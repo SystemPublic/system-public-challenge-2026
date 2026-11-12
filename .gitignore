@@ -1,0 +1,25 @@
+# API keys and secrets
+.env
+.env.*
+*.key
+secrets.*
+
+# Large data files (use a download script instead)
+*.parquet
+*.zip
+*.gz
+data/raw/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+
+# System files
+.DS_Store
+Thumbs.db
