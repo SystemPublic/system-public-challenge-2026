@@ -1,0 +1,18 @@
+/* Project dashboard. Uses the tokens from style.css. */
+.dashboard { margin: 0 0 var(--s4); }
+.dash-bar { display: flex; flex-wrap: wrap; gap: var(--s2); align-items: center; margin: var(--s3) 0; }
+.dash-bar .small { flex: 1 1 200px; }
+.dash-head { border-bottom: 1px solid var(--line); margin-bottom: var(--s3); padding-bottom: var(--s2); }
+.dash-head p { margin: 0; }
+.panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: var(--s3); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px var(--s3); min-width: 0; }
+.panel-kpis, .panel-table { grid-column: 1 / -1; }
+.panel h3 { margin: 0 0 var(--s1); }
+.panel .chart { margin-top: var(--s2); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--s2); margin-top: var(--s2); }
+.kpi { border-top: 1px solid var(--line); padding: var(--s2) 0 0; }
+.kpi-label, .kpi-source, .panel-sources { font-size: var(--fs-s); color: var(--muted); }
+.kpi-value { font-size: var(--fs-l); font-weight: 600; font-variant-numeric: tabular-nums; }
+.kpi-unit { font-size: var(--fs-s); font-weight: 400; color: var(--muted); }
+.panel-sources { margin: var(--s2) 0 0; overflow-wrap: anywhere; }
+.panel figcaption:empty { display: none; }

@@ -5,20 +5,22 @@ Run: .venv/bin/uvicorn server.main:app --port 8000
 """
 import asyncio
 import json
+import os
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
+import httpx
 from fastapi import FastAPI, HTTPException
 from fastapi.concurrency import run_in_threadpool
-from fastapi.responses import PlainTextResponse, StreamingResponse
+from fastapi.responses import JSONResponse, PlainTextResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 import mcp_server
-from agents import orchestrator
+from agents import dashboard, orchestrator
 from server import db
-from tools import graph  # importing tools loads .env
+from tools import graph, literature  # importing tools loads .env
 
 RUNS_PER_PROFILE, RUNS_TOTAL = 10**9, 10**9  # rate limit off for the demo
 subscribers: dict[int, list[asyncio.Queue]] = {}   # run id -> live SSE queues, only while the run is going
@@ -29,11 +31,18 @@ tasks = set()
 @asynccontextmanager
 async def lifespan(app):
     await run_in_threadpool(db.init)
+    await run_in_threadpool(db.fail_stale_runs)
     async with mcp_server.server.session_manager.run():
         yield
 
 
 app = FastAPI(title="CAMOX", lifespan=lifespan)
+
+
+@app.exception_handler(Exception)
+async def json_error(request, e):
+    """Any unhandled error becomes a short JSON body, never an HTML page or a stack trace."""
+    return JSONResponse({"detail": f"Server error ({type(e).__name__}). Please try again."}, 500)
 
 
 class ProfileIn(BaseModel):
@@ -45,6 +54,7 @@ class ProfileIn(BaseModel):
 
 class ProjectIn(BaseModel):
     title: str
+    goals: str = ""
 
 
 class RunIn(BaseModel):
@@ -54,9 +64,28 @@ class RunIn(BaseModel):
 
 
 def found(row):
+    """The row, or a 404."""
     if not row:
         raise HTTPException(404, "Not found")
     return row
+
+
+@app.get("/api/health")
+def health():
+    """For hosting checks: what the app depends on, each true or false. `ok` needs the database and the graph."""
+    try:
+        database = db.q("select 1 as ok", one=True)["ok"] == 1
+    except Exception:
+        database = False
+    try:
+        live = httpx.get(f"{graph.API}/concepts/bNXwlzaSaB", headers={"x-api-key": os.environ.get("SPG_APIKEY", "")},
+                         timeout=5).status_code == 200
+    except httpx.HTTPError:
+        live = False
+    checks = {"database": database, "graph_file": graph.GRAPH_FILE.exists(),
+              "openai_key": bool(os.environ.get("OPENAI_API_KEY")), "live_graph_api": live}
+    return JSONResponse({"ok": database and checks["graph_file"], **checks},
+                        200 if database and checks["graph_file"] else 503)
 
 
 @app.get("/api/agents")
@@ -88,7 +117,12 @@ def list_projects(profile_id: int):
 @app.post("/api/profiles/{profile_id}/projects")
 def create_project(profile_id: int, p: ProjectIn):
     found(db.get_profile(profile_id))
-    return db.create_project(profile_id, p.title)
+    return db.create_project(profile_id, p.title, p.goals)
+
+
+@app.put("/api/projects/{project_id}")
+def update_project(project_id: int, p: ProjectIn):
+    return found(db.update_project(project_id, p.title, p.goals))
 
 
 @app.get("/api/projects/{project_id}")
@@ -99,7 +133,34 @@ def get_project(project_id: int):
 def context(project_id):
     """(project, profile, history) for a query in this project."""
     project = found(db.get_project(project_id))
-    return project, db.get_profile(project["profile_id"]), db.history(project_id)
+    profile = {**db.get_profile(project["profile_id"]), "project": {"title": project["title"], "goals": project["goals"]}}
+    return project, profile, db.history(project_id)
+
+
+@app.post("/api/projects/{project_id}/dashboard")
+async def start_dashboard(project_id: int):
+    """Builds the project dashboard in the background; poll GET /api/projects/{id} for dashboard_status."""
+    project, profile, _ = await run_in_threadpool(context, project_id)
+    answers = [{"query": r["query"], **r["answer"]} for r in project["runs"] if r["status"] == "done" and r["answer"]]
+    if not answers:
+        raise HTTPException(400, "Ask at least one question in this project first; the dashboard is built from the answers.")
+
+    async def emit(e):
+        if e["type"] in ("agent_started", "tool_call"):
+            await run_in_threadpool(db.set_dashboard, project_id, f"building: {e['agent']}" + (f", {e['tool']}" if "tool" in e else ""))
+
+    async def build():
+        try:
+            d = await dashboard.build_dashboard(project, profile, answers, emit)
+            await run_in_threadpool(db.set_dashboard, project_id, "done", d.model_dump())
+        except Exception:
+            await run_in_threadpool(db.set_dashboard, project_id, "failed")
+
+    await run_in_threadpool(db.set_dashboard, project_id, "building: planning panels")
+    task = asyncio.create_task(build())
+    tasks.add(task)
+    task.add_done_callback(tasks.discard)
+    return {"dashboard_status": "building: planning panels"}
 
 
 @app.post("/api/projects/{project_id}/plan")
@@ -123,6 +184,7 @@ async def start_run(project_id: int, r: RunIn):
 
 
 async def execute(run_id, query, profile, history, agents, plan):
+    """Run the agents in the background: store every event, push it to live SSE subscribers, then finish the run."""
     async def emit(event):
         event = {**event, "t": datetime.now(timezone.utc).isoformat()}
         await run_in_threadpool(db.append_event, run_id, event)
@@ -174,6 +236,12 @@ async def run_events(run_id: int):
                 subscribers[run_id].remove(queue)
 
     return StreamingResponse(stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
+
+
+@app.get("/api/references")
+def get_references(dois: str):
+    """Title, year and venue for each DOI an answer cites (OpenAlex), for the References list."""
+    return literature.lookup_dois([d for d in dois.split(",") if d][:50])
 
 
 @app.get("/api/graph")

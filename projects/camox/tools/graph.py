@@ -23,10 +23,12 @@ FAMILY = {
 NULL = {"ratio": 1.0, "difference": 0.0, "correlation": 0.0}
 
 
+GRAPH_FILE = Path(__file__).resolve().parents[1] / os.environ.get("GRAPH_DB", "data/graph.duckdb")
+
+
 @functools.cache
 def _db():
-    return duckdb.connect(str(Path(__file__).resolve().parents[1] / os.environ.get("GRAPH_DB", "data/graph.duckdb")),
-                          read_only=True, config={"memory_limit": os.environ.get("DUCKDB_MEMORY", "75%")})
+    return duckdb.connect(str(GRAPH_FILE), read_only=True, config={"memory_limit": os.environ.get("DUCKDB_MEMORY", "75%")})
 
 
 def _rows(sql, params=()):
@@ -155,8 +157,12 @@ def summarise_evidence(concepts_a: list[str], concepts_b: list[str] | None = Non
 
 
 def sql(query: str) -> list:
-    """Escape hatch: run a read-only DuckDB SQL query (max 50 rows). Tables: associations, relationships,
-    studies, variables, concepts. Relationship columns are quoted, e.g. "source_concept.system_id"."""
+    """Escape hatch: run a read-only DuckDB SQL query (max 50 rows). Tables and main columns:
+    associations(study_id, system_statistic_type, statistic_value, ci_lower, ci_upper, p_value, variable_1_name,
+    variable_2_name, variable_1_concept_id, variable_2_concept_id); studies(study_id, doi, population_string,
+    study_type); variables(name, concept_id); concepts(system_id, wikidata_label, wikidata_id); relationships(num_studies, num_findings,
+    "source_concept.system_id", "source_concept.wikidata_label", "target_concept.system_id",
+    "target_concept.wikidata_label"; quote these dotted names)."""
     return _rows(f"SELECT * FROM ({query.rstrip('; ')}) LIMIT 50")
 
 

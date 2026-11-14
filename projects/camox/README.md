@@ -15,7 +15,7 @@ A research assistant that makes the System Public Graph usable for any question.
 - **Outside research**: recent papers from OpenAlex and PubMed, web sources and World Bank indicators for what the graph doesn't hold.
 - **Skeptic**: the strongest evidence against the user's claim.
 
-Follow-up questions in a project see the earlier answers. You can review and edit the plan before agents start.
+Each project has goals that every agent reads, and follow-up questions see the earlier answers. You can review and edit the plan before agents start. Answers cite DOIs inline, each checked in code against the run's tool results, with a numbered reference list (titles from OpenAlex).
 
 ## How we used the System Public Graph
 

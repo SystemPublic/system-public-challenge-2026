@@ -1,6 +1,7 @@
 // State, API calls, the run event stream and page layout. Section rendering is in sections.js, the graph in graph.js.
-import { esc, plural, renderAnswer, mountCharts, answerConcepts, downloadCsv } from './sections.js';
+import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv } from './sections.js';
 import { drawGraph } from './graph.js';
+import { bindDashboard } from './dashboard.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 const app = $('#app');
@@ -27,14 +28,23 @@ const EXAMPLES = [
 ];
 const examples = (p) => EXAMPLES.find(([re]) => re.test([p.role, p.organisation, p.about].join(' ')))[1];
 
-async function api(path, opts = {}) {
-  const res = await fetch(path, { ...opts, headers: { 'Content-Type': 'application/json' }, body: opts.body && JSON.stringify(opts.body) });
+async function api(path, opts = {}, retry = !opts.method) {
+  const res = await fetch(path, { ...opts, headers: { 'Content-Type': 'application/json' }, body: opts.body && JSON.stringify(opts.body) })
+    .catch(() => { throw new Error('could not reach the server; check your connection'); });
+  // The free host returns 502/503 while it wakes up or redeploys: retry a read once before giving up.
+  if (retry && res.status >= 502 && res.status <= 504) {
+    await new Promise((r) => setTimeout(r, 2500));
+    return api(path, opts, false);
+  }
   const text = await res.text();
   let data = text;
   try { data = JSON.parse(text); } catch { /* plain text body */ }
   if (!res.ok) {
     const d = data?.detail ?? data;
-    const err = new Error(typeof d === 'string' && d ? d : `${res.status} ${res.statusText}`);
+    const html = typeof d === 'string' && d.trimStart().startsWith('<');
+    const msg = res.status >= 502 ? 'the server is waking up or restarting; try again in a minute'
+      : (typeof d === 'string' && d && !html ? d.slice(0, 200) : `server error ${res.status}`);
+    const err = new Error(msg);
     err.status = res.status;
     throw err;
   }
@@ -45,7 +55,7 @@ const store = { get: (k) => { try { return localStorage.getItem(k); } catch { re
                 set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* storage off */ } } };
 const route = () => Object.fromEntries(new URLSearchParams(location.hash.slice(1)));
 const go = (r) => { location.hash = new URLSearchParams(Object.entries(r).filter(([, v]) => v != null)).toString(); };
-const agentTitle = (name) => state.agents.find((a) => a.name === name)?.title || name;
+const agentTitle = (name) => state.agents.find((a) => a.name === name)?.title || String(name).charAt(0).toUpperCase() + String(name).slice(1);
 const dur = (ms) => (ms < 1000 ? `${Math.round(ms)} ms` : `${(ms / 1000).toFixed(1)} s`);
 const when = (iso) => (iso ? new Date(iso).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : '');
 
@@ -157,30 +167,81 @@ function renderWorkspace() {
   app.innerHTML = `<nav class="projects" aria-label="Projects">
       <h2>Projects</h2>
       <ul>${state.projects.map((x) => `<li><a href="#profile=${p.id}&project=${x.id}" ${pj?.id === x.id ? 'aria-current="page"' : ''}>
-        ${esc(x.title)}<div class="small muted num">${plural(x.n_runs ?? 0, 'question', 'questions')}</div></a></li>`).join('')}</ul>
+        <span class="t">${esc(x.title)}</span><div class="small muted num">${plural(x.n_runs ?? 0, 'question', 'questions')}</div></a></li>`).join('')}</ul>
       <select aria-label="Project"><option value="">${state.projects.length ? 'Choose a project' : 'No projects yet'}</option>
         ${state.projects.map((x) => `<option value="${x.id}" ${pj?.id === x.id ? 'selected' : ''}>${esc(x.title)}</option>`).join('')}</select>
-      <form id="new-project" class="row"><input name="title" required placeholder="New project title" aria-label="New project title"><button>Create</button></form>
+      <a class="button new-btn" href="#profile=${p.id}" ${pj ? '' : 'aria-current="page"'}>New project</a>
     </nav>
-    <main>${pj ? projectView(pj) : `<div class="empty"><h2>Pick a project</h2>
-      <p>A project keeps a thread of questions and answers, so follow-ups can build on earlier ones. Choose one from the list or create one.</p></div>`}</main>`;
+    <main>${pj ? projectView(pj) : newProjectView()}</main>`;
 
   $('nav select').onchange = (e) => e.target.value && go({ profile: p.id, project: e.target.value });
-  $('#new-project').onsubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const x = await api(`/api/profiles/${p.id}/projects`, { method: 'POST', body: { title: new FormData(e.target).get('title').trim() } });
-      go({ profile: p.id, project: x.id });
-    } catch (err) { notice(`Could not create the project: ${err.message}.`, 'Try again.'); }
-  };
-  if (!pj) return;
+  if (!pj) {
+    $('#new-project').onsubmit = async (e) => {
+      e.preventDefault();
+      const f = Object.fromEntries(new FormData(e.target));
+      try {
+        const x = await api(`/api/profiles/${p.id}/projects`, { method: 'POST', body: { title: f.title.trim(), goals: f.goals.trim() } });
+        go({ profile: p.id, project: x.id });
+      } catch (err) { $('#new-project .form-msg').textContent = `Could not create the project: ${err.message}. Try again.`; }
+    };
+    return;
+  }
+  bindGoals();
+  bindDashboard($('#dashboard'), pj, api);
   const runs = [...pj.runs].sort((a, b) => a.id - b.id);
   const lastDone = runs.filter((r) => r.answer).at(-1);
   runs.forEach((r) => mountTurn(r, r === lastDone));
   bindComposer();
 }
 
+const GOALS_HINT = 'What the work is for, who will read it, and its scope: countries, populations, years.';
+const newProjectView = () => `<div class="new-project"><h1>New project</h1>
+  <p class="muted">A project keeps a thread of questions. The agents read its goals and the earlier answers with every new question.
+    ${state.projects.length ? 'Pick an existing project from the list, or start one here.' : ''}</p>
+  <form id="new-project">
+    <label for="np-title">Title</label><input id="np-title" name="title" required placeholder="Youth employment brief">
+    <label for="np-goals">Goals and context</label>
+    <textarea id="np-goals" name="goals" rows="5" placeholder="${GOALS_HINT}"></textarea>
+    <p class="form-msg" role="status"></p>
+    <div class="form-actions"><button class="primary">Create project</button></div>
+  </form></div>`;
+
+const goalsView = (pj) => (pj.goals
+  ? `<div class="goals-head"><span class="label">Goals and context</span><button type="button" class="ghost small" data-edit-goals>Edit</button></div>
+     <p>${esc(pj.goals)}</p>`
+  : `<p class="small">No goals yet. Say what this work is for, who reads it and its scope; the agents read the goals with every question.
+     <button type="button" class="small" data-edit-goals>Add goals</button></p>`);
+
+function bindGoals() {
+  const box = $('#goals'); const pj = state.project;
+  box.onclick = (e) => {
+    if (e.target.dataset.editGoals !== undefined) {
+      box.innerHTML = `<form id="goals-form"><label for="g-title">Title</label><input id="g-title" name="title" required value="${esc(pj.title)}">
+        <label for="g-goals">Goals and context</label><textarea id="g-goals" name="goals" rows="5" placeholder="${GOALS_HINT}">${esc(pj.goals)}</textarea>
+        <p class="form-msg" role="status"></p>
+        <div class="form-actions"><button type="button" data-cancel-goals>Cancel</button><button class="primary">Save</button></div></form>`;
+      $('#g-goals').focus();
+      $('#goals-form').onsubmit = async (ev) => {
+        ev.preventDefault();
+        const f = Object.fromEntries(new FormData(ev.target));
+        try {
+          const x = await api(`/api/projects/${pj.id}`, { method: 'PUT', body: { title: f.title.trim(), goals: f.goals.trim() } });
+          Object.assign(pj, { title: x.title ?? f.title.trim(), goals: x.goals ?? f.goals.trim() });
+          Object.assign(state.projects.find((q) => q.id === pj.id) || {}, { title: pj.title, goals: pj.goals });
+          $('main h1').textContent = pj.title;
+          $('nav a[aria-current] .t').textContent = pj.title;
+          $(`nav option[value="${pj.id}"]`).textContent = pj.title;
+          box.innerHTML = goalsView(pj);
+        } catch (err) { $('#goals-form .form-msg').textContent = `Could not save: ${err.message}. Try again.`; }
+      };
+    }
+    if (e.target.dataset.cancelGoals !== undefined) box.innerHTML = goalsView(pj);
+  };
+}
+
 const projectView = (pj) => `<h1>${esc(pj.title)}</h1>
+  <div id="goals" class="goals">${goalsView(pj)}</div>
+  <div id="dashboard" class="dashboard"></div>
   <div id="thread">${pj.runs.length ? '' : '<div class="empty"><p>No questions in this project yet. Ask one below or pick an example.</p></div>'}</div>
   <form id="composer" class="composer">
     <label for="q">${pj.runs.length ? 'Ask a follow-up' : 'Ask a question'}</label>
@@ -239,7 +300,7 @@ function bindComposer() {
   const ed = $('#plan-editor');
   const options = (sel) => state.agents.map((a) => `<option value="${esc(a.name)}" ${a.name === sel ? 'selected' : ''}>${esc(a.title)}</option>`).join('');
   const taskRow = (t) => `<div class="task-row"><select aria-label="Agent">${options(t.agent)}</select>
-    <textarea rows="3" aria-label="Instruction">${esc(t.instruction)}</textarea><button type="button" data-remove>Remove</button></div>`;
+    <textarea rows="4" aria-label="Instruction">${esc(t.instruction)}</textarea><button type="button" data-remove>Remove</button></div>`;
   function renderPlanEditor(plan) {
     ed.hidden = false;
     ed.innerHTML = `<h3>Plan</h3><label for="plan-q">Question</label><input id="plan-q" value="${esc(plan.question)}">
@@ -265,9 +326,10 @@ function bindComposer() {
 function mountTurn(run, latest) {
   $('#thread').insertAdjacentHTML('beforeend', `<section class="turn" id="run-${run.id}">
     <div class="q"><p>${esc(run.query)}</p><time class="small muted">${esc(when(run.created_at))}</time></div>
+    <p class="context small muted" hidden></p>
     <div class="status-line" role="status" hidden></div>
     <details class="trace"><summary>Show agents and tool calls</summary><div class="trace-body"></div></details>
-    <div class="answer"></div></section>`);
+    ${latest || !run.answer ? '<div class="answer"></div>' : `<details class="older"><summary><span class="more-label">Show the answer</span> <span class="muted">${esc(short(run.answer.summary.replace(/\s*\[[^\]]*10\.\d{4}[^\]]*\]/g, ''), 170))}</span></summary><div class="answer"></div></details>`}</section>`);
   const el = $(`#run-${run.id}`);
   if (run.status === 'running') {
     $('.trace', el).open = true;
@@ -275,13 +337,15 @@ function mountTurn(run, latest) {
   } else {
     if (run.answer) mountAnswer(el, run.answer, latest);
     else status(el, 'This run finished without an answer. Open the trace to see which step failed, then ask again.', true);
+    // Stored events give the context line now and the trace when it is opened.
     const tr = $('.trace', el);
+    const events = () => (el.events ??= api(`/api/runs/${run.id}`).then((r) => r.events || []));
+    events().then((evs) => { if (!tr.open) renderTrace(el, evs, false); }).catch(() => { el.events = null; });
     tr.addEventListener('toggle', async () => {
-      if (!tr.open || tr.dataset.loaded) return;
-      tr.dataset.loaded = '1';
+      if (!tr.open) return;
       $('.trace-body', el).innerHTML = '<p class="small muted">Loading the trace for this run</p>';
-      try { renderTrace(el, (await api(`/api/runs/${run.id}`)).events || [], false); }
-      catch (e) { $('.trace-body', el).innerHTML = `<p class="small">Could not load the trace: ${esc(e.message)}. Close and open it to retry.</p>`; delete tr.dataset.loaded; }
+      try { renderTrace(el, await events(), false, true); }
+      catch (e) { el.events = null; $('.trace-body', el).innerHTML = `<p class="small">Could not load the trace: ${esc(e.message)}. Close and open it to retry.</p>`; }
     });
   }
   return el;
@@ -330,6 +394,7 @@ function traceModel(events) {
     if (e.type === 'agent_done') Object.assign(agent(e.agent), { status: 'done', t1: e.t });
     if (e.type === 'agent_failed') { Object.assign(agent(e.agent), { status: 'failed', t1: e.t }); agent(e.agent).notes.push(['Failed', e.error]); }
     if (e.type === 'formatting') m.formatting = true;
+    if (e.type === 'verifying') m.verifying = true;
     if (e.type === 'error') m.error = e.message;
     if (e.type === 'run_done') m.done = e.status;
   }
@@ -338,17 +403,29 @@ function traceModel(events) {
 }
 
 const mainArg = (t) => Object.values(t.args || {}).find((v) => typeof v === 'string' && v);
+// The server's summary repeats the tool and its argument ("search_concepts "x" -> 5 concepts"): keep only the result.
+const result = (t) => short(String(t.summary || '').split(/\s+(?:->|→)\s+/).slice(1).join(' → ') || t.summary, 200);
+const toolLine = (t) => `${mainArg(t) ? `“${short(mainArg(t), 90)}” → ` : ''}${result(t)}`;
 const STATUS = { waiting: 'Waiting', running: 'Running', retrying: 'Retrying', done: 'Done', failed: 'Failed' };
 
-function renderTrace(el, events, live) {
+function contextLine(el, c) {
+  const p = $('.context', el);
+  if (!c || !p) return;
+  p.hidden = false;
+  p.textContent = `What the agents knew: profile ${c.profile || 'none'}; ${c.project_goals ? 'the project goals' : 'no project goals'}; `
+    + `${c.earlier_turns ? plural(c.earlier_turns, 'earlier answer', 'earlier answers') : 'no earlier answers'} in this project.`;
+}
+
+function renderTrace(el, events, live, keepOpen = false) {
   const m = traceModel(events);
+  contextLine(el, events.find((e) => e.type === 'context'));
   const agents = [...m.agents.values()];
   const open = (el.expanded ??= new Set());
   $('.trace-body', el).onclick = (e) => {
     const n = e.target.dataset.more;
     if (n === undefined) return;
     open.has(n) ? open.delete(n) : open.add(n);
-    renderTrace(el, events, live && !m.done);
+    renderTrace(el, events, live && !m.done, true);
   };
   const doneN = agents.filter((a) => a.status === 'done' || a.status === 'failed').length;
   $('.trace-body', el).innerHTML = `${m.plan ? `<p class="plan-q">Plan: ${esc(m.plan.question)}</p>` : ''}
@@ -356,29 +433,31 @@ function renderTrace(el, events, live) {
       <div class="agent-head"><span class="st st-${a.status}">${STATUS[a.status]}</span><strong>${esc(agentTitle(a.name))}</strong>
         <span class="meta small muted num">${plural(a.tools.length, 'tool call', 'tool calls')}${a.t0 && a.t1 ? `, ${dur(new Date(a.t1) - new Date(a.t0))}` : ''}</span></div>
       ${a.instruction ? `<p class="instr">${esc(a.instruction)}</p>` : ''}
-      ${a.tools.length ? `<ol class="tools">${a.tools.slice(open.has(a.name) ? 0 : -3).map((t) => `<li><code>${esc(t.tool)}</code><span>${mainArg(t) ? `<q>${esc(mainArg(t))}</q> ` : ''}${esc(t.summary)}</span><span class="num">${dur(t.ms ?? 0)}</span></li>`).join('')}</ol>` : ''}
+      ${a.tools.length ? `<ol class="tools">${a.tools.slice(open.has(a.name) ? 0 : -3).map((t) => `<li><code>${esc(t.tool)}</code><span>${esc(toolLine(t))}</span><span class="num">${dur(t.ms ?? 0)}</span></li>`).join('')}</ol>` : ''}
       ${a.tools.length > 3 ? `<button type="button" class="ghost small more" data-more="${esc(a.name)}">${open.has(a.name) ? 'Show the last 3' : `Show all ${a.tools.length} tool calls`}</button>` : ''}
-      ${a.notes.map(([k, v]) => `<p class="note ${k === 'Failed' ? 'bad' : ''}">${k}: ${esc(v)}</p>`).join('')}
+      ${a.notes.map(([k, v]) => `<p class="note ${k === 'Failed' ? 'bad' : ''}">${k}: ${esc(short(v))}</p>`).join('')}
     </li>`).join('')}</ul>` : ''}`;
   $('.trace summary', el).textContent = m.done || !live
     ? `Trace: ${plural(agents.length, 'agent', 'agents')}, ${plural(m.tools, 'tool call', 'tool calls')}, ${dur(m.ms)}`
     : 'Agents and tool calls';
 
-  if (m.error) return status(el, `The run stopped: ${m.error}. Ask again, or pin fewer agents.`, true);
+  if (m.error) return status(el, `The run stopped: ${short(m.error).replace(/[.\s]+$/, '')}. Ask the question again.`, true);
   if (m.done === 'failed' && !$('.answer', el).innerHTML) return status(el, 'The run failed before writing an answer. Check the failed agent above, then ask again.', true);
-  if (!live) { status(el, ''); $('.trace', el).open = false; return; }
+  if (!live) { status(el, ''); if (!keepOpen) $('.trace', el).open = false; return; }
   if (!m.plan) return status(el, 'Planning: choosing agents for this question');
+  if (m.verifying) return status(el, 'Verifying: checking the answer\'s claims and numbers against the tool results');
   if (m.formatting) return status(el, `Writing the answer from ${plural(agents.filter((a) => a.status === 'done').length, 'section', 'sections')}`);
   const lastRunning = m.last && ['running', 'retrying'].includes(m.agents.get(m.last.agent)?.status) ? m.last : null;
   status(el, `${doneN} of ${agents.length} agents finished. `
-    + (lastRunning ? `${agentTitle(lastRunning.agent)}: ${lastRunning.tool}${mainArg(lastRunning) ? ` "${mainArg(lastRunning)}"` : ''}, ${lastRunning.summary}` : 'Agents are starting their first tool calls'));
+    + (lastRunning ? `${agentTitle(lastRunning.agent)}: ${lastRunning.tool.replaceAll('_', ' ')} ${toolLine(lastRunning)}` : 'Agents are starting their first tool calls'));
 }
 
 // Answer and graph ---------------------------------------------------------------------------------
 function mountAnswer(el, answer, drawNow) {
   const box = $('.answer', el);
-  box.innerHTML = renderAnswer(answer);
+  box.innerHTML = renderAnswer(answer, el.id.replace('run-', ''));
   mountCharts(box);
+  fillReferences(box);
   const { ids, verdicts } = answerConcepts(answer);
   const panel = $('.graph-panel', box);
   if (!ids.length) { panel.innerHTML = '<p class="small muted">No graph concepts in this answer, so there is no graph to draw.</p>'; return; }
@@ -389,7 +468,10 @@ function mountAnswer(el, answer, drawNow) {
       if (!data.nodes?.length) { panel.innerHTML = '<p class="small muted">The graph has none of these concepts.</p>'; return; }
       if (!window.cytoscape) throw new Error('the graph library did not load');
       drawGraph(panel, data, verdicts);
-    } catch (e) { panel.innerHTML = `<p class="small">Could not draw the graph: ${esc(e.message)}. The answer is unaffected; reload to try again.</p>`; }
+    } catch (e) {
+      panel.innerHTML = `<p class="small">Could not draw the graph: ${esc(short(e.message))}. The answer is unaffected. <button type="button" class="small">Try again</button></p>`;
+      $('button', panel).onclick = draw;
+    }
   };
   if (drawNow) draw();
   else {
@@ -398,8 +480,40 @@ function mountAnswer(el, answer, drawNow) {
   }
 }
 
-// Verdict pills open the findings table of their card.
+// Titles, venues and years for the References list; DOIs the lookup does not know stay as plain DOI links.
+async function fillReferences(box) {
+  const items = [...box.querySelectorAll('.refs-list li[data-doi]')];
+  for (let i = 0; i < items.length; i += 50) {
+    const chunk = items.slice(i, i + 50);
+    try {
+      const found = await api(`/api/references?dois=${encodeURIComponent(chunk.map((li) => li.dataset.doi).join(','))}`);
+      const by = new Map(found.map((r) => [String(r.doi).toLowerCase(), r]));
+      for (const li of chunk) {
+        const r = by.get(li.dataset.doi.toLowerCase());
+        if (r?.title) $('div', li).innerHTML = refBody({ ...r, doi: li.dataset.doi });
+      }
+    } catch { /* the DOI links still work without titles */ }
+  }
+}
+
+// Citation links scroll to their reference and flash it. Verdict pills open the findings table of their card.
 document.addEventListener('click', (e) => {
+  const c = e.target.closest('a[data-ref]');
+  if (c) {
+    e.preventDefault();
+    const li = document.getElementById(c.dataset.ref);
+    if (!li) return;
+    li.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    li.classList.remove('flash'); void li.offsetWidth; li.classList.add('flash');
+    return;
+  }
+  const f = e.target.closest('button[data-show]');
+  if (f) {
+    const sec = f.closest('.sec');
+    sec.querySelectorAll('[data-show]').forEach((b) => b.setAttribute('aria-pressed', b === f));
+    sec.querySelectorAll('tr[data-kind]').forEach((tr) => { tr.hidden = !!f.dataset.show && !tr.dataset.kind.split(' ').includes(f.dataset.show); });
+    return;
+  }
   const csv = e.target.closest('button[data-csv]');
   if (csv) return downloadCsv(csv.dataset.csv);
   const v = e.target.closest('button[data-findings]');

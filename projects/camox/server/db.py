@@ -13,6 +13,10 @@ create table if not exists profiles(id serial primary key, name text not null, r
     about text, keys bytea, created_at timestamptz default now());
 create table if not exists projects(id serial primary key, profile_id int references profiles on delete cascade,
     title text not null, created_at timestamptz default now());
+alter table projects add column if not exists goals text not null default '';
+alter table projects add column if not exists dashboard jsonb;
+alter table projects add column if not exists dashboard_status text;
+update projects set dashboard_status = 'failed' where dashboard_status like 'building%';  -- a restart ends builds
 create table if not exists runs(id serial primary key, project_id int references projects on delete cascade,
     query text not null, agents text[], status text not null default 'running', answer jsonb,
     events jsonb not null default '[]', created_at timestamptz default now(), finished_at timestamptz);
@@ -97,22 +101,33 @@ def set_keys(profile_id, updates: dict):
 
 # Projects
 def list_projects(profile_id):
-    return q("select p.id, p.title, p.created_at, count(r.id)::int as n_runs from projects p "
+    return q("select p.id, p.title, p.goals, p.created_at, count(r.id)::int as n_runs from projects p "
              "left join runs r on r.project_id = p.id where p.profile_id = %s group by p.id order by p.id desc",
              (profile_id,))
 
 
-def create_project(profile_id, title):
-    return q("insert into projects(profile_id, title) values (%s, %s) returning id, title, profile_id, created_at",
-             (profile_id, title), one=True)
+def create_project(profile_id, title, goals=""):
+    return q("insert into projects(profile_id, title, goals) values (%s, %s, %s) "
+             "returning id, title, goals, profile_id, created_at", (profile_id, title, goals), one=True)
+
+
+def update_project(project_id, title, goals):
+    return q("update projects set title = %s, goals = %s where id = %s returning id, title, goals, profile_id",
+             (title, goals, project_id), one=True)
 
 
 def get_project(project_id):
-    project = q("select id, title, profile_id from projects where id = %s", (project_id,), one=True)
+    project = q("select id, title, goals, profile_id, dashboard, dashboard_status from projects where id = %s", (project_id,), one=True)
     if project:
         project["runs"] = q("select id, query, status, created_at, answer from runs where project_id = %s "
                             "order by id", (project_id,))
     return project
+
+
+def set_dashboard(project_id, status, dashboard=None):
+    """Status is 'building: <progress>', 'done' or 'failed'; a rebuild keeps the old dashboard until the new one lands."""
+    q("update projects set dashboard_status = %s, dashboard = coalesce(%s, dashboard) where id = %s",
+      (status, Jsonb(dashboard) if dashboard else None, project_id))
 
 
 def history(project_id):
@@ -128,6 +143,13 @@ def runs_last_hour(profile_id):
             "join projects p on p.id = r.project_id where r.created_at > now() - interval '1 hour'",
             (profile_id,), one=True)
     return row["mine"], row["total"]
+
+
+def fail_stale_runs():
+    """Runs left 'running' by a restart can never finish: mark them failed, with the events the UI expects."""
+    q("""update runs set status = 'failed', finished_at = now(), events = events || jsonb_build_array(
+           jsonb_build_object('type', 'error', 'message', 'Interrupted by a server restart.', 't', now()),
+           jsonb_build_object('type', 'run_done', 'status', 'failed', 't', now())) where status = 'running'""")
 
 
 def create_run(project_id, query, agents):

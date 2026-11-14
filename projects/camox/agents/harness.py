@@ -17,7 +17,7 @@ MODEL = os.environ.get("OPENAI_MODEL", "gpt-6-luna")
 MAX_TOOL_ROUNDS = 20
 MAX_RETRIES = 2
 MAX_TOOL_CHARS = 12_000
-DOI = re.compile(r"10\.\d{4,9}/[^\s\"'<>,;]+", re.I)
+DOI = re.compile(r"10\.\d{4,9}/[^\s\"'<>,;\]]+", re.I)
 _openai = AsyncOpenAI()
 
 
@@ -98,33 +98,67 @@ def _result_text(res) -> str:
         return "\n".join(parts)
 
 
-def summarise_result(text: str) -> str:
-    """One line for the live view."""
+def summarise_result(tool: str, args: dict, text: str) -> str:
+    """One human line for the live view, e.g. 'search_concepts "internet use" -> 10 concepts, top: Internet use
+    (382 studies)'."""
+    query = next((args[k] for k in ("text", "query") if isinstance(args.get(k), str)), None)
+    head = f'{tool} "{query[:50]}"' if query and tool != "sql" else tool
     try:
         data = json.loads(text)
     except ValueError:
-        return text[:100]
-    if isinstance(data, dict) and "result" in data and len(data) == 1:
+        return f"{head} -> {text[:80]}"
+    if isinstance(data, dict) and set(data) == {"result"}:
         data = data["result"]
-    if isinstance(data, list):
-        first = data[0] if data else {}
-        name = next((first.get(k) for k in ("label", "title", "concept_label", "path", "name") if isinstance(first, dict) and first.get(k)), None)
-        return f"{len(data)} results" + (f", first: {str(name)[:60]}" if name else "")
-    if isinstance(data, dict):
-        if "total" in data:
-            return f"{data['total']} total, {data.get('shown', '?')} shown"
-        if "n_findings" in data:
-            return f"{data['n_findings']} findings from {data.get('n_studies')} studies"
-        if "error" in data:
-            return f"error: {str(data['error'])[:80]}"
-        return ", ".join(f"{k}: {str(v)[:30]}" for k, v in list(data.items())[:3])
-    return str(data)[:100]
+    try:
+        return f"{head} -> {_describe(tool, data)}"
+    except (KeyError, TypeError, AttributeError, ValueError):  # an unexpected shape never breaks a run
+        return f"{head} -> {text[:80]}"
+
+
+def _describe(tool: str, data) -> str:
+    if isinstance(data, dict) and "error" in data:
+        return f"error: {str(data['error'])[:80]}"
+    if tool == "summarise_evidence":
+        fams = data["by_family"].values()
+        up, down = (sum(f[k] for f in fams) for k in ("ci_excludes_null_above", "ci_excludes_null_below"))
+        return f"{data['n_findings']} findings from {data['n_studies']} studies, {up} up and {down} down (CI excludes null)"
+    if tool == "get_findings":
+        return f"{data['total']} findings" + (f", {data['shown']} shown" if data["shown"] < data["total"] else "")
+    if tool == "get_concept":
+        return f"{data.get('wikidata_label')} ({data.get('wikidata_id')}, {data.get('source')})"
+    if tool == "get_worldbank_data":
+        years = [r["year"] for r in data["rows"]]
+        span = f", {min(years)}-{max(years)}" if years else ""
+        return f"{data['total']} values ({data['source']}{span})"
+    noun, label = LIST_SUMMARIES.get(tool, ("rows", lambda r: ""))
+    if isinstance(data, dict) and tool in LIST_SUMMARIES:
+        data = [data]  # a one-item list arrives as a single object
+    if not isinstance(data, list):
+        return ", ".join(f"{k}: {str(v)[:30]}" for k, v in list(data.items())[:3]) if isinstance(data, dict) else str(data)[:80]
+    if not data:
+        return "nothing found"
+    if tool == "search_worldbank_indicators":
+        return f"{len(data)} indicators ({', '.join(dict.fromkeys(i['database'].removeprefix('WB_') for i in data[:5]))})"
+    return f"{len(data)} {noun}" + (f", top: {label(data[0])}" if label(data[0]) else "")
+
+
+LIST_SUMMARIES = {  # tool -> (what the rows are, how to name the top row)
+    "search_concepts": ("concepts", lambda r: f"{r['label']} ({r['n_studies']} studies)"),
+    "neighbours": ("linked concepts", lambda r: f"{r['label']} ({r['n_studies']} studies)"),
+    "search_variables": ("concepts by wording", lambda r: f"{r['concept_label']} ({r['n_variables']} variables)"),
+    "paths": ("paths", lambda r: " -> ".join(r["path"])),
+    "search_worldbank_indicators": ("indicators", None),
+    "search_openalex": ("papers", lambda r: f"{r['title'][:60]} ({r['year']})"),
+    "search_pubmed": ("papers", lambda r: f"{r['title'][:60]} ({r['year']})"),
+    "lookup_dois": ("papers", lambda r: f"{r['title'][:60]} ({r['year']})"),
+}
 
 
 async def run_agent(name: str, instructions: str, task: str, output: type[BaseModel], emit,
                     tools: list[str] | None = None, web_search: bool = False,
-                    check=check_provenance) -> BaseModel:
-    """Run one agent to a validated `output`. Tools come only from the MCP server."""
+                    check=check_provenance, effort: str | None = None) -> BaseModel:
+    """Run one agent to a validated `output`. Tools come only from the MCP server. `effort` sets the
+    model's reasoning effort (its default when None)."""
     async with Client(mcp_server.server) as mcp:
         listed = (await mcp.list_tools()).tools
         specs = [{"type": "function", "name": t.name, "description": t.description or "", "parameters": t.input_schema}
@@ -145,14 +179,15 @@ async def run_agent(name: str, instructions: str, task: str, output: type[BaseMo
             trace.append(text.lower())
             calls_made.append(c.name)
             await emit({"type": "tool_call", "agent": name, "tool": c.name, "args": json.loads(c.arguments or "{}"),
-                        "summary": summarise_result(text), "ms": int((time.monotonic() - t0) * 1000)})
+                        "summary": summarise_result(c.name, json.loads(c.arguments or "{}"), text), "ms": int((time.monotonic() - t0) * 1000)})
             return {"type": "function_call_output", "call_id": c.call_id, "output": text[:MAX_TOOL_CHARS]}
 
         for attempt in range(MAX_RETRIES + 1):
             for _ in range(MAX_TOOL_ROUNDS):
                 r = await _openai.responses.create(model=MODEL, instructions=instructions, input=new_input,
                                                    previous_response_id=prev, tools=specs or None, text=fmt,
-                                                   truncation="auto")
+                                                   truncation="auto",
+                                                   **({"reasoning": {"effort": effort}} if effort else {}))
                 prev = r.id
                 calls = [o for o in r.output if o.type == "function_call"]
                 if not calls:

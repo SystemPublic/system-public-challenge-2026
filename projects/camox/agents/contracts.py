@@ -4,6 +4,8 @@ from typing import Literal
 
 from pydantic import BaseModel
 
+from agents.verifier import Verification
+
 Verdict = Literal["supported", "contested", "mixed", "thin", "no evidence"]
 
 
@@ -147,11 +149,24 @@ class IndicatorMapSection(BaseModel):
     concept_ids: list[str]
 
     def model_post_init(self, _):
-        """Flags and order come from code, not the model: cross-dataset links first, then by studies."""
+        """Flags and order come from code, not the model. Drops self-links (a matched seed concept, the seed series
+        in any database) and copies of a seed-database series held in another database; then sorts
+        cross-dataset links first, then by studies."""
+        db, seed = self.seed.database, _series(self.seed)
+        matched = {m.concept_id for m in self.matches}
+        self.links = [l for l in self.links if l.concept_id not in matched]
         for link in self.links:
+            home = {_series(i) for i in link.indicators if i.database == db}
+            link.indicators = [i for i in link.indicators
+                               if _series(i) != seed and (i.database == db or _series(i) not in home)]
             link.data_gap = not link.indicators
-            link.cross_dataset = any(i.database not in (self.seed.database, "unknown dataset") for i in link.indicators)
+            link.cross_dataset = any(i.database not in (db, "unknown dataset") for i in link.indicators)
         self.links.sort(key=lambda l: (not l.cross_dataset, -l.studies))
+
+
+def _series(i: Indicator) -> str:
+    """The series code without its database prefix: WB_HNP_SH_STA_BFED_ZS -> SH_STA_BFED_ZS."""
+    return i.indicator_id.removeprefix(i.database + "_")
 
 
 Section = EvidenceSection | EdaSection | PolicySection | ResearchSection | IndicatorMapSection
@@ -171,3 +186,5 @@ class Answer(BaseModel):
     summary: str
     caveats: list[str]
     sections: list[Section]
+    section_sources: list[list[str]] = []     # data sources each section used, same order as sections
+    verification: Verification | None = None

@@ -36,3 +36,19 @@ def search_pubmed(query: str, k: int = 10) -> list:
     return [{"pmid": i, "title": res[i]["title"], "year": res[i]["pubdate"][:4], "journal": res[i]["fulljournalname"],
              "doi": next((a["value"] for a in res[i]["articleids"] if a["idtype"] == "doi"), None)}
             for i in ids if i in res]
+
+
+def lookup_dois(dois: list[str]) -> list:
+    """Title, year, venue and citation count for up to 50 DOIs (OpenAlex). Use it to name the papers behind
+    findings before citing them. DOIs OpenAlex doesn't know are left out."""
+    clean = sorted({d.lower().removeprefix("https://doi.org/") for d in dois if d})[:50]
+    if not clean:
+        return []
+    params = {"filter": "doi:" + "|".join(clean), "per_page": 50,
+              "select": "doi,display_name,publication_year,primary_location,cited_by_count"}
+    if os.environ.get("OPENALEX_API_KEY"):
+        params["api_key"] = os.environ["OPENALEX_API_KEY"]
+    return [{"doi": (w["doi"] or "").removeprefix("https://doi.org/"), "title": w["display_name"],
+             "year": w["publication_year"], "cited_by_count": w["cited_by_count"],
+             "venue": ((w.get("primary_location") or {}).get("source") or {}).get("display_name")}
+            for w in get_json("https://api.openalex.org/works", params)["results"]]
