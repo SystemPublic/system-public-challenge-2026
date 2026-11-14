@@ -67,10 +67,14 @@ def slug(s):
 
 
 def canonical(rec):
-    """Underlay protocol v2 canonical form: fixed envelope, data in JCS (keys sorted)."""
-    data = json.dumps(rec["data"], sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    """Underlay canonical form: fixed envelope, data in RFC 8785 JCS (tools/underlay_export.jcs).
+    Until 14 November this used json.dumps, which writes the float 0.0 as "0.0" where JCS writes
+    "0"; 438 Restaurant records with latitude 0.0 had a local hash the server did not agree with.
+    The records were not affected: the server hashes what it receives."""
+    sys.path.insert(0, str(ROOT / "tools"))
+    from underlay_export import jcs
     return ('{"id":' + json.dumps(rec["id"], ensure_ascii=False) + ',"type":'
-            + json.dumps(rec["type"], ensure_ascii=False) + ',"data":' + data + "}")
+            + json.dumps(rec["type"], ensure_ascii=False) + ',"data":' + jcs(rec["data"]) + "}")
 
 
 def rhash(rec):
@@ -381,6 +385,8 @@ def readme(src, commit, counts, rstats, fstats):
 
 This collection holds the New York City Department of Health and Mental Hygiene (DOHMH) Restaurant Inspection Results for all five boroughs, as the city published them on 12 November 2026. It also holds the restaurants that appear in earlier copies of the same table and have since been removed from it.
 
+The collection belongs to the Underlay organization `system-community` (System Inc. Community), where teams in the System Public Challenge of November 2026 publish their work. Team Hypergraph (Jeff Nickerson and Ida Benedetto) built it for Build Challenge 4. Knowledge Futures seeded the collection `nyc/restaurant-inspections` v1.0.0 for the challenge; it covers Manhattan restaurants inspected since January 2024 and was pushed on 12 June 2026. This collection is a later and wider copy of the same city table: all five boroughs, every inspection the city listed on 12 November 2026, and a record for each restaurant the city has since removed. The section "Record types" lists the differences.
+
 ## Source
 
 The source is the NYC Open Data dataset "DOHMH New York City Restaurant Inspection Results", dataset id `{DATASET}` (https://data.cityofnewyork.us/d/{DATASET}). The dataset's `rowsUpdatedAt` was {src['rows_updated_at']} when the rows were fetched, and it was unchanged when the fetch ended. The rows were fetched at {src['fetched']} through the Socrata API (`https://data.cityofnewyork.us/resource/{DATASET}.json`) with this query, paged by `$offset` in steps of 50,000:
@@ -391,7 +397,7 @@ The source is the NYC Open Data dataset "DOHMH New York City Restaurant Inspecti
 
 The fetch returned {src['n_rows']:,} rows. The city's own counts, queried by SoQL aggregation at the same time, were {src['server_counts']['rows']:,} rows, {src['server_counts']['restaurants']:,} distinct CAMIS numbers, {src['server_counts']['inspections']:,} distinct inspections (CAMIS, date and type, dated after 1901) and {src['server_counts']['violation_rows']:,} rows that cite a violation code on a dated inspection.
 
-The collection was built by `analyses/underlay_publish/build.py` in the repository nyc-concordance, at git commit `{commit}`.
+The collection was built by `analyses/underlay_publish/build.py` in the repository nyc-concordance, at git commit `{commit}`. The code is in the public pull request https://github.com/SystemPublic/system-public-challenge-2026/pull/3, under `projects/hypergraph/` (`analyses/underlay_publish/`; the drift audit is `docs/underlay_drift.md`). The working repository, nyc-concordance on GitHub, is private for now.
 
 ## Record types
 

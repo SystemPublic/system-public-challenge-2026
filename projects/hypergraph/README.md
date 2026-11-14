@@ -72,6 +72,9 @@ The folder runs without a System API key. A key is needed only to send new queri
 - OpenStreetMap, via the Overpass API. ODbL 1.0.
 - Open data from Chicago (data.cityofchicago.org and the Chicago Health Atlas), Los Angeles, Phoenix, Tucson, Dallas, Austin and Philadelphia, for tests outside New York. Each city's open data terms.
 - Internet Archive copies of the restaurant inspection table, and Underlay collection nyc/restaurant-inspections v1.0.0 (`docs/underlay_drift.md`).
+- Two collections we published on the Underlay (`docs/underlay_publish.md`):
+  - [system-community/nyc-concordance-claims](https://www.underlay.org/system-community/nyc-concordance-claims) v1.0.0: 94 claims, 93 outcomes and 88 revisions (ARK `https://underlay.org/ark:12345/ulcb4ksbc7h2v96n.v1.0.0`).
+  - [system-community/nyc-restaurant-inspections-2026-11](https://www.underlay.org/system-community/nyc-restaurant-inspections-2026-11) v1.0.0: the city's inspection table as of 12 November 2026, with 2,388 restaurants it has since removed (ARK `https://underlay.org/ark:12345/ulcb4v9t8nfrhs62.v1.0.0`). City open data; no licence restriction.
 
 The complete list for each claim is in `claims/outcomes/<id>.json` under `sources`, and `python download_data.py --list` prints it.
 

@@ -1,6 +1,12 @@
 """Create the collection built by build.py on the Underlay and push one version.
 
     python analyses/underlay_publish/push.py --owner <org slug> --yes
+    python analyses/underlay_publish/push.py --owner <org slug> --yes --collection claims
+    python analyses/underlay_publish/push.py --owner <org slug> --verify-only [--collection claims]
+
+--collection restaurants (the default) pushes the build in ~/opt/nyc-concordance/underlay_publish/;
+--collection claims pushes data/derived/underlay_publish/claims/, written by tools/underlay_export.py.
+--verify-only repeats the unauthenticated read-back of the version named in push_result.json.
 
 Without both --owner and --yes it prints the plan and exits without contacting the Underlay.
 The key is read from ~/.config/underlay/token and is never printed or written anywhere.
@@ -12,8 +18,10 @@ Sequence (https://www.underlay.org/docs/api/versions):
   4. POST .../push/:sid/records                   NDJSON batches within limits.batch_lines / batch_bytes
   5. POST .../push/:sid/commit                    {"async": true}; then poll GET .../push/:sid
   6. Read back without authentication: the collection, the version, typeCounts, the ARK,
-     the manifest's record hashes against record_hashes.tsv, and /api/records/:hash/first
-     for the sample hashes in data/derived/underlay_publish/manifest.json.
+     the manifest's record hashes against record_hashes.tsv, and each sample record of
+     manifest.json through .../versions/:hash/records/:type/:id, comparing its hash and data.
+     (The lookup /api/records/:hash/first is listed as not available yet in llms.txt and
+     answers 404, so records are resolved through the collection.)
 Any error stops the script and prints the status and body. Nothing is retried except the poll.
 """
 import argparse
@@ -21,6 +29,8 @@ import json
 import sys
 import time
 from pathlib import Path
+
+from urllib.parse import quote
 
 import requests
 
@@ -39,7 +49,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--owner", help="organization slug that will own the collection")
     ap.add_argument("--yes", action="store_true", help="actually create and push")
+    ap.add_argument("--collection", choices=["restaurants", "claims"], default="restaurants")
+    ap.add_argument("--verify-only", action="store_true", help="only read the pushed version back")
     a = ap.parse_args()
+    global BIG, OUT
+    if a.collection == "claims":
+        BIG = OUT = ROOT / "data" / "derived" / "underlay_publish" / "claims"
 
     col = json.loads((BIG / "collection.json").read_text())
     schemas = json.loads((BIG / "schemas.json").read_text())
@@ -50,6 +65,9 @@ def main():
 
     print(f"collection {a.owner or '<owner>'}/{col['slug']} (public), {len(lines):,} records, "
           f"types {manifest['counts']}, build {manifest['build_commit'][:12]}")
+    if a.owner and a.verify_only:
+        res = json.loads((OUT / "push_result.json").read_text())
+        return verify(a.owner, col["slug"], res["result"]["hash"], manifest)
     if not (a.owner and a.yes):
         print("dry run: pass --owner <slug> and --yes to create the collection and push")
         return
@@ -123,7 +141,7 @@ def main():
         elif st["status"] != "committing":
             sys.exit(f"commit ended with status {st['status']}: {json.dumps(st.get('error'))}")
     print("committed", json.dumps(result))
-    (OUT / "push_result.json").write_text(json.dumps({"owner": a.owner, "slug": col["slug"],
+    (OUT / "push_result.json").write_text(json.dumps({"owner": a.owner, "slug": col["slug"], "host": API,
                                                       "result": result}, indent=1))
 
     # 6. read back without authentication
@@ -162,17 +180,31 @@ def verify(owner, slug, vhash, manifest):
         cursor = m["pagination"]["nextCursor"]
         time.sleep(1.1)
     mismatch = sum(1 for k, h in expected.items() if got.get(k) != h) + len(set(got) - set(expected))
-    firsts = []
+    local = {}
+    want = {(s["type"], s["id"]) for s in manifest["sample_hashes"]}
+    with open(BIG / "records.ndjson", encoding="utf-8") as fh:
+        for ln in fh:
+            r = json.loads(ln)
+            if (r["type"], r["id"]) in want:
+                local[(r["type"], r["id"])] = r["data"]
+    samples = []
     for s in manifest["sample_hashes"]:
-        f = requests.get(f"{API}/records/{s['hash']}/first", timeout=60)
-        firsts.append({"type": s["type"], "id": s["id"], "hash": s["hash"], "status": f.status_code,
-                       "first": f.json() if f.status_code == 200 else f.text[:300]})
+        f = requests.get(f"{base}/versions/{vhash}/records/{quote(s['type'], safe='')}/{quote(s['id'], safe='')}",
+                         timeout=60)
+        j = f.json() if f.status_code == 200 else {}
+        samples.append({"type": s["type"], "id": s["id"], "hash": s["hash"], "status": f.status_code,
+                        "hash_matches": j.get("hash") == s["hash"],
+                        "data_matches": j.get("data") == local.get((s["type"], s["id"])),
+                        "error": None if f.status_code == 200 else f.text[:300]})
         time.sleep(1.1)
     report = {"collection_public": c.get("public"), "head": c.get("head"), "collection_ark": c.get("ark"),
               "version_hash": v.get("hash"), "version_hash_matches": v.get("hash") == vhash,
               "version_ark": v.get("ark"), "semver": v.get("semver"), "typeCounts": tc,
               "typeCounts_match": tc == manifest["counts"], "manifest_records": len(got),
-              "manifest_hash_mismatches": mismatch, "first": firsts}
+              "manifest_hash_mismatches": mismatch,
+              "samples_resolved": sum(x["hash_matches"] and x["data_matches"] for x in samples),
+              "samples": samples, "read_without_authentication": True,
+              "checked_at": time.strftime("%Y-%m-%dT%H:%M:%S%z")}
     (OUT / "readback.json").write_text(json.dumps(report, indent=1))
     print(json.dumps(report, indent=1))
 
