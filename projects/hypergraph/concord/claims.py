@@ -203,7 +203,14 @@ PRECEDENCE = """Verdict precedence (fixed 12 Nov 2026 after the first critique r
    units) as part of the test, so that rule 11 can apply.
    (Added 13 Nov 2026, after the turn-calming referee found that an unregistered placebo
    would have made two confirmations unsettled. It binds later registrations only and
-   changes no verdict; under rule 4 an unregistered placebo decides nothing.)"""
+   changes no verdict; under rule 4 an unregistered placebo decides nothing.)
+13. For a claim registered with direction 0 (a prediction of no effect, with equivalence bounds),
+   rule 11 is read in reverse. A placebo that also lies inside the bounds is the expected result
+   and does not unsettle the verdict. The verdict is unsettled when the placebo falls outside
+   the bounds, because the design then shows an effect where none can exist.
+   (Added 14 Nov 2026, after the data, in answer to the referee of moon-full-emergencies, who
+   noted that rule 11 read literally gives unsettled because the placebo also meets support_if,
+   and recommended confirmed. It changes no verdict.)"""
 
 
 def endpoint_stance(z: float, z_null: float | None = None) -> dict:

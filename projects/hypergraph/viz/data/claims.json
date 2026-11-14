@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-13T23:33:49-0500",
+ "generated": "2026-11-14T07:21:49-0500",
  "claims": [
   {
    "id": "afford-gentrification-prevalence",
@@ -15055,6 +15055,379 @@
    }
   },
   {
+   "id": "heat-inside-outside-2006",
+   "kind": "confirmation",
+   "statement": "In New York City from 2006, shootings outside rise with daily maximum temperature and shootings inside rise less: the inside rate ratio per 5 C is smaller than the outside one.",
+   "graph_evidence": [
+    {
+     "relationship_id": "4FaXcuNJRt|YZku29igbl",
+     "concepts": [
+      "temperature",
+      "homicide"
+     ],
+     "n_findings": 4,
+     "n_studies": 2,
+     "direction": "+",
+     "summary": "As registered in heat-shootings: about +5 to +9% per 5 C. The graph has no finding that separates indoor from outdoor violence.",
+     "pubmed_ids": [
+      36858215,
+      32738768
+     ]
+    }
+   ],
+   "literature": [
+    {
+     "citation": "Stolzenberg L, D'Alessio SJ, Flexon JL. A hunter's moon: the effect of moon illumination on outdoor crime. Am J Crim Justice 2017.",
+     "doi": "10.1007/s12103-016-9351-9",
+     "finding": "Uses the same indoor and outdoor split for a different exposure."
+    },
+    {
+     "citation": "Mukherjee A, Sanders NJ. The causal effect of heat on violence: social implications of unmitigated heat among the incarcerated. NBER w28987, 2021.",
+     "doi": "10.3386/w28987",
+     "finding": "Violence in prisons without air conditioning rises on hot days (about 20%, secondary source), which favours a direct effect of heat on people indoors."
+    }
+   ],
+   "prediction": {
+    "direction": "-",
+    "magnitude": "Outside rate ratio per 5 C between 1.10 and 1.20; inside between 0.95 and 1.10; ratio of inside to outside between 0.80 and 0.98.",
+    "support_if": "The 95% upper bound of the ratio of the inside to the outside rate ratio is below 1.00.",
+    "refute_if": "The 95% lower bound of the inside rate ratio per 5 C is above 1.05 and the 95% interval of the ratio includes 1.00."
+   },
+   "plan": "analyses/heat_inside/test_2006.py, a copy of test.py with the start date 2006-01-01, committed with this registration and not yet run. Same models. Registered because the year-to-date file 5ucz-vwe8 turned out to carry the inside or outside field for every year, which the first registration did not know.",
+   "can_it_fail": "Yes. With about 4,000 inside and 20,000 outside incidents the expected standard error of the log ratio is about 0.02, so equal slopes (ratio 1.00) and no inside rise (ratio about 0.87) are both detectable.",
+   "already_seen": "Counts of inside incidents by year for 2006 to 2017 (155 to 265 a year) and the 2022 to 2024 counts named in heat-inside-outside, seen on 14 November 2026 while checking the field. No count by date or temperature was seen, and neither this test nor heat-inside-outside had been run.",
+   "alternatives": [
+    "Homes without air conditioning are hotter than the street, so a direct effect could be larger inside",
+    "Inside shootings differ in kind (domestic, commercial robbery), with their own seasonality",
+    "The inside or outside field may be recorded differently in summer"
+   ],
+   "rivals_separated": "Routine activity (people outdoors) predicts a ratio below 1. Direct irritability, sleep loss and medication effects act on people wherever they are and predict a ratio near 1 or above.",
+   "prior": 0.6,
+   "registrant": "Claude (coordinator), for Jeff Vernon",
+   "relation": "Same hypothesis as heat-inside-outside on a longer window; registered before either was run. Both outcomes are reported.",
+   "registered_at": "2026-11-14T07:13:15-0500",
+   "sha256": "7e134210eb08209ce565179c2abf900b4e684107d781be050c58d161906198fd",
+   "hash_ok": true,
+   "outcome": {
+    "id": "heat-inside-outside-2006",
+    "verdict": "confirmed",
+    "city_effect": {
+     "label": "ratio of the inside to the outside rate ratio of shootings per 5 C, New York City 2006 to 2026",
+     "estimate": 0.8612001538682373,
+     "lo": 0.828,
+     "hi": 0.896,
+     "scale": "ratio of rate ratios",
+     "null": 1,
+     "n": 7548,
+     "interval_note": "corrected by the referee; the registered script gave 0.842 to 0.881"
+    },
+    "all_effects": {
+     "ratio_registered": {
+      "estimate": 0.8612001538682373,
+      "lo": 0.8420596689566152,
+      "hi": 0.8807757126542632,
+      "se_log": 0.011467380960090253
+     },
+     "ratio_from_separate_poisson_fits": {
+      "estimate": 0.8597376076222034,
+      "lo": 0.827764688931528,
+      "hi": 0.8929454999029218,
+      "se_log": 0.019335874180319266
+     },
+     "inside_irr_per_5c": {
+      "estimate": 1.0089507699563478,
+      "lo": 0.9748652350744084,
+      "hi": 1.0442280836056355,
+      "se_log": 0.017534177158138042
+     },
+     "outside_irr_per_5c": {
+      "estimate": 1.1735566305478096,
+      "lo": 1.1549583145939504,
+      "hi": 1.1924544355411855,
+      "se_log": 0.008150378009894226
+     },
+     "inside_incidents": 3471,
+     "outside_incidents": 20958,
+     "first": "2006-01-01",
+     "last": "2026-08-31"
+    },
+    "sources": [
+     {
+      "kind": "nyc-open-data",
+      "dataset": "833y-fsy8",
+      "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+      "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+      "rows_updated_at": "2025-04-15T18:16:42Z",
+      "query": {
+       "$limit": 50000,
+       "$select": "date_trunc_ymd(occur_date) as d, loc_of_occur_desc as loc, count(distinct incident_key) as n",
+       "$where": "occur_date >= '2006-01-01T00:00:00' and loc_of_occur_desc in ('INSIDE','OUTSIDE')",
+       "$group": "d, loc",
+       "$order": "d, loc"
+      },
+      "fetched": "2026-11-14T07:13:26-0500",
+      "n_rows": 1370
+     },
+     {
+      "kind": "nyc-open-data",
+      "dataset": "5ucz-vwe8",
+      "name": "Shootings (2006-Present)",
+      "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+      "rows_updated_at": "2026-11-05T20:59:39Z",
+      "query": {
+       "$limit": 50000,
+       "$select": "date_trunc_ymd(occur_date) as d, loc_of_occur_desc as loc, count(distinct incident_key) as n",
+       "$where": "occur_date >= '2006-01-01T00:00:00' and loc_of_occur_desc in ('INSIDE','OUTSIDE')",
+       "$group": "d, loc",
+       "$order": "d, loc"
+      },
+      "fetched": "2026-11-14T07:13:27-0500",
+      "n_rows": 9346
+     },
+     {
+      "kind": "derived",
+      "path": "data/derived/heat/shootings_daily.csv",
+      "note": "Central Park weather and calendar terms"
+     }
+    ],
+    "prediction_scored": "hit: outside 1.174 (1.155 to 1.192) per 5 C, inside 1.009 (0.975 to 1.044), ratio 0.861 (0.842 to 0.881); the upper bound of the ratio is below 1.00. With the referee's corrected standard error the interval is 0.828 to 0.896, still below 1.00.",
+    "settle": "Whether the people shot inside were in rooms without cooling. Shootings by premises type and building air conditioning would test a direct effect of indoor heat.",
+    "research_needed": [
+     {
+      "question": "Does domestic violence, which happens mostly inside, rise with heat in New York?",
+      "data": "NYPD complaints flagged as domestic, by day",
+      "design": "the same daily model, inside and outside premises",
+      "priority": "high"
+     }
+    ],
+    "figures": [],
+    "notes": "Shootings recorded as outside rise with temperature and shootings recorded as inside do not. This is what the account in which heat puts more people in contact outdoors predicts. It does not separate that account from a direct effect of heat on people who are outdoors, because most indoor spaces are cooled, so a direct effect also predicts a smaller rise inside. Flat inside counts are also consistent with a direct rise offset by people leaving their homes. Effects that carry over from the night before (sleep loss) or that depend on a person's medication were not tested with lags. What the result counts against is a bodily effect that follows people indoors on the same day. Inside shootings are a different mix of events (domestic, commercial). The registered interval was too narrow: statsmodels' freq_weights with HC1 understated the standard error by a factor of 1.6 to 1.7 (referee, 14 November). The interval reported here is the corrected one, with the day as the unit. This claim and its twin on the other window are one result, not two.",
+    "registration_sha256": "7e134210eb08209ce565179c2abf900b4e684107d781be050c58d161906198fd",
+    "decided_at": "2026-11-14T07:14:02-0500",
+    "stance": {
+     "value": 0.999,
+     "lo": 0.991,
+     "hi": 1.0,
+     "z": 7.42
+    },
+    "critique": "critique/referee_2026-11-14_moon_inside.md",
+    "history": [
+     {
+      "verdict": "confirmed",
+      "city_effect": {
+       "label": "ratio of the inside to the outside rate ratio of shootings per 5 C, New York City 2006 to 2026",
+       "estimate": 0.8612001538682373,
+       "lo": 0.8420596689566152,
+       "hi": 0.8807757126542632,
+       "scale": "ratio of rate ratios",
+       "null": 1,
+       "n": 7548
+      },
+      "stance": {
+       "value": 1.0,
+       "lo": 1.0,
+       "hi": 1.0,
+       "z": 13.03
+      },
+      "decided_at": "2026-11-14T07:14:02-0500",
+      "prediction_scored": "hit: outside 1.174 (1.155 to 1.192) per 5 C, inside 1.009 (0.975 to 1.044), ratio 0.861 (0.842 to 0.881); the upper bound of the ratio is below 1.00. The ratio computed from the two separate fits, which allow overdispersion, is 0.860 (0.828 to 0.893), also below 1.00."
+     }
+    ],
+    "revision": {
+     "reason": "Referee found the registered standard error too small and the mechanism sentence too strong; verdict unchanged.",
+     "critique": "critique/referee_2026-11-14_moon_inside.md",
+     "revised_at": "2026-11-14T07:21:15-0500",
+     "rule": "concord.claims.PRECEDENCE"
+    }
+   }
+  },
+  {
+   "id": "heat-inside-outside",
+   "kind": "confirmation",
+   "statement": "In New York City from 2022, shootings outside rise with daily maximum temperature and shootings inside rise less: the inside rate ratio per 5 C is smaller than the outside one.",
+   "graph_evidence": [
+    {
+     "relationship_id": "4FaXcuNJRt|YZku29igbl",
+     "concepts": [
+      "temperature",
+      "homicide"
+     ],
+     "n_findings": 4,
+     "n_studies": 2,
+     "direction": "+",
+     "summary": "As registered in heat-shootings: about +5 to +9% per 5 C. The graph has no finding that separates indoor from outdoor violence.",
+     "pubmed_ids": [
+      36858215,
+      32738768
+     ]
+    }
+   ],
+   "literature": [
+    {
+     "citation": "Stolzenberg L, D'Alessio SJ, Flexon JL. A hunter's moon: the effect of moon illumination on outdoor crime. Am J Crim Justice 2017.",
+     "doi": "10.1007/s12103-016-9351-9",
+     "finding": "Uses the same indoor and outdoor split for a different exposure."
+    },
+    {
+     "citation": "Mukherjee A, Sanders NJ. The causal effect of heat on violence: social implications of unmitigated heat among the incarcerated. NBER w28987, 2021.",
+     "doi": "10.3386/w28987",
+     "finding": "Violence in prisons without air conditioning rises on hot days (about 20%, secondary source), which favours a direct effect of heat on people indoors."
+    }
+   ],
+   "prediction": {
+    "direction": "-",
+    "magnitude": "Outside rate ratio per 5 C between 1.10 and 1.20; inside between 0.95 and 1.10; ratio of inside to outside between 0.80 and 0.98.",
+    "support_if": "The 95% upper bound of the ratio of the inside to the outside rate ratio is below 1.00.",
+    "refute_if": "The 95% lower bound of the inside rate ratio per 5 C is above 1.05 and the 95% interval of the ratio includes 1.00."
+   },
+   "plan": "analyses/heat_inside/test.py, committed with this registration and not yet run. Binomial regression of the daily share of located shooting incidents that were inside on t5 with weekday, year, month, holiday and wet-day terms, 2022 to the latest date in the files; robust errors. Secondary: separate Poisson slopes.",
+   "can_it_fail": "Yes. With about 600 inside and 3,000 outside incidents the expected standard error of the log ratio is about 0.05. If inside shootings did not rise at all the ratio would be about 0.87, D about 8 under rule 8. A direct effect of heat on temper predicts equal slopes, a ratio near 1.00, which would leave the claim unsettled or refuted.",
+   "already_seen": "Counts of incidents by year and location (2022: 242 inside, 1,474 outside victim rows; 2023: 218 and 1,032; 2024: 222 and 960), fetched on 14 November 2026 to check that the field is filled. No count by date or temperature was seen.",
+   "alternatives": [
+    "Homes without air conditioning are hotter than the street, so a direct effect could be larger inside",
+    "Inside shootings differ in kind (domestic, commercial robbery), with their own seasonality",
+    "The inside or outside field may be recorded differently in summer"
+   ],
+   "rivals_separated": "Routine activity (people outdoors) predicts a ratio below 1. Direct irritability, sleep loss and medication effects act on people wherever they are and predict a ratio near 1 or above.",
+   "prior": 0.55,
+   "registrant": "Claude (coordinator), for Jeff Vernon",
+   "registered_at": "2026-11-14T07:12:57-0500",
+   "sha256": "9711212568454c182f3f799fc6add766886c624df4c5930fcecccbb589479ee6",
+   "hash_ok": true,
+   "outcome": {
+    "id": "heat-inside-outside",
+    "verdict": "confirmed",
+    "city_effect": {
+     "label": "ratio of the inside to the outside rate ratio of shootings per 5 C, New York City 2022 to 2026",
+     "estimate": 0.8598151707453281,
+     "lo": 0.787,
+     "hi": 0.939,
+     "scale": "ratio of rate ratios",
+     "null": 1,
+     "n": 1704,
+     "interval_note": "corrected by the referee; the registered script gave 0.814 to 0.909"
+    },
+    "all_effects": {
+     "ratio_registered": {
+      "estimate": 0.8598151707453281,
+      "lo": 0.8135596754056803,
+      "hi": 0.9087005541113821,
+      "se_log": 0.028213351058370806
+     },
+     "ratio_from_separate_poisson_fits": {
+      "estimate": 0.8580908661697515,
+      "lo": 0.7874171843196732,
+      "hi": 0.9351077792900001,
+      "se_log": 0.043852957196982435
+     },
+     "inside_irr_per_5c": {
+      "estimate": 0.9917348926483152,
+      "lo": 0.9173133578340387,
+      "hi": 1.0721942386389058,
+      "se_log": 0.03979933251184347
+     },
+     "outside_irr_per_5c": {
+      "estimate": 1.1557457744249262,
+      "lo": 1.1147758408969841,
+      "hi": 1.1982214236238622,
+      "se_log": 0.01841453193899028
+     },
+     "inside_incidents": 655,
+     "outside_incidents": 3646,
+     "first": "2022-01-01",
+     "last": "2026-08-31"
+    },
+    "sources": [
+     {
+      "kind": "nyc-open-data",
+      "dataset": "833y-fsy8",
+      "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+      "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+      "rows_updated_at": "2025-04-15T18:16:42Z",
+      "query": {
+       "$limit": 50000,
+       "$select": "date_trunc_ymd(occur_date) as d, loc_of_occur_desc as loc, count(distinct incident_key) as n",
+       "$where": "occur_date >= '2022-01-01T00:00:00' and loc_of_occur_desc in ('INSIDE','OUTSIDE')",
+       "$group": "d, loc",
+       "$order": "d, loc"
+      },
+      "fetched": "2026-11-14T07:13:18-0500",
+      "n_rows": 1370
+     },
+     {
+      "kind": "nyc-open-data",
+      "dataset": "5ucz-vwe8",
+      "name": "Shootings (2006-Present)",
+      "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+      "rows_updated_at": "2026-11-05T20:59:39Z",
+      "query": {
+       "$limit": 50000,
+       "$select": "date_trunc_ymd(occur_date) as d, loc_of_occur_desc as loc, count(distinct incident_key) as n",
+       "$where": "occur_date >= '2022-01-01T00:00:00' and loc_of_occur_desc in ('INSIDE','OUTSIDE')",
+       "$group": "d, loc",
+       "$order": "d, loc"
+      },
+      "fetched": "2026-11-14T07:13:24-0500",
+      "n_rows": 2008
+     },
+     {
+      "kind": "derived",
+      "path": "data/derived/heat/shootings_daily.csv",
+      "note": "Central Park weather and calendar terms"
+     }
+    ],
+    "prediction_scored": "hit: outside 1.156 (1.115 to 1.198) per 5 C, inside 0.992 (0.917 to 1.072), ratio 0.860 (0.814 to 0.909); the upper bound of the ratio is below 1.00. With the referee's corrected standard error the interval is 0.787 to 0.939, still below 1.00.",
+    "settle": "Whether the people shot inside were in rooms without cooling. Shootings by premises type and building air conditioning would test a direct effect of indoor heat.",
+    "research_needed": [
+     {
+      "question": "Does domestic violence, which happens mostly inside, rise with heat in New York?",
+      "data": "NYPD complaints flagged as domestic, by day",
+      "design": "the same daily model, inside and outside premises",
+      "priority": "high"
+     }
+    ],
+    "figures": [],
+    "notes": "Shootings recorded as outside rise with temperature and shootings recorded as inside do not. This is what the account in which heat puts more people in contact outdoors predicts. It does not separate that account from a direct effect of heat on people who are outdoors, because most indoor spaces are cooled, so a direct effect also predicts a smaller rise inside. Flat inside counts are also consistent with a direct rise offset by people leaving their homes. Effects that carry over from the night before (sleep loss) or that depend on a person's medication were not tested with lags. What the result counts against is a bodily effect that follows people indoors on the same day. Inside shootings are a different mix of events (domestic, commercial). The registered interval was too narrow: statsmodels' freq_weights with HC1 understated the standard error by a factor of 1.6 to 1.7 (referee, 14 November). The interval reported here is the corrected one, with the day as the unit. This claim and its twin on the other window are one result, not two.",
+    "registration_sha256": "9711212568454c182f3f799fc6add766886c624df4c5930fcecccbb589479ee6",
+    "decided_at": "2026-11-14T07:14:02-0500",
+    "stance": {
+     "value": 0.932,
+     "lo": 0.603,
+     "hi": 0.99,
+     "z": 3.35
+    },
+    "critique": "critique/referee_2026-11-14_moon_inside.md",
+    "history": [
+     {
+      "verdict": "confirmed",
+      "city_effect": {
+       "label": "ratio of the inside to the outside rate ratio of shootings per 5 C, New York City 2022 to 2026",
+       "estimate": 0.8598151707453281,
+       "lo": 0.8135596754056803,
+       "hi": 0.9087005541113821,
+       "scale": "ratio of rate ratios",
+       "null": 1,
+       "n": 1704
+      },
+      "stance": {
+       "value": 0.991,
+       "lo": 0.935,
+       "hi": 0.999,
+       "z": 5.35
+      },
+      "decided_at": "2026-11-14T07:14:02-0500",
+      "prediction_scored": "hit: outside 1.156 (1.115 to 1.198) per 5 C, inside 0.992 (0.917 to 1.072), ratio 0.860 (0.814 to 0.909); the upper bound of the ratio is below 1.00. The ratio computed from the two separate fits, which allow overdispersion, is 0.858 (0.787 to 0.935), also below 1.00."
+     }
+    ],
+    "revision": {
+     "reason": "Referee found the registered standard error too small and the mechanism sentence too strong; verdict unchanged.",
+     "critique": "critique/referee_2026-11-14_moon_inside.md",
+     "revised_at": "2026-11-14T07:21:15-0500",
+     "rule": "concord.claims.PRECEDENCE"
+    }
+   }
+  },
+  {
    "id": "heat-mech-intox",
    "kind": "bridge",
    "statement": "Alcohol and drug intoxication is not a measurable step between heat and shootings in New York City: daily FDNY EMS dispatches for drug and alcohol abuse rise with the day's maximum temperature by only a few percent per 5 C, and adding them to the daily model removes less than a tenth of the temperature slope of shootings.",
@@ -20149,6 +20522,322 @@
      "lo": -0.164,
      "hi": 0.946,
      "z": 1.62
+    }
+   }
+  },
+  {
+   "id": "moon-full-emergencies",
+   "kind": "confirmation",
+   "statement": "On the day of a full moon and the days either side of it, New York City has no more and no fewer shootings, ambulance incidents or injury crashes than on other days, within stated equivalence bounds.",
+   "graph_evidence": [
+    {
+     "association_id": "variable search 'full moon', 'lunar cycle', 'moon phase', 'lunar phase' (14 November 2026)",
+     "concepts": [
+      "full moon",
+      "road traffic crash emergency transport"
+     ],
+     "n_findings": 1,
+     "n_studies": 1,
+     "direction": "+",
+     "summary": "Relative risk 1.042 (1.021 to 1.063) of emergency transport for road traffic crashes on full-moon nights.",
+     "pubmed_ids": [
+      29990928
+     ]
+    },
+    {
+     "association_id": "same search",
+     "concepts": [
+      "full moon",
+      "motorcycle deaths"
+     ],
+     "n_findings": 2,
+     "n_studies": 1,
+     "direction": "+",
+     "summary": "Relative risk 1.05 (1.02 to 1.09) of motorcycle deaths on full-moon nights; a second record gives an odds ratio 1.26.",
+     "pubmed_ids": [
+      29229755
+     ]
+    },
+    {
+     "association_id": "same search",
+     "concepts": [
+      "moon phase",
+      "homicide"
+     ],
+     "n_findings": 2,
+     "n_studies": 1,
+     "direction": "-",
+     "summary": "Homicides in Finland: relative risk 0.85 (0.77 to 0.94) at full moon.",
+     "pubmed_ids": [
+      30647032
+     ]
+    },
+    {
+     "association_id": "same search",
+     "concepts": [
+      "full moon",
+      "out-of-hospital cardiac arrest"
+     ],
+     "n_findings": 3,
+     "n_studies": 1,
+     "direction": "0",
+     "summary": "Relative risk 1.007 (0.993 to 1.021).",
+     "pubmed_ids": [
+      33693140
+     ]
+    }
+   ],
+   "graph_evidence_note": "The variable search returned 60 findings from 36 studies on lunar variables. The values above are the graph's records as returned by the API; the abstracts were not read before registration.",
+   "literature": [
+    {
+     "citation": "Rotton J, Kelly IW. Much ado about the full moon: a meta-analysis of lunar-lunacy research. Psychol Bull 1985;97(2):286-306.",
+     "doi": "10.1037/0033-2909.97.2.286",
+     "finding": "Phases of the moon accounted for no more than about 1% of the variance in the behaviours studied (cited from memory; to be verified)."
+    }
+   ],
+   "prediction": {
+    "direction": "0",
+    "magnitude": "Rate ratio for the 3-day full-moon window: shootings 0.96 to 1.04, ambulance incidents 0.995 to 1.005, injury crashes 0.98 to 1.02. Best guess 1.00 for each.",
+    "support_if": "All three 95% intervals lie inside their equivalence bounds: shootings 0.93 to 1.07, ambulance incidents 0.98 to 1.02, injury crashes 0.97 to 1.03.",
+    "refute_if": "For at least one outcome the 98.3% interval excludes 1.00 while the 95% interval of the 23-day placebo for that outcome includes 1.00."
+   },
+   "plan": "analyses/moon/test.py, committed with this registration and not yet run. Poisson regression of daily counts on a 3-day full-moon window (PyEphem instants, New York dates), with day of week, year-by-month fixed effects, holiday, daily maximum temperature and its square, and a wet-day indicator; Newey-West errors, 7 lags. Outcomes: shooting incidents 2006-2025 (data/derived/heat/shootings_daily.csv), all EMS incidents 2017-01-01 to 2026-08-31 (data/derived/health_gaps/ems_daily.csv), crashes with an injured person 2014-2025 (Motor Vehicle Collisions, h9gi-nx95, the copy fetched for the turn-restriction claims). Placebo (rule 12): the same model with a 3-day window that recurs every 23 days. Secondary, deciding nothing: the full-moon day alone.",
+   "can_it_fail": "Yes. The graph's crash finding (1.042) lies outside the crash bound, so a New York effect of that size would miss support_if, and its interval would probably exclude 1.00. Expected standard errors: about 0.025 for shootings, 0.004 for ambulance incidents and 0.008 for injury crashes.",
+   "already_seen": "The three daily series were built for earlier claims. None has been tabulated or plotted against lunar phase by this registrant. The equivalence bounds were set from expected standard errors, not from results.",
+   "alternatives": [
+    "Moonlight changes visibility and night-time activity (a real but non-lunacy path)",
+    "Cloud cover hides the moon and dilutes any effect",
+    "Chance among many lunar studies (publication of positive results)"
+   ],
+   "prior": 0.6,
+   "prior_note": "The ambulance bound is narrow; a small real difference or residual seasonality could miss it.",
+   "registrant": "Claude (coordinator), for Jeff Vernon",
+   "registered_at": "2026-11-14T07:10:45-0500",
+   "sha256": "e9097b4a39e764212a31c6646953e0cf2d31fdeae07451bebe7dea84a2c598bb",
+   "hash_ok": true,
+   "outcome": {
+    "id": "moon-full-emergencies",
+    "verdict": "confirmed",
+    "city_effect": {
+     "label": "rate ratio of injury crashes in the 3-day full-moon window, New York City 2014-2025",
+     "estimate": 1.0022125191777629,
+     "lo": 0.9866413936437485,
+     "hi": 1.018029387442579,
+     "scale": "rate ratio",
+     "null": 1,
+     "n": 4383
+    },
+    "graph_effect": {
+     "label": "relative risk of emergency transport for road traffic crashes on full-moon nights (PMID 29990928)",
+     "estimate": 1.042,
+     "lo": 1.021,
+     "hi": 1.063,
+     "scale": "relative risk",
+     "null": 1
+    },
+    "all_effects": {
+     "shootings": {
+      "full_moon": {
+       "x": "F",
+       "n_days": 7305,
+       "n_exposed_days": 741,
+       "events": 23988.0,
+       "rr": 1.006595212225992,
+       "lo": 0.9659753644932794,
+       "hi": 1.048923149098943,
+       "lo983": 0.9572192622434904,
+       "hi983": 1.0585181068144351,
+       "se_log": 0.02101595079378678
+      },
+      "placebo_23_day": {
+       "x": "P",
+       "n_days": 7305,
+       "n_exposed_days": 954,
+       "events": 23988.0,
+       "rr": 1.0076607578276058,
+       "lo": 0.9688842861250712,
+       "hi": 1.0479891328680622,
+       "lo983": 0.9605155425312111,
+       "hi983": 1.0571200130608098,
+       "se_log": 0.020021619542259776
+      },
+      "full_moon_day_only": {
+       "x": "F0",
+       "n_days": 7305,
+       "n_exposed_days": 247,
+       "events": 23988.0,
+       "rr": 1.0326535470951104,
+       "lo": 0.9574606148754817,
+       "hi": 1.1137516590870904,
+       "lo983": 0.941591378938289,
+       "hi983": 1.1325224212763343,
+       "se_log": 0.03857338264825008
+      },
+      "bounds": [
+       0.93,
+       1.07
+      ],
+      "first": "2006-01-01",
+      "last": "2025-12-31"
+     },
+     "ems": {
+      "full_moon": {
+       "x": "F",
+       "n_days": 3530,
+       "n_exposed_days": 360,
+       "events": 14947095.0,
+       "rr": 0.9970796231817651,
+       "lo": 0.990689296723351,
+       "hi": 1.003511169700172,
+       "lo983": 0.9892821449294037,
+       "hi983": 1.0049385608139483,
+       "se_log": 0.0032805038381743356
+      },
+      "placebo_23_day": {
+       "x": "P",
+       "n_days": 3530,
+       "n_exposed_days": 459,
+       "events": 14947095.0,
+       "rr": 0.9977510660550547,
+       "lo": 0.9924636838739391,
+       "hi": 1.0030666169347167,
+       "lo983": 0.9912986063751553,
+       "hi983": 1.004245525426725,
+       "se_log": 0.0027109636159652964
+      },
+      "full_moon_day_only": {
+       "x": "F0",
+       "n_days": 3530,
+       "n_exposed_days": 120,
+       "events": 14947095.0,
+       "rr": 0.9972659179247344,
+       "lo": 0.9897455012489559,
+       "hi": 1.0048434772365804,
+       "lo983": 0.988090656427151,
+       "hi983": 1.00652637952314,
+       "se_log": 0.003862117825863971
+      },
+      "bounds": [
+       0.98,
+       1.02
+      ],
+      "first": "2017-01-01",
+      "last": "2026-08-31"
+     },
+     "injury_crashes": {
+      "full_moon": {
+       "x": "F",
+       "n_days": 4383,
+       "n_exposed_days": 444,
+       "events": 437376.0,
+       "rr": 1.0022125191777629,
+       "lo": 0.9866413936437485,
+       "hi": 1.018029387442579,
+       "lo983": 0.983231920225586,
+       "hi983": 1.0215595252096659,
+       "se_log": 0.007989284749855599
+      },
+      "placebo_23_day": {
+       "x": "P",
+       "n_days": 4383,
+       "n_exposed_days": 573,
+       "events": 437376.0,
+       "rr": 1.0016751695976942,
+       "lo": 0.9875828503916154,
+       "hi": 1.01596857923434,
+       "lo983": 0.9844943644429532,
+       "hi983": 1.019155803859057,
+       "se_log": 0.007229038274832344
+      },
+      "full_moon_day_only": {
+       "x": "F0",
+       "n_days": 4383,
+       "n_exposed_days": 148,
+       "events": 437376.0,
+       "rr": 0.9796919470022337,
+       "lo": 0.9568204501462269,
+       "hi": 1.0031101560113456,
+       "lo983": 0.9518368301704856,
+       "hi983": 1.0083622324733077,
+       "se_log": 0.012052479634143604
+      },
+      "bounds": [
+       0.97,
+       1.03
+      ],
+      "first": "2014-01-01",
+      "last": "2025-12-31"
+     }
+    },
+    "sources": [
+     {
+      "kind": "derived",
+      "path": "data/derived/heat/shootings_daily.csv",
+      "note": "NYPD shooting incidents by day with NOAA Central Park weather, built for heat-shootings"
+     },
+     {
+      "kind": "derived",
+      "path": "data/derived/health_gaps/ems_daily.csv",
+      "note": "EMS Incident Dispatch Data (76xm-jjuj) by day; source records in data/derived/health_gaps/ems_daily_sources.json"
+     },
+     {
+      "kind": "nyc-open-data",
+      "dataset": "h9gi-nx95",
+      "name": "Motor Vehicle Collisions - Crashes",
+      "note": "copy fetched for the turn-restriction claims, crashes to 10 November 2026; held outside the repository"
+     },
+     {
+      "kind": "other",
+      "name": "PyEphem full-moon instants",
+      "note": "ephem.next_full_moon, converted to New York dates"
+     }
+    ],
+    "prediction_scored": "hit: shootings 1.007 (0.966 to 1.049), ambulance incidents 0.997 (0.991 to 1.004), injury crashes 1.002 (0.987 to 1.018); each 95% interval is inside its registered bound and inside the predicted range except at the edges of the interval.",
+    "settle": "Hour-of-day data would test the one remaining path, moonlight at night: night-time crashes and shootings on clear full-moon nights against cloudy ones.",
+    "research_needed": [
+     {
+      "question": "Do night-time crashes rise on clear full-moon nights?",
+      "data": "crash times (h9gi-nx95) and hourly cloud cover",
+      "design": "full moon by cloud cover interaction, night hours only",
+      "priority": "low"
+     }
+    ],
+    "figures": [],
+    "notes": "The 23-day placebo gave shootings 1.008 (0.969 to 1.048), ambulance incidents 0.998 (0.992 to 1.003) and injury crashes 1.002 (0.988 to 1.016), so the full-moon estimates are no different from a window with no meaning. The graph's 1.042 for crash transports in Japan (PMID 29990928) is for full-moon nights. Spread over three whole days it would be about 1.004, which the injury-crash interval does not exclude, so the two do not conflict. The graph's homicide finding for Finland (0.85, PMID 30647032) is outside the shooting interval. Secondary, deciding nothing: the full-moon day alone gave shootings 1.033 (0.957 to 1.114) and injury crashes 0.980 (0.957 to 1.003). Referee, 14 November: the numbers reproduce and stay inside the bounds under quasi-Poisson and negative-binomial errors and 5- and 7-day windows. Rule 11 read literally would give unsettled, since the placebo also meets support_if; rule 13 records how rule 11 applies to a prediction of no effect. Exploratory and unexplained: a 3-day window centred 4 days before the full moon gives 0.914 for shootings (z = -3.9), in both decades; it is outside the registered window and decides nothing.",
+    "registration_sha256": "e9097b4a39e764212a31c6646953e0cf2d31fdeae07451bebe7dea84a2c598bb",
+    "decided_at": "2026-11-14T07:12:57-0500",
+    "stance": {
+     "value": 0.929,
+     "lo": 0.729,
+     "hi": 1
+    },
+    "critique": "critique/referee_2026-11-14_moon_inside.md",
+    "history": [
+     {
+      "verdict": "confirmed",
+      "city_effect": {
+       "label": "rate ratio of injury crashes in the 3-day full-moon window, New York City 2014-2025",
+       "estimate": 1.0022125191777629,
+       "lo": 0.9866413936437485,
+       "hi": 1.018029387442579,
+       "scale": "rate ratio",
+       "null": 1,
+       "n": 4383
+      },
+      "stance": {
+       "value": 0.929,
+       "lo": 0.729,
+       "hi": 1
+      },
+      "decided_at": "2026-11-14T07:12:57-0500",
+      "prediction_scored": "hit: shootings 1.007 (0.966 to 1.049), ambulance incidents 0.997 (0.991 to 1.004), injury crashes 1.002 (0.987 to 1.018); each 95% interval is inside its registered bound and inside the predicted range except at the edges of the interval."
+     }
+    ],
+    "revision": {
+     "reason": "Referee corrected the comparison with the Japanese crash finding and raised rule 11; verdict unchanged.",
+     "critique": "critique/referee_2026-11-14_moon_inside.md",
+     "revised_at": "2026-11-14T07:21:15-0500",
+     "rule": "concord.claims.PRECEDENCE"
     }
    }
   },

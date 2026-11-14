@@ -1,7 +1,7 @@
 # NYC Concordance
 
 **Team:** Hypergraph
-**Members:** to be added before the deadline
+**Members:** Ida Benedetto and Jeff Nickerson
 **Challenge:** Build Challenge 4
 **Pitch slides:** the slide source is in `deck/` in this folder; a hosted link will be added before the deadline
 
@@ -43,7 +43,7 @@ The folder runs without a System API key. A key is needed only to send new queri
    ```
    .venv/bin/python -m http.server 8000
    ```
-   Open http://localhost:8000/viz/hypergraph.html first. It shows the 69 links, their findings and the city tests. `viz/comics.html` shows four changes to an edge as strips of frames, with the drawing rules in `docs/comics.md`. The other pages are `viz/heat_drugs.html` (heat, medicines and chronic conditions), `viz/index.html` (claims dashboard), `viz/evidence.html` (test cards, review changes and provenance), `viz/levers.html` (city levers), `viz/explorer.html` (graph explorer), `viz/explore.html` (neighbourhood explorer) and `viz/simulate.html` (toll simulator). Every page has the same navigation bar. The dashboard and the explorer load D3 from cdnjs.cloudflare.com.
+   Open http://localhost:8000/viz/hypergraph.html first. It shows the 69 links, their findings and the city tests. `viz/comics.html` shows six changes to an edge as strips of frames, among them five rival conjectures for heat and shootings with a registered test that narrows them (`docs/conjectures.md`); the drawing rules are in `docs/comics.md`. The other pages are `viz/heat_drugs.html` (heat, medicines and chronic conditions), `viz/index.html` (claims dashboard), `viz/evidence.html` (test cards, review changes and provenance), `viz/levers.html` (city levers), `viz/explorer.html` (graph explorer), `viz/explore.html` (neighbourhood explorer) and `viz/simulate.html` (toll simulator). Every page has the same navigation bar. The dashboard and the explorer load D3 from cdnjs.cloudflare.com.
 5. Re-run one claim from pinned inputs. Each of the twelve packages in `replication/` reruns the deciding number of one claim and prints MATCH, DRIFT or MISMATCH:
    ```
    cd replication/heat-shootings
@@ -84,7 +84,7 @@ The method is to register each prediction before reading the data that test it, 
 
 Placebo tests turned some confirmations into unsettled results. Two claims that were first scored confirmed (rlc-expansion-rearend and ems-taxi-2026-onset) became unsettled under rule 11 when the registered placebo year met the support condition by itself. The two turn-calming confirmations would also be unsettled had their placebo been registered, and the docs say they should not be counted as agreement with the research. Referee review changed 11 of 93 scored verdicts: eight moved toward unsettled, one moved from unsettled to contested, and two changed label (to bridged and to no test). Six outcomes have no referee report. Each topic write-up in `docs/` has a section of corrections after review.
 
-Many results are unsettled. Of 94 registered claims, 33 are confirmed, 19 contested, 36 unsettled, 4 had no possible test, 1 bridge is reported as bridged, and 1 (construction-2022-rush-units-2027) waits for 2027 data. Unsettled means the registered conditions for support and refutation were both unmet. Several confirmations are narrower than their titles. For example, the vacant-lot screen counts lots that pass a filter (1,116 by the registrant's count and 1,087 by the referee's), and a check of 40 of them against aerial images found that 28 were not vacant blighted land.
+Many results are unsettled. Of 94 registered claims, 33 are confirmed, 19 contested, 36 unsettled, 4 had no possible test, 1 bridge is reported as bridged, and 1 (construction-2022-rush-units-2027) waits for 2027 data. Unsettled means the registered conditions for support and refutation were both unmet. Several confirmations are narrower than their titles. For example, the vacant-lot screen counts lots that pass a filter (1,116 by the registrant's count and 1,087 by the referee's), and a check of 40 of them against aerial images found that 28 were not vacant blighted land. These counts are as of 13 November. Three more claims were registered and scored on 14 November (moon-full-emergencies, heat-inside-outside and heat-inside-outside-2006; `docs/conjectures.md`), which makes 97 registered and 96 scored.
 
 The graph itself limits what can be tested. It is mainly clinical, and congestion pricing, building permits, electricity demand and for-hire vehicle pricing have no findings in it. In the two largest audits, 26 of 62 and 25 of 114 records checked against abstracts were wrong or incomplete, and only the records a claim relied on were checked. The API carries no version identifier, so a cached response is the only record of what it returned. The city rewrites its tables in place, so a re-fetched table can differ from the one used (`docs/underlay_drift.md`); only the twelve replication packages hold pinned copies of their inputs, and 81 scored claims have none.
 

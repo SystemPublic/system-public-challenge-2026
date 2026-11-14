@@ -10,7 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&text=0123456789.%2C%25%C3%97%2B%E2%88%92&display=swap" rel="stylesheet">
 <script src="data/comics.js"></script>
 <style>
-  :root { --paper: #fbf8f0; --pink: #14120f; --new: #c8371a; --gone: #b9b3a6; --letter: "Patrick Hand", "Architects Daughter", "Avenir Next Condensed", "Arial Narrow", sans-serif; }
+  :root { --paper: #fbf8f0; --pink: #14120f; --new: #c8371a; --gone: #b9b3a6; --letter: "Patrick Hand", "Architects Daughter", "Avenir Next Condensed", "Arial Narrow", sans-serif; --diagram: var(--letter); }
+  /* Variants for comparison: comics.html?theme=dark | blue | helv (can be combined with commas). */
+  body.t-dark { --paper: #000; --pink: #fff; --new: #ffd60a; --gone: #6f6f6f; }
+  body.t-blue { --new: #1f4fd8; }
+  body.t-helv { --diagram: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body.t-helv .frame svg text { letter-spacing: .01em; }
   main, header.site, footer { max-width: 1400px; }
   .lead { font-size: 16px; max-width: 86ch; color: var(--ink); margin: 6px 0 0; }
   h2.strip-title { margin: 34px 0 2px; font-size: 19px; }
@@ -20,7 +25,7 @@
   @media (max-width: 620px) { .strip { grid-template-columns: minmax(0, 1fr); } }
   .frame { background: var(--paper); border: 2.5px solid var(--pink); display: flex; flex-direction: column; color: var(--pink); }
   .frame svg { display: block; width: 100%; height: auto; }
-  .frame svg text { font-family: var(--letter); fill: var(--pink); text-transform: uppercase; }
+  .frame svg text { font-family: var(--diagram); fill: var(--pink); text-transform: uppercase; }
   .frame .cap { border-top: 2.5px solid var(--pink); padding: 8px 11px 9px; font-family: var(--letter); text-transform: uppercase;
                 font-size: 13.5px; line-height: 1.34; letter-spacing: .02em; flex: 1; }
   .frame .cap b { color: var(--new); font-weight: 400; }
@@ -194,8 +199,8 @@ function drawGrammar(root) {
       const sp = document.createElement("span"); sp.textContent = r.text; row.appendChild(sp);
       b.appendChild(row);
       if (r.node) {
-        if (r.node === "unknown") { el("circle", { cx: 56, cy: 17, r: 14, fill: "var(--paper)", stroke: "var(--pink)", "stroke-width": 2.2, "stroke-dasharray": "5 3.5" }, svg); el("text", { x: 56, y: 18, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 17, style: "font-family: var(--letter); fill: var(--pink)" }, svg, "X"); }
-        else { el("rect", { x: 14, y: 5, width: 84, height: 24, fill: "var(--paper)", stroke: "var(--pink)", "stroke-width": 2.2, "stroke-dasharray": r.node === "proxy" ? "5 3.5" : null }, svg); el("text", { x: 56, y: 18, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 11.5, style: "font-family: var(--letter); fill: var(--pink); text-transform: uppercase" }, svg, r.nodeLabel || "variable"); }
+        if (r.node === "unknown") { el("circle", { cx: 56, cy: 17, r: 14, fill: "var(--paper)", stroke: "var(--pink)", "stroke-width": 2.2, "stroke-dasharray": "5 3.5" }, svg); el("text", { x: 56, y: 18, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 17, style: "font-family: var(--diagram); fill: var(--pink)" }, svg, "X"); }
+        else { el("rect", { x: 14, y: 5, width: 84, height: 24, fill: "var(--paper)", stroke: "var(--pink)", "stroke-width": 2.2, "stroke-dasharray": r.node === "proxy" ? "5 3.5" : null }, svg); el("text", { x: 56, y: 18, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 11.5, style: "font-family: var(--diagram); fill: var(--pink); text-transform: uppercase" }, svg, r.nodeLabel || "variable"); }
       } else if (r.mod) {
         const g = paintEdge(svg, { x: 4, y: 26 }, { x: 108, y: 26 }, { ev: "obs", w: 2 });
         paintEdge(svg, { x: 56, y: 2 }, { x: 56, y: 21 }, { ev: "obs", w: 1, dir: "none" });
@@ -209,6 +214,7 @@ function drawGrammar(root) {
 }
 const q = new URLSearchParams(location.search);
 const exp = q.get("export"), only = q.get("frames") ? q.get("frames").split(",").map(Number) : null;
+(q.get("theme") || "").split(",").filter(Boolean).forEach(t => document.body.classList.add("t-" + t));
 if (exp) { document.body.classList.add("export"); if (q.get("cap")) document.body.style.setProperty("--capsize", q.get("cap") + "px"); }
 const pending = [];
 if (!exp || exp === "grammar") drawGrammar(document.getElementById("grammar"));

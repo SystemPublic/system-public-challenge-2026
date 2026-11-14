@@ -76,6 +76,8 @@ DECK_BLOBS = {
     "130472b6690021dfd7f700ddc264d739": "figures/comics/grammar.png",
     "7bf4f54f0e9e25a55295db69ebaf9c28": "figures/comics/strip_aircon.png",
     "298f91bd13901934f143df4d2e31c77f": "figures/comics/strip_restaurants.png",
+    "cff38b95551bc7a4a66c5fb9b7d5729b": "figures/comics/strip_rivals.png",
+    "b0b41869c55923747c753e3a4a3326ec": "figures/comics/strip_moon.png",
 }
 # Files scanned for figure references.
 SCAN_FOR_FIGURES = ("docs/", "viz/", "deck/", "claims/", "critique/", "replication/")

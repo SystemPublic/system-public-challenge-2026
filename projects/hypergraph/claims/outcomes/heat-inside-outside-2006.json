@@ -1,0 +1,132 @@
+{
+ "id": "heat-inside-outside-2006",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "ratio of the inside to the outside rate ratio of shootings per 5 C, New York City 2006 to 2026",
+  "estimate": 0.8612001538682373,
+  "lo": 0.828,
+  "hi": 0.896,
+  "scale": "ratio of rate ratios",
+  "null": 1,
+  "n": 7548,
+  "interval_note": "corrected by the referee; the registered script gave 0.842 to 0.881"
+ },
+ "all_effects": {
+  "ratio_registered": {
+   "estimate": 0.8612001538682373,
+   "lo": 0.8420596689566152,
+   "hi": 0.8807757126542632,
+   "se_log": 0.011467380960090253
+  },
+  "ratio_from_separate_poisson_fits": {
+   "estimate": 0.8597376076222034,
+   "lo": 0.827764688931528,
+   "hi": 0.8929454999029218,
+   "se_log": 0.019335874180319266
+  },
+  "inside_irr_per_5c": {
+   "estimate": 1.0089507699563478,
+   "lo": 0.9748652350744084,
+   "hi": 1.0442280836056355,
+   "se_log": 0.017534177158138042
+  },
+  "outside_irr_per_5c": {
+   "estimate": 1.1735566305478096,
+   "lo": 1.1549583145939504,
+   "hi": 1.1924544355411855,
+   "se_log": 0.008150378009894226
+  },
+  "inside_incidents": 3471,
+  "outside_incidents": 20958,
+  "first": "2006-01-01",
+  "last": "2026-08-31"
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, loc_of_occur_desc as loc, count(distinct incident_key) as n",
+    "$where": "occur_date >= '2006-01-01T00:00:00' and loc_of_occur_desc in ('INSIDE','OUTSIDE')",
+    "$group": "d, loc",
+    "$order": "d, loc"
+   },
+   "fetched": "2026-11-14T07:13:26-0500",
+   "n_rows": 1370
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, loc_of_occur_desc as loc, count(distinct incident_key) as n",
+    "$where": "occur_date >= '2006-01-01T00:00:00' and loc_of_occur_desc in ('INSIDE','OUTSIDE')",
+    "$group": "d, loc",
+    "$order": "d, loc"
+   },
+   "fetched": "2026-11-14T07:13:27-0500",
+   "n_rows": 9346
+  },
+  {
+   "kind": "derived",
+   "path": "data/derived/heat/shootings_daily.csv",
+   "note": "Central Park weather and calendar terms"
+  }
+ ],
+ "prediction_scored": "hit: outside 1.174 (1.155 to 1.192) per 5 C, inside 1.009 (0.975 to 1.044), ratio 0.861 (0.842 to 0.881); the upper bound of the ratio is below 1.00. With the referee's corrected standard error the interval is 0.828 to 0.896, still below 1.00.",
+ "settle": "Whether the people shot inside were in rooms without cooling. Shootings by premises type and building air conditioning would test a direct effect of indoor heat.",
+ "research_needed": [
+  {
+   "question": "Does domestic violence, which happens mostly inside, rise with heat in New York?",
+   "data": "NYPD complaints flagged as domestic, by day",
+   "design": "the same daily model, inside and outside premises",
+   "priority": "high"
+  }
+ ],
+ "figures": [],
+ "notes": "Shootings recorded as outside rise with temperature and shootings recorded as inside do not. This is what the account in which heat puts more people in contact outdoors predicts. It does not separate that account from a direct effect of heat on people who are outdoors, because most indoor spaces are cooled, so a direct effect also predicts a smaller rise inside. Flat inside counts are also consistent with a direct rise offset by people leaving their homes. Effects that carry over from the night before (sleep loss) or that depend on a person's medication were not tested with lags. What the result counts against is a bodily effect that follows people indoors on the same day. Inside shootings are a different mix of events (domestic, commercial). The registered interval was too narrow: statsmodels' freq_weights with HC1 understated the standard error by a factor of 1.6 to 1.7 (referee, 14 November). The interval reported here is the corrected one, with the day as the unit. This claim and its twin on the other window are one result, not two.",
+ "registration_sha256": "7e134210eb08209ce565179c2abf900b4e684107d781be050c58d161906198fd",
+ "decided_at": "2026-11-14T07:14:02-0500",
+ "stance": {
+  "value": 0.999,
+  "lo": 0.991,
+  "hi": 1.0,
+  "z": 7.42
+ },
+ "critique": "critique/referee_2026-11-14_moon_inside.md",
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "ratio of the inside to the outside rate ratio of shootings per 5 C, New York City 2006 to 2026",
+    "estimate": 0.8612001538682373,
+    "lo": 0.8420596689566152,
+    "hi": 0.8807757126542632,
+    "scale": "ratio of rate ratios",
+    "null": 1,
+    "n": 7548
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 13.03
+   },
+   "decided_at": "2026-11-14T07:14:02-0500",
+   "prediction_scored": "hit: outside 1.174 (1.155 to 1.192) per 5 C, inside 1.009 (0.975 to 1.044), ratio 0.861 (0.842 to 0.881); the upper bound of the ratio is below 1.00. The ratio computed from the two separate fits, which allow overdispersion, is 0.860 (0.828 to 0.893), also below 1.00."
+  }
+ ],
+ "revision": {
+  "reason": "Referee found the registered standard error too small and the mechanism sentence too strong; verdict unchanged.",
+  "critique": "critique/referee_2026-11-14_moon_inside.md",
+  "revised_at": "2026-11-14T07:21:15-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -43,7 +43,7 @@ Each frame has a heading that names its kind. The strips so far use six.
 
 A strip can end in three ways. The evidence agrees and the edge becomes thicker. The evidence conflicts and the frame shows both edges with a question mark. Or support is withdrawn and the edge turns grey. The third is the case that a large replication project would produce many times at once.
 
-## The four strips
+## The six strips
 
 All numbers come from registered claims in this repository or from abstracts read in PubMed. Each strip's source list is on the page.
 
@@ -62,6 +62,18 @@ All numbers come from registered claims in this repository or from abstracts rea
 ![Red-light cameras](../figures/comics/strip_cameras.png)
 
 **Red-light cameras and a placebo.** A registered test gave 1.33 for rear-end crashes, in line with a meta-analysis. The same design run a year earlier, with no cameras, gave 1.25. The last frame withdraws the edge and names the cause: controls matched on earlier crash counts.
+
+![Five conjectures](../figures/comics/strip_rivals.png)
+
+**One edge, five conjectures.** A strip can hold several rival conjectures at once. Two run through behaviour (people outdoors, alcohol and drugs) and three through the body (short temper, sleep loss, medicines that impair cooling). The third frame draws a measurement on which some of them disagree, shootings inside against outside. The fourth gives the registered result: 1.17 per 5 °C outside and 1.01 inside. The result rules out a bodily effect that follows people indoors and leaves a direct effect of heat felt outdoors open. The reasoning is in `docs/conjectures.md`.
+
+![The full moon](../figures/comics/strip_moon.png)
+
+**The full moon.** The first frame draws a common belief as three dotted arrows. The second shows what the graph holds: more crash transports in Japan, fewer homicides in Finland, no change in cardiac arrests. The third is a registered null for New York's shootings, ambulance incidents and injury crashes, drawn as thick arrows with struck circles: the estimate is precise and it is no effect.
+
+## Colour and lettering variants
+
+`comics.html?theme=dark` draws white on black with yellow for what a frame adds. `theme=blue` replaces the red with blue. `theme=helv` sets the diagram lettering in Helvetica and leaves the captions hand-lettered. The values combine with commas. Examples are in `figures/comics/variants/`.
 
 ## From versions to frames
 

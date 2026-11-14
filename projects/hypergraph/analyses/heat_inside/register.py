@@ -1,0 +1,47 @@
+"""Registration of heat-inside-outside. Usage: python -m analyses.heat_inside.register"""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from concord import claims
+
+REC = {
+    "id": "heat-inside-outside",
+    "kind": "confirmation",
+    "statement": "In New York City from 2022, shootings outside rise with daily maximum temperature and shootings inside rise "
+                 "less: the inside rate ratio per 5 C is smaller than the outside one.",
+    "graph_evidence": [{"relationship_id": "4FaXcuNJRt|YZku29igbl", "concepts": ["temperature", "homicide"], "n_findings": 4,
+                        "n_studies": 2, "direction": "+",
+                        "summary": "As registered in heat-shootings: about +5 to +9% per 5 C. The graph has no finding that separates indoor from outdoor violence.",
+                        "pubmed_ids": [36858215, 32738768]}],
+    "literature": [
+        {"citation": "Stolzenberg L, D'Alessio SJ, Flexon JL. A hunter's moon: the effect of moon illumination on outdoor crime. Am J Crim Justice 2017.",
+         "doi": "10.1007/s12103-016-9351-9", "finding": "Uses the same indoor and outdoor split for a different exposure."},
+        {"citation": "Mukherjee A, Sanders NJ. The causal effect of heat on violence: social implications of unmitigated heat among the incarcerated. NBER w28987, 2021.",
+         "doi": "10.3386/w28987", "finding": "Violence in prisons without air conditioning rises on hot days (about 20%, secondary source), which favours a direct effect of heat on people indoors."},
+    ],
+    "prediction": {
+        "direction": "-",
+        "magnitude": "Outside rate ratio per 5 C between 1.10 and 1.20; inside between 0.95 and 1.10; ratio of inside to outside between 0.80 and 0.98.",
+        "support_if": "The 95% upper bound of the ratio of the inside to the outside rate ratio is below 1.00.",
+        "refute_if": "The 95% lower bound of the inside rate ratio per 5 C is above 1.05 and the 95% interval of the ratio includes 1.00.",
+    },
+    "plan": "analyses/heat_inside/test.py, committed with this registration and not yet run. Binomial regression of the daily share of "
+            "located shooting incidents that were inside on t5 with weekday, year, month, holiday and wet-day terms, 2022 to the latest "
+            "date in the files; robust errors. Secondary: separate Poisson slopes.",
+    "can_it_fail": "Yes. With about 600 inside and 3,000 outside incidents the expected standard error of the log ratio is about 0.05. "
+                   "If inside shootings did not rise at all the ratio would be about 0.87, D about 8 under rule 8. A direct effect of heat "
+                   "on temper predicts equal slopes, a ratio near 1.00, which would leave the claim unsettled or refuted.",
+    "already_seen": "Counts of incidents by year and location (2022: 242 inside, 1,474 outside victim rows; 2023: 218 and 1,032; 2024: 222 and 960), "
+                    "fetched on 14 November 2026 to check that the field is filled. No count by date or temperature was seen.",
+    "alternatives": ["Homes without air conditioning are hotter than the street, so a direct effect could be larger inside",
+                     "Inside shootings differ in kind (domestic, commercial robbery), with their own seasonality",
+                     "The inside or outside field may be recorded differently in summer"],
+    "rivals_separated": "Routine activity (people outdoors) predicts a ratio below 1. Direct irritability, sleep loss and medication effects "
+                        "act on people wherever they are and predict a ratio near 1 or above.",
+    "prior": 0.55,
+    "registrant": "Claude (coordinator), for Jeff Vernon",
+}
+
+if __name__ == "__main__":
+    print(claims.register(REC))

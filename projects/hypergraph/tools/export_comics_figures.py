@@ -28,6 +28,8 @@ FIGS = [
     ("strip_aircon.png", "export=aircon&cap=17", 1280),
     ("strip_restaurants.png", "export=restaurants&cap=14", 1280),
     ("strip_cameras.png", "export=cameras&cap=17", 1280),
+    ("strip_rivals.png", "export=rivals&cap=14", 1280),
+    ("strip_moon.png", "export=moon&cap=17", 1280),
     ("grammar.png", "export=grammar", 1280),
 ]
 
