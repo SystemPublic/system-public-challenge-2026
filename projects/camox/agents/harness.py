@@ -179,7 +179,8 @@ async def run_agent(name: str, instructions: str, task: str, output: type[BaseMo
             trace.append(text.lower())
             calls_made.append(c.name)
             await emit({"type": "tool_call", "agent": name, "tool": c.name, "args": json.loads(c.arguments or "{}"),
-                        "summary": summarise_result(c.name, json.loads(c.arguments or "{}"), text), "ms": int((time.monotonic() - t0) * 1000)})
+                        "summary": summarise_result(c.name, json.loads(c.arguments or "{}"), text), "ms": int((time.monotonic() - t0) * 1000),
+                        **({"live": True} if '"source": "live"' in text else {})})
             return {"type": "function_call_output", "call_id": c.call_id, "output": text[:MAX_TOOL_CHARS]}
 
         for attempt in range(MAX_RETRIES + 1):

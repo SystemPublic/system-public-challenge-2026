@@ -297,3 +297,47 @@ details.older[open] > summary { margin-bottom: var(--s3); }
 #thread .empty { border: 0; padding: 0; color: var(--muted); }
 .plan-editor .form-actions { justify-content: flex-end; }
 .plan-editor [data-add] { margin-right: auto; }
+
+/* Project home: header, then three titled blocks (data availability, dashboard, questions) */
+.project-head { max-width: 80ch; margin-bottom: var(--s4); }
+.project-head .for { margin: 0 0 var(--s2); }
+.project-head .goals { margin-bottom: 0; }
+button.link { color: var(--accent); padding: 0 var(--s1); min-height: 0; }
+.block { border-top: 1px solid var(--line-strong); padding: var(--s4) 0; }
+.block-head { margin-bottom: var(--s3); }
+.block-head h2 { margin: 0; }
+.block-head p { margin: 2px 0 0; max-width: 80ch; }
+#first-pass .turn, #thread > .turn:first-child { border-top: 0; padding-top: 0; }
+#first-pass .empty, .block .empty { margin: 0; padding: var(--s3); }
+#first-pass .empty p { max-width: 70ch; }
+.fp-when { margin: 0 0 var(--s1); }
+.empty-line { margin: var(--s3) 0 0; }
+.composer { border-top: 0; padding-top: 0; margin-bottom: var(--s3); }
+.how { margin: 0 0 var(--s3); padding-left: 20px; }
+.how li { margin-bottom: var(--s1); }
+nav.projects li a .g { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+nav.projects li { margin-bottom: 2px; }
+
+/* A failed run is one quiet line */
+.turn.failed { padding: var(--s2) 0; }
+.fail-line { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); align-items: baseline; font-size: var(--fs-s); color: var(--muted); }
+.fail-line .fq { min-width: 0; overflow-wrap: anywhere; }
+.fail-line button { min-height: 0; padding: 0 var(--s2); color: var(--accent); }
+
+/* Reply box under an answer */
+.reply { margin-top: var(--s3); padding-top: var(--s3); border-top: 1px dashed var(--line-strong); }
+.reply label { margin-top: 0; }
+.reply .examples { margin-bottom: var(--s2); }
+.reply-row { display: flex; gap: var(--s2); align-items: flex-end; }
+.reply-row textarea { flex: 1; min-width: 0; }
+.reply-actions { display: flex; gap: var(--s2); flex: none; }
+@media (max-width: 600px) { .reply-row { flex-direction: column; align-items: stretch; } .reply-actions { justify-content: flex-end; } }
+
+/* Source chips: one per provider, linking to it */
+.src-chips { display: contents; }
+.src-chip { font-size: 12px; border: 1px solid var(--line-strong); border-radius: 10px; padding: 0 var(--s2); color: var(--text); text-decoration: none; background: var(--surface); }
+a.src-chip:hover { border-color: var(--accent); color: var(--accent); }
+.data-src { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); align-items: center; }
+.graph-pick { margin: var(--s1) 0 0; color: var(--muted); }
+.project-head .goals { border-bottom: 0; padding-bottom: 0; }
+.jump { display: flex; flex-wrap: wrap; gap: var(--s1); align-items: baseline; margin-top: var(--s3); }

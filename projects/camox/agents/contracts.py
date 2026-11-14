@@ -154,7 +154,7 @@ class IndicatorMapSection(BaseModel):
         cross-dataset links first, then by studies."""
         db, seed = self.seed.database, _series(self.seed)
         matched = {m.concept_id for m in self.matches}
-        self.links = [l for l in self.links if l.concept_id not in matched]
+        self.links = [l for l in self.links if l.concept_id not in matched and l.studies > 0]  # no evidence, no link
         for link in self.links:
             home = {_series(i) for i in link.indicators if i.database == db}
             link.indicators = [i for i in link.indicators
@@ -179,12 +179,14 @@ class Overall(BaseModel):
     summary: str                # 3-6 sentence answer to the question, built only from the sections
     section_order: list[int]    # indices into the sections, most useful first
     caveats: list[str]
+    follow_ups: list[str]       # 3 short next questions from the gaps and the project goals
 
 
 class Answer(BaseModel):
     question: str
     summary: str
     caveats: list[str]
+    follow_ups: list[str] = []
     sections: list[Section]
     section_sources: list[list[str]] = []     # data sources each section used, same order as sections
     verification: Verification | None = None

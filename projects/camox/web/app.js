@@ -161,13 +161,14 @@ function renderWorkspace() {
   const p = state.profile; const pj = state.project;
   const btn = $('#profile-btn');
   btn.hidden = false;
-  btn.innerHTML = `${esc(p.name)}<br><span class="small muted">Profile and keys</span>`;
+  btn.innerHTML = `<span class="small muted">Profile</span> ${esc(p.name)}<br><span class="small muted">Change profile or add keys</span>`;
   app.className = 'layout';
   app.onclick = null;
   app.innerHTML = `<nav class="projects" aria-label="Projects">
       <h2>Projects</h2>
       <ul>${state.projects.map((x) => `<li><a href="#profile=${p.id}&project=${x.id}" ${pj?.id === x.id ? 'aria-current="page"' : ''}>
-        <span class="t">${esc(x.title)}</span><div class="small muted num">${plural(x.n_runs ?? 0, 'question', 'questions')}</div></a></li>`).join('')}</ul>
+        <span class="t">${esc(x.title)}</span>${x.goals ? `<div class="small muted g">${esc(short(x.goals.split('\n')[0], 70))}</div>` : ''}
+        <div class="small muted num">${projectStatus(pj?.id === x.id ? { ...x, first_pass_status: fpStatus(pj) ?? x.first_pass_status } : x)}</div></a></li>`).join('')}</ul>
       <select aria-label="Project"><option value="">${state.projects.length ? 'Choose a project' : 'No projects yet'}</option>
         ${state.projects.map((x) => `<option value="${x.id}" ${pj?.id === x.id ? 'selected' : ''}>${esc(x.title)}</option>`).join('')}</select>
       <a class="button new-btn" href="#profile=${p.id}" ${pj ? '' : 'aria-current="page"'}>New project</a>
@@ -180,31 +181,77 @@ function renderWorkspace() {
       e.preventDefault();
       const f = Object.fromEntries(new FormData(e.target));
       try {
+        e.target.querySelector('button').disabled = true;
         const x = await api(`/api/profiles/${p.id}/projects`, { method: 'POST', body: { title: f.title.trim(), goals: f.goals.trim() } });
         go({ profile: p.id, project: x.id });
-      } catch (err) { $('#new-project .form-msg').textContent = `Could not create the project: ${err.message}. Try again.`; }
+      } catch (err) {
+        e.target.querySelector('button').disabled = false;
+        $('#new-project .form-msg').textContent = `Could not create the project: ${err.message}. Try again.`;
+      }
     };
     return;
   }
   bindGoals();
-  bindDashboard($('#dashboard'), pj, api);
+  state.pollDashboard = bindDashboard($('#dashboard'), pj, api);
   const runs = [...pj.runs].sort((a, b) => a.id - b.id);
-  const lastDone = runs.filter((r) => r.answer).at(-1);
-  runs.forEach((r) => mountTurn(r, r === lastDone));
+  const fps = runs.filter(isFirstPass); const fpDone = fps.filter((r) => r.answer).at(-1);
+  const asked = runs.filter((r) => !isFirstPass(r));
+  const lastDone = asked.filter((r) => r.answer).at(-1);
+  if (fps.length) $('#first-pass').innerHTML = '';
+  fps.forEach((r) => mountTurn(r, r === fpDone, $('#first-pass')));
+  asked.forEach((r) => mountTurn(r, r === lastDone));
+  bindFirstPass();
   bindComposer();
+}
+
+// The first pass is the run the server starts when a project gets goals: it maps what data exists for them.
+const FIRST_PASS = 'First pass: what data is available for this project, and where do sources disagree or run out?';
+const isFirstPass = (r) => r.kind === 'first_pass' || /^first pass\b/i.test(r.query || '');
+const fpStatus = (pj) => { const f = pj.runs.filter(isFirstPass); return f.some((r) => r.status === 'running') ? 'running' : f.some((r) => r.answer) ? 'done' : null; };
+const projectStatus = (x) => {
+  const s = x.first_pass_status;
+  if (s === 'running') return 'First pass running';
+  if (s === 'done') return `First pass ready, ${plural(x.n_runs ?? 1, 'run', 'runs')}`;
+  if (!x.goals) return 'No goals yet';
+  return plural(x.n_runs ?? 0, 'run', 'runs');
+};
+
+const firstPassEmpty = (pj) => (pj.goals
+  ? `<div class="empty"><p>No first pass for this project yet. It reads the goals, checks which data and studies exist for them and where sources disagree.</p>
+     <button type="button" class="primary" data-first-pass>Run the first pass</button></div>`
+  : `<div class="empty"><p><strong>Add goals to start the first pass.</strong> It reads them, checks which data and studies exist and where sources disagree, then builds the dashboard.</p>
+     <button type="button" class="primary" data-add-goals>Add goals</button></div>`);
+
+function bindFirstPass() {
+  const box = $('#first-pass');
+  box.onclick = async (e) => {
+    if (e.target.dataset.addGoals !== undefined) return $('#goals [data-edit-goals]')?.click();
+    if (e.target.dataset.firstPass === undefined) return;
+    e.target.disabled = true;
+    try {
+      const { run_id: id } = await api(`/api/projects/${state.project.id}/runs`, { method: 'POST', body: { query: FIRST_PASS } });
+      box.innerHTML = '';
+      mountTurn({ id, query: FIRST_PASS, status: 'running', created_at: new Date().toISOString(), answer: null }, true, box);
+    } catch (err) { e.target.disabled = false; notice(`Could not start the first pass: ${err.message}.`, 'Try again in a moment.'); }
+  };
 }
 
 const GOALS_HINT = 'What the work is for, who will read it, and its scope: countries, populations, years.';
 const newProjectView = () => `<div class="new-project"><h1>New project</h1>
-  <p class="muted">A project keeps a thread of questions. The agents read its goals and the earlier answers with every new question.
-    ${state.projects.length ? 'Pick an existing project from the list, or start one here.' : ''}</p>
+  <p>A project is one piece of work, such as a brief or a programme design note. <strong>Its goals drive everything:</strong></p>
+  <ol class="how small">
+    <li>A first pass reads the goals and maps which data and studies exist, and where sources disagree.</li>
+    <li>A dashboard of key numbers is built from that first pass.</li>
+    <li>You ask questions; every answer reads the goals and the earlier answers.</li>
+  </ol>
   <form id="new-project">
     <label for="np-title">Title</label><input id="np-title" name="title" required placeholder="Youth employment brief">
     <label for="np-goals">Goals and context</label>
-    <textarea id="np-goals" name="goals" rows="5" placeholder="${GOALS_HINT}"></textarea>
+    <textarea id="np-goals" name="goals" rows="5" required placeholder="${GOALS_HINT}"></textarea>
     <p class="form-msg" role="status"></p>
-    <div class="form-actions"><button class="primary">Create project</button></div>
-  </form></div>`;
+    <div class="form-actions"><button class="primary">Create and start the first pass</button></div>
+  </form>
+  <p class="small muted">Answers are written for your profile, ${esc(state.profile.name)}${state.profile.role ? `, ${esc(state.profile.role)}` : ''}. Change it with the profile button at the top.</p></div>`;
 
 const goalsView = (pj) => (pj.goals
   ? `<div class="goals-head"><span class="label">Goals and context</span><button type="button" class="ghost small" data-edit-goals>Edit</button></div>
@@ -226,6 +273,7 @@ function bindGoals() {
         const f = Object.fromEntries(new FormData(ev.target));
         try {
           const x = await api(`/api/projects/${pj.id}`, { method: 'PUT', body: { title: f.title.trim(), goals: f.goals.trim() } });
+          if (x.first_pass_run_id) return load();
           Object.assign(pj, { title: x.title ?? f.title.trim(), goals: x.goals ?? f.goals.trim() });
           Object.assign(state.projects.find((q) => q.id === pj.id) || {}, { title: pj.title, goals: pj.goals });
           $('main h1').textContent = pj.title;
@@ -239,12 +287,24 @@ function bindGoals() {
   };
 }
 
-const projectView = (pj) => `<h1>${esc(pj.title)}</h1>
+const block = (id, title, line, body, cls = '') => `<section class="block ${cls}" aria-labelledby="${id}-h">
+  <div class="block-head"><h2 id="${id}-h">${title}</h2><p class="small muted">${line}</p></div>${body}</section>`;
+const profileLine = (p) => `For <strong>${esc(p.name)}</strong>${[p.role, p.organisation].some(Boolean) ? `, ${esc([p.role, p.organisation].filter(Boolean).join(', '))}` : ''}.
+  Answers are written for this profile. <button type="button" class="ghost small link" onclick="document.getElementById('profile-btn').click()">Change profile</button>`;
+
+const projectView = (pj) => `<header class="project-head"><h1>${esc(pj.title)}</h1>
+  <p class="small muted for">${profileLine(state.profile)}</p>
   <div id="goals" class="goals">${goalsView(pj)}</div>
-  <div id="dashboard" class="dashboard"></div>
-  <div id="thread">${pj.runs.length ? '' : '<div class="empty"><p>No questions in this project yet. Ask one below or pick an example.</p></div>'}</div>
+  <nav class="jump small" aria-label="On this page"><span class="muted">On this page</span>
+    <button type="button" class="ghost small link" data-jump="fp-h">Data availability</button>
+    <button type="button" class="ghost small link" data-jump="db-h">Dashboard</button>
+    <button type="button" class="ghost small link" data-jump="qs-h">Questions (${pj.runs.filter((r) => !isFirstPass(r)).length})</button></nav></header>
+  ${block('fp', 'Data availability and gaps', 'What exists for this project, and where sources disagree. Runs once, from the goals.',
+    `<div id="first-pass">${firstPassEmpty(pj)}</div>`)}
+  ${block('db', 'Dashboard', 'Key numbers, World Bank data and charts built from the answers in this project.', '<div id="dashboard" class="dashboard"></div>')}
+  ${block('qs', 'Questions', 'Ask about this project. Every answer reads the goals and the earlier answers. Older answers fold away; reply under the latest.', `
   <form id="composer" class="composer">
-    <label for="q">${pj.runs.length ? 'Ask a follow-up' : 'Ask a question'}</label>
+    <label for="q">${pj.runs.some((r) => !isFirstPass(r)) ? 'Ask a new question' : 'Ask a question'}</label>
     <textarea id="q" rows="3" placeholder="${esc(examples(state.profile)[0])}"></textarea>
     <p class="small muted scope">Answers from about 2M published findings in the System Graph. Shows associations, not causes, and says where the evidence runs out.</p>
     <div class="examples">${examples(state.profile).map((q) => `<button type="button" class="ghost small" data-example>${esc(q)}</button>`).join('')}</div>
@@ -255,7 +315,8 @@ const projectView = (pj) => `<h1>${esc(pj.title)}</h1>
     <div class="form-actions"><div><button type="button" id="review">Review plan</button><button class="primary" id="run">Run</button></div></div>
     <p class="form-msg" role="status"></p>
     <div id="plan-editor" class="plan-editor" hidden></div>
-  </form>`;
+  </form>
+  <div id="thread">${pj.runs.some((r) => !isFirstPass(r)) ? '' : '<p class="empty-line small muted">No questions yet. Ask one above or pick an example.</p>'}</div>`)}`;
 
 // Composer and editable plan -----------------------------------------------------------------------
 function bindComposer() {
@@ -277,11 +338,8 @@ function bindComposer() {
     form.querySelectorAll('button').forEach((b) => { b.disabled = true; });
     say('Starting the run');
     try {
-      const { run_id: id } = await api(`/api/projects/${state.project.id}/runs`, { method: 'POST', body: { query: query(), agents: agents(), plan } });
-      const run = { id, query: query(), status: 'running', created_at: new Date().toISOString(), answer: null };
-      $('#thread .empty')?.remove();
+      await startRun(query(), plan);
       $('#q').value = ''; $('#plan-editor').hidden = true; say('');
-      mountTurn(run, true).scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (e) {
       say(e.status === 429 ? `${e.message}` : `Could not start the run: ${e.message}. Try again in a moment.`, true);
     } finally { form.querySelectorAll('button').forEach((b) => { b.disabled = false; }); }
@@ -323,14 +381,21 @@ function bindComposer() {
 }
 
 // Turns: one per run --------------------------------------------------------------------------------
-function mountTurn(run, latest) {
-  $('#thread').insertAdjacentHTML('beforeend', `<section class="turn" id="run-${run.id}">
-    <div class="q"><p>${esc(run.query)}</p><time class="small muted">${esc(when(run.created_at))}</time></div>
+function mountTurn(run, latest, box = $('#thread')) {
+  const fp = box.id === 'first-pass';
+  if (run.status === 'failed' && !run.answer) {
+    box.insertAdjacentHTML('beforeend', failedTurn(run, fp));
+    return $(`#run-${run.id}`);
+  }
+  box.insertAdjacentHTML('beforeend', `<section class="turn" id="run-${run.id}">
+    ${fp ? `<p class="small muted fp-when">${run.status === 'running' ? 'First pass running, started' : 'First pass ran'} ${esc(when(run.created_at))}</p>`
+      : `<div class="q"><p>${esc(run.query)}</p><time class="small muted">${esc(when(run.created_at))}</time></div>`}
     <p class="context small muted" hidden></p>
     <div class="status-line" role="status" hidden></div>
     <details class="trace"><summary>Show agents and tool calls</summary><div class="trace-body"></div></details>
     ${latest || !run.answer ? '<div class="answer"></div>' : `<details class="older"><summary><span class="more-label">Show the answer</span> <span class="muted">${esc(short(run.answer.summary.replace(/\s*\[[^\]]*10\.\d{4}[^\]]*\]/g, ''), 170))}</span></summary><div class="answer"></div></details>`}</section>`);
   const el = $(`#run-${run.id}`);
+  el.run = run;
   if (run.status === 'running') {
     $('.trace', el).open = true;
     follow(run.id, el);
@@ -351,6 +416,58 @@ function mountTurn(run, latest) {
   return el;
 }
 
+// A failed run is one quiet line: what was asked, when, and a way to ask again. The trace stays one click away.
+const failedTurn = (run, fp) => `<section class="turn failed" id="run-${run.id}">
+  <div class="fail-line"><span class="st st-failed">Did not finish</span>
+    <span class="fq">${esc(short(fp ? 'First pass' : run.query, 110))}</span><time class="small muted">${esc(when(run.created_at))}</time>
+    <button type="button" class="ghost small" data-ask-again="${esc(run.query)}">${fp ? 'Run again' : 'Ask again'}</button></div></section>`;
+
+document.addEventListener('click', (e) => {
+  const j = e.target.dataset?.jump;
+  if (j) return document.getElementById(j)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const q = e.target.dataset?.askAgain;
+  if (q === undefined) return;
+  if (e.target.closest('#first-pass')) { $('#first-pass').innerHTML = firstPassEmpty(state.project); return $('[data-first-pass]')?.click(); }
+  startRun(q).catch((err) => notice(`Could not start the run: ${err.message}.`, 'Try again in a moment.'));
+});
+
+// Starts a question in this project's thread; the new turn streams at the end of the thread.
+async function startRun(query, plan = null) {
+  const { run_id: id } = await api(`/api/projects/${state.project.id}/runs`, { method: 'POST', body: { query, agents: state.pinned.size ? [...state.pinned] : null, plan } });
+  $('#thread .empty-line')?.remove();
+  const el = mountTurn({ id, query, status: 'running', created_at: new Date().toISOString(), answer: null }, true);
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  return el;
+}
+
+// Reply box under an answer, like a chat: suggested follow-ups send at once; Review plan hands the question to the main ask box.
+function replyBox(el, answer) {
+  $('.reply', el)?.remove();
+  const id = el.id.replace('run-', '');
+  const fu = (Array.isArray(answer.follow_ups) ? answer.follow_ups : []).filter(Boolean).slice(0, 3);
+  $('.answer', el).insertAdjacentHTML('afterend', `<form class="reply"><label for="reply-${id}">Ask a follow-up</label>
+    ${fu.length ? `<div class="examples">${fu.map((q) => `<button type="button" class="ghost small" data-follow>${esc(q)}</button>`).join('')}</div>` : ''}
+    <div class="reply-row"><textarea id="reply-${id}" rows="2" placeholder="Ask about this answer"></textarea>
+      <div class="reply-actions"><button type="button" data-review>Review plan</button><button class="primary">Ask</button></div></div>
+    <p class="form-msg" role="status"></p></form>`);
+  const form = $('.reply', el); const box = $('textarea', form);
+  const send = async () => {
+    if (!box.value.trim()) { $('.form-msg', form).textContent = 'Write a question first.'; return; }
+    form.querySelectorAll('button').forEach((b) => { b.disabled = true; });
+    try { await startRun(box.value.trim()); box.value = ''; $('.form-msg', form).textContent = ''; }
+    catch (e) { $('.form-msg', form).textContent = e.status === 429 ? e.message : `Could not start the run: ${e.message}. Try again in a moment.`; }
+    finally { form.querySelectorAll('button').forEach((b) => { b.disabled = false; }); }
+  };
+  form.onsubmit = (e) => { e.preventDefault(); send(); };
+  form.onclick = (e) => {
+    if (e.target.dataset.follow !== undefined) { box.value = e.target.textContent; send(); }
+    if (e.target.dataset.review !== undefined) {
+      if (!box.value.trim()) { $('.form-msg', form).textContent = 'Write a question first.'; return; }
+      $('#q').value = box.value.trim(); $('#composer').scrollIntoView({ behavior: 'smooth' }); $('#review').click();
+    }
+  };
+}
+
 function status(el, text, bad = false) {
   const s = $('.status-line', el);
   s.hidden = !text; s.textContent = text || ''; s.classList.toggle('error', bad);
@@ -367,7 +484,14 @@ function follow(id, el) {
     const ev = JSON.parse(m.data);
     events.push(ev);
     if (ev.type === 'answer') mountAnswer(el, ev.answer, true);
-    if (ev.type === 'run_done') { es.close(); streams.delete(es); }
+    if (ev.type === 'run_done') {
+      es.close(); streams.delete(es);
+      if (ev.status === 'failed' && !$('.answer', el).innerHTML) {
+        el.outerHTML = failedTurn({ ...el.run, created_at: el.run.created_at }, el.parentElement.id === 'first-pass');
+        return;
+      }
+      if (el.parentElement.id === 'first-pass') setTimeout(() => state.pollDashboard?.(), 2000);
+    }
     renderTrace(el, events, ev.type !== 'run_done');
   };
   es.onerror = () => {
@@ -456,6 +580,7 @@ function renderTrace(el, events, live, keepOpen = false) {
 function mountAnswer(el, answer, drawNow) {
   const box = $('.answer', el);
   box.innerHTML = renderAnswer(answer, el.id.replace('run-', ''));
+  replyBox(el, answer);
   mountCharts(box);
   fillReferences(box);
   const { ids, verdicts } = answerConcepts(answer);

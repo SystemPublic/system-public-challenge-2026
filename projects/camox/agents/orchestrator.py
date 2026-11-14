@@ -11,12 +11,13 @@ from agents.verifier import WEB, verify
 
 HERE = Path(__file__).parent
 RULES = (HERE / "rules.md").read_text()
-GRAPH = "System Public Graph (cleaned Dataverse subset, July 2026 release, CC BY-NC 4.0)"
-SOURCES = {**dict.fromkeys(["search_concepts", "search_variables", "neighbours", "paths", "get_findings",
-                            "summarise_evidence", "sql", "subgraph", "get_concept"], GRAPH),
-           "search_openalex": "OpenAlex", "lookup_dois": "OpenAlex", "search_pubmed": "PubMed (NCBI)",
-           "search_worldbank_indicators": "World Bank Data360 / WDI (CC BY 4.0)",
-           "get_worldbank_data": "World Bank Data360 / WDI (CC BY 4.0)"}
+GRAPH = "System Public Graph (System), cleaned Dataverse copy, July 2026, CC BY-NC 4.0"
+LIVE = "System Public Graph API (System, live)"
+GRAPH_TOOLS = {"search_concepts", "search_variables", "neighbours", "paths", "get_findings", "summarise_evidence",
+               "sql", "subgraph", "get_concept"}
+SOURCES = {**dict.fromkeys(["search_openalex", "count_openalex", "lookup_dois"], "OpenAlex API (OurResearch)"),
+           "search_pubmed": "PubMed E-utilities (NCBI, US NLM)",
+           **dict.fromkeys(["search_worldbank_indicators", "get_worldbank_data"], "World Bank Data360 API (World Bank)")}
 
 
 def _load_role(path: Path) -> dict:
@@ -102,7 +103,7 @@ async def run(query: str, profile: dict, history: list[dict], agents: list[str] 
 
         async def track(event):  # record the tools this agent really called, for its data-source labels
             if event.get("type") == "tool_call":
-                used.append(event["tool"])
+                used.append(LIVE if event.get("live") else event["tool"])
             await emit(event)
         try:
             section = await run_agent(
@@ -111,7 +112,8 @@ async def run(query: str, profile: dict, history: list[dict], agents: list[str] 
                 SECTION_MODELS[role["section"]], track, tools=role["tools"], web_search=role["web_search"],
                 **({"check": None} if role["web_search"] else {}))  # web results aren't in our trace
             await emit({"type": "agent_done", "agent": task.agent, "section_type": role["section"]})
-            labels = [SOURCES[t] for t in used if t in SOURCES] + ([WEB] if role["web_search"] else [])
+            graph = [LIVE] if LIVE in used else [GRAPH] if GRAPH_TOOLS & set(used) else []
+            labels = graph + [SOURCES[t] for t in used if t in SOURCES] + ([WEB] if role["web_search"] else [])
             return section, list(dict.fromkeys(labels))
         except Exception as e:
             await emit({"type": "agent_failed", "agent": task.agent, "error": str(e)[:300]})
@@ -129,7 +131,7 @@ async def run(query: str, profile: dict, history: list[dict], agents: list[str] 
                               effort="low")
     order = [i for i in dict.fromkeys(overall.section_order) if 0 <= i < len(sections)]
     order += [i for i in range(len(sections)) if i not in order]
-    answer = Answer(question=plan.question, summary=overall.summary, caveats=overall.caveats,
+    answer = Answer(question=plan.question, summary=overall.summary, caveats=overall.caveats, follow_ups=overall.follow_ups,
                     sections=[sections[i] for i in order], section_sources=[done[i][1] for i in order])
     answer.verification = await verify(answer, emit)
     await emit({"type": "answer", "answer": answer.model_dump()})

@@ -1,4 +1,5 @@
 """Literature search: OpenAlex (works with citations and abstracts) and PubMed (NCBI E-utilities)."""
+import datetime
 import os
 
 from tools._http import get_json
@@ -52,3 +53,18 @@ def lookup_dois(dois: list[str]) -> list:
              "year": w["publication_year"], "cited_by_count": w["cited_by_count"],
              "venue": ((w.get("primary_location") or {}).get("source") or {}).get("display_name")}
             for w in get_json("https://api.openalex.org/works", params)["results"]]
+
+
+def count_openalex(query: str, year_from: int | None = None) -> dict:
+    """How many OpenAlex works match a query (all fields), in total and per publication year since year_from
+    (default: the last 15 years). Compare it with the graph's study count to see how much of the literature the
+    graph holds."""
+    year_from = year_from or datetime.date.today().year - 15
+    params = {"search": query, "filter": f"from_publication_date:{year_from}-01-01", "group_by": "publication_year"}
+    if os.environ.get("OPENALEX_API_KEY"):
+        params["api_key"] = os.environ["OPENALEX_API_KEY"]
+    total = get_json("https://api.openalex.org/works", {"search": query, "per_page": 1, "select": "id",
+                                                        **({"api_key": params["api_key"]} if "api_key" in params else {})})
+    years = get_json("https://api.openalex.org/works", params)["group_by"]
+    return {"query": query, "total_works": total["meta"]["count"],
+            "by_year": sorted((int(g["key"]), g["count"]) for g in years if str(g["key"]).isdigit())}

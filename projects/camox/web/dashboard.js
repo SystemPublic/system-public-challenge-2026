@@ -1,5 +1,5 @@
 // Project dashboard: KPI tiles, charts and tables built by the dashboard agents from the project's answers.
-import { esc, table, chart, mountCharts } from './sections.js';
+import { esc, linked, wbUrl, table, chart, mountCharts } from './sections.js';
 
 document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="dashboard.css">');
 
@@ -8,18 +8,18 @@ const link = (href, text) => `<a href="${esc(href)}" target="_blank" rel="noopen
 const sourceLink = (s) => {
   const doi = String(s).match(/10\.\d{4,9}\/\S+/);
   if (doi) return link(`https://doi.org/${doi[0]}`, `paper ${doi[0]}`);
-  if (/^WB_[A-Z0-9]+_\S+$/.test(s)) return link(`https://data360.worldbank.org/en/indicator/${s}`, s);
-  return esc(s);
+  if (/^WB_[A-Z0-9]+_\S+$/.test(s)) return link(wbUrl(s), s);
+  return linked(s);
 };
 
 const kpis = (p) => `<div class="kpis">${p.kpis.map((k) => `<div class="kpi">
   <div class="kpi-label">${esc(k.label)}</div>
   <div class="kpi-value num">${esc(k.value)} <span class="kpi-unit">${esc(k.unit)}</span></div>
-  <div class="kpi-source">${esc(k.source)}</div></div>`).join('')}</div>`;
+  <div class="kpi-source">${linked(k.source)}</div></div>`).join('')}</div>`;
 
 const panel = (p) => `<section class="panel panel-${esc(p.kind)}">
   <h3>${esc(p.title)}</h3>
-  ${p.caption ? `<p class="small">${esc(p.caption)}</p>` : ''}
+  ${p.caption ? `<p class="small">${linked(p.caption)}</p>` : ''}
   ${p.kind === 'kpis' ? kpis(p) : ''}
   ${p.vega_lite_json ? chart({ title: '', vega_lite_json: p.vega_lite_json }) : ''}
   ${p.table ? table(p.table) : ''}
@@ -27,7 +27,7 @@ const panel = (p) => `<section class="panel panel-${esc(p.kind)}">
 </section>`;
 
 export function renderDashboard(el, d) {
-  el.innerHTML = `<div class="dash-head"><h2>${esc(d.title)}</h2><p class="small muted">${esc(d.summary)}</p></div>
+  el.innerHTML = `<div class="dash-head"><h3>${esc(d.title)}</h3><p class="small muted">${linked(d.summary)}</p></div>
     <div class="panels">${d.panels.map(panel).join('')}</div>`;
   mountCharts(el);
 }
@@ -42,7 +42,8 @@ export function bindDashboard(box, pj, api) {
     const step = s.replace(/^building:? ?/, '').replace('dashboard_planner', 'planning panels').replace('panel: ', '');
     msg.textContent = building ? `Building dashboard: ${step || 'planning panels'}`
       : s === 'failed' ? 'The last dashboard build failed. Build it again; it reads the answers in this thread.'
-      : pj.dashboard || !pj.runs.some((r) => r.answer) ? '' : 'Build a dashboard of key numbers, World Bank data and linked indicators from the answers in this project.';
+      : pj.dashboard ? '' : pj.runs.some((r) => r.answer) ? 'No dashboard yet. Build it from the answers in this project.'
+      : 'Builds itself when the first pass finishes. Nothing to show yet.';
     btn.textContent = pj.dashboard ? 'Rebuild dashboard' : 'Build dashboard';
     btn.disabled = building; btn.hidden = !pj.runs.some((r) => r.answer);
     if (pj.dashboard && pj.dashboard !== shown) { shown = pj.dashboard; renderDashboard(body, shown); }
@@ -59,4 +60,5 @@ export function bindDashboard(box, pj, api) {
     show();
   };
   show();
+  return poll;
 }

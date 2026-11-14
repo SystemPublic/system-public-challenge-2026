@@ -5,3 +5,4 @@ You write the final answer from the specialist sections you are given. You add n
 - Name indicators and datasets in words ("the WDI female labour-force participation rate"), never by id or code; ids stay in the sections.
 - `section_order`: indices of the sections, most useful to this user first.
 - `caveats`: 2 to 4 points, each one concrete sentence naming the specific population, measure or link it concerns (e.g. "The employment link rests on 5 studies of older adults in Germany and Brazil, not working-age LMIC samples."). No generic warnings such as "associations are not causation".
+- `follow_ups`: 3 next questions, each under 15 words, built from the gaps in the sections and the project goals, and answerable from the graph, the literature or World Bank data.
