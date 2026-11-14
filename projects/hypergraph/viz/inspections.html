@@ -420,7 +420,7 @@ async function drill(tr) {
     const vs = r.violations || [], gone = vs.filter(v => v.june && !v.today);
     const vrow = v => `<tr><td><b>${esc(v.code)}</b></td><td>${esc(v.description)}</td><td>${v.june ? "cited" : "not in the June copy"}</td><td>${v.today ? "on the record" : '<span class="removed" style="margin-left:0">removed</span>'}</td></tr>`;
     const vtable = vs.length ? `<table class="viol"><thead><tr><th>Code</th><th>Violation</th><th>June version</th><th>City table today</th></tr></thead><tbody>${vs.map(vrow).join("")}</tbody></table>` : `<p class="cap">No violation records found for this inspection among the ${r.codes_tried} common codes.</p>`;
-    d.firstChild.innerHTML = `<div class="cards">${card("june", "")}${card("november", "nov")}</div>` + vtable
+    d.firstChild.innerHTML = `<div class="cards">${card("june", "")}${card("november", "nov")}</div>` + vtable + (r.partial ? `<p class="source">${esc(r.partial)}</p>` : "")
       + `<p class="cap">Same restaurant, same inspection, same day. ${a === b ? `The record for ${esc(name)} shows ${a} violation points in both copies.` : `The record for ${esc(name)} showed ${a} violation points in June and shows ${b} now. ${gone.length} violation${gone.length === 1 ? " was" : "s were"} removed.`}</p>`;
   } catch (e) { d.firstChild.textContent = String(e.message || e); }
 }

@@ -172,6 +172,7 @@ class Handler(SimpleHTTPRequestHandler):
 
                 import requests
                 codes = [c["code"] for c in json.loads((ROOT / "viz/data/inspections_codes.json").read_text())]
+                signed = "Authorization" in cv._session.headers
                 camis, day, kind = rid.split("-")[0], "-".join(rid.split("-")[1:4]), "-".join(rid.split("-")[4:])
                 slug = lambda x: re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (x or "").lower())).strip("-")  # noqa: E731
                 # today: the city's table, queried now, gives the complete current list for this inspection
@@ -183,7 +184,13 @@ class Handler(SimpleHTTPRequestHandler):
                 def viol(code):
                     v = cv.record("nyc", "restaurant-inspections", "v1.0.0", "Violation", f"{rid}-{code}")
                     return (code, v["data"]) if v else None
-                with ThreadPoolExecutor(max_workers=32) as ex:
+                if not signed:
+                    # Without a key the Underlay allows 60 units a minute for the whole network address, and trying
+                    # all 157 codes would spend more than that in one click. Try today's codes and the commonest only.
+                    common = ["10F", "08A", "06C", "02G", "06D", "10B", "02B", "04L", "04N", "04A", "10G", "05D", "04H", "06F", "06E", "08C", "09C", "06A", "04M", "10H"]
+                    codes = list(dict.fromkeys(list(now) + common))[:28]
+                    out["partial"] = "No Underlay key on this machine, so only the commonest violation codes were checked in the June version."
+                with ThreadPoolExecutor(max_workers=32 if signed else 6) as ex:
                     june = dict(x for x in ex.map(viol, codes) if x)
                 out["violations"] = [{"code": c, "description": (june.get(c) or {}).get("violationDescription") or (now.get(c) or {}).get("violation_description", ""),
                                       "june": c in june, "today": c in now} for c in sorted(set(june) | set(now))]
