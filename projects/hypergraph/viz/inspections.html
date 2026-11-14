@@ -3,9 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What makes a restaurant unsafe?</title>
+<title>Restaurant inspections: what makes a restaurant unsafe?</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style_guide_tokens.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&text=0123456789.%2C%25%C3%97%2B%E2%88%92&display=swap" rel="stylesheet">
 <script src="data/comics.js"></script>
@@ -49,86 +51,121 @@
   body.export h2.strip-title, body.export p.strip-lede, body.export .sources { display: none; }
   body.export .strip { gap: 16px; }
   body.export .frame .cap { font-size: var(--capsize, 15px); }
-  .copies { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: stretch; margin: 16px 0 8px; max-width: 1100px; }
-  .copy { background: #000; color: #fff; border: 2.5px solid #000; padding: 12px 16px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .copy h3 { margin: 0 0 4px; font-size: 22px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: #fff; }
-  .copy p { margin: 0; font-size: 13.5px; color: #e6e6e6 !important; line-height: 1.35; word-break: break-all; }
-  .copy p b { color: #ffd60a; font-weight: 600; }
-  .mid { display: flex; align-items: center; }
-  button.big { font: inherit; font-size: 20px; font-weight: 700; padding: 14px 26px; border: 3px solid #000; background: #ffd60a; color: #000; border-radius: 4px; cursor: pointer; }
-  button.big:disabled { opacity: .55; cursor: progress; }
-  button.plain { font: inherit; font-size: 15px; font-weight: 600; padding: 8px 16px; border: 2px solid #000; background: #fff; color: #000; border-radius: 4px; cursor: pointer; }
-  .nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 14px 0 6px; max-width: 1400px; }
-  .num { background: #000; color: #fff; padding: 14px 16px 12px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; opacity: 0; transform: translateY(6px); transition: opacity .35s, transform .35s; }
-  .num.on { opacity: 1; transform: none; }
-  .num .n { font-size: 54px; font-weight: 700; line-height: 1; color: #ffd60a; font-variant-numeric: tabular-nums; }
-  .num.red .n { color: #ff3b30; }
-  .num .t { font-family: var(--letter); text-transform: uppercase; font-size: 16px; line-height: 1.3; margin-top: 8px; letter-spacing: .02em; }
-  #status { font-size: 14px; color: var(--ink-2); min-height: 1.4em; margin: 6px 0; }
-  .listbar { display: flex; gap: 12px; align-items: center; margin: 22px 0 8px; }
-  .listbar input { font: inherit; font-size: 15px; padding: 7px 10px; border: 1px solid #999; border-radius: 4px; width: 28ch; }
-  table.rows { border-collapse: collapse; width: 100%; max-width: 1100px; font-size: 15px; }
-  table.rows th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); padding: 4px 10px 4px 0; border-bottom: 2px solid #000; }
-  table.rows td { padding: 7px 10px 7px 0; border-bottom: 1px solid #ddd; }
-  table.rows tr.row { cursor: pointer; }
-  table.rows tr.row:hover td { background: #fff3b0; }
-  td.sc { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
-  td.sc .to { color: #b3261e; }
-  .band { display: inline-block; min-width: 1.5em; text-align: center; font-size: 12px; font-weight: 700; padding: 1px 5px; border: 1.5px solid #000; margin-left: 6px; }
-  tr.detail td { background: #000; color: #fff; padding: 14px 16px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .card { border: 2px solid #fff; padding: 10px 14px; }
-  .card.nov { border-color: #ffd60a; }
-  .card h4 { margin: 0 0 6px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
-  .card.nov h4 { color: #ffd60a; }
-  .card .s { font-size: 44px; font-weight: 700; line-height: 1; }
-  .card.nov .s { color: #ffd60a; }
-  .card p { margin: 6px 0 0; font-size: 13.5px; line-height: 1.4; color: #ddd; }
-  .card a { color: #9cc2ff; }
-  table.viol { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
-  table.viol th { text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: #bbb; padding: 4px 8px 4px 0; border-bottom: 1px solid #fff; background: none; }
-  table.viol td { padding: 5px 8px 5px 0; border-bottom: 1px solid #333; background: none !important; color: #fff; }
-  .detail .cap { font-family: var(--letter); text-transform: uppercase; font-size: 15px; margin: 12px 0 0; letter-spacing: .02em; }
-  #research { margin-top: 30px; }
-  .live { margin: 26px 0 30px; padding: 4px 0 18px; border-bottom: 2px solid #000; max-width: 1100px; }
-  .live input { font: inherit; font-size: 17px; padding: 9px 12px; border: 2px solid #000; border-radius: 4px; width: 34ch; }
-  #lstatus { font-size: 14.5px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 10px; }
-  button.chip { font: inherit; font-size: 13.5px; padding: 5px 10px; border: 1.5px solid #000; background: #fff; border-radius: 14px; cursor: pointer; }
-  button.chip:hover { background: #fff3b0; }
-  .qa { border-left: 5px solid #000; padding: 6px 0 6px 14px; margin: 12px 0; }
-  .qa .q { font-weight: 700; margin: 0 0 4px; font-size: 16px; color: #000 !important; }
-  .qa .a { margin: 0; font-size: 17px; line-height: 1.45; color: #000 !important; }
-  .qa .meta { display: block; font-size: 12.5px; color: #666; margin-top: 4px; }
-  .steps { display: flex; gap: 14px; flex-wrap: wrap; margin: 16px 0 14px; }
-  button.big:disabled { opacity: .35; cursor: default; }
-  table.story { border-collapse: collapse; width: 100%; max-width: 1400px; background: #000; color: #fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  table.story th { text-align: left; font-size: 12.5px; text-transform: uppercase; letter-spacing: .06em; color: #bbb; padding: 10px 14px; border-bottom: 2px solid #fff; }
-  table.story td { padding: 12px 14px; border-bottom: 1px solid #444; font-size: 17px; vertical-align: middle; }
-  table.story td.c { font-size: 20px; font-weight: 700; width: 24%; }
-  table.story td.says { color: #ffd60a; width: 36%; opacity: 0; transition: opacity .5s; }
-  table.story td.rec { width: 20%; opacity: 0; transition: opacity .5s; font-variant-numeric: tabular-nums; }
+  /* Page styles follow docs/style_guide.md: tokens from style_guide_tokens.css, Spectral for the title and
+     question headings, Work Sans elsewhere, an 8-based space scale and a 1080 px column. */
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 14px; font-variant-numeric: tabular-nums; }
+  main, header.site, footer { max-width: 1080px; }
+  header.site { padding-bottom: 0; }
+  nav.menu { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; font-size: 13px; margin-bottom: var(--s3); }
+  nav.menu .grp { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+  nav.menu .gl { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); }
+  nav.menu a { color: var(--accent); text-decoration: none; }
+  nav.menu a[aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--ink); }
+  .eyebrow { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 var(--s1) !important; }
+  header.site h1, h1 { font-family: var(--serif); font-weight: 600; font-size: 42px; line-height: 1.12; margin: 0 0 var(--s2); color: var(--ink); }
+  .lead { font-size: 17px; line-height: 1.5; max-width: 72ch; color: var(--ink) !important; margin: 0 0 var(--s2) !important; }
+  .label { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--line2); border-radius: 3px; padding: 3px 8px; margin: 0 0 var(--s3) !important; background: var(--card); }
+  .label b { color: var(--ink); font-weight: 600; }
+  h2.q, h2.strip-title { font-family: var(--serif); font-weight: 600; font-size: 34px; line-height: 1.15; margin: 0 0 var(--s1); color: var(--ink); }
+  p.strip-lede, p.say { font-size: 14px; line-height: 1.5; max-width: 72ch; color: var(--muted); margin: 0 0 var(--s2); }
+  section.block { margin-top: var(--s5); }
+  .steps { display: flex; gap: var(--s2); flex-wrap: wrap; margin: 0 0 var(--s2); }
+  button.big, button.plain, button.chip { font-family: var(--sans); cursor: pointer; border-radius: 4px; }
+  button.big { font-size: 17px; font-weight: 600; padding: 12px 22px; border: 2px solid var(--accent); background: var(--accent); color: #fff; }
+  button.big:disabled { opacity: .4; cursor: default; }
+  button.big.small { font-size: 14px; padding: 8px 16px; }
+  button.plain { font-size: 14px; font-weight: 600; padding: 8px 16px; border: 1px solid var(--line2); background: var(--card); color: var(--ink); }
+  button.plain:hover, button.chip:hover { border-color: var(--accent); }
+  button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 4px; }
+  table.story { border-collapse: collapse; width: 100%; background: var(--card); border: 1px solid var(--line); border-radius: 4px; }
+  table.story th { text-align: left; font-size: 12px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding: 12px 16px; border-bottom: 1.2px solid var(--line2); }
+  table.story td { padding: 14px 16px; border-bottom: 1px solid var(--line); font-size: 14px; vertical-align: middle; color: var(--ink); }
+  table.story tr:last-child td { border-bottom: 0; }
+  table.story td.c { font-size: 17px; font-weight: 600; width: 25%; }
+  table.story td.says { width: 37%; color: var(--ink); opacity: 0; transition: opacity .5s; }
+  table.story td.says small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+  table.story td.rec { width: 19%; opacity: 0; transition: opacity .5s; white-space: nowrap; }
   table.story td.on { opacity: 1; }
+  table.story .bar { display: inline-block; height: 12px; background: var(--ink); border-radius: 3px; vertical-align: middle; margin-right: 8px; }
+  table.story .bar.hl { background: var(--hl); outline: 1px solid var(--ink); }
+  table.story .n { font-size: 28px; font-weight: 600; line-height: 1; }
+  table.story td.none { color: var(--muted); font-style: italic; font-family: var(--serif); font-size: 15px; }
   body.auto table.story td.says, body.auto table.story td.rec, body.auto .num { opacity: 1 !important; transition: none !important; transform: none !important; }
-  table.story .bar { display: inline-block; height: 16px; background: #fff; vertical-align: middle; margin-right: 8px; }
-  table.story .bar.red { background: #ff3b30; }
-  table.story .n { font-size: 22px; font-weight: 700; }
-  table.story td.none { color: #ff3b30; font-weight: 600; }
-  p.verdict { display: block; white-space: normal; box-sizing: border-box; width: 100%; max-width: 1400px; font-family: var(--letter); text-transform: uppercase; font-size: 19px; line-height: 1.35; letter-spacing: .02em; margin: 12px 0 0 !important; padding: 12px 16px; background: #ffd60a; color: #000 !important; }
-  .mid { font-size: 14px; color: var(--ink-2); }
-  .barf, .barr { display: inline-block; height: 14px; vertical-align: middle; }
-  .barf { background: #000; }
-  .barr { background: #c8271b; }
-  td.grp { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); padding-top: 14px; }
-  #histout, #codesout, #besideout { max-width: 1100px; }
-  p.key { max-width: 1100px; font-size: 14.5px; line-height: 1.45; background: #fff8d6; border-left: 5px solid #ffd60a; padding: 10px 14px; margin: 10px 0 0; }
+  p.verdict { display: block; box-sizing: border-box; white-space: normal; width: auto; max-width: 72ch; font-family: var(--sans); font-size: 17px; line-height: 1.45; margin: var(--s2) 0 0 !important; padding: 0 0 0 var(--s2); border-left: 4px solid var(--hl); color: var(--ink) !important; background: none; text-transform: none; letter-spacing: 0; }
+  p.source { font-size: 12px; color: var(--muted) !important; margin: var(--s1) 0 0 !important; max-width: none; }
+  p.source b { color: var(--ink); font-weight: 500; }
+  details.f { display: inline-block; vertical-align: top; }
+  details.f summary { display: inline-block; list-style: none; cursor: pointer; font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--accent); border: 1px solid var(--line2); border-radius: 3px; padding: 0 6px; background: var(--card); }
+  details.f summary::-webkit-details-marker { display: none; }
+  details.f[open] { display: block; margin-top: 6px; }
+  details.f pre { font-size: 11.5px; white-space: pre-wrap; background: var(--card2); border: 1px solid var(--line); padding: 8px 10px; border-radius: 4px; max-width: 100%; color: var(--ink); }
+  details.how { margin: var(--s2) 0 0; max-width: 72ch; }
+  details.how summary { cursor: pointer; font-size: 13px; color: var(--accent); }
+  details.how p { font-size: 14px; line-height: 1.5; color: var(--ink) !important; margin: var(--s1) 0 0 !important; }
+  .nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s2); margin: var(--s3) 0 0; }
+  .num { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: var(--s2); opacity: 0; transform: translateY(6px); transition: opacity .35s, transform .35s; }
+  .num.on { opacity: 1; transform: none; }
+  .num .n { font-size: 28px; font-weight: 600; line-height: 1.1; color: var(--ink); }
+  .num .t { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.35; text-transform: none; letter-spacing: 0; font-family: var(--sans); }
+  #status { font-size: 12px; color: var(--muted); min-height: 1.4em; margin: var(--s1) 0 0; }
+  .listbar { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); align-items: center; margin: 0 0 var(--s2); }
+  .listbar input { font-family: var(--sans); font-size: 14px; padding: 9px 12px; border: 1px solid var(--line2); border-radius: 4px; background: var(--card2); color: var(--ink); width: 36ch; max-width: 100%; }
+  #lstatus { font-size: 12px; color: var(--muted); }
+  table.rows { border-collapse: collapse; width: 100%; font-size: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 4px; }
+  table.rows th { text-align: left; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding: 10px 12px; border-bottom: 1.2px solid var(--line2); }
+  table.rows td { padding: 9px 12px; border-bottom: 1px solid var(--line); color: var(--ink); }
+  table.rows tr.row { cursor: pointer; }
+  table.rows tr.row:hover td { background: var(--card2); }
+  table.rows tr.changed td { background: var(--hl-soft); }
+  td.sc { font-weight: 500; white-space: nowrap; }
+  td.sc .to { font-weight: 700; }
+  td.sc .tag, .removed { background: var(--hl); color: var(--hl-ink); font-weight: 600; font-size: 12px; padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .band { display: inline-block; min-width: 1.5em; text-align: center; font-size: 11px; font-weight: 600; padding: 0 5px; border: 1px solid var(--line2); border-radius: 3px; margin-left: 6px; color: var(--muted); }
+  tr.detail td { background: var(--card2) !important; padding: var(--s2); }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2); }
+  .cards .rcard { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 12px 14px; }
+  .cards .rcard.nov { border-color: var(--ink); }
+  .rcard h4 { margin: 0 0 4px; font-size: 12px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+  .rcard .s { font-size: 28px; font-weight: 600; line-height: 1.1; }
+  .rcard p { margin: 6px 0 0; font-size: 12px; line-height: 1.45; color: var(--muted); }
+  .detail .cap { font-family: var(--serif); font-style: italic; font-size: 15px; margin: 12px 0 0; color: var(--ink); text-transform: none; letter-spacing: 0; max-width: 72ch; }
+  table.viol { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; background: var(--card); border: 1px solid var(--line); }
+  table.viol th { text-align: left; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding: 6px 10px; border-bottom: 1px solid var(--line2); }
+  table.viol td { padding: 6px 10px; border-bottom: 1px solid var(--line); background: var(--card) !important; color: var(--ink); }
+  .chips { display: flex; flex-wrap: wrap; gap: var(--s1); margin: 0 0 var(--s2); }
+  button.chip { font-size: 13px; padding: 5px 10px; border: 1px solid var(--line2); background: var(--card); color: var(--ink); border-radius: 14px; }
+  .qa { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 4px; padding: 12px var(--s2); margin: 0 0 var(--s2); max-width: 72ch; }
+  .qa .q { font-weight: 600; margin: 0 0 4px; font-size: 14px; color: var(--ink) !important; }
+  .qa .a { margin: 0; font-size: 17px; line-height: 1.45; color: var(--ink) !important; }
+  .qa .meta { display: block; font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .err { color: var(--ink); font-weight: 600; }
+  .barf, .barr { display: inline-block; height: 12px; vertical-align: middle; border-radius: 3px; }
+  .barf { background: var(--ink); }
+  .barr { background: var(--hl); outline: 1px solid var(--ink); margin-left: 2px; }
+  td.grp { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding-top: 14px; }
+  .btnrow { display: flex; gap: var(--s2); flex-wrap: wrap; margin: 0 0 var(--s2); }
+  #histout, #codesout { margin-top: var(--s3); }
+  footer p { font-size: 12px; color: var(--muted); max-width: 72ch; line-height: 1.5; }
+  @media (max-width: 720px) {
+    header.site h1, h1 { font-size: 30px; } h2.q, h2.strip-title { font-size: 24px; }
+    .nums { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cards { grid-template-columns: 1fr; }
+    table.story, table.rows { display: block; overflow-x: auto; }
+    table.story td.c { font-size: 15px; } section.block { margin-top: var(--s4); }
+  }
 </style>
 </head>
 <body>
 <header class="site">
-  <nav class="pages"><a href="index.html">Findings</a><a href="evidence.html">Sources and tests</a><a href="inspections.html" aria-current="page">Restaurant inspections</a><a href="compare.html">Compare versions</a><a href="comics.html">How a link changes</a><a href="architecture.html">How it was built</a></nav>
+  <nav class="menu" aria-label="Site">
+    <span class="grp"><a href="index.html">Findings</a><a href="evidence.html">Sources and tests</a></span>
+    <span class="grp"><span class="gl">Case studies</span><a href="inspections.html" aria-current="page">Restaurant inspections</a><a href="heat_drugs.html">Heat and medicines</a><a href="levers.html">City levers</a><a href="simulate.html">Congestion toll simulator</a></span>
+    <span class="grp"><span class="gl">Tools and method</span><a href="explorer.html">Graph explorer</a><a href="explore.html">Neighbourhood explorer</a><a href="hypergraph.html">Links as objects</a><a href="comics.html">How a link changes</a><a href="compare.html">Compare versions</a><a href="architecture.html">How it was built</a></span>
+  </nav>
+  <p class="eyebrow">Case study · Restaurant inspections</p>
   <h1>What makes a restaurant unsafe?</h1>
   <p class="lead">Most of us would say mice and roaches. Ask the research, then ask the city's record.</p>
+  <p class="label"><b>Descriptive.</b> What the records show, not tested against a prediction. One tested claim is linked at the end.</p>
   <div class="steps">
     <button class="big" id="s1">1 · What do studies say?</button>
     <button class="big" id="go" disabled>2 · What does the city's record keep?</button>
@@ -137,49 +174,66 @@
     <thead><tr><th>Condition</th><th>What studies report about outbreaks</th><th>Share of the city's citations</th><th>Removed after a hearing</th></tr></thead>
     <tbody id="storyrows"></tbody>
   </table>
+  <p class="source" id="src1" hidden></p>
   <p class="verdict" id="v1" hidden><b>Our intuition is off.</b> The leading cause is a sick worker. Then come temperature and handling. Pests come last.</p>
-  <p class="verdict" id="v2" hidden><b>The appeal process does not follow the research.</b> After hearings, the pests stay on the record. Temperature and handling come off five times as often. The leading cause is not on the record at all.</p>
-  <div class="copies" id="copies" hidden>
-    <div class="copy"><h3>June 2026</h3><p id="cj">nyc/restaurant-inspections v1.0.0</p></div>
-    <div class="mid">compared with</div>
-    <div class="copy"><h3>November 2026</h3><p id="cn">system-community/nyc-restaurant-inspections-2026-11 v1.0.0</p></div>
-  </div>
+  <p class="verdict" id="v2" hidden></p>
+  <details class="how" id="key" hidden><summary>How to read a score, a hearing and a closure</summary>
+    <p>An inspector adds points for each violation, so a lower score is better. 0 to 13 points earns an A, 14 to 27 a B, and 28 or more a C. A restaurant can contest violations at a hearing. When a violation is dismissed, its points come off. "Closed by DOHMH" means the health department shut the kitchen at that inspection until it was fixed; those restaurants usually reopen. The restaurants counted as gone have left the city's table altogether.</p>
+  </details>
   <p id="status"></p>
-  <p class="key" id="key" hidden><b>How to read a score.</b> An inspector adds points for each violation, so <b>a lower score is better</b>. 0 to 13 points earns an A, 14 to 27 a B, and 28 or more a C. A restaurant can contest violations at a hearing. When a violation is dismissed, its points come off. "Closed by DOHMH" means the health department shut the kitchen at that inspection until it was fixed; those restaurants usually reopen. The 519 "gone" restaurants have left the table altogether.</p>
   <div class="nums" id="nums"></div>
+  <p class="source" id="src2" hidden></p>
 </header>
 <main>
   <div id="list" hidden>
-    <div class="live" id="askbox">
-      <h2 class="strip-title">Ask the tables</h2>
-      <p class="strip-lede">Type a question about these data. It is answered by a language model that is given only the tables behind this page, so it can say what the data show and when they cannot answer. An answer takes about ten seconds.</p>
-      <div class="listbar"><input id="aq" placeholder="For example: do re-inspections get reduced more often?" style="width:52ch"><button class="big" id="ago" style="font-size:16px; padding:9px 18px;">Ask</button></div>
+    <section class="block" id="askbox">
+      <h2 class="q">What else do the tables say?</h2>
+      <p class="say">Type a question about these data. A language model answers it, given only the tables behind this page, so it can say what the data show and when they cannot answer. An answer takes about ten seconds.</p>
+      <div class="listbar"><input id="aq" placeholder="For example: do re-inspections get reduced more often?" style="width:52ch"><button class="big small" id="ago">Ask</button></div>
       <div class="chips" id="chips"></div>
       <div id="alog"></div>
-    </div>
-    <div class="live">
-      <h2 class="strip-title">Look up any Manhattan restaurant, live</h2>
-      <p class="strip-lede">Type a name. The page asks the city's data portal for that restaurant's inspections as they stand today, fetches the same inspections from the June version on the Underlay, and compares them. Click any row to see its violations in both versions.</p>
-      <div class="listbar"><input id="lq" placeholder="A restaurant's name, for example JOE'S PIZZA"><button class="big" id="lgo" style="font-size:16px; padding:9px 18px;">Look it up</button><span id="lstatus"></span></div>
+      <p class="source">Answered from <b>viz/data/ask_context.json</b>, built from the comparisons on this page. <details class="f"><summary>ƒ</summary><pre>Model: Claude Haiku through the Claude command-line tool, with no tools and no other material.
+Material: the eleven-copy history, the April to November 2026 violation counts, the June against November counts, and the six research statements shown above.
+The model's wording is not checked. Read an answer against the tables before repeating it.</pre></details></p>
+    </section>
+    <section class="block">
+      <h2 class="q">What happened at one restaurant?</h2>
+      <p class="say">Type a Manhattan restaurant's name. The page asks the city's data portal for its inspections as they stand today, fetches the same inspections from the June version on the Underlay, and compares them. Click a row to see its violations in both.</p>
+      <div class="listbar"><input id="lq" placeholder="A restaurant's name, for example WINGSTOP"><button class="big small" id="lgo">Look it up</button><span id="lstatus"></span></div>
       <table class="rows" id="ltable" hidden><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>Points in June</th><th>Points today</th></tr></thead><tbody id="lrows"></tbody></table>
-    </div>
-    <div class="listbar"><b>One restaurant at a time: the 485 inspections whose score changed.</b> Click one to fetch its records and violations from both versions on the Underlay. <input id="q" placeholder="Search a restaurant or street"></div>
-    <table class="rows"><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>Points in June</th><th>Points in November</th></tr></thead><tbody id="rows"></tbody></table>
-    <p><button class="plain" id="morerows">Show more</button></p>
-    <div id="more2" style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
-      <button class="plain" id="hist">Has this always happened?</button>
-      <button class="plain" id="codes">Which violations come off?</button>
-    </div>
-    <div id="histout"></div>
-    <div id="codesout"></div>
-    <div id="besideout"></div>
-    <div id="research">
-      <button class="plain" id="why">What does research say this score predicts?</button>
+      <p class="source">Today: <b>NYC Open Data 43nn-pn8j</b>, queried when you press the button. June: <b>Underlay nyc/restaurant-inspections v1.0.0</b>. <details class="f"><summary>ƒ</summary><pre>Publisher: NYC Department of Health and Mental Hygiene, "DOHMH New York City Restaurant Inspection Results".
+Query: Manhattan rows whose name contains the text typed, inspections dated 2024-01-01 to 2026-06-11, grouped by restaurant, date and inspection type.
+June copy: one Inspection record per restaurant, date and type, fetched by id from the Underlay; one Violation record per code.</pre></details></p>
+    </section>
+    <section class="block">
+      <h2 class="q">Which inspections changed between June and November?</h2>
+      <p class="say">The 485 inspections whose score differs between the two versions, largest change first. Click one to fetch its records and violations from the Underlay.</p>
+      <div class="listbar"><input id="q" placeholder="Filter by restaurant or street"></div>
+      <table class="rows"><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>Points in June</th><th>Points in November</th></tr></thead><tbody id="rows"></tbody></table>
+      <p style="margin-top:16px"><button class="plain" id="morerows">Show more</button></p>
+      <p class="source" id="src3"></p>
+    </section>
+    <section class="block">
+      <h2 class="q">Is this new, and which violations come off?</h2>
+      <div class="btnrow">
+        <button class="plain" id="hist">Eleven years of copies</button>
+        <button class="plain" id="codes">Violations removed most and least</button>
+      </div>
+      <div id="histout"></div>
+      <div id="codesout"></div>
+      <p class="source">Ten <b>Internet Archive</b> copies of the city's table, September 2015 to April 2026, and the table of <b>12 November 2026</b>. <details class="f"><summary>ƒ</summary><pre>Built by analyses/underlay_drift/history.py. Each copy is matched with the next on restaurant, inspection date and inspection type.
+Capture times: 20150908, 20161210, 20170426, 20201106, 20210529, 20221130, 20231117, 20241218, 20251115, 20260403, then the live table (rows updated 2026-11-12T23:06:40Z).
+Exploratory: nothing here was registered or refereed. Method and limits: docs/underlay_drift.md.</pre></details></p>
+    </section>
+    <section class="block" id="research">
+      <h2 class="q">What does research say a score predicts?</h2>
+      <p class="say">The one tested claim behind this page: whether a poor score is followed by more food-poisoning complaints. It was registered before the data were read, and its verdict is unsettled.</p>
+      <div class="btnrow"><button class="plain" id="why">Draw the evidence</button><a class="plain" href="evidence.html#restaurants-score-complaints" style="text-decoration:none; display:inline-block; font-size:14px; font-weight:600; padding:8px 16px; border:1px solid var(--line2); border-radius:4px; color:var(--ink); background:var(--card);">Open the claim</a></div>
       <div id="strips"></div>
-    </div>
+    </section>
   </div>
 </main>
-<footer><p>Served by <code>tools/demo_server.py</code>. The list of changed inspections is <code>viz/data/inspections_changed_scores.json</code>; the method is in <code>docs/underlay_drift.md</code>. Each drill-down reads two records from the Underlay when you click. Scores: 0 to 13 is the A range, 14 to 27 the B range, 28 and over the C range. A lower score is better.</p></footer>
+<footer><p>Next: <a href="index.html">all findings</a>, or <a href="compare.html">compare two versions of our claims</a>. Served by <code>tools/demo_server.py</code>. The list of changed inspections is <code>viz/data/inspections_changed_scores.json</code>; the method is in <code>docs/underlay_drift.md</code>. Each drill-down reads two records from the Underlay when you click. Scores: 0 to 13 is the A range, 14 to 27 the B range, 28 and over the C range. A lower score is better.</p></footer>
 <script>
 "use strict";
 const NS = "http://www.w3.org/2000/svg";
@@ -310,7 +364,7 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 let DATA = null, shownRows = 0, filtered = [];
 function addNum(n, text, red) {
-  const d = document.createElement("div"); d.className = "num" + (red ? " red" : "");
+  const d = document.createElement("div"); d.className = "num";
   d.innerHTML = `<div class="n">${n}</div><div class="t">${text}</div>`; $("nums").appendChild(d);
   requestAnimationFrame(() => requestAnimationFrame(() => d.classList.add("on")));
   setTimeout(() => d.classList.add("on"), 120);
@@ -328,22 +382,25 @@ function renderRows(reset) {
   $("morerows").textContent = `Show more (${filtered.length - shownRows} left)`;
 }
 async function compare() {
-  $("go").disabled = true; $("nums").textContent = ""; $("list").hidden = true; $("key").hidden = true; storyKeep(); $("strips").textContent = "";
+  $("go").disabled = true; $("nums").textContent = ""; $("list").hidden = true; $("key").hidden = true; $("v2").hidden = true; storyKeep(); $("strips").textContent = "";
   $("status").textContent = "Asking the Underlay for the two versions…";
   const t0 = performance.now();
   try {
     DATA = await fetch("/api/inspections/compare").then(r => r.json());
     if (DATA.error) throw new Error(DATA.error);
     const c = DATA.counts, f = n => Number(n).toLocaleString("en-US");
-    $("cj").innerHTML = `nyc/restaurant-inspections v1.0.0<br><b>${f(DATA.june.recordCount)} records</b> · ${esc((DATA.june.hash || "").slice(0, 22))}…`;
-    $("cn").innerHTML = `system-community/nyc-restaurant-inspections-2026-11 v1.0.0<br><b>${f(DATA.november.recordCount)} records</b> · ${esc((DATA.november.hash || "").slice(0, 22))}…`;
-    $("status").textContent = `Matched ${f(c.in_both)} Manhattan inspections that are in both copies. ${((performance.now() - t0) / 1000).toFixed(1)} seconds.`;
-    $("copies").hidden = false;
+            $("status").textContent = `Both versions read from the Underlay in ${((performance.now() - t0) / 1000).toFixed(1)} seconds.`;
+    $("src2").innerHTML = `Scores: <b>Underlay nyc/restaurant-inspections v1.0.0</b> (June 2026, ${f(DATA.june.recordCount)} records) against <b>system-community/nyc-restaurant-inspections-2026-11 v1.0.0</b> (November 2026, ${f(DATA.november.recordCount)} records), ${f(c.in_both)} Manhattan inspections in both. <details class="f"><summary>ƒ</summary><pre>June version hash: ${esc(DATA.june.hash || "")}
+November version hash: ${esc(DATA.november.hash || "")}
+Both read from https://www.underlay.org when the button was pressed.
+Matched on restaurant, inspection date and inspection type (analyses/underlay_drift/compare.py; docs/underlay_drift.md).
+The November collection was built from NYC Open Data 43nn-pn8j, rows updated 2026-11-12T23:06:40Z.</pre></details>`;
+    $("src2").hidden = false; $("src3").innerHTML = $("src2").innerHTML;
     await fillRecord();
-    addNum(f(c.scores_changed), "inspection scores changed after the fact"); await sleep(450);
-    addNum(f(c.scores_fell) + " / " + f(c.scores_rose), "got better / got worse"); await sleep(450);
-    addNum(f(c.band_changed), "crossed a grade line"); await sleep(450);
-    addNum(f(c.restaurants_gone), "restaurants gone from the table", true); await sleep(350);
+    addNum(f(c.scores_changed), "inspection scores changed after the inspection"); await sleep(450);
+    addNum(f(c.scores_fell) + " / " + f(c.scores_rose), "improved / got worse"); await sleep(450);
+    addNum(f(c.band_changed), "crossed a grade line (A, B or C)"); await sleep(450);
+    addNum(f(c.restaurants_gone), "restaurants gone from the city's table"); await sleep(350);
     filtered = DATA.rows; renderRows(true); $("list").hidden = false; $("key").hidden = false;
   } catch (e) { $("status").textContent = String(e.message || e) + " (is tools/demo_server.py running?)"; }
   $("go").disabled = false;
@@ -356,11 +413,11 @@ async function drill(tr) {
   try {
     const r = await fetch("/api/inspections/record?id=" + encodeURIComponent(tr.dataset.id)).then(r => r.json());
     if (r.error) throw new Error(r.error);
-    const card = (side, cls) => { const x = (r[side].record || {}).data || {}; return `<div class="card ${cls}"><h4>${side === "june" ? "June copy" : "November copy"}</h4><div class="s">${x.score ?? "no score"}</div>`
+    const card = (side, cls) => { const x = (r[side].record || {}).data || {}; return `<div class="rcard ${cls}"><h4>${side === "june" ? "June copy" : "November copy"}</h4><div class="s">${x.score ?? "no score"}</div>`
       + `<p>${esc(x.action || "")}</p><p>Grade: ${esc(x.grade || "none recorded")} · ${esc(r[side].collection)} · <a href="${r[side].url}" target="_blank" rel="noopener">record</a></p></div>`; };
     const a = ((r.june.record || {}).data || {}).score, b = ((r.november.record || {}).data || {}).score, name = (r.restaurant || {}).name || tr.querySelector("b").textContent;
     const vs = r.violations || [], gone = vs.filter(v => v.june && !v.today);
-    const vrow = v => `<tr><td><b>${esc(v.code)}</b></td><td>${esc(v.description)}</td><td>${v.june ? "cited" : "not in the June copy"}</td><td>${v.today ? "on the record" : '<span style="color:#ffd60a;font-weight:700">removed</span>'}</td></tr>`;
+    const vrow = v => `<tr><td><b>${esc(v.code)}</b></td><td>${esc(v.description)}</td><td>${v.june ? "cited" : "not in the June copy"}</td><td>${v.today ? "on the record" : '<span class="removed" style="margin-left:0">removed</span>'}</td></tr>`;
     const vtable = vs.length ? `<table class="viol"><thead><tr><th>Code</th><th>Violation</th><th>June version</th><th>City table today</th></tr></thead><tbody>${vs.map(vrow).join("")}</tbody></table>` : `<p class="cap">No violation records found for this inspection among the ${r.codes_tried} common codes.</p>`;
     d.firstChild.innerHTML = `<div class="cards">${card("june", "")}${card("november", "nov")}</div>` + vtable
       + `<p class="cap">Same restaurant, same inspection, same day. ${a === b ? `The record for ${esc(name)} shows ${a} violation points in both copies.` : `The record for ${esc(name)} showed ${a} violation points in June and shows ${b} now. ${gone.length} violation${gone.length === 1 ? " was" : "s were"} removed.`}</p>`;
@@ -373,8 +430,8 @@ async function lookupLive() {
   try {
     const r = await fetch("/api/inspections/lookup?q=" + encodeURIComponent(term)).then(r => r.json());
     if (r.error) throw new Error(r.error);
-    $("lrows").innerHTML = r.rows.map(x => `<tr class="row" data-id="${esc(x.id)}"${x.changed ? ' style="background:#fff3b0"' : ""}><td><b>${esc(x.name)}</b></td><td>${esc(x.address)}</td><td>${esc(x.date)}</td>`
-      + `<td class="sc">${x.in_june_copy ? (x.june ?? "no score") : "not in the June copy"}</td><td class="sc">${x.changed ? `<span class="to">${x.now}</span> changed` : (x.now ?? "no score")}</td></tr>`).join("")
+    $("lrows").innerHTML = r.rows.map(x => `<tr class="row${x.changed ? " changed" : ""}" data-id="${esc(x.id)}"><td><b>${esc(x.name)}</b></td><td>${esc(x.address)}</td><td>${esc(x.date)}</td>`
+      + `<td class="sc">${x.in_june_copy ? (x.june ?? "no score") : "not in the June copy"}</td><td class="sc">${x.changed ? `<span class="to">${x.now}</span><span class="tag">changed</span>` : (x.now ?? "no score")}</td></tr>`).join("")
       || `<tr><td colspan="5">No Manhattan restaurant with that name has an inspection from 2024 to June 2026.</td></tr>`;
     $("ltable").hidden = false;
     $("lstatus").innerHTML = `<b>${r.inspections_today}</b> inspections in the city's table today (${r.seconds_city} s), <b>${r.found_in_june}</b> found in the June version (${r.seconds_underlay} s), <b>${r.changed}</b> with a different score.`;
@@ -392,7 +449,7 @@ async function askTables(qn) {
   try {
     const r = await fetch("/api/ask?q=" + encodeURIComponent(question)).then(r => r.json());
     clearInterval(tick);
-    item.querySelector(".a").innerHTML = r.error ? `<span style="color:#b3261e">${esc(r.error)}</span>` : `${esc(r.answer)}<span class="meta">${esc(r.model)} · ${r.seconds} s</span>`;
+    item.querySelector(".a").innerHTML = r.error ? `<span class="err">${esc(r.error)}</span>` : `${esc(r.answer)}<span class="meta">${esc(r.model)} · ${r.seconds} s</span>`;
   } catch (e) { clearInterval(tick); item.querySelector(".a").textContent = String(e.message || e); }
   $("ago").disabled = false; $("aq").value = "";
 }
@@ -409,12 +466,12 @@ $("q").addEventListener("input", () => { const k = $("q").value.trim().toUpperCa
 // ?auto=1 runs the comparison and opens one row, for screenshots and checks.
 function storyKeep() { for (let i = 0; i < STORY.length; i++) { const s = $("sh" + i), r = $("rm" + i); if (s && s.colSpan === 2) continue; if (s) s.classList.remove("on"); if (r) r.classList.remove("on"); } }
 const STORY = [
-  { k: "(no code)", name: "A sick or infectious food worker", says: "The leading factor: 40% to 59% of restaurant outbreaks (CDC)" },
-  { k: "temperature control", name: "Food held at the wrong temperature", says: "About ten times the odds of an outbreak (Seattle)" },
-  { k: "contamination", name: "Contamination and handling", says: "Odds 4.9 times higher (Minnesota, in System's graph)" },
-  { k: "pest evidence", name: "Mice, rats, roaches, flies", says: "One study, odds 3.3 (Miami, in System's graph). Not a factor in CDC's analyses" } ];
+  { k: "(no code)", name: "A sick or infectious food worker", says: "The leading factor: 40% to 59% of restaurant outbreaks with known factors", cite: 'CDC outbreak reports: <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Lipcsei+2019+foodborne+NEARS">Lipcsei 2019</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Moritz+2023+foodborne+illness+outbreaks+retail">Moritz 2023</a>' },
+  { k: "temperature control", name: "Food held at the wrong temperature", says: "About ten times the odds of an outbreak", cite: 'Seattle: <a href="https://pubmed.ncbi.nlm.nih.gov/2705592/">Irwin 1989</a>' },
+  { k: "contamination", name: "Contamination and handling", says: "Odds ratio 4.9 (95% interval 1.6 to 15.4)", cite: 'Minnesota, in System\'s graph: <a href="https://pubmed.ncbi.nlm.nih.gov/31928421/">Firestone 2020</a>' },
+  { k: "pest evidence", name: "Mice, rats, roaches, flies", says: "One study: odds ratio 3.3 (95% interval 1.1 to 13.1). Not a factor in CDC's analyses", cite: 'Miami-Dade, in System\'s graph: <a href="https://pubmed.ncbi.nlm.nih.gov/11344897/">Cruz 2001</a>' } ];
 function storyInit() {
-  $("storyrows").innerHTML = STORY.map((r, i) => `<tr><td class="c">${r.name}</td><td class="says" id="say${i}">${r.says}</td><td class="rec" id="sh${i}"></td><td class="rec" id="rm${i}"></td></tr>`).join("");
+  $("storyrows").innerHTML = STORY.map((r, i) => `<tr><td class="c">${r.name}</td><td class="says" id="say${i}">${r.says}<small>${r.cite}</small></td><td class="rec" id="sh${i}"></td><td class="rec" id="rm${i}"></td></tr>`).join("");
 }
 async function step1() {
   $("s1").disabled = true;
@@ -427,12 +484,21 @@ async function fillRecord() {
     const g = L.groups.find(x => x.group.startsWith(STORY[i].k));
     if (g) {
       $("sh" + i).innerHTML = `<span class="n">${(100 * g.share_of_citations).toFixed(0)}%</span>`;
-      $("rm" + i).innerHTML = `<span class="bar${STORY[i].k === "pest evidence" ? " red" : ""}" style="width:${(120 * g.share_removed / max).toFixed(0)}px"></span><span class="n">${(100 * g.share_removed).toFixed(1)}%</span>`;
-    } else { $("sh" + i).className = "rec none"; $("sh" + i).colSpan = 2; $("rm" + i).remove(); $("sh" + i).textContent = "Not on the record: an inspection rarely sees it"; }
+      $("rm" + i).innerHTML = `<span class="bar${STORY[i].k === "pest evidence" ? " hl" : ""}" style="width:${(72 * g.share_removed / max).toFixed(0)}px"></span><span class="n">${(100 * g.share_removed).toFixed(1)}%</span>`;
+    } else { $("sh" + i).className = "rec none"; $("sh" + i).colSpan = 2; $("rm" + i).remove(); $("sh" + i).textContent = "Not on the record: an inspection rarely sees it."; }
     $("sh" + i).classList.add("on"); const rm = $("rm" + i); if (rm) rm.classList.add("on");
     await sleep(550);
   }
+  const pest = L.groups.find(x => x.group.startsWith("pest evidence")), others = L.groups.filter(x => /^(temperature control|contamination)/.test(x.group));
+  const rate = others.reduce((a, g) => a + g.removed, 0) / others.reduce((a, g) => a + g.cited, 0), times = rate / pest.share_removed;
+  $("v2").innerHTML = `<b>The appeal process does not follow the research.</b> After hearings, ${(100 * (1 - pest.share_removed)).toFixed(1)}% of pest citations stay on the record. Temperature and handling violations come off ${times.toFixed(0)} times as often (${(100 * rate).toFixed(1)}% against ${(100 * pest.share_removed).toFixed(1)}%). The leading cause is not on the record at all.`;
   $("v2").hidden = false;
+  $("src1").innerHTML = `Citations and removals: the city's table of <b>April 2026</b> against <b>12 November 2026</b>, whole city, ${L.codes_cited.toLocaleString("en-US")} violations on inspections from the year before April. <details class="f"><summary>ƒ</summary><pre>Earlier copy: Internet Archive capture 20260403010027 of data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv.
+Later copy: NYC Open Data 43nn-pn8j, rows updated 2026-11-12T23:06:40Z.
+A violation is "removed" when its code is on an inspection in the earlier copy and absent from the same inspection in the later one.
+Groups: pest evidence 04K, 04L, 04M, 04N; temperature control 02B, 02G, 02H; contamination and handling 04C, 04H, 06C, 06D, 06E, 06F.
+Built by analyses/underlay_drift/history.py. Exploratory, not registered or refereed.</pre></details>`;
+  $("src1").hidden = false;
 }
 let HIST = null;
 async function hist() { if (!HIST) HIST = await fetch("/api/inspections/history").then(r => r.json()); return HIST; }
@@ -440,28 +506,23 @@ const ym = s => s.slice(0, 4) + "-" + s.slice(4, 6);
 $("hist").addEventListener("click", async () => {
   const d = await hist(), max = Math.max(...d.pairs.map(p => p.fell + p.rose));
   const tf = d.pairs.reduce((a, p) => a + p.fell, 0), tr = d.pairs.reduce((a, p) => a + p.rose, 0);
-  $("histout").innerHTML = `<h2 class="strip-title">Eleven copies of the table, 2015 to 2026, whole city</h2>`
+  $("histout").innerHTML = `<h3 style="font-size:17px;margin:0 0 4px">Eleven copies of the table, 2015 to 2026, whole city</h3>`
     + `<p class="strip-lede">Each row compares one archived copy with the next. Of the scores that changed, <b>${tf.toLocaleString("en-US")} fell and ${tr.toLocaleString("en-US")} rose</b>. The one exception is 2021 to 2022, after inspections had been suspended.</p>`
     + `<table class="rows hist"><thead><tr><th>Earlier copy</th><th>Later copy</th><th>Scores that fell</th><th>Scores that rose</th><th></th></tr></thead><tbody>`
     + d.pairs.map(p => `<tr><td>${ym(p.from)}</td><td>${ym(p.to)}</td><td class="sc">${p.fell.toLocaleString("en-US")}</td><td class="sc"><span class="to">${p.rose}</span></td>`
-      + `<td style="width:46%"><span class="barf" style="width:${(100 * p.fell / max).toFixed(1)}%"></span><span class="barr" style="width:${(100 * p.rose / max).toFixed(1)}%"></span></td></tr>`).join("")
+      + `<td style="width:44%"><span class="barf" style="width:${(100 * p.fell / max).toFixed(1)}%"></span><span class="barr" style="width:${(100 * p.rose / max).toFixed(1)}%"></span></td></tr>`).join("")
     + `</tbody></table>`;
   $("histout").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 $("codes").addEventListener("click", async () => {
   const L = (await hist()).latest, row = c => `<tr><td><b>${esc(c.code)}</b></td><td>${esc(c.description)}</td><td class="sc">${c.cited.toLocaleString("en-US")}</td><td class="sc">${(100 * c.share).toFixed(1)}%</td></tr>`;
-  $("codesout").innerHTML = `<h2 class="strip-title">Which violations come off the record</h2>`
+  $("codesout").innerHTML = `<h3 style="font-size:17px;margin:var(--s3) 0 4px">Violations removed most and least often</h3>`
     + `<p class="strip-lede">April to November 2026, whole city, inspections from the year before April. Of ${L.codes_cited.toLocaleString("en-US")} violations cited, <b>${L.codes_removed.toLocaleString("en-US")} were removed and ${L.codes_added} added</b>. Removals are rare. Practices come off about five times as often as evidence of pests.</p>`
     + `<table class="rows"><thead><tr><th>Code</th><th>Violation</th><th>Cited</th><th>Removed later</th></tr></thead><tbody>`
     + `<tr><td colspan="4" class="grp">Removed most often</td></tr>` + L.most_removed.map(row).join("")
     + `<tr><td colspan="4" class="grp">Removed least often</td></tr>` + L.least_removed.map(row).join("") + `</tbody></table>`;
   $("codesout").scrollIntoView({ behavior: "smooth", block: "start" });
 });
-const RESEARCH = [
-  { k: "(no code)", name: "A sick or infectious food worker", says: "The leading factor: 40% to 59% of restaurant outbreaks with known factors (CDC: Lipcsei 2019, Moritz 2023).", none: "An inspection rarely sees it. No violation code for it is among those cited 200 times or more." },
-  { k: "temperature control", name: "Temperature control", says: "About ten times the odds of an outbreak (Seattle: Irwin 1989)." },
-  { k: "contamination", name: "Contamination and handling", says: "Odds ratio 4.9 for a contamination violation (Minnesota: Firestone 2020, in System's graph)." },
-  { k: "pest evidence", name: "Evidence of mice, rats, roaches or flies", says: "One study: odds ratio 3.3 (Miami-Dade: Cruz 2001, in System's graph). Not a named factor in CDC's outbreak analyses." } ];
 $("why").addEventListener("click", () => {
   const root = $("strips"); root.textContent = "";
   const s = COMICS.strips.find(x => x.id === "restaurants"); if (!s) return;

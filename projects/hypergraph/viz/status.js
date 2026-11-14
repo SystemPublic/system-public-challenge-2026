@@ -4,7 +4,7 @@
   const page = location.pathname.split("/").pop() || "index.html";
   const b = document.createElement("div");
   b.id = "status-badge";
-  b.style.cssText = "position:fixed;top:8px;right:10px;z-index:50;font:12.5px/1.3 'Helvetica Neue',Helvetica,Arial,sans-serif;background:#000;color:#fff;padding:6px 10px;border-radius:4px;display:flex;gap:8px;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.3)";
+  b.style.cssText = "position:fixed;bottom:8px;right:10px;z-index:50;font:12.5px/1.3 'Helvetica Neue',Helvetica,Arial,sans-serif;background:#000;color:#fff;padding:6px 10px;border-radius:4px;display:flex;gap:8px;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.3)";
   b.innerHTML = '<span id="status-light" style="width:11px;height:11px;border-radius:50%;background:#888;display:inline-block"></span><span id="status-text">checking the server…</span>';
   document.body.appendChild(b);
   const light = b.querySelector("#status-light"), text = b.querySelector("#status-text");

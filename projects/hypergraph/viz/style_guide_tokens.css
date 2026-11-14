@@ -1,0 +1,24 @@
+/* Tokens from docs/style_guide.md, section 10 (neutral colours, type, space), with set A's surfaces.
+   The guide puts these on :root in style.css. Until the site adopts them there, a page that follows the
+   guide loads this file after style.css. Remove it when style.css carries the same names. */
+:root {
+  --bg: #eef1f4; --card: #ffffff; --card2: #f4f6f9; --ink: #171d24; --muted: #5a6673; --faint: #8a97a3;
+  --line: #e1e6eb; --line2: #cbd3db; --track: #e4e9ee; --accent: #0f9d8a; --warn: #b3413a;
+  --ink-2: #5a6673; --rule: #cbd3db; --panel: #ffffff; --grid: #e4e9ee;
+  --hl: #ffd60a; --hl-soft: #fff3b0; --hl-ink: #171d24;   /* the one highlight colour for change (section 12) */
+  --serif: "Spectral", "Iowan Old Style", Georgia, serif;
+  --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --s1: 8px; --s2: 16px; --s3: 28px; --s4: 48px; --s5: 88px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #13171b; --card: #1a2026; --card2: #20272e; --ink: #e8ecef; --muted: #a3aeb8; --faint: #76838f;
+    --line: #2a323a; --line2: #39434d; --track: #2a323a; --accent: #27a893; --warn: #e8837b;
+    --ink-2: #a3aeb8; --rule: #39434d; --panel: #1a2026; --grid: #2a323a; --hl-soft: #4a3f08; --hl-ink: #171d24;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #13171b; --card: #1a2026; --card2: #20272e; --ink: #e8ecef; --muted: #a3aeb8; --faint: #76838f;
+  --line: #2a323a; --line2: #39434d; --track: #2a323a; --accent: #27a893; --warn: #e8837b;
+  --ink-2: #a3aeb8; --rule: #39434d; --panel: #1a2026; --grid: #2a323a; --hl-soft: #4a3f08; --hl-ink: #171d24;
+}
