@@ -1,0 +1,452 @@
+<title>Bridging Medicine and Heat</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: one reading column; each section = one idea, one visual, the numbers behind it.
+   Palette follows Cool-Aid's tokens (web/src/styles/tokens.css): System indigo for the graph,
+   heat vermillion for heat, Okabe–Ito status colors for verification. Validated (dataviz validator)
+   light #4f46e5/#d55e00, dark #7078ee/#d8692a. */
+:root {
+  --bg: #ffffff;
+  --surface: #f7f7f5;
+  --line: #dcdcd7;
+  --line-strong: #6b6b66;
+  --ink: #141414;
+  --muted: #4b5563;
+  --graph: #4f46e5;
+  --graph-ink: #3730a3;
+  --graph-bg: #eef2ff;
+  --heat: #d55e00;
+  --heat-ink: #a0410a;
+  --heat-bg: #fbe3d6;
+  --ok: #047857; --ok-soft: #a7e3cb; --warn: #b45309; --unv: #9ca3af;
+  --ok-on: #ffffff; --ok-soft-on: #0b3d2c; --warn-on: #ffffff; --unv-on: #141414;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131416; --surface: #1c1e21; --line: #2e3136; --line-strong: #8a9099;
+    --ink: #ececea; --muted: #a6acb4;
+    --graph: #7078ee; --graph-ink: #b4b9ff; --graph-bg: #23254a;
+    --heat: #d8692a; --heat-ink: #f3a777; --heat-bg: #3a2416;
+    --ok: #34b38a; --ok-soft: #1f5a47; --warn: #e0a043; --unv: #6b7280;
+    --ok-on: #0b1f18; --ok-soft-on: #d7f5e9; --warn-on: #1f1405; --unv-on: #f3f4f6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131416; --surface: #1c1e21; --line: #2e3136; --line-strong: #8a9099;
+  --ink: #ececea; --muted: #a6acb4;
+  --graph: #7078ee; --graph-ink: #b4b9ff; --graph-bg: #23254a;
+  --heat: #d8692a; --heat-ink: #f3a777; --heat-bg: #3a2416;
+  --ok: #34b38a; --ok-soft: #1f5a47; --warn: #e0a043; --unv: #6b7280;
+  --ok-on: #0b1f18; --ok-soft-on: #d7f5e9; --warn-on: #1f1405; --unv-on: #f3f4f6;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.55 var(--font); }
+.wrap { max-width: 960px; margin: 0 auto; padding-block: 40px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { margin: 0; line-height: 1.2; text-wrap: balance; }
+h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -0.015em; }
+h2 { font-size: 25px; letter-spacing: -0.01em; }
+h3 { font-size: 16px; }
+p { margin: 0; max-width: 66ch; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--graph-ink); }
+header { display: grid; gap: 16px; padding-bottom: 32px; }
+.lede { font-size: 19px; }
+.formula { font-family: var(--mono); font-size: 17px; font-weight: 600; display: inline-flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.formula .m { color: var(--ink); }
+.formula .e { color: var(--graph-ink); background: var(--graph-bg); padding: 2px 8px; border-radius: 6px; }
+.formula .h { color: var(--heat-ink); background: var(--heat-bg); padding: 2px 8px; border-radius: 6px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.tile { border-top: 3px solid var(--graph); background: var(--surface); padding: 12px 14px 14px; min-width: 0; }
+.tile.heat { border-top-color: var(--heat); }
+.tile .n { font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.tile .t { font-size: 14px; color: var(--muted); line-height: 1.4; margin-top: 4px; }
+section { display: grid; gap: 16px; padding-block: 36px; border-top: 1px solid var(--line); }
+section > * { min-width: 0; }
+.move { display: flex; gap: 10px; align-items: baseline; }
+.move .k { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--graph-ink); white-space: nowrap; }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+svg { display: block; height: auto; }
+svg text { font-family: var(--font); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--muted); align-items: center; }
+.legend .sw { display: inline-block; width: 26px; height: 0; border-top: 4px solid var(--graph); vertical-align: middle; margin-right: 6px; }
+.legend .sw.dash { border-top-style: dashed; opacity: .7; }
+.legend .sw.heat { border-top-color: var(--heat); }
+.callout { background: var(--surface); border-left: 3px solid var(--line-strong); padding: 12px 16px; font-size: 15px; }
+.callout b { color: var(--ink); }
+
+/* Matrix */
+table { border-collapse: separate; border-spacing: 2px; font-size: 14px; width: 100%; min-width: 680px; }
+th, td { padding: 7px 8px; text-align: center; font-variant-numeric: tabular-nums; }
+thead th { font-size: 12.5px; font-weight: 700; color: var(--muted); vertical-align: bottom; }
+thead th .hl { display: block; font-weight: 600; color: var(--heat-ink); font-size: 12px; margin-top: 2px; }
+tbody th { text-align: left; font-weight: 600; white-space: nowrap; }
+td.c { border-radius: 4px; color: var(--ink); }
+td.c0 { color: var(--muted); }
+td.c1 { background: color-mix(in oklab, var(--graph) 14%, var(--bg)); }
+td.c2 { background: color-mix(in oklab, var(--graph) 26%, var(--bg)); }
+td.c3 { background: color-mix(in oklab, var(--graph) 40%, var(--bg)); font-weight: 700; }
+td.c4 { background: color-mix(in oklab, var(--graph) 54%, var(--bg)); font-weight: 800; }
+td.dir { text-align: left; white-space: nowrap; }
+.pill { display: inline-block; font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 999px; }
+.pill.never { background: var(--graph-bg); color: var(--graph-ink); }
+.pill.some { background: var(--surface); color: var(--muted); border: 1px solid var(--line); }
+tr.gap th { color: var(--muted); }
+.scale { display: flex; gap: 2px; align-items: center; font-size: 12.5px; color: var(--muted); flex-wrap: wrap; }
+.scale span.b { width: 34px; height: 14px; border-radius: 3px; display: inline-block; }
+
+/* Patient card (mirrors the clinician "How it adds up" panel) */
+.patient { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+@media (max-width: 720px) { .patient { grid-template-columns: 1fr; } }
+.pcard { border: 1px solid var(--line); border-left: 4px solid var(--heat); background: color-mix(in oklab, var(--heat-bg) 55%, var(--bg)); border-radius: 8px; padding: 14px; display: grid; gap: 10px; }
+.pcard .row { display: flex; justify-content: space-between; gap: 8px; align-items: start; }
+.badge { background: var(--heat); color: #141414; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; gap: 6px; align-items: center; border: 1px solid var(--line); background: var(--bg); border-radius: 999px; padding: 2px 4px 2px 10px; font-size: 13px; }
+.chip b { font-variant-numeric: tabular-nums; background: var(--graph-bg); color: var(--graph-ink); border-radius: 999px; padding: 0 7px; }
+.chip b.z { background: var(--surface); color: var(--muted); }
+.chip.h b { background: var(--heat-bg); color: var(--heat-ink); }
+.sub { font-size: 12.5px; font-weight: 700; color: var(--muted); }
+
+/* Bars */
+.bars { display: grid; gap: 6px; }
+.bar { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 12px; align-items: center; font-size: 14px; }
+.bar .lab { text-align: right; }
+.bar .track { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.bar .fill { height: 18px; background: var(--graph); border-radius: 0 4px 4px 0; min-width: 2px; }
+.bar .v { font-variant-numeric: tabular-nums; font-weight: 700; }
+.bar .why { color: var(--muted); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 560px) { .bar { grid-template-columns: 1fr; gap: 2px; } .bar .lab { text-align: left; font-weight: 600; } }
+
+/* Verification */
+.stack { display: flex; gap: 2px; height: 34px; width: 100%; }
+.stack div { display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; min-width: 0; overflow: hidden; }
+.stack div:first-child { border-radius: 4px 0 0 4px; } .stack div:last-child { border-radius: 0 4px 4px 0; }
+.vk { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; }
+.vk i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px 20px; }
+.facts div { border-top: 1px solid var(--line); padding-top: 8px; font-size: 14.5px; }
+.facts b { display: block; font-size: 22px; font-variant-numeric: tabular-nums; }
+
+/* Where it shows up */
+.uses { display: grid; gap: 0; }
+.use { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); }
+.use:first-child { border-top: 0; }
+.st { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; justify-self: start; align-self: start; white-space: nowrap; }
+.st.built { background: var(--graph-bg); color: var(--graph-ink); }
+.st.cached { background: var(--surface); color: var(--muted); border: 1px solid var(--line); }
+.st.stub { background: var(--heat-bg); color: var(--heat-ink); }
+@media (max-width: 560px) { .use { grid-template-columns: 1fr; gap: 6px; } }
+code { font-family: var(--mono); font-size: .88em; }
+.foot { font-size: 13px; color: var(--muted); display: grid; gap: 6px; }
+
+/* Tooltip */
+#tip { position: fixed; pointer-events: none; z-index: 20; background: var(--ink); color: var(--bg); font-size: 13px; line-height: 1.4; padding: 7px 10px; border-radius: 6px; max-width: 280px; opacity: 0; transition: opacity .1s; }
+#tip.on { opacity: 1; }
+.hit { cursor: default; }
+.hit:focus { outline: none; }
+.hit:focus-visible + .vis, .hit:hover + .vis { stroke-opacity: 1 !important; }
+@media (prefers-reduced-motion: reduce) { #tip { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Cool-Aid · System Public Graph</div>
+    <h1>How we used the graph to connect medicines to heat</h1>
+    <p class="lede">Almost no study asks "what does this medicine do in a heat wave?" System only holds a handful of those direct findings. But it holds thousands of findings on the halves of that question. So we built a bridge out of them.</p>
+    <div class="formula" aria-label="medicine, then body effect, then heat">
+      <span class="m">medicine</span><span>→</span><span class="e">body effect</span><span>←</span><span class="h">heat</span>
+    </div>
+    <p class="muted">If a medicine weakens a body effect and heat strains the same effect, the two risks meet there. Each half is well studied. The whole is the connection the graph lets us draw.</p>
+    <div class="tiles">
+      <div class="tile"><div class="n">38</div><div class="t">medicine → effect ← heat pathways for our 15 medicine groups</div></div>
+      <div class="tile"><div class="n">22</div><div class="t">of those pathways belong to medicines never studied directly with heat in System</div></div>
+      <div class="tile"><div class="n">13 / 15</div><div class="t">medicine groups the graph reaches on its own; the 2 it misses are explained below</div></div>
+      <div class="tile heat"><div class="n">118 / 300</div><div class="t">synthetic patients with 2+ medicines on the same weak spot, both halves backed by System</div></div>
+    </div>
+  </header>
+
+  <section id="bridge">
+    <div class="move"><span class="k">Move 1</span><h2>The bridge: two well-studied halves make one connection</h2></div>
+    <p>We pulled every System finding that names one of our 15 medicine groups, heat, or one of five body effects (kidney injury, low sodium, dehydration, sweating, body temperature): 15,001 findings over 1,902 API calls. Then we kept the findings that link a medicine to an effect, and heat to an effect, and joined them on the effect.</p>
+    <div class="legend">
+      <span><span class="sw"></span>Medicine never studied directly with heat in System</span>
+      <span><span class="sw dash"></span>Medicine also has a direct heat study</span>
+      <span><span class="sw heat"></span>Heat → effect</span>
+      <span>Line width = number of studies</span>
+    </div>
+    <div class="scroll"><svg id="bridgeSvg" role="img" aria-label="Connection diagram: 15 medicine groups on the left link to five body effects in the middle, which link to heat on the right. Exact counts are in the table below."></svg></div>
+    <div class="callout">Blood pressure is left out on purpose. Most medicine → blood-pressure findings are trials of a blood-pressure drug doing its job, so they would swamp the picture without saying anything about heat. They are kept in the data (<code>system_api_pathways.csv</code>).</div>
+  </section>
+
+  <section id="matrix">
+    <div class="move"><span class="k">Move 2</span><h2>Reading across: where the bridge is strong and where it is missing</h2></div>
+    <p>The same pathways as numbers. Each cell counts System studies linking the medicine group to that effect. The heat row under each effect is the other half. The last column is the direct medicine × heat evidence the bridge stands in for.</p>
+    <div class="scale" aria-hidden="true">
+      <span>Studies:</span>
+      <span class="b" style="background:var(--surface);border:1px solid var(--line)"></span>0
+      <span class="b" style="background:color-mix(in oklab,var(--graph) 14%,var(--bg))"></span>1–2
+      <span class="b" style="background:color-mix(in oklab,var(--graph) 26%,var(--bg))"></span>3–9
+      <span class="b" style="background:color-mix(in oklab,var(--graph) 40%,var(--bg))"></span>10–29
+      <span class="b" style="background:color-mix(in oklab,var(--graph) 54%,var(--bg))"></span>30+
+    </div>
+    <div class="scroll"><table id="matrixTable"></table></div>
+    <p class="muted small">The gaps are findings too. The medicines that stop sweating or raise body heat (anticholinergics, topiramate, stimulants) have 0–2 studies on those effects in System, even though classic heat advice worries about them most. Cool-Aid labels those claims "Early signs" instead of overstating them.</p>
+  </section>
+
+  <section id="check">
+    <div class="move"><span class="k">Move 3</span><h2>Checking the bridge against what we already knew</h2></div>
+    <p>A method that connects anything to anything is useless. So before trusting the bridge, we ran it on medicines whose heat risk is already in the literature and guidance, to see whether the graph finds them without being told.</p>
+    <div class="facts">
+      <div><b>13 of 15</b>of our known heat-risk medicine groups reach heat through at least one effect other than blood pressure.</div>
+      <div><b>2 missed</b>Topiramate/zonisamide works through sweating, which has almost no medicine studies in System. Epinephrine's risk is the pen spoiling in heat, a storage problem with no body effect to connect.</div>
+      <div><b>#1 of 19</b>NSAIDs, which were not on our list, top the non-blood-pressure pathway score across every group we scored (kidney injury: 45 studies). Heat guidance already warns about them in the "triple whammy" with diuretics and ACE inhibitors.</div>
+    </div>
+    <p class="muted small">Sources: <code>system_api_pathway_drug_summary.csv</code> (19 groups: our 15 plus 4 comparators), <code>system_api_pathways.csv</code>.</p>
+  </section>
+
+  <section id="patient">
+    <div class="move"><span class="k">Move 4</span><h2>From the graph to one person's medicine list</h2></div>
+    <p>A clinician doesn't treat a medicine group, they treat a patient on three medicines at once. So we run the bridge per patient: for each body effect, which of their medicines weaken it, and does System have findings on both halves? When two or more medicines land on the same effect, the risks stack, and the clinician sees why.</p>
+    <div class="patient">
+      <div class="pcard" aria-label="Example: synthetic patient S04, sweating">
+        <div class="row"><h3>Sweating (cooling by sweat)</h3><span class="badge">2+ medicines</span></div>
+        <div><div class="sub">Studies in System</div>
+          <div class="chips">
+            <span class="chip h">Heat <b>6</b></span>
+            <span class="chip">benztropine <b class="z">0</b></span>
+            <span class="chip">clozapine <b>1</b></span>
+            <span class="chip">haloperidol <b>1</b></span>
+          </div>
+        </div>
+        <p class="small muted">Both halves have System findings. The combination itself is untested in heat.</p>
+      </div>
+      <div class="pcard" aria-label="Example: synthetic patient S04, body temperature">
+        <div class="row"><h3>Brain thermostat / body heat</h3><span class="badge">2+ medicines</span></div>
+        <div><div class="sub">Studies in System</div>
+          <div class="chips">
+            <span class="chip h">Heat <b>32</b></span>
+            <span class="chip">clozapine <b>1</b></span>
+            <span class="chip">haloperidol <b>1</b></span>
+          </div>
+        </div>
+        <p class="small muted">Both halves have System findings. The combination itself is untested in heat.</p>
+      </div>
+    </div>
+    <p>This is Ramon (synthetic patient S04): 44, schizophrenia, on clozapine, haloperidol and benztropine, lives alone. Three of his medicines land on sweating and two on body heat, which is why he sits in the high-risk group on the clinic board. <b>118 of our 300 synthetic patients</b> have at least one effect like this.</p>
+    <p class="muted small">These cards are the "How it adds up" panel in the clinician view. Its counts come from the System Dataverse v2.1 bulk release (<code>system_pathways.csv</code>), so they differ slightly from the live-API counts above. Both are labeled with their source in the app.</p>
+  </section>
+
+  <section id="leads">
+    <div class="move"><span class="k">Move 5</span><h2>Pointing past our list</h2></div>
+    <p>Run the bridge backwards and the graph suggests medicines we never looked at. These are the outpatient drugs with the most studies on the non-blood-pressure effects that heat also strains. They are leads, not findings.</p>
+    <div class="bars" id="leadBars" role="list"></div>
+    <div class="callout"><b>Why these stay unvalidated.</b> The graph links a medicine to an effect whatever the direction. Tolvaptan is here because it <i>treats</i> low sodium, not because it causes it. That is exactly why a person has to read the studies before any lead reaches a label. 262 candidates sit in <code>system_hidden_drug_candidates.csv</code>, marked unvalidated. Broad classes such as "antibiotic" are left out of this chart.</div>
+  </section>
+
+  <section id="reader">
+    <div class="move"><span class="k">Move 6</span><h2>System as a second reader, and us as its auditor</h2></div>
+    <p>We extracted every number we quote from paper abstracts ourselves. System extracts findings from papers too, so we compared paper by paper: same number, same meaning, same direction. The connection runs both ways. Where System was wrong, we report it back.</p>
+    <div>
+      <div class="sub" style="margin-bottom:6px">105 numbers we quote, by verification badge</div>
+      <div class="stack" id="vstack"></div>
+    </div>
+    <div class="vk" id="vkey"></div>
+    <div class="facts">
+      <div><b>80 of 83</b>papers we cite are indexed in System</div>
+      <div><b>0</b>number or direction conflicts where we both read the same result</div>
+      <div><b>7 numbers in 3 papers</b>System had our number on the wrong drug, or no drug. Our claim keeps ✓; the error goes on the fix list.</div>
+      <div><b>26</b>rows on the fix list for System (<code>system_audit_fix_list.csv</code>)</div>
+      <div><b>36 + 15</b>reverse check: findings on our papers we hadn't used, and strong links to papers missing from our list, now on a review list</div>
+    </div>
+  </section>
+
+  <section id="app">
+    <div class="move"><span class="k">In the app</span><h2>Where each connection shows up in Cool-Aid</h2></div>
+    <div class="uses">
+      <div class="use"><span class="st built">Built</span><div><b>Drug Card badges.</b> Every claim on a medicine card carries the badge from Move 6 (✓✓, ✓, ⚠, ?). Claims marked "?" never reach a label.</div></div>
+      <div class="use"><span class="st built">Built</span><div><b>Clinician "How it adds up."</b> The per-patient bridge from Move 4, with study counts on each half.</div></div>
+      <div class="use"><span class="st cached">Cached run</span><div><b>Heat-day time-lapse patient card.</b> Reads the live-API pathway counts from the 14 Nov run (<code>system_api_pathways.csv</code>). Every response is cached, so the run repeats without spending calls.</div></div>
+      <div class="use"><span class="st stub">Not wired</span><div><b>Live refresh on Drug Cards.</b> The route (<code>/api/system-live</code>) is a stub that makes no calls yet. The calls it would make are written down in <code>system_api_live_layer.json</code>.</div></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div>Sources (all in <code>data/processed/</code>): <code>system_api_findings.csv</code> (15,001 findings), <code>system_api_pathways.csv</code>, <code>system_api_pathway_drug_summary.csv</code>, <code>system_hidden_drug_candidates.csv</code>, <code>system_api_verification_summary.json</code>, <code>system_audit_fix_list.csv</code>, <code>panel_scores_replay.json</code>. API request log: <code>data/raw/system/api/request_log.csv</code> (1,902 calls, under the 10,000-a-day limit). System API run on 14 Nov 2026.</div>
+    <div>Patients are synthetic. Not medical advice. Companion page: <code>docs/system-api-story.html</code>.</div>
+  </div>
+</div>
+<div id="tip" role="tooltip"></div>
+
+<script>
+(function () {
+  // ---- Data (copied from data/processed/system_api_pathways.csv, our 15 groups, non-BP effects) ----
+  const EFFECTS = [
+    { k: "aki", label: "Kidney injury" },
+    { k: "hyponatremia", label: "Low sodium" },
+    { k: "dehydration", label: "Dehydration" },
+    { k: "sweating", label: "Sweating" },
+    { k: "body_temp", label: "Body temperature" },
+  ];
+  const HEAT = { aki: 12, hyponatremia: 6, dehydration: 8, sweating: 11, body_temp: 71 };
+  // [label, direct medicine×heat studies, {effect: medicine→effect studies}] — ordered to reduce crossings
+  const MEDS = [
+    ["Loop diuretics", 0, { aki: 31, hyponatremia: 10, dehydration: 3 }],
+    ["ACE inhibitors / ARBs", 0, { aki: 47, hyponatremia: 8, dehydration: 1, sweating: 1 }],
+    ["SGLT2 inhibitors", 0, { aki: 32, hyponatremia: 2, dehydration: 8 }],
+    ["Metformin", 0, { aki: 11, hyponatremia: 1, dehydration: 1 }],
+    ["Insulin (incl. pumps)", 2, { aki: 8, hyponatremia: 4, dehydration: 1, body_temp: 1 }],
+    ["Lithium", 2, { aki: 1, hyponatremia: 1 }],
+    ["Thiazides", 1, { aki: 3, hyponatremia: 26, dehydration: 1 }],
+    ["SSRIs", 0, { hyponatremia: 19, sweating: 2, body_temp: 1 }],
+    ["Antipsychotics (incl. clozapine)", 0, { aki: 4, hyponatremia: 6, sweating: 1, body_temp: 1 }],
+    ["Anticholinergics (oxybutynin)", 0, { hyponatremia: 1, sweating: 1 }],
+    ["Beta blockers", 1, { aki: 8, sweating: 2, body_temp: 4 }],
+    ["Fentanyl / opioid patches", 2, { aki: 8, hyponatremia: 2, body_temp: 3 }],
+    ["ADHD stimulants", 2, { body_temp: 1 }],
+    ["Topiramate / zonisamide", 0, {}],
+    ["Epinephrine auto-injectors", 0, {}],
+  ];
+  // Outpatient candidates not in our 15 (system_hidden_drug_candidates.csv; specific drugs only)
+  const LEADS = [
+    ["Proton-pump inhibitors", 23, "kidney injury 21 · low sodium 2"],
+    ["Tolvaptan", 19, "low sodium 14 · kidney injury 5"],
+    ["Simvastatin", 14, "kidney injury 14"],
+    ["Aspirin", 8, "kidney injury 7 · sweating 1"],
+    ["Tacrolimus", 8, "kidney injury 8"],
+    ["Dexamethasone", 5, "kidney injury 3 · body temperature 2"],
+    ["Trimethoprim-sulfamethoxazole", 5, "kidney injury 4 · body temperature 1"],
+    ["Heparin", 5, "low sodium 2 · kidney injury 2 · body temperature 1"],
+  ];
+  // system_api_verification_summary.json → badges_numbers
+  const BADGES = [
+    { k: "✓✓", n: 14, label: "System found the same number", c: "var(--ok)", on: "var(--ok-on)" },
+    { k: "✓", n: 58, label: "Verified in the abstract", c: "var(--ok-soft)", on: "var(--ok-soft-on)" },
+    { k: "⚠", n: 7, label: "System mislabeled it", c: "var(--warn)", on: "var(--warn-on)" },
+    { k: "?", n: 26, label: "Not yet verified (hidden from labels)", c: "var(--unv)", on: "var(--unv-on)" },
+  ];
+
+  const tip = document.getElementById("tip");
+  const showTip = (html, x, y) => {
+    tip.innerHTML = html; tip.classList.add("on");
+    const r = tip.getBoundingClientRect();
+    let left = x + 14, top = y + 14;
+    if (left + r.width > innerWidth - 8) left = x - r.width - 14;
+    if (top + r.height > innerHeight - 8) top = y - r.height - 14;
+    tip.style.left = Math.max(8, left) + "px"; tip.style.top = Math.max(8, top) + "px";
+  };
+  const hideTip = () => tip.classList.remove("on");
+  const attachTip = (el, html) => {
+    el.addEventListener("pointermove", (e) => showTip(html, e.clientX, e.clientY));
+    el.addEventListener("pointerleave", hideTip);
+    el.addEventListener("focus", () => { const r = el.getBoundingClientRect(); showTip(html, r.left + r.width / 2, r.top + r.height / 2); });
+    el.addEventListener("blur", hideTip);
+  };
+  const NS = "http://www.w3.org/2000/svg";
+  const mk = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+  const w = (n) => 1.2 + 1.55 * Math.sqrt(n);
+
+  // ---- Move 1: bridge diagram ----
+  (function () {
+    const svg = document.getElementById("bridgeSvg");
+    const W = 920, top = 30, rowH = 31, H = top + MEDS.length * rowH + 16;
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    svg.style.width = "100%"; svg.style.minWidth = "720px";
+    const xMed = 250, xEffL = 520, effW = 150, xEffR = xEffL + effW, xHeat = 840;
+    const yMed = (i) => top + i * rowH + rowH / 2;
+    const span = MEDS.length * rowH, effGap = span / EFFECTS.length;
+    const yEff = (j) => top + effGap * j + effGap / 2;
+    const yHeat = top + span / 2;
+    mk("text", { x: xMed, y: 16, "text-anchor": "end", "font-size": 12, "font-weight": 700, fill: "var(--muted)" }, svg).textContent = "MEDICINE GROUP";
+    mk("text", { x: xEffL + effW / 2, y: 16, "text-anchor": "middle", "font-size": 12, "font-weight": 700, fill: "var(--muted)" }, svg).textContent = "BODY EFFECT";
+    mk("text", { x: xHeat, y: 16, "text-anchor": "middle", "font-size": 12, "font-weight": 700, fill: "var(--muted)" }, svg).textContent = "HEAT";
+    const links = mk("g", {}, svg);
+    // heat → effect
+    EFFECTS.forEach((e, j) => {
+      const d = `M${xHeat - 26},${yHeat} C${xHeat - 110},${yHeat} ${xEffR + 70},${yEff(j)} ${xEffR},${yEff(j)}`;
+      const g = mk("g", {}, links);
+      const hit = mk("path", { d, fill: "none", stroke: "transparent", "stroke-width": Math.max(14, w(HEAT[e.k]) + 8), class: "hit", tabindex: 0, "aria-label": `Heat to ${e.label}: ${HEAT[e.k]} studies` }, g);
+      mk("path", { d, fill: "none", stroke: "var(--heat)", "stroke-width": w(HEAT[e.k]), "stroke-opacity": 0.7, class: "vis", "pointer-events": "none" }, g);
+      attachTip(hit, `<b>Heat → ${e.label.toLowerCase()}</b><br>${HEAT[e.k]} studies in System`);
+    });
+    // medicine → effect
+    MEDS.forEach(([label, direct, legs], i) => {
+      EFFECTS.forEach((e, j) => {
+        const n = legs[e.k] || 0; if (!n) return;
+        const d = `M${xMed + 8},${yMed(i)} C${xMed + 140},${yMed(i)} ${xEffL - 120},${yEff(j)} ${xEffL},${yEff(j)}`;
+        const g = mk("g", {}, links);
+        const hit = mk("path", { d, fill: "none", stroke: "transparent", "stroke-width": Math.max(12, w(n) + 8), class: "hit", tabindex: 0, "aria-label": `${label} to ${e.label}: ${n} studies` }, g);
+        mk("path", { d, fill: "none", stroke: "var(--graph)", "stroke-width": w(n), "stroke-opacity": direct ? 0.45 : 0.72, "stroke-dasharray": direct ? "6 4" : "none", class: "vis", "pointer-events": "none" }, g);
+        attachTip(hit, `<b>${label} → ${e.label.toLowerCase()}</b><br>${n} ${n === 1 ? "study" : "studies"} · heat → ${e.label.toLowerCase()}: ${HEAT[e.k]}<br>${direct ? `Also ${direct} direct heat ${direct === 1 ? "study" : "studies"}` : "Never studied directly with heat in System"}`);
+      });
+    });
+    // medicine nodes
+    MEDS.forEach(([label, direct, legs], i) => {
+      const none = !Object.keys(legs).length;
+      mk("circle", { cx: xMed + 4, cy: yMed(i), r: 4.5, fill: none ? "var(--bg)" : "var(--ink)", stroke: none ? "var(--line-strong)" : "var(--ink)", "stroke-width": 1.5 }, svg);
+      const t = mk("text", { x: xMed - 6, y: yMed(i) + 4.5, "text-anchor": "end", "font-size": 13.5, fill: none ? "var(--muted)" : "var(--ink)", "font-weight": none ? 400 : 600 }, svg);
+      t.textContent = label + (none ? "  (no path)" : "");
+    });
+    // effect nodes
+    EFFECTS.forEach((e, j) => {
+      mk("rect", { x: xEffL, y: yEff(j) - 17, width: effW, height: 34, rx: 6, fill: "var(--graph-bg)", stroke: "var(--graph)", "stroke-width": 1.5 }, svg);
+      mk("text", { x: xEffL + effW / 2, y: yEff(j) + 5, "text-anchor": "middle", "font-size": 14, "font-weight": 700, fill: "var(--graph-ink)" }, svg).textContent = e.label;
+    });
+    // heat node
+    mk("circle", { cx: xHeat, cy: yHeat, r: 26, fill: "var(--heat-bg)", stroke: "var(--heat)", "stroke-width": 2 }, svg);
+    mk("text", { x: xHeat, y: yHeat + 5, "text-anchor": "middle", "font-size": 14, "font-weight": 800, fill: "var(--heat-ink)" }, svg).textContent = "Heat";
+  })();
+
+  // ---- Move 2: matrix ----
+  (function () {
+    const t = document.getElementById("matrixTable");
+    const bin = (n) => (n === 0 ? 0 : n <= 2 ? 1 : n <= 9 ? 2 : n <= 29 ? 3 : 4);
+    let h = `<caption class="muted small" style="caption-side:bottom;text-align:left;padding-top:8px">System studies per medicine group and body effect (live API run, 14 Nov). Source: system_api_pathways.csv.</caption><thead><tr><th scope="col" style="text-align:left">Medicine group</th>`;
+    EFFECTS.forEach((e) => (h += `<th scope="col">${e.label}<span class="hl">heat: ${HEAT[e.k]}</span></th>`));
+    h += `<th scope="col" style="text-align:left">Direct medicine × heat studies</th></tr></thead><tbody>`;
+    MEDS.forEach(([label, direct, legs]) => {
+      const none = !Object.keys(legs).length;
+      h += `<tr class="${none ? "gap" : ""}"><th scope="row">${label}</th>`;
+      EFFECTS.forEach((e) => { const n = legs[e.k] || 0; h += `<td class="c c${bin(n)}">${n || "–"}</td>`; });
+      h += `<td class="dir">${direct ? `<span class="pill some">${direct}</span>` : `<span class="pill never">never</span>`}</td></tr>`;
+    });
+    t.innerHTML = h + "</tbody>";
+  })();
+
+  // ---- Move 5: lead bars ----
+  (function () {
+    const box = document.getElementById("leadBars");
+    const max = Math.max(...LEADS.map((l) => l[1]));
+    LEADS.forEach(([name, n, why]) => {
+      const row = document.createElement("div");
+      row.className = "bar"; row.setAttribute("role", "listitem"); row.tabIndex = 0;
+      row.innerHTML = `<div class="lab">${name}</div><div class="track"><div class="fill" style="width:${(68 * n) / max}%"></div><span class="v">${n}</span><span class="why">${why}</span></div>`;
+      row.setAttribute("aria-label", `${name}: ${n} studies (${why})`);
+      attachTip(row, `<b>${name}</b><br>${n} studies on heat-strained effects<br>${why}<br><i>Unvalidated lead</i>`);
+      box.appendChild(row);
+    });
+  })();
+
+  // ---- Move 6: verification stack ----
+  (function () {
+    const total = BADGES.reduce((a, b) => a + b.n, 0);
+    const st = document.getElementById("vstack"), key = document.getElementById("vkey");
+    BADGES.forEach((b) => {
+      const d = document.createElement("div");
+      d.style.flex = String(b.n); d.style.background = b.c; d.style.color = b.on; d.tabIndex = 0;
+      d.textContent = (b.n / total) * 100 > 9 ? `${b.k} ${b.n}` : b.k;
+      d.setAttribute("aria-label", `${b.k} ${b.label}: ${b.n} of ${total}`);
+      attachTip(d, `<b>${b.k} ${b.label}</b><br>${b.n} of ${total} numbers`);
+      st.appendChild(d);
+      const k = document.createElement("span");
+      k.innerHTML = `<i style="background:${b.c}"></i><b>${b.k} ${b.n}</b> ${b.label}`;
+      key.appendChild(k);
+    });
+  })();
+})();
+</script>

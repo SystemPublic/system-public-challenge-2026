@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Data Funnel</title>
+<style>
+  /* Site design tokens (web/src/styles/tokens.css); light mode only, like the site.
+     Funnel bands use only the graph-layer pair (#eef2ff / #3730a3): tint for each step, solid for the result. */
+  :root {
+    --ui-page:#ffffff; --ui-surface:#f7f7f5; --ui-line:#d4d4d0; --ui-line-strong:#6b6b66;
+    --ui-ink:#141414; --ui-ink-muted:#4b5563;
+    --layer-graph-bg:#eef2ff; --layer-graph-fg:#3730a3;
+    --verify-double-bg:#d1fae5; --verify-double-fg:#065f46;
+    --verify-conflict-bg:#fef3c7; --verify-conflict-fg:#92400e;
+    --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--ui-page); color:var(--ui-ink); font:16px/1.5 var(--font-body); }
+  main { max-width: 1040px; margin:0 auto; padding: 32px 16px 48px; }
+  .eyebrow { display:inline-block; font-size:12px; font-weight:600; letter-spacing:.04em; color:var(--layer-graph-fg);
+             background:var(--layer-graph-bg); border-radius:999px; padding:2px 10px; margin-bottom:10px; }
+  h1 { font-size:26px; line-height:1.25; margin:0 0 6px; }
+  .lede { color:var(--ui-ink-muted); margin:0 0 22px; max-width:760px; }
+  .grid { display:grid; grid-template-columns: 1fr; gap:16px; }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+  .card { background:var(--ui-surface); border:1px solid var(--ui-line); border-radius:12px; padding:18px 18px 12px; min-width:0; }
+  .card h2 { font-size:17px; margin:0 0 2px; }
+  .card .sub { font-size:13.5px; color:var(--ui-ink-muted); margin:0 0 12px; }
+  svg { display:block; width:100%; height:auto; overflow:visible; }
+  .n  { font-size:20px; font-weight:700; font-variant-numeric: tabular-nums; }
+  .d  { font-size:12.5px; }
+  .step { cursor:default; }
+  .step:hover polygon, .step:hover rect { filter: brightness(1.06); }
+  .note { font-size:13px; color:var(--ui-ink-muted); margin:10px 0 0; }
+  details { margin-top:8px; font-size:13.5px; color:var(--ui-ink-muted); }
+  table { border-collapse:collapse; margin-top:6px; }
+  td, th { padding:3px 12px 3px 0; text-align:left; font-variant-numeric: tabular-nums; }
+  .foot { font-size:13px; color:var(--ui-ink-muted); margin:14px 0 0; }
+  #tip { position:fixed; pointer-events:none; background:var(--ui-page); border:1px solid var(--ui-line-strong); border-radius:8px;
+         padding:6px 10px; font-size:13px; opacity:0; transition:opacity .08s; max-width:280px; box-shadow:none; }
+</style>
+</head>
+<body>
+<main>
+  <span class="eyebrow">① System Public Graph</span>
+  <h1>How System narrowed and checked our data</h1>
+  <p class="lede">We used the System Public Graph API twice: to <b>find</b> evidence that links our 15 drugs to heat, and to <b>check</b> the papers we already cite. Each step drops what can't support a heat-risk claim. Live API, 14 Nov 2026.</p>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Find: from 5.9 million findings to 38 pathways</h2>
+      <p class="sub">System findings kept at each step (band width on a log scale)</p>
+      <div id="f1"></div>
+      <details><summary>Show as table</summary><table id="t1"></table></details>
+    </section>
+
+    <section class="card">
+      <h2>Check: the 83 papers we cite</h2>
+      <p class="sub">Papers at each step, and what System's extraction showed</p>
+      <div id="f2"></div>
+      <details><summary>Show as table</summary><table id="t2"></table></details>
+    </section>
+  </div>
+  <p class="foot">Sources: <code>data/processed/system_api_findings.csv</code>, <code>system_api_pathways.csv</code>, <code>system_api_verification_summary.json</code>. 1,902 API calls. System estimates ~20% of API extractions are inaccurate, so a finding counts as evidence only if it is also in the Dataverse release; mislabels never downgrade our own claim (our numbers are checked against the abstract).</p>
+</main>
+<div id="tip" role="tooltip"></div>
+<script>
+const tip = document.getElementById('tip');
+const fmt = n => n.toLocaleString('en-US');
+
+/* Stepped funnel: centered bands joined by trapezoid necks.
+   stages: [{n, label, detail, fill, ink}], width(v) -> 0..1 */
+function funnel(el, tableEl, stages, widthFn, opt = {}) {
+  const W = 900, bandH = 46, neck = 12, maxW = 380, minW = 50, cx = 200;
+  const H = stages.length * bandH + (stages.length - 1) * neck + (opt.extraH || 0);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${opt.aria}">`;
+  const wd = v => minW + (maxW - minW) * widthFn(v);
+  stages.forEach((st, i) => {
+    const y = i * (bandH + neck), w = wd(st.n);
+    if (i > 0) {
+      const pw = wd(stages[i - 1].n), py = y - neck;
+      s += `<polygon points="${cx - pw / 2},${py} ${cx + pw / 2},${py} ${cx + w / 2},${y} ${cx - w / 2},${y}" fill="var(--layer-graph-fg)" opacity=".12"/>`;
+    }
+    const t = `<b>${fmt(st.n)} ${st.unit}</b><br>${st.label}${st.detail ? '<br>' + st.detail : ''}`;
+    s += `<g class="step" data-tip="${encodeURIComponent(t)}">`;
+    s += `<rect x="${cx - w / 2}" y="${y}" width="${w}" height="${bandH}" rx="6" fill="${st.fill}" stroke="var(--layer-graph-fg)"/>`;
+    const inside = w > 96;
+    s += `<text class="n" x="${inside ? cx : cx + w / 2 + 8}" y="${y + bandH / 2 + 7}" text-anchor="${inside ? 'middle' : 'start'}" fill="${inside ? st.ink : 'var(--ui-ink)'}">${st.short || fmt(st.n)}</text>`;
+    s += `<text class="d" x="${cx + maxW / 2 + 14}" y="${y + bandH / 2 - 3}" fill="var(--ui-ink)" font-weight="600">${st.label}</text>`;
+    if (st.detail) s += `<text class="d" x="${cx + maxW / 2 + 14}" y="${y + bandH / 2 + 14}" fill="var(--ui-ink-muted)">${st.detail}</text>`;
+    s += `</g>`;
+  });
+  if (opt.after) s += opt.after(H, cx, wd, maxW);
+  s += `</svg>`;
+  el.innerHTML = s;
+  tableEl.innerHTML = `<tr><th>Step</th><th>Count</th><th></th></tr>` +
+    stages.map(st => `<tr><td>${st.label}</td><td>${fmt(st.n)}</td><td>${st.detail || ''}</td></tr>`).join('') + (opt.extraRows || '');
+  el.querySelectorAll('.step').forEach(g => {
+    g.addEventListener('mousemove', e => { tip.innerHTML = decodeURIComponent(g.dataset.tip); tip.style.opacity = 1;
+      tip.style.left = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8) + 'px'; tip.style.top = (e.clientY + 14) + 'px'; });
+    g.addEventListener('mouseleave', () => tip.style.opacity = 0);
+  });
+}
+
+/* FIND funnel: log-scaled widths */
+const logW = v => Math.log10(v) / Math.log10(5944001);
+funnel(document.getElementById('f1'), document.getElementById('t1'), [
+  { n: 5944001, short: '5.9M', unit: 'findings', label: 'All findings in System', detail: 'from 40.3M indexed studies', fill: 'var(--layer-graph-bg)', ink: 'var(--layer-graph-fg)' },
+  { n: 15001, unit: 'findings', label: 'Match our terms', detail: '15 drugs · heat · kidney, sodium, fluid', fill: 'var(--layer-graph-bg)', ink: 'var(--layer-graph-fg)' },
+  { n: 912, unit: 'findings', label: 'Link a drug or heat to a mediator', detail: '546 studies', fill: 'var(--layer-graph-bg)', ink: 'var(--layer-graph-fg)' },
+  { n: 806, unit: 'findings', label: 'Drop blood-pressure efficacy trials', detail: 'drug→mediator 588 · heat→mediator 204 · direct 14', fill: 'var(--layer-graph-bg)', ink: 'var(--layer-graph-fg)' },
+  { n: 38, unit: 'pathways', label: 'Two-hop pathways for our 15 drugs', detail: 'drug → mediator ← heat; 22 never tested directly', fill: 'var(--layer-graph-fg)', ink: 'var(--ui-page)' },
+], logW, { aria: 'Funnel of System findings from 5.9 million to 38 pathways' });
+
+/* CHECK funnel: linear widths, then a split into match / mislabel */
+const linW = v => v / 83;
+funnel(document.getElementById('f2'), document.getElementById('t2'), [
+  { n: 83, unit: 'papers', label: 'Papers we cite', detail: 'master list + research report', fill: 'var(--layer-graph-bg)', ink: 'var(--layer-graph-fg)' },
+  { n: 80, unit: 'papers', label: 'Indexed in System', detail: 'the Dataverse bulk release had only 7', fill: 'var(--layer-graph-bg)', ink: 'var(--layer-graph-fg)' },
+  { n: 15, unit: 'papers', label: 'System extracted findings', detail: '50 findings; text only, no tables', fill: 'var(--layer-graph-bg)', ink: 'var(--layer-graph-fg)' },
+], linW, {
+  aria: 'Funnel of our 83 cited papers through the System check',
+  extraH: 96,
+  extraRows: `<tr><td>✓✓ Same number as ours</td><td>7</td><td>14 numbers double-verified</td></tr><tr><td>⚠ System mislabel caught</td><td>3</td><td>7 numbers; sent to the fix list</td></tr><tr><td>Number conflicts</td><td>0</td><td></td></tr>`,
+  after: (H, cx, wd, maxW) => {
+    const y0 = H - 96, top = y0 - 0, w15 = wd(15), yb = y0 + 34, bh = 50;
+    const g = (x, w, fill, stroke, ink, big, label, detail, tipTxt) =>
+      `<g class="step" data-tip="${encodeURIComponent(tipTxt)}"><rect x="${x}" y="${yb}" width="${w}" height="${bh}" rx="6" fill="${fill}" stroke="${stroke}"/>` +
+      `<text class="n" x="${x + 12}" y="${yb + 22}" fill="${ink}">${big}</text>` +
+      `<text class="d" x="${x + 12}" y="${yb + 40}" fill="${ink}">${label}</text></g>`;
+    let s = '';
+    // split lines from the 15 band
+    s += `<path d="M${cx - 10},${top - 0} C${cx - 10},${top + 18} ${97},${top + 14} ${97},${yb}" stroke="var(--verify-double-fg)" stroke-width="2" fill="none"/>`;
+    s += `<path d="M${cx + 10},${top - 0} C${cx + 10},${top + 18} ${297},${top + 14} ${297},${yb}" stroke="var(--verify-conflict-fg)" stroke-width="2" fill="none"/>`;
+    s += g(0, 194, 'var(--verify-double-fg)', 'var(--verify-double-fg)', 'var(--ui-page)', '✓✓ 7 papers', 'same number as ours',
+           '', '<b>7 papers, 14 numbers</b><br>System extracted the same value we quote');
+    s += g(200, 194, 'var(--verify-conflict-bg)', 'var(--verify-conflict-fg)', 'var(--verify-conflict-fg)', '⚠ 3 papers', 'System mislabel → fix list',
+           '', '<b>3 papers, 7 numbers</b><br>Martin-Latry 2007, Layton 2020, Wong 2024: right number, wrong or missing drug in System');
+    const lx = cx + maxW / 2 + 14;
+    s += `<text class="d" x="${lx}" y="${yb + 14}" fill="var(--ui-ink)" font-weight="600">What System's extraction showed</text>`;
+    s += `<text class="d" x="${lx}" y="${yb + 32}" fill="var(--ui-ink-muted)">14 of our numbers double-verified · 7 mislabeled by System</text>`;
+    s += `<text class="d" x="${lx}" y="${yb + 50}" fill="var(--ui-ink-muted)">0 number or direction conflicts with our extraction</text>`;
+    return s;
+  }
+});
+</script>
+</body>
+</html>

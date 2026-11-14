@@ -1,0 +1,263 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1130" width="1600" height="1130" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif">
+  <title>The Missing Label: how we got, connected and funneled the data</title>
+  <style>
+    /* Site design tokens (web/src/styles/tokens.css); light mode only.
+       System = graph layer, Literature = literature layer, Regulatory = FDA layer,
+       Place = Store-cool/Low-risk blue, Patients = Monitor purple. */
+    :root { --bg:#ffffff; --ink:#141414; --muted:#4b5563; --line:#d4d4d0; --card:#f7f7f5;
+            --sys:#3730a3; --sysbg:#eef2ff; --lit:#166534; --litbg:#f0fdf4; --reg:#9a3412; --regbg:#fff7ed;
+            --place:#005a8c; --placebg:#dcebf5; --pat:#9c3d74; --patbg:#f6e4ee; --kb:#141414; }
+    .bg { fill: var(--bg); }
+    .t  { fill: var(--ink); }
+    .m  { fill: var(--muted); }
+    .h1 { font-size: 30px; font-weight: 700; }
+    .h2 { font-size: 15px; font-weight: 700; letter-spacing: .08em; }
+    .h3 { font-size: 16px; font-weight: 700; }
+    .b  { font-size: 13px; }
+    .s  { font-size: 11.5px; }
+    .n  { font-size: 20px; font-weight: 700; }
+    .card { fill: var(--card); stroke: var(--line); }
+    .arrow { stroke: var(--muted); stroke-width: 1.6; fill: none; marker-end: url(#ah); }
+    .sysA { stroke: var(--sys); stroke-width: 2; fill: none; stroke-dasharray: 6 4; marker-end: url(#ahs); }
+    .lane { stroke: var(--line); stroke-dasharray: 2 4; }
+    .sys  { fill: var(--sys); }   .sysbg  { fill: var(--sysbg);  stroke: var(--sys); }
+    .lit  { fill: var(--lit); }   .litbg  { fill: var(--litbg);  stroke: var(--lit); }
+    .reg  { fill: var(--reg); }   .regbg  { fill: var(--regbg);  stroke: var(--reg); }
+    .place{ fill: var(--place); } .placebg{ fill: var(--placebg);stroke: var(--place); }
+    .pat  { fill: var(--pat); }   .patbg  { fill: var(--patbg);  stroke: var(--pat); }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/></marker>
+    <marker id="ahs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3730a3"/></marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1600" height="1130"/>
+
+  <!-- Title -->
+  <text class="t h1" x="40" y="52">The Missing Label: how the data was gathered, joined and filtered</text>
+  <text class="m b" x="40" y="78">Overnight pipeline (commit 95fb864) plus the live System API pull, 14 Nov 2026. Numbers are row or record counts at each step.</text>
+
+  <!-- Column headers -->
+  <text class="m h2" x="40"   y="122">1 · GET</text>
+  <text class="m h2" x="420"  y="122">2 · CONNECT (join keys)</text>
+  <text class="m h2" x="640"  y="122">3 · FUNNEL (filter, verify, score)</text>
+  <text class="m h2" x="1300" y="122">4 · USE</text>
+  <line class="lane" x1="40" y1="132" x2="1560" y2="132"/>
+
+  <!-- ============ LANE 1: SYSTEM ============ -->
+  <rect class="sysbg" x="40" y="148" width="360" height="230" rx="10" stroke-width="1.5"/>
+  <text class="sys h3" x="58" y="174">System Public Graph</text>
+  <text class="t b" x="58" y="198">API (live, key works 14 Nov)</text>
+  <text class="m s" x="58" y="215">40.3M studies · 5.9M findings · 627k relationships</text>
+  <text class="t b" x="58" y="243">Dataverse v2.1 bulk release</text>
+  <text class="m s" x="58" y="260">2.0M findings · 845k studies · 840k edges (MD5-checked)</text>
+  <text class="t b" x="58" y="288">PubMed E-utilities</text>
+  <text class="m s" x="58" y="305">publication dates for 1,207 PMIDs (Dataverse has none)</text>
+  <text class="m s" x="58" y="336">Roles: evidence · second extractor · two-hop</text>
+  <text class="m s" x="58" y="352">connector · gap finder · auditor · live layer</text>
+
+  <rect class="card" x="420" y="168" width="200" height="190" rx="8"/>
+  <text class="t b" x="434" y="192" font-weight="700">Paper ID</text>
+  <text class="m s" x="434" y="208">PMID ⇄ PMCID ⇄ DOI</text>
+  <text class="m s" x="434" y="223">(NCBI ID converter, 6,835 ids)</text>
+  <text class="t b" x="434" y="252" font-weight="700">Drug group</text>
+  <text class="m s" x="434" y="268">variable names → 15 groups</text>
+  <text class="m s" x="434" y="283">+ mediator + heat term lists</text>
+  <text class="t b" x="434" y="312" font-weight="700">Concept ID</text>
+  <text class="m s" x="434" y="328">concept ↔ concept edges</text>
+  <text class="m s" x="434" y="343">(drug, mediator, heat)</text>
+
+  <!-- System funnel: API route (top) -->
+  <text class="sys s" x="640" y="160" font-weight="700">AUDIT OUR CITATIONS (API)</text>
+  <g>
+    <rect class="sysbg" x="640" y="168" width="120" height="58" rx="6"/><text class="t n" x="652" y="194">83</text><text class="m s" x="652" y="214">papers we cite</text>
+    <rect class="sysbg" x="780" y="168" width="120" height="58" rx="6"/><text class="t n" x="792" y="194">80</text><text class="m s" x="792" y="214">indexed</text>
+    <rect class="sysbg" x="920" y="168" width="120" height="58" rx="6"/><text class="t n" x="932" y="194">15</text><text class="m s" x="932" y="214">with findings (50)</text>
+    <rect class="sysbg" x="1060" y="168" width="160" height="58" rx="6"/><text class="t n" x="1072" y="194">7</text><text class="m s" x="1072" y="214">same number · 3 mislabeled</text>
+    <path class="arrow" d="M760,197 H778"/><path class="arrow" d="M900,197 H918"/><path class="arrow" d="M1040,197 H1058"/>
+  </g>
+  <!-- System funnel: evidence route -->
+  <text class="sys s" x="640" y="248" font-weight="700">FIND EVIDENCE (Dataverse scan + API concept / variable search)</text>
+  <g>
+    <rect class="sysbg" x="640" y="256" width="120" height="58" rx="6"/><text class="t n" x="652" y="282">2.0M</text><text class="m s" x="652" y="302">findings scanned</text>
+    <rect class="sysbg" x="780" y="256" width="120" height="58" rx="6"/><text class="t n" x="792" y="282">94,340</text><text class="m s" x="792" y="302">relevant by name</text>
+    <rect class="sysbg" x="920" y="256" width="300" height="58" rx="6"/>
+    <text class="t b" x="932" y="276" font-weight="700">1,644 drug→mediator · 101 heat→mediator</text>
+    <text class="t b" x="932" y="294" font-weight="700">18 direct drug × heat (14 studies)</text>
+    <text class="m s" x="932" y="308">API: 15,001 findings via 401 edges + variable search</text>
+    <path class="arrow" d="M760,285 H778"/><path class="arrow" d="M900,285 H918"/>
+  </g>
+  <text class="sys s" x="640" y="336" font-weight="700">CONNECT THE HOPS</text>
+  <text class="t b" x="640" y="356">drug → kidney injury / low sodium / dehydration / BP ← heat  =  <tspan font-weight="700">114 pathways</tspan> · <tspan font-weight="700">316 untested links</tspan></text>
+  <text class="m s" x="640" y="372">Validation: diuretics rank top 3; anticholinergics rank low (sweating barely in graph = a gap)</text>
+
+  <line class="lane" x1="40" y1="392" x2="1560" y2="392"/>
+
+  <!-- ============ LANE 2: LITERATURE ============ -->
+  <rect class="litbg" x="40" y="406" width="360" height="150" rx="10" stroke-width="1.5"/>
+  <text class="lit h3" x="58" y="432">Literature</text>
+  <text class="t b" x="58" y="456">PubMed + Europe PMC search, citation chase</text>
+  <text class="m s" x="58" y="473">5,995 unique records · 1,965 chased citations</text>
+  <text class="t b" x="58" y="500">Master list (hand-built) + research report</text>
+  <text class="m s" x="58" y="517">86 rows · 83 distinct cited papers</text>
+  <text class="m s" x="58" y="540">Screened &amp; extracted by Claude, rules fixed in advance</text>
+
+  <rect class="card" x="420" y="426" width="200" height="110" rx="8"/>
+  <text class="t b" x="434" y="450" font-weight="700">Paper ID · Drug group</text>
+  <text class="m s" x="434" y="468">each claim → 1 of 15 drugs</text>
+  <text class="m s" x="434" y="484">each number → its source paper</text>
+  <text class="m s" x="434" y="506">design tier (1 RCT … 8 mechanism)</text>
+  <text class="m s" x="434" y="522">population match</text>
+
+  <g>
+    <rect class="litbg" x="640" y="426" width="110" height="58" rx="6"/><text class="t n" x="652" y="452">5,995</text><text class="m s" x="652" y="472">records</text>
+    <rect class="litbg" x="766" y="426" width="110" height="58" rx="6"/><text class="t n" x="778" y="452">2,773</text><text class="m s" x="778" y="472">pass rule filter</text>
+    <rect class="litbg" x="892" y="426" width="110" height="58" rx="6"/><text class="t n" x="904" y="452">333</text><text class="m s" x="904" y="472">included</text>
+    <rect class="litbg" x="1018" y="426" width="96" height="58" rx="6"/><text class="t n" x="1030" y="452">367</text><text class="m s" x="1030" y="472">extractions</text>
+    <rect class="litbg" x="1130" y="426" width="90" height="58" rx="6"/><text class="t n" x="1142" y="452">108</text><text class="m s" x="1142" y="472">verbatim #</text>
+    <path class="arrow" d="M750,455 H764"/><path class="arrow" d="M876,455 H890"/><path class="arrow" d="M1002,455 H1016"/><path class="arrow" d="M1114,455 H1128"/>
+  </g>
+  <text class="t b" x="640" y="512">Every number checked to appear verbatim in its abstract; failures blanked, never corrected.</text>
+  <text class="m s" x="640" y="530">Then System acts as the second extractor: same number? same meaning? other studies agree? also in Dataverse?</text>
+  <text class="m s" x="640" y="546">Badges: ✓✓ double-verified · ✓ in abstract · ↗ corroborated · ⚠ mislabel/conflict · ? hidden from public</text>
+
+  <!-- System verifies literature -->
+  <path class="sysA" d="M1240,300 C1262,330 1262,400 1240,440"/>
+  <text class="sys s" x="1192" y="404" font-weight="700" text-anchor="end">System checks</text>
+  <text class="sys s" x="1192" y="417" font-weight="700" text-anchor="end">our numbers</text>
+
+  <line class="lane" x1="40" y1="570" x2="1560" y2="570"/>
+
+  <!-- ============ LANE 3: REGULATORY ============ -->
+  <rect class="regbg" x="40" y="584" width="360" height="130" rx="10" stroke-width="1.5"/>
+  <text class="reg h3" x="58" y="610">Regulatory &amp; guidance</text>
+  <text class="t b" x="58" y="634">openFDA drug labels · FAERS adverse events</text>
+  <text class="m s" x="58" y="651">5,938 label sections audited · 21M FAERS reports</text>
+  <text class="t b" x="58" y="678">Heat-health guidance documents</text>
+  <text class="m s" x="58" y="695">13 sources (CDC, NHS, Health Canada, ANSM …)</text>
+
+  <rect class="card" x="420" y="604" width="200" height="90" rx="8"/>
+  <text class="t b" x="434" y="628" font-weight="700">Drug group · RxNorm</text>
+  <text class="m s" x="434" y="646">ingredient → RxCUI → group</text>
+  <text class="m s" x="434" y="662">study vs negative-control drugs</text>
+  <text class="m s" x="434" y="678">(noise band for FAERS)</text>
+
+  <g>
+    <rect class="regbg" x="640" y="604" width="180" height="58" rx="6"/><text class="t n" x="652" y="630">299</text><text class="m s" x="652" y="650">heat sentences in labels</text>
+    <rect class="regbg" x="836" y="604" width="180" height="58" rx="6"/><text class="t n" x="848" y="630">403</text><text class="m s" x="848" y="650">FAERS signal rows (ROR + CI)</text>
+    <rect class="regbg" x="1032" y="604" width="188" height="58" rx="6"/><text class="t n" x="1044" y="630">306</text><text class="m s" x="1044" y="650">guidance codes (2 passes, κ)</text>
+  </g>
+  <text class="m s" x="640" y="684">Label sentences deduplicated (369 → 299). FAERS signals compared against negative-control drugs, never read as rates.</text>
+
+  <line class="lane" x1="40" y1="728" x2="1560" y2="728"/>
+
+  <!-- ============ LANE 4: PLACE & CLIMATE ============ -->
+  <rect class="placebg" x="40" y="742" width="360" height="160" rx="10" stroke-width="1.5"/>
+  <text class="place h3" x="58" y="768">Place &amp; climate (NYC / Bronx)</text>
+  <text class="t b" x="58" y="792">NWS forecasts &amp; HeatRisk · NOAA station history</text>
+  <text class="m s" x="58" y="809">26,196 station-days → 183 heat waves · CPC outlooks</text>
+  <text class="t b" x="58" y="836">Vulnerability &amp; access</text>
+  <text class="m s" x="58" y="853">HVI · SVI (2,324 tracts) · CDC PLACES · AC households</text>
+  <text class="m s" x="58" y="869">1,868 cooling places · 520 pharmacies · 423 street sensors</text>
+  <text class="m s" x="58" y="885">Medicare Part D prescribing by ZIP × drug class</text>
+
+  <rect class="card" x="420" y="762" width="200" height="120" rx="8"/>
+  <text class="t b" x="434" y="786" font-weight="700">Place</text>
+  <text class="m s" x="434" y="802">ZIP ⇄ ZCTA ⇄ tract ⇄ NTA</text>
+  <text class="m s" x="434" y="818">lat/lon for points</text>
+  <text class="t b" x="434" y="846" font-weight="700">Day</text>
+  <text class="m s" x="434" y="862">date · HeatRisk level 0–4</text>
+
+  <g>
+    <rect class="placebg" x="640" y="762" width="160" height="58" rx="6"/><text class="t n" x="652" y="788">all NYC</text><text class="m s" x="652" y="808">tracts, ZIPs, sites</text>
+    <rect class="placebg" x="816" y="762" width="190" height="58" rx="6"/><text class="t n" x="828" y="788">11 ZIPs</text><text class="m s" x="828" y="808">SBH Health System catchment</text>
+    <rect class="placebg" x="1022" y="762" width="198" height="58" rx="6"/><text class="t n" x="1034" y="788">24 Jun 2025</text><text class="m s" x="1034" y="808">replay day, HeatRisk 4</text>
+    <path class="arrow" d="M800,791 H814"/><path class="arrow" d="M1006,791 H1020"/>
+  </g>
+  <text class="m s" x="640" y="842">Every layer joined to the same ZIP / tract keys so heat, vulnerability and prescribing line up on the map.</text>
+
+  <line class="lane" x1="40" y1="916" x2="1560" y2="916"/>
+
+  <!-- ============ LANE 5: PATIENTS ============ -->
+  <rect class="patbg" x="40" y="930" width="360" height="120" rx="10" stroke-width="1.5"/>
+  <text class="pat h3" x="58" y="956">Patients (all synthetic)</text>
+  <text class="t b" x="58" y="980">Generator calibrated to PLACES, SVI, Part D</text>
+  <text class="m s" x="58" y="997">300 patients · 952 meds (RxNorm) · 327 contacts</text>
+  <text class="m s" x="58" y="1013">FHIR bundle + sign-up questionnaire · no doses</text>
+  <text class="m s" x="58" y="1035">Fictional names &amp; 555-01xx phones; flagged synthetic</text>
+
+  <rect class="card" x="420" y="950" width="200" height="80" rx="8"/>
+  <text class="t b" x="434" y="974" font-weight="700">RxNorm + ZIP + day</text>
+  <text class="m s" x="434" y="992">meds → 15 drug groups</text>
+  <text class="m s" x="434" y="1008">home → ZIP → HeatRisk</text>
+
+  <g>
+    <rect class="patbg" x="640" y="950" width="140" height="58" rx="6"/><text class="t n" x="652" y="976">300</text><text class="m s" x="652" y="996">patients scored</text>
+    <rect class="patbg" x="796" y="950" width="200" height="58" rx="6"/><text class="t n" x="808" y="976">207</text><text class="m s" x="808" y="996">get heat cards (replay day)</text>
+    <rect class="patbg" x="1012" y="950" width="208" height="58" rx="6"/><text class="t n" x="1024" y="976">59</text><text class="m s" x="1024" y="996">to call today (replay day)</text>
+    <path class="arrow" d="M780,979 H794"/>
+  </g>
+  <text class="m s" x="640" y="1030">Each patient scored from drug evidence (knowledge base), local HeatRisk that day and personal factors (age, AC, contacts).</text>
+
+  <!-- Lane flow arrows GET → CONNECT → FUNNEL -->
+  <path class="arrow" d="M400,263 H418"/><path class="arrow" d="M620,263 H636"/>
+  <path class="arrow" d="M400,481 H418"/><path class="arrow" d="M620,481 H636"/>
+  <path class="arrow" d="M400,649 H418"/><path class="arrow" d="M620,649 H636"/>
+  <path class="arrow" d="M400,822 H418"/><path class="arrow" d="M620,822 H636"/>
+  <path class="arrow" d="M400,990 H418"/><path class="arrow" d="M620,990 H636"/>
+
+  <!-- ============ USE COLUMN ============ -->
+  <rect x="1300" y="148" width="260" height="566" rx="12" style="fill:var(--card);stroke:var(--kb);stroke-width:2"/>
+  <text class="t h3" x="1318" y="178">Knowledge base</text>
+  <text class="m s" x="1318" y="196">knowledge_base.json · one row per drug</text>
+  <text class="t n" x="1318" y="236">15 drugs</text>
+  <text class="t n" x="1318" y="268">101 claims</text>
+  <text class="m s" x="1318" y="288">✓✓ 3 · ✓ 79 · ↗ 17 · ? 2 hidden</text>
+  <text class="t b" x="1318" y="324" font-weight="700">Per drug:</text>
+  <text class="m s" x="1318" y="344">evidence meter (literature only)</text>
+  <text class="m s" x="1318" y="362">Heat Dose Compass direction</text>
+  <text class="m s" x="1318" y="380">System pathways &amp; gaps</text>
+  <text class="m s" x="1318" y="398">FDA label &amp; FAERS signal</text>
+  <text class="m s" x="1318" y="416">guidance coverage (of 8)</text>
+  <text class="m s" x="1318" y="434">storage limits · patient lines</text>
+  <text class="t b" x="1318" y="470" font-weight="700">Layers kept separate:</text>
+  <text class="m s" x="1318" y="490">graph · literature · label ·</text>
+  <text class="m s" x="1318" y="506">FDA reports · guidance</text>
+  <text class="m s" x="1318" y="526">so every claim shows whether it</text>
+  <text class="m s" x="1318" y="542">rests on a System finding or not</text>
+  <text class="t b" x="1318" y="580" font-weight="700">Never computed:</text>
+  <text class="m s" x="1318" y="600">numeric safe doses</text>
+  <text class="t b" x="1318" y="636" font-weight="700">Hidden:</text>
+  <text class="m s" x="1318" y="656">'?' unverified claims ·</text>
+  <text class="m s" x="1318" y="672">unvalidated hidden-drug candidates</text>
+
+  <rect x="1300" y="742" width="260" height="308" rx="12" style="fill:var(--card);stroke:var(--kb);stroke-width:2"/>
+  <text class="t h3" x="1318" y="772">App views</text>
+  <text class="t b" x="1318" y="800">Professional evidence map</text>
+  <text class="m s" x="1318" y="817">Drug Cards · pathway Sankey ·</text>
+  <text class="m s" x="1318" y="833">gap constellation · graph audit</text>
+  <text class="t b" x="1318" y="863">3D NYC map</text>
+  <text class="m s" x="1318" y="880">heat × vulnerability × prescribing</text>
+  <text class="t b" x="1318" y="910">Patient label view</text>
+  <text class="m s" x="1318" y="927">plain-language heat card</text>
+  <text class="t b" x="1318" y="957">Clinic call list</text>
+  <text class="m s" x="1318" y="974">who to call before / during heat</text>
+  <text class="t b" x="1318" y="1004">Live from System</text>
+  <text class="m s" x="1318" y="1021">relationship counts on each card</text>
+
+  <!-- funnel → use -->
+  <path class="arrow" d="M1220,197 H1298"/>
+  <path class="arrow" d="M1220,285 H1298"/>
+  <path class="arrow" d="M1220,455 H1298"/>
+  <path class="arrow" d="M1220,633 H1298"/>
+  <path class="arrow" d="M1220,791 H1298"/>
+  <path class="arrow" d="M1220,979 H1298"/>
+  <path class="arrow" d="M1430,714 V740"/>
+  <text class="m s" x="1424" y="732" text-anchor="end">feeds patient scores</text>
+
+  <!-- footer -->
+  <text class="m s" x="40" y="1084">Purple dashed = System used as a check on our own extraction. System's rule applied: keep an API finding as evidence only if it is also in the Dataverse release (≈20% of API extractions are inaccurate).</text>
+  <text class="m s" x="40" y="1102">No human screening or review. Patient data is synthetic. Not clinical advice; no dose advice.</text>
+</svg>
