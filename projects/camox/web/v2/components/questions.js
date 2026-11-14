@@ -28,7 +28,7 @@ export function Questions({ project, projects, runs, thread, threads, agents, se
     ${thread && html`<${ThreadTitle} key=${`${thread}.${threads?.find((t) => t.id === thread)?.title}`} thread=${threads?.find((t) => t.id === thread)} reload=${reload} project=${project} projects=${projects} />`}
     <div class="thread">
       ${sorted.length ? sorted.map((r, i) => html`<${Turn} key=${r.id} run=${r} agents=${agents} latest=${i === sorted.length - 1} onDone=${reload}
-          onAgain=${(q) => start(q, null, session.prefs.agents || null).catch(() => {})} />`)
+          onAgain=${(q) => start(q).catch(() => {})} />`)
         : html`<p class="muted small empty-line">No questions in this thread yet. Ask one below or start from an example.</p>`}
     </div>
     <${SelectReply} />
@@ -90,13 +90,11 @@ function Composer({ project, thread, agents, session, suggestions, isFollowUp, s
   const withQuote = (text) => (quote ? `About this part of the earlier analysis: "${quote}"\n\n${text}` : text);
   const key = `draft.${project.id}.${thread ?? 'main'}`;
   const [q, setQ] = useState(() => local.get(key, ''));
-  const [pinned, setPinned] = useState(() => session.prefs.agents || null);  // null: the planner chooses
-  const [chooser, setChooser] = useState(false);
+  const pinned = null;  // the planner always chooses the agents
   const [plan, setPlan] = useState(null);
   const [msg, setMsg] = useState(['', false]);
   const [busy, setBusy] = useState(false);
   const draft = (v) => { setQ(v); local.set(key, v || null); };
-  const pin = (next) => { setPinned(next); savePrefs(session, { agents: next }); };
   const say = (t, bad = false) => setMsg([t, bad]);
 
   const run = async (p = null) => {
@@ -113,7 +111,6 @@ function Composer({ project, thread, agents, session, suggestions, isFollowUp, s
     catch (e) { say(`Could not get a plan: ${e.message}. Use Ask to let the planner choose during the run.`, true); }
     finally { setBusy(false); }
   };
-  const chosen = pinned ? agents.filter((a) => pinned.includes(a.name)) : [];
 
   return html`<form class="composer" onSubmit=${(e) => { e.preventDefault(); run(); }}>
     <label for="q" class="eyebrow">${isFollowUp ? 'Ask a follow-up' : 'Ask a question'}</label>
@@ -124,34 +121,15 @@ function Composer({ project, thread, agents, session, suggestions, isFollowUp, s
     <textarea id="q" rows="3" value=${q} onInput=${(e) => draft(e.target.value)} placeholder="Ask about this project"
       onKeyDown=${(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) run(); }}></textarea>
     <div class="composer-row">
-      <button type="button" class="agents-btn" aria-expanded=${chooser} onClick=${() => setChooser(!chooser)}>
-        <span class="eyebrow">Agents</span><span>${pinned ? chosen.map((a) => a.title).join(', ') || 'None chosen' : 'Planner chooses'}</span><span aria-hidden="true">${chooser ? '▴' : '▾'}</span></button>
+      <span class="small muted">The planner picks the agents for each question.</span>
       <span class="spacer"></span>
       <button type="button" class="outline" disabled=${busy} onClick=${review}>Review plan</button>
       <button class="primary" disabled=${busy}>Ask</button>
     </div>
-    ${chooser && html`<${AgentChooser} agents=${agents} pinned=${pinned} pin=${pin} />`}
     <p class="scope small muted">Answers from about 2M published findings in the System Graph. Shows associations, not causes, and says where the evidence runs out.</p>
     ${msg[0] && html`<p class=${`msg ${msg[1] ? 'bad' : ''}`} role="status">${msg[0]}</p>`}
     ${plan && html`<${PlanEditor} plan=${plan} agents=${agents} busy=${busy} cancel=${() => setPlan(null)} run=${run} say=${say} />`}
   </form>`;
-}
-
-export function AgentChooser({ agents, pinned, pin }) {
-  const toggle = (name) => {
-    const s = new Set(pinned || []);
-    s.has(name) ? s.delete(name) : s.add(name);
-    pin(s.size ? [...s] : null);
-  };
-  return html`<div class="chooser" role="group" aria-label="Choose agents">
-    <button type="button" class="agent-card planner" role="checkbox" aria-checked=${!pinned} onClick=${() => pin(null)}>
-      <span class="tick" aria-hidden="true"></span><strong>Let the planner choose</strong>
-      <span class="small muted">Picks the agents that fit each question. Recommended.</span></button>
-    ${agents.map((a) => html`<button key=${a.name} type="button" class="agent-card" role="checkbox" aria-checked=${!!pinned?.includes(a.name)}
-      title=${a.description} onClick=${() => toggle(a.name)}>
-      <span class="tick" aria-hidden="true"></span><strong>${a.title}</strong><span class="small muted">${firstLine(a.description)}</span></button>`)}
-    <p class="small muted chooser-note">${pinned ? 'The planner may only use the agents you picked.' : 'Pick agents to limit the planner to them.'} Your choice is kept for next time.</p>
-  </div>`;
 }
 
 function PlanEditor({ plan, agents, busy, cancel, run, say }) {

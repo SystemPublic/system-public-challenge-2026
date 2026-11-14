@@ -1,6 +1,5 @@
 // Settings: account, the profile the agents read, API keys, default agents, log out and delete account.
 import { html, useState, api, savePrefs, signOut } from '../api.js';
-import { AgentChooser } from './questions.js';
 
 export function Settings({ session, setSession, profile, agents }) {
   const account = session.mode === 'account';
@@ -17,8 +16,6 @@ export function Settings({ session, setSession, profile, agents }) {
     <${Section} title="API keys" line="Optional. Store your own API keys (for example OpenAlex) for keyed tools as we add them. Keys are stored encrypted; only their names are shown again.">
       <${Keys} key=${profile.id} profile=${profile} />
     <//>
-    <${Section} title="Agents" line="Your default choice for new questions. You can still change it under each question.">
-      <${DefaultAgents} session=${session} agents=${agents} />
     <//>
     <${Section} title=${account ? 'Log out' : 'Leave demo'} line=${account ? 'Ends this session on this browser.' : 'Returns to the sign-in screen. Your place is kept in this browser.'}>
       <div><button type="button" class="outline" onClick=${out}>${account ? 'Log out' : 'Leave demo'}</button></div>
@@ -97,24 +94,4 @@ function Keys({ profile }) {
       </div>
       <datalist id="key-names"><option value="OPENALEX_API_KEY" /><option value="DHS_API_KEY" /></datalist>${note}
       <div class="row-end"><button class="outline" disabled=${busy}>Save key</button></div></form>`;
-}
-
-function DefaultAgents({ session, agents }) {
-  const [pinned, setPinned] = useState(session.prefs.agents || null);
-  return html`<${AgentChooser} agents=${agents} pinned=${pinned} pin=${(v) => { setPinned(v); savePrefs(session, { agents: v }); }} />`;
-}
-
-function DeleteAccount({ session, setSession }) {
-  const [confirm, setConfirm] = useState(false);
-  const [msg, setMsg] = useState('');
-  const del = async () => {
-    try { await api('/api/auth/account', { method: 'DELETE' }); await signOut({ mode: 'gone' }); setSession(null); }
-    catch (x) { setMsg(`Could not delete the account: ${x.message}.`); }
-  };
-  if (!confirm) return html`<div><button type="button" class="danger-btn" onClick=${() => setConfirm(true)}>Delete account</button></div>`;
-  return html`<div class="confirm" role="alertdialog" aria-labelledby="del-h">
-    <p id="del-h"><strong>Delete ${session.user?.email}?</strong> This removes your profiles, projects and runs. It cannot be undone.</p>
-    ${msg && html`<p class="msg bad">${msg}</p>`}
-    <div class="row-end"><button type="button" class="ghost-btn" onClick=${() => setConfirm(false)}>Cancel</button>
-      <button type="button" class="danger-btn" onClick=${del}>Delete for good</button></div></div>`;
 }
