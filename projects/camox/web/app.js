@@ -232,6 +232,7 @@ function bindThreads(p, pj) {
   const title = $('#thread-title');
   if (!title) return;
   if (state.editThread) { state.editThread = false; title.focus(); title.select(); }
+  title.onkeydown = (e) => { if (e.key === 'Enter' || e.key === 'Escape') { if (e.key === 'Escape') title.value = state.threads.find((x) => x.id === state.thread).title; title.blur(); } };
   title.onchange = async () => {
     try {
       const t = await api(`/api/threads/${state.thread}`, { method: 'PUT', body: { title: title.value.trim() } });

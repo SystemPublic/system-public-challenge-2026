@@ -15,10 +15,12 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import JSONResponse, PlainTextResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
+from openai import AsyncOpenAI
 from pydantic import BaseModel
 
 import mcp_server
 from agents import dashboard, orchestrator, report
+from agents.harness import MODEL
 from server import auth, db, kg
 from tools import graph, literature  # importing tools loads .env
 
@@ -329,10 +331,30 @@ async def execute(run_id, query, profile, history, agents, plan, kind="question"
     finally:
         await run_in_threadpool(db.finish_run, run_id, status, answer)
         if status == "done":
-            tasks.add(t := asyncio.create_task(kg.rebuild_after_run(run_id)))
-            t.add_done_callback(tasks.discard)
+            for job in (kg.rebuild_after_run(run_id), name_thread(run_id)):
+                tasks.add(t := asyncio.create_task(job))
+                t.add_done_callback(tasks.discard)
         await emit({"type": "run_done", "status": status})
         del subscribers[run_id], events_sent[run_id]
+
+
+async def name_thread(run_id):
+    """Give a thread still called "New thread" a 3-6 word topic title after a finished run; failures are ignored."""
+    try:
+        run = await run_in_threadpool(db.q, "select r.thread_id, r.query, r.answer->>'summary' as summary from runs r "
+                                      "join threads t on t.id = r.thread_id where r.id = %s and t.title in ('', 'New thread')",
+                                      (run_id,), True)
+        if run:
+            r = await AsyncOpenAI().responses.create(
+                model=MODEL, reasoning={"effort": "low"},
+                instructions="Name this research thread in 3 to 6 words. Reply with the title only, no quotes or full stop.",
+                input=f"Question: {run['query']}\nAnswer: {(run['summary'] or '').split('. ')[0]}")
+            title = r.output_text.strip().strip('"').rstrip(".")[:80]
+            if title:
+                await run_in_threadpool(db.q, "update threads set title = %s where id = %s and title in ('', 'New thread')",
+                                        (title, run["thread_id"]))
+    except Exception:
+        pass
 
 
 @app.get("/api/runs/{run_id}")

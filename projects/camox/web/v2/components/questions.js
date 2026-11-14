@@ -25,7 +25,7 @@ export function Questions({ project, projects, runs, thread, threads, agents, se
     setTimeout(() => document.getElementById(`run-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
   };
   return html`
-    ${thread && html`<${ThreadTitle} key=${thread} thread=${threads?.find((t) => t.id === thread)} reload=${reload} project=${project} projects=${projects} />`}
+    ${thread && html`<${ThreadTitle} key=${`${thread}.${threads?.find((t) => t.id === thread)?.title}`} thread=${threads?.find((t) => t.id === thread)} reload=${reload} project=${project} projects=${projects} />`}
     <div class="thread">
       ${sorted.length ? sorted.map((r, i) => html`<${Turn} key=${r.id} run=${r} agents=${agents} latest=${i === sorted.length - 1} onDone=${reload}
           onAgain=${(q) => start(q, null, session.prefs.agents || null).catch(() => {})} />`)
@@ -53,7 +53,7 @@ function ThreadTitle({ thread, reload, project, projects }) {
     } catch (x) { setMsg(x.status === 403 ? 'You can only move threads between your own projects.' : `Could not move the thread: ${x.message}.`); }
   };
   return html`<div class="thread-title"><label for="tt" class="eyebrow">Thread name</label>
-    <input id="tt" defaultValue=${thread.title} onBlur=${save} onKeyDown=${(e) => e.key === 'Enter' && e.target.blur()} />
+    <input id="tt" defaultValue=${thread.title} onBlur=${save} onKeyDown=${(e) => { if (e.key === 'Escape') e.target.value = thread.title; if (e.key === 'Enter' || e.key === 'Escape') e.target.blur(); }} />
     ${projects.length > 1 && html`<select aria-label="Move this thread to another project" value="" onChange=${(e) => move(e.target.value)}>
       <option value="">Move thread to another project…</option>
       ${projects.filter((p) => p.id !== project.id).map((p) => html`<option key=${p.id} value=${p.id}>${p.title}</option>`)}</select>`}
