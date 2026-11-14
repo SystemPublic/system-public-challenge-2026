@@ -1,7 +1,7 @@
 # Evidence Agent
 
 **Team:** CAMOX
-**Members:** TODO
+**Members:** Daniel Mora (daMS2005), catxu632, vishnuskulkarni, yilalalalala
 **Challenge:** TODO
 **Pitch slides:** TODO
 
@@ -32,6 +32,8 @@ TODO once the challenge is chosen. The agent's tools (`agent/tools.py`) search c
    OPENAI_API_KEY=your-openai-key
    ```
 4. `.venv/bin/python agent/agent.py "your question"`
+
+To use the same graph tools from any MCP client (Claude, Cursor, Codex), add `MCP_TOKEN=any-long-secret` to `.env`, run `.venv/bin/python mcp_server.py`, and connect the client to `http://localhost:8799/mcp` with the header `Authorization: Bearer <MCP_TOKEN>`.
 
 ## Data sources
 

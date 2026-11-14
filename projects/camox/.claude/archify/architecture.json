@@ -2,117 +2,87 @@
   "schema_version": 1,
   "diagram_type": "architecture",
   "meta": {
-    "title": "CAMOX Evidence Agent: architecture and agent flow",
+    "title": "CAMOX: an agent layer over the System Public Graph (target)",
     "locale": "en",
     "output": "docs/architecture.html",
     "quality_profile": "showcase"
   },
   "components": [
     {
-      "id": "teammates",
-      "type": "external",
-      "label": "Teammates' agents",
-      "sublabel": "Claude Code, Codex",
-      "pos": [
-        290,
-        40
-      ],
-      "size": [
-        140,
-        60
-      ]
-    },
-    {
-      "id": "tunnel",
-      "type": "security",
-      "label": "cloudflared tunnel",
-      "sublabel": "public URL",
-      "pos": [
-        540,
-        40
-      ],
-      "size": [
-        140,
-        60
-      ]
-    },
-    {
-      "id": "mcp",
-      "type": "backend",
-      "label": "MCP server",
-      "sublabel": "mcp_server.py, planned",
-      "pos": [
-        790,
-        40
-      ],
-      "size": [
-        140,
-        60
-      ]
-    },
-    {
       "id": "user",
       "type": "external",
       "label": "Researcher",
-      "sublabel": "question or hypothesis",
+      "sublabel": "e.g. World Bank analyst",
       "pos": [
         40,
-        200
+        40
       ],
       "size": [
-        140,
+        150,
         60
       ]
     },
     {
-      "id": "app",
+      "id": "dashboard",
       "type": "frontend",
-      "label": "Demo app",
-      "sublabel": "app.py, planned",
+      "label": "Web dashboard",
+      "sublabel": "profile picker, graph view",
       "pos": [
         290,
-        200
+        40
       ],
       "size": [
-        140,
+        150,
         60
       ]
     },
     {
-      "id": "agent",
+      "id": "backend",
       "type": "backend",
-      "label": "Agent loop",
-      "sublabel": "agent/agent.py",
+      "label": "FastAPI backend",
+      "sublabel": "deploys the agent loop",
+      "pos": [
+        540,
+        40
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "planner",
+      "type": "backend",
+      "label": "Planner",
+      "sublabel": "query to tasks",
       "pos": [
         540,
         200
       ],
       "size": [
-        140,
+        150,
         60
-      ],
-      "tag": "gpt-6-luna"
+      ]
     },
     {
-      "id": "tools",
+      "id": "specialists",
       "type": "backend",
-      "label": "Graph tools",
-      "sublabel": "agent/tools.py",
+      "label": "Specialist agents",
+      "sublabel": "4 roles, in parallel",
       "pos": [
         790,
         200
       ],
       "size": [
-        140,
+        150,
         60
-      ],
-      "tag": "7 read-only"
+      ]
     },
     {
-      "id": "duckdb",
-      "type": "database",
-      "label": "graph.duckdb",
-      "sublabel": "2M findings, 845k studies",
+      "id": "formatter",
+      "type": "backend",
+      "label": "Formatter",
+      "sublabel": "Pydantic contract, retry",
       "pos": [
         1040,
         200
@@ -123,38 +93,108 @@
       ]
     },
     {
-      "id": "viz",
-      "type": "frontend",
-      "label": "Graph visualizer",
-      "sublabel": "in app.py, planned",
-      "pos": [
-        290,
-        360
-      ],
-      "size": [
-        140,
-        60
-      ]
-    },
-    {
       "id": "openai",
       "type": "cloud",
       "label": "OpenAI",
-      "sublabel": "Responses API",
+      "sublabel": "gpt-6-luna, web search",
       "pos": [
         540,
         360
       ],
       "size": [
-        140,
+        150,
         60
       ]
     },
     {
-      "id": "dataverse",
+      "id": "mcp",
+      "type": "backend",
+      "label": "MCP server",
+      "sublabel": "one tool surface",
+      "pos": [
+        790,
+        360
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "sga",
+      "type": "cloud",
+      "label": "System Graph API",
+      "sublabel": "live, key pending",
+      "pos": [
+        290,
+        520
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "graph",
+      "type": "backend",
+      "label": "Graph client",
+      "sublabel": "live or local, same tools",
+      "pos": [
+        540,
+        520
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "lit",
       "type": "external",
-      "label": "Dataverse CSVs",
-      "sublabel": "cleaned subset, 1.1 GB",
+      "label": "Literature search",
+      "sublabel": "OpenAlex, PubMed",
+      "pos": [
+        790,
+        520
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "apis",
+      "type": "external",
+      "label": "Outside data APIs",
+      "sublabel": "user's own keys, per profile",
+      "pos": [
+        1040,
+        520
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "duckdb",
+      "type": "database",
+      "label": "Local graph copy",
+      "sublabel": "DuckDB, 2M findings",
+      "pos": [
+        540,
+        680
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "Product database",
+      "sublabel": "runs, context, projects",
       "pos": [
         1040,
         360
@@ -167,11 +207,12 @@
   ],
   "boundaries": [
     {
-      "kind": "security-group",
-      "label": "shared bearer token",
+      "kind": "region",
+      "label": "Agent loop",
       "wraps": [
-        "tunnel",
-        "mcp"
+        "planner",
+        "specialists",
+        "formatter"
       ]
     }
   ],
@@ -179,99 +220,131 @@
     {
       "id": "ask",
       "from": "user",
-      "to": "app",
-      "label": "question",
+      "to": "dashboard",
+      "label": "query",
+      "variant": "emphasis"
+    },
+    {
+      "id": "api",
+      "from": "dashboard",
+      "to": "backend",
+      "label": "API + SSE",
       "variant": "emphasis"
     },
     {
       "id": "run",
-      "from": "app",
-      "to": "agent",
-      "label": "question",
+      "from": "backend",
+      "to": "planner",
+      "label": "query + profile",
       "variant": "emphasis"
     },
     {
-      "id": "call-tools",
-      "from": "agent",
-      "to": "tools",
-      "label": "tool calls",
+      "id": "tasks",
+      "from": "planner",
+      "to": "specialists",
+      "label": "tasks",
       "variant": "emphasis"
     },
     {
-      "id": "query",
-      "from": "tools",
-      "to": "duckdb",
-      "label": "SQL"
+      "id": "findings",
+      "from": "specialists",
+      "to": "formatter",
+      "label": "findings",
+      "variant": "emphasis"
     },
     {
-      "id": "reason",
-      "from": "agent",
+      "id": "answer",
+      "from": "formatter",
+      "to": "backend",
+      "label": "validated answer",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "right"
+    },
+    {
+      "id": "llm",
+      "from": "planner",
       "to": "openai",
-      "label": "plan, verdicts"
+      "label": "LLM calls"
     },
     {
-      "id": "cards",
-      "from": "agent",
-      "to": "app",
-      "label": "cards + trace",
-      "variant": "dashed"
+      "id": "tool-calls",
+      "from": "specialists",
+      "to": "mcp",
+      "label": "tool calls"
     },
     {
-      "id": "draw",
-      "from": "app",
-      "to": "viz",
-      "label": "concepts, links"
-    },
-    {
-      "id": "build",
-      "from": "dataverse",
-      "to": "duckdb",
-      "label": "eda/load.sql",
-      "variant": "dashed"
-    },
-    {
-      "id": "team-call",
-      "from": "teammates",
-      "to": "tunnel",
-      "label": "MCP / HTTPS"
-    },
-    {
-      "id": "forward",
-      "from": "tunnel",
-      "to": "mcp"
-    },
-    {
-      "id": "same-tools",
+      "id": "graph-tools",
       "from": "mcp",
-      "to": "tools",
-      "label": "same tools"
+      "to": "graph",
+      "label": "graph tools"
+    },
+    {
+      "id": "search",
+      "from": "mcp",
+      "to": "lit",
+      "label": "search"
+    },
+    {
+      "id": "connectors",
+      "from": "mcp",
+      "to": "apis",
+      "label": "connectors"
+    },
+    {
+      "id": "live",
+      "from": "graph",
+      "to": "sga",
+      "label": "live",
+      "variant": "dashed"
+    },
+    {
+      "id": "fallback",
+      "from": "graph",
+      "to": "duckdb",
+      "label": "fallback"
+    },
+    {
+      "id": "save",
+      "from": "formatter",
+      "to": "db",
+      "label": "save run"
+    },
+    {
+      "id": "context",
+      "from": "mcp",
+      "to": "db",
+      "label": "project context"
     }
   ],
   "cards": [
     {
       "dot": "emerald",
-      "title": "Agent flow",
+      "title": "Specialist agents",
       "items": [
-        "Splits the question into 2-4 sub-claims",
-        "Searches concepts and variable wording, walks links and paths",
-        "Pulls findings, counts them in code, then writes one evidence card per sub-claim"
+        "Graph evidence: findings, verdicts, DOIs",
+        "Research: OpenAlex, PubMed, web search",
+        "EDA: coverage, distributions, gaps",
+        "Policy: theory-of-change chains from graph paths"
       ]
     },
     {
       "dot": "violet",
-      "title": "Rules the agent keeps",
+      "title": "Shared harness",
       "items": [
-        "Statistics come from summarise_evidence, never the model",
-        "Associated with, never caused by",
-        "Only DOIs returned by the tools"
+        "Pydantic contracts in and out of every agent",
+        "Retry with the validation errors",
+        "Context compaction on long runs",
+        "Tools only through the MCP server"
       ]
     },
     {
       "dot": "slate",
-      "title": "Off for now",
+      "title": "Stretch and later",
       "items": [
-        "Neo4j: kept for graph algorithms if needed",
-        "Live System Public API: key returns 403"
+        "Project knowledge graph for graph RAG",
+        "More connectors as users add keys",
+        "Neo4j if we need graph algorithms"
       ]
     }
   ]
