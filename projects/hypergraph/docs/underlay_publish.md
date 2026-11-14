@@ -81,3 +81,14 @@ Any non-success response stops the script and prints the status and body. Only t
 ## Earlier blocker (resolved)
 
 Until the evening of 13 November the account belonged to no organization, and `GET /api/accounts/me` returned `"orgs": []`. Later that evening `GET /api/accounts/me` listed `system-community` with the role member, and the key in `~/.config/underlay/token` then created both collections. No other write was made on the Underlay.
+
+## Versions 1.1.0 and 1.2.0 of the claims collection (14 November 2026)
+
+Both were published with `analyses/underlay_publish/push_delta.py`, which follows the delta push flow in the Underlay's llms.txt: read the head, compare its manifest with the local export by type, id and hash, open a session on the head's version, upload only the changed records, and commit. No schema was sent, so the server assigned minor versions.
+
+| Version | Records | Change against the version before | Hash |
+|---|---|---|---|
+| v1.1.0 | 284 | 9 added: claims moon-full-emergencies, heat-inside-outside and heat-inside-outside-2006, with their outcomes and revisions | `ulv3:9d878b52aa00865390e446de212c2720b6f245ac83e2a66b40be4edecd73fef2` |
+| v1.2.0 | 287 | 3 added: claim transfer-chicago-inside-outside, its outcome and its revision | `ulv3:e7a37134d08b94bb9bbb7363fe73f97da383422abebb20bd617430acbd7bc792` |
+
+The difference call (`GET .../versions/v1.2.0/diff?from=v1.1.0`) returned the same counts after each push. `tools/strip_from_diff.py` reads that call to draw strips (`docs/comics.md`). The comparison page is https://www.underlay.org/system-community/nyc-concordance-claims/versions/compare?from=v1.0.0&to=v1.2.0. System's public graph is also on the Underlay, as `system/public-graph` v1.0.0; the claims do not yet cite it by record.

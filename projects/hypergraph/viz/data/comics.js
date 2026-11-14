@@ -151,7 +151,7 @@ const COMICS = {
         { text: "Lynott et al. 2023, preprint. Meta-analysis of 80 laboratory effects, N = 4,577: no reliable effect of temperature on antisocial behaviour. Not peer reviewed.", href: "https://doi.org/10.31234/osf.io/qup53", link: "doi" },
         { text: "Minor et al. 2022, One Earth: nights above 30 °C shorten sleep by about 14 minutes (figure from a secondary source). Van Veen et al. 2022, Sleep Med Rev, PMID 36064210: short sleep and aggression correlate (r = -0.16); controlled experiments are not significant.", href: "https://doi.org/10.1016/j.smrv.2022.101661", link: "doi" },
         { text: "Martin-Latry et al. 2007, Eur Psychiatry, PMID 17513091: odds ratio 4.6 (1.9 to 11.2) of heat-related admission with antipsychotics. No study of medication, heat and violence was found. Layton et al. 2020, PLoS One, PMID 33301532, found no interaction of heat waves with these medicines for hospital admission.", href: "https://doi.org/10.1016/j.eurpsy.2007.03.007", link: "doi" },
-        { text: "Claims heat-inside-outside-2006 and heat-inside-outside, registered on 14 November 2026 before the dated counts were fetched. 2006 to 2026: outside 1.174 (1.155 to 1.192) per 5 °C on 20,958 incidents; inside 1.009 (0.975 to 1.044) on 3,471; ratio 0.861 (0.828 to 0.896). 2022 to 2026 alone: ratio 0.860 (0.787 to 0.939). Intervals as corrected by the referee. The two claims are one result.", href: "evidence.html#heat-inside-outside-2006", link: "test card" },
+        { text: "Claims heat-inside-outside-2006 and heat-inside-outside, registered on 14 November 2026 before the dated counts were fetched. 2006 to 2026: outside 1.174 (1.155 to 1.192) per 5 °C on 20,958 incidents; inside 1.009 (0.975 to 1.044) on 3,471; ratio 0.861 (0.828 to 0.896). 2022 to 2026 alone: ratio 0.860 (0.787 to 0.939). Intervals as corrected by the referee. The two claims are one result. In Chicago (claim transfer-chicago-inside-outside) inside shootings do rise: outside 1.140, inside 1.102, ratio 0.968 (0.943 to 0.994).", href: "evidence.html#heat-inside-outside-2006", link: "test card" },
         { text: "Tiihonen et al. 2017, Sci Rep, PMID 28754972, proposes serotonin as the bodily path: a monthly correlation in Finland. Mukherjee and Sanders 2021 (NBER w28987) report more violence on hot days in prisons without air conditioning, which is evidence for a direct effect. The strip's test does not separate a direct effect of heat felt outdoors from more contact outdoors, because most indoor spaces are cooled.", href: "https://doi.org/10.1038/s41598-017-06720-z", link: "doi" }
       ],
       frames: [
@@ -216,31 +216,37 @@ const COMICS = {
                   { from: "M", onto: "ts", t: 0.6, ev: "conj", w: 1, state: "gone", mark: "x", markT: 0.5 } ],
           cap: "We withdraw the dotted arrow. It was a conjecture, and the evidence we could gather counts against it. <b>The risk of death in heat stays</b>, and a city can act on that." }
       ] },
-    { id: "moon", title: "The full moon: a belief, the graph and a null",
+    { id: "moon", title: "The full moon: a belief, the graph, a null and a new belief",
       lede: "A graph of findings can also be used to test a common belief. The graph holds studies on both sides, and the city's record gives a narrow interval around no effect.",
       sources: [
         { text: "Rotton and Kelly 1985, Psychol Bull, PMID 3885282. Meta-analysis of 37 studies: the moon's phase explains at most 1% of the variance in the behaviours studied (figure from secondary sources).", href: "https://doi.org/10.1037/0033-2909.97.2.286", link: "doi" },
         { text: "Onozuka et al. 2018, Sci Total Environ, PMID 29990928. Japan, 842,554 ambulance transports: 1.042 (1.021 to 1.063) for road crashes at full moon. In the graph.", href: "https://doi.org/10.1016/j.scitotenv.2018.07.053", link: "doi" },
         { text: "Graph record for PMID 30647032, homicides in Finland: 0.85 (0.77 to 0.94) at full moon. The abstract was not read.", href: "https://pubmed.ncbi.nlm.nih.gov/30647032/", link: "PubMed" },
         { text: "Graph record for PMID 33693140, out-of-hospital cardiac arrest: 1.007 (0.993 to 1.021). The abstract was not read.", href: "https://pubmed.ncbi.nlm.nih.gov/33693140/", link: "PubMed" },
-        { text: "Claim moon-full-emergencies, registered on 14 November 2026 before the test was run. Three-day window around each full moon: shootings 1.007 (0.966 to 1.049), 2006 to 2025; ambulance incidents 0.997 (0.991 to 1.004), 2017 to 2026; injury crashes 1.002 (0.987 to 1.018), 2014 to 2025. A 23-day placebo cycle gave 1.008, 0.998 and 1.002.", href: "evidence.html#moon-full-emergencies", link: "test card" }
+        { text: "Claim moon-full-emergencies, registered on 14 November 2026 before the test was run. Three-day window around each full moon: shootings 1.007 (0.966 to 1.049), 2006 to 2025; ambulance incidents 0.997 (0.991 to 1.004), 2017 to 2026; injury crashes 1.002 (0.987 to 1.018), 2014 to 2025. A 23-day placebo cycle gave 1.008, 0.998 and 1.002.", href: "evidence.html#moon-full-emergencies", link: "test card" },
+        { text: "Referee report of 14 November 2026: a 3-day window centred four days before the full moon gives 0.914 for shootings (z = -3.9), found by moving the window to every position in the cycle. Exploratory; it decides nothing.", href: "../critique/referee_2026-11-14_moon_inside.md", link: "report" }
       ],
       frames: [
         { head: "The belief",
           nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "crime", x: 320, y: 58 }, { id: "E", label: "emergency\nvisits", x: 320, y: 150 }, { id: "A", label: "accidents", x: 320, y: 242 } ],
           edges: [ { a: "M", b: "C", ev: "conj", w: 1, mark: "?", markT: 0.5 }, { a: "M", b: "E", ev: "conj", w: 1, mark: "?", markT: 0.5 }, { a: "M", b: "A", ev: "conj", w: 1, mark: "?", markT: 0.5 } ],
-          cap: "Police and hospital staff often say that a full moon brings more crime, more accidents and busier emergency rooms. A 1985 review of 37 studies found almost no effect." },
+          cap: "Ask a nurse or a police officer on a busy night and you will hear it: must be a full moon. A 1985 review of 37 studies found almost nothing. <b>The belief survived.</b>" },
         { head: "What the graph holds",
           nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "homicide", x: 320, y: 58, state: "new" }, { id: "E", label: "cardiac\narrest", x: 320, y: 150, state: "new" }, { id: "A", label: "crash\ntransports", x: 320, y: 242, state: "new" } ],
           edges: [ { a: "M", b: "C", ev: "obs", w: 1, state: "new", label: "×0.85", refs: [3], lo: -14 }, { a: "M", b: "E", ev: "obs", w: 2, state: "new", mark: "0", markT: 0.68, label: "×1.01", refs: [4], lo: -13, labelT: 0.36 },
                    { a: "M", b: "A", ev: "obs", w: 2, state: "new", label: "×1.04", refs: [2], lo: 15 } ],
-          cap: "The graph has 60 findings about the moon from 36 studies. Japan's ambulances carry 4% more crash victims at full moon. Finland has <b>fewer homicides</b> then. Cardiac arrests do not change." },
+          cap: "The graph has 60 findings about the moon from 36 studies. Japan's ambulances carry 4% more crash victims. Finland has fewer homicides. Cardiac arrests do not change. <b>The moon cannot seem to decide.</b>" },
         { head: "New York's record",
           nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "injury\ncrashes", x: 320, y: 242 } ],
           edges: [ { a: "M", b: "C", ev: "obs", w: 2, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.01", refs: [5], lo: -14, labelT: 0.36 },
                    { a: "M", b: "E", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [5], lo: -13, labelT: 0.36 },
                    { a: "M", b: "A", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [5], lo: 15, labelT: 0.36 } ],
-          cap: "The test was registered before it was run. Around a full moon, New York's shootings, ambulance calls and injury crashes <b>do not change</b>. A made-up 23-day cycle gives the same answer." }
+          cap: "We registered a prediction of nothing, and then found it. Around a full moon, New York's shootings, ambulance calls and injury crashes <b>do not change</b>. A made-up 23-day moon does just as well." },
+        { head: "The referee looks harder",
+          nodes: [ { id: "M", label: "four days\nbefore", x: 70, y: 150, state: "new" }, { id: "C", label: "shootings", x: 320, y: 150 } ],
+          edges: [ { a: "M", b: "C", ev: "obs", w: 1, state: "new", mark: "?", markT: 0.68, label: "×0.91", refs: [6], lo: -14, labelT: 0.36 } ],
+          texts: [ { text: "found by trying\nevery day of the cycle", x: 196, y: 214, state: "new", size: 12.5 } ],
+          cap: "A referee tried every day of the cycle. Four days before the full moon, shootings are 9% lower. Nobody predicted it, so <b>it counts for nothing</b>. This is how beliefs start." }
       ] }
   ]
 };

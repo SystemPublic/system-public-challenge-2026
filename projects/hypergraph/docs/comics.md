@@ -43,7 +43,7 @@ Each frame has a heading that names its kind. The strips so far use six.
 
 A strip can end in three ways. The evidence agrees and the edge becomes thicker. The evidence conflicts and the frame shows both edges with a question mark. Or support is withdrawn and the edge turns grey. The third is the case that a large replication project would produce many times at once.
 
-## The seven strips
+## The seven hand-drawn strips
 
 All numbers come from registered claims in this repository or from abstracts read in PubMed. Each strip's source list is on the page.
 
@@ -78,6 +78,16 @@ All numbers come from registered claims in this repository or from abstracts rea
 ## Colour and lettering variants
 
 The style above was chosen on 14 November from three variants (`figures/comics/variants/`). The earlier style is still available: `comics.html?theme=light` draws black on cream with red for additions and grey for withdrawals, `theme=light,blue` uses blue for additions, and `theme=hand` letters the figures by hand.
+
+## Strips generated from the Underlay
+
+`tools/strip_from_diff.py` draws a strip from the difference between two versions of an Underlay collection. It calls `GET /api/collections/system-community/nyc-concordance-claims/versions/<to>/diff?from=<from>`, which needs no key, and writes `viz/data/comics_generated.js`. Frame 1 is the edge as the earlier version holds it. Frame 2 is what the later version adds, in yellow, or withdraws, in red. Frame 3 is a revision record from the same difference, with the interval before and after and the referee's reason. Captions are filled from templates and are not edited.
+
+Two differences have been drawn. Version 1.0.0 to 1.1.0 (nine records added on 14 November) gives a strip for the full moon and one for shootings inside and outside in New York. Version 1.1.0 to 1.2.0 (three records) gives the Chicago replication, and its second frame quotes New York's number from the earlier version.
+
+![Generated: Chicago](../figures/comics/strip_generated_chicago.png)
+
+The numbers, verdicts, dates and reasons are read from the records. The names of the two variables are not, because the collection has no field that says which variable is the exposure. They are typed in `viz/data/strip_nodes.json`. With an exposure field the strip would need nothing typed by hand.
 
 ## From versions to frames
 

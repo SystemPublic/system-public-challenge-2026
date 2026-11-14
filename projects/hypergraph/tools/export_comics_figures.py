@@ -29,8 +29,11 @@ FIGS = [
     ("strip_restaurants.png", "export=restaurants&cap=14", 1280),
     ("strip_cameras.png", "export=cameras&cap=17", 1280),
     ("strip_rivals.png", "export=rivals&cap=14", 1280),
-    ("strip_moon.png", "export=moon&cap=17", 1280),
+    ("strip_moon.png", "export=moon&cap=14", 1280),
     ("strip_medicine.png", "export=medicine&cap=17", 1280),
+    ("strip_generated_heat.png", "export=diff-heat-inside-outside-2006&cap=17", 1280),
+    ("strip_generated_moon.png", "export=diff-moon-full-emergencies&cap=17", 1280),
+    ("strip_generated_chicago.png", "export=diff-transfer-chicago-inside-outside&cap=16", 1280),
     ("grammar.png", "export=grammar", 1280),
 ]
 

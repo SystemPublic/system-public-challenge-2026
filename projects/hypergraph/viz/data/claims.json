@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-14T07:40:04-0500",
+ "generated": "2026-11-14T10:59:04-0500",
  "claims": [
   {
    "id": "afford-gentrification-prevalence",
@@ -30261,6 +30261,225 @@
       "prediction_scored": "partial. Part (a) met: Divvy trips change by 0.949 (0.896 to 1.005) from 27 to 33 C (upper limit below 1.06) and shootings rise by 1.058 (1.014 to 1.105) (lower limit above 1). Part (b) not met: all Divvy trips remove 0.104 (0.041 to 0.247) of the 15 to 21 C rise, below the registered 0.20; the amount removed from the 27 to 33 C log rise is -0.007 (-0.017 to 0.001), within the registered bound."
      }
     ]
+   }
+  },
+  {
+   "id": "transfer-chicago-inside-outside",
+   "kind": "confirmation",
+   "statement": "In Chicago from 2010 to August 2026, shootings outside rise with daily maximum temperature and shootings inside rise less: the inside rate ratio per 5 C is smaller than the outside one, as found in New York (heat-inside-outside-2006).",
+   "graph_evidence": [
+    {
+     "relationship_id": "4FaXcuNJRt|YZku29igbl",
+     "concepts": [
+      "temperature",
+      "homicide"
+     ],
+     "n_findings": 4,
+     "n_studies": 2,
+     "direction": "+",
+     "summary": "As registered in heat-shootings. The graph has no finding that separates indoor from outdoor violence.",
+     "pubmed_ids": [
+      36858215,
+      32738768
+     ]
+    }
+   ],
+   "literature": [
+    {
+     "citation": "Asher J. A Rise in Murder? Let's Talk About the Weather. New York Times (The Upshot), 21 September 2018.",
+     "doi": null,
+     "finding": "Philadelphia: outdoor shootings rise with temperature and indoor shootings barely change; descriptive, no model."
+    },
+    {
+     "citation": "Stevens HR, Graham PL, Beggs PJ, Ossola A. Associations between violent crime inside and outside, air temperature, urban heat island magnitude and urban green space. Int J Biometeorol 2024.",
+     "doi": "PMID 38189988",
+     "finding": "Sydney: temperature raises violent crime both inside and outside."
+    }
+   ],
+   "prediction": {
+    "direction": "-",
+    "magnitude": "Ratio of the inside to the outside rate ratio per 5 C between 0.80 and 0.95 (New York: 0.861, 0.828 to 0.896). Outside 1.10 to 1.18; inside 0.95 to 1.08.",
+    "support_if": "The 95% upper bound of the ratio of the inside to the outside rate ratio is below 1.00.",
+    "refute_if": "The 95% lower bound of the inside rate ratio per 5 C is above 1.05 and the 95% interval of the ratio includes 1.00."
+   },
+   "plan": "analyses/heat_inside/test_chicago.py, committed with this registration and not yet run. Location classes are fixed in the script by two regular expressions; vehicles, transit property and unclassified descriptions are excluded. Quasi-binomial regression of the daily inside count out of inside plus outside on t5 with weekday, year, month, holiday and wet-day terms, with the Pearson scale, which is the error the referee of the New York claims required. Secondary, deciding nothing: separate Poisson slopes, and PORCH moved to excluded.",
+   "can_it_fail": "Yes. About 2,800 inside and 14,500 outside victims are expected; the standard error of the log ratio should be near 0.025, so a ratio of 1.00 (equal slopes) and one of 0.86 are distinguishable. Chicago homes have less air conditioning than New York's, which favours a rise inside.",
+   "already_seen": "Counts of gunshot victims by location_description over all years with no dates (STREET 10,475; AUTO 2,509; ALLEY 1,215; APARTMENT 1,026; PORCH 618; HOUSE 576 and smaller classes), fetched on 14 November 2026 to write the classes. The New York result is known. No Chicago count by date, month or temperature and location was seen.",
+   "alternatives": [
+    "The location description is free text and may be recorded differently by season",
+    "A porch is outdoors but at home; it is classed outside, with a secondary run that excludes it",
+    "Shootings in vehicles are excluded and may behave as either class"
+   ],
+   "relation": "Transfer of heat-inside-outside-2006 to a second city.",
+   "prior": 0.7,
+   "registrant": "Claude (coordinator), for Jeff Vernon",
+   "registered_at": "2026-11-14T10:51:41-0500",
+   "sha256": "dcf2869a78e69c08fdfeaf87984af58b8484a698f82e520d95a400f6bc652478",
+   "hash_ok": true,
+   "outcome": {
+    "id": "transfer-chicago-inside-outside",
+    "verdict": "confirmed",
+    "city_effect": {
+     "label": "ratio of the inside to the outside rate ratio of shootings per 5 C, Chicago 2010 to 2026",
+     "estimate": 0.967928930002403,
+     "lo": 0.943,
+     "hi": 0.994,
+     "scale": "ratio of rate ratios",
+     "null": 1,
+     "n": 6085,
+     "interval_note": "quasi-binomial with the scale computed correctly (1.04), from the referee; the registered script printed 0.956 to 0.980 because statsmodels miscomputes the Pearson scale for the two-column binomial form"
+    },
+    "all_effects": {
+     "ratio_registered": {
+      "estimate": 0.967928930002403,
+      "lo": 0.9555559446307464,
+      "hi": 0.9804621265766243,
+      "se_log": 0.00656395565572762,
+      "dispersion": 0.24889434956696613
+     },
+     "ratio_from_separate_fits": {
+      "estimate": 0.967928930002403,
+      "lo": 0.9418455936484202,
+      "hi": 0.994734614520398,
+      "se_log": 0.01393740680894036
+     },
+     "inside_irr_per_5c": {
+      "estimate": 1.1015411696682875,
+      "lo": 1.074309497322273,
+      "hi": 1.129463112351304,
+      "se_log": 0.012771497673175045
+     },
+     "outside_irr_per_5c": {
+      "estimate": 1.1396846542095744,
+      "lo": 1.127287320614416,
+      "hi": 1.1522183273851214,
+      "se_log": 0.0055803365258720325
+     },
+     "inside_incidents": 5744,
+     "outside_incidents": 33330,
+     "classes": {
+      "excluded": 1989,
+      "inside": 5746,
+      "outside": 33343
+     },
+     "porch_excluded": {
+      "ratio_inside_to_outside": {
+       "estimate": 0.9436495917829212,
+       "lo": 0.9302134414283142,
+       "hi": 0.9572798160224147,
+       "se_log": 0.007316752736496944,
+       "dispersion": 0.26140118310298693
+      },
+      "n_days": 6085,
+      "inside": 4702,
+      "outside": 33075,
+      "inside_irr_per_5c": {
+       "estimate": 1.0718607327153595,
+       "lo": 1.0432895970885046,
+       "hi": 1.1012143066923006,
+       "se_log": 0.013784359905872201
+      },
+      "outside_irr_per_5c": {
+       "estimate": 1.1381460821035048,
+       "lo": 1.1257066930941055,
+       "hi": 1.1507229300086148,
+       "se_log": 0.005606982035410048
+      }
+     },
+     "exploratory_after_the_run": {
+      "homes_only_vs_street_alley_sidewalk": {
+       "inside_irr": 1.056,
+       "inside_lo": 1.021,
+       "inside_hi": 1.092,
+       "inside_n": 2856,
+       "ratio": 0.931,
+       "ratio_lo": 0.898,
+       "ratio_hi": 0.964
+      },
+      "commercial_interiors_vs_street": {
+       "inside_irr": 1.002,
+       "inside_lo": 0.939,
+       "inside_hi": 1.069,
+       "inside_n": 749,
+       "ratio": 0.883,
+       "ratio_lo": 0.827,
+       "ratio_hi": 0.943
+      }
+     }
+    },
+    "sources": [
+     {
+      "kind": "nyc-open-data",
+      "dataset": "gumc-mgzr",
+      "name": "Violence Reduction - Victims of Homicides and Non-Fatal Shootings",
+      "url": "https://data.cityofchicago.org/d/gumc-mgzr",
+      "rows_updated_at": "2026-11-14T14:37:49Z",
+      "query": {
+       "$limit": 50000,
+       "$select": "date_trunc_ymd(date) as d, location_description as loc, count(distinct case_number) as n",
+       "$where": "date between '2010-01-01T00:00:00' and '2026-08-31T23:59:59' AND gunshot_injury_i in ('Y','YES')",
+       "$group": "d, loc",
+       "$order": "d, loc"
+      },
+      "fetched": "2026-11-14T10:51:45-0500",
+      "n_rows": 22090
+     },
+     {
+      "kind": "derived",
+      "path": "data/derived/graph/transfer_chicago/chicago_heat_daily.csv",
+      "note": "Chicago weather and calendar terms"
+     }
+    ],
+    "prediction_scored": "partial: the support condition is met, ratio 0.968 (0.943 to 0.994) with the corrected error. The predicted sizes were missed: the ratio is above the predicted 0.80 to 0.95, and inside shootings rise 1.102 (1.074 to 1.129), above the predicted 0.95 to 1.08.",
+    "settle": "A location field that separates rooms from porches, yards and garages, as New York's does. Chicago's description is free text.",
+    "research_needed": [
+     {
+      "question": "Do shootings inside homes rise with heat less where homes are cooled?",
+      "data": "shootings by premises type with household air conditioning by tract",
+      "design": "the same daily model, with the inside slope allowed to differ by air-conditioning share",
+      "priority": "high"
+     }
+    ],
+    "figures": [],
+    "notes": "In Chicago shootings outside rise 1.140 (1.127 to 1.152) per 5 C and shootings classed inside rise 1.102 (1.074 to 1.129). The inside slope is smaller, as registered, with a margin of 0.006 below 1.00 (z about 2.4). New York's finding that inside shootings do not rise (1.009, 0.975 to 1.044) is not reproduced with the registered classes. The classes are flawed: 2,132 of the 5,746 incidents classed inside (37%) have descriptions that also match the outside pattern (porch or hallway 1,043; parking lot or garage 669; residence yard 240; hospital building or grounds 171), because the inside pattern was tested first. The error pulls the ratio toward 1.00, against the claim. Exploratory, deciding nothing: with ambiguous descriptions excluded the ratio is 0.918 (0.888 to 0.948) and the inside slope 1.046; homes only against street, alley and sidewalk give 0.932 (0.899 to 0.965) and 1.056. With the registered classes the ratio is 0.969 with year-by-month terms, 0.977 (0.931 to 1.026) in May to September, 0.953 in 2010 to 2017 and 0.979 (0.945 to 1.014) in 2018 to 2026. What transfers from New York is the direction: shootings inside rise less with heat than shootings outside. Whether the two cities differ in size is not shown; Chicago homes against New York inside differ by z = 1.9 on a classification chosen after the data. The undated counts quoted in the registration's already_seen came from a narrower preview query (gunshot_injury_i = 'YES' and two incident types) and are smaller than the counts the script fetched.",
+    "registration_sha256": "dcf2869a78e69c08fdfeaf87984af58b8484a698f82e520d95a400f6bc652478",
+    "decided_at": "2026-11-14T10:52:52-0500",
+    "stance": {
+     "value": 0.838,
+     "lo": 0.22,
+     "hi": 0.975,
+     "z": 2.43
+    },
+    "critique": "critique/referee_2026-11-14_chicago_inside.md",
+    "history": [
+     {
+      "verdict": "confirmed",
+      "city_effect": {
+       "label": "ratio of the inside to the outside rate ratio of shootings per 5 C, Chicago 2010 to 2026",
+       "estimate": 0.967928930002403,
+       "lo": 0.9418455936484202,
+       "hi": 0.994734614520398,
+       "scale": "ratio of rate ratios",
+       "null": 1,
+       "n": 6085,
+       "interval_note": "from the two separate Poisson fits with robust errors; the registered quasi-binomial interval is 0.956 to 0.980, which is too narrow because the Pearson scale is 0.25 on sparse daily counts"
+      },
+      "stance": {
+       "value": 0.824,
+       "lo": 0.187,
+       "hi": 0.973,
+       "z": 2.34
+      },
+      "decided_at": "2026-11-14T10:52:52-0500",
+      "prediction_scored": "partial: the support condition is met, since the ratio is 0.968 (0.956 to 0.980) as registered and 0.968 (0.942 to 0.995) with the wider error, both below 1.00. The predicted sizes were missed: the ratio is above the predicted 0.80 to 0.95, and inside shootings rise 1.102 (1.074 to 1.129), above the predicted 0.95 to 1.08. New York's finding that inside shootings do not rise is not reproduced."
+     }
+    ],
+    "revision": {
+     "reason": "Referee corrected the interval (a statsmodels scale error) and counted 37% of inside incidents as ambiguously classed; verdict unchanged.",
+     "critique": "critique/referee_2026-11-14_chicago_inside.md",
+     "revised_at": "2026-11-14T10:56:03-0500",
+     "rule": "concord.claims.PRECEDENCE"
+    }
    }
   },
   {

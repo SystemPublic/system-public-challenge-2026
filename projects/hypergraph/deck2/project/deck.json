@@ -26,19 +26,20 @@
  "cover": "cover",
  "order": [
   "cover",
+  "stripmoon",
   "edgefield",
   "stripheat",
   "striprivals",
-  "stripmedicine",
+  "stripgenerated",
   "stripcameras",
-  "stripair",
   "record",
   "use",
   "requests",
   "close",
+  "stripmedicine",
+  "stripair",
   "grammar",
   "striprestaurants",
-  "stripmoon",
   "edgepanel",
   "review",
   "method",
@@ -46,12 +47,12 @@
  ],
  "sections": {
   "s1": {
-   "description": "The five-minute talk: how new evidence changes an edge, with heat and shootings as the worked example",
+   "description": "The five-minute talk: the full moon as the example, then the procedure on heat and shootings, a strip generated from the Underlay, and the record",
    "start": "cover"
   },
   "s2": {
-   "description": "Backup: the drawing rules, two more strips, one edge in detail, and the method's record",
-   "start": "grammar"
+   "description": "Backup: a conjecture set aside, a new study, the drawing rules, the restaurant strip, one edge in detail, and the method's record",
+   "start": "stripmedicine"
   }
  }
 }

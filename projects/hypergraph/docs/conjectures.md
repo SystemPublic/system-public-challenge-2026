@@ -31,6 +31,12 @@ Shootings outside rise with heat. Shootings inside do not. Both claims are confi
 
 The result is what the first conjecture predicts. It does not separate that conjecture from a direct effect of heat on people who are outdoors: most indoor spaces are cooled, so a direct effect also predicts a smaller rise inside. The referee made this point, and it limits the claim. What the result counts against is a bodily effect that follows people indoors on the same day. Effects that carry over from a hot night, or that depend on medication, were not tested with lags. Flat inside counts are also consistent with a direct rise offset by people leaving their homes, and shootings inside are a different mix of events. The prison result (Mukherjee 2021) remains evidence that heat can raise violence with contact held roughly fixed.
 
+### Chicago, the same morning
+
+The claim `transfer-chicago-inside-outside` was registered before any dated Chicago count by location was fetched. From 2010 to August 2026 shootings outside rise 1.140 (1.127 to 1.152) per 5 °C and shootings classed inside rise 1.102 (1.074 to 1.129). The ratio is 0.968 (0.943 to 0.994, the referee's corrected interval). The registered condition is met, so the claim is confirmed, but the predicted sizes were missed and New York's flat inside slope is not reproduced.
+
+Chicago's location field is free text, and the registered classes were flawed: 37% of the incidents classed inside have descriptions that also name a porch, a yard or a garage. The error works against the claim. With ambiguous descriptions excluded (exploratory) the ratio is 0.918 (0.888 to 0.948) and the inside slope 1.046. What transfers is the direction: shootings inside rise less with heat than shootings outside. Whether the two cities differ in size is not shown (`critique/referee_2026-11-14_chicago_inside.md`).
+
 A short search found no peer-reviewed estimate of this split for shootings (`notes/conjecture_sources.md`, section D). A 2018 newspaper analysis of Philadelphia shootings (Asher, New York Times) described the same pattern without a model. Australian assault data show the opposite for assault: indoor assault keeps rising with heat (Stevens 2024). The New York result should be described as agreeing with the Philadelphia report and as untested elsewhere.
 
 ## Does the prescriber's ZIP code stand in for the patient's?

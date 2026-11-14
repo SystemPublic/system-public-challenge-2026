@@ -1,0 +1,53 @@
+{
+ "id": "transfer-chicago-inside-outside",
+ "kind": "confirmation",
+ "statement": "In Chicago from 2010 to August 2026, shootings outside rise with daily maximum temperature and shootings inside rise less: the inside rate ratio per 5 C is smaller than the outside one, as found in New York (heat-inside-outside-2006).",
+ "graph_evidence": [
+  {
+   "relationship_id": "4FaXcuNJRt|YZku29igbl",
+   "concepts": [
+    "temperature",
+    "homicide"
+   ],
+   "n_findings": 4,
+   "n_studies": 2,
+   "direction": "+",
+   "summary": "As registered in heat-shootings. The graph has no finding that separates indoor from outdoor violence.",
+   "pubmed_ids": [
+    36858215,
+    32738768
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Asher J. A Rise in Murder? Let's Talk About the Weather. New York Times (The Upshot), 21 September 2018.",
+   "doi": null,
+   "finding": "Philadelphia: outdoor shootings rise with temperature and indoor shootings barely change; descriptive, no model."
+  },
+  {
+   "citation": "Stevens HR, Graham PL, Beggs PJ, Ossola A. Associations between violent crime inside and outside, air temperature, urban heat island magnitude and urban green space. Int J Biometeorol 2024.",
+   "doi": "PMID 38189988",
+   "finding": "Sydney: temperature raises violent crime both inside and outside."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Ratio of the inside to the outside rate ratio per 5 C between 0.80 and 0.95 (New York: 0.861, 0.828 to 0.896). Outside 1.10 to 1.18; inside 0.95 to 1.08.",
+  "support_if": "The 95% upper bound of the ratio of the inside to the outside rate ratio is below 1.00.",
+  "refute_if": "The 95% lower bound of the inside rate ratio per 5 C is above 1.05 and the 95% interval of the ratio includes 1.00."
+ },
+ "plan": "analyses/heat_inside/test_chicago.py, committed with this registration and not yet run. Location classes are fixed in the script by two regular expressions; vehicles, transit property and unclassified descriptions are excluded. Quasi-binomial regression of the daily inside count out of inside plus outside on t5 with weekday, year, month, holiday and wet-day terms, with the Pearson scale, which is the error the referee of the New York claims required. Secondary, deciding nothing: separate Poisson slopes, and PORCH moved to excluded.",
+ "can_it_fail": "Yes. About 2,800 inside and 14,500 outside victims are expected; the standard error of the log ratio should be near 0.025, so a ratio of 1.00 (equal slopes) and one of 0.86 are distinguishable. Chicago homes have less air conditioning than New York's, which favours a rise inside.",
+ "already_seen": "Counts of gunshot victims by location_description over all years with no dates (STREET 10,475; AUTO 2,509; ALLEY 1,215; APARTMENT 1,026; PORCH 618; HOUSE 576 and smaller classes), fetched on 14 November 2026 to write the classes. The New York result is known. No Chicago count by date, month or temperature and location was seen.",
+ "alternatives": [
+  "The location description is free text and may be recorded differently by season",
+  "A porch is outdoors but at home; it is classed outside, with a secondary run that excludes it",
+  "Shootings in vehicles are excluded and may behave as either class"
+ ],
+ "relation": "Transfer of heat-inside-outside-2006 to a second city.",
+ "prior": 0.7,
+ "registrant": "Claude (coordinator), for Jeff Vernon",
+ "registered_at": "2026-11-14T10:51:41-0500",
+ "sha256": "dcf2869a78e69c08fdfeaf87984af58b8484a698f82e520d95a400f6bc652478"
+}
