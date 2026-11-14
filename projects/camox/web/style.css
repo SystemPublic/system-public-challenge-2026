@@ -400,3 +400,7 @@ ul.links .ind-id { display: none; }
 .viz { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: var(--s4); }
 .viz .chart { margin: 0; }
 @media (min-width: 900px) { .viz { grid-template-columns: repeat(2, minmax(0, 1fr)); } .viz .wide { grid-column: 1 / -1; } }
+/* Long section labels and verifier badges wrap on phones. */
+span.kind { white-space: normal; overflow-wrap: anywhere; }
+details.verify, details.verify summary, details.verify .pill { white-space: normal; max-width: 100%; overflow-wrap: anywhere; }
+.verify .pill, span.pill.s-backed { white-space: normal; max-width: 100%; overflow-wrap: anywhere; }

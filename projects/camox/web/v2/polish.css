@@ -38,3 +38,6 @@ th { color: var(--teal); }
 .panel h3 { font-weight: 720; letter-spacing: -.015em; }
 .kpi-value { color: var(--ink); }
 @media (max-width: 600px) { .kpi-value { font-size: 22px; } }
+/* Long section labels and verifier badges wrap on phones. */
+span.kind { white-space: normal; overflow-wrap: anywhere; }
+details.verify, details.verify summary, details.verify .pill { white-space: normal; max-width: 100%; overflow-wrap: anywhere; }
