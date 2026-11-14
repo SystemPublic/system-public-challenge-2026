@@ -1,0 +1,103 @@
+{
+ "id": "heat-shootings",
+ "kind": "confirmation",
+ "statement": "In New York City, the daily number of shooting incidents rises with the day's maximum temperature at Central Park, within month and year, by about 5 to 20 percent per 5 C.",
+ "graph_evidence": [
+  {
+   "relationship_id": "4FaXcuNJRt|YZku29igbl",
+   "concepts": [
+    "temperature",
+    "homicide"
+   ],
+   "n_findings": 4,
+   "n_studies": 2,
+   "direction": "+",
+   "summary": "Two case-crossover studies. Rahman et al. 2023 (California 2014-2019): homicide odds +4.9% (1.6 to 8.1) per 5 C Tmax lag 0. Xu et al. 2020 (9 US cities 2007-2017): intentional homicide +9.5% (4.3 to 15.0) per 5 C mean temperature in Chicago and +8.8% (1.5 to 16.6) in New York, lag 0-7. The graph stores Xu's estimates as odds ratios 0.095 and 0.088 and Rahman's as odds ratios 4.9 and 6.2; the abstracts give percent changes, so the graph values are mis-extracted (true ORs about 1.095, 1.088, 1.049, 1.062).",
+   "pubmed_ids": [
+    36858215,
+    32738768
+   ]
+  },
+  {
+   "relationship_id": "4FaXcuNJRt|rULjCt1BqH",
+   "concepts": [
+    "temperature",
+    "injury"
+   ],
+   "n_findings": 4,
+   "n_studies": 3,
+   "direction": "+",
+   "summary": "Girma et al. 2023, New York City ED visits 2005-2011 (SPARCS), warm season: intentional injury among 20-25 year olds OR 1.54 (1.28 to 1.85) for daily minimum 77 F vs 48 F, lag 0-5. The only NYC violence-temperature finding in the graph.",
+   "pubmed_ids": [
+    37448837
+   ]
+  },
+  {
+   "relationship_id": "(concept X7hfhwez9f, 34 relationships)",
+   "concepts": [
+    "gun violence",
+    "temperature"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "The gun violence concept has no relationship with temperature, air temperature, heat wave, hot or extreme heat. Violence (2qLKgaxkm_), crime, aggression and violent crime have none either. The graph's heat-violence evidence is homicide and injury only.",
+   "pubmed_ids": []
+  },
+  {
+   "relationship_id": "4FaXcuNJRt|TLeQZQ_leT",
+   "concepts": [
+    "temperature",
+    "suicide"
+   ],
+   "n_findings": 12,
+   "n_studies": 8,
+   "direction": "+",
+   "summary": "Self-directed violence rises with temperature in 8 studies (e.g. RR 1.35, 1.26 to 1.45, PMID 35394808; per 1 C IRR 1.008, PMID 34034696). Context for the violence claim.",
+   "pubmed_ids": [
+    35394808,
+    34034696,
+    36858215
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Reeping PM, Hemenway D. The association between weather and the number of daily shootings in Chicago (2012-2016). Inj Epidemiol 2020;7:31.",
+   "doi": "10.1186/s40621-020-00260-3",
+   "finding": "Negative binomial GEE with month and year fixed effects: +34.0% (28.1 to 40.2) shootings per 10 C daily high on weekdays, +41.6% (34.7 to 48.9) on weekends and holidays; per 5 C that is IRR 1.158 and 1.190."
+  },
+  {
+   "citation": "Lyons VH, Gause EL, Spangler KR, Wellenius GA, Jay J. Analysis of daily ambient temperature and firearm violence in 100 US cities. JAMA Netw Open 2022;5(12):e2247207.",
+   "doi": "10.1001/jamanetworkopen.2022.47207",
+   "finding": "Gun Violence Archive 2015-2020, distributed-lag models, lag 0 best: RR 1.17 (1.12 to 1.21) at the 84th percentile of Tmax vs the city median; 6.85% of shootings attributable to days above the median; Northeast attributable fraction 9.54%."
+  },
+  {
+   "citation": "Xu R, Xiong X, Abramson MJ, Li S, Guo Y. Ambient temperature and intentional homicide: a multi-city case-crossover study in the US. Environ Int 2020;143:105992.",
+   "doi": "10.1016/j.envint.2020.105992",
+   "finding": "New York 2007-2017: +8.8% (1.5 to 16.6) intentional homicide per 5 C daily mean temperature, lag 0-7; 7.1% attributable to temperatures above the median."
+  },
+  {
+   "citation": "Rahman MM et al. Ambient temperature and air pollution associations with suicide and homicide mortality in California. Sci Total Environ 2023;874:162462.",
+   "doi": "10.1016/j.scitotenv.2023.162462",
+   "finding": "+4.9% (1.6 to 8.1) homicide per 5 C Tmax lag 0."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "IRR per 5 C of Central Park TMAX (lag 0) between 1.05 and 1.20, with month, year and day-of-week terms. The spline curve rises monotonically from the coldest days to about the 85th-95th percentile; RR at the city's 84th percentile TMAX vs the median between 1.05 and 1.25 (Lyons et al. pooled 1.17).",
+  "support_if": "lower 95% limit of the IRR per 5 C above 1.00 (confirmed); hit if the estimate lies in 1.05-1.20",
+  "refute_if": "upper 95% limit at or below 1.00 (contested); an estimate above 1.00 with a limit below 1.00 is unsettled"
+ },
+ "plan": "Data: NYPD Shooting Incident Data, 5ucz-vwe8 (Shootings 2006-Present) as primary, count of distinct incident_key per occur_date, 2006-01-01 to the last full month; the archived historic file 833y-fsy8 (to 2024) used to check the counts match. Weather: GHCN-Daily USW00094728 (Central Park) TMAX and PRCP via concord/noaa.py. Primary model: negative binomial GLM (log link, dispersion by ML) of daily incidents on linear TMAX/5, factors for day of week, calendar month, year, an indicator for federal holidays plus 4 July and 31 December, and an indicator PRCP >= 1 mm. Report IRR per 5 C with 95% CI (robust HC0 SE). Curve: same model with a natural cubic spline of TMAX (4 df), RR vs the median TMAX; read off the RR at the 84th percentile for comparison with Lyons et al. Sensitivity, pre-specified: (a) TMAX averaged over lags 0-1; (b) TMIN instead of TMAX; (c) warm season May-September only; (d) 2006-2019 vs 2020-present; (e) murders only (statistical_murder_flag, historic file). Comparison: literature estimates converted to IRR per 5 C where possible (Reeping weekday and weekend; Xu NYC homicide; Rahman CA homicide; corrected graph values).",
+ "alternatives": [
+  "Residual seasonality within month (school calendar, summer youth programmes, daylight) correlated with temperature",
+  "Time outdoors and street encounters as the mechanism (the temperature effect is real but works through routine activity, not physiology); the design cannot separate mechanisms",
+  "Police summer deployments (e.g. Summer All Out) that respond to expected violence",
+  "The 2020-2021 rise in shootings coinciding with summers; handled by year terms but not by year-by-month"
+ ],
+ "prior": 0.9,
+ "registrant": "Claude (heat agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T15:19:38-0500",
+ "sha256": "b2a1bd8ecec550da1e1e07d368d2e5f1b7d108b07ce6f51ef658bbb197ebb762"
+}

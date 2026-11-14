@@ -1,0 +1,71 @@
+{
+ "id": "repro-dot-2025-deaths",
+ "kind": "reproduction",
+ "target": {
+  "report": "Traffic deaths reach all-time low (press release)",
+  "agency": "New York City Department of Transportation",
+  "date": "2026-01-02",
+  "url": "https://www.nyc.gov/html/dot/html/pr2026/traffic-deaths-reach-all-time-low.shtml",
+  "location": "press release text, paragraphs on overall deaths, pedestrians, boroughs and injuries",
+  "number": {
+   "deaths_2025": 205,
+   "deaths_2024": 253,
+   "pedestrian_deaths_2025": 111,
+   "pedestrian_deaths_2024": 122,
+   "deaths_by_borough_2025": {
+    "BRONX": 33,
+    "QUEENS": 57,
+    "MANHATTAN": 39,
+    "BROOKLYN": 63,
+    "STATEN ISLAND": 13
+   },
+   "deaths_by_borough_2024": {
+    "BRONX": 54,
+    "QUEENS": 74,
+    "MANHATTAN": 44,
+    "BROOKLYN": 69,
+    "STATEN ISLAND": 12
+   },
+   "injuries_2025_as_of_dec15": 47557,
+   "injuries_2024": 51540,
+   "serious_injuries": {
+    "2025": 2947,
+    "2024": 3031,
+    "note": "not reproduced: the open tables have no severity field matching DOT's serious-injury definition"
+   }
+  },
+  "definition": "Traffic deaths in calendar year 2025 'through December 31, 2025' (release). Injuries: 'as of December 15, total injuries are down 7.7 percent, from 51,540 in 2024, to 47,557 in 2025'. The release does not name its data source, the date field (crash or death), or how borough is assigned. DOT's fatality file is reconciled with NYPD and the medical examiner and adds deaths that occur days after the crash; it is revised later (the Fiscal 2026 MMR revised Fiscal 2025 deaths from 211 to 214).",
+  "data_used": [
+   "DOT/NYPD reconciled fatality file (not published at row level)",
+   "NYPD Motor Vehicle Collisions - Crashes h9gi-nx95 (open approximation)",
+   "NYPD Motor Vehicle Collisions - Person f55k-p6yu (open approximation)"
+  ],
+  "data_access": "partly_open"
+ },
+ "statement": "The NYPD open collision tables, queried in November 2026, reproduce DOT's 2 January 2026 figures for 2025 traffic deaths (205), 2024 deaths (253), pedestrian deaths (111, 122), deaths by borough and injuries (47,557 and 51,540) within the registered tolerances under the primary reading.",
+ "graph_evidence": [],
+ "literature": [],
+ "prediction": {
+  "direction": "0",
+  "magnitude": "Tolerances. Citywide deaths: within 5 percent of the stated count (2025: 195 to 215; 2024: 241 to 265). Pedestrian deaths and each borough death count: within 5 percent or 3 deaths, whichever is larger. Injuries: within 3 percent (2025: 46,130 to 48,984; 2024: 49,994 to 53,086). Registrant's expectation, separate from the tolerance: the open-data death counts differ from DOT's by 0 to 15 percent, more likely below than above DOT, because DOT adds deaths that occur after the crash report; open-data injury counts for the Jan 1 to Dec 15 window are within 3 percent but somewhat above DOT's because rows were added after 15 December 2025.",
+  "support_if": "Under the primary reading (D1, B1, I1) the 2025 and 2024 citywide death counts and the 2025 and 2024 injury counts are all within tolerance. Borough and pedestrian results are reported per item and do not decide the verdict, but each one out of tolerance is reported as a mismatch.",
+  "refute_if": "No registered reading puts the 2025 citywide death count within tolerance, or no registered reading puts the 2025 injury count within tolerance.",
+  "verdict_rule": "confirmed = support_if met under the primary readings; contested = refute_if met; unsettled = otherwise (some readings reproduce, the primary does not)."
+ },
+ "plan": "All queries through concord/socrata.py (SoQL aggregation), recording rowsUpdatedAt for each dataset. Readings of the unstated parts of the method:\nDEATHS. D1 (primary): persons table f55k-p6yu, count of rows with person_injury = 'Killed', crash_date in the calendar year (2025, and 2024 for the comparison). D2: crash table h9gi-nx95, sum(number_of_persons_killed) by crash_date in the calendar year. D3: deaths dated by date of death rather than crash date; the open tables carry no date of death, so D3 cannot be computed; its effect is bounded by reporting D1 for crashes on 1 to 31 December of the prior year (deaths of those victims may fall in the next year) and noted as not computable.\nPEDESTRIANS. P1 (primary): persons table, person_type = 'Pedestrian' and person_injury = 'Killed'. P2: crash table sum(number_of_pedestrians_killed).\nBOROUGH. B1 (primary): borough field of the crash record (h9gi-nx95), with deaths taken as sum(number_of_persons_killed) grouped by borough, crashes with a blank borough reported as unassigned. B2: borough from coordinates: killed-person crashes (crash table rows with number_of_persons_killed > 0) placed by point-in-polygon in the DCP Borough Boundaries dataset gthc-hcne; points outside all polygons go to the nearest polygon if within 500 m, otherwise they keep the record's borough field; rows with no coordinates keep the borough field. B1 and B2 are compared for 2025 and 2024, since the project found a change in geocoding in 2025 (critique/bridge-crz-injury-crashes.md).\nINJURIES. I1 (primary): crash table sum(number_of_persons_injured), crash_date from 1 January to 15 December inclusive, for 2025 and for 2024 (same window both years). I2: persons table count of person_injury = 'Injured', same window. I3: 2025 Jan 1 to Dec 15 against 2024 full calendar year (if the release compared a partial 2025 with a full 2024). I4: window ending 14 December inclusive (if 'as of December 15' means data through the previous day). The vintage of the data (DOT read it about 15 December 2025; the open tables now hold rows added later) cannot be reconstructed from Socrata and is noted.\nReport each number under each reading against the stated number, the signed gap in counts and percent, a figure in figures/reproduction/, and an outcome scored with concord.claims.outcome. No other measures decide the verdict; anything added after the data are seen is labelled exploratory.",
+ "alternatives": [
+  "DOT's reconciled file adds deaths that occur after the crash report (NYPD records the injury at the scene; the person later dies) and so exceeds the NYPD counts.",
+  "DOT's definition excludes deaths that NYPD tables include (deaths on highways under state jurisdiction, medical events, suicides, crashes on private property), so the NYPD counts exceed DOT's.",
+  "Late additions and revisions to the open tables since January 2026 move the counts away from what DOT read.",
+  "Borough attribution differs by method (crash record field vs coordinates); the 2025 change in geocoding moves crashes between blank and named boroughs.",
+  "Date field: DOT may date a death by the date of death, moving late-December crashes across the year boundary."
+ ],
+ "prior": 0.3,
+ "registrant": "claude (reproduction agent, Claude Code, 12 Nov 2026)",
+ "data_seen_before": {
+  "this_agent": "This agent has queried no crash data values before registering. It read dataset metadata (column names, rowsUpdatedAt) for h9gi-nx95, f55k-p6yu and the catalog entry of gthc-hcne, the press release, docs/reproduction_inventory.md and critique/bridge-crz-injury-crashes.md. The critique quotes yearly counts of injury crashes and of injury crashes without coordinates for 2022 to 2025 (e.g. 37,426 injury crashes in 2025, 973 without coordinates); this agent has therefore seen injury-crash counts (crashes with any injured or killed person) but not person-injured or person-killed totals.",
+  "cache_files": "data/cache/socrata holds 12 query files for h9gi-nx95 and none for f55k-p6yu, all fetched 12 Nov 2026 by other agents (rowsUpdatedAt 2026-11-12T14:31:25Z). Files that contain 2025 death information: h9gi-nx95-3f9e56089f9f2d194cff7cf5 (monthly sum of number_of_persons_killed, Jan 2022 to Aug 2026, geocoded crashes inside a citywide bounding box, so 2025 monthly totals for geocoded crashes); h9gi-nx95-40eea3b0547e81a6ab0e631e and -a4bdb6ea3ebbdc09a03deabb (row-level injury or fatal crashes with borough and number_of_persons_killed, 2022 to Aug 2026, box over Manhattan, west Bronx, north Brooklyn and west Queens); h9gi-nx95-434a6a168ea809bf4cebdadf and -4c48ae6b0ff245e984d47a4a (row-level, lower and midtown Manhattan box, with number_of_persons_killed). Files without death counts for 2025: -298b0c5d8909bde7a7a3cc3b (2019 to 2024 only), -4c1b267f1f2f7a762c93e0cb and -e57bb5e0e7b318085fdc2e93 (August 2022 samples), -501f1c4e3e58d05bcdfeb761 (yearly counts and missing coordinates), -b14f35ec17caf3406bd2e930 (injury crashes by year and borough, 2022 to 2025, includes 2025 injury-crash counts by borough), -bb07af279237f0100917c614 and -e4bc06d219b87596ce421347 (injury crashes by location class and month). This agent has not opened the rows of any of these files and will run fresh queries."
+ },
+ "registered_at": "2026-11-12T19:56:43-0500",
+ "sha256": "830c41a9b091a8f6b1582f61c3c6e47acce8f519bb95594f03ffdaa534af28ac"
+}

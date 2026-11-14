@@ -1,0 +1,68 @@
+{
+ "id": "all-boats-trees-rent",
+ "kind": "confirmation",
+ "statement": "Across New York City census tracts, a larger gain in living street trees between the 2005 and 2015 street tree censuses is followed by a faster rise in median gross rent between ACS 2008-12 and ACS 2018-22, of the size that a Portland study of tree planting and house prices implies (green gentrification).",
+ "edge": {
+  "cause": "street tree planting",
+  "effect": "rent"
+ },
+ "graph_evidence": [
+  {
+   "concepts": [
+    "tree cover / tree canopy / street trees (variable names)",
+    "rent, property value, gentrification"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "A search of the graph's variable names for tree canopy, street trees, tree cover and tree planting (30 shortest matching variables of 118, about 80 associations) returned no finding that links trees to rent, house prices, property values or gentrification. It returned findings on depression, distress, cardiovascular disease, mortality, sleep, dementia and one on shootings (IRR 0.91, PMID 36115422). The claimed harm of urban greening is absent from the graph as far as this search reached.",
+   "pubmed_ids": [
+    36115422
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Donovan GH, Prestemon JP, Butry DT, Kaminski AR, Monleon VJ. The politics of urban trees: tree planting is associated with gentrification in Portland, Oregon. Forest Policy and Economics 2021;124:102387.",
+   "pmid": 34483719,
+   "finding": "Abstract: each tree planted was associated with a 131 dollar (95% CI 53 to 210) increase in a tract's median single-family sale price six years later and 265 dollars (151 to 379) twelve years later; 141 tracts, 30 years. The authors call the association modest."
+  },
+  {
+   "citation": "Troy A, Grove JM, O'Neil-Dunne J. The relationship between tree canopy and crime rates across an urban-rural gradient in the greater Baltimore region. Landscape and Urban Planning 2012;106:262-270.",
+   "finding": "A 10% increase in tree canopy was associated with about a 12% decrease in crime (cross-sectional). Used for the secondary measure only."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Slope of the change in log median gross rent on the change in street trees: 0.044 log points per 100 trees (0.018 to 0.070). Derivation: 131 dollars (53 to 210) per tree at six years divided by an assumed Portland median sale price of 300,000 dollars gives 0.044% (0.018 to 0.070%) per tree per tract; assumed to carry over to rent and to New York tracts, which are of similar population. The hedonic alternative (about 2% of rent for a tree at the house, Donovan and Butry 2011) implies under 0.005 per 100 trees, which this test cannot tell from zero.",
+  "support_if": "The 95% confidence interval of the primary slope (per 100 trees) lies wholly above 0.009, half the lower end of the predicted range.",
+  "refute_if": "The 95% confidence interval of the primary slope lies wholly below 0.018, the lower end of the predicted range. Any other result is unsettled."
+ },
+ "discrimination": {
+  "computed_before_outcome": true,
+  "method": "analyses/all_boats/tree_test.py --dry: the registered model was fitted 200 times to simulated rent changes with the marginal standard deviation of the real rent change (0.199, read without reference to trees) and no relation to trees, on the real design matrix (n = 2,048 tracts, SD of exposure 1.03 hundred trees).",
+  "se_slope": 0.0049,
+  "z_null_if_prediction_true": {
+   "central_0.044": 8.9,
+   "low_0.018": 3.7
+  },
+  "D_if_prediction_true": {
+   "central": 80,
+   "low": 13.5
+  },
+  "discriminates": true,
+  "secondary_crime": "Predicted slope for violent crime: about -0.011 log points per 100 trees (100 young trees at 15 square metres of crown each add about 0.9 points of canopy to a median tract of 0.17 square km; Troy et al. give 1.2% less crime per point). Simulated standard error 0.0073, so z_null is 1.5 and D is 2.3, below 4. The crime measure therefore decides no verdict. It is computed by the same fixed script and reported as exploratory; a null on it is uninformative."
+ },
+ "plan": "Script: analyses/all_boats/tree_test.py, committed with this registration; no resampling, so no seed. Unit: 2020 census tracts with ACS 2018-22 population of at least 500, both median gross rents present and neither top-coded (2008-12 below 2,000 dollars; 2018-22 below 3,500 dollars). Exposure: living street trees in the 2015 census (NYC Open Data uvpi-gqnh, status Alive) minus living trees in the 2005 census (29bw-z7pj, status not Dead), points joined to 2020 tracts, in hundreds of trees (data/derived/all_boats/tree_counts_tracts.csv). Outcome: d_logrent in data/derived/neighbourhood/tracts_acs.csv (log median gross rent, table B25064, ACS 2018-22 minus ACS 2008-12 area-weighted from 2010 tracts; built by analyses/neighbourhood/base.py). Primary model: OLS of d_logrent on the exposure, trees per square km in 2005, log median rent 2008-12, non-Hispanic white share 2008-12, log population density 2008-12 and borough, with standard errors clustered by 2020 NTA. Sensitivities fixed in the script: without baseline rent; adding the 2018-22 poverty rate; exposure as log ratio of tree counts; tracts with at least 50 trees in 2005. Distribution (exploratory): the slope within thirds of 2008-12 median rent. Secondary, exploratory: Poisson model of murders, robberies and felony assaults in 2016-18 (NYPD complaint data qgea-i56i, offence codes 101, 105, 106) on the exposure, log(1 + count in 2006-08) and the same covariates.",
+ "data_seen": "Seen before registration: tree counts by tract in both censuses and their correlation with the 2018-22 poverty rate (Spearman 0.30 to 0.35: gains were larger in poorer tracts); the marginal distribution of d_logrent (mean 0.377, SD 0.200, counts of top-coded tracts) and one row of tracts_acs.csv printed as a file header. Not seen: any relation between tree change and rent change, and any crime data by tract and period. d_logrent was used earlier in this project as a covariate in the 311 noise claim (analyses/neighbourhood/noise311.py), never with trees.",
+ "alternatives": [
+  "MillionTreesNYC (2007-2015) directed planting to low-canopy, poorer neighbourhoods, several of which gentrified for other reasons. This would produce a positive slope without any effect of trees. Borough, baseline rent, baseline white share and density adjust for it in part.",
+  "The 2005 and 2015 censuses differ in method and completeness (1.5% of 2005 trees fall outside any tract by their coordinates against 0.01% in 2015), so the measured change contains error, which biases the slope toward zero.",
+  "ACS tract medians have large sampling error; with baseline rent as a covariate, regression to the mean affects the baseline coefficient and may leak into the tree coefficient. The sensitivity without baseline rent addresses this.",
+  "Rent stabilisation slows rent change in older multi-family tracts, where street trees are also dense."
+ ],
+ "prior": "Probability confirmed 0.25, contested 0.45, unsettled 0.30.",
+ "registrant": "Claude (agent, all-boats task), 13 November 2026",
+ "registered_at": "2026-11-13T07:46:53-0500",
+ "sha256": "04c757287a2a6502078696eb6e4e13a790d502c3be954368f8f44ed6572f25b8"
+}

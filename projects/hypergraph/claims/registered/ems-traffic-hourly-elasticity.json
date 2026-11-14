@@ -1,0 +1,42 @@
+{
+ "id": "ems-traffic-hourly-elasticity",
+ "kind": "confirmation",
+ "statement": "Within a day, Manhattan ambulance travel time rises in hours when yellow-taxi trips in the same area are slower than usual, with an elasticity between 0.3 and 0.9, and taxi pace a week later does not predict it.",
+ "graph_evidence": [
+  {
+   "summary": "The graph holds no finding on the elasticity of emergency-vehicle travel time to general traffic speed. It holds a lights-and-sirens time saving of 3.02 min (Minneapolis, PMID 9795322) and survival odds ratios of 1.02 to 1.24 per minute of shorter response (docs/congestion_tradeoffs.md).",
+   "pubmed_ids": [
+    "9795322",
+    "20798090"
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "docs/congestion_tradeoffs.md, bridge-crz-ems-travel registration",
+   "finding": "Monthly zone-relative elasticity of ambulance travel time to taxi speed 0.32 (five specifications 0.14 to 0.49), October 2019 to December 2024."
+  },
+  {
+   "citation": "Calibration 2017-2018 (this thread, calibration.json, seen before registration)",
+   "finding": "Same model on 2017-2018: elasticity 0.70 (0.64 to 0.75), lead coefficient in the joint model -0.04 (-0.08 to 0.01); life-threatening only 0.53 (0.46 to 0.61)."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "elasticity of mean EMS travel time to taxi pace (hours per mile) 0.3 to 0.9; lead coefficient near 0",
+  "support_if": "Joint model (x and x_lead together), all severities, 2019-01-01 to 2026-09-30 without 2020-03-01 to 2021-06-30: the 95% lower bound of beta_x is above 0.10, AND the 95% lower bound of beta_x - beta_lead is above 0.10.",
+  "refute_if": "The 95% upper bound of beta_x is below 0.10, OR the 95% upper bound of beta_x - beta_lead is below 0 (future traffic predicts at least as well as current traffic)."
+ },
+ "plan": "lib.t1(range(2019, 2027)) at commit f44ab0b. Cells: date x hour x area (crz with taxi cbd, north with taxi north), at least 2 EMS incidents with travel > 0 and 20 taxi trips. y = log mean EMS travel seconds (76xm-jjuj, valid response time, 2019-2026 rows from data/derived/congestion/ems_YYYY.csv); x = log taxi hours per mile (TLC yellow trip files, filter f1, analyses/ems_response/taxi_hourly.py); x_lead = x of the same area and hour 7 days later. Controls log n of the cell and log Manhattan EMS n of the hour. Fixed effects date x area and area x year x weekday x hour, weights EMS n, standard errors clustered by week. No resampling. Discrimination (rule 8): the 2017-2018 calibration gives se(beta_x) = 0.030, so D against no effect at a predicted 0.4 is 181. Secondary (reported, not deciding): life-threatening only (sev hi); x alone; lead alone; by year.",
+ "alternatives": [
+  "Fewer ambulance unit-hours (MMR: in-service hours per day 8,891 in FY22 to 8,109 in FY26), so the nearest free unit is farther away (a distance effect, not traffic)",
+  "Hospital closures and diversions lengthening repositioning (Mount Sinai Beth Israel closed 2025)",
+  "Call mix and geography (more calls in slow areas or hours)",
+  "Recording changes (share of incidents without a valid response time rose from 4.4% in 2023 to 9.5% in 2026)",
+  "A shared within-hour cause, such as rain or an event, that slows traffic and also raises demand in that hour"
+ ],
+ "prior": 0.8,
+ "registrant": "claude (ems_response thread)",
+ "registered_at": "2026-11-13T13:27:12-0500",
+ "sha256": "ad3404a9d7090050cd7910f3742ac2d8b150b6194d815eced9cf77aab7a312fa"
+}

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strips: how an edge changes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&text=0123456789.%2C%25%C3%97%2B%E2%88%92&display=swap" rel="stylesheet">
+<script src="data/comics.js"></script>
+<script src="data/comics_generated.js"></script>
+<style>
+  /* House style since 14 November: white on black, yellow for what a frame adds, red for a withdrawn edge,
+     Helvetica in the figures and hand lettering in the captions. Earlier styles: ?theme=light, blue (with light), hand. */
+  :root { --paper: #000; --pink: #fff; --new: #ffd60a; --gone: #ff3b30;
+          --letter: "Patrick Hand", "Architects Daughter", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+          --diagram: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body.t-light { --paper: #fbf8f0; --pink: #14120f; --new: #c8371a; --gone: #b9b3a6; }
+  body.t-blue { --new: #1f4fd8; }
+  body.t-hand { --diagram: var(--letter); }
+  .frame svg text { letter-spacing: .01em; }
+  main, header.site, footer { max-width: 1400px; }
+  .lead { font-size: 16px; max-width: 86ch; color: var(--ink); margin: 6px 0 0; }
+  h2.strip-title { margin: 34px 0 2px; font-size: 19px; }
+  p.strip-lede { margin: 0 0 10px; max-width: 96ch; color: var(--ink-2); font-size: 14px; }
+  .strip { display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); gap: 12px; }
+  @media (max-width: 1150px) { .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .strip { grid-template-columns: minmax(0, 1fr); } }
+  .frame { background: var(--paper); border: 2.5px solid var(--pink); display: flex; flex-direction: column; color: var(--pink); }
+  .frame svg { display: block; width: 100%; height: auto; }
+  .frame svg text { font-family: var(--diagram); fill: var(--pink); text-transform: uppercase; }
+  .frame .cap { border-top: 2.5px solid var(--pink); padding: 8px 11px 9px; font-family: var(--letter); text-transform: uppercase;
+                font-size: 13.5px; line-height: 1.34; letter-spacing: .02em; flex: 1; }
+  .frame .cap b { color: var(--new); font-weight: 400; }
+  .sources { font-size: 12.5px; color: var(--ink-2); margin: 8px 0 0; padding-left: 0; list-style: none; columns: 2; column-gap: 28px; max-width: 1400px; }
+  .sources li { break-inside: avoid; margin: 0 0 3px; padding-left: 22px; text-indent: -22px; }
+  .sources li b { display: inline-block; width: 22px; text-indent: 0; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+  @media (max-width: 800px) { .sources { columns: 1; } }
+  .grammar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  @media (max-width: 1000px) { .grammar { grid-template-columns: minmax(0, 1fr); } }
+  .gbox { background: var(--paper); border: 2.5px solid var(--pink); padding: 8px 12px 10px; color: var(--pink); }
+  .gbox h3 { font-family: var(--letter); text-transform: uppercase; font-weight: 400; font-size: 15px; margin: 0 0 4px; letter-spacing: .04em; color: var(--pink); }
+  .grow { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 10px; align-items: center; min-height: 34px; }
+  .grow svg { width: 112px; height: 34px; display: block; overflow: visible; }
+  .grow span { font-family: var(--letter); text-transform: uppercase; font-size: 12.5px; line-height: 1.25; letter-spacing: .02em; }
+  body.export header.site, body.export footer, body.export .noexport { display: none; }
+  body.export { background: var(--paper); }
+  body.export main { max-width: none; padding: 14px 18px; margin: 0; }
+  body.export h2.strip-title, body.export p.strip-lede, body.export .sources { display: none; }
+  body.export .strip { gap: 16px; }
+  body.export .frame .cap { font-size: var(--capsize, 15px); }
+</style>
+</head>
+<body>
+<header class="site">
+  <nav class="pages"><a href="hypergraph.html">Edges as objects</a><a href="heat_drugs.html">Heat and medicines</a><a href="comics.html" aria-current="page">Strips</a><a href="index.html">Evidence dashboard</a><a href="evidence.html">Test cards and provenance</a><a href="levers.html">Levers</a></nav>
+  <h1>Strips: how an edge changes</h1>
+  <p class="lead">A graph of findings changes whenever a study, a dataset or a retraction arrives. Each strip below shows one such change as a sequence of frames. A frame is the state of a few edges at one time. What a frame adds is drawn in yellow, and what it withdraws is drawn in red. Every number has a numbered source under the strip.</p>
+</header>
+<main>
+  <div id="strips"></div>
+  <section class="noexport" id="grammar-sec">
+    <h2 class="strip-title">The grammar of arrows</h2>
+    <p class="strip-lede">Five properties of an edge are drawn, and each has one visual channel. The line says what kind of evidence there is. The head says which way the influence runs. The width says how certain the edge is. The colour says what changed in this frame. A mark on the line says what is open or withdrawn.</p>
+  </section>
+  <div id="grammar" class="grammar"></div>
+</main>
+<footer><p>Built from <code>viz/data/comics.js</code>. The grammar and the rules for writing a strip are in <code>docs/comics.md</code>.</p></footer>
+<script>
+"use strict";
+const NS = "http://www.w3.org/2000/svg";
+const W = 400, H = 292;
+const COL = { new: "var(--new)", gone: "var(--gone)", kept: "var(--pink)" };
+const DASH = { exp: null, obs: "9 5", cor: "0.1 6.5", conj: "0.1 6.5" };
+const WID = { 1: 1.6, 2: 3.2, 3: 5.4 };
+function el(tag, attrs, parent, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs || {}) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+  if (text != null) e.textContent = text;
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function lines(svg, str, x, y, size, attrs) {
+  const parts = String(str).split("\n"), lh = size * 1.16;
+  const t = el("text", Object.assign({ x, y: y - (parts.length - 1) * lh / 2, "text-anchor": "middle", "dominant-baseline": "central", "font-size": size }, attrs || {}), svg);
+  parts.forEach((p, i) => el("tspan", { x, dy: i ? lh : 0 }, t, p));
+  return t;
+}
+// Point where the segment from the centre of box b toward point p leaves the box.
+function clip(b, p, gap) {
+  const dx = p.x - b.x, dy = p.y - b.y;
+  if (b.r) { const d = Math.hypot(dx, dy) || 1; return { x: b.x + dx / d * (b.r + gap), y: b.y + dy / d * (b.r + gap) }; }
+  const hw = b.w / 2 + gap, hh = b.h / 2 + gap;
+  const s = Math.min(dx ? hw / Math.abs(dx) : 1e9, dy ? hh / Math.abs(dy) : 1e9);
+  return { x: b.x + dx * s, y: b.y + dy * s };
+}
+function quad(p0, c, p1, t) { const u = 1 - t; return { x: u * u * p0.x + 2 * u * t * c.x + t * t * p1.x, y: u * u * p0.y + 2 * u * t * c.y + t * t * p1.y }; }
+// Draw one edge between two points (already clipped). Returns the geometry so that labels and modifiers can attach.
+function paintEdge(svg, p0, p1, e) {
+  const col = COL[e.state || "kept"], w = WID[e.w || 2], ev = e.ev || "obs";
+  const dx = p1.x - p0.x, dy = p1.y - p0.y, len = Math.hypot(dx, dy) || 1, nx = -dy / len, ny = dx / len, bend = e.bend || 0;
+  const c = { x: (p0.x + p1.x) / 2 + nx * bend, y: (p0.y + p1.y) / 2 + ny * bend };
+  const dir = e.dir || (ev === "cor" ? "none" : "ab");
+  const hl = 7 + w * 1.7, hw = 3.6 + w * 1.05;
+  function back(p, toward) { const d = Math.hypot(toward.x - p.x, toward.y - p.y) || 1; return { x: p.x + (toward.x - p.x) / d * (hl - 1), y: p.y + (toward.y - p.y) / d * (hl - 1), ux: (p.x - toward.x) / d, uy: (p.y - toward.y) / d }; }
+  let a = p0, b = p1, heads = [];
+  if (dir === "ab" || dir === "both") { const k = back(p1, c); b = k; heads.push([p1, k]); }
+  if (dir === "both") { const k = back(p0, c); a = k; heads.push([p0, k]); }
+  const g = el("g", { opacity: e.state === "gone" ? 0.9 : 1 }, svg);
+  el("path", { d: `M${a.x},${a.y} Q${c.x},${c.y} ${b.x},${b.y}`, fill: "none", stroke: col, "stroke-width": ev === "cor" || ev === "conj" ? Math.max(w, 2.4) : w,
+               "stroke-dasharray": DASH[ev], "stroke-linecap": ev === "cor" || ev === "conj" ? "round" : "butt" }, g);
+  for (const [tip, k] of heads) {
+    const px = -k.uy, py = k.ux;
+    el("polygon", { points: `${tip.x},${tip.y} ${k.x - k.ux + px * hw},${k.y - k.uy + py * hw} ${k.x - k.ux - px * hw},${k.y - k.uy - py * hw}`, fill: col }, g);
+  }
+  const geo = { at: t => quad(p0, c, p1, t), nx, ny, col, g };
+  if (e.mark) {
+    const m = geo.at(e.markT != null ? e.markT : (e.label ? 0.24 : 0.5));
+    if (e.mark === "x") { const s = 7; el("path", { d: `M${m.x - s},${m.y - s} L${m.x + s},${m.y + s} M${m.x - s},${m.y + s} L${m.x + s},${m.y - s}`, stroke: "var(--new)", "stroke-width": 3.2, "stroke-linecap": "round" }, g); }
+    else if (e.mark === "0") { el("circle", { cx: m.x, cy: m.y, r: 7.5, fill: "var(--paper)", stroke: col, "stroke-width": 2 }, g); el("path", { d: `M${m.x - 5.3},${m.y + 5.3} L${m.x + 5.3},${m.y - 5.3}`, stroke: col, "stroke-width": 2 }, g); }
+    else if (e.mark === "?") { el("circle", { cx: m.x, cy: m.y, r: 10, fill: "var(--paper)", stroke: "var(--new)", "stroke-width": 2 }, g); el("text", { x: m.x, y: m.y + 0.5, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 17, style: "fill: var(--new)" }, g, "?"); }
+  }
+  if (e.label) {
+    const m = geo.at(e.labelT != null ? e.labelT : 0.5), off = e.lo || 0;
+    const x = m.x + nx * off + (e.lx || 0), y = m.y + ny * off + (e.ly || 0);
+    const t = lines(g, e.label, x, y, e.size || 14, { style: `fill: ${col}; paint-order: stroke; stroke: var(--paper); stroke-width: 6px; stroke-linejoin: round;` });
+    if (e.refs && e.refs.length) {
+      const last = t.lastChild;
+      el("tspan", { dy: -5, "font-size": 9.5, style: "letter-spacing: .5px" }, last, " " + e.refs.join(","));
+    }
+    if (e.city) {
+      const bb = t.getBBox(), cx = bb.x - 8, cy = bb.y + bb.height / 2, s = 5;
+      el("polygon", { points: `${cx},${cy - s} ${cx + s},${cy} ${cx},${cy + s} ${cx - s},${cy}`, fill: col, stroke: "var(--paper)", "stroke-width": 1 }, g);
+    }
+  }
+  return geo;
+}
+function drawFrame(f, i, parent) {
+  const wrap = document.createElement("div"); wrap.className = "frame"; parent.appendChild(wrap);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${f.h || H}`, role: "img", "aria-label": f.alt || f.cap.replace(/<[^>]+>/g, "") }, null);
+  wrap.appendChild(svg);
+  // number tab and frame kind
+  el("rect", { x: 0, y: 0, width: 27, height: 25, fill: "var(--pink)" }, svg);
+  el("text", { x: 13.5, y: 13.5, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 15, style: "fill: var(--paper)" }, svg, String(i + 1));
+  if (f.head) el("text", { x: 35, y: 14, "dominant-baseline": "central", "font-size": 12.5, style: "letter-spacing: .08em" }, svg, f.head);
+  const gE = el("g", {}, svg), gN = el("g", {}, svg), box = {};
+  for (const n of f.nodes) {
+    const col = COL[n.state || "kept"];
+    if (n.kind === "unknown") {
+      const r = n.r || 19; box[n.id] = { x: n.x, y: n.y, r };
+      el("circle", { cx: n.x, cy: n.y, r, fill: "var(--paper)", stroke: col, "stroke-width": 2.4, "stroke-dasharray": "5 3.5" }, gN);
+      el("text", { x: n.x, y: n.y + 1, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 22, style: `fill: ${col}` }, gN, n.label || "X");
+      if (n.note) lines(gN, n.note, n.x + (n.nx || 0), n.y + (n.ny != null ? n.ny : r + 14), 12.5, { style: `fill: ${col}` });
+      continue;
+    }
+    const t = lines(gN, n.label, n.x, n.y, n.size || 13.5, { style: `fill: ${col}` });
+    const bb = t.getBBox(), w = Math.max(bb.width + 16, 44), h = bb.height + 11;
+    box[n.id] = { x: n.x, y: n.y, w, h };
+    const r = el("rect", { x: n.x - w / 2, y: n.y - h / 2, width: w, height: h, fill: "var(--paper)", stroke: col, "stroke-width": 2.2, "stroke-dasharray": n.kind === "proxy" ? "5 3.5" : null }, null);
+    gN.insertBefore(r, t);
+  }
+  const geo = {};
+  (f.edges || []).forEach((e, k) => {
+    const A = box[e.a], B = box[e.b];
+    const mid = { x: (A.x + B.x) / 2, y: (A.y + B.y) / 2 };
+    let ca = B, cb = A;
+    if (e.bend) { const dx = B.x - A.x, dy = B.y - A.y, l = Math.hypot(dx, dy) || 1; ca = cb = { x: mid.x - dy / l * e.bend, y: mid.y + dx / l * e.bend }; }
+    geo[e.id || k] = paintEdge(gE, clip(A, ca, 3), clip(B, cb, 4), e);
+  });
+  for (const m of f.mods || []) {
+    const A = box[m.from], tgt = geo[m.onto].at(m.t != null ? m.t : 0.5);
+    const p0 = clip(A, tgt, 3), col = COL[m.state || "kept"];
+    const d = Math.hypot(tgt.x - p0.x, tgt.y - p0.y) || 1, p1 = { x: tgt.x - (tgt.x - p0.x) / d * 5, y: tgt.y - (tgt.y - p0.y) / d * 5 };
+    paintEdge(gE, p0, p1, Object.assign({}, m, { dir: "none" }));
+    el("circle", { cx: tgt.x, cy: tgt.y, r: 5.5, fill: col, stroke: "var(--paper)", "stroke-width": 1.5 }, gE);
+  }
+  for (const t of f.texts || []) lines(gN, t.text, t.x, t.y, t.size || 12.5, { style: `fill: ${COL[t.state || "kept"]}`, "text-anchor": t.anchor || "middle" });
+  const cap = document.createElement("div"); cap.className = "cap"; cap.innerHTML = f.cap; wrap.appendChild(cap);
+  return wrap;
+}
+function drawStrip(s, only) {
+  const out = document.createDocumentFragment();
+  const h = document.createElement("h2"); h.className = "strip-title"; h.id = s.id; h.textContent = s.title; out.appendChild(h);
+  const p = document.createElement("p"); p.className = "strip-lede"; p.innerHTML = s.lede; out.appendChild(p);
+  const div = document.createElement("div"); div.className = "strip";
+  const frames = s.frames.map((f, i) => [f, i]).filter(([f, i]) => !only || only.includes(i + 1));
+  div.style.setProperty("--cols", Math.min(frames.length, 4));
+  out.appendChild(div);
+  const ol = document.createElement("ol"); ol.className = "sources";
+  s.sources.forEach((r, i) => { const li = document.createElement("li"); li.innerHTML = `<b>${i + 1}</b>${r.text}` + (r.href ? ` <a href="${r.href}">${r.link || "link"}</a>` : ""); ol.appendChild(li); });
+  out.appendChild(ol);
+  return [out, div, frames];
+}
+function drawGrammar(root) {
+  for (const boxDef of COMICS.grammar) {
+    const b = document.createElement("div"); b.className = "gbox";
+    const h = document.createElement("h3"); h.textContent = boxDef.title; b.appendChild(h);
+    root.appendChild(b);
+    for (const r of boxDef.rows) {
+      const row = document.createElement("div"); row.className = "grow";
+      const svg = el("svg", { viewBox: "0 0 112 34" }, null); row.appendChild(svg);
+      const sp = document.createElement("span"); sp.textContent = r.text; row.appendChild(sp);
+      b.appendChild(row);
+      if (r.node) {
+        if (r.node === "unknown") { el("circle", { cx: 56, cy: 17, r: 14, fill: "var(--paper)", stroke: "var(--pink)", "stroke-width": 2.2, "stroke-dasharray": "5 3.5" }, svg); el("text", { x: 56, y: 18, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 17, style: "font-family: var(--diagram); fill: var(--pink)" }, svg, "X"); }
+        else { el("rect", { x: 14, y: 5, width: 84, height: 24, fill: "var(--paper)", stroke: "var(--pink)", "stroke-width": 2.2, "stroke-dasharray": r.node === "proxy" ? "5 3.5" : null }, svg); el("text", { x: 56, y: 18, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 11.5, style: "font-family: var(--diagram); fill: var(--pink); text-transform: uppercase" }, svg, r.nodeLabel || "variable"); }
+      } else if (r.mod) {
+        const g = paintEdge(svg, { x: 4, y: 26 }, { x: 108, y: 26 }, { ev: "obs", w: 2 });
+        paintEdge(svg, { x: 56, y: 2 }, { x: 56, y: 21 }, { ev: "obs", w: 1, dir: "none" });
+        el("circle", { cx: 56, cy: 26, r: 5, fill: "var(--pink)" }, svg);
+      } else {
+        const t = paintEdge(svg, { x: 4, y: r.e.label ? 22 : 17 }, { x: 108, y: r.e.label ? 22 : 17 }, r.e);
+      }
+      for (const tx of svg.querySelectorAll("text")) { tx.style.fontFamily = "var(--letter)"; tx.style.textTransform = "uppercase"; }
+    }
+  }
+}
+const q = new URLSearchParams(location.search);
+const exp = q.get("export"), only = q.get("frames") ? q.get("frames").split(",").map(Number) : null;
+(q.get("theme") || "").split(",").filter(Boolean).forEach(t => document.body.classList.add("t-" + t));
+if (exp) { document.body.classList.add("export"); if (q.get("cap")) document.body.style.setProperty("--capsize", q.get("cap") + "px"); }
+const pending = [];
+if (!exp || exp === "grammar") drawGrammar(document.getElementById("grammar"));
+if (exp === "grammar") document.getElementById("grammar").style.gridTemplateColumns = "repeat(3, minmax(0, 1fr))";
+for (const s of COMICS.strips) {
+  if (exp && exp !== s.id) continue;
+  const [frag, div, frames] = drawStrip(s, only);
+  document.getElementById("strips").appendChild(frag);
+  pending.push([div, frames]);
+}
+// Frames are drawn after the lettering face has loaded, because box sizes are measured from the text.
+function drawAll() { for (const [div, frames] of pending) { div.textContent = ""; for (const [f, i] of frames) drawFrame(f, i, div); } document.body.dataset.ready = "1"; }
+(document.fonts && document.fonts.load ? Promise.race([Promise.all([document.fonts.load('14px "Architects Daughter"'), document.fonts.load('14px "Patrick Hand"', '0123')]).then(() => document.fonts.ready), new Promise(r => setTimeout(r, 2500))]) : Promise.resolve()).then(drawAll, drawAll);
+</script>
+</body>
+</html>

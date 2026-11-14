@@ -1,0 +1,32 @@
+{
+ "note": "Written for an Underlay push; nothing has been pushed. Hashes follow tools/underlay_export.record_hash (RFC 8785).",
+ "collection_suggestion": "nyc-concordance/replication",
+ "counts": {
+  "PackageInput": 4,
+  "PackageCode": 10,
+  "PackageSource": 5,
+  "ReplicationPackage": 1
+ },
+ "records": {
+  "replication/turn-calming-ped/input/0": "29ada0abfd7a80118e3028651bc75a0b82702001ae9ee4e6e6a0a827b19da5c1",
+  "replication/turn-calming-ped/input/1": "31bd438c233b1ec5f61c0ab417fad85033743166a1570d60c542f66fbb4023f2",
+  "replication/turn-calming-ped/input/2": "f916b92b5f53894430dd71d3c1e8afef0ca939b26f78981309a8fe87043088f4",
+  "replication/turn-calming-ped/input/3": "6bd96bcac567190f379af17ef28c78f91fda6cf9b308b5cad158a8b2f3d96b16",
+  "replication/turn-calming-ped/code/0": "c45bb80136df9bf885d861869986cf43f71842b9b66e5b489e1fc96e504f7887",
+  "replication/turn-calming-ped/code/1": "541454aab8a434f16b669259a38f62da71a438f54c75ba861e9580eae948f11a",
+  "replication/turn-calming-ped/code/2": "2190899682017a77f7788d3689c7a401c67c6f0cb7e6307bd0e774420750eb58",
+  "replication/turn-calming-ped/code/3": "41adbb752cc8881d6b372f88088751caadf63d2e8c31b5169aafcec72df585ad",
+  "replication/turn-calming-ped/code/4": "0ef7ea4f5eaa83bfbb966e9ad652f7274fe7bdf32695badd647a6051f49e1941",
+  "replication/turn-calming-ped/code/5": "1ff3eb8c33d0c67d6227aae33a7c6e15eed8fe40b31173e392cc4cbcdd482a4c",
+  "replication/turn-calming-ped/code/6": "fe225455cf3bb802427134e72d543a70568263dcc003d61600b9b5790acafe9f",
+  "replication/turn-calming-ped/code/7": "cba4bed1053ee1c7863d9930632837925b1f5df30bd4cbb3afb99a6f21c8f740",
+  "replication/turn-calming-ped/code/8": "60af7f221188d42d05b58a73b67f5d61b3acac63265f74800ebbd60dd4aae1bf",
+  "replication/turn-calming-ped/code/9": "123116437da3a4397da428e12a2fdb308a8e332f1b21bb57fb8dcc222fd9f48b",
+  "replication/turn-calming-ped/source/0": "566076a28fd9a3080ff43e85d87b5c68f92e6e1ea7f752fd6820c8c627b820ac",
+  "replication/turn-calming-ped/source/1": "d490f7ff18000811e764588f1298558a9a9cef6bc197d9b8fcd65bf1480b7c86",
+  "replication/turn-calming-ped/source/2": "e1c94df5f18e1999232983bc34d764b85d481219100c22af661e7d239b41da80",
+  "replication/turn-calming-ped/source/3": "b07054b8c4d69e987782fee982a0bfa9b0e8429a3f66700c3f38678ac208ce6c",
+  "replication/turn-calming-ped/source/4": "8fabeb56154f9eff32253f7dfc215d346af8cb77fd833a4cc0e4b6b663ef8981",
+  "replication/turn-calming-ped": "a4e05e5dd6af95a17b19490ed94d0727cdc3640af180b559466bcc07080e21e3"
+ }
+}

@@ -1,0 +1,69 @@
+"""Register crz-storefront-vacancy. Run once after `vacancy design`, before reporting year 2025 is fetched."""
+import json
+
+from concord import claims
+from analyses.congestion.common import DER
+
+d = json.loads((DER / "vacancy_design.json").read_text())
+pl = {x["year"]: x for x in d["placebo_did"]}
+rec = {
+    "id": "crz-storefront-vacancy",
+    "kind": "confirmation",
+    "statement": ("One year after the congestion toll began, the share of storefronts vacant on 31 December 2025 in the "
+                  "Congestion Relief Zone had not risen relative to the rest of the city: the change from 31 December 2024, "
+                  "zone minus outside, is at most +0.5 percentage points and a rise of 1.2 points is excluded."),
+    "edge": {"cause": "congestion toll", "effect": "storefront vacancy"},
+    "graph_evidence": [{
+        "concepts": "congestion pricing, congestion charge, road pricing, cordon pricing, low emission zone | retail, restaurants, business",
+        "n_findings": 0, "direction": "none",
+        "summary": ("System Public Graph variable-name and concept searches (data/derived/congestion/graph_response_survival.json, "
+                    "section 'pricing'): no variable or concept for congestion pricing, cordon pricing, congestion relief zone or low "
+                    "emission zone; 'congestion charge' and 'road pricing' match only unrelated variables (hospital charges, an online "
+                    "market); 'traffic congestion' matches nine variables, none with a retail or business outcome. The graph supplies "
+                    "nothing on this link.")}],
+    "literature": [
+        {"citation": "Quddus MA, Carmel A, Bell MGH (2007). The impact of the congestion charge on retail: the London experience. Journal of Transport Economics and Policy 41(1):113-133.",
+         "doi": None, "finding": "Cited from the registrant's memory, not re-read: sales at one Oxford Street department store fell after the 2003 charge, with no detectable effect on central London retail sales as a whole."},
+        {"citation": "Daunfeldt S-O, Rudholm N, Ramme U (2009). Congestion charges and retail revenues: results from the Stockholm road pricing trial. Transportation Research Part A 43(3):306-309.",
+         "doi": "10.1016/j.tra.2008.09.005", "finding": "Cited from the registrant's memory, not re-read: no negative effect of the 2006 trial on retail revenue in shopping malls and shopping districts."}],
+    "prediction": {
+        "direction": "0",
+        "magnitude": ("DiD in percentage points of vacancy, 31 December 2025 against 31 December 2024, zone minus all other city ZIPs: "
+                      "between -1.5 and +0.5. The same DiD was -0.74, -1.40 and -0.45 in the three years to 2024 (the zone was recovering "
+                      "from its 2020 peak faster than the rest), so the expectation without any toll effect is about -0.5."),
+        "support_if": "The DiD point estimate is at most +0.5 points AND the upper bound of its 95% bootstrap interval is below +1.2 points.",
+        "refute_if": "The lower bound of the 95% bootstrap interval is above 0 (vacancy rose in the zone relative to outside).",
+    },
+    "plan": (
+        "Data: Storefronts Reported Vacant or Not (92iy-9c3n). Script analyses/congestion/vacancy.py, written and run in design mode "
+        "(years to 2024) before registration; design output data/derived/congestion/vacancy_design.json. Each reporting year gives "
+        "vacant_on_12_31 for that 31 December; only the main annual filing (the filing_due_date with most rows) is used; rows answering "
+        "neither YES nor NO are dropped. Areas by ZIP (analyses/congestion/common.py): zone = Manhattan south of 60th Street (about "
+        "15,100 storefronts in 2024, 12.3% vacant); comparison = all other city ZIPs (about 47,000, 7.3% vacant). Estimator: change in "
+        "the vacancy share 2024 to 2025 in the zone minus the same change outside, in points. Interval: bootstrap over tax lots within "
+        "each group, 2,000 draws, seed 20261113, percentiles. "
+        "Can the test fail? The bootstrap se was 0.34 to 0.44 points in each earlier year and the DiD itself moved between -1.40 and -0.45 "
+        "over 2022-24 (sd 0.49), so the uncertainty about the no-toll value is about 0.6 points around -0.5. A toll effect of +1.2 points "
+        "(about 180 more vacant storefronts, a tenth more than now) would put the estimate near +0.7, two such standard errors from the "
+        "no-effect expectation (D about 4); it would miss support_if (point estimate above +0.5, upper bound near +1.4) and would meet "
+        "refute_if about half the time. A rise smaller than 1.2 points cannot be told from the trend, and the outcome will say so. "
+        "Verdict by PRECEDENCE rules 1 and 2. "
+        "Secondary, not deciding: the same DiD against Manhattan 60th-110th Street, against downtown Brooklyn with Long Island City, and "
+        "against the rest of the city; the 2025 DiD minus the mean of the 2022-24 DiDs (a trend-adjusted figure). "
+        "Limits known in advance: there is one observation after the toll; leases turn over slowly, so a year may be too soon; filings "
+        "are by owners and coverage changed after 2020 (17,000 zone storefronts then, 15,100 now)."),
+    "alternatives": [
+        "Continued recovery of Manhattan retail from the pandemic peak in vacancy, which lowers zone vacancy whatever the toll does.",
+        "Office attendance and tourism in the zone, which changed in the same period.",
+        "Changes in which owners file, or in how vacancy is reported.",
+        "Commercial rents adjusting instead of vacancy."],
+    "data_seen_before_registration": [
+        "92iy-9c3n: row counts by reporting_year and filing_due_date for every year including 2025 and 2026 (counts only); two sample rows and the YES/NO totals for reporting year 2023; all rows for reporting years up to 2024 (design run).",
+        "No value of vacant_on_12_31 for reporting year 2025 or 2026 has been queried or seen. The registrant recalls press statements by the Governor's office in 2025-26 that retail activity in the zone rose, and none about the storefront registry."],
+    "design_file": "data/derived/congestion/vacancy_design.json",
+    "scripts": ["analyses/congestion/vacancy.py", "analyses/congestion/register_vacancy.py", "analyses/congestion/common.py"],
+    "seed": 20261113, "draws": 2000,
+    "prior": 0.6,
+    "registrant": "Claude (agent, congestion tradeoffs task), 13 November 2026",
+}
+print(claims.register(rec))

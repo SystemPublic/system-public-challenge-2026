@@ -1,0 +1,57 @@
+{
+ "id": "bridge-heat-shootings-ems",
+ "kind": "bridge",
+ "statement": "Composed from heat and shootings (heat-shootings, NYPD) and the share of EMS gunshot dispatches that are shooting victims (bridge-shot-ems-link), daily FDNY EMS dispatches for gunshot wounds rise with the day's maximum temperature by the composed rate ratio.",
+ "graph_evidence": [
+  {
+   "relationship_id": "4FaXcuNJRt|rULjCt1BqH",
+   "concepts": [
+    "temperature",
+    "injury"
+   ],
+   "n_findings": 4,
+   "n_studies": 3,
+   "direction": "+",
+   "summary": "Girma et al. 2023, NYC ED visits 2005-2011: intentional injury among 20-25 year olds OR 1.54 (1.28 to 1.85) for daily minimum 77 F vs 48 F. Used for direction only; it is an ED measure, not EMS, and not firearm-specific.",
+   "pubmed_ids": [
+    37448837
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Reeping PM, Hemenway D (2020). The association between weather and the number of daily shootings in Chicago (2012-2016). Injury Epidemiology 7:31.",
+   "doi": "10.1186/s40621-020-00260-3",
+   "finding": "Shootings +34.0% (weekdays) and +41.6% (weekends) per 10 C."
+  }
+ ],
+ "chain": [
+  "heat-shootings",
+  "bridge-shot-ems-link"
+ ],
+ "composed_prediction": {
+  "scale": "IRR per 5 C of daily maximum temperature, Central Park",
+  "median": 1.099,
+  "lo": 1.0494,
+  "hi": 1.1476,
+  "mean_log": 0.09427432105922165,
+  "sd_log": 0.025144994166285625,
+  "file": "data/derived/bridges/composed_predictions.json"
+ },
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Composed IRR 1.099 (1.049 to 1.148) per 5 C. Below the shootings IRR (1.146) because victim dispatches are only 25 to 50 percent of SHOT dispatches (NYPD recorded 974 shooting incidents in 2023; SHOT dispatches numbered 3,159 that year, a level seen before registration) and the other dispatches are assumed to follow temperature less, between not at all and as much as shootings.",
+  "support_if": "With D = log(observed IRR) - mean_log(composed) and SE = sqrt(se_observed^2 + sd_log(composed)^2), |D| < 1.96 SE. Verdict confirmed.",
+  "refute_if": "|D| >= 1.96 SE. Verdict contested. An observed IRR above the composed range would mean that the non-victim dispatches follow heat more than shootings do; below it, that the chain overstates."
+ },
+ "plan": "Daily counts 2006-01-01 to 2026-08-31 of 76xm-jjuj with initial_call_type = 'SHOT'. Weather and calendar terms built exactly as in analyses/heat/shootings.py (Central Park TMAX/5, day of week, month, year, holiday, rain >= 1 mm). Negative binomial GLM, alpha by ML, HC0 errors. Secondary, reported but not deciding: warm season May-September; 2006-2019 only; STAB dispatches as a contrast outside the chain; SHOT plus T-SHOT.",
+ "alternatives": [
+  "Fireworks around 4 July are reported as shots; holidays are in the model, and the warm-season sensitivity checks the rest.",
+  "EMS call-type coding changed over the period; year terms absorb level changes but not changes in seasonal coding.",
+  "Heat raises outdoor presence and hence the number of people who report shots, independent of shootings."
+ ],
+ "prior": 0.6,
+ "registrant": "Claude (bridges agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T16:04:50-0500",
+ "sha256": "bda255d3ebffd6189ea84b6060c0e85675e809fee6bcbdbb17a4a6281ff11099"
+}

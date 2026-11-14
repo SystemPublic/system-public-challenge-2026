@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edges as objects</title>
+<link rel="stylesheet" href="style.css">
+<script src="data/hypergraph.js"></script>
+<style>
+  :root { --seq1: rgba(11,92,173,.14); --seq2: rgba(11,92,173,.32); --seq3: rgba(11,92,173,.58); --seq4: rgba(11,92,173,.88); --mark: var(--ink); }
+  :root[data-theme="dark"] { --seq1: rgba(109,176,240,.16); --seq2: rgba(109,176,240,.34); --seq3: rgba(109,176,240,.6); --seq4: rgba(109,176,240,.9); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --seq1: rgba(109,176,240,.16); --seq2: rgba(109,176,240,.34); --seq3: rgba(109,176,240,.6); --seq4: rgba(109,176,240,.9); } }
+  main, header.site, footer { max-width: 1280px; }
+  p.how { max-width: 118ch; }
+  .lead { font-size: 16px; max-width: 86ch; color: var(--ink); margin: 6px 0 0; }
+  .facts { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 12px 0 0; font-size: 13.5px; color: var(--ink-2); }
+  .facts b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+  /* edge field */
+  #field { column-count: 2; column-gap: 28px; margin-top: 6px; }
+  @media (max-width: 1100px) { #field { column-count: 1; } }
+  .grp { break-after: avoid; margin: 14px 0 2px; font-size: 13px; font-weight: 600; color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 2px; display: flex; justify-content: space-between; gap: 8px; }
+  .grp:first-child { margin-top: 0; }
+  .grp span { font-weight: 400; color: var(--muted); }
+  .erow { display: grid; grid-template-columns: minmax(0, 1fr) 236px minmax(0, 1fr) 92px; align-items: center; gap: 6px; height: 24px; break-inside: avoid;
+          border-radius: 4px; cursor: pointer; font-size: 12.5px; border-left: 3px solid transparent; padding-left: 2px; }
+  .erow:hover, .erow.sel { background: var(--band); }
+  .erow.share { border-left-color: var(--accent); }
+  .erow.dim { opacity: .35; }
+  .erow .la { text-align: right; } .erow .la, .erow .lb { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--ink); }
+  .erow .meta { font-size: 11.5px; color: var(--muted); white-space: nowrap; overflow: hidden; font-variant-numeric: tabular-nums; display: flex; gap: 5px; align-items: center; }
+  .erow svg, .glyph svg { display: block; overflow: visible; }
+  @media (max-width: 620px) { .erow { grid-template-columns: minmax(0, 1fr) 150px minmax(0, 1fr) 30px; font-size: 11.5px; } .erow .meta .vd { display: none; } }
+  .vd { display: inline-flex; align-items: center; gap: 3px; color: var(--ink-2); }
+  .vd i { width: 4px; height: 11px; border-radius: 2px; display: inline-block; }
+  .track { fill: var(--grid); } .null { stroke: var(--muted); stroke-width: 1; }
+  .note-in { font-size: 10px; fill: var(--muted); font-style: italic; }
+  .legend .key svg { vertical-align: middle; }
+  /* edge panel */
+  #panel h3 { font-size: 15px; margin: 14px 0 4px; } #panel > h3 { font-size: 17px; margin: 0 0 2px; }
+  #panel .cols { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+  @media (max-width: 1000px) { #panel .cols { grid-template-columns: 1fr; } }
+  table.forest td { padding: 3px 6px; } table.forest td.plot, table.forest th.plot { padding: 0 2px; width: 200px; min-width: 200px; }
+  table.forest th { vertical-align: bottom; }
+  table.forest .pop { max-width: 200px; min-width: 120px; color: var(--ink-2); font-size: 12px; }
+  table.forest tr.city td { border-top: 1px solid var(--rule); background: var(--band); }
+  @media (max-width: 900px) { table.forest .pop, table.forest th.pop { display: none; } }
+  .signbar { display: flex; height: 10px; border-radius: 3px; overflow: hidden; gap: 2px; margin: 4px 0; }
+  .signbar span { display: block; height: 100%; background: var(--ink-2); } .signbar span.n { background: var(--rule); }
+  .signbar span.m { background: var(--muted); }
+  .tag { display: inline-block; font-size: 11.5px; border: 1px solid var(--rule); border-radius: 10px; padding: 0 7px; margin: 1px 3px 1px 0; color: var(--ink-2); white-space: nowrap; }
+  a.tag { text-decoration: none; cursor: pointer; } a.tag:hover { border-color: var(--accent); color: var(--accent); }
+  .rec-correct, .rec-read { color: var(--ink); } .rec-wrong, .rec-qualifier-lost { color: var(--warn); } .rec-unread, .rec-absent { color: var(--muted); }
+  /* relations */
+  .rel { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 1000px) { .rel { grid-template-columns: 1fr; } }
+  .rel .panel { margin: 0; min-width: 0; } .rel h3 { margin-top: 0; }
+  .rel p { font-size: 13.5px; color: var(--ink-2); margin: 4px 0 8px; }
+  .crow { display: grid; grid-template-columns: 118px minmax(0, 1fr) minmax(0, 1fr) 62px; gap: 8px; align-items: center; font-size: 12.5px; padding: 3px 0; border-top: 1px solid var(--grid); }
+  .crow.head { border-top: 0; color: var(--muted); font-size: 11.5px; }
+  .crow .glyph { cursor: pointer; } .crow .pred { font-size: 11.5px; color: var(--ink-2); }
+  .opp { color: var(--c-contested); font-weight: 600; font-size: 11.5px; }
+  .mrow { display: grid; grid-template-columns: 130px 236px minmax(0, 1fr); gap: 8px; align-items: center; font-size: 12.5px; height: 24px; cursor: pointer; }
+  .mrow:hover { background: var(--band); }
+  .mstem { border-left: 2px solid var(--rule); margin-left: 60px; padding-left: 0; }
+  .paper { font-size: 12.5px; padding: 4px 0; border-top: 1px solid var(--grid); } .paper:first-child { border-top: 0; }
+  /* matrix */
+  table.den { border-collapse: separate; border-spacing: 2px; font-size: 12px; }
+  table.den th { font-weight: 500; color: var(--ink-2); text-align: right; padding: 0 6px 0 0; white-space: nowrap; }
+  table.den thead th { text-align: center; font-size: 11px; padding: 0 0 3px; white-space: normal; width: 62px; line-height: 1.15; vertical-align: bottom; }
+  table.den td { width: 62px; height: 20px; text-align: center; border-radius: 3px; font-size: 11px; color: var(--ink); position: relative; cursor: default; }
+  table.den td.e0 { box-shadow: inset 0 0 0 1px var(--grid); } table.den td.s1 { background: var(--seq1); } table.den td.s2 { background: var(--seq2); }
+  table.den td.s3 { background: var(--seq3); } table.den td.s4 { background: var(--seq4); color: var(--bg); }
+  table.den td.city { cursor: pointer; } table.den td.city::after { content: ""; position: absolute; inset: -1px; border: 2px solid var(--vc); border-radius: 4px; }
+  .dwrap { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 24px; align-items: start; }
+  @media (max-width: 1000px) { .dwrap { grid-template-columns: 1fr; } }
+  body.export main { max-width: none; padding: 0 28px 20px; } body.export header.site, body.export footer, body.export .controls { display: none; }
+  body.export section { display: none; } body.export section.show { display: block; } body.export h2 { border-top: 0; margin-top: 12px; }
+</style>
+</head>
+<body>
+<header class="site">
+  <h1>Edges as objects: what is known about each link, and how links relate</h1>
+  <p class="lead">The System Public Graph links variables by findings from papers. This page draws each link as an object with contents: every finding the graph holds for it, the study design where one is known, whether this project read the abstract, and the city's registered test where there is one. It then shows relations among the links themselves.</p>
+  <nav class="pages"><a href="hypergraph.html" aria-current="page">Edges as objects</a><a href="heat_drugs.html">Heat and medicines</a><a href="comics.html">Strips</a><a href="index.html">Evidence dashboard</a><a href="evidence.html">Test cards and provenance</a><a href="explorer.html">Graph explorer</a><a href="explore.html">Neighbourhood explorer</a><a href="levers.html">City levers</a><a href="simulate.html">Toll simulator</a></nav>
+  <div class="facts" id="facts"></div>
+</header>
+<main>
+<section id="sec-field">
+  <h2>A. The edge field</h2>
+  <p class="how">Each row is one edge. The bar is a log-ratio axis from 0.25 to 4, with no effect at the centre line, and each mark is one finding. Findings that are not ratios are counted in the end boxes, negative at the left and positive at the right. The coloured capsule is the city's estimate and 95% interval. Hover a row for a summary, and click it to open the edge in part B.</p>
+  <div class="legend" id="legend"></div>
+  <div class="controls" style="margin:0 0 10px">
+    <span>Order:</span>
+    <span class="seg" id="sort">
+      <button data-s="group" aria-pressed="true">Shared endpoint</button>
+      <button data-s="n" aria-pressed="false">Number of findings</button>
+      <button data-s="exp" aria-pressed="false">Share experimental</button>
+      <button data-s="dis" aria-pressed="false">Disagreement in sign</button>
+      <button data-s="city" aria-pressed="false">Tested by the city</button>
+    </span>
+    <button class="plain" id="theme">Light / dark</button>
+  </div>
+  <div id="field"></div>
+</section>
+<section id="sec-panel">
+  <h2>B. What is known about this edge</h2>
+  <div id="panel" class="panel"></div>
+</section>
+<section id="sec-rel">
+  <h2>C. Edges about edges</h2>
+  <p class="how">A relation among more than two variables, or among edges, is a hyperedge. Four kinds occur in this project. Each is drawn from the same records as the field above.</p>
+  <div class="rel" id="rel"></div>
+</section>
+<section id="sec-den">
+  <h2>D. Density and absence</h2>
+  <div class="dwrap"><div class="scroll-x" id="den"></div><div id="den-note"></div></div>
+</section>
+</main>
+<footer id="foot"></footer>
+<div class="tip" id="tip"></div>
+<script>
+(function () {
+"use strict";
+const D = window.CONCORD_HYPERGRAPH;
+if (!D) { document.body.insertAdjacentHTML("afterbegin", "<p class='banner'>data/hypergraph.js did not load. Run tools/build_hypergraph.py.</p>"); return; }
+const Q = new URLSearchParams(location.search);
+if (Q.get("theme")) document.documentElement.dataset.theme = Q.get("theme");
+const E = D.edges, byId = Object.fromEntries(E.map(e => [e.id, e]));
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmt = v => v == null ? "" : Math.abs(v) >= 100 ? v.toFixed(0) : Math.abs(v) >= 10 ? v.toFixed(1) : Math.abs(v) >= 2 ? v.toFixed(2) : v.toFixed(3).replace(/0$/, "");
+const num = n => n.toLocaleString("en-US");
+const STAT = { odds_ratio: "OR", adjusted_odds_ratio: "aOR", hazard_ratio: "HR", adjusted_hazard_ratio: "aHR", relative_risk_ratio: "RR", incident_rate_ratio: "IRR",
+  prevalence_ratio: "PR", pearson_r: "r", spearman_correlation: "rho", coefficient: "coef.", mean_difference_unstandardized: "mean diff.",
+  mean_difference_standardized: "SMD", risk_difference: "risk diff.", coefficient_of_determination: "R²" };
+const DL = D.meta.design_labels;
+const REC = { correct: "record correct", read: "abstract read for a registration", "qualifier-lost": "qualifier lost", wrong: "record wrong", unread: "abstract not read", absent: "study not in the graph" };
+const VC = v => v === "unsettled" ? "var(--c-unsettled-edge)" : `var(--c-${v === "registered" ? "open" : v})`;
+const L = Math.log(4);
+
+/* ---- marks ---- */
+function mark(x, y, f, s) {
+  s = s || 3.6; x = Math.round(+x * 10) / 10; y = +y;
+  if (!isFinite(x) || !isFinite(y)) return "";  // a finding with no position on the axis is not drawn
+  const st = f.record === "unread" ? "open" : f.record === "absent" ? "dash" : (f.record === "wrong" || f.record === "qualifier-lost") ? "bad" : "ok";
+  const col = "var(--mark)";
+  let a = st === "ok" ? `fill="${col}" stroke="var(--panel)" stroke-width="1"` : `fill="var(--panel)" stroke="${col}" stroke-width="1.2"${st === "dash" ? ' stroke-dasharray="2 1.6"' : ""}`;
+  let g;
+  if (f.design === "unknown") {
+    const h = st === "open" ? 4 : 5.5;
+    g = `<line x1="${x}" x2="${x}" y1="${y - h}" y2="${y + h}" stroke="${st === "open" ? "var(--muted)" : col}" stroke-width="${st === "open" ? 1 : 2}"${st === "open" ? ' opacity=".55"' : ""}${st === "dash" ? ' stroke-dasharray="2 1.6"' : ""}/>`;
+  } else if (f.design === "trial") g = `<rect x="${x - s}" y="${y - s}" width="${2 * s}" height="${2 * s}" ${a}/>`;
+  else if (f.design === "quasi") g = `<path d="M${x},${y - s - 1}L${x + s + 1},${y}L${x},${y + s + 1}L${x - s - 1},${y}Z" ${a}/>`;
+  else if (f.design === "cohort") g = `<path d="M${x},${y - s - .6}L${x + s + .8},${y + s}L${x - s - .8},${y + s}Z" ${a}/>`;
+  else g = `<circle cx="${x}" cy="${y}" r="${s}" ${a}/>`;
+  if (st === "bad") g += `<line x1="${x - s - 1.5}" y1="${y + s + 1.5}" x2="${x + s + 1.5}" y2="${y - s - 1.5}" stroke="var(--warn)" stroke-width="1.6"/>`;
+  return g;
+}
+function glyph(e, W, H) {
+  W = W || 236; H = H || 22;
+  const gut = 30, x0 = gut + 3, x1 = W - gut - 3, cx = (x0 + x1) / 2, half = (x1 - x0) / 2, cy = H / 2;
+  const X = v => cx + Math.max(-1, Math.min(1, v / L)) * half;
+  let s = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(e.a)} and ${esc(e.b)}: ${e.sum.n} findings">`;
+  s += `<rect class="track" x="${x0}" y="${cy - 7}" width="${x1 - x0}" height="14" rx="3"/>`;
+  s += `<rect x=".5" y="${cy - 7}" width="${gut - 3}" height="14" rx="3" fill="none" stroke="var(--grid)"/><rect x="${W - gut + 2.5}" y="${cy - 7}" width="${gut - 3}" height="14" rx="3" fill="none" stroke="var(--grid)"/>`;
+  s += `<line class="null" x1="${cx}" x2="${cx}" y1="1" y2="${H - 1}"/>`;
+  const F = e.findings;
+  if (!F.length) {
+    const t = e.kind === "concept" && e.n_graph ? `graph counts ${e.n_graph}, returns 0` : "no finding";
+    s += `<text class="note-in" x="${cx}" y="${cy + 3.5}" text-anchor="middle" paint-order="stroke" stroke="var(--grid)" stroke-width="3">${t}</text>`;
+  }
+  const ax = F.filter(f => f.x != null), ticks = ax.filter(f => f.design === "unknown"), shp = ax.filter(f => f.design !== "unknown");
+  for (const f of ticks) s += mark(X(f.x).toFixed(1), cy, f);
+  const placed = [];
+  for (const f of shp) {
+    const px = X(f.x); let oy = 0;
+    for (const o of [0, -5, 5, -8, 8]) { oy = o; if (!placed.some(p => p[1] === o && Math.abs(p[0] - px) < 6.5)) break; }
+    placed.push([px, oy]); s += mark(px.toFixed(1), cy + oy, f, 3.2);
+  }
+  for (const [sg, gx] of [["-", 2], ["+", W - gut + 4]]) {
+    const g = F.filter(f => f.x == null && f.sign === sg);
+    if (!g.length) continue;
+    if (g.length <= 3) g.forEach((f, i) => { s += mark(gx + 5 + i * 8.5, cy, f, 2.8); });
+    else s += `<text x="${gx + (gut - 3) / 2 - 1.5}" y="${cy + 3.5}" text-anchor="middle" font-size="10" fill="var(--ink-2)">${g.length}</text>`;
+  }
+  (e.tests || []).slice(0, 2).forEach((t, i) => {
+    if (t.est == null) return;
+    const c = VC(t.verdict);
+    if (t.x != null) {
+      const px = X(t.x);
+      if (t.xlo != null) s += `<line x1="${X(t.xlo)}" x2="${X(t.xhi)}" y1="${H - 2.5 - i * 3}" y2="${H - 2.5 - i * 3}" stroke="${c}" stroke-width="2.5" stroke-linecap="round"/>`;
+      s += `<rect x="${px - 2.5}" y="1" width="5" height="${H - 2}" rx="2.5" fill="${c}" stroke="var(--panel)" stroke-width="1"/>`;
+    } else {
+      const px = t.sign === "-" ? 2 + (gut - 3) - 5 - i * 7 : W - gut + 2.5 + 5 + i * 7;
+      s += `<rect x="${px - 2.5}" y="2" width="5" height="${H - 4}" rx="2.5" fill="var(--panel)" stroke="${c}" stroke-width="1.8"/>`;
+    }
+  });
+  return s + "</svg>";
+}
+
+/* ---- facts and legend ---- */
+const M = D.meta;
+document.getElementById("facts").innerHTML =
+  `<span><b>${M.n_edges}</b> edges</span><span><b>${num(M.n_findings)}</b> findings from <b>${num(M.n_papers)}</b> papers</span>` +
+  `<span><b>${M.n_tested}</b> edges tested by the city</span><span>design recorded by the graph for <b>${M.design_src["graph study_type"] || 0}</b> findings, read by us for <b>${num(M.n_findings - M.design.unknown - (M.design_src["graph study_type"] || 0))}</b></span>` +
+  `<span><b>${num(M.n_findings - M.record.unread - (M.record.absent || 0))}</b> graph findings checked against an abstract</span><span><b>${M.papers_on_two_or_more_edges}</b> papers sit on two or more edges</span>`;
+(function legend() {
+  const k = (f, t) => `<span class="key"><svg width="16" height="14">${mark(8, 7, f)}</svg>${t}</span>`;
+  const ok = "correct";
+  document.getElementById("legend").innerHTML =
+    k({ design: "trial", record: ok }, "experiment or trial") + k({ design: "quasi", record: ok }, "quasi-experiment") +
+    k({ design: "cohort", record: ok }, "cohort, case-control, case-crossover") + k({ design: "cross", record: ok }, "cross-section") +
+    k({ design: "unknown", record: "unread" }, "design not recorded by the graph") +
+    `<span class="key" style="margin-left:8px"><svg width="16" height="14">${mark(8, 7, { design: "cross", record: ok })}</svg>abstract read, record correct</span>` +
+    k({ design: "cross", record: "unread" }, "not read") + k({ design: "cross", record: "wrong" }, "read: wrong or qualifier lost") +
+    k({ design: "cross", record: "absent" }, "study not in the graph") +
+    `<span class="key" style="margin-left:8px"><svg width="34" height="16"><line x1="3" x2="31" y1="13" y2="13" stroke="var(--c-confirmed)" stroke-width="2.5" stroke-linecap="round"/><rect x="14" y="1" width="5" height="14" rx="2.5" fill="var(--c-confirmed)"/></svg>city estimate and interval:</span>` +
+    ["confirmed", "bridged", "unsettled", "contested"].map(v => `<span class="vd"><i style="background:${VC(v)}"></i>${v}</span>`).join(" ") +
+    `<span class="key"><svg width="12" height="16"><rect x="3" y="2" width="5" height="12" rx="2.5" fill="var(--panel)" stroke="var(--c-confirmed)" stroke-width="1.8"/></svg>city estimate on another scale (sign only)</span>`;
+})();
+
+/* ---- field ---- */
+const share = {};
+for (const e of E) { for (const f of e.findings) if (f.pmid) (share[f.pmid] = share[f.pmid] || new Set()).add(e.id); }
+const neigh = {};
+for (const p in share) if (share[p].size > 1) for (const a of share[p]) for (const b of share[p]) if (a !== b) { (neigh[a] = neigh[a] || {})[b] = (neigh[a][b] || 0) + 1; }
+const tip = document.getElementById("tip");
+function showTip(html, ev) { tip.innerHTML = html; tip.style.opacity = 1; const w = tip.offsetWidth, h = tip.offsetHeight;
+  tip.style.left = Math.min(window.innerWidth - w - 8, ev.clientX + 14) + "px"; tip.style.top = Math.min(window.innerHeight - h - 8, ev.clientY + 14) + "px"; }
+function hideTip() { tip.style.opacity = 0; }
+function designLine(e) { const d = e.sum.design; return ["trial", "quasi", "cohort", "cross", "unknown"].filter(k => d[k]).map(k => `${d[k]} ${k === "unknown" ? "design not recorded" : DL[k]}`).join("; "); }
+function tipFor(e) {
+  const s = e.sum, r = s.record, nread = s.n - (r.unread || 0) - (r.absent || 0);
+  let h = `<b>${esc(e.a)} — ${esc(e.b)}</b><br>`;
+  if (!s.n) h += e.kind === "concept" && e.n_graph ? `The relationship record counts ${e.n_graph} findings and the API returns none.` : esc(e.not_found || "No finding in the graph.");
+  else h += `${s.n} finding${s.n > 1 ? "s" : ""} from ${s.studies} stud${s.studies > 1 ? "ies" : "y"}; ${s.plus} positive, ${s.minus} negative${s.unsigned ? ", " + s.unsigned + " without a sign" : ""}.<br>${designLine(e)}.<br>${nread} checked against an abstract${(r.wrong || 0) + (r["qualifier-lost"] || 0) ? ", " + ((r.wrong || 0) + (r["qualifier-lost"] || 0)) + " wrong or qualifier lost" : ""}${r.absent ? "; " + r.absent + " studies not in the graph" : ""}.`;
+  for (const t of e.tests) h += `<br><span class="vd"><i style="background:${VC(t.verdict)}"></i>City: ${esc(t.claim)}, ${esc(t.verdict)}${t.est != null ? ", " + fmt(t.est) + (t.lo != null ? " (" + fmt(t.lo) + " to " + fmt(t.hi) + ")" : "") + " " + esc(t.scale || "") : ""}</span>`;
+  const nb = Object.keys(neigh[e.id] || {}).length;
+  if (nb) h += `<br><span class="muted">Shares a paper with ${nb} other edge${nb > 1 ? "s" : ""}.</span>`;
+  return h;
+}
+let sortMode = "group", selected = Q.get("edge") || "4FaXcuNJRt|YZku29igbl";
+function rowHtml(e) {
+  const t = e.tests[0];
+  return `<div class="erow${e.id === selected ? " sel" : ""}" data-id="${esc(e.id)}" tabindex="0" role="button"><span class="la" title="${esc(e.a)}">${esc(e.a)}</span>${glyph(e)}<span class="lb" title="${esc(e.b)}">${esc(e.b)}</span>` +
+    `<span class="meta"><span>${e.sum.n}</span>${t ? `<span class="vd"><i style="background:${VC(t.verdict)}"></i>${esc(t.verdict.replace("_", " "))}</span>` : ""}</span></div>`;
+}
+function drawField() {
+  let h = "";
+  if (sortMode === "group") {
+    for (const g of D.groups) { const es = E.filter(e => e.group === g.id); if (!es.length) continue;
+      h += `<div class="grp" title="${esc(g.note)}">${esc(g.label)}<span>${es.length} edges · ${num(es.reduce((a, e) => a + e.sum.n, 0))} findings</span></div>` + es.map(rowHtml).join(""); }
+  } else {
+    const key = { n: e => -e.sum.n, exp: e => -e.sum.share_exp * 1000 - e.sum.n / 1000, dis: e => -e.sum.disagree * 1000 - e.sum.n / 1000, city: e => (e.tests.length ? -1000 : 0) - e.sum.n / 1000 }[sortMode];
+    const lab = { n: "Most findings first", exp: "Largest share of findings from experiments, trials or quasi-experiments first", dis: "Most evenly split between positive and negative findings first", city: "Edges with a registered city test first" }[sortMode];
+    h = `<div class="grp">${lab}<span>${E.length} edges</span></div>` + E.slice().sort((a, b) => key(a) - key(b)).map(rowHtml).join("");
+  }
+  document.getElementById("field").innerHTML = h;
+}
+const field = document.getElementById("field");
+function rowOf(ev) { return ev.target.closest && ev.target.closest("[data-id]"); }
+document.addEventListener("mousemove", ev => {
+  const r = rowOf(ev);
+  if (r && byId[r.dataset.id] && !r.matches("td")) { showTip(tipFor(byId[r.dataset.id]), ev);
+    const nb = neigh[r.dataset.id] || {}; field.querySelectorAll(".erow").forEach(x => x.classList.toggle("share", x.dataset.id in nb)); }
+  else if (r && r.dataset.tip) showTip(r.dataset.tip, ev);
+  else if (ev.target.closest && ev.target.closest("[data-tip]")) showTip(ev.target.closest("[data-tip]").dataset.tip, ev);
+  else { hideTip(); }
+});
+document.addEventListener("click", ev => { const r = rowOf(ev); if (r && byId[r.dataset.id]) { ev.preventDefault(); select(r.dataset.id, true); } });
+document.addEventListener("keydown", ev => { if (ev.key === "Enter" && ev.target.classList && ev.target.classList.contains("erow")) select(ev.target.dataset.id, true); });
+document.getElementById("sort").addEventListener("click", ev => { const b = ev.target.closest("button"); if (!b) return; sortMode = b.dataset.s;
+  document.querySelectorAll("#sort button").forEach(x => x.setAttribute("aria-pressed", x === b)); drawField(); });
+document.getElementById("theme").addEventListener("click", () => { const r = document.documentElement, dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; r.dataset.theme = dark ? "light" : "dark"; });
+
+/* ---- panel ---- */
+let showAll = false;
+function statText(f) {
+  const v = f.stored ? f.stored : f; const lab = STAT[f.stat] || f.stat;
+  let t = `${esc(lab)} ${v.value == null ? "not given" : fmt(v.value)}${v.lo != null && v.hi != null ? ` (${fmt(v.lo)} to ${fmt(v.hi)})` : ""}`;
+  if (f.stored) t = `<s class="muted" title="As stored in the graph">${t}</s>`;
+  if (f.stored) t += `<br><span class="rec-wrong">abstract: ${fmt(f.value)}${f.lo != null ? ` (${fmt(f.lo)} to ${fmt(f.hi)})` : ""}</span>`;
+  else if (f.lo == null && f.p != null) t += ` <span class="muted">p ${fmt(f.p)}</span>`;
+  return t;
+}
+function select(id, scroll) {
+  selected = id; showAll = false; drawPanel();
+  field.querySelectorAll(".erow").forEach(x => x.classList.toggle("sel", x.dataset.id === id));
+  if (scroll) document.getElementById("sec-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+function drawPanel() {
+  const e = byId[selected] || E[0], s = e.sum, F = e.findings;
+  const rank = f => ({ wrong: 0, "qualifier-lost": 0, correct: 1, read: 1, absent: 2, unread: 3 }[f.record]);
+  const rows = F.slice().sort((a, b) => rank(a) - rank(b) || (a.x == null) - (b.x == null) || (a.x || 0) - (b.x || 0));
+  const cap = 24, shown = showAll ? rows : rows.slice(0, cap);
+  const xs = F.filter(f => f.x != null).flatMap(f => [f.x, f.xlo == null ? f.x : f.xlo, f.xhi == null ? f.x : f.xhi]).concat(e.tests.filter(t => t.x != null).flatMap(t => [t.xlo, t.xhi]));
+  const R = Math.min(Math.log(8), Math.max(Math.log(1.25), ...xs.map(Math.abs).filter(isFinite))) * 1.08, PW = 196, pc = PW / 2;
+  const PX = v => pc + Math.max(-1, Math.min(1, v / R)) * (pc - 8);
+  const plot = (inner) => `<svg width="${PW}" height="20" style="display:block;overflow:visible"><line x1="${pc}" x2="${pc}" y1="-4" y2="24" stroke="var(--muted)"/>${inner}</svg>`;
+  const ci = (lo, hi, col, w) => `<line x1="${PX(lo)}" x2="${PX(hi)}" y1="10" y2="10" stroke="${col}" stroke-width="${w || 1.3}"/>`;
+  const tick = (R < Math.log(1.7) ? [0.67, 0.8, 0.9, 1, 1.1, 1.25, 1.5] : R < Math.log(3.2) ? [0.33, 0.5, 0.67, 1, 1.5, 2, 3] : [0.125, 0.25, 0.5, 1, 2, 4, 8]).filter(v => Math.abs(Math.log(v)) <= R * 0.93);
+  const axis = `<svg width="${PW}" height="24" style="display:block;overflow:visible">${tick.map(v => `<line x1="${PX(Math.log(v))}" x2="${PX(Math.log(v))}" y1="18" y2="24" stroke="var(--muted)"/><text x="${PX(Math.log(v))}" y="14" text-anchor="middle" font-size="10.5" fill="var(--muted)">${v}</text>`).join("")}</svg>`;
+  let h = `<h3>${esc(e.a)} — ${esc(e.b)}</h3><p class="small muted" style="margin:0 0 8px">` +
+    (e.kind === "concept" ? `Graph relationship <span class="mono">${esc(e.id)}</span>, ${e.n_graph == null ? "no relationship record" : e.n_graph + " findings in " + e.n_studies_graph + " studies by the graph's count"}${e.last_published ? ", last publication " + esc(e.last_published) : ""}. ${esc(e.count_note || "")}${e.n_reverse ? " " + e.n_reverse + " of the findings shown are filed under the reverse order of the two concepts." : ""}`
+      : esc("Not a graph relationship. " + (e.kind === "modifier" ? "A relation among heat, " + e.modifier.toLowerCase() + " and heat illness; " : "Assembled by ") + e.found_by + ".")) + `</p>`;
+  h += `<div class="cols"><div>`;
+  if (!F.length) h += `<p>${e.kind === "concept" && e.n_graph ? `The relationship record counts ${e.n_graph} findings, and the association endpoint returns none. The contents of this edge cannot be read through the API.` : esc(e.not_found || "The search returned no finding for this pair. The edge is empty in the graph.")}</p>`;
+  else {
+    h += `<div class="scroll-x"><table class="data forest"><thead><tr><th>Study</th><th>Design</th><th class="pop">Population</th><th>Statistic as stored</th><th class="plot">${axis}</th><th>Our reading</th></tr></thead><tbody>`;
+    for (const f of shown) {
+      const who = `${esc(f.author || "Study")}${f.year ? " " + esc(f.year) : ""}`;
+      const link = f.pmid ? `<a href="https://pubmed.ncbi.nlm.nih.gov/${f.pmid}/" title="${esc(f.journal || "")}">${who}</a><br><span class="muted" style="font-size:11px">PMID ${f.pmid}</span>` : f.doi ? `<a href="https://doi.org/${esc(f.doi)}">${who}</a>` : `${who} <span class="muted">no PubMed id</span>`;
+      const des = f.design === "unknown" ? `<span class="muted">not recorded by the graph</span>${f.pubtype && f.pubtype.length ? `<br><span class="muted" style="font-size:11px">PubMed type: ${esc(f.pubtype.join(", "))}</span>` : ""}`
+        : `<svg width="12" height="12" style="vertical-align:-1px">${mark(6, 6, { design: f.design, record: "correct" }, 3.2)}</svg> ${esc(f.design_text && f.design_text.length < 40 ? f.design_text : DL[f.design])}<br><span class="muted" style="font-size:11px">${f.design_src === "graph study_type" ? "graph study_type" : "our reading"}</span>`;
+      let p = "";
+      if (f.x != null) p = plot((f.xlo != null ? ci(f.xlo, f.xhi, "var(--ink-2)") : "") + mark(PX(f.x), 10, f, 3.6));
+      else p = `<span class="muted small">${f.sign === "+" ? "positive" : f.sign === "-" ? "negative" : "no sign"}, not a ratio</span>`;
+      h += `<tr><td>${link}</td><td>${des}</td><td class="pop" title="${esc(f.population || "")}">${esc((f.population || "").length > 90 ? f.population.slice(0, 88) + "…" : f.population || "")}</td><td class="num" title="${esc(f.v1)} — ${esc(f.v2)}">${statText(f)}${f.flags.length ? `<br><span class="rec-wrong" style="font-size:11px">${esc(f.flags.join("; "))}</span>` : ""}<br><span class="muted" style="font-size:11px;white-space:normal">${esc((f.v1 || "").slice(0, 60))} — ${esc((f.v2 || "").slice(0, 60))}</span></td><td class="plot">${p}</td>` +
+        `<td class="rec-${f.record}" ${f.read_note ? `data-tip="${esc(f.read_note)}<br><span class='muted'>${esc(f.read_src || "")}</span>"` : ""}>${REC[f.record]}${f.record === "wrong" && f.read_note ? `<br><span class="muted" style="font-size:11px;white-space:normal">${esc(f.read_note.split(/[.;]/)[0])}</span>` : ""}</td></tr>`;
+    }
+    if (s.pool) h += `<tr class="city"><td colspan="2"><b>Pooled</b>, ${s.pool.k} findings</td><td class="pop"></td><td class="num">${fmt(s.pool.est)} (${fmt(s.pool.lo)} to ${fmt(s.pool.hi)})</td><td class="plot">${plot(ci(Math.log(s.pool.lo), Math.log(s.pool.hi), "var(--ink)", 3) + `<path d="M${PX(Math.log(s.pool.est))},4l5,6l-5,6l-5,-6Z" fill="var(--ink)"/>`)}</td><td class="small">${esc(s.pool.method)}</td></tr>`;
+    for (const t of e.tests) if (t.est != null) h += `<tr class="city"><td colspan="2"><b>City test</b> <a href="evidence.html?claim=${encodeURIComponent(t.claim)}">${esc(t.claim)}</a></td><td class="pop">${esc((t.label || "").slice(0, 80))}</td><td class="num">${fmt(t.est)}${t.lo != null ? ` (${fmt(t.lo)} to ${fmt(t.hi)})` : ""}<br><span class="muted" style="font-size:11px;white-space:normal">${esc(t.scale || "")}</span></td>` +
+      `<td class="plot">${t.x != null ? plot((t.xlo != null ? ci(t.xlo, t.xhi, VC(t.verdict), 3) : "") + `<rect x="${PX(t.x) - 2.5}" y="1" width="5" height="18" rx="2.5" fill="${VC(t.verdict)}"/>`) : `<span class="muted small">own scale; ${t.sign === "+" ? "positive" : "negative"}</span>`}</td><td><span class="vd"><i style="background:${VC(t.verdict)}"></i>${esc(t.verdict)}</span></td></tr>`;
+    h += `</tbody></table></div>`;
+    if (rows.length > cap) h += `<p class="small"><button class="plain" id="more">${showAll ? "Show the first " + cap : "Show all " + rows.length + " findings"}</button> <span class="muted">Findings we read are listed first, then the others by size.</span></p>`;
+  }
+  h += `</div><div>`;
+  if (F.length) {
+    const sg = s.plus + s.minus;
+    h += `<h3 style="margin-top:0">Sign agreement</h3><div class="signbar" title="positive | negative | no sign">${s.plus ? `<span style="flex:${s.plus}"></span>` : ""}${s.minus ? `<span class="m" style="flex:${s.minus}"></span>` : ""}${s.unsigned ? `<span class="n" style="flex:${s.unsigned}"></span>` : ""}</div>` +
+      `<p class="small" style="margin:0">${s.plus} positive (${s.sig_plus} with an interval or p value that excludes no effect), ${s.minus} negative (${s.sig_minus})${s.unsigned ? ", " + s.unsigned + " with no sign" : ""}. ${sg ? "The larger side holds " + Math.round(100 * Math.max(s.plus, s.minus) / sg) + "% of the signed findings. " : ""}The sign follows each study's own variable names, and the graph does not record which variable is the exposure.${e.direction_after_reading ? " After reading, a day moved from office to home predicts " + (e.direction_after_reading === "+" ? "more" : "less") + " of this outcome on this evidence." : ""}</p>`;
+    h += `<h3>Pooled summary</h3><p class="small" style="margin:0">` + (s.pool ? `${fmt(s.pool.est)} (${fmt(s.pool.lo)} to ${fmt(s.pool.hi)}), ${esc(s.pool.method)}, ${s.pool.k} findings. ${esc(s.pool.note)}`
+      : `These findings do not pool. The graph does not record the exposure contrast (per degree, per quintile, high against low) or the reference group, so findings of the same statistic type are not on one scale.${s.ratio_range ? ` For description only: the ${s.ratio_range.k} stored ratios run from ${fmt(s.ratio_range.min)} to ${fmt(s.ratio_range.max)}, median ${fmt(s.ratio_range.median)}.` : ""}`) + `</p>`;
+    h += `<h3>Design</h3><p class="small" style="margin:0">${designLine(e)}. The graph's study record has a study_type field, which is empty for most studies; other designs are from this project's reading of the abstract.</p>`;
+  }
+  h += `<h3${F.length ? "" : ' style="margin-top:0"'}>City test</h3>`;
+  if (!e.tests.length) h += `<p class="small" style="margin:0">${esc(e.no_test || "No registered claim tests this edge.")}${e.cited_by && e.cited_by.length ? " Cited as evidence by " + e.cited_by.map(c => `<a href="evidence.html?claim=${encodeURIComponent(c)}">${esc(c)}</a>`).join(", ") + "." : ""}${e.page ? ` <a href="${esc(e.page)}">Map of heat, medicines and conditions</a>.` : ""}</p>`;
+  for (const t of e.tests) {
+    h += `<p class="small" style="margin:0 0 6px"><span class="vd"><i style="background:${VC(t.verdict)}"></i><b>${esc(t.verdict)}</b></span> · <a href="evidence.html?claim=${encodeURIComponent(t.claim)}">${esc(t.claim)}</a>${t.referee ? ` · <a href="../${esc(t.referee)}">referee report</a>` : ""}${t.prior != null ? ` · prior ${t.prior}` : ""}<br>${esc(t.statement || "")}` +
+      (t.est != null ? `<br>Estimate ${fmt(t.est)}${t.lo != null ? ` (${fmt(t.lo)} to ${fmt(t.hi)})` : ""} ${esc(t.scale || "")}${t.n ? ", n = " + num(t.n) : ""}.` : "") + (t.verdict_note ? `<br><span class="muted">${esc(t.verdict_note)}</span>` : "") + (t.referee_answer ? `<br><span class="muted">Referee: ${esc(t.referee_answer)}.</span>` : "") + `</p>`;
+    if (t.versions && t.versions.length) h += `<p class="small muted" style="margin:0 0 8px">Dataset versions cited: ${t.versions.map(esc).join("; ")}.</p>`;
+  }
+  h += `<p class="small muted" style="margin:8px 0 0">Graph version: System Public Graph API ${esc(M.api)}, ${esc(M.dataset)}.</p>`;
+  const nb = neigh[e.id];
+  if (nb) h += `<h3>Shares a paper with</h3><p style="margin:0">${Object.keys(nb).sort((a, b) => nb[b] - nb[a]).slice(0, 10).map(i => `<a class="tag" data-id="${esc(i)}">${esc(byId[i].a)} — ${esc(byId[i].b)} · ${nb[i]}</a>`).join("")}</p>`;
+  h += `</div></div>`;
+  document.getElementById("panel").innerHTML = h;
+  const m = document.getElementById("more"); if (m) m.onclick = () => { showAll = !showAll; drawPanel(); };
+}
+
+/* ---- relations ---- */
+function drawRel() {
+  const R = D.relations, c = R.chain, k = R.contradiction, mo = R.modification;
+  // chain
+  const W = 560, ax0 = 150, ax1 = 520, lo = 1.0, hi = 1.2, AX = v => ax0 + (Math.log(v) - Math.log(lo)) / (Math.log(hi) - Math.log(lo)) * (ax1 - ax0);
+  const box = (x, w, l) => `<rect x="${x}" y="34" width="${w}" height="46" rx="6" fill="var(--bg)" stroke="${VC(l.verdict)}" stroke-width="2"/><text x="${x + w / 2}" y="51" text-anchor="middle" font-size="12" font-weight="600">${esc(l.claim)}</text>` +
+    `<text x="${x + w / 2}" y="65" text-anchor="middle" font-size="11.5" fill="var(--ink-2)">${fmt(l.est)} (${fmt(l.lo)} to ${fmt(l.hi)})</text><text x="${x + w / 2}" y="76" text-anchor="middle" font-size="10" fill="var(--muted)">${esc(l.scale)} · ${esc(l.verdict)}</text>`;
+  let s = `<div class="figure"><svg viewBox="0 0 ${W} 204" role="img" aria-label="Chain of two tested edges and the composed prediction">` +
+    [[4, "daily maximum", "temperature"], [237, "shooting", "incidents"], [470, "EMS gunshot", "dispatches"]].map(([x, a, b]) => `<text x="${x + 43}" y="12" text-anchor="middle" font-size="12">${a}</text><text x="${x + 43}" y="26" text-anchor="middle" font-size="12">${b}</text>`).join("") +
+    box(60, 190, c.links[0]) + box(310, 190, c.links[1]) +
+    `<path d="M47,30V98H513V30" fill="none" stroke="${VC(c.verdict)}" stroke-width="2"/><text x="280" y="114" text-anchor="middle" font-size="12" font-weight="600">composed edge: ${esc(c.claim)} · ${esc(c.verdict)}</text>` +
+    `<line x1="${ax0}" x2="${ax1}" y1="170" y2="170" stroke="var(--rule)"/>` + [1.0, 1.05, 1.1, 1.15, 1.2].map(v => `<line x1="${AX(v)}" x2="${AX(v)}" y1="170" y2="174" stroke="var(--rule)"/><text x="${AX(v)}" y="186" text-anchor="middle" font-size="10.5" fill="var(--muted)">${v.toFixed(2)}</text>`).join("") +
+    `<text x="${ax1}" y="200" text-anchor="end" font-size="10.5" fill="var(--muted)">rate ratio per 5 °C</text>` +
+    `<text x="${ax0 - 8}" y="137" text-anchor="end" font-size="11.5">predicted before the test</text><rect x="${AX(c.composed.lo)}" y="127" width="${AX(c.composed.hi) - AX(c.composed.lo)}" height="12" rx="3" fill="var(--band)" stroke="var(--band-line)"/><line x1="${AX(c.composed.est)}" x2="${AX(c.composed.est)}" y1="125" y2="141" stroke="var(--ink)" stroke-width="2"/>` +
+    `<text x="${ax0 - 8}" y="159" text-anchor="end" font-size="11.5">measured at the endpoint</text><line x1="${AX(c.endpoint.lo)}" x2="${AX(c.endpoint.hi)}" y1="155" y2="155" stroke="${VC(c.verdict)}" stroke-width="3" stroke-linecap="round"/><rect x="${AX(c.endpoint.est) - 2.5}" y="147" width="5" height="16" rx="2.5" fill="${VC(c.verdict)}"/>` +
+    `</svg></div>`;
+  let h = `<div class="panel"><h3>Chain: two edges compose a third</h3><p>Heat to shootings and shootings to ambulance dispatches were each tested. Their product was registered as a prediction for an edge that no finding in the graph holds, and the endpoint was then measured.</p>${s}` +
+    `<p>Predicted ${fmt(c.composed.est)} (${fmt(c.composed.lo)} to ${fmt(c.composed.hi)}); measured ${fmt(c.endpoint.est)} (${fmt(c.endpoint.lo)} to ${fmt(c.endpoint.hi)}); z = ${fmt(c.endpoint.z)}, ${c.endpoint.compatible ? "compatible" : "not compatible"}. In the graph: ${esc(c.links[0].graph)}; ${esc(c.links[1].graph)}. ` +
+    `<a href="evidence.html?claim=${c.claim}">Test card</a> · <a href="../critique/${c.claim}.md">referee report</a> · <a class="tag" data-id="${esc(c.links[0].edge)}">open temperature — homicide</a></p></div>`;
+  // contradiction
+  const word = d => d === "+" ? "more" : d === "-" ? "less" : "not read";
+  h += `<div class="panel"><h3>Contradiction: two literatures on one change</h3><p>A day moved from the office to home is less commuting and more work at home. The graph holds studies of each, found only by variable name. This project's reading found that they predict opposite signs for six of ten outcomes (docs/graph_experiments.md). The five it names are shown.</p>` +
+    `<div class="crow head"><span>Outcome</span><span>commute time — outcome</span><span>working at home — outcome</span><span></span></div>` +
+    k.rows.map(r => { const opp = r.commute.read && r.telework.read && r.commute.read !== r.telework.read;
+      return `<div class="crow"><span>${esc(r.outcome)}</span>` + ["commute", "telework"].map(key => `<span><span class="glyph" data-id="${esc(r[key].edge)}">${glyph(byId[r[key].edge], 190, 20)}</span><span class="pred">${r[key].n} findings; day at home: ${word(r[key].read)}</span></span>`).join("") +
+        `<span class="${opp ? "opp" : "muted"}">${opp ? "opposite" : "same"}</span></div>`; }).join("") +
+    `<p style="margin-top:8px">The bars use the same marks as the field. Commuting findings are positive because a longer commute goes with more of the outcome, so less commuting predicts less. Source: ${esc(k.source)}. The claim on the weekday pattern itself is <a href="evidence.html?claim=${k.claim}">${k.claim}</a> (${esc(k.claim_verdict)}).</p></div>`;
+  // modification
+  const dr = mo.drugs;
+  if (dr) {
+    const pick = ["mod:antipsychotic", "mod:anticholinergic", "mod:schizophrenia", "mod:mental", "mod:diabetes", "mod:kidney", "mod:lithium"].filter(i => byId[i]);
+    h += `<div class="panel"><h3>Modification: a third variable attached to an edge</h3><p>Some medicines and illnesses change how heat affects a person. Each row below is a relation among three variables, attached to the edge from heat to heat illness or death and not to either end. A dashed mark is a study that this project found in PubMed and the graph does not hold.</p>` +
+      `<div style="font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:8px"><span>heat</span><span style="flex:0 0 150px;height:8px;border-radius:4px;background:var(--rule)"></span><span>heat illness or death</span></div><div class="mstem">` +
+      pick.map(i => { const e = byId[i]; return `<div class="mrow" data-id="${esc(i)}"><span style="padding-left:8px">× ${esc(e.modifier.toLowerCase())}</span>${glyph(e)}<span class="muted" style="font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${e.sum.n - e.sum.absent} in graph, ${e.sum.absent} absent</span></div>`; }).join("") +
+      `</div><p style="margin-top:8px">Of ${dr.tally.read} graph records read, ${dr.tally.correct} were correct, ${dr.tally.partial} had lost a qualifier and ${dr.tally.wrong} were wrong. No city test was registered: the power check gave D = ${fmt(dr.D)}, where registration requires 4. <a href="${esc(dr.page)}">Map of heat, medicines and conditions</a> · <a href="../${esc(dr.doc)}">write-up</a>.</p>` +
+      `<p>A second case, tested: household air conditioning on the edge from heat to shootings. Difference of slopes ${fmt(mo.est)} (${fmt(mo.lo)} to ${fmt(mo.hi)}), <a href="evidence.html?claim=${mo.claim}">${mo.claim}</a>, ${esc(mo.verdict)} by the registered rule; the <a href="../${esc(mo.referee)}">referee</a> found that it is not evidence of an air-conditioning effect. The graph holds nothing on air conditioning and violence.</p></div>`;
+  }
+  // shared
+  h += `<div class="panel"><h3>Dependence: edges that rest on the same paper</h3><p>${M.papers_on_two_or_more_edges} of the ${num(M.n_papers)} papers contribute findings to two or more of the ${M.n_edges} edges. Two edges that share a paper are not independent evidence. The papers on the most edges:</p>` +
+    R.shared.slice(0, 8).map(p => `<div class="paper"><a href="https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/" title="${esc(p.title || "")}">${esc(p.author || "PMID " + p.pmid)} ${esc(p.year || "")}</a> <span class="muted">${esc(p.journal || "")}</span><br>` +
+      Object.keys(p.edges).map(i => `<a class="tag" data-id="${esc(i)}">${esc(byId[i].a)} — ${esc(byId[i].b)}${p.edges[i] > 1 ? " · " + p.edges[i] : ""}</a>`).join("") + `</div>`).join("") + `</div>`;
+  document.getElementById("rel").innerHTML = h;
+}
+
+/* ---- matrix ---- */
+function drawDen() {
+  const X = D.matrix, cell = {}; X.cells.forEach(c => cell[c.i + "|" + c.d] = c);
+  const dn = d => d.replace(/_/g, " ").replace("crime safety", "crime, safety").replace("income employment", "income, work");
+  const L1 = { experimental: "E", longitudinal: "L", "cross-sectional": "C" };
+  let h = `<table class="den"><thead><tr><th></th>${X.domains.map(d => `<th>${esc(dn(d))}</th>`).join("")}</tr></thead><tbody>`;
+  for (const iv of X.interventions) {
+    h += `<tr><th>${esc(iv.label)}</th>`;
+    for (const d of X.domains) {
+      const c = cell[iv.id + "|" + d], n = c.n, cls = n === 0 ? "e0" : n <= 2 ? "s1" : n <= 5 ? "s2" : n <= 10 ? "s3" : "s4";
+      const t = c.tests[0];
+      const txt = c.benefit ? L1[c.benefit] : c.harm ? L1[c.harm].toLowerCase() : n ? "·" : "";
+      const tipx = `<b>${esc(iv.label)} — ${esc(dn(d))}</b><br>` + (n ? `${n} studies in the graph, ${c.read} read. Status after reading: ${esc(c.status)}.${c.benefit ? " Strongest design for a verified benefit: " + esc(c.benefit) + "." : ""}${c.harm ? " Verified harm: " + esc(c.harm) + "." : ""}` : "The search returned nothing.") +
+        c.tests.map(x => `<br>City test: ${esc(x.claim)}, ${esc(x.verdict.replace("_", " "))}`).join("");
+      h += `<td class="${cls}${t ? " city" : ""}"${t ? ` style="--vc:${VC(t.verdict)}" data-claim="${esc(t.claim)}"` : ""} data-tip="${esc(tipx)}">${txt}</td>`;
+    }
+    h += "</tr>";
+  }
+  document.getElementById("den").innerHTML = h + "</tbody></table>";
+  const nE = X.cells.filter(c => !c.n).length, tested = X.cells.filter(c => c.tests.length), tE = tested.filter(c => !c.n).length;
+  document.getElementById("den-note").innerHTML = `<p class="how">Twenty-five interventions by eight outcome domains (${esc(X.source)}). The shade is the number of studies the graph returned for the cell. The letter is the strongest design behind a benefit verified against an abstract: E experimental, L longitudinal, C cross-sectional. A lower-case letter is a verified harm only, and a dot is a cell in which no finding read was usable.</p>` +
+    `<div class="legend"><span class="key"><svg width="16" height="12"><rect x=".5" y=".5" width="15" height="11" rx="2" fill="none" stroke="var(--grid)"/></svg>nothing returned</span>` +
+    [["s1", "1 to 2"], ["s2", "3 to 5"], ["s3", "6 to 10"], ["s4", "11 or more studies"]].map(([c, t]) => `<span class="key"><svg width="16" height="12"><rect width="16" height="12" rx="2" fill="var(--seq${c[1]})"/></svg>${t}</span>`).join("") +
+    `<span class="key"><svg width="18" height="14"><rect x="1" y="1" width="16" height="12" rx="3" fill="none" stroke="var(--c-unsettled-edge)" stroke-width="2"/></svg>the city registered a test here (outline in the verdict colour)</span></div>` +
+    `<p class="how"><b style="font-weight:600">${nE} of ${X.cells.length} cells are empty.</b> The housing-cost column is empty for every intervention, and it is the harm most often claimed for urban greening. The city registered tests in ${tested.length} cells, and ${tE} of those are cells in which the graph holds nothing: ${tested.filter(c => !c.n).map(c => esc(X.interventions.find(i => i.id === c.i).label.toLowerCase() + " and " + dn(c.d))).join("; ")}. Click an outlined cell to open its test card.</p>` +
+    `<p class="how muted small">An empty cell means the variable-name search found nothing. It does not mean that no study exists. The repository has no coding of which other cells the city's data could measure, so only registered tests are marked.</p>`;
+  document.getElementById("den").addEventListener("click", ev => { const td = ev.target.closest("td.city"); if (td) location.href = "evidence.html?claim=" + encodeURIComponent(td.dataset.claim); });
+}
+
+drawField(); drawPanel(); drawRel(); drawDen();
+document.getElementById("foot").innerHTML = `Built ${esc(M.generated.slice(0, 16).replace("T", " "))} by tools/build_hypergraph.py. Findings, variables and study records: System Public Graph API ${esc(M.api)}, ${esc(M.dataset)}, CC BY-NC 4.0. Authors and years: PubMed. City estimates, readings of abstracts and verdicts: this project (claims/, critique/, data/derived/). <a href="../docs/hypergraph.md">How to read this page</a>.`;
+const ex = Q.get("export");
+if (ex) { document.body.classList.add("export"); ({ field: ["sec-field"], edge: ["sec-panel"], relations: ["sec-rel"], density: ["sec-den"] }[ex] || []).forEach(i => document.getElementById(i).classList.add("show")); }
+})();
+</script>
+</body>
+</html>

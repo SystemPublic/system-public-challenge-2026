@@ -1,0 +1,289 @@
+{
+ "id": "repro-dot-2025-deaths",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "2025 traffic deaths, NYPD open data (persons table, crash date in 2025) minus DOT's 205, percent",
+  "estimate": 11.7,
+  "lo": null,
+  "hi": null,
+  "scale": "percent of stated count",
+  "null": 0,
+  "n": 229
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "f55k-p6yu",
+   "name": "Motor Vehicle Collisions - Person",
+   "url": "https://data.cityofnewyork.us/d/f55k-p6yu",
+   "rows_updated_at": "2026-11-12T17:31:19Z",
+   "query": {
+    "$select": "date_trunc_ym(crash_date) as m, person_type, count(*) as n",
+    "$where": "crash_date between '2023-12-01T00:00:00' and '2025-12-31T23:59:59' and person_injury = 'Killed'",
+    "$group": "m, person_type",
+    "$order": "m",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:58:20-0500",
+   "n_rows": 85,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "f55k-p6yu",
+   "name": "Motor Vehicle Collisions - Person",
+   "url": "https://data.cityofnewyork.us/d/f55k-p6yu",
+   "rows_updated_at": "2026-11-12T17:31:19Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "collision_id, crash_date, person_type",
+    "$where": "crash_date between '2024-01-01T00:00:00' and '2025-12-31T23:59:59' and person_injury = 'Killed'",
+    "$order": "unique_id"
+   },
+   "fetched": "2026-11-12T19:58:23-0500",
+   "n_rows": 497,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "collision_id, crash_date, borough, latitude, longitude, number_of_persons_killed, number_of_pedestrians_killed",
+    "$where": "crash_date between '2024-01-01T00:00:00' and '2025-12-31T23:59:59' and number_of_persons_killed > 0",
+    "$order": "collision_id"
+   },
+   "fetched": "2026-11-12T19:58:24-0500",
+   "n_rows": 468,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$select": "date_trunc_ymd(crash_date) as d, sum(number_of_persons_injured) as inj",
+    "$where": "crash_date between '2024-01-01T00:00:00' and '2025-12-31T23:59:59'",
+    "$group": "d",
+    "$order": "d",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:01:56-0500",
+   "n_rows": 731,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "f55k-p6yu",
+   "name": "Motor Vehicle Collisions - Person",
+   "url": "https://data.cityofnewyork.us/d/f55k-p6yu",
+   "rows_updated_at": "2026-11-12T17:31:19Z",
+   "query": {
+    "$select": "date_trunc_ymd(crash_date) as d, count(*) as inj",
+    "$where": "crash_date between '2024-01-01T00:00:00' and '2025-12-31T23:59:59' and person_injury = 'Injured'",
+    "$group": "d",
+    "$order": "d",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:01:59-0500",
+   "n_rows": 731,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "gthc-hcne",
+   "name": "Borough Boundaries",
+   "url": "https://data.cityofnewyork.us/d/gthc-hcne",
+   "rows_updated_at": "2026-11-02T19:28:11Z",
+   "query": {
+    "$select": "boroname, the_geom",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:02:10-0500",
+   "n_rows": 5,
+   "data_access": "open"
+  },
+  {
+   "kind": "other",
+   "name": "NYC DOT press release, Traffic deaths reach all-time low, 2 Jan 2026",
+   "url": "https://www.nyc.gov/html/dot/html/pr2026/traffic-deaths-reach-all-time-low.shtml",
+   "read": "2026-11-12",
+   "data_access": "partly_open",
+   "note": "DOT's reconciled fatality file is not published at row level."
+  }
+ ],
+ "results": {
+  "deaths_2025": {
+   "stated": 205,
+   "D1_persons": 229,
+   "D2_crash": 229,
+   "D3": "not computable"
+  },
+  "deaths_2024": {
+   "stated": 253,
+   "D1_persons": 268,
+   "D2_crash": 268
+  },
+  "pedestrian_deaths": {
+   "2025": {
+    "stated": 111,
+    "P1": 119,
+    "P2": 119
+   },
+   "2024": {
+    "stated": 122,
+    "P1": 124,
+    "P2": 124
+   }
+  },
+  "borough_2025": {
+   "stated": {
+    "BRONX": 33,
+    "QUEENS": 57,
+    "MANHATTAN": 39,
+    "BROOKLYN": 63,
+    "STATEN ISLAND": 13
+   },
+   "B1_field": {
+    "MANHATTAN": 41,
+    "BROOKLYN": 70,
+    "BRONX": 33,
+    "QUEENS": 59,
+    "UNASSIGNED": 19,
+    "STATEN ISLAND": 7
+   },
+   "B2_coords": {
+    "MANHATTAN": 43,
+    "BROOKLYN": 74,
+    "BRONX": 34,
+    "QUEENS": 64,
+    "STATEN ISLAND": 10,
+    "UNASSIGNED": 4
+   }
+  },
+  "borough_2024": {
+   "stated": {
+    "BRONX": 54,
+    "QUEENS": 74,
+    "MANHATTAN": 44,
+    "BROOKLYN": 69,
+    "STATEN ISLAND": 12
+   },
+   "B1_field": {
+    "MANHATTAN": 33,
+    "BROOKLYN": 53,
+    "STATEN ISLAND": 11,
+    "BRONX": 36,
+    "UNASSIGNED": 103,
+    "QUEENS": 32
+   },
+   "B2_coords": {
+    "MANHATTAN": 43,
+    "BROOKLYN": 67,
+    "STATEN ISLAND": 15,
+    "BRONX": 46,
+    "QUEENS": 64,
+    "UNASSIGNED": 33
+   }
+  },
+  "injuries": {
+   "stated": {
+    "2025": 47557,
+    "2024": 51540
+   },
+   "I1": {
+    "2024": 51775,
+    "2025": 47744
+   },
+   "I2": {
+    "2024": 51775,
+    "2025": 47744
+   },
+   "I3": {
+    "2025": 47744,
+    "2024": 54030
+   },
+   "I4": {
+    "2024": 51671,
+    "2025": 47589
+   }
+  },
+  "persons_killed_by_type": {
+   "2024": {
+    "Occupant": 111,
+    "Other Motorized": 11,
+    "Pedestrian": 124,
+    "Bicyclist": 22
+   },
+   "2025": {
+    "Bicyclist": 10,
+    "Occupant": 66,
+    "Pedestrian": 119,
+    "Other Motorized": 34
+   }
+  },
+  "dec_crash_deaths": {
+   "dec_2023_crash_deaths": 23,
+   "dec_2024_crash_deaths": 17,
+   "dec_2025_crash_deaths": 19,
+   "note": "Deaths recorded for December crashes; under a date-of-death reading some of these move to the next year. The open tables carry no date of death."
+  }
+ },
+ "prediction_scored": "miss: under the primary reading the 2025 death count is 229 against 205 (+24, +11.7 percent; tolerance 5 percent) and 2024 is 268 against 253 (+15, +5.9 percent), so support_if is not met; no computable reading brings 2025 within tolerance, which meets refute_if. The registrant's expectation that the open data would fall below DOT was wrong in direction. The injury expectation (within 3 percent, slightly above DOT) was a hit: 47,744 against 47,557 (+0.4 percent) and 51,775 against 51,540 (+0.5 percent).",
+ "settle": "DOT's row-level fatality file for 2024 and 2025, or a list of the NYPD-recorded deaths that DOT excludes with the reason (for example deaths judged to be medical events, suicides, crashes on private property or on highways outside DOT's count), would settle the death gap. For the 2024 borough split, DOT's borough assignment rule would settle it.",
+ "research_needed": [
+  {
+   "question": "Which deaths in the NYPD collision tables does DOT's reconciled count exclude, and why?",
+   "data": "DOT Vision Zero fatality file with collision ids, or the reconciliation rules",
+   "design": "Record linkage between the NYPD person table (person_injury = Killed) and DOT's list; tabulate exclusions by reason and person type",
+   "priority": "high"
+  },
+  {
+   "question": "Did the 2025 rise in 'Other Motorized' deaths (11 in 2024, 34 in 2025) and fall in 'Occupant' deaths (111 to 66) in the NYPD table reflect a coding change for e-bikes and mopeds?",
+   "data": "f55k-p6yu person_type with vehicle types from the Vehicles table (bm4k-52h4)",
+   "design": "Cross-tabulate person_type against vehicle type by quarter, 2022 to 2025",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/reproduction/dot_2025_deaths.png"
+ ],
+ "notes": "All counts were computed from the NYPD Motor Vehicle Collisions tables as published on 12 November 2026 (crashes h9gi-nx95 rows updated 2026-11-12T14:31:25Z; persons f55k-p6yu rows updated 2026-11-12T17:31:19Z), with code in analyses/reproduction/dot_2025_deaths.py and results in data/derived/reproduction/dot_2025_deaths.json.\n\nDeaths. The persons table (rows with person_injury = Killed) and the crash table (sum of number_of_persons_killed) give the same totals: 229 in 2025 and 268 in 2024, by crash date. DOT states 205 and 253. The open data exceed DOT by 24 deaths (11.7 percent) in 2025 and 15 deaths (5.9 percent) in 2024, both outside the registered 5 percent tolerance. The gap is in the opposite direction from deaths added after the crash report, so it cannot be explained by DOT's later additions. The date-of-death reading (D3) cannot be computed, but it cannot close the gap: the NYPD tables record 17 deaths for crashes in December 2024 and 19 for crashes in December 2025, so moving late-December deaths across the year boundary changes the 2025 count by at most a few deaths in either direction. The most likely explanation is that DOT's reconciled file excludes deaths that NYPD records in the collision tables (DOT's count is restricted to traffic deaths under its definition, and DOT revises its own counts, as the MMR shows for Fiscal 2025). The person type breakdown in the NYPD table also changed: occupant deaths fell from 111 to 66 and 'Other Motorized' deaths rose from 11 to 34, while DOT reports a 40 percent fall in occupant deaths and a 32 percent fall in motorcyclist deaths.\n\nPedestrians. Both readings give 124 in 2024 (DOT 122, within tolerance) and 119 in 2025 (DOT 111, +8, outside the tolerance of 5.55).\n\nBoroughs. Under the primary reading (borough field of the crash record) 2025 is close for the Bronx (33 against 33), Manhattan (41 against 39) and Queens (59 against 57), but Brooklyn is 70 against 63 and Staten Island 7 against 13, and 19 deaths have no borough. In 2024 the borough field is blank for 103 of 268 deaths, so every borough except Staten Island is far below DOT's figure. Placing crashes by coordinates (B2) leaves 33 deaths unassigned in 2024 and 4 in 2025, and brings 2024 Brooklyn (67 against 69) and Manhattan (43 against 44) within tolerance, but puts 2025 Brooklyn, Queens and Manhattan further above DOT because the citywide total is 24 above. The 2024 result shows the geocoding change found in critique/bridge-crz-injury-crashes.md: blank boroughs were common in 2024 and rare in 2025, so a borough comparison across the two years from the record's borough field is not valid. DOT's year-on-year borough changes (for example Queens 74 to 57) cannot be checked with the borough field and only partly with coordinates (64 to 64).\n\nInjuries. Every reading with a 1 January to 15 December window reproduces DOT within 0.5 percent: 47,744 against 47,557 in 2025 and 51,775 against 51,540 in 2024 (crash table and persons table agree). The window ending 14 December comes closer (47,589 and 51,671, within 0.3 percent). The full-year 2024 reading (54,030) does not match, so DOT compared the same partial window in both years. The small excess over DOT is consistent with rows added after mid-December 2025. Serious injuries (2,947 and 3,031) were not reproduced because the open tables have no field matching DOT's severity definition.\n\nVerdict. By the registered rule, contested: the 2025 death count is outside tolerance under every computable reading. The injury numbers reproduce, so the release mixes a reproducible injury count with a death count that comes from a file the public cannot see, and which is lower than the open record by about one death in nine.\n\nAfter the referee (13 Nov 2026): contested here means that the open NYPD collision tables do not reproduce DOT's reconciled count. It does not mean that DOT's count is wrong; DOT's file is not published and the claim cannot test it. The referee re-queried both tables and obtained the same 229 and 268. Removing fatal crashes whose contributing factor is a medical event removes 12 deaths in 2025 and 8 in 2024 (217 and 260), so the one exclusion visible in the open data accounts for at most half of the 2025 gap, and 2025 stays outside the tolerance. Deaths that NYPD later reclassifies (suicides, homicides by vehicle, private property) are corrected in DOT's file and not in the open table. November 2025 has 7 recorded deaths against 13 to 29 in the other months and 23 in November 2024; if November is incomplete in the open table the gap is larger than 24. DOT's fall from 2024 to 2025 is 19.0% and the open tables give 14.6%. The referee recalled, without checking, that the open tables were also about 24 deaths above DOT in 2019 to 2021; if so the gap is the usual one and the 5% tolerance would be missed in most years. That is not verified here.",
+ "registration_sha256": "830c41a9b091a8f6b1582f61c3c6e47acce8f519bb95594f03ffdaa534af28ac",
+ "decided_at": "2026-11-12T20:04:55-0500",
+ "stance": null,
+ "verdict_note": "The open NYPD tables do not reproduce DOT's reconciled count of deaths (229 against 205). This is not a finding that DOT's count is wrong. The injury counts reproduce within 0.5%.",
+ "critique": {
+  "report": "critique/repro-dot-2025-deaths.md",
+  "answer": "accepted; verdict kept, meaning of the label stated"
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "2025 traffic deaths, NYPD open data (persons table, crash date in 2025) minus DOT's 205, percent",
+    "estimate": 11.7,
+    "lo": null,
+    "hi": null,
+    "scale": "percent of stated count",
+    "null": 0,
+    "n": 229
+   },
+   "stance": null,
+   "decided_at": "2026-11-12T20:04:55-0500",
+   "prediction_scored": "miss: under the primary reading the 2025 death count is 229 against 205 (+24, +11.7 percent; tolerance 5 percent) and 2024 is 268 against 253 (+15, +5.9 percent), so support_if is not met; no computable reading brings 2025 within tolerance, which meets refute_if. The registrant's expectation that the open data would fall below DOT was wrong in direction. The injury expectation (within 3 percent, slightly above DOT) was a hit: 47,744 against 47,557 (+0.4 percent) and 51,775 against 51,540 (+0.5 percent)."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep contested; notes state that the label concerns reproduction from the open tables, not the correctness of DOT's count.",
+  "critique": "critique/repro-dot-2025-deaths.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

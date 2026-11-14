@@ -1,0 +1,199 @@
+{
+ "id": "graph-confounders-surftemp-ed",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Change in the percent change of the heat-stress ED rate per 1 F of surface temperature when the share of older adults living alone is added to poverty, percent Black and AC; community districts; paired bootstrap interval",
+  "estimate": 0.590612352751096,
+  "lo": -1.2733179474488119,
+  "hi": 3.417691636540998,
+  "scale": "percentage points per 1 F",
+  "null": 0,
+  "n": 54
+ },
+ "graph_effect": {
+  "label": "Change derived from living-alone odds ratios 8.1 and 42.3 (PMIDs 11988377, 27221967)",
+  "estimate": -0.5,
+  "lo": -2.5,
+  "hi": 0.5,
+  "scale": "percentage points per 1 F",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$select": "cd, sum(lotarea) as lot_ft2, count(*) as lots",
+    "$where": "lottype != '9' OR lottype IS NULL",
+    "$group": "cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:44:02-0500",
+   "n_rows": 72
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$select": "cd, sum(bldgarea/numfloors) as foot_ft2, sum(bldgarea) as floor_ft2",
+    "$where": "numfloors > 0 AND bldgarea > 0",
+    "$group": "cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:44:11-0500",
+   "n_rows": 71
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$select": "borocode, ct2010, sum(lotarea) as lot_ft2, count(*) as lots",
+    "$where": "lottype != '9' OR lottype IS NULL",
+    "$group": "borocode, ct2010",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:49:08-0500",
+   "n_rows": 2176
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$select": "borocode, ct2010, sum(bldgarea/numfloors) as foot_ft2, sum(bldgarea) as floor_ft2",
+    "$where": "numfloors > 0 AND bldgarea > 0",
+    "$group": "borocode, ct2010",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:49:16-0500",
+   "n_rows": 2162
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "8ius-dhrr",
+   "name": "2010 Census Tract to Neighborhood Tabulation Area Equivalency table",
+   "url": "https://data.cityofnewyork.us/d/8ius-dhrr",
+   "rows_updated_at": "2015-02-17T16:34:59Z",
+   "query": {
+    "$select": "_2010_nyc_borough_code as b, _2010_census_tract as t, neighborhood_tabulation_area_nta_code as nta",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:49:18-0500",
+   "n_rows": 2168
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2325.json",
+   "indicator": 2325,
+   "measure": 992,
+   "label": "Total population (ACS)",
+   "geotype": "CD, NTA2010",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2325.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2146.json",
+   "indicator": 2146,
+   "measure": 693,
+   "label": "Older adults living alone (65+), percent (ACS)",
+   "geotype": "CD, NTA2010",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2146.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2112.json",
+   "indicator": 2112,
+   "measure": 643,
+   "label": "Traffic density, million vehicle miles per square mile",
+   "geotype": "CD",
+   "periods": [
+    "2019"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2112.json"
+  },
+  {
+   "kind": "derived",
+   "file": "data/derived/heat/bridge_cd.csv, bridge_nta.csv",
+   "note": "outcome, exposure and original covariates; sources listed in the outcomes of heat-trees-surftemp and heat-surftemp-ed"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "System Public Graph v1.0",
+   "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO (API only)",
+   "file": "data/derived/graph/confounders/links_green__temperature.json, links_temperature__heat-illness.json"
+  }
+ ],
+ "prediction_scored": "partial: the change is small, as predicted, +0.59 (-1.27 to +3.42) points, but its sign is positive and it falls 0.09 outside the registered band of -2.5 to +0.5, so support condition (a) is not met. Conditions (b), (c) and (d) are met: the bootstrap interval lies inside -5.2 to +5.2, the slope under the graph set is -9.7 (-17.6 to -1.2) with its upper limit below zero, and the largest VIF is 3.20. The refutation condition is not met. The sign was wrong because the share of older adults living alone has a correlation of -0.15 with surface temperature, not a positive one.",
+ "settle": "Living alone does not account for the negative district association. The three built-form covariates do in a secondary model that does not decide this verdict: with them the slope is -2.7 (-11.1 to +6.5)% per F. A registered test of that set on an outcome not yet seen (the yearly heat ED rates by district, or heat hospitalizations) would settle whether heat-surftemp-ed should remain contested.",
+ "research_needed": [
+  {
+   "question": "Is the negative district association between surface temperature and heat ED visits produced by street area and built form?",
+   "data": "EHDP heat ED and hospitalization rates by district, PLUTO, Landsat scenes from several summers",
+   "design": "Registered replication with road share, footprint share and density as covariates, on an outcome period not used here",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/round2/heat_confounders.png"
+ ],
+ "notes": "n = 54 districts. Original refitted: -10.3 (-17.5 to -2.6)% per F. The coefficient of living alone is +0.0065 log rate per percentage point (SE 0.0096), with an interval of -0.012 to +0.025, which includes zero and three times the value derived from the graph's odds ratios (0.003 to 0.008), so it neither agrees nor disagrees with the graph. Its partial R2 with surface temperature is 0.06. Secondary models, not deciding: built-form covariates without living alone -2.7 (-11.1 to +6.5), change +7.6 (+1.3 to +15.3); living alone with built form -1.8 (-10.8 to +8.1), change +8.5 (+1.4 to +17.6), in which road share has a coefficient of -3.3% per point (p = 0.005). At NTA2010, for heat hospitalizations, living alone has a negative coefficient (-0.0063, SE 0.0031) and the temperature slope moves from -3.9 (-7.2 to -0.4) to -5.0 (-8.6 to -1.3).\n\nAfter the referee (13 Nov 2026): the stance is set to null under rule 6. The claim predicts a change near zero, and the value of -0.242 was computed as though it predicted a negative change. Condition (a) is missed by 0.09 points, which is less than the effect of removing one district: leaving out one district at a time gives changes from +0.28 to +0.93, and 12 of the 54 deletions bring the change inside the band. The statement that the living-alone coefficient agrees with the graph has been withdrawn. The living-alone measure is reported by PUMA, so eight districts carry the same value in pairs; a bootstrap that resamples the pairs together gives -1.49 to +3.30. The built-form secondary models used the population density that is overstated for those districts (see graph-confounders-trees-surftemp). With the density corrected the built-form model gives -3.1 (-11.8 to +6.5), a change of +7.3 (+0.4 to +15.9); with the waterfront lot share added the interval of that change includes zero (+7.0, -0.4 to +16.1). Road share has a correlation of +0.51 with surface temperature, so adding it removes part of the exposure. With borough terms the change is -0.83 (-5.46 to +3.35), which leaves the registered limit of condition (b). The covariate has a correlation of -0.15 with surface temperature and could move the slope little in either direction; the result is 0.52 standard errors from no change and 0.95 from the centre of the prediction.",
+ "registration_sha256": "d487c4638e9d364954b7e654a909b8af3f49793e70cc363a92855fcdb72fd298",
+ "decided_at": "2026-11-12T23:57:40-0500",
+ "stance": null,
+ "stance_note": "Null after the referee (rule 6): the claim predicts a change near zero, for which the stance formula has no null that expresses the research direction.",
+ "critique": {
+  "report": "critique/graph-confounders-surftemp-ed.md",
+  "answer": "accepted; verdict kept, stance null"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Change in the percent change of the heat-stress ED rate per 1 F of surface temperature when the share of older adults living alone is added to poverty, percent Black and AC; community districts; paired bootstrap interval",
+    "estimate": 0.590612352751096,
+    "lo": -1.2733179474488119,
+    "hi": 3.417691636540998,
+    "scale": "percentage points per 1 F",
+    "null": 0,
+    "n": 54
+   },
+   "stance": {
+    "value": -0.242,
+    "lo": -0.891,
+    "hi": 0.487,
+    "z": -0.49
+   },
+   "decided_at": "2026-11-12T23:57:40-0500",
+   "prediction_scored": "partial: the change is small, as predicted, +0.59 (-1.27 to +3.42) points, but its sign is positive and it falls 0.09 outside the registered band of -2.5 to +0.5, so support condition (a) is not met. Conditions (b), (c) and (d) are met: the bootstrap interval lies inside -5.2 to +5.2, the slope under the graph set is -9.7 (-17.6 to -1.2) with its upper limit below zero, and the largest VIF is 3.20. The refutation condition is not met. The sign was wrong because the share of older adults living alone has a correlation of -0.15 with surface temperature, not a positive one."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; stance set to null (rule 6); the claim of agreement with the graph for the living-alone coefficient withdrawn; density error in the secondary models recorded.",
+  "critique": "critique/graph-confounders-surftemp-ed.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

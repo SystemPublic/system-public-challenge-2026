@@ -1,0 +1,217 @@
+{
+ "id": "graph-triad-cold-asthma-absence",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "citywide absence rate on cold school days against other school days of the same week of the year",
+  "estimate": 1.1012278100339397,
+  "lo": 1.0526025817186513,
+  "hi": 1.152099292414892,
+  "scale": "ratio of absence rates",
+  "null": 1,
+  "n": 587,
+  "n_exposed": 98
+ },
+ "graph_effect": {
+  "label": "composed through asthma: RR(asthma exacerbation) ^ share of absences attributable to asthma",
+  "estimate": 1.0072685309733118,
+  "lo": 1.0007778837133046,
+  "hi": 1.0172716526590189,
+  "scale": "ratio of absence rates",
+  "null": 1
+ },
+ "graph_evidence": [
+  {
+   "relationship_id": [
+    "4FaXcuNJRt|EAshH_Ko3h",
+    "EAshH_Ko3h|4FaXcuNJRt",
+    "dINFs04idR|EAshH_Ko3h"
+   ],
+   "concepts": "temperature family (hot, temperature, air temperature) - asthma",
+   "n_findings": 40,
+   "n_studies": 24,
+   "direction": "+ for heat in the hot season and + for cold in the cold season; the 32 positive and 8 negative rows mix both, and include heaters and exhaled temperature",
+   "summary": "cold (5th percentile of temperature) and childhood asthma hospitalisation, RR 1.64 (1.06-2.54) on days with lower PM2.5, Hefei 2013-2016; also low temperature RR 1.20 (1.15-1.26), Lanzhou (PMID 39251927), and 1.10 (1.05-1.15) in adults, Hong Kong (PMID 36240934)",
+   "pubmed_ids": [
+    "35817164",
+    "34555607",
+    "39251927",
+    "36240934"
+   ]
+  },
+  {
+   "relationship_id": [
+    "EAshH_Ko3h|_l4tNqo_PI"
+   ],
+   "concepts": "asthma - school attendance",
+   "n_findings": 1,
+   "n_studies": 31,
+   "direction": "+ (more days absent)",
+   "summary": "children with asthma had 2.21 (1.41-3.01) more days absent per year than matched children without asthma, Rochester, Minnesota (abstract read; the relationship record lists 31 studies but the API returns one finding)",
+   "pubmed_ids": [
+    "11487757"
+   ]
+  },
+  {
+   "relationship_id": null,
+   "concepts": "temperature family - school attendance",
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": null,
+   "summary": "no direct finding in the graph for hot, temperature, air temperature, surface temperature, heat wave or urban heat island with school attendance (two findings from two studies with absenteeism)",
+   "pubmed_ids": []
+  }
+ ],
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "xwxx-rnki",
+   "name": "2006-2009 Historical Daily Attendance By School",
+   "url": "https://data.cityofnewyork.us/d/xwxx-rnki",
+   "rows_updated_at": "2017-08-23T16:45:14Z",
+   "query": {
+    "$select": "date, sum(absent) as absent, sum(enrolled) as enrolled, sum(present) as present, count(*) as schools",
+    "$group": "date",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T22:53:04-0500",
+   "n_rows": 557
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wpqj-3buw",
+   "name": "2009-2012 Historical Daily Attendance By School",
+   "url": "https://data.cityofnewyork.us/d/wpqj-3buw",
+   "rows_updated_at": "2017-08-23T19:25:27Z",
+   "query": {
+    "$select": "date, sum(absent) as absent, sum(enrolled) as enrolled, sum(present) as present, count(*) as schools",
+    "$group": "date",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T22:53:14-0500",
+   "n_rows": 550
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "pffu-gbfi",
+   "name": "2012 - 2015 Historical Daily Attendance By School",
+   "url": "https://data.cityofnewyork.us/d/pffu-gbfi",
+   "rows_updated_at": "2017-08-23T14:14:13Z",
+   "query": {
+    "$select": "date, sum(absent) as absent, sum(enrolled) as enrolled, sum(present) as present, count(*) as schools",
+    "$group": "date",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T22:53:24-0500",
+   "n_rows": 549
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "3y5p-x48f",
+   "name": "2015-2018 Historical Daily Attendance By School",
+   "url": "https://data.cityofnewyork.us/d/3y5p-x48f",
+   "rows_updated_at": "2018-11-20T16:13:41Z",
+   "query": {
+    "$select": "date, sum(absent::number) as absent, sum(enrolled::number) as enrolled, sum(present::number) as present, count(*) as schools",
+    "$group": "date",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T22:56:15-0500",
+   "n_rows": 544
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "x3bb-kg5j",
+   "name": "2018-2019 Daily Attendance",
+   "url": "https://data.cityofnewyork.us/d/x3bb-kg5j",
+   "rows_updated_at": "2019-09-11T13:54:18Z",
+   "query": {
+    "$select": "date, sum(absent) as absent, sum(enrolled) as enrolled, sum(present) as present, count(*) as schools",
+    "$group": "date",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T22:56:15-0500",
+   "n_rows": 185
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "v1.0",
+   "relationships": [
+    "4FaXcuNJRt|EAshH_Ko3h",
+    "EAshH_Ko3h|4FaXcuNJRt",
+    "dINFs04idR|EAshH_Ko3h",
+    "EAshH_Ko3h|_l4tNqo_PI"
+   ],
+   "fetched": "2026-11-12",
+   "note": "API responses carry no version; findings read through data/cache/sysgraph"
+  }
+ ],
+ "prediction_scored": "partial. The direct association is present and robust: 1.101 (1.053 to 1.152), 1.07 with an influenza control. The triad is not supported as an account of it: the endpoint is 3.81 standard errors above the composed 1.0073 and D = 3.0, below the 4 of rule 8, so the test does not separate the chain from no effect, and the asthma path accounts for about 8% of the log ratio.",
+ "settle": "Absence by reason (illness against other), or absence among pupils with and without asthma, on cold days; daily asthma emergency visits of school-age children as the middle term; an influenza control (weekly influenza-like illness). The referee added the influenza control (1.070, 1.015 to 1.127, from 2009-10). The cold-day association should be registered as a direct claim that does not name asthma and tested on school years not used here.",
+ "mediated_share": 0.07510693607336075,
+ "research_needed": [
+  {
+   "question": "How much of the cold-day rise in school absence passes through asthma?",
+   "data": "DOE absence by reason or by pupil health status; DOHMH syndromic asthma visits ages 5-17 by day",
+   "design": "mediation analysis by day with asthma visits as the middle term",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/graph/triads_network.png"
+ ],
+ "notes": "Model as registered; 2158 school days from 2006-09-05 to 2019-06-26 after excluding 218 days with low citywide enrolment (mostly Regents examination weeks in late January and June) and 9 days with absence above 30%. Mean absence rate 8.8%. Secondary estimates, none deciding: {\"lag0_2\": {\"ratio\": 1.0535, \"lo\": 1.021, \"hi\": 1.087, \"n\": 587}, \"per_5C\": {\"ratio\": 0.9566, \"lo\": 0.9426, \"hi\": 0.9708, \"n\": 587}, \"without_snow_days\": {\"ratio\": 1.1243, \"lo\": 1.0702, \"hi\": 1.1812, \"n\": 500}}. Influenza is not controlled, and in the cold arm it is the main rival. The test was registered knowing it could not detect the composed size (D below 4).\n\nAfter the referee (13 Nov 2026): the verdict is changed from confirmed to unsettled. The claim is a bridge with an endpoint test and was registered more than six hours after rule 8, so its support condition could not be a test of direction only. The endpoint lies 3.81 standard errors from the composed prediction (1.0073) and 4.19 from no effect, D = 3.0, below the 4 that rule 8 requires, and the registration itself reported an expected D of 0.23. The endpoint rejects the chain's size while agreeing with its sign: the composed 0.7% and the city's 10% differ by a factor of about 13, and the asthma path accounts for about 8% of the log ratio. The direct association between cold days and absence is robust. The referee rebuilt the series and obtained 1.101 (1.053 to 1.152); clustered by school year the interval is 1.039 to 1.167; with fixed effects for each week of each school year the ratio is 1.096 (1.040 to 1.155); from 2009-10 onward it is 1.071 (1.016 to 1.129) and 1.070 (1.015 to 1.127) with laboratory-confirmed influenza in the model, so influenza, the rival the registrant named, does not account for it. Dropping days near a recess raises the estimate (1.128), a placebo exposure two days ahead gives 1.009 (0.968 to 1.051), and absence rises in steps with cold (1.06 at 0 to 5 C, 1.11 at -5 to 0 C, 1.34 at or below -5 C). The size depends on a few extreme days (1.070 without the five highest-absence exposed days); a defensible range is 1.06 to 1.10. The alternative that remains is a direct effect of cold on attendance that has nothing to do with health (travel, parents keeping children home, ice). This association should be registered as a direct claim that does not name asthma. The snow indicator used the previous kept school day and not the previous calendar day (corrected: 1.100).",
+ "registration_sha256": "e209073100a94c7f01555b38f651a628241c34d9cec205401a37b1f329a42183",
+ "decided_at": "2026-11-12T22:58:13-0500",
+ "stance": {
+  "lo": null,
+  "hi": null,
+  "z": 3.81,
+  "rule": "7+8",
+  "D": 3.04,
+  "discriminates": false,
+  "value": -0.78,
+  "note": "Rules 7 and 8: agreement of the endpoint with the composed prediction, scaled by how well the test separates the chain from no effect. The earlier value was the stance of a direct effect against its null."
+ },
+ "verdict_note": "Unsettled as a bridge (rule 8, D = 3.0). The direct cold-day association with absence is robust (1.10, 1.05 to 1.15; 1.07 with an influenza control) and is not explained by the asthma chain.",
+ "critique": {
+  "report": "critique/graph-triad-cold-asthma-absence.md",
+  "answer": "accepted; verdict changed to unsettled"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "citywide absence rate on cold school days against other school days of the same week of the year",
+    "estimate": 1.1012278100339397,
+    "lo": 1.0526025817186513,
+    "hi": 1.152099292414892,
+    "scale": "ratio of absence rates",
+    "null": 1,
+    "n": 587,
+    "n_exposed": 98
+   },
+   "stance": {
+    "value": 0.97,
+    "lo": 0.805,
+    "hi": 0.996,
+    "z": 4.18
+   },
+   "decided_at": "2026-11-12T22:58:13-0500",
+   "prediction_scored": "partial. The direction composed from the triad is supported: the ratio is 1.101 (1.053 to 1.152). The size is not the chain's: the interval lies wholly above the composed interval (1.0008 to 1.0173), and above the registrant's expected range of 1.00 to 1.08 at the point estimate. The asthma path accounts for about 8% of the log ratio (1% to 18% over the composed interval)."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: a bridge registered after rule 8 whose endpoint test does not discriminate (D = 3.0); verdict changed from confirmed to unsettled; stance recomputed by the endpoint formula.",
+  "critique": "critique/graph-triad-cold-asthma-absence.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

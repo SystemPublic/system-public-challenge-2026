@@ -1,0 +1,1291 @@
+{
+ "4FaXcuNJRt__YZku29igbl": {
+  "query": {
+   "a": "4FaXcuNJRt",
+   "b": "YZku29igbl",
+   "expand": false,
+   "offline": false
+  },
+  "generated": "2026-11-12T15:29:09-0500",
+  "concepts_a": [
+   {
+    "system_id": "4FaXcuNJRt",
+    "label": "temperature",
+    "wikidata_id": "Q11466",
+    "match": "id"
+   }
+  ],
+  "concepts_b": [
+   {
+    "system_id": "YZku29igbl",
+    "label": "homicide",
+    "wikidata_id": "Q149086",
+    "match": "id"
+   }
+  ],
+  "sources": {
+   "dataverse": {
+    "doi": "doi:10.7910/DVN/7V6JDO",
+    "url": "https://doi.org/10.7910/DVN/7V6JDO",
+    "version": "2.1",
+    "release_time": "2026-07-22T10:56:14Z",
+    "license": "CC BY-NC 4.0",
+    "associations_sha256": "a9c8ba3db760efec0d08c65c17c36f0066073062d8e1ff8ea40cc71679daddf9",
+    "associations_md5": "c884dd1132957f69ffea45404f29db61",
+    "loaded_at": "2026-11-12T15:12:02-0500"
+   },
+   "api": {
+    "base": "https://public-api.system.com",
+    "api_version": "v1.0",
+    "pairs_queried": 1,
+    "pairs_total": 1,
+    "requests_including_cached": 3
+   }
+  },
+  "relationships": [
+   {
+    "relationship_id": "4FaXcuNJRt|YZku29igbl",
+    "num_findings": 2,
+    "num_studies": 1,
+    "last_published_date": "2023-05-20",
+    "last_updated": "2024-12-12 13:25:37.319153-05",
+    "source": "temperature",
+    "target": "homicide",
+    "from": "csv"
+   },
+   {
+    "relationship_id": "4FaXcuNJRt|YZku29igbl",
+    "num_findings": 4,
+    "num_studies": 2,
+    "last_published_date": "2023-05-20T00:00:00",
+    "last_updated": "2024-06-03T14:18:09.998760",
+    "source": "temperature",
+    "target": "homicide",
+    "from": "api"
+   }
+  ],
+  "summary": {
+   "csv": {
+    "n": 2,
+    "+": 2,
+    "-": 0,
+    "none": 0,
+    "sig+": 2,
+    "sig-": 0,
+    "studies": 1
+   },
+   "api_only_dropped": {
+    "n": 2,
+    "+": 0,
+    "-": 2,
+    "none": 0,
+    "sig+": 0,
+    "sig-": 2,
+    "studies": 1
+   },
+   "statistic_types_csv": {
+    "odds_ratio": 2
+   },
+   "with_interval_csv": 2,
+   "with_p_csv": 2,
+   "flagged_csv": 0
+  },
+  "associations": [
+   {
+    "association_id": "9AJXCx758B",
+    "orientation": "a->b",
+    "variable_1": "daily exposure to temperature",
+    "variable_2": "homicide mortality (among the population)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "YZku29igbl",
+    "statistic_type": "odds ratio",
+    "system_statistic_type": "odds_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.6,
+    "ci_upper": 11.0,
+    "p_value": 0.001,
+    "statistic_value": 6.2,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "f93bc2-3xr",
+    "pubmed_id": 36858215,
+    "doi": "10.1016/j.scitotenv.2023.162462",
+    "population": "Adults in California from 2014 to 2019.",
+    "study_type": null
+   },
+   {
+    "association_id": "EQDeWCSNL2",
+    "orientation": "a->b",
+    "variable_1": "daily exposure to temperature",
+    "variable_2": "homicide mortality (among the population)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "YZku29igbl",
+    "statistic_type": "odds ratio",
+    "system_statistic_type": "odds_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.6,
+    "ci_upper": 8.1,
+    "p_value": 0.001,
+    "statistic_value": 4.9,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "f93bc2-3xr",
+    "pubmed_id": 36858215,
+    "doi": "10.1016/j.scitotenv.2023.162462",
+    "population": "Adults in California from 2014 to 2019.",
+    "study_type": null
+   },
+   {
+    "association_id": "4eQXnUZuvY",
+    "orientation": "a->b",
+    "variable_1": "daily ambient temperature",
+    "variable_2": "intentional homicide (among overall inter-personal violence)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "YZku29igbl",
+    "statistic_type": "odds_ratio",
+    "system_statistic_type": "odds_ratio",
+    "null": 1.0,
+    "direction": "-",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.0,
+    "ci_lower": 0.015,
+    "ci_upper": 0.166,
+    "p_value": 0.001,
+    "statistic_value": 0.088,
+    "p_value_equality": null,
+    "in_csv": false,
+    "in_api": true,
+    "study_id": "6xcSYbJWu_",
+    "pubmed_id": 32738768,
+    "doi": null,
+    "population": null,
+    "study_type": null
+   },
+   {
+    "association_id": "zzv-EJ0kW8",
+    "orientation": "a->b",
+    "variable_1": "daily ambient temperature",
+    "variable_2": "intentional homicide (among the population studied)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "YZku29igbl",
+    "statistic_type": "odds_ratio",
+    "system_statistic_type": "odds_ratio",
+    "null": 1.0,
+    "direction": "-",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.0,
+    "ci_lower": 0.043,
+    "ci_upper": 0.15,
+    "p_value": 0.001,
+    "statistic_value": 0.095,
+    "p_value_equality": null,
+    "in_csv": false,
+    "in_api": true,
+    "study_id": "6xcSYbJWu_",
+    "pubmed_id": 32738768,
+    "doi": null,
+    "population": null,
+    "study_type": null
+   }
+  ],
+  "notes": "direction is the sign of the statistic against its null (1 for ratios, 0 otherwise) for the variables as named; check names for negations and comparators. The API documentation advises dropping API associations absent from the Dataverse CSV (in_csv false)."
+ },
+ "4FaXcuNJRt__rULjCt1BqH": {
+  "query": {
+   "a": "4FaXcuNJRt",
+   "b": "rULjCt1BqH",
+   "expand": false,
+   "offline": false
+  },
+  "generated": "2026-11-12T15:29:09-0500",
+  "concepts_a": [
+   {
+    "system_id": "4FaXcuNJRt",
+    "label": "temperature",
+    "wikidata_id": "Q11466",
+    "match": "id"
+   }
+  ],
+  "concepts_b": [
+   {
+    "system_id": "rULjCt1BqH",
+    "label": "injury",
+    "wikidata_id": "Q193078",
+    "match": "id"
+   }
+  ],
+  "sources": {
+   "dataverse": {
+    "doi": "doi:10.7910/DVN/7V6JDO",
+    "url": "https://doi.org/10.7910/DVN/7V6JDO",
+    "version": "2.1",
+    "release_time": "2026-07-22T10:56:14Z",
+    "license": "CC BY-NC 4.0",
+    "associations_sha256": "a9c8ba3db760efec0d08c65c17c36f0066073062d8e1ff8ea40cc71679daddf9",
+    "associations_md5": "c884dd1132957f69ffea45404f29db61",
+    "loaded_at": "2026-11-12T15:12:02-0500"
+   },
+   "api": {
+    "base": "https://public-api.system.com",
+    "api_version": "v1.0",
+    "pairs_queried": 1,
+    "pairs_total": 1,
+    "requests_including_cached": 3
+   }
+  },
+  "relationships": [
+   {
+    "relationship_id": "4FaXcuNJRt|rULjCt1BqH",
+    "num_findings": 4,
+    "num_studies": 3,
+    "last_published_date": "2023-09-01",
+    "last_updated": "2024-12-12 13:25:37.319153-05",
+    "source": "temperature",
+    "target": "injury",
+    "from": "csv"
+   },
+   {
+    "relationship_id": "4FaXcuNJRt|rULjCt1BqH",
+    "num_findings": 4,
+    "num_studies": 3,
+    "last_published_date": "2023-09-01T00:00:00",
+    "last_updated": "2024-06-03T14:17:49.801851",
+    "source": "temperature",
+    "target": "injury",
+    "from": "api"
+   }
+  ],
+  "summary": {
+   "csv": {
+    "n": 4,
+    "+": 4,
+    "-": 0,
+    "none": 0,
+    "sig+": 3,
+    "sig-": 0,
+    "studies": 3
+   },
+   "api_only_dropped": {
+    "n": 0,
+    "+": 0,
+    "-": 0,
+    "none": 0,
+    "sig+": 0,
+    "sig-": 0,
+    "studies": 0
+   },
+   "statistic_types_csv": {
+    "odds_ratio": 3,
+    "relative_risk_ratio": 1
+   },
+   "with_interval_csv": 4,
+   "with_p_csv": 0,
+   "flagged_csv": 0
+  },
+  "associations": [
+   {
+    "association_id": "B0hgnbp5zC",
+    "orientation": "a->b",
+    "variable_1": "exposure to extreme temperature",
+    "variable_2": "injury at the workplace",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "rULjCt1BqH",
+    "statistic_type": "odds ratio",
+    "system_statistic_type": "odds_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.44,
+    "ci_upper": 1.85,
+    "p_value": null,
+    "statistic_value": 1.64,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "1wokf8U3u1",
+    "pubmed_id": 31817710,
+    "doi": "10.3390/ijerph16244955",
+    "population": "92,238 workers from the 2014 and 2017 Korean Working Condition Survey.",
+    "study_type": null
+   },
+   {
+    "association_id": "O2VyGVBwiK",
+    "orientation": "a->b",
+    "variable_1": "exposure to extreme temperature",
+    "variable_2": "injury at the workplace",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "rULjCt1BqH",
+    "statistic_type": "odds ratio",
+    "system_statistic_type": "odds_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.78,
+    "ci_upper": 2.38,
+    "p_value": null,
+    "statistic_value": 2.06,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "1wokf8U3u1",
+    "pubmed_id": 31817710,
+    "doi": "10.3390/ijerph16244955",
+    "population": "92,238 workers from the 2014 and 2017 Korean Working Condition Survey.",
+    "study_type": null
+   },
+   {
+    "association_id": "Z8k_cvAhEf",
+    "orientation": "a->b",
+    "variable_1": "warm season ambient temperature",
+    "variable_2": "intentional injury (among 20-25 year olds)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "rULjCt1BqH",
+    "statistic_type": "odds ratio",
+    "system_statistic_type": "odds_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.28,
+    "ci_upper": 1.85,
+    "p_value": null,
+    "statistic_value": 1.54,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "6cW2OIQrxO",
+    "pubmed_id": 37448837,
+    "doi": "10.1088/2752-5309/ace27b",
+    "population": "Children and young adults aged 0-25 years in New York City from 2005 to 2011.",
+    "study_type": null
+   },
+   {
+    "association_id": "MxfJ6wJV_r",
+    "orientation": "a->b",
+    "variable_1": "temperatures of 42\u00b0C",
+    "variable_2": "risk of injury (among outdoor workers in Kuwait)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "rULjCt1BqH",
+    "statistic_type": "relative risk",
+    "system_statistic_type": "relative_risk_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": false,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 0.93,
+    "ci_upper": 1.57,
+    "p_value": null,
+    "statistic_value": 1.21,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "aVtimnkj63",
+    "pubmed_id": 37068948,
+    "doi": "10.1136/oemed-2022-108697",
+    "population": "Migrant workers in Kuwait doing outdoor jobs such as construction and hospitality during the summer months of June, July and August from 2015 to 2019.",
+    "study_type": null
+   }
+  ],
+  "notes": "direction is the sign of the statistic against its null (1 for ratios, 0 otherwise) for the variables as named; check names for negations and comparators. The API documentation advises dropping API associations absent from the Dataverse CSV (in_csv false)."
+ },
+ "wpUeTjUbAc__PtQBvGm5CM": {
+  "query": {
+   "a": "wpUeTjUbAc",
+   "b": "PtQBvGm5CM",
+   "expand": false,
+   "offline": false
+  },
+  "generated": "2026-11-12T15:29:09-0500",
+  "concepts_a": [
+   {
+    "system_id": "wpUeTjUbAc",
+    "label": "extreme heat",
+    "wikidata_id": "Q69044113",
+    "match": "id"
+   }
+  ],
+  "concepts_b": [
+   {
+    "system_id": "PtQBvGm5CM",
+    "label": "heat illness",
+    "wikidata_id": "Q1191065",
+    "match": "id"
+   }
+  ],
+  "sources": {
+   "dataverse": {
+    "doi": "doi:10.7910/DVN/7V6JDO",
+    "url": "https://doi.org/10.7910/DVN/7V6JDO",
+    "version": "2.1",
+    "release_time": "2026-07-22T10:56:14Z",
+    "license": "CC BY-NC 4.0",
+    "associations_sha256": "a9c8ba3db760efec0d08c65c17c36f0066073062d8e1ff8ea40cc71679daddf9",
+    "associations_md5": "c884dd1132957f69ffea45404f29db61",
+    "loaded_at": "2026-11-12T15:12:02-0500"
+   },
+   "api": {
+    "base": "https://public-api.system.com",
+    "api_version": "v1.0",
+    "pairs_queried": 1,
+    "pairs_total": 1,
+    "requests_including_cached": 3
+   }
+  },
+  "relationships": [
+   {
+    "relationship_id": "wpUeTjUbAc|PtQBvGm5CM",
+    "num_findings": 2,
+    "num_studies": 2,
+    "last_published_date": "2023-03-01",
+    "last_updated": "2024-12-12 13:25:37.319153-05",
+    "source": "extreme heat",
+    "target": "heat illness",
+    "from": "csv"
+   },
+   {
+    "relationship_id": "wpUeTjUbAc|PtQBvGm5CM",
+    "num_findings": 2,
+    "num_studies": 2,
+    "last_published_date": "2023-03-01T00:00:00",
+    "last_updated": "2024-06-03T14:13:37.269737",
+    "source": "extreme heat",
+    "target": "heat illness",
+    "from": "api"
+   }
+  ],
+  "summary": {
+   "csv": {
+    "n": 2,
+    "+": 2,
+    "-": 0,
+    "none": 0,
+    "sig+": 2,
+    "sig-": 0,
+    "studies": 2
+   },
+   "api_only_dropped": {
+    "n": 0,
+    "+": 0,
+    "-": 0,
+    "none": 0,
+    "sig+": 0,
+    "sig-": 0,
+    "studies": 0
+   },
+   "statistic_types_csv": {
+    "odds_ratio": 1,
+    "relative_risk_ratio": 1
+   },
+   "with_interval_csv": 2,
+   "with_p_csv": 0,
+   "flagged_csv": 0
+  },
+  "associations": [
+   {
+    "association_id": "i5VpcS_P9m",
+    "orientation": "a->b",
+    "variable_1": "extreme heat",
+    "variable_2": "emergency department visits visits for heat-related illness",
+    "variable_1_concept_id": "wpUeTjUbAc",
+    "variable_2_concept_id": "PtQBvGm5CM",
+    "statistic_type": "odds ratio",
+    "system_statistic_type": "odds_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.16,
+    "ci_upper": 1.56,
+    "p_value": null,
+    "statistic_value": 1.34,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "a1dwZjiqGf",
+    "pubmed_id": 36337257,
+    "doi": "10.1088/2752-5309/ac78fa",
+    "population": "Commercially insured US children aged 0-17 from May to September 2016-2019.",
+    "study_type": null
+   },
+   {
+    "association_id": "G0r9uw0ug7",
+    "orientation": "a->b",
+    "variable_1": "Days of extreme heat (defined as the 95th centile of the local warm season temperature distribution)",
+    "variable_2": "visits to the emergency department for heat related illness",
+    "variable_1_concept_id": "wpUeTjUbAc",
+    "variable_2_concept_id": "PtQBvGm5CM",
+    "statistic_type": "excess relative risk",
+    "system_statistic_type": "relative_risk_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 60.2,
+    "ci_upper": 72.7,
+    "p_value": null,
+    "statistic_value": 66.3,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "OgdZ783XNx",
+    "pubmed_id": 34819309,
+    "doi": "10.1136/bmj-2021-065653",
+    "population": "74.2 million adults aged 18 years and older with health insurance in the conterminous United States between May and September 2010 to 2019.",
+    "study_type": null
+   }
+  ],
+  "notes": "direction is the sign of the statistic against its null (1 for ratios, 0 otherwise) for the variables as named; check names for negations and comparators. The API documentation advises dropping API associations absent from the Dataverse CSV (in_csv false)."
+ },
+ "hsryqxdFzE__PCdVJWVRyS": {
+  "query": {
+   "a": "hsryqxdFzE",
+   "b": "PCdVJWVRyS",
+   "expand": false,
+   "offline": false
+  },
+  "generated": "2026-11-12T15:29:10-0500",
+  "concepts_a": [
+   {
+    "system_id": "hsryqxdFzE",
+    "label": "Normalized Difference Vegetation Index",
+    "wikidata_id": "Q718775",
+    "match": "id"
+   }
+  ],
+  "concepts_b": [
+   {
+    "system_id": "PCdVJWVRyS",
+    "label": "thermodynamic temperature",
+    "wikidata_id": "Q264647",
+    "match": "id"
+   }
+  ],
+  "sources": {
+   "dataverse": {
+    "doi": "doi:10.7910/DVN/7V6JDO",
+    "url": "https://doi.org/10.7910/DVN/7V6JDO",
+    "version": "2.1",
+    "release_time": "2026-07-22T10:56:14Z",
+    "license": "CC BY-NC 4.0",
+    "associations_sha256": "a9c8ba3db760efec0d08c65c17c36f0066073062d8e1ff8ea40cc71679daddf9",
+    "associations_md5": "c884dd1132957f69ffea45404f29db61",
+    "loaded_at": "2026-11-12T15:12:02-0500"
+   },
+   "api": {
+    "base": "https://public-api.system.com",
+    "api_version": "v1.0",
+    "pairs_queried": 1,
+    "pairs_total": 1,
+    "requests_including_cached": 4
+   }
+  },
+  "relationships": [
+   {
+    "relationship_id": "PCdVJWVRyS|hsryqxdFzE",
+    "num_findings": 1,
+    "num_studies": 1,
+    "last_published_date": "2021-09-08",
+    "last_updated": "2024-12-12 13:25:37.319153-05",
+    "source": "thermodynamic temperature",
+    "target": "Normalized Difference Vegetation Index",
+    "from": "csv"
+   },
+   {
+    "relationship_id": "hsryqxdFzE|PCdVJWVRyS",
+    "num_findings": 1,
+    "num_studies": 1,
+    "last_published_date": "2022-05-01T00:00:00",
+    "last_updated": "2024-07-03T03:07:15.892708",
+    "source": "Normalized Difference Vegetation Index",
+    "target": "thermodynamic temperature",
+    "from": "api"
+   },
+   {
+    "relationship_id": "PCdVJWVRyS|hsryqxdFzE",
+    "num_findings": 1,
+    "num_studies": 1,
+    "last_published_date": "2021-09-08T00:00:00",
+    "last_updated": "2024-07-03T03:07:07.510496",
+    "source": "thermodynamic temperature",
+    "target": "Normalized Difference Vegetation Index",
+    "from": "api"
+   }
+  ],
+  "summary": {
+   "csv": {
+    "n": 1,
+    "+": 1,
+    "-": 0,
+    "none": 0,
+    "sig+": 0,
+    "sig-": 0,
+    "studies": 1
+   },
+   "api_only_dropped": {
+    "n": 1,
+    "+": 0,
+    "-": 1,
+    "none": 0,
+    "sig+": 0,
+    "sig-": 1,
+    "studies": 1
+   },
+   "statistic_types_csv": {
+    "pearson_r": 1
+   },
+   "with_interval_csv": 0,
+   "with_p_csv": 0,
+   "flagged_csv": 0
+  },
+  "associations": [
+   {
+    "association_id": "ifahtWbWoy",
+    "orientation": "b->a",
+    "variable_1": "negative temperature anomaly",
+    "variable_2": "NDVI",
+    "variable_1_concept_id": "PCdVJWVRyS",
+    "variable_2_concept_id": "hsryqxdFzE",
+    "statistic_type": "correlation coefficient (r)",
+    "system_statistic_type": "pearson_r",
+    "null": 0.0,
+    "direction": "+",
+    "significant": null,
+    "flags": [],
+    "ci_level": null,
+    "ci_lower": null,
+    "ci_upper": null,
+    "p_value": null,
+    "statistic_value": 0.83,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "cbLfXo4J0G",
+    "pubmed_id": null,
+    "doi": "10.3390/rs13183576",
+    "population": "Individuals in Zhejiang province, China, during August 2014.",
+    "study_type": null
+   },
+   {
+    "association_id": "zPZNewMcGY",
+    "orientation": "a->b",
+    "variable_1": "NDVI",
+    "variable_2": "land surface temperature",
+    "variable_1_concept_id": "hsryqxdFzE",
+    "variable_2_concept_id": "PCdVJWVRyS",
+    "statistic_type": "pearson_r",
+    "system_statistic_type": "pearson_r",
+    "null": 0.0,
+    "direction": "-",
+    "significant": true,
+    "flags": [],
+    "ci_level": null,
+    "ci_lower": null,
+    "ci_upper": null,
+    "p_value": 0.001,
+    "statistic_value": -1.0,
+    "p_value_equality": null,
+    "in_csv": false,
+    "in_api": true,
+    "study_id": "MEqoqxYBm7",
+    "pubmed_id": 35060045,
+    "doi": null,
+    "population": null,
+    "study_type": null
+   }
+  ],
+  "notes": "direction is the sign of the statistic against its null (1 for ratios, 0 otherwise) for the variables as named; check names for negations and comparators. The API documentation advises dropping API associations absent from the Dataverse CSV (in_csv false)."
+ },
+ "sSuplgYnDQ__mUxSLRMwIy": {
+  "query": {
+   "a": "sSuplgYnDQ",
+   "b": "mUxSLRMwIy",
+   "expand": false,
+   "offline": false
+  },
+  "generated": "2026-11-12T15:29:10-0500",
+  "concepts_a": [
+   {
+    "system_id": "sSuplgYnDQ",
+    "label": "surface temperature",
+    "wikidata_id": "Q56297886",
+    "match": "id"
+   }
+  ],
+  "concepts_b": [
+   {
+    "system_id": "mUxSLRMwIy",
+    "label": "air temperature",
+    "wikidata_id": "Q1160424",
+    "match": "id"
+   }
+  ],
+  "sources": {
+   "dataverse": {
+    "doi": "doi:10.7910/DVN/7V6JDO",
+    "url": "https://doi.org/10.7910/DVN/7V6JDO",
+    "version": "2.1",
+    "release_time": "2026-07-22T10:56:14Z",
+    "license": "CC BY-NC 4.0",
+    "associations_sha256": "a9c8ba3db760efec0d08c65c17c36f0066073062d8e1ff8ea40cc71679daddf9",
+    "associations_md5": "c884dd1132957f69ffea45404f29db61",
+    "loaded_at": "2026-11-12T15:12:02-0500"
+   },
+   "api": {
+    "base": "https://public-api.system.com",
+    "api_version": "v1.0",
+    "pairs_queried": 1,
+    "pairs_total": 1,
+    "requests_including_cached": 3
+   }
+  },
+  "relationships": [
+   {
+    "relationship_id": "sSuplgYnDQ|mUxSLRMwIy",
+    "num_findings": 2,
+    "num_studies": 2,
+    "last_published_date": "2020-03-10",
+    "last_updated": "2024-12-12 13:25:37.319153-05",
+    "source": "surface temperature",
+    "target": "air temperature",
+    "from": "csv"
+   },
+   {
+    "relationship_id": "sSuplgYnDQ|mUxSLRMwIy",
+    "num_findings": 2,
+    "num_studies": 2,
+    "last_published_date": "2020-03-23T00:00:00",
+    "last_updated": "2024-07-03T03:07:07.510496",
+    "source": "surface temperature",
+    "target": "air temperature",
+    "from": "api"
+   }
+  ],
+  "summary": {
+   "csv": {
+    "n": 2,
+    "+": 1,
+    "-": 0,
+    "none": 1,
+    "sig+": 0,
+    "sig-": 0,
+    "studies": 2
+   },
+   "api_only_dropped": {
+    "n": 0,
+    "+": 0,
+    "-": 0,
+    "none": 0,
+    "sig+": 0,
+    "sig-": 0,
+    "studies": 0
+   },
+   "statistic_types_csv": {
+    "coefficient_of_determination": 1,
+    "pearson_r": 1
+   },
+   "with_interval_csv": 0,
+   "with_p_csv": 0,
+   "flagged_csv": 0
+  },
+  "associations": [
+   {
+    "association_id": "YXbXIRwoas",
+    "orientation": "a->b",
+    "variable_1": "land surface temperature (LST)",
+    "variable_2": "air temperature (Ta)",
+    "variable_1_concept_id": "sSuplgYnDQ",
+    "variable_2_concept_id": "mUxSLRMwIy",
+    "statistic_type": "R2",
+    "system_statistic_type": "coefficient_of_determination",
+    "null": null,
+    "direction": null,
+    "significant": null,
+    "flags": [],
+    "ci_level": null,
+    "ci_lower": null,
+    "ci_upper": null,
+    "p_value": null,
+    "statistic_value": 0.9,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "kQFhLJHo4e",
+    "pubmed_id": null,
+    "doi": "10.5194/egusphere-egu2020-13555",
+    "population": "Individuals residing in Bucharest, Romania, between 2013-2018.",
+    "study_type": null
+   },
+   {
+    "association_id": "jhl7lxFLmQ",
+    "orientation": "a->b",
+    "variable_1": "satellite derived surface temperature",
+    "variable_2": "ground-observed air temperature",
+    "variable_1_concept_id": "sSuplgYnDQ",
+    "variable_2_concept_id": "mUxSLRMwIy",
+    "statistic_type": "correlation coefficient (r)",
+    "system_statistic_type": "pearson_r",
+    "null": 0.0,
+    "direction": "+",
+    "significant": null,
+    "flags": [],
+    "ci_level": null,
+    "ci_lower": null,
+    "ci_upper": null,
+    "p_value": null,
+    "statistic_value": 0.9,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "o4qCUJAXBb",
+    "pubmed_id": null,
+    "doi": "10.5026/jgeography.111.5_695",
+    "population": "Researchers studying the correlation between remotely sensed brightness temperature and ground air temperature in the Tokyo Metropolitan Area.",
+    "study_type": null
+   }
+  ],
+  "notes": "direction is the sign of the statistic against its null (1 for ratios, 0 otherwise) for the variables as named; check names for negations and comparators. The API documentation advises dropping API associations absent from the Dataverse CSV (in_csv false)."
+ },
+ "4FaXcuNJRt__TLeQZQ_leT": {
+  "query": {
+   "a": "4FaXcuNJRt",
+   "b": "TLeQZQ_leT",
+   "expand": false,
+   "offline": false
+  },
+  "generated": "2026-11-12T15:29:10-0500",
+  "concepts_a": [
+   {
+    "system_id": "4FaXcuNJRt",
+    "label": "temperature",
+    "wikidata_id": "Q11466",
+    "match": "id"
+   }
+  ],
+  "concepts_b": [
+   {
+    "system_id": "TLeQZQ_leT",
+    "label": "suicide",
+    "wikidata_id": "Q10737",
+    "match": "id"
+   }
+  ],
+  "sources": {
+   "dataverse": {
+    "doi": "doi:10.7910/DVN/7V6JDO",
+    "url": "https://doi.org/10.7910/DVN/7V6JDO",
+    "version": "2.1",
+    "release_time": "2026-07-22T10:56:14Z",
+    "license": "CC BY-NC 4.0",
+    "associations_sha256": "a9c8ba3db760efec0d08c65c17c36f0066073062d8e1ff8ea40cc71679daddf9",
+    "associations_md5": "c884dd1132957f69ffea45404f29db61",
+    "loaded_at": "2026-11-12T15:12:02-0500"
+   },
+   "api": {
+    "base": "https://public-api.system.com",
+    "api_version": "v1.0",
+    "pairs_queried": 1,
+    "pairs_total": 1,
+    "requests_including_cached": 3
+   }
+  },
+  "relationships": [
+   {
+    "relationship_id": "4FaXcuNJRt|TLeQZQ_leT",
+    "num_findings": 11,
+    "num_studies": 7,
+    "last_published_date": "2023-05-20",
+    "last_updated": "2025-08-24 10:04:03.173346-04",
+    "source": "temperature",
+    "target": "suicide",
+    "from": "csv"
+   },
+   {
+    "relationship_id": "4FaXcuNJRt|TLeQZQ_leT",
+    "num_findings": 12,
+    "num_studies": 8,
+    "last_published_date": "2023-05-20T00:00:00",
+    "last_updated": "2026-03-26T21:09:51.562462",
+    "source": "temperature",
+    "target": "suicide",
+    "from": "api"
+   }
+  ],
+  "summary": {
+   "csv": {
+    "n": 11,
+    "+": 11,
+    "-": 0,
+    "none": 0,
+    "sig+": 9,
+    "sig-": 0,
+    "studies": 7
+   },
+   "api_only_dropped": {
+    "n": 1,
+    "+": 0,
+    "-": 1,
+    "none": 0,
+    "sig+": 0,
+    "sig-": 0,
+    "studies": 1
+   },
+   "statistic_types_csv": {
+    "incident_rate_ratio": 2,
+    "odds_ratio": 2,
+    "relative_risk_ratio": 7
+   },
+   "with_interval_csv": 10,
+   "with_p_csv": 2,
+   "flagged_csv": 0
+  },
+  "associations": [
+   {
+    "association_id": "FFNRn2Ws72",
+    "orientation": "a->b",
+    "variable_1": "increase in average temperature of 1\u00b0C (compared to the average temperature)",
+    "variable_2": "suicide rate",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "incidence rate ratio",
+    "system_statistic_type": "incident_rate_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.0025,
+    "ci_upper": 1.014,
+    "p_value": null,
+    "statistic_value": 1.0082,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "1BO58SFG79",
+    "pubmed_id": 34034696,
+    "doi": "10.1186/s12889-021-11001-6",
+    "population": "Adults in California's five most populous counties from 1999 to 2019.",
+    "study_type": null
+   },
+   {
+    "association_id": "uxplFAMeQz",
+    "orientation": "a->b",
+    "variable_1": "minimum temperature (Increase in minimum temperature by 1 \u00b0C)",
+    "variable_2": "suicide rate",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "incidence rate ratio",
+    "system_statistic_type": "incident_rate_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.0023,
+    "ci_upper": 1.0153,
+    "p_value": null,
+    "statistic_value": 1.0088,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "1BO58SFG79",
+    "pubmed_id": 34034696,
+    "doi": "10.1186/s12889-021-11001-6",
+    "population": "Adults in California's five most populous counties from 1999 to 2019.",
+    "study_type": null
+   },
+   {
+    "association_id": "21v84dc0WS",
+    "orientation": "a->b",
+    "variable_1": "daily exposure to temperature",
+    "variable_2": "suicide mortality (among the population studied in California)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "odds ratio",
+    "system_statistic_type": "odds_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": false,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 0.9,
+    "ci_upper": 6.8,
+    "p_value": null,
+    "statistic_value": 3.8,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "f93bc2-3xr",
+    "pubmed_id": 36858215,
+    "doi": "10.1016/j.scitotenv.2023.162462",
+    "population": "Adults in California from 2014 to 2019.",
+    "study_type": null
+   },
+   {
+    "association_id": "lOXaZzv7MT",
+    "orientation": "a->b",
+    "variable_1": "daily exposure to temperature",
+    "variable_2": "suicide mortality (among the California population)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "odds ratio",
+    "system_statistic_type": "odds_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.1,
+    "ci_upper": 5.2,
+    "p_value": 0.001,
+    "statistic_value": 3.1,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "f93bc2-3xr",
+    "pubmed_id": 36858215,
+    "doi": "10.1016/j.scitotenv.2023.162462",
+    "population": "Adults in California from 2014 to 2019.",
+    "study_type": null
+   },
+   {
+    "association_id": "8mWV-FpCJD",
+    "orientation": "a->b",
+    "variable_1": "ambient temperature (daily maximum temperature for men in East Asia and Pacific region)",
+    "variable_2": "suicide deaths/attempts",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "relative risk",
+    "system_statistic_type": "relative_risk_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.013,
+    "ci_upper": 1.019,
+    "p_value": null,
+    "statistic_value": 1.016,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "3cej9vh9fp",
+    "pubmed_id": 34688638,
+    "doi": "10.1016/j.envres.2021.112230",
+    "population": "Individuals who are at risk of suicide, with a focus on the influence of daily meteorological conditions, such as temperature, on suicidal behaviors.",
+    "study_type": null
+   },
+   {
+    "association_id": "DE5KIe6FpA",
+    "orientation": "a->b",
+    "variable_1": "Exposure to exceedingly high levels of temperature mean (T mean)",
+    "variable_2": "suicide mortality",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "relative risk (RR)",
+    "system_statistic_type": "relative_risk_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.079,
+    "ci_upper": 1.34,
+    "p_value": null,
+    "statistic_value": 1.203,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "Ksz-aTOQoA",
+    "pubmed_id": 36057060,
+    "doi": "10.1007/s11356-022-22832-0",
+    "population": "Adults in Wuhu, China from 2014 to 2020.",
+    "study_type": null
+   },
+   {
+    "association_id": "TJDpl8UkQj",
+    "orientation": "a->b",
+    "variable_1": "exposure to exceedingly high levels of temperature mean (T mean) (lag 14)",
+    "variable_2": "suicide mortality (among the population)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "relative risk (RR)",
+    "system_statistic_type": "relative_risk_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.015,
+    "ci_upper": 1.263,
+    "p_value": null,
+    "statistic_value": 1.132,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "Ksz-aTOQoA",
+    "pubmed_id": 36057060,
+    "doi": "10.1007/s11356-022-22832-0",
+    "population": "Adults in Wuhu, China from 2014 to 2020.",
+    "study_type": null
+   },
+   {
+    "association_id": "VzeVTNdhOz",
+    "orientation": "a->b",
+    "variable_1": "Increase in Apparent Temperature by 17.38 degrees Celsius (Higher AT)",
+    "variable_2": "suicide (risk or rate among the population)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "Relative Risk (RR)",
+    "system_statistic_type": "relative_risk_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": null,
+    "flags": [],
+    "ci_level": null,
+    "ci_lower": null,
+    "ci_upper": null,
+    "p_value": null,
+    "statistic_value": 2.7,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "xAifvjytX2",
+    "pubmed_id": 33045652,
+    "doi": "10.1016/j.socscimed.2020.113411",
+    "population": "Adults in Madrid and Lisbon from 2000 to 2017.",
+    "study_type": null
+   },
+   {
+    "association_id": "WbDngZZu8d",
+    "orientation": "a->b",
+    "variable_1": "Temperature (high temperatures)",
+    "variable_2": "suicide (among the population)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "relative risk",
+    "system_statistic_type": "relative_risk_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.26,
+    "ci_upper": 1.45,
+    "p_value": 0.001,
+    "statistic_value": 1.35,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "cbnl-7wgVS",
+    "pubmed_id": 35394808,
+    "doi": "10.1289/ehp9943",
+    "population": "2,416,707 people in 47 prefectures of Japan from 1979 to 2015.",
+    "study_type": null
+   },
+   {
+    "association_id": "ZS-_uUgIHI",
+    "orientation": "a->b",
+    "variable_1": "daily average temperature (measured at the Uccle station in Brussels)",
+    "variable_2": "suicide deaths (occurring among Brussels residents aged 5 years or older)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "cumulative risk ratios (RR)",
+    "system_statistic_type": "relative_risk_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.27,
+    "ci_upper": 2.54,
+    "p_value": null,
+    "statistic_value": 1.8,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "GQNB3_EpYR",
+    "pubmed_id": 34606845,
+    "doi": "10.1016/j.envres.2021.112159",
+    "population": "Brussels residents aged 5 years or older who died by suicide between January 1st, 2002 and December 31st, 2011.",
+    "study_type": null
+   },
+   {
+    "association_id": "wLfoIqJTzV",
+    "orientation": "a->b",
+    "variable_1": "Temperature (high temperatures)",
+    "variable_2": "suicide (among the population)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "relative risk",
+    "system_statistic_type": "relative_risk_ratio",
+    "null": 1.0,
+    "direction": "+",
+    "significant": true,
+    "flags": [],
+    "ci_level": 0.95,
+    "ci_lower": 1.26,
+    "ci_upper": 1.45,
+    "p_value": null,
+    "statistic_value": 1.35,
+    "p_value_equality": null,
+    "in_csv": true,
+    "in_api": true,
+    "study_id": "cbnl-7wgVS",
+    "pubmed_id": 35394808,
+    "doi": "10.1289/ehp9943",
+    "population": "2,416,707 people in 47 prefectures of Japan from 1979 to 2015.",
+    "study_type": null
+   },
+   {
+    "association_id": "eGCwRjdY1o",
+    "orientation": "a->b",
+    "variable_1": "temperature increase [vs incidence of suicide]",
+    "variable_2": "suicide incidence (of the general population)",
+    "variable_1_concept_id": "4FaXcuNJRt",
+    "variable_2_concept_id": "TLeQZQ_leT",
+    "statistic_type": "mean_difference_unstandardized",
+    "system_statistic_type": "mean_difference_unstandardized",
+    "null": 0.0,
+    "direction": "-",
+    "significant": false,
+    "flags": [
+     "sign_depends_on_group_order"
+    ],
+    "ci_level": null,
+    "ci_lower": null,
+    "ci_upper": null,
+    "p_value": 0.05,
+    "statistic_value": -0.01,
+    "p_value_equality": null,
+    "in_csv": false,
+    "in_api": true,
+    "study_id": "J8VkwA_agB",
+    "pubmed_id": 30235587,
+    "doi": null,
+    "population": null,
+    "study_type": null
+   }
+  ],
+  "notes": "direction is the sign of the statistic against its null (1 for ratios, 0 otherwise) for the variables as named; check names for negations and comparators. The API documentation advises dropping API associations absent from the Dataverse CSV (in_csv false)."
+ }
+}

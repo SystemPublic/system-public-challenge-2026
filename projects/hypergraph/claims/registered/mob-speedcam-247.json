@@ -1,0 +1,114 @@
+{
+ "id": "mob-speedcam-247",
+ "kind": "confirmation",
+ "statement": "Extending New York City's school-zone speed cameras to 24-hour, 7-day operation on 1 August 2022 reduced injury crashes in the newly enforced hours (weekday 10 pm-6 am and weekends) relative to the weekday 6 am-10 pm hours that were already enforced.",
+ "graph_evidence": [
+  {
+   "note": "No speed-camera concept in the graph; variable search found 7 associations in 6 studies.",
+   "findings": [
+    {
+     "variable_1_name": "speed cameras installed in an urban setting",
+     "variable_2_name": "number of road collisions",
+     "statistic_type": "relative_risk_ratio",
+     "statistic_value": 0.73,
+     "ci_lower": 0.63,
+     "ci_upper": 0.85,
+     "pubmed_id": 17666698,
+     "study_id": "w7LPWoPkj7"
+    },
+    {
+     "variable_1_name": "Installation of speed control cameras (2000-2006 vs 2007-2010)",
+     "variable_2_name": "vehicular injury death rate per 100,000",
+     "statistic_type": "mean_difference_unstandardized",
+     "statistic_value": 5.2,
+     "ci_lower": null,
+     "ci_upper": null,
+     "pubmed_id": 21994881,
+     "study_id": "D_P0qVt-n4"
+    },
+    {
+     "variable_1_name": "Use of mobile speed cameras",
+     "variable_2_name": "Rate ratio of injurious crashes at intervention and control sites",
+     "statistic_type": "relative_risk_ratio",
+     "statistic_value": 0.49,
+     "ci_lower": 0.42,
+     "ci_upper": 0.57,
+     "pubmed_id": 14693888,
+     "study_id": "qVhRrEdQ5j"
+    },
+    {
+     "variable_1_name": "speed cameras on Barcelona's beltway",
+     "variable_2_name": "people injured (among the population affected by the speed cameras on Barcelona's beltway)",
+     "statistic_type": "relative_risk_ratio",
+     "statistic_value": 0.99,
+     "ci_lower": 0.9,
+     "ci_upper": 1.1,
+     "pubmed_id": 17666698,
+     "study_id": "w7LPWoPkj7"
+    },
+    {
+     "variable_1_name": "Camera Zone (300 meters of the speed cameras) [vs Non-Camera Zone]",
+     "variable_2_name": "Average Speed (among Iranian taxi drivers in southern Tehran)",
+     "statistic_type": "mean_difference_unstandardized",
+     "statistic_value": -4.4,
+     "ci_lower": null,
+     "ci_upper": null,
+     "pubmed_id": 34424783,
+     "study_id": "Gcjc7NFRGZ"
+    },
+    {
+     "variable_1_name": "Camera Zone (300 meters of the speed cameras) [vs Non-Camera Zone]",
+     "variable_2_name": "Average Speed (among Iranian taxi drivers in southern Tehran)",
+     "statistic_type": "mean_difference_unstandardized",
+     "statistic_value": -1.8,
+     "ci_lower": null,
+     "ci_upper": null,
+     "pubmed_id": 34424783,
+     "study_id": "Gcjc7NFRGZ"
+    },
+    {
+     "variable_1_name": "vehicles 200 meters after fixed cameras [vs vehicles on roadways without speed cameras]",
+     "variable_2_name": "speeding vehicles",
+     "statistic_type": "mean_difference_unstandardized",
+     "statistic_value": 6.4,
+     "ci_lower": null,
+     "ci_upper": null,
+     "pubmed_id": 26648375,
+     "study_id": "c0Ao6MYQL4"
+    }
+   ]
+  },
+  {
+   "note": "Abstract check: PMID 17666698 (Barcelona) reports RR 0.73 (0.63-0.85) for collisions on the beltway with cameras; the graph's second association from that paper (RR 0.99, 0.90-1.10, labelled 'people injured among the population affected by the speed cameras') is the comparison arterial roads without cameras, so it is mis-extracted. PMID 14693888 (South Wales, mobile cameras) reports injurious crash rate ratio 0.49 (0.42-0.57) within 500 m routes, with decreases in day and night."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Wilson C, Willis C, Hendrikz JK, Le Brocque R, Bellamy N (2010). Speed cameras for the prevention of road traffic injuries and deaths. Cochrane Database Syst Rev (10):CD004607.",
+   "doi": "10.1002/14651858.CD004607.pub4",
+   "finding": "Reductions in injury crashes near camera sites of roughly 8-49%, fatal and serious 11-44%."
+  },
+  {
+   "citation": "NYC DOT (2023, 2025). Speed camera program reports and press releases.",
+   "doi": null,
+   "finding": "About 7.6% fewer injuries in the new overnight and weekend hours at camera locations in the first year (agency figure)."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Citywide, because cameras cover a small share of street length, the ratio of ratios (injury crashes in new hours / old hours, Aug 2022-Jul 2023 vs Aug 2021-Jul 2022) between 0.92 and 1.00. Persons injured and pedestrians injured are secondary outcomes.",
+  "support_if": "Ratio of ratios below 1 with a 95% interval below 1.",
+  "refute_if": "Ratio of ratios at or above 1 with an interval that excludes 0.97."
+ },
+ "plan": "Data: NYPD Motor Vehicle Collisions - Crashes (data.cityofnewyork.us h9gi-nx95), aggregated by SoQL to counts by month, day of week and hour. Exposure groups: new hours = Mon-Fri 22:00-05:59 and all Sat-Sun; old hours = Mon-Fri 06:00-21:59. Outcomes: crashes with >= 1 person injured or killed (primary), persons injured, pedestrians injured, persons killed. Model: Poisson GLM of monthly counts on group x month fixed effects ... specifically log E[count] = group + month(calendar) + group x post, on a 24-month window Aug 2021-Jul 2023, with Pearson-scaled (quasi-Poisson) standard errors. Event-study figure of the new/old ratio by month, Jan 2020 - Dec 2024, to show pre-trends. Placebo: fake start 1 Aug 2021 on Aug 2020-Jul 2022. Mechanism check: camera tickets ('PHTO SCHOOL ZN SPEED VIOLATION') by issue hour in Open Parking and Camera Violations (nc67-uf89) should appear in the new hours from Aug 2022. Design limits: citywide counts dilute a local effect; night and weekend travel recovered from the pandemic at a different pace from weekday daytime travel, which can bias the DiD in either direction; no exposure (vehicle-miles) by hour.",
+ "alternatives": [
+  "Differential post-pandemic recovery of night and weekend traffic (nightlife) relative to weekday daytime",
+  "Changes in NYPD crash reporting or in the share of crashes with location and time recorded",
+  "E-bike and moped growth, concentrated in evening delivery hours",
+  "Regression to the mean if 2021-22 night crash levels were unusually high"
+ ],
+ "prior": 0.3,
+ "registrant": "mobility agent (Claude Opus 5.5), for J. Vernon",
+ "registered_at": "2026-11-12T15:15:19-0500",
+ "sha256": "dceaaebfd4c399d50f80cf40c4ef0435101593ff9e9723f0a57f810a9c422043"
+}

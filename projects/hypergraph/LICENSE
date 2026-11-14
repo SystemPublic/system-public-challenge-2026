@@ -1,0 +1,55 @@
+# Licences for this folder
+
+This folder holds three kinds of material under three licences. When a file could belong to two groups, the more restrictive licence applies.
+
+## Code: MIT
+
+The Python code (`concord/`, `tools/`, `analyses/`, `sim/`, `download_data.py`, and the `code/`, `verify.py` and `run.sh` files in `replication/`), the HTML, CSS and JavaScript of the pages in `viz/` (`*.html`, `style.css`, `simulate_model.js`) and the deck's HTML and CSS in `deck/` are under the MIT licence. Its text is at the end of this file.
+
+## Material from the System Public Graph: CC BY-NC 4.0
+
+Anything that contains or derives from System Public Graph data carries the graph's licence, Creative Commons Attribution-NonCommercial 4.0 International (https://creativecommons.org/licenses/by-nc/4.0/legalcode). In this folder that is:
+
+- `viz/data/graph/`, the graph neighbourhoods shown in the explorer;
+- the other data files in `viz/data/`, which carry the graph findings each claim cites;
+- `claims/registered/` and `claims/outcomes/`, which quote graph findings (statistics, intervals, PubMed ids) as evidence;
+- every cached graph response, including `replication/*/inputs/data/cache/sysgraph/`;
+- every file derived from graph queries, including `replication/*/inputs/data/derived/**/graph*` and any `data/derived/graph*` file;
+- the figures in `figures/` that plot graph findings, which include `figures/graph/`, `figures/graph_audit/` and the panels of other figures that show graph evidence;
+- the replication packages' `manifest.json` and `underlay/` records, which carry graph findings.
+
+The repository's cache of graph responses (`data/cache/sysgraph/`) is not included. Graph data are used here for a non-commercial research and hackathon purpose. The Dataverse deposit is doi:10.7910/DVN/7V6JDO.
+
+## Written material and other figures: CC BY 4.0
+
+The text in `README.md`, `docs/`, `critique/` and the deck's slide text, and the figures that show only city or federal data, are under Creative Commons Attribution 4.0 International (https://creativecommons.org/licenses/by/4.0/legalcode). The graph findings that this text quotes remain under CC BY-NC 4.0.
+
+## Material from other sources
+
+City, state and federal open data, and files derived from them, keep the terms of their publishers (NYC Open Data Terms of Use, NY Open Data terms, US Government works in the public domain). OpenStreetMap data are under ODbL 1.0. The PubMed abstracts that were read to check graph records are not included.
+
+---
+
+## MIT licence
+
+MIT License
+
+Copyright (c) 2026 Jeff Nickerson
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

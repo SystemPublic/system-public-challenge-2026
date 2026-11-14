@@ -1,0 +1,73 @@
+{
+ "id": "heat-school-out",
+ "kind": "confirmation",
+ "statement": "On weekdays within six weeks of the last and first day of classes in New York public schools, shootings are more frequent on days out of school than on school days at the same temperature.",
+ "graph_evidence": [
+  {
+   "association_id": "variables searched by name: school calendar, summer vacation, school holidays",
+   "concepts": [
+    "school holidays (variable names)",
+    "violence"
+   ],
+   "n_findings": 2,
+   "n_studies": 1,
+   "direction": "-",
+   "summary": "40 variables match; the only violence outcome is referrals to domestic violence services, which fell during school holidays in England and Wales (Panovska-Griffiths 2022), a finding about access to services. The graph holds nothing on school terms and shootings, assault or youth violence.",
+   "pubmed_ids": [
+    35291956
+   ]
+  }
+ ],
+ "graph_evidence_note": "Collected on 13 November 2026 by analyses/heat_solutions/graph.py (variable-name search, API only); data/derived/heat_solutions/graph.json.",
+ "literature": [
+  {
+   "citation": "Jacob BA, Lefgren L. Are idle hands the devil's workshop? Incapacitation, concentration, and juvenile crime. Am Econ Rev 2003;93:1560-1577.",
+   "doi": "10.1257/000282803322655446",
+   "finding": "Juvenile property crime falls and juvenile violent crime rises on days when school is in session; cited from memory, not re-read."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Rate ratio of shooting incidents, days out of school against school days: between 0.95 and 1.08, best guess 1.02.",
+  "support_if": "The 95% lower limit of the rate ratio is above 1.00. This alone decides 'confirmed'.",
+  "refute_if": "The 95% upper limit is below 1.10 and the lower limit is at or below 1.00: a rise of 10% or more when school is out is excluded.",
+  "otherwise": "Unsettled.",
+  "secondary_registered": "Reported, not deciding: a 21-day window; quadratic trends; the end and the start of term separately; victims under 18, 18 to 24 and 25 or older (archived file 833y-fsy8, to 2024); the odds that a victim is under 18 on days out of school; a table of victims by age group and hour block; the heat-shootings model on all days with and without a term for the summer recess, and the share of the log slope that the term removes."
+ },
+ "composed_prediction": {
+  "chain": "school out -> shootings (unknown size g) ; school out is correlated with temperature within June and September only, because heat-shootings holds month and year fixed.",
+  "arithmetic": "The coefficient of TMAX/5 in a regression of the summer-recess indicator on the terms of heat-shootings is 0.011. A school effect of ln g on shootings biases the log slope by ln g x 0.011: 0.8% of the slope if g = 1.10 and 1.8% if g = 1.25. For the school calendar to produce a tenth of the 14.6%, shootings would have to be 3.353 times as frequent when school is out.",
+  "reading": "Computed from the calendar and the weather alone, before any outcome was read: the registered slope cannot contain more than a few percent of school-calendar effect."
+ },
+ "plan": "Script: analyses/heat_solutions/run.py (sha256 ff13670222b73baa) with analyses/heat_solutions/common.py (sha256 c271c2fae50f98b5), committed with this registration and run unchanged. No resampling and no random numbers; all intervals are Wald intervals from HC0 standard errors (rule 9). The script was exercised before registration on simulated records only (--simulate, seed 1). School calendar: first and last day of classes for each year (common.FIRST_DAY, LAST_DAY; 2006-07 to 2018-19 agree with the daily attendance files, later years from Department of Education calendars). The June 2020, September 2020 and June 2021 transitions are left out (remote teaching). Days: Monday to Friday, not public holidays, within 42 calendar days of a transition, 2006 to August 2026. A day is out of school if it is after the last day or before the first day. Closures inside the term (religious holidays, Juneteenth after 2022) are counted as school days unless they are federal holidays, which are dropped. Outcome: shooting incidents per day (5ucz-vwe8). Model: negative binomial GLM, log link, on out + TMAX/5 + a linear trend in days from the transition for each kind of transition + C(dow) + wet + a term for each transition (kind by year); dispersion by maximum likelihood.",
+ "can_it_fail": {
+  "source": "data/derived/heat_solutions/prereg_design.json",
+  "weekdays": 2260,
+  "days_out": 1125,
+  "expected_se_log_irr": 0.04497337626774757,
+  "smallest_detectable_irr_80pct": 1.134197614725356,
+  "D_for_1.10": 4.491253750710397,
+  "under_18": {
+   "weekdays": 2260,
+   "days_out": 1125,
+   "assumed_mean_per_day": 0.45,
+   "se_log_irr": 0.127131291619037,
+   "mde_irr_80pct": 1.4275613181309001,
+   "D_for_irr_1.10": 0.5620483265174737,
+   "D_for_irr_1.25": 3.0808018221341973
+  },
+  "reading": "Expected standard error 0.045 on 2260 weekdays; D for a ratio of 1.10 is 4.491 (rule 8 needs 4). With no effect the refutation rule is met with probability 0.563. The count of victims under 18 can detect only a ratio of 1.428 or more (D for 1.25 is 3.081), so the age results are reported and decide nothing."
+ },
+ "already_seen": "The citywide daily series of shootings and its temperature models; the hourly distribution by temperature band. I have not tabulated shootings by date relative to the school calendar, and no script in the repository uses a school calendar with shootings. The victim age field has not been queried by this project.",
+ "alternatives": [
+  "Season: late June and July differ from May and early June in daylight and outdoor life beyond what temperature captures; the linear trends absorb only smooth change.",
+  "Events tied to the calendar and not to school: the weekend of 4 July and the West Indian Day parade on Labor Day fall just after and just before the transitions; public holidays are dropped but the days around them are not.",
+  "Summer programmes: the Summer Youth Employment Program starts in early July, about a week after the last day, and would offset a school effect inside the window.",
+  "Most victims and shooters are over 18; an effect on school-age youth is diluted about tenfold in the total, which is why the age split is reported."
+ ],
+ "prior": 0.12,
+ "prior_note": "Probability of 'confirmed'. About 0.45 for refuted.",
+ "registrant": "Claude (heat solutions agent)",
+ "registered_at": "2026-11-13T07:52:12-0500",
+ "sha256": "2bafdf8baa8b39a7a06fdcc2c2383295f76c760317887c6cfe7a087c87dac831"
+}

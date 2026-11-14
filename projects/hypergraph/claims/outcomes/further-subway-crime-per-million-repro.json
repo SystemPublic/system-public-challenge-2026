@@ -1,0 +1,540 @@
+{
+ "id": "further-subway-crime-per-million-repro",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "MTA Major Felonies (yeek-jhmu, NYCT, Jan-Nov 2025) rate per million riders divided by the State's 1.65",
+  "estimate": 0.6738782436354599,
+  "lo": 0.6427158849764582,
+  "hi": 0.7061608984852294,
+  "scale": "ratio to the published number",
+  "null": 1,
+  "n": 1755
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qgea-i56i",
+   "name": "NYPD Complaint Data Historic",
+   "url": "https://data.cityofnewyork.us/d/qgea-i56i",
+   "rows_updated_at": "2026-04-28T16:10:09Z",
+   "query": {
+    "$select": "date_extract_y(cmplnt_fr_dt) as y, date_extract_m(cmplnt_fr_dt) as m, substring(cmplnt_fr_tm,1,2) as hh, case(cmplnt_fr_tm in ('00:00:00','12:00:00'),1,true,0) as rnd, ky_cd, prem_typ_desc, count(*) as n",
+    "$where": "cmplnt_fr_dt between '2019-01-01T00:00:00' and '2025-12-31T23:59:59' and law_cat_cd='FELONY' and ky_cd in (101,104,105,106,107,109,110) and prem_typ_desc in ('TRANSIT - NYC SUBWAY','TRANSIT FACILITY (OTHER)')",
+    "$group": "y,m,hh,rnd,ky_cd,prem_typ_desc",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:28:39-0500",
+   "n_rows": 5985,
+   "domain": "https://data.cityofnewyork.us",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qgea-i56i",
+   "name": "NYPD Complaint Data Historic",
+   "url": "https://data.cityofnewyork.us/d/qgea-i56i",
+   "rows_updated_at": "2026-04-28T16:10:09Z",
+   "query": {
+    "$select": "date_extract_y(cmplnt_fr_dt) as y, date_extract_m(cmplnt_fr_dt) as m, substring(cmplnt_fr_tm,1,2) as hh, case(cmplnt_fr_tm in ('00:00:00','12:00:00'),1,true,0) as rnd, ky_cd, count(*) as n",
+    "$where": "cmplnt_fr_dt between '2019-01-01T00:00:00' and '2025-12-31T23:59:59' and law_cat_cd='FELONY' and ky_cd in (101,104,105,106,107,109,110) and transit_district is not null",
+    "$group": "y,m,hh,rnd,ky_cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:28:41-0500",
+   "n_rows": 5297,
+   "domain": "https://data.cityofnewyork.us",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qgea-i56i",
+   "name": "NYPD Complaint Data Historic",
+   "url": "https://data.cityofnewyork.us/d/qgea-i56i",
+   "rows_updated_at": "2026-04-28T16:10:09Z",
+   "query": {
+    "$select": "date_extract_y(cmplnt_fr_dt) as y, date_extract_m(cmplnt_fr_dt) as m, substring(cmplnt_fr_tm,1,2) as hh, case(cmplnt_fr_tm in ('00:00:00','12:00:00'),1,true,0) as rnd, count(*) as n",
+    "$where": "cmplnt_fr_dt between '2019-01-01T00:00:00' and '2025-12-31T23:59:59' and law_cat_cd='FELONY' and ky_cd in (101,104,105,106,107,109,110) and (prem_typ_desc is null or prem_typ_desc not in ('TRANSIT - NYC SUBWAY','TRANSIT FACILITY (OTHER)','TUNNEL','BRIDGE'))",
+    "$group": "y,m,hh,rnd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:28:57-0500",
+   "n_rows": 2184,
+   "domain": "https://data.cityofnewyork.us",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qgea-i56i",
+   "name": "NYPD Complaint Data Historic",
+   "url": "https://data.cityofnewyork.us/d/qgea-i56i",
+   "rows_updated_at": "2026-04-28T16:10:09Z",
+   "query": {
+    "$select": "count(*) as n",
+    "$where": "cmplnt_fr_dt between '2019-01-01T00:00:00' and '2025-12-31T23:59:59' and law_cat_cd='FELONY' and ky_cd in (101,104,105,106,107,109,110)",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:29:04-0500",
+   "n_rows": 1,
+   "domain": "https://data.cityofnewyork.us",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5uac-w243",
+   "name": "NYPD Complaint Data Current (Year To Date)",
+   "url": "https://data.cityofnewyork.us/d/5uac-w243",
+   "rows_updated_at": "2026-11-05T21:20:50Z",
+   "query": {
+    "$select": "date_extract_y(cmplnt_fr_dt) as y, date_extract_m(cmplnt_fr_dt) as m, substring(cmplnt_fr_tm,1,2) as hh, case(cmplnt_fr_tm in ('00:00:00','12:00:00'),1,true,0) as rnd, ky_cd, prem_typ_desc, count(*) as n",
+    "$where": "cmplnt_fr_dt between '2026-01-01T00:00:00' and '2026-09-30T23:59:59' and law_cat_cd='FELONY' and ky_cd in (101,104,105,106,107,109,110) and prem_typ_desc in ('TRANSIT - NYC SUBWAY','TRANSIT FACILITY (OTHER)')",
+    "$group": "y,m,hh,rnd,ky_cd,prem_typ_desc",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:29:04-0500",
+   "n_rows": 712,
+   "domain": "https://data.cityofnewyork.us",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5uac-w243",
+   "name": "NYPD Complaint Data Current (Year To Date)",
+   "url": "https://data.cityofnewyork.us/d/5uac-w243",
+   "rows_updated_at": "2026-11-05T21:20:50Z",
+   "query": {
+    "$select": "date_extract_y(cmplnt_fr_dt) as y, date_extract_m(cmplnt_fr_dt) as m, substring(cmplnt_fr_tm,1,2) as hh, case(cmplnt_fr_tm in ('00:00:00','12:00:00'),1,true,0) as rnd, ky_cd, count(*) as n",
+    "$where": "cmplnt_fr_dt between '2026-01-01T00:00:00' and '2026-09-30T23:59:59' and law_cat_cd='FELONY' and ky_cd in (101,104,105,106,107,109,110) and transit_district is not null",
+    "$group": "y,m,hh,rnd,ky_cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:29:04-0500",
+   "n_rows": 579,
+   "domain": "https://data.cityofnewyork.us",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5uac-w243",
+   "name": "NYPD Complaint Data Current (Year To Date)",
+   "url": "https://data.cityofnewyork.us/d/5uac-w243",
+   "rows_updated_at": "2026-11-05T21:20:50Z",
+   "query": {
+    "$select": "date_extract_y(cmplnt_fr_dt) as y, date_extract_m(cmplnt_fr_dt) as m, substring(cmplnt_fr_tm,1,2) as hh, case(cmplnt_fr_tm in ('00:00:00','12:00:00'),1,true,0) as rnd, count(*) as n",
+    "$where": "cmplnt_fr_dt between '2026-01-01T00:00:00' and '2026-09-30T23:59:59' and law_cat_cd='FELONY' and ky_cd in (101,104,105,106,107,109,110) and (prem_typ_desc is null or prem_typ_desc not in ('TRANSIT - NYC SUBWAY','TRANSIT FACILITY (OTHER)','TUNNEL','BRIDGE'))",
+    "$group": "y,m,hh,rnd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:29:10-0500",
+   "n_rows": 234,
+   "domain": "https://data.cityofnewyork.us",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5uac-w243",
+   "name": "NYPD Complaint Data Current (Year To Date)",
+   "url": "https://data.cityofnewyork.us/d/5uac-w243",
+   "rows_updated_at": "2026-11-05T21:20:50Z",
+   "query": {
+    "$select": "count(*) as n",
+    "$where": "cmplnt_fr_dt between '2026-01-01T00:00:00' and '2026-09-30T23:59:59' and law_cat_cd='FELONY' and ky_cd in (101,104,105,106,107,109,110)",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:29:11-0500",
+   "n_rows": 1,
+   "domain": "https://data.cityofnewyork.us",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "t69i-h2me",
+   "name": "MTA Subway Hourly Ridership: 2017-2019",
+   "url": "https://data.ny.gov/d/t69i-h2me",
+   "rows_updated_at": "2025-11-06T23:49:34Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2019-01-01T00:00:00' and '2019-12-31T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:29:45-0500",
+   "n_rows": 288,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2020-01-01T00:00:00' and '2020-06-30T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:54:41-0500",
+   "n_rows": 144,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2020-07-01T00:00:00' and '2020-12-31T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:56:42-0500",
+   "n_rows": 144,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2021-01-01T00:00:00' and '2021-06-30T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T21:00:18-0500",
+   "n_rows": 144,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2021-07-01T00:00:00' and '2021-12-31T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T21:01:21-0500",
+   "n_rows": 144,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2022-01-01T00:00:00' and '2022-06-30T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T21:02:19-0500",
+   "n_rows": 144,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2022-07-01T00:00:00' and '2022-12-31T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T21:03:14-0500",
+   "n_rows": 144,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2023-01-01T00:00:00' and '2023-06-30T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T21:04:26-0500",
+   "n_rows": 144,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2023-07-01T00:00:00' and '2023-12-31T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T21:05:52-0500",
+   "n_rows": 144,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2024-01-01T00:00:00' and '2024-06-30T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T21:06:38-0500",
+   "n_rows": 144,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2024-07-01T00:00:00' and '2024-12-31T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T21:07:06-0500",
+   "n_rows": 144,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5wq4-mkjj",
+   "name": "MTA Subway Hourly Ridership: Beginning 2025",
+   "url": "https://data.ny.gov/d/5wq4-mkjj",
+   "rows_updated_at": "2026-11-12T20:17:52Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2025-01-01T00:00:00' and '2025-12-31T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T21:11:28-0500",
+   "n_rows": 288,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5wq4-mkjj",
+   "name": "MTA Subway Hourly Ridership: Beginning 2025",
+   "url": "https://data.ny.gov/d/5wq4-mkjj",
+   "rows_updated_at": "2026-11-12T20:17:52Z",
+   "query": {
+    "$select": "date_extract_y(transit_timestamp) as y, date_extract_m(transit_timestamp) as m, date_extract_hh(transit_timestamp) as hh, sum(ridership) as n",
+    "$where": "transit_mode='subway' and transit_timestamp between '2026-01-01T00:00:00' and '2026-11-05T23:59:59'",
+    "$group": "y,m,hh",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T21:13:44-0500",
+   "n_rows": 264,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "yeek-jhmu",
+   "name": "MTA Major Felonies",
+   "url": "https://data.ny.gov/d/yeek-jhmu",
+   "rows_updated_at": "2026-10-23T15:12:27Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "month,agency,police_force,felony_type,felony_count,crimes_per_million_riders",
+    "$order": "month,agency,police_force,felony_type"
+   },
+   "fetched": "2026-11-12T21:13:53-0500",
+   "n_rows": 2373,
+   "domain": "https://data.ny.gov",
+   "data_access": "open"
+  }
+ ],
+ "prediction_scored": "miss. Under the primary reading R1 the 2025 rate is 1.11 per million (1,755 felonies over 1,578 million riders) against 1.65, and the fall since 2021 is 27.0% (1.52 in 2021 to 1.11 in 2025), just below the 27 to 33 percent band (26.96%). R2 to R6 as registered give 1.14, 1.11, 1.11, 6.12 and 1.83 for 2025; none meets both conditions.",
+ "settle": "The State's figure is reproduced to two decimal places (1.653 against 1.65, and a fall of 29.5% against 30%) by NYPD subway-premise felony complaints over MTA subway ridership from 1 January to 14 December 2025. This reading was found after the data were seen. It should be registered as a new claim and tested on the full year 2025 and on 2024. The release should name its source and its rider count.",
+ "research_needed": [
+  {
+   "question": "Which dataset and denominator the State's 1.65 per million uses",
+   "data": "request to the Governor's office or MTA; MTA Major Felonies metadata",
+   "design": "Register the complaint-over-entries reading as a new claim and test it on 2024 and the 2025 full year",
+   "priority": "high"
+  }
+ ],
+ "figures": [],
+ "readings": {
+  "R1_primary": {
+   "2019": 1.0173781256991015,
+   "2019_counts": 2220,
+   "2019_months": 11,
+   "2021": 1.5222494945941503,
+   "2021_counts": 1570,
+   "2021_months": 11,
+   "2024": 1.2916042966761192,
+   "2024_counts": 1888,
+   "2024_months": 11,
+   "2025": 1.1118991019985087,
+   "2025_counts": 1755,
+   "2025_months": 11,
+   "fall_pct": 26.956842098019273
+  },
+  "R2": {
+   "2021": 1.542622675705955,
+   "2021_counts": 1764,
+   "2021_months": 12,
+   "2025": 1.1405906131969388,
+   "2025_counts": 1962,
+   "2025_months": 12,
+   "fall_pct": 26.06159424727975
+  },
+  "R3": {
+   "2021": 1.5272727272727273,
+   "2021_counts": 1570,
+   "2021_months": 11,
+   "2025": 1.1118181818181816,
+   "2025_counts": 1755,
+   "2025_months": 11,
+   "fall_pct": 27.202380952380967
+  },
+  "R4": {
+   "2021": 1.5222494945941503,
+   "2021_counts": 1570,
+   "2021_months": 11,
+   "2025": 1.1118991019985087,
+   "2025_counts": 1755,
+   "2025_months": 11,
+   "fall_pct": 26.956842098019273
+  },
+  "R5": {
+   "2021": 7.172228295385408,
+   "2021_counts": 1708,
+   "2021_months": 11,
+   "2025": 6.1242500822893495,
+   "2025_counts": 2007,
+   "2025_months": 11,
+   "fall_pct": 14.611612597026857
+  },
+  "R6": {
+   "2021": 1.8588480787668065,
+   "2021_counts": 1572,
+   "2021_months": 11,
+   "2025": 1.8275606941973657,
+   "2025_counts": 1766,
+   "2025_months": 11,
+   "fall_pct": 1.6831598518905033
+  }
+ },
+ "secondary_complaints_over_entries": {
+  "counts": {
+   "2019": 2242,
+   "2021": 1592,
+   "2024": 1979,
+   "2025": 1940
+  },
+  "entries_m": {
+   "2019": 1555.622449,
+   "2021": 682.4094,
+   "2024": 1101.131577,
+   "2025": 1186.253659
+  },
+  "rate": {
+   "2019": 1.4412237374442776,
+   "2021": 2.3329104200499,
+   "2024": 1.7972420747316376,
+   "2025": 1.6354006457905477
+  }
+ },
+ "notes": "Verdict follows the registration, which listed R1 to R6 and called the complaint-based ratio secondary. It is contested because no registered reading reproduces both numbers. The yeek-jhmu NYCT rows for January to November 2025 hold 1,755 felonies, all from NYPD, compared with 1,940 NYPD felony complaints with the subway premise in the same months, and the table's implied rider count is 1,578 million against 1,186 million subway entries in the ridership table. The table's rates are therefore on a larger denominator and a smaller count than the State's number implies (the denominator is subway plus bus ridership; see the referee's check below). The secondary check, computed after the registered readings, gives 1,940 complaints over 1,186.3 million entries, 1.64 per million for January to November 2025 and 2.33 for the same months of 2021, a fall of 29.9%. That matches the published 1.65 and 30% within the registered tolerance, but it is a reading that the registration did not include among R1 to R6, so by the register's rules (PRECEDENCE 4) it decides nothing; it is a candidate for a new registration. R5 and R6 were registered with a riders formula that adds rates across agencies, which is not valid for more than one agency; a per-agency version gives 1.17 for all four agencies and 1.12 for NYCT and SIR, still far from 1.65.\n\nAfter the referee (13 Nov 2026): contested here means that the registered source was the wrong one. It does not mean that the State's figure fails. The State's 1.65 per million does reproduce: 2,028 NYPD felony complaints of the seven major types with the subway premise, 1 January to 14 December 2025, over 1,226.8 million subway rides in the MTA daily ridership table (sayj-mze2) give 1.653, and 1,695 complaints over 722.4 million rides in the same days of 2021 (vxuj-8kew) give 2.346, a fall of 29.5% (referee; re-checked by a fresh query on 13 November). This reading was found after the data were seen, so under rule 4 it decides nothing and the verdict stays. The registered table (yeek-jhmu) fails because its NYCT rate is per subway and bus rider: the riders implied by its NYCT rows equal subway plus NYCT Bus plus MTA Bus ridership in the MTA monthly table (xfre-bxip; median ratio 0.998 over 93 months), 1,578 million for January to November 2025, of which the subway is 1,171 million. The sentence that the table's counts are consistent with arrests has been removed: the counts are 90% of the complaint counts and the column description reads 'the count of Major Felonies committed'. Whether the 1,755 includes crimes on buses was not tested. R1's fall of 26.96% is just below the 27 to 33 percent band, not at its edge. With four of the six registered readings equal or close to R1, the registration tested one reading of one table.",
+ "registration_sha256": "96fcc59a82adf26b842bd04e914386e8906e5c3f9e48101cde0f61f391df52ca",
+ "decided_at": "2026-11-12T21:15:55-0500",
+ "stance": {
+  "value": 0,
+  "lo": -0.2,
+  "hi": 0.2
+ },
+ "reproduction_found_after_data": {
+  "reading": "NYPD felony complaints (seven major types, premise TRANSIT - NYC SUBWAY, by occurrence date) over MTA daily subway ridership, 1 January to 14 December",
+  "y2025": {
+   "complaints": 2028,
+   "rides_millions": 1226.8,
+   "rate_per_million": 1.653
+  },
+  "y2021": {
+   "complaints": 1695,
+   "rides_millions": 722.4,
+   "rate_per_million": 2.346
+  },
+  "fall_percent": 29.5,
+  "datasets": [
+   "qgea-i56i",
+   "sayj-mze2",
+   "vxuj-8kew"
+  ],
+  "status": "exploratory under rule 4; decides nothing; candidate for a new registration",
+  "found_by": "critique/further-subway-crime-per-million-repro.md; re-checked 13 Nov 2026"
+ },
+ "critique": {
+  "report": "critique/further-subway-crime-per-million-repro.md",
+  "answer": "accepted; verdict kept, notes and settle rewritten"
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "MTA Major Felonies (yeek-jhmu, NYCT, Jan-Nov 2025) rate per million riders divided by the State's 1.65",
+    "estimate": 0.6738782436354599,
+    "lo": 0.6427158849764582,
+    "hi": 0.7061608984852294,
+    "scale": "ratio to the published number",
+    "null": 1,
+    "n": 1755
+   },
+   "stance": {
+    "value": 0,
+    "lo": -0.2,
+    "hi": 0.2
+   },
+   "decided_at": "2026-11-12T21:15:55-0500",
+   "prediction_scored": "miss. Under the primary reading R1 the 2025 rate is 1.11 per million (1,755 felonies over 1,578 million riders) against 1.65, and the fall since 2021 is 27.0% (1.52 in 2021 to 1.11 in 2025), at the lower edge of the 27 to 33 percent band. R2 to R6 as registered give 1.14, 1.11, 1.11, 6.12 and 1.83 for 2025; none meets both conditions."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep contested under rule 4; notes rewritten to say the State's figure reproduces (1.653) from NYPD subway complaints over subway ridership and that the registered source was the wrong one.",
+  "critique": "critique/further-subway-crime-per-million-repro.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

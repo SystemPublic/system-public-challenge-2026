@@ -1,0 +1,159 @@
+{
+ "id": "stalled-flood-zone-starts",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "borough-stratified (Mantel-Haenszel) risk difference in the 36-month no-CO rate, flood minus non-flood",
+  "estimate": -0.049,
+  "lo": -0.098,
+  "hi": -0.002,
+  "scale": "difference in proportions",
+  "null": 0,
+  "n": 3276
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ipu4-2q9a",
+   "name": "DOB Permit Issuance",
+   "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+   "rows_updated_at": "2026-11-12T00:36:38Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job__,job_doc___,permit_type,filing_status,permit_status,issuance_date,expiration_date,bbl,borough,residential,gis_latitude,gis_longitude",
+    "$where": "job_type='NB'"
+   },
+   "fetched": "2026-11-12T15:26:51-0500",
+   "n_rows": 572035
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "rbx6-tga4",
+   "name": "DOB NOW: Build – Approved Permits",
+   "url": "https://data.cityofnewyork.us/d/rbx6-tga4",
+   "rows_updated_at": "2026-11-12T19:44:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "job_filing_number,work_type,filing_reason,issued_date,bbl",
+    "$where": "work_type='Foundation'",
+    "$order": "job_filing_number,issued_date"
+   },
+   "fetched": "2026-11-13T11:54:48-0500",
+   "n_rows": 27708
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "w9ak-ipjd",
+   "name": "DOB NOW: Build – Job Application Filings",
+   "url": "https://data.cityofnewyork.us/d/w9ak-ipjd",
+   "rows_updated_at": "2026-11-11T21:29:13Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_filing_number,filing_status,job_type,bbl,filing_date,first_permit_date,approved_date,signoff_date,proposed_dwelling_units,latitude,longitude",
+    "$where": "job_type='New Building'"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 59039
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "bs8b-p36w",
+   "name": "DOB Certificate Of Occupancy",
+   "url": "https://data.cityofnewyork.us/d/bs8b-p36w",
+   "rows_updated_at": "2026-11-11T21:35:47Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_number,job_type,c_o_issue_date,issue_type,bbl,pr_dwelling_unit,ex_dwelling_unit",
+    "$where": "job_type='NB'"
+   },
+   "fetched": "2026-11-12T15:20:43-0500",
+   "n_rows": 53531
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "pkdm-hqz6",
+   "name": "DOB NOW: Certificate of Occupancy",
+   "url": "https://data.cityofnewyork.us/d/pkdm-hqz6",
+   "rows_updated_at": "2026-11-11T21:01:41Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_filing_name,job_type,c_of_o_issuance_date,c_of_o_filing_type,c_of_o_status,number_of_dwelling_units,bbl"
+   },
+   "fetched": "2026-11-12T15:21:05-0500",
+   "n_rows": 84095
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$where": "bbl in (<job BBLs, 150 per query>)",
+    "$select": "bbl,borough,pfirm15_flag,firm07_flag,lotarea"
+   },
+   "fetched": "2026-11-13T11:57:46-0500",
+   "n_rows": 142,
+   "n_queries": 22
+  }
+ ],
+ "prediction_scored": "miss in direction: the estimate is -0.049, opposite to the prediction. The registered refute condition (upper bound < 0) was met with the registered seed and draws (upper bound -0.0023), but under rule 9 the re-run gives -0.0022 with 20,000 draws and an upper bound below 0 under 19 of 20 other seeds (range -0.0050 to 0.0003), so the condition is neither met nor unmet and the verdict is unsettled.",
+ "settle": "A larger sample (all foundation starts 2014-2023, not only the December-June windows), the flood zone at the date of the permit rather than the current PLUTO flag, and a control for project size (proposed units or floor area).",
+ "research_needed": [
+  {
+   "question": "Why do floodplain starts in Queens finish faster and those in Brooklyn and Manhattan slower than other starts in the same borough?",
+   "data": "flood_jobs.csv with proposed units, building type and neighbourhood",
+   "design": "stratify by NTA and project size",
+   "priority": "medium"
+  },
+  {
+   "question": "Do groundwater and dewatering problems, rather than the flood-construction rules, delay foundations near the shore?",
+   "data": "DOB/ECB violations citing BC 3303.14 (drainage of excavations) by lot, joined to foundation starts",
+   "design": "rate of dewatering violations by flood zone and the later completion of those jobs",
+   "priority": "high"
+  }
+ ],
+ "figures": [],
+ "notes": "Crude rates: flood 0.342, other 0.391. By borough (flood vs other): BK 0.455 (n 121) vs 0.403 (n 997); BX 0.316 (n 19) vs 0.354 (n 390); MN 0.833 (n 30) vs 0.538 (n 195); QN 0.212 (n 198) vs 0.413 (n 1098); SI 0.273 (n 33) vs 0.133 (n 195). The pooled difference is driven by Queens, where 198 floodplain starts finished faster than other Queens starts; in Brooklyn and Manhattan the floodplain starts finished more slowly. The outcome measure (job number or BBL matching) was fixed after the result of stalled-421a-vesting-footings and before this claim was registered.",
+ "registration_sha256": "2904af8de8b282f1b3508d91dcd41b6ea9282ca7792838dc3e718b16b9de0f44",
+ "decided_at": "2026-11-13T12:05:35-0500",
+ "stance": {
+  "value": -0.762,
+  "lo": -0.964,
+  "hi": -0.041,
+  "z": -2.0
+ },
+ "notes_referee": "Referee estimate with job-number matching: -0.001 (-0.051 to +0.049). Verdict unsettled stands. Registered lot matching credited neighbours' certificates on shared Rockaway lots (Queens blocks 16340, 16350).",
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "borough-stratified (Mantel-Haenszel) risk difference in the 36-month no-CO rate, flood minus non-flood",
+    "estimate": -0.049,
+    "lo": -0.098,
+    "hi": -0.002,
+    "scale": "difference in proportions",
+    "null": 0,
+    "n": 3276
+   },
+   "stance": {
+    "value": -0.762,
+    "lo": -0.964,
+    "hi": -0.041,
+    "z": -2.0
+   },
+   "decided_at": "2026-11-13T12:05:35-0500",
+   "prediction_scored": "miss in direction: the estimate is -0.049, opposite to the prediction. The registered refute condition (upper bound < 0) was met with the registered seed and draws (upper bound -0.0023), but under rule 9 the re-run gives -0.0022 with 20,000 draws and an upper bound below 0 under 19 of 20 other seeds (range -0.0050 to 0.0003), so the condition is neither met nor unmet and the verdict is unsettled."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee: verdict kept",
+  "critique": "critique/stalled-flood-zone-starts.md",
+  "revised_at": "2026-11-13T12:27:03-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

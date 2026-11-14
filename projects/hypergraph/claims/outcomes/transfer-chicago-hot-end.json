@@ -1,0 +1,223 @@
+{
+ "id": "transfer-chicago-hot-end",
+ "verdict": "unsettled",
+ "parts": {
+  "a_supported": true,
+  "b_supported": false,
+  "a_refuted": false
+ },
+ "city_effect": {
+  "label": "Chicago gunshot-injury cases, ratio 33 C against 27 C of Midway TMAX (piecewise-linear spline), 2010-2026",
+  "estimate": 1.058162059683993,
+  "lo": 1.0136776627657356,
+  "hi": 1.1045986171774196,
+  "scale": "rate ratio 33 C vs 27 C",
+  "null": 1,
+  "n": 6085
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "type": "socrata",
+   "domain": "data.cityofchicago.org",
+   "dataset": "fg6s-gzvg",
+   "name": "Divvy Trips",
+   "n_queries": 79,
+   "first_query": {
+    "kind": "nyc-open-data",
+    "dataset": "fg6s-gzvg",
+    "name": "Divvy Trips",
+    "url": "https://data.cityofchicago.org/d/fg6s-gzvg",
+    "rows_updated_at": "2020-05-19T18:08:06Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "date_trunc_ymd(start_time) as d, user_type, count(*) as n",
+     "$where": "start_time between '2013-06-01T00:00:00' and '2013-06-30T23:59:59'",
+     "$group": "d, user_type",
+     "$order": "d, user_type"
+    },
+    "fetched": "2026-11-13T00:00:57-0500",
+    "n_rows": 8
+   },
+   "last_query": {
+    "kind": "nyc-open-data",
+    "dataset": "fg6s-gzvg",
+    "name": "Divvy Trips",
+    "url": "https://data.cityofchicago.org/d/fg6s-gzvg",
+    "rows_updated_at": "2020-05-19T18:08:06Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "date_trunc_ymd(start_time) as d, user_type, count(*) as n",
+     "$where": "start_time between '2019-12-01T00:00:00' and '2019-12-31T23:59:59'",
+     "$group": "d, user_type",
+     "$order": "d, user_type"
+    },
+    "fetched": "2026-11-13T00:44:23-0500",
+    "n_rows": 62
+   },
+   "all_queries": "data/derived/round2/hot_end/sources.json"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "gumc-mgzr",
+   "name": "Violence Reduction - Victims of Homicides and Non-Fatal Shootings",
+   "url": "https://data.cityofchicago.org/d/gumc-mgzr",
+   "rows_updated_at": "2026-11-12T14:37:55Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(date) as d, count(distinct case_number) as n",
+    "$where": "date between '2010-01-01T00:00:00' and '2026-08-31T23:59:59' AND gunshot_injury_i in ('Y','YES')",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T22:33:08-0500",
+   "n_rows": 6012
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "gumc-mgzr",
+   "name": "Violence Reduction - Victims of Homicides and Non-Fatal Shootings",
+   "url": "https://data.cityofchicago.org/d/gumc-mgzr",
+   "rows_updated_at": "2026-11-12T14:37:55Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(date) as d, count(distinct case_number) as n",
+    "$where": "date between '2010-01-01T00:00:00' and '2026-08-31T23:59:59' AND gunshot_injury_i in ('Y','YES') AND victimization_primary='HOMICIDE'",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T22:33:13-0500",
+   "n_rows": 4163
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ijzp-q8t2",
+   "name": "Crimes - 2001 to Present",
+   "url": "https://data.cityofchicago.org/d/ijzp-q8t2",
+   "rows_updated_at": "2026-11-12T12:16:46Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(date) as d, count(*) as n",
+    "$where": "date between '2010-01-01T00:00:00' and '2026-08-31T23:59:59' AND primary_type='HOMICIDE'",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T22:33:24-0500",
+   "n_rows": 4533
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ijzp-q8t2",
+   "name": "Crimes - 2001 to Present",
+   "url": "https://data.cityofchicago.org/d/ijzp-q8t2",
+   "rows_updated_at": "2026-11-12T12:16:46Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(date) as d, count(*) as n",
+    "$where": "date between '2010-01-01T00:00:00' and '2026-08-31T23:59:59' AND primary_type='BATTERY' AND description like '%AGGRAVATED%' AND (description like '%HANDGUN%' OR description like '%FIREARM%')",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T22:33:28-0500",
+   "n_rows": 5906
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00014819",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00014819.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:32:44 GMT",
+   "fetched": "2026-11-12T22:33:29-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094846",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094846.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:26 GMT",
+   "fetched": "2026-11-12T22:33:30-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  }
+ ],
+ "prediction_scored": "partial. Part (a) met: Divvy trips change by 0.949 (0.896 to 1.005) from 27 to 33 C (upper limit below 1.06) and shootings rise by 1.058 (1.014 to 1.105) (lower limit above 1). Part (b) not met: all Divvy trips remove 0.104 (0.041 to 0.247) of the 15 to 21 C rise, below the registered 0.20; the amount removed from the 27 to 33 C log rise is -0.007 (-0.017 to 0.001), within the registered bound.",
+ "settle": "A daily count of people on residential streets in the evening (pedestrian counters, or a noise or gathering complaint series, which Chicago's 311 does not hold), and Divvy trips after 2019 from the operator's archives, would say whether the decomposition fails because of the proxy or because of the city.",
+ "research_needed": [
+  {
+   "question": "What accounts for the rise in shootings above 27 C, when outdoor activity is no longer rising?",
+   "data": "Hourly indoor temperature in housing without air conditioning; nightly sleep duration (wearable panels); alcohol sales by day and hour; hourly shootings with hourly temperature.",
+   "design": "Daily and hourly models with the candidate step added, in two or more cities; night-time minimum temperature as the exposure for the sleep step.",
+   "priority": "high"
+  },
+  {
+   "question": "Does a pedestrian or gathering proxy in Chicago remove as much of the mild-day slope as street-noise complaints do in New York?",
+   "data": "Chicago police non-emergency noise or disturbance calls by day, if released; pedestrian counters.",
+   "design": "The registered model with that proxy.",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/round2/hot_end_two_cities.png"
+ ],
+ "notes": "Secondary, registered as not deciding: Divvy casual (Customer) trips change by 0.992 (0.924 to 1.066) from 27 to 33 C and remove 0.298 (0.170 to 0.588) of the 15 to 21 C rise; subscriber trips change by 0.958 (0.911 to 1.007) and remove 0.038 (0.005 to 0.117). With the 4-df quantile-knot basis of the New York exploratory analysis the all-trips ratio from 27 to 33 C is 1.034 (0.994 to 1.076) and the shootings ratio 1.093 (1.062 to 1.125); a simulation run before registration showed that this basis overstates the ratio when the curve bends near 27 C. Shootings on the Divvy window alone: 1.053 (0.987 to 1.123). No graph request was made.\n\nAfter the referee (13 Nov 2026): the stance (0.859) describes only the shootings half of part (a) and now carries a note saying so. The outcome's intervals use HC0 errors and daily counts are correlated from day to day; with errors that allow for this the shootings ratio is 1.058 (1.008 to 1.110) and the Divvy ratio 0.949 (0.876 to 1.027). Part (a) still passes and part (b) fails in every variant the referee ran. Part (a) depends on the composition of riders: subscribers make three quarters of trips and their trips fall on hot days (0.958), while casual trips do not fall (0.992, 0.924 to 1.066) and would not have met the 1.06 condition. The flattening may therefore be commuters avoiding heat and not fewer people on the street. Part (b) was predicted from New York street-noise complaints and tested with bicycle trips, and New York's own bicycle counts removed 0.021, so the failure of (b) agrees with New York's bicycle result and says little about its noise result. The shootings condition is met only on the full window (1.053, 0.987 to 1.123 on the Divvy window), and with autocorrelation-robust errors D for the shootings half is 3.4, below the 4 of rule 8. Round 5 check (analyses/critique/round5_night_of_check.py): this claim counts gunshot injuries by calendar date, so injuries between 00:00 and 05:59 are counted on a date whose maximum came later. With each injury assigned to the day whose night it falls in (06:00 to 05:59), the Chicago ratio for 33 against 27 C is 1.035 (0.991 to 1.082) against 1.059 (1.014 to 1.105) by calendar date. Part (a) would then not be met. The verdict was already unsettled and stays unsettled.",
+ "registration_sha256": "c23b08942fa109d0d097c79a7fd3324b3eba128b5c80bee56f52743a940c17ed",
+ "decided_at": "2026-11-13T00:46:33-0500",
+ "stance": {
+  "value": 0.859,
+  "lo": 0.3,
+  "hi": 0.979,
+  "z": 2.58
+ },
+ "critique": {
+  "report": "critique/transfer-chicago-hot-end.md",
+  "answer": "accepted; verdict kept, stance annotated"
+ },
+ "revision": {
+  "reason": "Referee of heat-night-minimum: calendar-day counts include small-hours shootings that precede the day's maximum.",
+  "critique": "critique/heat-night-minimum.md",
+  "revised_at": "2026-11-13T08:05:42-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ },
+ "verdict_note": "Unsettled. On night-of counts part (a) is also not met (1.035, 0.991 to 1.082).",
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Chicago gunshot-injury cases, ratio 33 C against 27 C of Midway TMAX (piecewise-linear spline), 2010-2026",
+    "estimate": 1.058162059683993,
+    "lo": 1.0136776627657356,
+    "hi": 1.1045986171774196,
+    "scale": "rate ratio 33 C vs 27 C",
+    "null": 1,
+    "n": 6085
+   },
+   "stance": {
+    "value": 0.859,
+    "lo": 0.3,
+    "hi": 0.979,
+    "z": 2.58
+   },
+   "decided_at": "2026-11-13T00:46:33-0500",
+   "prediction_scored": "partial. Part (a) met: Divvy trips change by 0.949 (0.896 to 1.005) from 27 to 33 C (upper limit below 1.06) and shootings rise by 1.058 (1.014 to 1.105) (lower limit above 1). Part (b) not met: all Divvy trips remove 0.104 (0.041 to 0.247) of the 15 to 21 C rise, below the registered 0.20; the amount removed from the 27 to 33 C log rise is -0.007 (-0.017 to 0.001), within the registered bound."
+  },
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Chicago gunshot-injury cases, ratio 33 C against 27 C of Midway TMAX (piecewise-linear spline), 2010-2026",
+    "estimate": 1.058162059683993,
+    "lo": 1.0136776627657356,
+    "hi": 1.1045986171774196,
+    "scale": "rate ratio 33 C vs 27 C",
+    "null": 1,
+    "n": 6085
+   },
+   "stance": {
+    "value": 0.859,
+    "lo": 0.3,
+    "hi": 0.979,
+    "z": 2.58,
+    "note": "Computed from the shootings ratio alone, the half of part (a) that was not blind. It says nothing about part (b), which failed and makes the verdict unsettled."
+   },
+   "decided_at": "2026-11-13T00:46:33-0500",
+   "prediction_scored": "partial. Part (a) met: Divvy trips change by 0.949 (0.896 to 1.005) from 27 to 33 C (upper limit below 1.06) and shootings rise by 1.058 (1.014 to 1.105) (lower limit above 1). Part (b) not met: all Divvy trips remove 0.104 (0.041 to 0.247) of the 15 to 21 C rise, below the registered 0.20; the amount removed from the 27 to 33 C log rise is -0.007 (-0.017 to 0.001), within the registered bound."
+  }
+ ]
+}

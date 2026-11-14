@@ -1,0 +1,212 @@
+{
+ "id": "transfer-chicago-weekday-pattern",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "Change in the Monday/Friday deficit of Chicago Loop 'L' entries, Sep 2025-Aug 2026 minus 2019",
+  "estimate": 15.92418615046446,
+  "lo": 11.998470262826654,
+  "hi": 22.657072390128945,
+  "scale": "percentage points of the Tue-Thu mean",
+  "null": 0,
+  "n": "41 weeks recent, 42 weeks 2019, 15 Loop stations"
+ },
+ "graph_effect": null,
+ "graph_evidence": [
+  {
+   "note": "Concept and variable searches found no finding on the day-of-week pattern of transit use. Variable search for ridership gives 11 studies, none a ridership time series of a US city (see docs/graph_discovery.md).",
+   "n_findings": 0
+  }
+ ],
+ "sources": [
+  {
+   "kind": "socrata (recorded by concord/socrata.py as nyc-open-data)",
+   "portal": "data.cityofchicago.org",
+   "dataset": "8pix-ypme",
+   "name": "CTA - System Information - List of 'L' Stops",
+   "url": "https://data.cityofchicago.org/d/8pix-ypme",
+   "rows_updated_at": "2025-11-19T18:14:37Z",
+   "n_queries": 1,
+   "fetched_first": "2026-11-12T22:34:12-0500",
+   "fetched_last": "2026-11-12T22:34:12-0500",
+   "example_query": {
+    "$select": "map_id,station_name,location",
+    "$limit": 5000
+   },
+   "data_access": "open"
+  },
+  {
+   "kind": "socrata (recorded by concord/socrata.py as nyc-open-data)",
+   "portal": "data.cityofchicago.org",
+   "dataset": "5neh-572f",
+   "name": "CTA - Ridership - 'L' Station Entries - Daily Totals",
+   "url": "https://data.cityofchicago.org/d/5neh-572f",
+   "rows_updated_at": "2026-10-28T16:52:14Z",
+   "n_queries": 2,
+   "fetched_first": "2026-11-12T22:34:24-0500",
+   "fetched_last": "2026-11-12T22:34:28-0500",
+   "example_query": {
+    "$limit": 50000,
+    "$select": "date, station_id, rides",
+    "$where": "station_id in (40040,40070,40160,40260,40370,40380,40460,40560,40680,40730,40790,40850,41090,41340,41490,41660,41700) AND date between '2018-01-01T00:00:00' and '2026-12-31T23:59:59'",
+    "$order": "date,station_id"
+   },
+   "data_access": "open"
+  }
+ ],
+ "prediction_scored": "miss on size, hit on sign: registered refute_if (Delta above 13.1 points) is met by 15.9 (12.0 to 22.7). The sign, the midweek plateau (Loop recent midweek range 0.9 points) and Loop-above-rest ordering transfer; the size is about 1.8 times New York's. Corrected after the referee: the Loop minus rest-of-system difference is 7.1 points (6.2 to 8.0) with a paired bootstrap, so the registered secondary prediction that the Loop changed more than the rest of the system is met.",
+ "components": {
+  "loop_recent_mf_deficit_pct": [
+   18.24198783692992,
+   17.12101378590406,
+   19.308163879724866
+  ],
+  "loop_2019_mf_deficit_pct": [
+   2.3178016864654594,
+   -3.9980539759276525,
+   5.7839676205695865
+  ],
+  "loop_recent_monday_friday_pct": [
+   16.36441977774267,
+   20.11955589611717
+  ],
+  "rest_delta_points": {
+   "estimate": 8.831476245425463,
+   "lo": 5.120849345749977,
+   "hi": 15.273382603154488
+  },
+  "rest_recent_mf_pct": 8.705487990377359,
+  "loop_minus_rest_delta": {
+   "estimate": 7.092709905038996,
+   "ci": [
+    6.2,
+    8.0
+   ],
+   "method": "paired bootstrap: the same weeks resampled for the Loop and for the rest of the system",
+   "superseded_ci_independent_resamples": [
+    -1.0838314818514514,
+    15.65123248853693
+   ]
+  },
+  "placebo_2019_minus_2018": {
+   "estimate": -3.481456673762684,
+   "lo": -10.168761694965642,
+   "hi": 0.3370141974318984
+  },
+  "sensitivity": {
+   "S1_median": {
+    "estimate": 13.463228200919474,
+    "lo": 12.424203312827172,
+    "hi": 15.155060224022366
+   },
+   "S3_calendar_2025": {
+    "estimate": 15.394009007543742,
+    "lo": 11.471846252898363,
+    "hi": 22.170566338233538
+   },
+   "S4_no_strike_weeks": {
+    "estimate": 16.140265636730923,
+    "lo": 12.04039544321364,
+    "hi": 23.16426971028374
+   },
+   "S6_wide_box": {
+    "estimate": 16.43755112287085,
+    "lo": 12.517752747813274,
+    "hi": 23.12324947945534
+   },
+   "S2_days_only": 13.617507832795006
+  },
+  "exploratory_no_polar_vortex_week_2019_01_28": {
+   "loop": {
+    "delta": {
+     "estimate": 12.942912657493633,
+     "lo": 11.626049948532811,
+     "hi": 14.198512338904473
+    },
+    "recent_mf": 18.24198783692992,
+    "recent_mf_ci": [
+     17.12101378590406,
+     19.308163879724866
+    ],
+    "y2019_mf": 5.299075179436286,
+    "y2019_mf_ci": [
+     4.650900246724469,
+     5.931784295921626
+    ],
+    "n19": 41
+   },
+   "rest": {
+    "delta": {
+     "estimate": 6.031683024944923,
+     "lo": 4.797122260586357,
+     "hi": 7.238085121325534
+    },
+    "recent_mf": 8.705487990377359,
+    "recent_mf_ci": [
+     7.674888844443692,
+     9.71618079104131
+    ],
+    "y2019_mf": 2.673804965432436,
+    "y2019_mf_ci": [
+     2.020434005009704,
+     3.3073373931625785
+    ],
+    "n19": 41
+   }
+  },
+  "note": "The 2019 baseline mean is distorted by the week of 28 January 2019 (polar vortex; Wednesday entries 27% of the week's Tue-Thu mean). The registered primary keeps that week. Without it the Loop Delta is 12.9 (11.6 to 14.2), just under the refutation limit; the placebo year difference (-3.5, -10.2 to 0.3) fails the registered 1.5-point check for the same reason. Exploratory; it does not decide the verdict (precedence rule 4).",
+  "loop_station_gap": "State/Lake (station 40260), one of the 15 Loop stations, has no entries on 234 days of the recent period. Excluding it from both periods changes the Delta by 0.2 points."
+ },
+ "settle": "A registered week-level treatment of weather outliers (for example dropping weeks with a day below 50% of the week's median), written before data are seen, would settle whether the Loop size is 12.9 or 15.9. Chicago office-badge data (Kastle) by weekday would show whether the CTA pattern reflects workplace attendance.",
+ "research_needed": [
+  {
+   "question": "Why is the Friday deficit in the Loop (20.1%) larger than the Monday deficit (16.4%) when New York shows the reverse?",
+   "data": "Metra and CTA ridership by day for the same weeks; employer schedule surveys",
+   "design": "Descriptive comparison with Kastle weekday occupancy",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/graph/transfer_chicago.png"
+ ],
+ "notes": "Data end 2026-08-31, so the recent period is the registered fallback, 1 September 2025 to 31 August 2026. The Loop rule selected 15 station ids. Loop mean weekday entries fell from 148011 in 2019 to 83902; the whole 'L' system from 592309 to 376629. Rest of system: Delta 8.8 (5.1 to 15.3) against New York's 4.2; it lies above the registered range of 2 to 7 points, with an interval (5.1 to 15.3) that overlaps it.\n\nAfter the referee (13 Nov 2026): the interval for the Loop minus rest-of-system difference was wrong. The script drew separate bootstrap samples of weeks for the two areas, although both are observed in the same weeks. Resampling the same weeks for both gives 7.1 (6.2 to 8.0) in place of 7.1 (-1.1 to 15.7) (referee; re-checked from chicago_daily_entries.csv). The registered secondary prediction that the Loop changed more than the rest of the system is therefore clearly met. State/Lake, one of the 15 Loop stations, has no entries on 234 days of the recent period; the outcome said 15 stations for both periods. Excluding it from both changes the Delta by 0.2 points. The verdict follows rule 1, since the registered primary (15.9) is above 13.1, but the threshold is not robustly exceeded: the referee's variants run from 12.4 (baseline 2018) to 16.1, and the excess over 13.1 comes from the week of 28 January 2019. With weeks holding a day under 70% of the week's median dropped in both cities, the Loop is 12.9 (11.6 to 14.2) and the New York CBD 7.1 (6.1 to 8.2), a ratio of 1.8, so on a like-for-like basis the size still does not transfer. Against New York's registered office core (9.3 with the same rule) the ratio is 1.4, which the registration would call partial transfer; the Loop box is an office core and the New York CBD includes residential districts. The lower recovery of Loop entries (57% of 2019 against 75%) is the simplest untested account of a larger Delta. The Friday deficit in the Loop (20.1%) exceeds the Monday deficit (16.4%), the reverse of New York.",
+ "registration_sha256": "c55ef3974a55bd7f5fdfd58d4e1bbd74bec3c683f17a12a649511aa8f167f890",
+ "decided_at": "2026-11-12T22:54:41-0500",
+ "stance": {
+  "value": 0.994,
+  "lo": 0.976,
+  "hi": 1.0,
+  "z": 5.86
+ },
+ "critique": {
+  "report": "critique/transfer-chicago-weekday-pattern.md",
+  "answer": "accepted; verdict kept, interval corrected"
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "Change in the Monday/Friday deficit of Chicago Loop 'L' entries, Sep 2025-Aug 2026 minus 2019",
+    "estimate": 15.92418615046446,
+    "lo": 11.998470262826654,
+    "hi": 22.657072390128945,
+    "scale": "percentage points of the Tue-Thu mean",
+    "null": 0,
+    "n": "41 weeks recent, 42 weeks 2019, 15 Loop stations"
+   },
+   "stance": {
+    "value": 0.994,
+    "lo": 0.976,
+    "hi": 1.0,
+    "z": 5.86
+   },
+   "decided_at": "2026-11-12T22:54:41-0500",
+   "prediction_scored": "miss on size, hit on sign: registered refute_if (Delta above 13.1 points) is met by 15.9 (12.0 to 22.7). The sign, the midweek plateau (Loop recent midweek range 0.9 points) and Loop-above-rest ordering transfer; the size is about 1.8 times New York's."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep contested; Loop minus rest interval corrected to 7.1 (6.2 to 8.0) by a paired bootstrap; State/Lake gap recorded.",
+  "critique": "critique/transfer-chicago-weekday-pattern.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

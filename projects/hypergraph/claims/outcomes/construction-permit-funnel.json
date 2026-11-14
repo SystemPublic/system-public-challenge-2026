@@ -1,0 +1,171 @@
+{
+ "id": "construction-permit-funnel",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "legacy NB permit rows per distinct NB job, rows issued 2010-2019",
+  "estimate": 6.87,
+  "lo": null,
+  "hi": null,
+  "scale": "rows per job (null: 1 row per building)",
+  "null": 1,
+  "n": 25339
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ipu4-2q9a",
+   "name": "DOB Permit Issuance",
+   "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+   "rows_updated_at": "2026-11-12T00:36:38Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job__,job_doc___,permit_type,filing_status,permit_status,issuance_date,expiration_date,bbl,borough,residential,gis_latitude,gis_longitude",
+    "$where": "job_type='NB'"
+   },
+   "fetched": "2026-11-12T15:26:51-0500",
+   "n_rows": 572035
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "bs8b-p36w",
+   "name": "DOB Certificate Of Occupancy",
+   "url": "https://data.cityofnewyork.us/d/bs8b-p36w",
+   "rows_updated_at": "2026-11-11T21:35:47Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_number,job_type,c_o_issue_date,issue_type,bbl,pr_dwelling_unit,ex_dwelling_unit",
+    "$where": "job_type='NB'"
+   },
+   "fetched": "2026-11-12T15:20:43-0500",
+   "n_rows": 53531
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "pkdm-hqz6",
+   "name": "DOB NOW: Certificate of Occupancy",
+   "url": "https://data.cityofnewyork.us/d/pkdm-hqz6",
+   "rows_updated_at": "2026-11-11T21:01:41Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_filing_name,job_type,c_of_o_issuance_date,c_of_o_filing_type,c_of_o_status,number_of_dwelling_units,bbl"
+   },
+   "fetched": "2026-11-12T15:21:05-0500",
+   "n_rows": 84095
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "w9ak-ipjd",
+   "name": "DOB NOW: Build – Job Application Filings",
+   "url": "https://data.cityofnewyork.us/d/w9ak-ipjd",
+   "rows_updated_at": "2026-11-11T21:29:13Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_filing_number,filing_status,job_type,bbl,filing_date,first_permit_date,approved_date,signoff_date,proposed_dwelling_units,latitude,longitude",
+    "$where": "job_type='New Building'"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 59039
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "br6q-ssj3",
+   "name": "Housing Database Project Level Files",
+   "url": "https://data.cityofnewyork.us/d/br6q-ssj3",
+   "rows_updated_at": "2026-09-30T18:04:43Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_number,job_type,job_status,permityear,compltyear,datepermit,datecomplt,classaprop,units_co,bbl",
+    "$where": "job_type='New Building'"
+   },
+   "fetched": "2026-11-12T15:21:45-0500",
+   "n_rows": 35188
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$select": "yearbuilt,count(*) as lots,sum(unitsres) as units,sum(bldgarea) as area",
+    "$where": "yearbuilt >= 2000",
+    "$group": "yearbuilt",
+    "$order": "yearbuilt",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:24:33-0500",
+   "n_rows": 27
+  },
+  {
+   "kind": "sysgraph",
+   "api_version": "v1.0",
+   "dataset_version": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "queries": "variable and concept search for 13 terms; relationships of concepts COEFxSZVXO (construction), jCrN64TC75 (building), IFcQ3j86qe (housing); associations of 8 variables",
+   "derived": "data/derived/construction/graph_search.json",
+   "fetched": "2026-11-12"
+  }
+ ],
+ "prediction_scored": "partial. Registered support required at least 3 rows per distinct job in every issuance year 2010-2019. Per-year values are 2.55 (2010), 2.64 (2011), 2.90 (2012) and 3.00-3.28 for 2013-2019, so the rule fails in three years; the refutation rule is not met either. Lifetime rows per job by cohort (7.0-10.3) and 54% renewals are exploratory measures chosen after the per-year figure was seen. That permit rows overstate buildings is not in doubt; the registered test did not decide it.",
+ "settle": "Rows per job is a property of the record, not in dispute. What remains is how many NB jobs are superseded or refiled under a new number, which needs DOB's job-relationship table (HDB hpd_jobrel or BIS 'related jobs').",
+ "research_needed": [
+  {
+   "question": "What share of NB permit rows are renewals of stalled jobs, and how long do such jobs stall?",
+   "data": "ipu4-2q9a renewals by job, with gaps between expiry and renewal",
+   "design": "survival analysis of time from first permit to CO, with renewal gaps as events",
+   "priority": "medium"
+  },
+  {
+   "question": "Do news and policy counts of 'permits' use rows, jobs or units?",
+   "data": "press releases, REBNY and DCP reports",
+   "design": "content audit",
+   "priority": "low"
+  },
+  {
+   "question": "Should the graph hold findings on housing supply (permits, starts, completions, lapse)? It now holds none.",
+   "data": "Census New Residential Construction; NYC DCP Housing Database; Furman Center CoreData",
+   "design": "extraction of urban-economics and planning literature into the graph",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/construction/funnel_2010_2019.png",
+  "figures/construction/funnel_by_year.png"
+ ],
+ "notes": "The legacy DOB Permit Issuance table has 572,035 rows with job_type NB, for 95,784 distinct job numbers (5.97 rows per job over the table's life). The rows are of five permit types (NB 267,198; PL 129,572; EQ 126,366; FO 48,730; EW 169), and 309,782 (54%) are renewals. For permits issued 2010-2019 the 173,976 rows belong to 25,339 jobs, and 19,095 jobs had their first NB permit in those years; 16,297 of these (85%) have a certificate of occupancy by November 2026. Over 2012-2021 the Housing Database records 14,756 completed residential new buildings and PLUTO has 15,813 lots with those years built. The 173,976 rows are about 11 times the 16,297 jobs that reached a CO, and the 19,095 permitted jobs are 17% more than those completed jobs. (The 25,339 jobs with rows in 2010-2019 include jobs first permitted before 2010.) Since 2021 NB jobs are filed in DOB NOW (w9ak-ipjd), and legacy rows after 2021 are mostly renewals of older jobs. Graph evidence check (12 Nov 2026, after the coordinator's audit): association aFGrNWb1i5 (vacant housing demolitions and 'change in crime', PMID 36228876), cited in the registration, is NOT in the Dataverse v2.1 CSV. The abstract (Kvik et al., Prev Med 2022) shows it is mis-extracted: the -0.068 (95% CI -0.119 to -0.018) is the change in total emergency-department visits per 1,000 people, and demolitions showed no significant change in crime. It should be dropped; it bore on context only, not on any test here. Of the other graph rows cited, UXzKbLS899 (population growth and construction land, Chongqing) is in the CSV. The vacant-lot and renovation rows looked at during the search (3rfxckzPtm, R0ctB4TYK1, CVCABCQUUe, 168lUaKwYN, 20AOg9kwfR, IfVJnDqqH0) are not in the CSV. The graph holds no finding on permits, permit-to-completion ratios, lags or permit lapse, so the research side of every construction claim comes from the literature.",
+ "registration_sha256": "443fc73d3f520619115c56c1a222658021e30f012b0a8da0467e47d56aaf7c16",
+ "decided_at": "2026-11-12T15:44:27-0500",
+ "stance": null,
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "legacy NB permit rows per distinct NB job, rows issued 2010-2019",
+    "estimate": 6.87,
+    "lo": null,
+    "hi": null,
+    "scale": "rows per job (null: 1 row per building)",
+    "null": 1,
+    "n": 25339
+   },
+   "stance": {
+    "value": 0.999,
+    "lo": null,
+    "hi": null
+   },
+   "decided_at": "2026-11-12T15:44:27-0500",
+   "prediction_scored": "hit on the main measure, partial on one sub-criterion. Rows per distinct job 2010-2019 were 6.87 (173,976 rows, 25,339 jobs; predicted 3-10); renewals were 54% of all 572,035 NB rows (predicted at least 20%); NB jobs per year 1,309-2,491 (predicted 1,500-4,500; 2010-2012 and 2020 fell slightly below); jobs with a CO by November 2026 were fewer than jobs permitted in every cohort 2012-2019 (ratio 0.88-0.93). The support rule 'rows per job >= 3 in every year' holds for the lifetime rows of each cohort (7.0-10.3) but not for rows per job active within one calendar year (2.55-2.90 in 2010-2012). PLUTO lots by year built were 0.51-1.16 of NB jobs permitted two years before (0.80-0.99 for permit years 2010-2017 except 2012 at 1.16); the predicted range was 0.4-1.0. The low values for 2018-2019 reflect the 2020-2021 dip in completions and late PLUTO updates."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: the registered per-year rule fails for 2010-2012; the outcome substituted a lifetime measure.",
+  "critique": "critique/construction-permit-funnel.md",
+  "revised_at": "2026-11-12T15:55:02-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

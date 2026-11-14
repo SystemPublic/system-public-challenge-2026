@@ -1,0 +1,1005 @@
+{
+ "package": {
+  "claim": "rlc-expansion-rearend",
+  "built_at": "2026-11-13T23:36:06-0500",
+  "tool": "tools/replicate.py",
+  "tool_blob": "1f726a6eae93bd4d0ab81abcf0022214762758e3",
+  "paths": "relative to the repository (inputs keep their repo paths under inputs/) or to ~/opt/nyc-concordance"
+ },
+ "claim": {
+  "id": "rlc-expansion-rearend",
+  "registration": {
+   "id": "rlc-expansion-rearend",
+   "kind": "conflict",
+   "statement": "At the intersections where New York City switched on red-light cameras in January-August 2026, rear-end crashes rose relative to matched signalized intersections, as the meta-analyses predict and contrary to NYC DOT's report of fewer rear-end injury crashes at its camera sites.",
+   "graph_evidence": [
+    {
+     "note": "Variable search (analyses/street_safety/graph_collect.py). Red-light camera associations come from two studies; none concerns rear-end or right-angle crashes. Abstracts checked: data/derived/street_safety/graph_check.json (13 of 21 relied-on records correct, 7 wrong, 1 unverifiable).",
+     "findings": [
+      {
+       "pubmed_id": 28454859,
+       "variable_1_name": "activating red light cameras",
+       "variable_2_name": "all fatal crashes at signalized intersections",
+       "statistic_type": "percent change",
+       "statistic_value": -14,
+       "abstract_check": "correct"
+      },
+      {
+       "pubmed_id": 28454859,
+       "variable_1_name": "activating red light cameras",
+       "variable_2_name": "fatal red light running crashes",
+       "statistic_type": "percent change",
+       "statistic_value": -21,
+       "abstract_check": "correct"
+      },
+      {
+       "pubmed_id": 28454859,
+       "variable_1_name": "Removing red light cameras (2010-2014)",
+       "variable_2_name": "all fatal crashes at signalized intersections",
+       "statistic_type": "percent change",
+       "statistic_value": 8,
+       "abstract_check": "wrong: abstract gives +16% for these 14 cities; +8% is for all 19"
+      },
+      {
+       "pubmed_id": 32195995,
+       "variable_1_name": "Red light camera laws",
+       "variable_2_name": "motor vehicle crash fatality rate",
+       "statistic_type": "coefficient",
+       "statistic_value": -0.06,
+       "abstract_check": "direction correct; value not in abstract"
+      }
+     ]
+    }
+   ],
+   "literature": [
+    {
+     "citation": "Erke A (2009). Red light for red-light cameras? A meta-analysis of the effects of red-light cameras on crashes. Accid Anal Prev 41(5):897-905.",
+     "doi": "10.1016/j.aap.2008.08.011",
+     "finding": "In the best-controlled studies, rear-end crashes about +40% and right-angle crashes about -10%; all crashes about +15%; none significant. Results are more favourable without control for regression to the mean."
+    },
+    {
+     "citation": "Hoye A (2013). Still red light for red light cameras? An update. Accid Anal Prev 55:77-89.",
+     "doi": "10.1016/j.aap.2013.02.017",
+     "finding": "Right-angle crashes -13%, rear-end +39%; right-angle injury crashes -33%, rear-end injury crashes +19%."
+    },
+    {
+     "citation": "Hu W, Cicchino JB (2017). Effects of turning on and off red light cameras on fatal crashes in large U.S. cities. J Safety Res 61:141-148.",
+     "doi": "10.1016/j.jsr.2017.02.019",
+     "finding": "Fatal crashes at signalized intersections 14% lower after activation; 16% higher after removal (2010-2014 removals)."
+    },
+    {
+     "citation": "Aeron-Thomas AS, Hess S (2005). Red-light cameras for the prevention of road traffic crashes. Cochrane Database Syst Rev CD003862.",
+     "doi": "10.1002/14651858.CD003862.pub2",
+     "finding": "Injury crashes RR 0.71 (0.55-0.92) in a small number of controlled before-after studies; rear-end effects inconsistent."
+    },
+    {
+     "citation": "NYC DOT (2025-2026). NYC Red Light Camera Program addendum and press release of October 2026.",
+     "doi": null,
+     "finding": "At existing camera intersections, right-angle injury collisions -70% and rear-end injury collisions about -60% against a pre-installation average. No control group; this disagrees in sign with the meta-analyses on rear-end crashes."
+    }
+   ],
+   "prediction": {
+    "direction": "+",
+    "magnitude": "Ratio of ratios for the rear-end proxy (crashes citing 'Following Too Closely', or with an in-traffic vehicle struck at 'Center Back End') between 1.10 and 1.60.",
+    "support_if": "The 95% interval of the ratio of ratios lies above 1.00 and the test discriminates (rule 8: D >= 4 against the band's geometric centre, 1.33).",
+    "refute_if": "The upper 95% bound is below 1.10 (the city data exclude the meta-analytic increase; a decrease as NYC DOT reports would fall here).",
+    "rule8": {
+     "expected_post_events": 191,
+     "expected_se_log": 0.117,
+     "pred_log": 0.283,
+     "expected_D_if_prediction_true": 5.86
+    }
+   },
+   "plan": "Analysis script analyses/street_safety/rlc_did.py at commit 793cc32 (B = 2000 bootstrap draws, seed 20261113; robustness rerun with B = 20000 and seeds 1-10). Treatment data: red-light camera intersections and the first month with tickets, from Parking Violations Issued FY2024-FY2027 (8zf9-spf8, m5vz-tzqv, 9mwx-gamw, pvqr-7yc4; violation code 7, sampled on the 1st and 15th of each month; analyses/street_safety/rlc_sites.py), geocoded to OpenStreetMap intersections and the LPI gazetteer (geocode_sites.py). Treated: intersections first ticketed January-August 2026 with no ticket in earlier sampled months. Post window: months a+1 to a+9 (a = first month), ending October 2026; pre window: the same calendar months in 2024 and 2025. Controls: 3 LPI intersections (xc4v-ntf4, LPI before 2024) per treated site, same borough, at least 300 m from any camera, matched on the pre-window count of all crashes. Crashes (h9gi-nx95, with vehicles bm4k-52h4) within 50 m. Estimator: ratio of ratios (treated post/pre over control post/pre); 95% percentile interval from a cluster bootstrap over matched sets. Secondary: placebo one year earlier; SIP sites (shr7-eqdc, 2024-2026) excluded. Expected discrimination before data (power.py, assumed rates): {\"n_treated\": 283, \"post_site_years\": 156.7}. Primary outcome: rear-end proxy count. Secondary (reported, not deciding): crashes citing 'Traffic Control Disregarded' (red-running proxy), predicted ratio 0.50-0.85.",
+   "alternatives": [
+    "Regression to the mean: new camera sites were chosen for high crash or violation counts; matching on pre-period crash counts and the two-year pre window reduce, but do not remove, this bias.",
+    "Concurrent treatments at the same intersections in 2025-26 (street improvement projects, LPIs, daylighting, signal retiming); the SIP-excluded check addresses part of this.",
+    "Traffic diverted from camera intersections to nearby streets; controls are at least 300 m from every camera, which limits but does not exclude spillover.",
+    "A warning or test period before the first ticket, or tickets dated after the violation, shifting the true activation month.",
+    "Changes in police crash reporting or geocoding in 2026 that differ between camera and control intersections.",
+    "More traffic or congestion at camera sites in 2026 raising all crash types; the all-crash ratio is reported to show this."
+   ],
+   "prior": 0.3,
+   "registrant": "street-safety agent (Claude Opus 5.5), for J. Vernon",
+   "registered_at": "2026-11-13T12:39:17-0500",
+   "sha256": "a0d11a850d2da5029a3ae583a3ce37a4ff36a4b4846df639fa569276879ace9e"
+  },
+  "registration_path": "claims/registered/rlc-expansion-rearend.json",
+  "registration_sha256": "a0d11a850d2da5029a3ae583a3ce37a4ff36a4b4846df639fa569276879ace9e",
+  "registration_hash_ok": true,
+  "registration_file_sha256": "43b4b3b99083d4aad69e16798e120c427c8175bfb5f5ca7bafeb389c1ffca73f",
+  "registration_commit": {
+   "commit": "3e747066e417950621ada4cb0610650dbb5e77b4",
+   "committed_at": "2026-11-13T12:39:17-05:00",
+   "subject": "register rlc-expansion-rearend and rlc-expansion-injuries (before any site-level crash data)"
+  },
+  "prereg_branch": {
+   "name": "prereg/rlc-expansion-rearend",
+   "sha": "3e747066e417950621ada4cb0610650dbb5e77b4",
+   "reachable": true,
+   "contains_registration_commit": true
+  },
+  "outcome": {
+   "id": "rlc-expansion-rearend",
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Rear-end proxy crashes within 50 m, camera intersections vs matched controls, post vs same months of 2024-25 (ratio of ratios)",
+    "estimate": 1.3266,
+    "lo": 1.061,
+    "hi": 1.6499,
+    "scale": "ratio of ratios",
+    "null": 1,
+    "n": 283
+   },
+   "graph_effect": {
+    "label": "Not in the graph. Meta-analyses: rear-end crashes +40% (Erke 2009, n.s.), +39% (Hoye 2013); NYC DOT reports rear-end injury crashes -60% at old sites",
+    "estimate": 1.39,
+    "lo": null,
+    "hi": null,
+    "scale": "ratio",
+    "null": 1
+   },
+   "sources": [
+    {
+     "kind": "nyc-open-data",
+     "dataset": "h9gi-nx95",
+     "name": "Motor Vehicle Collisions - Crashes",
+     "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+     "rows_updated_at": "2026-11-12T14:31:25Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "collision_id, crash_date, latitude, longitude, number_of_persons_injured, number_of_persons_killed, number_of_pedestrians_injured, number_of_pedestrians_killed, contributing_factor_vehicle_1, contributing_factor_vehicle_2, contributing_factor_vehicle_3, contributing_factor_vehicle_4, contributing_factor_vehicle_5",
+      "$where": "crash_date >= '2023-01-01T00:00:00' and crash_date < '2026-11-01T00:00:00' and latitude > 40.4 and longitude < -73.6",
+      "$order": "collision_id"
+     },
+     "fetched": "2026-11-13T12:50:58-0500",
+     "n_rows": 323685
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "bm4k-52h4",
+     "name": "Motor Vehicle Collisions - Vehicles",
+     "url": "https://data.cityofnewyork.us/d/bm4k-52h4",
+     "rows_updated_at": "2026-11-13T15:33:26Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "collision_id",
+      "$where": "crash_date >= '2023-01-01T00:00:00' and crash_date < '2026-11-01T00:00:00' and point_of_impact = 'Center Back End' and pre_crash in ('Going Straight Ahead', 'Stopped in Traffic', 'Slowing or Stopping', 'Starting in Traffic')",
+      "$order": "collision_id"
+     },
+     "fetched": "2026-11-13T12:51:14-0500",
+     "n_rows": 42673
+    },
+    {
+     "kind": "nyc-open-data",
+     "datasets": [
+      "8zf9-spf8",
+      "9mwx-gamw",
+      "m5vz-tzqv",
+      "pvqr-7yc4"
+     ],
+     "name": "Parking Violations Issued FY2024-FY2027, violation code 7",
+     "n_queries": 50,
+     "rows_updated_at": [
+      "2026-03-12T16:35:39Z",
+      "2026-03-12T22:48:17Z",
+      "2026-08-18T22:28:35Z",
+      "2026-10-15T14:03:32Z"
+     ],
+     "query_example": {
+      "$select": "street_name, intersecting_street, violation_county",
+      "$where": "violation_code='7' and issue_date = '2026-08-15T00:00:00'",
+      "$limit": 50000
+     },
+     "note": "full list of source records in data/derived/street_safety/rlc_sites.json"
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "xc4v-ntf4",
+     "name": "VZV Leading Pedestrian Interval Signals (control pool)"
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "shr7-eqdc",
+     "name": "VZV Street Improvement Projects (SIP) Intersections"
+    },
+    {
+     "kind": "other",
+     "name": "OpenStreetMap intersections via Overpass API, OSM base 2026-07-24",
+     "licence": "ODbL 1.0"
+    },
+    {
+     "kind": "sysgraph",
+     "file": "data/derived/street_safety/graph_check.json"
+    }
+   ],
+   "prediction_scored": "hit on the registered condition, weak as evidence of a camera effect. Ratio of ratios 1.327 (1.061-1.650); lower bound above 1.00 under the registered seed and under seeds 1-10 with 20,000 draws (lower bounds 1.067-1.073); rule 8 D = 6.45 (>= 4). Under rule 1 the verdict is confirmed. But the registered placebo year gives 1.250 (1.052-1.488), almost the same, so the design cannot separate a camera effect from the bias it shows without cameras (named alternative: regression to the mean). The estimate contradicts NYC DOT's report of fewer rear-end crashes; it does not show that the cameras caused an increase.",
+   "settle": "A comparison that does not select controls on pre-period counts (not-yet-treated camera sites, or empirical Bayes expected counts), exact activation dates, and a longer post period.",
+   "research_needed": [
+    {
+     "question": "Publish NYC red-light camera locations with coordinates, approach and activation (and warning-period) dates as open data.",
+     "data": "NYC DOT camera inventory",
+     "design": "site-level before-after with exact dates; removes ticket-based geocoding (117 of 585 approach names could not be located)",
+     "priority": "high"
+    },
+    {
+     "question": "Repeat the test in late 2027 with 18-21 months of post data and a comparison group that is not selected on pre-period counts (for example, later-activated cameras as not-yet-treated controls, or empirical Bayes expected counts).",
+     "data": "h9gi-nx95, bm4k-52h4, ticket data through 2027",
+     "design": "staggered difference in differences or empirical Bayes before-after (Hauer)",
+     "priority": "high"
+    },
+    {
+     "question": "Which intersections did DOT choose for the 2026 expansion and on what criteria (crash history, violation counts, equity)?",
+     "data": "DOT siting memo",
+     "design": "model the selection to correct for it",
+     "priority": "medium"
+    },
+    {
+     "question": "The graph has no association between red-light cameras and rear-end or right-angle crashes; add Erke 2009, Hoye 2013 and the Cochrane review. Three of its LPI and traffic-calming records turn percentage reductions into odds ratios or reverse the exposure.",
+     "data": "System Public Graph",
+     "design": "curation",
+     "priority": "medium"
+    }
+   ],
+   "figures": [
+    "figures/street_safety/rlc_ratio_of_ratios.png",
+    "figures/street_safety/rlc_feb_cohort_quarterly.png",
+    "figures/street_safety/rlc_sites_map.png"
+   ],
+   "notes": "Design: 283 intersections first ticketed January-August 2026, 3 matched LPI intersections each (pool 4590), 323683 geolocated crashes January 2023-October 2026. All outcomes, ratio of ratios (95% interval): rear-end proxy 1.327 (1.061-1.650); persons injured or killed 1.038 (0.907-1.192); pedestrians injured or killed 1.289 (1.029-1.637); 'Traffic Control Disregarded' crashes 1.111 (0.722-1.734); all crashes 1.181 (1.081-1.289). Registered placebo (same sites and windows one year earlier, before any camera): rear-end 1.250 (1.052-1.488); injured 1.263 (1.100-1.445); pedestrians 1.357 (1.031-1.749); red-running 0.866 (0.582-1.280); all crashes 1.296 (1.183-1.418). The placebo shows the design producing ratios of 1.25-1.36 where no camera existed. The likely reason is that controls were matched on their pre-window crash counts, so controls with unusually high counts were chosen and then fell (regression to the mean in the controls), while the camera sites, chosen by DOT on other grounds, did not fall in the same way. The design therefore carries a bias of roughly +25% in every outcome, and the registered estimates must be read against the placebo. Excluding the 3 sites near a 2024-26 street improvement project changes little: rear-end 1.301 (1.057-1.616), injured 1.027 (0.904-1.166). EXPLORATORY, not a test (rule 4): the ratio of the 2026 estimate to the placebo estimate, with a joint bootstrap, is rear-end 1.062 (0.797-1.395), persons injured 0.821 (0.672-0.993), pedestrians 0.95 (0.661-1.348), all crashes 0.911 (0.805-1.039). Read this way, the cameras show no clear rise in rear-end crashes and a fall of about 18% in persons injured, but the adjustment was chosen after the data were seen.",
+   "registration_sha256": "a0d11a850d2da5029a3ae583a3ce37a4ff36a4b4846df639fa569276879ace9e",
+   "decided_at": "2026-11-13T13:11:25-0500",
+   "stance": {
+    "value": 0.85,
+    "lo": 0.257,
+    "hi": 0.977,
+    "z": 2.51
+   },
+   "notes_referee": "Referee reproduced 1.327 (1.061 to 1.650). The placebo year gives 1.250 and itself meets support_if (lower bound 1.052); against the placebo D = -2.3. Controls matched on pre-window counts regress to the mean (0.78 of pre level vs 0.99 for the pool). Unmatched comparisons, chosen after the data, give 1.03 and 1.05. Rule 11 makes the verdict unsettled.",
+   "history": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "Rear-end proxy crashes within 50 m, camera intersections vs matched controls, post vs same months of 2024-25 (ratio of ratios)",
+      "estimate": 1.3266,
+      "lo": 1.061,
+      "hi": 1.6499,
+      "scale": "ratio of ratios",
+      "null": 1,
+      "n": 283
+     },
+     "stance": {
+      "value": 0.85,
+      "lo": 0.257,
+      "hi": 0.977,
+      "z": 2.51
+     },
+     "decided_at": "2026-11-13T13:11:25-0500",
+     "prediction_scored": "hit on the registered condition, weak as evidence of a camera effect. Ratio of ratios 1.327 (1.061-1.650); lower bound above 1.00 under the registered seed and under seeds 1-10 with 20,000 draws (lower bounds 1.067-1.073); rule 8 D = 6.45 (>= 4). Under rule 1 the verdict is confirmed. But the registered placebo year gives 1.250 (1.052-1.488), almost the same, so the design cannot separate a camera effect from the bias it shows without cameras (named alternative: regression to the mean). The estimate contradicts NYC DOT's report of fewer rear-end crashes; it does not show that the cameras caused an increase."
+    }
+   ],
+   "revision": {
+    "reason": "Round 7 referee; rule 11 (placebo meets support_if)",
+    "critique": "critique/rlc-expansion-rearend.md",
+    "revised_at": "2026-11-13T13:28:23-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   }
+  },
+  "outcome_path": "claims/outcomes/rlc-expansion-rearend.json",
+  "outcome_file_sha256": "8bad9cd1c986c6a28a8740abcbf0e0c1bdc00f0bc3a3ce20a6931fe3781dc3ab",
+  "revision_history": {
+   "in_file": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "Rear-end proxy crashes within 50 m, camera intersections vs matched controls, post vs same months of 2024-25 (ratio of ratios)",
+      "estimate": 1.3266,
+      "lo": 1.061,
+      "hi": 1.6499,
+      "scale": "ratio of ratios",
+      "null": 1,
+      "n": 283
+     },
+     "stance": {
+      "value": 0.85,
+      "lo": 0.257,
+      "hi": 0.977,
+      "z": 2.51
+     },
+     "decided_at": "2026-11-13T13:11:25-0500",
+     "prediction_scored": "hit on the registered condition, weak as evidence of a camera effect. Ratio of ratios 1.327 (1.061-1.650); lower bound above 1.00 under the registered seed and under seeds 1-10 with 20,000 draws (lower bounds 1.067-1.073); rule 8 D = 6.45 (>= 4). Under rule 1 the verdict is confirmed. But the registered placebo year gives 1.250 (1.052-1.488), almost the same, so the design cannot separate a camera effect from the bias it shows without cameras (named alternative: regression to the mean). The estimate contradicts NYC DOT's report of fewer rear-end crashes; it does not show that the cameras caused an increase."
+    }
+   ],
+   "last_revision": {
+    "reason": "Round 7 referee; rule 11 (placebo meets support_if)",
+    "critique": "critique/rlc-expansion-rearend.md",
+    "revised_at": "2026-11-13T13:28:23-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   },
+   "outcome_commits": [
+    {
+     "commit": "164b45c2ac904cfbef1736b13006497dcbe87431",
+     "committed_at": "2026-11-13T13:28:24-05:00",
+     "subject": "Red-light cameras: rule 11 on failed placebos; apply round 7 referee notes"
+    },
+    {
+     "commit": "c00c09cc0d34d4973ec6268e80257217e9141390",
+     "committed_at": "2026-11-13T13:12:23-05:00",
+     "subject": "outcomes rlc-expansion-rearend (confirmed under rule 1: 1.33, 1.06-1.65, but placebo year 1.25) and rlc-expansion-injuries (unsettled: 1.04, 0.91-1.19); docs/street_safety.md, figures"
+    }
+   ]
+  },
+  "referee_reports": [
+   {
+    "path": "critique/rlc-expansion-rearend.md",
+    "role": "referee report for this claim",
+    "sha256": "0291be105195ebffc9e8f229bca7c72fd8481186c42140ad6c716276a1b530c5"
+   },
+   {
+    "path": "critique/SUBMISSION_REVIEW.md",
+    "role": "mentions the claim id",
+    "sha256": "b1a54d76155f27cb9533ba6a34f11b6b3ea4695e12f4250bcdb226c572ee18e8"
+   },
+   {
+    "path": "critique/rlc-expansion-injuries.md",
+    "role": "mentions the claim id",
+    "sha256": "fbfd67e82aa55f90ce154fbecbefb7d2deb8b11f646aae2edf8d15ff7b31473f"
+   }
+  ]
+ },
+ "code": {
+  "repo_commit": "f9660de2d17f167d26e9def67a195ab42a954d21",
+  "repo_dirty_paths": 26,
+  "scripts": [
+   {
+    "path": "concord/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "concord/socrata.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "blob_at_HEAD": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "3cc8d26ec235c6633cae66a5ddcdf5173ea8252f72c722d28a52ff48f4d61f4b"
+   },
+   {
+    "path": "analyses/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "first_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/street_safety/rlc_did.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "f0a0cbbd15b17660cf143e0dfeb49a6d3ac995e4",
+    "blob_at_HEAD": "f0a0cbbd15b17660cf143e0dfeb49a6d3ac995e4",
+    "clean": true,
+    "last_commit": "793cc3217676b59d427f8790d2dbe5c9bae47242",
+    "first_commit": "793cc3217676b59d427f8790d2dbe5c9bae47242",
+    "sha256": "ba674572d5dd06b4a7c208c896fb614f884cff4cd99de93c84bad7f1644ebcb8"
+   },
+   {
+    "path": "analyses/street_safety/rlc_sites.py",
+    "found_by": "rerun recipe (upstream stage, not rerun)",
+    "exists": true,
+    "blob": "b9992f48825764eb1498fe93a59fed5eacf6781d",
+    "blob_at_HEAD": "b9992f48825764eb1498fe93a59fed5eacf6781d",
+    "clean": true,
+    "last_commit": "793cc3217676b59d427f8790d2dbe5c9bae47242",
+    "first_commit": "793cc3217676b59d427f8790d2dbe5c9bae47242",
+    "sha256": "84ab4a8234ebfca70faf79cb463ac6e4c93a28e09e8cd76d6c6185db1aa53e7f"
+   },
+   {
+    "path": "analyses/street_safety/graph_collect.py",
+    "found_by": "named in the registration or outcome",
+    "exists": true,
+    "blob": "9b17262e8843f36581b3b7c0d5052b47e76d11ac",
+    "blob_at_HEAD": "9b17262e8843f36581b3b7c0d5052b47e76d11ac",
+    "clean": true,
+    "last_commit": "793cc3217676b59d427f8790d2dbe5c9bae47242",
+    "first_commit": "793cc3217676b59d427f8790d2dbe5c9bae47242",
+    "sha256": "0dfa44a7be243c558c49076b89c78008f7bdb56c9c36c51263cd0d53c7edc1c4"
+   },
+   {
+    "path": "analyses/street_safety/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "73353f3cdb1b6ad0d3c4248c9fdcc748bdf22cd9",
+    "blob_at_HEAD": "73353f3cdb1b6ad0d3c4248c9fdcc748bdf22cd9",
+    "clean": true,
+    "last_commit": "793cc3217676b59d427f8790d2dbe5c9bae47242",
+    "first_commit": "793cc3217676b59d427f8790d2dbe5c9bae47242",
+    "sha256": "25ad5aafa691456e5c2df5e27a80fd450629d41fc8c6838c103af4d170adde57"
+   },
+   {
+    "path": "analyses/street_safety/write_outcomes.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "e90a5a4cff25f854aa9df3511dab1b5296642a65",
+    "blob_at_HEAD": "e90a5a4cff25f854aa9df3511dab1b5296642a65",
+    "clean": true,
+    "last_commit": "c00c09cc0d34d4973ec6268e80257217e9141390",
+    "first_commit": "c00c09cc0d34d4973ec6268e80257217e9141390",
+    "sha256": "83befbb0ff9ed84acca5d035559596b81fdfc907c1c50283fc4e3ea8bf78f5cb"
+   }
+  ],
+  "seeds": [
+   "20261113"
+  ],
+  "draw_counts": [
+   "2000 bootstrap draws"
+  ],
+  "commits_named_in_registration": [
+   "793cc32"
+  ],
+  "procedure_note": "Seeds and draw counts above are quoted from the registration text."
+ },
+ "data": [
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "h9gi-nx95",
+    "name": "Motor Vehicle Collisions - Crashes",
+    "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+    "rows_updated_at": "2026-11-12T14:31:25Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "collision_id, crash_date, latitude, longitude, number_of_persons_injured, number_of_persons_killed, number_of_pedestrians_injured, number_of_pedestrians_killed, contributing_factor_vehicle_1, contributing_factor_vehicle_2, contributing_factor_vehicle_3, contributing_factor_vehicle_4, contributing_factor_vehicle_5",
+     "$where": "crash_date >= '2023-01-01T00:00:00' and crash_date < '2026-11-01T00:00:00' and latitude > 40.4 and longitude < -73.6",
+     "$order": "collision_id"
+    },
+    "fetched": "2026-11-13T12:50:58-0500",
+    "n_rows": 323685
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "collision_id, crash_date, latitude, longitude, number_of_persons_injured, number_of_persons_killed, number_of_pedestrians_injured, number_of_pedestrians_killed, contributing_factor_vehicle_1, contributing_factor_vehicle_2, contributing_factor_vehicle_3, contributing_factor_vehicle_4, contributing_factor_vehicle_5",
+    "$where": "crash_date >= '2023-01-01T00:00:00' and crash_date < '2026-11-01T00:00:00' and latitude > 40.4 and longitude < -73.6",
+    "$order": "collision_id"
+   },
+   "fetched": "2026-11-13T12:50:58-0500",
+   "n_rows": 323685,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/h9gi-nx95-d84a3a3634c73147b31621a7.json",
+     "sha256": "fa64e70b35c4b7a836d6b8f34dfff33f228e208dddf044729e5df614f7729897",
+     "rows_sha256": "2446723f780f5d869f9b4ccb911848eb05dc9d049821080f1da18be67ff3278a",
+     "bytes": 19547018,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/h9gi-nx95-6689db4216bb39668a0d5e23.json",
+     "sha256": "fe9b3db8dbaf14276a476cd3769ed955d566f85a20f76d5ed10060158cb62c97",
+     "rows_sha256": "23ffd81982d9e325350e1d2466ee5186eb3f03f1929c9076e5e38f911508891b",
+     "bytes": 19547636,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/h9gi-nx95-8f57948c311e587e8fc34b1c.json",
+     "sha256": "169f8f9e2fbb53d7594b2ce138fbadb27dc7d110840a05b1f1b96264ff66de84",
+     "rows_sha256": "c61364344ee825107e6efe05b1a998ca722f1bf8be7e7c58dc3afc250b235b39",
+     "bytes": 19550007,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/h9gi-nx95-969416e69c86c5044fc85a1b.json",
+     "sha256": "dc5166671c97befa59375a2919099e35716dc21d119e1ac15f0abba5777756fa",
+     "rows_sha256": "94fa2675d678d4086f5f167e624dacc4b8577b4c2be90ee2f3f4e623a81730f3",
+     "bytes": 19553628,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/h9gi-nx95-a1ada602969f6cf789d991b2.json",
+     "sha256": "3f51c29ff5060b03a9e874c579d790f0506c18ea60a73ed968ef84299aa6c024",
+     "rows_sha256": "53e5982ce7f3f883e56b66121c8fad764c3144da0c9bede6399f5681e78b2ee4",
+     "bytes": 19565090,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/h9gi-nx95-60cab1a79bd7b49bf9f7b688.json",
+     "sha256": "6c3f21f7d73239973cf12fe2b59b3ab73615c359f62f03961fe50499b12ab234",
+     "rows_sha256": "5683e04cd92184d6f063ce23c7757ab56a37701b49235bacb214796053bf56b0",
+     "bytes": 19546288,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/h9gi-nx95-64e49fa4d92902d1aaf51cee.json",
+     "sha256": "fba41f098c5a2e7d00ffe6422906e6a55741ce870f00842348158a63e1830dde",
+     "rows_sha256": "7d5728738e13abb93335ef638764b6acda71383e163e4765844cbe51eae6dc0f",
+     "bytes": 9261922,
+     "copied": false
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "bm4k-52h4",
+    "name": "Motor Vehicle Collisions - Vehicles",
+    "url": "https://data.cityofnewyork.us/d/bm4k-52h4",
+    "rows_updated_at": "2026-11-13T15:33:26Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "collision_id",
+     "$where": "crash_date >= '2023-01-01T00:00:00' and crash_date < '2026-11-01T00:00:00' and point_of_impact = 'Center Back End' and pre_crash in ('Going Straight Ahead', 'Stopped in Traffic', 'Slowing or Stopping', 'Starting in Traffic')",
+     "$order": "collision_id"
+    },
+    "fetched": "2026-11-13T12:51:14-0500",
+    "n_rows": 42673
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "bm4k-52h4",
+   "rows_updated_at": "2026-11-13T15:33:26Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "collision_id",
+    "$where": "crash_date >= '2023-01-01T00:00:00' and crash_date < '2026-11-01T00:00:00' and point_of_impact = 'Center Back End' and pre_crash in ('Going Straight Ahead', 'Stopped in Traffic', 'Slowing or Stopping', 'Starting in Traffic')",
+    "$order": "collision_id"
+   },
+   "fetched": "2026-11-13T12:51:14-0500",
+   "n_rows": 42673,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/bm4k-52h4-d9aed0d6a7c5d127ad60851a.json",
+     "sha256": "33ab4b469070f0247944bdb85e485546d7c41559f6a7bd88bcc68fb7c1f22139",
+     "rows_sha256": "216f5f9953cad17fb786a618be478cc12ba410a17bd92fd5863375bd647e6251",
+     "bytes": 2304944,
+     "copied": false
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "datasets": [
+     "8zf9-spf8",
+     "9mwx-gamw",
+     "m5vz-tzqv",
+     "pvqr-7yc4"
+    ],
+    "name": "Parking Violations Issued FY2024-FY2027, violation code 7",
+    "n_queries": 50,
+    "rows_updated_at": [
+     "2026-03-12T16:35:39Z",
+     "2026-03-12T22:48:17Z",
+     "2026-08-18T22:28:35Z",
+     "2026-10-15T14:03:32Z"
+    ],
+    "query_example": {
+     "$select": "street_name, intersecting_street, violation_county",
+     "$where": "violation_code='7' and issue_date = '2026-08-15T00:00:00'",
+     "$limit": 50000
+    },
+    "note": "full list of source records in data/derived/street_safety/rlc_sites.json"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "xc4v-ntf4",
+    "name": "VZV Leading Pedestrian Interval Signals (control pool)"
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "xc4v-ntf4",
+   "rows_updated_at": null,
+   "soql": null,
+   "fetched": null,
+   "n_rows": null,
+   "cache_files": [],
+   "cache_files_note": "no cached response found in data/cache/socrata/ for this query"
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "shr7-eqdc",
+    "name": "VZV Street Improvement Projects (SIP) Intersections"
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "shr7-eqdc",
+   "rows_updated_at": null,
+   "soql": null,
+   "fetched": null,
+   "n_rows": null,
+   "cache_files": [],
+   "cache_files_note": "no cached response found in data/cache/socrata/ for this query"
+  },
+  {
+   "kind": "other",
+   "record": {
+    "kind": "other",
+    "name": "OpenStreetMap intersections via Overpass API, OSM base 2026-07-24",
+    "licence": "ODbL 1.0"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "sysgraph",
+   "record": {
+    "kind": "sysgraph",
+    "file": "data/derived/street_safety/graph_check.json"
+   },
+   "type": "sysgraph",
+   "release": "July 1, 2026 release (as named in the challenge brief; the API returns no version id)",
+   "api": "v1.0",
+   "dataset_version": null,
+   "key": "not included; supply your own in ~/.config/system/token",
+   "derived_files": [
+    {
+     "path": "data/derived/street_safety/graph_check.json",
+     "sha256": "2e05fdbe0e1bb70732e0047ce2d86ea84fc8c6eca6bfd3862f612e2d4a65fe10",
+     "bytes": 4491,
+     "copied": false
+    }
+   ],
+   "cached_requests": []
+  }
+ ],
+ "environment": {
+  "python": "3.12.10 (main, Apr  9 2025, 03:49:38) [Clang 20.1.0 ]",
+  "venv": "~/.venvs/nyc-concordance",
+  "uv_pip_freeze": [
+   "affine==3.0.1",
+   "annotated-types==0.8.0",
+   "attrs==26.1.0",
+   "certifi==2026.10.23",
+   "charset-normalizer==3.5.2",
+   "click==8.5.1",
+   "contourpy==1.4.0",
+   "cycler==0.12.1",
+   "duckdb==2.0.0",
+   "fonttools==4.68.0",
+   "formulaic==1.2.2",
+   "geopandas==1.2.0",
+   "idna==3.20",
+   "interface-meta==2.0.1",
+   "jsonschema==4.26.0",
+   "jsonschema-specifications==2025.9.1",
+   "kiwisolver==1.5.1",
+   "matplotlib==3.11.2",
+   "mercantile==1.2.1",
+   "narwhals==2.28.0",
+   "numpy==2.5.4",
+   "packaging==26.3",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pillow==13.0.0",
+   "planetary-computer==1.0.0",
+   "pyarrow==26.0.1",
+   "pydantic==2.14.3",
+   "pydantic-core==2.50.4",
+   "pyogrio==0.13.0",
+   "pyparsing==3.3.3",
+   "pyproj==3.8.0",
+   "pystac==1.16.0",
+   "pystac-client==0.9.1",
+   "pystac-core==1.16.0",
+   "pystac-ext-classification==2.0.2",
+   "pystac-ext-datacube==2.2.2",
+   "pystac-ext-eo==1.1.2",
+   "pystac-ext-file==2.1.2",
+   "pystac-ext-grid==1.1.2",
+   "pystac-ext-item-assets==1.0.2",
+   "pystac-ext-label==1.0.3",
+   "pystac-ext-mgrs==1.0.2",
+   "pystac-ext-mlm==1.4.2",
+   "pystac-ext-pointcloud==1.0.2",
+   "pystac-ext-projection==2.0.2",
+   "pystac-ext-raster==1.1.2",
+   "pystac-ext-render==2.0.1",
+   "pystac-ext-sar==1.0.2",
+   "pystac-ext-sat==1.0.2",
+   "pystac-ext-scientific==1.0.2",
+   "pystac-ext-storage==2.0.2",
+   "pystac-ext-table==1.2.2",
+   "pystac-ext-timestamps==1.1.2",
+   "pystac-ext-version==1.2.2",
+   "pystac-ext-view==1.0.2",
+   "pystac-ext-xarray-assets==1.0.2",
+   "python-dateutil==4.0.0",
+   "python-dotenv==1.2.4",
+   "pytz==2026.6",
+   "rasterio==1.5.2",
+   "referencing==0.37.0",
+   "requests==2.34.2",
+   "rpds-py==2026.9.1",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0",
+   "typing-extensions==4.16.0",
+   "typing-inspection==0.4.5",
+   "tzdata==2026.6",
+   "urllib3==2.8.0",
+   "wrapt==2.5.2"
+  ],
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "os": "Darwin 27.2.0",
+  "mac_ver": "27.2.1",
+  "requirements": [
+   "numpy==2.5.4",
+   "requests==2.34.2",
+   "scipy==1.18.1"
+  ]
+ },
+ "inputs": {
+  "cap_bytes": 15728640,
+  "copied_bytes": 4090868,
+  "files": [
+   {
+    "path": "prepared/street_safety/crashes_near_sites.json.gzip",
+    "bytes": 2685142,
+    "sha256": "ffe8470047fe4f50b3ec3d4d99813296df5b3cb2fd964885854f9508bc3f3dc6",
+    "role": "prepared input, read by the rerun",
+    "copied": true,
+    "required_for_rerun": true,
+    "prepared_from": [
+     {
+      "source": "data/cache/socrata/h9gi-nx95-d84a3a3634c73147b31621a7.json",
+      "bytes": 19547018,
+      "sha256": "fa64e70b35c4b7a836d6b8f34dfff33f228e208dddf044729e5df614f7729897"
+     },
+     {
+      "source": "data/cache/socrata/h9gi-nx95-6689db4216bb39668a0d5e23.json",
+      "bytes": 19547636,
+      "sha256": "fe9b3db8dbaf14276a476cd3769ed955d566f85a20f76d5ed10060158cb62c97"
+     },
+     {
+      "source": "data/cache/socrata/h9gi-nx95-8f57948c311e587e8fc34b1c.json",
+      "bytes": 19550007,
+      "sha256": "169f8f9e2fbb53d7594b2ce138fbadb27dc7d110840a05b1f1b96264ff66de84"
+     },
+     {
+      "source": "data/cache/socrata/h9gi-nx95-969416e69c86c5044fc85a1b.json",
+      "bytes": 19553628,
+      "sha256": "dc5166671c97befa59375a2919099e35716dc21d119e1ac15f0abba5777756fa"
+     },
+     {
+      "source": "data/cache/socrata/h9gi-nx95-a1ada602969f6cf789d991b2.json",
+      "bytes": 19565090,
+      "sha256": "3f51c29ff5060b03a9e874c579d790f0506c18ea60a73ed968ef84299aa6c024"
+     },
+     {
+      "source": "data/cache/socrata/h9gi-nx95-60cab1a79bd7b49bf9f7b688.json",
+      "bytes": 19546288,
+      "sha256": "6c3f21f7d73239973cf12fe2b59b3ab73615c359f62f03961fe50499b12ab234"
+     },
+     {
+      "source": "data/cache/socrata/h9gi-nx95-64e49fa4d92902d1aaf51cee.json",
+      "bytes": 9261922,
+      "sha256": "fba41f098c5a2e7d00ffe6422906e6a55741ce870f00842348158a63e1830dde"
+     },
+     {
+      "source": "data/cache/socrata/bm4k-52h4-d9aed0d6a7c5d127ad60851a.json",
+      "bytes": 2304944,
+      "sha256": "33ab4b469070f0247944bdb85e485546d7c41559f6a7bd88bcc68fb7c1f22139"
+     },
+     {
+      "source": "data/derived/street_safety/rlc_sites_geo.json",
+      "bytes": 292990,
+      "sha256": "c5dfe14c6f0cd631e390326a9f1ab2437355552efa292a9491e5fb885a508c92"
+     },
+     {
+      "source": "data/derived/street_safety/lpi_gazetteer.json",
+      "bytes": 1112736,
+      "sha256": "4ab2c425ded4cd77094c0e708550d0e5dcd2a104d8523d9dcc3f8bc6682e170e"
+     }
+    ],
+    "prepared_by": "code/prepare.py",
+    "what": "the crash records (h9gi-nx95, with the rear-end flag from bm4k-52h4) within 50.5 m of a camera intersection or a control-pool intersection, as returned by rlc_did.fetch_crashes(), gzipped"
+   },
+   {
+    "path": "data/derived/street_safety/rlc_sites_geo.json",
+    "bytes": 292990,
+    "sha256": "c5dfe14c6f0cd631e390326a9f1ab2437355552efa292a9491e5fb885a508c92",
+    "role": "derived table read by the rerun",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/street_safety/lpi_gazetteer.json",
+    "bytes": 1112736,
+    "sha256": "4ab2c425ded4cd77094c0e708550d0e5dcd2a104d8523d9dcc3f8bc6682e170e",
+    "role": "derived table read by the rerun",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/socrata/h9gi-nx95-d84a3a3634c73147b31621a7.json",
+    "bytes": 19547018,
+    "sha256": "fa64e70b35c4b7a836d6b8f34dfff33f228e208dddf044729e5df614f7729897",
+    "role": "cached Socrata response, h9gi-nx95",
+    "rows_sha256": "2446723f780f5d869f9b4ccb911848eb05dc9d049821080f1da18be67ff3278a",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/h9gi-nx95-6689db4216bb39668a0d5e23.json",
+    "bytes": 19547636,
+    "sha256": "fe9b3db8dbaf14276a476cd3769ed955d566f85a20f76d5ed10060158cb62c97",
+    "role": "cached Socrata response, h9gi-nx95",
+    "rows_sha256": "23ffd81982d9e325350e1d2466ee5186eb3f03f1929c9076e5e38f911508891b",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/h9gi-nx95-8f57948c311e587e8fc34b1c.json",
+    "bytes": 19550007,
+    "sha256": "169f8f9e2fbb53d7594b2ce138fbadb27dc7d110840a05b1f1b96264ff66de84",
+    "role": "cached Socrata response, h9gi-nx95",
+    "rows_sha256": "c61364344ee825107e6efe05b1a998ca722f1bf8be7e7c58dc3afc250b235b39",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/h9gi-nx95-969416e69c86c5044fc85a1b.json",
+    "bytes": 19553628,
+    "sha256": "dc5166671c97befa59375a2919099e35716dc21d119e1ac15f0abba5777756fa",
+    "role": "cached Socrata response, h9gi-nx95",
+    "rows_sha256": "94fa2675d678d4086f5f167e624dacc4b8577b4c2be90ee2f3f4e623a81730f3",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/h9gi-nx95-a1ada602969f6cf789d991b2.json",
+    "bytes": 19565090,
+    "sha256": "3f51c29ff5060b03a9e874c579d790f0506c18ea60a73ed968ef84299aa6c024",
+    "role": "cached Socrata response, h9gi-nx95",
+    "rows_sha256": "53e5982ce7f3f883e56b66121c8fad764c3144da0c9bede6399f5681e78b2ee4",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/h9gi-nx95-60cab1a79bd7b49bf9f7b688.json",
+    "bytes": 19546288,
+    "sha256": "6c3f21f7d73239973cf12fe2b59b3ab73615c359f62f03961fe50499b12ab234",
+    "role": "cached Socrata response, h9gi-nx95",
+    "rows_sha256": "5683e04cd92184d6f063ce23c7757ab56a37701b49235bacb214796053bf56b0",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/h9gi-nx95-64e49fa4d92902d1aaf51cee.json",
+    "bytes": 9261922,
+    "sha256": "fba41f098c5a2e7d00ffe6422906e6a55741ce870f00842348158a63e1830dde",
+    "role": "cached Socrata response, h9gi-nx95",
+    "rows_sha256": "7d5728738e13abb93335ef638764b6acda71383e163e4765844cbe51eae6dc0f",
+    "n_rows": 23685,
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/bm4k-52h4-d9aed0d6a7c5d127ad60851a.json",
+    "bytes": 2304944,
+    "sha256": "33ab4b469070f0247944bdb85e485546d7c41559f6a7bd88bcc68fb7c1f22139",
+    "role": "cached Socrata response, bm4k-52h4",
+    "rows_sha256": "216f5f9953cad17fb786a618be478cc12ba410a17bd92fd5863375bd647e6251",
+    "n_rows": 42673,
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/derived/street_safety/graph_check.json",
+    "bytes": 4491,
+    "sha256": "2e05fdbe0e1bb70732e0047ce2d86ea84fc8c6eca6bfd3862f612e2d4a65fe10",
+    "role": "graph evidence (file)",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   }
+  ],
+  "traced": true
+ },
+ "deciding": {
+  "available": true,
+  "what": "city_effect: ratio of ratios for rear-end proxy crashes within 50 m, 283 camera intersections against matched controls, cluster bootstrap 95% interval (B=2000, seed 20261113)",
+  "recorded": {
+   "estimate": 1.3266,
+   "lo": 1.061,
+   "hi": 1.6499,
+   "n": 283,
+   "placebo_estimate": 1.2496,
+   "placebo_lo": 1.0519,
+   "placebo_hi": 1.488
+  },
+  "tolerance": {
+   "estimate": 0.0001,
+   "lo": 0.0001,
+   "hi": 0.0001,
+   "n": 0,
+   "placebo_estimate": 0.0001,
+   "placebo_lo": 0.0001,
+   "placebo_hi": 0.0001
+  },
+  "decides": "support_if: 95% interval above 1.00 and rule 8 D >= 4 against 1.33",
+  "recorded_from": {
+   "city_effect": "claims/outcomes/rlc-expansion-rearend.json",
+   "placebo_estimate": "outcome notes and data/derived/street_safety/rlc_did_results.json (placebo_one_year_earlier.rear_end.rr)",
+   "placebo_lo": "rlc_did_results.json placebo_one_year_earlier.rear_end.lo",
+   "placebo_hi": "rlc_did_results.json placebo_one_year_earlier.rear_end.hi"
+  },
+  "wrapper": "code/rerun.py",
+  "wrapper_note": "Smallest wrapper: rlc_did.py needs 120.7 MB of crash pages and writes into the repository. code/prepare.py keeps the crashes within 50.5 m of a camera or control intersection, the only ones build() counts, and code/rerun.py calls load_sites(), control_pool(), crash_arrays(), build(), placebo(), rr_from() and boot() unchanged (B=2000, seed 20261113) for the rear-end outcome. rlc_did.py rounds the ratio and the interval to four decimals, as the outcome records them. The placebo is the registered one (the same sites and windows one year earlier, before any camera).",
+  "refetch_rerun": false,
+  "placebo": {
+   "placebo_estimate": {
+    "value": 1.2496,
+    "tol": 0.0001,
+    "registered": true,
+    "from": "outcome notes and data/derived/street_safety/rlc_did_results.json (placebo_one_year_earlier.rear_end.rr)",
+    "what": "registered placebo: the same sites and windows one year earlier, before any camera"
+   },
+   "placebo_lo": {
+    "value": 1.0519,
+    "tol": 0.0001,
+    "registered": true,
+    "from": "rlc_did_results.json placebo_one_year_earlier.rear_end.lo",
+    "what": "its lower 95% limit"
+   },
+   "placebo_hi": {
+    "value": 1.488,
+    "tol": 0.0001,
+    "registered": true,
+    "from": "rlc_did_results.json placebo_one_year_earlier.rear_end.hi",
+    "what": "its upper 95% limit"
+   }
+  },
+  "trace_run_in_repository": {
+   "printed": {
+    "estimate": 1.3266,
+    "lo": 1.061,
+    "hi": 1.6499,
+    "n": 283,
+    "placebo_estimate": 1.2496,
+    "placebo_lo": 1.0519,
+    "placebo_hi": 1.488,
+    "placebo_n": 283
+   },
+   "files_read": 2
+  }
+ },
+ "not_rebuilt": []
+}

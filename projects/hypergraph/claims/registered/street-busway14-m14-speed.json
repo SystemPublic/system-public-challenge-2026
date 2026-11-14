@@ -1,0 +1,61 @@
+{
+ "id": "street-busway14-m14-speed",
+ "kind": "confirmation",
+ "statement": "On weekdays in October 2019 to February 2020 the M14A and M14D Select Bus Service ran at least 4% faster, relative to the other Manhattan bus routes, than in July to September 2019, when the SBS ran without the busway.",
+ "edge": {
+  "cause": "busway (14th Street closed to through cars)",
+  "effect": "M14 route-average bus speed"
+ },
+ "graph_evidence": [
+  {
+   "concepts": "bus lane, bus rapid transit, transit priority",
+   "n_findings": 2,
+   "direction": "none on speed",
+   "summary": "Variable search 'bus lane' finds one variable (bus stops on a bus-only lane and pedestrian collisions, Lima, PMID 24357516); 'bus' finds BRT station density and walking (PMID 24096625). No finding on bus speed or travel time (data/derived/street_space/graph_evidence.json).",
+   "pubmed_ids": [
+    24357516,
+    24096625
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "NYC DOT / Sam Schwartz Engineering, 14th Street Transit & Truck Priority Pilot preliminary report (fall 2019), as summarised by the Mayor's Office and Streetsblog, 18 December 2019.",
+   "doi": null,
+   "finding": "Bus travel times on the 14th Street corridor 22-47% shorter than in May/October 2018 (before the SBS); M14A/D weekday ridership +24%, weekend +30%."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "DiD between +4% and +20%, central +10%. The corridor from 3rd to 9th Avenue is roughly 40% of each route's length and more of its running time; DOT's 22-47% corridor gain includes the SBS of July 2019, which the summer baseline already contains.",
+  "support_if": "DiD >= +4% AND lower 95% bound above 0.",
+  "refute_if": "Upper 95% bound below +4%."
+ },
+ "discrimination": {
+  "rule": 8,
+  "se_log_design": 0.0185,
+  "predicted_log": 0.0953,
+  "D_if_estimate_at_prediction": 26.4,
+  "note": "se from 119 placebo DiDs (each other Manhattan route as if treated, seasons 2021-2023)."
+ },
+ "plan": "analyses/street_space/bus.py (committed before this registration): data.ny.gov cudb-vcni, weekday rows, both periods, speed = total mileage / total operating time; M14A+ and M14D+ pooled; controls = other Manhattan routes present every month; DiD of log speed Oct 2019-Feb 2020 against Jul-Sep 2019; 95% interval DiD +/- 1.96 x design sd. No resampling. Rules 1, 2 and 10 (conditions on bounds).",
+ "alternatives": [
+  "Seasonal differences between the M14 and other routes (the placebo spread covers typical ones).",
+  "SBS learning effects (riders using off-board fare more over time), which would continue after July 2019 without the busway.",
+  "Bus lane camera enforcement on 14th Street, which began with the busway and is part of the treatment.",
+  "L train slowdown (from 27 April 2019), present in both windows; it mainly raised night and weekend M14 loads."
+ ],
+ "data_seen_before_registration": [
+  "cudb-vcni: route ids, months and dimensions for Manhattan (no speeds of any 2019-20 month); speeds of all non-M14 Manhattan routes, July 2021 to February 2024 (design).",
+  "No M14 speed has been queried or seen. From the press: DOT's December 2019 summary (22-47%)."
+ ],
+ "design_file": "data/derived/street_space/bus_design.json",
+ "scripts": [
+  "analyses/street_space/bus.py"
+ ],
+ "prior": 0.75,
+ "registrant": "Claude (agent, street-space task), 13 November 2026",
+ "script_commit": "073d33f",
+ "registered_at": "2026-11-13T13:12:22-0500",
+ "sha256": "3a9ed05a54f81f1f92c8303f8aacbc11f9db8818bd5cd3d41c7e9ea99af36b37"
+}

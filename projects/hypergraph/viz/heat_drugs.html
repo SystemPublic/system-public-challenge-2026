@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heat and Medicines</title>
+<link rel="stylesheet" href="style.css">
+<script src="data/heat_drugs.js"></script>
+<style>
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px 40px; }
+.lead { color: var(--ink-2); max-width: 86ch; }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 18px; align-items: start; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+.mapbox { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 8px; }
+svg#map { width: 100%; height: auto; display: block; }
+svg#map text { fill: var(--ink); font-family: var(--font); }
+svg#map .lbl { font-size: 15px; cursor: pointer; }
+svg#map .lbl.cond { font-weight: 600; }
+svg#map .sub { font-size: 11.5px; fill: var(--muted); }
+svg#map .spoke { fill: none; }
+svg#map .node { cursor: pointer; }
+svg#map .node.sel .lbl { fill: var(--accent); text-decoration: underline; }
+svg#map .centre { fill: var(--c-contested); }
+svg#map .centre-t { fill: #fff; font-weight: 600; font-size: 17px; }
+.panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; font-size: 13px; }
+.panel h3 { margin: 0 0 4px; font-size: 16px; }
+.panel .mech { color: var(--muted); margin: 0 0 8px; }
+.panel .fd { border-top: 1px solid var(--rule); padding: 7px 0; }
+.panel .fd b { font-weight: 600; }
+.tag { display: inline-block; font-size: 11px; border-radius: 9px; padding: 0 6px; margin-left: 4px; border: 1px solid var(--rule); }
+.tag.correct { background: var(--c-confirmed); color: #fff; border-color: transparent; }
+.tag.partial { background: var(--band); }
+.tag.absent { border-style: dashed; color: var(--ink-2); }
+.legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 6px 18px; font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+.legend svg { vertical-align: middle; margin-right: 6px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin: 12px 0; }
+.fact { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; }
+.fact b { display: block; font-size: 22px; font-weight: 600; }
+.fact span { font-size: 12px; color: var(--muted); }
+h2 { font-size: 18px; margin: 26px 0 6px; }
+table.w { border-collapse: collapse; font-size: 13px; width: 100%; }
+table.w td, table.w th { border-bottom: 1px solid var(--rule); padding: 5px 6px; text-align: left; vertical-align: top; }
+.tablebox { overflow-x: auto; }
+body.export header.site nav, body.export .panel, body.export .after, body.export .facts { display: none; }
+body.export .grid { grid-template-columns: 1fr; }
+body.export .wrap { max-width: 1040px; }
+</style>
+</head>
+<body>
+<header class="site">
+  <h1>Heat, medicines and chronic illness: what the graph holds and what it lacks</h1>
+  <nav class="pages"><a href="hypergraph.html">Edges as objects</a><a href="heat_drugs.html" aria-current="page">Heat and medicines</a><a href="comics.html">Strips</a><a href="index.html">Evidence dashboard</a><a href="evidence.html">Test cards and provenance</a><a href="explorer.html">Graph explorer</a><a href="explore.html">Neighbourhood explorer</a><a href="levers.html">City levers</a><a href="simulate.html">Toll simulator</a></nav>
+</header>
+<div class="wrap">
+<p class="lead">Ambient heat is at the centre. Each spoke leads to a drug class (left) or a chronic condition (right). Each mark on a spoke is one published finding, read in its PubMed abstract: its shape is the study design, its size the effect (the log of the ratio), its colour the direction. A solid spoke means the System Public Graph holds at least one record of a finding on that link (correct, or with its numbers right and a qualifier lost); a dashed spoke means the studies exist but the graph search did not find them; a dotted grey spoke means no study was found in either. Filled marks are in the graph; hollow marks are not. Click a label for the findings. Method and sources: <a href="../docs/heat_drugs.md">docs/heat_drugs.md</a>.</p>
+<div class="facts" id="facts"></div>
+<div class="grid">
+  <div class="mapbox"><svg id="map" viewBox="0 0 1000 760" role="img" aria-label="Radial map of heat linked to drug classes and chronic conditions"></svg>
+    <div class="legend" id="legend"></div></div>
+  <div class="panel" id="panel"><p>Click a drug class or condition.</p></div>
+</div>
+<div class="after">
+<h2>Graph records judged wrong after reading the abstract</h2>
+<p class="lead">These records were found by the search and are not drawn on the map.</p>
+<div class="tablebox"><table class="w" id="wrong"><thead><tr><th>Study</th><th>Graph record</th><th>What the abstract says</th></tr></thead><tbody></tbody></table></div>
+</div>
+</div>
+<script>
+(function () {
+  var D = window.HEAT_DRUGS;
+  var NS = "http://www.w3.org/2000/svg";
+  var svg = document.getElementById("map");
+  if (/export/.test(location.search)) document.body.classList.add("export");
+  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  var css = getComputedStyle(document.documentElement);
+  function tok(n) { return css.getPropertyValue(n).trim(); }
+  var COL = { "+": tok("--c-contested"), "-": tok("--c-confirmed"), "0": tok("--c-unsettled-edge") };
+  var cx = 520, cy = 380, R0 = 62, R1 = 300;
+  var drugs = D.nodes.filter(function (n) { return n.kind === "drug"; });
+  var conds = D.nodes.filter(function (n) { return n.kind === "condition"; });
+  // angles: drugs on the left arc, conditions on the right arc (degrees, 0 = right, clockwise)
+  function arc(list, a0, a1) { list.forEach(function (n, i) { n.ang = (a0 + (a1 - a0) * (list.length === 1 ? 0.5 : i / (list.length - 1))) * Math.PI / 180; }); }
+  arc(drugs, 128, 232); arc(conds, -48, 48);
+  var byNode = {}; D.findings.forEach(function (f) { (byNode[f.node] = byNode[f.node] || []).push(f); });
+  function size(f) { if (f.est == null || f.est <= 0) return 5; return 4 + 11 * Math.min(Math.abs(Math.log(f.est)), 1.4) / 1.4; }
+  function shape(g, design, x, y, r, fill, hollow) {
+    var a = { fill: hollow ? tok("--panel") : fill, stroke: fill, "stroke-width": hollow ? 2 : 1 };
+    var d = design;
+    if (/case-control/.test(d)) { a.cx = x; a.cy = y; a.r = r; return el("circle", a, g); }
+    if (/case-crossover|case series|sequence/.test(d)) { a.points = [x, y - r * 1.15, x + r * 1.1, y + r * 0.8, x - r * 1.1, y + r * 0.8].join(" "); return el("polygon", a, g); }
+    if (/time series/.test(d)) { a.points = [x, y - r * 1.2, x + r * 1.2, y, x, y + r * 1.2, x - r * 1.2, y].join(" "); return el("polygon", a, g); }
+    if (/meta/.test(d)) { var s = []; for (var i = 0; i < 10; i++) { var rr = i % 2 ? r * 0.5 : r * 1.25, t = -Math.PI / 2 + i * Math.PI / 5; s.push(x + rr * Math.cos(t), y + rr * Math.sin(t)); } a.points = s.join(" "); return el("polygon", a, g); }
+    a.x = x - r; a.y = y - r; a.width = 2 * r; a.height = 2 * r; return el("rect", a, g); // cohort, cross-sectional
+  }
+  function majority(fs) { var c = { "+": 0, "-": 0, "0": 0 }; fs.forEach(function (f) { c[f.dir]++; }); return c["+"] >= c["0"] && c["+"] >= c["-"] ? "+" : c["-"] > c["0"] ? "-" : "0"; }
+  var sel = null, gNodes = {};
+  D.nodes.forEach(function (n) {
+    var fs = byNode[n.id] || [];
+    var inGraph = fs.some(function (f) { return f.graph !== "absent"; });
+    var g = el("g", { "class": "node", tabindex: 0 }, svg);
+    var ca = Math.cos(n.ang), sa = Math.sin(n.ang);
+    var x0 = cx + R0 * ca, y0 = cy + R0 * sa, x1 = cx + R1 * ca, y1 = cy + R1 * sa;
+    var dir = fs.length ? majority(fs) : "0";
+    var w = fs.length ? 1.5 + Math.min(fs.length, 8) * 0.6 : 1.2;
+    var sp = { "class": "spoke", x1: x0, y1: y0, x2: x1, y2: y1, stroke: fs.length ? COL[dir] : tok("--c-unknown"), "stroke-width": w, "stroke-linecap": "round" };
+    if (!fs.length) sp["stroke-dasharray"] = "1.5 6"; else if (!inGraph) sp["stroke-dasharray"] = "9 7";
+    el("line", sp, g);
+    var k = fs.length;
+    fs.forEach(function (f, i) {
+      var t = (i + 1) / (k + 1), px = x0 + (x1 - x0) * t, py = y0 + (y1 - y0) * t;
+      var off = (i % 2 ? 1 : -1) * 9; px += -sa * off; py += ca * off;
+      var m = shape(g, f.design, px, py, size(f), COL[f.dir], f.graph === "absent");
+      var tt = el("title", {}, m); tt.textContent = f.cite + ": " + f.measure + " " + (f.est == null ? "(no number)" : f.est) + (f.lo != null ? " (" + f.lo + " to " + f.hi + ")" : "") + ", " + f.design + "; graph: " + f.graph;
+    });
+    var lx = cx + (R1 + 14) * ca, ly = cy + (R1 + 14) * sa;
+    var anchor = ca < -0.15 ? "end" : ca > 0.15 ? "start" : "middle";
+    var lb = el("text", { x: lx, y: ly + 4, "text-anchor": anchor, "class": "lbl" + (n.kind === "condition" ? " cond" : "") }, g);
+    lb.textContent = n.label;
+    var nG = fs.filter(function (f) { return f.graph !== "absent"; }).length;
+    var st = el("text", { x: lx, y: ly + 19, "text-anchor": anchor, "class": "sub" }, g);
+    st.textContent = fs.length ? (nG + " of " + fs.length + " in graph") : "no study found";
+    g.addEventListener("click", function () { show(n); });
+    g.addEventListener("keydown", function (e) { if (e.key === "Enter") show(n); });
+    gNodes[n.id] = g;
+  });
+  el("circle", { cx: cx, cy: cy, r: R0, "class": "centre" }, svg);
+  var c1 = el("text", { x: cx, y: cy - 2, "text-anchor": "middle", "class": "centre-t" }, svg); c1.textContent = "Ambient";
+  var c2 = el("text", { x: cx, y: cy + 18, "text-anchor": "middle", "class": "centre-t" }, svg); c2.textContent = "heat";
+  var h1 = el("text", { x: 40, y: 34, "class": "lbl cond" }, svg); h1.textContent = "Drug classes";
+  var h2 = el("text", { x: 960, y: 34, "text-anchor": "end", "class": "lbl cond" }, svg); h2.textContent = "Chronic conditions";
+  var foot = el("text", { x: 500, y: 748, "text-anchor": "middle", "class": "sub" }, svg);
+  foot.textContent = "System Public Graph API v1.0, searched 13 Nov 2026; " + D.tally.read + " records read against PubMed: " + D.tally.correct + " correct, " + D.tally.partial + " with a lost qualifier, " + D.tally.wrong + " wrong.";
+
+  function show(n) {
+    if (sel) gNodes[sel].classList.remove("sel"); sel = n.id; gNodes[n.id].classList.add("sel");
+    var p = document.getElementById("panel"), fs = byNode[n.id] || [];
+    var h = "<h3>" + n.label + "</h3><p class='mech'>" + n.mechanism + "</p>";
+    if (!fs.length) h += "<p>" + (D.not_found[n.id] || "No study found.") + "</p>";
+    fs.forEach(function (f) {
+      var est = f.est == null ? "no number in the abstract" : f.measure + " " + f.est + (f.lo != null ? " (" + f.lo + " to " + f.hi + ")" : "");
+      h += "<div class='fd'><b>" + f.cite + "</b><span class='tag " + f.graph + "'>" + (f.graph === "absent" ? "not in graph" : f.graph === "partial" ? "in graph, qualifier lost" : "in graph, correct") + "</span><br>" +
+        est + ". " + f.design + "; " + f.outcome + "." + (f.note ? " " + f.note : "") +
+        " <a href='https://pubmed.ncbi.nlm.nih.gov/" + f.pmid + "/'>PubMed " + f.pmid + "</a></div>";
+    });
+    p.innerHTML = h;
+  }
+  // legend
+  var L = document.getElementById("legend");
+  function item(draw, text) { var d = document.createElement("div"); var s = document.createElementNS(NS, "svg"); s.setAttribute("width", 34); s.setAttribute("height", 20); draw(s); d.appendChild(s); d.appendChild(document.createTextNode(text)); L.appendChild(d); }
+  item(function (s) { el("line", { x1: 2, y1: 10, x2: 32, y2: 10, stroke: COL["+"], "stroke-width": 3 }, s); }, "Graph holds a record of it");
+  item(function (s) { el("line", { x1: 2, y1: 10, x2: 32, y2: 10, stroke: COL["+"], "stroke-width": 3, "stroke-dasharray": "8 5" }, s); }, "Literature only: the graph lacks it");
+  item(function (s) { el("line", { x1: 2, y1: 10, x2: 32, y2: 10, stroke: tok("--c-unknown"), "stroke-width": 2, "stroke-dasharray": "1.5 5" }, s); }, "No study found");
+  item(function (s) { el("circle", { cx: 9, cy: 10, r: 6, fill: COL["+"] }, s); el("circle", { cx: 25, cy: 10, r: 6, fill: COL["0"] }, s); }, "More harm in heat / no clear difference");
+  item(function (s) { el("circle", { cx: 10, cy: 10, r: 6, fill: tok("--panel"), stroke: COL["+"], "stroke-width": 2 }, s); }, "Hollow: finding not in the graph");
+  item(function (s) { shape(s, "case-control", 9, 10, 6, COL["0"]); shape(s, "cohort", 26, 10, 5, COL["0"]); }, "Case-control / cohort or survey");
+  item(function (s) { shape(s, "case-crossover", 9, 11, 6, COL["0"]); shape(s, "time series", 26, 10, 6, COL["0"]); }, "Case-crossover or case series / time series");
+  item(function (s) { shape(s, "meta", 10, 10, 7, COL["0"]); }, "Meta-analysis. Mark size: |ln ratio|, capped at 1.4");
+  // facts
+  var t = D.tally, fx = document.getElementById("facts");
+  [[t.read, "graph records read against PubMed"], [t.correct, "correct"], [t.partial, "numbers right, qualifier lost"], [t.wrong, "wrong"], [t.findings_drawn_absent + " of " + t.findings_drawn, "of the findings drawn are not in the graph"]].forEach(function (a) {
+    var d = document.createElement("div"); d.className = "fact"; d.innerHTML = "<b>" + a[0] + "</b><span>" + a[1] + "</span>"; fx.appendChild(d); });
+  var tb = document.querySelector("#wrong tbody");
+  D.wrong_records.forEach(function (w) { var r = document.createElement("tr"); r.innerHTML = "<td>" + w.cite + " <a href='https://pubmed.ncbi.nlm.nih.gov/" + w.pmid + "/'>" + w.pmid + "</a>" + (w.n ? " (" + w.n + " records)" : "") + "</td><td>" + w.record + "</td><td>" + w.why + "</td>"; tb.appendChild(r); });
+  if (!document.body.classList.contains("export")) show(D.nodes[0]);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+ "id": "food-supermarket-diabetes-zcta",
+ "kind": "conflict",
+ "statement": "Across New York City ZIP code areas, the number of supermarkets per resident does not predict adult hospital admissions for diabetes (age-sex standardised) once residential density, poverty, income and median age are held, against the graph's cross-sectional findings that distance to or scarcity of supermarkets goes with more diabetes.",
+ "graph_evidence": [
+  {
+   "note": "analyses/health_gaps/graph_food.py searched 311 graph variables for food desert, food access, supermarket, grocery store, food environment, food retail, food swamp, healthy food retailer and convenience store; 109 associations have a diabetes, glycaemia, obesity, BMI or weight outcome (data/derived/health_gaps/graph_food.json). Most are cross-sectional and point to harm from scarcity."
+  },
+  {
+   "pubmed_ids": [
+    36058428
+   ],
+   "summary": "Household distance to the nearest supermarket and incidence of diabetes: OR 1.27 to 1.38 (four graph records), pre-diabetes 1.33 to 1.78."
+  },
+  {
+   "pubmed_ids": [
+    32088514
+   ],
+   "summary": "Food swamp severity and hospitalisation rates among adults with diabetes: coefficient 2.181 (no interval in the graph)."
+  },
+  {
+   "pubmed_ids": [
+    24886134
+   ],
+   "summary": "Grocery stores per 1,000 people and obesity: OR 0.58 (0.36 to 0.93)."
+  },
+  {
+   "pubmed_ids": [
+    29555650
+   ],
+   "summary": "Low physical food access and glycaemic control: mean difference 0.2 (-0.2 to 0.5), a null."
+  },
+  {
+   "pubmed_ids": [
+    32666031
+   ],
+   "summary": "Food environment interventions and BMI change: -0.37 (-0.95 to 0.22) and -0.11 (-0.19 to -0.03), small."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Elbel B et al. (2015). Assessment of a government-subsidized supermarket in a high-need area on household food availability and children's dietary intakes. Public Health Nutr 18(15):2881-90.",
+   "doi": "10.1017/S1368980015000282",
+   "finding": "A FRESH-subsidised supermarket in the Bronx did not change children's diet or household food availability."
+  },
+  {
+   "citation": "Cummins S, Flint E, Matthews SA (2014). New neighborhood grocery store increased awareness of food access but did not alter dietary habits or obesity. Health Aff 33(2):283-91.",
+   "doi": "10.1377/hlthaff.2013.0512",
+   "finding": "A Philadelphia supermarket opening did not change BMI or fruit and vegetable intake."
+  },
+  {
+   "citation": "Allcott H, Diamond R, Dube J-P (2019). The geography of poverty and nutrition: food deserts and food choices across the United States. QJE 134(4):1793-1844.",
+   "doi": "10.1093/qje/qjz015",
+   "finding": "Supply explains about 10% of the nutritional gap between high- and low-income households; demand explains about 90%."
+  }
+ ],
+ "prediction": {
+  "direction": "0",
+  "magnitude": "Ratio of the diabetes admission O/E per doubling of supermarkets (>= 6,000 sq ft) per 10,000 residents, adjusted: 0.95 to 1.03. The graph's cross-sectional findings, read as a protective effect of supply, imply about 0.85 to 0.92 per doubling. Unadjusted, a ratio below 1 is expected, and the per-area measure (stores per km2) should move towards 1 when log residential density is added (the Red Hook pattern: few stores where few people live).",
+  "support_if": "Primary ratio per doubling with 95% interval inside (0.90, 1.10) and estimate at or above 0.95.",
+  "refute_if": "Upper 95% bound of the primary ratio per doubling below 0.95 (a protective association of supermarket supply that survives adjustment)."
+ },
+ "plan": "Script analyses/health_gaps/food_access.py, committed in d787695 before this registration and before any outcome is read; it is the procedure (no resampling, no seed). Unit: NYC ZCTAs (2020) assigned to a NYC county by largest land overlap, adult population >= 5,000. Outcome: SPARCS adult PQIs by patient ZIP (health.data.ny.gov 5q8c-d6xq), PQI 01, 03, 14, 16, three latest years, log(sum observed / sum expected). Exposure: NY State Retail Food Stores (data.ny.gov 9a8c-vfzj), type A, >= 6,000 sq ft, per 10,000 residents, log2 with 0.5 added to counts. Covariates: log2 residential density (ACS 2019-23 population / 2020 Gazetteer land area), percent poor, log2 median household income, median age. Weighted least squares by population, HC3. Secondaries listed in the script are reported and do not decide. The store list is the current one (October 2026) and the outcome years are earlier, so stores that closed or opened in between add noise. FRESH store locations are not published; only FRESH zoning boundaries (cgn7-aehz) are, and they are not used.",
+ "alternatives": [
+  "Reverse placement: supermarket chains locate by purchasing power, so supply follows income and density rather than causing health; adjustment for income and density addresses this only in part.",
+  "ZIP boundaries: people shop outside their ZIP; a per-resident count within the ZIP misstates access near boundaries and biases towards the null.",
+  "Admissions measure access to and quality of primary care as well as disease prevalence.",
+  "Residual confounding by race and ethnicity, which predict diabetes and store placement; reported as a secondary model."
+ ],
+ "prior": 0.55,
+ "registrant": "health-gaps agent (Claude), 13 Nov 2026",
+ "registered_at": "2026-11-13T12:00:23-0500",
+ "sha256": "7af9b8f8298e72630678ce3e796d6338e4a27db4a3fd984b8af08f9a605c8d36"
+}

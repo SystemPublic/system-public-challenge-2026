@@ -1,0 +1,104 @@
+{
+ "id": "graph-triad-cold-asthma-absence",
+ "kind": "bridge",
+ "statement": "On cold school days New York City public-school absence is higher than on other school days of the same week of the year, as the open triad temperature - asthma - school attendance in the System Public Graph implies; the graph holds no finding that links temperature to school attendance directly.",
+ "graph_evidence": [
+  {
+   "relationship_id": [
+    "4FaXcuNJRt|EAshH_Ko3h",
+    "EAshH_Ko3h|4FaXcuNJRt",
+    "dINFs04idR|EAshH_Ko3h"
+   ],
+   "concepts": "temperature family (hot, temperature, air temperature) - asthma",
+   "n_findings": 40,
+   "n_studies": 24,
+   "direction": "+ for heat in the hot season and + for cold in the cold season; the 32 positive and 8 negative rows mix both, and include heaters and exhaled temperature",
+   "summary": "cold (5th percentile of temperature) and childhood asthma hospitalisation, RR 1.64 (1.06-2.54) on days with lower PM2.5, Hefei 2013-2016; also low temperature RR 1.20 (1.15-1.26), Lanzhou (PMID 39251927), and 1.10 (1.05-1.15) in adults, Hong Kong (PMID 36240934)",
+   "pubmed_ids": [
+    "35817164",
+    "34555607",
+    "39251927",
+    "36240934"
+   ]
+  },
+  {
+   "relationship_id": [
+    "EAshH_Ko3h|_l4tNqo_PI"
+   ],
+   "concepts": "asthma - school attendance",
+   "n_findings": 1,
+   "n_studies": 31,
+   "direction": "+ (more days absent)",
+   "summary": "children with asthma had 2.21 (1.41-3.01) more days absent per year than matched children without asthma, Rochester, Minnesota (abstract read; the relationship record lists 31 studies but the API returns one finding)",
+   "pubmed_ids": [
+    "11487757"
+   ]
+  },
+  {
+   "relationship_id": null,
+   "concepts": "temperature family - school attendance",
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": null,
+   "summary": "no direct finding in the graph for hot, temperature, air temperature, surface temperature, heat wave or urban heat island with school attendance (two findings from two studies with absenteeism)",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Keivabu RC. Temperature and school absences: evidence from England. Population and Environment 2024",
+   "doi": "10.1007/s11111-024-00448-5",
+   "finding": "hot days increase absences in English schools; cold days show no substantive effect. Not in the graph. Read as a search summary only, not the paper."
+  }
+ ],
+ "composition": {
+  "method": "kit.bridge.compose, log RR(absence) = share x log RR(asthma exacerbation), 20000 draws, seed 1",
+  "link": {
+   "estimate": 1.64,
+   "lo": 1.06,
+   "hi": 2.54,
+   "pubmed_id": "35817164"
+  },
+  "exponent": {
+   "mean": 0.0156,
+   "sd": 0.0045,
+   "meaning": "share of pupil absences attributable to asthma = prevalence U(0.08, 0.15) x excess days 2.21 (1.41-3.01) / mean days absent U(13, 20); prevalence and mean days absent are the registrant's assumptions, not graph findings"
+  },
+  "composed_ratio_lo_median_hi": [
+   1.0007778837133046,
+   1.0072685309733118,
+   1.0172716526590189
+  ],
+  "discrimination": {
+   "endpoint_se": 0.016,
+   "combined_se": 0.016544124086493393,
+   "z_null_if_chain_true": 0.4792985991861879,
+   "D_expected": 0.22972714718184198,
+   "discriminates": false,
+   "p_null_passes": 0.9330052811874541,
+   "advice": "the test cannot separate the chain from no effect; find a larger contrast or a more precise endpoint"
+  }
+ },
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Composed through asthma alone: absence ratio 1.0073 (95% interval 1.0008 to 1.0173). With an expected standard error near 0.016 on the log scale the test cannot separate this size from no effect (D = 0.23, below 4). The registrant expects the direct association to be larger than the chain, between 1.00 and 1.08, because temperature can affect attendance by routes other than asthma.",
+  "support_if": "the absence ratio for exposed days is above 1 and its 95% interval (Newey-West) excludes 1. The direction composed from the triad is then confirmed. Whether the interval contains the composed interval is reported as a second, registered quantity (the share of the association that the asthma path can account for = composed log ratio / city log ratio).",
+  "refute_if": "the absence ratio is below 1 and its 95% interval excludes 1."
+ },
+ "plan": "Unit: school day, citywide, school years 2006-07 to 2018-19. Outcome: log(sum of absent / sum of enrolled) over all schools by date, from NYC Open Data daily attendance by school (xwxx-rnki, wpqj-3buw, pffu-gbfi, 3y5p-x48f, x3bb-kg5j), aggregated in SoQL. Exclusions fixed now: weekends; days whose citywide enrolment is below 80% of that school year's median; days with an absence rate above 30%. Arm: school days in December, January and February. Exposure: Central Park TMAX <= 0.0 C on the same day (NOAA GHCN-Daily USW00094728). Model: OLS of the log absence rate on the exposure indicator with fixed effects for school year, day of week and ISO week of the year, and indicators for precipitation >= 10 mm, and snowfall > 0 on the same or the previous day, for a school day next to a weekday without school, and for the last five school days of the school year. Standard errors Newey-West with 5 lags. Estimate: exp(coefficient) with its 95% interval. Secondary, not deciding: exposure on any of lags 0 to 2; a linear term per 5 C of TMAX within the arm; the hot arm without the last two weeks of June; the same model on the school-level medians is not planned.",
+ "alternatives": [
+  "Temperature affects attendance directly (discomfort, travel, classrooms without air conditioning, families' choices), not through asthma; a ratio far above the composed interval indicates this.",
+  "Calendar: late June is hot and attendance falls at the end of the year; winter cold coincides with influenza season and snow. Week-of-year and school-year effects and the snow indicator address this in part; influenza is not controlled.",
+  "Citywide aggregation hides schools that close or report late on extreme days; the exclusions address this in part.",
+  "The asthma links come from hospital admissions in Hong Kong, Hefei, Lanzhou and Florida and from 92 children in Minnesota; none is a New York school population."
+ ],
+ "disclosure": "No attendance data had been queried by this project before registration (no file for these datasets in data/cache/socrata; only the catalog's column names were read). The Central Park temperature series had been used by earlier claims, and the counts of exposed days (116 of 843 hot-season weekdays, 145 of 838 cold-season weekdays) were computed from it before registration. The registrant knows in general that New York attendance falls in late June and on snow days. A web search summary of Keivabu 2024 was read before registration.",
+ "prior": 0.55,
+ "registrant": "claude (graph triads study)",
+ "chain": [
+  "temperature -> asthma exacerbation (graph)",
+  "asthma -> days absent (graph)"
+ ],
+ "registered_at": "2026-11-12T22:51:37-0500",
+ "sha256": "e209073100a94c7f01555b38f651a628241c34d9cec205401a37b1f329a42183"
+}

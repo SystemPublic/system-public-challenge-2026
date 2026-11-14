@@ -1,0 +1,91 @@
+{
+ "id": "nbhd-rodents-asthma",
+ "kind": "confirmation",
+ "statement": "Across NYC's 42 UHF neighbourhoods, a higher share of homes with mice or rats in the building is associated with higher asthma emergency department visit rates in children aged 5-17, and the association remains after adjustment for poverty and housing problems.",
+ "graph_evidence": [
+  {
+   "variable_id": "IET_Lwkf52",
+   "concepts": [
+    "mouse allergen exposure",
+    "asthma morbidity"
+   ],
+   "direction": "+",
+   "summary": "Baltimore inner-city preschool children, mouse-sensitised and highly exposed: ED visit OR 2.1 (1.1-4.1), hospitalisation OR 36.6 (4.1-327) (Matsui et al. 2006).",
+   "pubmed_ids": [
+    17069107
+   ]
+  },
+  {
+   "variable_id": "IET_Lwkf52",
+   "concepts": [
+    "mouse allergen",
+    "asthma-related health care use"
+   ],
+   "direction": "+",
+   "summary": "150 urban children: each tenfold increase in bed mouse allergen OR 1.87 (1.21-2.88) for asthma-related health care use among mouse-sensitised children only (Torjusen et al. 2013).",
+   "pubmed_ids": [
+    23067271
+   ]
+  },
+  {
+   "variable_id": "u5QsWFrJ4v",
+   "concepts": [
+    "school mouse allergen",
+    "asthma symptom days"
+   ],
+   "direction": "+",
+   "summary": "School mouse allergen exposure OR 1.27 (1.05-1.54) for an asthma symptom day.",
+   "pubmed_ids": [
+    27893060
+   ]
+  },
+  {
+   "variable_id": "OrMVbVvbil",
+   "concepts": [
+    "mouse allergen reduction",
+    "symptoms"
+   ],
+   "direction": "-",
+   "summary": "Mouse allergen reduction IRR 0.94 (0.92-0.96) for symptoms in low-income children with asthma.",
+   "pubmed_ids": [
+    31520838
+   ]
+  },
+  {
+   "variable_id": "KuPyJdVJcZ",
+   "concepts": [
+    "rodent or insect infestation",
+    "asthma"
+   ],
+   "direction": "+",
+   "summary": "Residence with rodent or insect infestation OR 2.1 (1.1-3.8) for asthma (case-control, PMID 31103883).",
+   "pubmed_ids": [
+    31103883
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Olmedo O, Goldstein IF, Acosta L, et al. Neighborhood differences in exposure and sensitization to cockroach, mouse, dust mite, cat, and dog allergens in New York City. J Allergy Clin Immunol 2011;128(2):284-92.",
+   "doi": "10.1016/j.jaci.2011.02.044",
+   "finding": "Homes in NYC neighbourhoods with high asthma prevalence had higher mouse and cockroach allergen levels than homes in low-prevalence neighbourhoods."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Unadjusted Spearman rho between percent of homes with mice or rats in the building (NYCHVS) and child (5-17) asthma ED rate: 0.5-0.8. Adjusted standardised coefficient (per SD of rodent share, outcome in log rate) 0.00-0.20, shrinking by more than half from the unadjusted value.",
+  "support_if": "Adjusted coefficient for rodent share has a 95% CI above 0.",
+  "refute_if": "Adjusted coefficient has a 95% CI below 0 (contested). A CI spanning 0 is unsettled, which is the expected verdict."
+ },
+ "plan": "Unit: UHF42 neighbourhoods. Data from the NYC Environment and Health Data Portal repository (github.com/nychealth/EHDP-data, production branch, commit recorded): measure 94 (mice or rats in the building, percent, NYCHVS), measure 634 (adults reporting mice or rats inside, CHS) as an alternative exposure, measure 1196 (asthma ED visits age 5-17, rate per 10,000) as outcome, measure 1198 (adult asthma ED rate) as a secondary outcome, measures 221 (poverty percent) and 1248 or 86 (housing problems percent) as confounders. Latest period common to all. City operational data: DOHMH Rodent Inspection (p937-wjvj) share of initial inspections with active rat signs, and 311 rodent complaints per 1,000 residents (erm2-nwe9, complaint_type 'Rodent', 2022-2024), by ZIP code mapped to UHF42, as alternative exposures. Model: OLS of log asthma ED rate on standardised exposure, poverty, housing problems; n=42, HC3 SE. Report unadjusted rho and adjusted coefficient. Figure: binned scatter and coefficient plot with the household-level research OR beside the NYC estimate.",
+ "alternatives": [
+  "Poverty, housing quality, cockroach allergen, smoking and outdoor air pollution all vary with rodent infestation across neighbourhoods.",
+  "The research concerns indoor mouse allergen among sensitised children; NYC rodent measures mix rats and mice and indoor and outdoor signs.",
+  "Health care access: ED use for asthma reflects lack of primary care as well as morbidity.",
+  "n=42 gives little power to separate correlated neighbourhood measures."
+ ],
+ "prior": 0.3,
+ "registrant": "claude-code agent (neighbourhood), for Jeff Vernon",
+ "registered_at": "2026-11-12T15:24:16-0500",
+ "sha256": "7e57999e5f83174070afcbefbef53ab051e737915fca1c8897d763d3dd28c33c"
+}

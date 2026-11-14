@@ -1,0 +1,41 @@
+{
+ "note": "Written for an Underlay push; nothing has been pushed. Hashes follow tools/underlay_export.record_hash (RFC 8785).",
+ "collection_suggestion": "nyc-concordance/replication",
+ "counts": {
+  "PackageInput": 6,
+  "PackageCode": 17,
+  "PackageSource": 5,
+  "ReplicationPackage": 1
+ },
+ "records": {
+  "replication/bridge-heat-shootings-ems/input/0": "6bd22729fc2cb37e295f9c1571c3b49767e54c45588a2c3aca7774e9f7cf78df",
+  "replication/bridge-heat-shootings-ems/input/1": "1965ed062aa79e941604e8d2f32d46f297d1968048829f26301c8f2cda993a27",
+  "replication/bridge-heat-shootings-ems/input/2": "8e6665870edd305073b96c81cbf9d0b8eff69a32eaaf4700254209facecab0df",
+  "replication/bridge-heat-shootings-ems/input/3": "1aeb877b5949f26c6a746149b5c68459546f6513a30fb995425c6363ac2c7ee6",
+  "replication/bridge-heat-shootings-ems/input/4": "2f337f38852408bc995ac74f7b90f839c051511adbaa35a0b9dc8073ec60e4ce",
+  "replication/bridge-heat-shootings-ems/input/5": "daacae63500bb2a48f034d2f58c01ad2120a47f6dc4fc216b88831ec54b1b726",
+  "replication/bridge-heat-shootings-ems/code/0": "bc67b3a27d82bd8be50f5ca5e7cfc882675ca90a1d976a4fe06dd574c31bb179",
+  "replication/bridge-heat-shootings-ems/code/1": "02aa6ab9b883ad05eea0c6776a2b2697e58daeb82fd7ab31a3a4b374a7b734d5",
+  "replication/bridge-heat-shootings-ems/code/2": "46ba588c160e916b1932db4f7674b9eacf5a42233cdee54b2e31a5141b55a4da",
+  "replication/bridge-heat-shootings-ems/code/3": "07692a5aa5b3d5987f82fe28f11fd745a1ea5e8a07b9ba40cc929295e5f2ad0c",
+  "replication/bridge-heat-shootings-ems/code/4": "cc2433a2f313826599c2efd33312d1ea9f96a7add18d2b807ffd0251dc6c2975",
+  "replication/bridge-heat-shootings-ems/code/5": "22bb7771b70357bdff7a1748be9cb66645d1106d127a291899523d809d371e99",
+  "replication/bridge-heat-shootings-ems/code/6": "ddabe7de30eba574e8d7ed5391f5dbe310431c80abf67a90bfc4920bc54131e5",
+  "replication/bridge-heat-shootings-ems/code/7": "662fb594e6451341df6e09fff7e630ba4e61bd8467ca0d08c8d2e917b26bb0cf",
+  "replication/bridge-heat-shootings-ems/code/8": "b00575ff7199040ffa9ffd6f89b75cd2c241de3fb931ab870cdd40eeef2481f3",
+  "replication/bridge-heat-shootings-ems/code/9": "ab99e7dbbc7b6f7fae65bbc2bc613e1dc04876b9a973bf6093ce42d1324f607b",
+  "replication/bridge-heat-shootings-ems/code/10": "3deaa705a8acd00ac06b173020c8f8d4b093a46b7a9ac0e41c1952ac798c9961",
+  "replication/bridge-heat-shootings-ems/code/11": "721fb86fc85a74ad284c855ce76b58c4d0490455077429186897a64fcd06b729",
+  "replication/bridge-heat-shootings-ems/code/12": "0a8a49345795765d9340200cca9a757dc8ad48fb4c0eb5698154b436601aa695",
+  "replication/bridge-heat-shootings-ems/code/13": "378447ea7e3230f6e24cdce72d4d2760d542d449684293328c93e3c46b5b0b9a",
+  "replication/bridge-heat-shootings-ems/code/14": "1bcd67771380f63b87536f761b30346bf5eed2b2a5e49bab1ea4638364521c45",
+  "replication/bridge-heat-shootings-ems/code/15": "51f4cbfc5012b29cdbe6d8f6fe1bff37fde8a904ff8cd45210a37e2dbe44220d",
+  "replication/bridge-heat-shootings-ems/code/16": "e3f1fe3c0702764b6dd0f2ee334794afc7b51c22820726b41a7df289763e0e4e",
+  "replication/bridge-heat-shootings-ems/source/0": "c67f4ad556eb6ed4304a3bfd29750b8cd0d5357383214f5ebb27a2cfa713f505",
+  "replication/bridge-heat-shootings-ems/source/1": "1212426e09140687ac9a6323c716d74c4bc1a925674fea6320a9b33710e9f9f7",
+  "replication/bridge-heat-shootings-ems/source/2": "e4f15acaeba0bee3fcd908309999343aadaf82b842b02e5b0113960a40e32492",
+  "replication/bridge-heat-shootings-ems/source/3": "47b77e3a9bbbb17f52cb4dcf4f46e79fda4026624723aba1473a8d2efbd2e2fa",
+  "replication/bridge-heat-shootings-ems/source/4": "7ce83b4a568cd612e9e848b8b28c0783a6bc98b0d0b84c3c6bb28bacbc9085f5",
+  "replication/bridge-heat-shootings-ems": "61994d76d3e5346d52641726a1d9a886f0eb7dd011cf49b97afec36fc172a32b"
+ }
+}

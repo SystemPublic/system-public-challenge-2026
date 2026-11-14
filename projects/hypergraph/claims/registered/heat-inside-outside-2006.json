@@ -1,0 +1,54 @@
+{
+ "id": "heat-inside-outside-2006",
+ "kind": "confirmation",
+ "statement": "In New York City from 2006, shootings outside rise with daily maximum temperature and shootings inside rise less: the inside rate ratio per 5 C is smaller than the outside one.",
+ "graph_evidence": [
+  {
+   "relationship_id": "4FaXcuNJRt|YZku29igbl",
+   "concepts": [
+    "temperature",
+    "homicide"
+   ],
+   "n_findings": 4,
+   "n_studies": 2,
+   "direction": "+",
+   "summary": "As registered in heat-shootings: about +5 to +9% per 5 C. The graph has no finding that separates indoor from outdoor violence.",
+   "pubmed_ids": [
+    36858215,
+    32738768
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Stolzenberg L, D'Alessio SJ, Flexon JL. A hunter's moon: the effect of moon illumination on outdoor crime. Am J Crim Justice 2017.",
+   "doi": "10.1007/s12103-016-9351-9",
+   "finding": "Uses the same indoor and outdoor split for a different exposure."
+  },
+  {
+   "citation": "Mukherjee A, Sanders NJ. The causal effect of heat on violence: social implications of unmitigated heat among the incarcerated. NBER w28987, 2021.",
+   "doi": "10.3386/w28987",
+   "finding": "Violence in prisons without air conditioning rises on hot days (about 20%, secondary source), which favours a direct effect of heat on people indoors."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Outside rate ratio per 5 C between 1.10 and 1.20; inside between 0.95 and 1.10; ratio of inside to outside between 0.80 and 0.98.",
+  "support_if": "The 95% upper bound of the ratio of the inside to the outside rate ratio is below 1.00.",
+  "refute_if": "The 95% lower bound of the inside rate ratio per 5 C is above 1.05 and the 95% interval of the ratio includes 1.00."
+ },
+ "plan": "analyses/heat_inside/test_2006.py, a copy of test.py with the start date 2006-01-01, committed with this registration and not yet run. Same models. Registered because the year-to-date file 5ucz-vwe8 turned out to carry the inside or outside field for every year, which the first registration did not know.",
+ "can_it_fail": "Yes. With about 4,000 inside and 20,000 outside incidents the expected standard error of the log ratio is about 0.02, so equal slopes (ratio 1.00) and no inside rise (ratio about 0.87) are both detectable.",
+ "already_seen": "Counts of inside incidents by year for 2006 to 2017 (155 to 265 a year) and the 2022 to 2024 counts named in heat-inside-outside, seen on 14 November 2026 while checking the field. No count by date or temperature was seen, and neither this test nor heat-inside-outside had been run.",
+ "alternatives": [
+  "Homes without air conditioning are hotter than the street, so a direct effect could be larger inside",
+  "Inside shootings differ in kind (domestic, commercial robbery), with their own seasonality",
+  "The inside or outside field may be recorded differently in summer"
+ ],
+ "rivals_separated": "Routine activity (people outdoors) predicts a ratio below 1. Direct irritability, sleep loss and medication effects act on people wherever they are and predict a ratio near 1 or above.",
+ "prior": 0.6,
+ "registrant": "Claude (coordinator), for Jeff Vernon",
+ "relation": "Same hypothesis as heat-inside-outside on a longer window; registered before either was run. Both outcomes are reported.",
+ "registered_at": "2026-11-14T07:13:15-0500",
+ "sha256": "7e134210eb08209ce565179c2abf900b4e684107d781be050c58d161906198fd"
+}

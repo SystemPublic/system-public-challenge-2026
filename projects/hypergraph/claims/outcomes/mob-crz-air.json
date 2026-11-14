@@ -1,0 +1,122 @@
+{
+ "id": "mob-crz-air",
+ "verdict": "no_test",
+ "city_effect": {
+  "label": "PM2.5 at PS 19 (only in-zone AQS monitor with a pre-period) vs other-borough monitors, 2025 vs 2023-24, TWFE DiD",
+  "estimate": -5.23,
+  "lo": -9.47,
+  "hi": -0.87,
+  "scale": "percent change in daily PM2.5",
+  "null": 0,
+  "n": 8540
+ },
+ "graph_effect": {
+  "label": "No road-pricing findings in the graph. Literature range for NO2: Stockholm -5% to -15% ambient (Simeonova et al. 2021)",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "percent",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "epa-aqs-airdata",
+   "url": "https://aqs.epa.gov/aqsweb/airdata/daily_42602_2022.zip",
+   "version": "pre-generated file as of 2026-06-25",
+   "parameter": "NO2 (ppb)"
+  },
+  {
+   "kind": "epa-aqs-airdata",
+   "url": "https://aqs.epa.gov/aqsweb/airdata/daily_42602_2023.zip",
+   "version": "pre-generated file as of 2026-06-25",
+   "parameter": "NO2 (ppb)"
+  },
+  {
+   "kind": "epa-aqs-airdata",
+   "url": "https://aqs.epa.gov/aqsweb/airdata/daily_42602_2024.zip",
+   "version": "pre-generated file as of 2026-06-25",
+   "parameter": "NO2 (ppb)"
+  },
+  {
+   "kind": "epa-aqs-airdata",
+   "url": "https://aqs.epa.gov/aqsweb/airdata/daily_42602_2025.zip",
+   "version": "pre-generated file as of 2026-06-25",
+   "parameter": "NO2 (ppb)"
+  },
+  {
+   "kind": "epa-aqs-airdata",
+   "url": "https://aqs.epa.gov/aqsweb/airdata/daily_88101_2022.zip",
+   "version": "pre-generated file as of 2026-06-25",
+   "parameter": "PM2.5 FRM/FEM (ug/m3)"
+  },
+  {
+   "kind": "epa-aqs-airdata",
+   "url": "https://aqs.epa.gov/aqsweb/airdata/daily_88101_2023.zip",
+   "version": "pre-generated file as of 2026-06-25",
+   "parameter": "PM2.5 FRM/FEM (ug/m3)"
+  },
+  {
+   "kind": "epa-aqs-airdata",
+   "url": "https://aqs.epa.gov/aqsweb/airdata/daily_88101_2024.zip",
+   "version": "pre-generated file as of 2026-06-25",
+   "parameter": "PM2.5 FRM/FEM (ug/m3)"
+  },
+  {
+   "kind": "epa-aqs-airdata",
+   "url": "https://aqs.epa.gov/aqsweb/airdata/daily_88101_2025.zip",
+   "version": "pre-generated file as of 2026-06-25",
+   "parameter": "PM2.5 FRM/FEM (ug/m3)"
+  }
+ ],
+ "prediction_scored": "partial. The primary NO2 test could not be run: the EPA AQS daily NO2 files for 2022-2025 contain no monitor in Manhattan (sites: IS 52 and Pfizer Lab in the Bronx, Queens College 2 and Queens College Near Road). The secondary PM2.5 estimate, -5.2% (-9.5 to -0.9), falls in the registered range (0% to -8%), but it rests on one monitor that samples one day in three and is not robust: on the same days, against the two comparison monitors that ran in every year (IS 52, Queens College 2), PS 19's excess changed by -0.3%. The 2024 placebo is -2.0% (-8.2 to +4.2).",
+ "settle": "An in-zone NO2 record with a pre-period. Candidates: the NYCCAS street-level two-week samples at in-zone sites (not published as a time series), the DEC Division Street site (PM2.5 began 2025; no pre-period), satellite NO2 (TROPOMI, about 5 km pixels, too coarse for a 23 km2 zone but usable for a Manhattan vs outer-borough contrast) and the low-cost sensor networks used by Fraser et al.",
+ "research_needed": [
+  {
+   "question": "Publish the NYCCAS biweekly site-level measurements inside the CRZ for 2022-2025.",
+   "data": "NYCCAS raw monitoring data",
+   "design": "site-level DiD with reference-site adjustment",
+   "priority": "high"
+  },
+  {
+   "question": "Reconcile Fraser et al. (2025) with the DOHMH 2026 report: daily maximum vs daily mean, monitor sets, counterfactual model.",
+   "data": "both studies' monitor lists and code",
+   "design": "re-analysis on common data",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/mobility/crz_air_pm25_before_after.png"
+ ],
+ "notes": "Against Manhattan monitors north of 60th Street the PM2.5 estimate is -3.9% (-11.4 to +5.0). Restricting to sites observed before and after gives -5.3% (-9.8 to -0.9). The two-way fixed-effects estimate depends on which comparison monitors enter, because three Brooklyn and Bronx monitors started in mid-2023 and two more in 2025. The research on this exact question disagrees. Fraser et al. (2025, npj Clean Air) report daily maximum PM2.5 in the zone 22% below a counterfactual in January-June 2025; the NYC Health Department (August 2026) reports no significant difference for PM2.5, NO2, NO or black carbon in 2025. The NO2 test was re-registered as mob-crz-air-nyccas.",
+ "registration_sha256": "06a52e5821eaef00d9a98ec30141044967099a55e5bf9ea73d203bc02cdbcfa9",
+ "decided_at": "2026-11-12T15:30:56-0500",
+ "stance": null,
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "PM2.5 at PS 19 (only in-zone AQS monitor with a pre-period) vs other-borough monitors, 2025 vs 2023-24, TWFE DiD",
+    "estimate": -5.23,
+    "lo": -9.47,
+    "hi": -0.87,
+    "scale": "percent change in daily PM2.5",
+    "null": 0,
+    "n": 8540
+   },
+   "stance": {
+    "value": 0.831,
+    "lo": 0.196,
+    "hi": 0.974,
+    "z": 2.38
+   },
+   "decided_at": "2026-11-12T15:30:56-0500",
+   "prediction_scored": "partial. The primary NO2 test could not be run: the EPA AQS daily NO2 files for 2022-2025 contain no monitor in Manhattan (sites: IS 52 and Pfizer Lab in the Bronx, Queens College 2 and Queens College Near Road). The secondary PM2.5 estimate, -5.2% (-9.5 to -0.9), falls in the registered range (0% to -8%), but it rests on one monitor that samples one day in three and is not robust: on the same days, against the two comparison monitors that ran in every year (IS 52, Queens College 2), PS 19's excess changed by -0.3%. The 2024 placebo is -2.0% (-8.2 to +4.2)."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: no Manhattan NO2 monitor in AQS 2022-2025, so the registered primary test was not run; the PM2.5 secondary mixes monitor methods and a changing comparison set.",
+  "critique": "critique/mob-crz-air.md",
+  "revised_at": "2026-11-12T15:55:02-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,109 @@
+{
+ "ReplicationPackage": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "A replication package for one registered claim (tools/replicate.py).",
+  "properties": {
+   "claim": {
+    "type": "string",
+    "x-ref-type": "Claim"
+   },
+   "registration_sha256": {
+    "type": "string"
+   },
+   "manifest_sha256": {
+    "type": "string"
+   },
+   "inputs": {
+    "type": "array",
+    "items": {
+     "type": "string",
+     "x-ref-type": "PackageInput"
+    }
+   },
+   "code": {
+    "type": "array",
+    "items": {
+     "type": "string",
+     "x-ref-type": "PackageCode"
+    }
+   },
+   "sources": {
+    "type": "array",
+    "items": {
+     "type": "string",
+     "x-ref-type": "PackageSource"
+    }
+   }
+  },
+  "required": [
+   "claim",
+   "registration_sha256",
+   "inputs"
+  ]
+ },
+ "PackageInput": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+   "package": {
+    "type": "string",
+    "x-ref-type": "ReplicationPackage"
+   },
+   "path": {
+    "type": "string"
+   },
+   "sha256": {
+    "type": "string",
+    "pattern": "^[0-9a-f]{64}$"
+   },
+   "bytes": {
+    "type": "integer"
+   },
+   "copied": {
+    "type": "boolean"
+   }
+  },
+  "required": [
+   "package",
+   "path",
+   "sha256"
+  ]
+ },
+ "PackageCode": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+   "package": {
+    "type": "string",
+    "x-ref-type": "ReplicationPackage"
+   },
+   "path": {
+    "type": "string"
+   },
+   "blob": {
+    "type": "string"
+   }
+  },
+  "required": [
+   "package",
+   "path"
+  ]
+ },
+ "PackageSource": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+   "package": {
+    "type": "string",
+    "x-ref-type": "ReplicationPackage"
+   },
+   "type": {
+    "type": "string"
+   }
+  },
+  "required": [
+   "package"
+  ]
+ }
+}

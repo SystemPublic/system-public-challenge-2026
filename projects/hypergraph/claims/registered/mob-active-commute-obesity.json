@@ -1,0 +1,85 @@
+{
+ "id": "mob-active-commute-obesity",
+ "kind": "confirmation",
+ "statement": "Across New York City's UHF42 neighbourhoods, a higher share of workers who walk or cycle to work goes with a lower share of adults with obesity, after adjusting for neighbourhood poverty.",
+ "graph_evidence": [
+  {
+   "relationship_id": "dPeET-pgVN|cj7G775u_Q",
+   "concepts": [
+    "physical activity",
+    "obesity"
+   ],
+   "n_findings": 82,
+   "n_studies": 58,
+   "direction": "+",
+   "summary": "21 ratio findings; 11 above 1, 10 below; 6 with CI above 1, 7 with CI below 1; median ratio 1.2 (mixed increments and designs)",
+   "pubmed_ids": [
+    11985949,
+    15229327,
+    20368941,
+    21605360,
+    23308135,
+    23844958,
+    23958406,
+    24282316,
+    24406093,
+    24918414,
+    26477996,
+    27924618,
+    28404503,
+    30688830,
+    30921554,
+    34274952,
+    34556954,
+    38207152
+   ]
+  },
+  {
+   "relationship_id": "_2dhcsFISl|cj7G775u_Q",
+   "concepts": [
+    "walking",
+    "obesity"
+   ],
+   "n_findings": 3,
+   "n_studies": 2,
+   "direction": "+",
+   "summary": "3 ratio findings; 2 above 1, 1 below; 2 with CI above 1, 1 with CI below 1; median ratio 1.96 (mixed increments and designs)",
+   "pubmed_ids": [
+    33225582,
+    37056656
+   ]
+  },
+  {
+   "note": "The graph's physical activity -> obesity findings are split in sign (the ratio findings mix 'activity predicts lower obesity' with 'inactivity predicts higher obesity', so the sign of a ratio depends on the coding of the exposure). There is no concept for cycling or active commuting; variable search finds a few commuting variables (e.g. 'active commuting to/from school', 'being a non-active commuter')."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Flint E, Cummins S, Sacker A (2014). Associations between active commuting, body fat, and body mass index: population based, cross sectional study in the United Kingdom. BMJ 349:g4887.",
+   "doi": "10.1136/bmj.g4887",
+   "finding": "Men commuting by active or public modes had BMI about 1 kg/m2 lower than car commuters; women about 0.7 kg/m2."
+  },
+  {
+   "citation": "Celis-Morales CA et al. (2017). Association between active commuting and incident cardiovascular disease, cancer, and mortality. BMJ 357:j1456.",
+   "doi": "10.1136/bmj.j1456",
+   "finding": "Cycle commuting associated with lower CVD incidence and mortality (UK Biobank)."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Unadjusted slope: -2 to -6 percentage points of adult obesity per 10 points of walk-or-bike commute share. Poverty-adjusted: -0.5 to -4 points per 10 points.",
+  "support_if": "Poverty-adjusted slope below 0 with a 95% interval below 0.",
+  "refute_if": "Poverty-adjusted slope at or above 0 with an interval that excludes -0.5."
+ },
+ "plan": "Data: EHDP (github.com/nychealth/EHDP-data, commit 547482b9df589006543e13e8cdf6546e00ed9998): indicator 2415 commuting modes, measures 1304 (bicycle %) + 1307 (walked %), UHF42, ACS 2015-19; indicator 2063 adult obesity %, measure 506, UHF42, mean of 2017, 2018 and 2019 (CHS, self-reported BMI); indicator 103 poverty %, measure 221, UHF42, 2015-19. Model: OLS of obesity % on active-commute % (per 10 points), then adding poverty %; HC3 standard errors; sensitivity adding borough fixed effects and excluding Manhattan. Figure: scatter of UHF neighbourhoods coloured by poverty with the fitted adjusted slope and the slope implied by Flint et al. (about -1 kg/m2 BMI for active commuters, translated to obesity prevalence only qualitatively).",
+ "alternatives": [
+  "Income, education and race/ethnicity composition (poverty is the named confounder; others are not measured here)",
+  "Density and Manhattan: walking to work is common where jobs are close, which is also where incomes are high",
+  "Reverse causation and selection: people with lower BMI choose to walk or cycle, or choose walkable neighbourhoods",
+  "Commute mode covers workers only; obesity covers all adults"
+ ],
+ "prior": 0.5,
+ "registrant": "mobility agent (Claude Opus 5.5), for J. Vernon",
+ "registered_at": "2026-11-12T15:25:31-0500",
+ "sha256": "ae99f6c6638ffddcd7df7f9576b3f372e9359d98dd86b546a4c396e9a1ba80ae"
+}

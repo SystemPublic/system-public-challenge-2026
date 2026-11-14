@@ -1,0 +1,55 @@
+{
+ "id": "further-subway-crime-per-million-repro",
+ "kind": "reproduction",
+ "target": {
+  "report": "Safer Subways: Governor Hochul announces subway crime on track to reach lowest levels in a generation in 2025 (press release)",
+  "agency": "Office of the Governor of New York",
+  "date": "2025-12-18",
+  "url": "https://www.governor.ny.gov/news/safer-subways-governor-hochul-announces-subway-crime-track-reach-lowest-levels-generation-2025",
+  "location": "paragraph on crime per rider",
+  "number": {
+   "major_crimes_per_million_riders_2025": 1.65,
+   "fall_since_2021_percent": 30,
+   "transit_major_crime_change_vs_2024_percent": -5.2,
+   "transit_major_crime_change_vs_2019_percent": -14.4
+  },
+  "definition": "\"1.65 major crimes per million riders in 2025, down roughly 30 percent from 2021.\" The release names no source, does not define major crime, and was issued on 18 December 2025, so 2025 means a partial year.",
+  "data_used": [
+   "MTA Major Felonies yeek-jhmu (data.ny.gov), column crimes_per_million_riders"
+  ],
+  "data_access": "open",
+  "tolerance": "1.65 within +-0.05 (about 3%); fall since 2021 within 27 to 33 percent"
+ },
+ "statement": "The MTA Major Felonies table (yeek-jhmu) reproduces the Governor's figures: about 1.65 major felonies per million riders in 2025 and a fall of about 30% from 2021.",
+ "graph_evidence": [
+  {
+   "note": "Not applicable to a reproduction; no live graph lookup is pending for it.",
+   "n_findings": 0
+  }
+ ],
+ "literature": [],
+ "prediction": {
+  "direction": "0",
+  "definitions": "Rate for a period = (sum of felony_count over the months and rows) / (sum over months of riders in millions), with the riders of a month taken as the monthly total felony_count divided by the monthly sum of crimes_per_million_riders over felony types, for the same rows. Fall since 2021 = 1 - rate(2025)/rate(2021) for the same months.",
+  "magnitude": "Primary reading R1 gives 1.60 to 1.70 for 2025 and a fall of 27 to 33 percent. Other readings may differ by more than the tolerance.",
+  "support_if": "Under the primary reading R1 both hold: rate(2025) within 1.65 +- 0.05 and the fall within 27 to 33 percent.",
+  "refute_if": "Under no registered reading R1 to R6 are both conditions met. Primary reading misses but another reading meets both: unsettled.",
+  "readings": {
+   "R1_primary": "agency = 'NYCT', both police forces, all seven felony types, months January to November 2025 against January to November 2021 (the release was issued 18 December 2025)",
+   "R2": "as R1 with January to December 2025 against January to December 2021",
+   "R3": "as R1 but the unweighted mean of the monthly total rates",
+   "R4": "agency = 'NYCT' and police_force = 'NYPD' only, January to November",
+   "R5": "all four agencies (NYCT, SIR, LIRR, MNR) pooled, January to November",
+   "R6": "agency in ('NYCT','SIR'), January to November"
+  }
+ },
+ "plan": "Query yeek-jhmu (data.ny.gov) with server-side aggregation by month, agency, police_force and felony_type. Compute the readings in prediction.readings. Method sensitivity is the share of readings R1 to R6 that reproduce both numbers. As an independent check, also report the ratio of NYPD complaint counts (subway premise, seven felony types) to MTA subway entries for January to November 2025 and 2021, labelled secondary; it does not decide the verdict. The table description says it counts arrests while the column is named felony_count; the outcome states which the counts resemble by comparing with the complaint counts.",
+ "alternatives": [
+  "The State's figure uses different months, agencies, a different rider count (ridership by trips rather than entries) or a different release of the table."
+ ],
+ "prior": 0.6,
+ "registrant": "Claude (agent), for Jeff Vernon",
+ "disclosure_prior_looks": "Only the distinct agency, police_force and felony_type values and the month range (2019-01 to 2026-09, table updated 2026-10-23) of yeek-jhmu were read before registration. No count or rate was read.",
+ "registered_at": "2026-11-12T20:28:09-0500",
+ "sha256": "96fcc59a82adf26b842bd04e914386e8906e5c3f9e48101cde0f61f391df52ca"
+}

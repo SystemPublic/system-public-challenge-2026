@@ -1,0 +1,74 @@
+{
+ "id": "turn-calming-ped",
+ "kind": "confirmation",
+ "statement": "NYC DOT left-turn traffic calming (hardened centerlines, slow-turn wedges and related treatments) reduced pedestrians injured or killed within 40 m of treated intersections in the two years after installation, relative to intersections DOT treated later.",
+ "graph_evidence": [
+  {
+   "association": "PMID 37288501 (Batomen et al. 2024, Am J Epidemiol, Montreal 2012-2019)",
+   "summary": "Graph: traffic-calming measures -> collision rates IRR 0.31 (0.12-0.86). Abstract check: correct, but the figure is a subgroup (intersections on local roads); overall the authors found weak evidence of any association, and most collisions were on arterials, where NYC places turn calming.",
+   "pubmed_ids": [
+    37288501
+   ]
+  },
+  {
+   "association": "PMID 30962130 (He et al. 2019, Chin J Traumatol, Changsha)",
+   "summary": "Graph: 'intersections with conflicting left-turning vehicle-pedestrian traffic lights' -> 'proportion of intersections' IRR 3.13 and risky conflicts IRR 4.02. Abstract check: partly mis-extracted. 3.13 is the IRR of risky conflicts (vehicle counts) and 4.02 the IRR for pedestrians; neither is a proportion. The abstract also reports no difference in transport efficiency between the two signal designs.",
+   "pubmed_ids": [
+    30962130
+   ]
+  },
+  {
+   "association": "PMID 26680430 (Morency et al. 2015, Can J Public Health, Montreal 512 intersections)",
+   "summary": "Graph: fourth branch IRR 2.40 (1.53-3.77) and parking within 5 m IRR 2.40 (1.64-3.51) for injured pedestrians. Abstract check: correct. Cross-sectional; supports intersection geometry as a cause.",
+   "pubmed_ids": [
+    26680430
+   ]
+  },
+  {
+   "association": "PMID 31033340 (Ghana)",
+   "summary": "Graph: traffic calming -> pedestrian fatality OR 1.98. Already found reversed by the street-safety agent (data/derived/street_safety/graph_check.json); not used.",
+   "pubmed_ids": [
+    31033340
+   ]
+  },
+  {
+   "note": "Variable search for 'turn restriction', 'turn ban', 'hardened centerline', 'protected left' and 'crash migration' returned no relevant variables. The graph holds no evaluation of turn bans or turn calming on crashes. Collection: analyses/turn_restrictions/graph_collect.py."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "NYC DOT (2016). Don't Cut Corners: Left Turn Pedestrian & Bicyclist Crash Study.",
+   "doi": null,
+   "finding": "108 of 859 pedestrian and bicyclist deaths 2010-2014 involved left-turning vehicles; left turns 19% of pedestrian and bicyclist KSI vs right turns 6%. Before-after at 478 intersections, no control group: left-turn restrictions -41% left-turn pedestrian and bicyclist injuries (51 sites, 113 to 67 in 3 years), left-turn bays -15%, left-turn-only signals -33%, LPIs -14%."
+  },
+  {
+   "citation": "NYC DOT Turn Calming Program web page (accessed 13 Nov 2026).",
+   "doi": null,
+   "finding": "Pedestrian injuries -18%, pedestrian severe injuries -33%, median left-turn speed -54%; injuries 'declining faster than nearby comparable locations'; comparison sites and periods not stated. An earlier page (2016-2018 installations) gave -20%. A 2022 DOT evaluation slide gave all injuries flat."
+  },
+  {
+   "citation": "Hu W, Cicchino JB (2020). Hardened centerlines at intersections in Washington, DC; J Safety Res, December 2020 (IIHS bibliography ref 2202; title paraphrased).",
+   "doi": null,
+   "finding": "10 treated, 8 control intersections: vehicle-pedestrian conflicts -70.5%, mean left-turn speed -9.8%; most of the conflict reduction at two sites with many conflicts before."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Ratio of ratios 0.80-0.97 (DOT's own uncontrolled -18% to -20% shrinks under a controlled design).",
+  "support_if": "Upper bound of the 95% interval of the ratio of ratios below 1.00.",
+  "refute_if": "Lower bound of the 95% interval above 0.97."
+ },
+ "plan": "Treatment: data/derived/turn_restrictions/sites.json, built from NYC DOT VZV Turn Traffic Calming (sm2x-35i7): 1,457 left-turn records merged within 40 m into 1,207 intersections with install dates 2016-2026 (right-turn and bike-island records dropped). Outcome data, read only after this registration: Motor Vehicle Collisions - Crashes (h9gi-nx95) points since 2014 and Vehicles (bm4k-52h4) collision ids with pre_crash 'Making Left Turn' (the brief's 'bk4m-6pyy' is bm4k-52h4). Script: analyses/turn_restrictions/did.py at commit bd2a8d9, run unchanged. Design: stacked cohorts by install quarter 2016Q3-2023Q2; treated windows 24 months before and months 1-24 after the install month; controls are calming sites installed more than 24 months after the cohort ends (not yet treated), same calendar windows. Model: binomial GLM of post/(pre+post) on cohort fixed effects and a treated indicator, which is conditional Poisson; exp(b) is the ratio of ratios; SEs clustered by site; 95% Wald interval. Data through September 2026. Power check (analyses/turn_restrictions/power.py, assumed rates): about 770 treated sites in 23 cohorts; expected SE of log ratio 0.077 for pedestrians injured (z about -1.6 if the predicted midpoint is true, so this test may well end unsettled), 0.049 for left-turn crashes (z about -4.1), 0.046 for the pedestrian ring. Non-deciding checks: 30 m radius; cohorts whose windows avoid March-June 2020; event-time figure. Left-turn bans are not tested: no dated list of bans exists on NYC Open Data, and the 42nd Street changes of 2019 (extensions of time-of-day bans at 6th Ave, 7th Ave and Lexington Ave) are too few and imprecisely dated. Outcome: 'ped' in did.py.",
+ "alternatives": [
+  "Regression to the mean: DOT chooses sites after crash clusters (the design compares with sites DOT chose later, which were also chosen for crash history, but those were chosen later and may have had their clusters later)",
+  "Co-installed treatments: LPIs, daylighting, street improvement projects at the same intersections and dates",
+  "Changes in NYPD crash reporting and pre-crash coding, notably the fall of 'Making Left Turn' records in 2020",
+  "Differential pandemic and post-pandemic traffic recovery between early-treated and later-treated places",
+  "Geocoding error: NYPD crash coordinates snap to intersections or block faces, so a 40 m radius may miss or misassign crashes",
+  "Growth of e-bikes and mopeds, whose crashes with pedestrians are not left-turn car crashes"
+ ],
+ "prior": 0.35,
+ "registrant": "turn-restrictions agent (Claude Opus 5.5), for J. Vernon",
+ "registered_at": "2026-11-13T13:18:40-0500",
+ "sha256": "5941844b4bc2fd346ebb469eafa51c0dc44fca0f1ff247bc0086f3fba10debc2"
+}

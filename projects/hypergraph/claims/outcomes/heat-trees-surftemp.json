@@ -1,0 +1,138 @@
+{
+ "id": "heat-trees-surftemp",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Surface temperature (Landsat 17 Jul 2018) on z(log live street trees per km2), CD, adjusted for poverty and percent Black",
+  "estimate": 0.5046555461274105,
+  "lo": -0.029091970714172688,
+  "hi": 1.0384030629689938,
+  "scale": "F per SD",
+  "null": 0,
+  "n": 55
+ },
+ "graph_effect": {
+  "label": "NDVI -> land surface temperature (Hasan 2022, Bangladesh): negative, no value in the abstract; graph r = -1.0 is absent from the Dataverse CSV",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "direction only",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "uvpi-gqnh",
+   "name": "2015 Street Tree Census - Tree Data",
+   "url": "https://data.cityofnewyork.us/d/uvpi-gqnh",
+   "rows_updated_at": "2017-10-04T13:41:26Z",
+   "query": {
+    "$select": "cb_num, count(*) as n",
+    "$where": "status='Alive'",
+    "$group": "cb_num",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:27:40-0500",
+   "n_rows": 59
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "uvpi-gqnh",
+   "name": "2015 Street Tree Census - Tree Data",
+   "url": "https://data.cityofnewyork.us/d/uvpi-gqnh",
+   "rows_updated_at": "2017-10-04T13:41:26Z",
+   "query": {
+    "$select": "nta, count(*) as n",
+    "$where": "status='Alive'",
+    "$group": "nta",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:27:46-0500",
+   "n_rows": 188
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2141.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2141.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2143.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2143.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2443.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2443.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2410.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2410.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-vulnerability-index/hvi-nta.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-vulnerability-index/hvi-nta.csv",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "geography/CD.geojson",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/geography/CD.geojson",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "geography/NTA2010.topo.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/geography/NTA2010.topo.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "System Public Graph v1.0",
+   "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "file": "data/derived/heat/graph_evidence.json",
+   "audit": "data/derived/heat/graph_audit_heat.json"
+  }
+ ],
+ "prediction_scored": "miss: the adjusted slope is positive (+0.50 F, -0.03 to +1.04), not negative. At NTA level (n=194) it is positive with the interval above 0 (+0.44, +0.15 to +0.73). Vegetative cover (grass and trees, EHDP 2143) has the predicted negative slope (-0.62 F per SD, -1.17 to -0.07).",
+ "settle": "Street-tree density per km2 measures how much of an area is street grid, not how much of it is shaded: dense grids (Manhattan, inner Brooklyn) have many street trees per km2 and hot roofs and pavement, while parks, cemeteries and low-rise yards are cool but have few street trees. A canopy measure that includes park and yard trees (LiDAR canopy at tract level, or street trees per km of street), with impervious cover and building density as covariates, would settle whether street trees cool surfaces.",
+ "research_needed": [
+  {
+   "question": "Do street trees lower surface temperature once impervious cover and building height are held fixed?",
+   "data": "NYC 2017 LiDAR land cover (6 in), Landsat/ECOSTRESS LST, street tree census, PLUTO",
+   "design": "Block-level regression with street-segment fixed effects",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/heat/heat_bridge_chain.png"
+ ],
+ "notes": "The registered verdict rule gives 'unsettled' because the CD interval includes zero; the NTA secondary would be 'contested'. Adding borough terms (not registered) makes the CD slope positive with the interval above 0 (+0.61 F). Four CDs lack HVI covariates (CD aggregation of NTAs) and drop from adjusted models.",
+ "registration_sha256": "a1001b709d21ebc86de614001fd350d9115b0fff15a0aaeea827d07def3cf453",
+ "decided_at": "2026-11-12T15:39:52-0500",
+ "stance": {
+  "value": -0.729,
+  "lo": -0.957,
+  "hi": 0.053,
+  "z": -1.85
+ }
+}

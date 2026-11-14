@@ -1,0 +1,141 @@
+{
+ "id": "heat-ac-shootings",
+ "verdict": "confirmed",
+ "verdict_note": "Confirmed by the registered rule, for the whole-year linear slope on calendar dates only: 0.043 (0.007 to 0.080). It is not evidence of an air-conditioning effect. The difference comes from days below about 20 C, when air conditioners are off, and is -0.178 (-0.329 to -0.027) at 27 C and above. It is 0.025 (-0.011 to 0.061) when the day runs from 06:00 to 05:59, and 0.034 (-0.007 to 0.076) within income strata pooled; neither interval excludes 0.",
+ "city_effect": {
+  "label": "Difference between the log rate ratios of shootings per 5 C of TMAX, low-AC half minus high-AC half of community districts, 2006-2026",
+  "estimate": 0.04326569768119201,
+  "lo": 0.00699859399042501,
+  "hi": 0.079532801371959,
+  "scale": "difference of log rate ratios per 5 C",
+  "null": 0,
+  "n": 6932
+ },
+ "graph_effect": null,
+ "graph_evidence": [
+  {
+   "association_id": "variables searched by name: air conditioning, air conditioner",
+   "concepts": [
+    "air conditioning (variable names)",
+    "violence, crime, aggression, injury"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "86 and 27 variables match; none of their associations has a violence, crime, aggression or shooting variable on the other side. The graph holds nothing on air conditioning and violence.",
+   "pubmed_ids": []
+  },
+  {
+   "association_id": "variables searched by name: air conditioner",
+   "concepts": [
+    "working air conditioner at home",
+    "heat-related death or hospital admission"
+   ],
+   "n_findings": 5,
+   "n_studies": 4,
+   "direction": "-",
+   "summary": "Case-control studies of heat waves: odds of heat-related death with a working air conditioner 0.2 (0.1 to 0.7) in Chicago 1999 (Naughton 2002), 0.3 in Chicago 1995 (Semenza 1996), 0.03 (0 to 0.2) in Cincinnati 1999 (Kaiser 2001); odds of heat-related hospital admission with an air conditioner in the bedroom 0.12 (0.02 to 0.74) in Adelaide 2009 (Zhang 2016). The four abstracts were read in PubMed and match. A fifth record (Saito 2019, 'no air conditioner', HR 1.71) is wrong: the abstract gives 1.71 for a deprivation index, not for air conditioning.",
+   "pubmed_ids": [
+    11988377,
+    8649494,
+    11563746,
+    27256088,
+    30634562
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "incident_key, max(occur_date) as d, max(occur_time) as t, max(latitude) as lat, max(longitude) as lon, max(jurisdiction_code) as jur, max(location_desc) as loc",
+    "$where": "occur_date between '2006-01-01T00:00:00' and '2026-08-31T23:59:59'",
+    "$group": "incident_key",
+    "$order": "incident_key"
+   },
+   "fetched": "2026-11-13T07:53:21-0500",
+   "n_rows": 24429
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "ehdp",
+   "file": "hvi-nta-2020.csv",
+   "repository": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998"
+  }
+ ],
+ "prediction_scored": "partial. The difference is 0.043 (0.007 to 0.080); the predicted range was -0.02 to +0.05 with a best guess of +0.01, and the registrant gave 'confirmed' a probability of 0.2. The lower limit is above 0, so the support rule is met. After the referee: the sentence comparing the estimate with the half-carry value 0.042 is withdrawn, because the difference arises on days below about 20 C, when air conditioners are off. On a day from 06:00 to 05:59 the difference is 0.025 (-0.011 to 0.061) and the support rule is not met; that count was chosen after the data and does not decide (rule 4).",
+ "settle": "Shootings by census tract or block with the tract's housing type and air-conditioning share (the Housing and Vacancy Survey microdata give it by sub-borough and building type), and a temperature measured in the district. A design with a change in air conditioning over time is needed to say anything causal: residential electricity by ZIP code and month (New York State Utility Energy Registry, 2016 on) gives a yearly measure of cooling use per account that could serve.",
+ "research_needed": [
+  {
+   "question": "Does the heat slope of shootings in a ZIP code fall in years when its summer residential electricity use per account rises?",
+   "data": "Utility Energy Registry monthly ZIP electricity (data.ny.gov tzb9-c2c6, g2x3-izm4); NYPD shootings by coordinates",
+   "design": "ZIP by year panel of summer slopes on the ratio of July-August to April-May residential use per account, ZIP and year fixed",
+   "priority": "medium"
+  },
+  {
+   "question": "Why is the slope of shootings below 27 C steeper in low-AC, low-income districts?",
+   "data": "Shootings by location type and hour; 311 street-noise complaints by district",
+   "design": "The outdoor-activity proxies of heat-mech-outdoors by district half",
+   "priority": "medium"
+  },
+  {
+   "question": "On days of 27 C or more, is the heat slope of shootings steeper in low-AC districts once income is in the model?",
+   "data": "NYPD shootings by coordinates and time; Heat Vulnerability Index file",
+   "design": "A new registration: the district contrast on days of 27 C or more, with the day from 06:00 to 05:59 and income as a term (the referee's fifth recommendation)",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/heat_solutions/heat_solutions.png"
+ ],
+ "notes": "Two lines of run.py (170 and 224) were changed after registration: each reads the hour of a shooting as the text before the first colon in place of the first two characters. The earlier wording of this note (one line; unpadded times in 'the file'; no model had run) was inaccurate and was corrected after the referee. The incident file 5ucz-vwe8 has no unpadded time, and the two versions of line 170 give the same hour for all 24,429 incidents. The 390 unpadded times (of 29,744) are in the archived victim file 833y-fsy8, which only heat-school-out uses, so the registered script stopped at line 224. That line comes after the air-conditioning models in main(), so in the failed run those models had been fitted in memory; the script prints and writes only at its end, so no result was displayed or saved before the change. The change alters no number of the three claims' deciding models, none of which uses the hour. Registered secondary results. Rate ratios per 5 C: low-AC half 1.157 (1.139 to 1.176), high-AC half 1.105 (1.069 to 1.141). Bottom against top third 0.057 (0.007 to 0.108). Within the low-income half 0.065 (-0.006 to 0.135); within the high-income half 0.018 (-0.034 to 0.069). Shootings between 00:00 and 05:59 0.034 (-0.027 to 0.095). Days with TMAX of 27 C or more -0.178 (-0.329 to -0.027): on hot days the slope is steeper in the HIGH-AC half. May to September -0.028 (-0.095 to 0.039). 2006 to 2019 0.068 (0.025 to 0.112); 2020 to 2026 -0.023 (-0.088 to 0.042). District slopes on air-conditioning share per 10 points: -0.032 (-0.077 to 0.013) alone and -0.033 (-0.079 to 0.013) with income, 37 districts. Housing Bureau jurisdiction against other incidents 0.017 (-0.021 to 0.056), within the low-AC half 0.013 (-0.029 to 0.055). Public-housing buildings against other apartment buildings 0.119 (0.061 to 0.177). Exploratory, after the results: in one piecewise model the difference is 0.073 (0.032 to 0.113) per 5 C below 27 C and -0.123 (-0.237 to -0.009) above 27 C. Leaving out one borough at a time gives 0.038 to 0.052, with the lower limit at or below 0 without the Bronx, Brooklyn or Queens. The public-housing building contrast is 0.138 (0.072 to 0.204) below 27 C and 0.017 (-0.165 to 0.200) above; shootings at other apartment buildings have a flat slope (1.048 (1.001 to 1.097)) and the location field is blank for about half of incidents.\n\nAfter the referee (13 Nov 2026): the verdict is kept under rule 1 and narrowed. The referee rebuilt the district table, the district of each shooting and the daily series with separate code; the daily counts agree on all 7,548 days and the refit gives 0.043 (0.007 to 0.080) on 6,932 days. The support condition, a lower limit above 0, is met by the registered model, so the label stays confirmed. What is confirmed is one linear slope over all days of the year, with shootings counted on calendar dates. It is not evidence about air conditioning, for four reasons.\nTemperature range (referee). The difference is 0.105 (-0.001 to 0.211) on days below 10 C, 0.161 (0.033 to 0.288) from 10 to 20 C, -0.009 (-0.184 to 0.165) from 20 to 27 C and -0.178 (-0.329 to -0.027) at 27 C and above; 0.075 (0.031 to 0.119) from October to April and -0.028 (-0.095 to 0.039) from May to September. It comes from days below about 20 C, when air conditioners are off, and the sign above the knot is negative for knots at 24, 27 and 30 C and at LaGuardia and JFK. The agreement of 0.043 with the half-carry value 0.042 is a coincidence of two numbers, and the sentence that compared them is removed from prediction_scored.\nThe day. Shootings from 00:00 to 05:59 are 34.7% of incidents (8,480 of 24,429), and the maximum of their calendar date comes hours later. With the day running from 06:00 to 05:59 the registered model gives 0.025 (-0.011 to 0.061) on 6,902 days (referee; re-checked with the registered functions). The lower limit is below 0 and the upper limit is above 0.042, which the registered rule would read as unsettled. Under rule 4 a count chosen after the data decides nothing, so the verdict is not revised; the condition that changes side is reported here and to the coordinator. Shootings from 06:00 to 23:59 alone give 0.051 (0.006 to 0.096); shootings from 00:00 to 05:59 give 0.034 (-0.027 to 0.095) on the same date's maximum and -0.019 (-0.079 to 0.041) on the previous date's.\nIncome. The Spearman correlation of air-conditioning share with median income is 0.699 and with the percentage of Black residents -0.72 (the registration does not mention the second). The income halves pooled by inverse variance give 0.034 (-0.007 to 0.076), which includes 0; the income contrast with air conditioning ignored is 0.028 (-0.002 to 0.057). No model shows an air-conditioning difference that excludes 0 once income is in it. Within boroughs the estimate is 0.053 (-0.008 to 0.115) in Brooklyn, 0.044 (-0.028 to 0.117) in Queens and 0.000 (-0.086 to 0.086) in Manhattan; the Bronx has 169 incidents in high-AC districts.\nPeriod. 0.068 (0.025 to 0.112) for 2006 to 2019 and -0.023 (-0.088 to 0.042) for 2020 to 2026; the interaction is -0.040 (-0.077 to -0.003).\nOther specifications (referee), calendar date then 06:00 day: HAC errors with 7 lags 0.043 (0.008 to 0.078) and 0.025 (-0.010 to 0.060); year-by-month terms 0.051 (0.012 to 0.089) and 0.030 (-0.008 to 0.068); without 2020 and 2021 0.058 (0.020 to 0.097) and 0.037 (-0.002 to 0.076); LaGuardia 0.037 (0.001 to 0.074) and JFK 0.048 (0.007 to 0.088) on calendar dates. The Pearson statistic is 1.03 per degree of freedom, so the standard errors are sound.\nEvery quoted estimate on the 06:00 day (re-checked), calendar date first: low half's own rate ratio 1.157 (1.139 to 1.176) on calendar dates and 1.141 (1.122 to 1.160) on the 06:00 day; high half 1.105 (1.069 to 1.141) on calendar dates and 1.109 (1.074 to 1.146) on the 06:00 day; bottom against top third 0.057 (0.007 to 0.108) on calendar dates and 0.035 (-0.016 to 0.085) on the 06:00 day; low-income half 0.065 (-0.006 to 0.135) on calendar dates and 0.046 (-0.023 to 0.116) on the 06:00 day; high-income half 0.018 (-0.034 to 0.069) on calendar dates and 0.011 (-0.041 to 0.062) on the 06:00 day; income halves pooled 0.034 (-0.007 to 0.076) on calendar dates and 0.023 (-0.018 to 0.065) on the 06:00 day; days of 27 C or more -0.178 (-0.329 to -0.027) on calendar dates and -0.133 (-0.284 to 0.017) on the 06:00 day; May to September -0.028 (-0.095 to 0.039) on calendar dates and -0.032 (-0.099 to 0.036) on the 06:00 day; 2006 to 2019 0.068 (0.025 to 0.112) on calendar dates and 0.047 (0.002 to 0.091) on the 06:00 day; 2020 to 2026 -0.023 (-0.088 to 0.042) on calendar dates and -0.031 (-0.093 to 0.030) on the 06:00 day; piecewise below 27 C 0.073 (0.032 to 0.113) on calendar dates and 0.044 (0.004 to 0.084) on the 06:00 day and above -0.123 (-0.237 to -0.009) on calendar dates and -0.087 (-0.205 to 0.031) on the 06:00 day; Housing Bureau jurisdiction against other incidents 0.017 (-0.021 to 0.056) on calendar dates and 0.018 (-0.020 to 0.055) on the 06:00 day; public-housing buildings against other apartment buildings 0.119 (0.061 to 0.177) on calendar dates and 0.115 (0.058 to 0.172) on the 06:00 day. On the 06:00 day the hot-day reversal no longer excludes 0. It is one of about ten registered secondary results (p = 0.02 uncorrected) and is reported as a result that contradicts the air-conditioning reading, not as a finding that high-AC districts are more sensitive to heat. Exploratory, run after the outcomes, and deciding nothing under rule 4 (analyses/critique/round6_six_am_solutions.py; data/derived/round6_heat/six_am_solutions.json).\nRivals that fit the temperature pattern better than air conditioning (referee): outdoor life, which rises from cold to mild days and is complete by about 20 C; saturation, since the low-AC districts already hold 82% of incidents; and the poor fit of one linear term to both halves, so that a difference of slopes summarises a difference of shapes.\nOrder of events. The registration is stamped 07:52:12 and the commit on prereg/heat-ac-shootings 07:53:07; the dated query was fetched at 07:53:21. Git records the commit time and not the push time, so the repository cannot show that the push preceded the fetch.\nStance. The stance is set to null. The value 0.824 was the z of the estimate against no difference, and on the strip it read as agreement with research. The graph holds nothing on air conditioning and violence, graph_effect is null, and the one cited paper concerns poverty and housing age.\nNot done. The referee's fifth recommendation, a new registration of the contrast on days of 27 C or more with the 06:00 day and income in the model, is recorded under research_needed and was not registered in this round.",
+ "registration_sha256": "567404dcc31818d12b262b40803c7974152ab3870c86eefc55255e2eb9f994a4",
+ "decided_at": "2026-11-13T07:58:34-0500",
+ "stance": null,
+ "stance_note": "Null after the referee: the graph has no finding on air conditioning and violence (graph_effect is null), so the z of the city estimate against no difference (2.34) does not measure agreement with research.",
+ "critique": {
+  "report": "critique/heat-ac-shootings.md",
+  "answer": "accepted; verdict kept under rule 1 and narrowed, note on the changed lines corrected, stance null"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Difference between the log rate ratios of shootings per 5 C of TMAX, low-AC half minus high-AC half of community districts, 2006-2026",
+    "estimate": 0.04326569768119201,
+    "lo": 0.00699859399042501,
+    "hi": 0.079532801371959,
+    "scale": "difference of log rate ratios per 5 C",
+    "null": 0,
+    "n": 6932
+   },
+   "stance": {
+    "value": 0.824,
+    "lo": 0.187,
+    "hi": 0.973,
+    "z": 2.34
+   },
+   "decided_at": "2026-11-13T07:58:34-0500",
+   "prediction_scored": "partial. The difference is 0.043 (0.007 to 0.080); the predicted range was -0.02 to +0.05 with a best guess of +0.01, and the registrant gave 'confirmed' a probability of 0.2. The lower limit is above 0, so the support rule is met. The estimate is close to the size expected if households without air conditioning carried half the slope (0.042)."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed, narrowed. verdict_note limits the label to the whole-year slope on calendar dates and says it is not evidence of an air-conditioning effect; the 06:00-day estimate 0.025 (-0.011 to 0.061), under which the support condition is not met, is recorded and the verdict is not revised (rule 4); half-carry sentence removed; note on the changed lines corrected; stance set to null.",
+  "critique": "critique/heat-ac-shootings.md",
+  "revised_at": "2026-11-13T09:19:59-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,197 @@
+{
+ "id": "commute-time-depression",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "age-adjusted adult depression, percentage points per 5 min of mean commute, adjusted for poverty and subway access",
+  "estimate": -0.765,
+  "lo": -1.63,
+  "hi": 0.1,
+  "scale": "points per 5 minutes",
+  "null": 0,
+  "n": 42
+ },
+ "graph_effect": {
+  "label": "depression OR, 60-120 vs <=30 min commute (PMID 37342827)",
+  "estimate": 1.23,
+  "lo": 1.13,
+  "hi": 1.33,
+  "scale": "odds ratio",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "census-acs-summary-file",
+   "vintage": "ACS 2015-2019 5-year (legacy sequence files)",
+   "table": "B08303",
+   "lines": [
+    1,
+    12,
+    13
+   ],
+   "sequence": "0027",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2019/data/5_year_seq_by_state/UnitedStates/All_Geographies_Not_Tracts_Block_Groups/20195us0027000.zip",
+   "geography_file": "https://www2.census.gov/programs-surveys/acs/summary_file/2019/data/5_year_seq_by_state/UnitedStates/All_Geographies_Not_Tracts_Block_Groups/g20195us.csv"
+  },
+  {
+   "kind": "census-acs-summary-file",
+   "vintage": "ACS 2015-2019 5-year (legacy sequence files)",
+   "table": "B08013",
+   "lines": [
+    1
+   ],
+   "sequence": "0022",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2019/data/5_year_seq_by_state/UnitedStates/All_Geographies_Not_Tracts_Block_Groups/20195us0022000.zip",
+   "geography_file": "https://www2.census.gov/programs-surveys/acs/summary_file/2019/data/5_year_seq_by_state/UnitedStates/All_Geographies_Not_Tracts_Block_Groups/g20195us.csv"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "geography/zcta_to_uhf.csv",
+   "label": "ZCTA to UHF42 crosswalk",
+   "n_zcta_matched": 214
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2417.json",
+   "indicator": 2417,
+   "measure": 1324,
+   "label": "Depression (adults), age-adjusted % (CHS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2017-18"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2417.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2060.json",
+   "indicator": 2060,
+   "measure": 500,
+   "label": "Exercise in past 30 days, % (CHS); outcome is 100 minus this",
+   "geotype": "UHF42",
+   "periods": [
+    "2017",
+    "2018",
+    "2019"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2060.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2063.json",
+   "indicator": 2063,
+   "measure": 506,
+   "label": "Adult obesity, % (CHS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2017",
+    "2018",
+    "2019"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2063.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/103.json",
+   "indicator": 103,
+   "measure": 221,
+   "label": "Poverty, % below FPL (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/103.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2391.json",
+   "indicator": 2391,
+   "measure": 1227,
+   "label": "Residents within 1/4 mile of a subway entrance, %",
+   "geotype": "UHF42",
+   "periods": [
+    "2018"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2391.json"
+  },
+  {
+   "kind": "dataverse",
+   "doi": "doi:10.7910/DVN/7V6JDO",
+   "version": "2.1",
+   "file": "data/derived/commuting/graph_evidence.json"
+  }
+ ],
+ "prediction_scored": "uninformative. The design's standard error (about 0.44 points per 5 minutes) gave about 10% power against the predicted upper slope of +0.3, so the registration could not have produced support. The point estimate is not stable: weighting by CHS precision gives +0.19, dropping Manhattan gives +0.67.",
+ "settle": "Individual-level data linking commute time to depression (a survey with both items), or a panel around a change in commute time; neighbourhood-level aggregates in NYC lack the power for the effect size the research reports. (A PUMS linkage cannot supply depression and was dropped.)",
+ "research_needed": [
+  {
+   "question": "Does commute time predict depression or poor sleep among New York workers, net of income?",
+   "data": "NYC Community Health Survey with a commute-time item; or ACS PUMS joined to a survey with health outcomes",
+   "design": "person-level logistic regression by commute-time band, adjusted for income, age, occupation and borough",
+   "priority": "high"
+  },
+  {
+   "question": "Why do long-commute neighbourhoods have much more obesity and inactivity than poverty and subway access predict?",
+   "data": "CHS 2017-19 (obesity, exercise) with car commuting share, age structure and race/ethnicity by UHF42",
+   "design": "registered neighbourhood model adding car-commute share and composition; then a within-person panel elsewhere",
+   "priority": "medium"
+  },
+  {
+   "question": "The System graph has no concept for commuting or commute time; its 51 findings with a commute-time exposure (38 on sleep, mental health, inactivity or self-rated health) are reachable only by variable search",
+   "data": "System Public Graph",
+   "design": "add a commute-time concept and ground these variables to it",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/commuting/commute_time_depression_uhf42.png"
+ ],
+ "notes": "Across 42 UHF neighbourhoods mean one-way commute time (ACS 2015-19) ranges from 25.7 minutes (Greenwich Village-SoHo) to 50.2 minutes (Rockaways). Adjusted for poverty and subway access, depression changes by -0.77 (-1.63 to +0.10) points per 5 minutes; unadjusted -0.45 (-1.23 to +0.32); poverty only -0.76 (-1.38 to -0.14); with borough fixed effects -0.55 (-1.73 to +0.62). The share commuting 60 minutes or more gives -0.64 (-1.72 to +0.43) points per 10 points of share. Manhattan neighbourhoods have short commutes and above-predicted depression, which pulls the slope down. Secondary outcomes (registered as reported only): no exercise in the past 30 days rises +2.20 (+1.19 to +3.22) points per 5 minutes and obesity +4.04 (+2.79 to +5.28) points per 5 minutes, both adjusted. These are far larger than any commute effect the research implies, and they repeat the pattern of mob-active-commute-obesity: long-commute neighbourhoods are outer, car- and bus-dependent and differ in composition. They are associations, not tests. The ACS commute data were read from the Census summary files because the Census API now requires a key; the ZCTA crosswalk matched 214 ZCTAs.",
+ "registration_sha256": "3908e52e90ed062cd9d24cc967a43cb9af43d0811cec9687338eb50675c352bc",
+ "decided_at": "2026-11-12T16:31:40-0500",
+ "stance": {
+  "value": -0.7,
+  "lo": -0.951,
+  "hi": 0.113,
+  "z": -1.73
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "age-adjusted adult depression, percentage points per 5 min of mean commute, adjusted for poverty and subway access",
+    "estimate": -0.765,
+    "lo": -1.63,
+    "hi": 0.1,
+    "scale": "points per 5 minutes",
+    "null": 0,
+    "n": 42
+   },
+   "stance": {
+    "value": -0.7,
+    "lo": -0.951,
+    "hi": 0.113,
+    "z": -1.73
+   },
+   "decided_at": "2026-11-12T16:31:40-0500",
+   "prediction_scored": "miss: the adjusted slope is negative, -0.77 (-1.63 to +0.10) points per 5 minutes, against a predicted +0.05 to +0.3. Its interval includes 0, so neither registered condition is met."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; the test was uninformative; settle condition revised.",
+  "critique": "critique/commute-time-depression.md",
+  "revised_at": "2026-11-12T16:37:37-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

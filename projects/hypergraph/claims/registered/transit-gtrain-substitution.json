@@ -1,0 +1,167 @@
+{
+ "id": "transit-gtrain-substitution",
+ "kind": "confirmation",
+ "statement": "During the summer 2024 G train shutdown, daily Uber and Lyft pickups in taxi zones whose G-only stations had no train service rose relative to nearby Brooklyn and Queens zones without G stations, which is what substitution of ride-hail for the subway predicts.",
+ "edge": {
+  "cause": "loss of subway service at a station (G train shutdown, 28 June to 3 September 2024)",
+  "effect": "app-based for-hire vehicle (Uber, Lyft) pickups in the taxi zone around the station"
+ },
+ "event": {
+  "note": "The task text gave the year as 2023. The shutdown for signal (CBTC) work was in summer 2024, so the trip data are the 2024 file and the placebo year is 2023. The third phase closed Bedford-Nostrand Avs to Church Av, not only to Hoyt-Schermerhorn; south of Hoyt-Schermerhorn the F train kept serving the shared stations.",
+  "phases": [
+   {
+    "phase": 1,
+    "from": "2024-06-28 21:45",
+    "to": "2024-07-05",
+    "no_g_service": "Court Sq to Nassau Av (trains ran Nassau Av to Church Av)",
+    "analysis_days": "2024-06-29 to 2024-07-04"
+   },
+   {
+    "phase": 2,
+    "from": "2024-07-05",
+    "to": "2024-08-12",
+    "no_g_service": "Court Sq to Bedford-Nostrand Avs (trains ran Bedford-Nostrand Avs to Church Av)",
+    "analysis_days": "2024-07-05 to 2024-08-11"
+   },
+   {
+    "phase": 3,
+    "from": "2024-08-12",
+    "to": "2024-09-03",
+    "no_g_service": "Bedford-Nostrand Avs to Church Av (trains ran Court Sq to Bedford-Nostrand Avs)",
+    "analysis_days": "2024-08-12 to 2024-09-02"
+   }
+  ],
+  "sources": [
+   "https://www.amny.com/new-york/brooklyn/g-train-shutdown-what-to-know-2024",
+   "https://www.fox5ny.com/news/g-train-shutdown-starts-friday",
+   "https://nbcnewyork.com/traffic/transit-traffic/g-train-shutdown-what-to-know/5569268/"
+  ],
+  "shuttle_buses": "Free shuttle buses ran along the closed segment in every phase (as often as every 1 to 2 minutes at weekday peaks). They absorb displaced riders and work against finding substitution.",
+  "which_stations_closed_in_each_phase": "Inferred from the endpoints in the announcements and the order of stations on the line, with the terminal of the truncated service counted as served. The first stage checks this station by station."
+ },
+ "graph_evidence": [
+  {
+   "note": "The System graph API key is not on this machine, so no live lookup was made; a live lookup is pending. The cached evidence in this repository (data/derived/commuting/graph_evidence.json and the registration of commute-fhv-subway-distance, 12 Nov 2026) records that the graph has no concept for ride-hailing, taxis or the subway, that 'public transport' links to health outcomes only, and that a variable search found 7 associations mentioning ride-hail, all from one study. The research side of this claim therefore rests on the transport literature below.",
+   "n_findings": 0,
+   "direction": null
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Hall JD, Palsson C, Price J (2018). Is Uber a substitute or complement for public transit? Journal of Urban Economics 108:36-50.",
+   "doi": "10.1016/j.jue.2018.09.003",
+   "finding": "Difference in differences across US metropolitan areas by Uber entry date and penetration. Uber is a complement for the average transit agency, increasing ridership by five percent after two years, with heterogeneity by city and agency size. Checked against the abstract.",
+   "data_used": "FTA National Transit Database monthly ridership by agency; Uber entry dates; Google Trends as penetration",
+   "data_access": "open",
+   "access_note": "Replication code and data at openICPSR project 115490."
+  },
+  {
+   "citation": "Graehler M, Mucci RA, Erhardt GD (2019). Understanding the recent transit ridership decline in major US cities: service cuts or emerging modes? Transportation Research Board 98th Annual Meeting, paper 19-04931.",
+   "doi": null,
+   "finding": "Panel of major US cities 2002-2018. For each year after ride-hail companies enter a market, heavy rail ridership falls by 1.3% and bus ridership by 1.7%. Checked against the TRID abstract. Conference paper, not journal-reviewed.",
+   "data_used": "FTA National Transit Database monthly ridership by mode; TNC entry dates",
+   "data_access": "open"
+  },
+  {
+   "citation": "Diao M, Kong H, Zhao J (2021). Impacts of transportation network companies on urban mobility. Nature Sustainability 4:494-500.",
+   "doi": "10.1038/s41893-020-00678-z",
+   "finding": "US metropolitan areas: ride-hail entry raised road congestion, reduced transit ridership by about 9% (the figure usually quoted is 8.9%; we confirmed only 'approximately 9%' from a press summary of the paper, not from the paper itself), and did not change vehicle ownership significantly.",
+   "data_used": "Urban Mobility Report congestion measures, National Transit Database ridership, vehicle ownership by metropolitan area, TNC entry dates",
+   "data_access": "unknown",
+   "access_note": "Methods section not read."
+  },
+  {
+   "citation": "Erhardt GD, Mucci RA, Cooper D, Sana B, Chen M, Castiglione J (2022). Do transportation network companies increase or decrease transit ridership? Empirical evidence from San Francisco. Transportation 49:313-342.",
+   "doi": "10.1007/s11116-021-10178-4",
+   "finding": "San Francisco 2010 to 2015: ride-hail accounts for a net bus ridership decline of about 10% (8.6% to 10.8% across models); no significant effect on light rail. Checked against abstracts and summaries; the DOI was not checked by resolving it.",
+   "data_used": "Trip data scraped from the APIs of two ride-hail companies; SFMTA automated passenger counts",
+   "data_access": "partly_open",
+   "access_note": "The scraped trip data were processed by the San Francisco County Transportation Authority; route-level counts come from the agency."
+  },
+  {
+   "citation": "Babar Y, Burtch G (2020). Examining the heterogeneous impact of ride-hailing services on public transit use. Information Systems Research 31(3):820-834.",
+   "doi": "10.1287/isre.2019.0917",
+   "finding": "Staggered entry across US locations: ride-hail significantly reduced city bus use and increased commuter rail use, varying with city size, crime, weather, fuel price and transit quality. Direction checked against the abstract; the abstract gives no percentages and we quote none.",
+   "data_used": "FTA National Transit Database; ride-hail entry dates",
+   "data_access": "open"
+  },
+  {
+   "citation": "Borowski E, Soria J, Schofer J, Stathopoulos A (2023). Does ridesourcing respond to unplanned rail disruptions? A natural experiment analysis of mobility resilience and disparity. Cities 140:104439.",
+   "doi": "10.1016/j.cities.2023.104439",
+   "finding": "Chicago, 28 unplanned rail disruptions, November 2018 to October 2019: ride-hail demand rose during disruptions, more on weekdays, in severe disruptions and in whiter and more affluent areas. This is the closest published design to ours. Direction checked against the abstract; we did not find an effect size to quote.",
+   "data_used": "City of Chicago Transportation Network Providers trip records; CTA service alerts",
+   "data_access": "open"
+  },
+  {
+   "citation": "Barajas JM, Brown A (2021). Not minding the gap: does ride-hailing serve transit deserts? Journal of Transport Geography 90:102918.",
+   "doi": "10.1016/j.jtrangeo.2020.102918",
+   "finding": "Chicago: more ride-hail trip ends where rail service is prevalent; ride-hail does not concentrate in transit deserts (the complement pattern in the cross-section). Already cited by commute-fhv-subway-distance.",
+   "data_used": "City of Chicago Transportation Network Providers trip records",
+   "data_access": "open"
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Coefficient on closed_here in the primary model (log points; daily app pickups in treated zones while their G-only station was closed): +0.02 to +0.12, that is 2% to 13% more pickups. In the three G-dependent zones (Greenpoint, Bedford, Clinton Hill) the registered secondary estimate is expected to be at least as large: +0.03 to +0.15. The 2023 placebo is expected to lie within -0.02 to +0.02.",
+  "support_if": "All of: (a) first stage passes; (b) the primary coefficient is above 0 and its zone-clustered 95% interval excludes 0; (c) the placebo-in-space permutation p-value (two-sided) is below 0.05; (d) the 2023 placebo coefficient has a 95% interval that includes 0, or is smaller in absolute value than half the primary coefficient.",
+  "refute_if": "First stage passes and the upper end of the zone-clustered 95% interval of the primary coefficient is below +0.02, so that a rise of 2% or more is excluded. This covers a precise null and a fall.",
+  "otherwise": "unsettled when neither condition is met; no_test when the first stage fails or the primary model cannot be run as registered."
+ },
+ "plan": {
+  "datasets": {
+   "trips_2024": "NYC Open Data bqxa-629f, 2024 High Volume FHV Trip Data (pickup_datetime, pulocationid, hvfhs_license_num)",
+   "trips_2023": "NYC Open Data u253-aew4, 2023 High Volume FHV Trip Data (placebo year). The 2022 file g6pj-fsah named in the task is not used, because the event is in 2024.",
+   "fallback": "If the portal cannot aggregate these tables on the server (timeouts), the same counts are computed from the TLC monthly parquet files of the same records (d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_YYYY-MM.parquet, June to September 2023 and 2024), cited by URL, ETag and Last-Modified. This is not a change of plan.",
+   "subway": "data.ny.gov wujg-7c2s, MTA Subway Hourly Ridership 2020-2024, summed to station complex by day (concord.socrata with DOMAIN set to https://data.ny.gov)",
+   "stations": "data.ny.gov 39hk-dx4f, MTA Subway Stations (lookup, read before registration)",
+   "zones": "TLC taxi_zones shapefile (lookup, read before registration)"
+  },
+  "unit": "taxi zone by calendar day of pickup, 1 June to 30 September 2024 (122 days), less 28 June and 3 September, which are partial days.",
+  "treated_zones": {
+   "rule": "A zone-day has closed_here = 1 when at least one station in the zone served only by the G (no other line in the station complex) had no G service on that day. A zone-day of a treated zone has cut_elsewhere = 1 when it is inside the shutdown (29 June to 2 September) and closed_here = 0, since the line was cut at another point. The reference days for treated zones are therefore 1 to 27 June and 4 to 30 September.",
+   "closed_here": {
+    "112 Greenpoint": "phase 1 (Greenpoint Av) and phase 2 (Greenpoint Av, Nassau Av)",
+    "145 Long Island City/Hunters Point": "phases 1 and 2 (21 St; Court Sq keeps the 7, E and M)",
+    "17 Bedford": "phase 2 (Flushing Av, Myrtle-Willoughby Avs; Bedford-Nostrand Avs was the terminal)",
+    "80 East Williamsburg": "phase 2 (Broadway)",
+    "256 Williamsburg (South Side)": "phase 2 (Metropolitan Av; the L at Lorimer St stays)",
+    "49 Clinton Hill": "phase 3 (Classon Av, Clinton-Washington Avs)",
+    "97 Fort Greene": "phase 3 (Fulton St)"
+   },
+   "g_dependent_subset": "112 Greenpoint, 17 Bedford, 49 Clinton Hill: zones in which G-only stations are at least half of the stations in the zone."
+  },
+  "control_zones": "Brooklyn and Queens taxi zones with no G station, not airports (132, 138), whose centroid is within 5 km of a G station between Court Sq and Fulton St (35 zones by the shapefile). Zones that contain a G station shared with the F, A or C (25, 40, 106, 133, 181, 257) are in neither group.",
+  "exclusion": "Any zone, treated or control, with fewer than 200 mean daily pickups over 1 to 27 June 2024 is dropped (parks and industrial zones).",
+  "outcome": "log of daily pickups, Uber (HV0003) plus Lyft (HV0005).",
+  "model": "OLS: log(pickups) on closed_here and cut_elsewhere with zone fixed effects and date fixed effects, standard errors clustered by zone. The primary coefficient is closed_here, pooled over the seven treated zones and their phases.",
+  "inference": "Because there are only seven treated clusters, a placebo-in-space permutation is also required for support: 2,000 draws in which seven control zones chosen at random receive the seven treated schedules, the treated zones are left out, and the model is re-estimated; the p-value is the share of draws with an absolute coefficient at least as large as the estimate.",
+  "first_stage": "Daily entries (ridership) at the ten G-only station complexes (282, 283, 284, 286, 287, 288, 289, 290, 291, 292 in wujg-7c2s). Passes when, for the stations coded closed, mean daily entries during their closed phase are at least 70% below their mean over 1 to 27 June 2024, pooled over stations. A station that does not show the fall is reported, and the coding is not changed after the data are seen.",
+  "placebo": "The same model on 2023 pickups (u253-aew4) with every date moved back 364 days so that days of the week align (window 3 June to 2 October 2023; pseudo-phases 1 July to 4 September 2023). A first-stage check on 2023 entries at the same stations confirms that there was no comparable closure.",
+  "sensitivity_reported_only": [
+   "G-dependent subset as the treated group (registered secondary, with its own predicted range)",
+   "one coefficient per phase and per treated zone",
+   "Poisson regression of counts with the same fixed effects",
+   "triple difference: both years stacked, zone-by-year and date fixed effects, closed_here in 2024 only",
+   "controls: all Brooklyn and Queens zones without a G station (115 before the volume rule)",
+   "controls: drop the control zones that touch a treated zone (spillover from riders walking to another line)",
+   "weekdays only",
+   "Uber and Lyft separately",
+   "implied diversion: extra pickups per day in treated zones divided by entries lost per day at their closed stations"
+  ],
+  "relation_to_other_claims": "commute-fhv-subway-distance (contested) found fewer app pickups per resident farther from the subway in the 2024 cross-section. This claim tests the same question within zones over time. The outcome will state whether the two agree."
+ },
+ "prior_exposure": "Before this registration the project had not queried bqxa-629f, u253-aew4, g6pj-fsah or wujg-7c2s; there are no cached results for them in data/cache/socrata and no analysis script names them. Their metadata (names, columns, update dates) were read for this registration. The project had queried c5iv-bn4s (Pickups and Drop-offs by Taxi Zone and Industry) three ways: monthly trip counts by industry and zone from January 2023 onward (34,771 rows, fetched 12 Nov 2026 15:18 for mob-crz-traffic), 2024 annual totals by industry, pickup or drop-off and zone (for commute-fhv-subway-distance), and row counts by month. The monthly file contains app trips by zone for June to September 2023 and 2024, at monthly and not daily resolution. The registrant did not open that cached file or any result derived from it for these zones and months, and has seen no pickup counts for the treated or control zones. The registrant read the outcome of commute-fhv-subway-distance (2024 annual cross-section). The station table 39hk-dx4f and the taxi zone shapefile were read to define treated and control zones. No subway ridership values were seen.",
+ "alternatives": [
+  "Shuttle buses, walking to the L, 7, C, J and M, and bicycles (Citi Bike) absorb the displaced riders, so that a small or null effect does not show that ride-hail and the subway are unrelated",
+  "Trips are cancelled or moved (working from home in July and August), which lowers all travel from the zone",
+  "Neighbourhood-specific summer trends (new housing in Greenpoint and Long Island City, McCarren Park and waterfront events) that differ from the control zones; the 2023 placebo and the triple difference address this",
+  "Spillover: displaced riders are picked up in adjacent control zones, which biases the estimate toward zero; the drop-adjacent sensitivity addresses this",
+  "Supply response: more drivers and surge pricing near the closed stations change pickups without a change in rider demand",
+  "The shutdown also made the G unreliable in zones coded cut_elsewhere, so the reference period is only June and September, when school and work schedules differ from midsummer; date fixed effects absorb the citywide part only"
+ ],
+ "prior": 0.35,
+ "prior_note": "Probability of 'confirmed'. Probability that the refute condition is met: 0.25. Remainder unsettled or no_test.",
+ "registrant": "Claude (agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T20:17:01-0500",
+ "sha256": "96025ddce56d9130e4aa334661ce133aae2a586c0960aa8ae324b8ac3b718c58"
+}

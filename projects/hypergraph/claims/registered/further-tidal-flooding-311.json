@@ -1,0 +1,65 @@
+{
+ "id": "further-tidal-flooding-311",
+ "kind": "confirmation",
+ "statement": "On rain-free days, 311 street-flooding complaints from ZIP codes in the tidal-flood areas of New York City (Howard Beach, Broad Channel and the Rockaways, Red Hook, Coney Island) are more frequent on days when the Battery water level reaches the NOAA minor-flood threshold than on other rain-free days, and the rise is larger there than in the remaining ZIP codes.",
+ "edge": {
+  "cause": "daily maximum water level at the Battery (high-tide flood day)",
+  "effect": "311 street-flooding complaints per day in tidal-flood ZIP codes, rain-free days only"
+ },
+ "graph_evidence": [
+  {
+   "note": "Live lookup of the System Public Graph pending: the API key is not on this machine. No graph finding is relied on in this registration. Suggested concepts for the lookup: high tide flooding, sea level rise, coastal flooding, flood reporting, 311 / citizen reporting."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "NOAA Tides and Currents, Annual High Tide Flooding Outlook, Mid-Atlantic 2026-2027 (outlook window May 2026 to April 2027).",
+   "url": "https://tidesandcurrents.noaa.gov/high-tide-flooding/annual-outlook.html",
+   "finding": "\"This year, the Mid-Atlantic is predicted to experience 15 to 20 high tide flood days.\" Flood counts are \"the number of days where observed water levels exceed the NOS minor flood threshold.\" (Quotes checked against the page on 12 Nov 2026.) The page notes the number of true flood days may be lower than the count of threshold exceedances, and that impacts vary with local geography and mitigation.",
+   "data_used": "NOAA CO-OPS water level gauges, NOS minor flood thresholds",
+   "data_access": "open"
+  },
+  {
+   "citation": "New York State Climate Impacts Assessment (2024), as quoted by The Broadsheet, 19 Feb 2024.",
+   "url": "https://ebroadsheet.com/?p=21311",
+   "finding": "\"While New York City currently experiences approximately ten high-tide floods per year as measured at the Battery, that number could rise to 60-85 days by the 2040s.\" Quote checked in the news article on 12 Nov 2026; the assessment report itself was not read.",
+   "data_used": "Battery tide gauge records and sea level rise projections",
+   "data_access": "open"
+  },
+  {
+   "citation": "New York City Panel on Climate Change (NPCC4), Climate change and New York City's flood risk. Ann N Y Acad Sci 2024;1539(1):127-184.",
+   "url": "https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/nyas.15158",
+   "finding": "Scouting note: risks from rainfall, river-based, coastal and groundwater flooding are expected to increase with sea level rise and intensified rainfall. Chapter text not read by the registrant; no Battery trend figure relied on.",
+   "data_used": "tide gauge, climate projections, flood hazard maps",
+   "data_access": "unknown"
+  },
+  {
+   "citation": "Agostini G, Pierson E, Garg N. A Bayesian spatial model to correct under-reporting in urban crowdsourcing. arXiv:2312.11754 (2023); AAAI 2024.",
+   "url": "https://arxiv.org/abs/2312.11754",
+   "doi": "10.48550/arXiv.2312.11754",
+   "finding": "Abstract: \"reporting rates are higher in Census tracts with higher populations, proportions of white residents, and proportions of owner-occupied households\" (storm-induced flooding reports in New York City). Implication for this claim: 311 flood reports are a filtered sensor whose reporting rate differs by tract.",
+   "data_used": "NYC 311 flooding reports, Census tract demographics",
+   "data_access": "open"
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Registrant's expectation for the primary exposure (E1, a Battery minor-flood day) in the tidal ZIP set and primary complaint set (C1): a rate ratio of 1.15 to 2.0 against other rain-free days, with a wide interval (the baseline count is small, so the standard error of log RR is expected to be 0.15 to 0.35). The same ratio in the placebo ZIP set: 0.9 to 1.1. Ratio of the two (tidal over placebo): 1.1 to 2.0.",
+  "support_if": "In the primary model (below) the tidal-set rate ratio for E1 has a 95 percent interval whose lower limit is above 1.00, and the tidal-over-placebo ratio of rate ratios has a 95 percent interval whose lower limit is above 1.00.",
+  "refute_if": "The upper 95 percent limit of the tidal-set rate ratio for E1 is below 1.25 (a flat slope: the data exclude a rise of a quarter or more), or the upper 95 percent limit of the tidal-over-placebo ratio is below 1.00. Either condition holds only if the sample passes the minimum-data rule in the plan; otherwise the verdict is no_test.",
+  "scoring_notes": "Placebo checks (tide shifted 7 and 100 days; placebo ZIP set) are reported as checks and do not decide the verdict, except that if the shifted-tide placebo gives a tidal-set rate ratio with a 95 percent interval above 1.00 at both shifts the result is reported as unsettled with that reason. Secondary results (continuous tide, lag, C2, broad ZIP set, FloodNet) never decide the verdict."
+ },
+ "plan": "DATA AND WHAT HAS BEEN SEEN. Before registering I read only metadata: the column lists of erm2-nwe9 (311 Service Requests from 2020 to Present), kb2e-tjy3 (FloodNet sensor deployment table: ZIP, tidally_influenced flag; a lookup table of sensor sites, not events), aq7i-eu5q (FloodNet events; columns only), 5xsi-dfpx; the CO-OPS flood levels and datums for 8518750; and the 2023 hourly Battery series, solely to confirm the unit and datum of the thresholds (12 days in 2023 reached the threshold below, consistent with the roughly ten a year in the State assessment). No 311 flooding complaint counts were read for this claim. The project's cache holds 29 earlier queries of erm2-nwe9, all for noise and rodent complaints (nbhd-noise311-exposure, nbhd-rodents-asthma) or address look-ups in Red Hook for the Red Hook case study; none concerns flooding, sewer or catch-basin complaints, FloodNet events, or any time series by tide. Scouting note flooding-sea-level.md read no outcome values. The descriptor strings of the 311 flooding complaints were not enumerated; they are specified below by text patterns.\nSAMPLE. Calendar days 1 Jan 2020 to 31 Oct 2026 (311 file from 2020 only; extension to the 2010-2019 file is not part of this claim). RAIN-FREE DAY: GHCN-Daily PRCP under 1.0 mm at both Central Park (USW00094728) and JFK (USW00094789) on the day and on the previous day, both values non-missing. All other days are dropped.\nEXPOSURE. NOAA CO-OPS station 8518750 The Battery, product hourly_height (verified where available, else preliminary), datum MLLW, metric, local clock time; calendar day = local date. Daily maximum H. Threshold: NOS minor flood level 10.19 (the flood-levels endpoint reports it in feet above station datum; the station datum is 1.002 m below MLLW per the datums table), i.e. 2.104 m above MLLW. E1 (primary) = 1 if H >= 2.104 m. E2 (secondary) = H in units of 10 cm, continuous, using all rain-free days. E1 lagged one day (flood day yesterday) is a secondary.\nZIP SETS (fixed now). TIDAL (primary), named from the neighbourhoods listed in the scouting note: Howard Beach 11414; Broad Channel and the Rockaways 11693, 11691, 11692, 11694, 11697; Red Hook 11231; Coney Island 11224. TIDAL-BROAD (secondary): the primary set plus every ZIP that holds a FloodNet sensor flagged tidally_influenced = Yes in kb2e-tjy3 as read on 12 Nov 2026 (10464, 11413, 11422, 10305, 10306, 10301, 10310, 10312, 10034). PLACEBO: every other ZIP code with at least one 311 record, excluding TIDAL-BROAD. Known weakness: the placebo set contains some other waterfront ZIPs and 11231 contains inland blocks.\nCOMPLAINTS. Created date in the sample. C1 (primary): records where upper(complaint_type) or upper(descriptor) contains 'STREET FLOOD'. C2 (secondary): C1 plus records whose descriptor contains 'CATCH BASIN' or 'SEWER BACKUP' (case-insensitive). If C1 gives fewer than 100 records in the TIDAL set on rain-free days over the whole sample, C2 becomes the primary complaint set (the same decision rule applies to it), and this is reported.\nMINIMUM-DATA RULE. The test is run only if the sample has at least 30 rain-free days with E1 = 1 and at least 100 primary-set complaints from the TIDAL set on rain-free days. Otherwise the verdict is no_test.\nUNIT. ZIP-set-day: the count of complaints per day for the TIDAL set and for the PLACEBO set (aggregated on the server with SoQL group by date and incident_zip, then summed in Python).\nMODEL (primary). Negative binomial (NB2, log link) of the daily count on E1, with year fixed effects, month-of-year fixed effects and day-of-week fixed effects, fitted separately to the TIDAL and PLACEBO series. A stacked version with a group indicator and group interactions with all the same terms gives the TIDAL-over-PLACEBO ratio of rate ratios. Intervals: moving-block bootstrap over dates (blocks of 14 consecutive calendar days, 1000 replicates, TIDAL and PLACEBO resampled together, percentile 95 percent interval), which allows for serial correlation. The point estimate is exp(coefficient).\nPRE-SPECIFIED SENSITIVITY CHECKS (reported, none decides the verdict): (1) E2 continuous tide in place of E1, per 10 cm; (2) E1 lagged one day; (3) C2 in place of C1; (4) TIDAL-BROAD in place of TIDAL; (5) rain-free defined as under 0.1 mm instead of under 1 mm; (6) Poisson with the same terms and the same bootstrap; (7) leave-one-year-out for the TIDAL rate ratio; (8) the same model on rainy days (PRCP >= 10 mm at either station) as a reference slope: reports are expected to follow rain far more than tide.\nPLACEBOS. (a) PLACEBO ZIP set, as above. (b) Tide shifted: E1 assigned from the calendar day 7 days later, and separately from the day 100 days later, within the same rain-free sample, expected rate ratio about 1. (The shift is 7 and not 15 days because the spring-neap cycle repeats every about 14.8 days and a 15-day shift would reproduce the tidal phase.)\nSECONDARY B (FloodNet, descriptive, never decides). Sensor-days from kb2e-tjy3 (date_installed to date_removed or 31 Oct 2026) for sensors flagged tidally_influenced = Yes and No; an event is a row of aq7i-eu5q with flood_start_time converted to local date; compute events per sensor-day on rain-free E1 = 1 days and rain-free E1 = 0 days for each group, with exact Poisson intervals treating sensors as independent, and the ratio of the two groups' rate ratios. Reported only if the event table loads; otherwise listed under what could not be done.\nOUTCOME. Primary estimate and interval, placebo estimates, all checks, the count of rain-free flood days and of complaints, a figure in figures/further/, a section in docs/further.md. Verdict by the precedence rules in concord.claims.PRECEDENCE: support_if or refute_if decides; otherwise unsettled.",
+ "alternatives": [
+  "Reports follow rainfall and sewer failure, not tide, so the true response to tide-only flooding is near zero because tidal nuisance flooding is brief, localised, expected by residents, and not reported to 311 (the flat-slope reading: 311 does not register the tidal hazard the city plans around).",
+  "Residents of the tidal ZIPs use other channels or do not report (reporting rates differ by tract: Agostini et al.), so a flat slope reflects reporting behaviour, not absence of flooding.",
+  "Tide height at the Battery is a poor proxy for water in Jamaica Bay and the Rockaways, which respond to wind set-up and have a different tidal range, so a flat slope reflects exposure misclassification.",
+  "Days at or above the threshold coincide with storms, nor'easters or wind events that bring rain locally but not at the two airport gauges, or that raise sewer backups, so any positive slope reflects weather, not tide (the rain-free restriction reduces but does not remove this).",
+  "Residual rain from the previous night or sewer surcharge after earlier rain keeps complaint counts high on days that happen to coincide with spring tides.",
+  "Seasonal confounding: perigean spring tides cluster in autumn and complaint rates vary by season (month terms address this only partly)."
+ ],
+ "prior": 0.3,
+ "registrant": "Claude (agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T20:23:29-0500",
+ "sha256": "f7edaad6f0153133846782cbfcda9eb997e79212d3e68c13ca26f3e95b6b6228"
+}

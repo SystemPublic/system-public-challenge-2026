@@ -1,0 +1,58 @@
+{
+ "id": "heat-trees-airtemp-hyperlocal",
+ "kind": "bridge",
+ "statement": "Within the same neighbourhood and day, NYC hyperlocal sensors with more street trees nearby record lower afternoon air temperature.",
+ "graph_evidence": [
+  {
+   "relationship_id": "sSuplgYnDQ|mUxSLRMwIy",
+   "concepts": [
+    "surface temperature",
+    "air temperature"
+   ],
+   "n_findings": 2,
+   "n_studies": 2,
+   "direction": "+",
+   "summary": "Satellite surface temperature tracks ground air temperature (r about 0.9; R2 0.9).",
+   "pubmed_ids": []
+  },
+  {
+   "relationship_id": "(concepts I2CN3brExA tree, lHLIKbfnYp green space, RF7tCwCaa5 vegetation cover)",
+   "concepts": [
+    "tree",
+    "green space",
+    "heat"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "The tree concept has no relationships. Green space has 14, none with temperature, heat illness or emergency care. Surface temperature links only to air temperature (r about 0.9, 2 studies), population density (r 0.82) and deforestation (r 0.89). No finding connects trees or green space to heat-related ED visits.",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Ziter CD, Pedersen EJ, Kucharik CJ, Turner MG. Scale-dependent interactions between tree canopy cover and impervious surfaces reduce daytime urban heat during summer. PNAS 2019;116:7575-7580.",
+   "doi": "10.1073/pnas.1817561116",
+   "finding": "Bicycle-transect air temperatures in Madison: daytime air temperature falls with canopy cover, nonlinearly, with the largest cooling above about 40% canopy at 60-90 m scales."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Per 10 additional live street trees within 50 m of a sensor, mean 12:00-18:00 air temperature lower by 0.05 to 0.5 C, within NTA-by-day.",
+  "support_if": "slope negative with upper 95% limit (sensor-clustered SE) below 0",
+  "refute_if": "slope positive with lower limit above 0"
+ },
+ "plan": "Data: Hyperlocal Temperature Monitoring (qdq3-9eqn), summers 2018 and 2019, sensor-day mean airtemp over hours 12-18 via SoQL group by sensor_id, day; sensor coordinates, install_type and ntacode. Trees: 2015 Street Tree Census live trees with coordinates (uvpi-gqnh), counted within 50 m (and 100 m, sensitivity) of each sensor using projected coordinates. Model: OLS of sensor-day afternoon temperature on trees50/10 and install_type, with NTA-by-day fixed effects (comparisons only among sensors in the same NTA on the same day); SE clustered by sensor. Report the slope in C per 10 trees.",
+ "alternatives": [
+  "Sensor siting: sensors on light poles vs trees differ in shade and height (install_type is controlled)",
+  "Trees cluster on residential side streets, away from wide arterial roads and heat from traffic",
+  "The 2015 census predates the 2018-2019 readings; plantings and removals in between add noise"
+ ],
+ "prior": 0.55,
+ "registrant": "Claude (heat agent), for Jeff Vernon",
+ "chain": [
+  "heat-trees-airtemp-hyperlocal"
+ ],
+ "registered_at": "2026-11-12T15:19:38-0500",
+ "sha256": "53c70b072b99ff4598066a241a1e0f9f5d418e24f58a1eff529a14286e473d94"
+}

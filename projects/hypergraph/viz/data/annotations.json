@@ -1,0 +1,3492 @@
+{
+ "topics": [
+  {
+   "key": "heat",
+   "name": "Heat and violence"
+  },
+  {
+   "key": "toll",
+   "name": "Congestion toll and mobility"
+  },
+  {
+   "key": "streets",
+   "name": "Streets and safety"
+  },
+  {
+   "key": "ems",
+   "name": "EMS"
+  },
+  {
+   "key": "construction",
+   "name": "Construction, housing and vacant land"
+  },
+  {
+   "key": "health",
+   "name": "Health and food"
+  },
+  {
+   "key": "drift",
+   "name": "Restaurants, reproductions and data drift"
+  },
+  {
+   "key": "graph",
+   "name": "The graph itself"
+  },
+  {
+   "key": "other",
+   "name": "Energy, flooding and other city questions"
+  }
+ ],
+ "note": "Estimates from outcome city_effect; bands and thresholds read from the registration's prediction in city_effect units; placebos and referee values from critique/*.md and the outcome notes. Built by tools/build_annotations.py, which checks each hand-copied number against its source text.",
+ "claims": {
+  "afford-gentrification-prevalence": {
+   "topic": "construction",
+   "verdict": "confirmed",
+   "label": "share of the 22 lowest-rent areas of 2000 whose rent and college share both grew faster than the city's by 2022-2024",
+   "unit": "proportion",
+   "unit_full": "proportion (Wilson interval)",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.36363636363636365,
+   "lo": 0.1973320457082143,
+   "hi": 0.5704829206386436,
+   "band": [
+    0.2727272727272727,
+    0.45454545454545453
+   ],
+   "thresholds": [],
+   "placebo": null,
+   "referee": null,
+   "band_derived": true,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/afford-gentrification-prevalence.json (city_effect)",
+    "band_thresholds": "claims/registered/afford-gentrification-prevalence.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "afford-poor-count-shift": {
+   "topic": "construction",
+   "verdict": "confirmed",
+   "label": "difference in mean log change of the number of poor residents, 2000 to 2022-2024, gentrified minus other low-rent areas",
+   "unit": "difference in log change",
+   "unit_full": "difference in log change",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.28292856142783823,
+   "lo": -0.5443626363105794,
+   "hi": -0.021494486545097058,
+   "band": [
+    -0.45,
+    -0.1
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/afford-poor-count-shift.json (city_effect)",
+    "band_thresholds": "claims/registered/afford-poor-count-shift.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "all-boats-trees-rent": {
+   "topic": "construction",
+   "verdict": "unsettled",
+   "label": "2020 census tracts (n=2,048): change in log median gross rent, ACS 2008-12 to 2018-22, per 100 additional living street trees between the 2005 and 2015 censuses; OLS with baseline trees per km2, log rent, white share, log density and borough; SE clustered by NTA",
+   "unit": "log points per 100 trees",
+   "unit_full": "log points per 100 trees",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.0127,
+   "lo": 0.0018,
+   "hi": 0.0235,
+   "band": [
+    0.018,
+    0.07
+   ],
+   "thresholds": [
+    {
+     "v": 0.009,
+     "role": "support"
+    },
+    {
+     "v": 0.018,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/all-boats-trees-rent.json (city_effect)",
+    "band_thresholds": "claims/registered/all-boats-trees-rent.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "bridge-crz-crash-link": {
+   "topic": "toll",
+   "verdict": "no_test",
+   "label": null,
+   "unit": "",
+   "unit_full": null,
+   "scale": "linear",
+   "null": null,
+   "estimate": null,
+   "lo": null,
+   "hi": null,
+   "band": null,
+   "thresholds": [],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": "A research link (speed and volume elasticities from the literature); city data test it only through the bridge's endpoint.",
+   "sources": {
+    "estimate": "claims/outcomes/bridge-crz-crash-link.json (city_effect)",
+    "band_thresholds": "claims/registered/bridge-crz-crash-link.json (prediction)"
+   },
+   "card": "text"
+  },
+  "bridge-crz-ems-travel": {
+   "topic": "toll",
+   "verdict": "unsettled",
+   "label": "EMS mean travel time, zone vs all other city ZIPs, peak toll hours, 5 Jan-31 Aug 2025 vs 2023-24 (DiD on monthly log means, HAC 3)",
+   "unit": "percent change",
+   "unit_full": "percent change",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.8525879373604384,
+   "lo": -3.030928115363263,
+   "hi": 1.3746870797501254,
+   "band": [
+    -3.59,
+    -0.38
+   ],
+   "thresholds": [],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/bridge-crz-ems-travel.json (city_effect)",
+    "band_thresholds": "claims/registered/bridge-crz-ems-travel.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "bridge-crz-injury-crashes-v2": {
+   "topic": "toll",
+   "verdict": "unsettled",
+   "label": "Endpoint: NYPD injury crashes in the CBD geofence vs Manhattan north of 60th St, 2025 vs 2022-24 (OLS log monthly count, HAC 3)",
+   "unit": "percent change",
+   "unit_full": "percent change",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 4.4886771973749795,
+   "lo": -2.7002880956366604,
+   "hi": 12.208797423660457,
+   "band": [
+    -9.2,
+    5.5
+   ],
+   "thresholds": [],
+   "placebo": {
+    "est": 15.2,
+    "lo": 4.8,
+    "hi": 26.6,
+    "registered": true,
+    "label": "2024 placebo",
+    "src": "claims/outcomes/bridge-crz-injury-crashes-v2.json"
+   },
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/bridge-crz-injury-crashes-v2.json (city_effect)",
+    "band_thresholds": "claims/registered/bridge-crz-injury-crashes-v2.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "bridge-crz-injury-crashes": {
+   "topic": "toll",
+   "verdict": "unsettled",
+   "label": "Endpoint: NYPD injury crashes in the CBD geofence vs rest of city, 2025 vs 2022-24 (OLS log monthly count, HAC 3)",
+   "unit": "percent change",
+   "unit_full": "percent change",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 1.3352842617798455,
+   "lo": -4.697894762752652,
+   "hi": 7.750398701605055,
+   "band": [
+    -8.2,
+    8.7
+   ],
+   "thresholds": [],
+   "placebo": {
+    "est": 3.8,
+    "lo": -5.4,
+    "hi": 14.0,
+    "registered": true,
+    "label": "2024 placebo",
+    "src": "claims/outcomes/bridge-crz-injury-crashes.json"
+   },
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/bridge-crz-injury-crashes.json (city_effect)",
+    "band_thresholds": "claims/registered/bridge-crz-injury-crashes.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "bridge-heat-shootings-ems": {
+   "topic": "heat",
+   "verdict": "bridged",
+   "label": "Endpoint: daily FDNY EMS SHOT dispatches, Central Park TMAX lag 0, NB GLM as heat-shootings, 2006 to Aug 2026",
+   "unit": "IRR per 5 C",
+   "unit_full": "IRR per 5 C",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.1105984346713746,
+   "lo": 1.100129319081887,
+   "hi": 1.1211671770768419,
+   "band": [
+    1.049,
+    1.148
+   ],
+   "thresholds": [],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/bridge-heat-shootings-ems.json (city_effect)",
+    "band_thresholds": "claims/registered/bridge-heat-shootings-ems.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "bridge-shot-ems-link": {
+   "topic": "heat",
+   "verdict": "confirmed",
+   "label": "Daily EMS SHOT dispatches per NYPD shooting incident, same day (OLS with day of week, month, year, holiday; HAC 7)",
+   "unit": "dispatches per incident",
+   "unit_full": "dispatches per incident",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 1.2481259189852711,
+   "lo": 1.1976372638059938,
+   "hi": 1.2986145741645485,
+   "band": [
+    0.6,
+    1.6
+   ],
+   "thresholds": [
+    {
+     "v": 0.6,
+     "role": "support"
+    },
+    {
+     "v": 1.6,
+     "role": "support"
+    },
+    {
+     "v": 0.6,
+     "role": "refute"
+    },
+    {
+     "v": 1.6,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/bridge-shot-ems-link.json (city_effect)",
+    "band_thresholds": "claims/registered/bridge-shot-ems-link.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "commute-fhv-subway-distance": {
+   "topic": "toll",
+   "verdict": "contested",
+   "label": "elasticity of 2024 HVFHV pickups per resident with respect to distance to nearest station, adjusted for income and jobs",
+   "unit": "log-log elasticity",
+   "unit_full": "log-log elasticity",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.295,
+   "lo": -0.378,
+   "hi": -0.213,
+   "band": [
+    0.1,
+    0.5
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/commute-fhv-subway-distance.json (city_effect)",
+    "band_thresholds": "claims/registered/commute-fhv-subway-distance.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "commute-time-depression": {
+   "topic": "health",
+   "verdict": "unsettled",
+   "label": "age-adjusted adult depression, percentage points per 5 min of mean commute, adjusted for poverty and subway access",
+   "unit": "points per 5 minutes",
+   "unit_full": "points per 5 minutes",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.765,
+   "lo": -1.63,
+   "hi": 0.1,
+   "band": [
+    0.05,
+    0.3
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/commute-time-depression.json (city_effect)",
+    "band_thresholds": "claims/registered/commute-time-depression.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "construction-2022-rush-units-2027": {
+   "topic": "construction",
+   "verdict": "registered",
+   "label": null,
+   "unit": "",
+   "unit_full": null,
+   "scale": "linear",
+   "null": null,
+   "estimate": null,
+   "lo": null,
+   "hi": null,
+   "band": null,
+   "thresholds": [],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": "Registered for a date not yet reached (30 June 2027); no outcome yet.",
+   "sources": {
+    "estimate": "claims/outcomes/construction-2022-rush-units-2027.json (city_effect)",
+    "band_thresholds": "claims/registered/construction-2022-rush-units-2027.json (prediction)"
+   },
+   "card": "text"
+  },
+  "construction-aerial-triangulation": {
+   "topic": "construction",
+   "verdict": "unsettled",
+   "label": "share of 48 sampled NB jobs (first permit 2018-2020) with visible change of the lot, NAIP 2017 to 2022",
+   "unit": "proportion",
+   "unit_full": "proportion (Wilson 95% interval, n=48)",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.688,
+   "lo": 0.55,
+   "hi": 0.8,
+   "band": [
+    0.65,
+    0.9
+   ],
+   "thresholds": [
+    {
+     "v": 0.6,
+     "role": "support"
+    },
+    {
+     "v": 0.45,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/construction-aerial-triangulation.json (city_effect)",
+    "band_thresholds": "claims/registered/construction-aerial-triangulation.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "construction-four-year-completion": {
+   "topic": "construction",
+   "verdict": "unsettled",
+   "label": "share of NB jobs with a first CO within 4 years of first NB permit, pooled cohorts 2010-2017 (registered statistic)",
+   "unit": "proportion",
+   "unit_full": "proportion; null set to the registered support threshold 0.75",
+   "scale": "linear",
+   "null": 0.75,
+   "estimate": 0.734,
+   "lo": 0.727,
+   "hi": 0.741,
+   "band": [
+    0.55,
+    0.85
+   ],
+   "thresholds": [
+    {
+     "v": 0.75,
+     "role": "support"
+    },
+    {
+     "v": 0.95,
+     "role": "support"
+    },
+    {
+     "v": 0.65,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/construction-four-year-completion.json (city_effect)",
+    "band_thresholds": "claims/registered/construction-four-year-completion.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "construction-permit-funnel": {
+   "topic": "construction",
+   "verdict": "unsettled",
+   "label": "legacy NB permit rows per distinct NB job, rows issued 2010-2019",
+   "unit": "rows per job",
+   "unit_full": "rows per job (null: 1 row per building)",
+   "scale": "linear",
+   "null": 1,
+   "estimate": 6.87,
+   "lo": null,
+   "hi": null,
+   "band": [
+    3,
+    10
+   ],
+   "thresholds": [
+    {
+     "v": 3,
+     "role": "support"
+    },
+    {
+     "v": 2,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/construction-permit-funnel.json (city_effect)",
+    "band_thresholds": "claims/registered/construction-permit-funnel.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "construction-sheds-outnumber-nb": {
+   "topic": "construction",
+   "verdict": "confirmed",
+   "label": "ratio of jobs with an active sidewalk-shed permit to jobs with an active NB work permit, 1 Nov 2026",
+   "unit": "ratio",
+   "unit_full": "ratio (interval spans the two definitions of active, not sampling error)",
+   "scale": "log",
+   "null": 1,
+   "estimate": 2.3,
+   "lo": 2.16,
+   "hi": 2.3,
+   "band": [
+    1.5,
+    6
+   ],
+   "thresholds": [
+    {
+     "v": 1.2,
+     "role": "support"
+    },
+    {
+     "v": 0.8,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/construction-sheds-outnumber-nb.json (city_effect)",
+    "band_thresholds": "claims/registered/construction-sheds-outnumber-nb.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "construction2-rows-per-job-dobnow": {
+   "topic": "construction",
+   "verdict": "confirmed",
+   "label": "DOB NOW work-permit rows per NB job by Nov 2026, jobs first permitted 2021-2022",
+   "unit": "rows per job",
+   "unit_full": "rows per job (null: 1 row per building)",
+   "scale": "linear",
+   "null": 1,
+   "estimate": 12.77,
+   "lo": 12.24,
+   "hi": 13.31,
+   "band": [
+    4,
+    12
+   ],
+   "thresholds": [
+    {
+     "v": 3.0,
+     "role": "support"
+    },
+    {
+     "v": 2.0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/construction2-rows-per-job-dobnow.json (city_effect)",
+    "band_thresholds": "claims/registered/construction2-rows-per-job-dobnow.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "construction2-rows-per-job-legacy-2000s": {
+   "topic": "construction",
+   "verdict": "confirmed",
+   "label": "legacy NB permit rows per job over the table's life, jobs first permitted 2000-2009",
+   "unit": "rows per job",
+   "unit_full": "rows per job (null: 1 row per building)",
+   "scale": "linear",
+   "null": 1,
+   "estimate": 5.89,
+   "lo": 5.85,
+   "hi": 5.92,
+   "band": [
+    5,
+    9
+   ],
+   "thresholds": [
+    {
+     "v": 5.0,
+     "role": "support"
+    },
+    {
+     "v": 3.0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/construction2-rows-per-job-legacy-2000s.json (city_effect)",
+    "band_thresholds": "claims/registered/construction2-rows-per-job-legacy-2000s.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "crz-storefront-vacancy": {
+   "topic": "toll",
+   "verdict": "confirmed",
+   "label": "Change in storefront vacancy share, 31 Dec 2025 vs 31 Dec 2024, zone minus all other city ZIPs (bootstrap over tax lots)",
+   "unit": "percentage points",
+   "unit_full": "percentage points",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.4674314057962023,
+   "lo": -1.080900390717683,
+   "hi": 0.17391494617450684,
+   "band": [
+    -1.5,
+    0.5
+   ],
+   "thresholds": [
+    {
+     "v": 0.5,
+     "role": "support"
+    },
+    {
+     "v": 1.2,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/crz-storefront-vacancy.json (city_effect)",
+    "band_thresholds": "claims/registered/crz-storefront-vacancy.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "ems-hospital-turnaround-wait": {
+   "topic": "ems",
+   "verdict": "confirmed",
+   "label": "Elasticity of daily mean wait for an ambulance assignment (all calls) to daily mean time at hospital of transported patients, holding log call count, weekday and year-month; NYC, 2017-01-02 to 2026-09-30 excluding Mar-Jun 2020; OLS, HAC 7 lags",
+   "unit": "elasticity",
+   "unit_full": "elasticity",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 4.546821623466572,
+   "lo": 3.2104690058612357,
+   "hi": 5.883174241071909,
+   "band": [
+    0.5,
+    3
+   ],
+   "thresholds": [
+    {
+     "v": 0.2,
+     "role": "support"
+    },
+    {
+     "v": 0.2,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": 2.4,
+    "lo": 1.2,
+    "hi": 3.6,
+    "registered": false,
+    "label": "referee placebo: next day's turnaround",
+    "src": "claims/outcomes/ems-hospital-turnaround-wait.json"
+   },
+   "referee": {
+    "v": 4.54,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/ems-hospital-turnaround-wait.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/ems-hospital-turnaround-wait.json (city_effect)",
+    "band_thresholds": "claims/registered/ems-hospital-turnaround-wait.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "ems-taxi-2026-onset": {
+   "topic": "ems",
+   "verdict": "unsettled",
+   "label": "slope of weekly year-on-year change in Manhattan EMS travel time on that of taxi time per mile, 2025-W27 to 2026-W39",
+   "unit": "elasticity",
+   "unit_full": "elasticity",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.8947268759183055,
+   "lo": 0.5388176637647119,
+   "hi": 1.2506360880718992,
+   "band": [
+    0.3,
+    1.0
+   ],
+   "thresholds": [
+    {
+     "v": 0.1,
+     "role": "support"
+    },
+    {
+     "v": 0.1,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": 0.69,
+    "lo": 0.226,
+    "hi": 1.153,
+    "registered": true,
+    "label": "placebo year 2024-25",
+    "src": "critique/ems-taxi-2026-onset.md"
+   },
+   "referee": {
+    "v": 0.913,
+    "label": "referee re-estimate",
+    "src": "critique/ems-taxi-2026-onset.md"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/ems-taxi-2026-onset.json (city_effect)",
+    "band_thresholds": "claims/registered/ems-taxi-2026-onset.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "ems-traffic-hourly-elasticity": {
+   "topic": "ems",
+   "verdict": "confirmed",
+   "label": "elasticity of Manhattan EMS mean travel time to same-hour yellow-taxi time per mile, joint model with the 7-day lead, within date x area",
+   "unit": "elasticity",
+   "unit_full": "elasticity",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.6327779383788723,
+   "lo": 0.6013630994439945,
+   "hi": 0.6641927773137501,
+   "band": [
+    0.3,
+    0.9
+   ],
+   "thresholds": [
+    {
+     "v": 0.1,
+     "role": "support"
+    },
+    {
+     "v": 0.1,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 0.636,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/ems-traffic-hourly-elasticity.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/ems-traffic-hourly-elasticity.json (city_effect)",
+    "band_thresholds": "claims/registered/ems-traffic-hourly-elasticity.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "ems-traffic-share-2019-2026": {
+   "topic": "ems",
+   "verdict": "confirmed",
+   "label": "share of the 2019-2026 rise in Manhattan life-threatening EMS travel time that traffic could account for if ambulance pace moved one for one with taxi pace (S1)",
+   "unit": "share",
+   "unit_full": "share",
+   "scale": "linear",
+   "null": 0.5,
+   "estimate": 0.331097434751018,
+   "lo": 0.29459485491962767,
+   "hi": 0.3674869733328879,
+   "band": [
+    0.05,
+    0.45
+   ],
+   "thresholds": [
+    {
+     "v": 0.5,
+     "role": "support"
+    },
+    {
+     "v": 0.5,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 0.333,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/ems-traffic-share-2019-2026.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/ems-traffic-share-2019-2026.json (city_effect)",
+    "band_thresholds": "claims/registered/ems-traffic-share-2019-2026.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "food-supermarket-diabetes-zcta": {
+   "topic": "health",
+   "verdict": "confirmed",
+   "label": "Diabetes admissions (SPARCS PQI 01, 03, 14, 16, observed/expected, 2021-2023) per doubling of supermarkets >= 6,000 sq ft per 10,000 residents, adjusted for log residential density, poverty, log income and median age; 168 NYC ZCTAs, WLS by population, HC3",
+   "unit": "ratio per doubling",
+   "unit_full": "ratio per doubling",
+   "scale": "log",
+   "null": 1,
+   "estimate": 0.995099767922046,
+   "lo": 0.9463921955555745,
+   "hi": 1.0463141525984418,
+   "band": [
+    0.95,
+    1.03
+   ],
+   "thresholds": [
+    {
+     "v": 0.9,
+     "role": "support"
+    },
+    {
+     "v": 1.1,
+     "role": "support"
+    },
+    {
+     "v": 0.95,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 0.995,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/food-supermarket-diabetes-zcta.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/food-supermarket-diabetes-zcta.json (city_effect)",
+    "band_thresholds": "claims/registered/food-supermarket-diabetes-zcta.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "further-chinatown-shift": {
+   "topic": "drift",
+   "verdict": "contested",
+   "label": "Change in non-Hispanic Asian+Pacific Islander residents, 23-tract Chinatown set B1, 2010 census to ACS 2018-22 (primary reading D1, M1); interval is the ACS 90% margin of error applied to the 2020 count",
+   "unit": "percent change",
+   "unit_full": "percent change",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -21.48,
+   "lo": -26.71,
+   "hi": -16.24,
+   "band": null,
+   "thresholds": [],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/further-chinatown-shift.json (city_effect)",
+    "band_thresholds": "claims/registered/further-chinatown-shift.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "further-containers-rats-cd9": {
+   "topic": "health",
+   "verdict": "unsettled",
+   "label": "CD9 relative to CD7/10/11/12, 311 Rat Sighting counts, Jun 2025-May 2026 vs Jun 2024-May 2025",
+   "unit": "rate ratio",
+   "unit_full": "rate ratio (difference in differences)",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.017776844435111,
+   "lo": 0.8611862560157482,
+   "hi": 1.233872900242245,
+   "band": [
+    0.75,
+    0.95
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 0.9,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": 1.08,
+    "lo": 0.89,
+    "hi": 1.36,
+    "registered": true,
+    "label": "placebo year 2023-24",
+    "src": "claims/outcomes/further-containers-rats-cd9.json"
+   },
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/further-containers-rats-cd9.json (city_effect)",
+    "band_thresholds": "claims/registered/further-containers-rats-cd9.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "further-datacentre-share-manhattan-v2": {
+   "topic": "other",
+   "verdict": "confirmed",
+   "label": "High figure for data-centre share of Manhattan LL84 grid electricity, CY2024, minus 4.4 percent",
+   "unit": "percentage points",
+   "unit_full": "percentage points",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -2.14,
+   "lo": -2.25,
+   "hi": -2.02,
+   "band": [
+    -2.6000000000000005,
+    -0.9000000000000004
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": true,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/further-datacentre-share-manhattan-v2.json (city_effect)",
+    "band_thresholds": "claims/registered/further-datacentre-share-manhattan-v2.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "further-datacentre-share-manhattan": {
+   "topic": "other",
+   "verdict": "contested",
+   "label": "Upper-bound data-centre share of Manhattan LL84 grid electricity, CY2024, minus 4.4 percent",
+   "unit": "percentage points",
+   "unit_full": "percentage points",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 11.76,
+   "lo": 11.08,
+   "hi": 12.49,
+   "band": [
+    -3.4000000000000004,
+    0.5999999999999996
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": true,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/further-datacentre-share-manhattan.json (city_effect)",
+    "band_thresholds": "claims/registered/further-datacentre-share-manhattan.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "further-repro-dsny-rat-sightings": {
+   "topic": "drift",
+   "verdict": "unsettled",
+   "label": "Recomputed Dec 2024-Nov 2025 vs Dec 2023-Nov 2024 311 Rat Sightings under R1, percent change",
+   "unit": "percent change",
+   "unit_full": "percent change; stated -20.6",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -20.85896782789294,
+   "lo": null,
+   "hi": null,
+   "band": [
+    -21.1,
+    -20.1
+   ],
+   "thresholds": [
+    {
+     "v": -21.1,
+     "role": "support"
+    },
+    {
+     "v": -20.1,
+     "role": "support"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": true,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/further-repro-dsny-rat-sightings.json (city_effect)",
+    "band_thresholds": "claims/registered/further-repro-dsny-rat-sightings.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "further-subway-crime-per-million-repro": {
+   "topic": "drift",
+   "verdict": "contested",
+   "label": "MTA Major Felonies (yeek-jhmu, NYCT, Jan-Nov 2025) rate per million riders divided by the State's 1.65",
+   "unit": "ratio to the published number",
+   "unit_full": "ratio to the published number",
+   "scale": "log",
+   "null": 1,
+   "estimate": 0.6738782436354599,
+   "lo": 0.6427158849764582,
+   "hi": 0.7061608984852294,
+   "band": [
+    0.9696969696969698,
+    1.0303030303030303
+   ],
+   "thresholds": [
+    {
+     "v": 0.9696969696969698,
+     "role": "support"
+    },
+    {
+     "v": 1.0303030303030303,
+     "role": "support"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": true,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/further-subway-crime-per-million-repro.json (city_effect)",
+    "band_thresholds": "claims/registered/further-subway-crime-per-million-repro.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "further-subway-crime-per-ride-by-hour": {
+   "topic": "other",
+   "verdict": "unsettled",
+   "label": "late-night (0-5) subway felony rate per million entries, Oct 2025-Sep 2026 against 2019",
+   "unit": "rate ratio",
+   "unit_full": "rate ratio",
+   "scale": "log",
+   "null": 1,
+   "estimate": 0.9654083863701025,
+   "lo": 0.8612818284971441,
+   "hi": 1.0817474677412333,
+   "band": [
+    1.2,
+    2.2
+   ],
+   "thresholds": [
+    {
+     "v": 1,
+     "role": "support"
+    },
+    {
+     "v": 1,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/further-subway-crime-per-ride-by-hour.json (city_effect)",
+    "band_thresholds": "claims/registered/further-subway-crime-per-ride-by-hour.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "further-tidal-flooding-311": {
+   "topic": "other",
+   "verdict": "no_test",
+   "label": "Tidal-set rate ratio of street-flooding complaints, Battery minor-flood day vs other rain-free days (not decisive: minimum-data rule failed)",
+   "unit": "rate ratio",
+   "unit_full": "rate ratio",
+   "scale": "log",
+   "null": 1,
+   "estimate": 15.738146504504696,
+   "lo": 4.32477152673089,
+   "hi": 33.43483634030768,
+   "band": null,
+   "thresholds": [],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": "The registered minimum-data rule failed, so the rate ratio decides nothing.",
+   "sources": {
+    "estimate": "claims/outcomes/further-tidal-flooding-311.json (city_effect)",
+    "band_thresholds": "claims/registered/further-tidal-flooding-311.json (prediction)"
+   },
+   "card": "text"
+  },
+  "further-tidal-flooding-trend": {
+   "topic": "other",
+   "verdict": "confirmed",
+   "label": "Rate ratio of dry-day street-flooding and catch-basin complaints in the coastal ZIP set per 10 cm of Battery daily maximum above 0.35 m over MHHW, 2010-2019 held-out period",
+   "unit": "rate ratio per 10 cm above knot",
+   "unit_full": "rate ratio per 10 cm above knot",
+   "scale": "log",
+   "null": 1,
+   "estimate": 2.000694591935365,
+   "lo": 1.6436462504789693,
+   "hi": 2.3843478152869113,
+   "band": [
+    1.1,
+    2.0
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 1.3,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/further-tidal-flooding-trend.json (city_effect)",
+    "band_thresholds": "claims/registered/further-tidal-flooding-trend.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "further-zonej-demand-growth": {
+   "topic": "other",
+   "verdict": "contested",
+   "label": "Zone J weather-normalised annual energy trend, 2015-2025, pandemic days 2020-03-15 to 2021-06-30 excluded",
+   "unit": "percent a year",
+   "unit_full": "percent a year (OLS on daily ln energy, Newey-West 14 lags, 95% interval)",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.752,
+   "lo": -0.837,
+   "hi": -0.666,
+   "band": [
+    -0.6,
+    0.6
+   ],
+   "thresholds": [
+    {
+     "v": 0.5,
+     "role": "support"
+    },
+    {
+     "v": 0.5,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/further-zonej-demand-growth.json (city_effect)",
+    "band_thresholds": "claims/registered/further-zonej-demand-growth.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "graph-concordance-matrix": {
+   "topic": "graph",
+   "verdict": "confirmed",
+   "label": "Share of 109 qualifying indicator pairs whose poverty-partialled Spearman correlation across 42 UHF neighbourhoods has the literature's majority sign (interval: bootstrap of neighbourhoods)",
+   "unit": "proportion of pairs",
+   "unit_full": "proportion of pairs",
+   "scale": "linear",
+   "null": 0.5,
+   "estimate": 0.661,
+   "lo": 0.596,
+   "hi": 0.78,
+   "band": [
+    0.55,
+    0.75
+   ],
+   "thresholds": [
+    {
+     "v": 0.6,
+     "role": "support"
+    },
+    {
+     "v": 0.4,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": true,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/graph-concordance-matrix.json (city_effect)",
+    "band_thresholds": "claims/registered/graph-concordance-matrix.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "graph-confounders-commute-obesity": {
+   "topic": "graph",
+   "verdict": "unsettled",
+   "label": "Adult obesity per 10 points of walk-or-bike commute share, 42 UHF neighbourhoods, adjusted for the graph-derived set (poverty, high-school graduation, percent Black, Hispanic and Asian, walkability, perceived safety), OLS, HC3",
+   "unit": "percentage points of obesity per 10 points of active commuting",
+   "unit_full": "percentage points of obesity per 10 points of active commuting",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -4.4,
+   "lo": -7.58,
+   "hi": -1.23,
+   "band": [
+    -4.0,
+    -1.0
+   ],
+   "thresholds": [
+    {
+     "v": -4.0,
+     "role": "support"
+    },
+    {
+     "v": 0.5,
+     "role": "support"
+    },
+    {
+     "v": -5.0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/graph-confounders-commute-obesity.json (city_effect)",
+    "band_thresholds": "claims/registered/graph-confounders-commute-obesity.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "graph-confounders-surftemp-ed": {
+   "topic": "graph",
+   "verdict": "unsettled",
+   "label": "Change in the percent change of the heat-stress ED rate per 1 F of surface temperature when the share of older adults living alone is added to poverty, percent Black and AC; community districts; paired bootstrap interval",
+   "unit": "percentage points per 1 F",
+   "unit_full": "percentage points per 1 F",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.590612352751096,
+   "lo": -1.2733179474488119,
+   "hi": 3.417691636540998,
+   "band": [
+    -2.5,
+    0.5
+   ],
+   "thresholds": [
+    {
+     "v": -2.5,
+     "role": "support"
+    },
+    {
+     "v": 0.5,
+     "role": "support"
+    },
+    {
+     "v": -5.2,
+     "role": "refute"
+    },
+    {
+     "v": 3.4,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/graph-confounders-surftemp-ed.json (city_effect)",
+    "band_thresholds": "claims/registered/graph-confounders-surftemp-ed.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "graph-confounders-trees-surftemp": {
+   "topic": "graph",
+   "verdict": "unsettled",
+   "label": "Change in the slope of surface temperature on z(log street trees per km2) when log population density, building footprint share and road share are added to poverty and percent Black; community districts; paired bootstrap interval; population density corrected for the four PUMAs that each cover two districts",
+   "unit": "F per SD",
+   "unit_full": "F per SD",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.25,
+   "lo": -0.99,
+   "hi": 0.58,
+   "band": [
+    -1.2,
+    -0.3
+   ],
+   "thresholds": [
+    {
+     "v": -0.3,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/graph-confounders-trees-surftemp.json (city_effect)",
+    "band_thresholds": "claims/registered/graph-confounders-trees-surftemp.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "graph-triad-cold-asthma-absence": {
+   "topic": "graph",
+   "verdict": "unsettled",
+   "label": "citywide absence rate on cold school days against other school days of the same week of the year",
+   "unit": "ratio of absence rates",
+   "unit_full": "ratio of absence rates",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.1012278100339397,
+   "lo": 1.0526025817186513,
+   "hi": 1.152099292414892,
+   "band": [
+    1.0008,
+    1.0173
+   ],
+   "thresholds": [
+    {
+     "v": 1,
+     "role": "support"
+    },
+    {
+     "v": 1,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/graph-triad-cold-asthma-absence.json (city_effect)",
+    "band_thresholds": "claims/registered/graph-triad-cold-asthma-absence.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "graph-triad-hot-asthma-absence": {
+   "topic": "graph",
+   "verdict": "unsettled",
+   "label": "citywide absence rate on hot school days against other school days of the same week of the year",
+   "unit": "ratio of absence rates",
+   "unit_full": "ratio of absence rates",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.0090418360846225,
+   "lo": 0.969767705084531,
+   "hi": 1.0499065102196579,
+   "band": [
+    1.0007,
+    1.0055
+   ],
+   "thresholds": [
+    {
+     "v": 1,
+     "role": "support"
+    },
+    {
+     "v": 1,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": 1.021,
+    "lo": 0.985,
+    "hi": 1.058,
+    "registered": false,
+    "label": "referee placebo: heat two days later",
+    "src": "claims/outcomes/graph-triad-hot-asthma-absence.json"
+   },
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/graph-triad-hot-asthma-absence.json (city_effect)",
+    "band_thresholds": "claims/registered/graph-triad-hot-asthma-absence.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-ac-heat-calls": {
+   "topic": "heat",
+   "verdict": "contested",
+   "label": "Difference between the log rate ratios of EMS HEAT calls per 5 C of TMAX, low-AC half minus high-AC half of community districts, May-September 2006-2026",
+   "unit": "difference of log rate ratios per 5 C",
+   "unit_full": "difference of log rate ratios per 5 C",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.03190254440447328,
+   "lo": -0.08817964814308477,
+   "hi": 0.024374559334138214,
+   "band": [
+    0,
+    0.12
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0.112,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-ac-heat-calls.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-ac-heat-calls.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-ac-shootings": {
+   "topic": "heat",
+   "verdict": "confirmed",
+   "label": "Difference between the log rate ratios of shootings per 5 C of TMAX, low-AC half minus high-AC half of community districts, 2006-2026",
+   "unit": "difference of log rate ratios per 5 C",
+   "unit_full": "difference of log rate ratios per 5 C",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.04326569768119201,
+   "lo": 0.00699859399042501,
+   "hi": 0.079532801371959,
+   "band": [
+    -0.02,
+    0.05
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0.042,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 0.025,
+    "label": "referee, day from 06:00",
+    "src": "claims/outcomes/heat-ac-shootings.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-ac-shootings.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-ac-shootings.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-ed-syndromic": {
+   "topic": "heat",
+   "verdict": "confirmed",
+   "label": "NYC syndromic heat ED visits per day, May-Sep 2017-2026, Central Park TMAX lag 0, NB GLM with DOW, month, year, holiday",
+   "unit": "IRR per 5 C",
+   "unit_full": "IRR per 5 C",
+   "scale": "log",
+   "null": 1,
+   "estimate": 4.092242632189716,
+   "lo": 3.7615528042599875,
+   "hi": 4.452004433314224,
+   "band": [
+    1.5,
+    5
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 1.5,
+     "role": "support"
+    },
+    {
+     "v": 1.0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-ed-syndromic.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-ed-syndromic.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-extremes-downturn": {
+   "topic": "heat",
+   "verdict": "contested",
+   "label": "Aggravated assaults, days at 38 C or more against days at 32 to 35 C, pooled over Phoenix, Tucson, Dallas and Austin",
+   "unit": "rate ratio",
+   "unit_full": "rate ratio",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.0351692880590742,
+   "lo": 1.0081742992072855,
+   "hi": 1.0628870977799143,
+   "band": [
+    0.88,
+    0.98
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 1.0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-extremes-downturn.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-extremes-downturn.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-mech-intox": {
+   "topic": "heat",
+   "verdict": "unsettled",
+   "label": "Attenuation of the heat-shootings slope by daily EMS drug and alcohol dispatches, 2006-2026",
+   "unit": "share of the log IRR of shootings per 5 C removed by adding the proxy",
+   "unit_full": "share of the log IRR of shootings per 5 C removed by adding the proxy",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.14084592655928285,
+   "lo": 0.09458620133404194,
+   "hi": 0.18821276353616057,
+   "band": [
+    -0.02,
+    0.08
+   ],
+   "thresholds": [
+    {
+     "v": 0.1,
+     "role": "support"
+    },
+    {
+     "v": 0.25,
+     "role": "support"
+    },
+    {
+     "v": 0.1,
+     "role": "refute"
+    },
+    {
+     "v": 0.25,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-mech-intox.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-mech-intox.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-mech-outdoors": {
+   "topic": "heat",
+   "verdict": "confirmed",
+   "label": "Attenuation of the heat-shootings slope by daily 311 Noise - Street/Sidewalk complaints, 2010-2026",
+   "unit": "share of the log IRR of shootings per 5 C removed by adding the proxy",
+   "unit_full": "share of the log IRR of shootings per 5 C removed by adding the proxy",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.44035151823694374,
+   "lo": 0.3271165486955382,
+   "hi": 0.564142933967175,
+   "band": [
+    0.1,
+    0.35
+   ],
+   "thresholds": [
+    {
+     "v": 0.1,
+     "role": "support"
+    },
+    {
+     "v": 0.25,
+     "role": "support"
+    },
+    {
+     "v": 0.1,
+     "role": "refute"
+    },
+    {
+     "v": 0.25,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 0.529,
+    "label": "after referee: night-of counts",
+    "src": "claims/outcomes/heat-mech-outdoors.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-mech-outdoors.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-mech-outdoors.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-night-minimum": {
+   "topic": "heat",
+   "verdict": "unsettled",
+   "label": "New York shooting incidents per 5 C of the preceding night's minimum (Central Park TMIN) at fixed TMAX, shooting days with TMAX >= 27 C, 2006-2026",
+   "unit": "rate ratio per 5 C TMIN",
+   "unit_full": "rate ratio per 5 C TMIN",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.0326652139757795,
+   "lo": 0.9617061442858019,
+   "hi": 1.1088599677686248,
+   "band": [
+    0.98,
+    1.08
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 1.075,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-night-minimum.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-night-minimum.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-school-out": {
+   "topic": "heat",
+   "verdict": "unsettled",
+   "label": "Rate ratio of shooting incidents, weekdays out of school against school weekdays at the same temperature, within 42 days of the last or first day of classes, 2006-2026",
+   "unit": "rate ratio",
+   "unit_full": "rate ratio",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.1047945838930997,
+   "lo": 0.9970897003011571,
+   "hi": 1.2241336684461497,
+   "band": [
+    0.95,
+    1.08
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 1.1,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 1.044,
+    "label": "referee, day from 06:00",
+    "src": "claims/outcomes/heat-school-out.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-school-out.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-school-out.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-shootings": {
+   "topic": "heat",
+   "verdict": "confirmed",
+   "label": "NYC shooting incidents per day, Central Park TMAX lag 0, NB GLM with DOW, month, year, holiday, rain",
+   "unit": "IRR per 5 C",
+   "unit_full": "IRR per 5 C",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.1462159704993367,
+   "lo": 1.1297421298925683,
+   "hi": 1.162930031787583,
+   "band": [
+    1.05,
+    1.2
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 1.0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-shootings.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-shootings.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-surftemp-ed": {
+   "topic": "heat",
+   "verdict": "contested",
+   "label": "Area-level (community district) association, contradicting the registrant's bridge link: Log age-adjusted heat-stress ED rate (EHDP 2443, 5-year) on surface temperature, CD, adjusted for poverty, percent Black, AC",
+   "unit": "% per 1 F",
+   "unit_full": "% per 1 F",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -10.333958377626583,
+   "lo": -17.491510249782483,
+   "hi": -2.5554940520044367,
+   "band": [
+    0,
+    8
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-surftemp-ed.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-surftemp-ed.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-trees-airtemp-hyperlocal": {
+   "topic": "heat",
+   "verdict": "unsettled",
+   "label": "Sensor afternoon (12-18h) air temperature on live street trees within 50 m, NTA-by-day fixed effects, install type, SE clustered by sensor",
+   "unit": "C per 10 trees",
+   "unit_full": "C per 10 trees",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.0467684759766209,
+   "lo": -0.15925047879481236,
+   "hi": 0.06571352684157057,
+   "band": [
+    -0.5,
+    -0.05
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-trees-airtemp-hyperlocal.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-trees-airtemp-hyperlocal.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-trees-canopy-within-nta": {
+   "topic": "heat",
+   "verdict": "confirmed",
+   "label": "Sensor afternoon (12-18 h) air temperature on vegetation share (NAIP 2022, NDVI > 0.2) within 50 m; NTA by flight date by day fixed effects, light-pole indicator, SE clustered by sensor",
+   "unit": "C per 10 percentage points of vegetation share",
+   "unit_full": "C per 10 percentage points of vegetation share",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.20062094142942738,
+   "lo": -0.24675987851450454,
+   "hi": -0.15448200434435022,
+   "band": [
+    -0.25,
+    -0.02
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": -0.35187844759988873,
+    "lo": -0.45443615744111476,
+    "hi": -0.24932073775866267,
+    "registered": true,
+    "label": "placebo: vegetation share of the ring 200-300 m from the sensor",
+    "src": "claims/outcomes/heat-trees-canopy-within-nta.json (placebo.alone)"
+   },
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-trees-canopy-within-nta.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-trees-canopy-within-nta.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-trees-ed-chain": {
+   "topic": "heat",
+   "verdict": "contested",
+   "label": "Composed a*b, trees -> surface temperature -> log heat ED rate, CD, bootstrap 5000",
+   "unit": "% per SD log street-tree density",
+   "unit_full": "% per SD log street-tree density",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -3.6848496016938515,
+   "lo": -10.284900032206224,
+   "hi": 1.342009341266004,
+   "band": [
+    -5,
+    -0.5
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-trees-ed-chain.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-trees-ed-chain.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "heat-trees-surftemp": {
+   "topic": "heat",
+   "verdict": "unsettled",
+   "label": "Surface temperature (Landsat 17 Jul 2018) on z(log live street trees per km2), CD, adjusted for poverty and percent Black",
+   "unit": "F per SD",
+   "unit_full": "F per SD",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.5046555461274105,
+   "lo": -0.029091970714172688,
+   "hi": 1.0384030629689938,
+   "band": [
+    -3,
+    -0.5
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/heat-trees-surftemp.json (city_effect)",
+    "band_thresholds": "claims/registered/heat-trees-surftemp.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "levers-vacant-lot-trial-match": {
+   "topic": "construction",
+   "verdict": "confirmed",
+   "label": "Share of land use 11 lots in the top-decile shooting tracts that resemble the Philadelphia trial lots",
+   "unit": "share of lots",
+   "unit_full": "share of lots (a count, no sampling interval: every lot was classified)",
+   "scale": "linear",
+   "null": null,
+   "estimate": 0.417,
+   "lo": null,
+   "hi": null,
+   "band": [
+    0.18,
+    0.45
+   ],
+   "thresholds": [
+    {
+     "v": 0.18,
+     "role": "support"
+    },
+    {
+     "v": 0.45,
+     "role": "support"
+    },
+    {
+     "v": 0.18,
+     "role": "refute"
+    },
+    {
+     "v": 0.45,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 0.406,
+    "label": "referee rebuild",
+    "src": "claims/outcomes/levers-vacant-lot-trial-match.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/levers-vacant-lot-trial-match.json (city_effect)",
+    "band_thresholds": "claims/registered/levers-vacant-lot-trial-match.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "mob-active-commute-obesity": {
+   "topic": "health",
+   "verdict": "confirmed",
+   "label": "Adult obesity (percentage points) per 10 points of walk-or-bike commute share, poverty-adjusted, 42 UHF neighbourhoods",
+   "unit": "percentage points of obesity per 10 points of active commuting",
+   "unit_full": "percentage points of obesity per 10 points of active commuting",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -5.97,
+   "lo": -7.81,
+   "hi": -4.12,
+   "band": [
+    -4,
+    -0.5
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/mob-active-commute-obesity.json (city_effect)",
+    "band_thresholds": "claims/registered/mob-active-commute-obesity.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "mob-asthma-pollution": {
+   "topic": "health",
+   "verdict": "unsettled",
+   "label": "Asthma ED visits age 5-17 per 10 ppb NO2, poverty-adjusted, 42 UHF neighbourhoods, 2017-19",
+   "unit": "rate ratio per 10 ppb NO2",
+   "unit_full": "rate ratio per 10 ppb NO2",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.221,
+   "lo": 0.805,
+   "hi": 1.85,
+   "band": null,
+   "thresholds": [
+    {
+     "v": 1,
+     "role": "support"
+    },
+    {
+     "v": 1,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/mob-asthma-pollution.json (city_effect)",
+    "band_thresholds": "claims/registered/mob-asthma-pollution.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "mob-crz-air-nyccas": {
+   "topic": "toll",
+   "verdict": "contested",
+   "label": "NYCCAS annual NO2, UHF 306-310 vs 32 UHFs outside Manhattan, 2025 vs 2021-24 (DiD); interval from placebo-in-space",
+   "unit": "percent change in annual NO2",
+   "unit_full": "percent change in annual NO2",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.9,
+   "lo": -2.23,
+   "hi": 4.21,
+   "band": [
+    -10,
+    -3
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": 3.3,
+    "lo": null,
+    "hi": null,
+    "registered": true,
+    "label": "placebo in time (post = 2024)",
+    "src": "claims/outcomes/mob-crz-air-nyccas.json"
+   },
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/mob-crz-air-nyccas.json (city_effect)",
+    "band_thresholds": "claims/registered/mob-crz-air-nyccas.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "mob-crz-air": {
+   "topic": "toll",
+   "verdict": "no_test",
+   "label": "PM2.5 at PS 19 (only in-zone AQS monitor with a pre-period) vs other-borough monitors, 2025 vs 2023-24, TWFE DiD",
+   "unit": "percent change in daily PM2.5",
+   "unit_full": "percent change in daily PM2.5",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -5.23,
+   "lo": -9.47,
+   "hi": -0.87,
+   "band": null,
+   "thresholds": [],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": "No Manhattan NO2 monitor reported to EPA in 2022-2025, so the registered test could not be run.",
+   "sources": {
+    "estimate": "claims/outcomes/mob-crz-air.json (city_effect)",
+    "band_thresholds": "claims/registered/mob-crz-air.json (prediction)"
+   },
+   "card": "text"
+  },
+  "mob-crz-traffic": {
+   "topic": "toll",
+   "verdict": "confirmed",
+   "label": "CBD vs rest-of-city taxi/FHV speed, 2025 vs 2023-24 (DiD)",
+   "unit": "percent change in speed",
+   "unit_full": "percent change in speed",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 5.75,
+   "lo": 2.95,
+   "hi": 8.62,
+   "band": [
+    5,
+    15
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/mob-crz-traffic.json (city_effect)",
+    "band_thresholds": "claims/registered/mob-crz-traffic.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "mob-speedcam-247": {
+   "topic": "streets",
+   "verdict": "unsettled",
+   "label": "Injury crashes, new hours vs old hours, Aug 2022-Jul 2023 vs Aug 2021-Jul 2022 (ratio of ratios), citywide",
+   "unit": "ratio of ratios",
+   "unit_full": "ratio of ratios",
+   "scale": "log",
+   "null": 1,
+   "estimate": 0.934,
+   "lo": 0.86,
+   "hi": 1.014,
+   "band": [
+    0.92,
+    1.0
+   ],
+   "thresholds": [
+    {
+     "v": 1,
+     "role": "support"
+    },
+    {
+     "v": 0.97,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/mob-speedcam-247.json (city_effect)",
+    "band_thresholds": "claims/registered/mob-speedcam-247.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "nbhd-noise311-exposure": {
+   "topic": "other",
+   "verdict": "unsettled",
+   "label": "2020 tracts: beta(rent change) - beta(modelled transport noise) in OLS of log(1 + residential noise complaints per 1,000 residents per year, 2022-2024), per SD, borough effects; tract bootstrap 95% CI",
+   "unit": "difference in log units per SD",
+   "unit_full": "difference in log units per SD",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.034,
+   "lo": -0.091,
+   "hi": 0.024,
+   "band": [
+    0.05,
+    0.3
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/nbhd-noise311-exposure.json (city_effect)",
+    "band_thresholds": "claims/registered/nbhd-noise311-exposure.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "nbhd-rodents-asthma": {
+   "topic": "health",
+   "verdict": "confirmed",
+   "label": "UHF42 (n=42): change in log asthma ED rate age 5-17 (2017) per SD of % homes with mice or rats in the building (NYCHVS 2017), adjusted for poverty % (2013-17) and renter housing problems % (2017); OLS, HC3",
+   "unit": "log rate per SD",
+   "unit_full": "log rate per SD",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.467,
+   "lo": 0.063,
+   "hi": 0.872,
+   "band": [
+    0.0,
+    0.2
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/nbhd-rodents-asthma.json (city_effect)",
+    "band_thresholds": "claims/registered/nbhd-rodents-asthma.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "nbhd-vacant-shootings": {
+   "topic": "construction",
+   "verdict": "confirmed",
+   "label": "NYC 2020 tracts: shootings 2019-2024 per resident, IRR per quintile step of vacant-land share, adjusted for poverty, log density, borough (negative binomial, HC1 SE)",
+   "unit": "IRR per quintile step",
+   "unit_full": "IRR per quintile step",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.172,
+   "lo": 1.121,
+   "hi": 1.224,
+   "band": [
+    1.0,
+    1.1
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 1.0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/nbhd-vacant-shootings.json (city_effect)",
+    "band_thresholds": "claims/registered/nbhd-vacant-shootings.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "repro-dcp-2025-completions": {
+   "topic": "drift",
+   "verdict": "confirmed",
+   "label": "relative difference, R1 (sum of classaprop, New Building, compltyear 2025, 26Q2.1) minus DCP's 38,682, as a share of 38,682; interval is +/- the 0.34% revision DCP made to 2024 between releases, not a sampling interval",
+   "unit": "proportion",
+   "unit_full": "proportion",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.00018,
+   "lo": -0.00322,
+   "hi": 0.00358,
+   "band": [
+    -0.030556848146424676,
+    0.0211467866190993
+   ],
+   "thresholds": [
+    {
+     "v": -0.04,
+     "role": "support"
+    },
+    {
+     "v": 0.04,
+     "role": "support"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": true,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/repro-dcp-2025-completions.json (city_effect)",
+    "band_thresholds": "claims/registered/repro-dcp-2025-completions.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "repro-dot-2025-deaths": {
+   "topic": "drift",
+   "verdict": "contested",
+   "label": "2025 traffic deaths, NYPD open data (persons table, crash date in 2025) minus DOT's 205, percent",
+   "unit": "percent of stated count",
+   "unit_full": "percent of stated count",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 11.7,
+   "lo": null,
+   "hi": null,
+   "band": [
+    -5,
+    5
+   ],
+   "thresholds": [
+    {
+     "v": -5,
+     "role": "support"
+    },
+    {
+     "v": 5,
+     "role": "support"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": true,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/repro-dot-2025-deaths.json (city_effect)",
+    "band_thresholds": "claims/registered/repro-dot-2025-deaths.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "repro-mmr-cbd-speed": {
+   "topic": "drift",
+   "verdict": "confirmed",
+   "label": "R1 reproduced FY26 speed minus MMR stated FY26 speed (6.5 mph); lo and hi are the range of this difference over the readings that reproduce both years (R1, R3, R7, R8, R9)",
+   "unit": "mph",
+   "unit_full": "mph",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.117,
+   "lo": -0.071,
+   "hi": 0.142,
+   "band": [
+    -0.2,
+    0.2
+   ],
+   "thresholds": [
+    {
+     "v": -0.2,
+     "role": "support"
+    },
+    {
+     "v": 0.2,
+     "role": "support"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/repro-mmr-cbd-speed.json (city_effect)",
+    "band_thresholds": "claims/registered/repro-mmr-cbd-speed.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "restaurants-nta-harshness": {
+   "topic": "drift",
+   "verdict": "contested",
+   "label": "Between-NTA SD of the adjusted log rate ratio of critical violations per routine initial inspection (tau, method of moments)",
+   "unit": "SD of log rate ratio",
+   "unit_full": "SD of log rate ratio",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.0,
+   "lo": null,
+   "hi": null,
+   "band": [
+    0.05,
+    0.2
+   ],
+   "thresholds": [
+    {
+     "v": 0.05,
+     "role": "support"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/restaurants-nta-harshness.json (city_effect)",
+    "band_thresholds": "claims/registered/restaurants-nta-harshness.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "restaurants-score-complaints": {
+   "topic": "drift",
+   "verdict": "unsettled",
+   "label": "IRR of 311 Food Poisoning complaints at the lot in the 365 days after a routine initial inspection, score >= 14 against 0-13",
+   "unit": "incidence rate ratio",
+   "unit_full": "incidence rate ratio",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.124,
+   "lo": 0.957,
+   "hi": 1.319,
+   "band": [
+    1.1,
+    1.6
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 1.1,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": 1.673,
+    "lo": 1.111,
+    "hi": 2.519,
+    "registered": true,
+    "label": "placebo: Noise - Commercial complaints",
+    "src": "critique/restaurants-score-complaints.md"
+   },
+   "referee": {
+    "v": 1.13,
+    "label": "referee re-estimate",
+    "src": "claims/outcomes/restaurants-score-complaints.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/restaurants-score-complaints.json (city_effect)",
+    "band_thresholds": "claims/registered/restaurants-score-complaints.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "retimed-daytime-burglary": {
+   "topic": "toll",
+   "verdict": "unsettled",
+   "label": "Ratio of the Monday-and-Friday to Tuesday-to-Thursday ratio of daytime residential burglaries, 2023 to September 2026 over 2015-2019, citywide",
+   "unit": "ratio of ratios",
+   "unit_full": "ratio of ratios",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.0114236434298949,
+   "lo": 0.9525496596021868,
+   "hi": 1.0774697637052368,
+   "band": [
+    0.905,
+    0.95
+   ],
+   "thresholds": [
+    {
+     "v": 1,
+     "role": "support"
+    },
+    {
+     "v": 0.95,
+     "role": "refute"
+    },
+    {
+     "v": 1,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/retimed-daytime-burglary.json (city_effect)",
+    "band_thresholds": "claims/registered/retimed-daytime-burglary.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "retimed-ems-presence": {
+   "topic": "ems",
+   "verdict": "confirmed",
+   "label": "Elasticity of daytime EMS incidents to subway entries: the business-district-minus-rest change in the Monday-and-Friday ratio of incidents, divided by the same difference for entries (-0.0639)",
+   "unit": "elasticity",
+   "unit_full": "elasticity",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.45047475586137825,
+   "lo": 0.1707746176238145,
+   "hi": 0.6989792985639989,
+   "band": [
+    0.2,
+    1.0
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0.2,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/retimed-ems-presence.json (city_effect)",
+    "band_thresholds": "claims/registered/retimed-ems-presence.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "retimed-taxi-fhv-pickups": {
+   "topic": "toll",
+   "verdict": "unsettled",
+   "label": "Slope of the change in Monday-and-Friday relative pickups on the change in Monday-and-Friday relative subway entries, across taxi zones, Feb-Mar 2019 to Feb-Mar 2026",
+   "unit": "elasticity",
+   "unit_full": "elasticity (log-log slope)",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.5038518123089808,
+   "lo": 0.1286261710448805,
+   "hi": 0.8082960475535326,
+   "band": [
+    0.3,
+    1.0
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0.3,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/retimed-taxi-fhv-pickups.json (city_effect)",
+    "band_thresholds": "claims/registered/retimed-taxi-fhv-pickups.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "rlc-expansion-injuries": {
+   "topic": "streets",
+   "verdict": "unsettled",
+   "label": "Persons injured or killed within 50 m, camera intersections vs matched controls, post vs same months of 2024-25 (ratio of ratios)",
+   "unit": "ratio of ratios",
+   "unit_full": "ratio of ratios",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.0377,
+   "lo": 0.9072,
+   "hi": 1.1919,
+   "band": [
+    0.7,
+    0.95
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 0.95,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": 1.263,
+    "lo": 1.1,
+    "hi": 1.445,
+    "registered": true,
+    "label": "placebo year, before cameras",
+    "src": "critique/rlc-expansion-injuries.md"
+   },
+   "referee": {
+    "v": 1.038,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/rlc-expansion-injuries.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/rlc-expansion-injuries.json (city_effect)",
+    "band_thresholds": "claims/registered/rlc-expansion-injuries.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "rlc-expansion-rearend": {
+   "topic": "streets",
+   "verdict": "unsettled",
+   "label": "Rear-end proxy crashes within 50 m, camera intersections vs matched controls, post vs same months of 2024-25 (ratio of ratios)",
+   "unit": "ratio of ratios",
+   "unit_full": "ratio of ratios",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.3266,
+   "lo": 1.061,
+   "hi": 1.6499,
+   "band": [
+    1.1,
+    1.6
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 1.1,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": 1.25,
+    "lo": 1.052,
+    "hi": 1.488,
+    "registered": true,
+    "label": "placebo year, before cameras",
+    "src": "claims/outcomes/rlc-expansion-rearend.json"
+   },
+   "referee": {
+    "v": 1.327,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/rlc-expansion-rearend.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/rlc-expansion-rearend.json (city_effect)",
+    "band_thresholds": "claims/registered/rlc-expansion-rearend.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "sim-crz-holdout-2026": {
+   "topic": "toll",
+   "verdict": "contested",
+   "label": "S1: held-out elasticity of zone taxi speed to vehicle entries as a ratio of the elasticity fitted on 2025 (-0.409); non-holiday weekdays 5 January to 30 June 2026, by band of hours. The estimate is fixed by two storm days (23 February and 26 January 2026), which carry 84% of the identifying variation; without them S1 is -0.23 with a standard error of 1.05",
+   "unit": "ratio of held-out to fitted elasticity",
+   "unit_full": "ratio of held-out to fitted elasticity",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.28604582466555317,
+   "lo": 0.18953420366712112,
+   "hi": 0.3825574456639852,
+   "band": null,
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 1,
+     "role": "support"
+    },
+    {
+     "v": 0.5,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/sim-crz-holdout-2026.json (city_effect)",
+    "band_thresholds": "claims/registered/sim-crz-holdout-2026.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "split-temp-asthma-ems": {
+   "topic": "health",
+   "verdict": "unsettled",
+   "label": "Asthma EMS dispatches, October to March, per 5 C higher mean temperature over lags 0-3 days",
+   "unit": "incidence rate ratio per +5 C",
+   "unit_full": "incidence rate ratio per +5 C",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.0023,
+   "lo": 0.9927,
+   "hi": 1.012,
+   "band": [
+    0.95,
+    0.99
+   ],
+   "thresholds": [
+    {
+     "v": 1,
+     "role": "support"
+    },
+    {
+     "v": 1,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/split-temp-asthma-ems.json (city_effect)",
+    "band_thresholds": "claims/registered/split-temp-asthma-ems.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "split-temp-covid-growth": {
+   "topic": "health",
+   "verdict": "unsettled",
+   "label": "Weekly log growth of COVID-19 hospital admissions per 1 C temperature anomaly, days 7-20 before",
+   "unit": "change in weekly log growth per +1 C",
+   "unit_full": "change in weekly log growth per +1 C",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.0058,
+   "lo": -0.0036,
+   "hi": 0.0152,
+   "band": [
+    -0.03,
+    -0.003
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/split-temp-covid-growth.json (city_effect)",
+    "band_thresholds": "claims/registered/split-temp-covid-growth.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "stalled-421a-vesting-footings": {
+   "topic": "construction",
+   "verdict": "contested",
+   "label": "D1: 36-month no-CO rate, foundation starts 15 Dec 2021-14 Jun 2022 minus same window 2017-2019 (registered BBL matching)",
+   "unit": "difference in proportions",
+   "unit_full": "difference in proportions",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.208,
+   "lo": -0.248,
+   "hi": -0.167,
+   "band": [
+    0.05,
+    0.15
+   ],
+   "thresholds": [
+    {
+     "v": 0.03,
+     "role": "support"
+    },
+    {
+     "v": 0.03,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": -0.083,
+    "label": "referee, job-number matching",
+    "src": "claims/outcomes/stalled-421a-vesting-footings.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/stalled-421a-vesting-footings.json (city_effect)",
+    "band_thresholds": "claims/registered/stalled-421a-vesting-footings.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "stalled-flood-zone-starts": {
+   "topic": "construction",
+   "verdict": "unsettled",
+   "label": "borough-stratified (Mantel-Haenszel) risk difference in the 36-month no-CO rate, flood minus non-flood",
+   "unit": "difference in proportions",
+   "unit_full": "difference in proportions",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.049,
+   "lo": -0.098,
+   "hi": -0.002,
+   "band": [
+    0.04,
+    0.15
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": -0.001,
+    "label": "referee, job-number matching",
+    "src": "claims/outcomes/stalled-flood-zone-starts.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/stalled-flood-zone-starts.json (city_effect)",
+    "band_thresholds": "claims/registered/stalled-flood-zone-starts.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "street-busway14-crosstown-detour": {
+   "topic": "streets",
+   "verdict": "contested",
+   "label": "Weekday crosstown taxi metered distance, 14th Street pairs minus control pairs",
+   "unit": "% change",
+   "unit_full": "% change (E, summer-netted year-over-year DiD)",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.182,
+   "lo": -0.785,
+   "hi": 1.159,
+   "band": [
+    0.5,
+    4
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0.5,
+     "role": "support"
+    },
+    {
+     "v": 1.5,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 0.18,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/street-busway14-crosstown-detour.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/street-busway14-crosstown-detour.json (city_effect)",
+    "band_thresholds": "claims/registered/street-busway14-crosstown-detour.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "street-busway14-crosstown-time": {
+   "topic": "streets",
+   "verdict": "contested",
+   "label": "Weekday crosstown taxi trip duration, 14th Street pairs minus control pairs",
+   "unit": "% change",
+   "unit_full": "% change (E, summer-netted year-over-year DiD)",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.931,
+   "lo": -2.35,
+   "hi": 4.323,
+   "band": [
+    2,
+    10
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 2.0,
+     "role": "support"
+    },
+    {
+     "v": 5.0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 0.93,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/street-busway14-crosstown-time.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/street-busway14-crosstown-time.json (city_effect)",
+    "band_thresholds": "claims/registered/street-busway14-crosstown-time.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "street-busway14-fhv-north-south": {
+   "topic": "streets",
+   "verdict": "contested",
+   "label": "FHV weekday trip duration, north pairs (East Chelsea to Stuy Town/Gramercy) minus controls, seasonal swing net of yellow-taxi swing",
+   "unit": "% change in duration",
+   "unit_full": "% change in duration",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 1.559,
+   "lo": -3.14,
+   "hi": 6.487,
+   "band": [
+    3,
+    12
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 3,
+     "role": "support"
+    },
+    {
+     "v": 7,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 1.56,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/street-busway14-fhv-north-south.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/street-busway14-fhv-north-south.json (city_effect)",
+    "band_thresholds": "claims/registered/street-busway14-fhv-north-south.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "street-busway14-m14-speed": {
+   "topic": "streets",
+   "verdict": "confirmed",
+   "label": "M14A+M14D weekday speed, Oct 2019-Feb 2020 against Jul-Sep 2019, relative to other Manhattan routes",
+   "unit": "% change in speed",
+   "unit_full": "% change in speed",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 5.457,
+   "lo": 1.693,
+   "hi": 9.36,
+   "band": [
+    4,
+    20
+   ],
+   "thresholds": [
+    {
+     "v": 4,
+     "role": "support"
+    },
+    {
+     "v": 4,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 5.46,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/street-busway14-m14-speed.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/street-busway14-m14-speed.json (city_effect)",
+    "band_thresholds": "claims/registered/street-busway14-m14-speed.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "street-busway14-ped-injuries": {
+   "topic": "streets",
+   "verdict": "contested",
+   "label": "Pedestrian-injury crashes on 14th St (9th-3rd Av) relative to 23rd, 34th, 42nd, 57th St; Oct 2019-Sep 2022 against Oct 2014-Sep 2019",
+   "unit": "ratio of rate ratios",
+   "unit_full": "ratio of rate ratios",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.319,
+   "lo": 0.895,
+   "hi": 1.943,
+   "band": [
+    0.45,
+    0.85
+   ],
+   "thresholds": [
+    {
+     "v": 0.85,
+     "role": "support"
+    },
+    {
+     "v": 1,
+     "role": "support"
+    },
+    {
+     "v": 0.65,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 1.319,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/street-busway14-ped-injuries.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/street-busway14-ped-injuries.json (city_effect)",
+    "band_thresholds": "claims/registered/street-busway14-ped-injuries.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "transfer-chicago-concordance-matrix": {
+   "topic": "graph",
+   "verdict": "confirmed",
+   "label": "Share of the 15 qualifying pairs of PM2.5, ozone or traffic with a health outcome whose poverty-partialled Spearman correlation across 77 Chicago community areas has the literature's sign (interval: bootstrap of areas); the null is New York's 10 of 27",
+   "unit": "proportion of pairs",
+   "unit_full": "proportion of pairs",
+   "scale": "linear",
+   "null": 0.37,
+   "estimate": 0.8,
+   "lo": 0.533,
+   "hi": 0.867,
+   "band": [
+    0.4,
+    0.8
+   ],
+   "thresholds": [
+    {
+     "v": 0.6,
+     "role": "support"
+    },
+    {
+     "v": 0.37,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/transfer-chicago-concordance-matrix.json (city_effect)",
+    "band_thresholds": "claims/registered/transfer-chicago-concordance-matrix.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "transfer-chicago-heat-shootings": {
+   "topic": "heat",
+   "verdict": "confirmed",
+   "label": "Chicago daily gunshot-injury cases (gumc-mgzr), Midway TMAX lag 0, NB GLM with DOW, month, year, holiday, rain",
+   "unit": "IRR per 5 C",
+   "unit_full": "IRR per 5 C",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.1313639589995585,
+   "lo": 1.1201076921649944,
+   "hi": 1.1427333431209132,
+   "band": [
+    1.1,
+    1.2
+   ],
+   "thresholds": [
+    {
+     "v": 1.11,
+     "role": "support"
+    },
+    {
+     "v": 1.183,
+     "role": "support"
+    },
+    {
+     "v": 1.073,
+     "role": "refute"
+    },
+    {
+     "v": 1.219,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/transfer-chicago-heat-shootings.json (city_effect)",
+    "band_thresholds": "claims/registered/transfer-chicago-heat-shootings.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "transfer-chicago-hot-end": {
+   "topic": "heat",
+   "verdict": "unsettled",
+   "label": "Chicago gunshot-injury cases, ratio 33 C against 27 C of Midway TMAX (piecewise-linear spline), 2010-2026",
+   "unit": "rate ratio 33 C vs 27 C",
+   "unit_full": "rate ratio 33 C vs 27 C",
+   "scale": "log",
+   "null": 1,
+   "estimate": 1.058162059683993,
+   "lo": 1.0136776627657356,
+   "hi": 1.1045986171774196,
+   "band": [
+    1.05,
+    1.18
+   ],
+   "thresholds": [
+    {
+     "v": 1.06,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/transfer-chicago-hot-end.json (city_effect)",
+    "band_thresholds": "claims/registered/transfer-chicago-hot-end.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "transfer-chicago-weekday-pattern": {
+   "topic": "toll",
+   "verdict": "contested",
+   "label": "Change in the Monday/Friday deficit of Chicago Loop 'L' entries, Sep 2025-Aug 2026 minus 2019",
+   "unit": "percentage points of the Tue-Thu mean",
+   "unit_full": "percentage points of the Tue-Thu mean",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 15.92418615046446,
+   "lo": 11.998470262826654,
+   "hi": 22.657072390128945,
+   "band": [
+    5,
+    12
+   ],
+   "thresholds": [
+    {
+     "v": 6.5,
+     "role": "support"
+    },
+    {
+     "v": 10.9,
+     "role": "support"
+    },
+    {
+     "v": 4.4,
+     "role": "refute"
+    },
+    {
+     "v": 13.1,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/transfer-chicago-weekday-pattern.json (city_effect)",
+    "band_thresholds": "claims/registered/transfer-chicago-weekday-pattern.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "transit-fhv-price-subway": {
+   "topic": "toll",
+   "verdict": "no_test",
+   "label": "Weekday subway entries south of 96th St vs outside, 8 weeks after 2 Feb 2019 vs 3 weeks before, less the same in 2018 (not decisive: the registered first-stage gate failed)",
+   "unit": "percent change in entries",
+   "unit_full": "percent change in entries",
+   "scale": "linear",
+   "null": 0,
+   "estimate": -0.707,
+   "lo": -2.02,
+   "hi": 0.624,
+   "band": null,
+   "thresholds": [],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": "The registered first-stage gate failed, so the subway estimate decides nothing.",
+   "sources": {
+    "estimate": "claims/outcomes/transit-fhv-price-subway.json (city_effect)",
+    "band_thresholds": "claims/registered/transit-fhv-price-subway.json (prediction)"
+   },
+   "card": "text"
+  },
+  "transit-gtrain-substitution": {
+   "topic": "toll",
+   "verdict": "unsettled",
+   "label": "change in daily Uber and Lyft pickups in seven taxi zones on days when their G-only station had no service, against 32 nearby zones (zone and date fixed effects)",
+   "unit": "log points",
+   "unit_full": "log points (0.043 is about 4.4%)",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 0.0429,
+   "lo": 0.0013,
+   "hi": 0.0844,
+   "band": [
+    0.02,
+    0.12
+   ],
+   "thresholds": [
+    {
+     "v": 0,
+     "role": "support"
+    },
+    {
+     "v": 0.02,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": -0.002,
+    "lo": -0.031,
+    "hi": 0.027,
+    "registered": true,
+    "label": "2023 placebo",
+    "src": "claims/outcomes/transit-gtrain-substitution.json"
+   },
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/transit-gtrain-substitution.json (city_effect)",
+    "band_thresholds": "claims/registered/transit-gtrain-substitution.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "transit-weekday-pattern": {
+   "topic": "toll",
+   "verdict": "confirmed",
+   "label": "Change in the Monday/Friday deficit of CBD subway entries, Nov 2025-Oct 2026 minus 2019",
+   "unit": "percentage points of the Tue-Thu mean",
+   "unit_full": "percentage points of the Tue-Thu mean",
+   "scale": "linear",
+   "null": 0,
+   "estimate": 8.7,
+   "lo": 6.9,
+   "hi": 10.86,
+   "band": [
+    4,
+    10
+   ],
+   "thresholds": [
+    {
+     "v": 4,
+     "role": "support"
+    },
+    {
+     "v": 1,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": null,
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/transit-weekday-pattern.json (city_effect)",
+    "band_thresholds": "claims/registered/transit-weekday-pattern.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "turn-calming-displacement": {
+   "topic": "streets",
+   "verdict": "unsettled",
+   "label": "Pedestrians injured or killed 50-200 m from the site (excluding crashes within 40 m of any calming site), treated vs later-treated",
+   "unit": "ratio of ratios",
+   "unit_full": "ratio of ratios",
+   "scale": "log",
+   "null": 1,
+   "estimate": 0.9234,
+   "lo": 0.876,
+   "hi": 0.9734,
+   "band": [
+    0.93,
+    1.07
+   ],
+   "thresholds": [
+    {
+     "v": 0.88,
+     "role": "support"
+    },
+    {
+     "v": 1.12,
+     "role": "support"
+    },
+    {
+     "v": 1.0,
+     "role": "refute"
+    }
+   ],
+   "placebo": null,
+   "referee": {
+    "v": 0.926,
+    "label": "referee re-estimate",
+    "src": "claims/outcomes/turn-calming-displacement.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/turn-calming-displacement.json (city_effect)",
+    "band_thresholds": "claims/registered/turn-calming-displacement.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "turn-calming-leftturn": {
+   "topic": "streets",
+   "verdict": "confirmed",
+   "label": "Crashes with a vehicle 'Making Left Turn' within 40 m, 24 months after vs before, treated vs later-treated calming sites",
+   "unit": "ratio of ratios",
+   "unit_full": "ratio of ratios",
+   "scale": "log",
+   "null": 1,
+   "estimate": 0.9041,
+   "lo": 0.8473,
+   "hi": 0.9647,
+   "band": [
+    0.7,
+    0.95
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 0.95,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": 0.9339,
+    "lo": 0.8607,
+    "hi": 1.0133,
+    "registered": false,
+    "label": "placebo, installation 12 months early (not registered)",
+    "src": "critique/turn-calming-leftturn.md"
+   },
+   "referee": {
+    "v": 0.904,
+    "label": "referee reproduction",
+    "src": "claims/outcomes/turn-calming-leftturn.json"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/turn-calming-leftturn.json (city_effect)",
+    "band_thresholds": "claims/registered/turn-calming-leftturn.json (prediction)"
+   },
+   "card": "scale"
+  },
+  "turn-calming-ped": {
+   "topic": "streets",
+   "verdict": "confirmed",
+   "label": "Pedestrians injured or killed within 40 m, 24 months after vs 24 months before installation, treated vs later-treated calming sites, stacked cohorts 2016Q3-2023Q2",
+   "unit": "ratio of ratios",
+   "unit_full": "ratio of ratios",
+   "scale": "log",
+   "null": 1,
+   "estimate": 0.8482,
+   "lo": 0.7787,
+   "hi": 0.924,
+   "band": [
+    0.8,
+    0.97
+   ],
+   "thresholds": [
+    {
+     "v": 1.0,
+     "role": "support"
+    },
+    {
+     "v": 0.97,
+     "role": "refute"
+    }
+   ],
+   "placebo": {
+    "est": 0.9119,
+    "lo": 0.8252,
+    "hi": 1.0078,
+    "registered": false,
+    "label": "placebo, installation 12 months early (not registered)",
+    "src": "critique/turn-calming-ped.md"
+   },
+   "referee": {
+    "v": 0.8486,
+    "label": "referee reproduction",
+    "src": "critique/turn-calming-ped.md"
+   },
+   "band_derived": false,
+   "text": null,
+   "sources": {
+    "estimate": "claims/outcomes/turn-calming-ped.json (city_effect)",
+    "band_thresholds": "claims/registered/turn-calming-ped.json (prediction)"
+   },
+   "card": "scale"
+  }
+ }
+}

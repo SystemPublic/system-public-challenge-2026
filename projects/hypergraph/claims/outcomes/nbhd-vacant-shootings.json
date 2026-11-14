@@ -1,0 +1,203 @@
+{
+ "id": "nbhd-vacant-shootings",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "NYC 2020 tracts: shootings 2019-2024 per resident, IRR per quintile step of vacant-land share, adjusted for poverty, log density, borough (negative binomial, HC1 SE)",
+  "estimate": 1.172,
+  "lo": 1.121,
+  "hi": 1.224,
+  "scale": "IRR per quintile step",
+  "null": 1,
+  "n": 2208
+ },
+ "graph_effect": {
+  "label": "Philadelphia block groups 2002-2006: aggravated assault IRR per category shift of vacant properties (Branas, Rubin, Guo 2013, PMID 23814668; graph association 3rfxckzPtm)",
+  "estimate": 1.18,
+  "lo": 1.12,
+  "hi": 1.25,
+  "scale": "IRR per category",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$select": "bct2020, landuse, ownertype, count(*) as n, sum(lotarea) as area",
+    "$group": "bct2020, landuse, ownertype",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:28:32-0500",
+   "n_rows": 29066,
+   "pluto_version": "26v2"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "incident_key, occur_date, latitude, longitude",
+    "$where": "occur_date between '2019-01-01T00:00:00' and '2024-12-31T23:59:59' and latitude is not null",
+    "$order": "incident_key"
+   },
+   "fetched": "2026-11-12T15:28:48-0500",
+   "n_rows": 7043,
+   "note": "latitude/longitude columns swapped in source; corrected"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$select": "date_extract_y(occur_date) as y, count(distinct incident_key) as n",
+    "$where": "occur_date between '2019-01-01T00:00:00' and '2024-12-31T23:59:59'",
+    "$group": "y",
+    "$order": "y",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:28:53-0500",
+   "n_rows": 6
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "63ge-mke6",
+   "name": "2020 Census Tracts",
+   "url": "https://data.cityofnewyork.us/d/63ge-mke6",
+   "rows_updated_at": "2026-11-02T19:12:37Z",
+   "query": {
+    "$select": "geoid,boroct2020,borocode,boroname,nta2020,ntaname,shape_area,the_geom",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T15:26:00-0500",
+   "n_rows": 2325
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2022/table-based-SF/data/5YRData/acsdt5y2022-b01003.dat",
+   "file": "data/raw/acs/acsdt5y2022-b01003.dat"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2022/table-based-SF/data/5YRData/acsdt5y2022-c17002.dat",
+   "file": "data/raw/acs/acsdt5y2022-c17002.dat"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2022/table-based-SF/data/5YRData/acsdt5y2022-b03002.dat",
+   "file": "data/raw/acs/acsdt5y2022-b03002.dat"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2022/table-based-SF/data/5YRData/acsdt5y2022-b25064.dat",
+   "file": "data/raw/acs/acsdt5y2022-b25064.dat"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/acs2012_5yr/summaryfile/2008-2012_ACSSF_By_State_By_Sequence_Table_Subset/NewYork/Tracts_Block_Groups_Only/g20125ny.csv",
+   "file": "data/raw/acs/g20125ny.csv"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/acs2012_5yr/summaryfile/2008-2012_ACSSF_By_State_By_Sequence_Table_Subset/NewYork/Tracts_Block_Groups_Only/20125ny0003000.zip",
+   "file": "data/raw/acs/20125ny0003000.zip"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/acs2012_5yr/summaryfile/2008-2012_ACSSF_By_State_By_Sequence_Table_Subset/NewYork/Tracts_Block_Groups_Only/20125ny0005000.zip",
+   "file": "data/raw/acs/20125ny0005000.zip"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/acs2012_5yr/summaryfile/2008-2012_ACSSF_By_State_By_Sequence_Table_Subset/NewYork/Tracts_Block_Groups_Only/20125ny0105000.zip",
+   "file": "data/raw/acs/20125ny0105000.zip"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/tract/tab20_tract20_tract10_st36.txt",
+   "file": "data/raw/acs/tab20_tract20_tract10_st36.txt"
+  },
+  {
+   "kind": "sysgraph",
+   "api_version": "v1.0",
+   "dataset_version": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "file": "data/derived/neighbourhood/graph_vacant.json",
+   "n_variables": 162
+  }
+ ],
+ "prediction_scored": "partial. The direction was right and the registered support condition holds (adjusted IRR 1.17, 95% CI 1.12-1.22). The magnitude was wrong: I predicted 1.00-1.10, weaker than Philadelphia, and the NYC estimate equals the Philadelphia between-unit estimate (1.18). Adjustment for poverty did not attenuate it (unadjusted 1.16).",
+ "settle": "The tract association is ecological and cannot show that vacant lots cause shootings in NYC. Three things would settle whether the Philadelphia causal result transfers: (1) a lot-level design in NYC, such as shootings within 100-200 m of vacant lots before and after they are built on, cleaned or fenced, using DOB new-building permits and DSNY lot-cleaning records for timing; (2) a split of vacant lots into those staged for construction (open DOB new-building job) and those vacant for 36 months or more, the exposure used in the Philadelphia and opioid studies; (3) the same model with pre-period shootings (2010-2014) to test reverse causation.",
+ "research_needed": [
+  {
+   "question": "Do NYC vacant lots that are greened or cleaned see fewer nearby shootings, as in the Philadelphia trial?",
+   "data": "MapPLUTO land use 11 by year (PLUTO archive), DSNY lot cleaning, GreenThumb gardens, NYPD shootings",
+   "design": "difference-in-differences around treated versus matched untreated lots, 100-200 m buffers",
+   "priority": "high"
+  },
+  {
+   "question": "Is the association carried by long-vacant lots or by lots staged for construction?",
+   "data": "PLUTO archive versions 2014-2026 (vacancy duration), DOB NOW and BIS job filings (new building)",
+   "design": "tract or lot model with vacancy duration and permit status as separate exposures",
+   "priority": "high"
+  },
+  {
+   "question": "Why does private vacant land carry the association while City-owned vacant land does not?",
+   "data": "PLUTO ownertype, HPD and DCAS land inventories, lot condition from aerial photographs",
+   "design": "exploratory; describe lot condition by owner type, then register a test",
+   "priority": "medium"
+  },
+  {
+   "question": "Is the shape of the dose-response a threshold (any scattered vacant lots) rather than linear in vacant area?",
+   "data": "this analysis, with counts of vacant lots under 0.25 acre",
+   "design": "spline in vacant share; lot counts by size class",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/neighbourhood/vacant_shootings.png"
+ ],
+ "notes": "Unit: 2208 2020 census tracts with at least 500 residents and lot area in MapPLUTO 26v2. Vacant land (land use 11) is 7.8% of NYC tax-lot area. 6913 of 7043 shooting incidents 2019-2024 fell in the analysed tracts. Shooting rates rose from 0.96 per 10,000 residents per year in the lowest vacant-share quintile to 1.67 in the highest. The association held without Staten Island (IRR 1.17) and after adding the non-Hispanic white share (IRR 1.13). It was not linear in the share: per SD of the untransformed share the IRR was 0.99 (0.94-1.05), because the top quintile runs from 2.8% to 94% and the tracts with the most vacant land are industrial or waterfront tracts with few residents. Exploratory, not registered: private vacant land IRR 1.13 per SD (1.03-1.22); City-owned vacant land 0.96 (0.91-1.01). Data note: in Shootings (2006-Present), 5ucz-vwe8, the latitude column holds longitudes and the longitude column holds latitudes (checked 12 November 2026); the script detects and swaps them. Distinct incidents per year in 5ucz-vwe8 match the archived 833y-fsy8 table within one incident. The registration's literature note corrects the brief: the Branas et al. 2018 greening trial was published in PNAS, not JAMA Network Open. The PNAS trial is not present as a variable in the graph; the graph holds the cross-sectional Philadelphia study, the abandoned-housing trial (South et al. 2023) and the Rochester demolition study.\n\nAfter critique round 1b: The association is between neighbourhoods. With NTA fixed effects the IRR is 0.98 (0.94 to 1.01); with NTA-clustered errors the interval is 1.10 to 1.25. It is therefore consistent with neighbourhood-level confounding. The NYC and Philadelphia figures use different outcomes, exposures, units and scales, so they are similar in size but not equal. The exposure is PLUTO 2026 and the shootings are 2019-2024.",
+ "registration_sha256": "a65620b20ad5d385bf13bbcffcf3f26465e2fd39695e022376bfc2031db70a80",
+ "decided_at": "2026-11-12T15:43:51-0500",
+ "stance": {
+  "value": 0.998,
+  "lo": 0.988,
+  "hi": 1.0,
+  "z": 7.08
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "NYC 2020 tracts: shootings 2019-2024 per resident, IRR per quintile step of vacant-land share, adjusted for poverty, log density, borough (negative binomial, HC1 SE)",
+    "estimate": 1.172,
+    "lo": 1.121,
+    "hi": 1.224,
+    "scale": "IRR per quintile step",
+    "null": 1,
+    "n": 2208
+   },
+   "stance": {
+    "value": 0.998,
+    "lo": 0.988,
+    "hi": 1.0,
+    "z": 7.08
+   },
+   "decided_at": "2026-11-12T15:43:51-0500",
+   "prediction_scored": "partial. The direction was right and the registered support condition holds (adjusted IRR 1.17, 95% CI 1.12-1.22). The magnitude was wrong: I predicted 1.00-1.10, weaker than Philadelphia, and the NYC estimate equals the Philadelphia between-unit estimate (1.18). Adjustment for poverty did not attenuate it (unadjusted 1.16)."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed; report within-NTA null and the non-comparability with Philadelphia.",
+  "critique": "critique/nbhd-vacant-shootings.md",
+  "revised_at": "2026-11-12T15:58:59-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

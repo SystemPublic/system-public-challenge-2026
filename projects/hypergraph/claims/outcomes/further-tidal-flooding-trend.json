@@ -1,0 +1,131 @@
+{
+ "id": "further-tidal-flooding-trend",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Rate ratio of dry-day street-flooding and catch-basin complaints in the coastal ZIP set per 10 cm of Battery daily maximum above 0.35 m over MHHW, 2010-2019 held-out period",
+  "estimate": 2.000694591935365,
+  "lo": 1.6436462504789693,
+  "hi": 2.3843478152869113,
+  "scale": "rate ratio per 10 cm above knot",
+  "null": 1,
+  "n": 1882
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76ig-c548",
+   "name": "311 Service Requests from 2010 to 2019",
+   "url": "https://data.cityofnewyork.us/d/76ig-c548",
+   "rows_updated_at": "2025-12-24T18:19:08Z",
+   "query": {
+    "$select": "agency, count(*) as n",
+    "$where": "created_date between '2010-01-01T00:00:00' and '2019-12-31T23:59:59' and (descriptor like 'Street Flooding%' or descriptor like 'Catch Basin Clogged%' or descriptor like 'Sewer Backup%')",
+    "$group": "agency",
+    "$order": "n desc",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-13T00:04:34-0500",
+   "n_rows": 1,
+   "note": "first of the per-year queries; the year-by-year queries are in complaints_by_day_zip.json"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(created_date) as d, incident_zip as zip, count(*) as n",
+    "$where": "created_date between '2020-01-01T00:00:00' and '2020-12-31T23:59:59' and agency='DEP' and (upper(descriptor) like 'STREET FLOODING%' or upper(descriptor) like 'CATCH BASIN CLOGGED%' or upper(complaint_type) like '%STREET FLOOD%')",
+    "$group": "d, zip",
+    "$order": "d, zip"
+   },
+   "fetched": "2026-11-13T00:19:54-0500",
+   "n_rows": 5435,
+   "note": "first of the per-year queries; the year-by-year queries are in complaints_by_day_zip.json"
+  },
+  {
+   "kind": "noaa-co-ops",
+   "station": "8518750 The Battery",
+   "product": "hourly_height, datum MHHW, metric, lst_ldt",
+   "years": "2010-2025",
+   "n_requests": 16,
+   "first_url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=research&begin_date=20100101&end_date=20101231&datum=MHHW&station=8518750&time_zone=lst_ldt&units=metric&format=json",
+   "fetched": "2026-11-12T23:39:18-0500",
+   "data_access": "open"
+  },
+  {
+   "kind": "noaa-co-ops",
+   "product": "datums (mdapi) and sealvltrends (dpapi) for 8518750",
+   "note": "MHHW 2.543 m, MLLW 1.002 m above station datum; trend 1.16 +/- 0.02 in/decade = 2.95 +/- 0.05 mm/yr, 1856-2025"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "stations": "USW00094728, USW00094789",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  }
+ ],
+ "prediction_scored": "Part 1 hit on direction and on the support condition (tidal 2.00, 1.64 to 2.38; tidal over other 1.74, 1.43 to 2.09); the tidal estimate sits at the top of the registered range 1.10 to 2.0; the other-ZIP estimate (1.15, 1.03 to 1.26) is a miss against the registered 0.95 to 1.10. Part 2a partial: OLS slope 0.63 (-0.19 to 1.45) days per year per year contains both the implied 0.55 and zero. Part 2b: no association (Spearman 0.10, p 0.71), as registered, not testable.",
+ "settle": "Wind and local rain are the main untested rivals for the tide effect (the other-ZIP set also rises, 1.15 per 10 cm, and contains waterfront ZIPs); a Jamaica Bay or Rockaway gauge, hourly local rain and event-level matching with FloodNet would separate them. For the trend, more years: 16 annual counts cannot separate 0.55 days/yr/yr from zero.",
+ "research_needed": [
+  {
+   "question": "Does 311 reporting of tidal flooding rise with the tide after wind set-up and hyperlocal rain are controlled?",
+   "data": "CO-OPS Jamaica Bay-area gauges, MesoNet or radar rainfall, 311, FloodNet",
+   "design": "same hinge model with local gauge and radar rain",
+   "priority": "high"
+  },
+  {
+   "question": "What health outcomes follow tidal nuisance flooding (as opposed to disaster flooding) in New York City?",
+   "data": "NYC DOHMH syndromic surveillance by ZIP, 311 flood days",
+   "design": "case-crossover on dry high-tide days; the graph holds only disaster-flood outcomes",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/round2/further-tidal-flooding-trend.png"
+ ],
+ "notes": "Held-out sample: 1882 dry days in 2010-2019 (Sandy window 29 Oct to 30 Nov 2012 dropped), 173 with maximum at or above 0.35 m MHHW, 2042 C3 complaints in the 8 coastal ZIPs and 28899 in the other ZIPs; minimum-data rule met. Only 7 dry days reached the NOS minor level (0.563 m), so the first claim's threshold could not be used. Registered 311 queries were run with agency = 'DEP' added and in one-year chunks because the unrestricted upper() LIKE query timed out; all matching records in 2010-2019 for the case-sensitive patterns belong to DEP (249,360 records including sewer backups). Checks, tidal rate ratio per 10 cm: knot 0.30 1.73, 0.40 2.38, 0.45 2.88; street flooding only 3.02 (2.36 to 4.22); with sewer backups 1.53; log-linear over all dry days 1.11 (1.06 to 1.15); 2020-2025 in-sample 2.13; shifted-tide placebos 0.99 and 0.97. The registered shape was flat below the knot, but the band model shows the complaint rate already above the reference in 0.30 to 0.35 m (rate ratio 1.34), so the rise is smooth, not a threshold. Part 2a: annual counts 2010-2025 range from 11 to 41 (2024); detrending the tide by 2.95 mm/yr gives a slope of 0.01 (-0.79 to 0.81); the gauge's own annual-mean slope over 2010-2025 is 4.0 mm/yr, above the long-term 2.95. The verdict is decided by part 1 alone as registered.\n\nAfter the referee (13 Nov 2026): the referee reproduced the result with an independent bootstrap (2.00, 1.64 to 2.34) and it survives stricter dry-day rules, wind, season and influence checks. Three qualifications are added. The figure of 2.00 per 10 cm depends on the knot (1.73, 2.00, 2.38 and 2.88 at 0.30 to 0.45 m; 1.11 per 10 cm log-linear over all dry days) and should not be quoted as a general dose-response; the direction and the coastal specificity do not depend on it. The effect is concentrated in the Rockaway ZIP codes (2.01 to 2.52); Howard Beach, which supplies 625 of the 2,042 complaints, shows 1.25 (0.98 to 1.59) and Red Hook 1.10 (0.70 to 1.73). Several of the busiest dry days follow Hurricane Irene, and without the ten busiest days the estimate is 1.82 (1.60 to 2.17). The other-ZIP series also rises, so some common factor moves complaints citywide on high-water days. The referee added the strongest evidence against the weather rival: complaints in the coastal set follow the part of the water level that is predictable from lunar and seasonal periods (1.083 per 10 cm, SE 0.020) as well as the remainder (1.136, SE 0.022). In data/derived/round2/tidal_trend/graph_flood_findings.json the records under 'flooding -> post-traumatic stress disorder' with PMIDs 29344631, 32758312 and 24368465 are trials of a psychotherapy technique called flooding and are not flood evidence; docs/round2.md already says that the concept 'flooding' is mis-grounded, and no outcome cites those records.",
+ "registration_sha256": "517759937d19637def545614ad12b6602797658a915567e7ab6799e9575efe78",
+ "decided_at": "2026-11-13T00:35:27-0500",
+ "stance": {
+  "value": 0.999,
+  "lo": 0.989,
+  "hi": 1.0,
+  "z": 7.31
+ },
+ "verdict_note": "Direction and coastal specificity are confirmed. The size (2.00 per 10 cm) depends on the knot and the effect is concentrated in the Rockaway ZIP codes.",
+ "critique": {
+  "report": "critique/further-tidal-flooding-trend.md",
+  "answer": "accepted; verdict kept"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Rate ratio of dry-day street-flooding and catch-basin complaints in the coastal ZIP set per 10 cm of Battery daily maximum above 0.35 m over MHHW, 2010-2019 held-out period",
+    "estimate": 2.000694591935365,
+    "lo": 1.6436462504789693,
+    "hi": 2.3843478152869113,
+    "scale": "rate ratio per 10 cm above knot",
+    "null": 1,
+    "n": 1882
+   },
+   "stance": {
+    "value": 0.999,
+    "lo": 0.989,
+    "hi": 1.0,
+    "z": 7.31
+   },
+   "decided_at": "2026-11-13T00:35:27-0500",
+   "prediction_scored": "Part 1 hit on direction and on the support condition (tidal 2.00, 1.64 to 2.38; tidal over other 1.74, 1.43 to 2.09); the tidal estimate sits at the top of the registered range 1.10 to 2.0; the other-ZIP estimate (1.15, 1.03 to 1.26) is a miss against the registered 0.95 to 1.10. Part 2a partial: OLS slope 0.63 (-0.19 to 1.45) days per year per year contains both the implied 0.55 and zero. Part 2b: no association (Spearman 0.10, p 0.71), as registered, not testable."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed; notes add the dependence of the size on the knot, the concentration in the Rockaway ZIP codes and the mis-grounded graph records.",
+  "critique": "critique/further-tidal-flooding-trend.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

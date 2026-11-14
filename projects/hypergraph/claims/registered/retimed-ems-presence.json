@@ -1,0 +1,33 @@
+{
+ "id": "retimed-ems-presence",
+ "kind": "confirmation",
+ "statement": "Daytime EMS incidents in the Manhattan business district (community districts 101 to 106) fell on Mondays and Fridays relative to Tuesday to Thursday between 2018-2019 and October 2024-September 2026, relative to the same change in the rest of the city, by between 0.2 and 1.0 of the difference in the thinning of subway entries.",
+ "graph_evidence": [
+  {
+   "concepts": "EMS or ambulance call volume | daytime population, commuting, working at home, weekday",
+   "n_findings": 0,
+   "direction": "none",
+   "summary": "System Public Graph, variable searches (data/derived/graph/retimed_week/gap_checks.json and data/derived/round2/retimed_consequences/graph_gap_check.json, graph_leads.json): no finding has this outcome with commuting, working at home, day of week or daytime population as the exposure. 240 variables match ambulance, emergency medical services, EMS calls, daytime population or ambient population. Call volume appears as an outcome of a hurricane (PMID 30704948), the COVID-19 outbreak (PMID 33052824) and a smoke-free law (PMID 23918257); daytime population density appears only with physician supply (PMID 19226450). No finding relates call volume to the number of people present."
+  }
+ ],
+ "literature": [],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Primary: the contrast C = Y(CBD districts pooled) - Y(other districts pooled) is between -0.013 and -0.064. As an elasticity, C / (E_cbd - E_rest) with E_cbd = -0.1174 and E_rest = -0.0535 (difference -0.0639), it is between 0.2 and 1.0. 'In proportion to entries' means an elasticity of 1; I expect less, about 0.4, because residents, visitors and people without offices generate most calls.",
+  "support_if": "The 95% interval of C lies below zero (elasticity interval above zero).",
+  "refute_if": "The 95% interval of C lies above zero, or its lower bound is above -0.013 (elasticity below 0.2 throughout the interval)."
+ },
+ "plan": "Exposure comes from the dose map only (data/derived/transit/dose_map_long.csv, built from MTA hourly entries before any outcome was queried). For a group of station complexes, E = ln(MF/TWT in Nov 2025-Oct 2026) - ln(MF/TWT in 2019), where MF is mean Monday and Friday entries and TWT mean Tuesday-to-Thursday entries, for 06:00-19:59 unless the AM peak (06:00-09:59) is named. E is negative where Mondays and Fridays thinned. Files: data/derived/round2/retimed_consequences/exposure_taxi_zone.csv, exposure_community_district.csv, exposure_groups.json; code analyses/round2/retimed_consequences/exposure.py. Estimator (analyses/round2/retimed_consequences/lib.py, written before registration): for each unit and period, r = ln(mean Monday and Friday count / mean Tuesday-to-Thursday count) over retained weeks, and Y = r(recent) - r(baseline). Retained weeks have no federal holiday and no day from 24 December to 1 January, as in the dose map; the weeks of Monday 26 January and Monday 23 February 2026 are also dropped, because subway entries on those Mondays were 38% and 20% of the week's midweek level (docs/transit.md), which was known from entries before any outcome was seen. Intervals are the 2.5 and 97.5 percentiles of 2,000 bootstrap draws that resample weeks within each period and, for a slope across units, the units as well. Outcome: EMS incidents (76xm-jjuj) with incident hour 06 to 19, by communitydistrict and date. Baseline: 2018 and 2019. Recent: 1 October 2024 to 30 September 2026, the last two years in the dataset. Units: the community districts (codes ending 01 to 18) that hold a reliable station complex, 54 in all; the CBD group is the six districts whose complexes are all inside the MTA business district (101 to 106), and the rest are the other 48. The reported effect is the elasticity C / -0.0639 with its interval; whether the interval includes 1 is reported as the test of proportionality. Secondary, not deciding: the slope of Y on E across the 54 districts; Monday and Friday separately; hours 06-09 and 10-15; high-severity incidents (initial severity 1 to 3) only; baseline 2019 and recent 12 months only. Placebo: 2016-2017 against 2018-2019. Power, from years outside the test: the same estimator applied to 2017 against 2018 gave C = -0.013 (-0.038 to 0.012), standard error 0.0129, and a slope standard error of 0.27 (design_ems_placebo_2017_2018.json); weekday incidents in the band averaged 375 a day in the CBD districts and 2,305 in the rest. With two years on each side the standard error of C should be about 0.009, or 0.14 as an elasticity. The central prediction, elasticity 0.4 (C = -0.026), is 2.8 standard errors from zero (D = 8); elasticity 0.2 is 1.4. A true elasticity of zero would meet refute_if about a quarter of the time and support_if 2.5% of the time. The slope across districts can detect only an elasticity near 0.8 and is secondary for that reason. Verdict by concord.claims.PRECEDENCE rules 1 to 4: support_if met gives confirmed, refute_if met gives contested, otherwise unsettled; no_test if the registered data cannot be read. Secondary and placebo results decide nothing.",
+ "already_seen": "Earlier claims queried EMS incidents by day for shootings and stabbings, drug and psychiatric calls, and asthma, citywide; none tabulated incidents by community district or by weekday against midweek. For this registration I queried all daytime incidents by district and date for 2017 and 2018 only, to estimate sampling error; 2018 is therefore in both the design check and the baseline, and I have seen the 2017-to-2018 change in its weekday ratio (C = -0.013), not its level against any later year.",
+ "alternatives": [
+  "Residents of the CBD districts, about 600,000 people, stay in the district when they work at home, which offsets the loss of commuters.",
+  "Calls in Midtown come largely from visitors, shelters, hospitals and transit hubs, whose week did not change.",
+  "EMS call triage and telemedicine changed after 2020 and may have changed call volume differently by district.",
+  "The contrast is against the rest of the city, where people working at home add daytime presence on Mondays and Fridays; a negative C mixes a fall in the CBD with a rise elsewhere (the two pooled Y values are reported separately).",
+  "The district recorded is where the incident was, and incidents without a district code are dropped."
+ ],
+ "prior": 0.45,
+ "registrant": "Claude (round 2, re-timed consequences agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T23:48:46-0500",
+ "sha256": "ba0e599732842d1b203cbc648dd0acb0cddf7b85b93e6c06b12cebca86e98f64"
+}

@@ -1,0 +1,62 @@
+{
+ "id": "street-busway14-ped-injuries",
+ "kind": "confirmation",
+ "statement": "In the three years after the busway began (October 2019 to September 2022), crashes injuring or killing a pedestrian on 14th Street between Ninth and Third Avenues fell by about a third relative to 23rd, 34th, 42nd and 57th Streets over the same avenues, compared with the five years before.",
+ "edge": {
+  "cause": "busway (through car traffic removed)",
+  "effect": "pedestrian injury crashes on the corridor"
+ },
+ "graph_evidence": [
+  {
+   "concepts": "pedestrian injury, traffic volume, bus lane",
+   "n_findings": 1,
+   "direction": "against (bus stops on bus lanes)",
+   "summary": "The graph has many pedestrian-injury variables but none for a bus-only street or volume reduction; the nearest is Lima, where crossings at bus stops on bus-only lanes had more pedestrian collisions, OR 2.36 (1.02-5.42) (PMID 24357516, abstract read). Busways concentrate buses and bus stops, which this finding links to more collisions.",
+   "pubmed_ids": [
+    24357516
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Cairns et al. 2002 (as in street-busway14-crosstown-time)",
+   "doi": "10.1680/muen.2002.151.1.13",
+   "finding": "Traffic on a treated street falls substantially after reallocation; pedestrian crashes scale with vehicle volume."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Ratio of rate ratios 0.65 (range 0.45 to 0.85).",
+  "support_if": "RR <= 0.85 AND upper 95% bound below 1.",
+  "refute_if": "Lower 95% bound above 0.65 (the predicted central fall is excluded)."
+ },
+ "discrimination": {
+  "rule": 8,
+  "pre_counts_per_year_treated": 29.0,
+  "pre_counts_per_year_controls": 130.8,
+  "se_log_expected": 0.15,
+  "D_if_estimate_at_prediction": 8.3,
+  "note": "Power from persons injured 2014-2018 (peds_power.json); the test counts crashes, slightly fewer, so the se will be a little larger. A five-month post window (Oct 2019-Feb 2020) has a minimum detectable change of about 48% and is secondary only. Year-to-year sd of the log ratio 2013-2018 was 0.15, consistent with Poisson noise."
+ },
+ "plan": "analyses/street_space/peds_test.py and peds_common.py (committed before this registration): h9gi-nx95 crashes with a pedestrian injured or killed, located within 30 m of each corridor segment between the 9th and 3rd Avenue intersections; pre Oct 2014-Sep 2019, post Oct 2019-Sep 2022; ratio of rate ratios with Poisson interval. Rules 1, 2 and 10.",
+ "alternatives": [
+  "The pandemic changed traffic and walking differently in Midtown (offices, theatres) and around 14th Street (residential, Union Square).",
+  "Other street changes on the control corridors (for example 34th Street and 42nd Street bus lanes, Open Streets).",
+  "Geocoding changes in the NYPD data over time, common to all corridors.",
+  "Pedestrian volumes on 14th Street rose after the busway, which would raise exposure and hide a fall in risk per pedestrian."
+ ],
+ "data_seen_before_registration": [
+  "h9gi-nx95: pedestrian-injury crashes in the bounding box, January 2013 to 30 September 2019 (design, peds_power.json); crash locations at 9th and 3rd Avenue intersections before October 2019 (geometry). No crash after 30 September 2019 has been queried."
+ ],
+ "design_file": "data/derived/street_space/peds_power.json",
+ "scripts": [
+  "analyses/street_space/peds_test.py",
+  "analyses/street_space/peds_common.py",
+  "analyses/street_space/peds_power.py"
+ ],
+ "prior": 0.35,
+ "registrant": "Claude (agent, street-space task), 13 November 2026",
+ "script_commit": "073d33f",
+ "registered_at": "2026-11-13T13:12:24-0500",
+ "sha256": "363078ae117409fb2ab87c9e6fd8c7cde527b84d7b9638494bce82d468f264e4"
+}

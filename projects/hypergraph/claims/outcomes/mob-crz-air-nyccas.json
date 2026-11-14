@@ -1,0 +1,135 @@
+{
+ "id": "mob-crz-air-nyccas",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "NYCCAS annual NO2, UHF 306-310 vs 32 UHFs outside Manhattan, 2025 vs 2021-24 (DiD); interval from placebo-in-space",
+  "estimate": 0.9,
+  "lo": -2.23,
+  "hi": 4.21,
+  "scale": "percent change in annual NO2",
+  "null": 0,
+  "n": 37
+ },
+ "graph_effect": {
+  "label": "Registered expectation from Stockholm and London: NO2 -3% to -10%",
+  "estimate": -6.5,
+  "lo": -10,
+  "hi": -3,
+  "scale": "percent change in annual NO2",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2025.json",
+   "indicator": 2025,
+   "measure": 1431,
+   "label": "NO2 annual mean (ppb), NYCCAS",
+   "geotype": "UHF42",
+   "periods": [
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2025.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2023.json",
+   "indicator": 2023,
+   "measure": 1425,
+   "label": "PM2.5 annual mean (ug/m3), NYCCAS",
+   "geotype": "UHF42",
+   "periods": [
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2023.json"
+  }
+ ],
+ "prediction_scored": "miss. The NO2 DiD is +0.9% (-2.2 to +4.2), in the wrong direction and well inside the placebo distribution (one-sided p = 0.70); the refutation condition registered (estimate at or above 0) is met. The interval excludes the registered range below -2.2%, so the city data rule out an NO2 decline of the size seen in Stockholm, while allowing a small one. PM2.5: +1.7% (+0.0 to +3.3), also not a decline.",
+ "settle": "The design compares model-based annual surfaces. NYCCAS is a land-use regression whose spatial covariates include traffic indicators held fixed across years and whose year-to-year change comes from street-level monitors adjusted to reference sites, so it may smooth a local change toward zero. Raw in-zone NYCCAS monitor values, a second post-year (2026), and hourly NO2 near the zone's main entry points would settle it.",
+ "research_needed": [
+  {
+   "question": "Did NO2 at street level inside the CRZ change in 2025-26, measured at fixed monitors rather than modelled?",
+   "data": "NYCCAS site data, new DEC Division Street NO2 if added, sensor networks",
+   "design": "site-level DiD with a second post-year",
+   "priority": "high"
+  },
+  {
+   "question": "Did pollution rise near the diversion routes (Bronx expressways, FDR) as the Columbia sensor study reported?",
+   "data": "NYCCAS UHF 105-107 and site data; MTA excluded-roadway entries (t6yz-b64h)",
+   "design": "corridor DiD",
+   "priority": "medium"
+  },
+  {
+   "question": "What share of NO2 in the CBD comes from vehicles entering the zone vs buildings and through-traffic on excluded roads?",
+   "data": "NYC emissions inventory, MTA entries by vehicle class",
+   "design": "source apportionment",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/mobility/crz_air_nyccas_uhf42.png"
+ ],
+ "notes": "Group means, NO2 ppb: in zone {'2021': 21.84, '2022': 21.02, '2023': 22.07, '2024': 20.42, '2025': 20.57}; outside Manhattan {'2021': 16.04, '2022': 15.11, '2023': 15.87, '2024': 14.26, '2025': 14.63}. In-zone NO2 fell by 7.8 ppb (30.0 to 22.1) between 2014 and 2020, so the long-run decline is much larger than any 2025 change. The placebo-in-time (post = 2024) is +3.3% for NO2 and +12.8% for PM2.5; the PM2.5 series has a 2024 rise in the zone that the design cannot explain. Manhattan north of 60th St moved +5.9% in NO2 relative to outside Manhattan. This agrees with the DOHMH 2026 report, which used the same survey, and disagrees with Fraser et al. (2025) on PM2.5. Traffic speeds rose (mob-crz-traffic), so the policy changed traffic; the air-quality step of the chain is not visible in annual neighbourhood averages.",
+ "registration_sha256": "12a668a997839133b62c44c15db11750f0546e875f070963223d5b55759f39f5",
+ "decided_at": "2026-11-12T15:30:56-0500",
+ "stance": {
+  "value": -0.267,
+  "lo": -0.857,
+  "hi": 0.591,
+  "z": -0.55
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "NYCCAS annual NO2, UHF 306-310 vs 32 UHFs outside Manhattan, 2025 vs 2021-24 (DiD); interval from placebo-in-space",
+    "estimate": 0.9,
+    "lo": -2.23,
+    "hi": 4.21,
+    "scale": "percent change in annual NO2",
+    "null": 0,
+    "n": 37
+   },
+   "stance": {
+    "value": -0.267,
+    "lo": -0.857,
+    "hi": 0.591,
+    "z": -0.55
+   },
+   "decided_at": "2026-11-12T15:30:56-0500",
+   "prediction_scored": "miss. The NO2 DiD is +0.9% (-2.2 to +4.2), in the wrong direction and well inside the placebo distribution (one-sided p = 0.70); the refutation condition registered (estimate at or above 0) is met. The interval excludes the registered range below -2.2%, so the city data rule out an NO2 decline of the size seen in Stockholm, while allowing a small one. PM2.5: +1.7% (+0.0 to +3.3), also not a decline."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: the registered refutation (DiD at or above 0, inside the placebo distribution) is met; rule 1 gives contested.",
+  "critique": "critique/mob-crz-air-nyccas.md",
+  "revised_at": "2026-11-12T15:55:02-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}
