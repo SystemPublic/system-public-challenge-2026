@@ -81,9 +81,9 @@ Citation: System, Inc. (2026). System Public Graph (Version 2.1) [Data set]. htt
 
 ## AI coding tools
 
-Yes. We used Claude Code (Anthropic) to write the pipeline and the front end, under our direction. We chose the
-claims, the evidence rules and what to present, and checked results by hand.
+We used Claude to write boilerplate code for the pipeline and front-end. We designed the
+claims, the evidence rules and the verdict logic, chose what to present, and hand-checked findings against the papers.
 
 ## Screenshot
 
-TODO
+![Ground Truth: research-needed map, verdict ledger and a claim with New York's own data](screenshot.jpg)

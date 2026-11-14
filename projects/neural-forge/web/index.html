@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ground Truth · heat research tested against New York</title>
+<meta name="description" content="Heat research from the System Public Graph tested against New York City's own data, district by district, with every verdict cited to the records it rests on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <button class="brand" id="replay" title="Replay the opening">
+    <span class="mark"></span>
+    <span><b>Ground Truth</b><small>Whose science protects New York from heat?</small></span>
+  </button>
+  <div class="version" role="group" aria-label="Version of the verdicts">
+    <button data-v="v1.0.0"><b>v1.0.0</b> automated</button>
+    <button data-v="v1.1.0" class="on"><b>v1.1.0</b> hand-checked</button>
+  </div>
+  <nav class="links">
+    <a id="underlay-link" target="_blank" rel="noopener">Verdicts on Underlay ↗</a>
+  </nav>
+</header>
+
+<main class="app">
+  <section class="mapwrap">
+    <div id="map"></div>
+    <div class="layerbar" id="layerbar"></div>
+    <div class="legend" id="legend"></div>
+    <aside class="district" id="district" hidden></aside>
+  </section>
+  <aside class="ledger" id="ledger"></aside>
+  <aside class="drawer" id="drawer" aria-hidden="true"></aside>
+</main>
+
+<footer class="foot" id="foot"></footer>
+
+<div class="intro" id="intro">
+  <button class="skip" id="skip">Skip ›</button>
+  <div class="intro-inner">
+    <p class="eyebrow">The research New York relies on</p>
+    <h1 id="intro-head"><span class="big" id="intro-count">0</span> <span id="intro-line">studies on heat and health</span></h1>
+    <svg id="dots" viewBox="0 0 1180 170" preserveAspectRatio="xMidYMid meet" role="img"
+         aria-label="One dot per heat-and-health study, grouped by where it took place"></svg>
+    <div class="intro-stats" id="intro-stats"></div>
+    <div class="intro-out" id="intro-out"></div>
+    <button class="go" id="go">Test the research against New York <span>→</span></button>
+  </div>
+</div>
+
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
