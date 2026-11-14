@@ -1,0 +1,252 @@
+{
+  "checks": [
+    {
+      "result_id": "TZ24-CFP",
+      "source_scale_values": [
+        "0.45",
+        "0.30",
+        "0.67"
+      ],
+      "transformed_values": [
+        "0.45",
+        "0.30",
+        "0.67"
+      ],
+      "stored_values": [
+        "0.45",
+        "0.30",
+        "0.67"
+      ],
+      "numerical_match": true,
+      "normalization": "original ratio retained",
+      "context_correction_required": false,
+      "xml_sha256": "0af37443a91c525e602d12c73a5ca8630dd2b99a1683df794a69cbb0ef312421"
+    },
+    {
+      "result_id": "TZ24-PBO",
+      "source_scale_values": [
+        "0.99",
+        "0.67",
+        "1.45"
+      ],
+      "transformed_values": [
+        "0.99",
+        "0.67",
+        "1.45"
+      ],
+      "stored_values": [
+        "0.99",
+        "0.67",
+        "1.45"
+      ],
+      "numerical_match": true,
+      "normalization": "original ratio retained",
+      "context_correction_required": false,
+      "xml_sha256": "0af37443a91c525e602d12c73a5ca8630dd2b99a1683df794a69cbb0ef312421"
+    },
+    {
+      "result_id": "TZ24-PPF",
+      "source_scale_values": [
+        "0.79",
+        "0.54",
+        "1.17"
+      ],
+      "transformed_values": [
+        "0.79",
+        "0.54",
+        "1.17"
+      ],
+      "stored_values": [
+        "0.79",
+        "0.54",
+        "1.17"
+      ],
+      "numerical_match": true,
+      "normalization": "original ratio retained",
+      "context_correction_required": false,
+      "xml_sha256": "0af37443a91c525e602d12c73a5ca8630dd2b99a1683df794a69cbb0ef312421"
+    },
+    {
+      "result_id": "R21-SEAS",
+      "source_scale_values": [
+        "0.75",
+        "0.71",
+        "0.79"
+      ],
+      "transformed_values": [
+        "0.25",
+        "0.21",
+        "0.29"
+      ],
+      "stored_values": [
+        "0.25",
+        "0.21",
+        "0.29"
+      ],
+      "numerical_match": true,
+      "normalization": "HR = 1 - adjusted VE; reverse interval endpoints",
+      "context_correction_required": true,
+      "xml_sha256": "128ff51301bc29c808cc5157a8d8cdb3e96f2d084a162b07b72b9d24b73ae020"
+    },
+    {
+      "result_id": "R21-STD",
+      "source_scale_values": [
+        "0.68",
+        "0.61",
+        "0.74"
+      ],
+      "transformed_values": [
+        "0.32",
+        "0.26",
+        "0.39"
+      ],
+      "stored_values": [
+        "0.32",
+        "0.26",
+        "0.39"
+      ],
+      "numerical_match": true,
+      "normalization": "HR = 1 - adjusted VE; reverse interval endpoints",
+      "context_correction_required": true,
+      "xml_sha256": "128ff51301bc29c808cc5157a8d8cdb3e96f2d084a162b07b72b9d24b73ae020"
+    },
+    {
+      "result_id": "ACCESS-SMC-CC",
+      "source_scale_values": [
+        "88.2",
+        "78.7",
+        "93.4"
+      ],
+      "transformed_values": [
+        "0.118",
+        "0.066",
+        "0.213"
+      ],
+      "stored_values": [
+        "0.118",
+        "0.066",
+        "0.213"
+      ],
+      "numerical_match": true,
+      "normalization": "ratio = 1 - published percentage/100; reverse interval endpoints",
+      "context_correction_required": true,
+      "xml_sha256": "4504dbc58fdd258b42e7a7f60a7b716d1d2da6370ad59a57a60547bb2c1aca8f"
+    },
+    {
+      "result_id": "ACCESS-SMC-NG",
+      "source_scale_values": [
+        "25.5",
+        "6.1",
+        "40.9"
+      ],
+      "transformed_values": [
+        "0.745",
+        "0.591",
+        "0.939"
+      ],
+      "stored_values": [
+        "0.745",
+        "0.591",
+        "0.939"
+      ],
+      "numerical_match": true,
+      "normalization": "ratio = 1 - published percentage/100; reverse interval endpoints",
+      "context_correction_required": false,
+      "xml_sha256": "4504dbc58fdd258b42e7a7f60a7b716d1d2da6370ad59a57a60547bb2c1aca8f"
+    },
+    {
+      "result_id": "ACCESS-SMC-GM",
+      "source_scale_values": [
+        "55.2",
+        "42.0",
+        "65.3"
+      ],
+      "transformed_values": [
+        "0.448",
+        "0.347",
+        "0.58"
+      ],
+      "stored_values": [
+        "0.448",
+        "0.347",
+        "0.580"
+      ],
+      "numerical_match": true,
+      "normalization": "ratio = 1 - published percentage/100; reverse interval endpoints",
+      "context_correction_required": false,
+      "xml_sha256": "4504dbc58fdd258b42e7a7f60a7b716d1d2da6370ad59a57a60547bb2c1aca8f"
+    },
+    {
+      "result_id": "MALI-SMC5",
+      "source_scale_values": [
+        "0.49",
+        "0.26",
+        "0.94"
+      ],
+      "transformed_values": [
+        "0.49",
+        "0.26",
+        "0.94"
+      ],
+      "stored_values": [
+        "0.49",
+        "0.26",
+        "0.94"
+      ],
+      "numerical_match": true,
+      "normalization": "original ratio retained",
+      "context_correction_required": false,
+      "xml_sha256": "327da5bb5746a0839492d6787b2a7cbbb14732292fec6262fa9ca41a4e80bb54"
+    },
+    {
+      "result_id": "COCH-ITN-MORT",
+      "source_scale_values": [
+        "0.83",
+        "0.77",
+        "0.89"
+      ],
+      "transformed_values": [
+        "0.83",
+        "0.77",
+        "0.89"
+      ],
+      "stored_values": [
+        "0.83",
+        "0.77",
+        "0.89"
+      ],
+      "numerical_match": true,
+      "normalization": "original ratio retained",
+      "context_correction_required": false,
+      "xml_sha256": "3036ea8003038531955bc25f80b1e5eb76f30b7ac382825c84ab5b8fb2d3e8d8"
+    },
+    {
+      "result_id": "COCH-ITN-CLIN",
+      "source_scale_values": [
+        "0.55",
+        "0.48",
+        "0.64"
+      ],
+      "transformed_values": [
+        "0.55",
+        "0.48",
+        "0.64"
+      ],
+      "stored_values": [
+        "0.55",
+        "0.48",
+        "0.64"
+      ],
+      "numerical_match": true,
+      "normalization": "original ratio retained",
+      "context_correction_required": false,
+      "xml_sha256": "3036ea8003038531955bc25f80b1e5eb76f30b7ac382825c84ab5b8fb2d3e8d8"
+    }
+  ],
+  "identified_PMC8457484": {
+    "title": "Effectiveness of seasonal malaria chemoprevention (SMC) treatments when SMC is implemented at scale: Case-control studies in 5 countries",
+    "pmid": "34495978",
+    "doi": "10.1371/journal.pmed.1003727"
+  },
+  "additional_27875528_34894221_rows_in_graph_checked": 0
+}

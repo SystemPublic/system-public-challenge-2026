@@ -1,0 +1,110 @@
+# Malaria Atlas Project data platform
+
+> MAP provides modelled malaria risk, burden and intervention estimates, tabular administrative summaries, and spatial data. The interactive platform is at https://data.malariaatlas.org/ and the main project website is https://malariaatlas.org/.
+
+The interactive explorer requires JavaScript. The public HTTP services below can be used independently of the explorer. These notes describe existing services; they do not grant additional access rights or change data licences.
+
+Tabular administrative estimates are available directly from the Trends API. Raster download and aggregation are not required when the published administrative summaries match the requested metric and geography.
+
+Releases can have different available metrics and years. A higher release number does not imply that every metric from an earlier release is available. Select and report an explicit release; do not assume the backend default is the newest release. The examples below use explicit releases for illustration; choose the release that provides the requested metric and years.
+
+## Tabular estimates
+
+For a question about a state, province or country, start with a filtered Trends API request. This keeps the response small enough for text-reading tools. For the number of modelled Pf cases, use `Pf_incidence-count`; incidence rates and parasite prevalence are different metrics.
+
+1. Read the release metadata and select an explicit `version` that provides the metric and years needed.
+2. For a named subnational unit, resolve its `id` using the admin-name catalogue for that release's `geoServerRefs.mapAdminVersion`, matching both the place and country. For a national estimate, use the country's ISO3 code with `admin0`.
+3. Request `mean`, then `lci` and `uci` when uncertainty is needed, keeping the same release and geography filter on all three requests.
+4. Check the returned geography and year dimensions before reporting values. All available years are returned; select the requested years locally.
+
+- [Trends release metadata](https://data.malariaatlas.org/map-platform-app-backend/api/v1/trends/metadata): Available releases, data end years and corresponding GeoServer/boundary references. Check metric availability for the selected release.
+
+### Reading the release metadata
+
+The metadata endpoint returns a JSON array with one object per release, newest first. For each release:
+
+- `version`: the identifier to pass as the `version` query parameter, for example `202608`.
+- `dataEndYear`: the last year present in that release. The series starts in 2000. Do not request years beyond `dataEndYear`.
+- `provisional`: whether the release is provisional. Report this alongside values from a provisional release.
+- `geoServerRefs`: a set of named references. A non-empty value for a metric key means that metric is available in the release; an empty string means it is absent from that release. These values are GeoServer raster layer names for the spatial services; they are not the Trends API metric tokens. Use the table below to translate a metadata key into the `metric` path token.
+
+### Metric vocabulary
+
+The `metric` path segment uses fixed tokens that differ from both the metadata keys and the GeoServer layer names. Use the exact token, including case and punctuation. An unknown token returns HTTP 400. The `metadata key` column is the field in `geoServerRefs` whose emptiness indicates availability.
+
+Malaria endpoint (`/api/v1/trends/malaria/{metric}/{admin}/{stat}`):
+
+| Metadata key | `metric` token | Meaning |
+| --- | --- | --- |
+| `pfpr` | `Pf_PR-rate` | *Plasmodium falciparum* parasite rate, age-standardised for children aged 2–10 (PfPR2-10). Proportion, 0–1. |
+| `pvpr` | `Pv_PR-rate` | *Plasmodium vivax* parasite rate, all ages. Proportion, 0–1. |
+| `pfIncidenceRate` | `Pf_incidence-rate` | *P. falciparum* clinical incidence, all ages. Cases per 1,000 population per year. |
+| `pvIncidenceRate` | `Pv_incidence-rate` | *P. vivax* clinical incidence, all ages. Cases per 1,000 population per year. |
+| `pfMortalityRate` | `Pf_mortality-rate` | *P. falciparum* mortality, all ages. Deaths per 100,000 population per year. |
+| `pfIncidenceCount` | `Pf_incidence-count` | *P. falciparum* clinical cases, all ages. Absolute count. |
+| `pvIncidenceCount` | `Pv_incidence-count` | *P. vivax* clinical cases, all ages. Absolute count. |
+| `pfMortalityCount` | `Pf_mortality-count` | *P. falciparum* deaths, all ages. Absolute count. |
+
+Interventions endpoint (`/api/v1/trends/interventions/{metric}/{admin}/{stat}`):
+
+| Metadata key | `metric` token | Meaning |
+| --- | --- | --- |
+| `effectiveTreatment` | `Antimalarial_EFT-rate` | Proportion of malaria cases that receive effective treatment with an antimalarial medicine. Proportion, 0–1 (per malaria case). |
+| `irsCoverage` | `IRS_coverage-rate` | Proportion of households covered with indoor residual spraying during a defined year (Africa). Proportion, 0–1 (per household). |
+| `itnUse` | `ITN_use-rate` | Proportion of population that sleeps under an insecticide-treated net during a defined year (Africa). Proportion, 0–1. |
+| `itnAccess` | `ITN_access-rate` | Proportion of population with access to an insecticide-treated net in their household during a defined year (Africa). Proportion, 0–1. |
+| `itnUseRate` | `ITN_use_rate-rate` | Proportion of people sleeping under an insecticide-treated net, among those with access to a net in their household, during a defined year (Africa). Proportion, 0–1. This is a different metric from `ITN_use-rate`; do not confuse the two tokens. |
+
+Notes on these metrics:
+
+- Count metrics (`Pf_incidence-count`, `Pv_incidence-count`, `Pf_mortality-count`) are derived from the corresponding rate multiplied by population. They have no separate metadata key; their availability follows the matching rate/incidence data in the release.
+- For `Antimalarial_EFT-rate` and `IRS_coverage-rate` the source data has no uncertainty interval. Requesting `lci` or `uci` for these two metrics returns the mean value, not a lower or upper bound. Treat those as point estimates and do not report them as a confidence interval. All other metrics return genuine `lci`/`uci` bounds.
+- Missing estimates are returned as `0`, so a returned `0` can mean "no estimate available" rather than a true zero. Check that the metric is available in the release (non-empty `geoServerRefs` value) and sanity-check against neighbouring years before reporting a `0`.
+- [Admin-1 names for boundary version 2023_mg_5k](https://data.malariaatlas.org/admin-unit-metadata/admin-units/ADMIN1?mapAdmin=2023_mg_5k): JSON records containing `id`, `name`, `countryName`, `iso3` and parent fields. Replace the example boundary version with the selected release's `geoServerRefs.mapAdminVersion`. Kano, Nigeria is `10312921` in this boundary version. The catalogue can contain units absent from a particular metric dataset.
+
+The malaria and interventions Trends data endpoints accept one optional geography filter alongside `version`:
+
+- `adminUnitId`: one administrative unit's ID in the selected release's boundary version. Works with `admin0` or `admin1`.
+- `iso3`: one case-insensitive three-letter country code. On `admin0`, returns the published national estimate. On `admin1`, returns the country's available subnational estimates. An admin0 ID does not select its admin1 units; use `iso3` for that.
+
+Use either filter, not both. Each accepts one value, not a list. Filters on `global`, both filters together, empty or repeated values, invalid ISO3 codes, and selections with no matching data return HTTP 400 with an explanation. Read that explanation and correct the request. Without a filter, the endpoint returns the whole selected geographic level. Name and year query filtering are not supported.
+
+These examples are complete URLs that can be fetched directly:
+
+- [Kano Pf case-count means, release 202608](https://data.malariaatlas.org/map-platform-app-backend/api/v1/trends/malaria/Pf_incidence-count/admin1/mean?version=202608&adminUnitId=10312921): One state, with 26 annual values for 2000–2025 in this release.
+- [Kano Pf case-count lower bounds, release 202608](https://data.malariaatlas.org/map-platform-app-backend/api/v1/trends/malaria/Pf_incidence-count/admin1/lci?version=202608&adminUnitId=10312921): Same release, geography and years as the means.
+- [Kano Pf case-count upper bounds, release 202608](https://data.malariaatlas.org/map-platform-app-backend/api/v1/trends/malaria/Pf_incidence-count/admin1/uci?version=202608&adminUnitId=10312921): Same release, geography and years as the means.
+- [Angola national PfPR means, release 202608](https://data.malariaatlas.org/map-platform-app-backend/api/v1/trends/malaria/Pf_PR-rate/admin0/mean?version=202608&iso3=AGO): Published national *P. falciparum* parasite rate (PfPR2-10); read the value for the requested year from the returned Year dimension.
+- [Nigeria national Pf case-count means, release 202608](https://data.malariaatlas.org/map-platform-app-backend/api/v1/trends/malaria/Pf_incidence-count/admin0/mean?version=202608&iso3=NGA): Published national estimate; use this for a national question.
+- [Nigeria admin-1 Pf case-count means, release 202608](https://data.malariaatlas.org/map-platform-app-backend/api/v1/trends/malaria/Pf_incidence-count/admin1/mean?version=202608&iso3=NGA): Available subnational estimates for one country, for state-level comparisons.
+- [Kano ITN-use means, release 202508](https://data.malariaatlas.org/map-platform-app-backend/api/v1/trends/interventions/ITN_use-rate/admin1/mean?version=202508&adminUnitId=10312921): Example using the interventions endpoint; 25 annual values for 2000–2024 in this release.
+
+Responses use JSON-stat. Admin1 uses `ID` and `Year` dimensions; admin0 uses `ISO` and `Year`. Read the returned dimension order, sizes and category indexes. An index array lists categories in order; an index object maps category names to their positions. The `value` field can be an array or an object with numeric-string keys. For dimensions ordered as geography, then `Year`, the flattened position is `geographyIndex * numberOfYears + yearIndex`. Join admin1 IDs to the name catalogue's `id` field as strings.
+
+Filtered responses rebuild the geography indexes and value positions. A single-unit result has geography size 1, so value positions follow the returned year order from 0; do not reuse positions from a bulk response. Check that the returned unit or country matches the request and that the value count matches the product of the dimension sizes. A full-world response despite a filter can indicate an older backend or a cache/forwarding issue. A tool-truncated response is not evidence that the estimates are unavailable; use a narrower supported geography filter or a download-capable tool.
+
+These are modelled estimates, not individually reported surveillance records. Preserve species, metric, release, geography, year and uncertainty information. Do not label bounds as 95% unless the dataset's metadata or supporting publication establishes that level. Availability in one release or metric does not establish availability in another. The dashboard's CSV export is generated in the browser and is not a separate public CSV endpoint.
+
+## Licensing and attribution
+
+- [MAP open access policy](https://malariaatlas.org/open-access-policy/): MAP maps are available under the Creative Commons Attribution 3.0 Unported licence. MAP asks users to provide the correct citation when using its maps.
+- [Creative Commons Attribution 3.0 Unported (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/): When reusing licensed maps, give appropriate credit, retain supplied attribution details, link to the licence and identify adaptations. Follow the licence terms and the citation information supplied with the maps.
+
+Survey records and routine case data collated by MAP are owned by their original sources. MAP makes them available when they come from public sources or permission has been granted, and requests citation of the original source details supplied with downloads.
+
+The policy explicitly assigns CC BY 3.0 to MAP maps; it does not establish that every tabular or third-party dataset uses that licence. For other datasets, follow the licence and citation information supplied with the dataset. Preserve those details in derived outputs and cite the dataset used, not only the platform homepage.
+
+## Citation
+
+Follow any dataset-specific citation instructions, including references to research publications and original sources. For MAP-produced datasets without a supplied citation, use this suggested fallback:
+
+> Malaria Atlas Project. [Dataset or layer title], release [version, if available]. [Specific source URL]. Accessed [date].
+
+Use the actual layer or dataset title, release identifier and most specific source URL available. Omit unavailable details rather than inventing authors, dates, versions or DOIs. Preserve original-source citations for third-party data; this fallback does not replace them. Keep applicable licence and adaptation notices alongside the attribution, separate from the bibliographic reference.
+
+## Spatial data and background
+
+- [WCS capabilities](https://data.malariaatlas.org/geoserver/wcs?service=WCS&version=2.0.1&request=GetCapabilities): XML catalogue of raster coverages. This response is large. WCS provides raster data; WMS map images are a different product.
+- [MAP malariaAtlas R client](https://github.com/malaria-atlas-project/malariaAtlas): Existing client for discovering and retrieving MAP spatial data.
+- [Platform background and acknowledgements](https://data.malariaatlas.org/about): Existing interactive information page.
+- [Malaria Atlas Project](https://malariaatlas.org/): Project background and research.

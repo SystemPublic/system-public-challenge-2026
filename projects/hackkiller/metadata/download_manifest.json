@@ -1,0 +1,381 @@
+{
+  "prepared_date": "2026-11-14",
+  "processing": "Raw files only; no filtering, normalization, merging or correction. System CSVs losslessly gzip-compressed; association gzip byte-split.",
+  "files": [
+    {
+      "path": "data/raw/literature/PMC5119693.xml",
+      "bytes": 117634,
+      "sha256": "32c976cc67ee1774fff32f81913095ea144f68f7f7ae1b695b82a822b24291c6"
+    },
+    {
+      "path": "data/raw/literature/PMC6418392.xml",
+      "bytes": 345818,
+      "sha256": "3036ea8003038531955bc25f80b1e5eb76f30b7ac382825c84ab5b8fb2d3e8d8"
+    },
+    {
+      "path": "data/raw/literature/PMC7618965.xml",
+      "bytes": 133810,
+      "sha256": "128ff51301bc29c808cc5157a8d8cdb3e96f2d084a162b07b72b9d24b73ae020"
+    },
+    {
+      "path": "data/raw/literature/PMC7718580.xml",
+      "bytes": 121636,
+      "sha256": "4504dbc58fdd258b42e7a7f60a7b716d1d2da6370ad59a57a60547bb2c1aca8f"
+    },
+    {
+      "path": "data/raw/literature/PMC8457484.xml",
+      "bytes": 142210,
+      "sha256": "4d1950547afc20da6f2c919c70818b47cab7ad24798764ae7e74e3722c3a1a51"
+    },
+    {
+      "path": "data/raw/literature/PMC8971961.xml",
+      "bytes": 135135,
+      "sha256": "0af37443a91c525e602d12c73a5ca8630dd2b99a1683df794a69cbb0ef312421"
+    },
+    {
+      "path": "data/raw/literature/PMC9464075.xml",
+      "bytes": 118637,
+      "sha256": "9d040aef5d1a3dc79d273e6a4e5d065e85663297130bdc70cfa520f0ffcce778"
+    },
+    {
+      "path": "data/raw/literature/PMC9871299.xml",
+      "bytes": 84502,
+      "sha256": "327da5bb5746a0839492d6787b2a7cbbb14732292fec6262fa9ca41a4e80bb54"
+    },
+    {
+      "path": "data/raw/literature/core_papers.json",
+      "bytes": 183708,
+      "sha256": "0e12377b5fc96ab5444d31bc1bb32761de4a3a8daf44b119339498d103297d74"
+    },
+    {
+      "path": "data/raw/literature/smc_case_control_search.json",
+      "bytes": 15223,
+      "sha256": "cccc74b70631b27c616fb1575f2526398da391c9c12c2b1a1e4b7104dea9460a"
+    },
+    {
+      "path": "data/raw/map/BEN_ITN_use-rate_lci_202608.json",
+      "bytes": 1566,
+      "sha256": "7932e434d26b6758354d9e51a66de4671edd295ed4f65ce117e701fe7c820a15"
+    },
+    {
+      "path": "data/raw/map/BEN_ITN_use-rate_mean_202608.json",
+      "bytes": 1550,
+      "sha256": "20eb3e1c5da4ce2afe134951017ebb27a9c042069efe7b4bfc9f1d9978c4e153"
+    },
+    {
+      "path": "data/raw/map/BEN_ITN_use-rate_uci_202608.json",
+      "bytes": 1535,
+      "sha256": "add94ed72384ff95a6edfc16cb5b057e0a52678c74855d2f96b1d421a7507ab3"
+    },
+    {
+      "path": "data/raw/map/BEN_Pf_PR-rate_lci_202608.json",
+      "bytes": 1501,
+      "sha256": "757db21e37cd1ba272c56348b82d8b213c9100ebab56135d11a1c3480f69bf59"
+    },
+    {
+      "path": "data/raw/map/BEN_Pf_PR-rate_mean_202608.json",
+      "bytes": 1501,
+      "sha256": "3bb770520fd9fe41d630f2c239ea0f4b1ce0623951d85483061e667015e6a152"
+    },
+    {
+      "path": "data/raw/map/BEN_Pf_PR-rate_uci_202608.json",
+      "bytes": 1504,
+      "sha256": "65579d770f0e1f4b1bf85d1ea4fa280f6e5004528be3d7852f4bb45b4c50af8d"
+    },
+    {
+      "path": "data/raw/map/BEN_Pf_incidence-rate_lci_202608.json",
+      "bytes": 1507,
+      "sha256": "deff4c13e1a822de560f35e2cc1d99b3135251f8523955db5419fd162f4bfa53"
+    },
+    {
+      "path": "data/raw/map/BEN_Pf_incidence-rate_mean_202608.json",
+      "bytes": 1507,
+      "sha256": "b707149b97b5011ea6a39783b35ce6e5d1e016873e2e5cbba30ac17251b92599"
+    },
+    {
+      "path": "data/raw/map/BEN_Pf_incidence-rate_uci_202608.json",
+      "bytes": 1504,
+      "sha256": "4e186d46230466984f64654b27f6eff75c6910d2f972f80e4ab3c05c19bb190e"
+    },
+    {
+      "path": "data/raw/map/TZA_ITN_use-rate_lci_202608.json",
+      "bytes": 1558,
+      "sha256": "5f69b2315651cb862003c87cd771a9b4381cd18d5d12d868a929352b36e2cfa9"
+    },
+    {
+      "path": "data/raw/map/TZA_ITN_use-rate_mean_202608.json",
+      "bytes": 1541,
+      "sha256": "1147902cf44f03c24c6870deed4cfebd2a037447f8c291f3fee973fe0a3b922f"
+    },
+    {
+      "path": "data/raw/map/TZA_ITN_use-rate_uci_202608.json",
+      "bytes": 1538,
+      "sha256": "1e4492a02ad8fddcc88ff4d5a3aaad954c653e0788ddbcaf9df7f2dcffadb702"
+    },
+    {
+      "path": "data/raw/map/TZA_Pf_PR-rate_lci_202608.json",
+      "bytes": 1518,
+      "sha256": "a1b745be85725636c3f24fe37af99742ad8064bc212aa3338f14e619cad36bda"
+    },
+    {
+      "path": "data/raw/map/TZA_Pf_PR-rate_mean_202608.json",
+      "bytes": 1516,
+      "sha256": "6de5bec399afa554e531d082b8406479905342470720e822388ccf4efedde778"
+    },
+    {
+      "path": "data/raw/map/TZA_Pf_PR-rate_uci_202608.json",
+      "bytes": 1512,
+      "sha256": "aa8ddc353c290502f5de1edc08176cd35b184f0953296877afbf901c155b4bd7"
+    },
+    {
+      "path": "data/raw/map/TZA_Pf_incidence-rate_lci_202608.json",
+      "bytes": 1522,
+      "sha256": "08858f638116dd36212b2594fb36beb4b0f8c446f06a13f895b6670d7229e29a"
+    },
+    {
+      "path": "data/raw/map/TZA_Pf_incidence-rate_mean_202608.json",
+      "bytes": 1507,
+      "sha256": "752b1afa2c3b4a02d01d21a759cb4864c5186fb2f8ae1858c46ad049d570fb66"
+    },
+    {
+      "path": "data/raw/map/TZA_Pf_incidence-rate_uci_202608.json",
+      "bytes": 1509,
+      "sha256": "0bbf778580a9f118ed9d843882b263c43ee61f73e5678bddb6f388a4dc94204c"
+    },
+    {
+      "path": "data/raw/pf8/Pf8_README.txt",
+      "bytes": 37171,
+      "sha256": "c20655313e89cb66c3156be060532fb111c2d48d153e23ed7df6d7f446f2821d"
+    },
+    {
+      "path": "data/raw/pf8/Pf8_drug_resistance_marker_genotypes.tsv",
+      "bytes": 2311699,
+      "sha256": "866450e8b32a5f6433f813932565579512cc5e0424b999d6769818988840e4ed"
+    },
+    {
+      "path": "data/raw/pf8/Pf8_inferred_resistance_status_classification.tsv",
+      "bytes": 2745871,
+      "sha256": "d42ad15457c1d6df50c6e55575e35e98e599b95ed27682022bcbd0f09e5244d1"
+    },
+    {
+      "path": "data/raw/pf8/Pf8_resistance_classification.pdf",
+      "bytes": 347565,
+      "sha256": "d2339ee9efd2b3c6084053a4658decd491c633dda89a6d32dae95ca666d16397"
+    },
+    {
+      "path": "data/raw/pf8/Pf8_samples.txt",
+      "bytes": 6362589,
+      "sha256": "50b7dcf2d0ffea0ef429f62801a0e184ab4da4d22708f9ec685652062c8dadb0"
+    },
+    {
+      "path": "data/raw/system/MANIFEST.json",
+      "bytes": 3182,
+      "sha256": "d44b138206c3caf78799686e396f501437b1833bfc018dfe0dc2fe3f6a69fb2d"
+    },
+    {
+      "path": "data/raw/system/system-public-graph-v1-associations.csv.gz.part000",
+      "bytes": 78643200,
+      "sha256": "99d76cc74b555ab267bc580f3186a7bbdf2f9a48f24861e8869bbe7cc9bcbff7"
+    },
+    {
+      "path": "data/raw/system/system-public-graph-v1-associations.csv.gz.part001",
+      "bytes": 78643200,
+      "sha256": "d674632b6504a6e16f1a4ffeef797ea45a246aeea5c2e23fc73a4d1d05581813"
+    },
+    {
+      "path": "data/raw/system/system-public-graph-v1-associations.csv.gz.part002",
+      "bytes": 50706939,
+      "sha256": "766325928d070072c0de36af68e99644645a97820c8c3d802c4b441fe5e0523c"
+    },
+    {
+      "path": "data/raw/system/system-public-graph-v1-concepts.csv.gz",
+      "bytes": 2780182,
+      "sha256": "afafae66dcfd63ad48d6f6b3f581ecea4324ba27f264f1a985aa1169e79e7834"
+    },
+    {
+      "path": "data/raw/system/system-public-graph-v1-studies.csv.gz",
+      "bytes": 57824917,
+      "sha256": "d152177f34366650b438b561a085f50a238df2d22e2e2b3857880d6cf61cdbba"
+    },
+    {
+      "path": "data/raw/system/system-public-graph-v1-variables.csv.gz",
+      "bytes": 51335936,
+      "sha256": "8381c649953505abc18094767285367dd300aab0c00629732d225f330d65bcfb"
+    },
+    {
+      "path": "data/raw/who/MALARIA_EST_INCIDENCE.json",
+      "bytes": 30173,
+      "sha256": "e20d95eff25129992e1f699292b14f5ec4f8d45b0c8a78e10146f26bcf8d0b8f"
+    },
+    {
+      "path": "data/raw/who/MALARIA_IRS_COVERAGE.json",
+      "bytes": 9834,
+      "sha256": "213b3e8372452096f6530075d2a0194fabfacd42240a61a595e85f2f0c6c48ba"
+    },
+    {
+      "path": "data/raw/who/MALARIA_ITN_COVERAGE.json",
+      "bytes": 11353,
+      "sha256": "8b8e74d30c06ca8059f5fa99686941af42006405b4069b2ca7c18fb6fabc97c9"
+    },
+    {
+      "path": "data/raw/who/itn_use.json",
+      "bytes": 28007,
+      "sha256": "27361a44895daf8276f370443060b705fb42f0a75f545f582da47f7237173bf0"
+    },
+    {
+      "path": "data/raw/map/BFA_ITN_use-rate_lci_202608.json",
+      "bytes": 1563,
+      "sha256": "618191c45473a3927280bb5390f0015b601753d78ce30c6ffa12ffb64d635023"
+    },
+    {
+      "path": "data/raw/map/BFA_ITN_use-rate_mean_202608.json",
+      "bytes": 1547,
+      "sha256": "7b727b654292b07c88752d6f4aeb09d71860de4de7c1e80b7ab0a64a0737358d"
+    },
+    {
+      "path": "data/raw/map/BFA_ITN_use-rate_uci_202608.json",
+      "bytes": 1538,
+      "sha256": "d8ebb68509bd98c2d48d70ea7dd4d41105ae68101006031ac73ea5fed524a62a"
+    },
+    {
+      "path": "data/raw/map/BFA_Pf_PR-rate_lci_202608.json",
+      "bytes": 1503,
+      "sha256": "7a4e949401cae06b4aea7ebeb539d24ecb699d0fe01d66ea7f0d55acbb1bdb8f"
+    },
+    {
+      "path": "data/raw/map/BFA_Pf_PR-rate_mean_202608.json",
+      "bytes": 1499,
+      "sha256": "3c1d5405c9a77de1fbe2599dcb70deb7b495f0087ea9339d7a9d183874d992fd"
+    },
+    {
+      "path": "data/raw/map/BFA_Pf_PR-rate_uci_202608.json",
+      "bytes": 1502,
+      "sha256": "74857d39f5a1317582d1b5811c00867e3112e6e55bec4b25da60ccede99baa9c"
+    },
+    {
+      "path": "data/raw/map/BFA_Pf_incidence-rate_lci_202608.json",
+      "bytes": 1507,
+      "sha256": "073b177db11ee35516aea6d7a3545f3d036c33706f93a0cd6abd3a2acd273c0a"
+    },
+    {
+      "path": "data/raw/map/BFA_Pf_incidence-rate_mean_202608.json",
+      "bytes": 1504,
+      "sha256": "76c3207018fe4415636cd40292eda6b8fbcf263a7dec0f6b0a83ea8c34ea0ccd"
+    },
+    {
+      "path": "data/raw/map/BFA_Pf_incidence-rate_uci_202608.json",
+      "bytes": 1510,
+      "sha256": "e96121059fc0ba02aa418f70e5dfcbeda6ab84f7e9083739a1c63d6b162ab229"
+    },
+    {
+      "path": "data/raw/map/MLI_ITN_use-rate_lci_202608.json",
+      "bytes": 1555,
+      "sha256": "9fdc7d0e4d6a892b4497d23aaccd998e88628a857bf46fb82365c427be018e1d"
+    },
+    {
+      "path": "data/raw/map/MLI_ITN_use-rate_mean_202608.json",
+      "bytes": 1538,
+      "sha256": "c5da94f7d80df1cba97dd820876cac91d5f6cf4b14276c200adbd448bf395bb2"
+    },
+    {
+      "path": "data/raw/map/MLI_ITN_use-rate_uci_202608.json",
+      "bytes": 1534,
+      "sha256": "b0c8decd69dd70cbc77add35dc8776b5efa80df06e9f3ff5bbadaed64b22fd5f"
+    },
+    {
+      "path": "data/raw/map/MLI_Pf_PR-rate_lci_202608.json",
+      "bytes": 1503,
+      "sha256": "950a3364f59fc73927bb0a135d80668adffe73e985e7332258cefde25767176b"
+    },
+    {
+      "path": "data/raw/map/MLI_Pf_PR-rate_mean_202608.json",
+      "bytes": 1501,
+      "sha256": "e4b2e762f741c814542098eeffa74d90acb5c4206de13be1831fa7d43582a71c"
+    },
+    {
+      "path": "data/raw/map/MLI_Pf_PR-rate_uci_202608.json",
+      "bytes": 1501,
+      "sha256": "4bb31e61a268c73a1d8076f0c910b2d3fa44b60bef66caf2061b5998f051e2c7"
+    },
+    {
+      "path": "data/raw/map/MLI_Pf_incidence-rate_lci_202608.json",
+      "bytes": 1509,
+      "sha256": "28c3e8c0f824ff440fd52d6528c1f3b38669f6e99c18d05f1eca6a94be42d851"
+    },
+    {
+      "path": "data/raw/map/MLI_Pf_incidence-rate_mean_202608.json",
+      "bytes": 1510,
+      "sha256": "c7c104723fedf7a3a4c767ca3aec3a70e9c861b7dd4be4e86846c5817200caf7"
+    },
+    {
+      "path": "data/raw/map/MLI_Pf_incidence-rate_uci_202608.json",
+      "bytes": 1508,
+      "sha256": "bc96c813d8fa632ae8f0829708eaadd2878bb597e925fde90d12507d6b0800d4"
+    },
+    {
+      "path": "data/raw/map/NGA_ITN_use-rate_lci_202608.json",
+      "bytes": 1568,
+      "sha256": "fe7a85d2d45440266196b131f32525d40af5cf184d35667bc01e276912c4f7ef"
+    },
+    {
+      "path": "data/raw/map/NGA_ITN_use-rate_mean_202608.json",
+      "bytes": 1558,
+      "sha256": "a421bdcc1a2f35ed1126736f4cb7f1eea488d4a40cb0735deecfd98a53d64351"
+    },
+    {
+      "path": "data/raw/map/NGA_ITN_use-rate_uci_202608.json",
+      "bytes": 1542,
+      "sha256": "4a5faf551455d59ef487c0f6d78ae2e422e27ff42990258e39278a78aed0e7bd"
+    },
+    {
+      "path": "data/raw/map/NGA_Pf_PR-rate_lci_202608.json",
+      "bytes": 1504,
+      "sha256": "b53c2373443328d4bde0e16a1e801048e7b5e13fa5bef08c07df1d94abbcddcf"
+    },
+    {
+      "path": "data/raw/map/NGA_Pf_PR-rate_mean_202608.json",
+      "bytes": 1499,
+      "sha256": "eab8af66217ac325d424c54f149450e1957e3050cb8e96a157e9cafba0400175"
+    },
+    {
+      "path": "data/raw/map/NGA_Pf_PR-rate_uci_202608.json",
+      "bytes": 1499,
+      "sha256": "bd48ea9ca197bc5d0c3461b867160867740b220337234202e9dc46d6c86fcf0d"
+    },
+    {
+      "path": "data/raw/map/NGA_Pf_incidence-rate_lci_202608.json",
+      "bytes": 1508,
+      "sha256": "b918f0908fd51954b76ac1823a661e5994acdab1506f430e11c80625cd01b18c"
+    },
+    {
+      "path": "data/raw/map/NGA_Pf_incidence-rate_mean_202608.json",
+      "bytes": 1508,
+      "sha256": "5a8ea95350da24daff8fe866094bad15c14c738494d3dc042c4fd674bfd6f55e"
+    },
+    {
+      "path": "data/raw/map/NGA_Pf_incidence-rate_uci_202608.json",
+      "bytes": 1505,
+      "sha256": "e90da83d36159165bd940b5784c165c32e6e84b65634fdd631b22030dba1e993"
+    },
+    {
+      "path": "data/raw/who/MALARIA_EST_INCIDENCE_BFA_MLI_NGA.json",
+      "bytes": 45245,
+      "sha256": "593aba80f7eadaf33844b81b5b4b1d2da811eaa2eef1646bd4984d8ed6a00fc0"
+    },
+    {
+      "path": "data/raw/who/MALARIA_IRS_COVERAGE_BFA_MLI_NGA.json",
+      "bytes": 8086,
+      "sha256": "d28a7e705ef83fa5960a70244779c504a0582e725dd1879b5cb4289141ac471b"
+    },
+    {
+      "path": "data/raw/who/MALARIA_ITN_COVERAGE_BFA_MLI_NGA.json",
+      "bytes": 16975,
+      "sha256": "bd620c4763771409c215465a4f811967e2a25f922cd874121f8b98c5cd046e46"
+    },
+    {
+      "path": "data/raw/who/MALARIA_ITN_USE_BFA_MLI_NGA.json",
+      "bytes": 41959,
+      "sha256": "0e43d76c9b5660d84b1dc69f1bad498654f423b5a8b56524e1e66d10d6db1010"
+    }
+  ]
+}

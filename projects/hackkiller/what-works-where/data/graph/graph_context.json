@@ -1,0 +1,3757 @@
+{
+ "concepts": {
+  "malaria": {
+   "system_id": "7xpZryeSKE",
+   "wikidata_label": "malaria",
+   "wikidata_id": "Q12156",
+   "wikidata_description": "mosquito-borne infectious disease",
+   "wikidata_aliases": [
+    "Plasmodium infection",
+    "induced malaria"
+   ]
+  },
+  "mosquito net": {
+   "system_id": "MvZaix-FRr",
+   "wikidata_label": "mosquito net",
+   "wikidata_id": "Q696265",
+   "wikidata_description": "fine net used to exclude mosquitos and other biting insects",
+   "wikidata_aliases": [
+    "bednet",
+    "mosquito netting",
+    "mosquito nets",
+    "wire blinds"
+   ]
+  },
+  "malaria vaccine": {
+   "system_id": "vtzCBL9BRr",
+   "wikidata_label": "malaria vaccine",
+   "wikidata_id": "Q6741353",
+   "wikidata_description": "vaccine that is used to prevent malaria",
+   "wikidata_aliases": [
+    "malaria vaccines"
+   ]
+  },
+  "malaria prevention": {
+   "system_id": "FMF6gvw22J",
+   "wikidata_label": "malaria prevention",
+   "wikidata_id": "Q93598033",
+   "wikidata_description": "set of measures related to preventing the spread of malaria",
+   "wikidata_aliases": []
+  },
+  "indoor residual spraying": {
+   "system_id": "ie-Vi6-vS7",
+   "wikidata_label": "indoor residual spraying",
+   "wikidata_id": "Q6026475",
+   "wikidata_description": "spraying the inside of dwellings with an insecticide to kill mosquitoes",
+   "wikidata_aliases": [
+    "IRS"
+   ]
+  }
+ },
+ "neighbourhoods": {
+  "malaria": [
+   {
+    "relationship_id": "7xpZryeSKE|A9O2_M4sui",
+    "direction": "anchor → other",
+    "other_id": "A9O2_M4sui",
+    "other_label": "anemia",
+    "other_wikidata": "Q5445",
+    "num_studies": 89,
+    "num_findings": 107,
+    "last_published_date": "2025-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "qODaxGmiJk|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "qODaxGmiJk",
+    "other_label": "insecticide-treated bednet",
+    "other_wikidata": "Q59178547",
+    "num_studies": 63,
+    "num_findings": 95,
+    "last_published_date": "2025-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "wWbfsY5E0d|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "wWbfsY5E0d",
+    "other_label": "gender",
+    "other_wikidata": "Q48277",
+    "num_studies": 42,
+    "num_findings": 46,
+    "last_published_date": "2023-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "HejFSI-X_z|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "HejFSI-X_z",
+    "other_label": "age group",
+    "other_wikidata": "Q42401304",
+    "num_studies": 42,
+    "num_findings": 56,
+    "last_published_date": "2024-11-21T00:00:00"
+   },
+   {
+    "relationship_id": "3bsZWIMWFp|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "3bsZWIMWFp",
+    "other_label": "educational stage",
+    "other_wikidata": "Q18189",
+    "num_studies": 38,
+    "num_findings": 49,
+    "last_published_date": "2024-11-28T00:00:00"
+   },
+   {
+    "relationship_id": "W3DRcIxD47|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "W3DRcIxD47",
+    "other_label": "insecticide",
+    "other_wikidata": "Q181322",
+    "num_studies": 35,
+    "num_findings": 59,
+    "last_published_date": "2024-12-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|VM_BejazFq",
+    "direction": "anchor → other",
+    "other_id": "VM_BejazFq",
+    "other_label": "low birth weight infant",
+    "other_wikidata": "Q6692979",
+    "num_studies": 31,
+    "num_findings": 39,
+    "last_published_date": "2024-03-08T00:00:00"
+   },
+   {
+    "relationship_id": "2J5_gYjK1G|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "2J5_gYjK1G",
+    "other_label": "HIV",
+    "other_wikidata": "Q15787",
+    "num_studies": 27,
+    "num_findings": 41,
+    "last_published_date": "2022-09-01T00:00:00"
+   },
+   {
+    "relationship_id": "YsxVx5JJqR|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "YsxVx5JJqR",
+    "other_label": "rural area",
+    "other_wikidata": "Q175185",
+    "num_studies": 25,
+    "num_findings": 28,
+    "last_published_date": "2025-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "MtUI-7H2Qe|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "MtUI-7H2Qe",
+    "other_label": "rain",
+    "other_wikidata": "Q7925",
+    "num_studies": 24,
+    "num_findings": 32,
+    "last_published_date": "2023-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "4FaXcuNJRt|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "4FaXcuNJRt",
+    "other_label": "temperature",
+    "other_wikidata": "Q11466",
+    "num_studies": 23,
+    "num_findings": 28,
+    "last_published_date": "2025-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "MvZaix-FRr",
+    "other_label": "mosquito net",
+    "other_wikidata": "Q696265",
+    "num_studies": 21,
+    "num_findings": 25,
+    "last_published_date": "2024-08-07T00:00:00"
+   },
+   {
+    "relationship_id": "-4z8u-acvk|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "-4z8u-acvk",
+    "other_label": "fever",
+    "other_wikidata": "Q38933",
+    "num_studies": 18,
+    "num_findings": 23,
+    "last_published_date": "2023-12-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|QPxlNKv3zV",
+    "direction": "anchor → other",
+    "other_id": "QPxlNKv3zV",
+    "other_label": "mortality rate",
+    "other_wikidata": "Q58702",
+    "num_studies": 17,
+    "num_findings": 26,
+    "last_published_date": "2024-01-08T00:00:00"
+   },
+   {
+    "relationship_id": "6b5YlNiX6A|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "6b5YlNiX6A",
+    "other_label": "family characteristics",
+    "other_wikidata": "Q69905367",
+    "num_studies": 16,
+    "num_findings": 20,
+    "last_published_date": "2025-08-14T00:00:00"
+   },
+   {
+    "relationship_id": "QGsnhC2Mq6|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "QGsnhC2Mq6",
+    "other_label": "Plasmodium falciparum",
+    "other_wikidata": "Q311383",
+    "num_studies": 15,
+    "num_findings": 26,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "bTlnrVWxxs|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "bTlnrVWxxs",
+    "other_label": "gravidity",
+    "other_wikidata": "Q67299741",
+    "num_studies": 15,
+    "num_findings": 20,
+    "last_published_date": "2022-08-20T00:00:00"
+   },
+   {
+    "relationship_id": "A9O2_M4sui|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "A9O2_M4sui",
+    "other_label": "anemia",
+    "other_wikidata": "Q5445",
+    "num_studies": 15,
+    "num_findings": 16,
+    "last_published_date": "2024-06-13T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|sdWLpL7z_l",
+    "direction": "anchor → other",
+    "other_id": "sdWLpL7z_l",
+    "other_label": "preterm birth",
+    "other_wikidata": "Q625506",
+    "num_studies": 15,
+    "num_findings": 17,
+    "last_published_date": "2023-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|m70jNJv_Hw",
+    "direction": "anchor → other",
+    "other_id": "m70jNJv_Hw",
+    "other_label": "hemoglobin",
+    "other_wikidata": "Q43041",
+    "num_studies": 14,
+    "num_findings": 14,
+    "last_published_date": "2021-09-01T00:00:00"
+   },
+   {
+    "relationship_id": "_zLVUxvG7F|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "_zLVUxvG7F",
+    "other_label": "socioeconomic status",
+    "other_wikidata": "Q1515895",
+    "num_studies": 14,
+    "num_findings": 17,
+    "last_published_date": "2023-02-23T00:00:00"
+   },
+   {
+    "relationship_id": "Vyxa4OeWM-|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "Vyxa4OeWM-",
+    "other_label": "family relation",
+    "other_wikidata": "Q69901743",
+    "num_studies": 12,
+    "num_findings": 17,
+    "last_published_date": "2025-08-14T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|85bCpa5non",
+    "direction": "anchor → other",
+    "other_id": "85bCpa5non",
+    "other_label": "antimalarial",
+    "other_wikidata": "Q521616",
+    "num_studies": 12,
+    "num_findings": 15,
+    "last_published_date": "2024-01-08T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|QGsnhC2Mq6",
+    "direction": "anchor → other",
+    "other_id": "QGsnhC2Mq6",
+    "other_label": "Plasmodium falciparum",
+    "other_wikidata": "Q311383",
+    "num_studies": 11,
+    "num_findings": 13,
+    "last_published_date": "2022-10-12T00:00:00"
+   },
+   {
+    "relationship_id": "FSXE9QnJOc|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "FSXE9QnJOc",
+    "other_label": "chloroquine",
+    "other_wikidata": "Q422438",
+    "num_studies": 11,
+    "num_findings": 12,
+    "last_published_date": "2021-09-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|qODaxGmiJk",
+    "direction": "anchor → other",
+    "other_id": "qODaxGmiJk",
+    "other_label": "insecticide-treated bednet",
+    "other_wikidata": "Q59178547",
+    "num_studies": 11,
+    "num_findings": 17,
+    "last_published_date": "2024-07-30T00:00:00"
+   },
+   {
+    "relationship_id": "6Q_i0GlCWE|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "6Q_i0GlCWE",
+    "other_label": "pyrimethamine",
+    "other_wikidata": "Q421072",
+    "num_studies": 11,
+    "num_findings": 24,
+    "last_published_date": "2021-10-18T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|_GtjsdCZgn",
+    "direction": "anchor → other",
+    "other_id": "_GtjsdCZgn",
+    "other_label": "birth mass",
+    "other_wikidata": "Q4128476",
+    "num_studies": 11,
+    "num_findings": 12,
+    "last_published_date": "2024-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|fdUkIhWGjU",
+    "direction": "anchor → other",
+    "other_id": "fdUkIhWGjU",
+    "other_label": "Plasmodium",
+    "other_wikidata": "Q130948",
+    "num_studies": 11,
+    "num_findings": 14,
+    "last_published_date": "2023-12-28T00:00:00"
+   },
+   {
+    "relationship_id": "EsbQIzj8CX|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "EsbQIzj8CX",
+    "other_label": "forest",
+    "other_wikidata": "Q4421",
+    "num_studies": 10,
+    "num_findings": 16,
+    "last_published_date": "2024-01-30T00:00:00"
+   },
+   {
+    "relationship_id": "UBLYDhO7ul|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "UBLYDhO7ul",
+    "other_label": "humidity",
+    "other_wikidata": "Q180600",
+    "num_studies": 10,
+    "num_findings": 13,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "bzQO0hAZXK|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "bzQO0hAZXK",
+    "other_label": "sulfadoxine",
+    "other_wikidata": "Q411557",
+    "num_studies": 10,
+    "num_findings": 12,
+    "last_published_date": "2022-07-25T00:00:00"
+   },
+   {
+    "relationship_id": "QRTaPnGgvU|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "QRTaPnGgvU",
+    "other_label": "medical facility",
+    "other_wikidata": "Q4260475",
+    "num_studies": 10,
+    "num_findings": 16,
+    "last_published_date": "2023-09-08T00:00:00"
+   },
+   {
+    "relationship_id": "nDIFXeS4Xr|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "nDIFXeS4Xr",
+    "other_label": "sleep",
+    "other_wikidata": "Q35831",
+    "num_studies": 9,
+    "num_findings": 9,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "m70jNJv_Hw|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "m70jNJv_Hw",
+    "other_label": "hemoglobin",
+    "other_wikidata": "Q43041",
+    "num_studies": 9,
+    "num_findings": 14,
+    "last_published_date": "2019-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|-4z8u-acvk",
+    "direction": "anchor → other",
+    "other_id": "-4z8u-acvk",
+    "other_label": "fever",
+    "other_wikidata": "Q38933",
+    "num_studies": 9,
+    "num_findings": 14,
+    "last_published_date": "2025-07-17T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|aLGvrXuIez",
+    "direction": "anchor → other",
+    "other_id": "aLGvrXuIez",
+    "other_label": "parasite",
+    "other_wikidata": "Q10253316",
+    "num_studies": 9,
+    "num_findings": 9,
+    "last_published_date": "2023-07-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|pdXgo8f1KS",
+    "direction": "anchor → other",
+    "other_id": "pdXgo8f1KS",
+    "other_label": "blood platelet count",
+    "other_wikidata": "Q48634035",
+    "num_studies": 8,
+    "num_findings": 9,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|QeEVpx9Wlg",
+    "direction": "anchor → other",
+    "other_id": "QeEVpx9Wlg",
+    "other_label": "artemisinins",
+    "other_wikidata": "Q73902577",
+    "num_studies": 8,
+    "num_findings": 12,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "ulo6zHPp_o|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "ulo6zHPp_o",
+    "other_label": "mefloquine",
+    "other_wikidata": "Q736270",
+    "num_studies": 8,
+    "num_findings": 10,
+    "last_published_date": "2021-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "1TPeWEe_2z|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "1TPeWEe_2z",
+    "other_label": "pregnant women",
+    "other_wikidata": "Q308623",
+    "num_studies": 8,
+    "num_findings": 12,
+    "last_published_date": "2022-06-29T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|ufDTGHMlgR",
+    "direction": "anchor → other",
+    "other_id": "ufDTGHMlgR",
+    "other_label": "antibiotic",
+    "other_wikidata": "Q12187",
+    "num_studies": 8,
+    "num_findings": 9,
+    "last_published_date": "2023-07-25T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|MZpwE2CWM6",
+    "direction": "anchor → other",
+    "other_id": "MZpwE2CWM6",
+    "other_label": "therapeutic failure",
+    "other_wikidata": "Q56317195",
+    "num_studies": 8,
+    "num_findings": 8,
+    "last_published_date": "2025-03-19T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|zjycE-zYCh",
+    "direction": "anchor → other",
+    "other_id": "zjycE-zYCh",
+    "other_label": "parasitemia",
+    "other_wikidata": "Q1897162",
+    "num_studies": 7,
+    "num_findings": 7,
+    "last_published_date": "2022-10-14T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|UvVKf6zUx4",
+    "direction": "anchor → other",
+    "other_id": "UvVKf6zUx4",
+    "other_label": "diarrhea",
+    "other_wikidata": "Q40878",
+    "num_studies": 7,
+    "num_findings": 8,
+    "last_published_date": "2021-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "QDY-bQ2HQ8|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "QDY-bQ2HQ8",
+    "other_label": "farming",
+    "other_wikidata": "Q24886094",
+    "num_studies": 7,
+    "num_findings": 7,
+    "last_published_date": "2023-09-06T00:00:00"
+   },
+   {
+    "relationship_id": "2l2fyMUHkV|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "2l2fyMUHkV",
+    "other_label": "blood group antigen",
+    "other_wikidata": "Q79004107",
+    "num_studies": 7,
+    "num_findings": 9,
+    "last_published_date": "2023-12-01T00:00:00"
+   },
+   {
+    "relationship_id": "PNZ6HkA4qT|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "PNZ6HkA4qT",
+    "other_label": "precipitation",
+    "other_wikidata": "Q25257",
+    "num_studies": 7,
+    "num_findings": 11,
+    "last_published_date": "2025-02-06T00:00:00"
+   },
+   {
+    "relationship_id": "85bCpa5non|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "85bCpa5non",
+    "other_label": "antimalarial",
+    "other_wikidata": "Q521616",
+    "num_studies": 7,
+    "num_findings": 8,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "fdrcdxpNbi|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "fdrcdxpNbi",
+    "other_label": "Sickle cell trait",
+    "other_wikidata": "Q3536635",
+    "num_studies": 7,
+    "num_findings": 9,
+    "last_published_date": "2021-12-01T00:00:00"
+   },
+   {
+    "relationship_id": "QeEVpx9Wlg|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "QeEVpx9Wlg",
+    "other_label": "artemisinins",
+    "other_wikidata": "Q73902577",
+    "num_studies": 7,
+    "num_findings": 10,
+    "last_published_date": "2021-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "6yoKTYSOJa|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "6yoKTYSOJa",
+    "other_label": "income",
+    "other_wikidata": "Q1527264",
+    "num_studies": 7,
+    "num_findings": 8,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "MHZAhLfAeB|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "MHZAhLfAeB",
+    "other_label": "antiretroviral therapy",
+    "other_wikidata": "Q114595933",
+    "num_studies": 7,
+    "num_findings": 7,
+    "last_published_date": "2017-02-20T00:00:00"
+   },
+   {
+    "relationship_id": "kC0GoD2RzW|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "kC0GoD2RzW",
+    "other_label": "urban area",
+    "other_wikidata": "Q702492",
+    "num_studies": 7,
+    "num_findings": 7,
+    "last_published_date": "2022-07-18T00:00:00"
+   },
+   {
+    "relationship_id": "EhpdS79G1u|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "EhpdS79G1u",
+    "other_label": "ethnicity",
+    "other_wikidata": "Q5404323",
+    "num_studies": 6,
+    "num_findings": 7,
+    "last_published_date": "2023-03-01T00:00:00"
+   },
+   {
+    "relationship_id": "lUn2DJNd5u|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "lUn2DJNd5u",
+    "other_label": "glucose-6-phosphate dehydrogenase deficiency",
+    "other_wikidata": "Q848343",
+    "num_studies": 6,
+    "num_findings": 9,
+    "last_published_date": "2022-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "UbBsqFOheU|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "UbBsqFOheU",
+    "other_label": "immunoglobulin G",
+    "other_wikidata": "Q79448",
+    "num_studies": 6,
+    "num_findings": 10,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "oKYFWnernV|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "oKYFWnernV",
+    "other_label": "highly active antiretroviral therapy",
+    "other_wikidata": "Q3536652",
+    "num_studies": 6,
+    "num_findings": 7,
+    "last_published_date": "2017-02-20T00:00:00"
+   },
+   {
+    "relationship_id": "_wnHPOECxQ|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "_wnHPOECxQ",
+    "other_label": "CD4 lymphocyte count",
+    "other_wikidata": "Q70576736",
+    "num_studies": 6,
+    "num_findings": 6,
+    "last_published_date": "2020-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "LQWjUNDY2O|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "LQWjUNDY2O",
+    "other_label": "flood",
+    "other_wikidata": "Q8068",
+    "num_studies": 6,
+    "num_findings": 11,
+    "last_published_date": "2023-07-11T00:00:00"
+   },
+   {
+    "relationship_id": "iXXnTn6sQN|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "iXXnTn6sQN",
+    "other_label": "mass drug administration",
+    "other_wikidata": "Q6784028",
+    "num_studies": 6,
+    "num_findings": 10,
+    "last_published_date": "2025-05-16T00:00:00"
+   },
+   {
+    "relationship_id": "_l4tNqo_PI|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "_l4tNqo_PI",
+    "other_label": "school attendance",
+    "other_wikidata": "Q59262000",
+    "num_studies": 6,
+    "num_findings": 7,
+    "last_published_date": "2023-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "-T_Rgqi4pG|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "-T_Rgqi4pG",
+    "other_label": "vaccination",
+    "other_wikidata": "Q192995",
+    "num_studies": 6,
+    "num_findings": 12,
+    "last_published_date": "2016-06-30T00:00:00"
+   },
+   {
+    "relationship_id": "F8DI_OveVS|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "F8DI_OveVS",
+    "other_label": "amodiaquine",
+    "other_wikidata": "Q239569",
+    "num_studies": 6,
+    "num_findings": 9,
+    "last_published_date": "2014-08-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|X-jqh6j95g",
+    "direction": "anchor → other",
+    "other_id": "X-jqh6j95g",
+    "other_label": "stillbirth",
+    "other_wikidata": "Q745832",
+    "num_studies": 6,
+    "num_findings": 7,
+    "last_published_date": "2021-10-27T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|n8o7PdNYDI",
+    "direction": "anchor → other",
+    "other_id": "n8o7PdNYDI",
+    "other_label": "Plasmodium falciparum malaria",
+    "other_wikidata": "Q18554672",
+    "num_studies": 6,
+    "num_findings": 6,
+    "last_published_date": "2023-07-26T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|W3DRcIxD47",
+    "direction": "anchor → other",
+    "other_id": "W3DRcIxD47",
+    "other_label": "insecticide",
+    "other_wikidata": "Q181322",
+    "num_studies": 6,
+    "num_findings": 6,
+    "last_published_date": "2023-03-26T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|IQFH6QKJ7d",
+    "direction": "anchor → other",
+    "other_id": "IQFH6QKJ7d",
+    "other_label": "small for gestational age",
+    "other_wikidata": "Q1298973",
+    "num_studies": 5,
+    "num_findings": 9,
+    "last_published_date": "2022-10-12T00:00:00"
+   },
+   {
+    "relationship_id": "Ea-MgLRglN|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "Ea-MgLRglN",
+    "other_label": "employment",
+    "other_wikidata": "Q656365",
+    "num_studies": 5,
+    "num_findings": 5,
+    "last_published_date": "2022-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "EtFwKYP7RR|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "EtFwKYP7RR",
+    "other_label": "third trimester of pregnancy",
+    "other_wikidata": "Q70680242",
+    "num_studies": 5,
+    "num_findings": 5,
+    "last_published_date": "2025-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "3_9csjFvnL|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "3_9csjFvnL",
+    "other_label": "marital status",
+    "other_wikidata": "Q11920938",
+    "num_studies": 5,
+    "num_findings": 7,
+    "last_published_date": "2020-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "FB6LtahaSp|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "FB6LtahaSp",
+    "other_label": "iron",
+    "other_wikidata": "Q677",
+    "num_studies": 5,
+    "num_findings": 6,
+    "last_published_date": "2020-05-16T00:00:00"
+   },
+   {
+    "relationship_id": "GHLbLwsf1y|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "GHLbLwsf1y",
+    "other_label": "hookworm disease",
+    "other_wikidata": "Q5898175",
+    "num_studies": 5,
+    "num_findings": 6,
+    "last_published_date": "2022-04-27T00:00:00"
+   },
+   {
+    "relationship_id": "-PG5amYGpo|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "-PG5amYGpo",
+    "other_label": "insect repellent",
+    "other_wikidata": "Q1340459",
+    "num_studies": 5,
+    "num_findings": 6,
+    "last_published_date": "2025-09-04T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|SN_7jvyPq1",
+    "direction": "anchor → other",
+    "other_id": "SN_7jvyPq1",
+    "other_label": "glucose",
+    "other_wikidata": "Q37525",
+    "num_studies": 5,
+    "num_findings": 6,
+    "last_published_date": "2013-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "2gR7THM-gS|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "2gR7THM-gS",
+    "other_label": "neighborhood characteristics",
+    "other_wikidata": "Q112207543",
+    "num_studies": 5,
+    "num_findings": 6,
+    "last_published_date": "2020-10-23T00:00:00"
+   },
+   {
+    "relationship_id": "f9fu2zTOrD|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "f9fu2zTOrD",
+    "other_label": "sanitation",
+    "other_wikidata": "Q949149",
+    "num_studies": 5,
+    "num_findings": 6,
+    "last_published_date": "2023-10-11T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|5dL8p_2DYe",
+    "direction": "anchor → other",
+    "other_id": "5dL8p_2DYe",
+    "other_label": "C-reactive protein",
+    "other_wikidata": "Q422766",
+    "num_studies": 5,
+    "num_findings": 8,
+    "last_published_date": "2021-11-11T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|lw7_RArWhd",
+    "direction": "anchor → other",
+    "other_id": "lw7_RArWhd",
+    "other_label": "child mortality",
+    "other_wikidata": "Q61559",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2019-07-23T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|hUmuuT02z6",
+    "direction": "anchor → other",
+    "other_id": "hUmuuT02z6",
+    "other_label": "Plasmodium vivax",
+    "other_wikidata": "Q311376",
+    "num_studies": 4,
+    "num_findings": 4,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|dnIEpQCTQ1",
+    "direction": "anchor → other",
+    "other_id": "dnIEpQCTQ1",
+    "other_label": "perinatal death",
+    "other_wikidata": "Q2781245",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2023-06-12T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|4FaXcuNJRt",
+    "direction": "anchor → other",
+    "other_id": "4FaXcuNJRt",
+    "other_label": "temperature",
+    "other_wikidata": "Q11466",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2013-09-22T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|zfR9u2T5ry",
+    "direction": "anchor → other",
+    "other_id": "zfR9u2T5ry",
+    "other_label": "epilepsy",
+    "other_wikidata": "Q41571",
+    "num_studies": 4,
+    "num_findings": 6,
+    "last_published_date": "2013-03-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|9CVKkJofBg",
+    "direction": "anchor → other",
+    "other_id": "9CVKkJofBg",
+    "other_label": "interleukin-10",
+    "other_wikidata": "Q24766641",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2019-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "LiA9WnJT_e|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "LiA9WnJT_e",
+    "other_label": "prenatal care",
+    "other_wikidata": "Q3308829",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2021-05-26T00:00:00"
+   },
+   {
+    "relationship_id": "vy2UDuPulp|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "vy2UDuPulp",
+    "other_label": "severe acute malnutrition",
+    "other_wikidata": "Q54972217",
+    "num_studies": 4,
+    "num_findings": 4,
+    "last_published_date": "2023-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "Z5DWY-2qex|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "Z5DWY-2qex",
+    "other_label": "social class",
+    "other_wikidata": "Q187588",
+    "num_studies": 4,
+    "num_findings": 6,
+    "last_published_date": "2021-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "IFcQ3j86qe|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "IFcQ3j86qe",
+    "other_label": "housing",
+    "other_wikidata": "Q1247867",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2021-04-01T00:00:00"
+   },
+   {
+    "relationship_id": "uxk0Eg1eUF|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "uxk0Eg1eUF",
+    "other_label": "maternal age",
+    "other_wikidata": "Q64705665",
+    "num_studies": 4,
+    "num_findings": 8,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "Iszap5AcTi|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "Iszap5AcTi",
+    "other_label": "gestational age",
+    "other_wikidata": "Q2253111",
+    "num_studies": 4,
+    "num_findings": 4,
+    "last_published_date": "2020-08-05T00:00:00"
+   },
+   {
+    "relationship_id": "Viym-5ixzi|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "Viym-5ixzi",
+    "other_label": "quinine",
+    "other_wikidata": "Q189522",
+    "num_studies": 4,
+    "num_findings": 4,
+    "last_published_date": "2019-12-30T00:00:00"
+   },
+   {
+    "relationship_id": "L5e64i2ZqI|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "L5e64i2ZqI",
+    "other_label": "insect control",
+    "other_wikidata": "Q70442071",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2024-10-18T00:00:00"
+   },
+   {
+    "relationship_id": "aLGvrXuIez|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "aLGvrXuIez",
+    "other_label": "parasite",
+    "other_wikidata": "Q10253316",
+    "num_studies": 4,
+    "num_findings": 7,
+    "last_published_date": "2019-07-23T00:00:00"
+   },
+   {
+    "relationship_id": "pdXgo8f1KS|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "pdXgo8f1KS",
+    "other_label": "blood platelet count",
+    "other_wikidata": "Q48634035",
+    "num_studies": 4,
+    "num_findings": 4,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "ecEEOKJsQ5|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "ecEEOKJsQ5",
+    "other_label": "protective clothing",
+    "other_wikidata": "Q14524031",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "lLHXbmAX2D|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "lLHXbmAX2D",
+    "other_label": "artemether/lumefantrine",
+    "other_wikidata": "Q2981100",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "f_X09V_zpx|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "f_X09V_zpx",
+    "other_label": "iron deficiency",
+    "other_wikidata": "Q1313081",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2014-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "LaJ0Vxzkkv|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "LaJ0Vxzkkv",
+    "other_label": "insurance",
+    "other_wikidata": "Q43183",
+    "num_studies": 4,
+    "num_findings": 4,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "FPgHTPTt4S|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "FPgHTPTt4S",
+    "other_label": "human pregnancy",
+    "other_wikidata": "Q11995",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2022-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|eOzdYHTl_U",
+    "direction": "anchor → other",
+    "other_id": "eOzdYHTl_U",
+    "other_label": "splenomegaly",
+    "other_wikidata": "Q1129121",
+    "num_studies": 4,
+    "num_findings": 4,
+    "last_published_date": "2021-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|hUmuuT02z6",
+    "direction": "anchor → other",
+    "other_id": "hUmuuT02z6",
+    "other_label": "Plasmodium vivax",
+    "other_wikidata": "Q311376",
+    "num_studies": 4,
+    "num_findings": 4,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|lw7_RArWhd",
+    "direction": "anchor → other",
+    "other_id": "lw7_RArWhd",
+    "other_label": "child mortality",
+    "other_wikidata": "Q61559",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2019-07-23T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|dnIEpQCTQ1",
+    "direction": "anchor → other",
+    "other_id": "dnIEpQCTQ1",
+    "other_label": "perinatal death",
+    "other_wikidata": "Q2781245",
+    "num_studies": 4,
+    "num_findings": 5,
+    "last_published_date": "2023-06-12T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|wYL8n9x4mu",
+    "direction": "anchor → other",
+    "other_id": "wYL8n9x4mu",
+    "other_label": "malaria prevalence",
+    "other_wikidata": "Q113361605",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2025-05-22T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|6Q_i0GlCWE",
+    "direction": "anchor → other",
+    "other_id": "6Q_i0GlCWE",
+    "other_label": "pyrimethamine",
+    "other_wikidata": "Q421072",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2014-07-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|abksZXpIsu",
+    "direction": "anchor → other",
+    "other_id": "abksZXpIsu",
+    "other_label": "vomiting",
+    "other_wikidata": "Q127076",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2020-12-14T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|1nFyVypTEV",
+    "direction": "anchor → other",
+    "other_id": "1nFyVypTEV",
+    "other_label": "malnutrition",
+    "other_wikidata": "Q12167",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2020-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Fq5iJLSg0R",
+    "direction": "anchor → other",
+    "other_id": "Fq5iJLSg0R",
+    "other_label": "Burkitt lymphoma",
+    "other_wikidata": "Q1016605",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2018-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|QRTaPnGgvU",
+    "direction": "anchor → other",
+    "other_id": "QRTaPnGgvU",
+    "other_label": "medical facility",
+    "other_wikidata": "Q4260475",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2024-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|4dqHBL2Z57",
+    "direction": "anchor → other",
+    "other_id": "4dqHBL2Z57",
+    "other_label": "bilirubin",
+    "other_wikidata": "Q104219",
+    "num_studies": 3,
+    "num_findings": 5,
+    "last_published_date": "2019-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "rlvxrBIE89|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "rlvxrBIE89",
+    "other_label": "HIV type 1",
+    "other_wikidata": "Q18907320",
+    "num_studies": 3,
+    "num_findings": 5,
+    "last_published_date": "2009-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "hUmuuT02z6|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "hUmuuT02z6",
+    "other_label": "Plasmodium vivax",
+    "other_wikidata": "Q311376",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2021-09-29T00:00:00"
+   },
+   {
+    "relationship_id": "XGFLEvq9iX|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "XGFLEvq9iX",
+    "other_label": "azithromycin",
+    "other_wikidata": "Q165399",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2022-03-25T00:00:00"
+   },
+   {
+    "relationship_id": "qG8bpAf84m|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "qG8bpAf84m",
+    "other_label": "mosquito control",
+    "other_wikidata": "Q2003646",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2024-01-29T00:00:00"
+   },
+   {
+    "relationship_id": "EzIQqiNwkF|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "EzIQqiNwkF",
+    "other_label": "microscopy",
+    "other_wikidata": "Q1074953",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2021-02-01T00:00:00"
+   },
+   {
+    "relationship_id": "mB3409cfWP|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "mB3409cfWP",
+    "other_label": "clothing",
+    "other_wikidata": "Q11460",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2022-03-19T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|vy2UDuPulp",
+    "direction": "anchor → other",
+    "other_id": "vy2UDuPulp",
+    "other_label": "severe acute malnutrition",
+    "other_wikidata": "Q54972217",
+    "num_studies": 3,
+    "num_findings": 5,
+    "last_published_date": "2021-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "opLk6c7dtw|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "opLk6c7dtw",
+    "other_label": "breastfeeding",
+    "other_wikidata": "Q174876",
+    "num_studies": 3,
+    "num_findings": 6,
+    "last_published_date": "2016-07-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|cTEu6zVoCx",
+    "direction": "anchor → other",
+    "other_id": "cTEu6zVoCx",
+    "other_label": "pregnancy outcome",
+    "other_wikidata": "Q66057507",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2024-07-09T00:00:00"
+   },
+   {
+    "relationship_id": "fdUkIhWGjU|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "fdUkIhWGjU",
+    "other_label": "Plasmodium",
+    "other_wikidata": "Q130948",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2023-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|ERG0HQ59dj",
+    "direction": "anchor → other",
+    "other_id": "ERG0HQ59dj",
+    "other_label": "cholesterol",
+    "other_wikidata": "Q43656",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2017-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "K1H8CuPrjx|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "K1H8CuPrjx",
+    "other_label": "headache",
+    "other_wikidata": "Q86",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2023-12-15T00:00:00"
+   },
+   {
+    "relationship_id": "1nFyVypTEV|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "1nFyVypTEV",
+    "other_label": "malnutrition",
+    "other_wikidata": "Q12167",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2020-02-05T00:00:00"
+   },
+   {
+    "relationship_id": "gWPp9MEFwS|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "gWPp9MEFwS",
+    "other_label": "helminths",
+    "other_wikidata": "Q3129936",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2015-03-01T00:00:00"
+   },
+   {
+    "relationship_id": "NSSHqnR5tw|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "NSSHqnR5tw",
+    "other_label": "housing quality",
+    "other_wikidata": "Q112207514",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2024-06-18T00:00:00"
+   },
+   {
+    "relationship_id": "hE8omvq-Lm|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "hE8omvq-Lm",
+    "other_label": "schistosomiasis mansoni",
+    "other_wikidata": "Q66057173",
+    "num_studies": 3,
+    "num_findings": 8,
+    "last_published_date": "2019-07-24T00:00:00"
+   },
+   {
+    "relationship_id": "tfG4Z7n_jI|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "tfG4Z7n_jI",
+    "other_label": "TNF",
+    "other_wikidata": "Q18032037",
+    "num_studies": 3,
+    "num_findings": 6,
+    "last_published_date": "2023-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "2NaEtunqCy|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "2NaEtunqCy",
+    "other_label": "pyrethrin",
+    "other_wikidata": "Q282970",
+    "num_studies": 3,
+    "num_findings": 5,
+    "last_published_date": "2025-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "AG5EdenPcm|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "AG5EdenPcm",
+    "other_label": "insecticide resistance",
+    "other_wikidata": "Q60036895",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2019-02-11T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|DZBybMvxDI",
+    "direction": "anchor → other",
+    "other_id": "DZBybMvxDI",
+    "other_label": "COVID-19",
+    "other_wikidata": "Q84263196",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2023-12-06T00:00:00"
+   },
+   {
+    "relationship_id": "fsawG0CIrf|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "fsawG0CIrf",
+    "other_label": "sickle hemoglobin",
+    "other_wikidata": "Q76876892",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2020-01-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|-T_Rgqi4pG",
+    "direction": "anchor → other",
+    "other_id": "-T_Rgqi4pG",
+    "other_label": "vaccination",
+    "other_wikidata": "Q192995",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2024-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "IHQkojeSzS|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "IHQkojeSzS",
+    "other_label": "ABO",
+    "other_wikidata": "Q14839826",
+    "num_studies": 3,
+    "num_findings": 5,
+    "last_published_date": "2019-12-16T00:00:00"
+   },
+   {
+    "relationship_id": "c_f3i8lTBc|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "c_f3i8lTBc",
+    "other_label": "artesunate",
+    "other_wikidata": "Q707939",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2024-12-18T00:00:00"
+   },
+   {
+    "relationship_id": "aU6CVgYD7i|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "aU6CVgYD7i",
+    "other_label": "home environment",
+    "other_wikidata": "Q112207467",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2023-06-19T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "vtzCBL9BRr",
+    "other_label": "malaria vaccine",
+    "other_wikidata": "Q6741353",
+    "num_studies": 3,
+    "num_findings": 5,
+    "last_published_date": "2024-10-10T00:00:00"
+   },
+   {
+    "relationship_id": "BKGVtGv7Vp|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "BKGVtGv7Vp",
+    "other_label": "human chromosome 12",
+    "other_wikidata": "Q847102",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "N53dpvc6wQ|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "N53dpvc6wQ",
+    "other_label": "sickle-cell disease",
+    "other_wikidata": "Q185034",
+    "num_studies": 3,
+    "num_findings": 4,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "DRr8pzzRyH|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "DRr8pzzRyH",
+    "other_label": "asymptomatic infection",
+    "other_wikidata": "Q2326546",
+    "num_studies": 3,
+    "num_findings": 6,
+    "last_published_date": "2021-07-23T00:00:00"
+   },
+   {
+    "relationship_id": "DGUhnTh3Zq|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "DGUhnTh3Zq",
+    "other_label": "pregnancy",
+    "other_wikidata": "Q1490716",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2024-02-07T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|-8dpOP3337",
+    "direction": "anchor → other",
+    "other_id": "-8dpOP3337",
+    "other_label": "death",
+    "other_wikidata": "Q4",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2022-09-27T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|9vEFV2u0KM",
+    "direction": "anchor → other",
+    "other_id": "9vEFV2u0KM",
+    "other_label": "bacteremia",
+    "other_wikidata": "Q650912",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2014-03-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|QRSeEA8n9Q",
+    "direction": "anchor → other",
+    "other_id": "QRSeEA8n9Q",
+    "other_label": "pneumonia",
+    "other_wikidata": "Q12192",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2017-12-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|dReiQhT-a_",
+    "direction": "anchor → other",
+    "other_id": "dReiQhT-a_",
+    "other_label": "Kaposi's sarcoma",
+    "other_wikidata": "Q725345",
+    "num_studies": 3,
+    "num_findings": 3,
+    "last_published_date": "2023-04-04T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Uj0AiHVMf4",
+    "direction": "anchor → other",
+    "other_id": "Uj0AiHVMf4",
+    "other_label": "latent tuberculosis",
+    "other_wikidata": "Q4254929",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2019-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|_wnHPOECxQ",
+    "direction": "anchor → other",
+    "other_id": "_wnHPOECxQ",
+    "other_label": "CD4 lymphocyte count",
+    "other_wikidata": "Q70576736",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2002-04-26T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|SbXu3R4VTW",
+    "direction": "anchor → other",
+    "other_id": "SbXu3R4VTW",
+    "other_label": "self-medication",
+    "other_wikidata": "Q1761396",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2022-01-31T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|7wfLLVuDxQ",
+    "direction": "anchor → other",
+    "other_id": "7wfLLVuDxQ",
+    "other_label": "lymphocyte count",
+    "other_wikidata": "Q60035142",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2021-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|6ZeNvKWBJ9",
+    "direction": "anchor → other",
+    "other_id": "6ZeNvKWBJ9",
+    "other_label": "triglyceride",
+    "other_wikidata": "Q186319",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2017-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|h2P9WJjR7J",
+    "direction": "anchor → other",
+    "other_id": "h2P9WJjR7J",
+    "other_label": "fetal weight",
+    "other_wikidata": "Q67172386",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-10-31T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|DXirswrGV4",
+    "direction": "anchor → other",
+    "other_id": "DXirswrGV4",
+    "other_label": "erythrocyte index",
+    "other_wikidata": "Q6577969",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2019-03-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|LQvCXhyGLf",
+    "direction": "anchor → other",
+    "other_id": "LQvCXhyGLf",
+    "other_label": "hypoglycemia",
+    "other_wikidata": "Q202758",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-01-06T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|O27KJClJJt",
+    "direction": "anchor → other",
+    "other_id": "O27KJClJJt",
+    "other_label": "vitamin A",
+    "other_wikidata": "Q18225",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2006-06-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|PQU9PphbiG",
+    "direction": "anchor → other",
+    "other_id": "PQU9PphbiG",
+    "other_label": "ferritin complex",
+    "other_wikidata": "Q22327449",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2001-12-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|3vK952W1Jo",
+    "direction": "anchor → other",
+    "other_id": "3vK952W1Jo",
+    "other_label": "human height",
+    "other_wikidata": "Q476112",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2018-09-14T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|gjXBGUnKoK",
+    "direction": "anchor → other",
+    "other_id": "gjXBGUnKoK",
+    "other_label": "cerebral malaria",
+    "other_wikidata": "Q2822915",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2008-12-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|iXXnTn6sQN",
+    "direction": "anchor → other",
+    "other_id": "iXXnTn6sQN",
+    "other_label": "mass drug administration",
+    "other_wikidata": "Q6784028",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2017-10-23T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|YesxPOHDXm",
+    "direction": "anchor → other",
+    "other_id": "YesxPOHDXm",
+    "other_label": "blood glucose",
+    "other_wikidata": "Q275157",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2017-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|ckYZSXp5Ju",
+    "direction": "anchor → other",
+    "other_id": "ckYZSXp5Ju",
+    "other_label": "thrombocytopenia",
+    "other_wikidata": "Q585285",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2017-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|oAjEyROXyr",
+    "direction": "anchor → other",
+    "other_id": "oAjEyROXyr",
+    "other_label": "weight gain",
+    "other_wikidata": "Q3403879",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2018-09-14T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|bzQO0hAZXK",
+    "direction": "anchor → other",
+    "other_id": "bzQO0hAZXK",
+    "other_label": "sulfadoxine",
+    "other_wikidata": "Q411557",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2020-12-05T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|HejFSI-X_z",
+    "direction": "anchor → other",
+    "other_id": "HejFSI-X_z",
+    "other_label": "age group",
+    "other_wikidata": "Q42401304",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2016-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|NR2Tl7nVrX",
+    "direction": "anchor → other",
+    "other_id": "NR2Tl7nVrX",
+    "other_label": "eosinophil",
+    "other_wikidata": "Q107238",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2021-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|uWNNlnauQq",
+    "direction": "anchor → other",
+    "other_id": "uWNNlnauQq",
+    "other_label": "blood pressure",
+    "other_wikidata": "Q82642",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2014-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|tfG4Z7n_jI",
+    "direction": "anchor → other",
+    "other_id": "tfG4Z7n_jI",
+    "other_label": "TNF",
+    "other_wikidata": "Q18032037",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2022-07-14T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|s9AiIn8qjW",
+    "direction": "anchor → other",
+    "other_id": "s9AiIn8qjW",
+    "other_label": "neonatal anemia",
+    "other_wikidata": "Q18554047",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2007-05-23T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|jESAitvlCZ",
+    "direction": "anchor → other",
+    "other_id": "jESAitvlCZ",
+    "other_label": "febrile seizure",
+    "other_wikidata": "Q127664",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2024-01-08T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|4yad7yuLvv",
+    "direction": "anchor → other",
+    "other_id": "4yad7yuLvv",
+    "other_label": "Seizure",
+    "other_wikidata": "Q6279182",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2015-10-06T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|_l4tNqo_PI",
+    "direction": "anchor → other",
+    "other_id": "_l4tNqo_PI",
+    "other_label": "school attendance",
+    "other_wikidata": "Q59262000",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|WFN_kLlUeR",
+    "direction": "anchor → other",
+    "other_id": "WFN_kLlUeR",
+    "other_label": "tumor necrosis factor d1",
+    "other_wikidata": "Q21173843",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2019-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|KfFKAZ2rjN",
+    "direction": "anchor → other",
+    "other_id": "KfFKAZ2rjN",
+    "other_label": "Hemoglobin H",
+    "other_wikidata": "Q76452538",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2014-06-05T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|xP3OWYm-x_",
+    "direction": "anchor → other",
+    "other_id": "xP3OWYm-x_",
+    "other_label": "wasting",
+    "other_wikidata": "Q7972881",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2018-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "abGQlqdL31|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "abGQlqdL31",
+    "other_label": "merozoite",
+    "other_wikidata": "Q2296434",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2017-02-15T00:00:00"
+   },
+   {
+    "relationship_id": "zgvN8TuqYj|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "zgvN8TuqYj",
+    "other_label": "pregnancy trimesters",
+    "other_wikidata": "Q71130371",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2024-03-08T00:00:00"
+   },
+   {
+    "relationship_id": "8VV5SvMbga|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "8VV5SvMbga",
+    "other_label": "Parasite load",
+    "other_wikidata": "Q7135939",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2016-08-10T00:00:00"
+   },
+   {
+    "relationship_id": "YdX9m4rnXQ|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "YdX9m4rnXQ",
+    "other_label": "length of stay",
+    "other_wikidata": "Q2520821",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2021-02-04T00:00:00"
+   },
+   {
+    "relationship_id": "gx3ZHOeL5C|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "gx3ZHOeL5C",
+    "other_label": "(RS)-primaquine",
+    "other_wikidata": "Q419834",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "slXbabUYMb|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "slXbabUYMb",
+    "other_label": "overweight",
+    "other_wikidata": "Q332428",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-01-05T00:00:00"
+   },
+   {
+    "relationship_id": "VkrlHd7iG-|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "VkrlHd7iG-",
+    "other_label": "Anopheles",
+    "other_wikidata": "Q158597",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2015-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "VM_BejazFq|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "VM_BejazFq",
+    "other_label": "low birth weight infant",
+    "other_wikidata": "Q6692979",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2021-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "uPc9TXZRjc|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "uPc9TXZRjc",
+    "other_label": "mass screening",
+    "other_wikidata": "Q64733553",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2022-12-27T00:00:00"
+   },
+   {
+    "relationship_id": "GKMjPE8BnS|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "GKMjPE8BnS",
+    "other_label": "COVID-19 pandemic",
+    "other_wikidata": "Q81068910",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2024-04-03T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|pOVUPQfQY5",
+    "direction": "anchor → other",
+    "other_id": "pOVUPQfQY5",
+    "other_label": "lumefantrine",
+    "other_wikidata": "Q904464",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2018-06-05T00:00:00"
+   },
+   {
+    "relationship_id": "GuVqtviR9c|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "GuVqtviR9c",
+    "other_label": "Plasmodium malariae",
+    "other_wikidata": "Q133969",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2021-09-29T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|gdUTojmkBD",
+    "direction": "anchor → other",
+    "other_id": "gdUTojmkBD",
+    "other_label": "Plasmodium vivax malaria",
+    "other_wikidata": "Q18554412",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2019-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|70kETbLkUN",
+    "direction": "anchor → other",
+    "other_id": "70kETbLkUN",
+    "other_label": "intrauterine growth restriction",
+    "other_wikidata": "Q1671598",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2009-02-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|8VV5SvMbga",
+    "direction": "anchor → other",
+    "other_id": "8VV5SvMbga",
+    "other_label": "Parasite load",
+    "other_wikidata": "Q7135939",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-03-01T00:00:00"
+   },
+   {
+    "relationship_id": "AByRAdx2GF|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "AByRAdx2GF",
+    "other_label": "flooding",
+    "other_wikidata": "Q1429176",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2022-03-13T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|vddSqawvyH",
+    "direction": "anchor → other",
+    "other_id": "vddSqawvyH",
+    "other_label": "kidney failure",
+    "other_wikidata": "Q476921",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2013-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "sdwfqQf1LG|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "sdwfqQf1LG",
+    "other_label": "natural rubber",
+    "other_wikidata": "Q131877",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2022-03-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Fjds3WHBny",
+    "direction": "anchor → other",
+    "other_id": "Fjds3WHBny",
+    "other_label": "disease outbreak",
+    "other_wikidata": "Q3241045",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2021-12-07T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Zb3qyDbShP",
+    "direction": "anchor → other",
+    "other_id": "Zb3qyDbShP",
+    "other_label": "hospital readmission",
+    "other_wikidata": "Q25324519",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2021-07-29T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|LQdk5gHHY-",
+    "direction": "anchor → other",
+    "other_id": "LQdk5gHHY-",
+    "other_label": "vascular resistance",
+    "other_wikidata": "Q456026",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2016-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|u6ZPcqYnDK",
+    "direction": "anchor → other",
+    "other_id": "u6ZPcqYnDK",
+    "other_label": "monocyte",
+    "other_wikidata": "Q107244",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2020-06-17T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Gpvr-ADU-A",
+    "direction": "anchor → other",
+    "other_id": "Gpvr-ADU-A",
+    "other_label": "prevalence",
+    "other_wikidata": "Q719602",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2021-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|YsxVx5JJqR",
+    "direction": "anchor → other",
+    "other_id": "YsxVx5JJqR",
+    "other_label": "rural area",
+    "other_wikidata": "Q175185",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2020-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|UbBsqFOheU",
+    "direction": "anchor → other",
+    "other_id": "UbBsqFOheU",
+    "other_label": "immunoglobulin G",
+    "other_wikidata": "Q79448",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2017-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "chKqSW1rZS|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "chKqSW1rZS",
+    "other_label": "HBB",
+    "other_wikidata": "Q14905542",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2019-12-16T00:00:00"
+   },
+   {
+    "relationship_id": "uHvBROencA|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "uHvBROencA",
+    "other_label": "cough",
+    "other_wikidata": "Q35805",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2022-03-03T00:00:00"
+   },
+   {
+    "relationship_id": "95E7fnl8sH|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "95E7fnl8sH",
+    "other_label": "myalgia",
+    "other_wikidata": "Q474959",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2014-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|UbBsqFOheU",
+    "direction": "anchor → other",
+    "other_id": "UbBsqFOheU",
+    "other_label": "immunoglobulin G",
+    "other_wikidata": "Q79448",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2017-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|vddSqawvyH",
+    "direction": "anchor → other",
+    "other_id": "vddSqawvyH",
+    "other_label": "kidney failure",
+    "other_wikidata": "Q476921",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2013-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "EtT2ZbJZ31|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "EtT2ZbJZ31",
+    "other_label": "cattle",
+    "other_wikidata": "Q830",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2021-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|LQdk5gHHY-",
+    "direction": "anchor → other",
+    "other_id": "LQdk5gHHY-",
+    "other_label": "vascular resistance",
+    "other_wikidata": "Q456026",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2016-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "4aY_0Ykzyx|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "4aY_0Ykzyx",
+    "other_label": "homozygote",
+    "other_wikidata": "Q49985",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|u6ZPcqYnDK",
+    "direction": "anchor → other",
+    "other_id": "u6ZPcqYnDK",
+    "other_label": "monocyte",
+    "other_wikidata": "Q107244",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2020-06-17T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|YsxVx5JJqR",
+    "direction": "anchor → other",
+    "other_id": "YsxVx5JJqR",
+    "other_label": "rural area",
+    "other_wikidata": "Q175185",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2020-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Fjds3WHBny",
+    "direction": "anchor → other",
+    "other_id": "Fjds3WHBny",
+    "other_label": "disease outbreak",
+    "other_wikidata": "Q3241045",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2021-12-07T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Gpvr-ADU-A",
+    "direction": "anchor → other",
+    "other_id": "Gpvr-ADU-A",
+    "other_label": "prevalence",
+    "other_wikidata": "Q719602",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2021-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "0qs-ZNedT6|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "0qs-ZNedT6",
+    "other_label": "Ebolavirus",
+    "other_wikidata": "Q5331908",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2019-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "abGQlqdL31|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "abGQlqdL31",
+    "other_label": "merozoite",
+    "other_wikidata": "Q2296434",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2017-02-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|xP3OWYm-x_",
+    "direction": "anchor → other",
+    "other_id": "xP3OWYm-x_",
+    "other_label": "wasting",
+    "other_wikidata": "Q7972881",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2018-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "_GtjsdCZgn|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "_GtjsdCZgn",
+    "other_label": "birth mass",
+    "other_wikidata": "Q4128476",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2013-11-18T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|gjXBGUnKoK",
+    "direction": "anchor → other",
+    "other_id": "gjXBGUnKoK",
+    "other_label": "cerebral malaria",
+    "other_wikidata": "Q2822915",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2008-12-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|gdUTojmkBD",
+    "direction": "anchor → other",
+    "other_id": "gdUTojmkBD",
+    "other_label": "Plasmodium vivax malaria",
+    "other_wikidata": "Q18554412",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2019-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|iXXnTn6sQN",
+    "direction": "anchor → other",
+    "other_id": "iXXnTn6sQN",
+    "other_label": "mass drug administration",
+    "other_wikidata": "Q6784028",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2017-10-23T00:00:00"
+   },
+   {
+    "relationship_id": "lkPRUZG3Up|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "lkPRUZG3Up",
+    "other_label": "piperidine",
+    "other_wikidata": "Q59348943",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2024-12-20T00:00:00"
+   },
+   {
+    "relationship_id": "chKqSW1rZS|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "chKqSW1rZS",
+    "other_label": "HBB",
+    "other_wikidata": "Q14905542",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2019-12-16T00:00:00"
+   },
+   {
+    "relationship_id": "bIwjlkmcHV|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "bIwjlkmcHV",
+    "other_label": "poverty",
+    "other_wikidata": "Q10294",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|70kETbLkUN",
+    "direction": "anchor → other",
+    "other_id": "70kETbLkUN",
+    "other_label": "intrauterine growth restriction",
+    "other_wikidata": "Q1671598",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2009-02-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|pOVUPQfQY5",
+    "direction": "anchor → other",
+    "other_id": "pOVUPQfQY5",
+    "other_label": "lumefantrine",
+    "other_wikidata": "Q904464",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2018-06-05T00:00:00"
+   },
+   {
+    "relationship_id": "GuVqtviR9c|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "GuVqtviR9c",
+    "other_label": "Plasmodium malariae",
+    "other_wikidata": "Q133969",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2021-09-29T00:00:00"
+   },
+   {
+    "relationship_id": "g-p3q523PG|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "g-p3q523PG",
+    "other_label": "geographic location",
+    "other_wikidata": "Q2221906",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2017-11-21T00:00:00"
+   },
+   {
+    "relationship_id": "ZiQfgc4L7Z|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "ZiQfgc4L7Z",
+    "other_label": "ivermectin",
+    "other_wikidata": "Q415178",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-02-14T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|KfFKAZ2rjN",
+    "direction": "anchor → other",
+    "other_id": "KfFKAZ2rjN",
+    "other_label": "Hemoglobin H",
+    "other_wikidata": "Q76452538",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2014-06-05T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|8VV5SvMbga",
+    "direction": "anchor → other",
+    "other_id": "8VV5SvMbga",
+    "other_label": "Parasite load",
+    "other_wikidata": "Q7135939",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-03-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|yNXBh81IFL",
+    "direction": "anchor → other",
+    "other_id": "yNXBh81IFL",
+    "other_label": "CRP",
+    "other_wikidata": "Q14859861",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2015-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|h2P9WJjR7J",
+    "direction": "anchor → other",
+    "other_id": "h2P9WJjR7J",
+    "other_label": "fetal weight",
+    "other_wikidata": "Q67172386",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-10-31T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|SbXu3R4VTW",
+    "direction": "anchor → other",
+    "other_id": "SbXu3R4VTW",
+    "other_label": "self-medication",
+    "other_wikidata": "Q1761396",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2022-01-31T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|6ZeNvKWBJ9",
+    "direction": "anchor → other",
+    "other_id": "6ZeNvKWBJ9",
+    "other_label": "triglyceride",
+    "other_wikidata": "Q186319",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2017-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|ckYZSXp5Ju",
+    "direction": "anchor → other",
+    "other_id": "ckYZSXp5Ju",
+    "other_label": "thrombocytopenia",
+    "other_wikidata": "Q585285",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2017-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|7wfLLVuDxQ",
+    "direction": "anchor → other",
+    "other_id": "7wfLLVuDxQ",
+    "other_label": "lymphocyte count",
+    "other_wikidata": "Q60035142",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2021-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Uj0AiHVMf4",
+    "direction": "anchor → other",
+    "other_id": "Uj0AiHVMf4",
+    "other_label": "latent tuberculosis",
+    "other_wikidata": "Q4254929",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2019-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|LQvCXhyGLf",
+    "direction": "anchor → other",
+    "other_id": "LQvCXhyGLf",
+    "other_label": "hypoglycemia",
+    "other_wikidata": "Q202758",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-01-06T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|4yad7yuLvv",
+    "direction": "anchor → other",
+    "other_id": "4yad7yuLvv",
+    "other_label": "Seizure",
+    "other_wikidata": "Q6279182",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2015-10-06T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|_l4tNqo_PI",
+    "direction": "anchor → other",
+    "other_id": "_l4tNqo_PI",
+    "other_label": "school attendance",
+    "other_wikidata": "Q59262000",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|DXirswrGV4",
+    "direction": "anchor → other",
+    "other_id": "DXirswrGV4",
+    "other_label": "erythrocyte index",
+    "other_wikidata": "Q6577969",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2019-03-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|O27KJClJJt",
+    "direction": "anchor → other",
+    "other_id": "O27KJClJJt",
+    "other_label": "vitamin A",
+    "other_wikidata": "Q18225",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2006-06-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|_wnHPOECxQ",
+    "direction": "anchor → other",
+    "other_id": "_wnHPOECxQ",
+    "other_label": "CD4 lymphocyte count",
+    "other_wikidata": "Q70576736",
+    "num_studies": 2,
+    "num_findings": 4,
+    "last_published_date": "2002-04-26T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|OpiRe9waAQ",
+    "direction": "anchor → other",
+    "other_id": "OpiRe9waAQ",
+    "other_label": "attention",
+    "other_wikidata": "Q6501338",
+    "num_studies": 1,
+    "num_findings": 2,
+    "last_published_date": "2011-11-03T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|5_-4OzN311",
+    "direction": "anchor → other",
+    "other_id": "5_-4OzN311",
+    "other_label": "fatal outcome",
+    "other_wikidata": "Q68328187",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2018-06-07T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|3bsZWIMWFp",
+    "direction": "anchor → other",
+    "other_id": "3bsZWIMWFp",
+    "other_label": "educational stage",
+    "other_wikidata": "Q18189",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2024-11-18T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|_zLVUxvG7F",
+    "direction": "anchor → other",
+    "other_id": "_zLVUxvG7F",
+    "other_label": "socioeconomic status",
+    "other_wikidata": "Q1515895",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2014-11-07T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|H5xoZanmKe",
+    "direction": "anchor → other",
+    "other_id": "H5xoZanmKe",
+    "other_label": "half-life",
+    "other_wikidata": "Q47270",
+    "num_studies": 1,
+    "num_findings": 2,
+    "last_published_date": "1990-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|NBs6kemntc",
+    "direction": "anchor → other",
+    "other_id": "NBs6kemntc",
+    "other_label": "congenital abnormality",
+    "other_wikidata": "Q2852249",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2014-05-27T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Zb78u4tYk4",
+    "direction": "anchor → other",
+    "other_id": "Zb78u4tYk4",
+    "other_label": "scrub typhus",
+    "other_wikidata": "Q1194496",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2021-09-14T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|9w51tmNXGZ",
+    "direction": "anchor → other",
+    "other_id": "9w51tmNXGZ",
+    "other_label": "iron deficiency anemia",
+    "other_wikidata": "Q954674",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|YdX9m4rnXQ",
+    "direction": "anchor → other",
+    "other_id": "YdX9m4rnXQ",
+    "other_label": "length of stay",
+    "other_wikidata": "Q2520821",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2019-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|nnQGb5_DMK",
+    "direction": "anchor → other",
+    "other_id": "nnQGb5_DMK",
+    "other_label": "perinatal care",
+    "other_wikidata": "Q3411951",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2021-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|sFVwvl6xF6",
+    "direction": "anchor → other",
+    "other_id": "sFVwvl6xF6",
+    "other_label": "HIV seropositivity",
+    "other_wikidata": "Q54973000",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2000-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|VkZPMYH3zI",
+    "direction": "anchor → other",
+    "other_id": "VkZPMYH3zI",
+    "other_label": "aspartate transaminase",
+    "other_wikidata": "Q412474",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2019-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|uTfW_hAOh1",
+    "direction": "anchor → other",
+    "other_id": "uTfW_hAOh1",
+    "other_label": "low-density lipoprotein",
+    "other_wikidata": "Q28749",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2017-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Mt9v1LJTue",
+    "direction": "anchor → other",
+    "other_id": "Mt9v1LJTue",
+    "other_label": "intensive care unit",
+    "other_wikidata": "Q5094647",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2004-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Tzg0TxXii_",
+    "direction": "anchor → other",
+    "other_id": "Tzg0TxXii_",
+    "other_label": "infant death",
+    "other_wikidata": "Q22004151",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2014-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|NmVhhMXJkw",
+    "direction": "anchor → other",
+    "other_id": "NmVhhMXJkw",
+    "other_label": "patient compliance",
+    "other_wikidata": "Q1121713",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2008-07-14T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|KAI7i8aPCw",
+    "direction": "anchor → other",
+    "other_id": "KAI7i8aPCw",
+    "other_label": "schizont",
+    "other_wikidata": "Q3952119",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2012-08-28T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|lPNBkdfh_o",
+    "direction": "anchor → other",
+    "other_id": "lPNBkdfh_o",
+    "other_label": "perinatal mortality",
+    "other_wikidata": "Q67520723",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2022-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|6b5YlNiX6A",
+    "direction": "anchor → other",
+    "other_id": "6b5YlNiX6A",
+    "other_label": "family characteristics",
+    "other_wikidata": "Q69905367",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2014-11-07T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|V-ULIPoZ18",
+    "direction": "anchor → other",
+    "other_id": "V-ULIPoZ18",
+    "other_label": "Pyronaridine",
+    "other_wikidata": "Q7263674",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2025-08-12T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|GXPo2ZlO9e",
+    "direction": "anchor → other",
+    "other_id": "GXPo2ZlO9e",
+    "other_label": "neonatal mortality",
+    "other_wikidata": "Q3324547",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "1993-10-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|dJepC0Zpgx",
+    "direction": "anchor → other",
+    "other_id": "dJepC0Zpgx",
+    "other_label": "hospital mortality",
+    "other_wikidata": "Q65335221",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2022-08-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|7ZhJbPqaXA",
+    "direction": "anchor → other",
+    "other_id": "7ZhJbPqaXA",
+    "other_label": "antimicrobial stewardship",
+    "other_wikidata": "Q19903321",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2019-01-28T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|bTlnrVWxxs",
+    "direction": "anchor → other",
+    "other_id": "bTlnrVWxxs",
+    "other_label": "gravidity",
+    "other_wikidata": "Q67299741",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2013-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|lHFynWU2q2",
+    "direction": "anchor → other",
+    "other_id": "lHFynWU2q2",
+    "other_label": "fetal heart rate",
+    "other_wikidata": "Q5868917",
+    "num_studies": 1,
+    "num_findings": 2,
+    "last_published_date": "2012-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Iq2_T7DJQ9",
+    "direction": "anchor → other",
+    "other_id": "Iq2_T7DJQ9",
+    "other_label": "interleukin 12",
+    "other_wikidata": "Q2409681",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2022-07-30T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|i9LefaGsPQ",
+    "direction": "anchor → other",
+    "other_id": "i9LefaGsPQ",
+    "other_label": "Cytochrome P450 family 2 subfamily D member 6",
+    "other_wikidata": "Q3271142",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2020-04-21T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|7TvcOl106U",
+    "direction": "anchor → other",
+    "other_id": "7TvcOl106U",
+    "other_label": "colon carcinoma",
+    "other_wikidata": "Q18554829",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2017-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|o1KoT_RTdz",
+    "direction": "anchor → other",
+    "other_id": "o1KoT_RTdz",
+    "other_label": "lactate",
+    "other_wikidata": "Q349735",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": null
+   },
+   {
+    "relationship_id": "7xpZryeSKE|nDIFXeS4Xr",
+    "direction": "anchor → other",
+    "other_id": "nDIFXeS4Xr",
+    "other_label": "sleep",
+    "other_wikidata": "Q35831",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2014-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|d9mqGpiN7C",
+    "direction": "anchor → other",
+    "other_id": "d9mqGpiN7C",
+    "other_label": "composite lymphoma",
+    "other_wikidata": "Q18557019",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2020-10-30T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|YhyDYwxufP",
+    "direction": "anchor → other",
+    "other_id": "YhyDYwxufP",
+    "other_label": "Salmonella food poisoning",
+    "other_wikidata": "Q18967963",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-03-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|4GKouZcAf_",
+    "direction": "anchor → other",
+    "other_id": "4GKouZcAf_",
+    "other_label": "pet",
+    "other_wikidata": "Q39201",
+    "num_studies": 1,
+    "num_findings": 2,
+    "last_published_date": "2006-12-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|2RzIlqCjcm",
+    "direction": "anchor → other",
+    "other_id": "2RzIlqCjcm",
+    "other_label": "insulin",
+    "other_wikidata": "Q50265665",
+    "num_studies": 1,
+    "num_findings": 3,
+    "last_published_date": "1990-12-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|fPsnjzjNe8",
+    "direction": "anchor → other",
+    "other_id": "fPsnjzjNe8",
+    "other_label": "pituitary-dependent Cushing's disease",
+    "other_wikidata": "Q11312280",
+    "num_studies": 1,
+    "num_findings": 2,
+    "last_published_date": "1997-09-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|bxy3dykVii",
+    "direction": "anchor → other",
+    "other_id": "bxy3dykVii",
+    "other_label": "survival rate",
+    "other_wikidata": "Q332823",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2002-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|qSRJs5cxDR",
+    "direction": "anchor → other",
+    "other_id": "qSRJs5cxDR",
+    "other_label": "seroconversion",
+    "other_wikidata": "Q2141450",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2012-01-14T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|pOCAf3KWXQ",
+    "direction": "anchor → other",
+    "other_id": "pOCAf3KWXQ",
+    "other_label": "respiratory sound",
+    "other_wikidata": "Q779038",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2001-04-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Ot5J0G0RYA",
+    "direction": "anchor → other",
+    "other_id": "Ot5J0G0RYA",
+    "other_label": "alkaline phosphatase",
+    "other_wikidata": "Q24769688",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2019-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|KO8cggp0oa",
+    "direction": "anchor → other",
+    "other_id": "KO8cggp0oa",
+    "other_label": "von Willebrand's disease",
+    "other_wikidata": "Q709360",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2025-04-21T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|fPCsoUrPP8",
+    "direction": "anchor → other",
+    "other_id": "fPCsoUrPP8",
+    "other_label": "coma",
+    "other_wikidata": "Q159557",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-01-06T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|flkbRybU9m",
+    "direction": "anchor → other",
+    "other_id": "flkbRybU9m",
+    "other_label": "neonatal intensive care",
+    "other_wikidata": "Q70346593",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2020-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|Gy8ry_Dp9N",
+    "direction": "anchor → other",
+    "other_id": "Gy8ry_Dp9N",
+    "other_label": "asphyxia neonatorum",
+    "other_wikidata": "Q2694437",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2020-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|lOTAQNDzdk",
+    "direction": "anchor → other",
+    "other_id": "lOTAQNDzdk",
+    "other_label": "blood culture",
+    "other_wikidata": "Q886695",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "1996-04-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|jz1S1EzZ98",
+    "direction": "anchor → other",
+    "other_id": "jz1S1EzZ98",
+    "other_label": "primary prevention",
+    "other_wikidata": "Q10353754",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|enxmVSto4r",
+    "direction": "anchor → other",
+    "other_id": "enxmVSto4r",
+    "other_label": "antioxidant",
+    "other_wikidata": "Q133948",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2012-11-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|vyvd8rfun6",
+    "direction": "anchor → other",
+    "other_id": "vyvd8rfun6",
+    "other_label": "lymphocyte",
+    "other_wikidata": "Q715347",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2014-06-05T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|bcuXUSixPi",
+    "direction": "anchor → other",
+    "other_id": "bcuXUSixPi",
+    "other_label": "blood cell count",
+    "other_wikidata": "Q48633601",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2014-06-05T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|wWbfsY5E0d",
+    "direction": "anchor → other",
+    "other_id": "wWbfsY5E0d",
+    "other_label": "gender",
+    "other_wikidata": "Q48277",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2013-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|91y78bHwXu",
+    "direction": "anchor → other",
+    "other_id": "91y78bHwXu",
+    "other_label": "ketosis",
+    "other_wikidata": "Q1123139",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": null
+   },
+   {
+    "relationship_id": "7xpZryeSKE|yOGvvdFooT",
+    "direction": "anchor → other",
+    "other_id": "yOGvvdFooT",
+    "other_label": "i-urobilinogen",
+    "other_wikidata": "Q57054",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": null
+   },
+   {
+    "relationship_id": "7xpZryeSKE|0sFQcAU6t2",
+    "direction": "anchor → other",
+    "other_id": "0sFQcAU6t2",
+    "other_label": "chitinase-3-like protein 1",
+    "other_wikidata": "Q24776897",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2014-07-21T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|VkrlHd7iG-",
+    "direction": "anchor → other",
+    "other_id": "VkrlHd7iG-",
+    "other_label": "Anopheles",
+    "other_wikidata": "Q158597",
+    "num_studies": 1,
+    "num_findings": 2,
+    "last_published_date": "2013-05-01T00:00:00"
+   },
+   {
+    "relationship_id": "w7NInYNbNc|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "w7NInYNbNc",
+    "other_label": "Immunoglobulin domain",
+    "other_wikidata": "Q24770541",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2017-06-15T00:00:00"
+   },
+   {
+    "relationship_id": "tUv6-M9lp8|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "tUv6-M9lp8",
+    "other_label": "body water",
+    "other_wikidata": "Q4936981",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2020-11-19T00:00:00"
+   },
+   {
+    "relationship_id": "bcuXUSixPi|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "bcuXUSixPi",
+    "other_label": "blood cell count",
+    "other_wikidata": "Q48633601",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2013-03-13T00:00:00"
+   },
+   {
+    "relationship_id": "uRX7IBkex3|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "uRX7IBkex3",
+    "other_label": "Enterobius",
+    "other_wikidata": "Q213912",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2021-03-01T00:00:00"
+   },
+   {
+    "relationship_id": "XlKlHLfj0w|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "XlKlHLfj0w",
+    "other_label": "human chromosome 16",
+    "other_wikidata": "Q742870",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2020-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "oHkV2B-pvU|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "oHkV2B-pvU",
+    "other_label": "nausea",
+    "other_wikidata": "Q186889",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": null
+   },
+   {
+    "relationship_id": "UvVKf6zUx4|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "UvVKf6zUx4",
+    "other_label": "diarrhea",
+    "other_wikidata": "Q40878",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": null
+   },
+   {
+    "relationship_id": "vceJW8uiBp|7xpZryeSKE",
+    "direction": "other → anchor",
+    "other_id": "vceJW8uiBp",
+    "other_label": "fetal hemoglobin",
+    "other_wikidata": "Q2496436",
+    "num_studies": 1,
+    "num_findings": 2,
+    "last_published_date": "2015-01-01T00:00:00"
+   }
+  ],
+  "mosquito net": [
+   {
+    "relationship_id": "MvZaix-FRr|7xpZryeSKE",
+    "direction": "anchor → other",
+    "other_id": "7xpZryeSKE",
+    "other_label": "malaria",
+    "other_wikidata": "Q12156",
+    "num_studies": 21,
+    "num_findings": 25,
+    "last_published_date": "2024-08-07T00:00:00"
+   },
+   {
+    "relationship_id": "YsxVx5JJqR|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "YsxVx5JJqR",
+    "other_label": "rural area",
+    "other_wikidata": "Q175185",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-06-26T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|QPxlNKv3zV",
+    "direction": "anchor → other",
+    "other_id": "QPxlNKv3zV",
+    "other_label": "mortality rate",
+    "other_wikidata": "Q58702",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2012-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "3bsZWIMWFp|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "3bsZWIMWFp",
+    "other_label": "educational stage",
+    "other_wikidata": "Q18189",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-06-06T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|XuzpCJ807U",
+    "direction": "anchor → other",
+    "other_id": "XuzpCJ807U",
+    "other_label": "Japanese encephalitis",
+    "other_wikidata": "Q738292",
+    "num_studies": 2,
+    "num_findings": 5,
+    "last_published_date": "2022-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|VkrlHd7iG-",
+    "direction": "anchor → other",
+    "other_id": "VkrlHd7iG-",
+    "other_label": "Anopheles",
+    "other_wikidata": "Q158597",
+    "num_studies": 2,
+    "num_findings": 3,
+    "last_published_date": "2013-03-16T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|A8WtwGlE77",
+    "direction": "anchor → other",
+    "other_id": "A8WtwGlE77",
+    "other_label": "West Nile virus",
+    "other_wikidata": "Q158856",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2018-04-01T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|Zsx6vqeqpW",
+    "direction": "anchor → other",
+    "other_id": "Zsx6vqeqpW",
+    "other_label": "acute febrile encephalopathy",
+    "other_wikidata": "Q55236888",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2007-09-01T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|A9O2_M4sui",
+    "direction": "anchor → other",
+    "other_id": "A9O2_M4sui",
+    "other_label": "anemia",
+    "other_wikidata": "Q5445",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2019-12-11T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|MwpRlQwZwY",
+    "direction": "anchor → other",
+    "other_id": "MwpRlQwZwY",
+    "other_label": "Dengue virus",
+    "other_wikidata": "Q476209",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2019-07-18T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|dReiQhT-a_",
+    "direction": "anchor → other",
+    "other_id": "dReiQhT-a_",
+    "other_label": "Kaposi's sarcoma",
+    "other_wikidata": "Q725345",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2014-04-01T00:00:00"
+   },
+   {
+    "relationship_id": "-PG5amYGpo|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "-PG5amYGpo",
+    "other_label": "insect repellent",
+    "other_wikidata": "Q1340459",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2005-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|EPkRQaRIuw",
+    "direction": "anchor → other",
+    "other_id": "EPkRQaRIuw",
+    "other_label": "tuberculosis",
+    "other_wikidata": "Q12204",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-07-13T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|vUwiaNEBVo",
+    "direction": "anchor → other",
+    "other_id": "vUwiaNEBVo",
+    "other_label": "survival skill",
+    "other_wikidata": "Q891382",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2018-02-05T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|bIwjlkmcHV",
+    "direction": "anchor → other",
+    "other_id": "bIwjlkmcHV",
+    "other_label": "poverty",
+    "other_wikidata": "Q10294",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2012-02-01T00:00:00"
+   },
+   {
+    "relationship_id": "QRTaPnGgvU|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "QRTaPnGgvU",
+    "other_label": "medical facility",
+    "other_wikidata": "Q4260475",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-06-06T00:00:00"
+   },
+   {
+    "relationship_id": "Vyxa4OeWM-|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "Vyxa4OeWM-",
+    "other_label": "family relation",
+    "other_wikidata": "Q69901743",
+    "num_studies": 1,
+    "num_findings": 2,
+    "last_published_date": "2018-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "1qVe7kq9p5|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "1qVe7kq9p5",
+    "other_label": "permethrin",
+    "other_wikidata": "Q411635",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2005-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "VkrlHd7iG-|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "VkrlHd7iG-",
+    "other_label": "Anopheles",
+    "other_wikidata": "Q158597",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2022-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "6b5YlNiX6A|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "6b5YlNiX6A",
+    "other_label": "family characteristics",
+    "other_wikidata": "Q69905367",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-06-26T00:00:00"
+   },
+   {
+    "relationship_id": "6yoKTYSOJa|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "6yoKTYSOJa",
+    "other_label": "income",
+    "other_wikidata": "Q1527264",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2010-06-01T00:00:00"
+   },
+   {
+    "relationship_id": "HejFSI-X_z|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "HejFSI-X_z",
+    "other_label": "age group",
+    "other_wikidata": "Q42401304",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-06-26T00:00:00"
+   },
+   {
+    "relationship_id": "LiA9WnJT_e|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "LiA9WnJT_e",
+    "other_label": "prenatal care",
+    "other_wikidata": "Q3308829",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2010-11-10T00:00:00"
+   },
+   {
+    "relationship_id": "EtFwKYP7RR|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "EtFwKYP7RR",
+    "other_label": "third trimester of pregnancy",
+    "other_wikidata": "Q70680242",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-06-06T00:00:00"
+   },
+   {
+    "relationship_id": "EhpdS79G1u|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "EhpdS79G1u",
+    "other_label": "ethnicity",
+    "other_wikidata": "Q5404323",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-06-06T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|qODaxGmiJk",
+    "direction": "anchor → other",
+    "other_id": "qODaxGmiJk",
+    "other_label": "insecticide-treated bednet",
+    "other_wikidata": "Q59178547",
+    "num_studies": 1,
+    "num_findings": 2,
+    "last_published_date": "2017-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|CmGodZCd8W",
+    "direction": "anchor → other",
+    "other_id": "CmGodZCd8W",
+    "other_label": "Microfilaria",
+    "other_wikidata": "Q6839512",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2012-07-01T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|-T_Rgqi4pG",
+    "direction": "anchor → other",
+    "other_id": "-T_Rgqi4pG",
+    "other_label": "vaccination",
+    "other_wikidata": "Q192995",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2010-12-15T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|MvZaix-FRr",
+    "direction": "other → anchor",
+    "other_id": "7xpZryeSKE",
+    "other_label": "malaria",
+    "other_wikidata": "Q12156",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2024-11-18T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|1pkRcBPXcN",
+    "direction": "anchor → other",
+    "other_id": "1pkRcBPXcN",
+    "other_label": "filarial elephantiasis",
+    "other_wikidata": "Q192100",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": null
+   },
+   {
+    "relationship_id": "MvZaix-FRr|dnIEpQCTQ1",
+    "direction": "anchor → other",
+    "other_id": "dnIEpQCTQ1",
+    "other_label": "perinatal death",
+    "other_wikidata": "Q2781245",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2014-02-01T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|voHBND1YKO",
+    "direction": "anchor → other",
+    "other_id": "voHBND1YKO",
+    "other_label": "infarction",
+    "other_wikidata": "Q207550",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2012-03-01T00:00:00"
+   },
+   {
+    "relationship_id": "MvZaix-FRr|Fq5iJLSg0R",
+    "direction": "anchor → other",
+    "other_id": "Fq5iJLSg0R",
+    "other_label": "Burkitt lymphoma",
+    "other_wikidata": "Q1016605",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2008-06-18T00:00:00"
+   }
+  ],
+  "malaria vaccine": [
+   {
+    "relationship_id": "vtzCBL9BRr|7xpZryeSKE",
+    "direction": "anchor → other",
+    "other_id": "7xpZryeSKE",
+    "other_label": "malaria",
+    "other_wikidata": "Q12156",
+    "num_studies": 3,
+    "num_findings": 5,
+    "last_published_date": "2024-10-10T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|VQfUz8TO_M",
+    "direction": "anchor → other",
+    "other_id": "VQfUz8TO_M",
+    "other_label": "vaccine hesitancy",
+    "other_wikidata": "Q56641686",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-02-17T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|-T_Rgqi4pG",
+    "direction": "anchor → other",
+    "other_id": "-T_Rgqi4pG",
+    "other_label": "vaccination",
+    "other_wikidata": "Q192995",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2023-10-31T00:00:00"
+   },
+   {
+    "relationship_id": "-4z8u-acvk|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "-4z8u-acvk",
+    "other_label": "fever",
+    "other_wikidata": "Q38933",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2021-07-27T00:00:00"
+   },
+   {
+    "relationship_id": "c5MMKVDUn2|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "c5MMKVDUn2",
+    "other_label": "vaccination coverage",
+    "other_wikidata": "Q96482267",
+    "num_studies": 2,
+    "num_findings": 2,
+    "last_published_date": "2025-03-20T00:00:00"
+   },
+   {
+    "relationship_id": "zjycE-zYCh|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "zjycE-zYCh",
+    "other_label": "parasitemia",
+    "other_wikidata": "Q1897162",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-05-25T00:00:00"
+   },
+   {
+    "relationship_id": "qTaSECLkor|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "qTaSECLkor",
+    "other_label": "Infant Care",
+    "other_wikidata": "Q70490303",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2015-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "7xpZryeSKE|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "7xpZryeSKE",
+    "other_label": "malaria",
+    "other_wikidata": "Q12156",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-10-31T00:00:00"
+   },
+   {
+    "relationship_id": "-T_Rgqi4pG|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "-T_Rgqi4pG",
+    "other_label": "vaccination",
+    "other_wikidata": "Q192995",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-10-31T00:00:00"
+   },
+   {
+    "relationship_id": "Ea-MgLRglN|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "Ea-MgLRglN",
+    "other_label": "employment",
+    "other_wikidata": "Q656365",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-10-31T00:00:00"
+   },
+   {
+    "relationship_id": "QGsnhC2Mq6|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "QGsnhC2Mq6",
+    "other_label": "Plasmodium falciparum",
+    "other_wikidata": "Q311383",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2021-05-04T00:00:00"
+   },
+   {
+    "relationship_id": "A9lB6vPSYl|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "A9lB6vPSYl",
+    "other_label": "literacy",
+    "other_wikidata": "Q8236",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2023-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "QRSeEA8n9Q|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "QRSeEA8n9Q",
+    "other_label": "pneumonia",
+    "other_wikidata": "Q12192",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2015-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "Z5DWY-2qex|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "Z5DWY-2qex",
+    "other_label": "social class",
+    "other_wikidata": "Q187588",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2024-04-25T00:00:00"
+   },
+   {
+    "relationship_id": "Vyxa4OeWM-|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "Vyxa4OeWM-",
+    "other_label": "family relation",
+    "other_wikidata": "Q69901743",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2015-12-12T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|1nFyVypTEV",
+    "direction": "anchor → other",
+    "other_id": "1nFyVypTEV",
+    "other_label": "malnutrition",
+    "other_wikidata": "Q12167",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|qT0fZmGlX4",
+    "direction": "anchor → other",
+    "other_id": "qT0fZmGlX4",
+    "other_label": "sepsis",
+    "other_wikidata": "Q183134",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|rucWX1yTQu",
+    "direction": "anchor → other",
+    "other_id": "rucWX1yTQu",
+    "other_label": "gastroenteritis",
+    "other_wikidata": "Q156103",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "3_9csjFvnL|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "3_9csjFvnL",
+    "other_label": "marital status",
+    "other_wikidata": "Q11920938",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2022-05-12T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|xP3OWYm-x_",
+    "direction": "anchor → other",
+    "other_id": "xP3OWYm-x_",
+    "other_label": "wasting",
+    "other_wikidata": "Q7972881",
+    "num_studies": 1,
+    "num_findings": 3,
+    "last_published_date": "2022-02-22T00:00:00"
+   },
+   {
+    "relationship_id": "uHvBROencA|vtzCBL9BRr",
+    "direction": "other → anchor",
+    "other_id": "uHvBROencA",
+    "other_label": "cough",
+    "other_wikidata": "Q35805",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2015-01-01T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|-8dpOP3337",
+    "direction": "anchor → other",
+    "other_id": "-8dpOP3337",
+    "other_label": "death",
+    "other_wikidata": "Q4",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|QRSeEA8n9Q",
+    "direction": "anchor → other",
+    "other_id": "QRSeEA8n9Q",
+    "other_label": "pneumonia",
+    "other_wikidata": "Q12192",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|n8o7PdNYDI",
+    "direction": "anchor → other",
+    "other_id": "n8o7PdNYDI",
+    "other_label": "Plasmodium falciparum malaria",
+    "other_wikidata": "Q18554672",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "1996-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|Dv0LsWpgB-",
+    "direction": "anchor → other",
+    "other_id": "Dv0LsWpgB-",
+    "other_label": "Haemophilus infections",
+    "other_wikidata": "Q18966407",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|EPkRQaRIuw",
+    "direction": "anchor → other",
+    "other_id": "EPkRQaRIuw",
+    "other_label": "tuberculosis",
+    "other_wikidata": "Q12204",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-10-01T00:00:00"
+   },
+   {
+    "relationship_id": "vtzCBL9BRr|QPxlNKv3zV",
+    "direction": "anchor → other",
+    "other_id": "QPxlNKv3zV",
+    "other_label": "mortality rate",
+    "other_wikidata": "Q58702",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2016-10-01T00:00:00"
+   }
+  ],
+  "malaria prevention": [
+   {
+    "relationship_id": "7xpZryeSKE|FMF6gvw22J",
+    "direction": "other → anchor",
+    "other_id": "7xpZryeSKE",
+    "other_label": "malaria",
+    "other_wikidata": "Q12156",
+    "num_studies": 1,
+    "num_findings": 2,
+    "last_published_date": "2025-07-02T00:00:00"
+   }
+  ],
+  "indoor residual spraying": [
+   {
+    "relationship_id": "ie-Vi6-vS7|7xpZryeSKE",
+    "direction": "anchor → other",
+    "other_id": "7xpZryeSKE",
+    "other_label": "malaria",
+    "other_wikidata": "Q12156",
+    "num_studies": 1,
+    "num_findings": 1,
+    "last_published_date": "2018-04-21T00:00:00"
+   }
+  ]
+ },
+ "anchor_coverage": [
+  {
+   "pmid": "30398672",
+   "short_ref": "Pryce 2018 Cochrane",
+   "api_study": true,
+   "system_study_id": "xgxcZktkeu",
+   "api_associations": 0,
+   "csv_associations": 0
+  },
+  {
+   "pmid": "33278936",
+   "short_ref": "ACCESS-SMC 2020 Lancet",
+   "api_study": true,
+   "system_study_id": "uVMAuzbN39",
+   "api_associations": 2,
+   "csv_associations": 0
+  },
+  {
+   "pmid": "34432975",
+   "short_ref": "Chandramohan 2021 NEJM",
+   "api_study": true,
+   "system_study_id": "98tfoL5t5K",
+   "api_associations": 1,
+   "csv_associations": 0
+  },
+  {
+   "pmid": "35339225",
+   "short_ref": "Mosha 2022 Lancet",
+   "api_study": true,
+   "system_study_id": "xrgxiAooFV",
+   "api_associations": 3,
+   "csv_associations": 0
+  },
+  {
+   "pmid": "36704118",
+   "short_ref": "Mali 5th SMC round 2023",
+   "api_study": true,
+   "system_study_id": "cR37_M_xbV",
+   "api_associations": 2,
+   "csv_associations": 0
+  },
+  {
+   "pmid": "36706778",
+   "short_ref": "Accrombessi 2023 Lancet",
+   "api_study": true,
+   "system_study_id": "feOrVjYqBk",
+   "api_associations": 2,
+   "csv_associations": 1
+  },
+  {
+   "pmid": "37776879",
+   "short_ref": "Mosha 2024 Lancet Infect Dis (36-month)",
+   "api_study": true,
+   "system_study_id": "-Y2PnBarK4",
+   "api_associations": 3,
+   "csv_associations": 0
+  },
+  {
+   "pmid": "38310910",
+   "short_ref": "Datoo 2024 Lancet",
+   "api_study": true,
+   "system_study_id": "z0EDV_fZZ_",
+   "api_associations": 0,
+   "csv_associations": 0
+  },
+  {
+   "pmid": "38401551",
+   "short_ref": "Accrombessi 2024 Lancet Infect Dis (year 3)",
+   "api_study": true,
+   "system_study_id": "79tcjm146y",
+   "api_associations": 0,
+   "csv_associations": 0
+  }
+ ]
+}

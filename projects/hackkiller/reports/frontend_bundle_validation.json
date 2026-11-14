@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "bytes": 1175983,
+  "sha256": "7ddec971417b0a87ddd7281697c64e9191b0cb3a04085172a400a456be85bd6a",
+  "counts": {
+    "snapshot_associations": 1999877,
+    "candidate_associations": 481,
+    "candidate_papers": 273,
+    "paper_anchor_results": 20,
+    "abstract_reviewed_records": 33,
+    "reviewed_results_total": 53,
+    "displayable_reviewed_results": 52,
+    "excluded_reviewed_records": 1,
+    "fulltext_checks": 11,
+    "resolved_historical_context_discrepancies": 3,
+    "country_year_records": 721,
+    "who_records": 331,
+    "map_records": 390,
+    "pf8_sp_records": 332,
+    "pf8_aq_marker_records": 166,
+    "core_countries": [
+      "BEN",
+      "BFA",
+      "MLI",
+      "NGA",
+      "TZA"
+    ],
+    "country_registry_entries": 47,
+    "counting_note": "Results are comparisons, not independent trials. Candidate and reviewed collections overlap; do not add their counts."
+  },
+  "checks": [
+    "typed fields and country arrays",
+    "all 331 prior candidates retained in 481 union",
+    "52 reviewed displayable, 1 excluded",
+    "three historical context discrepancies resolved",
+    "source units and Pf8 denominators retained",
+    "input hashes verified",
+    "deterministic build passed"
+  ]
+}

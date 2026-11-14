@@ -1,0 +1,116 @@
+{
+  "manifest_version": "1.0",
+  "dataset": "System Public",
+  "generated_at": "2026-07-08T07:06:10Z",
+  "file_count": 5,
+  "total_bytes": 1103542333,
+  "files": [
+    {
+      "filename": "system-public-graph-v1-associations.csv",
+      "bytes": 442463948,
+      "rows": 1999877,
+      "columns": 19,
+      "column_names": [
+        "system_id",
+        "pubmed_id",
+        "study_id",
+        "statistic_type",
+        "system_statistic_type",
+        "statistic_value",
+        "ci_level",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "p_value_equality",
+        "variable_1_id",
+        "variable_2_id",
+        "variable_1_wikidata_id",
+        "variable_2_wikidata_id",
+        "variable_1_concept_id",
+        "variable_2_concept_id",
+        "variable_1_name",
+        "variable_2_name"
+      ],
+      "checksums": {
+        "sha256": "a9c8ba3db760efec0d08c65c17c36f0066073062d8e1ff8ea40cc71679daddf9",
+        "md5": "c884dd1132957f69ffea45404f29db61"
+      }
+    },
+    {
+      "filename": "system-public-graph-v1-concepts.csv",
+      "bytes": 7780684,
+      "rows": 45721,
+      "columns": 5,
+      "column_names": [
+        "system_id",
+        "wikidata_id",
+        "wikidata_aliases",
+        "wikidata_description",
+        "wikidata_label"
+      ],
+      "checksums": {
+        "sha256": "1d594e97760d92154cd389506c5a04beadb6aaef09a80016445a6372691b944f",
+        "md5": "c902b288797545dcc801edd3a55a4f0d"
+      }
+    },
+    {
+      "filename": "system-public-graph-v1-relationships.csv",
+      "bytes": 394497184,
+      "rows": 839872,
+      "columns": 15,
+      "column_names": [
+        "relationship_id",
+        "num_findings",
+        "num_studies",
+        "last_published_date",
+        "last_updated",
+        "source_concept.system_id",
+        "source_concept.wikidata_label",
+        "source_concept.wikidata_id",
+        "source_concept.wikidata_description",
+        "source_concept.wikidata_aliases",
+        "target_concept.system_id",
+        "target_concept.wikidata_label",
+        "target_concept.wikidata_id",
+        "target_concept.wikidata_description",
+        "target_concept.wikidata_aliases"
+      ],
+      "checksums": {
+        "sha256": "258c155855bc374594916981a821a7552f0b5f34a3450c9757d34ccc6a805f9b",
+        "md5": "f955dc9dd9f41cb4fcf95a9a14373d4c"
+      }
+    },
+    {
+      "filename": "system-public-graph-v1-studies.csv",
+      "bytes": 133629122,
+      "rows": 844435,
+      "columns": 5,
+      "column_names": [
+        "study_id",
+        "doi",
+        "pubmed_id",
+        "population_string",
+        "study_type"
+      ],
+      "checksums": {
+        "sha256": "0ec523dce16c5bb0f411d206639cb0b5fa8c8b6199bbf31fd62c220b5948eaa5",
+        "md5": "558e7529ee5545c7504bf412288694cc"
+      }
+    },
+    {
+      "filename": "system-public-graph-v1-variables.csv",
+      "bytes": 125171395,
+      "rows": 1774551,
+      "columns": 3,
+      "column_names": [
+        "system_id",
+        "name",
+        "concept_id"
+      ],
+      "checksums": {
+        "sha256": "ab775cb9948e3545d21afcef8a858b47b141aaecf06ba5294a5a4325cf22e5f3",
+        "md5": "aacff399861e8d5374308f34a21c1e6b"
+      }
+    }
+  ]
+}
