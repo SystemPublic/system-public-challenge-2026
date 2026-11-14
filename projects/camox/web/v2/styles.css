@@ -445,3 +445,21 @@ fieldset:disabled input, fieldset:disabled textarea { opacity: .7; }
 .phead h1 { font-size: clamp(22px, 3vw, 30px); }
 #questions > .block-head { display: none; }
 .composer { position: sticky; bottom: 12px; z-index: 5; box-shadow: 0 12px 40px rgba(0, 0, 0, .45); }
+.select-reply { position: fixed; z-index: 50; transform: translateX(-50%); padding: 6px 14px; box-shadow: 0 8px 24px rgba(0, 0, 0, .5); }
+.reply-quote { margin: 0; padding: 8px 12px; border-left: 2px solid var(--accent); background: var(--accent-soft); border-radius: 8px;
+  font-size: 13.5px; max-height: 6.5em; overflow: auto; display: flex; gap: 8px; align-items: flex-start; }
+.reply-quote .eyebrow { flex: none; }
+.reply-quote button { margin-left: auto; flex: none; }
+/* Keep the pinned ask box short: suggestions in one scrolling row, the quote above the question. */
+.composer .suggest { display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 6px; scrollbar-width: none; }
+.composer .suggestion { flex: none; max-width: 32ch; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.reply-quote { display: block; position: relative; padding-right: 32px; }
+.reply-quote .eyebrow { display: block; margin-bottom: 2px; }
+.reply-quote button { position: absolute; top: 4px; right: 4px; }
+@media (max-width: 600px) { .composer { padding: 12px 14px; gap: 8px; } .composer .scope { display: none; } }
+@media (max-width: 600px) {
+  .composer > label { display: none; }
+  .composer textarea { height: 3.4em; min-height: 0; }
+  .composer .agents-btn { flex: 1 1 100%; }
+  .reply-quote { max-height: 4.5em; }
+}

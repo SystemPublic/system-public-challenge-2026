@@ -1,5 +1,5 @@
 // Questions: the thread of runs, then the ask box with follow-ups, the agent chooser and the editable plan.
-import { html, useState, api, local, savePrefs, firstLine } from '../api.js';
+import { html, useState, useEffect, api, local, savePrefs, firstLine } from '../api.js';
 import { Turn } from './turn.js';
 
 // Example questions follow the profile: the first set whose keyword appears in role, organisation or about.
@@ -31,6 +31,7 @@ export function Questions({ project, projects, runs, thread, threads, agents, se
           onAgain=${(q) => start(q, null, session.prefs.agents || null).catch(() => {})} />`)
         : html`<p class="muted small empty-line">No questions in this thread yet. Ask one below or start from an example.</p>`}
     </div>
+    <${SelectReply} />
     <${Composer} key=${`${project.id}.${thread ?? 'main'}`} project=${project} thread=${thread} agents=${agents} session=${session}
       suggestions=${sorted.length ? followUps : examples(profile)} isFollowUp=${sorted.length > 0 && followUps.length > 0} start=${start} />`;
 }
@@ -59,7 +60,34 @@ function ThreadTitle({ thread, reload, project, projects }) {
     ${msg && html`<p class="msg bad">${msg}</p>`}</div>`;
 }
 
+// Select any text in an answer and a Reply button appears; it hands the quote to the composer as context.
+function SelectReply() {
+  const [sel, setSel] = useState(null);
+  useEffect(() => {
+    const check = () => setTimeout(() => {
+      const s = getSelection(); const text = s && !s.isCollapsed ? s.toString().trim() : '';
+      const inTurn = text.length > 3 && s.anchorNode?.parentElement?.closest('.turn');
+      if (!inTurn) return setSel(null);
+      const r = s.getRangeAt(0).getBoundingClientRect();
+      setSel({ text: text.slice(0, 800), x: Math.min(r.left + r.width / 2, innerWidth - 60), y: Math.max(r.top - 44, 8) });
+    }, 0);
+    document.addEventListener('mouseup', check); document.addEventListener('keyup', check); document.addEventListener('touchend', check);
+    return () => { document.removeEventListener('mouseup', check); document.removeEventListener('keyup', check); document.removeEventListener('touchend', check); };
+  }, []);
+  if (!sel) return null;
+  return html`<button type="button" class="select-reply primary" style=${{ left: `${sel.x}px`, top: `${sel.y}px` }}
+    onMouseDown=${(e) => e.preventDefault()}
+    onClick=${() => { dispatchEvent(new CustomEvent('camox:quote', { detail: sel.text })); getSelection().removeAllRanges(); setSel(null); }}>Reply</button>`;
+}
+
 function Composer({ project, thread, agents, session, suggestions, isFollowUp, start }) {
+  const [quote, setQuote] = useState(null);
+  useEffect(() => {
+    const take = (e) => { setQuote(e.detail); const t = document.getElementById('q'); t?.scrollIntoView({ block: 'nearest' }); t?.focus(); };
+    addEventListener('camox:quote', take);
+    return () => removeEventListener('camox:quote', take);
+  }, []);
+  const withQuote = (text) => (quote ? `About this part of the earlier analysis: "${quote}"\n\n${text}` : text);
   const key = `draft.${project.id}.${thread ?? 'main'}`;
   const [q, setQ] = useState(() => local.get(key, ''));
   const [pinned, setPinned] = useState(() => session.prefs.agents || null);  // null: the planner chooses
@@ -74,14 +102,14 @@ function Composer({ project, thread, agents, session, suggestions, isFollowUp, s
   const run = async (p = null) => {
     if (!q.trim()) return say('Write a question first.', true);
     setBusy(true); say('Starting the run');
-    try { await start(q.trim(), p, pinned); draft(''); setPlan(null); say(''); }
+    try { await start(withQuote(q.trim()), p, pinned); draft(''); setQuote(null); setPlan(null); say(''); }
     catch (e) { say(e.status === 429 ? e.message : `Could not start the run: ${e.message}. Try again in a moment.`, true); }
     finally { setBusy(false); }
   };
   const review = async () => {
     if (!q.trim()) return say('Write a question first.', true);
     setBusy(true); say('The planner is choosing agents for this question');
-    try { setPlan(await api(`/api/projects/${project.id}/plan`, { method: 'POST', body: { query: q.trim(), agents: pinned, thread_id: thread } })); say(''); }
+    try { setPlan(await api(`/api/projects/${project.id}/plan`, { method: 'POST', body: { query: withQuote(q.trim()), agents: pinned, thread_id: thread } })); say(''); }
     catch (e) { say(`Could not get a plan: ${e.message}. Use Ask to let the planner choose during the run.`, true); }
     finally { setBusy(false); }
   };
@@ -91,6 +119,8 @@ function Composer({ project, thread, agents, session, suggestions, isFollowUp, s
     <label for="q" class="eyebrow">${isFollowUp ? 'Ask a follow-up' : 'Ask a question'}</label>
     ${suggestions.length > 0 && html`<div class="suggest">${suggestions.map((s) => html`<button key=${s} type="button" class="suggestion"
       onClick=${() => draft(s)}>${s}</button>`)}</div>`}
+    ${quote && html`<blockquote class="reply-quote"><span class="eyebrow">Replying to</span> ${quote}
+      <button type="button" class="ghost-btn small" aria-label="Remove the quote" onClick=${() => setQuote(null)}>×</button></blockquote>`}
     <textarea id="q" rows="3" value=${q} onInput=${(e) => draft(e.target.value)} placeholder="Ask about this project"
       onKeyDown=${(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) run(); }}></textarea>
     <div class="composer-row">
