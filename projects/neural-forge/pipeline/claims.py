@@ -53,6 +53,8 @@ COLD_HOME = {"label": "cold homes (no heat)", "negation": False,  # "lack of hea
              "regex": r"cold (homes?|houses?|housing|indoor)|living in cold|energy poverty|fuel poverty|"
                       r"lack of heating|inadequate heating|without heating|unheated|measures of cold homes"}
 COLD_HARM = {"label": "cold, respiratory and general health harm",
+             # "poor mental health" IS the harm, not its absence (hand-check, v1.1.0); v1.0.0 read it inverted
+             "negation": False,
              "concepts": ["h0Aryv0NjW"],  # hypothermia
              "regex": r"hypothermia|cold[- ]related|frostbite|respirator|asthma|wheez|cough|infection|mortality|"
                       r"death|hospitali|blood pressure|ecg|electrocardiogram|poor (mental )?health|health outcomes"}

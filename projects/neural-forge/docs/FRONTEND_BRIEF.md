@@ -39,14 +39,17 @@ itself to a non-specialist in 3 minutes.
    - verdict, `triage` tags, `resolution` if present, and **"What would settle it"** = `settle` in bold;
    - citations: each of `city.sources` as "collection@semver · ulv3:abcd…" linking to `url`, with `label` and
      `period`; plus `research.graph` the same way and the count of `research.association_ids`.
-4. **Version toggle** in the header: "v1.0.0 automated · v1.1.0 hand-checked". Switch compares `verdict_v1` with
-   `verdict`; cards whose verdict changed pulse once; link to `meta.claims_collection.compare_url`.
+4. **Version toggle** in the header: "v1.0.0 automated · v1.1.0 hand-checked". Hand-checking changed NO verdict
+   (that is the point: they held up). Show `meta.review` as one line: "27 findings checked by hand · 21 held up ·
+   1 wrong in the graph (excluded) · 0 verdicts changed", list `meta.review.notes`, pulse the cards with
+   `research.n_excluded_after_review > 0` or whose research changed (the cold bridge: agreement 75% → 100%),
+   show each card's `review` ("5 checked by hand"), and link to `meta.claims_collection.compare_url`.
 5. **Footer**: `meta.graph_citation`, each `meta.inputs[]` as collection@semver + hash, "Built with Claude Code".
 
 ## Data shape (`web/data/ground_truth.json`, 0.2 MB)
 
 ```
-meta: { title, generated_at, graph_citation, rules[str], excluded_findings,
+meta: { title, generated_at, graph_citation, rules[str], excluded_findings, review{checked, ok, wrong, unclear, notes[str]},
         inputs[{collection, collection_id, semver, hash, url}],
         claims_collection{owner, slug, url, compare_url, versions[{semver, label}]} }
 headline: { studies_total 767, studies_human, studies_nyc 4, studies_mention_new_york 11, studies_us, studies_china,
@@ -56,7 +59,7 @@ outcomes[]: { outcome, studies, nyc, us, low_income, black_hispanic, older, no_p
 evidence_dots[]: { study_id, region, human, doi }
    region ∈ NYC | US | China | Europe | East Asia other | Australia | Other place | No place stated | Animal studies
 claims[] (11): { id, title, kind: direct|bridge, verdict, verdict_v1, triage[str], settle|null, resolution|null,
-   bridge_note|null, note|null,
+   bridge_note|null, note|null, review{checked, ok, wrong, unclear},
    chain[{label, concept_ids[], pattern}],
    research{ direction: "+"|"-"|"mixed"|null, n_studies, n_findings, n_excluded_after_review, evidence_fit,
              population{regions{name: count}, nyc, us, older, low_income, black_hispanic, urban},

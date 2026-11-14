@@ -3,15 +3,17 @@
     python -m pipeline.publish            # local: write out/underlay/ (records, schemas, record hashes)
     python -m pipeline.publish --push     # push to Underlay (needs UNDERLAY_API_KEY with write scope)
 
-First push becomes v1.0.0. After review/excluded_findings.csv changes, rebuild and push again: the server
-assigns v1.1.0 and its compare page shows exactly which verdicts changed.
+First push becomes v1.0.0. After the hand-check (review/to_check.csv), rebuild and push again: the server
+assigns v1.1.0 and its compare page shows exactly which records changed.
 """
 import argparse
 import hashlib
 import json
+from pathlib import Path
 import os
 import subprocess
 import sys
+import time
 
 import requests
 
@@ -42,13 +44,12 @@ SCHEMAS = {
             "bridgeNote": STR_OR_NULL, "chain": {"type": "array", "items": STR},
             "research": {"type": "object", "properties": {
                 "direction": STR_OR_NULL, "studies": {"type": "integer"}, "findings": {"type": "integer"},
-                "excludedAfterReview": {"type": "integer"}, "evidenceFit": NUM_OR_NULL,
+                "excludedAfterReview": {"type": "integer"}, "agreement": NUM_OR_NULL, "evidenceFit": NUM_OR_NULL,
                 "nycStudies": {"type": "integer"}, "dois": {"type": "array", "items": STR}}},
             "city": {"type": "object", "properties": {
                 "x": STR, "y": STR, "unit": STR, "n": {"type": "integer"}, "rho": NUM_OR_NULL, "p": NUM_OR_NULL,
                 "q": NUM_OR_NULL, "ci": {"type": ["array", "null"]}, "partialRhoPoverty": NUM_OR_NULL}},
             "inputs": {"type": "array", "items": INPUT},
-            "code": {"type": "object", "properties": {"repo": STR_OR_NULL, "commit": STR_OR_NULL}},
         },
     },
     "DistrictNeed": {
@@ -80,7 +81,6 @@ def _cite(src, role=None):
 
 
 def records(gt):
-    code = {"repo": os.environ.get("CODE_URL"), "commit": _git_commit()}
     graph = next(i for i in gt["meta"]["inputs"] if i["collection"] == "system/public-graph")
     out = []
     for c in gt["claims"]:
@@ -96,12 +96,13 @@ def records(gt):
             "chain": [e["label"] for e in c["chain"]],
             "research": {"direction": r["direction"], "studies": r["n_studies"], "findings": r["n_findings"],
                          "excludedAfterReview": r.get("n_excluded_after_review", 0),
+                         "agreement": r.get("agree_share"),
                          "evidenceFit": r["evidence_fit"], "nycStudies": r.get("population", {}).get("nyc", 0),
                          "dois": r["dois"]},
             "city": {"x": cty["x_label"], "y": cty["y_label"], "unit": cty["unit"], "n": cty["n"], "rho": cty["rho"],
                      "p": cty["p"], "q": cty.get("q"), "ci": cty.get("ci"),
                      "partialRhoPoverty": cty.get("partial_rho_poverty")},
-            "inputs": inputs, "code": code}})
+            "inputs": inputs}})
     eh = next(i for i in gt["meta"]["inputs"] if i["collection"] == "nyc/environment-health")
     for d in gt["districts"]:
         out.append({"id": d["id"], "type": "DistrictNeed", "data": {
@@ -141,6 +142,10 @@ def metadata(gt):
     inputs = "\n".join(f"| `{i['collection']}` | {i['semver']} | `{i['hash']}` |" for i in gt["meta"]["inputs"])
     rules = "\n".join(f"- {r}" for r in gt["meta"]["rules"])
     h = gt["headline"]
+    rv = gt["meta"].get("review") or {}
+    review = (f"## Hand-check\n\nWe checked {rv['checked']} findings against their papers: {rv['ok']} held up, "
+              f"{rv['wrong']} {'was' if rv['wrong'] == 1 else 'were'} wrong in the graph and excluded, {rv['unclear']} were unclear and kept.\n\n"
+              + "".join(f"- {n}\n" for n in rv.get("notes", [])) + "\n") if rv.get("checked") else ""
     readme = f"""# Ground Truth: heat research tested against New York City's own data
 
 Each `Claim` is one relationship from published research (System Public Graph) tested against NYC data on
@@ -153,7 +158,7 @@ Every record's `inputs` cites the exact collection, version id and record ids it
 City; {h['studies_name_low_income']} name low-income people; {h['studies_name_black_or_hispanic']} name Black or
 Hispanic people; {h['studies_non_human']} are animal studies.
 
-## Inputs
+{review}## Inputs
 
 | Collection | Version | Id |
 |---|---|---|
@@ -162,6 +167,8 @@ Hispanic people; {h['studies_non_human']} are animal studies.
 ## Rules
 
 {rules}
+
+Code: {os.environ.get("CODE_URL") or "see the challenge repository"} at commit `{_git_commit()}`.
 
 Built for the System Public Challenge 2026, Build Challenge 4. Derived from the System Public Graph
 ({C.GRAPH_CITATION}), so this collection is CC BY-NC 4.0.
@@ -233,15 +240,27 @@ def push(recs, meta):
     if c.status_code >= 300:
         sys.exit(f"commit failed: {c.status_code} {c.text[:2000]}")
     res = c.json().get("result", c.json())
+    while c.status_code == 202 or res.get("status") == "committing":  # commit moved to the background: poll
+        time.sleep(2)
+        c = requests.get(f"{base}/push/{sid}", headers=H, timeout=60)
+        st = c.json()
+        if st.get("status") == "failed" or st.get("error"):
+            sys.exit(f"commit failed: {st.get('error')}")
+        res = st.get("result") or {"status": st.get("status")}
+    print("changes:", res.get("changes"))
     print(f"published {C.CLAIMS_OWNER}/{C.CLAIMS_SLUG} {res.get('semver')} {res.get('hash')}")
     print(f"{C.UNDERLAY_WEB}/{C.CLAIMS_OWNER}/{C.CLAIMS_SLUG}")
+    if res.get("semver") and res["semver"] != "v1.0.0":
+        print(f"{C.UNDERLAY_WEB}/{C.CLAIMS_OWNER}/{C.CLAIMS_SLUG}/versions/compare?from=v1.0.0&to={res['semver']}")
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--push", action="store_true")
+    ap.add_argument("--json", default=str(C.WEB_DATA / "ground_truth.json"),
+                    help="build output to publish (default: web/data/ground_truth.json)")
     args = ap.parse_args()
-    gt = json.loads((C.WEB_DATA / "ground_truth.json").read_text())
+    gt = json.loads(Path(args.json).read_text())
     if gt["meta"].get("mock"):
         sys.exit("ground_truth.json is mock data; run `python -m pipeline.build` first.")
     recs, meta = records(gt), metadata(gt)

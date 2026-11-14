@@ -3,8 +3,8 @@
     python -m pipeline.build
 
 Writes web/data/ground_truth.json, web/data/districts.geojson and out/ (summary, per-claim findings for review).
-Verdicts are computed twice: v1.0.0 uses every finding; v1.1.0 drops findings listed in review/excluded_findings.csv
-(findings we checked against the paper and found wrongly extracted).
+Verdicts are computed twice: v1.0.0 uses every finding; v1.1.0 drops findings marked "wrong" in
+review/to_check.csv (findings we checked against the paper and found wrongly extracted).
 """
 import csv
 import datetime as dt
@@ -18,7 +18,6 @@ from . import city, config as C, graph, stats
 from .claims import CLAIMS
 from .data import connect, version_info
 
-REVIEW = C.PROJECT / "review" / "excluded_findings.csv"
 
 TRIAGE_HINTS = {  # applied only when a claim is not confirmed
     "trees-cool": ["weak proxy"],
@@ -52,16 +51,34 @@ CHECKLIST = C.PROJECT / "review" / "to_check.csv"
 
 
 def load_exclusions():
-    """Findings judged wrong by hand: rows in review/excluded_findings.csv, plus checklist rows marked 'wrong'."""
-    out = {}
-    if REVIEW.exists():
-        with open(REVIEW) as f:
-            out.update({r["system_id"]: r.get("reason", "") for r in csv.DictReader(f) if r.get("system_id")})
-    if CHECKLIST.exists():
-        with open(CHECKLIST) as f:
-            out.update({r["system_id"]: r.get("reason", "") for r in csv.DictReader(f)
-                        if (r.get("decision") or "").strip().lower() == "wrong"})
-    return out
+    """Findings judged wrong by hand: checklist rows marked 'wrong', with their reasons."""
+    if not CHECKLIST.exists():
+        return {}
+    with open(CHECKLIST) as f:
+        return {r["system_id"]: r.get("reason", "") for r in csv.DictReader(f)
+                if (r.get("decision") or "").strip().lower() == "wrong"}
+
+
+# Code fixes that came out of the hand-check (the findings themselves were right; our reading was not).
+READER_FIXES = ['Our code read "poor mental health" as the absence of harm, so 2 cold-home findings counted '
+                'backwards. Fixed: the cold-harm end no longer flips on words like "poor" or "lower".']
+
+
+def load_review():
+    """Hand-check decisions from review/to_check.csv: system_id -> ok | wrong | unclear, plus notes for the readme."""
+    if not CHECKLIST.exists():
+        return {}, []
+    with open(CHECKLIST) as f:
+        rows = [r for r in csv.DictReader(f) if (r.get("decision") or "").strip()]
+    decided = {r["system_id"]: r["decision"].strip().lower() for r in rows}
+    notes = [f'Excluded {r["system_id"]} ({r["claim"]}): "{r["variable_a"]}" and "{r["variable_b"]}", '
+             f'{r["graph_says"]}. {r.get("reason", "").strip()}' for r in rows if r["decision"].strip().lower() == "wrong"]
+    return decided, notes + READER_FIXES
+
+
+def review_counts(ids, decided):
+    got = [decided[i] for i in ids if i in decided]
+    return {"checked": len(got), "ok": got.count("ok"), "wrong": got.count("wrong"), "unclear": got.count("unclear")}
 
 
 def research_side(con, claim, excluded, frames):
@@ -224,6 +241,7 @@ def districts_geojson(con, ids):
 def main():
     con = connect()
     excluded = load_exclusions()
+    decided, review_notes = load_review()
     frames = {"cd": city.districts(con), "uhf": city.uhf42(con), "year": city.yearly(con)}
     C.OUT.mkdir(parents=True, exist_ok=True)
     (C.PROJECT / "review").mkdir(exist_ok=True)
@@ -243,7 +261,7 @@ def main():
         if not allf.empty:
             allf[cols].to_csv(C.OUT / f"findings_{cl['id']}.csv", index=False)
 
-    # one sheet for hand-checking findings against their papers; wrong ones go in review/excluded_findings.csv
+    # every finding behind every claim; pipeline/review.py turns it into the hand-check list review/to_check.csv
     sheet = [r["allf"].assign(claim=r["claim"]["id"]) for r in rows if not r["allf"].empty]
     if sheet:
         rv = pd.concat(sheet)
@@ -301,6 +319,7 @@ def main():
             "verdict": v, "verdict_v1": v1, "triage": list(dict.fromkeys(triage)),
             "settle": None if v == "confirmed" else cl["settle_if_not"],
             "bridge_note": bridge_note, "note": cl.get("note"), "resolution": resolution,
+            "review": review_counts(set(r["allf"]["system_id"]) if not r["allf"].empty else set(), decided),
         })
 
     heat = graph.heat_studies(con)
@@ -331,6 +350,7 @@ def main():
             "generated_at": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
             "graph_citation": C.GRAPH_CITATION, "inputs": inputs, "rules": RULES,
             "excluded_findings": len(excluded),
+            "review": {**review_counts(set(decided), decided), "notes": review_notes},
             "claims_collection": {"owner": C.CLAIMS_OWNER, "slug": C.CLAIMS_SLUG,
                                   "url": f"{C.UNDERLAY_WEB}/{C.CLAIMS_OWNER}/{C.CLAIMS_SLUG}",
                                   "compare_url": f"{C.UNDERLAY_WEB}/{C.CLAIMS_OWNER}/{C.CLAIMS_SLUG}/versions/compare"

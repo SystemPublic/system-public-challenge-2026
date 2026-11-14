@@ -1,6 +1,6 @@
 """Fetch pinned inputs (Underlay collections + Dataverse graph) and load them into one DuckDB file.
 
-    python -m pipeline.fetch      # download anything missing (safe to re-run)
+Called by `python -m pipeline.run`; downloads only what is missing, so it is safe to re-run.
 """
 import hashlib
 import json

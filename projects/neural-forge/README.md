@@ -1,7 +1,7 @@
 # Ground Truth
 
-**Team:** TEAM NAME
-**Members:** NAME 1, NAME 2
+**Team:** Neural Forge
+**Members:** Ali G, Muhammad Kone
 **Challenge:** Build 4: What can the research and New York City's own data confirm, question, and connect together?
 **Pitch slides:** LINK
 
@@ -41,18 +41,17 @@ Python 3.12.
 
 ```
 python -m venv .venv && .venv/bin/pip install -r requirements.txt
-cp .env.example .env                      # optional: set DATA_DIR (default: ../data)
 .venv/bin/python -m pipeline.run          # downloads ~1.5 GB on first run, then ~20 s
 python -m http.server 8000 -d web         # open http://localhost:8000
 ```
 
-`pipeline.run` downloads the pinned inputs if missing (`pipeline/fetch.py`), builds `web/data/ground_truth.json` and
+`pipeline.run` downloads the pinned inputs if missing (`pipeline/data.py`; set `DATA_DIR` in `.env` to store them elsewhere
+than `../data`), builds `web/data/ground_truth.json` and
 `web/data/districts.geojson`, and writes the Underlay collection to `out/underlay/`. To publish it, put a write-scope
 `UNDERLAY_API_KEY` in `.env` and run `.venv/bin/python -m pipeline.publish --push`. No System API key is needed: we
 read the curated Dataverse release, which drops associations System flagged as extraction errors.
 
-Hand-checking: `out/review_sheet.csv` lists every finding behind every claim with a link to its paper. Findings that
-the paper contradicts go in `review/excluded_findings.csv`; rebuild and push again to publish the next version.
+Hand-checking: `review/to_check.csv` lists the directional findings behind the claims, by priority, with a link to each paper. We marked each `ok`, `wrong` or `unclear`; `wrong` findings are excluded on the next build. We checked 27: 21 held up, 1 was wrong in the graph (a cold effect recorded as "air temperature"), 5 were unclear, and 2 of those showed our own code misreading "poor mental health", which we fixed. No verdict changed. Underlay v1.0.0 is the automated run and v1.1.0 the hand-checked one; the compare page shows the 4 records that changed.
 
 ## Data sources
 
@@ -77,7 +76,7 @@ Citation: System, Inc. (2026). System Public Graph (Version 2.1) [Data set]. htt
 - 59 districts and 42 neighborhoods give limited power; many verdicts are honestly "inconclusive".
 - Population tags come from regular expressions over free text; every New York City hit was checked by hand.
 - The graph's directions come from automated extraction; we hand-checked the findings behind headline claims
-  (`review/excluded_findings.csv`), not all of them.
+  (`review/to_check.csv`), not all of them.
 - Heat outcomes are ER visits and hospitalizations; there is no heat-death data by district on Underlay.
 
 ## AI coding tools
