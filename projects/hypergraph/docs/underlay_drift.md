@@ -80,6 +80,29 @@ As an example, take the share of letter grades that are A among A, B and C grade
 
 A version hash fixes the data a figure rests on, and anyone can retrieve the same records by that hash. The snapshot does not include later corrections. For inspection results, a snapshot taken soon after the inspections holds results that were later revised, so a citation should give both the version and the inspection dates it covers.
 
+## The same comparison over eleven years (added 14 November)
+
+This section is exploratory and nothing in it was registered. `analyses/underlay_drift/history.py` compares each of ten Internet Archive copies of the full table (2015 to April 2026, all boroughs) with the next one, and the last with the live table of 12 November 2026. Inspections are matched on restaurant, date and inspection type.
+
+| Earlier copy | Later copy | Inspections in both | Scores that fell | Scores that rose | Restaurants gone |
+|---|---|---|---|---|---|
+| 2015-09 | 2016-12 | 90,161 | 7,715 | 23 | 4,164 |
+| 2016-12 | 2017-04 | 125,726 | 1,171 | 9 | 1,182 |
+| 2017-04 | 2020-11 | 13,874 | 769 | 3 | 8,464 |
+| 2020-11 | 2021-05 | 129,447 | 643 | 31 | 521 |
+| 2021-05 | 2022-11 | 34,099 | 53 | 225 | 6,621 |
+| 2022-11 | 2023-11 | 36,841 | 1,597 | 4 | 2,397 |
+| 2023-11 | 2024-12 | 47,369 | 612 | 2 | 3,203 |
+| 2024-12 | 2025-11 | 59,361 | 842 | 1 | 2,695 |
+| 2025-11 | 2026-04 | 73,235 | 803 | 0 | 1,050 |
+| 2026-04 | 2026-11 | 64,756 | 1,473 | 0 | 2,061 |
+
+Across the ten comparisons 15,678 scores fell and 298 rose. Nine of the ten show almost no rises. The exception is 2021 to 2022, which follows the suspension of inspections in 2020 and 2021 and has almost no recent inspections in both copies; it was not investigated.
+
+The copies record the violation codes, so the removed violations are known. Between April and November 2026, for inspections dated in the year before April, 82,066 violations were cited, 1,202 were later removed and 2 added. The codes removed most often, as a share of citations, are 03A (food from an unapproved source, 5.6%), 05C (4.9%) and 09B (improper thawing, 4.4%). The codes removed least often are evidence of pests: mice (04L), roaches (04M, 0.3%) and flies (04N, 0.2%). The same ordering appears in the two earlier comparisons.
+
+Among inspections that scored 14 or more, 13.3% had the score reduced later (8.4% and 7.2% in the two earlier comparisons). Re-inspections are reduced more often than initial inspections in all three (17.5% against 12.2% in the latest). Differences by borough are modest: Queens and Manhattan are highest and the Bronx is lowest or second lowest in all three. By cuisine the order changes from one comparison to the next, except that Chinese restaurants are at or near the bottom in all three (9.8%, 5.7%, 6.6%). That pattern has not been tested and has many possible causes, including the mix of violations cited and whether a restaurant contests them. The outputs are in `data/derived/underlay_drift/history.json`.
+
 ## Files
 
 - `analyses/underlay_drift/fetch_underlay.py` downloads v1.0.0 with its metadata and checks every record hash. The records (51 MB) are in `~/opt/nyc-concordance/underlay/`.

@@ -87,6 +87,12 @@
   .card a { color: #9cc2ff; }
   .detail .cap { font-family: var(--letter); text-transform: uppercase; font-size: 15px; margin: 12px 0 0; letter-spacing: .02em; }
   #research { margin-top: 30px; }
+  .barf, .barr { display: inline-block; height: 14px; vertical-align: middle; }
+  .barf { background: #000; }
+  .barr { background: #c8271b; }
+  td.grp { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); padding-top: 14px; }
+  #histout, #codesout { max-width: 1100px; }
+  p.key { max-width: 1100px; font-size: 14.5px; line-height: 1.45; background: #fff8d6; border-left: 5px solid #ffd60a; padding: 10px 14px; margin: 10px 0 0; }
 </style>
 </head>
 <body>
@@ -100,13 +106,20 @@
     <div class="copy"><h3>November 2026</h3><p id="cn">system-community/nyc-restaurant-inspections-2026-11 v1.0.0</p></div>
   </div>
   <p id="status"></p>
+  <p class="key" id="key" hidden><b>How to read a score.</b> An inspector adds points for each violation, so <b>a lower score is better</b>. 0 to 13 points earns an A, 14 to 27 a B, and 28 or more a C. A restaurant can contest violations at a hearing. When a violation is dismissed, its points come off, which is why a score can fall after the inspection and does not rise. "Closed by DOHMH" means the health department shut the kitchen at that inspection until it was fixed. Those restaurants usually reopen, so they are still in the table. The 519 "gone" restaurants are different: they have left the table altogether.</p>
   <div class="nums" id="nums"></div>
 </header>
 <main>
   <div id="list" hidden>
     <div class="listbar"><b>The 485 inspections whose score changed.</b> Click one to fetch both records from the Underlay. <input id="q" placeholder="Search a restaurant or street"></div>
-    <table class="rows"><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>June score</th><th>November score</th></tr></thead><tbody id="rows"></tbody></table>
+    <table class="rows"><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>Points in June</th><th>Points in November</th></tr></thead><tbody id="rows"></tbody></table>
     <p><button class="plain" id="morerows">Show more</button></p>
+    <div id="more2" style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
+      <button class="plain" id="hist">Has this always happened?</button>
+      <button class="plain" id="codes">Which violations come off?</button>
+    </div>
+    <div id="histout"></div>
+    <div id="codesout"></div>
     <div id="research">
       <button class="plain" id="why">What does research say this score predicts?</button>
       <div id="strips"></div>
@@ -262,7 +275,7 @@ function renderRows(reset) {
   $("morerows").textContent = `Show more (${filtered.length - shownRows} left)`;
 }
 async function compare() {
-  $("go").disabled = true; $("nums").textContent = ""; $("list").hidden = true; $("strips").textContent = "";
+  $("go").disabled = true; $("nums").textContent = ""; $("list").hidden = true; $("key").hidden = true; $("strips").textContent = "";
   $("status").textContent = "Asking the Underlay for the two versions…";
   const t0 = performance.now();
   try {
@@ -272,11 +285,11 @@ async function compare() {
     $("cj").innerHTML = `nyc/restaurant-inspections v1.0.0<br><b>${f(DATA.june.recordCount)} records</b> · ${esc((DATA.june.hash || "").slice(0, 22))}…`;
     $("cn").innerHTML = `system-community/nyc-restaurant-inspections-2026-11 v1.0.0<br><b>${f(DATA.november.recordCount)} records</b> · ${esc((DATA.november.hash || "").slice(0, 22))}…`;
     $("status").textContent = `Matched ${f(c.in_both)} Manhattan inspections that are in both copies. ${((performance.now() - t0) / 1000).toFixed(1)} seconds.`;
-    addNum(f(c.scores_changed), "inspection scores changed"); await sleep(450);
-    addNum(f(c.scores_fell) + " / " + f(c.scores_rose), "went down / went up"); await sleep(450);
+    addNum(f(c.scores_changed), "inspection scores changed after the fact"); await sleep(450);
+    addNum(f(c.scores_fell) + " / " + f(c.scores_rose), "got better / got worse"); await sleep(450);
     addNum(f(c.band_changed), "crossed a grade line"); await sleep(450);
     addNum(f(c.restaurants_gone), "restaurants gone from the table", true); await sleep(350);
-    filtered = DATA.rows; renderRows(true); $("list").hidden = false;
+    filtered = DATA.rows; renderRows(true); $("list").hidden = false; $("key").hidden = false;
   } catch (e) { $("status").textContent = String(e.message || e) + " (is tools/demo_server.py running?)"; }
   $("go").disabled = false;
 }
@@ -292,7 +305,7 @@ async function drill(tr) {
       + `<p>${esc(x.action || "")}</p><p>Grade: ${esc(x.grade || "none recorded")} · ${esc(r[side].collection)} · <a href="${r[side].url}" target="_blank" rel="noopener">record</a></p></div>`; };
     const a = ((r.june.record || {}).data || {}).score, b = ((r.november.record || {}).data || {}).score, name = (r.restaurant || {}).name || tr.querySelector("b").textContent;
     d.firstChild.innerHTML = `<div class="cards">${card("june", "")}${card("november", "nov")}</div>`
-      + `<p class="cap">Same restaurant, same inspection, same day. The score for ${esc(name)} was ${a} in June and is ${b} now.</p>`;
+      + `<p class="cap">Same restaurant, same inspection, same day. The record for ${esc(name)} showed ${a} violation points in June and shows ${b} now. Fewer points is better.</p>`;
   } catch (e) { d.firstChild.textContent = String(e.message || e); }
 }
 $("go").addEventListener("click", compare);
@@ -301,6 +314,29 @@ $("morerows").addEventListener("click", () => renderRows(false));
 $("q").addEventListener("input", () => { const k = $("q").value.trim().toUpperCase(); filtered = DATA.rows.filter(r => !k || (r.name || "").toUpperCase().includes(k) || (r.street || "").toUpperCase().includes(k)); renderRows(true); });
 // ?auto=1 runs the comparison and opens one row, for screenshots and checks.
 if (new URLSearchParams(location.search).get("auto")) compare().then(() => drill(document.querySelectorAll("tr.row")[2]));
+let HIST = null;
+async function hist() { if (!HIST) HIST = await fetch("/api/inspections/history").then(r => r.json()); return HIST; }
+const ym = s => s.slice(0, 4) + "-" + s.slice(4, 6);
+$("hist").addEventListener("click", async () => {
+  const d = await hist(), max = Math.max(...d.pairs.map(p => p.fell + p.rose));
+  const tf = d.pairs.reduce((a, p) => a + p.fell, 0), tr = d.pairs.reduce((a, p) => a + p.rose, 0);
+  $("histout").innerHTML = `<h2 class="strip-title">Eleven copies of the table, 2015 to 2026, whole city</h2>`
+    + `<p class="strip-lede">Each row compares one archived copy with the next. Of the scores that changed, <b>${tf.toLocaleString("en-US")} fell and ${tr.toLocaleString("en-US")} rose</b>. The one exception is 2021 to 2022, after inspections had been suspended.</p>`
+    + `<table class="rows hist"><thead><tr><th>Earlier copy</th><th>Later copy</th><th>Scores that fell</th><th>Scores that rose</th><th></th></tr></thead><tbody>`
+    + d.pairs.map(p => `<tr><td>${ym(p.from)}</td><td>${ym(p.to)}</td><td class="sc">${p.fell.toLocaleString("en-US")}</td><td class="sc"><span class="to">${p.rose}</span></td>`
+      + `<td style="width:46%"><span class="barf" style="width:${(100 * p.fell / max).toFixed(1)}%"></span><span class="barr" style="width:${(100 * p.rose / max).toFixed(1)}%"></span></td></tr>`).join("")
+    + `</tbody></table>`;
+  $("histout").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+$("codes").addEventListener("click", async () => {
+  const L = (await hist()).latest, row = c => `<tr><td><b>${esc(c.code)}</b></td><td>${esc(c.description)}</td><td class="sc">${c.cited.toLocaleString("en-US")}</td><td class="sc">${(100 * c.share).toFixed(1)}%</td></tr>`;
+  $("codesout").innerHTML = `<h2 class="strip-title">Which violations come off the record</h2>`
+    + `<p class="strip-lede">April to November 2026, whole city, inspections from the year before April. Of ${L.codes_cited.toLocaleString("en-US")} violations cited, <b>${L.codes_removed.toLocaleString("en-US")} were removed and ${L.codes_added} added</b>. Judgement calls come off most often. Evidence of pests almost never does.</p>`
+    + `<table class="rows"><thead><tr><th>Code</th><th>Violation</th><th>Cited</th><th>Removed later</th></tr></thead><tbody>`
+    + `<tr><td colspan="4" class="grp">Removed most often</td></tr>` + L.most_removed.map(row).join("")
+    + `<tr><td colspan="4" class="grp">Removed least often</td></tr>` + L.least_removed.map(row).join("") + `</tbody></table>`;
+  $("codesout").scrollIntoView({ behavior: "smooth", block: "start" });
+});
 $("why").addEventListener("click", () => {
   const root = $("strips"); root.textContent = "";
   const s = COMICS.strips.find(x => x.id === "restaurants"); if (!s) return;

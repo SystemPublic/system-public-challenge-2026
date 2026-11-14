@@ -1,0 +1,328 @@
+{
+"note": "Built by analyses/underlay_drift/history.py from ten Internet Archive copies of the city table and the live table of 12 November 2026. Exploratory.",
+"pairs": [
+{
+"from": "20150908",
+"to": "20161210",
+"inspections_in_both": 90161,
+"changed": 7738,
+"fell": 7715,
+"rose": 23,
+"median_drop": 10.0,
+"restaurants_in_from": 24626,
+"restaurants_gone": 4164,
+"recent_in_both": 44448,
+"recent_changed": 7694,
+"recent_fell": 7677,
+"recent_rose": 17
+},
+{
+"from": "20161210",
+"to": "20170426",
+"inspections_in_both": 125726,
+"changed": 1180,
+"fell": 1171,
+"rose": 9,
+"median_drop": 10.0,
+"restaurants_in_from": 25072,
+"restaurants_gone": 1182,
+"recent_in_both": 41499,
+"recent_changed": 1177,
+"recent_fell": 1168,
+"recent_rose": 9
+},
+{
+"from": "20170426",
+"to": "20201106",
+"inspections_in_both": 13874,
+"changed": 772,
+"fell": 769,
+"rose": 3,
+"median_drop": 10.0,
+"restaurants_in_from": 25373,
+"restaurants_gone": 8464,
+"recent_in_both": 13452,
+"recent_changed": 772,
+"recent_fell": 769,
+"recent_rose": 3
+},
+{
+"from": "20201106",
+"to": "20210529",
+"inspections_in_both": 129447,
+"changed": 674,
+"fell": 643,
+"rose": 31,
+"median_drop": 12.0,
+"restaurants_in_from": 25908,
+"restaurants_gone": 521,
+"recent_in_both": 15564,
+"recent_changed": 615,
+"recent_fell": 590,
+"recent_rose": 25
+},
+{
+"from": "20210529",
+"to": "20221130",
+"inspections_in_both": 34099,
+"changed": 278,
+"fell": 53,
+"rose": 225,
+"median_drop": 8.0,
+"restaurants_in_from": 25433,
+"restaurants_gone": 6621,
+"recent_in_both": 9,
+"recent_changed": 0,
+"recent_fell": 0,
+"recent_rose": 0
+},
+{
+"from": "20221130",
+"to": "20231117",
+"inspections_in_both": 36841,
+"changed": 1601,
+"fell": 1597,
+"rose": 4,
+"median_drop": 17.0,
+"restaurants_in_from": 23886,
+"restaurants_gone": 2397,
+"recent_in_both": 23726,
+"recent_changed": 1598,
+"recent_fell": 1594,
+"recent_rose": 4
+},
+{
+"from": "20231117",
+"to": "20241218",
+"inspections_in_both": 47369,
+"changed": 614,
+"fell": 612,
+"rose": 2,
+"median_drop": 7.0,
+"restaurants_in_from": 25935,
+"restaurants_gone": 3203,
+"recent_in_both": 22057,
+"recent_changed": 607,
+"recent_fell": 605,
+"recent_rose": 2
+},
+{
+"from": "20241218",
+"to": "20251115",
+"inspections_in_both": 59361,
+"changed": 843,
+"fell": 842,
+"rose": 1,
+"median_drop": 7.0,
+"restaurants_in_from": 26462,
+"restaurants_gone": 2695,
+"recent_in_both": 24145,
+"recent_changed": 829,
+"recent_fell": 829,
+"recent_rose": 0
+},
+{
+"from": "20251115",
+"to": "20260403",
+"inspections_in_both": 73235,
+"changed": 803,
+"fell": 803,
+"rose": 0,
+"median_drop": 7.0,
+"restaurants_in_from": 26632,
+"restaurants_gone": 1050,
+"recent_in_both": 24613,
+"recent_changed": 749,
+"recent_fell": 749,
+"recent_rose": 0
+},
+{
+"from": "20260403",
+"to": "20261112",
+"inspections_in_both": 64756,
+"changed": 1473,
+"fell": 1473,
+"rose": 0,
+"median_drop": 8.0,
+"restaurants_in_from": 27438,
+"restaurants_gone": 2061,
+"recent_in_both": 24106,
+"recent_changed": 1307,
+"recent_fell": 1307,
+"recent_rose": 0
+}
+],
+"latest": {
+"from": "20260403",
+"to": "20261112",
+"base": "inspections dated in the 12 months before the earlier copy, present in both copies",
+"codes_cited": 82066,
+"codes_removed": 1202,
+"codes_added": 2,
+"most_removed": [
+{
+"code": "03A",
+"cited": 450,
+"removed": 25,
+"share": 0.0556,
+"critical": "Critical",
+"description": "Food, prohibited, from unapproved or unknown source, home canned or home prepared. Animal slaughtered, butchered or dressed (eviscerated, skinned) in "
+},
+{
+"code": "05C",
+"cited": 222,
+"removed": 11,
+"share": 0.0495,
+"critical": "Critical",
+"description": "Food contact surface, refillable, reusable containers, or equipment improperly constructed, placed or maintained. Unacceptable material used. Culinary"
+},
+{
+"code": "09B",
+"cited": 937,
+"removed": 41,
+"share": 0.0438,
+"critical": "Not Critical",
+"description": "Thawing procedure improper."
+},
+{
+"code": "08B",
+"cited": 475,
+"removed": 15,
+"share": 0.0316,
+"critical": "Not Critical",
+"description": "Garbage receptacle not pest or water resistant, with tight-fitting lids, and covered except while in active use. Garbage receptacle and cover not clea"
+},
+{
+"code": "06B",
+"cited": 333,
+"removed": 8,
+"share": 0.024,
+"critical": "Critical",
+"description": "Tobacco or electronic cigarette use, eating, or drinking from open container in food preparation, food storage or dishwashing area."
+},
+{
+"code": "06F",
+"cited": 1625,
+"removed": 37,
+"share": 0.0228,
+"critical": "Critical",
+"description": "Wiping cloths not stored clean and dry, or in a sanitizing solution, between uses."
+}
+],
+"least_removed": [
+{
+"code": "04L",
+"cited": 3884,
+"removed": 16,
+"share": 0.0041,
+"critical": "Critical",
+"description": "Evidence of mice or live mice in establishment's food or non-food areas."
+},
+{
+"code": "09E",
+"cited": 811,
+"removed": 3,
+"share": 0.0037,
+"critical": "Not Critical",
+"description": "Wash hands sign not posted near or above hand washing sink."
+},
+{
+"code": "10A",
+"cited": 267,
+"removed": 1,
+"share": 0.0037,
+"critical": "Not Critical",
+"description": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door."
+},
+{
+"code": "04M",
+"cited": 1339,
+"removed": 4,
+"share": 0.003,
+"critical": "Critical",
+"description": "Live roaches in facility's food or non-food area."
+},
+{
+"code": "04N",
+"cited": 2891,
+"removed": 6,
+"share": 0.0021,
+"critical": "Critical",
+"description": "Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment\u2019s food and/or non-food areas. FRSA flies inclu"
+},
+{
+"code": "28-06",
+"cited": 704,
+"removed": 0,
+"share": 0.0,
+"critical": "Not Critical",
+"description": "Contract with a pest management professional not in place. Record of extermination activities not kept on premises."
+}
+],
+"by_borough": [
+{
+"group": "Queens",
+"n": 2683,
+"fell": 400,
+"share": 0.1491,
+"mean_drop": 11.8
+},
+{
+"group": "Manhattan",
+"n": 3441,
+"fell": 456,
+"share": 0.1325,
+"mean_drop": 10.3
+},
+{
+"group": "Brooklyn",
+"n": 2407,
+"fell": 313,
+"share": 0.13,
+"mean_drop": 10.4
+},
+{
+"group": "Bronx",
+"n": 892,
+"fell": 97,
+"share": 0.1087,
+"mean_drop": 8.4
+},
+{
+"group": "Staten Island",
+"n": 373,
+"fell": 39,
+"share": 0.1046,
+"mean_drop": 9.9
+}
+],
+"by_kind": [
+{
+"group": "re-inspection",
+"n": 2354,
+"fell": 412,
+"share": 0.175,
+"mean_drop": 10.5
+},
+{
+"group": "initial inspection",
+"n": 7196,
+"fell": 876,
+"share": 0.1217,
+"mean_drop": 10.6
+},
+{
+"group": "other",
+"n": 259,
+"fell": 17,
+"share": 0.0656,
+"mean_drop": 17.1
+}
+],
+"scored_14_or_more": {
+"n": 9809,
+"fell": 1305,
+"share": 0.133
+}
+}
+}

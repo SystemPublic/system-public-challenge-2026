@@ -62,6 +62,8 @@ class Handler(SimpleHTTPRequestHandler):
                     v = cv.get(f"{cv.API}/collections/{d[side]['owner']}/{d[side]['slug']}/versions/{d[side]['version']}") or {}
                     d[side].update(hash=v.get("hash"), recordCount=v.get("recordCount"), createdAt=v.get("createdAt"))
                 return self._json(200, d)
+            if u.path == "/api/inspections/history":
+                return self._json(200, json.loads((ROOT / "viz/data/inspections_history.json").read_text()))
             if u.path == "/api/inspections/record":
                 rid = q.get("id", "")
                 if not re.match(r"^[0-9]{6,10}-[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]{1,80}$", rid):
