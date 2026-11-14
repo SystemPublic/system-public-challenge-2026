@@ -1,0 +1,14 @@
+metric,value,unit,scope,year_of_report,source_title,source_url,notes
+nhs_first_year_cost_all_cat1_hazards,1.4,GBP bn per year,England,2021,The Cost of Poor Housing in England (BRE),https://bregroup.com/the-cost-of-poor-housing,First-year NHS treatment costs for the poorest 15% of stock
+nhs_cost_excess_cold,857,GBP m per year,England,2021,The Cost of Poor Housing in England (BRE),https://www.pbctoday.co.uk/news/building-control-news/addressing-cost-poor-housing-england/108263/,Largest single hazard cost
+nhs_cost_damp,38,GBP m per year,England,2021,The Cost of Poor Housing in England (BRE),https://www.pbctoday.co.uk/news/building-control-news/addressing-cost-poor-housing-england/108263/,
+cost_to_fix_excess_cold_all,5.9,GBP bn one-off,England,2021,The Cost of Poor Housing in England (BRE),https://www.pbctoday.co.uk/news/building-control-news/addressing-cost-poor-housing-england/108263/,Payback about 7 years on NHS savings alone
+homes_excessively_cold,700000,homes,England,2023,The Cost of Poor Housing by Tenure (BRE),https://bregroup.com/reports/the-cost-of-poor-housing-by-tenure,Cat 1 excess cold roughly equals EPC band F or G
+nhs_cost_excess_cold_tenure_report,540,GBP m per year,England,2023,The Cost of Poor Housing by Tenure (BRE),https://bregroup.com/reports/the-cost-of-poor-housing-by-tenure,Updated estimate
+cost_to_fix_excess_cold_tenure_report,5.3,GBP bn one-off,England,2023,The Cost of Poor Housing by Tenure (BRE),https://www.pbctoday.co.uk/news/energy-news/new-research-reveals-tackling-cold-homes-could-save-the-nhs-540m/121920/,Insulation and heating improvements; payback 8-9 years
+avg_cost_fix_excess_cold_owner_occupied,6690,GBP per home,England,2023,The Cost of Poor Housing by Tenure (BRE),https://www.theconstructionindex.co.uk/news/view/coldhomes-cost-nhs-540m-a-year,
+avg_cost_fix_excess_cold_private_rented,6835,GBP per home,England,2023,The Cost of Poor Housing by Tenure (BRE),https://www.theconstructionindex.co.uk/news/view/coldhomes-cost-nhs-540m-a-year,
+homes_cat1_damp_mould,65000,homes,England,2023,The Cost of Ignoring Poor Housing (BRE),https://bregroup.com/the-cost-of-ignoring-poor-housing,
+cost_to_fix_cat1_damp_mould,250,GBP m one-off,England,2023,The Cost of Ignoring Poor Housing (BRE),https://bregroup.com/the-cost-of-ignoring-poor-housing,
+societal_cost_30yr_poor_housing,135.5,GBP bn over 30 years,England,2023,The Cost of Ignoring Poor Housing (BRE),https://bregroup.com/the-cost-of-ignoring-poor-housing,If no investment in homes with serious hazards
+homes_with_damp_problem,1.4,million homes (5%),England,2024,English Housing Survey 2024-25 headline,https://www.gov.uk/government/collections/english-housing-survey-2024-to-2025-headline-findings-on-housing-quality-and-energy-efficiency,"10% private rented, 7% social, 4% owner occupied"
