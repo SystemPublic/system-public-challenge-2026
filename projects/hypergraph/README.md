@@ -43,7 +43,7 @@ The folder runs without a System API key. A key is needed only to send new queri
    ```
    .venv/bin/python -m http.server 8000
    ```
-   Open http://localhost:8000/viz/hypergraph.html first. It shows the 69 links, their findings and the city tests. The other pages are `viz/heat_drugs.html` (heat, medicines and chronic conditions), `viz/index.html` (claims dashboard), `viz/evidence.html` (test cards, review changes and provenance), `viz/levers.html` (city levers), `viz/explorer.html` (graph explorer), `viz/explore.html` (neighbourhood explorer) and `viz/simulate.html` (toll simulator). Every page has the same navigation bar. The dashboard and the explorer load D3 from cdnjs.cloudflare.com.
+   Open http://localhost:8000/viz/hypergraph.html first. It shows the 69 links, their findings and the city tests. `viz/comics.html` shows four changes to an edge as strips of frames, with the drawing rules in `docs/comics.md`. The other pages are `viz/heat_drugs.html` (heat, medicines and chronic conditions), `viz/index.html` (claims dashboard), `viz/evidence.html` (test cards, review changes and provenance), `viz/levers.html` (city levers), `viz/explorer.html` (graph explorer), `viz/explore.html` (neighbourhood explorer) and `viz/simulate.html` (toll simulator). Every page has the same navigation bar. The dashboard and the explorer load D3 from cdnjs.cloudflare.com.
 5. Re-run one claim from pinned inputs. Each of the twelve packages in `replication/` reruns the deciding number of one claim and prints MATCH, DRIFT or MISMATCH:
    ```
    cd replication/heat-shootings

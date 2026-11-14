@@ -71,6 +71,11 @@ DECK_BLOBS = {
     "576181bdf4afbf11f78c4623d9b01c60": "figures/hypergraph/slide_edge_panel.png",
     "17d9b5aa575d5359b04d90a22076ed09": "figures/hypergraph/slide_edges_about_edges.png",
     "5115c7adc20b0f486260a73573902434": "figures/heat_drugs/slide_heat_drugs.png",
+    "36322880a89ae74985d1ab3f4e567f14": "figures/comics/strip_heat.png",
+    "0646de327d78cc2f3feec5f461eb5e48": "figures/comics/strip_cameras.png",
+    "130472b6690021dfd7f700ddc264d739": "figures/comics/grammar.png",
+    "7bf4f54f0e9e25a55295db69ebaf9c28": "figures/comics/strip_aircon.png",
+    "298f91bd13901934f143df4d2e31c77f": "figures/comics/strip_restaurants.png",
 }
 # Files scanned for figure references.
 SCAN_FOR_FIGURES = ("docs/", "viz/", "deck/", "claims/", "critique/", "replication/")

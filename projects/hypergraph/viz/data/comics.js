@@ -1,0 +1,156 @@
+// Strips for viz/comics.html. Each frame is the state of a few edges at one time.
+// Captions are written in ordinary case; the page letters them in capitals.
+// Edge fields: a, b (node ids); ev = exp | obs | cor | conj; w = 1 | 2 | 3 (certainty); dir = ab | none | both;
+// state = new | gone | kept; label; refs (numbers in the strip's source list); city (a registered city test);
+// mark = "?" | "x" | "0"; bend (curvature); lo (label offset from the line).
+const COMICS = {
+  grammar: [
+    { title: "The line: kind of evidence", rows: [
+      { e: { ev: "exp", w: 2 }, text: "Solid. A trial or a natural experiment changed the first variable." },
+      { e: { ev: "obs", w: 2 }, text: "Dashed. Observed, with the first variable measured before the second." },
+      { e: { ev: "cor", w: 2 }, text: "Dotted, no head. The two move together and the order is unknown." },
+      { e: { ev: "conj", w: 1, mark: "?", dir: "ab" }, text: "Dotted with a question mark. Proposed, and no study was found." } ] },
+    { title: "Head, width and number", rows: [
+      { e: { ev: "obs", w: 1 }, text: "Thin. One finding, or an interval that includes no effect." },
+      { e: { ev: "obs", w: 2 }, text: "Medium. Several findings that agree in direction." },
+      { e: { ev: "obs", w: 3 }, text: "Thick. Pooled or repeated, with a narrow interval." },
+      { e: { ev: "obs", w: 2, label: "×1.15", refs: [3], city: true, lo: -11 }, text: "The number is the effect. The small figure is its source. A diamond marks a city's registered test." } ] },
+    { title: "Change, marks and nodes", rows: [
+      { e: { ev: "obs", w: 2, state: "new" }, text: "Red. Added or changed in this frame." },
+      { e: { ev: "obs", w: 2, state: "gone", mark: "x" }, text: "Grey with a cross. Support withdrawn in this frame." },
+      { e: { ev: "obs", w: 1, mark: "0" }, text: "Struck circle. Tested, and no effect was found." },
+      { mod: true, text: "A line ending in a dot on an arrow. A third variable changes that effect." },
+      { node: "proxy", nodeLabel: "proxy", text: "Dashed box. A proxy stands in for the variable." },
+      { node: "unknown", text: "Dashed circle. A factor not yet named or measured." } ] }
+  ],
+  strips: [
+    { id: "heat", title: "Heat and shootings",
+      lede: "The graph holds one edge from temperature to homicide. Two cities' records make it thicker, and tests of the step in between leave one conjecture open.",
+      sources: [
+        { text: "Rahman et al. 2023, Sci Total Environ. Case-crossover, California. PMID 36858215.", href: "https://doi.org/10.1016/j.scitotenv.2023.162462", link: "doi" },
+        { text: "Pooled from three findings in two studies, read from the abstracts: 1.065 (1.039 to 1.092) per 5 °C.", href: "hypergraph.html", link: "edge panel" },
+        { text: "Claim heat-shootings, New York, 2006 to 2026: 1.146 (1.130 to 1.163) per 5 °C. Registered and refereed.", href: "evidence.html#heat-shootings", link: "test card" },
+        { text: "Claim transfer-chicago-heat-shootings: 1.131 (1.120 to 1.143). Registered and refereed.", href: "evidence.html#transfer-chicago-heat-shootings", link: "test card" },
+        { text: "Claim heat-mech-outdoors: 311 street-noise complaints remove 0.44 (0.33 to 0.56) of the slope. Confirmed; a next-day control removes 0.10.", href: "evidence.html#heat-mech-outdoors", link: "test card" },
+        { text: "Claim heat-mech-intox: ambulance dispatches for drugs and alcohol remove 0.14 (0.09 to 0.19). Unsettled.", href: "evidence.html#heat-mech-intox", link: "test card" },
+        { text: "Claim heat-night-minimum: 1.03 (0.96 to 1.11) per 5 °C of the night's minimum. Unsettled.", href: "evidence.html#heat-night-minimum", link: "test card" },
+        { text: "Chen et al. 2025, Sci Rep. People with schizophrenia, British Columbia heat dome: odds ratio of death 2.43 (1.52 to 4.01) with an antipsychotic dispensed. PMID 41044101. Not in the graph.", href: "https://pubmed.ncbi.nlm.nih.gov/41044101/", link: "PubMed" },
+        { text: "No study of medication, heat and violence was found. New York's open prescription data give the prescriber's ZIP code (docs/heat_drugs.md).", href: "heat_drugs.html", link: "map" }
+      ],
+      frames: [
+        { head: "The graph",
+          nodes: [ { id: "T", label: "daily\ntemperature", x: 82, y: 150 }, { id: "H", label: "homicide", x: 322, y: 150 } ],
+          edges: [ { a: "T", b: "H", ev: "obs", w: 2, label: "×1.07\nper 5 °C", refs: [1, 2], lo: -22 } ],
+          cap: "Two studies in the graph link hotter days to more homicides. The graph stored their percent changes as odds ratios. Read from the abstracts, they pool to 1.07 for each 5 °C." },
+        { head: "Two cities' tests",
+          nodes: [ { id: "T", label: "daily\ntemperature", x: 82, y: 190 }, { id: "S", label: "shootings", x: 322, y: 190 }, { id: "X", kind: "unknown", label: "?", x: 202, y: 82, state: "new", note: "by what step?", ny: -32 } ],
+          edges: [ { a: "T", b: "S", ev: "obs", w: 3, state: "new", city: true, label: "×1.15 New York\n×1.13 Chicago", refs: [3, 4], lo: 26 },
+                   { a: "T", b: "X", ev: "conj", w: 1, state: "new" }, { a: "X", b: "S", ev: "conj", w: 1, state: "new" } ],
+          cap: "Police records in <b>New York and Chicago</b> give 1.15 and 1.13 for shootings. Shootings cannot change the weather, so the arrow points one way. The records do not show the step in between." },
+        { head: "Three steps tested",
+          nodes: [ { id: "T", label: "daily\ntemperature", x: 64, y: 138 }, { id: "S", label: "shootings", x: 342, y: 138 },
+                   { id: "O", label: "people\noutdoors", x: 190, y: 54, kind: "proxy", state: "new" },
+                   { id: "I", label: "intoxication", x: 150, y: 226, kind: "proxy", state: "new" },
+                   { id: "N", label: "warm\nnight", x: 292, y: 254, state: "new" } ],
+          edges: [ { a: "T", b: "S", ev: "obs", w: 3, city: true, label: "×1.15", lo: -13, labelT: 0.45 },
+                   { a: "T", b: "O", ev: "obs", w: 2, state: "new" }, { a: "O", b: "S", ev: "obs", w: 2, state: "new", city: true, label: "44% of\nthe slope", refs: [5], lx: 44, ly: -22, labelT: 0.4 },
+                   { a: "T", b: "I", ev: "obs", w: 1, state: "new" }, { a: "I", b: "S", ev: "obs", w: 1, state: "new", city: true, label: "14%", refs: [6], lo: 15, labelT: 0.4 },
+                   { a: "N", b: "S", ev: "obs", w: 1, state: "new", mark: "0", markT: 0.5, city: true, label: "×1.03", refs: [7], lx: 42, ly: 8, labelT: 0.5 } ],
+          cap: "<b>Street-noise complaints</b>, a proxy for people outdoors, remove 44% of the slope. Ambulance calls for intoxication remove 14%. Warm nights add nothing that can be told from zero." },
+        { head: "A conjecture",
+          nodes: [ { id: "T", label: "daily\ntemperature", x: 66, y: 152 }, { id: "D", label: "death in a\nheat wave", x: 334, y: 56 }, { id: "S", label: "shootings", x: 334, y: 250 },
+                   { id: "M", label: "antipsychotic\nmedicines", x: 290, y: 152, state: "new" } ],
+          edges: [ { id: "td", a: "T", b: "D", ev: "obs", w: 2 }, { id: "ts", a: "T", b: "S", ev: "obs", w: 3, label: "×1.15", lo: 15, labelT: 0.3 } ],
+          mods: [ { from: "M", onto: "td", t: 0.6, ev: "obs", w: 2, state: "new", label: "×2.4", refs: [8], lx: 26, ly: -4 },
+                  { from: "M", onto: "ts", t: 0.6, ev: "conj", w: 1, state: "new", mark: "?", markT: 0.5 } ],
+          cap: "These medicines raise the risk of death in a heat wave. Do they change the heat-violence slope? <b>No study was found</b>, and New York publishes the prescriber's ZIP code, not the patient's." }
+      ] },
+    { id: "aircon", title: "Air conditioning: a city test and a new study disagree",
+      lede: "The city's test and a study published in 2025 ask the same question of the same city's shootings and give different answers. The strip ends on the measurement that would decide between them.",
+      sources: [
+        { text: "Claim heat-shootings, New York, 2006 to 2026: 1.146 (1.130 to 1.163) per 5 °C.", href: "evidence.html#heat-shootings", link: "test card" },
+        { text: "Claim heat-ac-shootings, by community district. The difference in slope between low and high air-conditioning districts is 0.043 (0.007 to 0.080) over the whole year and -0.178 (-0.329 to -0.027) on days of 27 °C or more. The referee did not accept it as an effect of cooling.", href: "evidence.html#heat-ac-shootings", link: "test card" },
+        { text: "Roberts et al. 2025, J Urban Health. New York public housing, 2012 to 2017: in the hottest months, higher electricity use goes with fewer shootings, 0.79 (0.63 to 0.98). PMID 40106209. Not in the graph.", href: "https://doi.org/10.1007/s11524-025-00969-w", link: "doi" }
+      ],
+      frames: [
+        { head: "The city's test",
+          nodes: [ { id: "T", label: "daily\ntemperature", x: 70, y: 214 }, { id: "S", label: "shootings", x: 336, y: 214 }, { id: "A", label: "air conditioning,\nby district", x: 203, y: 70, kind: "proxy" } ],
+          edges: [ { id: "ts", a: "T", b: "S", ev: "obs", w: 3, city: true, label: "×1.15", refs: [1], lo: 17 } ],
+          mods: [ { from: "A", onto: "ts", ev: "obs", w: 1, mark: "0", markT: 0.32, city: true, label: "no cooling\neffect seen", refs: [2], lx: 72, ly: 8 } ],
+          cap: "Districts with less air conditioning have a steeper slope over the whole year. The extra steepness comes from cool days, when the units are off. On hot days the difference reverses." },
+        { head: "A new study",
+          nodes: [ { id: "T", label: "monthly\ntemperature", x: 70, y: 214 }, { id: "S", label: "shootings in\npublic housing", x: 328, y: 214 }, { id: "A", label: "electricity use,\nby development", x: 203, y: 70, kind: "proxy", state: "new" } ],
+          edges: [ { id: "ts", a: "T", b: "S", ev: "obs", w: 2, state: "new", label: "×1.11", refs: [3], lo: 17 } ],
+          mods: [ { from: "A", onto: "ts", ev: "obs", w: 2, state: "new", label: "×0.79 in the\nhottest months", refs: [3], lx: 78, ly: 0 } ],
+          cap: "The graph <b>does not include</b> a 2025 study of New York's public housing. In developments that use more electricity, it finds fewer shootings in the hottest months, at 0.79." },
+        { head: "A question",
+          nodes: [ { id: "T", label: "daily\ntemperature", x: 70, y: 214 }, { id: "S", label: "shootings", x: 336, y: 214 }, { id: "A", label: "air conditioning", x: 203, y: 60 },
+                 ],
+          edges: [ { id: "ts", a: "T", b: "S", ev: "obs", w: 3, label: "×1.15", lo: 17 } ],
+          mods: [ { from: "A", onto: "ts", ev: "obs", w: 1, state: "new", mark: "?", markT: 0.5 } ],
+          texts: [ { text: "measured at\nwhat scale?", x: 268, y: 138, state: "new", size: 13.5 } ],
+          cap: "One result uses a survey by district, the other uses electricity by development. Neither measures a household's air conditioner. To choose between them, one would need <b>a count of units by building</b>." }
+      ] },
+    { id: "restaurants", title: "Inspection scores and food poisoning",
+      lede: "Research on whether a poor inspection score predicts illness is split. The city's test finds a small association, and a placebo shows that something else produces most of it.",
+      sources: [
+        { text: "Irwin et al. 1989. Seattle-King County: restaurants with poor routine scores were five times as likely to have an outbreak. PMID 2705592.", href: "https://pubmed.ncbi.nlm.nih.gov/2705592/", link: "PubMed" },
+        { text: "Jones et al. 2004. Tennessee, 167,574 inspections: no association between routine scores and outbreaks. PMID 15200861.", href: "https://pubmed.ncbi.nlm.nih.gov/15200861/", link: "PubMed" },
+        { text: "Claim restaurants-score-complaints: 1.12 (0.96 to 1.32), 10,360 restaurants, 311 complaints in the following year. Unsettled.", href: "evidence.html#restaurants-score-complaints", link: "test card" },
+        { text: "The same claim's registered placebo, Noise - Commercial complaints at the same lots: 1.67 (1.11 to 2.52).", href: "evidence.html#restaurants-score-complaints", link: "test card" },
+        { text: "Aik et al. 2026, Sci Total Environ. Singapore, weekly reports 2012 to 2024: each two-day heatwave, salmonellosis 1.099 (1.007 to 1.198), campylobacteriosis 0.870 (0.776 to 0.975). PMID 41483715. Not in the graph.", href: "https://doi.org/10.1016/j.scitotenv.2025.181307", link: "doi" },
+        { text: "No study from 2020 to 2026 linking temperature or season to inspection violations was found (notes/comic_sources.md)." }
+      ],
+      frames: [
+        { head: "The research",
+          nodes: [ { id: "P", label: "poor\ninspection\nscore", x: 74, y: 150 }, { id: "O", label: "outbreak", x: 330, y: 150 } ],
+          edges: [ { a: "P", b: "O", ev: "obs", w: 2, bend: -52, label: "×5 Seattle", refs: [1], lo: -13 },
+                   { a: "P", b: "O", ev: "obs", w: 2, bend: 52, mark: "0", markT: 0.5, label: "no link, Tennessee", refs: [2], lo: 19 } ],
+          cap: "In Seattle, restaurants with poor scores were five times as likely to have an outbreak. In Tennessee, 167,574 inspections showed no link. The research is split." },
+        { head: "The city's test",
+          nodes: [ { id: "P", label: "poor\ninspection\nscore", x: 74, y: 150 }, { id: "C", label: "food-poisoning\ncomplaints", x: 318, y: 82, state: "new" }, { id: "Z", label: "noise\ncomplaints", x: 318, y: 226, kind: "proxy", state: "new" } ],
+          edges: [ { a: "P", b: "C", ev: "obs", w: 1, state: "new", city: true, label: "×1.12", refs: [3], lo: -15 },
+                   { a: "P", b: "Z", ev: "obs", w: 2, state: "new", city: true, label: "×1.67", refs: [4], lo: 16 } ],
+          cap: "In New York, food-poisoning complaints are 1.12 times as frequent after a poor score, and the interval includes 1. <b>Noise complaints</b>, which hygiene cannot cause, are 1.67 times as frequent." },
+        { head: "A factor to find",
+          nodes: [ { id: "P", label: "poor\ninspection\nscore", x: 74, y: 76 }, { id: "C", label: "food-poisoning\ncomplaints", x: 312, y: 76 }, { id: "Z", label: "noise\ncomplaints", x: 318, y: 206, kind: "proxy" },
+                   { id: "X", kind: "unknown", label: "X", x: 104, y: 206, state: "new", note: "how busy the place is?", nx: 60, ny: 42 } ],
+          edges: [ { a: "P", b: "C", ev: "cor", w: 2, state: "new", mark: "?", markT: 0.5 },
+                   { a: "X", b: "P", ev: "conj", w: 1, state: "new" }, { a: "X", b: "C", ev: "conj", w: 1, state: "new" }, { a: "X", b: "Z", ev: "conj", w: 1, state: "new" } ],
+          cap: "A busy restaurant may score worse and draw more calls of every kind. Then the arrow shows only a <b>correlation</b>. A test needs counts of customers, which the city does not publish." },
+        { head: "A new study",
+          nodes: [ { id: "P", label: "poor\ninspection\nscore", x: 74, y: 72 }, { id: "I", label: "salmonella\ninfections", x: 322, y: 72 },
+                   { id: "T", label: "heatwave", x: 200, y: 232, state: "new" } ],
+          edges: [ { a: "P", b: "I", ev: "cor", w: 2, mark: "?", markT: 0.5 },
+                   { a: "T", b: "I", ev: "obs", w: 1, state: "new", label: "×1.10", refs: [5], lo: 17 },
+                   { a: "T", b: "P", ev: "conj", w: 1, state: "new", mark: "?", markT: 0.5 } ],
+          texts: [ { text: "no study\nfound", x: 78, y: 176, state: "new", size: 11.5, refs: [6] } ],
+          cap: "A 2026 study from Singapore finds more salmonella after <b>heatwaves</b>. Heat may also warm a kitchen's cold storage on inspection day. If so, heat causes both, and no study has tested it." }
+      ] },
+    { id: "cameras", title: "Red-light cameras and a placebo",
+      lede: "A registered test confirmed that rear-end crashes rose where cameras were installed. The test's own placebo then withdrew the confirmation.",
+      sources: [
+        { text: "Høye 2013, Accid Anal Prev 55:77. Meta-analysis: rear-end crashes +39% at red-light cameras.", href: "https://doi.org/10.1016/j.aap.2013.02.017", link: "doi" },
+        { text: "Claim rlc-expansion-rearend: 1.33 (1.06 to 1.65) at the 2026 camera intersections against matched controls.", href: "evidence.html#rlc-expansion-rearend", link: "test card" },
+        { text: "The same design moved one year earlier, when no camera existed: 1.25 (1.05 to 1.49). Reading rule 11 makes the verdict unsettled.", href: "evidence.html#rlc-expansion-rearend", link: "test card" },
+        { text: "Controls were matched on earlier crash counts, which selects sites whose counts were high by chance (docs/street_safety.md)." }
+      ],
+      frames: [
+        { head: "Research and city agree",
+          nodes: [ { id: "C", label: "red-light\ncamera", x: 76, y: 150 }, { id: "R", label: "rear-end\ncrashes", x: 326, y: 150 } ],
+          edges: [ { a: "C", b: "R", ev: "obs", w: 2, bend: -46, label: "×1.39 meta-analysis", refs: [1], lo: -14 },
+                   { a: "C", b: "R", ev: "exp", w: 2, bend: 46, city: true, label: "×1.33 New York", refs: [2], lo: 17 } ],
+          cap: "A meta-analysis finds more rear-end crashes at red-light cameras. New York's 2026 cameras, tested against a registered prediction, give 1.33. The claim was scored as confirmed." },
+        { head: "The placebo",
+          nodes: [ { id: "N", label: "no camera,\none year\nearlier", x: 76, y: 150, state: "new" }, { id: "R", label: "rear-end\ncrashes", x: 326, y: 150 } ],
+          edges: [ { a: "N", b: "R", ev: "exp", w: 2, state: "new", city: true, label: "×1.25", refs: [3], lo: -15 } ],
+          cap: "The same comparison was run one year earlier, <b>when no camera existed</b>, and it gives 1.25. So the comparison shows a rise where no camera was installed." },
+        { head: "Support withdrawn",
+          nodes: [ { id: "C", label: "red-light\ncamera", x: 76, y: 96 }, { id: "R", label: "rear-end\ncrashes", x: 326, y: 96 },
+                   { id: "X", kind: "unknown", label: "X", x: 200, y: 214, state: "new", note: "controls matched\non past crashes", ny: 40 } ],
+          edges: [ { id: "cr", a: "C", b: "R", ev: "exp", w: 2, state: "gone", mark: "x", markT: 0.25 } ],
+          mods: [ { from: "X", onto: "cr", ev: "obs", w: 2, state: "new", label: "×1.25 with\nno camera", refs: [3, 4], lx: 62, ly: 0 } ],
+          cap: "Controls were matched to camera sites on earlier crash counts. That method picks controls whose counts were high by chance and then fell. For that reason <b>the confirmation is withdrawn</b>." }
+      ] }
+  ]
+};

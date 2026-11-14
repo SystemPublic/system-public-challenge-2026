@@ -4,16 +4,20 @@ These two orders come from `critique/SUBMISSION_REVIEW.md` (Part 1). Each line g
 
 ## Ten slides, five minutes
 
+Revised on 14 November after the strips were added. These are the first ten slides of the deck, in order; `close` follows them and everything after it is backup.
+
 1. `cover`: "The System graph links variables by findings from papers; we treat each link as a running meta-analysis and add a city's registered test to it."
 2. `edgefield`: "Here are 69 links with 1,123 findings from 625 papers; each mark is one finding, and the coloured capsule is New York's own estimate on 25 of them."
 3. `edgepanel`: "Open temperature and homicide: the graph stores four percent changes as odds ratios, the abstracts pool to about 6.5% per 5 °C, and shootings in New York and Chicago rise 15% and 13%, so they agree in direction."
-4. `heatdrugs`: "For heat and medicines the graph holds the conditions but almost none of the drug classes, and New York's open data cannot test it because they give the prescriber's ZIP code, not the patient's."
-5. `method`: "Each prediction was hashed and committed before it was scored, and a referee who had not seen the reasoning rebuilt the deciding number for 87 of the 93 outcomes."
-6. `scorecard`: "Of 93 scored claims, 33 are confirmed, 19 contested and 36 unsettled; the referees changed eleven verdicts, eight of them toward unsettled, and two claims were not blind tests."
-7. `selection`: "A placebo year with no cameras showed the same rise in rear-end crashes as the camera year, so that confirmation was withdrawn, as was one on ambulance times; two turn-calming confirmations are not causal."
-8. `lineage`: "The record also shows where we fell short: two claims read their outcome before registering, and eleven more cannot be shown to be blind."
+4. `stripheat`: "A link changes, so we draw it as a strip: the graph's edge, then two cities' tests, then three tested steps of which people outdoors removes 44% of the slope, then a conjecture about medicines that nobody has tested."
+5. `heatdrugs`: "For heat and medicines the graph holds the conditions but almost none of the drug classes, and New York's open data cannot test it because they give the prescriber's ZIP code, not the patient's."
+6. `method`: "Each prediction was hashed and committed before it was scored, and a referee who had not seen the reasoning rebuilt the deciding number for 87 of the 93 outcomes."
+7. `scorecard`: "Of 93 scored claims, 33 are confirmed, 19 contested and 36 unsettled; the referees changed eleven verdicts, eight of them toward unsettled, and two claims were not blind tests."
+8. `stripcameras`: "Here is one withdrawal as a strip: the camera test gave 1.33, the same test a year earlier with no cameras gave 1.25, and the arrow turns grey."
 9. `drift`: "In five months the city deleted 519 restaurants from its inspection table and lowered 485 scores, so a result cited by update time cannot be rerun; a versioned collection can."
-10. `requests`: "Three changes would make the graph usable for cities: store which variable is the exposure, return every finding the API counts, and give urban exposures their own concepts."
+10. `requests`: "Three changes would make the graph usable for cities and would let strips be drawn from its version history: store which variable is the exposure, return every finding the API counts, and give urban exposures their own concepts."
+
+Slides 4 and 8 replace `heatdrugs`' old position and `selection`; `lineage` moved to backup. If a slide must go, drop `heatdrugs`, since the last frame of `stripheat` carries the medication question.
 
 ## Six slides, three minutes
 
