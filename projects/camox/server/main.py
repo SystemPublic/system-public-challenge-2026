@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import httpx
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import JSONResponse, PlainTextResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
@@ -20,7 +20,7 @@ from pydantic import BaseModel
 
 import mcp_server
 from agents import dashboard, orchestrator, report
-from server import db
+from server import auth, db, kg
 from tools import graph, literature  # importing tools loads .env
 
 RUNS_PER_PROFILE, RUNS_TOTAL = 10**9, 10**9  # rate limit off for the demo
@@ -38,6 +38,8 @@ async def lifespan(app):
 
 
 app = FastAPI(title="CAMOX", lifespan=lifespan)
+app.include_router(auth.router)
+app.include_router(kg.router)
 
 
 @app.exception_handler(Exception)
@@ -188,6 +190,42 @@ def rename_thread(thread_id: int, t: ThreadIn):
     return found(db.rename_thread(thread_id, t.title.strip() or "New thread"))
 
 
+class FolderIn(BaseModel):
+    folder: str | None = None
+
+
+class MoveIn(BaseModel):
+    project_id: int
+
+
+def owned(request: Request, project_id: int):
+    """Deleting or moving needs the logged-in owner, so example profiles' projects stay as they are."""
+    owner = found(db.q("select pf.user_id from projects p join profiles pf on pf.id = p.profile_id where p.id = %s",
+                       (project_id,), one=True))["user_id"]
+    user = auth.current_user(request)
+    if not owner or not user or user["id"] != owner:
+        raise HTTPException(403, "Log in as the project's owner to do this. Example projects can't be changed.")
+
+
+@app.delete("/api/projects/{project_id}", status_code=204)
+def delete_project(project_id: int, request: Request):
+    owned(request, project_id)
+    db.delete_project(project_id)
+
+
+@app.put("/api/projects/{project_id}/folder")
+def set_folder(project_id: int, f: FolderIn):
+    """Folders are labels: setting a new name creates the folder, clearing it moves the project out."""
+    return found(db.set_folder(project_id, (f.folder or "").strip() or None))
+
+
+@app.put("/api/threads/{thread_id}/project")
+def move_thread(thread_id: int, m: MoveIn, request: Request):
+    owned(request, found(db.q("select project_id from threads where id = %s", (thread_id,), one=True))["project_id"])
+    owned(request, m.project_id)
+    return found(db.move_thread(thread_id, m.project_id))
+
+
 @app.post("/api/projects/{project_id}/dashboard")
 async def start_dashboard(project_id: int):
     """Builds the project dashboard in the background; poll GET /api/projects/{id} for dashboard_status."""
@@ -229,8 +267,8 @@ async def start_report(project_id: int, r: ReportIn):
         raise HTTPException(409, "A report is already being built.")
 
     async def emit(e):
-        if e["type"] in ("agent_started", "retry"):
-            await run_in_threadpool(db.set_report_status, project_id, "building: " + ("checking citations" if e["type"] == "retry" else "writing"))
+        if e["type"] in ("agent_started", "retry", "verifying"):
+            await run_in_threadpool(db.set_report_status, project_id, "building: " + {"retry": "checking citations", "verifying": "verifying claims"}.get(e["type"], "writing"))
 
     async def build():
         try:
@@ -285,6 +323,9 @@ async def execute(run_id, query, profile, history, agents, plan, kind="question"
         await emit({"type": "error", "message": f"{type(e).__name__}: {e}"[:500]})
     finally:
         await run_in_threadpool(db.finish_run, run_id, status, answer)
+        if status == "done":
+            tasks.add(t := asyncio.create_task(kg.rebuild_after_run(run_id)))
+            t.add_done_callback(tasks.discard)
         await emit({"type": "run_done", "status": status})
         del subscribers[run_id], events_sent[run_id]
 

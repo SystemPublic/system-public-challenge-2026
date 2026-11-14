@@ -11,12 +11,14 @@ from pydantic import BaseModel
 from agents.dashboard import _compact
 from agents.harness import DOI, ContractError, check_wording, run_agent
 from agents.orchestrator import _context
+from agents.verifier import check, major
 from tools import literature
 
 HERE = Path(__file__).parent
 MARK = re.compile(r"\[(\d+)\]")
 GRAPH = {"search_concepts", "search_variables", "neighbours", "paths", "get_findings", "summarise_evidence", "sql",
          "get_concept"}
+CHECKS = ["Every DOI traced to the stored answers", "Every [n] marker has a reference", "No causal wording"]
 SOURCES = {  # source -> licence
     "System Public Graph (Dataverse release)": "CC BY-NC 4.0",
     "World Bank": "CC BY 4.0",
@@ -99,9 +101,21 @@ async def build_report(project: dict, profile: dict, answers: list[dict], instru
                  f"Revise it following this instruction: {instruction or 'update it with the latest answers'}")
     elif instruction:
         task += f"\n\nInstruction from the user: {instruction}"
-    await emit({"type": "agent_started", "agent": "report_writer"})
-    report = await run_agent("report_writer", (HERE / "report_writer.md").read_text(), task, Report, emit,
-                             tools=[], check=lambda out, *_: check_report(out, known))
+    async def write(extra=""):
+        await emit({"type": "agent_started", "agent": "report_writer"})
+        report = await run_agent("report_writer", (HERE / "report_writer.md").read_text(), task + extra, Report, emit,
+                                 tools=[], check=lambda out, *_: check_report(out, known))
+        review = (f"A project report, checked against the stored answers it was written from. Its executive summary "
+                  f"is the summary; [n] cites cited_dois[n-1].\n\nStored answers:\n{_compact(answers, 8000)}\n\n"
+                  f"Report:\n{json.dumps(report.model_dump())}")
+        return report, await check(review, CHECKS, emit, 90)
+    report, verification = await write()
+    if issues := major(verification):  # one revision pass, then the report ships with whatever remains
+        try:
+            report, verification = await write(f"\n\nYour draft:\n{json.dumps(report.model_dump())}\n\nA verifier found "
+                                               f"these major problems in it. Fix them and keep the rest:\n{issues}")
+        except Exception as e:
+            await emit({"type": "agent_failed", "agent": "report_writer", "error": f"Revision: {type(e).__name__}: {e}"[:300]})
     dois = [_doi(d) for d in report.cited_dois]
     try:
         found = {_doi(w["doi"]): w for w in await asyncio.to_thread(literature.lookup_dois, dois)}
@@ -110,4 +124,5 @@ async def build_report(project: dict, profile: dict, answers: list[dict], instru
     refs = [{"n": i + 1, "doi": d, "url": f"https://doi.org/{d}", **{k: found.get(d, {}).get(k) for k in ("title", "year", "venue")}}
             for i, d in enumerate(dois)]
     return {"instruction": instruction, "report": report.model_dump(), "references": refs,
-            "provenance": provenance(calls)}
+            "provenance": provenance(calls),
+            "verification": verification.model_dump() if verification else {"status": "not_verified"}}

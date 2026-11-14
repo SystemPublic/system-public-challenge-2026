@@ -1,5 +1,5 @@
 """Verifier: after the formatter, re-checks the answer's main claims against the graph and the cited papers.
-Advisory only: if it fails or times out, the answer ships with verification None."""
+Major issues trigger one fix pass (orchestrator, report); if it fails or times out, the output ships not verified."""
 import asyncio
 import json
 from pathlib import Path
@@ -45,10 +45,15 @@ def code_checks(answer) -> list[str]:
 
 
 async def verify(answer, emit, timeout: float = 60) -> Verification | None:
-    await emit({"type": "verifying"})
     sections = "\n".join(f"[{i}] {json.dumps(s.model_dump())[:5000]}" for i, s in enumerate(answer.sections))
     task = (f"Question: {answer.question}\n\nSummary: {answer.summary}\n\nCaveats: {json.dumps(answer.caveats)}"
             f"\n\nSections:\n{sections}")
+    return await check(task, code_checks(answer), emit, timeout)
+
+
+async def check(task: str, checks: list[str], emit, timeout: float) -> Verification | None:
+    """Runs the verifier on `task`; None when it fails or times out."""
+    await emit({"type": "verifying"})
     try:
         review = await asyncio.wait_for(run_agent(
             "verifier", (Path(__file__).parent / "verifier.md").read_text(), task, Review, emit,
@@ -57,4 +62,9 @@ async def verify(answer, emit, timeout: float = 60) -> Verification | None:
         await emit({"type": "agent_failed", "agent": "verifier", "error": f"{type(e).__name__}: {e}"[:300]})
         return None
     return Verification(status="issues_found" if any(i.severity == "major" for i in review.issues) else "verified", claims_checked=review.claims_checked,
-                        issues=review.issues, code_checks=code_checks(answer))
+                        issues=review.issues, code_checks=checks)
+
+
+def major(v: Verification | None) -> str:
+    """The major issues as a list for a fix pass; empty when there are none."""
+    return "\n".join(f"- {i.claim}: {i.problem}" for i in (v.issues if v else []) if i.severity == "major")

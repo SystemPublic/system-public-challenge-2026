@@ -1,7 +1,8 @@
 // State, API calls, the run event stream and page layout. Section rendering is in sections.js, the graph in graph.js.
-import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv } from './sections.js';
+import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv, renderMyList } from './sections.js';
 import { drawGraph } from './graph.js';
 import { bindDashboard } from './dashboard.js';
+import { mountKG } from './kg.js';
 import { bindReport } from './report.js';
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -199,7 +200,9 @@ function renderWorkspace() {
   }
   bindGoals();
   state.pollDashboard = bindDashboard($('#dashboard'), pj, api);
+  mountKG($('#kg'), pj.id);
   bindReport($('#report'), pj, api);
+  renderMyList($('.my-list'));
   const runs = [...pj.runs].sort((a, b) => a.id - b.id);
   const fps = runs.filter(isFirstPass); const fpDone = fps.filter((r) => r.answer).at(-1);
   const asked = runs.filter(inThread);
@@ -347,6 +350,8 @@ const projectView = (pj) => `<header class="project-head"><h1>${esc(pj.title)}</
   ${block('fp', 'Data availability and gaps', 'What exists for this project, and where sources disagree. Runs once, from the goals.',
     `<div id="first-pass">${firstPassEmpty(pj)}</div>`)}
   ${block('db', 'Dashboard', 'Key numbers, World Bank data and charts built from the answers in this project.', '<div id="dashboard" class="dashboard"></div>')}
+  ${block('kg', 'Knowledge graph', 'The entities in this project\'s answers and the facts linking them, with the studies behind each.', '<div id="kg"></div>')}
+  ${block('ml', 'My list', 'Indicators you picked from this project\'s indicator maps, to download as CSV.', '<div class="my-list"></div>')}
   ${block('rp', 'Report', 'A cited report of this project, with references and data provenance, to print or save as PDF.', '<div id="report"></div>')}
   ${block('qs', 'Questions', 'Ask about this project. Every answer reads the goals and the earlier answers. Older answers fold away; reply under the latest.', `${threadHead()}
   <form id="composer" class="composer">
@@ -565,6 +570,7 @@ function traceModel(events) {
     if (e.type === 'agent_failed') { Object.assign(agent(e.agent), { status: 'failed', t1: e.t }); agent(e.agent).notes.push(['Failed', e.error]); }
     if (e.type === 'formatting') m.formatting = true;
     if (e.type === 'verifying') m.verifying = true;
+    if (e.type === 'fixing') Object.assign(m, { verifying: false, fixing: e.issues });
     if (e.type === 'error') m.error = e.message;
     if (e.type === 'run_done') m.done = e.status;
   }
@@ -615,7 +621,8 @@ function renderTrace(el, events, live, keepOpen = false) {
   if (m.done === 'failed' && !$('.answer', el).innerHTML) return status(el, 'The run failed before writing an answer. Check the failed agent above, then ask again.', true);
   if (!live) { status(el, ''); if (!keepOpen) $('.trace', el).open = false; return; }
   if (!m.plan) return status(el, 'Planning: choosing agents for this question');
-  if (m.verifying) return status(el, 'Verifying: checking the answer\'s claims and numbers against the tool results');
+  if (m.verifying) return status(el, `Verifying${m.fixing ? ' again' : ''}: checking the answer's claims and numbers against the tool results`);
+  if (m.fixing) return status(el, `Fixing: rewriting the summary to address ${plural(m.fixing, 'major issue', 'major issues')} the verifier found`);
   if (m.formatting) return status(el, `Writing the answer from ${plural(agents.filter((a) => a.status === 'done').length, 'section', 'sections')}`);
   const lastRunning = m.last && ['running', 'retrying'].includes(m.agents.get(m.last.agent)?.status) ? m.last : null;
   status(el, `${doneN} of ${agents.length} agents finished. `

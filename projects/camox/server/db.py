@@ -26,6 +26,17 @@ create table if not exists runs(id serial primary key, project_id int references
 create table if not exists threads(id serial primary key, project_id int references projects on delete cascade,
     title text not null, created_at timestamptz default now());
 alter table runs add column if not exists thread_id int references threads on delete cascade;
+create table if not exists users(id serial primary key, email text unique not null, name text, pw_salt bytea,
+    pw_hash bytea, prefs jsonb not null default '{}', created_at timestamptz default now());
+create table if not exists sessions(token_hash text primary key, user_id int references users on delete cascade,
+    expires_at timestamptz);
+alter table projects add column if not exists folder text;
+alter table profiles add column if not exists user_id int references users on delete set null;
+create table if not exists kg_nodes(project_id int references projects on delete cascade, id text, kind text, label text,
+    data jsonb, primary key(project_id, id));
+create table if not exists kg_edges(project_id int references projects on delete cascade, source text, target text, kind text, data jsonb);
+create index if not exists kg_edges_project on kg_edges(project_id);
+create table if not exists kg_extract(text text primary key, data jsonb);
 """
 EXAMPLES = [
     ("Amara Okafor", "Jobs analyst", "World Bank",
@@ -80,7 +91,7 @@ def _public(row):
 
 
 def list_profiles():
-    return [_public(r) for r in q(f"select {PROFILE_COLS}, keys from profiles order by id")]
+    return [_public(r) for r in q(f"select {PROFILE_COLS}, keys from profiles where user_id is null order by id")]  # account profiles stay private
 
 
 def get_profile(profile_id):
@@ -107,7 +118,7 @@ def set_keys(profile_id, updates: dict):
 
 # Projects
 def list_projects(profile_id):
-    return q("select p.id, p.title, p.goals, p.created_at, count(r.id)::int as n_runs from projects p "
+    return q("select p.id, p.title, p.goals, p.folder, p.created_at, count(r.id)::int as n_runs from projects p "
              "left join runs r on r.project_id = p.id where p.profile_id = %s group by p.id order by p.id desc",
              (profile_id,))
 
@@ -120,6 +131,20 @@ def create_project(profile_id, title, goals=""):
 def update_project(project_id, title, goals):
     return q("update projects set title = %s, goals = %s where id = %s returning id, title, goals, profile_id",
              (title, goals, project_id), one=True)
+
+
+def delete_project(project_id):
+    return q("delete from projects where id = %s returning id", (project_id,), one=True)
+
+
+def set_folder(project_id, folder):
+    return q("update projects set folder = %s where id = %s returning id, folder", (folder, project_id), one=True)
+
+
+def move_thread(thread_id, project_id):
+    """Moves a thread and its runs to another project."""
+    q("update runs set project_id = %s where thread_id = %s", (project_id, thread_id))
+    return q("update threads set project_id = %s where id = %s returning id, project_id, title", (project_id, thread_id), one=True)
 
 
 def get_project(project_id):

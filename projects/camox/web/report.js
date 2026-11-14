@@ -1,5 +1,9 @@
 // Project report: Generate / revise a cited report; each version opens as a printable page (report.html).
-import { esc } from './sections.js';
+import { esc, plural } from './sections.js';
+
+// The report version's verifier result in a few words; versions from before the verifier count as not verified.
+export const verifiedLabel = (v) => (v?.status === 'verified' ? `Verified: ${plural(v.claims_checked ?? 0, 'claim', 'claims')} checked`
+  : v?.status === 'issues_found' ? `${plural(v.issues.filter((i) => i.severity === 'major').length, 'issue', 'issues')} found` : 'Not verified');
 
 const time = (t) => new Date(t).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
@@ -19,6 +23,8 @@ export function bindReport(box, pj, api) {
       : pj.runs.some((r) => r.answer) ? 'A cited report built from the answers and dashboard in this project.' : 'Ask a question first; the report is built from the answers.';
     btn.hidden = !pj.runs.some((r) => r.answer); btn.disabled = building;
     list.innerHTML = reports.map((r) => `<li><a href="report.html?project=${pj.id}&v=${r.version}" target="_blank" rel="noopener">v${r.version} · ${time(r.created_at)}</a>
+      <a href="report.html?project=${pj.id}&v=${r.version}&print=1" target="_blank" rel="noopener">Download PDF</a>
+      <span class="muted">${esc(verifiedLabel(r.verification))}</span>
       ${r.instruction ? `<span class="muted">${esc(r.instruction)}</span>` : ''}</li>`).join('');
     form.hidden = !reports.length; form.querySelector('button').disabled = building;
     if (building) setTimeout(poll, 4000);

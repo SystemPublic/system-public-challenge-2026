@@ -64,6 +64,20 @@ Read this file first, then the skill for your task (below). These rules apply to
 - **External search:** OpenAlex and PubMed (no keys) plus OpenAI's hosted web search.
 - **Stretch:** a per-project knowledge graph for graph RAG, after the core loop, dashboard and one connector work.
 
+## Provenance and verification (Daniel, 14 Nov)
+
+- **Provenance first.** Every number, claim, chart and indicator on screen or in a report says where it came from: the source name, its id, when it was retrieved and its licence. Provenance is built in code from tool results and stored run events, never written by a model.
+- **Link whenever possible:**
+  - DOIs → `https://doi.org/...`
+  - graph concepts → Wikidata (`wikidata_id`)
+  - World Bank indicators → their Data360 or data page
+  - OpenAlex and PubMed records → their pages
+- **Label carefully.** Full dataset names beside acronyms. Say which source each item came from (graph, World Bank, OpenAlex, web search). Web-search sources are marked as not checked against the graph.
+- **Verify before anything mission-critical reaches the user.**
+  - **Answers, dashboards and reports:** pass the verifier before they are shown or downloaded.
+  - **Major issues:** trigger one fix pass with the issues. Whatever remains is shown next to the output, never hidden.
+  - **Unavailable verifier:** if it fails or times out, the output says "not verified".
+
 ## Licences and disclosure
 
 - Anything containing or derived from graph data is CC BY-NC 4.0.

@@ -144,7 +144,44 @@ function source(s) {
 const MATCH = { exact: 'Exact', narrower: 'Narrower', broader: 'Broader', proxy: 'Proxy' };
 const dataset = (d) => (d ? `<span class="ds" title="${esc(d)}">${esc(datasetName(d))}</span>` : '');
 const indId = (id) => (id ? `<a class="ind-id num small" href="${esc(wbUrl(id))}" target="_blank" rel="noopener">${esc(id)}</a>` : '');
-const indicator = (i) => `<li>${esc(i.name)} ${indId(i.indicator_id)} ${dataset(i.database)}</li>`;
+const tier = (n) => (n >= 10 ? 'strong' : n >= 3 ? 'moderate' : 'thin');
+const pick = (i, l) => esc(JSON.stringify({ id: i.indicator_id, name: i.name, dataset: datasetName(i.database), url: wbUrl(i.indicator_id),
+  concept: l.concept_label, tier: tier(l.studies), studies: l.studies, dois: (l.dois || []).join(' ') }));
+const indicator = (i, l) => `<li>${esc(i.name)} ${indId(i.indicator_id)} ${dataset(i.database)}
+  <button type="button" class="chip" data-pick="${pick(i, l)}">Add to my list</button></li>`;
+
+// "My list": indicators the user picks across answers, kept per project in localStorage (in memory if storage is blocked).
+const lists = new Map();
+const listKey = () => `camox-list-${new URLSearchParams(location.hash.slice(1)).get('project') || ''}`;
+const myList = () => {
+  if (!lists.has(listKey())) { let l = []; try { l = JSON.parse(localStorage.getItem(listKey())) || []; } catch { /* no storage */ } lists.set(listKey(), l); }
+  return lists.get(listKey());
+};
+const saveList = (l) => {
+  lists.set(listKey(), l);
+  try { localStorage.setItem(listKey(), JSON.stringify(l)); } catch { /* no storage: the list lasts this page */ }
+  document.querySelectorAll('.my-list').forEach(renderMyList);
+};
+export function renderMyList(el) {
+  const l = myList();
+  el.innerHTML = l.length ? `<ul class="plain">${l.map((x) => `<li>${esc(x.name)} ${indId(x.id)} <span class="ds">${esc(x.dataset)}</span>
+      <span class="small muted">${esc(x.concept)}, ${plural(x.studies, 'study', 'studies')}</span>
+      <button type="button" class="chip" data-unpick="${esc(x.id)}">Remove</button></li>`).join('')}</ul>
+    <p><button type="button" class="download" data-mylist>Download my list (CSV)</button></p>`
+    : '<p class="small muted">Add indicators from any indicator map in this project with "Add to my list".</p>';
+}
+document.addEventListener('click', (e) => {
+  const add = e.target.closest('[data-pick]'), rm = e.target.closest('[data-unpick]');
+  if (add) { const x = JSON.parse(add.dataset.pick); if (!myList().some((y) => y.id === x.id)) saveList([...myList(), x]); add.textContent = 'In my list'; }
+  if (rm) saveList(myList().filter((y) => y.id !== rm.dataset.unpick));
+  if (e.target.closest('[data-mylist]')) {
+    const q = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
+    const rows = [['indicator_id', 'name', 'dataset', 'url', 'linked_concept', 'tier', 'studies', 'dois'],
+      ...myList().map((x) => [x.id, x.name, x.dataset, x.url, x.concept, x.tier, x.studies, x.dois])];
+    csvs.set('my-list', { name: 'my-indicator-list.csv', text: rows.map((r) => r.map(q).join(',')).join('\n') });
+    downloadCsv('my-list');
+  }
+});
 const csvs = new Map();
 let nextCsv = 0;
 
@@ -164,7 +201,7 @@ function indicatorMap(s) {
         ${l.cross_dataset ? '<span class="pill s-backed">Different dataset</span>' : ''}${l.data_gap ? '<span class="pill s-partial">Data gap</span>' : ''}
         <div class="small muted">${linked(l.note)}</div>${l.dois?.length ? `<p class="dois">${l.dois.map(doiLink).join('')}</p>` : ''}</td>
       <td class="r num" data-label="Evidence">${plural(l.studies, 'study', 'studies')}</td>
-      <td data-label="World Bank indicators">${l.indicators.length ? `<ul class="plain">${l.indicators.map(indicator).join('')}</ul>` : '<span class="small muted">No World Bank indicator measures this</span>'}</td>
+      <td data-label="World Bank indicators">${l.indicators.length ? `<ul class="plain">${l.indicators.map((i) => indicator(i, l)).join('')}</ul>` : '<span class="small muted">No World Bank indicator measures this</span>'}</td>
     </tr>`).join('');
   return `<p><strong>Starting indicator:</strong> ${esc(s.seed.name)} ${indId(s.seed.indicator_id)} ${dataset(s.seed.database)}</p>
     <ul class="plain small">${s.matches.map((m) => `<li>Graph concept <strong>${esc(m.label)}</strong>: ${esc(MATCH[m.match] || m.match)} match. ${linked(m.why)}</li>`).join('')}</ul>
@@ -205,7 +242,7 @@ function section(s, sources) {
 
 // Verification badge: what the checker looked at, and any issues it found.
 function verification(v) {
-  if (!v || typeof v !== 'object') return '';
+  if (!v || typeof v !== 'object') return '<span class="pill">Not verified</span>';
   const issues = Array.isArray(v.issues) ? v.issues : [];
   const checks = Array.isArray(v.code_checks) ? v.code_checks : [];
   const ok = v.status === 'verified';

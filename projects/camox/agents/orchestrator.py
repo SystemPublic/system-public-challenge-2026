@@ -7,7 +7,7 @@ from pathlib import Path
 
 from agents.contracts import SECTION_MODELS, Answer, Overall, Plan, Task
 from agents.harness import DOI, ContractError, check_wording, run_agent
-from agents.verifier import WEB, verify
+from agents.verifier import WEB, major, verify
 
 HERE = Path(__file__).parent
 RULES = (HERE / "rules.md").read_text()
@@ -126,13 +126,25 @@ async def run(query: str, profile: dict, history: list[dict], agents: list[str] 
 
     await emit({"type": "formatting"})
     listing = "\n".join(f"[{i}] {json.dumps(s.model_dump())[:6000]}" for i, s in enumerate(sections))
-    overall = await run_agent("formatter", (HERE / "formatter.md").read_text(),
-                              f"Question: {plan.question}\n\nSections:\n{listing}", Overall, emit, tools=[], check=lambda out, *_: check_citations(out, listing),
-                              effort="low")
-    order = [i for i in dict.fromkeys(overall.section_order) if 0 <= i < len(sections)]
-    order += [i for i in range(len(sections)) if i not in order]
-    answer = Answer(question=plan.question, summary=overall.summary, caveats=overall.caveats, follow_ups=overall.follow_ups,
-                    sections=[sections[i] for i in order], section_sources=[done[i][1] for i in order])
+
+    async def write(extra=""):
+        overall = await run_agent("formatter", (HERE / "formatter.md").read_text(),
+                                  f"Question: {plan.question}\n\nSections:\n{listing}{extra}", Overall, emit, tools=[], check=lambda out, *_: check_citations(out, listing),
+                                  effort="low")
+        order = [i for i in dict.fromkeys(overall.section_order) if 0 <= i < len(sections)]
+        order += [i for i in range(len(sections)) if i not in order]
+        return Answer(question=plan.question, summary=overall.summary, caveats=overall.caveats, follow_ups=overall.follow_ups,
+                      sections=[sections[i] for i in order], section_sources=[done[i][1] for i in order])
+    answer = await write()
     answer.verification = await verify(answer, emit)
+    if issues := major(answer.verification):  # one fix pass, then the answer ships with whatever remains
+        await emit({"type": "fixing", "issues": issues.count("\n") + 1})
+        try:
+            fixed = await write(f"\n\nYour previous summary:\n{answer.summary}\n\nA verifier found these major problems in it. "
+                                 f"Fix them and keep the rest:\n{issues}")
+            fixed.verification = await verify(fixed, emit)
+            answer = fixed
+        except Exception as e:
+            await emit({"type": "agent_failed", "agent": "formatter", "error": f"Fix pass: {type(e).__name__}: {e}"[:300]})
     await emit({"type": "answer", "answer": answer.model_dump()})
     return answer
