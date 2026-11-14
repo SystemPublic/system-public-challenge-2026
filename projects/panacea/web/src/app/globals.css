@@ -1,0 +1,623 @@
+@import "tailwindcss";
+
+/*
+ * Design system: Tufte CSS conventions (edwardtufte.github.io/tufte-css)
+ * ported to Tailwind v4 tokens, in permanent dark mode — warm near-black
+ * paper, hairline rules, small-caps labels. Monochrome chrome: links are
+ * underlined ink, never colored. Chart colors follow the dataviz method,
+ * dark-surface steps (sequential ramps flip anchor: dark recedes, bright
+ * is high).
+ */
+
+:root {
+  --paper: #171613;
+  --ink: #ece8df;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-rule: color-mix(in srgb, var(--ink) 18%, transparent);
+  --color-muted: color-mix(in srgb, var(--ink) 58%, var(--paper));
+  --font-serif: var(--font-ebgaramond), "Palatino", Georgia, serif;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* shadcn/ui tokens, mapped onto the Tufte palette */
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--ink);
+  --color-primary-foreground: var(--paper);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--ink);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--ink);
+  --color-muted-foreground: var(--color-muted);
+  --color-destructive: var(--destructive);
+  --color-border: color-mix(in srgb, var(--ink) 18%, transparent);
+  --color-input: color-mix(in srgb, var(--ink) 25%, transparent);
+  --color-ring: color-mix(in srgb, var(--ink) 45%, transparent);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --popover: color-mix(in srgb, var(--ink) 7%, var(--paper));
+  --secondary: color-mix(in srgb, var(--ink) 10%, var(--paper));
+  --accent: color-mix(in srgb, var(--ink) 14%, var(--paper));
+  --destructive: #e66767;
+  --radius: 0.45rem;
+
+  /*
+   * Chart tokens (dataviz reference palette, dark-surface steps, re-checked
+   * on the dark paper). Chart text stays in the sans; prose stays serif.
+   */
+  --chart-ink-2: color-mix(in srgb, var(--ink) 66%, var(--paper));
+  --chart-muted: color-mix(in srgb, var(--ink) 48%, var(--paper));
+  --chart-grid: color-mix(in srgb, var(--ink) 12%, var(--paper));
+  --chart-baseline: color-mix(in srgb, var(--ink) 26%, var(--paper));
+  /* categorical slots 1 & 3, dark steps (all-pairs validated) */
+  --s-blue: #3987e5;
+  --s-aqua: #199e70;
+  --s-deemph: #4a4945;
+  /* diverging pair for ρ (blue <-> red, neutral midpoint) */
+  --div-pos: #3987e5;
+  --div-neg: #e66767;
+  --div-mid: #383835;
+  /* effect direction on graph nodes (status-like: means good/bad) */
+  --dir-up: #e66767;   /* risk increasing */
+  --dir-down: #0ca30c; /* protective / decreasing */
+  /* sequential ramps: blue (X) and orange (Y); components reverse the order
+     so the dark end recedes toward the dark surface */
+  --seq-b100: #cde2fb; --seq-b150: #b7d3f6; --seq-b200: #9ec5f4;
+  --seq-b250: #86b6ef; --seq-b300: #6da7ec; --seq-b350: #5598e7;
+  --seq-b400: #3987e5; --seq-b450: #2a78d6; --seq-b500: #256abf;
+  --seq-b550: #1c5cab; --seq-b600: #184f95; --seq-b650: #104281;
+  --seq-b700: #0d366b;
+  --seq-o100: #ffc4a1; --seq-o150: #ffb28c; --seq-o200: #ffa078;
+  --seq-o250: #ff8d62; --seq-o300: #f77b4c; --seq-o350: #eb6834;
+  --seq-o400: #d55d2d; --seq-o450: #c15226; --seq-o500: #ac481f;
+  --seq-o550: #983d18; --seq-o600: #853311; --seq-o650: #722a0b;
+  --seq-o700: #5f2005;
+  /* status: modeled-burden warning; never reused as a series color */
+  --status-warn: #fab219;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+/* ---------- chrome ---------- */
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* ---------- article (Tufte layout) ---------- */
+/*
+ * Main column ~46rem. At >= 1024px the container grows and sidenotes
+ * float right into a reserved margin column. Below that, sidenotes and
+ * margin notes collapse into Tufte's CSS-only checkbox toggles.
+ */
+
+.article {
+  font-size: clamp(1.125rem, 0.35vw + 1.05rem, 1.25rem);
+  line-height: 1.58;
+}
+
+.article > * {
+  max-width: 46rem;
+}
+
+.article > figure.fullwidth {
+  max-width: 100%;
+}
+
+.article-col {
+  max-width: 48rem;
+}
+
+@media (min-width: 1024px) {
+  .article-col {
+    max-width: 61rem; /* 46rem main column + 15rem margin */
+  }
+}
+
+/* ---------- sidenotes & margin notes ---------- */
+
+.article input.margin-toggle {
+  display: none;
+}
+
+.article label.margin-toggle {
+  display: inline;
+  cursor: pointer;
+}
+
+.article label.sidenote-number {
+  display: inline;
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 1;
+  padding-right: 0.15em;
+}
+
+.article .sidenote,
+.article .marginnote {
+  display: none;
+  font-size: 0.85em;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.article input.margin-toggle:checked + .sidenote,
+.article input.margin-toggle:checked + .marginnote {
+  display: block;
+  margin: 0.75rem 0 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .article label.margin-toggle {
+    display: none;
+  }
+
+  .article .sidenote,
+  .article .marginnote {
+    display: block;
+    float: right;
+    clear: right;
+    width: 14rem;
+    margin-right: -15rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    /* keep the note on the same text line as its reference */
+    text-indent: -0.35em;
+  }
+
+  .article .sidenote .sn-num {
+    display: inline;
+    font-size: 0.75em;
+    vertical-align: super;
+    padding-right: 0.15em;
+  }
+
+  .article input.margin-toggle:checked + .sidenote,
+  .article input.margin-toggle:checked + .marginnote {
+    display: block;
+    margin: 0.25rem 0 1rem;
+  }
+}
+
+.article .sidenote .sn-num {
+  display: none;
+}
+
+/* ---------- headings ---------- */
+
+.article h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 2.5rem 0 0;
+}
+
+.article h2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.45rem;
+  line-height: 1.3;
+  margin: 2.75rem 0 1rem;
+}
+
+.article h3 {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 2.25rem 0 0.75rem;
+}
+
+.article p,
+.article ul,
+.article ol {
+  margin: 0 0 1.25rem;
+}
+
+.article ul,
+.article ol {
+  padding-left: 1.4rem;
+}
+
+.article li {
+  margin-bottom: 0.4rem;
+}
+
+.article section {
+  margin-top: 2.5rem;
+}
+
+.newthought {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- links ---------- */
+
+.article a,
+.footer-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ink) 35%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+.article a:hover,
+.footer-link:hover {
+  text-decoration-color: var(--ink);
+}
+
+/* ---------- epigraphs & blockquotes ---------- */
+
+.article blockquote {
+  font-size: 0.95em;
+  font-style: italic;
+  margin: 2rem 0 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.article blockquote footer {
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-top: 0.75rem;
+}
+
+/* ---------- figures ---------- */
+
+.article figure {
+  margin: 2rem 0 2rem;
+}
+
+.article figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.article figcaption {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+  margin-top: 0.6rem;
+}
+
+.article figure.fullwidth figcaption {
+  max-width: 46rem;
+}
+
+/* figure that lives entirely in the margin on wide screens */
+@media (min-width: 1024px) {
+  .article figure.marginfig {
+    float: right;
+    clear: right;
+    width: 14rem;
+    margin-right: -15rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.iframe-wrapper {
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--color-rule);
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ---------- code ---------- */
+
+.article code,
+.article pre {
+  font-family: var(--font-mono);
+}
+
+.article p code,
+.article li code,
+.article td code {
+  font-size: 0.8em;
+  padding: 0.1em 0.3em;
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+.article pre {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  padding: 1rem 1.15rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.article pre code {
+  background: none;
+  padding: 0;
+}
+
+/* minimal monochrome highlighting (rehype-highlight classes) */
+.hljs-comment,
+.hljs-quote {
+  color: var(--color-muted);
+  font-style: italic;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag {
+  font-weight: 600;
+}
+.hljs-string,
+.hljs-regexp,
+.hljs-addition {
+  color: color-mix(in srgb, var(--ink) 75%, var(--paper));
+}
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+  color: color-mix(in srgb, var(--ink) 88%, var(--paper));
+}
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ink) 30%, transparent);
+  text-underline-offset: 0.15em;
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-built_in,
+.hljs-params {
+  color: var(--color-muted);
+}
+.hljs-meta,
+.hljs-deletion {
+  color: var(--color-muted);
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: 600;
+}
+
+/* ---------- tables (booktabs) ---------- */
+
+.article table {
+  font-size: 0.85em;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.article th {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: left;
+  color: var(--color-muted);
+}
+
+.article th,
+.article td {
+  padding: 0.5rem 1rem 0.5rem 0;
+  border-bottom: 1px solid var(--color-rule);
+  vertical-align: baseline;
+}
+
+.article thead tr {
+  border-top: 2px solid var(--ink);
+}
+
+.article tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+
+/* ---------- rules & katex ---------- */
+
+.article hr {
+  border: 0;
+  border-top: 1px solid var(--color-rule);
+  margin: 2.5rem 0;
+}
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+.katex {
+  font-size: 1.05em;
+}
+
+/* ---------- dashboard chrome ---------- */
+
+/* ρ badge / pills */
+.rho-pill {
+  display: inline-block;
+  padding: 0 0.45em;
+  border: 1px solid var(--color-rule);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.rho-pill.pos { border-color: var(--div-pos); color: var(--div-pos); }
+.rho-pill.neg { border-color: var(--div-neg); color: var(--div-neg); }
+.rho-pill.warn { border-color: var(--status-warn); color: var(--status-warn); }
+.badge-gray {
+  display: inline-block;
+  padding: 0 0.45em;
+  border: 1px solid var(--color-rule);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* SPG expected-direction pill (confirmations/contested tables) */
+.dir-pill {
+  display: inline-block;
+  padding: 0 0.45em;
+  border: 1px solid var(--color-rule);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.dir-pill.up { border-color: var(--div-pos); color: var(--div-pos); }
+.dir-pill.down { border-color: var(--div-neg); color: var(--div-neg); }
+
+/* concept/measure chips */
+.chip {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--s-aqua) 45%, var(--paper));
+  background: color-mix(in srgb, var(--s-aqua) 12%, var(--paper));
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--ink);
+}
+.chip.endpoint {
+  border-color: var(--s-blue);
+  background: color-mix(in srgb, var(--s-blue) 16%, var(--paper));
+  font-weight: 600;
+}
+
+/* the chart tooltip */
+.viz-tip {
+  position: absolute;
+  z-index: 20;
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 10px));
+  background: var(--popover);
+  border: 1px solid var(--color-rule);
+  padding: 0.35rem 0.55rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 260px;
+}
+.viz-tip .v {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.viz-tip .sub {
+  color: var(--color-muted);
+}
+
+/* dashboard tables (booktabs, matching .article tables outside articles) */
+.dash-table {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+.dash-table th {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: left;
+  color: var(--color-muted);
+}
+.dash-table th,
+.dash-table td {
+  padding: 0.4rem 0.9rem 0.4rem 0;
+  border-bottom: 1px solid var(--color-rule);
+  vertical-align: baseline;
+}
+.dash-table thead tr { border-top: 2px solid var(--ink); }
+.dash-table tbody tr:last-child td { border-bottom: 2px solid var(--ink); }
+.dash-table td.num,
+.dash-table th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.dash-table th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+.dash-table th.sortable::after { content: " \2195"; color: var(--color-rule); }
+.dash-table th.sorted::after { content: " \2193"; color: var(--ink); }
+.dash-table th.sorted.asc::after { content: " \2191"; color: var(--ink); }
+.dash-table tbody tr.rowlink { cursor: pointer; }
+.dash-table tbody tr.rowlink:hover { background: color-mix(in srgb, var(--ink) 6%, var(--paper)); }
+/* the open row + the expanding pair-detail row below it */
+.dash-table tbody tr.rowopen { background: color-mix(in srgb, var(--ink) 8%, var(--paper)); }
+.dash-table tbody tr.rowopen td { border-bottom: none; }
+.dash-table tbody tr.detail-row > td { padding: 0; border-bottom: none; }
+.dom-note {
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  margin-left: 0.35rem;
+}
+
+/* findings note entrance (replays per selected hypothesis) */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* underlined in-story citations */
+.cite-link {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--s-blue) 70%, transparent);
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+.cite-link:hover {
+  text-decoration-color: var(--s-blue);
+}
