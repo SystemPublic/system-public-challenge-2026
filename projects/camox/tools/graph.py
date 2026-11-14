@@ -1,10 +1,18 @@
-"""Read-only tools over the System Public Graph (Dataverse copy in data/graph.duckdb). Each returns JSON-able data."""
-from pathlib import Path
+"""Read-only tools over the System Public Graph: the local DuckDB copy of the cleaned Dataverse subset
+(GRAPH_DB, default data/graph.duckdb) for numbers, and the live System Graph API where it adds something."""
+import functools
+import os
 import statistics
+import time
+from pathlib import Path
+from urllib.parse import quote
 
 import duckdb
 
-DB = duckdb.connect(str(Path(__file__).resolve().parents[1] / "data/graph.duckdb"), read_only=True)
+from tools._http import get_json
+
+API = "https://public-api.system.com/v1"
+_live_down_until = 0.0
 FAMILY = {
     **dict.fromkeys(["odds_ratio", "adjusted_odds_ratio", "hazard_ratio", "adjusted_hazard_ratio",
                      "relative_risk_ratio", "incident_rate_ratio", "prevalence_ratio"], "ratio"),
@@ -15,8 +23,14 @@ FAMILY = {
 NULL = {"ratio": 1.0, "difference": 0.0, "correlation": 0.0}
 
 
+@functools.cache
+def _db():
+    return duckdb.connect(str(Path(__file__).resolve().parents[1] / os.environ.get("GRAPH_DB", "data/graph.duckdb")),
+                          read_only=True)
+
+
 def _rows(sql, params=()):
-    cur = DB.cursor().execute(sql, params)
+    cur = _db().cursor().execute(sql, params)
     cols = [d[0] for d in cur.description]
     return [dict(zip(cols, r)) for r in cur.fetchall()]
 
@@ -146,4 +160,50 @@ def sql(query: str) -> list:
     return _rows(f"SELECT * FROM ({query.rstrip('; ')}) LIMIT 50")
 
 
-TOOLS = [search_concepts, search_variables, neighbours, paths, get_findings, summarise_evidence, sql]
+
+def _live(path):
+    """GET from the live System Graph API, or None. After a failure it is skipped for a minute, so fallback stays fast."""
+    global _live_down_until
+    if not os.environ.get("SPG_APIKEY") or time.time() < _live_down_until:
+        return None
+    try:
+        return get_json(API + path, headers={"x-api-key": os.environ["SPG_APIKEY"]}, timeout=5)
+    except RuntimeError:
+        _live_down_until = time.time() + 60
+        return None
+
+
+def get_concept(concept_id: str) -> dict:
+    """One concept's Wikidata label, id, description and aliases. Works for concepts outside the local copy too
+    (asks the live System Graph API first). `source` says "live" or "local"."""
+    live = _live(f"/concepts/{quote(concept_id, safe='')}")
+    if live:
+        return {**live, "source": "live"}
+    rows = _rows("""SELECT system_id, wikidata_label, wikidata_id, wikidata_description, wikidata_aliases
+                    FROM concepts WHERE system_id = $c""", {"c": concept_id})
+    return {**rows[0], "source": "local"} if rows else {"error": f"unknown concept {concept_id}"}
+
+
+def subgraph(concept_ids: list[str], max_extra: int = 0) -> dict:
+    """The graph among the given concepts: nodes with study counts and edges with study counts (both directions
+    merged). max_extra adds up to that many of the concepts most linked to the set (max 30). For drawing a map."""
+    extra = [] if max_extra <= 0 else [r["o"] for r in _rows("""
+        SELECT o FROM (SELECT "target_concept.system_id" o, num_studies n FROM relationships
+                       WHERE list_contains($ids, "source_concept.system_id") UNION ALL
+                       SELECT "source_concept.system_id", num_studies FROM relationships
+                       WHERE list_contains($ids, "target_concept.system_id"))
+        WHERE NOT list_contains($ids, o) GROUP BY o ORDER BY sum(n) DESC LIMIT $k""",
+                                                             {"ids": concept_ids, "k": min(max_extra, 30)})]
+    ids = list(dict.fromkeys(concept_ids + extra))
+    nodes = _rows("""
+        WITH counts AS (SELECT c, count(DISTINCT study_id) n FROM (
+                          SELECT variable_1_concept_id c, study_id FROM associations UNION ALL
+                          SELECT variable_2_concept_id, study_id FROM associations) WHERE list_contains($ids, c) GROUP BY c)
+        SELECT system_id id, wikidata_label label, coalesce(n, 0) n_studies
+        FROM concepts LEFT JOIN counts ON c = system_id WHERE list_contains($ids, system_id)""", {"ids": ids})
+    edges = _rows("""
+        SELECT least(s, t) source, greatest(s, t) target, sum(n) n_studies FROM (
+          SELECT "source_concept.system_id" s, "target_concept.system_id" t, num_studies n FROM relationships
+          WHERE list_contains($ids, "source_concept.system_id") AND list_contains($ids, "target_concept.system_id"))
+        WHERE s <> t GROUP BY 1, 2 ORDER BY n_studies DESC LIMIT 300""", {"ids": ids})
+    return {"nodes": nodes, "edges": edges, "source": "local"}

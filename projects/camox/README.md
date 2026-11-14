@@ -11,7 +11,7 @@ You ask a question or state a hypothesis in plain language. The agent splits it 
 
 ## How we used the System Public Graph
 
-TODO once the challenge is chosen. The agent's tools (`agent/tools.py`) search concepts and raw variable wording, walk concept links (neighbours, 1–3 hop paths), pull findings filtered by population and effect type, and compute direction and CI statistics in code, never in the model.
+TODO once the challenge is chosen. The agents' tools (`tools/graph.py`) search concepts and raw variable wording, walk concept links (neighbours, 1–3 hop paths), pull findings filtered by population and effect type, and compute direction and CI statistics in code, never in the model.
 
 ## How to run it
 
@@ -31,7 +31,7 @@ TODO once the challenge is chosen. The agent's tools (`agent/tools.py`) search c
    SPG_APIKEY=your-system-key
    OPENAI_API_KEY=your-openai-key
    ```
-4. `.venv/bin/python agent/agent.py "your question"`
+4. `.venv/bin/uvicorn server.main:app --port 8000`, then open http://localhost:8000
 
 To use the same graph tools from any MCP client (Claude, Cursor, Codex), add `MCP_TOKEN=any-long-secret` to `.env`, run `.venv/bin/python mcp_server.py`, and connect the client to `http://localhost:8799/mcp` with the header `Authorization: Bearer <MCP_TOKEN>`.
 

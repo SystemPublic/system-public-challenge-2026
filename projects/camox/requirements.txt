@@ -1,4 +1,10 @@
 openai
 duckdb
 mcp
+fastapi
 uvicorn
+psycopg[binary]
+cryptography
+httpx
+huggingface_hub
+pydantic

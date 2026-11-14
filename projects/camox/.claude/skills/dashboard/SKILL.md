@@ -1,6 +1,6 @@
 ---
 name: dashboard
-description: Use when building or changing the Streamlit demo (app.py) or the graph visualizer, when writing any text a user or judge will read, or when auditing the UI and the pipeline behind it.
+description: Use when building or changing the web dashboard (web/) or the graph visualizer, when writing any text a user or judge will read, or when auditing the UI and the pipeline behind it.
 ---
 
 # Dashboard: demo UI, graph view, wording, audit
@@ -9,15 +9,15 @@ The demo is what judges see in three minutes. It shows a question going in, the 
 
 ## Stack
 
-- One file: `app.py`, run with `.venv/bin/streamlit run app.py`.
-- The graph visualizer is our own HTML/JS page, embedded with `st.components.v1.html`. Move to `components.declare_component` only if clicks in the graph have to reach Python.
-- Use one graph library, from a CDN, at an exact pinned version. Use cytoscape.js (for example `https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js`). Don't add a second library.
-- Graph data:
-  - **Nodes:** the concepts the agent touched, taken from the tool trace and the cards' `concept_ids`.
-  - **Edges:** relationships between those concepts, from DuckDB (`relationships`). Edge width scales with `num_studies`.
-  - **Verdicts:** show them as text and colour together, both on the cards and on the nodes they cover.
-- Keep the HTML/JS as one template string or one file under `ui/`. Fill it with JSON from Python; don't build the page from string fragments.
-- If Streamlit blocks something we need, stop and ask before switching stacks.
+- Plain HTML/CSS/JS ES modules in `web/`, served by the FastAPI app at `/`. No build step, no framework.
+  - `index.html` layout, `style.css` tokens and layout, `app.js` state, API calls and the SSE stream (`/api/runs/{id}/events`), `sections.js` one renderer per section type (unknown types render as readable JSON), `graph.js` the cytoscape view.
+  - A new section type needs one renderer in `sections.js` and nothing else.
+- Libraries from jsDelivr at exact pinned versions: cytoscape@3.30.2, vega@5.30.0, vega-lite@5.21.0, vega-embed@6.26.0. Don't add another.
+- Graph data comes from `GET /api/graph?ids=...`, where ids are the union of `concept_ids` across the answer's sections.
+  - **Nodes:** size scales with `n_studies`.
+  - **Edges:** width scales with `n_studies`.
+  - **Verdicts:** show them as text and colour together, on the cards and anywhere else they appear.
+- Colours are CSS tokens on `:root`, redefined under `prefers-color-scheme: dark`. JS reads them from the tokens, never hard-codes them.
 
 ## Nonslop UI
 
@@ -63,7 +63,7 @@ This covers every piece of text a user reads: labels, cards, errors, README and 
 
 Run this after every UI change and before any push that touches the demo.
 
-1. **Run.** In Claude Code, add an entry to `.claude/launch.json` (`runtimeExecutable` `.venv/bin/streamlit`, args `run app.py --server.headless true`, port 8501), then open it with the browser pane's `preview_start`. Elsewhere, run the command and open http://localhost:8501.
+1. **Run.** Start the backend (`.venv/bin/uvicorn server.main:app --port 8000`) and open http://localhost:8000. For UI-only work without the backend, `python3 .claude/scratch/mock_server.py` serves `web/` with a fake API and event stream on port 8766.
 2. **Screenshot.** Take four: desktop light, desktop dark, 390 px light, 390 px dark. Capture the empty state, a running state and a finished answer.
 3. **Check** each screenshot against Nonslop UI and Nonslop writing above. Write down every miss.
 4. **Audit the pipeline** on the standing test question: "Validate: girls under 12 are more vulnerable to malaria because of sexism in malaria-endemic countries." Check that:

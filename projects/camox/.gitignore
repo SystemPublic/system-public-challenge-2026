@@ -8,3 +8,4 @@ data
 # archify render receipts and screenshots
 docs/*.delivery.json
 .claude/archify/*/
+.claude/scratch/

@@ -1,6 +1,6 @@
 ---
 name: graph-evidence
-description: Use when querying the System Public Graph (DuckDB), testing a hypothesis or building evidence cards, or adding or changing a tool in agent/tools.py.
+description: Use when querying the System Public Graph (DuckDB), testing a hypothesis or building evidence cards, or adding or changing a tool in tools/ (served by mcp_server.py).
 ---
 
 # Graph evidence
@@ -33,7 +33,7 @@ Join keys: `associations.variable_{1,2}_concept_id = concepts.system_id`, `assoc
 - **Relationship counts are approximate.** `neighbours` and `paths` add A→B and B→A, which can count a study twice. Use them to find links, and `summarise_evidence` for the numbers you report.
 - **Single-study links** are common. Flag them; never call one study "supported".
 
-### Tools (`agent/tools.py`)
+### Tools (`tools/graph.py`)
 
 - `search_concepts(text)`: entry points. Exact label first, then most-studied.
 - `search_variables(text)`: raw paper wording, and the concepts it is grounded to.
@@ -42,6 +42,8 @@ Join keys: `associations.variable_{1,2}_concept_id = concepts.system_id`, `assoc
 - `get_findings(concepts_a, concepts_b, ...)`: the actual effects with DOIs and populations, CI-bearing rows first.
 - `summarise_evidence(...)`: direction and CI counts and medians per family, computed in code.
 - `sql(query)`: a read-only escape hatch, capped at 50 rows.
+- `get_concept(concept_id)`: label, description, aliases; live System Graph API first, local fallback (`source`).
+- `subgraph(concept_ids, max_extra)`: nodes and edges among concepts, for the graph view.
 
 ## Evidence cards
 
@@ -51,15 +53,15 @@ Join keys: `associations.variable_{1,2}_concept_id = concepts.system_id`, `assoc
 4. Read the variable wording on the findings you cite. Report who was studied and say where that differs from the user's population.
 5. Search for synonyms before you write "no evidence". Name the gap and where to look next.
 
-The verdict rules (supported / contested / mixed / thin / no evidence) live in `agent/system_prompt.md`. That file is the single source; change them there, not here.
+The verdict rules (supported / contested / mixed / thin / no evidence) live in `agents/rules.md`. That file is the single source; change them there, not here.
 
 ## Adding a tool
 
-- Write one plain, read-only function in `agent/tools.py` and add it to `TOOLS`. No classes, no wrappers.
-- Use only these type hints: `str`, `int`, `float`, `bool`, `list[str]`, and `X | None` for optional arguments. `agent.py` builds the OpenAI schema from them. Any other type breaks the schema.
+- Write one plain, read-only function in any `tools/` module (or a new module there). `tools.TOOLS` finds every public function and `mcp_server.py` serves it; nothing to register. Helpers start with `_`. No classes, no wrappers.
+- Use only these type hints: `str`, `int`, `float`, `bool`, `list[str]`, and `X | None` for optional arguments. The MCP server builds the schema from them. Any other type breaks the schema.
 - The docstring is what the model reads. Say what the tool returns and when to use it, in two or three lines.
-- Return small JSON: cap rows, and include a `total` when you truncate. Query through `_rows()`, with `$name` parameters, never f-strings with user text.
+- Return small JSON: cap rows, and include a `total` when you truncate. In `tools/graph.py`, query through `_rows()`, with `$name` parameters, never f-strings with user text.
 - Smoke-test from `projects/camox`:
   ```bash
-  .venv/bin/python -c "import sys; sys.path.insert(0,'agent'); import tools; print(tools.search_concepts('malaria', k=3))"
+  .venv/bin/python -c "from tools import graph; print(graph.search_concepts('malaria', k=3))"
   ```
