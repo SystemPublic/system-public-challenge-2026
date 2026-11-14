@@ -1,5 +1,5 @@
 // State, API calls, the run event stream and page layout. Section rendering is in sections.js, the graph in graph.js.
-import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv, renderMyList } from './sections.js';
+import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv, renderMyList, kpiStrip } from './sections.js';
 import { drawGraph } from './graph.js';
 import { bindDashboard } from './dashboard.js';
 import { mountKG } from './kg.js';
@@ -203,6 +203,7 @@ function renderWorkspace() {
   mountKG($('#kg'), pj.id);
   bindReport($('#report'), pj, api);
   renderMyList($('.my-list'));
+  renderOverview();
   const runs = [...pj.runs].sort((a, b) => a.id - b.id);
   const fps = runs.filter(isFirstPass); const fpDone = fps.filter((r) => r.answer).at(-1);
   const asked = runs.filter(inThread);
@@ -347,6 +348,7 @@ const projectView = (pj) => `<header class="project-head"><h1>${esc(pj.title)}</
     <button type="button" class="ghost small link" data-jump="fp-h">Data availability</button>
     <button type="button" class="ghost small link" data-jump="db-h">Dashboard</button>
     <button type="button" class="ghost small link" data-jump="qs-h">Questions (${pj.runs.filter(inThread).length})</button></nav></header>
+  <div id="overview"></div>
   ${block('fp', 'Data availability and gaps', 'What exists for this project, and where sources disagree. Runs once, from the goals.',
     `<div id="first-pass">${firstPassEmpty(pj)}</div>`)}
   ${block('db', 'Dashboard', 'Key numbers, World Bank data and charts built from the answers in this project.', '<div id="dashboard" class="dashboard"></div>')}
@@ -430,6 +432,9 @@ function bindComposer() {
     }
   };
 }
+
+// KPI strip computed from every indicator map in the project; redrawn when a new answer arrives.
+const renderOverview = () => { const o = $('#overview'); if (o) o.innerHTML = kpiStrip(state.project.runs); };
 
 // Turns: one per run --------------------------------------------------------------------------------
 function mountTurn(run, latest, box = $('#thread')) {
@@ -534,7 +539,12 @@ function follow(id, el) {
     if (seen++ < events.length) return;  // the server replays stored events after a reconnect
     const ev = JSON.parse(m.data);
     events.push(ev);
-    if (ev.type === 'answer') mountAnswer(el, ev.answer, true);
+    if (ev.type === 'answer') {
+      mountAnswer(el, ev.answer, true);
+      el.run.answer = ev.answer;
+      if (el.isConnected && !state.project.runs.includes(el.run)) state.project.runs.push(el.run);
+      renderOverview();
+    }
     if (ev.type === 'run_done') {
       es.close(); streams.delete(es);
       if (ev.status === 'failed' && !$('.answer', el).innerHTML) {

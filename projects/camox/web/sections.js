@@ -148,6 +148,49 @@ const indLink = (name, id) => (id ? `<a href="${esc(wbUrl(id))}" target="_blank"
 const tier = (n) => (n >= 10 ? 'strong' : n >= 3 ? 'moderate' : 'thin');
 const pick = (i, l) => esc(JSON.stringify({ id: i.indicator_id, name: i.name, dataset: datasetName(i.database), url: wbUrl(i.indicator_id),
   concept: l.concept_label, tier: tier(l.studies), studies: l.studies, dois: (l.dois || []).join(' ') }));
+// Project overview: every indicator map in the project merged into rows (one per concept and indicator, gaps with none).
+function mapRows(runs) {
+  const rows = new Map(); const seeds = new Set();
+  for (const r of runs) for (const s of r.answer?.sections || []) if (s.type === 'indicator_map') {
+    seeds.add(s.seed.database);
+    for (const l of s.links) for (const i of l.indicators.length ? l.indicators : [null]) {
+      const k = `${l.concept_id}|${i?.indicator_id ?? ''}`;
+      (rows.get(k) || rows.set(k, { l, i, seed: s.seed.database, runs: new Set() }).get(k)).runs.add(r.id);
+    }
+  }
+  const all = [...rows.values()].sort((a, b) => b.l.studies - a.l.studies);
+  const found = new Set(all.filter((x) => x.i).map((x) => x.l.concept_id));
+  all.forEach((x) => { x.kind = x.i ? (![x.seed, 'unknown dataset'].includes(x.i.database) ? 'other' : 'same') : found.has(x.l.concept_id) ? '' : 'gap'; });
+  return { all: all.filter((x) => x.kind), seeds };
+}
+const questions = (xs) => plural(new Set(xs.flatMap((x) => [...x.runs])).size, 'question', 'questions');
+const uniq = (xs) => new Set(xs).size;
+
+export function kpiStrip(runs) {
+  const { all, seeds } = mapRows(runs);
+  if (!all.length) return '';
+  const ind = all.filter((x) => x.i), other = all.filter((x) => x.kind === 'other'), gap = all.filter((x) => x.kind === 'gap');
+  const studies = new Map(); all.forEach(({ l }) => studies.set(l.concept_id, Math.max(l.studies, studies.get(l.concept_id) || 0)));
+  const datasets = new Set([...seeds, ...ind.map((x) => x.i.database)]); datasets.delete('unknown dataset');
+  const cards = [[studies.size, 'linked concepts', '', all], [[...studies.values()].reduce((a, b) => a + b, 0), 'total studies', '', all],
+    [uniq(ind.map((x) => x.i.indicator_id)), 'World Bank indicators found', 'ind', ind], [datasets.size, 'datasets spanned', 'ind', ind],
+    [other.length, 'links outside the starting dataset', 'other', other], [uniq(gap.map((x) => x.l.concept_id)), 'not found in the World Bank datasets we checked', 'gap', gap]];
+  return `<div class="kstrip" role="group" aria-label="Project totals; pick one to filter the links">${cards.map(([v, label, f, xs]) =>
+    `<button type="button" class="kcard" data-kfilter="${f}" aria-pressed="false"><span class="kv num">${v.toLocaleString()}</span>
+      <span class="kl">${label}</span><span class="small muted">from ${questions(xs.length ? xs : all)}</span></button>`).join('')}</div>`;
+}
+// A KPI card filters the link lists to its rows; pressing it again shows all.
+document.addEventListener('click', (e) => {
+  const k = e.target.closest('[data-kfilter]');
+  if (!k) return;
+  const on = k.getAttribute('aria-pressed') !== 'true' && k.dataset.kfilter;
+  document.querySelectorAll('[data-kfilter]').forEach((b) => b.setAttribute('aria-pressed', b === k && k.getAttribute('aria-pressed') !== 'true'));
+  document.querySelectorAll('.lgroup').forEach((g) => {
+    g.querySelectorAll('li[data-kind]').forEach((li) => { li.hidden = !!on && !li.dataset.kind.split(' ').includes(on); });
+    g.hidden = !g.querySelector('li[data-kind]:not([hidden])');
+  });
+});
+
 const indicator = (i, l) => `<li>${indLink(i.name, i.indicator_id)} ${dataset(i.database)}
   <button type="button" class="chip" data-pick="${pick(i, l)}">Add to my list</button></li>`;
 
