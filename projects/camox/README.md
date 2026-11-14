@@ -2,7 +2,7 @@
 
 **Team:** CAMOX
 **Members:** Daniel Mora (daMS2005), catxu632, vishnuskulkarni, yilalalalala
-**Challenge:** TODO
+**Challenge:** Build Challenge 2 (World Bank): Can the System Public Graph improve discovery across World Bank data and research, with an initial focus on the jobs agenda?
 **Pitch slides:** TODO
 
 ## What it does
@@ -24,6 +24,28 @@ Follow-up questions in a project see the earlier answers. You can review and edi
 - **Findings:** filtered by concept groups (synonyms pooled), population wording and effect family. Direction splits, CI counts and medians are computed in code by `summarise_evidence`, never by the model, and different effect families are never pooled.
 - **Checks in code:** every DOI, concept id, effect size, CI and meter count in an answer must appear in that run's tool results. "Supported" needs 3 or more studies, "no evidence" needs at least three searches first, and causal verbs are rejected (the graph holds associations). An agent that fails a check retries with the error.
 - **Data:** the cleaned Dataverse subset (2.0M findings, 845k studies) in DuckDB, with the live System Graph API tried first for concept lookups.
+
+## Build Challenge 2: the jobs agenda
+
+The jobs demo sits on top of the general layer: a World Bank jobs analyst profile and one agent, the indicator map. The agent works for any World Bank indicator, not only jobs.
+
+**1. Can the tool surface connected indicators in other datasets?** It is built to, but in our demo it has not found one yet. The indicator-map agent finds the seed indicator in the World Bank Data360 catalogue, matches it to graph concepts, takes the concepts the evidence links to it most often, and searches the World Bank indicators again for each one. Code, not the model, marks a link "Different dataset" when its indicator sits in another database than the seed (for example WDI and Women, Business and the Law), and those links are listed first. The linked indicators, their datasets and the evidence behind them download as a CSV. In the internet-use run (seed: Individuals using the Internet, WDI), the evidence linked internet use to 8 concepts. Three had World Bank indicators (educational stage, employment, and the Internet seed itself), all in WDI, so no link crossed datasets. The other five, among them depression, internet addiction, sleep quality and health literacy, had no matching indicator and are shown as data gaps.
+
+**2. How well do indicator definitions match graph concepts?** The agent labels every match exact, narrower, broader or proxy, with one sentence why. Matching on concept labels and aliases works for broad outcomes such as unemployment, income, life expectancy and internet use. It breaks for legal and firm-level indicators: the graph has no concept for maternity leave (the nearest is parental leave), labor law or access to finance. There the agent falls back to the wording papers used and marks the match a proxy. In the internet-use run, the four concepts matched to the seed were 1 exact (Internet use), 1 broader (Internet), 2 proxy (internet access, employment) and 0 narrower.
+
+**3. What does the evidence cover well, and what poorly?** Job outcomes and Pillar 1 are well covered; Pillars 2 and 3 and public-sector pay are thin. Studies with at least one finding on the concept, in the cleaned Dataverse subset:
+
+| Jobs agenda group | Graph concepts (studies) |
+|---|---|
+| Job outcomes | income 2,278; unemployment 1,279; household income 1,255; informal economy 25 |
+| Pillar 1: foundations | Internet use 382; life expectancy 190 |
+| Pillar 2: business environment | day care 142; child care 108; parental leave 54; employment protection legislation 1; minimum wage 1; no concept for maternity leave or labor law |
+| Pillar 3: private capital | foreign direct investment 44; credit 15; no concept for access to finance |
+| Public sector | public sector 37; government employee 36 |
+
+The coverage run adds that job-focused interventions and job quality are thin even where the outcomes are dense: employment has 1,885 studies, but job training has 2, working conditions 1 and unemployment benefits 1.
+
+**4. Can it show where to look next, and where the evidence runs out?** Every link shows its study count, so a link that rests on one or two studies is visible as such. A linked concept that no World Bank indicator measures is shown as a "Data gap", not dropped. For maternity leave and women's employment, the answer says so plainly: the graph holds 54 parental-leave studies, mostly about breastfeeding and postpartum depression, and no finding that pairs leave with employment. Each answer ends with its gaps and where to look next, and the research agent searches OpenAlex, PubMed, the web and World Bank data for what the graph doesn't hold.
 
 ## How it is built
 
@@ -71,6 +93,9 @@ The MCP server is at `http://localhost:8000/mcp/` (header `Authorization: Bearer
 - Coverage is uneven: dense for common health outcomes, thin for policy instruments such as taxes, and populations skew to high-income countries.
 - A run takes 1 to 2 minutes and calls OpenAI, so runs are rate-limited per profile.
 - Sources the research agent finds on the web are not checked against our tool results the way graph findings are.
+- The studies are about individuals, while World Bank indicators are country-level, so a link between two concepts does not mean the two indicators move together across countries.
+- Matching an indicator to a graph concept can be wrong; the match type and its reason are shown so a reader can judge it.
+- "No matching indicator" means we didn't find one, not that the data doesn't exist.
 
 ## AI coding tools
 
