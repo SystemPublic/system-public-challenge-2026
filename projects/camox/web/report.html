@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAMOX report</title>
+<style>
+  :root { --text: #181b21; --muted: #5a606c; --line: #e2e5ea; --accent: #2456c4; --bg: #fff; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.6 "Source Serif 4", Georgia, serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1, h2, h3, .meta, .bar, table { font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif; }
+  h1 { font-size: 26px; line-height: 1.25; margin: 0 0 8px; }
+  h2 { font-size: 18px; margin: 28px 0 8px; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .purpose { font-style: italic; }
+  a { color: var(--accent); }
+  sup a { text-decoration: none; }
+  ol.refs li, .prov li { margin-bottom: 6px; font-size: 14px; overflow-wrap: anywhere; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; table-layout: fixed; }
+  th, td { border-bottom: 1px solid var(--line); padding: 6px 8px 6px 0; text-align: left; vertical-align: top; }
+  th:nth-child(1) { width: 22%; } th:nth-child(2) { width: 14%; } th:nth-child(3) { width: 20%; }
+  td:last-child { overflow-wrap: anywhere; }
+  .bar { display: flex; gap: 8px; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+  button { font: inherit; padding: 6px 14px; border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 6px; cursor: pointer; }
+  @page { size: A4; margin: 18mm 16mm 20mm; @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 9pt sans-serif; color: #5a606c; } }
+  @media print {
+    .bar { display: none; }
+    main { max-width: none; padding: 0; }
+    body { font-size: 11pt; }
+    h2 { break-after: avoid; }
+    .refs-block { break-before: page; }
+    tr, li { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<main id="report"><p class="meta">Loading the report...</p></main>
+<script type="module">
+import { esc } from './sections.js';
+import { verifiedLabel } from './report.js';
+
+const params = new URLSearchParams(location.search);
+const el = document.getElementById('report');
+const when = (t) => (t ? new Date(t).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' }) : '');
+// [n] markers become superscript links to the numbered reference.
+const cite = (t) => esc(t).replace(/\[(\d+)\]/g, '<sup><a href="#ref-$1">[$1]</a></sup>');
+
+try {
+  const pj = await (await fetch(`/api/projects/${encodeURIComponent(params.get('project'))}`)).json();
+  const versions = pj.reports || [];
+  const v = versions.find((x) => String(x.version) === params.get('v')) || versions.at(-1);
+  if (!v) throw new Error('This project has no report yet.');
+  const r = v.report;
+  document.title = `${r.title} (v${v.version})`;
+  el.innerHTML = `<div class="bar"><span class="meta">${esc(pj.title)} · version ${v.version} of ${versions.length}</span>
+      <button type="button" onclick="window.print()">Download PDF</button></div>
+    <h1>${esc(r.title)}</h1>
+    <p class="meta">${esc(verifiedLabel(v.verification))}</p>
+    ${v.verification?.issues?.length ? `<ul class="meta">${v.verification.issues.map((i) => `<li>${esc(i.severity)}: ${esc(i.problem)} (claim: ${esc(i.claim)})</li>`).join('')}</ul>` : ''}
+    <p class="meta">${esc(pj.title)} · version ${v.version} · ${when(v.created_at)}${v.instruction ? ` · revised: ${esc(v.instruction)}` : ''}</p>
+    <p class="purpose">${cite(r.purpose)}</p>
+    <h2>Executive summary</h2><p>${cite(r.executive_summary)}</p>
+    ${r.sections.map((s, i) => `<h2>${i + 1}. ${esc(s.heading)}</h2>${s.paragraphs.map((p) => `<p>${cite(p)}</p>`).join('')}`).join('')}
+    <h2>Limitations</h2><ul>${r.limitations.map((l) => `<li>${cite(l)}</li>`).join('')}</ul>
+    <div class="refs-block"><h2>References</h2>
+    ${v.references.length ? `<ol class="refs">${v.references.map((x) => `<li id="ref-${x.n}">${esc(x.title || 'Title not found in OpenAlex')}${x.year ? ` (${x.year})` : ''}.
+      ${x.venue ? `<em>${esc(x.venue)}</em>.` : ''} <a href="${esc(x.url)}">${esc(x.url)}</a></li>`).join('')}</ol>` : '<p class="meta">No papers cited.</p>'}
+    <h2>Appendix: data provenance</h2>
+    <p class="meta">Built from the tool calls stored with this project's answers, not written by a model.</p>
+    ${v.provenance.length ? `<table><thead><tr><th>Source</th><th>Licence</th><th>Retrieved</th><th>What was used</th></tr></thead><tbody>
+      ${v.provenance.map((p) => `<tr><td>${esc(p.source)}<br><span class="meta">${p.calls} calls</span></td><td>${esc(p.licence)}</td>
+        <td>${when(p.first)}${p.last !== p.first ? `<br>to ${when(p.last)}` : ''}</td>
+        <td>${p.items.slice(0, 40).map(esc).join('; ')}${p.items.length > 40 ? `; and ${p.items.length - 40} more` : ''}</td></tr>`).join('')}</tbody></table>`
+      : '<p class="meta">No tool calls stored for this project.</p>'}
+    <p class="meta">Content derived from the System Public Graph is licensed CC BY-NC 4.0. Generated by CAMOX.</p></div>`;
+  if (params.has('print')) setTimeout(() => window.print(), 300);
+} catch (e) {
+  el.innerHTML = `<p class="meta">Could not load the report: ${esc(e.message)}</p>`;
+}
+</script>
+</body>
+</html>
