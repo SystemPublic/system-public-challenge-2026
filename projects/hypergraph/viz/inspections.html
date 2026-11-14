@@ -313,7 +313,7 @@ $("rows").addEventListener("click", e => { const tr = e.target.closest("tr.row")
 $("morerows").addEventListener("click", () => renderRows(false));
 $("q").addEventListener("input", () => { const k = $("q").value.trim().toUpperCase(); filtered = DATA.rows.filter(r => !k || (r.name || "").toUpperCase().includes(k) || (r.street || "").toUpperCase().includes(k)); renderRows(true); });
 // ?auto=1 runs the comparison and opens one row, for screenshots and checks.
-if (new URLSearchParams(location.search).get("auto")) compare().then(() => drill(document.querySelectorAll("tr.row")[2]));
+if (new URLSearchParams(location.search).get("auto")) compare().then(() => { document.querySelectorAll(".num").forEach(n => { n.style.transition = "none"; n.classList.add("on"); }); return drill(document.querySelectorAll("tr.row")[2]); });
 let HIST = null;
 async function hist() { if (!HIST) HIST = await fetch("/api/inspections/history").then(r => r.json()); return HIST; }
 const ym = s => s.slice(0, 4) + "-" + s.slice(4, 6);

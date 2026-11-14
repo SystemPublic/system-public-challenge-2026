@@ -106,6 +106,10 @@ Yes. The work was done with Claude Code agents (Anthropic's Claude) under Jeff's
 
 ## Screenshot
 
+![The inspections demo after Compare and one drill-down](figures/comics/demo_inspections.png)
+
+`viz/inspections.html`: the June and November copies of the city's restaurant inspection table compared, and one inspection fetched from both Underlay collections.
+
 ![The claims dashboard](figures/viz/dashboard.png)
 
 The screenshot is the claims dashboard (`viz/index.html`); the page to open first is `viz/hypergraph.html`. The dashboard plots each claim, with its interval, by its stance: how far the city evidence agrees with the direction the research found. Each claim opens to its registration, outcome, sources and referee report.
