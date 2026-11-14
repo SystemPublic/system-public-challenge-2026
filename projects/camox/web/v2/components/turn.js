@@ -86,10 +86,12 @@ function Thread({ m, title }) {
   useEffect(() => { const el = ref.current; if (el) el.scrollTop = el.scrollHeight; }, [m.tools]);
   const ago = (t) => (t ? `${Math.round((Date.now() - new Date(t)) / 1000)} s` : '');
   const agents = [...m.agents.values()];
+  const secs = m.t0 ? (Date.now() - new Date(m.t0)) / 1000 : 0;
+  const eta = Math.round(m.verifying ? 10 : m.formatting ? 20 : Math.max(15, 90 - secs));  // rough: runs take about 1.5 min
   return html`<div class="tool-thread small">
-    <p class="muted">Run time ${ago(m.t0) || '0 s'}${agents.length ? ' · ' : ''}${agents.map((a) => html`<span key=${a.name} class="t-agent">
+    <p class="muted">Run time ${ago(m.t0) || '0 s'} · about ${eta} s left (estimate)${agents.length ? ' · ' : ''}${agents.map((a) => html`<span key=${a.name} class="t-agent">
       ${a.status === 'running' && html`<i class="dot busy"></i>`}${title(a.name)} ${a.status === 'running' ? ago(a.t0) : STATUS[a.status].toLowerCase()} </span>`)}</p>
-    <ol ref=${ref} style=${{ maxHeight: '14rem', overflowY: 'auto', margin: 0 }}>
+    <ol ref=${ref} style=${{ height: '14rem', minHeight: '6rem', overflowY: 'auto', margin: 0, resize: 'vertical' }}>
       ${!m.tools && html`<li class="muted"><i class="dot busy"></i> Planning: choosing agents for this question…</li>`}
       ${m.all.map((t, i) => html`<li key=${i}><strong>${title(t.agent)}</strong> · ${t.tool.replaceAll('_', ' ')} · ${toolLine(t)}</li>`)}
     </ol></div>`;

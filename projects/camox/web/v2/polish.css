@@ -41,3 +41,5 @@ th { color: var(--teal); }
 /* Long section labels and verifier badges wrap on phones. */
 span.kind { white-space: normal; overflow-wrap: anywhere; }
 details.verify, details.verify summary, details.verify .pill { white-space: normal; max-width: 100%; overflow-wrap: anywhere; }
+/* Resizable ask box and answers. */
+.composer textarea, .composer textarea[id] { resize: vertical; min-height: 3.4em; max-height: 50vh; }

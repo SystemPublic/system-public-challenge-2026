@@ -10,8 +10,8 @@ const GOALS_HINT = 'What the work is for, who will read it, and its scope: count
 
 export function ProjectHome({ project, profile, agents, session, threads, thread, reload, projects, owner, onDeleted }) {
   const [editGoals, setEditGoals] = useState(false);
-  const [tab, setTab] = useState('questions');  // chat first; the rest are one tap away
-  useEffect(() => setTab('questions'), [project.id]);
+  const [tab, setTab] = useState('dashboard');  // dashboard first; chat is one tap away
+  useEffect(() => setTab('dashboard'), [project.id]);
   // Poll the project while a dashboard or report is being built.
   useEffect(() => {
     if (!building(project.dashboard_status) && !building(project.report_status)) return;
