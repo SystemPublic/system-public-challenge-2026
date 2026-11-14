@@ -1,0 +1,12 @@
+<section class="panel" id="graph" aria-labelledby="graph-title" style="margin-top:16px">
+<div class="panelhead"><div><div class="eyebrow">03 / Evidence graph · real data</div><h2 id="graph-title">How much evidence sits behind each link?</h2><p>Pick an action. Lines run to its wider outcomes (above) and to health (below); line width is the number of studies. Select any line to see the findings.</p></div>
+<div class="gctl"><div class="seg" role="group" aria-label="Layout"><button type="button" data-layout="rows" aria-pressed="true">Rows</button><button type="button" data-layout="cols" aria-pressed="false">Columns</button></div>
+<div class="seg" role="group" aria-label="Evidence from"><button type="button" data-region="all" aria-pressed="true">All regions</button><button type="button" data-region="uk" aria-pressed="false">UK only</button></div></div></div>
+<div id="gpick" class="gpick" role="group" aria-label="Choose an action"></div>
+<div class="gwrap"><div class="gscroll"><svg id="gsvg" role="group" aria-label="Evidence graph"></svg></div>
+<aside class="ginspect" aria-live="polite"><div class="eyebrow">Inspect a link</div><div id="ginspect"></div></aside></div>
+<div class="glegend"><b>Line colour</b><span class="leg"><i class="gl" style="border-color:#36c9ff"></i> Health link (studies)</span><span class="leg"><i class="gl" style="border-color:#57ef8a"></i> Possible benefit</span><span class="leg"><i class="gl" style="border-color:#ff9c36;border-top-style:dashed"></i> Mixed / conditional</span><span class="leg"><i class="gl" style="border-color:#ff43bd;border-top-style:dotted"></i> Potential harm / makes worse</span><span class="leg"><i class="gl" style="border-color:#bcbcbc;border-top-style:dashed"></i> Not assessed</span>
+<span class="weight"><b>Evidence volume:</b> W1 = 1–4 · W2 = 5–19 · W3 = 20+ studies · width is linear in studies, not effect size</span>
+<span class="weight"><b>Bars:</b> blue = problem evidence (studies linking the exposure to health) · black = fix evidence (studies testing the action)</span></div>
+<p class="foot" id="gfoot"></p>
+</section>

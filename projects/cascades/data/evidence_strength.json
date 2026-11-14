@@ -1,0 +1,866 @@
+{
+ "Allergen & pest control (household)": {
+  "exposure": {
+   "studies": 61,
+   "tested": 57,
+   "significant": 51,
+   "pct_sig": 89,
+   "trials": 3,
+   "findings": 83,
+   "effect_size": 83,
+   "group_comparison": 0,
+   "level": "Strong",
+   "consistency": "consistent",
+   "by_outcome": {
+    "allergy": {
+     "studies": 6,
+     "tested": 5,
+     "significant": 3,
+     "pct_sig": 60,
+     "trials": 1,
+     "findings": 8,
+     "effect_size": 8,
+     "group_comparison": 0,
+     "level": "Moderate",
+     "consistency": "consistent"
+    },
+    "hosp": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 1,
+     "effect_size": 1,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "mental": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 2,
+     "effect_size": 2,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "resp": {
+     "studies": 54,
+     "tested": 51,
+     "significant": 47,
+     "pct_sig": 92,
+     "trials": 3,
+     "findings": 72,
+     "effect_size": 72,
+     "group_comparison": 0,
+     "level": "Strong",
+     "consistency": "consistent"
+    }
+   }
+  },
+  "intervention": {
+   "studies": 6,
+   "tested": 6,
+   "significant": 1,
+   "pct_sig": 17,
+   "trials": 4,
+   "findings": 8,
+   "effect_size": 3,
+   "group_comparison": 5,
+   "level": "Limited",
+   "consistency": "mostly null",
+   "by_outcome": {
+    "allergy": {
+     "studies": 4,
+     "tested": 4,
+     "significant": 0,
+     "pct_sig": 0,
+     "trials": 3,
+     "findings": 4,
+     "effect_size": 1,
+     "group_comparison": 3,
+     "level": "Limited",
+     "consistency": "mostly null"
+    },
+    "resp": {
+     "studies": 3,
+     "tested": 3,
+     "significant": 1,
+     "pct_sig": 33,
+     "trials": 2,
+     "findings": 4,
+     "effect_size": 2,
+     "group_comparison": 2,
+     "level": "Limited",
+     "consistency": "mostly null"
+    }
+   }
+  }
+ },
+ "Building fabric (insulation, airtightness)": {
+  "intervention": {
+   "studies": 1,
+   "tested": 1,
+   "significant": 1,
+   "pct_sig": 100,
+   "trials": 0,
+   "findings": 1,
+   "effect_size": 1,
+   "group_comparison": 0,
+   "level": "Limited",
+   "consistency": "consistent",
+   "by_outcome": {
+    "resp": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 1,
+     "effect_size": 1,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    }
+   }
+  }
+ },
+ "Clean cooking": {
+  "exposure": {
+   "studies": 190,
+   "tested": 179,
+   "significant": 165,
+   "pct_sig": 92,
+   "trials": 4,
+   "findings": 354,
+   "effect_size": 342,
+   "group_comparison": 12,
+   "level": "Strong",
+   "consistency": "consistent",
+   "by_outcome": {
+    "allergy": {
+     "studies": 5,
+     "tested": 4,
+     "significant": 4,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 10,
+     "effect_size": 10,
+     "group_comparison": 0,
+     "level": "Moderate",
+     "consistency": "consistent"
+    },
+    "cancer": {
+     "studies": 22,
+     "tested": 21,
+     "significant": 21,
+     "pct_sig": 100,
+     "trials": 1,
+     "findings": 32,
+     "effect_size": 31,
+     "group_comparison": 1,
+     "level": "Strong",
+     "consistency": "consistent"
+    },
+    "heart": {
+     "studies": 27,
+     "tested": 27,
+     "significant": 23,
+     "pct_sig": 85,
+     "trials": 2,
+     "findings": 63,
+     "effect_size": 55,
+     "group_comparison": 8,
+     "level": "Strong",
+     "consistency": "consistent"
+    },
+    "hosp": {
+     "studies": 19,
+     "tested": 19,
+     "significant": 18,
+     "pct_sig": 95,
+     "trials": 0,
+     "findings": 35,
+     "effect_size": 35,
+     "group_comparison": 0,
+     "level": "Moderate",
+     "consistency": "consistent"
+    },
+    "mental": {
+     "studies": 19,
+     "tested": 17,
+     "significant": 16,
+     "pct_sig": 94,
+     "trials": 0,
+     "findings": 35,
+     "effect_size": 35,
+     "group_comparison": 0,
+     "level": "Moderate",
+     "consistency": "consistent"
+    },
+    "resp": {
+     "studies": 107,
+     "tested": 100,
+     "significant": 88,
+     "pct_sig": 88,
+     "trials": 1,
+     "findings": 179,
+     "effect_size": 176,
+     "group_comparison": 3,
+     "level": "Strong",
+     "consistency": "consistent"
+    }
+   }
+  },
+  "intervention": {
+   "studies": 20,
+   "tested": 19,
+   "significant": 13,
+   "pct_sig": 68,
+   "trials": 6,
+   "findings": 30,
+   "effect_size": 29,
+   "group_comparison": 1,
+   "level": "Strong",
+   "consistency": "consistent",
+   "by_outcome": {
+    "allergy": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 1,
+     "findings": 1,
+     "effect_size": 1,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "cancer": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 0,
+     "pct_sig": 0,
+     "trials": 0,
+     "findings": 1,
+     "effect_size": 1,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "mostly null"
+    },
+    "heart": {
+     "studies": 3,
+     "tested": 3,
+     "significant": 3,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 6,
+     "effect_size": 6,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "hosp": {
+     "studies": 4,
+     "tested": 4,
+     "significant": 2,
+     "pct_sig": 50,
+     "trials": 1,
+     "findings": 6,
+     "effect_size": 6,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "mixed"
+    },
+    "mental": {
+     "studies": 2,
+     "tested": 2,
+     "significant": 2,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 4,
+     "effect_size": 4,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "resp": {
+     "studies": 9,
+     "tested": 8,
+     "significant": 5,
+     "pct_sig": 62,
+     "trials": 4,
+     "findings": 12,
+     "effect_size": 11,
+     "group_comparison": 1,
+     "level": "Moderate",
+     "consistency": "consistent"
+    }
+   }
+  }
+ },
+ "Crowding (exposure)": {
+  "exposure": {
+   "studies": 60,
+   "tested": 55,
+   "significant": 48,
+   "pct_sig": 87,
+   "trials": 3,
+   "findings": 67,
+   "effect_size": 67,
+   "group_comparison": 0,
+   "level": "Strong",
+   "consistency": "consistent",
+   "by_outcome": {
+    "allergy": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 0,
+     "pct_sig": 0,
+     "trials": 0,
+     "findings": 1,
+     "effect_size": 1,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "mostly null"
+    },
+    "cancer": {
+     "studies": 2,
+     "tested": 2,
+     "significant": 1,
+     "pct_sig": 50,
+     "trials": 0,
+     "findings": 2,
+     "effect_size": 2,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "mixed"
+    },
+    "heart": {
+     "studies": 3,
+     "tested": 3,
+     "significant": 2,
+     "pct_sig": 67,
+     "trials": 0,
+     "findings": 3,
+     "effect_size": 3,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "hosp": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 1,
+     "effect_size": 1,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "inf": {
+     "studies": 39,
+     "tested": 35,
+     "significant": 31,
+     "pct_sig": 89,
+     "trials": 3,
+     "findings": 44,
+     "effect_size": 44,
+     "group_comparison": 0,
+     "level": "Strong",
+     "consistency": "consistent"
+    },
+    "mental": {
+     "studies": 4,
+     "tested": 4,
+     "significant": 4,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 4,
+     "effect_size": 4,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "resp": {
+     "studies": 12,
+     "tested": 11,
+     "significant": 10,
+     "pct_sig": 91,
+     "trials": 0,
+     "findings": 12,
+     "effect_size": 12,
+     "group_comparison": 0,
+     "level": "Moderate",
+     "consistency": "consistent"
+    }
+   }
+  }
+ },
+ "Indoor temperature (heating & cooling)": {
+  "exposure": {
+   "studies": 10,
+   "tested": 10,
+   "significant": 10,
+   "pct_sig": 100,
+   "trials": 1,
+   "findings": 17,
+   "effect_size": 17,
+   "group_comparison": 0,
+   "level": "Moderate",
+   "consistency": "consistent",
+   "by_outcome": {
+    "heart": {
+     "studies": 4,
+     "tested": 4,
+     "significant": 4,
+     "pct_sig": 100,
+     "trials": 1,
+     "findings": 6,
+     "effect_size": 6,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "hosp": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 1,
+     "effect_size": 1,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "mental": {
+     "studies": 6,
+     "tested": 6,
+     "significant": 6,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 9,
+     "effect_size": 9,
+     "group_comparison": 0,
+     "level": "Moderate",
+     "consistency": "consistent"
+    },
+    "resp": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 1,
+     "effect_size": 1,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    }
+   }
+  },
+  "intervention": {
+   "studies": 43,
+   "tested": 37,
+   "significant": 30,
+   "pct_sig": 81,
+   "trials": 2,
+   "findings": 70,
+   "effect_size": 66,
+   "group_comparison": 4,
+   "level": "Moderate",
+   "consistency": "consistent",
+   "by_outcome": {
+    "allergy": {
+     "studies": 4,
+     "tested": 3,
+     "significant": 3,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 5,
+     "effect_size": 5,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "cancer": {
+     "studies": 2,
+     "tested": 2,
+     "significant": 2,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 5,
+     "effect_size": 5,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "heart": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 0,
+     "pct_sig": 0,
+     "trials": 0,
+     "findings": 2,
+     "effect_size": 2,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "mostly null"
+    },
+    "hosp": {
+     "studies": 7,
+     "tested": 7,
+     "significant": 4,
+     "pct_sig": 57,
+     "trials": 0,
+     "findings": 9,
+     "effect_size": 9,
+     "group_comparison": 0,
+     "level": "Moderate",
+     "consistency": "mixed"
+    },
+    "mental": {
+     "studies": 2,
+     "tested": 2,
+     "significant": 0,
+     "pct_sig": 0,
+     "trials": 1,
+     "findings": 4,
+     "effect_size": 1,
+     "group_comparison": 3,
+     "level": "Limited",
+     "consistency": "mostly null"
+    },
+    "resp": {
+     "studies": 30,
+     "tested": 24,
+     "significant": 22,
+     "pct_sig": 92,
+     "trials": 1,
+     "findings": 45,
+     "effect_size": 44,
+     "group_comparison": 1,
+     "level": "Moderate",
+     "consistency": "consistent"
+    }
+   }
+  }
+ },
+ "Moisture & mould remediation": {
+  "exposure": {
+   "studies": 102,
+   "tested": 94,
+   "significant": 85,
+   "pct_sig": 90,
+   "trials": 4,
+   "findings": 160,
+   "effect_size": 158,
+   "group_comparison": 2,
+   "level": "Strong",
+   "consistency": "consistent",
+   "by_outcome": {
+    "allergy": {
+     "studies": 12,
+     "tested": 9,
+     "significant": 8,
+     "pct_sig": 89,
+     "trials": 1,
+     "findings": 16,
+     "effect_size": 16,
+     "group_comparison": 0,
+     "level": "Moderate",
+     "consistency": "consistent"
+    },
+    "mental": {
+     "studies": 4,
+     "tested": 4,
+     "significant": 3,
+     "pct_sig": 75,
+     "trials": 0,
+     "findings": 12,
+     "effect_size": 12,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "resp": {
+     "studies": 89,
+     "tested": 82,
+     "significant": 75,
+     "pct_sig": 91,
+     "trials": 3,
+     "findings": 132,
+     "effect_size": 130,
+     "group_comparison": 2,
+     "level": "Strong",
+     "consistency": "consistent"
+    }
+   }
+  },
+  "intervention": {
+   "studies": 2,
+   "tested": 2,
+   "significant": 2,
+   "pct_sig": 100,
+   "trials": 0,
+   "findings": 2,
+   "effect_size": 2,
+   "group_comparison": 0,
+   "level": "Limited",
+   "consistency": "consistent",
+   "by_outcome": {
+    "resp": {
+     "studies": 2,
+     "tested": 2,
+     "significant": 2,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 2,
+     "effect_size": 2,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    }
+   }
+  }
+ },
+ "Particle filtration": {
+  "exposure": {
+   "studies": 4,
+   "tested": 4,
+   "significant": 4,
+   "pct_sig": 100,
+   "trials": 0,
+   "findings": 7,
+   "effect_size": 7,
+   "group_comparison": 0,
+   "level": "Limited",
+   "consistency": "consistent",
+   "by_outcome": {
+    "resp": {
+     "studies": 4,
+     "tested": 4,
+     "significant": 4,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 7,
+     "effect_size": 7,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    }
+   }
+  },
+  "intervention": {
+   "studies": 3,
+   "tested": 2,
+   "significant": 1,
+   "pct_sig": 50,
+   "trials": 1,
+   "findings": 4,
+   "effect_size": 2,
+   "group_comparison": 2,
+   "level": "Limited",
+   "consistency": "mixed",
+   "by_outcome": {
+    "mental": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 1,
+     "effect_size": 0,
+     "group_comparison": 1,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "resp": {
+     "studies": 3,
+     "tested": 2,
+     "significant": 1,
+     "pct_sig": 50,
+     "trials": 1,
+     "findings": 3,
+     "effect_size": 2,
+     "group_comparison": 1,
+     "level": "Limited",
+     "consistency": "mixed"
+    }
+   }
+  }
+ },
+ "Radon mitigation": {
+  "exposure": {
+   "studies": 65,
+   "tested": 55,
+   "significant": 33,
+   "pct_sig": 60,
+   "trials": 1,
+   "findings": 144,
+   "effect_size": 144,
+   "group_comparison": 0,
+   "level": "Strong",
+   "consistency": "consistent",
+   "by_outcome": {
+    "cancer": {
+     "studies": 55,
+     "tested": 45,
+     "significant": 28,
+     "pct_sig": 62,
+     "trials": 1,
+     "findings": 127,
+     "effect_size": 127,
+     "group_comparison": 0,
+     "level": "Strong",
+     "consistency": "consistent"
+    },
+    "heart": {
+     "studies": 3,
+     "tested": 3,
+     "significant": 2,
+     "pct_sig": 67,
+     "trials": 0,
+     "findings": 5,
+     "effect_size": 5,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "hosp": {
+     "studies": 7,
+     "tested": 7,
+     "significant": 2,
+     "pct_sig": 29,
+     "trials": 0,
+     "findings": 11,
+     "effect_size": 11,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "mostly null"
+    },
+    "resp": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 1,
+     "effect_size": 1,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    }
+   }
+  }
+ },
+ "Ventilation & source capture": {
+  "exposure": {
+   "studies": 7,
+   "tested": 7,
+   "significant": 6,
+   "pct_sig": 86,
+   "trials": 0,
+   "findings": 8,
+   "effect_size": 8,
+   "group_comparison": 0,
+   "level": "Moderate",
+   "consistency": "consistent",
+   "by_outcome": {
+    "cancer": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 2,
+     "effect_size": 2,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "resp": {
+     "studies": 6,
+     "tested": 6,
+     "significant": 5,
+     "pct_sig": 83,
+     "trials": 0,
+     "findings": 6,
+     "effect_size": 6,
+     "group_comparison": 0,
+     "level": "Moderate",
+     "consistency": "consistent"
+    }
+   }
+  },
+  "intervention": {
+   "studies": 7,
+   "tested": 6,
+   "significant": 5,
+   "pct_sig": 83,
+   "trials": 1,
+   "findings": 12,
+   "effect_size": 12,
+   "group_comparison": 0,
+   "level": "Moderate",
+   "consistency": "consistent",
+   "by_outcome": {
+    "heart": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 3,
+     "effect_size": 3,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "hosp": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 0,
+     "pct_sig": 0,
+     "trials": 0,
+     "findings": 1,
+     "effect_size": 1,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "mostly null"
+    },
+    "mental": {
+     "studies": 1,
+     "tested": 1,
+     "significant": 1,
+     "pct_sig": 100,
+     "trials": 0,
+     "findings": 3,
+     "effect_size": 3,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    },
+    "resp": {
+     "studies": 4,
+     "tested": 3,
+     "significant": 3,
+     "pct_sig": 100,
+     "trials": 1,
+     "findings": 5,
+     "effect_size": 5,
+     "group_comparison": 0,
+     "level": "Limited",
+     "consistency": "consistent"
+    }
+   }
+  }
+ }
+}

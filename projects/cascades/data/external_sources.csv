@@ -1,0 +1,7 @@
+columns,source,url,geography,type
+damp_pct_ehs2023 / cat1_hazard_pct_ehs2023 / non_decent_pct_ehs2023,EHS local authority stock condition modelling 2023 (modelled),https://www.gov.uk/government/statistics/english-housing-survey-local-authority-housing-stock-condition-modelling-2023,LA (2023 boundaries),modelled estimate
+fuel_poverty_pct_2024,"DESNZ sub-regional fuel poverty 2026 (2024 data), LILEE",https://www.gov.uk/government/statistics/sub-regional-fuel-poverty-data-2026-2024-data,LA and LSOA,modelled estimate
+imd_* / living_env_* / indoors_* / idaci_score,"English Indices of Deprivation 2025, File 7",https://www.gov.uk/government/statistics/english-indices-of-deprivation-2025,LSOA 2021; LA = population-weighted mean,official statistics
+epc_*_recent,"MHCLG EPC live tables EB1 and EB3 (existing dwellings), last 8 quarters: 2024/4, 2026/3",https://www.gov.uk/government/statistical-data-sets/live-tables-on-energy-performance-of-buildings-certificates,LA,modelled (SAP) at certificate level; homes with new certificates only
+asthma_adm_u19_per100k,OHID Fingertips 90810: hospital admissions for asthma (under 19 years),https://fingertips.phe.org.uk/,District/UA,observed (HES)
+winter_mortality_index,OHID Fingertips 90360: winter mortality index,https://fingertips.phe.org.uk/,District/UA,observed (ONS deaths)
