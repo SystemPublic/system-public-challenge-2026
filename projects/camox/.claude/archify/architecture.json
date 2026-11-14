@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "CAMOX Evidence Agent: architecture and agent flow",
+    "locale": "en",
+    "output": "docs/architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "teammates",
+      "type": "external",
+      "label": "Teammates' agents",
+      "sublabel": "Claude Code, Codex",
+      "pos": [
+        290,
+        40
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "tunnel",
+      "type": "security",
+      "label": "cloudflared tunnel",
+      "sublabel": "public URL",
+      "pos": [
+        540,
+        40
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "MCP server",
+      "sublabel": "mcp_server.py, planned",
+      "pos": [
+        790,
+        40
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "user",
+      "type": "external",
+      "label": "Researcher",
+      "sublabel": "question or hypothesis",
+      "pos": [
+        40,
+        200
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "app",
+      "type": "frontend",
+      "label": "Demo app",
+      "sublabel": "app.py, planned",
+      "pos": [
+        290,
+        200
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "agent",
+      "type": "backend",
+      "label": "Agent loop",
+      "sublabel": "agent/agent.py",
+      "pos": [
+        540,
+        200
+      ],
+      "size": [
+        140,
+        60
+      ],
+      "tag": "gpt-6-luna"
+    },
+    {
+      "id": "tools",
+      "type": "backend",
+      "label": "Graph tools",
+      "sublabel": "agent/tools.py",
+      "pos": [
+        790,
+        200
+      ],
+      "size": [
+        140,
+        60
+      ],
+      "tag": "7 read-only"
+    },
+    {
+      "id": "duckdb",
+      "type": "database",
+      "label": "graph.duckdb",
+      "sublabel": "2M findings, 845k studies",
+      "pos": [
+        1040,
+        200
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "viz",
+      "type": "frontend",
+      "label": "Graph visualizer",
+      "sublabel": "in app.py, planned",
+      "pos": [
+        290,
+        360
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "openai",
+      "type": "cloud",
+      "label": "OpenAI",
+      "sublabel": "Responses API",
+      "pos": [
+        540,
+        360
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "dataverse",
+      "type": "external",
+      "label": "Dataverse CSVs",
+      "sublabel": "cleaned subset, 1.1 GB",
+      "pos": [
+        1040,
+        360
+      ],
+      "size": [
+        150,
+        60
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "security-group",
+      "label": "shared bearer token",
+      "wraps": [
+        "tunnel",
+        "mcp"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "ask",
+      "from": "user",
+      "to": "app",
+      "label": "question",
+      "variant": "emphasis"
+    },
+    {
+      "id": "run",
+      "from": "app",
+      "to": "agent",
+      "label": "question",
+      "variant": "emphasis"
+    },
+    {
+      "id": "call-tools",
+      "from": "agent",
+      "to": "tools",
+      "label": "tool calls",
+      "variant": "emphasis"
+    },
+    {
+      "id": "query",
+      "from": "tools",
+      "to": "duckdb",
+      "label": "SQL"
+    },
+    {
+      "id": "reason",
+      "from": "agent",
+      "to": "openai",
+      "label": "plan, verdicts"
+    },
+    {
+      "id": "cards",
+      "from": "agent",
+      "to": "app",
+      "label": "cards + trace",
+      "variant": "dashed"
+    },
+    {
+      "id": "draw",
+      "from": "app",
+      "to": "viz",
+      "label": "concepts, links"
+    },
+    {
+      "id": "build",
+      "from": "dataverse",
+      "to": "duckdb",
+      "label": "eda/load.sql",
+      "variant": "dashed"
+    },
+    {
+      "id": "team-call",
+      "from": "teammates",
+      "to": "tunnel",
+      "label": "MCP / HTTPS"
+    },
+    {
+      "id": "forward",
+      "from": "tunnel",
+      "to": "mcp"
+    },
+    {
+      "id": "same-tools",
+      "from": "mcp",
+      "to": "tools",
+      "label": "same tools"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Agent flow",
+      "items": [
+        "Splits the question into 2-4 sub-claims",
+        "Searches concepts and variable wording, walks links and paths",
+        "Pulls findings, counts them in code, then writes one evidence card per sub-claim"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Rules the agent keeps",
+      "items": [
+        "Statistics come from summarise_evidence, never the model",
+        "Associated with, never caused by",
+        "Only DOIs returned by the tools"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "Off for now",
+      "items": [
+        "Neo4j: kept for graph algorithms if needed",
+        "Live System Public API: key returns 403"
+      ]
+    }
+  ]
+}
