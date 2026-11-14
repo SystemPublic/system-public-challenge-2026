@@ -1,5 +1,5 @@
 // State, API calls, the run event stream and page layout. Section rendering is in sections.js, the graph in graph.js.
-import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv, renderMyList, kpiStrip, verifyPill } from './sections.js';
+import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv, renderMyList, kpiStrip, linkGroups, verifyPill } from './sections.js';
 import { drawGraph } from './graph.js';
 import { bindDashboard } from './dashboard.js';
 import { mountKG } from './kg.js';
@@ -344,16 +344,17 @@ const projectView = (pj) => `<header class="project-head"><h1>${esc(pj.title)}</
   <p class="small muted for">${profileLine(state.profile)}</p>
   <div id="goals" class="goals">${goalsView(pj)}</div>
   <nav class="jump small" aria-label="On this page"><span class="muted">On this page</span>
-    <button type="button" class="ghost small link" data-jump="fp-h">Data availability</button>
     <button type="button" class="ghost small link" data-jump="db-h">Dashboard</button>
+    <button type="button" class="ghost small link" data-jump="fp-h">Data availability</button>
     <button type="button" class="ghost small link" data-jump="qs-h">Questions (${pj.runs.filter(inThread).length})</button></nav></header>
   <div id="overview"></div>
-  ${block('fp', 'Data availability and gaps', 'What exists for this project, and where sources disagree. Runs once, from the goals.',
-    `<div id="first-pass">${firstPassEmpty(pj)}</div>`)}
+  ${block('ro', 'Where the data runs out', 'Topics the evidence covers but no data series measures well.', '<div id="runs-out"></div>', 'runs-out')}
   ${block('db', 'Dashboard', 'Key numbers, World Bank data and charts built from the answers in this project.', '<div id="dashboard" class="dashboard"></div>')}
   ${block('kg', 'Knowledge graph', 'The entities in this project\'s answers and the facts linking them, with the studies behind each.', '<div id="kg"></div>')}
   ${block('ml', 'My list', 'Indicators you picked from this project\'s indicator maps, to download as CSV.', '<div class="my-list"></div>')}
   ${block('rp', 'Report', 'A cited report of this project, with references and data provenance, to print or save as PDF.', '<div id="report"></div>')}
+  ${block('fp', 'Data availability and gaps', 'What exists for this project, and where sources disagree. Runs once, from the goals.',
+    `<div id="first-pass">${firstPassEmpty(pj)}</div>`)}
   ${block('qs', 'Questions', 'Ask about this project. Every answer reads the goals and the earlier answers. Each answer folds to one line; open it to read the full analysis.', `${threadHead()}
   <form id="composer" class="composer">
     <label for="q">${pj.runs.some(inThread) ? 'Ask a new question' : 'Ask a question'}</label>
@@ -433,7 +434,11 @@ function bindComposer() {
 }
 
 // KPI strip computed from every indicator map in the project; redrawn when a new answer arrives.
-const renderOverview = () => { const o = $('#overview'); if (o) o.innerHTML = kpiStrip(state.project.runs); };
+const renderOverview = () => {
+  const o = $('#overview'); if (!o) return;
+  const g = linkGroups(state.project.runs);
+  o.innerHTML = kpiStrip(state.project.runs) + (g ? block('ln', 'Links across questions', 'Every indicator map in this project, merged. Pick a number above to filter.', g) : '');
+};
 
 const turnBody = `<p class="context small muted" hidden></p><div class="status-line" role="status" hidden></div>
   <details class="trace"><summary>Show agents and tool calls</summary><div class="trace-body"></div></details><div class="answer"></div>`;

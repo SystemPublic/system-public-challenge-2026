@@ -382,3 +382,18 @@ nav.projects ul.threads a[aria-current] { color: var(--accent); }
 @media (max-width: 600px) { .kstrip { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .brief { margin: var(--s1) 0 var(--s2); max-width: 80ch; }
 .brief .pill { margin-right: 6px; vertical-align: 1px; }
+.block.runs-out:not(:has(.panel)) { display: none; }
+.lgroup { margin-bottom: var(--s4); }
+.lgroup h3 .num { font-weight: 400; }
+ul.links { list-style: none; margin: 0; padding: 0; }
+ul.links li { display: grid; grid-template-columns: minmax(0, 1.1fr) 112px minmax(0, 2fr) auto; gap: var(--s1) var(--s3); align-items: center; padding: var(--s2) 0; border-top: 1px solid var(--line); }
+ul.links .pill { margin-left: 6px; vertical-align: 1px; }
+ul.links .ind-id { display: none; }
+.lr-n { font-size: var(--fs-s); }
+.sbar { display: block; height: 4px; margin-top: 3px; border-radius: 2px; background: var(--line); }
+.sbar > span { display: block; height: 100%; border-radius: 2px; background: var(--accent); }
+@media (max-width: 600px) {
+  ul.links li { grid-template-columns: minmax(0, 1fr) auto; }
+  .lr-c, .lr-i { grid-column: 1 / -1; }
+  .lr-n, ul.links .chip { order: 1; }
+}

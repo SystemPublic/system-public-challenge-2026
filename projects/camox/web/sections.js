@@ -179,6 +179,25 @@ export function kpiStrip(runs) {
     `<button type="button" class="kcard" data-kfilter="${f}" aria-pressed="false"><span class="kv num">${v.toLocaleString()}</span>
       <span class="kl">${label}</span><span class="small muted">from ${questions(xs.length ? xs : all)}</span></button>`).join('')}</div>`;
 }
+const TIER = { strong: 's-backed', moderate: 's-partial', thin: 's-unbacked' };
+export function linkGroups(runs) {
+  const { all } = mapRows(runs);
+  if (!all.length) return '';
+  const max = Math.max(...all.map((x) => x.l.studies));
+  const row = ({ l, i, kind }) => `<li data-kind="${i ? 'ind ' : ''}${kind}">
+    <span class="lr-c"><strong>${esc(l.concept_label)}</strong> <span class="pill ${TIER[tier(l.studies)]}">${cap(tier(l.studies))}</span></span>
+    <span class="lr-n num">${plural(l.studies, 'study', 'studies')}<span class="sbar"><span style="width:${((100 * l.studies) / max).toFixed(1)}%"></span></span></span>
+    <span class="lr-i">${i ? `${indLink(i.name, i.indicator_id)} ${dataset(i.database)}` : '<span class="small muted">No World Bank indicator measures this</span>'}</span>
+    ${i ? `<button type="button" class="chip" data-pick="${pick(i, l)}">Add to my list</button>` : ''}</li>`;
+  const group = (title, line, xs, note = '') => (xs.length ? `<div class="lgroup"><h3>${title} <span class="muted num">${xs.length}</span></h3>
+    <p class="small muted">${line}</p><ul class="links">${xs.map(row).join('')}</ul>${note}</div>` : '');
+  const other = all.filter((x) => x.kind === 'other'), thin = other.filter((x) => tier(x.l.studies) === 'thin').length;
+  return group('Less obvious', 'Linked by 3 or more studies, measured in a different World Bank dataset from the starting indicator.',
+    other.filter((x) => tier(x.l.studies) !== 'thin'), thin ? `<p class="small muted">${plural(thin, 'more link', 'more links')} to other datasets rest on 1 or 2 studies; they are in the full analysis below.</p>` : '')
+    + group('Obvious', 'Measured in the same dataset as the starting indicator.', all.filter((x) => x.kind === 'same'))
+    + group('Gaps', 'Research links these to the topic, but no World Bank indicator in the datasets we checked measures them.', all.filter((x) => x.kind === 'gap'))
+    + `<p class="small muted">From ${questions(all)}. Study counts: System Public Graph. Indicators: World Bank Data360.</p>`;
+}
 // A KPI card filters the link lists to its rows; pressing it again shows all.
 document.addEventListener('click', (e) => {
   const k = e.target.closest('[data-kfilter]');

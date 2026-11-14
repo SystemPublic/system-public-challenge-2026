@@ -30,6 +30,10 @@ export function renderDashboard(el, d) {
   el.innerHTML = `<div class="dash-head"><h3>${esc(d.title)}</h3><p class="small muted">${linked(d.summary)}</p></div>
     <div class="panels">${d.panels.map(panel).join('')}</div>`;
   mountCharts(el);
+  // The gaps panel moves up to "Where the data runs out" on the project page.
+  const out = document.getElementById('runs-out');
+  const gap = [...el.querySelectorAll('.panel')].find((p) => /runs out|gaps?\b/i.test(p.querySelector('h3').textContent));
+  out?.replaceChildren(...(gap ? [gap] : []));
 }
 
 // The Build / Rebuild bar above the thread. While a build runs, poll the project every 4 s for its status.
