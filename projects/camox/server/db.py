@@ -178,15 +178,17 @@ def tool_calls(project_id):
 
 
 def history(project_id, thread_id=None):
-    """Earlier done runs of one thread of a project (None = Main, the runs without a thread), oldest first."""
+    """Earlier done runs of one thread (None = Main), plus the project's data runs (first pass and "Data: topic"),
+    which every thread builds on. Oldest first."""
     return q("select query, answer->>'summary' as summary from runs where project_id = %s and status = 'done' "
-             "and thread_id is not distinct from %s order by id", (project_id, thread_id))
+             "and (thread_id is not distinct from %s or query ilike 'first pass%%' or query ilike 'data:%%') order by id",
+             (project_id, thread_id))
 
 
 # Threads: runs without a thread are the project's Main thread
 def list_threads(project_id):
     """Main first (synthetic, id None; the first pass is project-level, not a question), then the real threads."""
-    main = q("select count(*)::int as n_runs from runs where project_id = %s and thread_id is null and query not ilike 'first pass%%'",
+    main = q("select count(*)::int as n_runs from runs where project_id = %s and thread_id is null and query not ilike 'first pass%%' and query not ilike 'data:%%'",
              (project_id,), one=True)
     return [{"id": None, "title": "Main", **main}] + q("select t.id, t.title, t.created_at, count(r.id)::int as n_runs from threads t left join runs r on r.thread_id = t.id "
              "where t.project_id = %s group by t.id order by t.id", (project_id,))

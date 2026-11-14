@@ -1,5 +1,5 @@
 // Project home, top to bottom: header and goals, data availability (first pass), dashboard, report, questions.
-import { html, useState, useEffect, useRef, useMemo, api, Raw, FIRST_PASS, isFirstPass, when } from '../api.js';
+import { html, useState, useEffect, useRef, useMemo, api, Raw, FIRST_PASS, isFirstPass, isDataRun, when } from '../api.js';
 import { esc, linked, wbUrl, table, chart, mountCharts, plural } from '../../sections.js';
 import { Turn } from './turn.js';
 import { Questions } from './questions.js';
@@ -19,7 +19,8 @@ export function ProjectHome({ project, profile, agents, session, threads, thread
     return () => clearTimeout(t);
   }, [project]);
 
-  const inThread = project.runs.filter((r) => !isFirstPass(r) && (r.thread_id ?? null) === thread);
+  const inThread = project.runs.filter((r) => !isDataRun(r) && (r.thread_id ?? null) === thread);
+  const topics = project.runs.filter((r) => isDataRun(r) && !isFirstPass(r)).sort((a, b) => b.id - a.id);
   const hasReport = 'reports' in project || 'report_status' in project;
   const threadTitle = threads?.find((t) => (t.id ?? null) === thread)?.title || 'Main';
   const fp = project.runs.filter(isFirstPass);
@@ -36,7 +37,7 @@ export function ProjectHome({ project, profile, agents, session, threads, thread
           <button type="button" class="ghost-btn small" onClick=${() => setEditGoals(true)}>${project.goals ? 'Edit goals' : 'Add goals'}</button></div>`)}
       ${tab === 'overview' && owner && html`<${ProjectTools} project=${project} projects=${projects} reload=${reload} onDeleted=${onDeleted} />`}
       <nav class="jump" aria-label="Project views">
-        ${[['questions', `Chat · ${inThread.length}`], ['overview', 'Goals and data'], ['dashboard', 'Dashboard'], ['kg', 'Knowledge graph'], hasReport && ['report', 'Report']]
+        ${[['questions', `Chat · ${inThread.length}`], ['overview', `Data · ${fp.length + topics.length}`], ['dashboard', 'Dashboard'], ['kg', 'Knowledge graph'], hasReport && ['report', 'Report']]
           .filter(Boolean).map(([id, t]) => html`<button key=${id} type="button" class="chip" aria-pressed=${tab === id} onClick=${() => setTab(id)}>${t}</button>`)}
       </nav>
     </header>
@@ -44,6 +45,10 @@ export function ProjectHome({ project, profile, agents, session, threads, thread
     ${tab === 'overview' && html`<${Block} id="data" title="Data availability" eyebrow=${fp.some((r) => r.status === 'running') ? 'First pass · running' : fp.some((r) => r.answer) ? 'First pass · ready' : 'First pass'}
       line="What exists for this project and where sources disagree. Runs once, from the goals.">
       <${FirstPass} project=${project} runs=${fp} reload=${reload} addGoals=${() => setEditGoals(true)} />
+    <//>`}
+    ${tab === 'overview' && html`<${Block} id="topics" title="Data by topic" eyebrow=${`Data thread · ${plural(topics.length, 'topic', 'topics')}`}
+      line="Pull everything on one topic: graph coverage, World Bank indicators, and outside studies where the graph is thin. Every chat thread reads these.">
+      <${DataTopics} project=${project} runs=${topics} reload=${reload} />
     <//>`}
     ${tab === 'dashboard' && html`<${Block} id="dashboard" title="Dashboard" eyebrow=${project.dashboard ? `Dashboard · ${plural(project.dashboard.panels?.length ?? 0, 'panel', 'panels')}` : 'Dashboard'}
       line="Key numbers, World Bank data and charts built from the answers in this project.">
@@ -70,6 +75,22 @@ function KG({ project }) {
   const ref = useRef(null);
   useEffect(() => { if (ref.current) mountKG(ref.current, project.id); }, [project.id, project.runs.length]);
   return html`<div ref=${ref}></div>`;
+}
+
+function DataTopics({ project, runs, reload }) {
+  const [topic, setTopic] = useState('');
+  const [msg, setMsg] = useState('');
+  const pull = async (e) => {
+    e.preventDefault();
+    if (!topic.trim()) return;
+    try { await api(`/api/projects/${project.id}/runs`, { method: 'POST', body: { query: `Data: ${topic.trim()}` } }); setTopic(''); setMsg(''); reload(); }
+    catch (err) { setMsg(`Could not start: ${err.message}.`); }
+  };
+  return html`<form class="topic-form" onSubmit=${pull}>
+      <input aria-label="Topic" value=${topic} onInput=${(e) => setTopic(e.target.value)} placeholder="A topic, e.g. AI adoption and jobs in AI-exposed industries" />
+      <button class="primary">Pull data</button></form>
+    ${msg && html`<p class="msg bad">${msg}</p>`}
+    ${runs.map((r, i) => html`<${Turn} key=${r.id} run=${r} latest=${i === 0} onDone=${reload} onAgain=${() => {}} />`)}`;
 }
 
 // Owner-only: file the project in a folder, or delete it after a confirm step.

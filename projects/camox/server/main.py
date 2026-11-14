@@ -6,7 +6,6 @@ Run: .venv/bin/uvicorn server.main:app --port 8000
 import asyncio
 import json
 import os
-import re
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from pathlib import Path
@@ -140,15 +139,18 @@ async def update_project(project_id: int, p: ProjectIn):
 FIRST_PASS = "First pass: what data is available for this project, and where do sources disagree or run out?"
 
 
+def data_plan(question, scope):
+    """The fixed data plan behind the first pass and every "Data: topic" run: availability, indicators, outside sources."""
+    plan = [("availability", "Map data availability and mismatches for the key concepts in"),
+            ("indicator-map", "Start from the main World Bank indicator for this and map the evidence and indicators around it"),
+            ("research", "Find recent studies, reports and datasets the graph lacks, above all where its coverage is thin, for")]
+    return {"question": question, "tasks": [{"agent": a, "instruction": f"{i}: {scope}"} for a, i in plan]}
+
+
 async def start_first_pass(project_id):
     """A fixed-plan run started when a project gets goals; the project dashboard is built when it succeeds."""
     _, profile, history = await run_in_threadpool(context, project_id)
-    goals = profile["project"]["goals"]
-    plan = [("availability", "Map data availability and mismatches for the key concepts in these goals")]
-    if re.search(r"world bank|indicator|countr", goals, re.I):
-        plan.append(("indicator-map", "Start from the main World Bank indicator these goals need and map the evidence and indicators around it"))
-    plan.append(("research", "Find recent reviews, reports and datasets these goals need that the graph lacks"))
-    plan = {"question": FIRST_PASS, "tasks": [{"agent": a, "instruction": f"{i}: {goals}"} for a, i in plan]}
+    plan = data_plan(FIRST_PASS, profile["project"]["goals"])
     run_id = await run_in_threadpool(db.create_run, project_id, FIRST_PASS, None)
     subscribers[run_id], events_sent[run_id] = [], 0
 
@@ -304,9 +306,10 @@ async def start_run(project_id: int, r: RunIn):
     mine, total = await run_in_threadpool(db.runs_last_hour, profile["id"])
     if mine >= RUNS_PER_PROFILE or total >= RUNS_TOTAL:
         return PlainTextResponse("Run limit reached: please try again in an hour.", 429)
+    plan = r.plan or (data_plan(r.query, r.query[5:].strip()) if r.query.lower().startswith("data:") else None)
     run_id = await run_in_threadpool(db.create_run, project_id, r.query, r.agents, r.thread_id)
     subscribers[run_id], events_sent[run_id] = [], 0
-    task = asyncio.create_task(execute(run_id, r.query, profile, history, r.agents, r.plan))
+    task = asyncio.create_task(execute(run_id, r.query, profile, history, r.agents, plan))
     tasks.add(task)
     task.add_done_callback(tasks.discard)
     return {"run_id": run_id}

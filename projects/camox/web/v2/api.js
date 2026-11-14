@@ -73,6 +73,8 @@ export function Raw({ markup, className, onMount }) {
 
 export const FIRST_PASS = 'First pass: what data is available for this project, and where do sources disagree or run out?';
 export const isFirstPass = (r) => r.kind === 'first_pass' || /^first pass\b/i.test(r.query || '');
+// Data runs (the first pass and "Data: topic") form the project's data thread; every chat thread builds on them.
+export const isDataRun = (r) => isFirstPass(r) || /^data:/i.test(r.query || '');
 export const when = (iso) => (iso ? new Date(iso).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : '');
 export const dur = (ms) => (ms < 1000 ? `${Math.round(ms)} ms` : `${(ms / 1000).toFixed(1)} s`);
 export const firstLine = (s) => String(s || '').split(/(?<=[.:;])\s/)[0].replace(/[.:;]$/, '');

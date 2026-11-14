@@ -463,3 +463,5 @@ fieldset:disabled input, fieldset:disabled textarea { opacity: .7; }
   .composer .agents-btn { flex: 1 1 100%; }
   .reply-quote { max-height: 4.5em; }
 }
+.topic-form { display: flex; gap: 8px; margin-bottom: 16px; }
+.topic-form input { flex: 1; min-width: 0; }
