@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:28422845,exclude,"E5: malignant catatonia/NMS, no environmental heat link",antipsychotics,none,case_report
+PMID:28437058,exclude,E5: general antipsychotic review; NMS without environmental heat,antipsychotics,none,review
+PMID:28509122,exclude,"E5: hyponatremia/NMS case, no heat link",antipsychotics,none,case_report
+PMID:2858225,exclude,"E5: neuroleptic catatonia/NMS, no environmental heat",antipsychotics,none,review
+PMID:28607963,exclude,E3: chemical synthesis method,none,none,other
+PMID:2866145,include,I1: fatal heatstroke in patient on high-potency neuroleptics,antipsychotics,heat_illness,case_report
+PMID:2868079,exclude,"E5: NMS case/review, heatstroke only as differential",antipsychotics,none,case_report
+PMID:28789764,exclude,"E6: general hyperthermia treatment review, no specific drug",none,none,review
+PMID:28796021,include,"I1: psychotropics/antipsychotics and outcomes during heat waves, older patients",antipsychotics,hospitalization_ed,cohort
+PMID:2881551,exclude,"E6: MDMA/MDA toxicity, animal data; not a study drug",none,none,review
+PMID:2892428,include,"I1: NMS triggered during heat wave, three patients",antipsychotics,hyperthermia,case_series
+PMID:28936184,exclude,"E7: antipsychotic hypothermia, not heat",antipsychotics,none,systematic_review
+PMID:28953512,exclude,E6: cannabinoid hyperemesis review; haloperidol as treatment only,none,none,review
+PMID:2900182,exclude,E5: NMS/dopaminergic hyperthermia without environmental heat,antipsychotics,none,case_series
+PMID:29020197,include,I1: antipsychotic prescriptions and heat injury in US Army soldiers,antipsychotics,heat_illness,cohort
+PMID:29083822,exclude,"E6: EMS cooling guide, no specific study drug",none,none,other
+PMID:29127610,exclude,E3: hot melt extrusion formulation of quetiapine,none,none,lab_bench
+PMID:2917480,exclude,"E6: oncologic whole-body hyperthermia, neuroleptic incidental",none,none,other
+PMID:29193063,exclude,"E5: methamphetamine toxicity deaths, no environmental heat link",adhd_stimulants,none,case_series
+PMID:2925345,include,uncertain: I1 hyperthermic syndromes incl. heatstroke and NMS cases,antipsychotics,hyperthermia,case_series
+PMID:29307079,exclude,"E2: orexin/neuroleptic hyperthermia, animal data review",antipsychotics,none,review
+PMID:2938519,exclude,E5: malignant hyperthermia review,none,none,review
+PMID:29491260,include,uncertain: I2 aripiprazole tablets form transition stored at 60C/75% RH,antipsychotics,stability_potency,lab_bench
+PMID:29501,include,I1: hyperpyrexia on psychotropics during summer heat wave,antipsychotics,hyperthermia,case_report
+PMID:29666709,exclude,"E5: anesthesia case, MH/NMS risk only",none,none,case_report
+PMID:29933697,exclude,"E3: olanzapine-PLGA calorimetry method, not storage heat",none,none,lab_bench
+PMID:30149396,exclude,"E7: hypothermia on aripiprazole, not heat",antipsychotics,none,case_report
+PMID:30198916,exclude,"E5: postmortem hyperthermia from intoxication/NMS, no environmental heat",none,none,case_series
+PMID:30396751,exclude,E4: sepsis mimics review,none,none,review
+PMID:30498933,exclude,"E5: quetiapine/kratom fatal toxicity, no environmental heat",antipsychotics,none,case_report
+PMID:3100770,exclude,E2: rodent pharmacology of MAO inhibitor,none,none,lab_bench
+PMID:31157624,include,I1: exertional heatstroke in half-marathon runner on olanzapine,antipsychotics,heat_illness,case_report
+PMID:31378552,exclude,"E4: narrative review of fever in clozapine users, not drug x heat focused",antipsychotics,none,review
+PMID:31535526,exclude,E5: movement disorder emergencies review incl. NMS,none,none,review
+PMID:31559622,exclude,E5: malignant catatonia guideline comparison,none,none,other
+PMID:31806060,exclude,"E5: amphetamine sympathomimetic toxicity at festivals, no heat link",none,none,case_series
+PMID:320724,include,uncertain: I1 heat illness review incl. drugs and chlorpromazine heat stroke case,antipsychotics,heat_illness,review
+PMID:32371820,exclude,"E5: postoperative hypermetabolic syndrome/NMS, no environmental heat",none,none,case_report
+PMID:32384395,exclude,"E5: NMS case in teenager, no environmental heat",antipsychotics,none,case_report
+PMID:32439747,exclude,"E7: risperidone hypothermia, not heat",antipsychotics,none,case_series
+PMID:32546415,include,I1: clozapine unexpected deaths peaked during 2018 summer heat wave,antipsychotics,mortality,case_control
+PMID:32603245,exclude,E6: plant thermotolerance study,none,none,lab_bench
+PMID:32775026,exclude,"E6: PAID syndrome after brain injury, no study drug",none,none,case_report
+PMID:3278369,exclude,"E5: NMS review and case, no environmental heat",antipsychotics,none,case_report
+PMID:32812,exclude,"E5: NMS case series, no environmental heat",antipsychotics,none,case_series
+PMID:3289339,exclude,E5: hyperthermic syndromes review; NMS vs heat stroke differential,none,none,review
+PMID:33074007,exclude,E3: olanzapine polymorph crystallization on heating,none,none,lab_bench
+PMID:33315030,exclude,E7: plasma assay method for clozapine,none,none,lab_bench
+PMID:33442836,exclude,E5: pediatric methamphetamine toxicity; antipsychotics as treatment,none,none,cohort
+PMID:33557936,exclude,E4: COVID-19 rhabdomyolysis and fever,none,none,case_report
+PMID:3358184,exclude,"E5: NMS mimicking heat stroke, no environmental heat",antipsychotics,none,case_report
+PMID:3364875,exclude,"E4: drug fever from psychotropics, no environmental heat",none,none,case_series
+PMID:33736437,include,I1: fatal heatstroke in August under olanzapine and levomepromazine,antipsychotics,heat_illness,case_report
+PMID:33780181,exclude,E7: urine assay method for benzodiazepines,none,none,lab_bench
+PMID:33866917,exclude,E5: malignant syndromes review,antipsychotics,none,review
+PMID:34106671,exclude,"E5: malignant catatonia/NMS case, no environmental heat",antipsychotics,none,case_report
+PMID:34184149,exclude,E3: hot-melt extrusion processing of quetiapine,none,none,lab_bench
+PMID:3430138,include,"uncertain: I1 drugs found in hyperthermia-related deaths, forensic series",multiple,mortality,case_series
+PMID:34348614,exclude,E6: RYR1 rhabdomyolysis review; drugs not studied exposure x heat,none,none,review
+PMID:34408951,exclude,E5: GHB withdrawal with NMS-like hyperthermia,none,none,case_report
+PMID:34621607,exclude,"E4: haloperidol decanoate drug fever, no environmental heat",antipsychotics,none,case_report
+PMID:34659926,exclude,E4: antipsychotic-induced hyperthermia without stated environmental heat,antipsychotics,none,case_report
+PMID:34765395,exclude,"E6: Lesch-Nyhan dysautonomia, no study drug",none,none,case_report
+PMID:34934816,exclude,"E6: rhabdomyolysis AKI in ICU, not drug x heat",none,none,cohort
+PMID:34950995,exclude,E3: amorphous glassy solution formulation development,none,none,lab_bench
+PMID:34963860,exclude,"E7: aripiprazole hypothermia, not heat",antipsychotics,none,case_report
+PMID:35170234,exclude,"E7: postmortem microbial drug degradation model, not heat exposure",none,none,lab_bench
+PMID:3527659,exclude,E5: dantrolene review for MH/NMS,none,none,review
+PMID:35292399,exclude,E3: 3D printing/hot-melt extrusion implant formulation,none,none,lab_bench
+PMID:35482473,exclude,"E7: heat inactivation of blood samples, lab assay condition",none,none,lab_bench
+PMID:35547943,exclude,"E7: risperidone hypothermia, not heat",antipsychotics,none,case_report
+PMID:35801160,exclude,E4: nitrofurantoin drug fever in clozapine patient,none,none,case_report
+PMID:36123618,exclude,"E5: dantrolene use in NMS/MH/sepsis, no environmental heat",none,none,cohort
+PMID:36384608,exclude,E6: plant heat stress study,none,none,lab_bench
+PMID:36651656,exclude,E3: solid-state autoxidation chemistry of amorphous olanzapine,none,none,lab_bench
+PMID:36752238,include,"I1: review of medicine effects/stability during heatwaves incl. insulin, antipsychotics",multiple,other,review
+PMID:36993091,exclude,"E5: NMS case, no environmental heat",antipsychotics,none,case_report
+PMID:37621801,exclude,E6: Parkinson malignant syndrome in hot weather; dopaminergic drugs not in scope,none,none,case_report
+PMID:3783806,exclude,E6: DEET psychosis case; haloperidol as treatment,none,none,case_report
+PMID:37977752,exclude,E5: hyperactive delirium review,none,none,review
+PMID:38204562,exclude,E6: parkinsonism-hyperpyrexia after drug withdrawal,none,none,case_report
+PMID:38307533,exclude,"E6: traumatic brain injury outcomes, no drug x heat",none,none,cohort
+PMID:38467272,exclude,E2: cannabidiol in rodent models,none,none,lab_bench
+PMID:38556940,exclude,"E4: post-ECT fever, no environmental heat",none,none,case_report
+PMID:38826587,exclude,E6: dantrolene neuroprotection review,none,none,review
+PMID:38926083,exclude,"E5: serotonin toxicity review, no environmental heat",none,none,review
+PMID:38931827,exclude,E3: risperidone thermosensitive micelle formulation,none,none,lab_bench
+PMID:39040743,exclude,"E5: NMS case on clozapine, no environmental heat",antipsychotics,none,case_report
+PMID:39149410,exclude,E2: C. elegans heat stress with antipsychotics,antipsychotics,none,lab_bench
+PMID:3944073,exclude,"E5: coma after ECT and droperidol, NMS differential",none,none,case_report
+PMID:39534408,exclude,"E5: NMS in infant on olanzapine, no environmental heat",antipsychotics,none,case_report
+PMID:39648665,include,I1: SCCS heatwave heat-related illness by antipsychotic/antidepressant prescription,multiple,heat_illness,case_crossover
+PMID:3969217,exclude,E6: hyperthermia after levodopa/bromocriptine withdrawal,none,none,case_report
+PMID:39749619,exclude,E5: malignant catatonia treated with amantadine/clozapine,none,none,case_report
+PMID:3979279,exclude,E5: dantrolene for NMS/febrile catatonia,none,none,case_report
+PMID:39914276,exclude,E6: Parkinson akinetic crises on levodopa gel,none,none,case_series
+PMID:40132770,exclude,E3: haloperidol molded tablet formulation,none,none,lab_bench
+PMID:40134461,include,I1: fatal classic heatstroke in patient on risperidone and olanzapine,antipsychotics,heat_illness,case_report
+PMID:40166508,exclude,E6: parkinsonism hyperpyrexia syndrome,none,none,case_report
+PMID:40391693,exclude,E6: botryoid nuclei biomarker in heatstroke/NMS; drug not studied exposure,none,none,case_series
+PMID:40432167,include,"uncertain: I1 review of climate/heat effects on ASMs, antipsychotics, antidepressants",antipsychotics,other,review
+PMID:40448342,exclude,E5: febrile encephalopathy/NMS review,none,none,review
+PMID:40472596,exclude,E6: NSAIDs in schizophrenia review,none,none,review
+PMID:40630893,exclude,"E6: aripiprazole LAI tolerability, no heat",antipsychotics,none,cohort
+PMID:40668847,exclude,"E6: OHCA etiology scoping review, not drug x heat",none,none,systematic_review
+PMID:4091825,exclude,E2: orosomucoid fluorescence biochemistry,none,none,lab_bench
+PMID:40991352,exclude,"E5: illicit stimulant emergencies review, no heat link",none,none,review
+PMID:41044101,include,I1: antipsychotic dispensation and mortality during 2021 BC extreme heat event,antipsychotics,mortality,case_control
+PMID:41191882,exclude,"E5: NMS/stimulant hyperthermia, no environmental heat",antipsychotics,none,case_report
+PMID:41366975,exclude,E6: dantrolene adverse event pharmacovigilance,none,none,pharmacovigilance
+PMID:41542724,exclude,E6: parkinsonism dopamine depletion syndrome,none,none,case_series
+PMID:41639230,exclude,"E2: TAAR1 agonist preclinical/phase I, no heat",none,none,other
+PMID:41756567,exclude,E5: atypical NMS on paliperidone; no environmental trigger,antipsychotics,none,case_report
+PMID:41818093,exclude,"E6: pigment nephropathy outcomes, no drug x heat",none,none,cohort
+PMID:42261543,exclude,E5: malignant catatonia from paliperidone withdrawal,antipsychotics,none,case_report
+PMID:42325985,exclude,"E6: catatonic stupor treatment, no heat",none,none,case_report
+PMID:42336348,exclude,E5: rhabdomyolysis narrative review,none,none,review
+PMID:42361318,include,I1: exertional heat stroke in extreme heat in teen on antipsychotics,antipsychotics,heat_illness,case_report
+PMID:42447624,exclude,E6: conducted electrical device safety review,none,none,review
+PMID:42538420,exclude,E4: clozapine early trials review; benign fever,antipsychotics,none,review

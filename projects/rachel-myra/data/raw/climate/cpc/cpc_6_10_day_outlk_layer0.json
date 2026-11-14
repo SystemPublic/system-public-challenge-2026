@@ -1,0 +1,111 @@
+{
+ "displayFieldName": "fcst_date",
+ "fieldAliases": {
+  "objectid": "Object Id",
+  "fcst_date": "Forecast Date",
+  "start_date": "Start Date",
+  "end_date": "End Date",
+  "prob": "Probability",
+  "cat": "Category",
+  "inpoly_fid": "inpoly_fid",
+  "smopgnflag": "smopgnflag",
+  "idp_ingestdate": "cg_ingesttime",
+  "idp_filedate": "cg_filedate",
+  "idp_source": "idp_source",
+  "st_area(shape)": "st_area(shape)",
+  "st_perimeter(shape)": "st_perimeter(shape)"
+ },
+ "fields": [
+  {
+   "name": "objectid",
+   "type": "esriFieldTypeOID",
+   "alias": "Object Id"
+  },
+  {
+   "name": "fcst_date",
+   "type": "esriFieldTypeDate",
+   "alias": "Forecast Date",
+   "length": 8
+  },
+  {
+   "name": "start_date",
+   "type": "esriFieldTypeDate",
+   "alias": "Start Date",
+   "length": 8
+  },
+  {
+   "name": "end_date",
+   "type": "esriFieldTypeDate",
+   "alias": "End Date",
+   "length": 8
+  },
+  {
+   "name": "prob",
+   "type": "esriFieldTypeDouble",
+   "alias": "Probability"
+  },
+  {
+   "name": "cat",
+   "type": "esriFieldTypeString",
+   "alias": "Category",
+   "length": 254
+  },
+  {
+   "name": "inpoly_fid",
+   "type": "esriFieldTypeInteger",
+   "alias": "inpoly_fid"
+  },
+  {
+   "name": "smopgnflag",
+   "type": "esriFieldTypeInteger",
+   "alias": "smopgnflag"
+  },
+  {
+   "name": "idp_ingestdate",
+   "type": "esriFieldTypeDate",
+   "alias": "cg_ingesttime",
+   "length": 8
+  },
+  {
+   "name": "idp_filedate",
+   "type": "esriFieldTypeDate",
+   "alias": "cg_filedate",
+   "length": 8
+  },
+  {
+   "name": "idp_source",
+   "type": "esriFieldTypeString",
+   "alias": "idp_source",
+   "length": 50
+  },
+  {
+   "name": "st_area(shape)",
+   "type": "esriFieldTypeDouble",
+   "alias": "st_area(shape)"
+  },
+  {
+   "name": "st_perimeter(shape)",
+   "type": "esriFieldTypeDouble",
+   "alias": "st_perimeter(shape)"
+  }
+ ],
+ "features": [
+  {
+   "attributes": {
+    "objectid": 21,
+    "fcst_date": 1794528000000,
+    "start_date": 1795046400000,
+    "end_date": 1795392000000,
+    "prob": 70.0,
+    "cat": "Above",
+    "inpoly_fid": null,
+    "smopgnflag": null,
+    "idp_ingestdate": 1794600958000,
+    "idp_filedate": 1794600915000,
+    "idp_source": "610temp_latest",
+    "st_area(shape)": 2586872347362.364,
+    "st_perimeter(shape)": 39006272.65541137
+   }
+  }
+ ]
+}

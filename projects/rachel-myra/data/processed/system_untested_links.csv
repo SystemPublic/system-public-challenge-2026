@@ -1,0 +1,317 @@
+source,entity,entity_label,in_scope_15,mediator,drug_leg_findings,drug_leg_studies,heat_leg_findings,heat_leg_studies,direct_drug_heat_findings,untested,note
+drug_group,lithium,Lithium,True,hyponatremia,6,3,7,4,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,lithium,Lithium,True,aki,2,1,24,12,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,lithium,Lithium,True,bp_hypotension,13,7,21,16,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,loop_diuretics,Loop diuretics,True,dehydration,1,1,4,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,loop_diuretics,Loop diuretics,True,hyponatremia,9,5,7,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,loop_diuretics,Loop diuretics,True,aki,47,35,24,12,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,loop_diuretics,Loop diuretics,True,bp_hypotension,14,11,21,16,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,thiazides,Thiazides,True,dehydration,1,1,4,4,1,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,thiazides,Thiazides,True,hyponatremia,26,20,7,4,1,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,thiazides,Thiazides,True,aki,3,3,24,12,1,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,thiazides,Thiazides,True,bp_hypotension,156,89,21,16,1,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,acei_arb,ACE inhibitors / ARBs,True,hyponatremia,5,5,7,4,1,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,acei_arb,ACE inhibitors / ARBs,True,aki,83,59,24,12,1,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,acei_arb,ACE inhibitors / ARBs,True,bp_hypotension,658,423,21,16,1,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,acei_arb,ACE inhibitors / ARBs,True,sweating,1,1,6,6,1,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,sglt2,SGLT2 inhibitors,True,dehydration,1,1,4,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,sglt2,SGLT2 inhibitors,True,aki,34,28,24,12,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,sglt2,SGLT2 inhibitors,True,bp_hypotension,43,30,21,16,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,insulin,Insulin (incl. pumps),True,dehydration,1,1,4,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,insulin,Insulin (incl. pumps),True,hyponatremia,6,4,7,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,insulin,Insulin (incl. pumps),True,aki,9,8,24,12,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,insulin,Insulin (incl. pumps),True,bp_hypotension,58,44,21,16,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,metformin,Metformin,True,dehydration,1,1,4,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,metformin,Metformin,True,hyponatremia,2,1,7,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,metformin,Metformin,True,aki,9,6,24,12,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,metformin,Metformin,True,bp_hypotension,18,14,21,16,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,anticholinergics,Anticholinergics (oxybutynin),True,hyponatremia,2,1,7,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,anticholinergics,Anticholinergics (oxybutynin),True,bp_hypotension,1,1,21,16,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,antipsychotics,Antipsychotics (incl. clozapine),True,hyponatremia,9,6,7,4,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,antipsychotics,Antipsychotics (incl. clozapine),True,aki,21,4,24,12,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,antipsychotics,Antipsychotics (incl. clozapine),True,bp_hypotension,20,17,21,16,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,antipsychotics,Antipsychotics (incl. clozapine),True,sweating,1,1,6,6,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,antipsychotics,Antipsychotics (incl. clozapine),True,body_temp,1,1,41,32,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,ssris,SSRIs,True,hyponatremia,28,14,7,4,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,ssris,SSRIs,True,bp_hypotension,26,20,21,16,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,ssris,SSRIs,True,sweating,2,2,6,6,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,ssris,SSRIs,True,body_temp,1,1,41,32,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,topiramate_zonisamide,Topiramate / zonisamide,True,bp_hypotension,2,1,21,16,1,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,adhd_stimulants,ADHD stimulants,True,hyponatremia,1,1,7,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,adhd_stimulants,ADHD stimulants,True,bp_hypotension,7,4,21,16,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,beta_blockers,Beta blockers,True,aki,11,10,24,12,4,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,beta_blockers,Beta blockers,True,bp_hypotension,200,145,21,16,4,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,beta_blockers,Beta blockers,True,sweating,2,1,6,6,4,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,beta_blockers,Beta blockers,True,body_temp,3,3,41,32,4,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,opioids_fentanyl,Fentanyl / opioid patches,True,dehydration,1,1,4,4,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,opioids_fentanyl,Fentanyl / opioid patches,True,hyponatremia,1,1,7,4,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,opioids_fentanyl,Fentanyl / opioid patches,True,aki,9,9,24,12,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,opioids_fentanyl,Fentanyl / opioid patches,True,bp_hypotension,39,31,21,16,2,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,epinephrine_ai,Epinephrine auto-injectors,True,bp_hypotension,2,2,21,16,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,nsaids,NSAIDs (comparator),False,dehydration,1,1,4,4,3,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,nsaids,NSAIDs (comparator),False,hyponatremia,1,1,7,4,3,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,nsaids,NSAIDs (comparator),False,aki,69,41,24,12,3,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,nsaids,NSAIDs (comparator),False,bp_hypotension,15,12,21,16,3,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,nsaids,NSAIDs (comparator),False,body_temp,1,1,41,32,3,False,direct findings exist (see system_drug_heat_direct_findings.csv); check whether they cover this mediator's mechanism
+drug_group,benzodiazepines,Benzodiazepines (comparator),False,hyponatremia,2,2,7,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,benzodiazepines,Benzodiazepines (comparator),False,bp_hypotension,10,7,21,16,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,sulfonylureas,Sulfonylureas (comparator),False,hyponatremia,2,1,7,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,sulfonylureas,Sulfonylureas (comparator),False,aki,1,1,24,12,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,sulfonylureas,Sulfonylureas (comparator),False,bp_hypotension,3,3,21,16,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,diuretics_any,"Diuretics, any (comparator)",False,dehydration,2,1,4,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,diuretics_any,"Diuretics, any (comparator)",False,hyponatremia,29,16,7,4,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,diuretics_any,"Diuretics, any (comparator)",False,aki,65,49,24,12,0,True,"implied by graph, no direct drug x heat finding"
+drug_group,diuretics_any,"Diuretics, any (comparator)",False,bp_hypotension,37,30,21,16,0,True,"implied by graph, no direct drug x heat finding"
+hidden_candidate (unvalidated),Q1wtxnIbbs,vancomycin,False,aki,,76,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Q1wtxnIbbs,vancomycin,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),1v7uRHcf0P,piperacillin/tazobactam,False,aki,,51,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),DKI79Lx8fl,vasoconstrictor agents,False,aki,,42,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),DKI79Lx8fl,vasoconstrictor agents,False,bp_hypotension,,14,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),DKI79Lx8fl,vasoconstrictor agents,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),nceJeKpSLI,non-steroidal anti-inflammatory drug,False,aki,,28,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),nceJeKpSLI,non-steroidal anti-inflammatory drug,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),nceJeKpSLI,non-steroidal anti-inflammatory drug,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Wrt-1McZ5R,proton-pump inhibitors,False,aki,,21,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Wrt-1McZ5R,proton-pump inhibitors,False,hyponatremia,,2,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),DhZ5kUO4-5,hydroxyethyl starch,False,aki,,18,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),DhZ5kUO4-5,hydroxyethyl starch,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),DhZ5kUO4-5,hydroxyethyl starch,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),SYKm5eSh3p,tolvaptan,False,hyponatremia,,14,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),SYKm5eSh3p,tolvaptan,False,aki,,5,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),SYKm5eSh3p,tolvaptan,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),VOCCjhkVFK,simvastatin,False,aki,,14,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),VOCCjhkVFK,simvastatin,False,bp_hypotension,,4,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ufDTGHMlgR,antibiotic,False,aki,,7,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ufDTGHMlgR,antibiotic,False,bp_hypotension,,3,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ufDTGHMlgR,antibiotic,False,body_temp,,2,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ufDTGHMlgR,antibiotic,False,hyponatremia,,2,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),j6-S6iARXa,polymyxins,False,aki,,9,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),l2JA1mOpr4,aspirin,False,aki,,7,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),l2JA1mOpr4,aspirin,False,bp_hypotension,,5,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),l2JA1mOpr4,aspirin,False,sweating,,1,6,6,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),J1mklbzbHU,tacrolimus,False,aki,,8,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),J1mklbzbHU,tacrolimus,False,bp_hypotension,,3,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),EOR0xNZyGR,anesthetic,False,aki,,7,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),EOR0xNZyGR,anesthetic,False,bp_hypotension,,5,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),jFg-6ns1FR,aprotinin,False,aki,,7,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),jFg-6ns1FR,aprotinin,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),GFpJsFMb-H,antihypertensive drug,False,bp_hypotension,,150,21,16,1,False,candidate concept from broad scan
+hidden_candidate (unvalidated),GFpJsFMb-H,antihypertensive drug,False,aki,,6,24,12,1,False,candidate concept from broad scan
+hidden_candidate (unvalidated),iIWt73QRhJ,propofol,False,bp_hypotension,,35,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),iIWt73QRhJ,propofol,False,aki,,5,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),iIWt73QRhJ,propofol,False,dehydration,,1,4,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),clrcXjV0CV,cisplatin,False,aki,,4,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),clrcXjV0CV,cisplatin,False,hyponatremia,,2,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),YfeLhD8xq3,chemotherapy,False,aki,,6,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),_PSSbjv4MU,cyclosporine,False,bp_hypotension,,11,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),_PSSbjv4MU,cyclosporine,False,aki,,5,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Edfwg8RXCd,dexamethasone,False,bp_hypotension,,6,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Edfwg8RXCd,dexamethasone,False,aki,,3,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Edfwg8RXCd,dexamethasone,False,body_temp,,2,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),bb2ESVRWge,sulfamethoxazole/trimethoprim,False,aki,,4,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),bb2ESVRWge,sulfamethoxazole/trimethoprim,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ROjYmVlksg,heparin,False,hyponatremia,,2,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ROjYmVlksg,heparin,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ROjYmVlksg,heparin,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),k9gffgO8Ae,spironolactone,False,bp_hypotension,,21,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),k9gffgO8Ae,spironolactone,False,hyponatremia,,3,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),k9gffgO8Ae,spironolactone,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),jmIYjbqf6A,calcium channel blocker,False,bp_hypotension,,19,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),jmIYjbqf6A,calcium channel blocker,False,aki,,3,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),jmIYjbqf6A,calcium channel blocker,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),KTVuFJvn-v,thrombolysis,False,bp_hypotension,,7,21,16,1,False,candidate concept from broad scan
+hidden_candidate (unvalidated),KTVuFJvn-v,thrombolysis,False,aki,,2,24,12,1,False,candidate concept from broad scan
+hidden_candidate (unvalidated),KTVuFJvn-v,thrombolysis,False,body_temp,,2,41,32,1,False,candidate concept from broad scan
+hidden_candidate (unvalidated),Tyve4e9ot9,antimineralocorticoid,False,aki,,4,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Tyve4e9ot9,antimineralocorticoid,False,bp_hypotension,,3,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),njqzoHvxQq,"(R,R)-tramadol",False,hyponatremia,,4,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),njqzoHvxQq,"(R,R)-tramadol",False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),32ijxotuld,endovascular aneurysm repair,False,aki,,4,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),32ijxotuld,endovascular aneurysm repair,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),a4XughuDtA,desmopressin,False,hyponatremia,,4,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),a4XughuDtA,desmopressin,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),LjjGh_ZZYO,fluoroquinolone,False,aki,,4,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),S8oojrIuXN,antibiotic therapy,False,aki,,4,24,12,1,False,candidate concept from broad scan
+hidden_candidate (unvalidated),V9uqaUyFcO,combination therapy,False,bp_hypotension,,10,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),V9uqaUyFcO,combination therapy,False,aki,,3,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),eodgt8OFuJ,pharmaceutical preparation,False,bp_hypotension,,9,21,16,1,False,candidate concept from broad scan
+hidden_candidate (unvalidated),eodgt8OFuJ,pharmaceutical preparation,False,aki,,3,24,12,1,False,candidate concept from broad scan
+hidden_candidate (unvalidated),au0LnsERWi,cocaine,False,bp_hypotension,,5,21,16,4,False,candidate concept from broad scan
+hidden_candidate (unvalidated),au0LnsERWi,cocaine,False,sweating,,2,6,6,4,False,candidate concept from broad scan
+hidden_candidate (unvalidated),au0LnsERWi,cocaine,False,aki,,1,24,12,4,False,candidate concept from broad scan
+hidden_candidate (unvalidated),n0bh4dK69t,medical prescription,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),n0bh4dK69t,medical prescription,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),n0bh4dK69t,medical prescription,False,sweating,,1,6,6,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Yxr-IQte3B,influenza vaccine,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Yxr-IQte3B,influenza vaccine,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Yxr-IQte3B,influenza vaccine,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),93-Eira1i_,allopurinol,False,aki,,3,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),93-Eira1i_,allopurinol,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),0OE1xGhJA8,potassium-sparing diuretic,False,hyponatremia,,3,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),0OE1xGhJA8,potassium-sparing diuretic,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),USUBc6KApr,psychotropic drug,False,dehydration,,2,4,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),USUBc6KApr,psychotropic drug,False,sweating,,1,6,6,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),u5i8vHmyTU,teicoplanin,False,aki,,3,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),d9eR_syrvg,Iontophoresis,False,sweating,,3,6,6,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ml4DniRC5N,clarithromycin,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ml4DniRC5N,clarithromycin,False,sweating,,1,6,6,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ml4DniRC5N,clarithromycin,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),FlwwpSkp0a,mirtazapine,False,hyponatremia,,3,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),pTmrDOU3OL,rivaroxaban,False,aki,,3,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),GWi3wXfHRo,digoxin,False,bp_hypotension,,11,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),GWi3wXfHRo,digoxin,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),GWi3wXfHRo,digoxin,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),E8Va2A8rYH,intravenous infusion and defusion,False,bp_hypotension,,4,21,16,2,False,candidate concept from broad scan
+hidden_candidate (unvalidated),E8Va2A8rYH,intravenous infusion and defusion,False,aki,,1,24,12,2,False,candidate concept from broad scan
+hidden_candidate (unvalidated),E8Va2A8rYH,intravenous infusion and defusion,False,hyponatremia,,1,7,4,2,False,candidate concept from broad scan
+hidden_candidate (unvalidated),I4XbDJvWt5,estrogen,False,bp_hypotension,,3,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),I4XbDJvWt5,estrogen,False,sweating,,1,6,6,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),I4XbDJvWt5,estrogen,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),MHZAhLfAeB,antiretroviral therapy,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),MHZAhLfAeB,antiretroviral therapy,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),xV8OZ_hIDy,adverse drug reaction,False,body_temp,,2,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),xV8OZ_hIDy,adverse drug reaction,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),MG3oowJp-J,platelet aggregation inhibitors,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),MG3oowJp-J,platelet aggregation inhibitors,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),RgczvDtjry,carbapenem antibiotic,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),RgczvDtjry,carbapenem antibiotic,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),MC-lJ8qrQ3,benzodiazepine,False,hyponatremia,,2,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),MC-lJ8qrQ3,benzodiazepine,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),5JmAoxI4-R,tranexamic acid,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),5JmAoxI4-R,tranexamic acid,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),xXLjzS6_PM,remdesivir,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),xXLjzS6_PM,remdesivir,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),7_nQsccS6D,nitrofurantoin,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),T_ClTjAZwi,denosumab,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),qE3NzpkoRW,enterocolitis,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),dk3wvF5e-L,rotavirus vaccine,False,dehydration,,2,4,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),gActe7r5EG,drug-eluting stent,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),lLy3pRpHsf,aciclovir,False,aki,,2,24,12,1,False,candidate concept from broad scan
+hidden_candidate (unvalidated),blzaIM2Q_b,pembrolizumab,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),blzaIM2Q_b,pembrolizumab,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),KfkYYd9mhd,omeprazole,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),KfkYYd9mhd,omeprazole,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Ng51jTmyro,codeine,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Ng51jTmyro,codeine,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),of3Jfb6LlS,antifungal,False,sweating,,1,6,6,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),of3Jfb6LlS,antifungal,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),5nnSPg9uu3,antithrombin,False,aki,,2,24,12,1,False,candidate concept from broad scan
+hidden_candidate (unvalidated),BV0p0ZHLb5,carbamazepin,False,hyponatremia,,2,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ELMc-gF9EP,deferasirox,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),gkFun4K5_i,cephalosporin antibiotic,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),dDUVNqcqd7,intraventricular infusions,False,body_temp,,2,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),m42vsn4Rxl,Vancomycin-resistant Enterococcus,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),xWc3W93vcz,analgesic,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),xWc3W93vcz,analgesic,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),8w2FMYbdNw,tenofovir,False,aki,,2,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),cqv-4kiq2O,amoxicillin,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),cqv-4kiq2O,amoxicillin,False,dehydration,,1,4,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),hLIk5OIuRF,aliskiren,False,bp_hypotension,,19,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),hLIk5OIuRF,aliskiren,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),QFYqg8PWCI,amiodarone,False,bp_hypotension,,8,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),QFYqg8PWCI,amiodarone,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),zWnBG3Vv9T,epidural analgesia,False,bp_hypotension,,6,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),zWnBG3Vv9T,epidural analgesia,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ErWEYbmq0L,fludrocortisone,False,bp_hypotension,,3,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ErWEYbmq0L,fludrocortisone,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),PRFn_TnlRZ,hydroxocobalamin,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),PRFn_TnlRZ,hydroxocobalamin,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),4c1tnAgt--,convulsant,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),4c1tnAgt--,convulsant,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),kp3_5ZrYbK,tablet,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),kp3_5ZrYbK,tablet,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),tmB2RSLKnH,prednisolone,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),tmB2RSLKnH,prednisolone,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),SGYA-3ZQD6,antidiuretic hormone receptor antagonists,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),SGYA-3ZQD6,antidiuretic hormone receptor antagonists,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),xunbu1WRLc,intra-arterial injection,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),xunbu1WRLc,intra-arterial injection,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),cz_0QbdyfR,serotonin–norepinephrine reuptake inhibitor,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),cz_0QbdyfR,serotonin–norepinephrine reuptake inhibitor,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),GfYSNdZTRc,ciprofloxacin,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),GfYSNdZTRc,ciprofloxacin,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),yTT0BlcKTa,adrenergic beta-agonists,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),yTT0BlcKTa,adrenergic beta-agonists,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),EK4LdJnVXT,Metabolic Clearance Rate,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),EK4LdJnVXT,Metabolic Clearance Rate,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),X0rjmre-df,cholera vaccine,False,dehydration,,1,4,4,6,False,candidate concept from broad scan
+hidden_candidate (unvalidated),2uFWom52TC,anticonvulsant agent,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),wv_o1MaVcO,antiandrogen,False,sweating,,1,6,6,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),0pSi_oCoVG,protein kinase inhibitors,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),v47aYYQ9C9,dabigatran,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),JA0FqvxWKH,heparin-induced thrombocytopenia,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),_g7PZ7Sz0e,oxaliplatin,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),GGOjl84n0c,norfloxacin,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),-T_Rgqi4pG,vaccination,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Jwix3OidEg,Co-codamol,False,dehydration,,1,4,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),8JXlTaurUi,induction chemotherapy,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),H2eiqVo5h-,orthopedic procedures,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),WHqy-DS5xa,ezetimibe,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),W-dGaD7jCN,5-HT2c receptor agonist,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),lImI6Xp5Vy,multiple drug resistance,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),H10zXdwc7i,icodextrin,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),uRUzClDLz4,adrenergic antagonist,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ofRLTSrfXx,second-generation antidepressive agents,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ErYDwYdv8F,chemotherapy-induced febrile neutropenia,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),_HgokYiNm7,polypharmacy,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),5dKPwv4gC0,serotonergic agent,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),NGtsdwFRuO,adjuvant radiotherapy,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Ft0EKMIO5x,protein-bound paclitaxel,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),FjJ7tYl0jU,electrochemotherapy,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),yGWrtXvfHE,ipilimumab,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),VyHMRoVSur,neuroleptic malignant syndrome,False,dehydration,,1,4,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),LRwWqk8oZe,lepirudin,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),uc-gpa5rkU,H2 antagonists,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),a2WYiibSbl,radiopharmaceutical,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ql1a8NinJW,cefotetan,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),lmhkCAe1Ce,imipenem/cilastatin,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),q6uTdw3lvM,kanamycin (extract),False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),CVARqJMLtk,illegal drug,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),YpPV7TSzGS,adjuvant chemotherapy,False,aki,,1,24,12,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),C_uqk6HgwX,mTOR inhibitors,False,hyponatremia,,1,7,4,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),TTgrrpm8Vf,antipyretic,False,body_temp,,1,41,32,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ETkwrTGdWH,medication adherence,False,bp_hypotension,,36,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),1WX9gx3Si1,diltiazem,False,bp_hypotension,,16,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),sT5mxGPU-U,midazolam,False,bp_hypotension,,12,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),4H-AtiYT_x,prazosin,False,bp_hypotension,,10,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),OOlbm7SP8B,oral contraceptive,False,bp_hypotension,,10,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),qE1fOo_jan,liraglutide,False,bp_hypotension,,10,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),FjW8oDc4lS,nitroarginine,False,bp_hypotension,,8,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),8W1c8lUi28,vasodilator agent,False,bp_hypotension,,6,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),6EW9rAiV4-,midodrine,False,bp_hypotension,,6,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),geQ6QGnTKz,terazosin,False,bp_hypotension,,6,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ax8IoxZhEP,Urotensins,False,bp_hypotension,,5,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),CsrV5t6ZrT,betamethasone,False,bp_hypotension,,5,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),LNqtihk3Yv,pharmaceutical services,False,bp_hypotension,,5,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),4hhg8-XSGi,Plasminogen Inactivators,False,bp_hypotension,,4,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),P9iCkV1niN,acebutolol,False,bp_hypotension,,4,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),IO8EbHbqK2,orlistat,False,bp_hypotension,,4,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),C-193xD336,exenatide,False,bp_hypotension,,4,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),-5qpeHegn9,Azor,False,bp_hypotension,,3,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),MzRWxuUXAM,D-methamphetamine,False,bp_hypotension,,3,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),bmmw9c8_1d,ivabradine,False,bp_hypotension,,3,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),x7CT4HnLrL,dipyridamole,False,bp_hypotension,,3,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),5u0ZBB5r13,naloxone,False,bp_hypotension,,3,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),n9VViMcLAF,sildenafil,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),DOrlP-c0ip,stimulant,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),O-ogZg4wyt,imipramine,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),PTc_Ybjsai,deep sedation,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),beDGzAijqt,darbepoetin alfa,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),Rd7Qlty65G,lacosamide,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ZFAsXeCrgy,bevacizumab,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),AxxdQmr8ue,Adrenergic beta-2 Receptor Antagonists,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),ZYVREshPlb,naltrexone,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),E7GyuEcmpY,molsidomine,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),XHj5-c3nAZ,nadolol,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),-pDu3qjCg6,clopidogrel,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),J9-7Of-T5n,sirolimus,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),zep3Q7Phhu,HPV vaccine,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),H__b1a77Fa,sodium stibogluconate,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),m5XuYEQfuP,local anesthetic,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),cCbN7tT-jS,pyridostigmine,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),PHF7J5Jyaz,Cushing's syndrome,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),dPzvJUPpDa,conscious sedation,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),MPcSIG0-ea,tranquilizer,False,bp_hypotension,,2,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),HRb-rBJrWu,congenital plasminogen activator inhibitor type 1 deficiency,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),eA6hVwfY2X,hypnotics and sedatives,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan
+hidden_candidate (unvalidated),qvw5e35scM,neuromuscular blocking agents,False,bp_hypotension,,1,21,16,0,True,candidate concept from broad scan

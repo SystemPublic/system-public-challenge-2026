@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:19539098,include,I1 local heating of CSII site accelerates insulin absorption,insulin,pharmacokinetics_absorption,rct
+PMID:20110021,include,I2 insulin pen dose accuracy after 40C/70C exposure,insulin,device_performance,lab_bench
+PMID:2022198,include,"uncertain: I1 insulin-treated T1D exercise at 30C vs 10C, hormones",insulin,hypoglycemia_glycemic,human_lab_study
+PMID:20472620,exclude,E6 cardiac surgery CNS protection; insulin incidental,none,none,review
+PMID:20735747,exclude,E2 rat study of inflammatory allodynia,none,none,other
+PMID:2075936,exclude,E6 therapeutic artificial hyperthermia in oncology,none,none,other
+PMID:21216371,exclude,E6 cadaver decomposition; no drug exposure studied,none,none,review
+PMID:21599516,exclude,E2 insulin skin electroporation in mice,none,none,other
+PMID:2177366,exclude,E7 in vitro antibody assay temperature,none,none,other
+PMID:21880222,exclude,"E6 broad narrative review of environment and diabetes, not drug x heat",none,none,review
+PMID:2209302,exclude,E6 sensory thresholds and foot ulcers; no drug x heat,none,none,cross_sectional
+PMID:22107252,include,I2 insulin lispro pump stability at 37C for 14 days,insulin,stability_potency,lab_bench
+PMID:22154166,exclude,"E3 glucose sensor materials, steam sterilization",none,none,other
+PMID:22416577,exclude,E3 nanoparticle insulin formulation engineering,none,none,other
+PMID:22538135,include,uncertain: I2 heated insulin analogs fibrillation without excipients,insulin,stability_potency,lab_bench
+PMID:22902516,exclude,E2 thermosensitive polymer insulin delivery in rats,none,none,other
+PMID:22920802,include,I1 review of site-warming device on insulin absorption,insulin,pharmacokinetics_absorption,review
+PMID:23107353,include,I1 RCT infusion site warming accelerates aspart action,insulin,pharmacokinetics_absorption,rct
+PMID:23330725,include,I2 insulin pen dose accuracy in hot conditions/dry heat,insulin,device_performance,lab_bench
+PMID:2420531,exclude,E6 ocular growth factor heat lability; no drug,none,none,other
+PMID:24265305,exclude,"E7 package leak testing; refrigeration only, no heat exposure",none,none,lab_bench
+PMID:24351186,include,I2 systematic review of CSII insulin analog stability at high temperature,insulin,stability_potency,systematic_review
+PMID:24367934,include,I1 infusion site warming to 40C accelerates insulin absorption,insulin,pharmacokinetics_absorption,human_lab_study
+PMID:24610683,include,I1 RCT local heating device increases insulin absorption,insulin,pharmacokinetics_absorption,rct
+PMID:24753703,include,uncertain: I1 HbA1c vs ambient temperature by OAD/insulin treatment,insulin,hypoglycemia_glycemic,cohort
+PMID:2481728,exclude,E2 rat cold-exposure pancreatic study,none,none,other
+PMID:24876429,include,I2 insulin pump reservoir temperatures across seasons incl summer,insulin,device_performance,other
+PMID:25452873,include,I2 insulin pump bubble formation with temperature rise to 37C,insulin,device_performance,lab_bench
+PMID:26908204,exclude,E3 experimental oral insulin niosome formulation; mice,none,none,other
+PMID:27244950,exclude,E6 acupuncture heat sensitivity test in diabetes; no drug,none,none,cross_sectional
+PMID:27264884,exclude,E6 passive hyperthermia in T2DM without insulin therapy; no drug,none,none,rct
+PMID:2737363,exclude,E6 skin blood flow in IDDM; no drug x heat,none,none,cross_sectional
+PMID:27574991,exclude,E3 microneedle patch engineering; mice,none,none,other
+PMID:2758758,exclude,E6 thermal clearance probe validation,none,none,other
+PMID:27789976,include,"I2 rechargeable insulin pump heating, 35C chamber",insulin,device_performance,lab_bench
+PMID:27984105,exclude,E3 photothermal hydrogel insulin release engineering,none,none,other
+PMID:28067740,exclude,"E6 general review of diabetes in athletes, not specifically drug x heat",none,none,review
+PMID:28394190,include,I2 insulin pen cooling device tested at 37.8C outside temperature,insulin,device_performance,lab_bench
+PMID:2962806,exclude,E6 nerve ischaemia in diabetes; no drug x heat,none,none,case_control
+PMID:30311402,include,I1 RCT ambient 30C vs 15C alters insulin lispro pharmacodynamics,insulin,pharmacokinetics_absorption,rct
+PMID:30344853,exclude,E4 miliaria with febrile pyelonephritis; no environmental heat,none,none,case_report
+PMID:3046820,exclude,E6 ganglioside treatment thermal thresholds; no relevant drug,none,none,rct
+PMID:30654056,exclude,E3 ceramic microneedle fabrication,none,none,other
+PMID:3073067,include,I1 warm 30C vs cool 10C ambient increases insulin absorption,insulin,pharmacokinetics_absorption,human_lab_study
+PMID:33259116,include,uncertain: I2 evaporative cooling insulin storage wallet in hot climate (Haiti),insulin,device_performance,other
+PMID:33931817,exclude,E3 recombinant glargine production in yeast,none,none,other
+PMID:3405615,exclude,E6 neuropathy thermal thresholds; no drug x heat,none,none,case_control
+PMID:3514326,exclude,E2 streptozocin-diabetic rat study,none,none,other
+PMID:35443846,include,"uncertain: I2 insulin cooling devices in hot-humid climate, Thailand",insulin,device_performance,other
+PMID:36585035,include,I2 RCT glargine pens stored at 37C for 21 days vs refrigerated,insulin,stability_potency,rct
+PMID:3743316,exclude,E6 pasta glycemic index; no drug x heat,none,none,other
+PMID:37930742,include,I2 Cochrane review thermal stability and storage of human insulin,insulin,stability_potency,systematic_review
+PMID:38002864,exclude,E6 pediatric HHS review; no environmental heat,none,none,review
+PMID:3803736,exclude,E6 HbA1c seasonality in nondiabetics; no drug,none,none,cohort
+PMID:3806025,exclude,E6 burns from applied heat in diabetes; no drug x heat,none,none,case_series
+PMID:38060348,include,I1 case-crossover heat index and serious hypoglycemia in insulin users,insulin,hypoglycemia_glycemic,case_crossover
+PMID:38911103,exclude,"E8 society declaration/position statement, no data",none,none,other
+PMID:38966457,exclude,E4 DKA with thyroid storm hyperthermia; no environmental heat,none,none,case_report
+PMID:3899616,exclude,E2 in vitro interferon effect on rat insulin cells,none,none,other
+PMID:39043846,exclude,E3 chemical synthesis of novel thermostable insulin analog,none,none,other
+PMID:39433419,exclude,E6 sulfonylureas/DPP-4i/GLP1RA x temperature; none of the 15 drugs,none,none,cohort
+PMID:39668758,include,uncertain: I2 commentary on heat-stable insulin and heat effects on insulin,insulin,stability_potency,review
+PMID:39921158,exclude,E6 topical insulin for keratopathy; no heat,none,none,case_report
+PMID:40257998,exclude,E3 insulin analog crystallography,none,none,other
+PMID:41198742,include,I1 heatwave and glycemic control in T1D on hybrid closed-loop insulin,insulin,hypoglycemia_glycemic,cross_sectional
+PMID:41464483,include,uncertain: I1 temperature/heatwave and glycemia in T1D by insulin therapy type,insulin,hypoglycemia_glycemic,cohort
+PMID:42079068,exclude,E3 insulin detemir crystal structure,none,none,other
+PMID:42515187,exclude,E6 ozone and GDM; insulin only defines outcome class,none,none,cohort
+PMID:6349204,include,I1 sauna heat and absorption of amorphous insulin in T1D,insulin,pharmacokinetics_absorption,human_lab_study
+PMID:6376015,exclude,E6 general insulin PK review; heat only one listed factor,none,none,review
+PMID:6572616,exclude,E6 bacterial leukotoxin; no drug x heat,none,none,other
+PMID:6993886,exclude,E6 theoretical cell biology hypothesis,none,none,other
+PMID:7010077,include,I1 ambient 35C vs 20C augments insulin absorption,insulin,pharmacokinetics_absorption,human_lab_study
+PMID:7045623,exclude,E6 liposome drug delivery review; no heat,none,none,review
+PMID:7347664,exclude,E7 glucometer evaluation; temperature only calibration condition,none,none,other
+PMID:7573434,exclude,E6 glucose tracer methodology ('hot' = radiolabel),none,none,other
+PMID:7585875,exclude,E6 genetics review of chromosome 19,none,none,review
+PMID:7586662,exclude,E6 insulin sensitivity and thermal thresholds; no drug,none,none,cross_sectional
+PMID:8005027,exclude,E6 neural tube defects; no relevant drug x heat,none,none,other
+PMID:8022328,exclude,E6 hypothesis on milk heat treatment and IDDM,none,none,other
+PMID:8163058,exclude,E6 microvascular response to local heating; no drug,none,none,case_control
+PMID:8170493,exclude,E6 sensory threshold reproducibility; no drug,none,none,cross_sectional
+PMID:8538665,exclude,E6 SFEMG in diabetic neuropathy; no heat,none,none,cross_sectional
+PMID:8613983,exclude,E3 NMR structural study of insulin hexamer,none,none,other
+PMID:8781764,exclude,E6 C-peptide infusion and nerve function; no heat,none,none,rct
+PMID:9248670,exclude,E6 clamp methodology; hand warming for blood sampling,none,none,other
+PMID:9745836,exclude,E6 diabetic Hajj pilgrims profile; drug not analysed vs heat exhaustion,none,none,cross_sectional
+PMID:9794109,exclude,E2 in vitro hexokinase variants,none,none,other
+PMID:9811506,include,I2 insulin cartridge physical stress at 37C with agitation,insulin,stability_potency,lab_bench
+DOI:10.21203/rs.3.rs-37431/v1,exclude,E2 rat diuretic study of herbal medicine,none,none,other
+PAT:CN101007003,exclude,E3 torasemide injection manufacturing patent,none,none,other
+PMID:1011962,include,I1 furosemide-induced dehydration and exercise heat tolerance at 39C,loop_diuretics,heat_illness,human_lab_study
+PMID:10444564,exclude,E7 cold strain index; furosemide hypohydration before cold exposure,none,none,other
+PMID:10708159,exclude,E6 ventilator humidifiers; furosemide incidental covariate,none,none,rct
+PMID:11416987,include,uncertain: I2 bumetanide nasal formulation stability at 57C,loop_diuretics,stability_potency,lab_bench
+PMID:12956032,exclude,E6 rhabdomyolysis review; loop diuretics only as treatment,none,none,review
+PMID:15645612,exclude,E6 rhabdomyolysis/ARF review; loop diuretics only as treatment,none,none,review
+PMID:17402648,exclude,E6 marathon hyponatremia review; loop diuretic only as treatment,none,none,review
+PMID:20298139,exclude,E6 rhabdomyolysis review; no drug x heat analysis,none,none,review
+PMID:21596136,exclude,E3 hot-melt extrusion formulation engineering,none,none,other
+PMID:21736786,exclude,"E6 furosemide only a dehydration tool; cognition outcome, no heat outcome",none,none,rct
+PMID:21965363,exclude,E2 mouse nociception study,none,none,other
+PMID:22190027,exclude,E6 furosemide only a dehydration tool; mood outcome without hyperthermia,none,none,rct
+PMID:23302579,exclude,E6 vancomycin stability; furosemide only compatibility,none,none,lab_bench
+PMID:25087413,exclude,E6 balneotherapy in heart failure; no heat exposure x drug,none,none,other
+PMID:25627679,exclude,E6 CIPA autonomic study; furosemide only volume depletion test,none,none,case_control
+PMID:27812757,exclude,E2 in vitro transporter study,none,none,other
+PMID:28213919,exclude,E2 isolated optic nerve electrophysiology,none,none,other
+PMID:28751508,exclude,E6 erythromelalgia hypothermia case; no relevant drug x heat,none,none,case_report
+PMID:29377181,exclude,E6 rehydration beverages; Lasix only dehydration method,none,none,rct
+PMID:29488197,exclude,E3 torasemide hot-melt extrusion process engineering,none,none,other
+PMID:30777859,include,I1 furosemide users: temperature modifies potassium survival benefit,loop_diuretics,mortality,cohort
+PMID:31793011,include,I1 hyperthermia presentations associated with furosemide use,loop_diuretics,hyperthermia,cross_sectional
+PMID:35219343,exclude,E4 postoperative non-environmental hyperthermia; furosemide incidental,none,none,case_report
+PMID:38422674,include,I2 indapamide and torasemide storage at 40C/50C free radicals,multiple,stability_potency,lab_bench
+PMID:40906667,exclude,E7 nalbuphine heat only forced-degradation assay; furosemide compatibility,none,none,lab_bench
+PMID:40974836,include,uncertain: I1 heatwaves and sodium in CKD; thiazide/loop diuretic associations,multiple,electrolyte_hyponatremia,cohort
+PMID:41997733,exclude,E6 Y-site compatibility at ambient temperature; no heat,none,none,lab_bench
+PMID:42710533,include,"I1 SCCS antihypertensives (ACEi/ARB, diuretics) and heat illness in heatwaves",multiple,heat_illness,case_crossover
+PMID:42958471,exclude,E6 surgical case; furosemide only treatment,none,none,case_report

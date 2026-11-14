@@ -1,0 +1,19 @@
+outcome_group,search_label,concept_id,concept_label,exact_label_match
+heat illness/stroke,heat stroke,rYCo7LTyzN,heat stroke,True
+heat illness/stroke,heat illness,PtQBvGm5CM,heat illness,True
+heat illness/stroke,heat exhaustion,2M0TDlEdLk,heat exhaustion,True
+heat illness/stroke,hot,dINFs04idR,hot,True
+hyperthermia/body temp,hyperthermia,FDJ4Gulj_Q,hyperthermia,True
+hyperthermia/body temp,body temperature,CPu3fKZt34,body temperature,True
+hyperthermia/body temp,thermoregulation,4ixfP1w8VB,thermoregulation,True
+hyperthermia/body temp,fever,r3Cf6EaVWw,high fever,False
+ambient heat/heat wave,heat wave,k9BAffdSqv,heat wave,True
+ambient heat/heat wave,extreme heat,wpUeTjUbAc,extreme heat,True
+ambient heat/heat wave,temperature,mUxSLRMwIy,air temperature,False
+sweating,sweating,ccjhPmdWrg,sweating,True
+sweating,hypohidrosis,ronWkFpN4u,hypohidrosis,True
+sweating,hyperhidrosis,QwT0YUJizC,hyperhidrosis,True
+dehydration/volume,dehydration,ewCh_VoJr4,dehydration,True
+dehydration/volume,hypovolemia,rlOKG-Onc6,hypovolemia,True
+hyponatremia,hyponatremia,GiyIgG3cvi,hyponatremia,True
+acute kidney injury,acute kidney injury,dwy4MR0rcR,acute kidney injury,True

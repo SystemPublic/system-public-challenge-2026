@@ -1,0 +1,5482 @@
+[
+ {
+  "id": "https://openalex.org/W2079361870",
+  "doi": "https://doi.org/10.1016/j.maturitas.2011.03.008",
+  "title": "Heat wave impact on morbidity and mortality in the elderly population: A review of recent studies",
+  "publication_year": 2011,
+  "ids": {
+   "openalex": "https://openalex.org/W2079361870",
+   "doi": "https://doi.org/10.1016/j.maturitas.2011.03.008",
+   "mag": "2079361870",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/21477954"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/j.maturitas.2011.03.008",
+   "doi": "https://doi.org/10.1016/j.maturitas.2011.03.008",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1016/j.maturitas.2011.03.008",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S127492747",
+    "display_name": "Maturitas",
+    "issn_l": "0378-5122",
+    "issn": [
+     "0378-5122",
+     "1873-4111"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Maturitas",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 594,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5009248906",
+     "display_name": "Daniel Oudin \u00c5str\u00f6m",
+     "orcid": "https://orcid.org/0000-0003-4742-417X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-4742-417X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I90267481",
+      "display_name": "Ume\u00e5 University",
+      "ror": "https://ror.org/05kb8h459",
+      "country_code": "SE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I90267481"
+      ]
+     }
+    ],
+    "countries": [
+     "SE"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Daniel Oudin \u00c5str\u00f6m",
+    "raw_affiliation_strings": [
+     "Occupational and Environmental Medicine, Ume\u00e5 University, Ume\u00e5, Sweden. daniel.astrom@envmed.umu.se",
+     "Occupational and Environmental Medicine, Ume\u00e5 University, 901 87 Ume\u00e5, Sweden"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Occupational and Environmental Medicine, Ume\u00e5 University, Ume\u00e5, Sweden. daniel.astrom@envmed.umu.se",
+      "institution_ids": [
+       "https://openalex.org/I90267481"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Occupational and Environmental Medicine, Ume\u00e5 University, 901 87 Ume\u00e5, Sweden",
+      "institution_ids": [
+       "https://openalex.org/I90267481"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5054334378",
+     "display_name": "Bertil Forsberg",
+     "orcid": "https://orcid.org/0000-0002-0159-6657",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-0159-6657"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I90267481",
+      "display_name": "Ume\u00e5 University",
+      "ror": "https://ror.org/05kb8h459",
+      "country_code": "SE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I90267481"
+      ]
+     }
+    ],
+    "countries": [
+     "SE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Forsberg Bertil",
+    "raw_affiliation_strings": [
+     "Occupational and Environmental Medicine, Ume\u00e5 University, 901 87 Ume\u00e5, Sweden"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Occupational and Environmental Medicine, Ume\u00e5 University, 901 87 Ume\u00e5, Sweden",
+      "institution_ids": [
+       "https://openalex.org/I90267481"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5090027021",
+     "display_name": "Joacim Rockl\u00f6v",
+     "orcid": "https://orcid.org/0000-0003-4030-0449",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-4030-0449"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I90267481",
+      "display_name": "Ume\u00e5 University",
+      "ror": "https://ror.org/05kb8h459",
+      "country_code": "SE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I90267481"
+      ]
+     }
+    ],
+    "countries": [
+     "SE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Rockl\u00f6v Joacim",
+    "raw_affiliation_strings": [
+     "Epidemiology and Global Health, Ume\u00e5 University, Sweden",
+     "Occupational and Environmental Medicine, Ume\u00e5 University, 901 87 Ume\u00e5, Sweden"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Epidemiology and Global Health, Ume\u00e5 University, Sweden",
+      "institution_ids": [
+       "https://openalex.org/I90267481"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Occupational and Environmental Medicine, Ume\u00e5 University, 901 87 Ume\u00e5, Sweden",
+      "institution_ids": [
+       "https://openalex.org/I90267481"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2129308948",
+  "doi": "https://doi.org/10.1016/s0140-6736(09)61711-6",
+  "title": "Health effects of hot weather: from awareness of risk factors to effective health protection",
+  "publication_year": 2010,
+  "ids": {
+   "openalex": "https://openalex.org/W2129308948",
+   "doi": "https://doi.org/10.1016/s0140-6736(09)61711-6",
+   "mag": "2129308948",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/20153519"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/s0140-6736(09)61711-6",
+   "doi": "https://doi.org/10.1016/s0140-6736(09)61711-6",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1016/s0140-6736(09)61711-6",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S49861241",
+    "display_name": "The Lancet",
+    "issn_l": "0099-5355",
+    "issn": [
+     "0099-5355",
+     "0140-6736",
+     "1474-547X"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-class-a",
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-a",
+     "doyens",
+     "jufo-3",
+     "ki-jl-3",
+     "medline",
+     "norway-2",
+     "poland-200",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "The Lancet",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 506,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5039564393",
+     "display_name": "Shakoor Hajat",
+     "orcid": "https://orcid.org/0000-0002-3086-362X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3086-362X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I2802940977",
+      "display_name": "BC Centre for Disease Control",
+      "ror": "https://ror.org/05jyzx602",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1308729876",
+       "https://openalex.org/I156965999",
+       "https://openalex.org/I2802940977"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210089966",
+      "display_name": "London School of Hygiene & Tropical Medicine",
+      "ror": "https://ror.org/00a0jsq62",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ],
+    "countries": [
+     "CA",
+     "GB"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Shakoor Hajat",
+    "raw_affiliation_strings": [
+     "British Columbia Centre for Disease Control, Vancouver, BC, Canada. shakoor.hajat@lshtm.ac.uk",
+     "British Columbia Centre for Disease Control, Vancouver, BC, Canada",
+     "London School of Hygiene and Tropical Medicine, London, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "British Columbia Centre for Disease Control, Vancouver, BC, Canada. shakoor.hajat@lshtm.ac.uk",
+      "institution_ids": [
+       "https://openalex.org/I2802940977"
+      ]
+     },
+     {
+      "raw_affiliation_string": "British Columbia Centre for Disease Control, Vancouver, BC, Canada",
+      "institution_ids": [
+       "https://openalex.org/I2802940977"
+      ]
+     },
+     {
+      "raw_affiliation_string": "London School of Hygiene and Tropical Medicine, London, UK",
+      "institution_ids": [
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5109901680",
+     "display_name": "Madeline O\u2019Connor",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Madeline O'Connor",
+    "raw_affiliation_strings": [
+     "Montreal Public Health Department, Montreal, QC, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Montreal Public Health Department, Montreal, QC, Canada",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5026696304",
+     "display_name": "Tom Kosatsky",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I2802940977",
+      "display_name": "BC Centre for Disease Control",
+      "ror": "https://ror.org/05jyzx602",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1308729876",
+       "https://openalex.org/I156965999",
+       "https://openalex.org/I2802940977"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Tom Kosatsky",
+    "raw_affiliation_strings": [
+     "British Columbia Centre for Disease Control, Vancouver, BC, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "British Columbia Centre for Disease Control, Vancouver, BC, Canada",
+      "institution_ids": [
+       "https://openalex.org/I2802940977"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2065463734",
+  "doi": "https://doi.org/10.1097/00001648-199609000-00005",
+  "title": "Evidence of Depression Provoked by Cardiovascular Medication: A Prescription Sequence Symmetry Analysis",
+  "publication_year": 1996,
+  "ids": {
+   "openalex": "https://openalex.org/W2065463734",
+   "doi": "https://doi.org/10.1097/00001648-199609000-00005",
+   "mag": "2065463734",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/8862977"
+  },
+  "primary_location": {
+   "id": "doi:10.1097/00001648-199609000-00005",
+   "doi": "https://doi.org/10.1097/00001648-199609000-00005",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1097/00001648-199609000-00005",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S15470582",
+    "display_name": "Epidemiology",
+    "issn_l": "1044-3983",
+    "issn": [
+     "1044-3983",
+     "1531-5487"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-b",
+     "doyens",
+     "jufo-3",
+     "ki-jl-2",
+     "medline",
+     "norway-2",
+     "poland-140",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310315671",
+    "host_organization_name": "Lippincott Williams & Wilkins",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310315671",
+     "https://openalex.org/P4310318547"
+    ],
+    "host_organization_lineage_names": [
+     "Lippincott Williams & Wilkins",
+     "Wolters Kluwer"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Epidemiology",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 297,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5086275374",
+     "display_name": "Jesper Hallas",
+     "orcid": "https://orcid.org/0000-0002-8097-8708",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8097-8708"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I177969490",
+      "display_name": "University of Southern Denmark",
+      "ror": "https://ror.org/03yrrjy16",
+      "country_code": "DK",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I177969490"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2801498763",
+      "display_name": "Odense University Hospital",
+      "ror": "https://ror.org/00ey0ed83",
+      "country_code": "DK",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2801498763"
+      ]
+     }
+    ],
+    "countries": [
+     "DK"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Jesper Hallas",
+    "raw_affiliation_strings": [
+     "Jesper Hallas, Department S, Odense University Hospital, 5000 Odense C, Denmark",
+     "Submitted October 10, 1995; final version accepted May 24, 1996",
+     "the Department of Clinical Pharmacology, Institute of Medical Biology, Odense University, Odense, Denmark",
+     "Submitted October 10, 1995",
+     "final version accepted May 24, 1996"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Jesper Hallas, Department S, Odense University Hospital, 5000 Odense C, Denmark",
+      "institution_ids": [
+       "https://openalex.org/I2801498763"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Submitted October 10, 1995; final version accepted May 24, 1996",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "the Department of Clinical Pharmacology, Institute of Medical Biology, Odense University, Odense, Denmark",
+      "institution_ids": [
+       "https://openalex.org/I177969490"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Submitted October 10, 1995",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "final version accepted May 24, 1996",
+      "institution_ids": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2026994877",
+  "doi": "https://doi.org/10.1016/j.eurpsy.2007.03.007",
+  "title": "Psychotropic drugs use and risk of heat-related hospitalisation",
+  "publication_year": 2007,
+  "ids": {
+   "openalex": "https://openalex.org/W2026994877",
+   "doi": "https://doi.org/10.1016/j.eurpsy.2007.03.007",
+   "mag": "2026994877",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/17513091"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/j.eurpsy.2007.03.007",
+   "doi": "https://doi.org/10.1016/j.eurpsy.2007.03.007",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1016/j.eurpsy.2007.03.007",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S87202501",
+    "display_name": "European Psychiatry",
+    "issn_l": "0924-9338",
+    "issn": [
+     "0924-9338",
+     "1778-3585"
+    ],
+    "is_oa": false,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "dongbi-c",
+     "doyens",
+     "jufo-2",
+     "ki-jl-2",
+     "medline",
+     "norway-2",
+     "oarl",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310311721",
+    "host_organization_name": "Cambridge University Press",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310311721",
+     "https://openalex.org/P4310311702"
+    ],
+    "host_organization_lineage_names": [
+     "Cambridge University Press",
+     "University of Cambridge"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "European Psychiatry",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 198,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5025472626",
+     "display_name": "Karin Martin\u2010Latry",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I3018323443",
+      "display_name": "Centre Hospitalier Universitaire de Bordeaux",
+      "ror": "https://ror.org/01hq89f96",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3018323443"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405256745",
+      "display_name": "Universit\u00e9 Bordeaux Segalen",
+      "ror": "https://ror.org/04gbzm373",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I15057530",
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Karin Martin-Latry",
+    "raw_affiliation_strings": [
+     "Universit\u00e9 Victor Segalen Bordeaux 2, France. karin.latry@pharmaco.u-bordeaux2.fr",
+     "D\u00e9partement de Pharmacologie, CHU Bordeaux, France",
+     "Inserm U657, Bordeaux, France",
+     "Universit\u00e9 Victor Segalen Bordeaux 2, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Universit\u00e9 Victor Segalen Bordeaux 2, France. karin.latry@pharmaco.u-bordeaux2.fr",
+      "institution_ids": [
+       "https://openalex.org/I4405256745"
+      ]
+     },
+     {
+      "raw_affiliation_string": "D\u00e9partement de Pharmacologie, CHU Bordeaux, France",
+      "institution_ids": [
+       "https://openalex.org/I3018323443"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Inserm U657, Bordeaux, France",
+      "institution_ids": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Universit\u00e9 Victor Segalen Bordeaux 2, France",
+      "institution_ids": [
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5028102474",
+     "display_name": "Marie-Pierre Goumy",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I3018323443",
+      "display_name": "Centre Hospitalier Universitaire de Bordeaux",
+      "ror": "https://ror.org/01hq89f96",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3018323443"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210111110",
+      "display_name": "H\u00f4pital Saint-Andr\u00e9",
+      "ror": "https://ror.org/021959v84",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3018323443",
+       "https://openalex.org/I4210111110"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Marie-Pierre Goumy",
+    "raw_affiliation_strings": [
+     "Service des urgences-r\u00e9animation, Centre Hospitalo-Universitaire de Saint-Andr\u00e9, Bordeaux, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Service des urgences-r\u00e9animation, Centre Hospitalo-Universitaire de Saint-Andr\u00e9, Bordeaux, France",
+      "institution_ids": [
+       "https://openalex.org/I3018323443",
+       "https://openalex.org/I4210111110"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5072629246",
+     "display_name": "Philippe Latry",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210131891",
+      "display_name": "l'Assurance Maladie",
+      "ror": "https://ror.org/03am7sg53",
+      "country_code": "FR",
+      "type": "other",
+      "lineage": [
+       "https://openalex.org/I4210131891"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Philippe Latry",
+    "raw_affiliation_strings": [
+     "Direction R\u00e9gionale du Service M\u00e9dical de l\u2019Assurance Maladie d\u2019Aquitaine, CNAM-TS, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Direction R\u00e9gionale du Service M\u00e9dical de l\u2019Assurance Maladie d\u2019Aquitaine, CNAM-TS, France",
+      "institution_ids": [
+       "https://openalex.org/I4210131891"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5018167435",
+     "display_name": "C. Gabinski",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I3018323443",
+      "display_name": "Centre Hospitalier Universitaire de Bordeaux",
+      "ror": "https://ror.org/01hq89f96",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3018323443"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210111110",
+      "display_name": "H\u00f4pital Saint-Andr\u00e9",
+      "ror": "https://ror.org/021959v84",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3018323443",
+       "https://openalex.org/I4210111110"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Claude Gabinski",
+    "raw_affiliation_strings": [
+     "Service des urgences-r\u00e9animation, Centre Hospitalo-Universitaire de Saint-Andr\u00e9, Bordeaux, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Service des urgences-r\u00e9animation, Centre Hospitalo-Universitaire de Saint-Andr\u00e9, Bordeaux, France",
+      "institution_ids": [
+       "https://openalex.org/I3018323443",
+       "https://openalex.org/I4210111110"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5017285534",
+     "display_name": "Bernard B\u00e9gaud",
+     "orcid": "https://orcid.org/0000-0001-8797-0779",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8797-0779"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I3018323443",
+      "display_name": "Centre Hospitalier Universitaire de Bordeaux",
+      "ror": "https://ror.org/01hq89f96",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3018323443"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405256745",
+      "display_name": "Universit\u00e9 Bordeaux Segalen",
+      "ror": "https://ror.org/04gbzm373",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I15057530",
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Bernard B\u00e9gaud",
+    "raw_affiliation_strings": [
+     "D\u00e9partement de Pharmacologie, CHU Bordeaux, France",
+     "Inserm U657, Bordeaux, France",
+     "Universit\u00e9 Victor Segalen Bordeaux 2, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "D\u00e9partement de Pharmacologie, CHU Bordeaux, France",
+      "institution_ids": [
+       "https://openalex.org/I3018323443"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Inserm U657, Bordeaux, France",
+      "institution_ids": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Universit\u00e9 Victor Segalen Bordeaux 2, France",
+      "institution_ids": [
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5068123286",
+     "display_name": "Isabelle Faure",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I3018323443",
+      "display_name": "Centre Hospitalier Universitaire de Bordeaux",
+      "ror": "https://ror.org/01hq89f96",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3018323443"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210111110",
+      "display_name": "H\u00f4pital Saint-Andr\u00e9",
+      "ror": "https://ror.org/021959v84",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3018323443",
+       "https://openalex.org/I4210111110"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Isabelle Faure",
+    "raw_affiliation_strings": [
+     "Service des urgences-r\u00e9animation, Centre Hospitalo-Universitaire de Saint-Andr\u00e9, Bordeaux, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Service des urgences-r\u00e9animation, Centre Hospitalo-Universitaire de Saint-Andr\u00e9, Bordeaux, France",
+      "institution_ids": [
+       "https://openalex.org/I3018323443",
+       "https://openalex.org/I4210111110"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5045447124",
+     "display_name": "H\u00e9l\u00e8ne Verdoux",
+     "orcid": "https://orcid.org/0000-0003-2948-3782",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2948-3782"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405256745",
+      "display_name": "Universit\u00e9 Bordeaux Segalen",
+      "ror": "https://ror.org/04gbzm373",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I15057530",
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "H\u00e9l\u00e8ne Verdoux",
+    "raw_affiliation_strings": [
+     "Inserm U657, Bordeaux, France",
+     "Universit\u00e9 Victor Segalen Bordeaux 2, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Inserm U657, Bordeaux, France",
+      "institution_ids": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Universit\u00e9 Victor Segalen Bordeaux 2, France",
+      "institution_ids": [
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2135255573",
+  "doi": "https://doi.org/10.1172/jci31242",
+  "title": "Local production of angiotensin II in the subfornical organ causes elevated drinking",
+  "publication_year": 2007,
+  "ids": {
+   "openalex": "https://openalex.org/W2135255573",
+   "doi": "https://doi.org/10.1172/jci31242",
+   "mag": "2135255573",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/17404622",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/1838949"
+  },
+  "primary_location": {
+   "id": "doi:10.1172/jci31242",
+   "doi": "https://doi.org/10.1172/jci31242",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1172/jci31242",
+   "pdf_url": "http://www.jci.org/articles/view/31242/files/pdf",
+   "source": {
+    "id": "https://openalex.org/S114430552",
+    "display_name": "Journal of Clinical Investigation",
+    "issn_l": "0021-9738",
+    "issn": [
+     "0021-9738",
+     "1558-8238"
+    ],
+    "is_oa": false,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "dongbi-a",
+     "doyens",
+     "jufo-3",
+     "ki-jl-3",
+     "medline",
+     "norway-2",
+     "oarl",
+     "poland-200",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320279",
+    "host_organization_name": "American Society for Clinical Investigation",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320279"
+    ],
+    "host_organization_lineage_names": [
+     "American Society for Clinical Investigation"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Journal of Clinical Investigation",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 150,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5014436243",
+     "display_name": "Koji Sakai",
+     "orcid": "https://orcid.org/0000-0002-9348-0829",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-9348-0829"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I126307644",
+      "display_name": "University of Iowa",
+      "ror": "https://ror.org/036jqmy94",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I126307644"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Koji Sakai",
+    "raw_affiliation_strings": [
+     "Department of Internal Medicine, Department of Anatomy and Cell Biology, and Center on Functional Genomics of Hypertension, Roy J. and Lucille A. Carver College of Medicine, University of Iowa, Iowa City, Iowa 52242, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Internal Medicine, Department of Anatomy and Cell Biology, and Center on Functional Genomics of Hypertension, Roy J. and Lucille A. Carver College of Medicine, University of Iowa, Iowa City, Iowa 52242, USA",
+      "institution_ids": [
+       "https://openalex.org/I126307644"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5040209664",
+     "display_name": "Khristofor Agassandian",
+     "orcid": "https://orcid.org/0009-0003-9740-3227",
+     "observed_orcids": [
+      "https://orcid.org/0009-0003-9740-3227"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I126307644",
+      "display_name": "University of Iowa",
+      "ror": "https://ror.org/036jqmy94",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I126307644"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Khristofor Agassandian",
+    "raw_affiliation_strings": [
+     "Center on Functional Genomics of Hypertension , Roy J. and Lucille A. Carver",
+     "Department of Anatomy and Cell Biology, and",
+     "Center on Functional Genomics of Hypertension,",
+     "Roy J. and Lucille A. Carver College of Medicine, University of Iowa, Iowa City, Iowa, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Center on Functional Genomics of Hypertension , Roy J. and Lucille A. Carver",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Department of Anatomy and Cell Biology, and",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Center on Functional Genomics of Hypertension,",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Roy J. and Lucille A. Carver College of Medicine, University of Iowa, Iowa City, Iowa, USA",
+      "institution_ids": [
+       "https://openalex.org/I126307644"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5014016538",
+     "display_name": "Satoshi Morimoto",
+     "orcid": "https://orcid.org/0000-0002-2292-2319",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2292-2319"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Satoshi Morimoto",
+    "raw_affiliation_strings": [
+     "Department of Internal Medicine,"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Internal Medicine,",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5002530522",
+     "display_name": "Puspha Sinnayah",
+     "orcid": "https://orcid.org/0000-0002-9811-7236",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-9811-7236"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Puspha Sinnayah",
+    "raw_affiliation_strings": [
+     "Department of Anatomy and Cell Biology, and"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Anatomy and Cell Biology, and",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5112148840",
+     "display_name": "Martin D. Cassell",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I126307644",
+      "display_name": "University of Iowa",
+      "ror": "https://ror.org/036jqmy94",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I126307644"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Martin D. Cassell",
+    "raw_affiliation_strings": [
+     "Center on Functional Genomics of Hypertension , Roy J. and Lucille A. Carver",
+     "Department of Anatomy and Cell Biology, and",
+     "Center on Functional Genomics of Hypertension,",
+     "Roy J. and Lucille A. Carver College of Medicine, University of Iowa, Iowa City, Iowa, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Center on Functional Genomics of Hypertension , Roy J. and Lucille A. Carver",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Department of Anatomy and Cell Biology, and",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Center on Functional Genomics of Hypertension,",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Roy J. and Lucille A. Carver College of Medicine, University of Iowa, Iowa City, Iowa, USA",
+      "institution_ids": [
+       "https://openalex.org/I126307644"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5088358096",
+     "display_name": "Robin L. Davisson",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I205783295",
+      "display_name": "Cornell University",
+      "ror": "https://ror.org/05bnh6r87",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I205783295"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210151139",
+      "display_name": "New York State College of Veterinary Medicine",
+      "ror": "https://ror.org/04r17kf39",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I205783295",
+       "https://openalex.org/I4210151139"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4387153466",
+      "display_name": "Weill Cornell Medicine",
+      "ror": "https://ror.org/02r109517",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I205783295",
+       "https://openalex.org/I4387153466"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Robin L. Davisson",
+    "raw_affiliation_strings": [
+     "College of Veterinary Medicine, Cornell University, Ithaca, New York, USA",
+     "Department of Biomedical Sciences,",
+     "Department of Cell and Developmental Biology, Weill Cornell Medical College, Cornell University, New York, New York, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "College of Veterinary Medicine, Cornell University, Ithaca, New York, USA",
+      "institution_ids": [
+       "https://openalex.org/I205783295",
+       "https://openalex.org/I4210151139"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Biomedical Sciences,",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Department of Cell and Developmental Biology, Weill Cornell Medical College, Cornell University, New York, New York, USA",
+      "institution_ids": [
+       "https://openalex.org/I205783295",
+       "https://openalex.org/I4387153466"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5022804707",
+     "display_name": "Curt D. Sigmund",
+     "orcid": "https://orcid.org/0000-0002-1453-0921",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1453-0921"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I126307644",
+      "display_name": "University of Iowa",
+      "ror": "https://ror.org/036jqmy94",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I126307644"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Curt D. Sigmund",
+    "raw_affiliation_strings": [
+     "Center on Functional Genomics of Hypertension,",
+     "Department of Internal Medicine,",
+     "Department of Molecular Physiology and Biophysics,",
+     "Roy J. and Lucille A. Carver College of Medicine, University of Iowa, Iowa City, Iowa, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Center on Functional Genomics of Hypertension,",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Department of Internal Medicine,",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Department of Molecular Physiology and Biophysics,",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Roy J. and Lucille A. Carver College of Medicine, University of Iowa, Iowa City, Iowa, USA",
+      "institution_ids": [
+       "https://openalex.org/I126307644"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2031935069",
+  "doi": "https://doi.org/10.1002/pds.1736",
+  "title": "Adverse events with use of antiepileptic drugs: a prescription and event symmetry analysis",
+  "publication_year": 2009,
+  "ids": {
+   "openalex": "https://openalex.org/W2031935069",
+   "doi": "https://doi.org/10.1002/pds.1736",
+   "mag": "2031935069",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/19326363"
+  },
+  "primary_location": {
+   "id": "doi:10.1002/pds.1736",
+   "doi": "https://doi.org/10.1002/pds.1736",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1002/pds.1736",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S140231191",
+    "display_name": "Pharmacoepidemiology and Drug Safety",
+    "issn_l": "1053-8569",
+    "issn": [
+     "1053-8569",
+     "1099-1557"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-2",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Pharmacoepidemiology and Drug Safety",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 140,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5068068029",
+     "display_name": "Ioannis Tsiropoulos",
+     "orcid": "https://orcid.org/0000-0002-3156-8964",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3156-8964"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I177969490",
+      "display_name": "University of Southern Denmark",
+      "ror": "https://ror.org/03yrrjy16",
+      "country_code": "DK",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I177969490"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2801498763",
+      "display_name": "Odense University Hospital",
+      "ror": "https://ror.org/00ey0ed83",
+      "country_code": "DK",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2801498763"
+      ]
+     }
+    ],
+    "countries": [
+     "DK"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Ioannis Tsiropoulos",
+    "raw_affiliation_strings": [
+     "Department of Neurology, Odense University Hospital, Odense C, Denmark. iotsi@dadlnet.dk",
+     "Department of Neurology, Odense University Hospital, Sdr. Boulevard 29, 5000 Odense C, Denmark",
+     "Research Unit of Clinical Pharmacology, Institute of Public Health, University of Southern Denmark, Denmark"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Neurology, Odense University Hospital, Odense C, Denmark. iotsi@dadlnet.dk",
+      "institution_ids": [
+       "https://openalex.org/I2801498763"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Neurology, Odense University Hospital, Sdr. Boulevard 29, 5000 Odense C, Denmark",
+      "institution_ids": [
+       "https://openalex.org/I2801498763"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Research Unit of Clinical Pharmacology, Institute of Public Health, University of Southern Denmark, Denmark",
+      "institution_ids": [
+       "https://openalex.org/I177969490"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5003383445",
+     "display_name": "Morten Tolstrup Andersen",
+     "orcid": "https://orcid.org/0000-0001-7029-2860",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7029-2860"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I177969490",
+      "display_name": "University of Southern Denmark",
+      "ror": "https://ror.org/03yrrjy16",
+      "country_code": "DK",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I177969490"
+      ]
+     }
+    ],
+    "countries": [
+     "DK"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Morten Andersen",
+    "raw_affiliation_strings": [
+     "Research Unit of General Practice, Institute of Public Health, University of Southern Denmark, Denmark"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Research Unit of General Practice, Institute of Public Health, University of Southern Denmark, Denmark",
+      "institution_ids": [
+       "https://openalex.org/I177969490"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5086275374",
+     "display_name": "Jesper Hallas",
+     "orcid": "https://orcid.org/0000-0002-8097-8708",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8097-8708"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I177969490",
+      "display_name": "University of Southern Denmark",
+      "ror": "https://ror.org/03yrrjy16",
+      "country_code": "DK",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I177969490"
+      ]
+     }
+    ],
+    "countries": [
+     "DK"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Jesper Hallas",
+    "raw_affiliation_strings": [
+     "Research Unit of Clinical Pharmacology, Institute of Public Health, University of Southern Denmark, Denmark"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Research Unit of Clinical Pharmacology, Institute of Public Health, University of Southern Denmark, Denmark",
+      "institution_ids": [
+       "https://openalex.org/I177969490"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2083555242",
+  "doi": "https://doi.org/10.1016/0031-9384(95)02036-5",
+  "title": "Nonsteroidal anti-inflammatory drugs alter body temperature and suppress melatonin in humans",
+  "publication_year": 1996,
+  "ids": {
+   "openalex": "https://openalex.org/W2083555242",
+   "doi": "https://doi.org/10.1016/0031-9384(95)02036-5",
+   "mag": "2083555242",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/8848472"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/0031-9384(95)02036-5",
+   "doi": "https://doi.org/10.1016/0031-9384(95)02036-5",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1016/0031-9384(95)02036-5",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S167407068",
+    "display_name": "Physiology & Behavior",
+    "issn_l": "0031-9384",
+    "issn": [
+     "0031-9384",
+     "1873-507X"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-class-a",
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "erih-plus",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-2",
+     "poland-70",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Physiology &amp; Behavior",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 140,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5081572336",
+     "display_name": "Patricia Murphy",
+     "orcid": "https://orcid.org/0000-0002-9794-3173",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-9794-3173"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I157417397",
+      "display_name": "Bowling Green State University",
+      "ror": "https://ror.org/00ay7va13",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I157417397"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Patricia J. Murphy",
+    "raw_affiliation_strings": [
+     "Bowling Green State University, OH 43403, USA. pjmurphy@med.cornell.edu",
+     "Bowling Green State University, OH 43403, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Bowling Green State University, OH 43403, USA. pjmurphy@med.cornell.edu",
+      "institution_ids": [
+       "https://openalex.org/I157417397"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Bowling Green State University, OH 43403, USA",
+      "institution_ids": [
+       "https://openalex.org/I157417397"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5079126199",
+     "display_name": "Bryan L. Myers",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I157417397",
+      "display_name": "Bowling Green State University",
+      "ror": "https://ror.org/00ay7va13",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I157417397"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Bryan L. Myers",
+    "raw_affiliation_strings": [
+     "Bowling Green State University, Bowling Green, OH, 43403, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Bowling Green State University, Bowling Green, OH, 43403, USA",
+      "institution_ids": [
+       "https://openalex.org/I157417397"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5110028955",
+     "display_name": "Pietro Badia",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I157417397",
+      "display_name": "Bowling Green State University",
+      "ror": "https://ror.org/00ay7va13",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I157417397"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Pietro Badia",
+    "raw_affiliation_strings": [
+     "Bowling Green State University, Bowling Green, OH, 43403, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Bowling Green State University, Bowling Green, OH, 43403, USA",
+      "institution_ids": [
+       "https://openalex.org/I157417397"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W1915955802",
+  "doi": "https://doi.org/10.1002/pds.3417",
+  "title": "The validity of sequence symmetry analysis (SSA) for adverse drug reaction signal detection",
+  "publication_year": 2013,
+  "ids": {
+   "openalex": "https://openalex.org/W1915955802",
+   "doi": "https://doi.org/10.1002/pds.3417",
+   "mag": "1915955802",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/23412832"
+  },
+  "primary_location": {
+   "id": "doi:10.1002/pds.3417",
+   "doi": "https://doi.org/10.1002/pds.3417",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1002/pds.3417",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S140231191",
+    "display_name": "Pharmacoepidemiology and Drug Safety",
+    "issn_l": "1053-8569",
+    "issn": [
+     "1053-8569",
+     "1099-1557"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-2",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Pharmacoepidemiology and Drug Safety",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 88,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5038976031",
+     "display_name": "Izyan A. Wahab",
+     "orcid": "https://orcid.org/0000-0002-7447-671X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7447-671X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Izyan A. Wahab",
+    "raw_affiliation_strings": [
+     "School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, University of South Australia, Adelaide, South Australia, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, University of South Australia, Adelaide, South Australia, Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5058616004",
+     "display_name": "Nicole L. Pratt",
+     "orcid": "https://orcid.org/0000-0001-8730-8910",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8730-8910"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Nicole L. Pratt",
+    "raw_affiliation_strings": [
+     "School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute University of South Australia  Adelaide South Australia Australia",
+     "University of South Australia School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute Adelaide South Australia Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute University of South Australia  Adelaide South Australia Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     },
+     {
+      "raw_affiliation_string": "University of South Australia School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute Adelaide South Australia Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5052330076",
+     "display_name": "Michael David Wiese",
+     "orcid": "https://orcid.org/0000-0002-3255-9242",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3255-9242"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Michael D. Wiese",
+    "raw_affiliation_strings": [
+     "School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute University of South Australia  Adelaide South Australia Australia",
+     "University of South Australia School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute Adelaide South Australia Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute University of South Australia  Adelaide South Australia Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     },
+     {
+      "raw_affiliation_string": "University of South Australia School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute Adelaide South Australia Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5020478112",
+     "display_name": "Lisa M. Kalisch Ellett",
+     "orcid": "https://orcid.org/0000-0001-5063-6128",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-5063-6128"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Lisa M. Kalisch",
+    "raw_affiliation_strings": [
+     "School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute University of South Australia  Adelaide South Australia Australia",
+     "University of South Australia School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute Adelaide South Australia Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute University of South Australia  Adelaide South Australia Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     },
+     {
+      "raw_affiliation_string": "University of South Australia School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute Adelaide South Australia Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5051519595",
+     "display_name": "Elizabeth Ellen Roughead",
+     "orcid": "https://orcid.org/0000-0002-6811-8991",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6811-8991"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Elizabeth E. Roughead",
+    "raw_affiliation_strings": [
+     "School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute University of South Australia  Adelaide South Australia Australia",
+     "University of South Australia School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute Adelaide South Australia Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute University of South Australia  Adelaide South Australia Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     },
+     {
+      "raw_affiliation_string": "University of South Australia School of Pharmacy and Medical Sciences, Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute Adelaide South Australia Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2047211239",
+  "doi": "https://doi.org/10.1016/j.scitotenv.2012.10.042",
+  "title": "Risk factors for direct heat-related hospitalization during the 2009 Adelaide heatwave: A case crossover study",
+  "publication_year": 2012,
+  "ids": {
+   "openalex": "https://openalex.org/W2047211239",
+   "doi": "https://doi.org/10.1016/j.scitotenv.2012.10.042",
+   "mag": "2047211239",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/23168533"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/j.scitotenv.2012.10.042",
+   "doi": "https://doi.org/10.1016/j.scitotenv.2012.10.042",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1016/j.scitotenv.2012.10.042",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S86852077",
+    "display_name": "The Science of The Total Environment",
+    "issn_l": "0048-9697",
+    "issn": [
+     "0048-9697",
+     "1879-1026"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-class-a",
+     "anvur-scientific",
+     "cwts-core",
+     "jufo-2",
+     "medline",
+     "norway-2",
+     "poland-200",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Science of The Total Environment",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 88,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5100386012",
+     "display_name": "Ying Zhang",
+     "orcid": "https://orcid.org/0000-0001-6214-2440",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6214-2440",
+      "https://orcid.org/0009-0006-0836-6674",
+      "https://orcid.org/0009-0009-6551-4540",
+      "https://orcid.org/0000-0002-6038-7206"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I5681781",
+      "display_name": "The University of Adelaide",
+      "ror": "https://ror.org/00892tw58",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405259444",
+       "https://openalex.org/I5681781"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Ying Zhang",
+    "raw_affiliation_strings": [
+     "School of Population Health and Clinical Practice, The University of Adelaide, Adelaide, SA 5005, Australia. ying.zhang@adelaide.edu.au",
+     "School of Population Health and Clinical Practice, The University of Adelaide, Adelaide, SA 5005, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Population Health and Clinical Practice, The University of Adelaide, Adelaide, SA 5005, Australia. ying.zhang@adelaide.edu.au",
+      "institution_ids": [
+       "https://openalex.org/I5681781"
+      ]
+     },
+     {
+      "raw_affiliation_string": "School of Population Health and Clinical Practice, The University of Adelaide, Adelaide, SA 5005, Australia",
+      "institution_ids": [
+       "https://openalex.org/I5681781"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5012092014",
+     "display_name": "Monika Nitschke",
+     "orcid": "https://orcid.org/0000-0002-8524-7867",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8524-7867"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I2800277939",
+      "display_name": "Government of South Australia",
+      "ror": "https://ror.org/04g3scy39",
+      "country_code": "AU",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I2800277939"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210120278",
+      "display_name": "SA Health",
+      "ror": "https://ror.org/01tg7a346",
+      "country_code": "AU",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I2800277939",
+       "https://openalex.org/I4210120278"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Monika Nitschke",
+    "raw_affiliation_strings": [
+     "Department of Health, South Australian Government, Adelaide, SA 5000, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Health, South Australian Government, Adelaide, SA 5000, Australia",
+      "institution_ids": [
+       "https://openalex.org/I2800277939",
+       "https://openalex.org/I4210120278"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5025092082",
+     "display_name": "Peng Bi",
+     "orcid": "https://orcid.org/0000-0002-3238-3427",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3238-3427"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I5681781",
+      "display_name": "The University of Adelaide",
+      "ror": "https://ror.org/00892tw58",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405259444",
+       "https://openalex.org/I5681781"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Peng Bi",
+    "raw_affiliation_strings": [
+     "School of Population Health and Clinical Practice, The University of Adelaide, Adelaide, SA 5005, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Population Health and Clinical Practice, The University of Adelaide, Adelaide, SA 5005, Australia",
+      "institution_ids": [
+       "https://openalex.org/I5681781"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W1965501661",
+  "doi": "https://doi.org/10.1111/j.1468-1331.2009.02581.x",
+  "title": "Heat-related side-effects of neurological and non-neurological medication may increase heatwave fatalities",
+  "publication_year": 2009,
+  "ids": {
+   "openalex": "https://openalex.org/W1965501661",
+   "doi": "https://doi.org/10.1111/j.1468-1331.2009.02581.x",
+   "mag": "1965501661",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/19453697"
+  },
+  "primary_location": {
+   "id": "doi:10.1111/j.1468-1331.2009.02581.x",
+   "doi": "https://doi.org/10.1111/j.1468-1331.2009.02581.x",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1111/j.1468-1331.2009.02581.x",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S162635963",
+    "display_name": "European Journal of Neurology",
+    "issn_l": "1351-5101",
+    "issn": [
+     "1351-5101",
+     "1468-1331"
+    ],
+    "is_oa": false,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-class-a",
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "dongbi-c",
+     "doyens",
+     "jufo-2",
+     "ki-jl-2",
+     "medline",
+     "norway-2",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "European Journal of Neurology",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 85,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5110921201",
+     "display_name": "Claudia St\u00f6llberger",
+     "orcid": "https://orcid.org/0000-0001-7335-3120",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7335-3120"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "C. St\u00f6llberger",
+    "raw_affiliation_strings": [
+     "Second Medical Department, KAR, Vienna, Austria"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Second Medical Department, KAR, Vienna, Austria",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": null,
+     "display_name": "W. Lutz",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1317774081",
+      "display_name": "International Institute for Applied Systems Analysis",
+      "ror": "https://ror.org/02wfhk785",
+      "country_code": "AT",
+      "type": "nonprofit",
+      "lineage": [
+       "https://openalex.org/I1317774081"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I138211613",
+      "display_name": "Austrian Academy of Sciences",
+      "ror": "https://ror.org/03anc3s24",
+      "country_code": "AT",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I138211613"
+      ]
+     }
+    ],
+    "countries": [
+     "AT"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "W. Lutz",
+    "raw_affiliation_strings": [
+     "International Institute for Applied System Analysis (IIASA), Laxenburg, and Austrian Academy of Sciences, Laxenburg, Austria"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "International Institute for Applied System Analysis (IIASA), Laxenburg, and Austrian Academy of Sciences, Laxenburg, Austria",
+      "institution_ids": [
+       "https://openalex.org/I1317774081",
+       "https://openalex.org/I138211613"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5060806470",
+     "display_name": "Josef Finsterer",
+     "orcid": "https://orcid.org/0000-0003-2839-7305",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2839-7305",
+      "https://orcid.org/0000-0002-2304-4175",
+      "https://orcid.org/0009-0002-4174-5714"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": true,
+    "raw_author_name": "J. Finsterer",
+    "raw_affiliation_strings": [
+     "Neurological Department, KAR, Vienna, Austria"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Neurological Department, KAR, Vienna, Austria",
+      "institution_ids": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2121138768",
+  "doi": "https://doi.org/10.1002/pds.2009",
+  "title": "Increased risk of hip fracture in the elderly associated with prochlorperazine: is a prescribing cascade contributing?",
+  "publication_year": 2010,
+  "ids": {
+   "openalex": "https://openalex.org/W2121138768",
+   "doi": "https://doi.org/10.1002/pds.2009",
+   "mag": "2121138768",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/20623516"
+  },
+  "primary_location": {
+   "id": "doi:10.1002/pds.2009",
+   "doi": "https://doi.org/10.1002/pds.2009",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1002/pds.2009",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S140231191",
+    "display_name": "Pharmacoepidemiology and Drug Safety",
+    "issn_l": "1053-8569",
+    "issn": [
+     "1053-8569",
+     "1099-1557"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-2",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Pharmacoepidemiology and Drug Safety",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 76,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5028899651",
+     "display_name": "Gillian Elizabeth Caughey",
+     "orcid": "https://orcid.org/0000-0003-1192-4121",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1192-4121"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Gillian E. Caughey",
+    "raw_affiliation_strings": [
+     "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia. gillian.caughey@unisa.edu.au",
+     "Quality Use of Medicines and Pharmacy Research Centre; Sansom Institute; School of Pharmacy and Medical Sciences; University of South Australia; Adelaide SA Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia. gillian.caughey@unisa.edu.au",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre; Sansom Institute; School of Pharmacy and Medical Sciences; University of South Australia; Adelaide SA Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5051519595",
+     "display_name": "Elizabeth Ellen Roughead",
+     "orcid": "https://orcid.org/0000-0002-6811-8991",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6811-8991"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Elizabeth E. Roughead",
+    "raw_affiliation_strings": [
+     "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5058616004",
+     "display_name": "Nicole L. Pratt",
+     "orcid": "https://orcid.org/0000-0001-8730-8910",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8730-8910"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I5681781",
+      "display_name": "The University of Adelaide",
+      "ror": "https://ror.org/00892tw58",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405259444",
+       "https://openalex.org/I5681781"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Nicole Pratt",
+    "raw_affiliation_strings": [
+     "Discipline of Public Health, University of Adelaide, Adelaide, SA, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Discipline of Public Health, University of Adelaide, Adelaide, SA, Australia",
+      "institution_ids": [
+       "https://openalex.org/I5681781"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5033973551",
+     "display_name": "Sepehr Shakib",
+     "orcid": "https://orcid.org/0000-0002-7199-5733",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7199-5733"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1320133117",
+      "display_name": "Royal Adelaide Hospital",
+      "ror": "https://ror.org/00carf720",
+      "country_code": "AU",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1320133117",
+       "https://openalex.org/I4392738059"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I5681781",
+      "display_name": "The University of Adelaide",
+      "ror": "https://ror.org/00892tw58",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405259444",
+       "https://openalex.org/I5681781"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Sepehr Shakib",
+    "raw_affiliation_strings": [
+     "Pharmacology Department, Royal Adelaide Hospital and University of Adelaide, Adelaide, SA, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Pharmacology Department, Royal Adelaide Hospital and University of Adelaide, Adelaide, SA, Australia",
+      "institution_ids": [
+       "https://openalex.org/I1320133117",
+       "https://openalex.org/I5681781"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5006048128",
+     "display_name": "Agnes Isabelle Vitry",
+     "orcid": "https://orcid.org/0000-0003-1091-6453",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1091-6453"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Agnes I. Vitry",
+    "raw_affiliation_strings": [
+     "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5109962727",
+     "display_name": "Andrew L. Gilbert",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Andrew L. Gilbert",
+    "raw_affiliation_strings": [
+     "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2062159081",
+  "doi": "https://doi.org/10.1097/jgp.0b013e3181b7ef6e",
+  "title": "Risk of Death Related to Psychotropic Drug Use in Older People During the European 2003 Heatwave: A Population-Based Case\u2013Control Study",
+  "publication_year": 2009,
+  "ids": {
+   "openalex": "https://openalex.org/W2062159081",
+   "doi": "https://doi.org/10.1097/jgp.0b013e3181b7ef6e",
+   "mag": "2062159081",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/20104062"
+  },
+  "primary_location": {
+   "id": "doi:10.1097/jgp.0b013e3181b7ef6e",
+   "doi": "https://doi.org/10.1097/jgp.0b013e3181b7ef6e",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1097/jgp.0b013e3181b7ef6e",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S182891740",
+    "display_name": "American Journal of Geriatric Psychiatry",
+    "issn_l": "1064-7481",
+    "issn": [
+     "1064-7481",
+     "1545-7214"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-b",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "The American Journal of Geriatric Psychiatry",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 54,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5017007306",
+     "display_name": "Cl\u00e9mentine Nordon",
+     "orcid": "https://orcid.org/0000-0001-9441-9723",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9441-9723"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210124863",
+      "display_name": "Centre Hospitalier Sainte-Anne",
+      "ror": "https://ror.org/02kxjxy06",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210124863"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405256745",
+      "display_name": "Universit\u00e9 Bordeaux Segalen",
+      "ror": "https://ror.org/04gbzm373",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I15057530",
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Clementine Nordon",
+    "raw_affiliation_strings": [
+     "INSERM U657, Universit\u00e9 Victor Segalen Bordeaux 2, Bordeaux cedex, France",
+     "Clinique des Maladies Mentales et de l'Enc\u00e9phale, H\u00f4pital Sainte Anne, Paris",
+     "INSERM U657, Universit\u00e9 Victor Segalen Bordeaux 2, Bordeaux cedex"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "INSERM U657, Universit\u00e9 Victor Segalen Bordeaux 2, Bordeaux cedex, France",
+      "institution_ids": [
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4405256745"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Clinique des Maladies Mentales et de l'Enc\u00e9phale, H\u00f4pital Sainte Anne, Paris",
+      "institution_ids": [
+       "https://openalex.org/I4210124863"
+      ]
+     },
+     {
+      "raw_affiliation_string": "INSERM U657, Universit\u00e9 Victor Segalen Bordeaux 2, Bordeaux cedex",
+      "institution_ids": [
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5025472626",
+     "display_name": "Karin Martin\u2010Latry",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405256745",
+      "display_name": "Universit\u00e9 Bordeaux Segalen",
+      "ror": "https://ror.org/04gbzm373",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I15057530",
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Karin Martin-Latry",
+    "raw_affiliation_strings": [
+     "INSERM U657, Universit\u00e9 Victor Segalen Bordeaux 2, Bordeaux cedex"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "INSERM U657, Universit\u00e9 Victor Segalen Bordeaux 2, Bordeaux cedex",
+      "institution_ids": [
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5033950424",
+     "display_name": "L. de Roquefeuil",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I124158823",
+      "display_name": "Conservatoire National des Arts et M\u00e9tiers",
+      "ror": "https://ror.org/0175hh227",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124158823",
+       "https://openalex.org/I4210134562"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Laurence de Roquefeuil",
+    "raw_affiliation_strings": [
+     "CNAM-TS, Direction for Strategy, Studies and Statistics, Paris cedex 20"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "CNAM-TS, Direction for Strategy, Studies and Statistics, Paris cedex 20",
+      "institution_ids": [
+       "https://openalex.org/I124158823"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5072629246",
+     "display_name": "Philippe Latry",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210131891",
+      "display_name": "l'Assurance Maladie",
+      "ror": "https://ror.org/03am7sg53",
+      "country_code": "FR",
+      "type": "other",
+      "lineage": [
+       "https://openalex.org/I4210131891"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Philippe Latry",
+    "raw_affiliation_strings": [
+     "Caisse Nationale de l'Assurance Maladie des Travailleurs Salari\u00e9s (CNAM-TS), Bordeaux cedex"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Caisse Nationale de l'Assurance Maladie des Travailleurs Salari\u00e9s (CNAM-TS), Bordeaux cedex",
+      "institution_ids": [
+       "https://openalex.org/I4210131891"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5017285534",
+     "display_name": "Bernard B\u00e9gaud",
+     "orcid": "https://orcid.org/0000-0001-8797-0779",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8797-0779"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405256745",
+      "display_name": "Universit\u00e9 Bordeaux Segalen",
+      "ror": "https://ror.org/04gbzm373",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I15057530",
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Bernard B\u00e9gaud",
+    "raw_affiliation_strings": [
+     "INSERM U657, Universit\u00e9 Victor Segalen Bordeaux 2, Bordeaux cedex"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "INSERM U657, Universit\u00e9 Victor Segalen Bordeaux 2, Bordeaux cedex",
+      "institution_ids": [
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5026960163",
+     "display_name": "Bruno Falissard",
+     "orcid": "https://orcid.org/0000-0002-2418-4954",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2418-4954"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102197404",
+      "display_name": "Universit\u00e9 Paris-Sud",
+      "ror": "https://ror.org/028rypz17",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102197404",
+       "https://openalex.org/I277688954"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210164847",
+      "display_name": "H\u00f4pital Paul-Brousse",
+      "ror": "https://ror.org/05n7yzd13",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210097159",
+       "https://openalex.org/I4210164847",
+       "https://openalex.org/I4405259118"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4387156284",
+      "display_name": "Universit\u00e9 Paris Descartes",
+      "ror": "https://ror.org/0220k9r37",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I204730241",
+       "https://openalex.org/I4387156284"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405258400",
+      "display_name": "Troubles du comportement alimentaire de l'adolescent",
+      "ror": "https://ror.org/00kcdvz75",
+      "country_code": "FR",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I204730241",
+       "https://openalex.org/I4405258400"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Bruno Falissard",
+    "raw_affiliation_strings": [
+     "D\u00e9partement de sant\u00e9 publique, H\u00f4pital Paul Brousse, Villejuif",
+     "INSERM U669, Universit\u00e9 Paris Sud and Universit\u00e9 Paris Descartes, Paris"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "D\u00e9partement de sant\u00e9 publique, H\u00f4pital Paul Brousse, Villejuif",
+      "institution_ids": [
+       "https://openalex.org/I4210164847"
+      ]
+     },
+     {
+      "raw_affiliation_string": "INSERM U669, Universit\u00e9 Paris Sud and Universit\u00e9 Paris Descartes, Paris",
+      "institution_ids": [
+       "https://openalex.org/I102197404",
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4387156284",
+       "https://openalex.org/I4405258400"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5113571393",
+     "display_name": "F. Rouillon",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102197404",
+      "display_name": "Universit\u00e9 Paris-Sud",
+      "ror": "https://ror.org/028rypz17",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102197404",
+       "https://openalex.org/I277688954"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210124863",
+      "display_name": "Centre Hospitalier Sainte-Anne",
+      "ror": "https://ror.org/02kxjxy06",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210124863"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4387156284",
+      "display_name": "Universit\u00e9 Paris Descartes",
+      "ror": "https://ror.org/0220k9r37",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I204730241",
+       "https://openalex.org/I4387156284"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405258400",
+      "display_name": "Troubles du comportement alimentaire de l'adolescent",
+      "ror": "https://ror.org/00kcdvz75",
+      "country_code": "FR",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I204730241",
+       "https://openalex.org/I4405258400"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Frederic Rouillon",
+    "raw_affiliation_strings": [
+     "Clinique des Maladies Mentales et de l'Enc\u00e9phale, H\u00f4pital Sainte Anne, Paris",
+     "INSERM U669, Universit\u00e9 Paris Sud and Universit\u00e9 Paris Descartes, Paris"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Clinique des Maladies Mentales et de l'Enc\u00e9phale, H\u00f4pital Sainte Anne, Paris",
+      "institution_ids": [
+       "https://openalex.org/I4210124863"
+      ]
+     },
+     {
+      "raw_affiliation_string": "INSERM U669, Universit\u00e9 Paris Sud and Universit\u00e9 Paris Descartes, Paris",
+      "institution_ids": [
+       "https://openalex.org/I102197404",
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4387156284",
+       "https://openalex.org/I4405258400"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5045447124",
+     "display_name": "H\u00e9l\u00e8ne Verdoux",
+     "orcid": "https://orcid.org/0000-0003-2948-3782",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2948-3782"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210156675",
+      "display_name": "Centre Hospitalier Charles Perrens",
+      "ror": "https://ror.org/04q33ey84",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210156675"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405256745",
+      "display_name": "Universit\u00e9 Bordeaux Segalen",
+      "ror": "https://ror.org/04gbzm373",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I15057530",
+       "https://openalex.org/I4405256745"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Helene Verdoux",
+    "raw_affiliation_strings": [
+     "INSERM U657, Universit\u00e9 Victor Segalen Bordeaux 2, Bordeaux cedex",
+     "P\u00f4le Universitaire de Psychiatrie Adulte, H\u00f4pital Charles Perrens, Bordeaux cedex, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "INSERM U657, Universit\u00e9 Victor Segalen Bordeaux 2, Bordeaux cedex",
+      "institution_ids": [
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4405256745"
+      ]
+     },
+     {
+      "raw_affiliation_string": "P\u00f4le Universitaire de Psychiatrie Adulte, H\u00f4pital Charles Perrens, Bordeaux cedex, France",
+      "institution_ids": [
+       "https://openalex.org/I4210156675"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2130063068",
+  "doi": "https://doi.org/10.1007/s13181-012-0222-6",
+  "title": "Influence of Drug Use on Morbidity and Mortality in Heatstroke",
+  "publication_year": 2012,
+  "ids": {
+   "openalex": "https://openalex.org/W2130063068",
+   "doi": "https://doi.org/10.1007/s13181-012-0222-6",
+   "mag": "2130063068",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/22447633",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/3550168"
+  },
+  "primary_location": {
+   "id": "doi:10.1007/s13181-012-0222-6",
+   "doi": "https://doi.org/10.1007/s13181-012-0222-6",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1007/s13181-012-0222-6",
+   "pdf_url": "https://link.springer.com/content/pdf/10.1007%2Fs13181-012-0222-6.pdf",
+   "source": {
+    "id": "https://openalex.org/S41582180",
+    "display_name": "Journal of Medical Toxicology",
+    "issn_l": "1556-9039",
+    "issn": [
+     "1556-9039",
+     "1937-6995"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "dongbi-c",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-70",
+     "russia-white-list-3"
+    ],
+    "host_organization": "https://openalex.org/P4310319900",
+    "host_organization_name": "Springer Science+Business Media",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310319900",
+     "https://openalex.org/P4310319965"
+    ],
+    "host_organization_lineage_names": [
+     "Springer Science+Business Media",
+     "Springer Nature"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Journal of Medical Toxicology",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 34,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5045024074",
+     "display_name": "Michael Levine",
+     "orcid": "https://orcid.org/0000-0003-3866-0509",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-3866-0509"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210103827",
+      "display_name": "Banner - University Medical Center Phoenix",
+      "ror": "https://ror.org/01cjjjf51",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802412784",
+       "https://openalex.org/I4210103827"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Michael Levine",
+    "raw_affiliation_strings": [
+     "Department of Medical Toxicology, Banner Good Samaritan Medical Center, Phoenix, AZ, USA. Michael.Levine@bannerhealth.com",
+     "Department of Medical Toxicology, Banner Good Samaritan Medical Center, Phoenix, AZ, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Medical Toxicology, Banner Good Samaritan Medical Center, Phoenix, AZ, USA. Michael.Levine@bannerhealth.com",
+      "institution_ids": [
+       "https://openalex.org/I4210103827"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Medical Toxicology, Banner Good Samaritan Medical Center, Phoenix, AZ, USA",
+      "institution_ids": [
+       "https://openalex.org/I4210103827"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5047729879",
+     "display_name": "Frank LoVecchio",
+     "orcid": "https://orcid.org/0000-0002-2920-9073",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2920-9073"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210103827",
+      "display_name": "Banner - University Medical Center Phoenix",
+      "ror": "https://ror.org/01cjjjf51",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802412784",
+       "https://openalex.org/I4210103827"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210125289",
+      "display_name": "Maricopa Medical Center",
+      "ror": "https://ror.org/03bbhv598",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210125289",
+       "https://openalex.org/I4210152461"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Frank LoVecchio",
+    "raw_affiliation_strings": [
+     "Department of Emergency Medicine, Maricopa Medical Center, Phoenix, AZ, USA",
+     "Department of Medical Toxicology, Banner Good Samaritan Medical Center, Phoenix, AZ, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Emergency Medicine, Maricopa Medical Center, Phoenix, AZ, USA",
+      "institution_ids": [
+       "https://openalex.org/I4210125289"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Medical Toxicology, Banner Good Samaritan Medical Center, Phoenix, AZ, USA",
+      "institution_ids": [
+       "https://openalex.org/I4210103827"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5082759631",
+     "display_name": "Anne\u2010Michelle Ruha",
+     "orcid": "https://orcid.org/0000-0002-7913-3169",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7913-3169"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210103827",
+      "display_name": "Banner - University Medical Center Phoenix",
+      "ror": "https://ror.org/01cjjjf51",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802412784",
+       "https://openalex.org/I4210103827"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Anne-Michelle Ruha",
+    "raw_affiliation_strings": [
+     "Department of Medical Toxicology, Banner Good Samaritan Medical Center, Phoenix, AZ, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Medical Toxicology, Banner Good Samaritan Medical Center, Phoenix, AZ, USA",
+      "institution_ids": [
+       "https://openalex.org/I4210103827"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": null,
+     "display_name": "Gregory Chu",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210103827",
+      "display_name": "Banner - University Medical Center Phoenix",
+      "ror": "https://ror.org/01cjjjf51",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802412784",
+       "https://openalex.org/I4210103827"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Gregory Chu",
+    "raw_affiliation_strings": [
+     "Department of Critical Care Medicine, Banner Good Samaritan Medical Center, Phoenix, AZ, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Critical Care Medicine, Banner Good Samaritan Medical Center, Phoenix, AZ, USA",
+      "institution_ids": [
+       "https://openalex.org/I4210103827"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5111721140",
+     "display_name": "Pedro J. Roque",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210125289",
+      "display_name": "Maricopa Medical Center",
+      "ror": "https://ror.org/03bbhv598",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210125289",
+       "https://openalex.org/I4210152461"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Pedro Roque",
+    "raw_affiliation_strings": [
+     "Department of Emergency Medicine, Maricopa Medical Center, Phoenix, AZ, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Emergency Medicine, Maricopa Medical Center, Phoenix, AZ, USA",
+      "institution_ids": [
+       "https://openalex.org/I4210125289"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W1539799490",
+  "doi": "https://doi.org/10.1002/pds.2307",
+  "title": "A comparative study of adverse drug reactions during two heat waves that occurred in France in 2003 and 2006",
+  "publication_year": 2011,
+  "ids": {
+   "openalex": "https://openalex.org/W1539799490",
+   "doi": "https://doi.org/10.1002/pds.2307",
+   "mag": "1539799490",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/22162094"
+  },
+  "primary_location": {
+   "id": "doi:10.1002/pds.2307",
+   "doi": "https://doi.org/10.1002/pds.2307",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1002/pds.2307",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S140231191",
+    "display_name": "Pharmacoepidemiology and Drug Safety",
+    "issn_l": "1053-8569",
+    "issn": [
+     "1053-8569",
+     "1099-1557"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-2",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Pharmacoepidemiology and Drug Safety",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 40,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5069068175",
+     "display_name": "Agn\u00e8s Sommet",
+     "orcid": "https://orcid.org/0000-0001-7980-5650",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7980-5650"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I3019448017",
+      "display_name": "Centre Hospitalier Universitaire de Toulouse",
+      "ror": "https://ror.org/017h5q109",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3019448017"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405258862",
+      "display_name": "Universit\u00e9 de Toulouse",
+      "ror": "https://ror.org/01ahyrz84",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Agn\u00e8s Sommet",
+    "raw_affiliation_strings": [
+     "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Inserm U1027 Universit\u00e9 de Toulouse, Facult\u00e9 de M\u00e9decine  Toulouse 31000 France",
+     "Service de Pharmacologie Clinique, Centre Midi\u2010Pyr\u00e9n\u00e9es de Pharmacovigilance, de Pharmaco\u00e9pid\u00e9miologie et d'Informations sur le M\u00e9dicament Centre Hospitalier Universitaire de Toulouse  Toulouse 31400 France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Inserm U1027 Universit\u00e9 de Toulouse, Facult\u00e9 de M\u00e9decine  Toulouse 31000 France",
+      "institution_ids": [
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4405258862"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Service de Pharmacologie Clinique, Centre Midi\u2010Pyr\u00e9n\u00e9es de Pharmacovigilance, de Pharmaco\u00e9pid\u00e9miologie et d'Informations sur le M\u00e9dicament Centre Hospitalier Universitaire de Toulouse  Toulouse 31400 France",
+      "institution_ids": [
+       "https://openalex.org/I3019448017"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5036143753",
+     "display_name": "Genevi\u00e8ve Durrieu",
+     "orcid": "https://orcid.org/0000-0002-3717-2784",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3717-2784"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I3019448017",
+      "display_name": "Centre Hospitalier Universitaire de Toulouse",
+      "ror": "https://ror.org/017h5q109",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3019448017"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405258862",
+      "display_name": "Universit\u00e9 de Toulouse",
+      "ror": "https://ror.org/01ahyrz84",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Genevieve Durrieu",
+    "raw_affiliation_strings": [
+     "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Inserm U1027 Universit\u00e9 de Toulouse, Facult\u00e9 de M\u00e9decine  Toulouse 31000 France",
+     "Service de Pharmacologie Clinique, Centre Midi\u2010Pyr\u00e9n\u00e9es de Pharmacovigilance, de Pharmaco\u00e9pid\u00e9miologie et d'Informations sur le M\u00e9dicament Centre Hospitalier Universitaire de Toulouse  Toulouse 31400 France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Inserm U1027 Universit\u00e9 de Toulouse, Facult\u00e9 de M\u00e9decine  Toulouse 31000 France",
+      "institution_ids": [
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4405258862"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Service de Pharmacologie Clinique, Centre Midi\u2010Pyr\u00e9n\u00e9es de Pharmacovigilance, de Pharmaco\u00e9pid\u00e9miologie et d'Informations sur le M\u00e9dicament Centre Hospitalier Universitaire de Toulouse  Toulouse 31400 France",
+      "institution_ids": [
+       "https://openalex.org/I3019448017"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5050870063",
+     "display_name": "Maryse Lapeyre\u2010Mestre",
+     "orcid": "https://orcid.org/0000-0002-5494-5873",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5494-5873"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I3019448017",
+      "display_name": "Centre Hospitalier Universitaire de Toulouse",
+      "ror": "https://ror.org/017h5q109",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3019448017"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405258862",
+      "display_name": "Universit\u00e9 de Toulouse",
+      "ror": "https://ror.org/01ahyrz84",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Maryse Lapeyre\u2010Mestre",
+    "raw_affiliation_strings": [
+     "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Inserm U1027 Universit\u00e9 de Toulouse, Facult\u00e9 de M\u00e9decine  Toulouse 31000 France",
+     "Service de Pharmacologie Clinique, Centre Midi\u2010Pyr\u00e9n\u00e9es de Pharmacovigilance, de Pharmaco\u00e9pid\u00e9miologie et d'Informations sur le M\u00e9dicament Centre Hospitalier Universitaire de Toulouse  Toulouse 31400 France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Inserm U1027 Universit\u00e9 de Toulouse, Facult\u00e9 de M\u00e9decine  Toulouse 31000 France",
+      "institution_ids": [
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4405258862"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Service de Pharmacologie Clinique, Centre Midi\u2010Pyr\u00e9n\u00e9es de Pharmacovigilance, de Pharmaco\u00e9pid\u00e9miologie et d'Informations sur le M\u00e9dicament Centre Hospitalier Universitaire de Toulouse  Toulouse 31400 France",
+      "institution_ids": [
+       "https://openalex.org/I3019448017"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5091020739",
+     "display_name": "Jean\u2010Louis Montastruc",
+     "orcid": "https://orcid.org/0000-0001-6341-6001",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6341-6001"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154526488",
+      "display_name": "Inserm",
+      "ror": "https://ror.org/02vjkv261",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I154526488"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I3019448017",
+      "display_name": "Centre Hospitalier Universitaire de Toulouse",
+      "ror": "https://ror.org/017h5q109",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3019448017"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405258862",
+      "display_name": "Universit\u00e9 de Toulouse",
+      "ror": "https://ror.org/01ahyrz84",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Jean\u2010Louis Montastruc",
+    "raw_affiliation_strings": [
+     "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Inserm U1027 Universit\u00e9 de Toulouse, Facult\u00e9 de M\u00e9decine  Toulouse 31000 France",
+     "Service de Pharmacologie Clinique, Centre Midi\u2010Pyr\u00e9n\u00e9es de Pharmacovigilance, de Pharmaco\u00e9pid\u00e9miologie et d'Informations sur le M\u00e9dicament Centre Hospitalier Universitaire de Toulouse  Toulouse 31400 France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Inserm U1027 Universit\u00e9 de Toulouse, Facult\u00e9 de M\u00e9decine  Toulouse 31000 France",
+      "institution_ids": [
+       "https://openalex.org/I154526488",
+       "https://openalex.org/I4405258862"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Service de Pharmacologie Clinique, Centre Midi\u2010Pyr\u00e9n\u00e9es de Pharmacovigilance, de Pharmaco\u00e9pid\u00e9miologie et d'Informations sur le M\u00e9dicament Centre Hospitalier Universitaire de Toulouse  Toulouse 31400 France",
+      "institution_ids": [
+       "https://openalex.org/I3019448017"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2012792991",
+  "doi": "https://doi.org/10.1186/1471-2288-14-66",
+  "title": "The performance of sequence symmetry analysis as a tool for post-market surveillance of newly marketed medicines: a simulation study",
+  "publication_year": 2014,
+  "ids": {
+   "openalex": "https://openalex.org/W2012792991",
+   "doi": "https://doi.org/10.1186/1471-2288-14-66",
+   "mag": "2012792991",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/24886247",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/4035856"
+  },
+  "primary_location": {
+   "id": "doi:10.1186/1471-2288-14-66",
+   "doi": "https://doi.org/10.1186/1471-2288-14-66",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1186/1471-2288-14-66",
+   "pdf_url": "https://bmcmedresmethodol.biomedcentral.com/counter/pdf/10.1186/1471-2288-14-66",
+   "source": {
+    "id": "https://openalex.org/S185874209",
+    "display_name": "BMC Medical Research Methodology",
+    "issn_l": "1471-2288",
+    "issn": [
+     "1471-2288"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-class-a",
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "dongbi-b",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "oarl",
+     "poland-140",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320256",
+    "host_organization_name": "BioMed Central",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320256",
+     "https://openalex.org/P4310319965"
+    ],
+    "host_organization_lineage_names": [
+     "BioMed Central",
+     "Springer Nature"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "BMC Medical Research Methodology",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 38,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5058616004",
+     "display_name": "Nicole L. Pratt",
+     "orcid": "https://orcid.org/0000-0001-8730-8910",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8730-8910"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Nicole L Pratt",
+    "raw_affiliation_strings": [
+     "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia. nicole.pratt@unisa.edu.au",
+     "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia . Adelaide ( Australia )"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia. nicole.pratt@unisa.edu.au",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia . Adelaide ( Australia )",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5024051019",
+     "display_name": "Jenni Ilom\u00e4ki",
+     "orcid": "https://orcid.org/0000-0002-0348-9441",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-0348-9441"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Jenni Ilom\u00e4ki",
+    "raw_affiliation_strings": [
+     "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia",
+     "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia . Adelaide ( Australia )"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia . Adelaide ( Australia )",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": null,
+     "display_name": "Chris Raymond",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I3149551504",
+      "display_name": "Department of Health and Aged Care",
+      "ror": "https://ror.org/02swcnz29",
+      "country_code": "AU",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I2801453606",
+       "https://openalex.org/I3149551504"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Chris Raymond",
+    "raw_affiliation_strings": [
+     "Department of Health and Ageing, Pharmaceutical Evaluation - DUSC/ESC Section, Pharmaceutical Evaluation Branch, Pharmaceutical Benefits Division, Canberra, ACT, Australia",
+     "Department of Health and Ageing, Pharmaceutical Evaluation - DUSC/ESC Section, Pharmaceutical Evaluation Branch, Pharmaceutical Benefits Division, Canberra, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Health and Ageing, Pharmaceutical Evaluation - DUSC/ESC Section, Pharmaceutical Evaluation Branch, Pharmaceutical Benefits Division, Canberra, ACT, Australia",
+      "institution_ids": [
+       "https://openalex.org/I3149551504"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Health and Ageing, Pharmaceutical Evaluation - DUSC/ESC Section, Pharmaceutical Evaluation Branch, Pharmaceutical Benefits Division, Canberra, Australia",
+      "institution_ids": [
+       "https://openalex.org/I3149551504"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5051519595",
+     "display_name": "Elizabeth Ellen Roughead",
+     "orcid": "https://orcid.org/0000-0002-6811-8991",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6811-8991"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170239107",
+      "display_name": "University of South Australia",
+      "ror": "https://ror.org/01p93h210",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170239107",
+       "https://openalex.org/I4405259444"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Elizabeth E Roughead",
+    "raw_affiliation_strings": [
+     "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia",
+     "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia . Adelaide ( Australia )"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia, Adelaide, SA, Australia",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Quality Use of Medicines and Pharmacy Research Centre, Sansom Institute, School of Pharmacy and Medical Sciences, University of South Australia . Adelaide ( Australia )",
+      "institution_ids": [
+       "https://openalex.org/I170239107"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2001977185",
+  "doi": "https://doi.org/10.1002/pds.1284",
+  "title": "Adverse drug reactions in patients older than 70 years during the heat wave occurred in France in summer 2003: a study from the French PharmacoVigilance Database",
+  "publication_year": 2006,
+  "ids": {
+   "openalex": "https://openalex.org/W2001977185",
+   "doi": "https://doi.org/10.1002/pds.1284",
+   "mag": "2001977185",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/16924603"
+  },
+  "primary_location": {
+   "id": "doi:10.1002/pds.1284",
+   "doi": "https://doi.org/10.1002/pds.1284",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1002/pds.1284",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S140231191",
+    "display_name": "Pharmacoepidemiology and Drug Safety",
+    "issn_l": "1053-8569",
+    "issn": [
+     "1053-8569",
+     "1099-1557"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-2",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Pharmacoepidemiology and Drug Safety",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 36,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5022662601",
+     "display_name": "Fleur Michenot",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I3019448017",
+      "display_name": "Centre Hospitalier Universitaire de Toulouse",
+      "ror": "https://ror.org/017h5q109",
+      "country_code": "FR",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3019448017"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "F. Michenot",
+    "raw_affiliation_strings": [
+     "Service de Pharmacologie Clinique, Centre Midi-Pyr\u00e9n\u00e9es de Pharmacovigilance, de Pharmaco\u00e9pid\u00e9miologie et d'Informations sur le M\u00e9dicament, Centre Hospitalier Universitaire de Toulouse, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Service de Pharmacologie Clinique, Centre Midi-Pyr\u00e9n\u00e9es de Pharmacovigilance, de Pharmaco\u00e9pid\u00e9miologie et d'Informations sur le M\u00e9dicament, Centre Hospitalier Universitaire de Toulouse, France",
+      "institution_ids": [
+       "https://openalex.org/I3019448017"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5069068175",
+     "display_name": "Agn\u00e8s Sommet",
+     "orcid": "https://orcid.org/0000-0001-7980-5650",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7980-5650"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I134560555",
+      "display_name": "Universit\u00e9 Toulouse III - Paul Sabatier",
+      "ror": "https://ror.org/02v6kpv12",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I134560555",
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "A. Sommet",
+    "raw_affiliation_strings": [
+     "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Universit\u00e9 Paul Sabatier, Facult\u00e9 de M\u00e9decine, all\u00e9es Jules\u2010Guesde, Toulouse, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Universit\u00e9 Paul Sabatier, Facult\u00e9 de M\u00e9decine, all\u00e9es Jules\u2010Guesde, Toulouse, France",
+      "institution_ids": [
+       "https://openalex.org/I134560555"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5012427890",
+     "display_name": "Haleh Bagheri",
+     "orcid": "https://orcid.org/0000-0001-9585-9341",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9585-9341"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I134560555",
+      "display_name": "Universit\u00e9 Toulouse III - Paul Sabatier",
+      "ror": "https://ror.org/02v6kpv12",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I134560555",
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "H. Bagheri",
+    "raw_affiliation_strings": [
+     "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Universit\u00e9 Paul Sabatier, Facult\u00e9 de M\u00e9decine, all\u00e9es Jules\u2010Guesde, Toulouse, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Universit\u00e9 Paul Sabatier, Facult\u00e9 de M\u00e9decine, all\u00e9es Jules\u2010Guesde, Toulouse, France",
+      "institution_ids": [
+       "https://openalex.org/I134560555"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5050870063",
+     "display_name": "Maryse Lapeyre\u2010Mestre",
+     "orcid": "https://orcid.org/0000-0002-5494-5873",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5494-5873"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I134560555",
+      "display_name": "Universit\u00e9 Toulouse III - Paul Sabatier",
+      "ror": "https://ror.org/02v6kpv12",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I134560555",
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "M. Lapeyre-Mestre",
+    "raw_affiliation_strings": [
+     "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Universit\u00e9 Paul Sabatier, Facult\u00e9 de M\u00e9decine, all\u00e9es Jules\u2010Guesde, Toulouse, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Universit\u00e9 Paul Sabatier, Facult\u00e9 de M\u00e9decine, all\u00e9es Jules\u2010Guesde, Toulouse, France",
+      "institution_ids": [
+       "https://openalex.org/I134560555"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5091020739",
+     "display_name": "Jean\u2010Louis Montastruc",
+     "orcid": "https://orcid.org/0000-0001-6341-6001",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6341-6001"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I134560555",
+      "display_name": "Universit\u00e9 Toulouse III - Paul Sabatier",
+      "ror": "https://ror.org/02v6kpv12",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I134560555",
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "J. L. Montastruc",
+    "raw_affiliation_strings": [
+     "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Universit\u00e9 Paul Sabatier, Facult\u00e9 de M\u00e9decine, all\u00e9es Jules\u2010Guesde, Toulouse, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratoire de Pharmacologie M\u00e9dicale et Clinique, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie, Universit\u00e9 Paul Sabatier, Facult\u00e9 de M\u00e9decine, all\u00e9es Jules\u2010Guesde, Toulouse, France",
+      "institution_ids": [
+       "https://openalex.org/I134560555"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2041509252",
+  "doi": "https://doi.org/10.3109/15563658908994419",
+  "title": "Pharmacologic Effects on Thermoregulation: Mechanisms of Drug-Related Heatstroke",
+  "publication_year": 1989,
+  "ids": {
+   "openalex": "https://openalex.org/W2041509252",
+   "doi": "https://doi.org/10.3109/15563658908994419",
+   "mag": "2041509252",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/2689657"
+  },
+  "primary_location": {
+   "id": "doi:10.3109/15563658908994419",
+   "doi": "https://doi.org/10.3109/15563658908994419",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.3109/15563658908994419",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4210198581",
+    "display_name": "Journal of Toxicology Clinical Toxicology",
+    "issn_l": "0731-3810",
+    "issn": [
+     "0731-3810",
+     "1097-9875"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core"
+    ],
+    "host_organization": "https://openalex.org/P4310315681",
+    "host_organization_name": "Marcel Dekker",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310315681"
+    ],
+    "host_organization_lineage_names": [
+     "Marcel Dekker"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Journal of Toxicology: Clinical Toxicology",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 27,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5080065901",
+     "display_name": "Susi U. Vassallo",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210108985",
+      "display_name": "Bellevue Hospital Center",
+      "ror": "https://ror.org/01ky34z31",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1283621791",
+       "https://openalex.org/I4210086933",
+       "https://openalex.org/I4210108985"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Susi U. Vassallo",
+    "raw_affiliation_strings": [
+     "Bellevue Hospital, Department of Emergency Medicine, New York City, New York 10016",
+     "Bellevue Hospital, Department of Emergency Medicine, 28th Street and First Avenue, New York City, New York, 10016",
+     "Fellow in Medical Toxicology New York City Poison Control Center, 455 First Avenue, New York, New York, 10016"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Bellevue Hospital, Department of Emergency Medicine, New York City, New York 10016",
+      "institution_ids": [
+       "https://openalex.org/I4210108985"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Bellevue Hospital, Department of Emergency Medicine, 28th Street and First Avenue, New York City, New York, 10016",
+      "institution_ids": [
+       "https://openalex.org/I4210108985"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Fellow in Medical Toxicology New York City Poison Control Center, 455 First Avenue, New York, New York, 10016",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": null,
+     "display_name": "Kathleen A. Delaney",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210108985",
+      "display_name": "Bellevue Hospital Center",
+      "ror": "https://ror.org/01ky34z31",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1283621791",
+       "https://openalex.org/I4210086933",
+       "https://openalex.org/I4210108985"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Kathleen A. Delaney",
+    "raw_affiliation_strings": [
+     "Bellevue Hospital, Department of Emergency Medicine, 28th Street and First Avenue, New York City, New York, 10016"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Bellevue Hospital, Department of Emergency Medicine, 28th Street and First Avenue, New York City, New York, 10016",
+      "institution_ids": [
+       "https://openalex.org/I4210108985"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W1975890344",
+  "doi": "https://doi.org/10.1172/jci31856",
+  "title": "The renin-angiotensin system: it\u2019s all in your head",
+  "publication_year": 2007,
+  "ids": {
+   "openalex": "https://openalex.org/W1975890344",
+   "doi": "https://doi.org/10.1172/jci31856",
+   "mag": "1975890344",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/17404616",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/1838953"
+  },
+  "primary_location": {
+   "id": "doi:10.1172/jci31856",
+   "doi": "https://doi.org/10.1172/jci31856",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1172/jci31856",
+   "pdf_url": "http://www.jci.org/articles/view/31856/files/pdf",
+   "source": {
+    "id": "https://openalex.org/S114430552",
+    "display_name": "Journal of Clinical Investigation",
+    "issn_l": "0021-9738",
+    "issn": [
+     "0021-9738",
+     "1558-8238"
+    ],
+    "is_oa": false,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "dongbi-a",
+     "doyens",
+     "jufo-3",
+     "ki-jl-3",
+     "medline",
+     "norway-2",
+     "oarl",
+     "poland-200",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320279",
+    "host_organization_name": "American Society for Clinical Investigation",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320279"
+    ],
+    "host_organization_lineage_names": [
+     "American Society for Clinical Investigation"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Journal of Clinical Investigation",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 22,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": null,
+     "display_name": "Kelly K. Parsons",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170897317",
+      "display_name": "Duke University",
+      "ror": "https://ror.org/00py81415",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170897317"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210126298",
+      "display_name": "Duke Medical Center",
+      "ror": "https://ror.org/03njmea73",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210126298",
+       "https://openalex.org/I4210144876"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210139568",
+      "display_name": "Durham VA Medical Center",
+      "ror": "https://ror.org/034adnw64",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1322918889",
+       "https://openalex.org/I2799886695",
+       "https://openalex.org/I4210119589",
+       "https://openalex.org/I4210139568",
+       "https://openalex.org/I4210159720"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Kelly K. Parsons",
+    "raw_affiliation_strings": [
+     "Division of Nephrology, Department of Medicine, Duke University School of Medicine, and Durham Veterans Affairs Medical Center, Durham, North Carolina, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Division of Nephrology, Department of Medicine, Duke University School of Medicine, and Durham Veterans Affairs Medical Center, Durham, North Carolina, USA",
+      "institution_ids": [
+       "https://openalex.org/I170897317",
+       "https://openalex.org/I4210126298",
+       "https://openalex.org/I4210139568"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5059424230",
+     "display_name": "Thomas M. Coffman",
+     "orcid": "https://orcid.org/0000-0002-8433-1629",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8433-1629"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170897317",
+      "display_name": "Duke University",
+      "ror": "https://ror.org/00py81415",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170897317"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210126298",
+      "display_name": "Duke Medical Center",
+      "ror": "https://ror.org/03njmea73",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210126298",
+       "https://openalex.org/I4210144876"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210139568",
+      "display_name": "Durham VA Medical Center",
+      "ror": "https://ror.org/034adnw64",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1322918889",
+       "https://openalex.org/I2799886695",
+       "https://openalex.org/I4210119589",
+       "https://openalex.org/I4210139568",
+       "https://openalex.org/I4210159720"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Thomas M. Coffman",
+    "raw_affiliation_strings": [
+     "Division of Nephrology, Department of Medicine, Duke University School of Medicine, and Durham Veterans Affairs Medical Center, Durham, North Carolina, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Division of Nephrology, Department of Medicine, Duke University School of Medicine, and Durham Veterans Affairs Medical Center, Durham, North Carolina, USA",
+      "institution_ids": [
+       "https://openalex.org/I170897317",
+       "https://openalex.org/I4210126298",
+       "https://openalex.org/I4210139568"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2013299095",
+  "doi": "https://doi.org/10.1177/1559827611401203",
+  "title": "Hydration and Medication Use",
+  "publication_year": 2011,
+  "ids": {
+   "openalex": "https://openalex.org/W2013299095",
+   "doi": "https://doi.org/10.1177/1559827611401203",
+   "mag": "2013299095"
+  },
+  "primary_location": {
+   "id": "doi:10.1177/1559827611401203",
+   "doi": "https://doi.org/10.1177/1559827611401203",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1177/1559827611401203",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S84585612",
+    "display_name": "American Journal of Lifestyle Medicine",
+    "issn_l": "1559-8276",
+    "issn": [
+     "1559-8276",
+     "1559-8284"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "dongbi-d",
+     "ki-jl-1",
+     "norway-1",
+     "poland-40",
+     "russia-white-list-2"
+    ],
+    "host_organization": "https://openalex.org/P4310320017",
+    "host_organization_name": "SAGE Publishing",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320017"
+    ],
+    "host_organization_lineage_names": [
+     "SAGE Publishing"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "American Journal of Lifestyle Medicine",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 12,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": null,
+     "display_name": "Andrea N. Walter",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I114493937",
+      "display_name": "Creighton University",
+      "ror": "https://ror.org/05wf30g94",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I114493937"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Andrea N. Walter",
+    "raw_affiliation_strings": [
+     "School of Pharmacy and Health Professions, Creighton University, Omaha, Nebraska"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Pharmacy and Health Professions, Creighton University, Omaha, Nebraska",
+      "institution_ids": [
+       "https://openalex.org/I114493937"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5107145605",
+     "display_name": "Thomas L. Lenz",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I114493937",
+      "display_name": "Creighton University",
+      "ror": "https://ror.org/05wf30g94",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I114493937"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Thomas L. Lenz",
+    "raw_affiliation_strings": [
+     "Department of Pharmacy Practice, Creighton University, Omaha, Nebraska,"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Pharmacy Practice, Creighton University, Omaha, Nebraska,",
+      "institution_ids": [
+       "https://openalex.org/I114493937"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2062191872",
+  "doi": "https://doi.org/10.1136/bmj.b3146",
+  "title": "Adverse drug events",
+  "publication_year": 2009,
+  "ids": {
+   "openalex": "https://openalex.org/W2062191872",
+   "doi": "https://doi.org/10.1136/bmj.b3146",
+   "mag": "2062191872",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/19654180"
+  },
+  "primary_location": {
+   "id": "doi:10.1136/bmj.b3146",
+   "doi": "https://doi.org/10.1136/bmj.b3146",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1136/bmj.b3146",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4393911389",
+    "display_name": "BMJ",
+    "issn_l": "0007-1447",
+    "issn": [
+     "0007-1447",
+     "0267-0623",
+     "1468-5833"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": false,
+    "listed_in": [
+     "anvur-scientific",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310319945",
+    "host_organization_name": "BMJ",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310319945"
+    ],
+    "host_organization_lineage_names": [
+     "BMJ"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "BMJ",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 4,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5069068175",
+     "display_name": "Agn\u00e8s Sommet",
+     "orcid": "https://orcid.org/0000-0001-7980-5650",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7980-5650"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4405258862",
+      "display_name": "Universit\u00e9 de Toulouse",
+      "ror": "https://ror.org/01ahyrz84",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "A. Sommet",
+    "raw_affiliation_strings": [
+     "Department of Clinical Pharmacology, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie EA 3696, Universit\u00e9 de Toulouse, 31000-Toulouse, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Clinical Pharmacology, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie EA 3696, Universit\u00e9 de Toulouse, 31000-Toulouse, France",
+      "institution_ids": [
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5111407881",
+     "display_name": "A Castot",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210108273",
+      "display_name": "Agence Nationale de S\u00e9curit\u00e9 du M\u00e9dicament et des Produits de Sant\u00e9",
+      "ror": "https://ror.org/01g80gk13",
+      "country_code": "FR",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I4210108273"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "A. Castot",
+    "raw_affiliation_strings": [
+     "D\u00e9partement de la Surveillance du Risque, du Bon Usage et de l\u2019Information sur les M\u00e9dicaments, Agence Fran\u00e7aise de S\u00e9curit\u00e9 Sanitaire des Produits de Sant\u00e9, 93285-Saint-Denis Cedex, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "D\u00e9partement de la Surveillance du Risque, du Bon Usage et de l\u2019Information sur les M\u00e9dicaments, Agence Fran\u00e7aise de S\u00e9curit\u00e9 Sanitaire des Produits de Sant\u00e9, 93285-Saint-Denis Cedex, France",
+      "institution_ids": [
+       "https://openalex.org/I4210108273"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5091020739",
+     "display_name": "Jean\u2010Louis Montastruc",
+     "orcid": "https://orcid.org/0000-0001-6341-6001",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6341-6001"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4405258862",
+      "display_name": "Universit\u00e9 de Toulouse",
+      "ror": "https://ror.org/01ahyrz84",
+      "country_code": "FR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "J.-L. Montastruc",
+    "raw_affiliation_strings": [
+     "Department of Clinical Pharmacology, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie EA 3696, Universit\u00e9 de Toulouse, 31000-Toulouse, France"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Clinical Pharmacology, Unit\u00e9 de Pharmaco\u00e9pid\u00e9miologie EA 3696, Universit\u00e9 de Toulouse, 31000-Toulouse, France",
+      "institution_ids": [
+       "https://openalex.org/I4405258862"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2317828424",
+  "doi": "https://doi.org/10.5694/mja11.10289",
+  "title": "Medicine use, heat and thermoregulation in Australian patients",
+  "publication_year": 2011,
+  "ids": {
+   "openalex": "https://openalex.org/W2317828424",
+   "doi": "https://doi.org/10.5694/mja11.10289",
+   "mag": "2317828424",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/21929494"
+  },
+  "primary_location": {
+   "id": "doi:10.5694/mja11.10289",
+   "doi": "https://doi.org/10.5694/mja11.10289",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.5694/mja11.10289",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S13978405",
+    "display_name": "The Medical Journal of Australia",
+    "issn_l": "0025-729X",
+    "issn": [
+     "0025-729X",
+     "1326-5377"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "dongbi-b",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Medical Journal of Australia",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 3,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5009057081",
+     "display_name": "Peter W. Tait",
+     "orcid": "https://orcid.org/0000-0003-2712-3230",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2712-3230"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I118347636",
+      "display_name": "Australian National University",
+      "ror": "https://ror.org/019wvm592",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I118347636"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Peter W Tait",
+    "raw_affiliation_strings": [
+     "National Centre for Epidemiology and Population Health, Australian National University, Canberra, ACT"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "National Centre for Epidemiology and Population Health, Australian National University, Canberra, ACT",
+      "institution_ids": [
+       "https://openalex.org/I118347636"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2144401050",
+  "doi": "https://doi.org/10.1002/pds.1456",
+  "title": "Did thirst\u2010blockers like angiotensin\u2010converting\u2010enzyme inhibitors, sartans, serotonine\u2010re\u2010uptake\u2010inhibitors, dopamine agonists/antagonists, or atypical neuroleptics contribute to the exorbitant number of fatalities during the French 2003 heat wave?",
+  "publication_year": 2007,
+  "ids": {
+   "openalex": "https://openalex.org/W2144401050",
+   "doi": "https://doi.org/10.1002/pds.1456",
+   "mag": "2144401050",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/17960864"
+  },
+  "primary_location": {
+   "id": "doi:10.1002/pds.1456",
+   "doi": "https://doi.org/10.1002/pds.1456",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1002/pds.1456",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S140231191",
+    "display_name": "Pharmacoepidemiology and Drug Safety",
+    "issn_l": "1053-8569",
+    "issn": [
+     "1053-8569",
+     "1099-1557"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-2",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Pharmacoepidemiology and Drug Safety",
+   "raw_type": "journal-article"
+  },
+  "type": "letter",
+  "cited_by_count": 11,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5029331446",
+     "display_name": "Claudia St\u00f6llberger",
+     "orcid": "https://orcid.org/0000-0001-7335-3120",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7335-3120"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210111069",
+      "display_name": "Krankenanstalt Rudolfstiftung der Stadt Wien",
+      "ror": "https://ror.org/019myg640",
+      "country_code": "AT",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210111069",
+       "https://openalex.org/I4210117134"
+      ]
+     }
+    ],
+    "countries": [
+     "AT"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Claudia St\u00f6llberger",
+    "raw_affiliation_strings": [
+     "Krankenanstalt Rudolfstiftung, Wien, Austria"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Krankenanstalt Rudolfstiftung, Wien, Austria",
+      "institution_ids": [
+       "https://openalex.org/I4210111069"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5060806470",
+     "display_name": "Josef Finsterer",
+     "orcid": "https://orcid.org/0000-0003-2839-7305",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2839-7305",
+      "https://orcid.org/0000-0002-2304-4175",
+      "https://orcid.org/0009-0002-4174-5714"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210111069",
+      "display_name": "Krankenanstalt Rudolfstiftung der Stadt Wien",
+      "ror": "https://ror.org/019myg640",
+      "country_code": "AT",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210111069",
+       "https://openalex.org/I4210117134"
+      ]
+     }
+    ],
+    "countries": [
+     "AT"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Josef Finsterer",
+    "raw_affiliation_strings": [
+     "Krankenanstalt Rudolfstiftung, Wien, Austria"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Krankenanstalt Rudolfstiftung, Wien, Austria",
+      "institution_ids": [
+       "https://openalex.org/I4210111069"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W576609038",
+  "doi": null,
+  "title": "Beta blockade and thermoregulation during exercise in post menopausal women",
+  "publication_year": 1998,
+  "ids": {
+   "openalex": "https://openalex.org/W576609038",
+   "mag": "576609038"
+  },
+  "primary_location": {
+   "id": "pmh:oai:collectionscanada.gc.ca:OOAMICUS.20673384",
+   "doi": null,
+   "is_oa": false,
+   "landing_page_url": "http://www.collectionscanada.ca/obj/s4/f2/dsk2/ftp01/MQ32956.pdf",
+   "pdf_url": "http://www.collectionscanada.ca/obj/s4/f2/dsk2/ftp01/MQ32956.pdf",
+   "source": {
+    "id": "https://openalex.org/S4306402307",
+    "display_name": "Library and Archives Canada (Government of Canada)",
+    "issn_l": null,
+    "issn": null,
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": false,
+    "listed_in": [],
+    "host_organization": "https://openalex.org/I2802286613",
+    "host_organization_name": "Government of Canada",
+    "host_organization_lineage": [
+     "https://openalex.org/I2802286613"
+    ],
+    "host_organization_lineage_names": [],
+    "type": "repository"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "submittedVersion",
+   "is_accepted": false,
+   "is_published": false,
+   "raw_source_name": "",
+   "raw_type": "Electronic thesis or dissertation"
+  },
+  "type": "dissertation",
+  "cited_by_count": 1,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5062062556",
+     "display_name": "S Sandiford",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": true,
+    "raw_author_name": "S Sandiford",
+    "raw_affiliation_strings": [],
+    "raw_orcid": null,
+    "affiliations": []
+   }
+  ]
+ }
+]

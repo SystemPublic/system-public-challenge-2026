@@ -1,0 +1,254 @@
+{
+ "fetched_utc": "2026-11-14T06:13:01Z",
+ "service": "https://mapservices.weather.noaa.gov/experimental/rest/services/NWS_HeatRisk/ImageServer",
+ "categories": {
+  "0": "Green (little to no risk)",
+  "1": "Yellow (minor)",
+  "2": "Orange (moderate)",
+  "3": "Red (major)",
+  "4": "Magenta (extreme)"
+ },
+ "zips": {
+  "10453": {
+   "lat": 40.852508,
+   "lon": -73.913291,
+   "days": [
+    {
+     "product": "HeatRisk_1_Mercator",
+     "day": 1,
+     "valid_utc": "2026-11-14T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_2_Mercator",
+     "day": 2,
+     "valid_utc": "2026-11-15T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_3_Mercator",
+     "day": 3,
+     "valid_utc": "2026-11-16T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_4_Mercator",
+     "day": 4,
+     "valid_utc": "2026-11-17T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_5_Mercator",
+     "day": 5,
+     "valid_utc": "2026-11-18T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_6_Mercator",
+     "day": 6,
+     "valid_utc": "2026-11-19T12:00Z",
+     "issued_utc": "2026-11-14T04:03Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_7_Mercator",
+     "day": 7,
+     "valid_utc": "2026-11-20T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    }
+   ],
+   "max_next_7d": 0
+  },
+  "10457": {
+   "lat": 40.845707,
+   "lon": -73.897923,
+   "days": [
+    {
+     "product": "HeatRisk_1_Mercator",
+     "day": 1,
+     "valid_utc": "2026-11-14T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_2_Mercator",
+     "day": 2,
+     "valid_utc": "2026-11-15T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_3_Mercator",
+     "day": 3,
+     "valid_utc": "2026-11-16T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_4_Mercator",
+     "day": 4,
+     "valid_utc": "2026-11-17T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_5_Mercator",
+     "day": 5,
+     "valid_utc": "2026-11-18T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_6_Mercator",
+     "day": 6,
+     "valid_utc": "2026-11-19T12:00Z",
+     "issued_utc": "2026-11-14T04:03Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_7_Mercator",
+     "day": 7,
+     "valid_utc": "2026-11-20T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    }
+   ],
+   "max_next_7d": 0
+  },
+  "10458": {
+   "lat": 40.862486,
+   "lon": -73.886448,
+   "days": [
+    {
+     "product": "HeatRisk_1_Mercator",
+     "day": 1,
+     "valid_utc": "2026-11-14T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_2_Mercator",
+     "day": 2,
+     "valid_utc": "2026-11-15T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_3_Mercator",
+     "day": 3,
+     "valid_utc": "2026-11-16T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_4_Mercator",
+     "day": 4,
+     "valid_utc": "2026-11-17T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_5_Mercator",
+     "day": 5,
+     "valid_utc": "2026-11-18T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_6_Mercator",
+     "day": 6,
+     "valid_utc": "2026-11-19T12:00Z",
+     "issued_utc": "2026-11-14T04:03Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_7_Mercator",
+     "day": 7,
+     "valid_utc": "2026-11-20T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    }
+   ],
+   "max_next_7d": 0
+  },
+  "10460": {
+   "lat": 40.842344,
+   "lon": -73.879062,
+   "days": [
+    {
+     "product": "HeatRisk_1_Mercator",
+     "day": 1,
+     "valid_utc": "2026-11-14T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_2_Mercator",
+     "day": 2,
+     "valid_utc": "2026-11-15T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_3_Mercator",
+     "day": 3,
+     "valid_utc": "2026-11-16T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_4_Mercator",
+     "day": 4,
+     "valid_utc": "2026-11-17T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_5_Mercator",
+     "day": 5,
+     "valid_utc": "2026-11-18T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_6_Mercator",
+     "day": 6,
+     "valid_utc": "2026-11-19T12:00Z",
+     "issued_utc": "2026-11-14T04:03Z",
+     "heatrisk": 0
+    },
+    {
+     "product": "HeatRisk_7_Mercator",
+     "day": 7,
+     "valid_utc": "2026-11-20T12:00Z",
+     "issued_utc": "2026-11-14T04:52Z",
+     "heatrisk": 0
+    }
+   ],
+   "max_next_7d": 0
+  }
+ },
+ "cdc_dashboard_county_36005": {
+  "endpoint": "https://ephtracking.cdc.gov/DataExplorer/HeatForecastData/36005",
+  "response": [
+   {
+    "id": 9705375,
+    "date": 1794546000000,
+    "day0": 0,
+    "day1": 0,
+    "day2": 0,
+    "day3": 0,
+    "day4": 0,
+    "day5": 0,
+    "day6": 0,
+    "countyFips": 36005
+   }
+  ]
+ }
+}

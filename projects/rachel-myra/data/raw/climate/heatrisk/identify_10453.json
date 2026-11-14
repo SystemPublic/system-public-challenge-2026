@@ -1,0 +1,122 @@
+{
+ "objectId": 0,
+ "name": "Pixel",
+ "value": "0",
+ "location": {
+  "x": -8227989.916975051,
+  "y": 4990610.908322238,
+  "spatialReference": {
+   "wkid": 102100,
+   "latestWkid": 3857
+  }
+ },
+ "properties": {
+  "Values": [
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0"
+  ]
+ },
+ "catalogItems": {
+  "objectIdFieldName": "objectid",
+  "features": [
+   {
+    "attributes": {
+     "objectid": 30977203,
+     "name": "HeatRisk_7_Mercator",
+     "category": 1,
+     "idp_ingestdate": 1794632218000,
+     "idp_filedate": 1794631979000,
+     "idp_validtime": 1795176000000,
+     "st_area_shape_": null,
+     "st_perimeter_shape_": null
+    }
+   },
+   {
+    "attributes": {
+     "objectid": 30975603,
+     "name": "HeatRisk_1_Mercator",
+     "category": 1,
+     "idp_ingestdate": 1794632062000,
+     "idp_filedate": 1794631978000,
+     "idp_validtime": 1794657600000,
+     "st_area_shape_": null,
+     "st_perimeter_shape_": null
+    }
+   },
+   {
+    "attributes": {
+     "objectid": 30976803,
+     "name": "HeatRisk_5_Mercator",
+     "category": 1,
+     "idp_ingestdate": 1794632186000,
+     "idp_filedate": 1794631979000,
+     "idp_validtime": 1795003200000,
+     "st_area_shape_": null,
+     "st_perimeter_shape_": null
+    }
+   },
+   {
+    "attributes": {
+     "objectid": 30974803,
+     "name": "HeatRisk_6_Mercator",
+     "category": 1,
+     "idp_ingestdate": 1794629220000,
+     "idp_filedate": 1794629002000,
+     "idp_validtime": 1795089600000,
+     "st_area_shape_": null,
+     "st_perimeter_shape_": null
+    }
+   },
+   {
+    "attributes": {
+     "objectid": 30976003,
+     "name": "HeatRisk_3_Mercator",
+     "category": 1,
+     "idp_ingestdate": 1794632105000,
+     "idp_filedate": 1794631979000,
+     "idp_validtime": 1794830400000,
+     "st_area_shape_": null,
+     "st_perimeter_shape_": null
+    }
+   },
+   {
+    "attributes": {
+     "objectid": 30975203,
+     "name": "HeatRisk_2_Mercator",
+     "category": 1,
+     "idp_ingestdate": 1794632020000,
+     "idp_filedate": 1794631978000,
+     "idp_validtime": 1794744000000,
+     "st_area_shape_": null,
+     "st_perimeter_shape_": null
+    }
+   },
+   {
+    "attributes": {
+     "objectid": 30976403,
+     "name": "HeatRisk_4_Mercator",
+     "category": 1,
+     "idp_ingestdate": 1794632146000,
+     "idp_filedate": 1794631979000,
+     "idp_validtime": 1794916800000,
+     "st_area_shape_": null,
+     "st_perimeter_shape_": null
+    }
+   }
+  ]
+ },
+ "catalogItemVisibilities": [
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ]
+}

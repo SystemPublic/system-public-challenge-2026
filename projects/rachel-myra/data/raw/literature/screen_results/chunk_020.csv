@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:6367662,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:6367828,exclude,E7 erythrocyte insulin binding vs assay temperature,none,none,other
+PMID:6412475,exclude,"E3 dry heating of food proteins incl insulin, 80-180 C",none,none,other
+PMID:6423431,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:6458037,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:6751318,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:6754300,exclude,E3 insulin precipitate morphology; not storage heat of product,none,none,other
+PMID:6777376,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:6789520,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:7019232,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMID:7020306,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:7030725,exclude,E7 pancreatic tissue hormone content at room/low temperature,none,none,other
+PMID:7032738,exclude,E7 not about heat exposure (assay/cold/room-temp or method only),none,none,other
+PMID:7034999,exclude,E7 serum sample storage stability,none,none,other
+PMID:7295798,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:7496495,exclude,E7 HPLC column temperature effects on insulin variants,none,none,other
+PMID:7544275,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:7576259,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:7593447,exclude,E6 GH deficiency exercise in heat; none of 15 drugs,none,none,other
+PMID:7648429,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:7682548,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:7694465,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMID:7890703,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8024586,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8058051,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8083223,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8140052,exclude,E3 mechanism of moisture-induced lyophilized insulin aggregation,none,none,other
+PMID:8140627,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8165697,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8336727,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8408046,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8518301,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8621706,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8628753,exclude,E3 troglitazone photooxidation chemistry,none,none,other
+PMID:8749321,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8750759,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:8910485,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:894168,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:9027251,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMID:9173085,exclude,E2 heat shock in cultured fetal rat hepatocytes,none,none,other
+PMID:918020,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:9258444,exclude,"E3 chemistry/formulation science, not heat exposure of a medicine",none,none,other
+PMID:9288941,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:9344460,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:9358549,exclude,E3 supercritical processing of protein powders; insulin results not reported,none,none,other
+PMID:9359865,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:9503553,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:9556607,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:9624640,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMID:9661598,exclude,E7 not about heat exposure (assay/cold/room-temp or method only),none,none,other
+PMID:9705151,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:9710801,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:9753290,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:9832444,exclude,E2 heat shock of rat/human islets in vitro,none,none,other
+PMID:19798753,exclude,E3 annealing of freeze-dried ethacrynate formulation,none,none,other
+PMID:20592335,include,uncertain: I2 glucose strips; strip storage temperature tested as interference,storage_other,device_performance,lab_bench
+PMID:42799247,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMID:22495680,exclude,E6 contact lens disinfectant heated; not a listed drug,none,none,other
+PMID:23122064,exclude,"E3 chemistry/formulation science, not heat exposure of a medicine",none,none,other
+PMID:40183538,exclude,"E6 xylazine test strips, not glucose strips",none,none,other
+PMID:18700720,exclude,E6 vaccine cold chain only,none,none,other
+PMID:21126841,exclude,E7 not about heat exposure (assay/cold/room-temp or method only),none,none,other
+PMID:3028219,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:31477942,exclude,E7 glucose meter accuracy; heat not studied,none,none,other
+PMID:34515537,include,I2 glucose test strips stressed by Thai heat/humidity storage,storage_other,device_performance,lab_bench
+PMID:35236393,exclude,E6 vaccine cold chain review,none,none,other
+PMID:39420162,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMID:39629302,exclude,E6 heat-stable carbetocin; not a listed drug,none,none,other
+PMID:41938645,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMID:10796060,exclude,E7 cold temperature only (-10 C) inhaler study,none,none,other
+PMID:23923388,exclude,E7 betaxolol analytical method/acid hydrolysis only,none,none,other
+PMID:41011699,exclude,E7 forced degradation of timolol with excipients; method-only,none,none,other
+PMID:9518154,exclude,E7 not about heat exposure (assay/cold/room-temp or method only),none,none,other
+DOI:10.64898/2026.05.12.724523,include,"uncertain: I2 pMDI accelerated storage 40C/75% RH, API stability",storage_other,stability_potency,lab_bench
+PMID:22139691,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMID:25193129,exclude,E3 pMDI glycopyrrolate formulation microcalorimetry,none,none,other
+PMID:26525242,exclude,E6 acyclovir analog degradation; not a listed drug,none,none,other
+PMID:30668540,include,uncertain: I2 topical amitriptyline stability at 40 C,anticholinergics,stability_potency,lab_bench
+PMID:30978488,exclude,E6 emulsion stability kinetics; not a listed drug,none,none,other
+PMID:37399700,exclude,E7 analytical method validation,none,none,other
+PMID:38109505,exclude,E7 analytical method validation,none,none,other
+PMID:41352124,exclude,E6 topical pirenzepine neuropathy trial; no heat,none,none,other
+PMID:42893550,exclude,E7 analytical method validation,none,none,other
+PMID:9605160,exclude,"E2 animal/in-vitro biology, no human medicine heat data",none,none,other
+PMID:30660849,exclude,E7 not about heat exposure (assay/cold/room-temp or method only),none,none,other
+PMID:40555031,exclude,"E7 dried blood spot sample stability, not medicine",none,none,other
+AGR:IND605934922,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+AGR:IND609220623,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+DOI:10.1046/j.1439-0523.2002.00699.x,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+DOI:10.20944/preprints201804.0170.v1,exclude,E6 filarial antigen storage; not a listed product,none,none,other
+DOI:10.20944/preprints202410.0960.v1,exclude,E7 numerical modeling of MDI droplet evaporation,none,none,other
+DOI:10.21203/rs.3.rs-10789465/v1,exclude,"E3 chemistry/formulation science, not heat exposure of a medicine",none,none,other
+DOI:10.21203/rs.3.rs-5289491/v1,exclude,E7 not about heat exposure (assay/cold/room-temp or method only),none,none,other
+DOI:10.21203/rs.3.rs-678622/v1,exclude,E8 systematic review protocol with no results,none,none,other
+DOI:10.21203/rs.3.rs-7538348/v1,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+ETH:392348,exclude,"E3 chemistry/formulation science, not heat exposure of a medicine",none,none,other
+ETH:519959,exclude,"E3 chemistry/formulation science, not heat exposure of a medicine",none,none,other
+PAT:EP0386562,exclude,E3 patent: chemical stabilizer for test strips,none,none,other
+PAT:EP1041969,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PAT:US5185247,exclude,E3 patent: chemical stabilizer for test strips,none,none,other
+PAT:US5268269,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PAT:US5968913,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PAT:WO2009051743,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PAT:WO9932085,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMC:PMC8265968,exclude,E7 HbA1c strip room-temperature storage; no heat,none,none,other
+PMID:10150491,exclude,E3 CFC-to-HFA inhaler reformulation chemistry,none,none,other
+PMID:10150493,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMID:10155354,include,uncertain: I2 Diskus inhaler performance at 30C/75% RH,storage_other,device_performance,lab_bench
+PMID:10205605,include,uncertain: I2 DPI prototypes stored 40C/75% RH,storage_other,device_performance,lab_bench
+PMID:10623331,exclude,E3 CFC-free MDI technology development,none,none,other
+PMID:10734522,exclude,E6 none of the 15 drugs or storage devices studied under heat,none,none,other
+PMID:10806164,exclude,E7 ventilator circuit humidity; temperature not the factor,none,none,other
+PMID:10810745,exclude,E7 moisture ingress in pMDIs; heat not explicitly studied,none,none,other
+PMID:10890669,exclude,E7 not about heat exposure (assay/cold/room-temp or method only),none,none,other
+PMID:11169538,exclude,"E3 chemistry/formulation science, not heat exposure of a medicine",none,none,other
+PMID:11276138,exclude,E7 not about heat exposure (assay/cold/room-temp or method only),none,none,other
+PMID:11330145,exclude,E7 cold temperature only inhaler study,none,none,other
+PMID:11732650,include,I2 glucose meter performance at 33-34 C ambient,storage_other,device_performance,lab_bench
+PMID:11996829,exclude,"E3 chemistry/formulation science, not heat exposure of a medicine",none,none,other
+PMID:12029006,exclude,E7 not about heat exposure (assay/cold/room-temp or method only),none,none,other

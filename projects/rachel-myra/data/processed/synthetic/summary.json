@@ -1,0 +1,179 @@
+{
+ "n_patients": 300,
+ "n_story_patients": 10,
+ "n_coverage_topup_patients": 3,
+ "n_medication_rows": 952,
+ "n_contacts": 327,
+ "n_children": 42,
+ "age_band": {
+  "18-44": 70,
+  "45-64": 102,
+  "65+": 86,
+  "child": 42
+ },
+ "sex": {
+  "female": 166,
+  "male": 134
+ },
+ "zip": {
+  "10452": 28,
+  "10453": 62,
+  "10456": 27,
+  "10457": 43,
+  "10458": 60,
+  "10460": 49,
+  "10468": 31
+ },
+ "language": {
+  "ar": 4,
+  "bn": 4,
+  "en": 165,
+  "es": 125,
+  "fr": 2
+ },
+ "meds_per_patient": {
+  "mean": 3.17,
+  "median": 3,
+  "max": 10,
+  "pct_5plus": 23.0
+ },
+ "condition_counts": {
+  "hypertension": 137,
+  "hyperlipidemia": 81,
+  "type2_diabetes": 73,
+  "osteoarthritis": 71,
+  "depression": 56,
+  "asthma": 41,
+  "gerd": 22,
+  "heart_failure": 20,
+  "chronic_pain": 20,
+  "insomnia": 19,
+  "ckd": 18,
+  "overactive_bladder": 17,
+  "bipolar": 17,
+  "adhd": 16,
+  "hypothyroidism": 15,
+  "anaphylaxis_risk": 14,
+  "epilepsy": 13,
+  "schizophrenia": 8,
+  "migraine": 7,
+  "anxiety": 5,
+  "type1_diabetes": 3
+ },
+ "patients_per_heat_class": {
+  "ACE inhibitors/ARBs": 123,
+  "metformin": 64,
+  "SSRIs": 44,
+  "beta blockers": 43,
+  "anticholinergics": 32,
+  "thiazides": 27,
+  "insulin": 24,
+  "SGLT2 inhibitors": 19,
+  "loop diuretics": 18,
+  "antipsychotics": 18,
+  "epinephrine auto-injectors": 14,
+  "ADHD stimulants": 13,
+  "topiramate/zonisamide": 11,
+  "lithium": 5,
+  "fentanyl/opioid patches": 5
+ },
+ "combination_flag_counts": {
+  "polypharmacy_5plus": 69,
+  "acei_arb_plus_diuretic": 32,
+  "anticholinergic_stack": 22,
+  "triple_whammy": 6,
+  "thiazide_plus_ssri": 4,
+  "lithium_plus_nsaid": 3,
+  "lithium_plus_acei_arb": 3,
+  "fluid_loss_plus_narrow_margin_drug": 3,
+  "antipsychotic_polypharmacy": 2,
+  "lithium_plus_thiazide": 2
+ },
+ "adult_prevalence_panel_vs_places_pct": {
+  "hypertension": [
+   53.1,
+   35.0
+  ],
+  "diabetes": [
+   29.5,
+   16.5
+  ],
+  "asthma": [
+   8.5,
+   12.1
+  ],
+  "depression": [
+   21.7,
+   17.0
+  ],
+  "ckd": [
+   7.0,
+   3.5
+  ],
+  "arthritis_or_chronic_pain": [
+   32.9,
+   21.3
+  ],
+  "_note": "[panel %, PLACES crude % (adult-population-weighted across the 7 ZCTAs)]; panel is enriched by design"
+ },
+ "acs_svi_bronx_reference": {
+  "pct_age65plus": 13.3,
+  "pct_age17under": 24.7,
+  "pct_limited_english": 14.5,
+  "pct_10plus_unit_housing": 67.5
+ },
+ "questionnaire": {
+  "q1_working_ac": {
+   "no": 49,
+   "yes": 204,
+   "yes_but_cost_limits_use": 47
+  },
+  "q2_day_location": {
+   "home": 130,
+   "indoors_ac": 121,
+   "outdoors_or_physical_work": 49
+  },
+  "q4_lives_alone_adults_pct": 21.3,
+  "floor_7plus_pct": 23.0,
+  "walkup_floor_4plus": 37,
+  "step_free_needed": 69,
+  "q5_can_reach_cool_place": {
+   "no": 26,
+   "with_help": 69,
+   "yes": 205
+  },
+  "fluid_restricted": 22,
+  "alert_opt_in_pct": 88.3,
+  "alert_channel": {
+   "app_and_sms": 187,
+   "sms_only": 78,
+   "voice_call": 35
+  }
+ },
+ "contacts_per_patient": {
+  "0": 50,
+  "1": 173,
+  "2": 77
+ },
+ "contact_location_type": {
+  "elsewhere_bronx": 100,
+  "elsewhere_nyc": 58,
+  "out_of_area": 31,
+  "same_building": 44,
+  "walkable_same_area": 94
+ },
+ "patients_without_naive_qualifying_contact_60min": 154,
+ "patients_without_naive_qualifying_contact_90min": 92,
+ "meds_per_patient_by_age_band": {
+  "child": 1.52,
+  "18-44": 1.8,
+  "45-64": 3.84,
+  "65+": 4.3
+ },
+ "pct_5plus_meds_age65plus": 45.3,
+ "mail_order_patients": 48,
+ "mail_order_temperature_sensitive_rows": 16,
+ "high_risk_combo_example_counts": {
+  "no_ac_and_lives_alone": 8
+ }
+}

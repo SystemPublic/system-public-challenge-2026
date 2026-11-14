@@ -1,0 +1,57 @@
+{
+  "patients": 300,
+  "contacts": 327,
+  "patients_with_zero_contacts": 50,
+  "assumption_p90_patient_min": 15,
+  "assumption_p90_contact_min": 15,
+  "budgets": {
+    "45": {
+      "travel_allowance_min": 15,
+      "no_qualifying_contact_real": 100,
+      "no_qualifying_contact_real_nocar": 234,
+      "no_qualifying_contact_naive": 232,
+      "patients_status_changed": 132,
+      "lost_qualifying_contact": 0,
+      "gained_qualifying_contact": 132,
+      "contacts_qualifying_real": 242,
+      "contacts_qualifying_naive": 68
+    },
+    "60": {
+      "travel_allowance_min": 30,
+      "no_qualifying_contact_real": 75,
+      "no_qualifying_contact_real_nocar": 186,
+      "no_qualifying_contact_naive": 154,
+      "patients_status_changed": 79,
+      "lost_qualifying_contact": 0,
+      "gained_qualifying_contact": 79,
+      "contacts_qualifying_real": 288,
+      "contacts_qualifying_naive": 164
+    },
+    "90": {
+      "travel_allowance_min": 60,
+      "no_qualifying_contact_real": 65,
+      "no_qualifying_contact_real_nocar": 120,
+      "no_qualifying_contact_naive": 92,
+      "patients_status_changed": 27,
+      "lost_qualifying_contact": 0,
+      "gained_qualifying_contact": 27,
+      "contacts_qualifying_real": 303,
+      "contacts_qualifying_naive": 258
+    }
+  },
+  "naive_derived_matches_original_60": true,
+  "naive_derived_matches_original_90": true,
+  "median_ratio_real_fastest_to_naive": 0.28,
+  "fastest_mode_counts": {
+    "walk": 16,
+    "drive": 311,
+    "transit_approx": 0
+  },
+  "contacts_snapped_over_200m": 31,
+  "routing_engine": "osrm-fossgis",
+  "requests": {
+    "network": 0,
+    "cached": 13,
+    "errors": 0
+  }
+}

@@ -1,0 +1,27 @@
+openFDA drug/label.json audit, accessed 2026-11-14. Label text check, not a legal review.
+29 of 45 heat-risk ingredients (study + positive controls) carry no explicit heat warning on any audited label.
+  [3-way] heat warning: 16  lithium, hydrochlorothiazide, chlorthalidone, empagliflozin, oxybutynin, benztropine, trihexyphenidyl, olanzapine, haloperidol, risperidone, quetiapine, aripiprazole, topiramate, zonisamide, fentanyl, buprenorphine
+  [3-way] storage temperature only: 29  furosemide, bumetanide, torsemide, indapamide, lisinopril, enalapril, ramipril, losartan, valsartan, olmesartan, dapagliflozin, canagliflozin, insulin, metformin, tolterodine, clozapine, sertraline, fluoxetine, citalopram, escitalopram, paroxetine, amphetamine, lisdexamfetamine, methylphenidate, metoprolol, propranolol, atenolol, carvedilol, epinephrine
+  [3-way] nothing: 0  
+  [detail by best tier]
+  heat warning: 16  lithium, hydrochlorothiazide, chlorthalidone, empagliflozin, oxybutynin, benztropine, trihexyphenidyl, olanzapine, haloperidol, risperidone, quetiapine, aripiprazole, topiramate, zonisamide, fentanyl, buprenorphine
+  incidental mention only (hyperthermia/heat as a sign, differential or side-effect listing): 8  clozapine, sertraline, fluoxetine, citalopram, escitalopram, paroxetine, amphetamine, lisdexamfetamine
+  sweating/dehydration only (indirect): 18  furosemide, bumetanide, torsemide, indapamide, lisinopril, enalapril, ramipril, losartan, valsartan, olmesartan, dapagliflozin, canagliflozin, insulin, metformin, methylphenidate, metoprolol, carvedilol, epinephrine
+  storage temperature only: 3  tolterodine, propranolol, atenolol
+  nothing: 0  
+3 of 3 negative-control ingredients carry no explicit heat warning on any audited label.
+  [3-way] heat warning: 0  
+  [3-way] storage temperature only: 3  amoxicillin, levothyroxine, atorvastatin
+  [3-way] nothing: 0  
+  [detail by best tier]
+  heat warning: 0  
+  incidental mention only (hyperthermia/heat as a sign, differential or side-effect listing): 1  levothyroxine
+  sweating/dehydration only (indirect): 1  atorvastatin
+  storage temperature only: 1  amoxicillin
+  nothing: 0  
+By class (best ingredient): 8 of 15 classes have no ingredient with a heat warning.
+  heat warning: lithium, thiazides, SGLT2 inhibitors, anticholinergics, antipsychotics, topiramate/zonisamide, fentanyl/opioid patches
+  incidental mention only (hyperthermia/heat as a sign, differential or side-effect listing): SSRIs, ADHD stimulants
+  sweating/dehydration only (indirect): loop diuretics, ACE inhibitors/ARBs, insulin (incl. pumps), metformin, beta blockers, epinephrine auto-injectors
+  storage temperature only: 
+  nothing: 

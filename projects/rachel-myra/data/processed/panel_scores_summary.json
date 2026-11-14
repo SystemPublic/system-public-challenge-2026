@@ -1,0 +1,775 @@
+{
+ "meta": {
+  "synthetic": true,
+  "health_system": "sbh",
+  "data_notes": [
+   "ACB scores: data/kb/anticholinergic_burden.csv (99 rows)",
+   "Drug → heat-defense mapping: data/kb/knowledge_base.json (51 drug rows matched)",
+   "Contact travel: ROUTED (data/processed/synthetic/contacts_routed.csv; columns used: fastest_min ×31, fastest_nocar_min ×296)",
+   "Cooling match: ROUTED (data/processed/synthetic/cooling_match.csv, 300 patients)",
+   "System pathways: data/processed/system_pathways.csv (19 drug groups; Dataverse v2.1)"
+  ]
+ },
+ "today": {
+  "as_of": "2026-11-14",
+  "n_patients": 300,
+  "tiers": {
+   "call_today": 0,
+   "call_before_heat_wave": 0,
+   "send_heat_card": 266,
+   "routine": 34
+  },
+  "headline": "0 patients to call today, 0 before the heat wave, 266 heat cards",
+  "drill_tiers": {
+   "call_today": 53,
+   "call_before_heat_wave": 0,
+   "send_heat_card": 213,
+   "routine": 34
+  },
+  "auto_safety_alerts": 0,
+  "cooling_place_texts": 0,
+  "heatrisk_today_by_zip": {
+   "10452": 0,
+   "10453": 0,
+   "10456": 0,
+   "10457": 0,
+   "10458": 0,
+   "10460": 0,
+   "10468": 0
+  },
+  "readiness": {
+   "very_high": 41,
+   "high": 90,
+   "medium": 104,
+   "low": 65
+  },
+  "med_level": {
+   "4 very high": 36,
+   "3 high": 59,
+   "2 moderate": 137,
+   "1 low": 53,
+   "0 none": 15
+  },
+  "exposure_band": {
+   "very_high": 15,
+   "high": 88,
+   "medium": 143,
+   "low": 54
+  },
+  "lifestyle": {
+   "category": {
+    "most": 46,
+    "medium": 92,
+    "least": 162
+   },
+   "profile": {
+    "home_without_reliable_ac": 38,
+    "indoors_cool_place": 118,
+    "home_with_ac": 89,
+    "outdoor_worker": 49,
+    "indoors_with_outdoor_activity": 6
+   },
+   "incomplete": 0
+  },
+  "stacking": {
+   "patients_with_stacked_mechanism": 125,
+   "patients_with_stacked_symptoms": 149,
+   "patients_with_masked_signs": 108,
+   "stacked_mechanisms": {
+    "blood_pressure": 81,
+    "kidney_clearance": 71,
+    "alertness": 28,
+    "sweating": 9,
+    "fluid_salt_balance": 24,
+    "brain_thermostat": 8,
+    "blood_sugar": 16,
+    "drug_delivery": 12
+   },
+   "masked_signs": {
+    "confusion": 100,
+    "heavy_sweating": 57
+   }
+  },
+  "escalation": {
+   "enrolled": 208,
+   "t_max_min": {
+    "45": 57,
+    "60": 64,
+    "90": 87
+   },
+   "enrolled_without_qualifying_contact": 120,
+   "call_today_without_qualifying_contact": 0,
+   "travel_source": {
+    "routed": 327
+   },
+   "median_worst_case_unnoticed_min": 405
+  },
+  "cooling": {
+   "source": {
+    "fallback_nearest": 3,
+    "routing_agent": 297
+   },
+   "matched": 300,
+   "median_travel_min": 10.5,
+   "no_match": []
+  },
+  "messages": {
+   "total": 1343,
+   "sent_today": {
+    "heat_card": 266
+   },
+   "needs_translation": 8,
+   "safety_issues": 0
+  },
+  "drug_profile_sources": {
+   "knowledge_base": 231,
+   "provisional": 242
+  },
+  "unmapped_drugs": [],
+  "outlook_today": {
+   "targetDate": "2026-11-14",
+   "leadDays": 0,
+   "historical": 0,
+   "window": "0-7d forecast",
+   "source": "NWS HeatRisk (data/processed/heatrisk_zip_current.json)",
+   "probability": null,
+   "heatrisk": 0,
+   "barFraction": 0,
+   "method": "NWS/CDC HeatRisk level for the ZIP and day (deterministic forecast; bar = level / 4, labeled as a level, not a probability)"
+  }
+ },
+ "replay": {
+  "as_of": "2025-06-24",
+  "n_patients": 300,
+  "tiers": {
+   "call_today": 59,
+   "call_before_heat_wave": 0,
+   "send_heat_card": 207,
+   "routine": 34
+  },
+  "headline": "59 patients to call today, 0 before the heat wave, 207 heat cards",
+  "drill_tiers": {
+   "call_today": 59,
+   "call_before_heat_wave": 0,
+   "send_heat_card": 207,
+   "routine": 34
+  },
+  "auto_safety_alerts": 116,
+  "cooling_place_texts": 161,
+  "heatrisk_today_by_zip": {
+   "10452": 4,
+   "10453": 4,
+   "10456": 4,
+   "10457": 4,
+   "10458": 4,
+   "10460": 4,
+   "10468": 4
+  },
+  "readiness": {
+   "very_high": 41,
+   "high": 90,
+   "medium": 104,
+   "low": 65
+  },
+  "med_level": {
+   "4 very high": 36,
+   "3 high": 59,
+   "2 moderate": 137,
+   "1 low": 53,
+   "0 none": 15
+  },
+  "exposure_band": {
+   "very_high": 15,
+   "high": 88,
+   "medium": 143,
+   "low": 54
+  },
+  "lifestyle": {
+   "category": {
+    "most": 46,
+    "medium": 92,
+    "least": 162
+   },
+   "profile": {
+    "home_without_reliable_ac": 38,
+    "indoors_cool_place": 118,
+    "home_with_ac": 89,
+    "outdoor_worker": 49,
+    "indoors_with_outdoor_activity": 6
+   },
+   "incomplete": 0
+  },
+  "stacking": {
+   "patients_with_stacked_mechanism": 125,
+   "patients_with_stacked_symptoms": 149,
+   "patients_with_masked_signs": 108,
+   "stacked_mechanisms": {
+    "blood_pressure": 81,
+    "kidney_clearance": 71,
+    "alertness": 28,
+    "sweating": 9,
+    "fluid_salt_balance": 24,
+    "brain_thermostat": 8,
+    "blood_sugar": 16,
+    "drug_delivery": 12
+   },
+   "masked_signs": {
+    "confusion": 100,
+    "heavy_sweating": 57
+   }
+  },
+  "escalation": {
+   "enrolled": 208,
+   "t_max_min": {
+    "45": 208
+   },
+   "enrolled_without_qualifying_contact": 157,
+   "call_today_without_qualifying_contact": 50,
+   "travel_source": {
+    "routed": 327
+   },
+   "median_worst_case_unnoticed_min": 405
+  },
+  "cooling": {
+   "source": {
+    "routing_agent": 300
+   },
+   "matched": 300,
+   "median_travel_min": 10,
+   "no_match": []
+  },
+  "messages": {
+   "total": 1266,
+   "sent_today": {
+    "heat_card": 266,
+    "safety_alert": 131,
+    "cooling_place": 161,
+    "checkin": 208
+   },
+   "needs_translation": 27,
+   "safety_issues": 0
+  },
+  "drug_profile_sources": {
+   "knowledge_base": 231,
+   "provisional": 242
+  },
+  "unmapped_drugs": [],
+  "outlook_today": {
+   "targetDate": "2025-06-24",
+   "leadDays": 0,
+   "historical": 0.0762,
+   "window": "0-7d forecast",
+   "source": "NWS/WPC HeatRisk archive, day-1 values replayed as the forecast (data/processed/heatrisk_zip_replay.csv)",
+   "probability": null,
+   "heatrisk": 4,
+   "barFraction": 1,
+   "method": "NWS/CDC HeatRisk level for the ZIP and day (deterministic forecast; bar = level / 4, labeled as a level, not a probability)"
+  }
+ },
+ "story_patients_replay": [
+  {
+   "patient_id": "S01",
+   "story": "78F on a loop diuretic + oxybutynin, no AC, lives alone, 6th-floor walk-up; only contact is out of state",
+   "rank": 1,
+   "tier": "call_today",
+   "readiness": "very_high",
+   "x": 12,
+   "y_level": 4,
+   "why": [
+    "HeatRisk 4 Magenta today in 10457",
+    "very high readiness",
+    "no working ac at home",
+    "lives alone",
+    "neighborhood heat vulnerability index 5 (highest)",
+    "on lisinopril + furosemide",
+    "ACE inhibitor/ARB + water pill",
+    "Anticholinergic stack (2+ drugs, ACB total ≥3)",
+    "no trusted contact close enough"
+   ],
+   "escalation": {
+    "t_max_min": 45,
+    "t_wait_min": 20,
+    "t_contact_min": 15,
+    "allowed_travel_min": 10,
+    "resend_at_min": 10,
+    "contacts": [
+     "daughter: 98.7 min drive, osrm-fossgis (routed) → too far"
+    ],
+    "fallback": "Ask for a closer contact, or offer a buddy (NYC Be a Buddy (verify) / clinic volunteer buddy); priority call list",
+    "checkins": [
+     "10:00",
+     "14:00",
+     "16:00",
+     "18:00"
+    ],
+    "worst_case_unnoticed_min": 285
+   },
+   "cooling": "SAGE Center Bronx at Crotona Pride House OAC -OLDER ADULTS ONLY (cooling center), 6 min routed, leave by 10:35; patient needs help to get there; older adults only (60+); official cooling center: opens only on activated heat days; verify that day; Routed walk (older-adult 0.8 m/s, osrm-fossgis)",
+   "sent": [
+    "heat_card",
+    "safety_alert",
+    "cooling_place",
+    "checkin"
+   ]
+  },
+  {
+   "patient_id": "S02",
+   "story": "16M on a stimulant who plays outdoor summer soccer; also has asthma",
+   "rank": 184,
+   "tier": "send_heat_card",
+   "readiness": "medium",
+   "x": 4,
+   "y_level": 2,
+   "why": [
+    "medium readiness",
+    "spends the day outdoors or doing physical work",
+    "neighborhood heat vulnerability index 5 (highest)",
+    "on albuterol, amphetamine mixed salts",
+    "1 heat defense weakened: the body's thermostat"
+   ],
+   "escalation": {
+    "t_max_min": 45,
+    "t_wait_min": 15,
+    "t_contact_min": 15,
+    "allowed_travel_min": 15,
+    "resend_at_min": 8,
+    "contacts": [
+     "aunt_or_uncle: 42.4 min transit_approx, osrm-fossgis (routed) → too far"
+    ],
+    "fallback": "Ask for a closer contact, or offer a buddy (NYC Be a Buddy (verify) / clinic volunteer buddy); priority call list",
+    "checkins": [
+     "10:00",
+     "16:00"
+    ],
+    "worst_case_unnoticed_min": 405
+   },
+   "cooling": "Belmont Library (cooling center), 8 min routed, leave by 10:35; official cooling center: opens only on activated heat days; verify that day; Routed walk (routing default (~5 km/h), osrm-fossgis)",
+   "sent": [
+    "heat_card",
+    "checkin"
+   ]
+  },
+  {
+   "patient_id": "S03",
+   "story": "9F on topiramate for epilepsy; Spanish-speaking parent; outdoor summer day camp",
+   "rank": 115,
+   "tier": "send_heat_card",
+   "readiness": "high",
+   "x": 7,
+   "y_level": 2,
+   "why": [
+    "covered by automated safety alert, check-ins and contact escalation today",
+    "high readiness",
+    "has ac but cost limits use",
+    "spends the day outdoors or doing physical work",
+    "neighborhood heat vulnerability index 5 (highest)",
+    "on topiramate",
+    "1 heat defense weakened: sweating"
+   ],
+   "escalation": {
+    "t_max_min": 45,
+    "t_wait_min": 15,
+    "t_contact_min": 15,
+    "allowed_travel_min": 15,
+    "resend_at_min": 8,
+    "contacts": [
+     "grandparent: 14.3 min transit_approx, osrm-fossgis (routed) → eligible"
+    ],
+    "fallback": null,
+    "checkins": [
+     "10:00",
+     "14:00",
+     "16:00",
+     "18:00"
+    ],
+    "worst_case_unnoticed_min": 285
+   },
+   "cooling": "FIERCE NYC (community centre), 10 min routed, leave by 10:30; Hours not listed for this day: call ahead; Routed walk (routing default (~5 km/h), osrm-fossgis)",
+   "sent": [
+    "heat_card",
+    "safety_alert",
+    "cooling_place",
+    "checkin"
+   ]
+  },
+  {
+   "patient_id": "S04",
+   "story": "44M with schizophrenia on clozapine + haloperidol + benztropine (2 antipsychotics, anticholinergic stack); lives alone",
+   "rank": 4,
+   "tier": "call_today",
+   "readiness": "very_high",
+   "x": 9,
+   "y_level": 4,
+   "why": [
+    "HeatRisk 4 Magenta today in 10460",
+    "very high readiness",
+    "no working ac at home",
+    "lives alone",
+    "neighborhood heat vulnerability index 5 (highest)",
+    "on clozapine + haloperidol",
+    "2+ antipsychotics",
+    "Anticholinergic stack (2+ drugs, ACB total ≥3)",
+    "no trusted contact close enough"
+   ],
+   "escalation": {
+    "t_max_min": 45,
+    "t_wait_min": 15,
+    "t_contact_min": 15,
+    "allowed_travel_min": 15,
+    "resend_at_min": 8,
+    "contacts": [
+     "sibling: 21.6 min walk, osrm-fossgis (routed) → too far",
+     "case_manager: 90.1 min walk, osrm-fossgis (routed) → too far"
+    ],
+    "fallback": "Ask for a closer contact, or offer a buddy (NYC Be a Buddy (verify) / clinic volunteer buddy); priority call list",
+    "checkins": [
+     "10:00",
+     "14:00",
+     "16:00",
+     "18:00"
+    ],
+    "worst_case_unnoticed_min": 285
+   },
+   "cooling": "West Farms Library (cooling center), 5 min routed, leave by 10:40; official cooling center: opens only on activated heat days; verify that day; Routed walk (routing default (~5 km/h), osrm-fossgis)",
+   "sent": [
+    "heat_card",
+    "safety_alert",
+    "cooling_place",
+    "checkin"
+   ]
+  },
+  {
+   "patient_id": "S05",
+   "story": "34F with type 1 diabetes on an insulin pump; insulin and pump supplies by mail, left in the building lobby",
+   "rank": 161,
+   "tier": "send_heat_card",
+   "readiness": "medium",
+   "x": 5,
+   "y_level": 2,
+   "why": [
+    "medium readiness",
+    "spends the day outdoors or doing physical work",
+    "neighborhood heat vulnerability index 5 (highest)",
+    "uses power-dependent equipment",
+    "on insulin lispro",
+    "2 heat defenses weakened: blood sugar, how fast the medicine is absorbed"
+   ],
+   "escalation": {
+    "t_max_min": 45,
+    "t_wait_min": 15,
+    "t_contact_min": 15,
+    "allowed_travel_min": 15,
+    "resend_at_min": 8,
+    "contacts": [
+     "partner: 84.6 min transit_approx, osrm-fossgis (routed) → too far"
+    ],
+    "fallback": "Ask for a closer contact, or offer a buddy (NYC Be a Buddy (verify) / clinic volunteer buddy); priority call list",
+    "checkins": [
+     "10:00",
+     "14:00",
+     "16:00",
+     "18:00"
+    ],
+    "worst_case_unnoticed_min": 285
+   },
+   "cooling": "Burlington (department store), 5 min routed, leave by 10:35; Routed walk (routing default (~5 km/h), osrm-fossgis)",
+   "sent": [
+    "heat_card"
+   ]
+  },
+  {
+   "patient_id": "S06",
+   "story": "58F with bipolar disorder on lithium + hydrochlorothiazide + lisinopril + OTC ibuprofen",
+   "rank": 10,
+   "tier": "call_today",
+   "readiness": "very_high",
+   "x": 7,
+   "y_level": 4,
+   "why": [
+    "HeatRisk 4 Magenta today in 10452",
+    "very high readiness",
+    "has ac but cost limits use",
+    "lives alone",
+    "neighborhood heat vulnerability index 5 (highest)",
+    "on lithium + hydrochlorothiazide + ibuprofen + lisinopril",
+    "Lithium (or another kidney-cleared, narrow-margin drug) + a fluid-losing or kidney-flow drug",
+    "ACE inhibitor/ARB + water pill",
+    "no trusted contact close enough",
+    "not opted in to safety alerts: phone call is the only route"
+   ],
+   "escalation": {
+    "t_max_min": 45,
+    "t_wait_min": 15,
+    "t_contact_min": 15,
+    "allowed_travel_min": 15,
+    "resend_at_min": 8,
+    "contacts": [
+     "son: 63.8 min transit_approx, osrm-fossgis (routed) → too far"
+    ],
+    "fallback": "Ask for a closer contact, or offer a buddy (NYC Be a Buddy (verify) / clinic volunteer buddy); priority call list",
+    "checkins": [
+     "10:00",
+     "14:00",
+     "16:00",
+     "18:00"
+    ],
+    "worst_case_unnoticed_min": 285
+   },
+   "cooling": "Macomb's Bridge Branch (library), 8 min routed, leave by 10:35; Routed walk (routing default (~5 km/h), osrm-fossgis)",
+   "sent": [
+    "heat_card",
+    "safety_alert",
+    "cooling_place"
+   ]
+  },
+  {
+   "patient_id": "S07",
+   "story": "72M with hypertension, type 2 diabetes and CKD: losartan + chlorthalidone + OTC naproxen (triple whammy) + empagliflozin + metformin",
+   "rank": 139,
+   "tier": "send_heat_card",
+   "readiness": "medium",
+   "x": 2,
+   "y_level": 3,
+   "why": [
+    "medium readiness",
+    "neighborhood heat vulnerability index 5 (highest)",
+    "on losartan + chlorthalidone",
+    "ACE inhibitor/ARB + water pill",
+    "SGLT2 inhibitor + water pill"
+   ],
+   "escalation": {
+    "t_max_min": 45,
+    "t_wait_min": 15,
+    "t_contact_min": 15,
+    "allowed_travel_min": 15,
+    "resend_at_min": 8,
+    "contacts": [
+     "neighbor: 6.8 min walk, osrm-fossgis (routed) → eligible"
+    ],
+    "fallback": null,
+    "checkins": [
+     "10:00",
+     "16:00"
+    ],
+    "worst_case_unnoticed_min": 405
+   },
+   "cooling": "PSS Davidson OAC -OLDER ADULTS ONLY (cooling center), 18 min routed, leave by 10:25; older adults only (60+); official cooling center: opens only on activated heat days; verify that day; Closes at 16:00, before the hottest hours end; Routed walk (older-adult 0.8 m/s, osrm-fossgis)",
+   "sent": [
+    "heat_card",
+    "checkin"
+   ]
+  },
+  {
+   "patient_id": "S08",
+   "story": "66F with heart failure (fluid restricted) and chronic pain on a fentanyl patch; lives alone",
+   "rank": 3,
+   "tier": "call_today",
+   "readiness": "very_high",
+   "x": 9,
+   "y_level": 4,
+   "why": [
+    "HeatRisk 4 Magenta today in 10457",
+    "very high readiness",
+    "has ac but cost limits use",
+    "lives alone",
+    "neighborhood heat vulnerability index 5 (highest)",
+    "on sacubitril/valsartan + furosemide + spironolactone",
+    "ACE inhibitor/ARB + water pill",
+    "Anticholinergic stack (2+ drugs, ACB total ≥3)",
+    "no trusted contact close enough"
+   ],
+   "escalation": {
+    "t_max_min": 45,
+    "t_wait_min": 15,
+    "t_contact_min": 15,
+    "allowed_travel_min": 15,
+    "resend_at_min": 8,
+    "contacts": [
+     "daughter: 60.3 min transit_approx, osrm-fossgis (routed) → too far",
+     "friend: 27.2 min transit_approx, osrm-fossgis (routed) → too far"
+    ],
+    "fallback": "Ask for a closer contact, or offer a buddy (NYC Be a Buddy (verify) / clinic volunteer buddy); priority call list",
+    "checkins": [
+     "11:00",
+     "14:00",
+     "16:00",
+     "17:00",
+     "18:00"
+    ],
+    "worst_case_unnoticed_min": 225
+   },
+   "cooling": "Bronxworks East Concourse (My Spot/Mi Rincon OAC) -OLDER ADULTS ONLY (cooling center), 7 min routed, leave by 10:35; patient needs help to get there; older adults only (60+); official cooling center: opens only on activated heat days; verify that day; Closes at 16:00, before the hottest hours end; Routed walk (older-adult 0.8 m/s, osrm-fossgis)",
+   "sent": [
+    "heat_card",
+    "safety_alert",
+    "cooling_place",
+    "checkin"
+   ]
+  },
+  {
+   "patient_id": "S09",
+   "story": "29F with peanut allergy and asthma, works as a bike delivery courier; carries an epinephrine auto-injector all day",
+   "rank": 213,
+   "tier": "send_heat_card",
+   "readiness": "medium",
+   "x": 9,
+   "y_level": 1,
+   "why": [
+    "medium readiness",
+    "no working ac at home",
+    "spends the day outdoors or doing physical work",
+    "lives alone",
+    "on albuterol, epinephrine",
+    "Heat-sensitive to store: albuterol, epinephrine"
+   ],
+   "escalation": {
+    "t_max_min": 45,
+    "t_wait_min": 15,
+    "t_contact_min": 15,
+    "allowed_travel_min": 15,
+    "resend_at_min": 8,
+    "contacts": [
+     "sibling: 35.4 min transit_approx, osrm-fossgis (routed) → too far"
+    ],
+    "fallback": "Ask for a closer contact, or offer a buddy (NYC Be a Buddy (verify) / clinic volunteer buddy); priority call list",
+    "checkins": [
+     "10:00",
+     "16:00"
+    ],
+    "worst_case_unnoticed_min": 405
+   },
+   "cooling": "Leonard Lief Library (library), 2 min routed, leave by 10:40; Hours not listed for this day: call ahead; Routed walk (routing default (~5 km/h), osrm-fossgis)",
+   "sent": [
+    "heat_card",
+    "cooling_place",
+    "checkin"
+   ]
+  },
+  {
+   "patient_id": "S10",
+   "story": "81M on sertraline + hydrochlorothiazide (low-sodium risk), tolterodine + diphenhydramine (anticholinergic stack); walker, lives alone",
+   "rank": 14,
+   "tier": "call_today",
+   "readiness": "very_high",
+   "x": 6,
+   "y_level": 4,
+   "why": [
+    "HeatRisk 4 Magenta today in 10453",
+    "very high readiness",
+    "lives alone",
+    "cannot get to a cool place",
+    "neighborhood heat vulnerability index 5 (highest)",
+    "on hydrochlorothiazide + sertraline",
+    "Thiazide water pill + SSRI (low-sodium risk)",
+    "Anticholinergic stack (2+ drugs, ACB total ≥3)"
+   ],
+   "escalation": {
+    "t_max_min": 45,
+    "t_wait_min": 20,
+    "t_contact_min": 15,
+    "allowed_travel_min": 10,
+    "resend_at_min": 10,
+    "contacts": [
+     "neighbor: 1.1 min walk, osrm-fossgis (routed) → eligible"
+    ],
+    "fallback": null,
+    "checkins": [
+     "10:00",
+     "14:00",
+     "16:00",
+     "18:00"
+    ],
+    "worst_case_unnoticed_min": 285
+   },
+   "cooling": "Bronxworks East Concourse (My Spot/Mi Rincon OAC) -OLDER ADULTS ONLY (cooling center), 9 min routed, leave by 10:35; patient says they cannot reach a cool place: needs escort or ride; older adults only (60+); official cooling center: opens only on activated heat days; verify that day; Closes at 16:00, before the hottest hours end; Routed walk (older-adult 0.8 m/s, osrm-fossgis)",
+   "sent": [
+    "heat_card",
+    "safety_alert",
+    "cooling_place",
+    "checkin"
+   ]
+  }
+ ],
+ "story_patients_today": [
+  {
+   "patient_id": "S01",
+   "tier": "send_heat_card",
+   "drill_tier": "call_today",
+   "readiness": "very_high",
+   "x": 12,
+   "y_level": 4
+  },
+  {
+   "patient_id": "S02",
+   "tier": "send_heat_card",
+   "drill_tier": "send_heat_card",
+   "readiness": "medium",
+   "x": 4,
+   "y_level": 2
+  },
+  {
+   "patient_id": "S03",
+   "tier": "send_heat_card",
+   "drill_tier": "send_heat_card",
+   "readiness": "high",
+   "x": 7,
+   "y_level": 2
+  },
+  {
+   "patient_id": "S04",
+   "tier": "send_heat_card",
+   "drill_tier": "call_today",
+   "readiness": "very_high",
+   "x": 9,
+   "y_level": 4
+  },
+  {
+   "patient_id": "S05",
+   "tier": "send_heat_card",
+   "drill_tier": "send_heat_card",
+   "readiness": "medium",
+   "x": 5,
+   "y_level": 2
+  },
+  {
+   "patient_id": "S06",
+   "tier": "send_heat_card",
+   "drill_tier": "call_today",
+   "readiness": "very_high",
+   "x": 7,
+   "y_level": 4
+  },
+  {
+   "patient_id": "S07",
+   "tier": "send_heat_card",
+   "drill_tier": "send_heat_card",
+   "readiness": "medium",
+   "x": 2,
+   "y_level": 3
+  },
+  {
+   "patient_id": "S08",
+   "tier": "send_heat_card",
+   "drill_tier": "call_today",
+   "readiness": "very_high",
+   "x": 9,
+   "y_level": 4
+  },
+  {
+   "patient_id": "S09",
+   "tier": "send_heat_card",
+   "drill_tier": "send_heat_card",
+   "readiness": "medium",
+   "x": 9,
+   "y_level": 1
+  },
+  {
+   "patient_id": "S10",
+   "tier": "send_heat_card",
+   "drill_tier": "call_today",
+   "readiness": "very_high",
+   "x": 6,
+   "y_level": 4
+  }
+ ]
+}

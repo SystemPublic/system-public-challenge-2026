@@ -1,0 +1,2299 @@
+[
+ {
+  "id": "https://openalex.org/W3111886642",
+  "doi": "https://doi.org/10.1371/journal.pone.0243665",
+  "title": "Heatwaves, medications, and heat-related hospitalization in older Medicare beneficiaries with chronic conditions",
+  "publication_year": 2020,
+  "ids": {
+   "openalex": "https://openalex.org/W3111886642",
+   "doi": "https://doi.org/10.1371/journal.pone.0243665",
+   "mag": "3111886642",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/33301532",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/7728169"
+  },
+  "primary_location": {
+   "id": "doi:10.1371/journal.pone.0243665",
+   "doi": "https://doi.org/10.1371/journal.pone.0243665",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1371/journal.pone.0243665",
+   "pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0243665&type=printable",
+   "source": {
+    "id": "https://openalex.org/S202381698",
+    "display_name": "PLoS ONE",
+    "issn_l": "1932-6203",
+    "issn": [
+     "1932-6203"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-class-a",
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "dongbi-c",
+     "doyens",
+     "erih-plus",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310315706",
+    "host_organization_name": "Public Library of Science",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310315706"
+    ],
+    "host_organization_lineage_names": [
+     "Public Library of Science"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "PLOS ONE",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 131,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5044909684",
+     "display_name": "J. Bradley Layton",
+     "orcid": "https://orcid.org/0000-0003-0994-5820",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-0994-5820"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210120329",
+      "display_name": "RTI Health Solutions",
+      "ror": "https://ror.org/032nh7f71",
+      "country_code": "US",
+      "type": "nonprofit",
+      "lineage": [
+       "https://openalex.org/I137902535",
+       "https://openalex.org/I170897317",
+       "https://openalex.org/I180297670",
+       "https://openalex.org/I4210120329"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "J. Bradley Layton",
+    "raw_affiliation_strings": [
+     "RTI Health Solutions, Research Triangle Park, Raleigh, North Carolina, United States of America"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-0994-5820",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "RTI Health Solutions, Research Triangle Park, Raleigh, North Carolina, United States of America",
+      "institution_ids": [
+       "https://openalex.org/I4210120329"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5052526119",
+     "display_name": "Wenhong Li",
+     "orcid": "https://orcid.org/0000-0002-5990-2004",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5990-2004"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170897317",
+      "display_name": "Duke University",
+      "ror": "https://ror.org/00py81415",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170897317"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Wenhong Li",
+    "raw_affiliation_strings": [
+     "Earth & Ocean Sciences, Nicholas School of the Environment, Duke University, Durham, North Carolina, United States of America"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Earth & Ocean Sciences, Nicholas School of the Environment, Duke University, Durham, North Carolina, United States of America",
+      "institution_ids": [
+       "https://openalex.org/I170897317"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5015938495",
+     "display_name": "Jiacan Yuan",
+     "orcid": "https://orcid.org/0000-0003-3847-4490",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-3847-4490"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I170897317",
+      "display_name": "Duke University",
+      "ror": "https://ror.org/00py81415",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I170897317"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Jiacan Yuan",
+    "raw_affiliation_strings": [
+     "Earth & Ocean Sciences, Nicholas School of the Environment, Duke University, Durham, North Carolina, United States of America"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Earth & Ocean Sciences, Nicholas School of the Environment, Duke University, Durham, North Carolina, United States of America",
+      "institution_ids": [
+       "https://openalex.org/I170897317"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5033680989",
+     "display_name": "Joshua P Gilman",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I111088046",
+      "display_name": "Boston University",
+      "ror": "https://ror.org/05qwgg493",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I111088046"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Joshua P. Gilman",
+    "raw_affiliation_strings": [
+     "Department of Medicine, Boston University School of Medicine, Boston, Massachusetts, United States of America",
+     "Rutgers Robert Wood Johnson Medical School, New Brunswick, New Jersey, United States of America"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Medicine, Boston University School of Medicine, Boston, Massachusetts, United States of America",
+      "institution_ids": [
+       "https://openalex.org/I111088046"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Rutgers Robert Wood Johnson Medical School, New Brunswick, New Jersey, United States of America",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5010752114",
+     "display_name": "Daniel B. Horton",
+     "orcid": "https://orcid.org/0000-0002-1831-1339",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1831-1339"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Daniel B. Horton",
+    "raw_affiliation_strings": [
+     "Department of Pediatrics, Rutgers Robert Wood Johnson Medical School, New Brunswick, New Jersey, United States of America",
+     "Rutgers Center for Pharmacoepidemiology and Treatment Science, New Brunswick, New Jersey, United States of America"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-1831-1339",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Pediatrics, Rutgers Robert Wood Johnson Medical School, New Brunswick, New Jersey, United States of America",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Rutgers Center for Pharmacoepidemiology and Treatment Science, New Brunswick, New Jersey, United States of America",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5026725935",
+     "display_name": "Soko Setoguchi",
+     "orcid": "https://orcid.org/0000-0002-1583-752X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1583-752X",
+      "https://orcid.org/0000-0002-4289-7632"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Soko Setoguchi",
+    "raw_affiliation_strings": [
+     "Department of Medicine, Rutgers Robert Wood Johnson Medical School, New Brunswick, New Jersey, United States of America",
+     "Rutgers Center for Pharmacoepidemiology and Treatment Science, New Brunswick, New Jersey, United States of America"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-1583-752X",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Medicine, Rutgers Robert Wood Johnson Medical School, New Brunswick, New Jersey, United States of America",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Rutgers Center for Pharmacoepidemiology and Treatment Science, New Brunswick, New Jersey, United States of America",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7211943050",
+  "doi": "https://doi.org/10.1002/pds.70447",
+  "title": "Antihypertensive Medications and Risk of Heat\u2010Related Illness During Heatwaves: Self\u2010Controlled Case Series",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7211943050",
+   "doi": "https://doi.org/10.1002/pds.70447",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/42710533",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/13553137"
+  },
+  "primary_location": {
+   "id": "doi:10.1002/pds.70447",
+   "doi": "https://doi.org/10.1002/pds.70447",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1002/pds.70447",
+   "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/pds.70447",
+   "source": {
+    "id": "https://openalex.org/S140231191",
+    "display_name": "Pharmacoepidemiology and Drug Safety",
+    "issn_l": "1053-8569",
+    "issn": [
+     "1053-8569",
+     "1099-1557"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-2",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Pharmacoepidemiology and Drug Safety",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5051329211",
+     "display_name": "Mia Harley",
+     "orcid": "https://orcid.org/0000-0001-9065-3387",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9065-3387"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I146399215",
+      "display_name": "University of Tsukuba",
+      "ror": "https://ror.org/02956yf07",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210089966",
+      "display_name": "London School of Hygiene & Tropical Medicine",
+      "ror": "https://ror.org/00a0jsq62",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ],
+    "countries": [
+     "GB",
+     "JP"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Mia Harley",
+    "raw_affiliation_strings": [
+     "Department of Digital Health, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+     "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-9065-3387",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Digital Health, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK",
+      "institution_ids": [
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5084296759",
+     "display_name": "Masao Iwagami",
+     "orcid": "https://orcid.org/0000-0001-7079-0640",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7079-0640"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I146399215",
+      "display_name": "University of Tsukuba",
+      "ror": "https://ror.org/02956yf07",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210089966",
+      "display_name": "London School of Hygiene & Tropical Medicine",
+      "ror": "https://ror.org/00a0jsq62",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I4210089966"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405286311",
+      "display_name": "Center for Cyber Medicine Research, University of Tsukuba",
+      "ror": "https://ror.org/01sa2kh32",
+      "country_code": "JP",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405286311"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405287450",
+      "display_name": "Research and Development Center for Health Services, University of Tsukuba",
+      "ror": "https://ror.org/055y6de75",
+      "country_code": "JP",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405287450"
+      ]
+     }
+    ],
+    "countries": [
+     "GB",
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Masao Iwagami",
+    "raw_affiliation_strings": [
+     "Department of Digital Health, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+     "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK",
+     "Digital Society Division, Center for Cyber Medicine Research University of Tsukuba  Ibaraki Japan",
+     "Health Services Research and Development Center University of Tsukuba  Tsukuba Japan"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Digital Health, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK",
+      "institution_ids": [
+       "https://openalex.org/I4210089966"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Digital Society Division, Center for Cyber Medicine Research University of Tsukuba  Ibaraki Japan",
+      "institution_ids": [
+       "https://openalex.org/I4405286311"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Health Services Research and Development Center University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405287450"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5091963709",
+     "display_name": "Chitose Kawamura",
+     "orcid": "https://orcid.org/0009-0001-4251-0442",
+     "observed_orcids": [
+      "https://orcid.org/0009-0001-4251-0442"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I146399215",
+      "display_name": "University of Tsukuba",
+      "ror": "https://ror.org/02956yf07",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I146399215"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Chitose Kawamura",
+    "raw_affiliation_strings": [
+     "Department of Digital Health, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+     "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Digital Health, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5089833703",
+     "display_name": "Elizabeth Williamson",
+     "orcid": "https://orcid.org/0000-0001-6905-876X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6905-876X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210089966",
+      "display_name": "London School of Hygiene & Tropical Medicine",
+      "ror": "https://ror.org/00a0jsq62",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Elizabeth Williamson",
+    "raw_affiliation_strings": [
+     "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK",
+      "institution_ids": [
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5036730560",
+     "display_name": "Christopher T. Rentsch",
+     "orcid": "https://orcid.org/0000-0002-1408-7907",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1408-7907"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I32971472",
+      "display_name": "Yale University",
+      "ror": "https://ror.org/03v76x132",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I32971472"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210089966",
+      "display_name": "London School of Hygiene & Tropical Medicine",
+      "ror": "https://ror.org/00a0jsq62",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ],
+    "countries": [
+     "GB",
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Christopher T. Rentsch",
+    "raw_affiliation_strings": [
+     "Department of Internal Medicine Yale School of Medicine  New Haven Connecticut USA",
+     "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-1408-7907",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Internal Medicine Yale School of Medicine  New Haven Connecticut USA",
+      "institution_ids": [
+       "https://openalex.org/I32971472"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK",
+      "institution_ids": [
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5014459421",
+     "display_name": "Rohini Mathur",
+     "orcid": "https://orcid.org/0000-0002-3817-8790",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3817-8790"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I166337079",
+      "display_name": "Queen Mary University of London",
+      "ror": "https://ror.org/026zzn846",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I166337079"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Rohini Mathur",
+    "raw_affiliation_strings": [
+     "Wolfson Institute of Population Health, Queen Mary University of London  London UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Wolfson Institute of Population Health, Queen Mary University of London  London UK",
+      "institution_ids": [
+       "https://openalex.org/I166337079"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5069614553",
+     "display_name": "Ian Douglas",
+     "orcid": "https://orcid.org/0000-0002-8970-1406",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8970-1406"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210089966",
+      "display_name": "London School of Hygiene & Tropical Medicine",
+      "ror": "https://ror.org/00a0jsq62",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Ian J. Douglas",
+    "raw_affiliation_strings": [
+     "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK",
+      "institution_ids": [
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5008535670",
+     "display_name": "Dorothea Nitsch",
+     "orcid": "https://orcid.org/0000-0001-5767-248X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-5767-248X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210089966",
+      "display_name": "London School of Hygiene & Tropical Medicine",
+      "ror": "https://ror.org/00a0jsq62",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Dorothea Nitsch",
+    "raw_affiliation_strings": [
+     "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK",
+      "institution_ids": [
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5060073306",
+     "display_name": "Yuta Taniguchi",
+     "orcid": "https://orcid.org/0000-0002-0176-2379",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-0176-2379"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I146399215",
+      "display_name": "University of Tsukuba",
+      "ror": "https://ror.org/02956yf07",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405287450",
+      "display_name": "Research and Development Center for Health Services, University of Tsukuba",
+      "ror": "https://ror.org/055y6de75",
+      "country_code": "JP",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405287450"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Yuta Taniguchi",
+    "raw_affiliation_strings": [
+     "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+     "Health Services Research and Development Center University of Tsukuba  Tsukuba Japan"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Health Services Research and Development Center University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405287450"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5159873200",
+     "display_name": "Yoko Hamasaki",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I146399215",
+      "display_name": "University of Tsukuba",
+      "ror": "https://ror.org/02956yf07",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I146399215"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Yoko Hamasaki",
+    "raw_affiliation_strings": [
+     "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5073389244",
+     "display_name": "Ai Suzuki",
+     "orcid": "https://orcid.org/0000-0002-8961-9437",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8961-9437"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I146399215",
+      "display_name": "University of Tsukuba",
+      "ror": "https://ror.org/02956yf07",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405287450",
+      "display_name": "Research and Development Center for Health Services, University of Tsukuba",
+      "ror": "https://ror.org/055y6de75",
+      "country_code": "JP",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405287450"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Ai Suzuki",
+    "raw_affiliation_strings": [
+     "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+     "Health Services Research and Development Center University of Tsukuba  Tsukuba Japan"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Health Services Research and Development Center University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405287450"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5027307894",
+     "display_name": "Naoaki Kuroda",
+     "orcid": "https://orcid.org/0000-0003-0407-0228",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-0407-0228"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210160792",
+      "display_name": "National Institute of Mental Health",
+      "ror": "https://ror.org/04t0s7x83",
+      "country_code": "JP",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I4210103779",
+       "https://openalex.org/I4210160792"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Naoaki Kuroda",
+    "raw_affiliation_strings": [
+     "Department of Public Mental Health Research National Institute of Mental Health  Kodaira Tokyo Japan"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Public Mental Health Research National Institute of Mental Health  Kodaira Tokyo Japan",
+      "institution_ids": [
+       "https://openalex.org/I4210160792"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5043768309",
+     "display_name": "Jun Komiyama",
+     "orcid": "https://orcid.org/0000-0002-3125-9168",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3125-9168"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I146399215",
+      "display_name": "University of Tsukuba",
+      "ror": "https://ror.org/02956yf07",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405287450",
+      "display_name": "Research and Development Center for Health Services, University of Tsukuba",
+      "ror": "https://ror.org/055y6de75",
+      "country_code": "JP",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405287450"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Jun Komiyama",
+    "raw_affiliation_strings": [
+     "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+     "Health Services Research and Development Center University of Tsukuba  Tsukuba Japan"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Health Services Research and Development Center University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405287450"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5007512805",
+     "display_name": "Angel Y. S. Wong",
+     "orcid": "https://orcid.org/0000-0002-8618-7333",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8618-7333",
+      "https://orcid.org/0000-0003-2335-9641"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210089966",
+      "display_name": "London School of Hygiene & Tropical Medicine",
+      "ror": "https://ror.org/00a0jsq62",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Angel Y. S. Wong",
+    "raw_affiliation_strings": [
+     "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-8618-7333",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Non\u2010Communicable Disease Epidemiology, Faculty of Epidemiology and Population Health London School of Hygiene and Tropical Medicine  London UK",
+      "institution_ids": [
+       "https://openalex.org/I4210089966"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5017883757",
+     "display_name": "Nanako Tamiya",
+     "orcid": "https://orcid.org/0000-0002-8319-2057",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8319-2057"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I146399215",
+      "display_name": "University of Tsukuba",
+      "ror": "https://ror.org/02956yf07",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405286311",
+      "display_name": "Center for Cyber Medicine Research, University of Tsukuba",
+      "ror": "https://ror.org/01sa2kh32",
+      "country_code": "JP",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405286311"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405287450",
+      "display_name": "Research and Development Center for Health Services, University of Tsukuba",
+      "ror": "https://ror.org/055y6de75",
+      "country_code": "JP",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405287450"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Nanako Tamiya",
+    "raw_affiliation_strings": [
+     "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+     "Digital Society Division, Center for Cyber Medicine Research University of Tsukuba  Ibaraki Japan",
+     "Health Services Research and Development Center University of Tsukuba  Tsukuba Japan"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Health Services Research, Institute of Medicine University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Digital Society Division, Center for Cyber Medicine Research University of Tsukuba  Ibaraki Japan",
+      "institution_ids": [
+       "https://openalex.org/I4405286311"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Health Services Research and Development Center University of Tsukuba  Tsukuba Japan",
+      "institution_ids": [
+       "https://openalex.org/I146399215",
+       "https://openalex.org/I4405287450"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W4384204288",
+  "doi": "https://doi.org/10.1097/ee9.0000000000000261",
+  "title": "Does choice of outdoor heat metric affect heat-related epidemiologic analyses in the US Medicare population?",
+  "publication_year": 2023,
+  "ids": {
+   "openalex": "https://openalex.org/W4384204288",
+   "doi": "https://doi.org/10.1097/ee9.0000000000000261",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/37545812",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/10402938"
+  },
+  "primary_location": {
+   "id": "doi:10.1097/ee9.0000000000000261",
+   "doi": "https://doi.org/10.1097/ee9.0000000000000261",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1097/ee9.0000000000000261",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4210236793",
+    "display_name": "Environmental Epidemiology",
+    "issn_l": "2474-7882",
+    "issn": [
+     "2474-7882"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doaj",
+     "dongbi-c",
+     "jufo-1",
+     "ki-jl-1",
+     "norway-1",
+     "oarl",
+     "poland-20",
+     "russia-white-list-2",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310318547",
+    "host_organization_name": "Wolters Kluwer",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310318547"
+    ],
+    "host_organization_lineage_names": [
+     "Wolters Kluwer"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Environmental Epidemiology",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 26,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5085063209",
+     "display_name": "Keith R. Spangler",
+     "orcid": "https://orcid.org/0000-0002-8904-7280",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8904-7280"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I111088046",
+      "display_name": "Boston University",
+      "ror": "https://ror.org/05qwgg493",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I111088046"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Keith R. Spangler",
+    "raw_affiliation_strings": [
+     "Department of Environmental Health, Boston University School of Public Health, Boston, Massachusetts"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-8904-7280",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Environmental Health, Boston University School of Public Health, Boston, Massachusetts",
+      "institution_ids": [
+       "https://openalex.org/I111088046"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5058638666",
+     "display_name": "Quinn H. Adams",
+     "orcid": "https://orcid.org/0000-0001-7553-4777",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7553-4777"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I111088046",
+      "display_name": "Boston University",
+      "ror": "https://ror.org/05qwgg493",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I111088046"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Quinn H. Adams",
+    "raw_affiliation_strings": [
+     "Department of Environmental Health, Boston University School of Public Health, Boston, Massachusetts"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Environmental Health, Boston University School of Public Health, Boston, Massachusetts",
+      "institution_ids": [
+       "https://openalex.org/I111088046"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5030046917",
+     "display_name": "Jie Kate Hu",
+     "orcid": "https://orcid.org/0000-0002-7987-8419",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7987-8419"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I136199984",
+      "display_name": "Harvard University",
+      "ror": "https://ror.org/03vek6s52",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I136199984"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Jie Kate Hu",
+    "raw_affiliation_strings": [
+     "Department of Biostatistics, Harvard University T.H. Chan School of Public Health, Boston, Massachusetts"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Biostatistics, Harvard University T.H. Chan School of Public Health, Boston, Massachusetts",
+      "institution_ids": [
+       "https://openalex.org/I136199984"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5048337523",
+     "display_name": "Danielle Braun",
+     "orcid": "https://orcid.org/0000-0002-5177-8598",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5177-8598"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I136199984",
+      "display_name": "Harvard University",
+      "ror": "https://ror.org/03vek6s52",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I136199984"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210117453",
+      "display_name": "Dana-Farber Cancer Institute",
+      "ror": "https://ror.org/02jzgtq86",
+      "country_code": "US",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210117453"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Danielle Braun",
+    "raw_affiliation_strings": [
+     "Department of Biostatistics, Harvard University T.H. Chan School of Public Health, Boston, Massachusetts",
+     "Department of Data Sciences, Dana-Farber Cancer Institute, Boston, Massachusetts"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Biostatistics, Harvard University T.H. Chan School of Public Health, Boston, Massachusetts",
+      "institution_ids": [
+       "https://openalex.org/I136199984"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Data Sciences, Dana-Farber Cancer Institute, Boston, Massachusetts",
+      "institution_ids": [
+       "https://openalex.org/I4210117453"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5035731100",
+     "display_name": "Kate R. Weinberger",
+     "orcid": "https://orcid.org/0000-0001-6001-0081",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6001-0081"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I141945490",
+      "display_name": "University of British Columbia",
+      "ror": "https://ror.org/03rmrcq20",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I141945490"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Kate R. Weinberger",
+    "raw_affiliation_strings": [
+     "University of British Columbia, School of Population and Public Health, Vancouver, British Columbia, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of British Columbia, School of Population and Public Health, Vancouver, British Columbia, Canada",
+      "institution_ids": [
+       "https://openalex.org/I141945490"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5007008626",
+     "display_name": "Francesca Dominici",
+     "orcid": "https://orcid.org/0000-0002-9382-0141",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-9382-0141",
+      "https://orcid.org/0000-0001-5964-0756"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I136199984",
+      "display_name": "Harvard University",
+      "ror": "https://ror.org/03vek6s52",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I136199984"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Francesca Dominici",
+    "raw_affiliation_strings": [
+     "Department of Biostatistics, Harvard University T.H. Chan School of Public Health, Boston, Massachusetts"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Biostatistics, Harvard University T.H. Chan School of Public Health, Boston, Massachusetts",
+      "institution_ids": [
+       "https://openalex.org/I136199984"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5075376639",
+     "display_name": "Gregory A. Wellenius",
+     "orcid": "https://orcid.org/0000-0003-0427-7376",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-0427-7376"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I111088046",
+      "display_name": "Boston University",
+      "ror": "https://ror.org/05qwgg493",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I111088046"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Gregory A. Wellenius",
+    "raw_affiliation_strings": [
+     "Department of Environmental Health, Boston University School of Public Health, Boston, Massachusetts"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Environmental Health, Boston University School of Public Health, Boston, Massachusetts",
+      "institution_ids": [
+       "https://openalex.org/I111088046"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W4379930740",
+  "doi": "https://doi.org/10.1016/j.envint.2023.108005",
+  "title": "Urban heat island impacts on heat-related cardiovascular morbidity: A time series analysis of older adults in US metropolitan areas",
+  "publication_year": 2023,
+  "ids": {
+   "openalex": "https://openalex.org/W4379930740",
+   "doi": "https://doi.org/10.1016/j.envint.2023.108005",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/37437316",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/10599453"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/j.envint.2023.108005",
+   "doi": "https://doi.org/10.1016/j.envint.2023.108005",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1016/j.envint.2023.108005",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S143381477",
+    "display_name": "Environment International",
+    "issn_l": "0160-4120",
+    "issn": [
+     "0160-4120",
+     "1873-6750"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "dongbi-a",
+     "jufo-3",
+     "ki-jl-2",
+     "medline",
+     "norway-1",
+     "oarl",
+     "poland-140",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by-nc-nd",
+   "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Environment International",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 142,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5072231561",
+     "display_name": "Stephanie E. Cleland",
+     "orcid": "https://orcid.org/0000-0003-1912-8349",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1912-8349"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I114027177",
+      "display_name": "University of North Carolina at Chapel Hill",
+      "ror": "https://ror.org/0130frc33",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I114027177"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I1302368450",
+      "display_name": "Environmental Protection Agency",
+      "ror": "https://ror.org/03tns0030",
+      "country_code": "US",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I1302368450"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4389425366",
+      "display_name": "Oak Ridge Institute for Science and Education",
+      "ror": "https://ror.org/040vxhp34",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I1281378812",
+       "https://openalex.org/I1330989302",
+       "https://openalex.org/I4389425366"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Stephanie E. Cleland",
+    "raw_affiliation_strings": [
+     "Department of Environmental Sciences and Engineering, Gillings School of Global Public Health, University of North Carolina, Chapel Hill, NC, USA; Oak Ridge Institute for Science and Education at the Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, NC, USA",
+     "Department of Environmental Sciences and Engineering, Gillings School of Global Public Health, University of North Carolina, Chapel Hill, North Carolina, USA",
+     "Oak Ridge Institute for Science and Education at the Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, North Carolina, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Environmental Sciences and Engineering, Gillings School of Global Public Health, University of North Carolina, Chapel Hill, NC, USA; Oak Ridge Institute for Science and Education at the Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, NC, USA",
+      "institution_ids": [
+       "https://openalex.org/I114027177",
+       "https://openalex.org/I1302368450",
+       "https://openalex.org/I4389425366"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Environmental Sciences and Engineering, Gillings School of Global Public Health, University of North Carolina, Chapel Hill, North Carolina, USA",
+      "institution_ids": [
+       "https://openalex.org/I114027177"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Oak Ridge Institute for Science and Education at the Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, North Carolina, USA",
+      "institution_ids": [
+       "https://openalex.org/I1302368450",
+       "https://openalex.org/I4389425366"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5102385546",
+     "display_name": "William Steinhardt",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1302368450",
+      "display_name": "Environmental Protection Agency",
+      "ror": "https://ror.org/03tns0030",
+      "country_code": "US",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I1302368450"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4389425366",
+      "display_name": "Oak Ridge Institute for Science and Education",
+      "ror": "https://ror.org/040vxhp34",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I1281378812",
+       "https://openalex.org/I1330989302",
+       "https://openalex.org/I4389425366"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "William Steinhardt",
+    "raw_affiliation_strings": [
+     "Oak Ridge Institute for Science and Education at the Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, NC, USA",
+     "Oak Ridge Institute for Science and Education at the Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, North Carolina, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Oak Ridge Institute for Science and Education at the Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, NC, USA",
+      "institution_ids": [
+       "https://openalex.org/I1302368450",
+       "https://openalex.org/I4389425366"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Oak Ridge Institute for Science and Education at the Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, North Carolina, USA",
+      "institution_ids": [
+       "https://openalex.org/I1302368450",
+       "https://openalex.org/I4389425366"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5041894754",
+     "display_name": "Lucas Neas",
+     "orcid": "https://orcid.org/0000-0002-9377-8334",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-9377-8334"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1302368450",
+      "display_name": "Environmental Protection Agency",
+      "ror": "https://ror.org/03tns0030",
+      "country_code": "US",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I1302368450"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Lucas M. Neas",
+    "raw_affiliation_strings": [
+     "Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, NC, USA",
+     "Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, North Carolina, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, NC, USA",
+      "institution_ids": [
+       "https://openalex.org/I1302368450"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, North Carolina, USA",
+      "institution_ids": [
+       "https://openalex.org/I1302368450"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5024198997",
+     "display_name": "J. Jason West",
+     "orcid": "https://orcid.org/0000-0001-5652-4987",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-5652-4987"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I114027177",
+      "display_name": "University of North Carolina at Chapel Hill",
+      "ror": "https://ror.org/0130frc33",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I114027177"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "J. Jason West",
+    "raw_affiliation_strings": [
+     "Department of Environmental Sciences and Engineering, Gillings School of Global Public Health, University of North Carolina, Chapel Hill, NC, USA",
+     "Department of Environmental Sciences and Engineering, Gillings School of Global Public Health, University of North Carolina, Chapel Hill, North Carolina, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Environmental Sciences and Engineering, Gillings School of Global Public Health, University of North Carolina, Chapel Hill, NC, USA",
+      "institution_ids": [
+       "https://openalex.org/I114027177"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Environmental Sciences and Engineering, Gillings School of Global Public Health, University of North Carolina, Chapel Hill, North Carolina, USA",
+      "institution_ids": [
+       "https://openalex.org/I114027177"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5006962848",
+     "display_name": "Ana Grohovac Rappold",
+     "orcid": "https://orcid.org/0000-0002-7696-0900",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7696-0900"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1302368450",
+      "display_name": "Environmental Protection Agency",
+      "ror": "https://ror.org/03tns0030",
+      "country_code": "US",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I1302368450"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Ana G. Rappold",
+    "raw_affiliation_strings": [
+     "Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, NC, USA. Electronic address: rappold.ana@epa.gov",
+     "Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, North Carolina, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, NC, USA. Electronic address: rappold.ana@epa.gov",
+      "institution_ids": [
+       "https://openalex.org/I1302368450"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Center for Public Health and Environmental Assessment, Office of Research and Development, United States Environmental Protection Agency, Research Triangle Park, North Carolina, USA",
+      "institution_ids": [
+       "https://openalex.org/I1302368450"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W4417517261",
+  "doi": "https://doi.org/10.1097/ee9.0000000000000451",
+  "title": "Excess risk of heat-related hospitalization associated with temperature and PM2.5 among older adults",
+  "publication_year": 2025,
+  "ids": {
+   "openalex": "https://openalex.org/W4417517261",
+   "doi": "https://doi.org/10.1097/ee9.0000000000000451",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/41479685",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/12755698"
+  },
+  "primary_location": {
+   "id": "doi:10.1097/ee9.0000000000000451",
+   "doi": "https://doi.org/10.1097/ee9.0000000000000451",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1097/ee9.0000000000000451",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4210236793",
+    "display_name": "Environmental Epidemiology",
+    "issn_l": "2474-7882",
+    "issn": [
+     "2474-7882"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doaj",
+     "dongbi-c",
+     "jufo-1",
+     "ki-jl-1",
+     "norway-1",
+     "oarl",
+     "poland-20",
+     "russia-white-list-2",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310318547",
+    "host_organization_name": "Wolters Kluwer",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310318547"
+    ],
+    "host_organization_lineage_names": [
+     "Wolters Kluwer"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Environmental Epidemiology",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 3,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": null,
+     "display_name": "Lauren Mock",
+     "orcid": "https://orcid.org/0009-0005-6868-6277",
+     "observed_orcids": [
+      "https://orcid.org/0009-0005-6868-6277"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I136199984",
+      "display_name": "Harvard University",
+      "ror": "https://ror.org/03vek6s52",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I136199984"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Lauren Mock",
+    "raw_affiliation_strings": [
+     "Department of Biostatistics, Harvard T.H. Chan School of Public Health, Boston, Massachusetts"
+    ],
+    "raw_orcid": "https://orcid.org/0009-0005-6868-6277",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Biostatistics, Harvard T.H. Chan School of Public Health, Boston, Massachusetts",
+      "institution_ids": [
+       "https://openalex.org/I136199984"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5034133778",
+     "display_name": "Rachel C. Nethery",
+     "orcid": "https://orcid.org/0000-0001-9895-1477",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9895-1477"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I136199984",
+      "display_name": "Harvard University",
+      "ror": "https://ror.org/03vek6s52",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I136199984"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Rachel C. Nethery",
+    "raw_affiliation_strings": [
+     "Department of Biostatistics, Harvard T.H. Chan School of Public Health, Boston, Massachusetts"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-9895-1477",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Biostatistics, Harvard T.H. Chan School of Public Health, Boston, Massachusetts",
+      "institution_ids": [
+       "https://openalex.org/I136199984"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5055055518",
+     "display_name": "Poonam Gandhi",
+     "orcid": "https://orcid.org/0000-0003-0939-829X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-0939-829X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Poonam Gandhi",
+    "raw_affiliation_strings": [
+     "Rutgers University Institute for Health, Healthcare Policy, and Aging Research, New Brunswick, New Jersey"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Rutgers University Institute for Health, Healthcare Policy, and Aging Research, New Brunswick, New Jersey",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5048629170",
+     "display_name": "Ashwaghosha Parthasarathi",
+     "orcid": "https://orcid.org/0000-0002-7270-0247",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7270-0247"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Ashwaghosha Parthasarathi",
+    "raw_affiliation_strings": [
+     "Rutgers University Institute for Health, Healthcare Policy, and Aging Research, New Brunswick, New Jersey"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-7270-0247",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Rutgers University Institute for Health, Healthcare Policy, and Aging Research, New Brunswick, New Jersey",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5030590913",
+     "display_name": "Melanie Rua",
+     "orcid": "https://orcid.org/0000-0001-8597-6392",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8597-6392"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Melanie Rua",
+    "raw_affiliation_strings": [
+     "Rutgers University Institute for Health, Healthcare Policy, and Aging Research, New Brunswick, New Jersey"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Rutgers University Institute for Health, Healthcare Policy, and Aging Research, New Brunswick, New Jersey",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5078065046",
+     "display_name": "David Robinson",
+     "orcid": "https://orcid.org/0000-0002-6615-6054",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6615-6054"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "David Robinson",
+    "raw_affiliation_strings": [
+     "Department of Geography, Rutgers University, Piscataway, New Jersey"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Geography, Rutgers University, Piscataway, New Jersey",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5026725935",
+     "display_name": "Soko Setoguchi",
+     "orcid": "https://orcid.org/0000-0002-1583-752X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1583-752X",
+      "https://orcid.org/0000-0002-4289-7632"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Soko Setoguchi",
+    "raw_affiliation_strings": [
+     "Department of Medicine, Rutgers Robert Wood Johnson Medical School, New Brunswick, New Jersey",
+     "Rutgers University Institute for Health, Healthcare Policy, and Aging Research, New Brunswick, New Jersey"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-1583-752X",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Medicine, Rutgers Robert Wood Johnson Medical School, New Brunswick, New Jersey",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Rutgers University Institute for Health, Healthcare Policy, and Aging Research, New Brunswick, New Jersey",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5051444314",
+     "display_name": "Kevin Josey",
+     "orcid": "https://orcid.org/0000-0003-2490-6272",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2490-6272"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I151808059",
+      "display_name": "Colorado School of Public Health",
+      "ror": "https://ror.org/005x9g035",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I151808059"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Kevin Josey",
+    "raw_affiliation_strings": [
+     "Department of Biostatistics and Informatics, Colorado School of Public Health, Aurora, Colorado"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-2490-6272",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Biostatistics and Informatics, Colorado School of Public Health, Aurora, Colorado",
+      "institution_ids": [
+       "https://openalex.org/I151808059"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

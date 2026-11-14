@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:12052700,exclude,E7 DPI proof of principle; room temperature storage only,none,none,lab_bench
+PMID:12425742,exclude,E7 nebulizer design review; no heat,none,none,review
+PMID:12450444,exclude,E7 altitude/mountain glucose meter test; not heat,none,none,other
+PMID:12572958,exclude,E6 malaria rapid diagnostic test; not in-scope product,none,none,lab_bench
+PMID:12789085,include,"uncertain: I2 glucose meters under tropical ambient temperature, Kampala field",storage_other,device_performance,lab_bench
+PMID:12812453,exclude,E2 OCT glucose sensing in animal skin,none,none,lab_bench
+PMID:12872258,exclude,E6 SNP immunochromatographic strip; not in scope,none,none,lab_bench
+PMID:1406169,exclude,E6 exercise-induced bronchospasm guidelines; no inhaler heat data,none,none,review
+PMID:1424880,exclude,E7 formoterol aerosol RCT; no heat exposure tested,none,none,rct
+PMID:14604464,exclude,E3 spray-dried lysozyme formulation chemistry,none,none,lab_bench
+PMID:14727862,exclude,E3 liposomal budesonide DPI formulation,none,none,lab_bench
+PMID:1511661,include,I2 glucose strips/meters stored at 40-50C tropical conditions,storage_other,device_performance,lab_bench
+PMID:15349951,exclude,E7 analytical solubility method for MDI propellants,none,none,lab_bench
+PMID:1536535,exclude,E6 urine albumin test strip; not in scope,none,none,lab_bench
+PMID:15369731,exclude,E6 urine adulterant test strips; not in scope,none,none,lab_bench
+PMID:15491048,exclude,E3 MDI API particle size formulation; temperature cycling unspecified,none,none,lab_bench
+PMID:15863919,exclude,E3 amorphous NCE DPI formulation chemistry,none,none,lab_bench
+PMID:15962650,exclude,E6 leptospirosis test strip; not in scope,none,none,lab_bench
+PMID:16084699,exclude,E3 THC inhalation powder formulation,none,none,lab_bench
+PMID:16181005,include,I2 two DPIs stored 3 months at 40C/75% RH,storage_other,device_performance,lab_bench
+PMID:16181753,exclude,E3 protein pMDI formulation; room temperature storage,none,none,lab_bench
+PMID:16239418,include,"I2 albuterol HFA MDIs stored in hot car trunk, Tucson",storage_other,device_performance,lab_bench
+PMID:16282668,exclude,E6 wearable health monitoring device; not in scope,none,none,lab_bench
+PMID:16315736,include,I2 glucometer test strips in adverse storage incl. incubator,storage_other,device_performance,lab_bench
+PMID:16348914,exclude,E3 degradable plastics composting,none,none,lab_bench
+PMID:16854259,exclude,E3 mid-infrared glucose sensing engineering,none,none,lab_bench
+PMID:17000099,exclude,E3 glucose biosensor engineering,none,none,lab_bench
+PMID:17064863,exclude,E7 DPI carrier humidity study; no heat,none,none,lab_bench
+PMID:17227616,exclude,E3 ciclosporin MDI formulation development,none,none,lab_bench
+PMID:17316092,include,uncertain: I2 glucose meters exposed to 54-87F ambient chamber,storage_other,device_performance,lab_bench
+PMID:17365439,exclude,E7 glucose meters at high altitude; not heat,none,none,cross_sectional
+PMID:17377746,exclude,E7 DPI humidity electrostatics; no heat,none,none,lab_bench
+PMID:17388750,include,uncertain: I2 pMDI robustness under mechanical stress plus elevated temperature,storage_other,device_performance,lab_bench
+PMID:17398047,exclude,E3 lactose blending process,none,none,lab_bench
+PMID:17454047,include,uncertain: I2 MDI particle coarsening at accelerated 40C/75% RH,storage_other,device_performance,lab_bench
+PMID:17498897,exclude,E7 analytical method for propellant systems,none,none,lab_bench
+PMID:17877437,exclude,E6 leachables in biologic products review,none,none,review
+PMID:18285276,exclude,E6 INR coagulation monitor; not in scope,none,none,lab_bench
+PMID:18309250,exclude,E7 glucometer evaluation; room temperature/refrigerator only,none,none,lab_bench
+PMID:18413165,exclude,E7 noninvasive glucose monitor pilot; no heat,none,none,other
+PMID:18416935,exclude,E3 propellant solubility chemistry,none,none,lab_bench
+PMID:18459053,exclude,E3 propellant ultrasonic characterisation,none,none,lab_bench
+PMID:1850965,include,I2 metaproterenol MDI performance at canister temperatures 0-42C,storage_other,device_performance,lab_bench
+PMID:18543087,exclude,E3 salbutamol nanoparticle formulation,none,none,lab_bench
+PMID:19293739,include,I2 glucose test strips heat-stressed at 40C,storage_other,device_performance,lab_bench
+PMID:19885109,exclude,E3 OCT glucose prediction engineering,none,none,lab_bench
+PMID:19885227,include,uncertain: I2 FreeStyle Lite accuracy across 4-40C operating temperature,storage_other,device_performance,lab_bench
+PMID:19888404,exclude,E8 commentary on glucose meter quality; no data,none,none,other
+PMID:20144284,exclude,E3 microdialysis CGM engineering,none,none,lab_bench
+PMID:20144340,exclude,E7 narrative review of BGM errors; heat not focus,none,none,review
+PMID:20385222,exclude,E3 salbutamol milling calorimetry,none,none,lab_bench
+PMID:20676298,exclude,E6 veterinary milk ketosis strip,none,none,lab_bench
+PMID:20971174,include,uncertain: I2 inhaled loxapine device under ambient temperature and thermal cycling,antipsychotics,device_performance,lab_bench
+PMID:21081161,exclude,"E3 tranilast DPI formulation, rat data",none,none,lab_bench
+PMID:21129458,exclude,E3 sugar excipient particle engineering,none,none,lab_bench
+PMID:21129460,exclude,E3 sodium cromoglicate particle engineering,none,none,lab_bench
+PMID:21129465,exclude,E7 pMDI plume cooling; not ambient heat,none,none,lab_bench
+PMID:21142975,include,uncertain: I2 glucose strip accuracy at operating temperature extremes,storage_other,device_performance,lab_bench
+PMID:21295125,exclude,E3 lactose micronisation,none,none,lab_bench
+PMID:21507861,exclude,E7 inhalation capsule storage at 20C; no heat,none,none,lab_bench
+PMID:21671572,exclude,E3 glucose-binding protein engineering,none,none,lab_bench
+PMID:21714677,include,I2 glucose meters at 39C and after 30C equilibration,storage_other,device_performance,lab_bench
+PMID:21982990,exclude,E7 CGM accuracy in ED patients; no heat,none,none,cohort
+PMID:22020816,exclude,E3 bacteriophage inhalation powder formulation,none,none,lab_bench
+PMID:22043826,exclude,E6 peanut lateral flow device,none,none,lab_bench
+PMID:22155763,exclude,E2 poultry vaccine powder formulation,none,none,lab_bench
+PMID:22343132,exclude,E3 thymopentin pMDI formulation; ambient storage,none,none,lab_bench
+PMID:22410760,exclude,E7 forced degradation model for corticosteroids only,none,none,lab_bench
+PMID:22417525,exclude,E6 meat residue lateral flow strip,none,none,lab_bench
+PMID:22580211,exclude,E3 carrier particle formulation,none,none,lab_bench
+PMID:22595133,exclude,E3 mannitol carrier engineering,none,none,lab_bench
+PMID:22619045,exclude,E3 budesonide nanocluster DPI formulation,none,none,lab_bench
+PMID:22689396,exclude,E3 moisture content in MDI formulation,none,none,lab_bench
+PMID:22776503,exclude,E6 fish virus test strip,none,none,lab_bench
+PMID:22820981,exclude,E3 softmist excipient particle growth modelling,none,none,lab_bench
+PMID:22853721,include,uncertain: I2 OneTouch Verio strip performance at 5-45C,storage_other,device_performance,lab_bench
+PMID:23077265,include,I2 glucose strips under dynamic heat/humidity disaster stress,storage_other,device_performance,lab_bench
+PMID:23094687,include,I2 pMDI lung dose at 40C vs 20C operating temperature,storage_other,device_performance,lab_bench
+PMID:23355776,exclude,E3 spray-dried phospholipid particle formulation,none,none,lab_bench
+PMID:23403805,exclude,E3 tacrolimus inhalation particle formulation,none,none,lab_bench
+PMID:23569375,exclude,E3 cyclosporine inhalation particle formulation,none,none,lab_bench
+PMID:2370583,exclude,E6 dental sterilizer biological indicators,none,none,lab_bench
+PMID:23736850,exclude,E3 noninvasive CGM calibration modelling,none,none,lab_bench
+PMID:23879929,exclude,E7 CGM accuracy in ICU; no heat,none,none,cohort
+PMID:23883407,exclude,E7 narrative review of BGM accuracy; heat not focus,none,none,review
+PMID:23904207,exclude,E3 colistin inhalation powder formulation,none,none,lab_bench
+PMID:23919472,exclude,E3 budesonide processing surface properties,none,none,lab_bench
+PMID:23933147,exclude,E6 influenza vaccine powder; not in-scope product,none,none,lab_bench
+PMID:23956499,exclude,E3 MEMS glucose sensor engineering,none,none,lab_bench
+PMID:23984530,exclude,E3 herbal composite particle spray drying,none,none,lab_bench
+PMID:24140315,exclude,E2 ketone meters in dairy cows,none,none,lab_bench
+PMID:24148459,exclude,E6 shellfish toxin lateral flow assay,none,none,lab_bench
+PMID:24215736,exclude,E3 antibiotic DPI particle formulation,none,none,lab_bench
+PMID:24220675,exclude,E3 dielectric glucose sensor engineering,none,none,lab_bench
+PMID:24329164,exclude,E3 clarithromycin pMDI formulation development,none,none,lab_bench
+PMID:24585270,exclude,E3 inhalable rifapentine formulation,none,none,lab_bench
+PMID:24713542,exclude,E3 paper-based calorimetric sensing,none,none,lab_bench
+PMID:24729705,exclude,E6 melamine lateral flow strip,none,none,lab_bench
+PMID:24740732,exclude,E3 antibiotic/mannitol co-spray dried particles,none,none,lab_bench
+PMID:24794329,include,uncertain: I2 urine glucose reagent strips read at 34C in NICU,storage_other,device_performance,lab_bench
+PMID:24806822,exclude,E3 simvastatin inhalation formulation,none,none,lab_bench
+PMID:24809162,exclude,E3 trehalose recrystallization chemistry,none,none,lab_bench
+PMID:24876416,exclude,E7 CGM adhesive issues in children; heat not analysed,none,none,other
+PMID:24876432,exclude,E3 prototype on-strip calibration technology,none,none,lab_bench
+PMID:24876542,include,I2 glucose strips/meters after 42C humidity shock,storage_other,device_performance,lab_bench
+PMID:24962007,exclude,E3 granulated lactose DPI carrier,none,none,lab_bench
+PMID:25074469,exclude,E3 co-spray dried carbohydrate particles,none,none,lab_bench
+PMID:25167700,exclude,E3 meloxicam DPI formulation stability,none,none,lab_bench
+PMID:25228114,exclude,E7 HFA vs CFC MDI performance; no heat,none,none,lab_bench
+PMID:25252183,include,I2 four pMDIs at inhaler/ambient temperatures up to 41.7C,storage_other,device_performance,lab_bench
+PMID:25336421,exclude,E7 analytical extraction method,none,none,lab_bench
+PMID:25398478,exclude,E3 fluticasone API conditioning incl. 60C lagering,none,none,lab_bench
+PMID:25517187,exclude,E3 surface modified lactose DPI formulation,none,none,lab_bench
+PMID:25589383,exclude,E6 cosmetic HPLC assay,none,none,lab_bench
+PMID:25726385,exclude,E6 dental devices and ICD interference,none,none,lab_bench
+PMID:25769680,exclude,E7 DPI storage at room temperature only,none,none,lab_bench
+PMID:25776985,exclude,E3 heat-stable oxytocin powder formulation development,none,none,lab_bench
+PMID:25779351,exclude,E3 amorphous content measurement method,none,none,lab_bench
+PMID:26052676,exclude,E3 tobramycin inhalation powder particle design,none,none,lab_bench
+PMID:26099767,exclude,E6 sevoflurane anaesthetic vaporiser; not in-scope inhaler,none,none,lab_bench

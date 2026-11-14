@@ -1,0 +1,43 @@
+{
+  "ref_day": "2025-06-23",
+  "ref_weekday": "Monday",
+  "ref_day_max_heat_index_f": 105.7,
+  "places_in_file": 1868,
+  "indoor_candidates_after_hours_filter": 843,
+  "dropped": {
+    "outdoor": 852,
+    "no_address": 141,
+    "closed_or_after_11": 32
+  },
+  "patients": 300,
+  "patients_matched_3": 300,
+  "median_walk_min_nearest": 9.3,
+  "median_walk_min_nearest_older_pace_patients": 10.7,
+  "p90_walk_min_nearest": 18.4,
+  "nearest_over_15_min": 50,
+  "nearest_over_30_min": 1,
+  "nearest_place_type_counts": {
+    "cooling center": 236,
+    "community centre": 7,
+    "department store": 32,
+    "library": 14,
+    "recreation center": 11
+  },
+  "nearest_step_free_status_counts": {
+    "yes": 241,
+    "unknown": 59
+  },
+  "nearest_hours_status_counts": {
+    "known": 277,
+    "unknown": 23
+  },
+  "routing_engine": "osrm-fossgis",
+  "requests": {
+    "network": 15,
+    "cached": 0,
+    "errors": 0
+  },
+  "matrix_groups": 15,
+  "step_free_patients": 69,
+  "step_free_patients_nearest_confirmed_step_free": 58
+}

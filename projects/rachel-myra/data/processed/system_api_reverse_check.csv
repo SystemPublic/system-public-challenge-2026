@@ -1,0 +1,52 @@
+kind,paper_key,cited_in,system_id,variable_1_name,variable_2_name,statistic_type,statistic_value,ci_lower,ci_upper,p_value,in_dataverse
+unused_finding_on_cited_paper,PMID:26908568,master_list:R46 | report:line 89,oLehw2Zxfa,relative humidity (group C),point-of-care glucose measurement reliability,mean_difference_unstandardized,-16.6,,,0.001,no
+unused_finding_on_cited_paper,PMID:26908568,master_list:R46 | report:line 89,YSyDmE53ET,Operating temperature (group 2: 28-29°C),point-of-care glucose measurement reliability,mean_difference_unstandardized,-36.5,,,0.001,no
+unused_finding_on_cited_paper,PMID:26908568,master_list:R46 | report:line 89,4qBthrW08J,relative humidity (RH),point-of-care glucose measurement reliability,mean_difference_unstandardized,-5.8,,,0.001,no
+unused_finding_on_cited_paper,PMID:26908568,master_list:R46 | report:line 89,YsTTGGSgpi,Operating Temperature (33-34°C),point-of-care glucose measurement reliability,mean_difference_unstandardized,-37.4,,,0.001,no
+unused_finding_on_cited_paper,PMID:26908568,master_list:R46 | report:line 89,KWqS56i9ry,Operating Temperature (Higher Temperature Range),point-of-care glucose measurement reliability,mean_difference_unstandardized,-3.6,,,0.001,no
+unused_finding_on_cited_paper,PMID:26908568,master_list:R46 | report:line 89,lM864DiP1h,Relative Humidity Group B (RH ~80%),point-of-care glucose measurement reliability,mean_difference_unstandardized,-13.2,,,0.001,no
+unused_finding_on_cited_paper,PMID:26908568,master_list:R46 | report:line 89,y9nTkrV8ag,Relative Humidity (RH),point-of-care glucose measurement reliability,mean_difference_unstandardized,-4.0,,,0.001,no
+unused_finding_on_cited_paper,PMID:26908568,master_list:R46 | report:line 89,jiPNkrg15N,Operating temperature (24-25 vs 28-29°C),point-of-care glucose measurement reliability,mean_difference_unstandardized,-2.4,,,0.001,no
+unused_finding_on_cited_paper,PMID:28737683,master_list:R30 | report:line 32 | report:line 44,pIeoGzXhX6,outdoor temperature in Sweden,reporting of drug-induced hyponatremia to the Medical Products Agency (MPA),odds_ratio,2.21,,,,no
+unused_finding_on_cited_paper,PMID:29116624,graph_status:R28 | master_list:R28 | report:line 41,t1LGX1MD05,"concomitant use of diuretics, non-steroidal anti-inflammatory drugs, and angiotensin-converting enzyme inhibitors/angiotensin receptor blockers (triple whammy, TW)",in-hospital acute kidney injury (AKI),odds_ratio,0.79,0.34,1.83,0.58,yes_same_id
+unused_finding_on_cited_paper,PMID:29217346,graph_status:R76 | master_list:R76 | report:line 116,01UYVUpkTM,Hydrochlorothiazide use,squamous cell carcinoma (SCC),odds_ratio,7.38,6.32,8.6,,yes_same_id
+unused_finding_on_cited_paper,PMID:29217346,graph_status:R76 | master_list:R76 | report:line 116,VyPCdTSsRy,Hydrochlorothiazide use,basal cell carcinoma,odds_ratio,1.54,1.38,1.71,,yes_same_id
+unused_finding_on_cited_paper,PMID:29217346,graph_status:R76 | master_list:R76 | report:line 116,NNr9sPxE2V,Hydrochlorothiazide use,squamous cell carcinoma (SCC),odds_ratio,3.98,3.68,4.31,,yes_same_id
+unused_finding_on_cited_paper,PMID:29217346,graph_status:R76 | master_list:R76 | report:line 116,q5K_QIGKfA,Hydrochlorothiazide use,basal cell carcinoma,odds_ratio,1.29,1.23,1.35,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,kD7S4_ysBO,body mass index (BMI),severe heat illness (SHI),odds_ratio,1.94,1.47,2.56,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,CRsyKCSj9O,body mass index (BMI),severe heat illness (SHI),odds_ratio,2.26,1.16,4.39,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,Rza6q-jkz9,body mass index (BMI),mild heat illness (MHI),odds_ratio,1.41,1.19,1.67,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,Oz7wsnxr1o,body mass index (BMI),mild heat illness (MHI),odds_ratio,1.5,1.01,2.21,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,gxFhImodZd,tobacco use,mild heat illness (MHI),odds_ratio,1.55,1.37,1.77,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,LYDYE16Ot9,prior severe heat illness (SHI),mild heat illness (MHI),odds_ratio,4.02,2.67,6.03,,yes_same_id
+unused_finding_on_cited_paper,PMID:30130598,graph_status:R75 | master_list:R75 | report:line 116,jDST6i75ah,voriconazole use,cutaneous squamous cell carcinoma,relative_risk_ratio,1.86,1.36,2.55,,yes_same_id
+unused_finding_on_cited_paper,PMID:30130598,graph_status:R75 | master_list:R75 | report:line 116,gyaSOUSivM,voriconazole use,basal cell carcinoma,relative_risk_ratio,0.84,0.41,1.71,,yes_same_id
+unused_finding_on_cited_paper,PMID:31397862,graph_status:R79 | master_list:R79 | report:line 114,HJUVSLgYSN,Extreme heat events (EHEs),risk of hospital admission among patients with end-stage renal disease (ESRD),relative_risk_ratio,1.15,1.0,1.31,,no
+unused_finding_on_cited_paper,PMID:31397862,graph_status:R79 | master_list:R79 | report:line 114,4LoksJWOMv,Extreme heat events (EHEs),risk of mortality among patients with end-stage renal disease (ESRD),relative_risk_ratio,1.45,1.04,2.02,,yes_same_id
+unused_finding_on_cited_paper,PMID:31397862,graph_status:R79 | master_list:R79 | report:line 114,qenoW3WBRj,Extreme heat events (EHEs),risk of mortality among patients with end-stage renal disease living with diabetes,relative_risk_ratio,1.83,1.51,2.21,,no
+unused_finding_on_cited_paper,PMID:31397862,graph_status:R79 | master_list:R79 | report:line 114,JiOXd6o0XH,Extreme heat events (EHEs),risk of mortality among patients with end-stage renal disease living with chronic obstructive pulmonary disease,relative_risk_ratio,1.6,1.24,2.06,,yes_same_id
+unused_finding_on_cited_paper,PMID:31397862,graph_status:R79 | master_list:R79 | report:line 114,ksY7IPbn_V,Extreme heat events (EHEs),risk of mortality among patients with end-stage renal disease living with congestive heart failure,relative_risk_ratio,1.55,1.27,1.89,,yes_same_id
+unused_finding_on_cited_paper,PMID:35977265,graph_status:R67 | master_list:R67 | report:line 105 | report:line 91,NUjDsUa43S,power loss from Hurricane Irma,mortality within 30 days (among all affected NH residents),odds_ratio,1.12,1.02,1.23,,no
+unused_finding_on_cited_paper,PMID:35977265,graph_status:R67 | master_list:R67 | report:line 105 | report:line 91,Okd1hB-RoC,power loss from Hurricane Irma,hospitalization (among residents aged 65 to 74 years),odds_ratio,1.16,1.03,1.33,,no
+unused_finding_on_cited_paper,PMID:39585835,master_list:R37 | report:line 48,c-3kVRrdtB,risk factors for the primary endpoint,primary endpoint (among patients diagnosed with HF and diabetes mellitus),hazard_ratio,1.78,1.29,2.45,0.001,no
+unused_finding_on_cited_paper,PMID:39585835,master_list:R37 | report:line 48,JHfFwZt_bW,cases with three or more risk factors for discontinuing SGLT2 inhibitors in diabetic patients with heart failure,cases with no risk factor,adjusted_hazard_ratio,3.04,2.83,3.28,0.001,yes_same_id
+unused_finding_on_cited_paper,PMID:39585835,master_list:R37 | report:line 48,nIdxTjRcGt,risk factors for the primary endpoint,primary endpoint (among patients diagnosed with HF and diabetes mellitus),hazard_ratio,1.45,1.36,1.54,0.001,no
+unused_finding_on_cited_paper,PMID:39585835,master_list:R37 | report:line 48,v2CNKY5QwO,risk factors for the primary endpoint,primary endpoint (of ___ for SGLT2i-related hospitalizations among patients with heart failure and diabetes mellitus),hazard_ratio,1.17,1.09,1.26,0.001,no
+unused_finding_on_cited_paper,PMID:39585835,master_list:R37 | report:line 48,chUs6wp-az,risk factors for the primary endpoint,primary endpoint (of diabetic patients with heart failure),hazard_ratio,1.45,1.22,1.74,0.001,no
+unused_finding_on_cited_paper,PMID:39648665,master_list:R07 | master_list:R17 | report:line 18 | report:line 73,eYnBO3dhSh,heatwave,heat-related illness,incident_rate_ratio,1.54,1.46,1.64,0.33,no
+unused_finding_on_cited_paper,PMID:7000239,master_list:R44 | report:line 36 | report:line 47,UnATuQjaBE,rate of insulin absorption,fall in blood glucose values,pearson_r,0.3,,,0.01,no
+system_link_not_in_master_list,,,,SGLT2 inhibitors,aki,32 studies; ratio up 6 / down 31,,,,,
+system_link_not_in_master_list,,,,Loop diuretics,aki,31 studies; ratio up 27 / down 4,,,,,
+system_link_not_in_master_list,,,,ACE inhibitors / ARBs,bp_hypotension,24 studies; ratio up 13 / down 4,,,,,
+system_link_not_in_master_list,,,,Beta blockers,bp_hypotension,14 studies; ratio up 10 / down 2,,,,,
+system_link_not_in_master_list,,,,Metformin,aki,11 studies; ratio up 4 / down 8,,,,,
+system_link_not_in_master_list,,,,Fentanyl / opioid patches,bp_hypotension,11 studies; ratio up 6 / down 1,,,,,
+system_link_not_in_master_list,,,,SSRIs,bp_hypotension,11 studies; ratio up 9 / down 2,,,,,
+system_link_not_in_master_list,,,,Loop diuretics,hyponatremia,10 studies; ratio up 6 / down 2,,,,,
+system_link_not_in_master_list,,,,Antipsychotics (incl. clozapine),bp_hypotension,10 studies; ratio up 7 / down 1,,,,,
+system_link_not_in_master_list,,,,Insulin (incl. pumps),aki,8 studies; ratio up 7 / down 1,,,,,
+system_link_not_in_master_list,,,,Beta blockers,aki,8 studies; ratio up 3 / down 1,,,,,
+system_link_not_in_master_list,,,,Fentanyl / opioid patches,aki,8 studies; ratio up 7 / down 0,,,,,
+system_link_not_in_master_list,,,,ACE inhibitors / ARBs,hyponatremia,8 studies; ratio up 4 / down 0,,,,,
+system_link_not_in_master_list,,,,Antipsychotics (incl. clozapine),hyponatremia,6 studies; ratio up 10 / down 3,,,,,
+system_link_not_in_master_list,,,,Loop diuretics,bp_hypotension,5 studies; ratio up 2 / down 1,,,,,

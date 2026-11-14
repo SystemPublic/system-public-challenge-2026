@@ -1,0 +1,21 @@
+{
+ "records": 5995,
+ "by_rule": {
+  "to LLM screening": 2773,
+  "P4 none of the 15 drugs (or inhaler/glucose strip) named": 1098,
+  "P1 no abstract": 640,
+  "P3 materials/chemistry": 558,
+  "P2 animal-only MeSH": 472,
+  "P6 NMS/serotonin syndrome/MH, no environmental heat": 367,
+  "P5 no heat/temperature term": 87
+ },
+ "by_group_decision": {
+  "drug_x_heat|exclude": 1525,
+  "drug_x_heat|screen": 1635,
+  "storage|exclude": 1697,
+  "storage|screen": 1138
+ },
+ "to_screen": 2773,
+ "chunks": 24,
+ "chunk_size": 120
+}

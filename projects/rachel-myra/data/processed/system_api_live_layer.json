@@ -1,0 +1,820 @@
+{
+ "generated": "2026-11-14",
+ "base_url": "https://public-api.system.com/v1",
+ "auth": "header x-api-key (server-side only; never ship the key to the browser - proxy through an API route)",
+ "rate_limit": "10,000 requests/day per key; cache responses (e.g. 24 h) and refresh counts only",
+ "calls": [
+  {
+   "name": "count_and_newest",
+   "purpose": "relationship count + newest-evidence date for a drug card (1 call)",
+   "request": "GET /concepts/{concept_id}/relationships?limit=1&include_total=true&sort=last_published_date:desc",
+   "use_fields": [
+    "total",
+    "data[0].last_published_date"
+   ]
+  },
+  {
+   "name": "top_edges",
+   "purpose": "strongest edges for the card",
+   "request": "GET /concepts/{concept_id}/relationships?limit=5&sort=num_studies:desc",
+   "use_fields": [
+    "data[].relationship_id",
+    "data[].num_studies",
+    "data[].num_findings",
+    "data[].last_published_date",
+    "data[].source_concept.wikidata_label",
+    "data[].target_concept.wikidata_label"
+   ]
+  },
+  {
+   "name": "single_edge",
+   "purpose": "refresh one claim's edge (e.g. thiazide -> hyponatremia)",
+   "request": "GET /relationships/{A}%7C{B}",
+   "use_fields": [
+    "num_studies",
+    "num_findings",
+    "last_published_date",
+    "last_updated"
+   ]
+  },
+  {
+   "name": "concept_search",
+   "purpose": "resolve concept ids at BUILD time, not live",
+   "request": "GET /concepts?search=wikidata_label:{label}&limit=10",
+   "use_fields": [
+    "data[].system_id",
+    "data[].wikidata_label"
+   ]
+  }
+ ],
+ "latency_uncached": {
+  "concept_search": {
+   "n": 15,
+   "median_ms": 827,
+   "p90_ms": 851,
+   "max_ms": 944
+  },
+  "count_and_newest": {
+   "n": 15,
+   "median_ms": 814,
+   "p90_ms": 892,
+   "max_ms": 1020
+  },
+  "top_edges": {
+   "n": 15,
+   "median_ms": 998,
+   "p90_ms": 1043,
+   "max_ms": 1152
+  },
+  "single_edge": {
+   "n": 15,
+   "median_ms": 393,
+   "p90_ms": 413,
+   "max_ms": 591
+  }
+ },
+ "drugs": {
+  "lithium": {
+   "label": "Lithium",
+   "anchor": {
+    "system_id": "Try6QSLoWy",
+    "wikidata_label": "lithium carbonate",
+    "wikidata_id": "Q410174"
+   },
+   "total_relationships": 7,
+   "newest_evidence_date": "2022-09-01T00:00:00",
+   "newest_evidence_year": "2022",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "Try6QSLoWy|r_YtDNvf-E",
+     "other": "tardive dyskinesia",
+     "num_studies": 1,
+     "num_findings": 1,
+     "last_published_date": "1986-04-01T00:00:00"
+    },
+    {
+     "relationship_id": "Try6QSLoWy|f745jzjRmS",
+     "other": "suicidal ideation",
+     "num_studies": 1,
+     "num_findings": 1,
+     "last_published_date": "2022-09-01T00:00:00"
+    },
+    {
+     "relationship_id": "Try6QSLoWy|ioB3UJ8IJL",
+     "other": "hostility",
+     "num_studies": 1,
+     "num_findings": 1,
+     "last_published_date": "2022-09-01T00:00:00"
+    },
+    {
+     "relationship_id": "Try6QSLoWy|HlOsAtlSea",
+     "other": "depressive disorder",
+     "num_studies": 1,
+     "num_findings": 1,
+     "last_published_date": "1995-07-01T00:00:00"
+    },
+    {
+     "relationship_id": "Try6QSLoWy|GNCkDGlDyr",
+     "other": "sweat",
+     "num_studies": 1,
+     "num_findings": 1,
+     "last_published_date": "1990-01-01T00:00:00"
+    }
+   ]
+  },
+  "loop_diuretics": {
+   "label": "Loop diuretics",
+   "anchor": {
+    "system_id": "HacH3Zcl3_",
+    "wikidata_label": "furosemide",
+    "wikidata_id": "Q388801"
+   },
+   "total_relationships": 171,
+   "newest_evidence_date": "2025-12-01T00:00:00",
+   "newest_evidence_year": "2025",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "HacH3Zcl3_|QPxlNKv3zV",
+     "other": "mortality rate",
+     "num_studies": 19,
+     "num_findings": 24,
+     "last_published_date": "2024-02-01T00:00:00"
+    },
+    {
+     "relationship_id": "HacH3Zcl3_|dwy4MR0rcR",
+     "other": "acute kidney injury",
+     "num_studies": 18,
+     "num_findings": 18,
+     "last_published_date": "2024-01-01T00:00:00"
+    },
+    {
+     "relationship_id": "HacH3Zcl3_|hmt_IvCBx6",
+     "other": "aldosterone",
+     "num_studies": 7,
+     "num_findings": 9,
+     "last_published_date": "2004-04-06T00:00:00"
+    },
+    {
+     "relationship_id": "HacH3Zcl3_|mE9tnEcGn3",
+     "other": "glomerular filtration rate",
+     "num_studies": 7,
+     "num_findings": 8,
+     "last_published_date": "2008-03-01T00:00:00"
+    },
+    {
+     "relationship_id": "HacH3Zcl3_|of1GEB2i2t",
+     "other": "heart failure",
+     "num_studies": 7,
+     "num_findings": 12,
+     "last_published_date": "2023-11-01T00:00:00"
+    }
+   ]
+  },
+  "thiazides": {
+   "label": "Thiazides",
+   "anchor": {
+    "system_id": "eK6Lv3iVM8",
+    "wikidata_label": "hydrochlorothiazide",
+    "wikidata_id": "Q423930"
+   },
+   "total_relationships": 121,
+   "newest_evidence_date": "2025-05-01T00:00:00",
+   "newest_evidence_year": "2025",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "eK6Lv3iVM8|uWNNlnauQq",
+     "other": "blood pressure",
+     "num_studies": 42,
+     "num_findings": 62,
+     "last_published_date": "2022-12-01T00:00:00"
+    },
+    {
+     "relationship_id": "eK6Lv3iVM8|biF-tR58tn",
+     "other": "squamous cell carcinoma",
+     "num_studies": 13,
+     "num_findings": 20,
+     "last_published_date": "2023-04-04T00:00:00"
+    },
+    {
+     "relationship_id": "eK6Lv3iVM8|1G9wgA7BNQ",
+     "other": "potassium",
+     "num_studies": 10,
+     "num_findings": 10,
+     "last_published_date": "2025-05-01T00:00:00"
+    },
+    {
+     "relationship_id": "eK6Lv3iVM8|R9p4ebFH_T",
+     "other": "basal-cell carcinoma",
+     "num_studies": 8,
+     "num_findings": 10,
+     "last_published_date": "2023-06-01T00:00:00"
+    },
+    {
+     "relationship_id": "eK6Lv3iVM8|ERG0HQ59dj",
+     "other": "cholesterol",
+     "num_studies": 5,
+     "num_findings": 7,
+     "last_published_date": "2016-10-04T00:00:00"
+    }
+   ]
+  },
+  "acei_arb": {
+   "label": "ACE inhibitors / ARBs",
+   "anchor": {
+    "system_id": "Kcf5q8gDX9",
+    "wikidata_label": "ACE inhibitor",
+    "wikidata_id": "Q288280"
+   },
+   "total_relationships": 565,
+   "newest_evidence_date": "2026-04-01T00:00:00",
+   "newest_evidence_year": "2026",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "Kcf5q8gDX9|QPxlNKv3zV",
+     "other": "mortality rate",
+     "num_studies": 172,
+     "num_findings": 237,
+     "last_published_date": "2026-04-01T00:00:00"
+    },
+    {
+     "relationship_id": "Kcf5q8gDX9|jt0p0t_A6y",
+     "other": "myocardial infarction",
+     "num_studies": 48,
+     "num_findings": 65,
+     "last_published_date": "2023-10-01T00:00:00"
+    },
+    {
+     "relationship_id": "Kcf5q8gDX9|of1GEB2i2t",
+     "other": "heart failure",
+     "num_studies": 47,
+     "num_findings": 62,
+     "last_published_date": "2024-02-01T00:00:00"
+    },
+    {
+     "relationship_id": "Kcf5q8gDX9|dwy4MR0rcR",
+     "other": "acute kidney injury",
+     "num_studies": 31,
+     "num_findings": 45,
+     "last_published_date": "2024-11-01T00:00:00"
+    },
+    {
+     "relationship_id": "Kcf5q8gDX9|-8dpOP3337",
+     "other": "death",
+     "num_studies": 31,
+     "num_findings": 33,
+     "last_published_date": "2025-06-10T00:00:00"
+    }
+   ]
+  },
+  "sglt2": {
+   "label": "SGLT2 inhibitors",
+   "anchor": {
+    "system_id": "gwk0XVG6M2",
+    "wikidata_label": "empagliflozin",
+    "wikidata_id": "Q5373824"
+   },
+   "total_relationships": 120,
+   "newest_evidence_date": "2026-01-12T00:00:00",
+   "newest_evidence_year": "2026",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "gwk0XVG6M2|of1GEB2i2t",
+     "other": "heart failure",
+     "num_studies": 42,
+     "num_findings": 71,
+     "last_published_date": "2025-01-01T00:00:00"
+    },
+    {
+     "relationship_id": "gwk0XVG6M2|q_H3_5POpo",
+     "other": "glycated hemoglobin",
+     "num_studies": 18,
+     "num_findings": 21,
+     "last_published_date": "2026-01-08T00:00:00"
+    },
+    {
+     "relationship_id": "gwk0XVG6M2|QPxlNKv3zV",
+     "other": "mortality rate",
+     "num_studies": 16,
+     "num_findings": 21,
+     "last_published_date": "2024-04-01T00:00:00"
+    },
+    {
+     "relationship_id": "gwk0XVG6M2|JBuGcElHTV",
+     "other": "HBA1",
+     "num_studies": 15,
+     "num_findings": 16,
+     "last_published_date": "2024-01-01T00:00:00"
+    },
+    {
+     "relationship_id": "gwk0XVG6M2|mE9tnEcGn3",
+     "other": "glomerular filtration rate",
+     "num_studies": 11,
+     "num_findings": 15,
+     "last_published_date": "2024-03-01T00:00:00"
+    }
+   ]
+  },
+  "insulin": {
+   "label": "Insulin (incl. pumps)",
+   "anchor": {
+    "system_id": "2RzIlqCjcm",
+    "wikidata_label": "insulin",
+    "wikidata_id": "Q50265665"
+   },
+   "total_relationships": 1890,
+   "newest_evidence_date": "2026-04-01T00:00:00",
+   "newest_evidence_year": "2026",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "2RzIlqCjcm|SN_7jvyPq1",
+     "other": "glucose",
+     "num_studies": 148,
+     "num_findings": 198,
+     "last_published_date": "2023-12-01T00:00:00"
+    },
+    {
+     "relationship_id": "2RzIlqCjcm|LQvCXhyGLf",
+     "other": "hypoglycemia",
+     "num_studies": 147,
+     "num_findings": 185,
+     "last_published_date": "2025-12-01T00:00:00"
+    },
+    {
+     "relationship_id": "2RzIlqCjcm|YesxPOHDXm",
+     "other": "blood glucose",
+     "num_studies": 144,
+     "num_findings": 165,
+     "last_published_date": "2025-08-01T00:00:00"
+    },
+    {
+     "relationship_id": "YtQ5lW8obL|2RzIlqCjcm",
+     "other": "body mass index",
+     "num_studies": 128,
+     "num_findings": 165,
+     "last_published_date": "2024-01-01T00:00:00"
+    },
+    {
+     "relationship_id": "HcQQTk7lnw|2RzIlqCjcm",
+     "other": "leptin",
+     "num_studies": 117,
+     "num_findings": 158,
+     "last_published_date": "2023-01-01T00:00:00"
+    }
+   ]
+  },
+  "metformin": {
+   "label": "Metformin",
+   "anchor": {
+    "system_id": "lql492pWuk",
+    "wikidata_label": "metformin",
+    "wikidata_id": "Q19484"
+   },
+   "total_relationships": 573,
+   "newest_evidence_date": "2026-02-01T00:00:00",
+   "newest_evidence_year": "2026",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "lql492pWuk|QPxlNKv3zV",
+     "other": "mortality rate",
+     "num_studies": 133,
+     "num_findings": 208,
+     "last_published_date": "2025-07-01T00:00:00"
+    },
+    {
+     "relationship_id": "lql492pWuk|bxy3dykVii",
+     "other": "survival rate",
+     "num_studies": 121,
+     "num_findings": 171,
+     "last_published_date": "2025-01-22T00:00:00"
+    },
+    {
+     "relationship_id": "lql492pWuk|2RzIlqCjcm",
+     "other": "insulin",
+     "num_studies": 48,
+     "num_findings": 55,
+     "last_published_date": "2024-03-01T00:00:00"
+    },
+    {
+     "relationship_id": "lql492pWuk|YesxPOHDXm",
+     "other": "blood glucose",
+     "num_studies": 48,
+     "num_findings": 56,
+     "last_published_date": "2025-09-10T00:00:00"
+    },
+    {
+     "relationship_id": "lql492pWuk|RHdQ3aA1H9",
+     "other": "colorectal cancer",
+     "num_studies": 45,
+     "num_findings": 83,
+     "last_published_date": "2025-01-07T00:00:00"
+    }
+   ]
+  },
+  "anticholinergics": {
+   "label": "Anticholinergics (oxybutynin)",
+   "anchor": {
+    "system_id": "syRWr6L9uu",
+    "wikidata_label": "anticholinergic",
+    "wikidata_id": "Q113259"
+   },
+   "total_relationships": 163,
+   "newest_evidence_date": "2025-10-29T00:00:00",
+   "newest_evidence_year": "2025",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "syRWr6L9uu|g4giO_RrZB",
+     "other": "dementia",
+     "num_studies": 26,
+     "num_findings": 46,
+     "last_published_date": "2025-01-01T00:00:00"
+    },
+    {
+     "relationship_id": "syRWr6L9uu|nW6f4lFYH0",
+     "other": "delirium",
+     "num_studies": 23,
+     "num_findings": 33,
+     "last_published_date": "2024-09-28T00:00:00"
+    },
+    {
+     "relationship_id": "syRWr6L9uu|QPxlNKv3zV",
+     "other": "mortality rate",
+     "num_studies": 19,
+     "num_findings": 36,
+     "last_published_date": "2023-10-01T00:00:00"
+    },
+    {
+     "relationship_id": "syRWr6L9uu|yvzAi6nThy",
+     "other": "cognitive dysfunction",
+     "num_studies": 16,
+     "num_findings": 29,
+     "last_published_date": "2025-02-01T00:00:00"
+    },
+    {
+     "relationship_id": "syRWr6L9uu|2Uj74diYJP",
+     "other": "frailty syndrome",
+     "num_studies": 9,
+     "num_findings": 14,
+     "last_published_date": "2025-04-01T00:00:00"
+    }
+   ]
+  },
+  "antipsychotics": {
+   "label": "Antipsychotics (incl. clozapine)",
+   "anchor": {
+    "system_id": "BiMpw9Ovf9",
+    "wikidata_label": "clozapine",
+    "wikidata_id": "Q221361"
+   },
+   "total_relationships": 189,
+   "newest_evidence_date": "2025-10-15T00:00:00",
+   "newest_evidence_year": "2025",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "BiMpw9Ovf9|ujlY6wVzB0",
+     "other": "antipsychotics",
+     "num_studies": 10,
+     "num_findings": 11,
+     "last_published_date": "2025-04-11T00:00:00"
+    },
+    {
+     "relationship_id": "BiMpw9Ovf9|TLeQZQ_leT",
+     "other": "suicide",
+     "num_studies": 10,
+     "num_findings": 17,
+     "last_published_date": "2023-04-01T00:00:00"
+    },
+    {
+     "relationship_id": "BiMpw9Ovf9|DQbECFISI6",
+     "other": "diabetes",
+     "num_studies": 7,
+     "num_findings": 9,
+     "last_published_date": "2022-08-01T00:00:00"
+    },
+    {
+     "relationship_id": "NI8J66klok|BiMpw9Ovf9",
+     "other": "smoking",
+     "num_studies": 6,
+     "num_findings": 7,
+     "last_published_date": "2022-01-01T00:00:00"
+    },
+    {
+     "relationship_id": "BiMpw9Ovf9|QPxlNKv3zV",
+     "other": "mortality rate",
+     "num_studies": 6,
+     "num_findings": 8,
+     "last_published_date": "2022-06-01T00:00:00"
+    }
+   ]
+  },
+  "ssris": {
+   "label": "SSRIs",
+   "anchor": {
+    "system_id": "DWzSiBDXty",
+    "wikidata_label": "selective serotonin reuptake inhibitor",
+    "wikidata_id": "Q334477"
+   },
+   "total_relationships": 321,
+   "newest_evidence_date": "2025-09-01T00:00:00",
+   "newest_evidence_year": "2025",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "DWzSiBDXty|QPxlNKv3zV",
+     "other": "mortality rate",
+     "num_studies": 17,
+     "num_findings": 21,
+     "last_published_date": "2023-08-01T00:00:00"
+    },
+    {
+     "relationship_id": "DWzSiBDXty|TLeQZQ_leT",
+     "other": "suicide",
+     "num_studies": 15,
+     "num_findings": 22,
+     "last_published_date": "2017-07-01T00:00:00"
+    },
+    {
+     "relationship_id": "DWzSiBDXty|vsSdYqnwOM",
+     "other": "hip fracture",
+     "num_studies": 15,
+     "num_findings": 37,
+     "last_published_date": "2021-10-17T00:00:00"
+    },
+    {
+     "relationship_id": "DWzSiBDXty|ioPgKUy6Hf",
+     "other": "bone fracture",
+     "num_studies": 13,
+     "num_findings": 19,
+     "last_published_date": "2025-08-04T00:00:00"
+    },
+    {
+     "relationship_id": "DWzSiBDXty|XW9F7OPopQ",
+     "other": "stroke",
+     "num_studies": 9,
+     "num_findings": 11,
+     "last_published_date": "2019-07-01T00:00:00"
+    }
+   ]
+  },
+  "topiramate_zonisamide": {
+   "label": "Topiramate / zonisamide",
+   "anchor": {
+    "system_id": "a9WeQM3szB",
+    "wikidata_label": "topiramate",
+    "wikidata_id": "Q221174"
+   },
+   "total_relationships": 76,
+   "newest_evidence_date": "2025-10-06T00:00:00",
+   "newest_evidence_year": "2025",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "a9WeQM3szB|rQi81-BQ33",
+     "other": "migraine",
+     "num_studies": 20,
+     "num_findings": 28,
+     "last_published_date": "2024-09-01T00:00:00"
+    },
+    {
+     "relationship_id": "a9WeQM3szB|4yad7yuLvv",
+     "other": "Seizure",
+     "num_studies": 11,
+     "num_findings": 14,
+     "last_published_date": "2021-04-07T00:00:00"
+    },
+    {
+     "relationship_id": "a9WeQM3szB|K1H8CuPrjx",
+     "other": "headache",
+     "num_studies": 9,
+     "num_findings": 12,
+     "last_published_date": "2024-12-01T00:00:00"
+    },
+    {
+     "relationship_id": "a9WeQM3szB|JhV3DA0hY4",
+     "other": "weight loss",
+     "num_studies": 8,
+     "num_findings": 8,
+     "last_published_date": "2023-09-01T00:00:00"
+    },
+    {
+     "relationship_id": "a9WeQM3szB|YtQ5lW8obL",
+     "other": "body mass index",
+     "num_studies": 7,
+     "num_findings": 8,
+     "last_published_date": "2024-07-16T00:00:00"
+    }
+   ]
+  },
+  "adhd_stimulants": {
+   "label": "ADHD stimulants",
+   "anchor": {
+    "system_id": "dHeZGEao6O",
+    "wikidata_label": "methylphenidate",
+    "wikidata_id": "Q422112"
+   },
+   "total_relationships": 108,
+   "newest_evidence_date": "2024-05-01T00:00:00",
+   "newest_evidence_year": "2024",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "dHeZGEao6O|p2qlTRlHO1",
+     "other": "attention deficit hyperactivity disorder",
+     "num_studies": 7,
+     "num_findings": 9,
+     "last_published_date": "2024-05-01T00:00:00"
+    },
+    {
+     "relationship_id": "dHeZGEao6O|hItXxNKHYl",
+     "other": "fatigue",
+     "num_studies": 6,
+     "num_findings": 9,
+     "last_published_date": "2021-10-01T00:00:00"
+    },
+    {
+     "relationship_id": "dHeZGEao6O|aoAvqIgvlF",
+     "other": "psychotic disorder",
+     "num_studies": 5,
+     "num_findings": 8,
+     "last_published_date": "2022-10-11T00:00:00"
+    },
+    {
+     "relationship_id": "dHeZGEao6O|OYTBGZIklo",
+     "other": "stress fracture",
+     "num_studies": 4,
+     "num_findings": 7,
+     "last_published_date": "2020-11-01T00:00:00"
+    },
+    {
+     "relationship_id": "dHeZGEao6O|3vK952W1Jo",
+     "other": "human height",
+     "num_studies": 4,
+     "num_findings": 5,
+     "last_published_date": "2023-08-17T00:00:00"
+    }
+   ]
+  },
+  "beta_blockers": {
+   "label": "Beta blockers",
+   "anchor": {
+    "system_id": "DVPdh9276g",
+    "wikidata_label": "beta blocker",
+    "wikidata_id": "Q816759"
+   },
+   "total_relationships": 411,
+   "newest_evidence_date": "2026-03-01T00:00:00",
+   "newest_evidence_year": "2026",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "DVPdh9276g|QPxlNKv3zV",
+     "other": "mortality rate",
+     "num_studies": 144,
+     "num_findings": 210,
+     "last_published_date": "2025-12-01T00:00:00"
+    },
+    {
+     "relationship_id": "DVPdh9276g|of1GEB2i2t",
+     "other": "heart failure",
+     "num_studies": 42,
+     "num_findings": 54,
+     "last_published_date": "2025-07-01T00:00:00"
+    },
+    {
+     "relationship_id": "DVPdh9276g|OmSPyYqNuD",
+     "other": "heart rate",
+     "num_studies": 28,
+     "num_findings": 31,
+     "last_published_date": "2023-02-10T00:00:00"
+    },
+    {
+     "relationship_id": "DVPdh9276g|-8dpOP3337",
+     "other": "death",
+     "num_studies": 25,
+     "num_findings": 28,
+     "last_published_date": "2023-11-01T00:00:00"
+    },
+    {
+     "relationship_id": "DVPdh9276g|rVm1ws54Ko",
+     "other": "atrial fibrillation",
+     "num_studies": 24,
+     "num_findings": 26,
+     "last_published_date": "2023-12-01T00:00:00"
+    }
+   ]
+  },
+  "opioids_fentanyl": {
+   "label": "Fentanyl / opioid patches",
+   "anchor": {
+    "system_id": "FXpRF2f4Ae",
+    "wikidata_label": "fentanyl",
+    "wikidata_id": "Q407541"
+   },
+   "total_relationships": 269,
+   "newest_evidence_date": "2025-09-22T00:00:00",
+   "newest_evidence_year": "2025",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "-BjTCsPhEz|FXpRF2f4Ae",
+     "other": "dexmedetomidine",
+     "num_studies": 17,
+     "num_findings": 17,
+     "last_published_date": "2024-12-01T00:00:00"
+    },
+    {
+     "relationship_id": "FXpRF2f4Ae|ZLUL3UNrD1",
+     "other": "analgesia",
+     "num_studies": 17,
+     "num_findings": 19,
+     "last_published_date": "2022-05-01T00:00:00"
+    },
+    {
+     "relationship_id": "FXpRF2f4Ae|Zp8VOoRviz",
+     "other": "pain assessment",
+     "num_studies": 10,
+     "num_findings": 11,
+     "last_published_date": "2023-08-01T00:00:00"
+    },
+    {
+     "relationship_id": "FXpRF2f4Ae|2j7uZbS5wF",
+     "other": "pain perception",
+     "num_studies": 8,
+     "num_findings": 12,
+     "last_published_date": "2022-01-01T00:00:00"
+    },
+    {
+     "relationship_id": "FXpRF2f4Ae|m4eAsiRDXQ",
+     "other": "hypotension",
+     "num_studies": 7,
+     "num_findings": 10,
+     "last_published_date": "2024-05-24T00:00:00"
+    }
+   ]
+  },
+  "epinephrine_ai": {
+   "label": "Epinephrine auto-injectors",
+   "anchor": {
+    "system_id": "ZWEsrcE_nV",
+    "wikidata_label": "epinephrine",
+    "wikidata_id": "Q132621"
+   },
+   "total_relationships": 398,
+   "newest_evidence_date": "2026-01-01T00:00:00",
+   "newest_evidence_year": "2026",
+   "fields_param_honoured": false,
+   "top_edges_by_studies": [
+    {
+     "relationship_id": "ZWEsrcE_nV|vUwiaNEBVo",
+     "other": "survival skill",
+     "num_studies": 29,
+     "num_findings": 33,
+     "last_published_date": "2026-01-01T00:00:00"
+    },
+    {
+     "relationship_id": "ZWEsrcE_nV|dfN8_ZKXwi",
+     "other": "return of spontaneous circulation",
+     "num_studies": 28,
+     "num_findings": 35,
+     "last_published_date": "2025-10-13T00:00:00"
+    },
+    {
+     "relationship_id": "ZWEsrcE_nV|fEPvZSrVRx",
+     "other": "cardiac arrest",
+     "num_studies": 16,
+     "num_findings": 20,
+     "last_published_date": "2023-12-01T00:00:00"
+    },
+    {
+     "relationship_id": "LQvCXhyGLf|ZWEsrcE_nV",
+     "other": "hypoglycemia",
+     "num_studies": 15,
+     "num_findings": 16,
+     "last_published_date": "2023-10-01T00:00:00"
+    },
+    {
+     "relationship_id": "ZWEsrcE_nV|SN_7jvyPq1",
+     "other": "glucose",
+     "num_studies": 15,
+     "num_findings": 19,
+     "last_published_date": "2010-09-01T00:00:00"
+    }
+   ]
+  }
+ },
+ "requests_this_script": 78,
+ "caveats": [
+  "closed beta: fields may change",
+  "last_published_date is often null on relationships",
+  "relationship counts include all concepts linked to the drug, not only heat-relevant ones",
+  "about 20% of API associations are extraction errors (System); live layer shows counts only, claims come from the verified knowledge base"
+ ]
+}

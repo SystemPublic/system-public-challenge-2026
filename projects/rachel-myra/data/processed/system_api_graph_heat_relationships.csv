@@ -1,0 +1,67 @@
+drug_group,outcome_group,heat_concept,drug_concept,relationship,num_findings,num_studies,last_published_date,relationship_id
+ACEi/ARB,acute kidney injury,acute kidney injury,ACE inhibitor,ACE inhibitor -> acute kidney injury,45,31,2024-11-01T00:00:00,Kcf5q8gDX9|dwy4MR0rcR
+ACEi/ARB,acute kidney injury,acute kidney injury,angiotensin receptor antagonists,angiotensin receptor antagonists -> acute kidney injury,20,11,2024-09-01T00:00:00,mfsRYR2_AI|dwy4MR0rcR
+ACEi/ARB,acute kidney injury,acute kidney injury,ACE inhibitor,acute kidney injury -> ACE inhibitor,2,2,2023-05-01T00:00:00,dwy4MR0rcR|Kcf5q8gDX9
+ACEi/ARB,acute kidney injury,acute kidney injury,angiotensin receptor antagonists,acute kidney injury -> angiotensin receptor antagonists,1,1,2013-12-01T00:00:00,dwy4MR0rcR|mfsRYR2_AI
+ACEi/ARB,dehydration/volume,dehydration,ACE inhibitor,ACE inhibitor -> dehydration,1,1,2018-03-01T00:00:00,Kcf5q8gDX9|ewCh_VoJr4
+ACEi/ARB,heat illness/stroke,hot,ACE inhibitor,ACE inhibitor -> hot,1,1,2004-07-01T00:00:00,Kcf5q8gDX9|dINFs04idR
+ACEi/ARB,hyponatremia,hyponatremia,ACE inhibitor,ACE inhibitor -> hyponatremia,1,1,2020-10-01T00:00:00,Kcf5q8gDX9|GiyIgG3cvi
+NSAIDs,acute kidney injury,acute kidney injury,non-steroidal anti-inflammatory drug,non-steroidal anti-inflammatory drug -> acute kidney injury,41,29,2025-12-01T00:00:00,nceJeKpSLI|dwy4MR0rcR
+NSAIDs,acute kidney injury,acute kidney injury,ibuprofen,ibuprofen -> acute kidney injury,17,8,2024-12-01T00:00:00,mgRDS5mimT|dwy4MR0rcR
+NSAIDs,acute kidney injury,acute kidney injury,naproxen,naproxen -> acute kidney injury,2,2,2009-10-01T00:00:00,rL28dXGhRi|dwy4MR0rcR
+NSAIDs,hyponatremia,hyponatremia,non-steroidal anti-inflammatory drug,non-steroidal anti-inflammatory drug -> hyponatremia,1,1,2019-01-01T00:00:00,nceJeKpSLI|GiyIgG3cvi
+SGLT2 inhibitors,acute kidney injury,acute kidney injury,gliflozins,gliflozins -> acute kidney injury,50,32,2025-10-24T00:00:00,hhvMEgyj98|dwy4MR0rcR
+SGLT2 inhibitors,acute kidney injury,acute kidney injury,empagliflozin,empagliflozin -> acute kidney injury,7,6,2024-04-01T00:00:00,gwk0XVG6M2|dwy4MR0rcR
+SGLT2 inhibitors,acute kidney injury,acute kidney injury,canagliflozin,canagliflozin -> acute kidney injury,3,2,2024-10-15T00:00:00,BCkbAENZTS|dwy4MR0rcR
+SGLT2 inhibitors,dehydration/volume,dehydration,gliflozins,gliflozins -> dehydration,1,1,2023-01-24T00:00:00,hhvMEgyj98|ewCh_VoJr4
+SGLT2 inhibitors,dehydration/volume,hypovolemia,gliflozins,gliflozins -> hypovolemia,1,1,2023-02-24T00:00:00,hhvMEgyj98|rlOKG-Onc6
+anticholinergics,hyponatremia,hyponatremia,anticholinergic toxidrome,anticholinergic toxidrome -> hyponatremia,1,1,2011-10-01T00:00:00,A9HjVmhApk|GiyIgG3cvi
+antidepressants/SSRIs,hyponatremia,hyponatremia,fluoxetine,fluoxetine -> hyponatremia,3,2,2023-03-01T00:00:00,OPlwMIioCF|GiyIgG3cvi
+antidepressants/SSRIs,hyponatremia,hyponatremia,(RS)-citalopram,(RS)-citalopram -> hyponatremia,2,2,2018-01-01T00:00:00,uH0rXBHt_r|GiyIgG3cvi
+antidepressants/SSRIs,hyponatremia,hyponatremia,antidepressant,antidepressant -> hyponatremia,1,1,2011-08-01T00:00:00,4tK_Z18ObT|GiyIgG3cvi
+antidepressants/SSRIs,hyponatremia,hyponatremia,tricyclic antidepressant,tricyclic antidepressant -> hyponatremia,2,1,2018-01-01T00:00:00,XpRyYAtXCw|GiyIgG3cvi
+antidepressants/SSRIs,hyponatremia,hyponatremia,sertraline,sertraline -> hyponatremia,1,1,2018-01-01T00:00:00,Lb0C2H7U6X|GiyIgG3cvi
+antidepressants/SSRIs,hyponatremia,hyponatremia,antidepressant,hyponatremia -> antidepressant,1,1,2013-12-01T00:00:00,GiyIgG3cvi|4tK_Z18ObT
+antidepressants/SSRIs,sweating,hyperhidrosis,antidepressant,antidepressant -> hyperhidrosis,1,1,2017-12-01T00:00:00,4tK_Z18ObT|QwT0YUJizC
+antipsychotics,acute kidney injury,acute kidney injury,antipsychotics,antipsychotics -> acute kidney injury,9,4,2022-08-01T00:00:00,ujlY6wVzB0|dwy4MR0rcR
+antipsychotics,acute kidney injury,acute kidney injury,risperidone,risperidone -> acute kidney injury,3,2,2022-08-01T00:00:00,tEPKKhFBgG|dwy4MR0rcR
+antipsychotics,acute kidney injury,acute kidney injury,olanzapine,olanzapine -> acute kidney injury,3,2,2022-08-01T00:00:00,xTCyfzs2ZT|dwy4MR0rcR
+antipsychotics,acute kidney injury,acute kidney injury,quetiapine,quetiapine -> acute kidney injury,1,1,2017-04-01T00:00:00,vHOH3XFLDI|dwy4MR0rcR
+antipsychotics,acute kidney injury,acute kidney injury,quetiapine fumarate,quetiapine fumarate -> acute kidney injury,2,1,2022-08-01T00:00:00,gtg5bHnBPz|dwy4MR0rcR
+antipsychotics,acute kidney injury,acute kidney injury,aripiprazole,aripiprazole -> acute kidney injury,1,1,2017-04-01T00:00:00,m01ZxbXWsB|dwy4MR0rcR
+antipsychotics,acute kidney injury,acute kidney injury,haloperidol,haloperidol -> acute kidney injury,1,1,2017-04-01T00:00:00,LFVGpCjvUa|dwy4MR0rcR
+antipsychotics,dehydration/volume,dehydration,neuroleptic malignant syndrome,dehydration -> neuroleptic malignant syndrome,1,1,2009-01-01T00:00:00,ewCh_VoJr4|VyHMRoVSur
+antipsychotics,hyponatremia,hyponatremia,antipsychotics,antipsychotics -> hyponatremia,6,5,2021-07-14T00:00:00,ujlY6wVzB0|GiyIgG3cvi
+antipsychotics,hyponatremia,hyponatremia,quetiapine fumarate,quetiapine fumarate -> hyponatremia,1,1,2022-10-01T00:00:00,gtg5bHnBPz|GiyIgG3cvi
+antipsychotics,hyponatremia,hyponatremia,aripiprazole,aripiprazole -> hyponatremia,2,1,2019-02-01T00:00:00,m01ZxbXWsB|GiyIgG3cvi
+antipsychotics,hyponatremia,hyponatremia,risperidone,risperidone -> hyponatremia,2,1,2019-02-01T00:00:00,tEPKKhFBgG|GiyIgG3cvi
+benzodiazepines,hyponatremia,hyponatremia,benzodiazepine,benzodiazepine -> hyponatremia,1,1,2023-12-01T00:00:00,MC-lJ8qrQ3|GiyIgG3cvi
+beta blockers,acute kidney injury,acute kidney injury,beta blocker,beta blocker -> acute kidney injury,5,4,2023-10-01T00:00:00,DVPdh9276g|dwy4MR0rcR
+beta blockers,acute kidney injury,acute kidney injury,beta blocker,acute kidney injury -> beta blocker,1,1,2017-06-01T00:00:00,dwy4MR0rcR|DVPdh9276g
+beta blockers,acute kidney injury,acute kidney injury,propranolol,acute kidney injury -> propranolol,1,1,1985-08-01T00:00:00,dwy4MR0rcR|u3p7wGPvPL
+beta blockers,acute kidney injury,acute kidney injury,propranolol,propranolol -> acute kidney injury,1,1,2022-08-01T00:00:00,u3p7wGPvPL|dwy4MR0rcR
+beta blockers,hyperthermia/body temp,body temperature,(RS)-metoprolol,(RS)-metoprolol -> body temperature,1,1,1988-07-01T00:00:00,7FjcisZbI_|CPu3fKZt34
+diuretics (any),acute kidney injury,acute kidney injury,diuretic,diuretic -> acute kidney injury,40,36,2024-09-05T00:00:00,A6Dsv1dmTR|dwy4MR0rcR
+diuretics (any),acute kidney injury,acute kidney injury,diuretic,acute kidney injury -> diuretic,4,3,2016-01-01T00:00:00,dwy4MR0rcR|A6Dsv1dmTR
+diuretics (any),hyponatremia,hyponatremia,diuretic,diuretic -> hyponatremia,6,3,2023-06-01T00:00:00,A6Dsv1dmTR|GiyIgG3cvi
+diuretics (any),hyponatremia,hyponatremia,diuretic,hyponatremia -> diuretic,2,2,2013-07-31T00:00:00,GiyIgG3cvi|A6Dsv1dmTR
+diuretics (any),hyponatremia,hyponatremia,potassium-sparing diuretic,potassium-sparing diuretic -> hyponatremia,2,2,2016-01-01T00:00:00,0OE1xGhJA8|GiyIgG3cvi
+diuretics (any),hyponatremia,hyponatremia,antidiuretic,antidiuretic -> hyponatremia,1,1,2017-09-01T00:00:00,Iw5Xd3Xj2H|GiyIgG3cvi
+insulin,acute kidney injury,acute kidney injury,insulin,insulin -> acute kidney injury,5,4,2021-06-01T00:00:00,2RzIlqCjcm|dwy4MR0rcR
+insulin,acute kidney injury,acute kidney injury,insulins,insulins -> acute kidney injury,2,2,2022-06-20T00:00:00,wqj_TgiAW1|dwy4MR0rcR
+insulin,acute kidney injury,acute kidney injury,insulins,acute kidney injury -> insulins,1,1,2024-12-10T00:00:00,dwy4MR0rcR|wqj_TgiAW1
+insulin,heat illness/stroke,hot,insulin,hot -> insulin,1,1,2018-09-29T00:00:00,dINFs04idR|2RzIlqCjcm
+insulin,heat illness/stroke,hot,insulin resistance,hot -> insulin resistance,1,1,2019-07-01T00:00:00,dINFs04idR|gei86Kzzi8
+insulin,hyperthermia/body temp,body temperature,insulin,body temperature -> insulin,2,1,2019-05-01T00:00:00,CPu3fKZt34|2RzIlqCjcm
+insulin,hyponatremia,hyponatremia,insulins,insulins -> hyponatremia,4,3,2022-10-01T00:00:00,wqj_TgiAW1|GiyIgG3cvi
+insulin,hyponatremia,hyponatremia,insulins,hyponatremia -> insulins,1,1,2007-03-01T00:00:00,GiyIgG3cvi|wqj_TgiAW1
+lithium,hyponatremia,hyponatremia,lithium,lithium -> hyponatremia,4,1,2021-02-01T00:00:00,p8kiNa0Nw1|GiyIgG3cvi
+loop diuretics,hyponatremia,hyponatremia,furosemide,furosemide -> hyponatremia,3,1,2021-09-01T00:00:00,HacH3Zcl3_|GiyIgG3cvi
+metformin,hyponatremia,hyponatremia,metformin,metformin -> hyponatremia,2,1,2020-03-01T00:00:00,lql492pWuk|GiyIgG3cvi
+sulfonylureas,acute kidney injury,acute kidney injury,sulfonylurea,sulfonylurea -> acute kidney injury,1,1,2021-06-01T00:00:00,_F-5JB7RQu|dwy4MR0rcR
+sulfonylureas,hyponatremia,hyponatremia,sulfonylurea,sulfonylurea -> hyponatremia,2,1,2020-03-01T00:00:00,_F-5JB7RQu|GiyIgG3cvi
+thiazides,acute kidney injury,acute kidney injury,hydrochlorothiazide,hydrochlorothiazide -> acute kidney injury,1,1,2021-08-13T00:00:00,eK6Lv3iVM8|dwy4MR0rcR
+thiazides,acute kidney injury,acute kidney injury,chlorthalidone,chlorthalidone -> acute kidney injury,1,1,2020-04-01T00:00:00,akHzlhGK6Z|dwy4MR0rcR
+thiazides,hyponatremia,hyponatremia,thiazide,thiazide -> hyponatremia,5,5,2024-04-02T00:00:00,RFP3Vz-YwQ|GiyIgG3cvi
+thiazides,hyponatremia,hyponatremia,chlorthalidone,chlorthalidone -> hyponatremia,5,4,2021-09-01T00:00:00,akHzlhGK6Z|GiyIgG3cvi
+thiazides,hyponatremia,hyponatremia,hydrochlorothiazide,hyponatremia -> hydrochlorothiazide,1,1,2024-03-01T00:00:00,GiyIgG3cvi|eK6Lv3iVM8

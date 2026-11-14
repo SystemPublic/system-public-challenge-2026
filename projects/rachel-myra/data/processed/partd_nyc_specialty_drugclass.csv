@@ -1,0 +1,703 @@
+year,prscrbr_type,drug_class,n_prescribers,tot_clms,tot_30day_fills,tot_day_suply,tot_benes_sum,n_rows_benes_suppressed,ge65_tot_clms,small_cell,generics
+2024,Addiction Medicine,ACE inhibitors/ARBs,2,240.0,523.0,15690.0,49.0,4,104.0,True,Amlodipine Besylate/Benazepril; Enalapril Maleate; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide
+2024,Addiction Medicine,SGLT2 inhibitors,2,34.0,60.0,1800.0,0.0,2,0.0,True,Empagliflozin
+2024,Addiction Medicine,SSRIs,2,69.0,87.0,2314.0,0.0,4,0.0,True,Escitalopram Oxalate; Fluoxetine Hcl; Sertraline Hcl
+2024,Addiction Medicine,antipsychotics,1,16.0,16.0,465.0,0.0,1,0.0,True,Quetiapine Fumarate
+2024,Addiction Medicine,beta blockers,2,106.0,234.0,7006.0,14.0,3,59.0,True,Metoprolol Succinate; Metoprolol Tartrate
+2024,Addiction Medicine,insulin,2,38.0,52.9,1533.0,0.0,3,13.0,True,"Insulin Aspart Prot/Insuln Asp; Insulin Glargine,hum.Rec.Anlog"
+2024,Addiction Medicine,loop diuretics,1,11.0,19.0,570.0,0.0,1,11.0,True,Furosemide
+2024,Addiction Medicine,metformin,2,102.0,210.0,6300.0,17.0,2,0.0,True,Metformin Hcl
+2024,Addiction Medicine,thiazides,2,103.0,181.0,5430.0,13.0,2,0.0,True,Hydrochlorothiazide; Losartan/Hydrochlorothiazide
+2024,Advanced Heart Failure and Transplant Cardiology,ACE inhibitors/ARBs,47,6583.0,12628.9,377923.0,1744.0,42,3362.0,False,Amlodipine Besylate/Benazepril; Candesartan Cilexetil; Enalapril Maleate; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Valsartan
+2024,Advanced Heart Failure and Transplant Cardiology,SGLT2 inhibitors,42,4285.0,7671.6,229911.0,1132.0,31,1868.0,False,Dapagliflozin Propanediol; Empagliflozin; Sotagliflozin
+2024,Advanced Heart Failure and Transplant Cardiology,antipsychotics,1,14.0,14.0,285.0,0.0,1,0.0,True,Quetiapine Fumarate
+2024,Advanced Heart Failure and Transplant Cardiology,beta blockers,42,6243.0,14414.7,431525.0,1955.0,29,3668.0,False,Atenolol; Bisoprolol Fumarate; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Sotalol Hcl
+2024,Advanced Heart Failure and Transplant Cardiology,loop diuretics,42,4560.0,9645.9,287277.0,1556.0,25,2515.0,False,Bumetanide; Furosemide; Torsemide
+2024,Advanced Heart Failure and Transplant Cardiology,metformin,2,92.0,182.0,5460.0,16.0,1,53.0,True,Metformin Hcl
+2024,Advanced Heart Failure and Transplant Cardiology,thiazides,6,328.0,813.6,24081.0,88.0,7,265.0,False,Chlorthalidone; Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide
+2024,Allergy/ Immunology,ACE inhibitors/ARBs,9,965.0,2385.5,71528.0,178.0,25,507.0,False,Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Benazepril/Hydrochlorothiazide; Enalapril Maleate; Fosinopril Sodium; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Hydrochlorothiazide; Ramipril; Telmisartan; Valsartan
+2024,Allergy/ Immunology,ADHD stimulants,1,105.0,105.0,3083.0,25.0,0,54.0,True,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Allergy/ Immunology,SGLT2 inhibitors,2,86.0,158.3,4734.0,15.0,1,0.0,True,Empagliflozin
+2024,Allergy/ Immunology,SSRIs,6,203.0,392.8,11739.0,0.0,10,117.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Sertraline Hcl
+2024,Allergy/ Immunology,anticholinergics (bladder/antiparkinson),1,11.0,23.7,710.0,0.0,1,0.0,True,Oxybutynin Chloride
+2024,Allergy/ Immunology,antipsychotics,1,12.0,18.0,540.0,0.0,1,12.0,True,Risperidone
+2024,Allergy/ Immunology,beta blockers,6,376.0,962.3,28807.0,65.0,10,123.0,False,Atenolol; Atenolol/Chlorthalidone; Carvedilol; Metoprolol Succinate; Metoprolol Tartrate
+2024,Allergy/ Immunology,epinephrine auto-injectors,47,1472.0,1534.0,35269.0,909.0,10,383.0,False,Epinephrine
+2024,Allergy/ Immunology,loop diuretics,2,51.0,114.8,3444.0,12.0,1,51.0,True,Furosemide; Torsemide
+2024,Allergy/ Immunology,metformin,6,394.0,1001.3,29984.0,97.0,4,143.0,False,Metformin Hcl
+2024,Allergy/ Immunology,thiazides,8,409.0,859.2,25778.0,42.0,15,321.0,False,Atenolol/Chlorthalidone; Benazepril/Hydrochlorothiazide; Hydrochlorothiazide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide
+2024,Anesthesiology,ACE inhibitors/ARBs,5,85.0,132.7,3939.0,0.0,5,85.0,False,Enalapril Maleate; Lisinopril; Losartan Potassium
+2024,Anesthesiology,ADHD stimulants,2,39.0,39.0,1170.0,0.0,2,39.0,True,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Anesthesiology,SSRIs,3,68.0,68.0,2040.0,0.0,3,21.0,False,Citalopram Hydrobromide; Fluoxetine Hcl; Sertraline Hcl
+2024,Anesthesiology,antipsychotics,3,44.0,44.0,1320.0,0.0,3,29.0,False,Olanzapine; Quetiapine Fumarate
+2024,Anesthesiology,beta blockers,4,81.0,149.3,4465.0,0.0,5,51.0,False,Atenolol; Metoprolol Succinate; Nebivolol Hcl
+2024,Anesthesiology,fentanyl/opioid patches,33,1460.0,1464.5,41902.0,174.0,30,744.0,False,Buprenorphine; Fentanyl
+2024,Anesthesiology,loop diuretics,1,13.0,13.0,390.0,0.0,1,13.0,True,Torsemide
+2024,Anesthesiology,metformin,3,39.0,67.0,1969.0,0.0,3,39.0,False,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Anesthesiology,thiazides,2,26.0,54.5,1635.0,0.0,2,26.0,True,Hydrochlorothiazide
+2024,Anesthesiology,topiramate/zonisamide,8,254.0,342.8,10153.0,41.0,5,56.0,False,Topiramate
+2024,Cardiac Surgery,ACE inhibitors/ARBs,2,1400.0,3708.0,110862.0,324.0,10,955.0,True,Candesartan Cilexetil; Enalapril Maleate; Fosinopril Sodium; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Cardiac Surgery,SGLT2 inhibitors,2,128.0,260.0,7775.0,22.0,1,128.0,True,Empagliflozin
+2024,Cardiac Surgery,SSRIs,2,61.0,163.5,4889.0,0.0,4,61.0,True,Citalopram Hydrobromide; Escitalopram Oxalate; Paroxetine Hcl
+2024,Cardiac Surgery,beta blockers,3,1244.0,3314.1,99031.0,316.0,5,354.0,False,Atenolol; Bisoprolol Fumarate; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nadolol; Nebivolol Hcl; Sotalol Hcl
+2024,Cardiac Surgery,loop diuretics,2,132.0,308.8,8965.0,39.0,1,108.0,True,Furosemide; Torsemide
+2024,Cardiac Surgery,metformin,2,97.0,271.0,8130.0,24.0,1,97.0,True,Metformin Hcl
+2024,Cardiac Surgery,thiazides,2,405.0,1129.6,33774.0,107.0,5,299.0,True,Chlorthalidone; Hydrochlorothiazide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Cardiology,ACE inhibitors/ARBs,747,319054.0,740776.3,22196733.0,83373.0,2393,186149.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Amlodipine/Valsartan/Hcthiazid; Azilsartan Med/Chlorthalidone; Azilsartan Medoxomil; Benazepril Hcl; Benazepril/Hydrochlorothiazide; Candesartan Cilexetil; Candesartan/Hydrochlorothiazid; Captopril; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Fosinopril Sodium; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Perindopril Erbumine; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Amlodipine; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Cardiology,ADHD stimulants,3,73.0,75.0,2207.0,0.0,4,73.0,False,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Cardiology,SGLT2 inhibitors,518,47487.0,86144.6,2579472.0,11027.0,423,25721.0,False,Canagliflozin; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Linagliptin; Empagliflozin/Metformin Hcl; Ertugliflozin Pidolate; Sotagliflozin
+2024,Cardiology,SSRIs,150,9964.0,20181.0,602052.0,1570.0,220,7095.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Cardiology,anticholinergics (bladder/antiparkinson),31,684.0,1071.5,31430.0,23.0,35,558.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate
+2024,Cardiology,antipsychotics,22,901.0,1205.0,35161.0,104.0,26,644.0,False,Brexpiprazole; Cariprazine Hcl; Lurasidone Hcl; Olanzapine; Quetiapine Fumarate; Risperidone; Ziprasidone Hcl
+2024,Cardiology,beta blockers,780,354532.0,818114.0,24478677.0,101448.0,1185,232302.0,False,Acebutolol Hcl; Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Carvedilol Phosphate; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nadolol; Nebivolol Hcl; Propranolol Hcl; Sotalol Hcl
+2024,Cardiology,fentanyl/opioid patches,1,14.0,14.0,403.0,0.0,1,0.0,True,Fentanyl
+2024,Cardiology,insulin,46,2022.0,3368.6,95972.0,134.0,86,1062.0,False,"Insulin Aspart; Insulin Degludec; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine/Lixisenatide; Insulin Glulisine; Insulin Lispro; Insulin Lispro Protamin/Lispro; Insulin Nph Hum/Reg Insulin Hm; Insulin Nph Human Isophane; Insulin Regular, Human"
+2024,Cardiology,loop diuretics,665,83289.0,172835.3,5146065.0,26046.0,375,44390.0,False,Bumetanide; Ethacrynic Acid; Furosemide; Torsemide
+2024,Cardiology,metformin,287,24619.0,57891.8,1733297.0,6149.0,287,14743.0,False,Dapaglifloz Propaned/Metformin; Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Cardiology,thiazides,598,91530.0,218589.9,6549376.0,24421.0,942,51025.0,False,Amiloride/Hydrochlorothiazide; Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Benazepril/Hydrochlorothiazide; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Enalapril/Hydrochlorothiazide; Hydrochlorothiazide; Indapamide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Cardiology,topiramate/zonisamide,5,78.0,121.0,3630.0,0.0,5,65.0,False,Topiramate
+2024,Certified Clinical Nurse Specialist,ACE inhibitors/ARBs,6,289.0,610.5,18261.0,49.0,8,176.0,False,Amlodipine Besylate/Benazepril; Enalapril Maleate; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Sacubitril/Valsartan
+2024,Certified Clinical Nurse Specialist,SGLT2 inhibitors,2,41.0,71.0,2130.0,0.0,3,12.0,True,Dapagliflozin Propanediol; Empagliflozin
+2024,Certified Clinical Nurse Specialist,SSRIs,3,51.0,57.0,1710.0,0.0,4,26.0,False,Escitalopram Oxalate; Fluoxetine Hcl; Sertraline Hcl
+2024,Certified Clinical Nurse Specialist,antipsychotics,2,28.0,28.0,840.0,0.0,2,11.0,True,Olanzapine; Quetiapine Fumarate
+2024,Certified Clinical Nurse Specialist,beta blockers,8,288.0,552.5,16477.0,62.0,12,103.0,False,Atenolol; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Propranolol Hcl
+2024,Certified Clinical Nurse Specialist,insulin,2,25.0,41.0,1209.0,0.0,2,12.0,True,"Insulin Glargine,hum.Rec.Anlog; Insulin Lispro"
+2024,Certified Clinical Nurse Specialist,loop diuretics,7,131.0,184.2,4561.0,43.0,5,76.0,False,Furosemide
+2024,Certified Clinical Nurse Specialist,metformin,2,186.0,416.0,12457.0,58.0,1,127.0,True,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Certified Clinical Nurse Specialist,thiazides,1,86.0,236.8,7080.0,17.0,2,21.0,True,Chlorthalidone; Hydrochlorothiazide; Losartan/Hydrochlorothiazide
+2024,Certified Nurse Midwife,ACE inhibitors/ARBs,1,12.0,12.0,360.0,0.0,1,12.0,True,Irbesartan/Hydrochlorothiazide
+2024,Certified Nurse Midwife,SSRIs,1,11.0,13.0,390.0,0.0,1,0.0,True,Paroxetine Hcl
+2024,Certified Nurse Midwife,thiazides,1,12.0,12.0,360.0,0.0,1,12.0,True,Irbesartan/Hydrochlorothiazide
+2024,Clinic/Center,ACE inhibitors/ARBs,4,313.0,674.8,20089.0,112.0,3,78.0,False,Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan
+2024,Clinic/Center,SGLT2 inhibitors,4,115.0,253.0,7580.0,37.0,2,12.0,False,Empagliflozin
+2024,Clinic/Center,beta blockers,4,130.0,318.0,9525.0,11.0,6,91.0,False,Atenolol; Carvedilol; Metoprolol Succinate; Metoprolol Tartrate
+2024,Clinic/Center,insulin,2,82.0,166.7,4962.0,13.0,2,0.0,True,"Insulin Glargine,hum.Rec.Anlog"
+2024,Clinic/Center,loop diuretics,1,20.0,48.0,1439.0,0.0,1,0.0,True,Furosemide
+2024,Clinic/Center,metformin,3,255.0,555.5,16665.0,93.0,1,16.0,False,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Clinic/Center,thiazides,3,118.0,222.0,6630.0,34.0,2,17.0,False,Hydrochlorothiazide; Losartan/Hydrochlorothiazide
+2024,Clinical Cardiac Electrophysiology,ACE inhibitors/ARBs,24,4316.0,9610.7,287957.0,1054.0,49,1713.0,False,Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Enalapril Maleate; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Clinical Cardiac Electrophysiology,SGLT2 inhibitors,12,1067.0,1649.7,49465.0,235.0,11,342.0,False,Dapagliflozin Propanediol; Empagliflozin; Sotagliflozin
+2024,Clinical Cardiac Electrophysiology,SSRIs,2,113.0,197.6,5898.0,29.0,2,52.0,True,Escitalopram Oxalate; Fluoxetine Hcl; Sertraline Hcl
+2024,Clinical Cardiac Electrophysiology,beta blockers,68,11456.0,25580.8,765508.0,3765.0,52,6298.0,False,Atenolol; Bisoprolol Fumarate; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nadolol; Nebivolol Hcl; Pindolol; Propranolol Hcl; Sotalol Hcl
+2024,Clinical Cardiac Electrophysiology,insulin,1,13.0,20.4,528.0,0.0,1,0.0,True,"Insulin Glargine,hum.Rec.Anlog"
+2024,Clinical Cardiac Electrophysiology,loop diuretics,18,1410.0,2881.5,85060.0,501.0,6,618.0,False,Bumetanide; Furosemide; Torsemide
+2024,Clinical Cardiac Electrophysiology,metformin,4,241.0,514.0,15420.0,50.0,4,70.0,False,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Clinical Cardiac Electrophysiology,thiazides,11,555.0,1330.6,39890.0,88.0,18,348.0,False,Chlorthalidone; Hydrochlorothiazide; Indapamide; Irbesartan/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Critical Care (Intensivists),ACE inhibitors/ARBs,6,2464.0,4021.8,111162.0,361.0,25,1828.0,False,Amlodipine Besylate/Benazepril; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Ramipril; Sacubitril/Valsartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Critical Care (Intensivists),ADHD stimulants,1,20.0,20.0,575.0,0.0,1,20.0,True,Dextroamphetamine/Amphetamine
+2024,Critical Care (Intensivists),SGLT2 inhibitors,4,742.0,810.0,13541.0,68.0,5,450.0,False,Canagliflozin; Dapagliflozin Propanediol; Empagliflozin
+2024,Critical Care (Intensivists),SSRIs,4,1095.0,1361.5,36946.0,170.0,7,823.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Critical Care (Intensivists),anticholinergics (bladder/antiparkinson),2,286.0,312.0,8661.0,26.0,4,192.0,True,Benztropine Mesylate; Oxybutynin Chloride; Trihexyphenidyl Hcl
+2024,Critical Care (Intensivists),antipsychotics,5,1761.0,1795.0,42484.0,123.0,20,1283.0,False,Aripiprazole; Brexpiprazole; Clozapine; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Lurasidone Hcl; Olanzapine; Quetiapine Fumarate; Risperidone; Risperidone Microspheres; Trifluoperazine Hcl; Ziprasidone Hcl
+2024,Critical Care (Intensivists),beta blockers,6,2547.0,3394.0,92088.0,430.0,16,1754.0,False,Atenolol; Bisoprolol Fumarate; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Pindolol; Propranolol Hcl
+2024,Critical Care (Intensivists),epinephrine auto-injectors,3,47.0,47.0,626.0,13.0,2,25.0,False,Epinephrine
+2024,Critical Care (Intensivists),fentanyl/opioid patches,1,13.0,13.0,195.0,0.0,1,13.0,True,Fentanyl
+2024,Critical Care (Intensivists),insulin,5,957.0,996.1,20407.0,98.0,24,492.0,False,"Insulin Aspart; Insulin Aspart Prot/Insuln Asp; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Lispro; Insulin Regular, Human"
+2024,Critical Care (Intensivists),lithium,2,73.0,74.0,1154.0,0.0,2,15.0,True,Lithium Carbonate
+2024,Critical Care (Intensivists),loop diuretics,8,1005.0,1223.3,31352.0,178.0,7,862.0,False,Bumetanide; Furosemide; Torsemide
+2024,Critical Care (Intensivists),metformin,5,1279.0,1778.7,48095.0,220.0,5,909.0,False,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Critical Care (Intensivists),thiazides,4,454.0,958.7,27604.0,64.0,9,254.0,False,Enalapril/Hydrochlorothiazide; Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Valsartan/Hydrochlorothiazide
+2024,Critical Care (Intensivists),topiramate/zonisamide,2,63.0,63.0,1860.0,0.0,3,49.0,True,Topiramate; Zonisamide
+2024,Dentist,SGLT2 inhibitors,1,11.0,11.0,330.0,0.0,1,11.0,True,Dapagliflozin Propanediol
+2024,Dentist,beta blockers,3,54.0,97.0,2862.0,0.0,3,54.0,False,Metoprolol Succinate
+2024,Dentist,loop diuretics,2,27.0,50.0,1473.0,0.0,2,27.0,True,Furosemide
+2024,Dentist,metformin,1,12.0,12.0,360.0,0.0,1,12.0,True,Sitagliptin Phos/Metformin Hcl
+2024,Dermatology,ACE inhibitors/ARBs,1,24.0,24.0,720.0,0.0,2,24.0,True,Losartan Potassium; Sacubitril/Valsartan
+2024,Dermatology,SGLT2 inhibitors,1,12.0,12.0,360.0,0.0,1,12.0,True,Empagliflozin
+2024,Dermatology,SSRIs,5,84.0,97.7,2930.0,0.0,5,72.0,False,Escitalopram Oxalate; Sertraline Hcl
+2024,Dermatology,beta blockers,2,29.0,39.0,1156.0,0.0,2,11.0,True,Carvedilol Phosphate; Propranolol Hcl
+2024,Dermatology,metformin,5,78.0,117.0,3505.0,0.0,5,59.0,False,Metformin Hcl
+2024,Diagnostic Radiology,ACE inhibitors/ARBs,2,1077.0,2009.0,59994.0,203.0,7,561.0,True,Enalapril Maleate; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Diagnostic Radiology,SGLT2 inhibitors,1,234.0,405.0,12150.0,58.0,1,140.0,True,Dapagliflozin Propanediol; Empagliflozin
+2024,Diagnostic Radiology,SSRIs,2,267.0,353.0,10552.0,35.0,3,254.0,True,Escitalopram Oxalate; Paroxetine Hcl; Sertraline Hcl
+2024,Diagnostic Radiology,anticholinergics (bladder/antiparkinson),2,75.0,93.0,2524.0,0.0,5,58.0,True,Oxybutynin; Oxybutynin Chloride; Solifenacin Succinate; Trospium Chloride
+2024,Diagnostic Radiology,antipsychotics,1,54.0,62.0,1834.0,0.0,1,54.0,True,Quetiapine Fumarate
+2024,Diagnostic Radiology,beta blockers,1,741.0,1216.0,36480.0,125.0,4,173.0,True,Atenolol; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl
+2024,Diagnostic Radiology,insulin,1,31.0,53.0,1546.0,0.0,2,14.0,True,"Insulin Glargine,hum.Rec.Anlog"
+2024,Diagnostic Radiology,loop diuretics,1,107.0,134.8,4015.0,21.0,1,107.0,True,Furosemide; Torsemide
+2024,Diagnostic Radiology,metformin,1,595.0,1027.3,30805.0,115.0,4,435.0,True,Dapaglifloz Propaned/Metformin; Glyburide/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Diagnostic Radiology,thiazides,1,395.0,714.3,21396.0,89.0,1,140.0,True,Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Diagnostic Radiology,topiramate/zonisamide,1,15.0,15.0,450.0,0.0,1,0.0,True,Topiramate
+2024,Emergency Medicine,ACE inhibitors/ARBs,26,3139.0,6426.9,192051.0,570.0,53,1667.0,False,Amlodipine Besylate/Benazepril; Amlodipine/Valsartan/Hcthiazid; Benazepril Hcl; Enalapril Maleate; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Valsartan
+2024,Emergency Medicine,ADHD stimulants,1,13.0,13.0,390.0,0.0,1,13.0,True,Dextroamphetamine/Amphetamine
+2024,Emergency Medicine,SGLT2 inhibitors,10,427.0,644.3,18882.0,70.0,9,207.0,False,Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Metformin Hcl
+2024,Emergency Medicine,SSRIs,7,598.0,718.5,20793.0,38.0,16,277.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Emergency Medicine,anticholinergics (bladder/antiparkinson),4,171.0,209.0,6270.0,26.0,5,60.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate
+2024,Emergency Medicine,antipsychotics,7,639.0,682.0,19997.0,94.0,12,293.0,False,Aripiprazole; Cariprazine Hcl; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Olanzapine; Paliperidone Palmitate; Quetiapine Fumarate; Risperidone; Ziprasidone Hcl
+2024,Emergency Medicine,beta blockers,24,1864.0,3567.3,106912.0,268.0,42,1025.0,False,Atenolol; Bisoprolol Fumarate; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,Emergency Medicine,fentanyl/opioid patches,1,122.0,122.0,3430.0,34.0,1,94.0,True,Buprenorphine; Fentanyl
+2024,Emergency Medicine,insulin,6,322.0,580.3,16888.0,11.0,13,209.0,False,"Insulin Aspart; Insulin Degludec; Insulin Glargine,hum.Rec.Anlog; Insulin Lispro Protamin/Lispro; Insulin Nph Hum/Reg Insulin Hm"
+2024,Emergency Medicine,lithium,2,23.0,23.0,690.0,0.0,2,11.0,True,Lithium Carbonate
+2024,Emergency Medicine,loop diuretics,27,741.0,1085.6,28974.0,271.0,13,247.0,False,Furosemide; Torsemide
+2024,Emergency Medicine,metformin,18,1624.0,3365.1,100292.0,395.0,14,811.0,False,Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Emergency Medicine,thiazides,14,1123.0,2354.2,70354.0,243.0,18,492.0,False,Chlorthalidone; Hydrochlorothiazide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide
+2024,Endocrinology,ACE inhibitors/ARBs,186,19628.0,48346.1,1443844.0,3889.0,395,10828.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Azilsartan Med/Chlorthalidone; Benazepril Hcl; Candesartan Cilexetil; Captopril; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Fosinopril Sodium; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Endocrinology,ADHD stimulants,2,43.0,43.0,1290.0,0.0,2,12.0,True,Dextroamphetamine/Amphetamine
+2024,Endocrinology,SGLT2 inhibitors,260,59442.0,107450.1,3219093.0,14303.0,223,39456.0,False,Canagliflozin; Canagliflozin/Metformin Hcl; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Linagliptin; Empagliflozin/Metformin Hcl; Ertugliflozin Pidolate
+2024,Endocrinology,SSRIs,24,745.0,1573.6,45795.0,69.0,26,440.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Paroxetine Hcl; Sertraline Hcl
+2024,Endocrinology,anticholinergics (bladder/antiparkinson),6,136.0,282.2,8430.0,0.0,7,125.0,False,Oxybutynin Chloride
+2024,Endocrinology,antipsychotics,5,316.0,397.2,8775.0,24.0,8,227.0,False,Haloperidol; Olanzapine; Quetiapine Fumarate; Risperidone
+2024,Endocrinology,beta blockers,90,6517.0,14654.8,428275.0,1066.0,146,4049.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Carvedilol Phosphate; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,Endocrinology,fentanyl/opioid patches,2,27.0,27.0,810.0,0.0,2,12.0,True,Fentanyl
+2024,Endocrinology,insulin,249,79921.0,158562.8,4679303.0,19164.0,1104,40416.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Degludec/Liraglutide; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Glargine/Lixisenatide; Insulin Glulisine; Insulin Lispro; Insulin Lispro Protamin/Lispro; Insulin Lispro-Aabc; Insulin Nph Hum/Reg Insulin Hm; Insulin Nph Human Isophane; Insulin Regular, Human"
+2024,Endocrinology,loop diuretics,31,1237.0,2493.2,70336.0,228.0,22,769.0,False,Bumetanide; Furosemide; Torsemide
+2024,Endocrinology,metformin,276,88033.0,191425.1,5732206.0,23850.0,334,57865.0,False,Alogliptin Benz/Metformin Hcl; Canagliflozin/Metformin Hcl; Dapaglifloz Propaned/Metformin; Empaglifloz/Linaglip/Metformin; Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Glyburide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Pioglitazone Hcl/Metformin Hcl; Saxagliptin Hcl/Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Endocrinology,thiazides,88,5211.0,12572.2,374610.0,914.0,123,2763.0,False,Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Enalapril/Hydrochlorothiazide; Hydrochlorothiazide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Endocrinology,topiramate/zonisamide,18,445.0,827.0,24497.0,71.0,14,147.0,False,Topiramate; Zonisamide
+2024,Family Medicine,ACE inhibitors/ARBs,7,447.0,1156.6,34690.0,122.0,8,193.0,False,Amlodipine Besylate/Benazepril; Enalapril Maleate; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide
+2024,Family Medicine,SGLT2 inhibitors,3,40.0,60.0,1800.0,0.0,3,28.0,False,Empagliflozin
+2024,Family Medicine,SSRIs,3,192.0,248.0,7430.0,0.0,7,175.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Sertraline Hcl
+2024,Family Medicine,anticholinergics (bladder/antiparkinson),1,17.0,19.0,569.0,0.0,1,0.0,True,Oxybutynin Chloride
+2024,Family Medicine,antipsychotics,1,19.0,19.0,570.0,0.0,1,0.0,True,Quetiapine Fumarate
+2024,Family Medicine,beta blockers,6,258.0,573.0,17184.0,29.0,10,73.0,False,Atenolol; Carvedilol; Metoprolol Succinate; Metoprolol Tartrate
+2024,Family Medicine,insulin,2,58.0,92.2,2663.0,0.0,4,27.0,True,"Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Lispro"
+2024,Family Medicine,loop diuretics,1,31.0,44.0,1278.0,0.0,1,0.0,True,Furosemide
+2024,Family Medicine,metformin,4,278.0,646.8,19384.0,76.0,4,139.0,False,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Family Medicine,thiazides,3,222.0,540.5,16201.0,42.0,3,112.0,False,Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide
+2024,Family Practice,ACE inhibitors/ARBs,1041,370321.0,795758.0,23711099.0,81391.0,3608,222036.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Amlodipine/Valsartan/Hcthiazid; Azilsartan Med/Chlorthalidone; Azilsartan Medoxomil; Benazepril Hcl; Benazepril/Hydrochlorothiazide; Candesartan Cilexetil; Candesartan/Hydrochlorothiazid; Captopril; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Fosinopril Sodium; Fosinopril/Hydrochlorothiazide; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Moexipril Hcl; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Perindopril Erbumine; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Amlodipine; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Family Practice,ADHD stimulants,39,717.0,763.0,22473.0,13.0,41,318.0,False,Amphetamine Sulfate; Dexmethylphenidate Hcl; Dextroamphetamine Sulfate; Dextroamphetamine/Amphetamine; Lisdexamfetamine Dimesylate; Methylphenidate Hcl
+2024,Family Practice,SGLT2 inhibitors,747,75176.0,122665.0,3629711.0,14067.0,720,44726.0,False,Canagliflozin; Canagliflozin/Metformin Hcl; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Linagliptin; Empagliflozin/Metformin Hcl; Ertugliflozin Pidolate; Sotagliflozin
+2024,Family Practice,SSRIs,606,57391.0,98132.9,2837000.0,8278.0,1034,33992.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Family Practice,anticholinergics (bladder/antiparkinson),292,11144.0,16200.3,469238.0,883.0,392,6915.0,False,Benztropine Mesylate; Fesoterodine Fumarate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate; Trihexyphenidyl Hcl; Trospium Chloride
+2024,Family Practice,antipsychotics,310,23087.0,27799.9,751136.0,2012.0,536,14098.0,False,Aripiprazole; Aripiprazole Lauroxil; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Fluphenazine Decanoate; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Lumateperone Tosylate; Lurasidone Hcl; Olanzapine; Paliperidone; Paliperidone Palmitate; Perphenazine; Pimavanserin Tartrate; Quetiapine Fumarate; Risperidone; Risperidone Microspheres; Thiothixene; Trifluoperazine Hcl; Ziprasidone Hcl
+2024,Family Practice,beta blockers,923,207513.0,414117.4,12247343.0,43497.0,1849,126571.0,False,Acebutolol Hcl; Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Carvedilol Phosphate; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Metoprolol/Hydrochlorothiazide; Nadolol; Nebivolol Hcl; Propranolol Hcl; Sotalol Hcl
+2024,Family Practice,epinephrine auto-injectors,19,294.0,318.0,8411.0,0.0,19,32.0,False,Epinephrine
+2024,Family Practice,fentanyl/opioid patches,16,492.0,494.0,13728.0,68.0,15,281.0,False,Buprenorphine; Fentanyl
+2024,Family Practice,insulin,557,44097.0,71126.3,2002372.0,4805.0,1389,20429.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Glargine/Lixisenatide; Insulin Lispro; Insulin Lispro Protamin/Lispro; Insulin Lispro-Aabc; Insulin Nph Hum/Reg Insulin Hm; Insulin Nph Human Isophane; Insulin Regular, Human"
+2024,Family Practice,lithium,16,357.0,371.7,8577.0,12.0,16,147.0,False,Lithium Carbonate
+2024,Family Practice,loop diuretics,634,43023.0,70885.4,2023221.0,10193.0,386,23662.0,False,Bumetanide; Ethacrynic Acid; Furosemide; Torsemide
+2024,Family Practice,metformin,991,180748.0,367824.6,10962964.0,42162.0,1138,110031.0,False,Alogliptin Benz/Metformin Hcl; Canagliflozin/Metformin Hcl; Dapaglifloz Propaned/Metformin; Empaglifloz/Linaglip/Metformin; Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Glyburide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Pioglitazone Hcl/Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Family Practice,thiazides,910,133508.0,296894.2,8875671.0,28995.0,1678,75891.0,False,Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Benazepril/Hydrochlorothiazide; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Enalapril/Hydrochlorothiazide; Fosinopril/Hydrochlorothiazide; Hydrochlorothiazide; Indapamide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Metoprolol/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Family Practice,topiramate/zonisamide,73,1657.0,2244.9,65119.0,88.0,68,711.0,False,Topiramate; Zonisamide
+2024,Gastroenterology,ACE inhibitors/ARBs,54,5956.0,14889.1,442721.0,1067.0,124,4558.0,False,Amlodipine Besylate/Benazepril; Benazepril Hcl; Candesartan Cilexetil; Enalapril Maleate; Fosinopril Sodium; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Ramipril; Sacubitril/Valsartan; Telmisartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Gastroenterology,ADHD stimulants,2,72.0,72.0,2150.0,0.0,4,72.0,True,Dextroamphetamine/Amphetamine; Lisdexamfetamine Dimesylate; Methylphenidate Hcl
+2024,Gastroenterology,SGLT2 inhibitors,15,375.0,634.0,17801.0,25.0,15,239.0,False,Canagliflozin; Dapagliflozin Propanediol; Empagliflozin
+2024,Gastroenterology,SSRIs,38,1452.0,2891.0,85271.0,137.0,56,1097.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Gastroenterology,anticholinergics (bladder/antiparkinson),3,39.0,78.5,2355.0,0.0,3,39.0,False,Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate
+2024,Gastroenterology,antipsychotics,6,126.0,188.5,5243.0,0.0,8,76.0,False,Aripiprazole; Chlorpromazine Hcl; Olanzapine; Quetiapine Fumarate
+2024,Gastroenterology,beta blockers,101,4735.0,9885.6,291801.0,745.0,123,2846.0,False,Atenolol; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nadolol; Nebivolol Hcl; Propranolol Hcl
+2024,Gastroenterology,epinephrine auto-injectors,1,19.0,25.0,693.0,0.0,1,19.0,True,Epinephrine
+2024,Gastroenterology,insulin,5,83.0,123.3,3323.0,0.0,6,54.0,False,"Insulin Aspart; Insulin Aspart Prot/Insuln Asp; Insulin Glargine,hum.Rec.Anlog; Insulin Lispro"
+2024,Gastroenterology,loop diuretics,55,1691.0,2816.1,81769.0,280.0,42,864.0,False,Bumetanide; Furosemide; Torsemide
+2024,Gastroenterology,metformin,42,2351.0,5239.5,155901.0,472.0,38,1862.0,False,Linagliptin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Gastroenterology,thiazides,39,2204.0,5591.1,166375.0,366.0,51,1613.0,False,Chlorthalidone; Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Gastroenterology,topiramate/zonisamide,1,11.0,13.0,390.0,0.0,1,0.0,True,Topiramate
+2024,General Acute Care Hospital,ACE inhibitors/ARBs,3,64.0,151.5,4544.0,14.0,3,39.0,False,Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium
+2024,General Acute Care Hospital,SSRIs,1,16.0,16.0,240.0,0.0,1,16.0,True,Citalopram Hydrobromide
+2024,General Acute Care Hospital,beta blockers,3,70.0,166.0,4974.0,25.0,1,32.0,False,Carvedilol; Metoprolol Succinate
+2024,General Acute Care Hospital,loop diuretics,2,27.0,59.5,1785.0,0.0,2,14.0,True,Furosemide
+2024,General Acute Care Hospital,thiazides,2,23.0,47.0,1410.0,0.0,2,23.0,True,Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide
+2024,General Practice,ACE inhibitors/ARBs,67,20215.0,36763.8,1056975.0,4001.0,192,12716.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Amlodipine/Valsartan/Hcthiazid; Benazepril Hcl; Benazepril/Hydrochlorothiazide; Candesartan Cilexetil; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Fosinopril Sodium; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,General Practice,ADHD stimulants,5,94.0,100.0,2667.0,0.0,6,59.0,False,Dextroamphetamine/Amphetamine
+2024,General Practice,SGLT2 inhibitors,48,4045.0,5989.8,165548.0,889.0,35,2598.0,False,Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Metformin Hcl; Ertugliflozin Pidolate
+2024,General Practice,SSRIs,37,3904.0,5105.7,131667.0,454.0,67,2315.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,General Practice,anticholinergics (bladder/antiparkinson),19,1062.0,1209.0,29467.0,64.0,33,696.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate; Trospium Chloride
+2024,General Practice,antipsychotics,30,4297.0,4683.8,109053.0,480.0,68,2946.0,False,Aripiprazole; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Lurasidone Hcl; Olanzapine; Paliperidone; Paliperidone Palmitate; Pimavanserin Tartrate; Quetiapine Fumarate; Risperidone; Risperidone Microspheres; Trifluoperazine Hcl; Ziprasidone Hcl
+2024,General Practice,beta blockers,63,13296.0,21441.8,598691.0,2599.0,113,7848.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Carvedilol Phosphate; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nadolol; Nebivolol Hcl; Propranolol Hcl
+2024,General Practice,epinephrine auto-injectors,2,32.0,41.8,1055.0,17.0,1,19.0,True,Epinephrine
+2024,General Practice,insulin,36,4551.0,6008.3,143334.0,697.0,89,2157.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Glargine/Lixisenatide; Insulin Lispro; Insulin Lispro Protamin/Lispro; Insulin Nph Hum/Reg Insulin Hm"
+2024,General Practice,lithium,1,25.0,25.0,606.0,0.0,1,0.0,True,Lithium Carbonate
+2024,General Practice,loop diuretics,45,3748.0,5402.8,145536.0,858.0,28,2993.0,False,Bumetanide; Furosemide; Torsemide
+2024,General Practice,metformin,62,10838.0,18437.0,528143.0,2375.0,61,7174.0,False,Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Glyburide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,General Practice,thiazides,53,5831.0,12429.7,367244.0,1200.0,84,3538.0,False,Atenolol/Chlorthalidone; Benazepril/Hydrochlorothiazide; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Enalapril/Hydrochlorothiazide; Hydrochlorothiazide; Indapamide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,General Practice,topiramate/zonisamide,4,147.0,165.0,3790.0,0.0,5,76.0,False,Topiramate; Zonisamide
+2024,General Surgery,ACE inhibitors/ARBs,13,3859.0,6276.2,184961.0,616.0,36,2587.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Enalapril Maleate; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,General Surgery,SGLT2 inhibitors,8,413.0,522.0,14394.0,54.0,7,215.0,False,Dapagliflozin Propanediol; Empagliflozin
+2024,General Surgery,SSRIs,9,2151.0,3038.6,89460.0,331.0,13,1649.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,General Surgery,anticholinergics (bladder/antiparkinson),5,1615.0,2224.9,66680.0,230.0,6,114.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate; Trospium Chloride
+2024,General Surgery,antipsychotics,4,734.0,807.7,22192.0,105.0,8,554.0,False,Aripiprazole; Clozapine; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Olanzapine; Paliperidone; Quetiapine Fumarate; Risperidone
+2024,General Surgery,beta blockers,16,2655.0,4050.3,119207.0,397.0,35,1940.0,False,Atenolol; Atenolol/Chlorthalidone; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,General Surgery,fentanyl/opioid patches,1,27.0,27.0,600.0,0.0,1,0.0,True,Fentanyl
+2024,General Surgery,insulin,5,444.0,561.3,14568.0,43.0,15,130.0,False,"Insulin Aspart; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Glargine/Lixisenatide; Insulin Lispro; Insulin Nph Human Isophane"
+2024,General Surgery,loop diuretics,10,927.0,1242.2,35761.0,221.0,4,730.0,False,Bumetanide; Furosemide; Torsemide
+2024,General Surgery,metformin,13,2273.0,3416.5,101106.0,409.0,11,1200.0,False,Dapaglifloz Propaned/Metformin; Glipizide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,General Surgery,thiazides,9,1397.0,2171.5,64026.0,195.0,14,707.0,False,Atenolol/Chlorthalidone; Chlorthalidone; Hydrochlorothiazide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,General Surgery,topiramate/zonisamide,1,18.0,27.0,810.0,0.0,1,0.0,True,Topiramate
+2024,Geriatric Medicine,ACE inhibitors/ARBs,76,21072.0,42568.5,1193867.0,4631.0,181,15124.0,False,Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Benazepril Hcl; Candesartan Cilexetil; Enalapril Maleate; Fosinopril Sodium; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Amlodipine; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Geriatric Medicine,ADHD stimulants,2,139.0,148.0,4309.0,0.0,5,103.0,True,Dextroamphetamine Sulfate; Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Geriatric Medicine,SGLT2 inhibitors,51,4035.0,6044.1,158135.0,707.0,53,2825.0,False,Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Metformin Hcl; Ertugliflozin Pidolate
+2024,Geriatric Medicine,SSRIs,71,9790.0,14816.6,381778.0,1508.0,111,6901.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Geriatric Medicine,anticholinergics (bladder/antiparkinson),22,960.0,1243.5,29947.0,61.0,32,759.0,False,Benztropine Mesylate; Fesoterodine Fumarate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate; Trospium Chloride
+2024,Geriatric Medicine,antipsychotics,55,4457.0,5297.2,124265.0,332.0,102,3336.0,False,Aripiprazole; Brexpiprazole; Cariprazine Hcl; Clozapine; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Lurasidone Hcl; Olanzapine; Paliperidone; Paliperidone Palmitate; Perphenazine; Quetiapine Fumarate; Risperidone; Risperidone Microspheres
+2024,Geriatric Medicine,beta blockers,72,18533.0,31401.0,833187.0,3707.0,144,12743.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl; Sotalol Hcl
+2024,Geriatric Medicine,fentanyl/opioid patches,5,144.0,145.0,3934.0,0.0,6,20.0,False,Buprenorphine; Fentanyl
+2024,Geriatric Medicine,insulin,42,5673.0,7670.2,185777.0,836.0,114,3762.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Glulisine; Insulin Lispro; Insulin Nph Human Isophane; Insulin Regular, Human"
+2024,Geriatric Medicine,lithium,1,21.0,21.0,309.0,0.0,1,21.0,True,Lithium Carbonate
+2024,Geriatric Medicine,loop diuretics,68,7127.0,10342.6,255098.0,1476.0,41,4401.0,False,Bumetanide; Ethacrynic Acid; Furosemide; Torsemide
+2024,Geriatric Medicine,metformin,67,9456.0,18522.4,522847.0,2196.0,61,6724.0,False,Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Geriatric Medicine,thiazides,64,5753.0,12989.4,375981.0,1256.0,84,4148.0,False,Atenolol/Chlorthalidone; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Hydrochlorothiazide; Indapamide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Geriatric Medicine,topiramate/zonisamide,10,225.0,279.0,6436.0,16.0,9,85.0,False,Topiramate; Zonisamide
+2024,Geriatric Psychiatry,ADHD stimulants,1,43.0,51.0,1515.0,0.0,2,43.0,True,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Geriatric Psychiatry,SSRIs,8,2309.0,3655.1,109122.0,404.0,14,1800.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Geriatric Psychiatry,anticholinergics (bladder/antiparkinson),2,159.0,191.5,5698.0,17.0,2,56.0,True,Benztropine Mesylate; Trihexyphenidyl Hcl
+2024,Geriatric Psychiatry,antipsychotics,8,3868.0,5481.9,162549.0,532.0,48,2509.0,False,Aripiprazole; Aripiprazole Lauroxil; Asenapine Maleate; Brexpiprazole; Clozapine; Fluphenazine Decanoate; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Iloperidone; Lurasidone Hcl; Olanzapine; Paliperidone Palmitate; Perphenazine; Quetiapine Fumarate; Risperidone; Risperidone Microspheres; Trifluoperazine Hcl; Ziprasidone Hcl
+2024,Geriatric Psychiatry,beta blockers,2,24.0,42.0,1230.0,0.0,2,24.0,True,Propranolol Hcl
+2024,Geriatric Psychiatry,lithium,3,204.0,309.0,9108.0,15.0,4,170.0,False,Lithium Carbonate
+2024,Geriatric Psychiatry,topiramate/zonisamide,1,14.0,14.0,405.0,0.0,1,0.0,True,Topiramate
+2024,Hematology,ACE inhibitors/ARBs,2,56.0,91.0,2730.0,0.0,3,43.0,True,Candesartan Cilexetil; Lisinopril; Losartan Potassium
+2024,Hematology,ADHD stimulants,1,11.0,11.0,330.0,0.0,1,11.0,True,Dextroamphetamine/Amphetamine
+2024,Hematology,SSRIs,1,13.0,15.0,450.0,0.0,1,13.0,True,Citalopram Hydrobromide
+2024,Hematology,antipsychotics,2,42.0,49.4,1410.0,0.0,2,16.0,True,Olanzapine; Quetiapine Fumarate
+2024,Hematology,beta blockers,4,137.0,250.6,7520.0,18.0,5,73.0,False,Carvedilol; Metoprolol Succinate; Nadolol; Propranolol Hcl
+2024,Hematology,fentanyl/opioid patches,2,31.0,31.0,795.0,0.0,2,18.0,True,Fentanyl
+2024,Hematology,loop diuretics,4,115.0,184.5,5520.0,15.0,4,14.0,False,Furosemide; Torsemide
+2024,Hematology,topiramate/zonisamide,1,14.0,14.0,420.0,0.0,1,14.0,True,Topiramate
+2024,Hematology-Oncology,ACE inhibitors/ARBs,29,1893.0,4331.7,128167.0,436.0,40,949.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Azilsartan Medoxomil; Benazepril Hcl; Enalapril Maleate; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Sacubitril/Valsartan; Telmisartan; Valsartan
+2024,Hematology-Oncology,SGLT2 inhibitors,6,382.0,652.7,17740.0,62.0,8,285.0,False,Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Metformin Hcl
+2024,Hematology-Oncology,SSRIs,10,495.0,605.0,17697.0,54.0,11,310.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Sertraline Hcl
+2024,Hematology-Oncology,anticholinergics (bladder/antiparkinson),4,84.0,153.8,4517.0,0.0,5,61.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate
+2024,Hematology-Oncology,antipsychotics,28,701.0,795.0,21554.0,153.0,24,269.0,False,Chlorpromazine Hcl; Clozapine; Haloperidol; Olanzapine; Quetiapine Fumarate; Risperidone
+2024,Hematology-Oncology,beta blockers,21,1389.0,2842.1,84811.0,286.0,24,757.0,False,Atenolol; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl
+2024,Hematology-Oncology,fentanyl/opioid patches,9,179.0,179.7,4313.0,13.0,8,98.0,False,Fentanyl
+2024,Hematology-Oncology,insulin,3,148.0,201.5,5198.0,11.0,7,148.0,False,"Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Lispro; Insulin Nph Hum/Reg Insulin Hm; Insulin Nph Human Isophane"
+2024,Hematology-Oncology,loop diuretics,33,846.0,1072.0,30519.0,105.0,28,458.0,False,Bumetanide; Furosemide; Torsemide
+2024,Hematology-Oncology,metformin,17,1019.0,1950.7,57942.0,212.0,15,596.0,False,Alogliptin Benz/Metformin Hcl; Empagliflozin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Hematology-Oncology,thiazides,16,439.0,913.7,27410.0,82.0,14,358.0,False,Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide
+2024,Hematopoietic Cell Transplantation and Cellular Therapy,beta blockers,1,16.0,28.0,840.0,0.0,1,0.0,True,Metoprolol Succinate
+2024,Hematopoietic Cell Transplantation and Cellular Therapy,loop diuretics,1,11.0,11.0,126.0,0.0,1,0.0,True,Furosemide
+2024,Hospice and Palliative Care,ACE inhibitors/ARBs,7,873.0,1518.0,38601.0,146.0,17,581.0,False,Enalapril Maleate; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Ramipril; Sacubitril/Valsartan; Valsartan
+2024,Hospice and Palliative Care,ADHD stimulants,7,102.0,102.0,2743.0,0.0,7,26.0,False,Methylphenidate Hcl
+2024,Hospice and Palliative Care,SGLT2 inhibitors,5,155.0,231.0,6181.0,15.0,6,94.0,False,Dapagliflozin Propanediol; Empagliflozin
+2024,Hospice and Palliative Care,SSRIs,10,801.0,1221.0,30621.0,112.0,12,315.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Sertraline Hcl
+2024,Hospice and Palliative Care,anticholinergics (bladder/antiparkinson),1,15.0,15.0,204.0,0.0,1,15.0,True,Trihexyphenidyl Hcl
+2024,Hospice and Palliative Care,antipsychotics,13,345.0,408.8,10295.0,39.0,14,217.0,False,Lurasidone Hcl; Olanzapine; Quetiapine Fumarate; Risperidone
+2024,Hospice and Palliative Care,beta blockers,8,787.0,1016.3,22743.0,93.0,16,510.0,False,Atenolol; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Propranolol Hcl
+2024,Hospice and Palliative Care,fentanyl/opioid patches,18,960.0,960.0,26733.0,312.0,6,460.0,False,Buprenorphine; Fentanyl
+2024,Hospice and Palliative Care,insulin,4,98.0,127.5,2861.0,0.0,7,67.0,False,"Insulin Glargine,hum.Rec.Anlog; Insulin Lispro"
+2024,Hospice and Palliative Care,loop diuretics,7,369.0,445.0,9332.0,58.0,5,268.0,False,Bumetanide; Furosemide; Torsemide
+2024,Hospice and Palliative Care,metformin,6,389.0,632.5,16538.0,64.0,7,241.0,False,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Hospice and Palliative Care,thiazides,4,189.0,393.3,10984.0,42.0,4,55.0,False,Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone
+2024,Hospital,ACE inhibitors/ARBs,1,12.0,12.0,360.0,0.0,1,12.0,True,Olmesartan/Hydrochlorothiazide
+2024,Hospital,ADHD stimulants,1,11.0,11.0,330.0,0.0,1,0.0,True,Dextroamphetamine/Amphetamine
+2024,Hospital,SSRIs,2,107.0,119.0,3570.0,0.0,4,22.0,True,Escitalopram Oxalate; Fluoxetine Hcl; Sertraline Hcl
+2024,Hospital,anticholinergics (bladder/antiparkinson),1,49.0,49.0,1470.0,0.0,1,0.0,True,Benztropine Mesylate
+2024,Hospital,antipsychotics,1,281.0,308.8,9199.0,37.0,6,74.0,True,Aripiprazole; Fluphenazine Decanoate; Haloperidol Decanoate; Olanzapine; Paliperidone Palmitate; Quetiapine Fumarate; Risperidone
+2024,Hospital,beta blockers,2,28.0,28.0,840.0,0.0,2,12.0,True,Nebivolol Hcl; Propranolol Hcl
+2024,Hospital,thiazides,1,12.0,12.0,360.0,0.0,1,12.0,True,Olmesartan/Hydrochlorothiazide
+2024,Hospitalist,ACE inhibitors/ARBs,120,10505.0,19061.3,560940.0,2229.0,191,5771.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Benazepril Hcl; Enalapril Maleate; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Hospitalist,ADHD stimulants,2,35.0,35.0,1012.0,0.0,2,35.0,True,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Hospitalist,SGLT2 inhibitors,64,2750.0,4419.1,127777.0,445.0,63,1461.0,False,Dapagliflozin Propanediol; Empagliflozin; Ertugliflozin/Sitagliptin Phos
+2024,Hospitalist,SSRIs,27,2362.0,2825.9,75255.0,335.0,37,1250.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Hospitalist,anticholinergics (bladder/antiparkinson),15,422.0,586.1,16993.0,0.0,22,191.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate
+2024,Hospitalist,antipsychotics,16,2085.0,2128.0,51329.0,173.0,41,1127.0,False,Aripiprazole; Asenapine Maleate; Brexpiprazole; Cariprazine Hcl; Clozapine; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Lurasidone Hcl; Olanzapine; Paliperidone; Perphenazine; Pimavanserin Tartrate; Quetiapine Fumarate; Risperidone; Risperidone Microspheres
+2024,Hospitalist,beta blockers,160,10004.0,16277.6,473149.0,3030.0,144,4277.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl; Sotalol Hcl
+2024,Hospitalist,insulin,28,2108.0,2787.0,66600.0,221.0,60,1176.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Degludec; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Glargine/Lixisenatide; Insulin Lispro; Insulin Nph Human Isophane; Insulin Regular, Human"
+2024,Hospitalist,loop diuretics,118,4442.0,6016.9,166664.0,1784.0,47,1794.0,False,Bumetanide; Furosemide; Torsemide
+2024,Hospitalist,metformin,67,4640.0,8241.2,241351.0,907.0,68,2688.0,False,Dapaglifloz Propaned/Metformin; Glipizide/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Hospitalist,thiazides,50,2874.0,5612.5,167219.0,542.0,67,1691.0,False,Atenolol/Chlorthalidone; Chlorthalidone; Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Hospitalist,topiramate/zonisamide,5,85.0,99.0,2473.0,0.0,5,24.0,False,Topiramate; Zonisamide
+2024,Infectious Disease,ACE inhibitors/ARBs,125,15311.0,25828.7,762238.0,1793.0,327,8772.0,False,Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Azilsartan Med/Chlorthalidone; Benazepril Hcl; Benazepril/Hydrochlorothiazide; Candesartan Cilexetil; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Fosinopril Sodium; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Infectious Disease,ADHD stimulants,2,26.0,26.0,770.0,0.0,2,15.0,True,Dextroamphetamine/Amphetamine
+2024,Infectious Disease,SGLT2 inhibitors,70,2431.0,3377.6,96878.0,164.0,78,1187.0,False,Canagliflozin; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Metformin Hcl
+2024,Infectious Disease,SSRIs,53,2532.0,3399.5,81535.0,111.0,84,1369.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Infectious Disease,anticholinergics (bladder/antiparkinson),28,659.0,776.7,18659.0,0.0,30,425.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate; Trospium Chloride
+2024,Infectious Disease,antipsychotics,32,1802.0,1936.1,39654.0,32.0,50,857.0,False,Aripiprazole; Chlorpromazine Hcl; Haloperidol; Haloperidol Lactate; Lurasidone Hcl; Olanzapine; Quetiapine Fumarate; Risperidone
+2024,Infectious Disease,beta blockers,107,8661.0,13814.9,396909.0,904.0,209,4781.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Metoprolol/Hydrochlorothiazide; Nadolol; Nebivolol Hcl; Propranolol Hcl
+2024,Infectious Disease,epinephrine auto-injectors,1,13.0,13.0,303.0,0.0,1,0.0,True,Epinephrine
+2024,Infectious Disease,fentanyl/opioid patches,3,42.0,42.0,1260.0,0.0,3,42.0,False,Fentanyl
+2024,Infectious Disease,insulin,41,1801.0,2577.6,73128.0,109.0,77,831.0,False,"Insulin Aspart; Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Lispro; Insulin Nph Human Isophane; Insulin Regular, Human"
+2024,Infectious Disease,loop diuretics,53,2096.0,2904.4,78277.0,231.0,50,1025.0,False,Furosemide; Torsemide
+2024,Infectious Disease,metformin,106,6949.0,11243.3,327518.0,652.0,154,3764.0,False,Dapaglifloz Propaned/Metformin; Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Infectious Disease,thiazides,91,6699.0,11106.7,328369.0,658.0,165,3242.0,False,Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Benazepril/Hydrochlorothiazide; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Enalapril/Hydrochlorothiazide; Hydrochlorothiazide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metoprolol/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Infectious Disease,topiramate/zonisamide,7,182.0,200.0,3738.0,0.0,7,134.0,False,Topiramate; Zonisamide
+2024,Intensive Cardiac Rehabilitation,beta blockers,1,76.0,224.1,6723.0,35.0,0,0.0,True,Metoprolol Succinate
+2024,Internal Medicine,ACE inhibitors/ARBs,3455,1465544.0,3176539.7,94382293.0,323746.0,12102,933110.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Amlodipine/Valsartan/Hcthiazid; Azilsartan Med/Chlorthalidone; Azilsartan Medoxomil; Benazepril Hcl; Benazepril/Hydrochlorothiazide; Candesartan Cilexetil; Candesartan/Hydrochlorothiazid; Captopril; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Fosinopril Sodium; Fosinopril/Hydrochlorothiazide; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Perindopril Erbumine; Quinapril Hcl; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Amlodipine; Telmisartan/Hydrochlorothiazid; Trandolapril; Trandolapril/Verapamil Hcl; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Internal Medicine,ADHD stimulants,158,3067.0,3108.0,90186.0,26.0,182,1774.0,False,Dexmethylphenidate Hcl; Dextroamphetamine Sulfate; Dextroamphetamine/Amphetamine; Lisdexamfetamine Dimesylate; Methylphenidate Hcl
+2024,Internal Medicine,SGLT2 inhibitors,2471,306868.0,511780.3,15091101.0,62681.0,2200,187204.0,False,Canagliflozin; Canagliflozin/Metformin Hcl; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Linagliptin; Empagliflozin/Metformin Hcl; Ertugliflozin Pidolate; Ertugliflozin/Metformin; Sotagliflozin
+2024,Internal Medicine,SSRIs,2170,253910.0,426150.9,12191509.0,37056.0,3863,160014.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Internal Medicine,anticholinergics (bladder/antiparkinson),1046,45912.0,66917.2,1923562.0,3733.0,1425,32541.0,False,Benztropine Mesylate; Darifenacin Hydrobromide; Fesoterodine Fumarate; Oxybutynin; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate; Trihexyphenidyl Hcl; Trospium Chloride
+2024,Internal Medicine,antipsychotics,1143,109679.0,130266.3,3355712.0,10299.0,2138,69342.0,False,Aripiprazole; Aripiprazole Lauroxil; Asenapine Maleate; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Fluphenazine Decanoate; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Loxapine Succinate; Lumateperone Tosylate; Lurasidone Hcl; Olanzapine; Olanzapine/Fluoxetine Hcl; Olanzapine/Samidorphan Malate; Paliperidone; Paliperidone Palmitate; Perphenazine; Pimavanserin Tartrate; Quetiapine Fumarate; Risperidone; Risperidone Microspheres; Thioridazine Hcl; Thiothixene; Trifluoperazine Hcl; Ziprasidone Hcl
+2024,Internal Medicine,beta blockers,3354,920932.0,1824577.3,53667651.0,200591.0,6376,568233.0,False,Acebutolol Hcl; Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Carvedilol Phosphate; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Metoprolol/Hydrochlorothiazide; Nadolol; Nebivolol Hcl; Pindolol; Propranolol Hcl; Sotalol Hcl
+2024,Internal Medicine,epinephrine auto-injectors,58,906.0,953.5,21249.0,131.0,48,210.0,False,Epinephrine
+2024,Internal Medicine,fentanyl/opioid patches,77,1825.0,1831.1,49654.0,189.0,75,1206.0,False,Buprenorphine; Fentanyl
+2024,Internal Medicine,insulin,1847,203391.0,322882.0,8869038.0,29084.0,4926,105117.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Degludec/Liraglutide; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Glargine/Lixisenatide; Insulin Lispro; Insulin Lispro Protamin/Lispro; Insulin Lispro-Aabc; Insulin Nph Hum/Reg Insulin Hm; Insulin Nph Human Isophane; Insulin Regular, Human"
+2024,Internal Medicine,lithium,39,1115.0,1181.0,23624.0,0.0,41,743.0,False,Lithium Carbonate
+2024,Internal Medicine,loop diuretics,2527,213864.0,346780.0,9784223.0,51530.0,1541,128586.0,False,Bumetanide; Ethacrynic Acid; Furosemide; Torsemide
+2024,Internal Medicine,metformin,3119,693579.0,1426554.6,42389183.0,162803.0,3626,444020.0,False,Alogliptin Benz/Metformin Hcl; Canagliflozin/Metformin Hcl; Dapaglifloz Propaned/Metformin; Empaglifloz/Linaglip/Metformin; Empagliflozin/Metformin Hcl; Ertugliflozin/Metformin; Glipizide/Metformin Hcl; Glyburide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Pioglitazone Hcl/Metformin Hcl; Saxagliptin Hcl/Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Internal Medicine,thiazides,2794,488863.0,1097883.8,32803250.0,108795.0,5101,292378.0,False,Amiloride/Hydrochlorothiazide; Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Benazepril/Hydrochlorothiazide; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Enalapril/Hydrochlorothiazide; Fosinopril/Hydrochlorothiazide; Hydrochlorothiazide; Indapamide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Metoprolol/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Internal Medicine,topiramate/zonisamide,269,6315.0,8651.9,241732.0,250.0,271,2838.0,False,Topiramate; Zonisamide
+2024,Interventional Cardiology,ACE inhibitors/ARBs,76,23983.0,55026.4,1649590.0,6914.0,196,13457.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Azilsartan Med/Chlorthalidone; Azilsartan Medoxomil; Benazepril Hcl; Benazepril/Hydrochlorothiazide; Candesartan Cilexetil; Enalapril Maleate; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Interventional Cardiology,SGLT2 inhibitors,45,3910.0,7103.5,213023.0,939.0,40,2248.0,False,Dapagliflozin Propanediol; Empagliflozin; Sotagliflozin
+2024,Interventional Cardiology,SSRIs,3,105.0,247.0,7410.0,19.0,3,14.0,False,Escitalopram Oxalate; Sertraline Hcl
+2024,Interventional Cardiology,anticholinergics (bladder/antiparkinson),2,26.0,26.0,780.0,0.0,2,26.0,True,Oxybutynin Chloride; Solifenacin Succinate
+2024,Interventional Cardiology,antipsychotics,2,42.0,70.0,2096.0,0.0,2,42.0,True,Quetiapine Fumarate
+2024,Interventional Cardiology,beta blockers,84,30500.0,69570.9,2079095.0,9440.0,105,21056.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Carvedilol Phosphate; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl; Sotalol Hcl
+2024,Interventional Cardiology,insulin,2,25.0,28.5,834.0,0.0,2,25.0,True,"Insulin Detemir; Insulin Glargine,hum.Rec.Anlog"
+2024,Interventional Cardiology,loop diuretics,70,6546.0,13603.1,405550.0,2087.0,39,3096.0,False,Bumetanide; Furosemide; Torsemide
+2024,Interventional Cardiology,metformin,21,930.0,2167.1,64982.0,216.0,18,539.0,False,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Interventional Cardiology,thiazides,57,7158.0,16633.3,498658.0,2117.0,70,4166.0,False,Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Benazepril/Hydrochlorothiazide; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Hydrochlorothiazide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Interventional Pain Management,ACE inhibitors/ARBs,1,40.0,93.0,2790.0,0.0,2,0.0,True,Lisinopril; Losartan Potassium
+2024,Interventional Pain Management,ADHD stimulants,1,58.0,58.0,1730.0,16.0,0,47.0,True,Dextroamphetamine/Amphetamine
+2024,Interventional Pain Management,SSRIs,2,26.0,30.0,900.0,0.0,2,12.0,True,Citalopram Hydrobromide; Escitalopram Oxalate
+2024,Interventional Pain Management,antipsychotics,3,123.0,137.0,4087.0,26.0,1,50.0,False,Quetiapine Fumarate
+2024,Interventional Pain Management,fentanyl/opioid patches,11,690.0,690.0,19919.0,110.0,10,404.0,False,Buprenorphine; Fentanyl
+2024,Interventional Pain Management,loop diuretics,2,37.0,41.0,701.0,11.0,1,0.0,True,Furosemide
+2024,Interventional Pain Management,metformin,1,25.0,52.0,1560.0,0.0,1,0.0,True,Metformin Hcl
+2024,Interventional Pain Management,topiramate/zonisamide,6,205.0,249.0,7454.0,34.0,5,98.0,False,Topiramate; Zonisamide
+2024,Legal Medicine,ACE inhibitors/ARBs,3,2494.0,4657.0,139650.0,493.0,11,1923.0,False,Amlodipine Besylate/Benazepril; Candesartan Cilexetil; Candesartan/Hydrochlorothiazid; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Legal Medicine,SGLT2 inhibitors,1,388.0,536.0,16080.0,74.0,0,223.0,True,Dapagliflozin Propanediol; Empagliflozin
+2024,Legal Medicine,SSRIs,1,862.0,1300.0,39000.0,165.0,1,775.0,True,Escitalopram Oxalate; Paroxetine Hcl; Sertraline Hcl
+2024,Legal Medicine,anticholinergics (bladder/antiparkinson),1,69.0,101.0,3030.0,0.0,4,40.0,True,Benztropine Mesylate; Oxybutynin Chloride; Trospium Chloride
+2024,Legal Medicine,antipsychotics,2,364.0,532.0,15935.0,50.0,4,129.0,True,Aripiprazole; Brexpiprazole; Olanzapine; Quetiapine Fumarate; Risperidone
+2024,Legal Medicine,beta blockers,1,1490.0,2910.2,87280.0,285.0,5,850.0,True,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,Legal Medicine,insulin,1,750.0,1037.1,30445.0,123.0,7,409.0,True,"Insulin Aspart; Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Lispro; Insulin Nph Human Isophane"
+2024,Legal Medicine,loop diuretics,1,208.0,346.5,10263.0,49.0,0,0.0,True,Furosemide; Torsemide
+2024,Legal Medicine,metformin,2,1500.0,2664.8,79864.0,304.0,2,1081.0,True,Glipizide/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Legal Medicine,thiazides,1,1649.0,3041.0,91230.0,316.0,4,1475.0,True,Atenolol/Chlorthalidone; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Enalapril/Hydrochlorothiazide; Hydrochlorothiazide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Licensed Professional Counselor,antipsychotics,1,50.0,50.0,1228.0,0.0,2,0.0,True,Haloperidol Decanoate; Olanzapine
+2024,Medical Genetics and Genomics,metformin,1,12.0,33.0,990.0,0.0,1,0.0,True,Metformin Hcl
+2024,"Medical Genetics, Ph.D. Medical Genetics",ACE inhibitors/ARBs,1,33.0,55.0,1650.0,0.0,2,33.0,True,Lisinopril; Losartan/Hydrochlorothiazide
+2024,"Medical Genetics, Ph.D. Medical Genetics",metformin,1,15.0,25.0,750.0,0.0,1,15.0,True,Metformin Hcl
+2024,"Medical Genetics, Ph.D. Medical Genetics",thiazides,1,17.0,33.0,990.0,0.0,1,17.0,True,Losartan/Hydrochlorothiazide
+2024,Medical Oncology,ACE inhibitors/ARBs,24,707.0,1195.4,35769.0,77.0,25,583.0,False,Amlodipine Besylate/Benazepril; Irbesartan; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Ramipril
+2024,Medical Oncology,SSRIs,9,205.0,358.0,10740.0,27.0,8,187.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Sertraline Hcl
+2024,Medical Oncology,anticholinergics (bladder/antiparkinson),4,108.0,144.0,4315.0,15.0,3,77.0,False,Oxybutynin Chloride
+2024,Medical Oncology,antipsychotics,31,619.0,700.6,18330.0,153.0,21,290.0,False,Olanzapine
+2024,Medical Oncology,beta blockers,15,324.0,551.5,16528.0,12.0,17,230.0,False,Atenolol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nadolol; Propranolol Hcl
+2024,Medical Oncology,fentanyl/opioid patches,8,201.0,202.0,4209.0,40.0,6,109.0,False,Fentanyl
+2024,Medical Oncology,loop diuretics,21,376.0,481.9,13346.0,55.0,17,289.0,False,Furosemide
+2024,Medical Oncology,metformin,5,103.0,188.0,5622.0,15.0,4,91.0,False,Metformin Hcl
+2024,Medical Oncology,thiazides,8,134.0,232.4,6963.0,11.0,7,91.0,False,Chlorthalidone; Hydrochlorothiazide; Losartan/Hydrochlorothiazide
+2024,Nephrology,ACE inhibitors/ARBs,272,52615.0,103939.0,3107007.0,11294.0,505,30678.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Azilsartan Med/Chlorthalidone; Azilsartan Medoxomil; Benazepril Hcl; Benazepril/Hydrochlorothiazide; Candesartan Cilexetil; Candesartan/Hydrochlorothiazid; Captopril; Enalapril Maleate; Fosinopril Sodium; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Amlodipine; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Nephrology,ADHD stimulants,2,35.0,45.0,1350.0,0.0,2,0.0,True,Dextroamphetamine/Amphetamine
+2024,Nephrology,SGLT2 inhibitors,195,29669.0,46409.4,1389106.0,6410.0,171,17573.0,False,Canagliflozin; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Metformin Hcl
+2024,Nephrology,SSRIs,41,1900.0,3155.8,88627.0,225.0,55,1259.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Nephrology,anticholinergics (bladder/antiparkinson),21,578.0,731.7,20570.0,25.0,25,407.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate
+2024,Nephrology,antipsychotics,15,940.0,1106.4,25530.0,90.0,25,632.0,False,Aripiprazole; Brexpiprazole; Cariprazine Hcl; Clozapine; Haloperidol; Lurasidone Hcl; Olanzapine; Quetiapine Fumarate; Risperidone
+2024,Nephrology,beta blockers,239,29846.0,56007.8,1666624.0,5730.0,396,14521.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nadolol; Nebivolol Hcl; Propranolol Hcl; Sotalol Hcl
+2024,Nephrology,epinephrine auto-injectors,1,13.0,13.0,303.0,0.0,1,0.0,True,Epinephrine
+2024,Nephrology,fentanyl/opioid patches,1,11.0,11.0,330.0,0.0,1,11.0,True,Fentanyl
+2024,Nephrology,insulin,39,3141.0,5263.8,150239.0,475.0,99,1382.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Degludec/Liraglutide; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Lispro; Insulin Nph Human Isophane; Insulin Regular, Human"
+2024,Nephrology,loop diuretics,253,19450.0,36324.9,1076149.0,5106.0,202,8726.0,False,Bumetanide; Ethacrynic Acid; Furosemide; Torsemide
+2024,Nephrology,metformin,66,6074.0,12330.6,365806.0,1177.0,76,3659.0,False,Dapaglifloz Propaned/Metformin; Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Nephrology,thiazides,172,11123.0,25085.2,749532.0,2139.0,228,5837.0,False,Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Benazepril/Hydrochlorothiazide; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Hydrochlorothiazide; Indapamide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Nephrology,topiramate/zonisamide,3,62.0,84.0,2117.0,0.0,3,37.0,False,Topiramate; Zonisamide
+2024,Neurological Surgery,metformin,1,12.0,12.0,360.0,0.0,1,12.0,True,Metformin Hcl
+2024,Neurology,ACE inhibitors/ARBs,42,1805.0,3333.9,99701.0,234.0,61,972.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Azilsartan Medoxomil; Candesartan Cilexetil; Enalapril Maleate; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Ramipril; Sacubitril/Valsartan; Telmisartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Neurology,ADHD stimulants,67,2240.0,2390.5,70795.0,97.0,92,928.0,False,Amphetamine; Dexmethylphenidate Hcl; Dextroamphetamine Sulfate; Dextroamphetamine/Amphetamine; Lisdexamfetamine Dimesylate; Methylphenidate Hcl
+2024,Neurology,SGLT2 inhibitors,5,162.0,317.1,9513.0,22.0,5,112.0,False,Dapagliflozin Propanediol; Empagliflozin
+2024,Neurology,SSRIs,273,27503.0,42814.4,1279134.0,5018.0,349,16962.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Neurology,anticholinergics (bladder/antiparkinson),65,1925.0,2642.6,78818.0,89.0,71,740.0,False,Benztropine Mesylate; Oxybutynin Chloride; Tolterodine Tartrate; Trihexyphenidyl Hcl; Trospium Chloride
+2024,Neurology,antipsychotics,240,26178.0,34188.9,1018336.0,4287.0,302,16815.0,False,Aripiprazole; Asenapine Maleate; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Haloperidol; Iloperidone; Lumateperone Tosylate; Lurasidone Hcl; Olanzapine; Olanzapine/Samidorphan Malate; Pimavanserin Tartrate; Quetiapine Fumarate; Risperidone; Ziprasidone Hcl
+2024,Neurology,beta blockers,196,9360.0,15542.1,464322.0,1428.0,217,4563.0,False,Atenolol; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nadolol; Propranolol Hcl
+2024,Neurology,epinephrine auto-injectors,2,28.0,28.0,811.0,15.0,1,0.0,True,Epinephrine
+2024,Neurology,fentanyl/opioid patches,13,453.0,453.0,13027.0,55.0,12,232.0,False,Buprenorphine; Fentanyl
+2024,Neurology,insulin,1,37.0,54.9,1569.0,0.0,2,0.0,True,"Insulin Glargine,hum.Rec.Anlog"
+2024,Neurology,lithium,7,147.0,159.0,4749.0,0.0,7,66.0,False,Lithium Carbonate
+2024,Neurology,loop diuretics,11,410.0,676.7,20221.0,81.0,10,231.0,False,Furosemide; Torsemide
+2024,Neurology,metformin,11,336.0,560.0,16760.0,40.0,12,271.0,False,Metformin Hcl
+2024,Neurology,thiazides,16,694.0,1028.8,30811.0,112.0,16,512.0,False,Chlorthalidone; Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Neurology,topiramate/zonisamide,285,16555.0,25306.8,755669.0,2103.0,304,6193.0,False,Topiramate; Zonisamide
+2024,Neuropsychiatry,ACE inhibitors/ARBs,2,23.0,25.0,750.0,0.0,2,23.0,True,Losartan Potassium; Olmesartan Medoxomil
+2024,Neuropsychiatry,ADHD stimulants,37,1074.0,1176.6,35002.0,0.0,57,645.0,False,Dexmethylphenidate Hcl; Dextroamphetamine/Amphetamine; Lisdexamfetamine Dimesylate; Methylphenidate Hcl
+2024,Neuropsychiatry,SSRIs,100,7542.0,10107.1,301905.0,444.0,196,4097.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Neuropsychiatry,anticholinergics (bladder/antiparkinson),17,672.0,718.3,21238.0,38.0,19,140.0,False,Benztropine Mesylate; Trihexyphenidyl Hcl
+2024,Neuropsychiatry,antipsychotics,74,10257.0,11871.1,349263.0,669.0,212,4040.0,False,Aripiprazole; Asenapine Maleate; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Fluphenazine Decanoate; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Loxapine Succinate; Lumateperone Tosylate; Lurasidone Hcl; Olanzapine; Olanzapine/Samidorphan Malate; Paliperidone; Paliperidone Palmitate; Perphenazine; Pimavanserin Tartrate; Quetiapine Fumarate; Risperidone; Risperidone Microspheres; Thioridazine Hcl; Ziprasidone Hcl
+2024,Neuropsychiatry,beta blockers,17,531.0,708.0,20944.0,22.0,20,187.0,False,Metoprolol Succinate; Metoprolol Tartrate; Nadolol; Propranolol Hcl
+2024,Neuropsychiatry,lithium,18,308.0,342.0,10202.0,0.0,18,106.0,False,Lithium Carbonate
+2024,Neuropsychiatry,metformin,5,96.0,110.3,3240.0,0.0,5,36.0,False,Metformin Hcl
+2024,Neuropsychiatry,topiramate/zonisamide,13,354.0,416.0,12368.0,31.0,11,100.0,False,Topiramate; Zonisamide
+2024,Neurosurgery,ACE inhibitors/ARBs,2,594.0,1503.0,45074.0,116.0,10,405.0,True,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Enalapril Maleate; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Neurosurgery,SGLT2 inhibitors,1,54.0,88.0,2640.0,13.0,0,42.0,True,Empagliflozin
+2024,Neurosurgery,SSRIs,2,105.0,143.0,4290.0,0.0,4,91.0,True,Citalopram Hydrobromide; Escitalopram Oxalate; Sertraline Hcl
+2024,Neurosurgery,beta blockers,1,169.0,391.4,11717.0,21.0,4,125.0,True,Atenolol; Carvedilol; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl
+2024,Neurosurgery,insulin,1,17.0,27.6,828.0,0.0,1,0.0,True,"Insulin Glargine,hum.Rec.Anlog"
+2024,Neurosurgery,loop diuretics,1,109.0,191.1,5628.0,29.0,0,0.0,True,Furosemide
+2024,Neurosurgery,metformin,1,136.0,300.0,9000.0,35.0,1,95.0,True,Metformin Hcl
+2024,Neurosurgery,thiazides,1,200.0,494.9,14845.0,32.0,3,23.0,True,Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Nuclear Medicine,ACE inhibitors/ARBs,6,3987.0,10260.1,307461.0,1189.0,29,2036.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Amlodipine/Valsartan/Hcthiazid; Azilsartan Medoxomil; Candesartan Cilexetil; Candesartan/Hydrochlorothiazid; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Nuclear Medicine,SGLT2 inhibitors,3,722.0,1553.1,46449.0,228.0,1,466.0,False,Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Metformin Hcl
+2024,Nuclear Medicine,SSRIs,3,151.0,347.7,10432.0,43.0,3,151.0,False,Escitalopram Oxalate; Sertraline Hcl
+2024,Nuclear Medicine,beta blockers,6,3074.0,7718.3,229370.0,974.0,14,2345.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Carvedilol; Carvedilol Phosphate; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl; Sotalol Hcl
+2024,Nuclear Medicine,loop diuretics,6,628.0,1519.3,45498.0,238.0,2,422.0,False,Bumetanide; Furosemide; Torsemide
+2024,Nuclear Medicine,metformin,4,312.0,754.8,22611.0,92.0,3,210.0,False,Dapaglifloz Propaned/Metformin; Empagliflozin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Nuclear Medicine,thiazides,6,887.0,2423.6,72627.0,293.0,11,273.0,False,Atenolol/Chlorthalidone; Chlorthalidone; Enalapril/Hydrochlorothiazide; Hydrochlorothiazide; Indapamide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Nurse Practitioner,ACE inhibitors/ARBs,1653,275372.0,553097.9,16354676.0,73713.0,3361,145620.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Amlodipine/Valsartan/Hcthiazid; Azilsartan Med/Chlorthalidone; Azilsartan Medoxomil; Benazepril Hcl; Benazepril/Hydrochlorothiazide; Candesartan Cilexetil; Candesartan/Hydrochlorothiazid; Captopril; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Fosinopril Sodium; Fosinopril/Hydrochlorothiazide; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Hydrochlorothiazid; Trandolapril; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Nurse Practitioner,ADHD stimulants,145,4575.0,4671.1,136237.0,119.0,213,1255.0,False,Dexmethylphenidate Hcl; Dextroamphetamine Sulfate; Dextroamphetamine/Amphetamine; Lisdexamfetamine Dimesylate; Methylphenidate Hcl
+2024,Nurse Practitioner,SGLT2 inhibitors,1037,73369.0,121430.6,3578443.0,16870.0,886,39575.0,False,Canagliflozin; Canagliflozin/Metformin Hcl; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Linagliptin; Empagliflozin/Metformin Hcl; Ertugliflozin Pidolate; Ertugliflozin/Metformin; Ertugliflozin/Sitagliptin Phos; Sotagliflozin
+2024,Nurse Practitioner,SSRIs,1240,131827.0,167809.8,4820246.0,16067.0,2210,65663.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Nurse Practitioner,anticholinergics (bladder/antiparkinson),628,31074.0,38461.0,1121510.0,3326.0,654,12684.0,False,Benztropine Mesylate; Darifenacin Hydrobromide; Fesoterodine Fumarate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate; Trihexyphenidyl Hcl; Trospium Chloride
+2024,Nurse Practitioner,antipsychotics,1036,167967.0,186913.8,5305889.0,15004.0,3282,64333.0,False,Aripiprazole; Aripiprazole Lauroxil; Asenapine; Asenapine Maleate; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Fluphenazine Decanoate; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Iloperidone; Loxapine Succinate; Lumateperone Tosylate; Lurasidone Hcl; Olanzapine; Olanzapine/Samidorphan Malate; Paliperidone; Paliperidone Palmitate; Perphenazine; Pimavanserin Tartrate; Pimozide; Quetiapine Fumarate; Risperidone; Risperidone Microspheres; Thioridazine Hcl; Thiothixene; Trifluoperazine Hcl; Ziprasidone Hcl
+2024,Nurse Practitioner,beta blockers,1759,202142.0,391309.0,11444187.0,55262.0,2397,103649.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Carvedilol Phosphate; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Metoprolol/Hydrochlorothiazide; Nadolol; Nebivolol Hcl; Propranolol Hcl; Sotalol Hcl
+2024,Nurse Practitioner,epinephrine auto-injectors,7,100.0,100.0,2476.0,0.0,7,14.0,False,Epinephrine
+2024,Nurse Practitioner,fentanyl/opioid patches,62,2206.0,2206.0,58355.0,392.0,53,938.0,False,Buprenorphine; Fentanyl
+2024,Nurse Practitioner,insulin,626,46879.0,77694.9,2159137.0,7479.0,1326,21597.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Degludec/Liraglutide; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Glargine/Lixisenatide; Insulin Glulisine; Insulin Lispro; Insulin Lispro Protamin/Lispro; Insulin Lispro-Aabc; Insulin Nph Hum/Reg Insulin Hm; Insulin Nph Human Isophane; Insulin Regular, Human"
+2024,Nurse Practitioner,lithium,167,4496.0,4889.0,141336.0,11.0,206,559.0,False,Lithium Carbonate
+2024,Nurse Practitioner,loop diuretics,1127,64088.0,105409.2,2934645.0,19054.0,710,30934.0,False,Bumetanide; Ethacrynic Acid; Furosemide; Torsemide
+2024,Nurse Practitioner,metformin,1356,135092.0,255992.4,7553370.0,36834.0,1192,74077.0,False,Alogliptin Benz/Metformin Hcl; Canagliflozin/Metformin Hcl; Dapaglifloz Propaned/Metformin; Empaglifloz/Linaglip/Metformin; Empagliflozin/Metformin Hcl; Ertugliflozin/Metformin; Glipizide/Metformin Hcl; Glyburide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Pioglitazone Hcl/Metformin Hcl; Saxagliptin Hcl/Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Nurse Practitioner,thiazides,1111,84611.0,179588.0,5352376.0,20465.0,1485,44635.0,False,Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Benazepril/Hydrochlorothiazide; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Enalapril/Hydrochlorothiazide; Fosinopril/Hydrochlorothiazide; Hydrochlorothiazide; Indapamide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Metoprolol/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Nurse Practitioner,topiramate/zonisamide,229,7232.0,9841.7,287352.0,638.0,218,1812.0,False,Topiramate; Zonisamide
+2024,Obstetrics & Gynecology,ACE inhibitors/ARBs,8,557.0,897.5,26056.0,108.0,11,500.0,False,Enalapril Maleate; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Obstetrics & Gynecology,ADHD stimulants,1,14.0,14.0,420.0,0.0,1,0.0,True,Dextroamphetamine/Amphetamine
+2024,Obstetrics & Gynecology,SGLT2 inhibitors,3,137.0,216.0,5971.0,32.0,2,117.0,False,Dapagliflozin Propanediol; Empagliflozin
+2024,Obstetrics & Gynecology,SSRIs,16,532.0,797.0,23302.0,34.0,21,319.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Obstetrics & Gynecology,anticholinergics (bladder/antiparkinson),62,3054.0,4559.5,136101.0,638.0,62,1721.0,False,Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate; Trospium Chloride
+2024,Obstetrics & Gynecology,antipsychotics,7,136.0,137.1,3443.0,11.0,8,120.0,False,Aripiprazole; Brexpiprazole; Haloperidol Decanoate; Olanzapine; Quetiapine Fumarate; Risperidone
+2024,Obstetrics & Gynecology,beta blockers,7,405.0,560.3,16431.0,65.0,9,328.0,False,Atenolol; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate
+2024,Obstetrics & Gynecology,insulin,2,194.0,220.8,4476.0,0.0,7,150.0,True,"Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Lispro"
+2024,Obstetrics & Gynecology,loop diuretics,3,232.0,270.5,7575.0,43.0,3,202.0,False,Furosemide; Torsemide
+2024,Obstetrics & Gynecology,metformin,8,436.0,787.9,23443.0,123.0,6,247.0,False,Glipizide/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Obstetrics & Gynecology,thiazides,8,158.0,250.0,7436.0,14.0,9,118.0,False,Chlorthalidone; Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Obstetrics & Gynecology,topiramate/zonisamide,3,57.0,99.0,2970.0,17.0,2,15.0,False,Topiramate
+2024,Ophthalmology,ACE inhibitors/ARBs,1,18.0,22.5,676.0,0.0,1,18.0,True,Lisinopril
+2024,Ophthalmology,SSRIs,3,40.0,40.1,1203.0,0.0,3,24.0,False,Escitalopram Oxalate; Fluoxetine Hcl
+2024,Ophthalmology,fentanyl/opioid patches,1,14.0,14.0,420.0,0.0,1,14.0,True,Fentanyl
+2024,Ophthalmology,metformin,1,12.0,12.0,360.0,0.0,1,12.0,True,Metformin Hcl
+2024,Ophthalmology,thiazides,1,14.0,16.2,486.0,0.0,1,14.0,True,Hydrochlorothiazide
+2024,Orthopaedic Surgery,ACE inhibitors/ARBs,1,11.0,31.0,930.0,0.0,1,11.0,True,Benazepril Hcl
+2024,Orthopaedic Surgery,antipsychotics,1,14.0,14.0,420.0,0.0,1,0.0,True,Risperidone
+2024,Orthopedic Surgery,ACE inhibitors/ARBs,2,23.0,23.0,690.0,0.0,2,23.0,True,Losartan Potassium
+2024,Orthopedic Surgery,SSRIs,1,12.0,12.0,360.0,0.0,1,12.0,True,Citalopram Hydrobromide
+2024,Orthopedic Surgery,antipsychotics,1,26.0,26.0,780.0,11.0,0,13.0,True,Chlorpromazine Hcl
+2024,Orthopedic Surgery,loop diuretics,2,31.0,31.0,890.0,0.0,2,11.0,True,Furosemide
+2024,Orthopedic Surgery,metformin,1,18.0,18.0,540.0,0.0,1,0.0,True,Metformin Hcl
+2024,Orthopedic Surgery,thiazides,2,25.0,44.5,1335.0,0.0,2,25.0,True,Hydrochlorothiazide
+2024,Osteopathic Manipulative Medicine,ACE inhibitors/ARBs,3,4381.0,4996.0,149813.0,494.0,23,3044.0,False,Amlodipine Besylate/Valsartan; Azilsartan Med/Chlorthalidone; Azilsartan Medoxomil; Benazepril Hcl; Enalapril Maleate; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Osteopathic Manipulative Medicine,SGLT2 inhibitors,2,880.0,926.0,27780.0,132.0,2,818.0,True,Canagliflozin; Dapagliflozin Propanediol; Empagliflozin
+2024,Osteopathic Manipulative Medicine,SSRIs,3,1089.0,1175.0,35219.0,134.0,6,1007.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Paroxetine Hcl; Sertraline Hcl
+2024,Osteopathic Manipulative Medicine,anticholinergics (bladder/antiparkinson),2,108.0,118.0,3540.0,0.0,5,108.0,True,Fesoterodine Fumarate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate
+2024,Osteopathic Manipulative Medicine,antipsychotics,3,195.0,203.0,6090.0,0.0,7,127.0,False,Aripiprazole; Brexpiprazole; Haloperidol; Lurasidone Hcl; Quetiapine Fumarate
+2024,Osteopathic Manipulative Medicine,beta blockers,4,3599.0,4135.0,124050.0,469.0,11,2576.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Carvedilol; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl; Sotalol Hcl
+2024,Osteopathic Manipulative Medicine,fentanyl/opioid patches,2,53.0,53.0,1590.0,0.0,2,11.0,True,Fentanyl
+2024,Osteopathic Manipulative Medicine,insulin,2,244.0,346.4,9854.0,0.0,8,140.0,True,"Insulin Aspart; Insulin Degludec; Insulin Glargine,hum.Rec.Anlog; Insulin Lispro"
+2024,Osteopathic Manipulative Medicine,loop diuretics,2,439.0,445.0,12839.0,78.0,1,60.0,True,Furosemide; Torsemide
+2024,Osteopathic Manipulative Medicine,metformin,3,1794.0,1972.0,59096.0,190.0,12,1139.0,False,Dapaglifloz Propaned/Metformin; Glipizide/Metformin Hcl; Glyburide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Pioglitazone Hcl/Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Osteopathic Manipulative Medicine,thiazides,3,1436.0,1625.0,48750.0,167.0,8,939.0,False,Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Chlorthalidone; Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Osteopathic Manipulative Medicine,topiramate/zonisamide,1,48.0,48.0,1440.0,0.0,1,30.0,True,Topiramate
+2024,Otolaryngology,ACE inhibitors/ARBs,2,38.0,70.0,2100.0,0.0,2,22.0,True,Losartan Potassium; Ramipril
+2024,Otolaryngology,SSRIs,1,31.0,75.5,2265.0,0.0,1,31.0,True,Escitalopram Oxalate
+2024,Otolaryngology,antipsychotics,1,13.0,15.0,450.0,0.0,1,13.0,True,Quetiapine Fumarate
+2024,Otolaryngology,beta blockers,1,11.0,13.0,390.0,0.0,1,11.0,True,Metoprolol Succinate
+2024,Otolaryngology,epinephrine auto-injectors,4,71.0,71.0,1507.0,19.0,3,29.0,False,Epinephrine
+2024,Otolaryngology,loop diuretics,1,14.0,42.0,1260.0,0.0,1,14.0,True,Furosemide
+2024,Otolaryngology,thiazides,4,78.0,184.5,5535.0,12.0,3,78.0,False,Hydrochlorothiazide
+2024,Otolaryngology,topiramate/zonisamide,2,252.0,398.0,11820.0,103.0,0,174.0,True,Topiramate
+2024,Pain Management,ACE inhibitors/ARBs,1,55.0,77.0,2310.0,0.0,4,41.0,True,Lisinopril; Olmesartan Medoxomil; Olmesartan/Hydrochlorothiazide
+2024,Pain Management,ADHD stimulants,1,14.0,14.0,420.0,0.0,1,14.0,True,Dextroamphetamine Sulfate
+2024,Pain Management,SSRIs,5,208.0,230.0,6810.0,0.0,8,138.0,False,Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Pain Management,antipsychotics,2,46.0,52.0,1558.0,0.0,3,46.0,True,Aripiprazole; Quetiapine Fumarate
+2024,Pain Management,beta blockers,2,61.0,83.0,2490.0,0.0,4,25.0,True,Bisoprolol Fumarate; Carvedilol Phosphate; Metoprolol Succinate; Metoprolol Tartrate
+2024,Pain Management,fentanyl/opioid patches,19,783.0,783.0,22363.0,81.0,17,358.0,False,Buprenorphine; Fentanyl
+2024,Pain Management,loop diuretics,1,25.0,25.0,750.0,0.0,1,0.0,True,Furosemide
+2024,Pain Management,metformin,2,79.0,83.0,2490.0,0.0,3,25.0,True,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Pain Management,thiazides,1,24.0,42.0,1260.0,0.0,2,11.0,True,Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide
+2024,Pain Management,topiramate/zonisamide,6,359.0,434.8,12698.0,85.0,3,201.0,False,Topiramate
+2024,Pathology,ACE inhibitors/ARBs,1,203.0,518.7,15538.0,87.0,0,109.0,True,Lisinopril; Losartan Potassium
+2024,Pathology,SGLT2 inhibitors,1,30.0,55.0,1650.0,0.0,2,0.0,True,Dapagliflozin Propanediol; Empagliflozin
+2024,Pathology,SSRIs,3,67.0,123.0,3690.0,0.0,5,29.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Sertraline Hcl
+2024,Pathology,antipsychotics,1,47.0,90.0,2698.0,0.0,3,0.0,True,Aripiprazole; Quetiapine Fumarate
+2024,Pathology,beta blockers,1,151.0,415.5,12465.0,62.0,1,44.0,True,Atenolol; Carvedilol; Metoprolol Succinate; Metoprolol Tartrate
+2024,Pathology,insulin,1,17.0,27.0,809.0,0.0,1,0.0,True,"Insulin Glargine,hum.Rec.Anlog"
+2024,Pathology,loop diuretics,2,71.0,153.0,4590.0,28.0,1,45.0,True,Furosemide
+2024,Pathology,metformin,1,99.0,233.5,6987.0,35.0,0,73.0,True,Metformin Hcl
+2024,Pathology,thiazides,1,48.0,130.0,3900.0,15.0,0,0.0,True,Hydrochlorothiazide
+2024,Pediatric Medicine,ACE inhibitors/ARBs,36,3492.0,7141.1,213228.0,682.0,62,1997.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Azilsartan Medoxomil; Benazepril Hcl; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Pediatric Medicine,ADHD stimulants,3,60.0,60.0,1800.0,0.0,3,25.0,False,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Pediatric Medicine,SGLT2 inhibitors,14,690.0,1055.0,31650.0,106.0,12,450.0,False,Canagliflozin; Dapagliflozin Propanediol; Empagliflozin
+2024,Pediatric Medicine,SSRIs,19,901.0,1547.9,45939.0,43.0,35,423.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Pediatric Medicine,anticholinergics (bladder/antiparkinson),6,154.0,197.0,5380.0,0.0,7,92.0,False,Benztropine Mesylate; Oxybutynin Chloride; Tolterodine Tartrate
+2024,Pediatric Medicine,antipsychotics,9,537.0,630.5,17869.0,0.0,21,87.0,False,Aripiprazole; Fluphenazine Decanoate; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Lurasidone Hcl; Olanzapine; Quetiapine Fumarate; Risperidone
+2024,Pediatric Medicine,beta blockers,26,1548.0,3187.0,94774.0,314.0,36,1018.0,False,Atenolol; Atenolol/Chlorthalidone; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,Pediatric Medicine,epinephrine auto-injectors,3,42.0,42.0,974.0,0.0,3,28.0,False,Epinephrine
+2024,Pediatric Medicine,insulin,8,324.0,536.6,15579.0,15.0,17,218.0,False,"Insulin Aspart; Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine/Lixisenatide; Insulin Lispro; Insulin Nph Human Isophane"
+2024,Pediatric Medicine,loop diuretics,13,501.0,907.8,26112.0,129.0,7,244.0,False,Furosemide; Torsemide
+2024,Pediatric Medicine,metformin,26,1721.0,3401.6,101915.0,353.0,26,1044.0,False,Glipizide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Pioglitazone Hcl/Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Pediatric Medicine,thiazides,18,1276.0,2666.0,79806.0,256.0,22,424.0,False,Atenolol/Chlorthalidone; Chlorthalidone; Enalapril/Hydrochlorothiazide; Hydrochlorothiazide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Pediatric Medicine,topiramate/zonisamide,3,60.0,86.0,2580.0,0.0,3,0.0,False,Topiramate
+2024,Peripheral Vascular Disease,beta blockers,1,34.0,56.0,1680.0,0.0,1,0.0,True,Labetalol Hcl
+2024,Pharmacist,ACE inhibitors/ARBs,3,45.0,79.0,2370.0,0.0,3,32.0,False,Lisinopril; Losartan Potassium
+2024,Pharmacist,SGLT2 inhibitors,2,44.0,70.0,2100.0,0.0,2,25.0,True,Empagliflozin
+2024,Pharmacist,beta blockers,2,40.0,60.0,1800.0,0.0,3,25.0,True,Metoprolol Succinate; Metoprolol Tartrate; Propranolol Hcl
+2024,Pharmacist,insulin,3,138.0,241.2,7144.0,22.0,5,37.0,False,"Insulin Aspart; Insulin Glargine,hum.Rec.Anlog; Insulin Lispro"
+2024,Pharmacist,loop diuretics,1,52.0,52.0,728.0,0.0,1,52.0,True,Furosemide
+2024,Pharmacist,metformin,2,30.0,70.0,2100.0,0.0,2,14.0,True,Metformin Hcl
+2024,Physical Medicine & Rehabilitation,metformin,1,23.0,46.5,1395.0,0.0,1,23.0,True,Metformin Hcl
+2024,Physical Medicine and Rehabilitation,ACE inhibitors/ARBs,15,627.0,1249.8,37435.0,166.0,19,322.0,False,Amlodipine Besylate/Benazepril; Irbesartan; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Ramipril; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Physical Medicine and Rehabilitation,ADHD stimulants,9,226.0,230.0,6518.0,0.0,14,70.0,False,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Physical Medicine and Rehabilitation,SGLT2 inhibitors,5,103.0,183.0,5490.0,16.0,5,39.0,False,Dapagliflozin Propanediol; Empagliflozin
+2024,Physical Medicine and Rehabilitation,SSRIs,15,362.0,608.2,18103.0,68.0,11,162.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Sertraline Hcl
+2024,Physical Medicine and Rehabilitation,anticholinergics (bladder/antiparkinson),3,69.0,73.0,2190.0,0.0,4,0.0,False,Oxybutynin Chloride; Trihexyphenidyl Hcl
+2024,Physical Medicine and Rehabilitation,antipsychotics,7,189.0,212.0,6330.0,11.0,7,80.0,False,Chlorpromazine Hcl; Olanzapine; Quetiapine Fumarate
+2024,Physical Medicine and Rehabilitation,beta blockers,15,567.0,940.1,27850.0,149.0,18,264.0,False,Atenolol; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,Physical Medicine and Rehabilitation,fentanyl/opioid patches,17,575.0,581.0,16839.0,48.0,17,248.0,False,Buprenorphine; Fentanyl
+2024,Physical Medicine and Rehabilitation,insulin,1,33.0,33.0,493.0,0.0,2,33.0,True,"Insulin Detemir; Insulin Glargine,hum.Rec.Anlog"
+2024,Physical Medicine and Rehabilitation,lithium,1,22.0,22.0,308.0,0.0,1,22.0,True,Lithium Carbonate
+2024,Physical Medicine and Rehabilitation,loop diuretics,6,126.0,202.0,5865.0,42.0,4,63.0,False,Furosemide
+2024,Physical Medicine and Rehabilitation,metformin,11,314.0,571.0,16716.0,81.0,10,147.0,False,Linagliptin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Physical Medicine and Rehabilitation,thiazides,7,156.0,297.0,8861.0,12.0,9,87.0,False,Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Physical Medicine and Rehabilitation,topiramate/zonisamide,7,279.0,414.3,12377.0,61.0,5,99.0,False,Topiramate
+2024,Physician Assistant,ACE inhibitors/ARBs,578,112043.0,227802.2,6800502.0,31167.0,1195,59962.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Amlodipine/Valsartan/Hcthiazid; Azilsartan Med/Chlorthalidone; Azilsartan Medoxomil; Benazepril Hcl; Benazepril/Hydrochlorothiazide; Candesartan Cilexetil; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Fosinopril Sodium; Fosinopril/Hydrochlorothiazide; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Amlodipine; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Physician Assistant,ADHD stimulants,26,770.0,776.0,22424.0,13.0,35,93.0,False,Dexmethylphenidate Hcl; Dextroamphetamine/Amphetamine; Lisdexamfetamine Dimesylate; Methylphenidate Hcl
+2024,Physician Assistant,SGLT2 inhibitors,344,26666.0,42761.2,1273599.0,6367.0,298,15195.0,False,Canagliflozin; Canagliflozin/Metformin Hcl; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Linagliptin; Empagliflozin/Metformin Hcl; Ertugliflozin Pidolate
+2024,Physician Assistant,SSRIs,267,18021.0,27607.7,806767.0,2523.0,433,9867.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Physician Assistant,anticholinergics (bladder/antiparkinson),188,9663.0,14660.8,430029.0,1844.0,213,5389.0,False,Benztropine Mesylate; Darifenacin Hydrobromide; Fesoterodine Fumarate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate; Trihexyphenidyl Hcl; Trospium Chloride
+2024,Physician Assistant,antipsychotics,155,11975.0,15278.3,437571.0,1370.0,308,5425.0,False,Aripiprazole; Asenapine Maleate; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Fluphenazine Decanoate; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Lumateperone Tosylate; Lurasidone Hcl; Olanzapine; Paliperidone; Paliperidone Palmitate; Perphenazine; Pimavanserin Tartrate; Quetiapine Fumarate; Risperidone; Trifluoperazine Hcl; Ziprasidone Hcl
+2024,Physician Assistant,beta blockers,750,82280.0,160773.7,4780203.0,24300.0,866,42768.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Carvedilol Phosphate; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Metoprolol/Hydrochlorothiazide; Nadolol; Nebivolol Hcl; Pindolol; Propranolol Hcl; Sotalol Hcl
+2024,Physician Assistant,epinephrine auto-injectors,7,111.0,133.0,2929.0,26.0,5,16.0,False,Epinephrine
+2024,Physician Assistant,fentanyl/opioid patches,19,617.0,619.0,17189.0,57.0,19,201.0,False,Buprenorphine; Fentanyl
+2024,Physician Assistant,insulin,175,14345.0,24459.5,701087.0,2538.0,402,6199.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Glargine/Lixisenatide; Insulin Lispro; Insulin Lispro Protamin/Lispro; Insulin Lispro-Aabc; Insulin Nph Hum/Reg Insulin Hm; Insulin Nph Human Isophane; Insulin Regular, Human"
+2024,Physician Assistant,lithium,9,212.0,262.0,7805.0,11.0,9,55.0,False,Lithium Carbonate
+2024,Physician Assistant,loop diuretics,431,20194.0,33544.8,961845.0,6750.0,232,9807.0,False,Bumetanide; Furosemide; Torsemide
+2024,Physician Assistant,metformin,431,51386.0,97663.5,2913056.0,14527.0,418,25683.0,False,Canagliflozin/Metformin Hcl; Dapaglifloz Propaned/Metformin; Empaglifloz/Linaglip/Metformin; Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Glyburide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Pioglitazone Hcl/Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Physician Assistant,thiazides,378,36122.0,75676.5,2261978.0,9213.0,530,18876.0,False,Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Benazepril/Hydrochlorothiazide; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Enalapril/Hydrochlorothiazide; Fosinopril/Hydrochlorothiazide; Hydrochlorothiazide; Indapamide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Metoprolol/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Physician Assistant,topiramate/zonisamide,58,2246.0,3180.6,94040.0,330.0,49,710.0,False,Topiramate; Zonisamide
+2024,Plastic Surgery,beta blockers,1,12.0,12.0,360.0,0.0,1,12.0,True,Metoprolol Succinate
+2024,Plastic Surgery,metformin,1,13.0,33.0,990.0,0.0,1,13.0,True,Metformin Hcl
+2024,Plastic and Reconstructive Surgery,ACE inhibitors/ARBs,1,180.0,498.0,14940.0,30.0,5,86.0,True,Enalapril Maleate; Irbesartan; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Ramipril
+2024,Plastic and Reconstructive Surgery,ADHD stimulants,1,11.0,11.0,330.0,0.0,1,11.0,True,Methylphenidate Hcl
+2024,Plastic and Reconstructive Surgery,SGLT2 inhibitors,1,142.0,235.0,7041.0,35.0,1,82.0,True,Dapagliflozin Propanediol; Empagliflozin
+2024,Plastic and Reconstructive Surgery,SSRIs,1,88.0,213.5,6405.0,18.0,2,66.0,True,Escitalopram Oxalate; Paroxetine Hcl; Sertraline Hcl
+2024,Plastic and Reconstructive Surgery,antipsychotics,1,13.0,17.0,510.0,0.0,1,13.0,True,Quetiapine Fumarate
+2024,Plastic and Reconstructive Surgery,beta blockers,1,242.0,656.5,19695.0,64.0,1,12.0,True,Carvedilol; Metoprolol Succinate
+2024,Plastic and Reconstructive Surgery,loop diuretics,1,44.0,85.8,2574.0,0.0,2,44.0,True,Furosemide; Torsemide
+2024,Plastic and Reconstructive Surgery,metformin,1,86.0,232.0,6960.0,15.0,1,42.0,True,Metformin Hcl
+2024,Plastic and Reconstructive Surgery,thiazides,1,52.0,98.0,2940.0,13.0,1,52.0,True,Hydrochlorothiazide; Losartan/Hydrochlorothiazide
+2024,Podiatry,ACE inhibitors/ARBs,2,22.0,22.0,660.0,0.0,2,22.0,True,Lisinopril; Losartan Potassium
+2024,Podiatry,antipsychotics,23,754.0,754.0,21970.0,228.0,12,315.0,False,Chlorpromazine Hcl
+2024,Podiatry,beta blockers,1,12.0,12.0,360.0,0.0,1,12.0,True,Metoprolol Tartrate
+2024,Podiatry,loop diuretics,8,261.0,300.3,7614.0,116.0,3,81.0,False,Bumetanide; Furosemide
+2024,Podiatry,thiazides,1,12.0,12.0,360.0,0.0,1,0.0,True,Hydrochlorothiazide
+2024,Preventive Medicine,ACE inhibitors/ARBs,3,422.0,818.7,24560.0,102.0,5,278.0,False,Enalapril Maleate; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Ramipril
+2024,Preventive Medicine,SGLT2 inhibitors,3,99.0,157.0,4710.0,13.0,4,68.0,False,Dapagliflozin Propanediol; Empagliflozin
+2024,Preventive Medicine,SSRIs,1,79.0,92.0,2740.0,0.0,2,79.0,True,Escitalopram Oxalate; Sertraline Hcl
+2024,Preventive Medicine,anticholinergics (bladder/antiparkinson),1,13.0,13.0,390.0,0.0,1,13.0,True,Oxybutynin Chloride
+2024,Preventive Medicine,antipsychotics,1,14.0,14.0,420.0,0.0,1,0.0,True,Quetiapine Fumarate
+2024,Preventive Medicine,beta blockers,2,219.0,477.8,14315.0,47.0,3,201.0,True,Atenolol; Carvedilol; Metoprolol Succinate; Metoprolol Tartrate
+2024,Preventive Medicine,loop diuretics,1,83.0,139.9,3925.0,18.0,0,83.0,True,Furosemide
+2024,Preventive Medicine,metformin,4,260.0,528.0,15809.0,65.0,5,244.0,False,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Preventive Medicine,thiazides,2,116.0,213.7,6342.0,23.0,2,26.0,True,Hydrochlorothiazide; Losartan/Hydrochlorothiazide
+2024,Psychiatry,ACE inhibitors/ARBs,18,1085.0,1658.3,48890.0,158.0,27,674.0,False,Amlodipine Besylate/Benazepril; Enalapril Maleate; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Psychiatry,ADHD stimulants,334,13634.0,14216.8,417631.0,393.0,573,5560.0,False,Dexmethylphenidate Hcl; Dextroamphetamine Sulfate; Dextroamphetamine/Amphetamine; Lisdexamfetamine Dimesylate; Methylphenidate; Methylphenidate Hcl
+2024,Psychiatry,SGLT2 inhibitors,4,191.0,239.0,7170.0,29.0,4,130.0,False,Dapagliflozin Propanediol; Empagliflozin
+2024,Psychiatry,SSRIs,988,229610.0,297350.7,8855446.0,26348.0,2206,136367.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Psychiatry,anticholinergics (bladder/antiparkinson),418,23368.0,26086.6,768515.0,2015.0,363,6274.0,False,Benztropine Mesylate; Oxybutynin Chloride; Trihexyphenidyl Hcl; Xanomeline Tart/Trospium Chlor
+2024,Psychiatry,antipsychotics,969,278209.0,323615.5,9509949.0,23885.0,4219,123065.0,False,Aripiprazole; Aripiprazole Lauroxil; Asenapine Maleate; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Fluphenazine Decanoate; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Iloperidone; Loxapine Succinate; Lumateperone Tosylate; Lurasidone Hcl; Olanzapine; Olanzapine/Fluoxetine Hcl; Olanzapine/Samidorphan Malate; Paliperidone; Paliperidone Palmitate; Perphenazine; Pimavanserin Tartrate; Pimozide; Quetiapine Fumarate; Risperidone; Risperidone Microspheres; Thioridazine Hcl; Thiothixene; Trifluoperazine Hcl; Xanomeline Tart/Trospium Chlor; Ziprasidone Hcl
+2024,Psychiatry,beta blockers,195,5637.0,6872.7,202750.0,217.0,214,1517.0,False,Atenolol; Atenolol/Chlorthalidone; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nadolol; Propranolol Hcl; Sotalol Hcl
+2024,Psychiatry,fentanyl/opioid patches,1,98.0,98.0,2726.0,0.0,1,82.0,True,Fentanyl
+2024,Psychiatry,insulin,2,103.0,150.9,4269.0,0.0,5,29.0,True,"Insulin Aspart; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine/Lixisenatide"
+2024,Psychiatry,lithium,339,10785.0,13179.6,389698.0,179.0,416,2625.0,False,Lithium Carbonate
+2024,Psychiatry,loop diuretics,5,113.0,155.7,4645.0,23.0,4,47.0,False,Furosemide; Torsemide
+2024,Psychiatry,metformin,41,1212.0,1686.0,49463.0,95.0,43,426.0,False,Glyburide/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Psychiatry,thiazides,4,340.0,548.0,16440.0,50.0,8,208.0,False,Atenolol/Chlorthalidone; Chlorthalidone; Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Psychiatry,topiramate/zonisamide,181,5127.0,6014.4,178159.0,157.0,172,1269.0,False,Topiramate
+2024,Psychiatry & Neurology,ACE inhibitors/ARBs,15,205.0,260.0,7800.0,0.0,15,155.0,False,Enalapril Maleate; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide; Ramipril
+2024,Psychiatry & Neurology,ADHD stimulants,189,5615.0,5833.0,172456.0,85.0,290,3375.0,False,Dexmethylphenidate Hcl; Dextroamphetamine Sulfate; Dextroamphetamine/Amphetamine; Lisdexamfetamine Dimesylate; Methylphenidate Hcl
+2024,Psychiatry & Neurology,SGLT2 inhibitors,2,23.0,23.0,690.0,0.0,2,23.0,True,Empagliflozin
+2024,Psychiatry & Neurology,SSRIs,650,49175.0,64617.4,1922248.0,3532.0,1179,27423.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Psychiatry & Neurology,anticholinergics (bladder/antiparkinson),184,8493.0,9213.5,270370.0,688.0,162,1832.0,False,Benztropine Mesylate; Oxybutynin Chloride; Tolterodine Tartrate; Trihexyphenidyl Hcl
+2024,Psychiatry & Neurology,antipsychotics,569,79227.0,88378.3,2551868.0,3905.0,1998,28026.0,False,Aripiprazole; Aripiprazole Lauroxil; Asenapine Maleate; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Fluphenazine Decanoate; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Haloperidol Lactate; Iloperidone; Loxapine Succinate; Lumateperone Tosylate; Lurasidone Hcl; Olanzapine; Olanzapine/Fluoxetine Hcl; Olanzapine/Samidorphan Malate; Paliperidone; Paliperidone Palmitate; Perphenazine; Pimavanserin Tartrate; Quetiapine Fumarate; Risperidone; Risperidone Microspheres; Thioridazine Hcl; Thiothixene; Trifluoperazine Hcl; Ziprasidone Hcl
+2024,Psychiatry & Neurology,beta blockers,77,1750.0,2078.2,61485.0,47.0,86,454.0,False,Atenolol; Carvedilol; Metoprolol Succinate; Metoprolol Tartrate; Pindolol; Propranolol Hcl
+2024,Psychiatry & Neurology,lithium,152,3888.0,4568.2,134626.0,59.0,168,1042.0,False,Lithium Carbonate
+2024,Psychiatry & Neurology,loop diuretics,2,24.0,24.0,650.0,0.0,2,13.0,True,Furosemide
+2024,Psychiatry & Neurology,metformin,29,448.0,570.0,16916.0,0.0,30,100.0,False,Metformin Hcl
+2024,Psychiatry & Neurology,thiazides,3,36.0,36.0,1080.0,0.0,3,36.0,False,Hydrochlorothiazide; Losartan/Hydrochlorothiazide
+2024,Psychiatry & Neurology,topiramate/zonisamide,68,1710.0,2278.3,67601.0,49.0,69,351.0,False,Topiramate; Zonisamide
+2024,Psychoanalyst,SSRIs,2,34.0,42.0,1220.0,0.0,2,34.0,True,Escitalopram Oxalate; Sertraline Hcl
+2024,"Psychologist, Clinical",ADHD stimulants,1,93.0,95.0,2850.0,0.0,4,48.0,True,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,"Psychologist, Clinical",SSRIs,1,60.0,164.4,4933.0,0.0,3,60.0,True,Escitalopram Oxalate; Fluoxetine Hcl; Sertraline Hcl
+2024,"Psychologist, Clinical",antipsychotics,2,61.0,153.5,4605.0,0.0,3,29.0,True,Aripiprazole; Quetiapine Fumarate
+2024,"Psychologist, Clinical",beta blockers,1,11.0,13.0,390.0,0.0,1,11.0,True,Propranolol Hcl
+2024,Pulmonary Disease,ACE inhibitors/ARBs,63,12660.0,25992.7,773636.0,2257.0,171,9009.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Azilsartan Med/Chlorthalidone; Benazepril Hcl; Candesartan Cilexetil; Enalapril Maleate; Fosinopril Sodium; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Pulmonary Disease,ADHD stimulants,4,64.0,64.0,1860.0,0.0,4,23.0,False,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Pulmonary Disease,SGLT2 inhibitors,26,2643.0,3611.8,104422.0,433.0,28,2091.0,False,Canagliflozin; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Linagliptin; Empagliflozin/Metformin Hcl; Ertugliflozin Pidolate
+2024,Pulmonary Disease,SSRIs,35,2205.0,3616.0,104702.0,218.0,61,1234.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Pulmonary Disease,anticholinergics (bladder/antiparkinson),10,412.0,542.0,15826.0,29.0,14,245.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate
+2024,Pulmonary Disease,antipsychotics,17,738.0,886.2,23590.0,77.0,26,548.0,False,Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Haloperidol; Lumateperone Tosylate; Olanzapine; Quetiapine Fumarate; Risperidone; Ziprasidone Hcl
+2024,Pulmonary Disease,beta blockers,58,9242.0,16834.3,493666.0,1657.0,94,5559.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Carvedilol Phosphate; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,Pulmonary Disease,epinephrine auto-injectors,12,228.0,228.0,5745.0,31.0,11,51.0,False,Epinephrine
+2024,Pulmonary Disease,fentanyl/opioid patches,1,12.0,12.0,360.0,0.0,1,12.0,True,Fentanyl
+2024,Pulmonary Disease,insulin,15,2283.0,3310.7,85472.0,396.0,45,1543.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Lispro; Insulin Lispro Protamin/Lispro; Insulin Nph Hum/Reg Insulin Hm; Insulin Regular, Human"
+2024,Pulmonary Disease,loop diuretics,73,4587.0,7225.5,206574.0,905.0,57,2531.0,False,Bumetanide; Furosemide; Torsemide
+2024,Pulmonary Disease,metformin,44,6252.0,11668.5,346442.0,1214.0,44,4282.0,False,Dapaglifloz Propaned/Metformin; Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Glyburide/Metformin Hcl; Linagliptin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Pulmonary Disease,thiazides,50,4808.0,10058.9,300799.0,872.0,73,2999.0,False,Atenolol/Chlorthalidone; Azilsartan Med/Chlorthalidone; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Hydrochlorothiazide; Indapamide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Pulmonary Disease,topiramate/zonisamide,1,12.0,18.0,540.0,0.0,1,0.0,True,Topiramate
+2024,Radiation Oncology,anticholinergics (bladder/antiparkinson),7,153.0,239.0,7139.0,44.0,6,122.0,False,Oxybutynin Chloride; Trospium Chloride
+2024,Radiation Oncology,fentanyl/opioid patches,2,24.0,24.0,645.0,0.0,2,24.0,True,Fentanyl
+2024,Registered Nurse,ACE inhibitors/ARBs,5,2207.0,5876.8,176243.0,744.0,14,1393.0,False,Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Benazepril Hcl; Candesartan Cilexetil; Enalapril Maleate; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Registered Nurse,ADHD stimulants,1,114.0,114.0,3420.0,11.0,1,37.0,True,Amphetamine Sulfate; Dextroamphetamine/Amphetamine
+2024,Registered Nurse,SGLT2 inhibitors,4,440.0,883.0,26465.0,129.0,3,245.0,False,Dapagliflozin Propanediol; Empagliflozin
+2024,Registered Nurse,SSRIs,9,478.0,651.0,19114.0,66.0,13,244.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Registered Nurse,anticholinergics (bladder/antiparkinson),5,140.0,142.0,4154.0,0.0,5,23.0,False,Benztropine Mesylate; Oxybutynin Chloride
+2024,Registered Nurse,antipsychotics,9,934.0,1007.2,28041.0,62.0,29,302.0,False,Aripiprazole; Aripiprazole Lauroxil; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Haloperidol; Haloperidol Decanoate; Lurasidone Hcl; Olanzapine; Paliperidone Palmitate; Pimavanserin Tartrate; Quetiapine Fumarate; Risperidone
+2024,Registered Nurse,beta blockers,6,1360.0,3581.9,107307.0,477.0,7,405.0,False,Atenolol; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,Registered Nurse,insulin,4,149.0,257.4,7640.0,0.0,9,48.0,False,"Insulin Aspart; Insulin Degludec; Insulin Glargine,hum.Rec.Anlog; Insulin Lispro"
+2024,Registered Nurse,lithium,3,35.0,35.0,922.0,0.0,3,0.0,False,Lithium Carbonate
+2024,Registered Nurse,loop diuretics,6,234.0,551.6,15889.0,96.0,2,187.0,False,Furosemide; Torsemide
+2024,Registered Nurse,metformin,5,619.0,1496.3,44770.0,223.0,5,411.0,False,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Registered Nurse,thiazides,4,728.0,1845.3,55313.0,224.0,7,506.0,False,Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Hydrochlorothiazide; Indapamide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Registered Nurse,topiramate/zonisamide,2,40.0,40.0,1105.0,0.0,2,12.0,True,Topiramate
+2024,Rheumatology,ACE inhibitors/ARBs,34,3647.0,7438.4,222962.0,588.0,71,2577.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Azilsartan Medoxomil; Benazepril Hcl; Enalapril Maleate; Irbesartan; Irbesartan/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Hydrochlorothiazide; Perindopril Erbumine; Ramipril; Telmisartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Rheumatology,ADHD stimulants,4,83.0,83.0,2490.0,0.0,4,56.0,False,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Rheumatology,SGLT2 inhibitors,4,375.0,486.4,14561.0,61.0,5,227.0,False,Dapagliflozin Propanediol; Empagliflozin
+2024,Rheumatology,SSRIs,23,1621.0,2603.7,77977.0,204.0,31,1123.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Rheumatology,anticholinergics (bladder/antiparkinson),4,94.0,154.0,4579.0,0.0,6,76.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate
+2024,Rheumatology,antipsychotics,6,363.0,394.6,11714.0,27.0,9,290.0,False,Aripiprazole; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Olanzapine; Perphenazine; Quetiapine Fumarate
+2024,Rheumatology,beta blockers,18,1985.0,3754.7,112482.0,342.0,26,1727.0,False,Atenolol; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,Rheumatology,epinephrine auto-injectors,2,23.0,23.0,546.0,0.0,2,0.0,True,Epinephrine
+2024,Rheumatology,fentanyl/opioid patches,3,56.0,56.0,1680.0,0.0,3,12.0,False,Fentanyl
+2024,Rheumatology,insulin,2,168.0,323.3,9450.0,15.0,6,64.0,True,"Insulin Aspart; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Lispro"
+2024,Rheumatology,loop diuretics,12,704.0,1002.6,28606.0,155.0,9,614.0,False,Bumetanide; Furosemide; Torsemide
+2024,Rheumatology,metformin,18,1499.0,2694.1,80599.0,305.0,15,1004.0,False,Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Rheumatology,thiazides,22,1115.0,2423.6,72658.0,131.0,35,754.0,False,Chlorthalidone; Hydrochlorothiazide; Irbesartan/Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Rheumatology,topiramate/zonisamide,6,93.0,133.5,4005.0,0.0,6,25.0,False,Topiramate
+2024,Sleep Medicine,ACE inhibitors/ARBs,1,159.0,371.0,11104.0,30.0,4,159.0,True,Candesartan Cilexetil; Enalapril Maleate; Lisinopril; Losartan Potassium; Olmesartan Medoxomil; Valsartan
+2024,Sleep Medicine,SGLT2 inhibitors,1,13.0,25.0,725.0,0.0,1,13.0,True,Empagliflozin
+2024,Sleep Medicine,SSRIs,1,180.0,256.3,7669.0,32.0,2,111.0,True,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Sertraline Hcl
+2024,Sleep Medicine,antipsychotics,1,57.0,57.0,1710.0,11.0,1,57.0,True,Olanzapine; Quetiapine Fumarate
+2024,Sleep Medicine,beta blockers,1,169.0,342.8,10215.0,30.0,4,169.0,True,Bisoprolol Fumarate; Carvedilol; Metoprolol Succinate; Nebivolol Hcl; Propranolol Hcl
+2024,Sleep Medicine,insulin,1,13.0,13.5,203.0,0.0,1,13.0,True,"Insulin Glargine,hum.Rec.Anlog"
+2024,Sleep Medicine,loop diuretics,1,64.0,104.0,2915.0,21.0,0,64.0,True,Furosemide
+2024,Sleep Medicine,metformin,1,66.0,134.0,4020.0,14.0,1,66.0,True,Metformin Hcl
+2024,Sleep Medicine,thiazides,1,38.0,104.0,3100.0,16.0,0,38.0,True,Hydrochlorothiazide
+2024,Specialist,ACE inhibitors/ARBs,9,2270.0,4205.9,125893.0,377.0,33,1677.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Candesartan Cilexetil; Enalapril Maleate; Irbesartan; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Ramipril; Sacubitril/Valsartan; Telmisartan; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Specialist,ADHD stimulants,4,108.0,114.0,3420.0,0.0,6,56.0,False,Dextroamphetamine Sulfate; Dextroamphetamine/Amphetamine; Lisdexamfetamine Dimesylate; Methylphenidate Hcl
+2024,Specialist,SGLT2 inhibitors,7,687.0,894.0,26668.0,111.0,9,286.0,False,Canagliflozin; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Linagliptin; Empagliflozin/Metformin Hcl; Ertugliflozin Pidolate
+2024,Specialist,SSRIs,13,780.0,1294.6,38642.0,53.0,22,555.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Paroxetine Hcl; Sertraline Hcl
+2024,Specialist,anticholinergics (bladder/antiparkinson),2,70.0,88.0,2640.0,0.0,5,19.0,True,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate
+2024,Specialist,antipsychotics,7,898.0,1007.0,30017.0,72.0,19,450.0,False,Aripiprazole; Chlorpromazine Hcl; Clozapine; Haloperidol; Lurasidone Hcl; Olanzapine; Paliperidone; Perphenazine; Quetiapine Fumarate; Risperidone; Ziprasidone Hcl
+2024,Specialist,beta blockers,8,1305.0,2990.3,89597.0,322.0,11,1131.0,False,Atenolol; Bisoprolol Fumarate; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,Specialist,insulin,3,156.0,241.9,7197.0,14.0,7,132.0,False,"Insulin Aspart; Insulin Aspart Prot/Insuln Asp; Insulin Glargine,hum.Rec.Anlog"
+2024,Specialist,lithium,2,32.0,54.0,1620.0,0.0,2,0.0,True,Lithium Carbonate
+2024,Specialist,loop diuretics,4,249.0,540.4,16078.0,68.0,3,201.0,False,Bumetanide; Furosemide; Torsemide
+2024,Specialist,metformin,10,814.0,1314.7,39326.0,171.0,9,490.0,False,Empagliflozin/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Specialist,thiazides,8,715.0,1292.4,38774.0,99.0,14,456.0,False,Chlorthalidone; Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Specialist,topiramate/zonisamide,2,29.0,35.0,1050.0,0.0,2,0.0,True,Topiramate
+2024,Sports Medicine,ACE inhibitors/ARBs,1,99.0,238.8,7165.0,0.0,5,81.0,True,Enalapril Maleate; Irbesartan; Lisinopril; Losartan Potassium; Losartan/Hydrochlorothiazide
+2024,Sports Medicine,SGLT2 inhibitors,1,36.0,42.0,1260.0,0.0,2,19.0,True,Dapagliflozin Propanediol; Empagliflozin
+2024,Sports Medicine,beta blockers,1,51.0,105.0,3129.0,0.0,3,40.0,True,Carvedilol; Metoprolol Succinate; Metoprolol Tartrate
+2024,Sports Medicine,fentanyl/opioid patches,1,13.0,13.0,364.0,0.0,1,0.0,True,Buprenorphine
+2024,Sports Medicine,loop diuretics,1,24.0,54.3,1630.0,0.0,1,24.0,True,Furosemide
+2024,Sports Medicine,metformin,1,82.0,183.0,5490.0,23.0,0,0.0,True,Metformin Hcl
+2024,Sports Medicine,thiazides,2,64.0,152.0,4560.0,11.0,2,25.0,True,Hydrochlorothiazide; Losartan/Hydrochlorothiazide
+2024,Student in an Organized Health Care Education/Training Program,ACE inhibitors/ARBs,758,21663.0,46478.5,1391284.0,3221.0,953,10063.0,False,Amlodipine Bes/Olmesartan Med; Amlodipine Besylate/Benazepril; Amlodipine Besylate/Valsartan; Benazepril Hcl; Benazepril/Hydrochlorothiazide; Candesartan Cilexetil; Enalapril Maleate; Enalapril/Hydrochlorothiazide; Lisinopril; Lisinopril/Hydrochlorothiazide; Losartan Potassium; Losartan/Hydrochlorothiazide; Olmesartan Medoxomil; Olmesartan/Amlodipin/Hcthiazid; Olmesartan/Hydrochlorothiazide; Ramipril; Sacubitril/Valsartan; Telmisartan; Telmisartan/Hydrochlorothiazid; Valsartan; Valsartan/Hydrochlorothiazide
+2024,Student in an Organized Health Care Education/Training Program,ADHD stimulants,7,114.0,114.0,3270.0,0.0,8,42.0,False,Dextroamphetamine/Amphetamine; Methylphenidate Hcl
+2024,Student in an Organized Health Care Education/Training Program,SGLT2 inhibitors,484,10488.0,17680.2,529371.0,1262.0,434,4375.0,False,Canagliflozin; Dapagliflozin Propanediol; Empagliflozin; Empagliflozin/Metformin Hcl
+2024,Student in an Organized Health Care Education/Training Program,SSRIs,212,9299.0,10919.8,321381.0,629.0,334,3475.0,False,Citalopram Hydrobromide; Escitalopram Oxalate; Fluoxetine Hcl; Fluvoxamine Maleate; Paroxetine Hcl; Sertraline Hcl
+2024,Student in an Organized Health Care Education/Training Program,anticholinergics (bladder/antiparkinson),106,2361.0,2638.1,70333.0,529.0,75,547.0,False,Benztropine Mesylate; Oxybutynin Chloride; Solifenacin Succinate; Trihexyphenidyl Hcl; Trospium Chloride
+2024,Student in an Organized Health Care Education/Training Program,antipsychotics,223,14313.0,15739.8,456954.0,621.0,554,3786.0,False,Aripiprazole; Brexpiprazole; Cariprazine Hcl; Chlorpromazine Hcl; Clozapine; Fluphenazine Decanoate; Fluphenazine Hcl; Haloperidol; Haloperidol Decanoate; Lurasidone Hcl; Olanzapine; Paliperidone; Paliperidone Palmitate; Perphenazine; Quetiapine Fumarate; Risperidone; Risperidone Microspheres; Trifluoperazine Hcl; Ziprasidone Hcl
+2024,Student in an Organized Health Care Education/Training Program,beta blockers,632,15704.0,31760.3,947950.0,2807.0,641,5561.0,False,Atenolol; Atenolol/Chlorthalidone; Bisoprolol Fumarate; Bisoprolol/Hydrochlorothiazide; Carvedilol; Labetalol Hcl; Metoprolol Succinate; Metoprolol Tartrate; Nebivolol Hcl; Propranolol Hcl
+2024,Student in an Organized Health Care Education/Training Program,epinephrine auto-injectors,2,26.0,26.0,605.0,0.0,2,0.0,True,Epinephrine
+2024,Student in an Organized Health Care Education/Training Program,insulin,109,2436.0,4092.9,117384.0,128.0,142,1146.0,False,"Insulin Aspart; Insulin Aspart (Niacinamide); Insulin Aspart Prot/Insuln Asp; Insulin Degludec; Insulin Detemir; Insulin Glargine,hum.Rec.Anlog; Insulin Glargine-Yfgn; Insulin Lispro; Insulin Nph Hum/Reg Insulin Hm; Insulin Nph Human Isophane"
+2024,Student in an Organized Health Care Education/Training Program,lithium,26,443.0,471.3,13816.0,0.0,29,86.0,False,Lithium Carbonate
+2024,Student in an Organized Health Care Education/Training Program,loop diuretics,231,3955.0,7394.8,218111.0,770.0,187,1549.0,False,Bumetanide; Furosemide; Torsemide
+2024,Student in an Organized Health Care Education/Training Program,metformin,533,12069.0,25362.3,757715.0,1869.0,495,4300.0,False,Dapaglifloz Propaned/Metformin; Empaglifloz/Linaglip/Metformin; Empagliflozin/Metformin Hcl; Glipizide/Metformin Hcl; Glyburide/Metformin Hcl; Metformin Hcl; Sitagliptin Phos/Metformin Hcl
+2024,Student in an Organized Health Care Education/Training Program,thiazides,217,4812.0,10154.0,303533.0,486.0,239,2605.0,False,Atenolol/Chlorthalidone; Benazepril/Hydrochlorothiazide; Bisoprolol/Hydrochlorothiazide; Chlorthalidone; Enalapril/Hydrochlorothiazide; Hydrochlorothiazide; Lisinopril/Hydrochlorothiazide; Losartan/Hydrochlorothiazide; Metolazone; Olmesartan/Hydrochlorothiazide; Valsartan/Hydrochlorothiazide
+2024,Student in an Organized Health Care Education/Training Program,topiramate/zonisamide,24,359.0,426.5,12551.0,0.0,24,79.0,False,Topiramate; Zonisamide
+2024,Thoracic Surgery,ACE inhibitors/ARBs,1,15.0,17.0,510.0,0.0,1,0.0,True,Lisinopril
+2024,Thoracic Surgery,beta blockers,1,31.0,46.0,1365.0,12.0,0,0.0,True,Metoprolol Tartrate
+2024,Thoracic Surgery,loop diuretics,4,70.0,76.0,2046.0,12.0,3,55.0,False,Furosemide; Torsemide
+2024,Thoracic Surgery,thiazides,2,27.0,34.3,1022.0,0.0,2,12.0,True,Hydrochlorothiazide; Metolazone
+2024,Thoracic Surgery (Cardiothoracic Vascular Surgery),beta blockers,1,12.0,12.0,360.0,0.0,1,0.0,True,Metoprolol Tartrate
+2024,Undefined Physician type,beta blockers,2,45.0,93.1,2794.0,14.0,1,34.0,True,Carvedilol
+2024,Undefined Physician type,loop diuretics,1,12.0,19.0,570.0,0.0,1,0.0,True,Furosemide
+2024,Urology,ACE inhibitors/ARBs,3,42.0,48.0,1440.0,0.0,3,42.0,False,Lisinopril; Ramipril; Telmisartan
+2024,Urology,SGLT2 inhibitors,1,16.0,20.0,600.0,0.0,1,0.0,True,Empagliflozin
+2024,Urology,SSRIs,16,504.0,693.4,20635.0,104.0,13,324.0,False,Escitalopram Oxalate; Paroxetine Hcl; Sertraline Hcl
+2024,Urology,anticholinergics (bladder/antiparkinson),242,35601.0,62358.5,1858244.0,9852.0,271,21527.0,False,Darifenacin Hydrobromide; Fesoterodine Fumarate; Oxybutynin Chloride; Solifenacin Succinate; Tolterodine Tartrate; Trospium Chloride
+2024,Urology,antipsychotics,1,25.0,25.0,750.0,0.0,1,25.0,True,Quetiapine Fumarate
+2024,Urology,beta blockers,1,12.0,12.0,360.0,0.0,1,12.0,True,Metoprolol Succinate
+2024,Urology,loop diuretics,4,59.0,73.0,1612.0,12.0,3,59.0,False,Furosemide
+2024,Urology,metformin,3,48.0,72.0,2160.0,0.0,3,48.0,False,Metformin Hcl
+2024,Urology,thiazides,17,584.0,1275.0,38240.0,102.0,17,363.0,False,Chlorthalidone; Hydrochlorothiazide; Indapamide
+2024,Vascular Surgery,loop diuretics,2,244.0,432.9,12810.0,75.0,0,0.0,True,Furosemide
+2024,Vascular Surgery,thiazides,2,62.0,165.4,4944.0,17.0,1,62.0,True,Hydrochlorothiazide; Metolazone

@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:22504402,exclude,"E3 formulation/manufacturing (hot-melt extrusion), not heat exposure",thiazides,none,lab_bench
+PMID:23497698,include,"I1 heatstroke with thiazide-induced hyponatremia, hot work environment",thiazides,heat_illness,case_report
+PMID:23960741,exclude,"E7 bioanalytical HPLC method, assay conditions only",multiple,none,lab_bench
+PMID:24482404,exclude,"E7 analytical HPLC method, ambient assay temperature only",multiple,none,lab_bench
+PMID:25190009,exclude,E7 forced degradation (hydrolysis/oxidation/photolysis) analytical method,multiple,none,lab_bench
+PMID:25575509,exclude,E7 bioanalytical method; plasma sample stability only,multiple,none,lab_bench
+PMID:26314245,exclude,"E3 formulation technology (floating tablet), curing temperature",thiazides,none,lab_bench
+PMID:26687444,exclude,E3 cyclodextrin complex formulation chemistry,thiazides,none,lab_bench
+PMID:27992525,include,I1 daily temperature and creatinine change in elderly on thiazide/ACEi/ARB,multiple,renal_aki,cohort
+PMID:28102885,include,I1 summer hyponatraemia; thiazide use risk factor,thiazides,electrolyte_hyponatremia,case_control
+PMID:28342346,include,uncertain: I1 temperature vs atenolol loads in wastewater (population),beta_blockers,other,time_series
+PMID:29730176,exclude,E3 manufacturing (hot-melt extrusion vs spray drying) of FDC,multiple,none,lab_bench
+PMID:30220731,include,uncertain: I2 hydrochlorothiazide degradation at high temperature/humidity,thiazides,stability_potency,lab_bench
+PMID:34363917,exclude,E3 hot-melt coating formulation/lipid crystal science,thiazides,none,lab_bench
+PMID:35558458,include,uncertain: I2 indapamide degradation under high temperature/humidity,thiazides,stability_potency,lab_bench
+PMID:36906146,exclude,"E6 kidney stone prevention review, not drug x heat",thiazides,none,review
+PMID:3697832,exclude,E7 metabolic heat production with methyldopa; no heat exposure,thiazides,none,rct
+PMID:37598182,exclude,E7 analytical chromatography method,multiple,none,lab_bench
+PMID:40583613,exclude,"E6 urinary stone guideline, not drug x heat",thiazides,none,review
+PMID:41187832,exclude,E3 cocrystal synthesis by hot-melt extrusion,thiazides,none,lab_bench
+PMID:8071398,include,I2 bendrofluazide capsule stability stored at 45 or 60 C,thiazides,stability_potency,lab_bench
+PMID:8109690,include,"I1 thiazide-induced hypovolemia during intense heat exposure, volunteers",thiazides,other,human_lab_study
+DOI:10.1101/2025.08.11.669659,exclude,"E2 Drosophila study, no human data",metformin,none,other
+DOI:10.21203/rs.3.rs-713526/v1,exclude,"E6 tumor photothermal therapy, metformin not heat-exposure question",metformin,none,other
+PAT:WO2009144527,exclude,E3 salt synthesis patent,metformin,none,other
+PMID:16935831,exclude,E7 analytical HPLC method,metformin,none,lab_bench
+PMID:21313808,exclude,E7 analytical HPLC method,metformin,none,lab_bench
+PMID:22080805,exclude,E7 analytical HPLC method,metformin,none,lab_bench
+PMID:24505341,exclude,E6 therapeutic hyperthermia in cancer cells,metformin,none,other
+PMID:26751978,exclude,E3 hot-melt co-extrusion manufacturing,metformin,none,lab_bench
+PMID:26997866,exclude,"E7 stability-indicating analytical method, no heat storage data",metformin,none,lab_bench
+PMID:27214744,exclude,E7 analytical LC method,metformin,none,lab_bench
+PMID:27550216,exclude,E7 analytical LC method,metformin,none,lab_bench
+PMID:28118359,exclude,E2 rodent/cell study of AMPK activator,none,none,other
+PMID:28417083,exclude,E2 mouse study,metformin,none,other
+PMID:28432330,exclude,E6 photothermal cancer therapy,metformin,none,other
+PMID:28526827,exclude,"E6 thermal ablation, cell/mouse study",metformin,none,other
+PMID:28748781,exclude,E7 analytical LC method,metformin,none,lab_bench
+PMID:29147450,exclude,E6 mild hyperthermia oncology in mouse tumors,metformin,none,other
+PMID:29852987,exclude,E3 nanosensor chemistry,metformin,none,lab_bench
+PMID:30772406,exclude,E3 cellulose materials chemistry,metformin,none,lab_bench
+PMID:30826475,exclude,E3 hot-melt extrusion drug delivery design,metformin,none,lab_bench
+PMID:31817112,include,uncertain: I2 metformin degradation under high temperature/humidity,metformin,stability_potency,lab_bench
+PMID:32477453,exclude,"E6 narrative review of T2D mechanisms, no drug x heat question",metformin,none,review
+PMID:32889348,exclude,E7 analytical method for NDMA in ranitidine,none,none,lab_bench
+PMID:33254991,exclude,E6 hyperthermia nanofiber oncology,metformin,none,lab_bench
+PMID:33849366,exclude,E3 NDMA formation from heat during tablet manufacturing,metformin,none,lab_bench
+PMID:34267540,exclude,"E7 bioanalytical method, sample stability only",metformin,none,lab_bench
+PMID:35894806,exclude,E3 carbon dot nanomaterial synthesis,metformin,none,lab_bench
+PMID:36163535,exclude,E3 hot-melt extrusion manufacturing,metformin,none,lab_bench
+PMID:36191442,include,uncertain: I2 NDMA formation in metformin under high temperature storage/stress,metformin,stability_potency,lab_bench
+PMID:36317069,exclude,"E2 rat study, hot tea infusion not heat",metformin,none,other
+PMID:37294048,exclude,E6 integrative oncology review,metformin,none,review
+PMID:37424987,include,I1 metformin lactic acidosis after all-day roof work in summer heat,metformin,drug_toxicity_levels,case_report
+PMID:38821128,exclude,E6 wastewater micropollutant monitoring,multiple,none,other
+PMID:39122196,exclude,E3 PLGA implant hot-melt extrusion,metformin,none,lab_bench
+PMID:39228118,exclude,E3 perovskite solar cell materials,none,none,lab_bench
+PMID:39340841,exclude,E7 analytical HPLC method,metformin,none,lab_bench
+PMID:39406321,exclude,E3 hydrogel synthesis,metformin,none,lab_bench
+PMID:40895950,exclude,E6 exercise vasculitis in heat; metformin incidental,metformin,none,case_report
+PMID:41322941,include,I2 metformin + olmesartan unit-dose stability at 40 C/75% RH,multiple,stability_potency,lab_bench
+PMID:42100430,exclude,E6 oncology hyperthermia case; metformin incidental,metformin,none,case_report
+PMID:109891,exclude,E2 rat study of amphetamine hyperthermia,adhd_stimulants,none,other
+PMID:11118748,exclude,E7 forensic analytical method,adhd_stimulants,none,lab_bench
+PMID:111287,exclude,E2 dog model study,adhd_stimulants,none,other
+PMID:11499882,exclude,E3 pyrolysis chemistry of dimethylamphetamine,adhd_stimulants,none,lab_bench
+PMID:11599617,exclude,"E5 PMA overdose hyperthermia, no environmental heat link",none,none,case_series
+PMID:11898532,exclude,"E6 MS fatigue review, no heat x drug",adhd_stimulants,none,review
+PMID:11981294,exclude,"E5 methylphenidate overdose/abuse review, no environmental heat",adhd_stimulants,none,review
+PMID:12793539,exclude,E6 modafinil (not among 15) review; hot environments mentioned,none,none,review
+PMID:12908947,exclude,"E5 amphetamine analogue overdose hyperthermia, no environmental heat",adhd_stimulants,none,case_report
+PMID:139615,exclude,E2 rabbit pharmacology study,adhd_stimulants,none,other
+PMID:14616331,exclude,"E5 PMA/PMMA poisoning hyperthermia, no environmental heat",none,none,case_report
+PMID:16161930,exclude,"E5 drug intoxication hyperthermia, no environmental heat",adhd_stimulants,none,case_report
+PMID:17980530,exclude,E7 hair analysis analytical method,adhd_stimulants,none,lab_bench
+PMID:18408610,include,I1 methylphenidate and exercise in 30 C heat raised core temperature,adhd_stimulants,hyperthermia,human_lab_study
+PMID:18991857,exclude,E2 rodent amphetamine neurotoxicity,adhd_stimulants,none,other
+PMID:21756931,exclude,E6 MDMA interactions review (MDMA not among 15),none,none,review
+PMID:22024657,exclude,E7 hair analysis analytical method (atomoxetine),none,none,lab_bench
+PMID:22289608,exclude,E2 rat stimulant hyperthermia study,adhd_stimulants,none,other
+PMID:22447633,include,I1 heatstroke ICU patients; thermoregulation-impairing drugs incl. amphetamines vs morbidity,multiple,heat_illness,case_control
+PMID:22978803,exclude,E3 crystal lattice dynamics of amphetamine sulfate,adhd_stimulants,none,lab_bench
+PMID:23497014,exclude,E2 rodent gene expression after hyperthermia/amphetamine,adhd_stimulants,none,other
+PMID:23765447,exclude,"E2 in vitro hepatocyte line, no human data",adhd_stimulants,none,lab_bench
+PMID:25060403,exclude,"E5 methoxetamine/amphetamine poisoning hyperthermia, no environmental heat",adhd_stimulants,none,case_report
+PMID:25121992,exclude,"E5 methylphenidate intoxication, no heat",adhd_stimulants,none,case_report
+PMID:29613996,include,"I1 heat illness odds increased with methylphenidate, opioids in Army enlistees",multiple,heat_illness,cohort
+PMID:30574708,exclude,E7 forensic hair analysis method,adhd_stimulants,none,lab_bench
+PMID:30639129,exclude,"E5 antipsychotics for sympathomimetic toxicity, no environmental heat",multiple,none,systematic_review
+PMID:32219708,include,I1 fatal amphetamine/alpha-PVP use during sauna (hot environment),adhd_stimulants,mortality,case_report
+PMID:32460203,exclude,E6 MDMA/cathinone hyponatraemia review; not drug x environmental heat,none,none,review
+PMID:33048166,exclude,"E5 cathinone intoxication hyperthermia, no environmental heat",none,none,case_report
+PMID:33232172,include,"I1 methylphenidate during passive heat stress, cognition and heart rate",adhd_stimulants,other,human_lab_study
+PMID:34592764,exclude,"E5 synthetic cathinone intoxications, no environmental heat",none,none,case_series
+PMID:34773820,exclude,"E6 heat shock protein expression in drug deaths, no heat exposure",adhd_stimulants,none,case_series
+PMID:35438590,exclude,"E5 stimulant toxicity hyperthermia in ED, no environmental heat",adhd_stimulants,none,cohort
+PMID:35511961,exclude,E7 blood sample storage stability of lisdexamfetamine,adhd_stimulants,none,lab_bench
+PMID:36134084,exclude,"E4 drug-interaction rhabdomyolysis, no heat link",adhd_stimulants,none,case_report
+PMID:36562920,exclude,E7 forensic analysis; sample stability only,adhd_stimulants,none,case_report
+PMID:37047201,exclude,"E5 synthetic cathinone neurotoxicity review, no environmental heat",none,none,systematic_review
+PMID:37897873,include,I1 daily temperature and ED visits for amphetamine and opioid use,multiple,hospitalization_ed,case_crossover
+PMID:38467489,exclude,"E5 cathinone pharmacology review, no environmental heat",none,none,review
+PMID:39347264,include,I1 exertional heat stroke in athlete on amphetamine/dextroamphetamine,adhd_stimulants,heat_illness,case_report
+PMID:39758443,include,I1 heat-related illness risk in ADHD patients on vs off stimulants,adhd_stimulants,heat_illness,cohort
+PMID:412212,exclude,E2 rat study,adhd_stimulants,none,other
+PMID:4504832,exclude,E2 rat study,adhd_stimulants,none,other
+PMID:562704,exclude,E2 rat study,adhd_stimulants,none,other
+PMID:7198265,exclude,E2 rat study,none,none,other
+PMID:776447,exclude,E7 radioimmunoassay review,none,none,review
+PMID:8926733,exclude,E7 blood sample storage stability at ambient temperature,adhd_stimulants,none,lab_bench
+PMID:943116,exclude,E2 rat study of amphetamine and ambient temperature,adhd_stimulants,none,other
+PMID:97724,exclude,E2 dog study,adhd_stimulants,none,other
+DOI:10.20944/preprints202410.1890.v1,exclude,"E2 rat fertility study, no heat",ace_arb,none,other
+DOI:10.21203/rs.3.rs-4496702/v1,exclude,E3 sensor material science,ace_arb,none,lab_bench
+PAT:CN101457249,exclude,E6 food-derived ACE inhibitory peptide preparation,none,none,other
+PAT:CN101570568,exclude,E6 food-derived ACE inhibitory peptide preparation,none,none,other
+PMID:10664545,exclude,"E3 solid-state physics of amorphous quinapril, not storage under heat",ace_arb,none,lab_bench
+PMID:11011981,exclude,E7 bioanalytical HPLC method,ace_arb,none,lab_bench
+PMID:11393708,exclude,E7 chromatographic column temperature effects,ace_arb,none,lab_bench
+PMID:14614137,exclude,"E2 in vitro adipocyte study, no heat x drug",ace_arb,none,lab_bench

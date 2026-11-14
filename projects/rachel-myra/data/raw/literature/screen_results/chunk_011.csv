@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:9002705,exclude,E6 narrative heat injury review; drugs only listed as risk factors,anticholinergics,none,review
+PMID:9330841,exclude,"E5 drug-induced hyperthermia syndromes review, no environmental heat",multiple,none,review
+PMID:9686100,include,I1 exertional heat stroke case; chronic neuroleptic+anticholinergic predisposing,multiple,heat_illness,case_report
+DOI:10.1007/s12562-021-01561-2,exclude,E2 fish heat stress study,none,none,other
+PMC:PMC9475708,exclude,E6 SSRI defines disorder group; not drug exposure,ssris,none,cross_sectional
+PMID:10401727,exclude,E2 rat MDEA hyperthermia study,none,none,other
+PMID:11371001,exclude,E2 rat MDMA analogue study,none,none,other
+PMID:11595211,exclude,E2 animal antinociception study,ssris,none,other
+PMID:12202959,exclude,E2 animal models review,ssris,none,review
+PMID:12270036,exclude,E2 rat MDMA study,none,none,other
+PMID:12452225,exclude,"E5 perioperative malignant hyperthermia/amphetamine, no environmental heat",none,none,case_series
+PMID:12479085,exclude,"E5 serotonergic hyperthermia with phototherapy, no environmental heat",ssris,none,case_report
+PMID:12858034,exclude,"E7 laser-evoked pain and hot sensation, not heat illness",ssris,none,rct
+PMID:15328306,include,"I1 paroxetine RCT, prolonged exercise at 32 C",ssris,sweating_thermoregulation,rct
+PMID:16370179,include,uncertain: I2 fluoxetine-excipient degradation at 40/50 C storage,ssris,stability_potency,lab_bench
+PMID:16614734,exclude,E2 animal pharmacology of new compound,none,none,other
+PMID:16755415,exclude,"E5 NMS/serotonin syndrome case, no environmental heat",multiple,none,case_report
+PMID:17244971,exclude,"E6 duloxetine (SNRI) bleeding gums, no heat",none,none,case_report
+PMID:17361788,exclude,E6 ecstasy oral health review,none,none,review
+PMID:17486478,exclude,"E5 SSRI poisoning guideline, no heat link",ssris,none,other
+PMID:17689848,exclude,E6 balneotherapy; paroxetine only assay radioligand,none,none,other
+PMID:17849242,exclude,E6 dextromethorphan poisoning guideline,none,none,other
+PMID:17949903,exclude,E2 in-vitro MDMA transporter study,none,none,other
+PMID:18193734,exclude,E7 analytical HPLC assay method,multiple,none,lab_bench
+PMID:18311561,exclude,E2 mouse neuropeptide S pharmacology,none,none,other
+PMID:19202795,exclude,"E7 stability-indicating HPLC method, forced degradation",ssris,none,lab_bench
+PMID:19382571,exclude,E7 forced-degradation analytical method,ssris,none,lab_bench
+PMID:19533165,include,"I1 citalopram crossover RCT, exercise at 30 C vs 18 C",ssris,sweating_thermoregulation,rct
+PMID:19714976,exclude,E7 analytical HPLC assay method,ssris,none,lab_bench
+PMID:20074878,exclude,E5/E7 antidepressant overdose hypothermia,none,none,case_report
+PMID:20533982,include,uncertain: I1 sedating OTC medications + environmental hyperthermia death,anticholinergics,hyperthermia,case_report
+PMID:20880320,exclude,"E5 fatal serotonin syndrome, no environmental heat",ssris,none,case_series
+PMID:21209613,exclude,E2 monkey morphine study,none,none,other
+PMID:21385602,include,"I1 citalopram RCT, exercise at 30 C vs 18 C, BDNF",ssris,other,rct
+PMID:21575693,exclude,E3 computational oxidative stability chemistry,ssris,none,other
+PMID:22506805,exclude,"E5 pediatric SSRI ingestions, no heat link",ssris,none,cohort
+PMID:22552197,exclude,E3 subcritical water extraction chemistry,ssris,none,lab_bench
+PMID:22774398,exclude,E6 balneotherapy; paroxetine only assay radioligand,none,none,other
+PMID:23675256,exclude,E7 analytical TLC method,ssris,none,lab_bench
+PMID:23723553,exclude,E5 sertraline overdose hyperthermia,ssris,none,case_report
+PMID:23960384,exclude,"E7 hypothermic overdose, not heat",multiple,none,case_report
+PMID:24631644,exclude,E2 receptor pharmacology review,ssris,none,review
+PMID:25965391,exclude,E2 zebrafish model,none,none,other
+PMID:2692639,exclude,E2 serotonin food intake experimental review,none,none,other
+PMID:27352617,exclude,E2 animal vilazodone study,none,none,other
+PMID:28097008,exclude,E2 preclinical nociceptin antagonist,none,none,other
+PMID:29083800,exclude,E5 MAOI toxicity study guide,none,none,review
+PMID:29136551,exclude,E7 analytical extraction method,ssris,none,lab_bench
+PMID:29346612,exclude,"E5 serotonin syndrome case, no environmental heat",ssris,none,case_report
+PMID:29676811,exclude,E7 analytical urine method,ssris,none,lab_bench
+PMID:30594025,exclude,E6 SSRI defines disorder group; not drug exposure,ssris,none,cross_sectional
+PMID:32758791,exclude,E3 catalytic degradation chemistry,none,none,lab_bench
+PMID:32843862,exclude,"E4 antidepressant hot flush side effects, no environmental heat",ssris,none,cross_sectional
+PMID:33957677,exclude,E2 C. elegans study,none,none,other
+PMID:35584608,exclude,E2 in-vitro TRPM2 ion channel study,ssris,none,lab_bench
+PMID:35716526,exclude,"E5 NMS/SS-like drug hyperthermia, no environmental heat",multiple,none,case_series
+PMID:36039261,exclude,"E5 drug-induced hyperthermia review, no environmental heat exposure",multiple,none,review
+PMID:38130041,exclude,"E6 ozanimod-SSRI serotonin accumulation, no heat",ssris,none,cohort
+PMID:38370819,exclude,E2 Drosophila study,none,none,other
+PMID:39018016,exclude,"E6 ozanimod-SSRI serotonin accumulation, no heat",ssris,none,rct
+PMID:40898560,exclude,"E6 HTRA1 small vessel disease case, no heat",none,none,case_report
+PMID:41196212,exclude,"E5 serotonin syndrome case, no environmental heat",ssris,none,case_report
+PMID:42090275,include,I1 passive heating; sweating/vasodilation in SSRI-treated vs unmedicated MDD,ssris,sweating_thermoregulation,human_lab_study
+PMID:42487463,exclude,E3 salt disproportionation chemistry,none,none,other
+PMID:42623702,exclude,E2 maize heat resilience,none,none,other
+PMID:6722394,exclude,E2 rat fenfluramine hyperthermia,none,none,other
+PMID:7582557,exclude,E2 rat MDMA hyperthermia,none,none,other
+PMID:7885518,exclude,"E4 drug fever, no environmental heat",none,none,case_report
+PMID:7894680,exclude,E7 analytical serum method,ssris,none,lab_bench
+PMID:7919948,exclude,E2 animal anxiety models,none,none,other
+PMID:8198316,exclude,E5 sertraline intoxication hyperthermia,ssris,none,case_report
+PMID:8840355,exclude,E6 paroxetine only assay radioligand; seasonal binding,none,none,cohort
+PMID:9609418,exclude,E5 NMS-like hyperthermia on tetrabenazine,none,none,case_report
+PMID:9760094,exclude,E5 ecstasy/PMA overdose hyperthermia,none,none,case_series
+PMID:9856185,exclude,E5 ecstasy toxicology review,none,none,review
+DOI:10.21203/rs.3.rs-123527/v1,exclude,E4 COVID-19 fever/rhabdomyolysis,none,none,case_report
+PAT:CA2591644,exclude,E3 olanzapine crystal process patent,antipsychotics,none,other
+PAT:CA2690776,exclude,E3 drug complex patent,none,none,other
+PAT:CN101619047,exclude,E3 quetiapine synthesis patent,antipsychotics,none,other
+PAT:EP0475482,exclude,E3 formulation patent; manufacturing temperature,none,none,other
+PAT:NZ575573,exclude,E3 compound synthesis patent,none,none,other
+PAT:US2006100263,exclude,E6 bicifadine antipyretic patent,none,none,other
+PAT:US2007248660,exclude,E3 drug complex patent,none,none,other
+PAT:US2007248677,exclude,E3 drug salt patent,none,none,other
+PAT:US2007249735,exclude,E3 drug complex patent,none,none,other
+PAT:US2007259043,exclude,E3 drug salt patent,none,none,other
+PAT:US5292520,exclude,E3 formulation patent; manufacturing temperature,none,none,other
+PAT:US5441747,exclude,E3 formulation patent; manufacturing temperature,none,none,other
+PAT:WO2006050520,exclude,E6 bicifadine antipyretic patent,none,none,other
+PAT:WO2008151430,exclude,E3 olanzapine crystal process patent,antipsychotics,none,other
+PMC:PMC9567097,exclude,"E5/E6 catatonia case and review, no heat",none,none,case_report
+PMID:10089005,exclude,"E6 brain enzyme in stimulant users, no heat",none,none,case_control
+PMID:10745673,exclude,"E5 NMS review, no environmental heat",antipsychotics,none,review
+PMID:10846378,exclude,E2 guinea pig muscle fibre study,antipsychotics,none,lab_bench
+PMID:10910799,include,I1 exercise-heat tolerance test 40 C in antipsychotic-treated patients,antipsychotics,sweating_thermoregulation,human_lab_study
+PMID:11054142,exclude,E5 cocaine intoxication with tranquilizers,none,none,case_report
+PMID:11056365,exclude,E3 radiotracer synthesis chemistry,none,none,other
+PMID:11239318,exclude,"E5 hypothalamic instability TBI, no heat",none,none,case_report
+PMID:11252123,exclude,"E5 cocaine hyperthermia on risperidone, no environmental heat",antipsychotics,none,case_report
+PMID:11296369,exclude,E5 antidepressant overdose hyperpyrexia,anticholinergics,none,case_report
+PMID:11417268,exclude,E5 NMS case,antipsychotics,none,case_report
+PMID:11476402,exclude,"E6 hyperpyrexia differential diagnosis, no drug studied",none,none,case_report
+PMID:11572107,exclude,"E6 CK elevation on antipsychotics, no heat",antipsychotics,none,case_report
+PMID:11682205,exclude,E7 oxidative degradation analytical method,antipsychotics,none,lab_bench
+PMID:11725219,exclude,E5 overdose neurotoxic syndrome,multiple,none,case_report
+PMID:12012220,exclude,E5 NMS case,antipsychotics,none,case_report
+PMID:12048649,exclude,E6 baclofen withdrawal,none,none,review
+PMID:12190212,include,I1 heat stroke during 1998 heat wave; anticholinergic/psychotropic drug use,multiple,heat_illness,case_series
+PMID:12210375,exclude,"E6 McLeod myopathy rhabdomyolysis, no heat",antipsychotics,none,case_report
+PMID:12506260,exclude,E5 catatonia review,none,none,review
+PMID:12648893,exclude,"E4 drug fever with zuclopenthixol, no environmental heat",antipsychotics,none,cohort
+PMID:12652117,exclude,E6 statin rhabdomyolysis,none,none,case_report
+PMID:12666006,exclude,E6 dantrolene pharmacology review,none,none,review
+PMID:12735913,exclude,E6 antiparkinsonian malignant syndrome; none of 15 drugs,none,none,cohort
+PMID:12735915,exclude,E6 antiparkinsonian malignant syndrome consensus,none,none,review
+PMID:12745045,exclude,E6 baclofen withdrawal,none,none,case_report
+PMID:12883457,exclude,E5 NMS immunology case,antipsychotics,none,case_report
+PMID:1346093,exclude,E2 bacterial heat shock proteins,none,none,lab_bench
+PMID:1351046,exclude,E5 hyperthermia syndromes review; drug and environment separate,antipsychotics,none,review
+PMID:1361662,exclude,E5 NMS pathophysiology review,antipsychotics,none,review

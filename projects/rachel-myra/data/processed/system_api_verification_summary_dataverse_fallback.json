@@ -1,0 +1,48 @@
+{
+ "access_date": "2026-11-14",
+ "system_findings_source": "dataverse_v2.1_fallback (API key rejected)",
+ "funnel_papers": {
+  "cited_distinct_papers": 83,
+  "indexed_in_system": 7,
+  "with_findings": 7,
+  "with_findings_in_dataverse": 7,
+  "finding_matches_our_claim_number": 4,
+  "mislabeled": 0
+ },
+ "number_level": {
+  "claimed_numbers_checked": 105,
+  "shared_results_number_found_in_system": 5,
+  "same_number_same_meaning": 5,
+  "mislabels": 0,
+  "direction_conflicts": 0,
+  "system_matches_present_in_dataverse": 5
+ },
+ "badges_claims": {
+  "✓": 36,
+  "–": 167,
+  "? ↗": 1,
+  "✓✓": 5,
+  "– ↗": 2,
+  "?": 7,
+  "✓ (partial)": 10
+ },
+ "badges_claims_strict_dataverse": {
+  "✓": 36,
+  "–": 167,
+  "? ↗": 1,
+  "✓✓": 5,
+  "– ↗": 2,
+  "?": 7,
+  "✓ (partial)": 10
+ },
+ "badges_numbers": {
+  "✓": 74,
+  "?": 26,
+  "✓✓": 5
+ },
+ "claims_corroborated": 3,
+ "claims_with_any_system_relationship": 20,
+ "reverse_unused_findings_on_cited_papers": 17,
+ "reverse_system_links_not_in_master_list": 20,
+ "note_number_conflicts": "Check 1 cannot tell 'same result, different number' from 'different result' automatically; numbers not found in System are recorded as paper_in_system_number_not_extracted, never as conflicts."
+}

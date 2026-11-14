@@ -1,0 +1,14 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:6610613,exclude,E6: amylase test strips for forensic saliva stains; no heat,none,none,other
+PMID:7600750,include,I2 blood glucose meter accuracy at 4-44 C ambient temperature,storage_other,device_performance,lab_bench
+PMID:808086,exclude,E6: meconium albumin test strips for CF screening; no heat,none,none,other
+PMID:8592671,exclude,E7: microcalorimetry of surfactant adsorption on salbutamol; no heat storage,none,none,other
+PMID:8706467,exclude,E7: MDI albuterol delivery in ventilator model; 35 C circuit not heat exposure,none,none,other
+PMID:8815120,exclude,E6: HIV antibody test strips; no heat,none,none,other
+PMID:8941478,exclude,"E7: glucose meters at simulated altitude, temperature held constant",none,none,other
+PMID:9353600,exclude,E6: urine albumin test strip; only low sample temperature tested,none,none,other
+PMID:9423144,include,I2 albuterol MDI chemical/physical stability at 30 C and 40 C/85% RH,storage_other,stability_potency,lab_bench
+PMID:9566281,include,"uncertain: I2 glucose meters in newborns, temperature influenced readings",storage_other,device_performance,other
+PMID:9689424,exclude,E6: HFA vs CFC MDI tolerability in volunteers; no heat,none,none,other
+PMID:9876544,exclude,E7: inhaler sugar excipients at 25 C varying humidity only,none,none,other
+PMID:9876558,include,"I2 MDI emitted dose and particle size actuated at 4, 23, 40 C",storage_other,device_performance,lab_bench

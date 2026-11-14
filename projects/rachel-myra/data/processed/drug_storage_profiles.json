@@ -1,0 +1,398 @@
+{
+  "schema_version": 1,
+  "generated_by": "hand-curated by the thermal_sim agent from research-notes/storage_devices_supply.md and report/Prescribed drug heat risks.md (14 Nov 2026)",
+  "honesty_rule": "Advice is defined only as 'within label' / 'beyond label but within what studies tested' / 'beyond what studies tested'. The engine never outputs a '% potency left'. Study percentages below describe what a study measured, not an estimate for any patient's medicine.",
+  "advice_tiers": {
+    "use_as_normal": "Within label: every temperature stayed inside the product's labeled storage range (including any excursion the label or USP explicitly allows).",
+    "check_with_pharmacist": "Beyond label, but within what studies tested: the exposure went outside the label, and a published study held this product at least this hot for at least this long (at a constant temperature) without a meaningful loss.",
+    "request_replacement": "Beyond what studies tested: the exposure went outside the label and no study in our evidence base covers it, or it reached a level where a study found loss or malfunction."
+  },
+  "rule_details": [
+    "Label check: min temperature >= label.min_c AND (peak <= label.max_c OR (label.spike exists AND peak <= spike.max_c AND hours above label.max_c <= spike.max_hours)).",
+    "Harm check (checked first): for each evidence item with used_in_rule=true and outcome in {loss, device_failure, measurement_error}: peak >= exposure.temp_c AND hours at or above exposure.temp_c >= exposure.hours -> request_replacement.",
+    "Benign envelope: for each evidence item with used_in_rule=true, outcome=no_meaningful_change and exposure.mode=constant: peak <= exposure.temp_c AND hours above label.max_c <= exposure.hours -> check_with_pharmacist.",
+    "Below the label minimum (e.g., possible freezing) there is no tested cold envelope in our notes -> request_replacement.",
+    "Cyclic studies, studies without a reported temperature, and studies whose IDs are unverified are shown as context but are not used in the rule (used_in_rule=false with a reason)."
+  ],
+  "citation_status_key": {
+    "verified": "PMID/DOI confirmed from PubMed records in research-notes/storage_devices_supply.md",
+    "verified-abstract-only": "ID confirmed; only the abstract was read",
+    "listing-only": "PMID seen in a PubMed listing; results not read in full",
+    "unconfirmed": "ID not confirmed on PubMed",
+    "unverified-id": "no confirmed PMID/DOI; secondary reporting",
+    "label-general-knowledge": "Typical US prescribing-information / USP wording, written from general knowledge. NOT in the repo research notes. Verify against the dispensed product's label before using clinically."
+  },
+  "profiles": [
+    {
+      "id": "insulin_pen",
+      "name": "Insulin pen or vial (e.g., insulin glargine)",
+      "heat_sensitivity": "tolerant up to 37 C in trials; untested above 37 C",
+      "shipped_cold": true,
+      "dispense_temp_c": 5.0,
+      "mkt_delta_h_kj_mol": 83.144,
+      "mkt_delta_h_note": "USP <1079.2> default; no product-specific activation energy in the repo notes.",
+      "label": {
+        "summary": "Unopened: refrigerate 2-8 C, do not freeze. Most insulin labels allow keeping a pen/vial unrefrigerated below 30 C (86 F) for a limited number of days (often 28).",
+        "min_c": 0.0,
+        "max_c": 30.0,
+        "spike": null,
+        "hard_max_c": null,
+        "citation_status": "label-general-knowledge"
+      },
+      "evidence": [
+        {
+          "id": "kongmalai2022_rct",
+          "finding": "Randomized crossover trial: glargine pens stored at 37 C for 21 days gave the same CGM glucose as refrigerated pens (158.7 vs 157.0 mg/dL, n=40); UHPLC content equal.",
+          "exposure": {"temp_c": 37.0, "hours": 504, "mode": "constant"},
+          "outcome": "no_meaningful_change",
+          "used_in_rule": true,
+          "citation": {"text": "Kongmalai T et al., BMJ Open Diabetes Res Care 2022", "pmid": "36585035", "doi": "10.1136/bmjdrc-2022-003105", "status": "verified"}
+        },
+        {
+          "id": "kongmalai2021_inuse",
+          "finding": "In-use pens of 4 basal insulins kept 28 days at 29.7 C, 37 C or cycling held 97-101.5% of control content.",
+          "exposure": {"temp_c": 37.0, "hours": 672, "mode": "constant"},
+          "outcome": "no_meaningful_change",
+          "used_in_rule": true,
+          "citation": {"text": "Kongmalai T et al., Exp Clin Endocrinol Diabetes 2021", "pmid": "31634960", "doi": "10.1055/a-1010-5466", "status": "verified"}
+        },
+        {
+          "id": "kaufmann2021_cycling",
+          "finding": "Insulins cycled 25-37 C (refugee-camp profile) for 4 weeks met pharmacopeial standards; bioactivity matched 2-8 C controls.",
+          "exposure": {"temp_c": 37.0, "hours": 672, "mode": "cyclic"},
+          "outcome": "no_meaningful_change",
+          "used_in_rule": false,
+          "why_not_used": "cyclic profile; covered by the constant 37 C studies anyway",
+          "citation": {"text": "Kaufmann B et al., PLoS One 2021", "pmid": "33534816", "doi": "10.1371/journal.pone.0245372", "status": "verified"}
+        },
+        {
+          "id": "chandler2008_shipping",
+          "finding": "Regular, NPH and 70/30 insulin shipped 24-120 h in simulated summer/winter profiles, in non-insulated or gel-pack mailers, all met USP potency.",
+          "exposure": {"temp_c": null, "hours": 120, "mode": "simulated shipping"},
+          "outcome": "no_meaningful_change",
+          "used_in_rule": false,
+          "why_not_used": "profile temperatures not recorded in our notes",
+          "citation": {"text": "Chandler C et al., Am J Health Syst Pharm 2008", "pmid": "18463345", "doi": "10.2146/ajhp070347", "status": "verified"}
+        },
+        {
+          "id": "vimalavathini2009_rabbit",
+          "finding": "Older animal study: rabbits given insulin stored at 32 or 37 C for 28 days showed no significant glucose fall vs 5 C storage; authors concluded potency was lost. Conflicts with the RCT.",
+          "exposure": {"temp_c": 32.0, "hours": 672, "mode": "constant"},
+          "outcome": "loss",
+          "used_in_rule": false,
+          "why_not_used": "conflicts with the 2022 RCT; abstract not read in full; shown to the pharmacist as a caveat",
+          "citation": {"text": "Vimalavathini R, Gitanjali B, Indian J Med Res 2009", "pmid": "19797814", "doi": null, "status": "listing-only"}
+        }
+      ],
+      "evidence_gaps": "No clinical-outcome studies above 37 C (cars, direct sun). Freezing is outside label.",
+      "caveats": ["One older rabbit study (PMID 19797814) reported loss at 32-37 C; the 2022 RCT did not."],
+      "advice_text": {
+        "use_as_normal": "Your insulin stayed within its labeled temperature range. Use as normal.",
+        "check_with_pharmacist": "Your insulin got warmer than its label allows, but studies kept insulin pens at 37 C (99 F) for 3-4 weeks without losing effect. Check with your pharmacist before using it, and watch your glucose closely.",
+        "request_replacement": "Your insulin got hotter (or colder) than any study we know of has tested. Request a replacement and ask your pharmacist what to use in the meantime."
+      }
+    },
+    {
+      "id": "insulin_pump_reservoir",
+      "name": "Insulin in a pump reservoir / infusion set",
+      "heat_sensitivity": "label limit 37 C; untested above",
+      "shipped_cold": false,
+      "dispense_temp_c": 24.0,
+      "applies_to_note": "Filled reservoirs are not shipped; this profile is for insulin already in a pump or a filled reservoir left somewhere hot (home scenarios). Body heat from wearing the pump is not modeled.",
+      "mkt_delta_h_kj_mol": 83.144,
+      "mkt_delta_h_note": "USP <1079.2> default.",
+      "label": {
+        "summary": "Pump-use insulin labels typically say to replace insulin in the reservoir every few days and to discard it if exposed to temperatures above 37 C (98.6 F).",
+        "min_c": 0.0,
+        "max_c": 37.0,
+        "spike": null,
+        "hard_max_c": null,
+        "citation_status": "label-general-knowledge"
+      },
+      "evidence": [
+        {
+          "id": "sharrow2012_lispro_pump",
+          "finding": "Lispro in a MiniMed pump was chemically stable for 14 days at 37 C.",
+          "exposure": {"temp_c": 37.0, "hours": 336, "mode": "constant"},
+          "outcome": "no_meaningful_change",
+          "used_in_rule": true,
+          "citation": {"text": "Sharrow SD et al., Diabetes Technol Ther 2012", "pmid": "22107252", "doi": null, "status": "listing-only"}
+        },
+        {
+          "id": "senstius2007_aspart",
+          "finding": "Aspart at 37 +/- 2 C for up to 7 days.",
+          "exposure": {"temp_c": 37.0, "hours": 168, "mode": "constant"},
+          "outcome": "no_meaningful_change",
+          "used_in_rule": true,
+          "citation": {"text": "Senstius J, Diabetes Technol Ther 2007", "pmid": "17316101", "doi": null, "status": "listing-only"}
+        },
+        {
+          "id": "herr2014_wear",
+          "finding": "In normal wear, reservoir temperature ranged 25-37 C (mean ~30 C), above ambient because of body heat.",
+          "exposure": {"temp_c": 37.0, "hours": null, "mode": "field"},
+          "outcome": "context",
+          "used_in_rule": false,
+          "why_not_used": "exposure measurement, not a stability outcome",
+          "citation": {"text": "Herr JK et al., J Diabetes Sci Technol 2014", "pmid": "24876429", "doi": "10.1177/1932296814532327", "status": "verified"}
+        },
+        {
+          "id": "vereshchetin2016_pump",
+          "finding": "Pump temperature rose 6.4 C during long Li-ion charging and 4.4 C in a 35 C chamber, exceeding 37 C (industry-sponsored; relevance disputed).",
+          "exposure": {"temp_c": null, "hours": null, "mode": "bench"},
+          "outcome": "context",
+          "used_in_rule": false,
+          "why_not_used": "device temperature, not insulin stability",
+          "citation": {"text": "Vereshchetin P et al., Med Devices (Auckl) 2016", "pmid": "27789976", "doi": "10.2147/MDER.S116666", "status": "verified"}
+        },
+        {
+          "id": "pryce2009_dka",
+          "finding": "Case report: diabetic ketoacidosis after an insulin pump was exposed to heat and sunlight.",
+          "exposure": {"temp_c": null, "hours": null, "mode": "case report"},
+          "outcome": "loss",
+          "used_in_rule": false,
+          "why_not_used": "German case report; exposure details unknown",
+          "citation": {"text": "Pryce R, Praxis (Bern) 2009", "pmid": "19424950", "doi": "10.1024/1661-8157.98.10.543", "status": "verified"}
+        }
+      ],
+      "evidence_gaps": "No studies of pump insulin above 37 C.",
+      "caveats": [],
+      "advice_text": {
+        "use_as_normal": "The insulin in your pump stayed at or below 37 C (98.6 F). Use as normal.",
+        "check_with_pharmacist": "The insulin went beyond its label but stayed within what studies tested. Check with your pharmacist or diabetes team.",
+        "request_replacement": "The insulin in your pump/reservoir got hotter than 37 C (98.6 F), beyond what studies tested. Replace the insulin, reservoir and infusion set, and check your glucose more often today."
+      }
+    },
+    {
+      "id": "epinephrine_autoinjector",
+      "name": "Epinephrine auto-injector (e.g., 0.3 mg)",
+      "heat_sensitivity": "label 20-25 C; lab studies show loss only after days at 70 C",
+      "shipped_cold": false,
+      "dispense_temp_c": 22.0,
+      "mkt_delta_h_kj_mol": 83.144,
+      "mkt_delta_h_note": "USP <1079.2> default.",
+      "label": {
+        "summary": "Store at 20-25 C; excursions permitted to 15-30 C. Do not refrigerate.",
+        "min_c": 15.0,
+        "max_c": 30.0,
+        "spike": null,
+        "hard_max_c": null,
+        "citation_status": "label-general-knowledge"
+      },
+      "evidence": [
+        {
+          "id": "rachid2016_70c_5d",
+          "finding": "25 in-date auto-injectors held at a constant 70 C for 5 days delivered 96.8% of labeled dose.",
+          "exposure": {"temp_c": 70.0, "hours": 120, "mode": "constant"},
+          "outcome": "no_meaningful_change",
+          "used_in_rule": true,
+          "citation": {"text": "Rachid O et al., Drug Dev Ind Pharm 2016", "pmid": "25997362", "doi": "10.3109/03639045.2015.1035283", "status": "verified-abstract-only"}
+        },
+        {
+          "id": "rachid2016_70c_10d",
+          "finding": "Same study: constant 70 C for 10 days delivered 77.7 +/- 3.3% of labeled dose (controls 103.7%).",
+          "exposure": {"temp_c": 70.0, "hours": 240, "mode": "constant"},
+          "outcome": "loss",
+          "used_in_rule": true,
+          "citation": {"text": "Rachid O et al., Drug Dev Ind Pharm 2016", "pmid": "25997362", "doi": "10.3109/03639045.2015.1035283", "status": "verified-abstract-only"}
+        },
+        {
+          "id": "rachid2016_70c_cyclic",
+          "finding": "Same study: 5 days of cyclic 70 C heating gave 87.2% of labeled dose.",
+          "exposure": {"temp_c": 70.0, "hours": 120, "mode": "cyclic"},
+          "outcome": "loss",
+          "used_in_rule": false,
+          "why_not_used": "time at 70 C per cycle not in our notes; a single doorstep event is far shorter than 5 days of cycling",
+          "citation": {"text": "Rachid O et al., Drug Dev Ind Pharm 2016", "pmid": "25997362", "doi": "10.3109/03639045.2015.1035283", "status": "verified-abstract-only"}
+        },
+        {
+          "id": "parish2016_sr",
+          "finding": "Systematic review (9 studies): heat degraded epinephrine only with prolonged exposure; real-world fluctuations caused no significant degradation; all 40 auto-injectors tested fired.",
+          "exposure": {"temp_c": null, "hours": null, "mode": "review"},
+          "outcome": "no_meaningful_change",
+          "used_in_rule": false,
+          "why_not_used": "no single exposure level to encode",
+          "citation": {"text": "Parish HG et al., Ann Allergy Asthma Immunol 2016", "pmid": "27221065", "doi": "10.1016/j.anai.2016.04.006", "status": "verified"}
+        },
+        {
+          "id": "polish_car_pilot",
+          "finding": "Pilot: a few hours in a parked car on a sunny summer day lowered epinephrine concentration with no visible change; devices stayed functional (secondary reporting).",
+          "exposure": {"temp_c": null, "hours": 3, "mode": "field"},
+          "outcome": "loss",
+          "used_in_rule": false,
+          "why_not_used": "temperature not reported in our notes; ID unverified. Shown to the pharmacist as a caveat.",
+          "citation": {"text": "Polish pilot via SnackSafely (2018)", "pmid": null, "doi": null, "url": "https://snacksafely.com/2018/12/study-single-exposure-to-the-heat-of-a-car-can-lower-effective-dose-of-epinephrine-auto-injector", "status": "unverified-id"}
+        },
+        {
+          "id": "seattle_80_89c",
+          "finding": "Auto-injectors heated to about 80-89 C for 8 h and cooled became hard to remove from their carrier tubes in 84% of cases (secondary reporting).",
+          "exposure": {"temp_c": 80.0, "hours": 8, "mode": "constant"},
+          "outcome": "device_failure",
+          "used_in_rule": false,
+          "why_not_used": "ID unverified; anything above 70 C is already beyond the tested envelope",
+          "citation": {"text": "Seattle-led study via Allergic Living (2020)", "pmid": null, "doi": null, "url": "https://www.allergicliving.com/2020/03/11/if-your-auto-injector-gets-hot-it-may-fail/", "status": "unverified-id"}
+        },
+        {
+          "id": "grant1994_dilute",
+          "finding": "Epinephrine 1:10,000 (0.1 mg/mL) heated to 70 C 8 h/day degraded significantly by 8 weeks (64% by 12 weeks); 1:1,000 (1 mg/mL) was not significantly degraded at 12 weeks. Applies to ampoules/syringes, not auto-injectors; shows dilute concentrations are the fragile ones.",
+          "exposure": {"temp_c": 70.0, "hours": null, "mode": "cyclic"},
+          "outcome": "loss",
+          "used_in_rule": false,
+          "why_not_used": "different product (dilute EMS epinephrine) and cyclic",
+          "citation": {"text": "Grant TA et al., Am J Emerg Med 1994", "pmid": "8179739", "doi": "10.1016/0735-6757(94)90148-1", "status": "verified"}
+        }
+      ],
+      "evidence_gaps": "Only 2 small studies involve auto-injectors. No study at realistic doorstep/car profiles with reported temperatures and verified IDs.",
+      "caveats": ["A small pilot (ID unverified) reported lower epinephrine concentration after a few hours in a hot parked car."],
+      "advice_text": {
+        "use_as_normal": "Your epinephrine stayed within its labeled temperature range. Keep it with you as normal.",
+        "check_with_pharmacist": "Your epinephrine got warmer than its label allows. Lab studies found auto-injectors still delivered their dose after days at much higher heat, but ask your pharmacist whether to replace it. Keep carrying it until you have a replacement.",
+        "request_replacement": "Your epinephrine was exposed to heat beyond what studies tested. Request a replacement now, and keep this one until the new one arrives: an auto-injector exposed to heat is better than none in an emergency."
+      }
+    },
+    {
+      "id": "albuterol_inhaler",
+      "name": "Albuterol (salbutamol) HFA inhaler",
+      "heat_sensitivity": "storage heat probably tolerated; pressurized canister has a hard limit",
+      "shipped_cold": false,
+      "dispense_temp_c": 22.0,
+      "mkt_delta_h_kj_mol": 83.144,
+      "mkt_delta_h_note": "USP <1079.2> default.",
+      "label": {
+        "summary": "Store at 15-25 C. Contents under pressure: do not expose to temperatures above 49 C (120 F); the canister may burst.",
+        "min_c": 15.0,
+        "max_c": 25.0,
+        "spike": null,
+        "hard_max_c": 49.0,
+        "citation_status": "label-general-knowledge"
+      },
+      "evidence": [
+        {
+          "id": "hoye_tucson_trunk",
+          "finding": "Proventil HFA and Ventolin HFA stored 6 months in a car trunk in Tucson: dose delivery not significantly altered once tested at normal temperature; delivery changed when tested (used) outside the recommended range.",
+          "exposure": {"temp_c": null, "hours": 4380, "mode": "field"},
+          "outcome": "no_meaningful_change",
+          "used_in_rule": false,
+          "why_not_used": "trunk temperatures not recorded in our notes; ID unverified. A measured temperature from this study would likely move doorstep exposures to 'check with your pharmacist'.",
+          "citation": {"text": "Hoye WL et al. (University of Arizona)", "pmid": null, "doi": null, "url": "https://experts.arizona.edu/en/publications/effects-of-extreme-temperatures-on-drug-delivery-of-albuterol-sul/", "status": "unverified-id"}
+        },
+        {
+          "id": "salbutamol_logger",
+          "finding": "Patients carried salbutamol inhalers with loggers 2-3 weeks; authors projected smaller lung doses in hot summer.",
+          "exposure": {"temp_c": null, "hours": null, "mode": "field"},
+          "outcome": "context",
+          "used_in_rule": false,
+          "why_not_used": "magnitude not verified",
+          "citation": {"text": "Aerosol Sci Technol 2016", "pmid": null, "doi": "10.1080/02786826.2016.1240354", "status": "unconfirmed"}
+        }
+      ],
+      "evidence_gaps": "No study in our notes reports the storage temperature reached together with the outcome.",
+      "caveats": ["Let a hot inhaler return to room temperature before use: delivery changes when the canister itself is hot or cold."],
+      "advice_text": {
+        "use_as_normal": "Your inhaler stayed within its labeled temperature range. Use as normal.",
+        "check_with_pharmacist": "Your inhaler got warmer than its label allows but within what studies tested. Let it cool to room temperature and check with your pharmacist.",
+        "request_replacement": "Your inhaler got warmer than its label allows, and no study we hold reports a tested temperature for this. Let it cool to room temperature (do not use it hot), keep it for emergencies, and request a replacement."
+      }
+    },
+    {
+      "id": "glucose_test_strips",
+      "name": "Blood glucose test strips",
+      "heat_sensitivity": "fragile: reading errors after short heat/humidity exposure",
+      "shipped_cold": false,
+      "dispense_temp_c": 22.0,
+      "mkt_delta_h_kj_mol": 83.144,
+      "mkt_delta_h_note": "USP <1079.2> default (strips are enzyme reagents, not a drug; MKT shown for comparison only).",
+      "label": {
+        "summary": "Brand-specific; commonly about 4-30 C, keep vial capped (humidity). Check the strip vial.",
+        "min_c": 4.0,
+        "max_c": 30.0,
+        "spike": null,
+        "hard_max_c": null,
+        "citation_status": "label-general-knowledge"
+      },
+      "evidence": [
+        {
+          "id": "louie2014_42c",
+          "finding": "About 15 minutes at roughly 42 C and 83% RH produced meter bias up to 20 mg/dL and combined error of about 30%.",
+          "exposure": {"temp_c": 42.0, "hours": 0.25, "mode": "constant"},
+          "outcome": "measurement_error",
+          "used_in_rule": true,
+          "citation": {"text": "Louie RF et al., J Diabetes Sci Technol 2014", "pmid": "24876542", "doi": null, "status": "unconfirmed"}
+        },
+        {
+          "id": "pmc2717087_40c",
+          "finding": "Strips heat-stressed at 40 C for up to 4 weeks gave elevated results.",
+          "exposure": {"temp_c": 40.0, "hours": 672, "mode": "constant"},
+          "outcome": "measurement_error",
+          "used_in_rule": true,
+          "citation": {"text": "PMC2717087", "pmid": null, "doi": null, "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2717087", "status": "unconfirmed"}
+        },
+        {
+          "id": "louie_katrina_cycle",
+          "finding": "Under a 24-h temperature/humidity cycle modeled on post-Katrina conditions, meter errors reached about 22-24%.",
+          "exposure": {"temp_c": null, "hours": 24, "mode": "cyclic"},
+          "outcome": "measurement_error",
+          "used_in_rule": false,
+          "why_not_used": "cycle temperatures not in our notes; ID unverified",
+          "citation": {"text": "Louie et al., Disaster Med Public Health Prep", "pmid": null, "doi": null, "status": "unverified-id"}
+        }
+      ],
+      "evidence_gaps": "No study shows strips are fine after heat beyond their label; direction of error depends on strip chemistry (humidity can push readings the other way).",
+      "caveats": ["Humidity also matters and is not modeled here."],
+      "advice_text": {
+        "use_as_normal": "Your test strips stayed within their labeled range. Use as normal.",
+        "check_with_pharmacist": "Your strips went beyond their label but within what studies tested. Run a control-solution test before relying on them.",
+        "request_replacement": "Your test strips got hotter than their label allows; studies found reading errors after short heat exposure. Request replacement strips; until then, confirm unexpected readings with a control-solution test."
+      }
+    },
+    {
+      "id": "glp1_pen",
+      "name": "GLP-1 receptor agonist pen (e.g., semaglutide, liraglutide, tirzepatide)",
+      "heat_sensitivity": "unknown: no heat-stability studies found",
+      "shipped_cold": true,
+      "dispense_temp_c": 5.0,
+      "mkt_delta_h_kj_mol": 83.144,
+      "mkt_delta_h_note": "USP <1079.2> default.",
+      "label": {
+        "summary": "Refrigerate 2-8 C before first use; do not freeze. Labels differ: some allow limited unrefrigerated storage up to 30 C (86 F) before or after first use; at least one product's unopened label is 2-8 C only. Class-level approximation used here: up to 30 C.",
+        "min_c": 0.0,
+        "max_c": 30.0,
+        "spike": null,
+        "hard_max_c": null,
+        "citation_status": "label-general-knowledge"
+      },
+      "evidence": [],
+      "evidence_gaps": "The research notes found no peer-reviewed heat-stability data for GLP-1 pens. Any exposure beyond label is therefore beyond what studies tested.",
+      "caveats": ["Class-level label approximation; verify the specific product's label."],
+      "advice_text": {
+        "use_as_normal": "Your pen stayed within its labeled temperature range. Use as normal.",
+        "check_with_pharmacist": "Your pen went beyond its label but within what studies tested. Check with your pharmacist.",
+        "request_replacement": "Your pen got warmer (or colder) than its label allows, and we found no studies testing GLP-1 pens in heat. Request a replacement and ask your pharmacist about this dose."
+      }
+    },
+    {
+      "id": "oral_tablet_crt",
+      "name": "Room-temperature oral tablets (e.g., metformin, lisinopril) - contrast case",
+      "heat_sensitivity": "robust by label: USP allows short spikes to 40 C",
+      "shipped_cold": false,
+      "dispense_temp_c": 22.0,
+      "mkt_delta_h_kj_mol": 83.144,
+      "mkt_delta_h_note": "USP <1079.2> default.",
+      "label": {
+        "summary": "USP controlled room temperature: 20-25 C, excursions 15-30 C, mean kinetic temperature not above 25 C; transient spikes up to 40 C permitted if they do not exceed 24 hours (USP <659>).",
+        "min_c": 15.0,
+        "max_c": 30.0,
+        "spike": {"max_c": 40.0, "max_hours": 24.0},
+        "hard_max_c": null,
+        "citation_status": "label-general-knowledge"
+      },
+      "evidence": [],
+      "evidence_gaps": "The notes hold no heat-stability studies for common oral tablets. (The only documented toxic heat degradation is historical tetracycline, which involved moisture and age.)",
+      "caveats": [],
+      "advice_text": {
+        "use_as_normal": "Your tablets stayed within the temperature range their label allows. Use as normal.",
+        "check_with_pharmacist": "Your tablets went beyond their label but within what studies tested. Check with your pharmacist.",
+        "request_replacement": "Your tablets got hotter than 40 C (104 F) or stayed hot longer than the label allows, and we have no study covering that. Ask your pharmacist; most tablets are robust, but this is beyond what we can vouch for."
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+drug_group,drug_label,in_15,mediator,drug_leg_findings,drug_leg_studies,heat_leg_studies,direct_drug_heat_studies,concept_drug_leg_relationships,concept_drug_leg_findings,concept_drug_leg_studies_summed,concept_drug_leg_newest,concept_heat_leg_relationships,concept_heat_leg_studies_summed,score_sqrt_studies,untested
+lithium,Lithium,True,dehydration,0,0,8,2,0,0,0,,0,0,0.0,False
+lithium,Lithium,True,hyponatremia,4,1,6,2,1,4,1,2021-02-01,0,0,2.449,False
+lithium,Lithium,True,aki,2,1,12,2,1,2,1,2023-07-03,2,3,3.464,False
+lithium,Lithium,True,bp_hypotension,0,0,27,2,6,14,11,2000-03-01,3,3,0.0,False
+lithium,Lithium,True,sweating,0,0,11,2,1,1,1,1990-01-01,1,1,0.0,False
+lithium,Lithium,True,body_temp,0,0,71,2,0,0,0,,6,7,0.0,False
+loop_diuretics,Loop diuretics,True,dehydration,7,3,8,0,1,1,1,2003-08-01,0,0,4.899,True
+loop_diuretics,Loop diuretics,True,hyponatremia,14,10,6,0,2,7,3,2021-09-01,0,0,7.746,True
+loop_diuretics,Loop diuretics,True,aki,37,31,12,0,3,33,29,2025-04-01,2,3,19.287,True
+loop_diuretics,Loop diuretics,True,bp_hypotension,5,5,27,0,7,20,18,2025-01-29,3,3,11.619,True
+loop_diuretics,Loop diuretics,True,sweating,0,0,11,0,0,0,0,,1,1,0.0,False
+loop_diuretics,Loop diuretics,True,body_temp,0,0,71,0,0,0,0,,6,7,0.0,False
+thiazides,Thiazides,True,dehydration,1,1,8,1,1,1,1,2003-08-01,0,0,2.828,False
+thiazides,Thiazides,True,hyponatremia,35,26,6,1,4,23,16,2024-04-02,0,0,12.49,False
+thiazides,Thiazides,True,aki,3,3,12,1,3,3,3,2024-03-01,2,3,6.0,False
+thiazides,Thiazides,True,bp_hypotension,4,3,27,1,24,126,93,2024-05-14,3,3,9.0,False
+thiazides,Thiazides,True,sweating,0,0,11,1,0,0,0,,1,1,0.0,False
+thiazides,Thiazides,True,body_temp,0,0,71,1,0,0,0,,6,7,0.0,False
+acei_arb,ACE inhibitors / ARBs,True,dehydration,1,1,8,0,1,1,1,2018-03-01,0,0,2.828,True
+acei_arb,ACE inhibitors / ARBs,True,hyponatremia,11,8,6,0,1,1,1,2020-10-01,0,0,6.928,True
+acei_arb,ACE inhibitors / ARBs,True,aki,65,47,12,0,5,69,46,2024-11-01,2,3,23.749,True
+acei_arb,ACE inhibitors / ARBs,True,bp_hypotension,30,24,27,0,101,812,601,2025-12-12,3,3,25.456,True
+acei_arb,ACE inhibitors / ARBs,True,sweating,1,1,11,0,1,1,1,2015-03-01,1,1,3.317,True
+acei_arb,ACE inhibitors / ARBs,True,body_temp,0,0,71,0,0,0,0,,6,7,0.0,False
+sglt2,SGLT2 inhibitors,True,dehydration,11,8,8,0,2,2,2,2023-02-24,0,0,8.0,True
+sglt2,SGLT2 inhibitors,True,hyponatremia,5,2,6,0,0,0,0,,0,0,3.464,True
+sglt2,SGLT2 inhibitors,True,aki,40,32,12,0,4,67,44,2025-10-24,2,3,19.596,True
+sglt2,SGLT2 inhibitors,True,bp_hypotension,1,1,27,0,18,61,46,2025-12-01,3,3,5.196,True
+sglt2,SGLT2 inhibitors,True,sweating,0,0,11,0,0,0,0,,1,1,0.0,False
+sglt2,SGLT2 inhibitors,True,body_temp,0,0,71,0,0,0,0,,6,7,0.0,False
+insulin,Insulin (incl. pumps),True,dehydration,1,1,8,2,0,0,0,,0,0,2.828,False
+insulin,Insulin (incl. pumps),True,hyponatremia,6,4,6,2,3,6,5,2022-10-01,0,0,4.899,False
+insulin,Insulin (incl. pumps),True,aki,9,8,12,2,3,8,7,2024-12-10,2,3,9.798,False
+insulin,Insulin (incl. pumps),True,bp_hypotension,0,0,27,2,11,168,114,2023-05-24,3,3,0.0,False
+insulin,Insulin (incl. pumps),True,sweating,0,0,11,2,0,0,0,,1,1,0.0,False
+insulin,Insulin (incl. pumps),True,body_temp,2,1,71,2,1,2,1,2019-05-01,6,7,8.426,False
+metformin,Metformin,True,dehydration,1,1,8,0,0,0,0,,0,0,2.828,True
+metformin,Metformin,True,hyponatremia,2,1,6,0,1,2,1,2020-03-01,0,0,2.449,True
+metformin,Metformin,True,aki,13,11,12,0,1,12,10,2025-01-01,2,3,11.489,True
+metformin,Metformin,True,bp_hypotension,0,0,27,0,5,21,16,2026-01-01,3,3,0.0,False
+metformin,Metformin,True,sweating,0,0,11,0,0,0,0,,1,1,0.0,False
+metformin,Metformin,True,body_temp,0,0,71,0,0,0,0,,6,7,0.0,False
+anticholinergics,Anticholinergics (oxybutynin),True,dehydration,0,0,8,0,0,0,0,,0,0,0.0,False
+anticholinergics,Anticholinergics (oxybutynin),True,hyponatremia,2,1,6,0,1,1,1,2011-10-01,0,0,2.449,True
+anticholinergics,Anticholinergics (oxybutynin),True,aki,0,0,12,0,0,0,0,,2,3,0.0,False
+anticholinergics,Anticholinergics (oxybutynin),True,bp_hypotension,1,1,27,0,5,5,5,2021-10-01,3,3,5.196,True
+anticholinergics,Anticholinergics (oxybutynin),True,sweating,1,1,11,0,1,1,1,2023-07-01,1,1,3.317,True
+anticholinergics,Anticholinergics (oxybutynin),True,body_temp,0,0,71,0,0,0,0,,6,7,0.0,False
+antipsychotics,Antipsychotics (incl. clozapine),True,dehydration,0,0,8,0,0,0,0,,0,0,0.0,False
+antipsychotics,Antipsychotics (incl. clozapine),True,hyponatremia,13,6,6,0,5,12,9,2022-10-01,0,0,6.0,True
+antipsychotics,Antipsychotics (incl. clozapine),True,aki,22,4,12,0,9,22,14,2022-08-01,2,3,6.928,True
+antipsychotics,Antipsychotics (incl. clozapine),True,bp_hypotension,10,10,27,0,12,18,16,2024-04-01,3,3,16.432,True
+antipsychotics,Antipsychotics (incl. clozapine),True,sweating,1,1,11,0,0,0,0,,1,1,3.317,True
+antipsychotics,Antipsychotics (incl. clozapine),True,body_temp,1,1,71,0,0,0,0,,6,7,8.426,True
+ssris,SSRIs,True,dehydration,0,0,8,0,0,0,0,,0,0,0.0,False
+ssris,SSRIs,True,hyponatremia,38,19,6,0,9,24,17,2025-08-05,0,0,10.677,True
+ssris,SSRIs,True,aki,0,0,12,0,0,0,0,,2,3,0.0,False
+ssris,SSRIs,True,bp_hypotension,13,11,27,0,19,32,26,2023-11-01,3,3,17.234,True
+ssris,SSRIs,True,sweating,2,2,11,0,2,2,2,2017-12-01,1,1,4.69,True
+ssris,SSRIs,True,body_temp,1,1,71,0,0,0,0,,6,7,8.426,True
+topiramate_zonisamide,Topiramate / zonisamide,True,dehydration,0,0,8,0,0,0,0,,0,0,0.0,False
+topiramate_zonisamide,Topiramate / zonisamide,True,hyponatremia,0,0,6,0,0,0,0,,0,0,0.0,False
+topiramate_zonisamide,Topiramate / zonisamide,True,aki,0,0,12,0,0,0,0,,2,3,0.0,False
+topiramate_zonisamide,Topiramate / zonisamide,True,bp_hypotension,0,0,27,0,2,2,2,2008-06-09,3,3,0.0,False
+topiramate_zonisamide,Topiramate / zonisamide,True,sweating,0,0,11,0,1,1,1,2012-05-01,1,1,0.0,False
+topiramate_zonisamide,Topiramate / zonisamide,True,body_temp,0,0,71,0,0,0,0,,6,7,0.0,False
+adhd_stimulants,ADHD stimulants,True,dehydration,0,0,8,2,0,0,0,,0,0,0.0,False
+adhd_stimulants,ADHD stimulants,True,hyponatremia,0,0,6,2,0,0,0,,0,0,0.0,False
+adhd_stimulants,ADHD stimulants,True,aki,0,0,12,2,0,0,0,,2,3,0.0,False
+adhd_stimulants,ADHD stimulants,True,bp_hypotension,0,0,27,2,7,10,8,2021-12-01,3,3,0.0,False
+adhd_stimulants,ADHD stimulants,True,sweating,0,0,11,2,0,0,0,,1,1,0.0,False
+adhd_stimulants,ADHD stimulants,True,body_temp,1,1,71,2,0,0,0,,6,7,8.426,False
+beta_blockers,Beta blockers,True,dehydration,0,0,8,1,0,0,0,,0,0,0.0,False
+beta_blockers,Beta blockers,True,hyponatremia,0,0,6,1,0,0,0,,0,0,0.0,False
+beta_blockers,Beta blockers,True,aki,10,8,12,1,5,9,8,2023-10-01,2,3,9.798,False
+beta_blockers,Beta blockers,True,bp_hypotension,19,14,27,1,44,256,198,2025-07-02,3,3,19.442,False
+beta_blockers,Beta blockers,True,sweating,6,2,11,1,1,3,2,2018-12-01,1,1,4.69,False
+beta_blockers,Beta blockers,True,body_temp,4,4,71,1,3,3,3,2011-05-01,6,7,16.852,False
+opioids_fentanyl,Fentanyl / opioid patches,True,dehydration,0,0,8,2,0,0,0,,0,0,0.0,False
+opioids_fentanyl,Fentanyl / opioid patches,True,hyponatremia,3,2,6,2,0,0,0,,0,0,3.464,False
+opioids_fentanyl,Fentanyl / opioid patches,True,aki,8,8,12,2,2,6,6,2024-01-01,2,3,9.798,False
+opioids_fentanyl,Fentanyl / opioid patches,True,bp_hypotension,15,11,27,2,9,29,25,2024-07-04,3,3,17.234,False
+opioids_fentanyl,Fentanyl / opioid patches,True,sweating,0,0,11,2,0,0,0,,1,1,0.0,False
+opioids_fentanyl,Fentanyl / opioid patches,True,body_temp,3,3,71,2,0,0,0,,6,7,14.595,False
+epinephrine_ai,Epinephrine auto-injectors,True,dehydration,0,0,8,0,0,0,0,,0,0,0.0,False
+epinephrine_ai,Epinephrine auto-injectors,True,hyponatremia,0,0,6,0,0,0,0,,0,0,0.0,False
+epinephrine_ai,Epinephrine auto-injectors,True,aki,0,0,12,0,0,0,0,,2,3,0.0,False
+epinephrine_ai,Epinephrine auto-injectors,True,bp_hypotension,0,0,27,0,0,0,0,,3,3,0.0,False
+epinephrine_ai,Epinephrine auto-injectors,True,sweating,0,0,11,0,0,0,0,,1,1,0.0,False
+epinephrine_ai,Epinephrine auto-injectors,True,body_temp,0,0,71,0,0,0,0,,6,7,0.0,False
+nsaids,NSAIDs (comparator),False,dehydration,1,1,8,1,0,0,0,,0,0,2.828,False
+nsaids,NSAIDs (comparator),False,hyponatremia,1,1,6,1,1,1,1,2019-01-01,0,0,2.449,False
+nsaids,NSAIDs (comparator),False,aki,74,45,12,1,5,64,43,2025-12-01,2,3,23.238,False
+nsaids,NSAIDs (comparator),False,bp_hypotension,0,0,27,1,10,18,14,2021-01-01,3,3,0.0,False
+nsaids,NSAIDs (comparator),False,sweating,0,0,11,1,0,0,0,,1,1,0.0,False
+nsaids,NSAIDs (comparator),False,body_temp,4,3,71,1,2,2,2,2013-05-12,6,7,14.595,False
+benzodiazepines,Benzodiazepines (comparator),False,dehydration,0,0,8,1,0,0,0,,0,0,0.0,False
+benzodiazepines,Benzodiazepines (comparator),False,hyponatremia,1,1,6,1,1,1,1,2023-12-01,0,0,2.449,False
+benzodiazepines,Benzodiazepines (comparator),False,aki,0,0,12,1,0,0,0,,2,3,0.0,False
+benzodiazepines,Benzodiazepines (comparator),False,bp_hypotension,1,1,27,1,3,10,7,2025-03-11,3,3,5.196,False
+benzodiazepines,Benzodiazepines (comparator),False,sweating,0,0,11,1,0,0,0,,1,1,0.0,False
+benzodiazepines,Benzodiazepines (comparator),False,body_temp,0,0,71,1,0,0,0,,6,7,0.0,False
+sulfonylureas,Sulfonylureas (comparator),False,dehydration,0,0,8,0,0,0,0,,0,0,0.0,False
+sulfonylureas,Sulfonylureas (comparator),False,hyponatremia,2,1,6,0,1,2,1,2020-03-01,0,0,2.449,True
+sulfonylureas,Sulfonylureas (comparator),False,aki,1,1,12,0,1,1,1,2021-06-01,2,3,3.464,True
+sulfonylureas,Sulfonylureas (comparator),False,bp_hypotension,0,0,27,0,1,2,1,2004-11-15,3,3,0.0,False
+sulfonylureas,Sulfonylureas (comparator),False,sweating,0,0,11,0,0,0,0,,1,1,0.0,False
+sulfonylureas,Sulfonylureas (comparator),False,body_temp,0,0,71,0,0,0,0,,6,7,0.0,False
+diuretics_any,"Diuretics, any (comparator)",False,dehydration,8,3,8,0,0,0,0,,0,0,4.899,True
+diuretics_any,"Diuretics, any (comparator)",False,hyponatremia,43,23,6,0,4,11,8,2023-06-01,0,0,11.747,True
+diuretics_any,"Diuretics, any (comparator)",False,aki,66,53,12,0,2,44,39,2024-09-05,2,3,25.219,True
+diuretics_any,"Diuretics, any (comparator)",False,bp_hypotension,7,7,27,0,9,37,32,2023-12-01,3,3,13.748,True
+diuretics_any,"Diuretics, any (comparator)",False,sweating,0,0,11,0,0,0,0,,1,1,0.0,False
+diuretics_any,"Diuretics, any (comparator)",False,body_temp,0,0,71,0,0,0,0,,6,7,0.0,False

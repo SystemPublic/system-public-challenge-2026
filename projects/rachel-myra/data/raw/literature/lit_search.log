@@ -1,0 +1,53 @@
+query drug_lithium
+query drug_loop_diuretics
+query drug_thiazides
+query drug_ace_inhibitors_arbs
+query drug_sglt2_inhibitors
+query drug_insulin_incl_pumps
+query drug_metformin
+query drug_anticholinergics_oxybutynin
+query drug_antipsychotics_incl_clozapine
+query drug_ssris
+query drug_topiramate_zonisamide
+query drug_adhd_stimulants
+query drug_beta_blockers
+query drug_fentanyl_opioid_patches
+query drug_epinephrine_auto_injectors
+query storage_insulin
+query storage_epinephrine_auto_injector
+query storage_inhalers
+query storage_glucose_test_strips_meters
+query storage_mail_order_delivery_temperature
+query storage_medicines_in_heat_general
+unique PMIDs 5821
+  efetch 200/5821
+  efetch 400/5821
+  efetch 600/5821
+  efetch 800/5821
+  efetch 1000/5821
+  efetch 1200/5821
+  efetch 1400/5821
+  efetch 1600/5821
+  efetch 1800/5821
+  efetch 2000/5821
+  efetch 2200/5821
+  efetch 2400/5821
+  efetch 2600/5821
+  efetch 2800/5821
+  efetch 3000/5821
+  efetch 3200/5821
+  efetch 3400/5821
+  efetch 3600/5821
+  efetch 3800/5821
+  efetch 4000/5821
+  efetch 4200/5821
+  efetch 4400/5821
+  efetch 4600/5821
+  efetch 4800/5821
+  efetch 5000/5821
+  efetch 5200/5821
+  efetch 5400/5821
+  efetch 5600/5821
+  efetch 5800/5821
+  efetch 5821/5821
+total unique records 5995

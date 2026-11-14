@@ -1,0 +1,32 @@
+openFDA drug/label.json audit v2 (all current labels), run 2026-11-14. Label text check, not a legal review.
+28 of 45 heat-risk ingredients (study + positive controls) carry no explicit heat warning on ANY of their current labels (4942 labels audited).
+  heat warning on most labels (>50%): 14  lithium (30/59), hydrochlorothiazide (146/155), chlorthalidone (77/81), oxybutynin (83/86), benztropine (35/35), olanzapine (105/105), haloperidol (98/111), risperidone (72/73), quetiapine (156/156), aripiprazole (124/125), topiramate (157/161), zonisamide (32/33), fentanyl (5/5), buprenorphine (7/7)
+  heat warning on some labels (<=50%): 3  empagliflozin (1/8), trihexyphenidyl (4/12), methylphenidate (3/82)
+  heat warning on no label: 28  furosemide (0/152), bumetanide (0/74), torsemide (0/34), indapamide (0/13), lisinopril (0/159), enalapril (0/69), ramipril (0/38), losartan (0/143), valsartan (0/69), olmesartan (0/81), dapagliflozin (0/30), canagliflozin (0/5), insulin (0/55), metformin (0/327), tolterodine (0/18), clozapine (0/16), sertraline (0/167), fluoxetine (0/168), citalopram (0/89), escitalopram (0/115), paroxetine (0/94), amphetamine (0/78), lisdexamfetamine (0/32), metoprolol (0/349), propranolol (0/143), atenolol (0/99), carvedilol (0/125), epinephrine (0/55)
+  [best tier on any label]
+  heat warning: 17  lithium, hydrochlorothiazide, chlorthalidone, empagliflozin, oxybutynin, benztropine, trihexyphenidyl, olanzapine, haloperidol, risperidone, quetiapine, aripiprazole, topiramate, zonisamide, methylphenidate, fentanyl, buprenorphine
+  incidental mention only (hyperthermia/heat as a sign, differential or side-effect listing): 8  clozapine, sertraline, fluoxetine, citalopram, escitalopram, paroxetine, amphetamine, lisdexamfetamine
+  sweating/dehydration only (indirect): 19  furosemide, bumetanide, torsemide, indapamide, lisinopril, enalapril, ramipril, losartan, valsartan, olmesartan, dapagliflozin, canagliflozin, insulin, metformin, metoprolol, propranolol, atenolol, carvedilol, epinephrine
+  storage temperature only: 1  tolterodine
+  nothing: 0  
+3 of 3 negative-control ingredients carry no explicit heat warning on ANY of their current labels (996 labels audited).
+  heat warning on most labels (>50%): 0  
+  heat warning on some labels (<=50%): 0  
+  heat warning on no label: 3  amoxicillin (0/228), levothyroxine (0/299), atorvastatin (0/247)
+  [best tier on any label]
+  heat warning: 0  
+  incidental mention only (hyperthermia/heat as a sign, differential or side-effect listing): 1  levothyroxine
+  sweating/dehydration only (indirect): 1  atorvastatin
+  storage temperature only: 1  amoxicillin
+  nothing: 0  
+By class: 7 of 15 classes have no ingredient with a heat warning on any label: loop diuretics, ACE inhibitors/ARBs, insulin (incl. pumps), metformin, SSRIs, beta blockers, epinephrine auto-injectors
+Claims (whole label text, all openFDA fields):
+  (a) insulin: 61 labels; 58 mention heat somewhere; 0 heat sentences not recognised as storage/product protection (see claims CSV).
+  (a) epinephrine: 55 labels; 23 mention heat somewhere; 0 heat sentences not recognised as storage/product protection (see claims CSV).
+  (b) clozapine: 0 of 16 labels contain body-temperature-regulation language.
+  (b) olanzapine: 109 of 109 labels contain body-temperature-regulation language.
+  (b) haloperidol: 0 of 111 labels contain body-temperature-regulation language.
+  (b) risperidone: 72 of 73 labels contain body-temperature-regulation language.
+  (b) quetiapine: 156 of 156 labels contain body-temperature-regulation language.
+  (b) aripiprazole: 124 of 125 labels contain body-temperature-regulation language.
+  (c) tolterodine: 0 of 18 labels have a non-storage heat or sweating sentence.

@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:12423340,exclude,E2 archaeal thioredoxin biochemistry,none,none,lab_bench
+PMID:12429508,exclude,E2 chaperone/crystallin protein biochemistry; not a medicine,none,none,lab_bench
+PMID:12451258,exclude,E2 organ/cell cold preservation solutions,none,none,lab_bench
+PMID:12554125,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:12631120,exclude,E2 organ/cell cold preservation solutions,none,none,lab_bench
+PMID:1265555,exclude,E7 insulin deterioration at room temperature only; no heat,insulin,none,other
+PMID:12811236,exclude,E2 organ/cell cold preservation solutions,none,none,lab_bench
+PMID:12946530,exclude,E7 HPLC assay method for insulin degradation,insulin,none,lab_bench
+PMID:131126,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:1336030,exclude,E2 bacterial proteolysis vs growth temperature,none,none,lab_bench
+PMID:14612956,exclude,E6 islet transplantation cell viability,none,none,lab_bench
+PMID:14692918,exclude,E6 hair follicle micrograft storage,none,none,lab_bench
+PMID:14747276,exclude,E6 sympathetic activation and obesity review,none,none,review
+PMID:15030316,exclude,E2 chaperone/crystallin protein biochemistry; not a medicine,none,none,lab_bench
+PMID:15038068,exclude,E3 soil DNA extraction method,none,none,lab_bench
+PMID:15077478,exclude,E6 heat shock proteins in diabetes review,none,none,review
+PMID:15129972,include,uncertain: I2 inhaled insulin powder stability at 60C,insulin,stability_potency,lab_bench
+PMID:15133196,exclude,E2 Drosophila latitudinal clines review,none,none,review
+PMID:15188506,exclude,E2 organ/cell cold preservation solutions,none,none,lab_bench
+PMID:15280813,exclude,E2 organ/cell cold preservation solutions,none,none,lab_bench
+PMID:15324478,exclude,E3 oral insulin oil-based formulation,none,none,lab_bench
+PMID:156812,exclude,E6 heart protein synthesis review,none,none,review
+PMID:15708981,exclude,E2 Drosophila insulin-like ligands,none,none,lab_bench
+PMID:15800986,exclude,E2 organ/cell cold preservation solutions,none,none,lab_bench
+PMID:15885238,exclude,E7 insulin blood sample preanalytical stability,none,none,lab_bench
+PMID:15990096,exclude,E3 insulin unfolding chemistry with thiols,none,none,lab_bench
+PMID:15991797,exclude,E7 proinsulin ELISA evaluation,none,none,lab_bench
+PMID:16061882,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:16101301,exclude,E3 insulin thermal unfolding biophysics (calorimetry); not storage,insulin,none,lab_bench
+PMID:16108916,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:16145048,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:16145541,exclude,E2 chaperone/crystallin protein biochemistry; not a medicine,none,none,lab_bench
+PMID:16161764,exclude,E2 royal jelly in mice,none,none,lab_bench
+PMID:16221538,exclude,E2 C. elegans metabolism,none,none,lab_bench
+PMID:1628645,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:16376376,exclude,E3 insulin fibrillation under pressure biophysics,none,none,lab_bench
+PMID:16386095,exclude,E3 Exubera product development; no heat exposure data,insulin,none,review
+PMID:16416608,exclude,E6 hair follicle micrograft storage,none,none,lab_bench
+PMID:16428610,exclude,E6 IGF-I in dairy processing,none,none,lab_bench
+PMID:16731758,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:16828268,exclude,E3 insulin microneedle fabrication,none,none,lab_bench
+PMID:16895519,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:16906458,exclude,E3 insulin micronization by homogenization,none,none,lab_bench
+PMID:16925671,exclude,E2 organ/cell cold preservation solutions,none,none,lab_bench
+PMID:16926159,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:16951013,exclude,E6 continuous glucose monitoring in cardiac surgery; no heat,none,none,cohort
+PMID:16969698,include,uncertain: I2 insulin formulation chemical stability at 37C,insulin,stability_potency,lab_bench
+PMID:17034892,exclude,E3 sericin-insulin bioconjugate synthesis,none,none,lab_bench
+PMID:17052863,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:17148734,exclude,E6 stress and insulin resistance review,none,none,review
+PMID:17149363,exclude,E2 chaperone/crystallin protein biochemistry; not a medicine,none,none,lab_bench
+PMID:1715199,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:17196937,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:17237281,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:1724266,exclude,E6 heat treatment of human milk IGFs,none,none,lab_bench
+PMID:17280640,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:1730651,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:17404095,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:17425438,exclude,E2 glucagon stability in swine model; not among 15 drugs,none,none,lab_bench
+PMID:17435044,exclude,E2 chick hatchery endocrinology,none,none,review
+PMID:17444618,exclude,E6 GLP-1/exendin receptor structure,none,none,lab_bench
+PMID:17523690,exclude,E3 insulin in lipid cubic phases biophysics,none,none,lab_bench
+PMID:17884998,exclude,E2 starch digestibility in rats,none,none,lab_bench
+PMID:1795060,exclude,E6 milk quality from bST-treated cows review,none,none,review
+PMID:17960114,exclude,E2 chaperone/crystallin protein biochemistry; not a medicine,none,none,lab_bench
+PMID:17971453,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:17987563,exclude,E6 type 1 diabetes genetics,none,none,case_control
+PMID:18020392,exclude,E3 glucose-sensitive nanoshell materials,none,none,lab_bench
+PMID:18035683,exclude,E6 steatohepatitis review,none,none,review
+PMID:18061612,exclude,E2 chaperone/crystallin protein biochemistry; not a medicine,none,none,lab_bench
+PMID:1814206,exclude,E7 insulin syringes at 4C and 23C only; no heat,insulin,none,lab_bench
+PMID:1827399,exclude,E7 capillary blood insulin sample collection,none,none,lab_bench
+PMID:18294961,exclude,E7 IGF-1 blood sample room temperature stability,none,none,lab_bench
+PMID:18374063,exclude,E6 islet transplantation cell viability,none,none,lab_bench
+PMID:18400946,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:18439622,exclude,E3 insulin aggregation circular dichroism,none,none,lab_bench
+PMID:18463345,include,I2 insulin vials in simulated summer mail transit,insulin,stability_potency,lab_bench
+PMID:18594209,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:18599680,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:18676850,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:18768842,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:18805403,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:18806119,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:18834878,exclude,E2 diabetic mice thermal nociception,none,none,lab_bench
+PMID:18948577,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:19083193,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:19142186,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:19299165,exclude,E3 MALDI matrix preparation,none,none,lab_bench
+PMID:19441108,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:19477941,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:19523452,exclude,E6 amino acid-induced thermogenesis under anesthesia,none,none,other
+PMID:19564937,exclude,E3 insulin-cyclodextrin complex formulation chemistry,insulin,none,lab_bench
+PMID:19595436,exclude,E6 energy expenditure review,none,none,review
+PMID:19713273,exclude,E7 urinary C-peptide sample stability,none,none,cohort
+PMID:19715354,exclude,E3 crystallin-insulin biophysics,none,none,lab_bench
+PMID:1973148,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:19737590,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:19797814,include,I2 insulin potency after storage at 32 and 37C for 28 days,insulin,stability_potency,lab_bench
+PMID:19844959,include,I2 Exubera inhaled insulin powder heat-stressed degradation kinetics,insulin,stability_potency,lab_bench
+PMID:19883376,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:1993672,exclude,E2 rat liver enzyme biochemistry,none,none,lab_bench
+PMID:19956560,exclude,E2 chaperone/crystallin protein biochemistry; not a medicine,none,none,lab_bench
+PMID:20004745,exclude,E3 hydrogel growth factor carriers,none,none,lab_bench
+PMID:20043882,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:20098276,exclude,E6 islet transplantation cell viability,none,none,lab_bench
+PMID:20106984,exclude,E3 insulin fibrillation and analog design,none,none,lab_bench
+PMID:20110281,exclude,E7 post mortem tissue sampling temperature proteomics,none,none,lab_bench
+PMID:20150024,include,"I1 review of diabetes, insulin stability and glucometers in heat",insulin,other,review
+PMID:2015893,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:20192919,exclude,E2 goat transgenic cells,none,none,lab_bench
+PMID:20199785,exclude,E6 HSP72 and insulin sensitivity in humans; no drug,none,none,cross_sectional
+PMID:20226194,exclude,E3 affibody scaffold protein engineering,none,none,lab_bench
+PMID:20382695,exclude,E6 taspoglutide GLP-1 analog; not among 15 drugs,none,none,lab_bench
+PMID:20423326,exclude,E2 chaperone/crystallin protein biochemistry; not a medicine,none,none,lab_bench
+PMID:20509000,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:20707305,exclude,E3 insulin nanoencapsulation for oral delivery,none,none,lab_bench
+PMID:20935666,exclude,E6 brown adipose tissue review,none,none,review
+PMID:21099326,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:21103377,exclude,E2 cell/molecular biology; no medicine heat stability,none,none,lab_bench
+PMID:21299583,exclude,E7 canine insulin ELISA validation,none,none,lab_bench

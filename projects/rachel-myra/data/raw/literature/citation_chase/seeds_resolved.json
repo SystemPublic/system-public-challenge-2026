@@ -1,0 +1,129 @@
+{
+ "access_date": "2026-11-14",
+ "openalex_calls": 33,
+ "openalex_remaining_usd_after": "0.0908",
+ "seeds": [
+  {
+   "seed": "Hospers 2024",
+   "title_query": "effect of prescription and over-the-counter medications on core temperature heat stress meta-analysis",
+   "expected_doi": "10.1016/j.eclinm.2024.102886",
+   "expected_doi_used": "10.1016/j.eclinm.2024.102886",
+   "resolved": {
+    "openalex_id": "W4403730929",
+    "doi": "10.1016/j.eclinm.2024.102886",
+    "pmid": "39513185",
+    "pmcid": "11541675",
+    "title": "The effect of prescription and over-the-counter medications on core temperature in adults during heat stress: a systematic review and meta-analysis",
+    "year": 2024,
+    "journal": "EClinicalMedicine",
+    "first_author": "Lily Hospers",
+    "type": "review",
+    "cited_by_count": 74
+   },
+   "resolved_by": "openalex title search; DOI matches cited DOI",
+   "openalex_n_references_listed": 80,
+   "openalex_n_references_fetched": 77,
+   "openalex_n_cited_by": 73,
+   "epmc_n_references": 71,
+   "epmc_n_citations": 36
+  },
+  {
+   "seed": "Tews 2026",
+   "title_query": "Recognizing and Mitigating the Effects of Medication on Heat",
+   "expected_doi": "10.3390/pharmacy14030074",
+   "expected_doi_used": "10.3390/pharmacy14030074",
+   "resolved": {
+    "openalex_id": "W7162091437",
+    "doi": "10.3390/pharmacy14030074",
+    "pmid": "42200961",
+    "pmcid": "13214780",
+    "title": "Recognizing and Mitigating the Effects of Medication on Heat-Related Illness in Older Adults: A Scoping Review",
+    "year": 2026,
+    "journal": "Pharmacy",
+    "first_author": "Lily M. Tews",
+    "type": "review",
+    "cited_by_count": 4
+   },
+   "resolved_by": "openalex title search; DOI matches cited DOI",
+   "openalex_n_references_listed": 74,
+   "openalex_n_references_fetched": 74,
+   "openalex_n_cited_by": 4,
+   "epmc_n_references": 75,
+   "epmc_n_citations": 1
+  },
+  {
+   "seed": "Kalisch Ellett 2016",
+   "title_query": "Kalisch Ellett medicines hospitalisation dehydration heat-related illness veterans",
+   "expected_doi": "10.1111/jcpt.12418",
+   "expected_doi_used": "10.1111/jcpt.12418",
+   "resolved": {
+    "openalex_id": "W2468721541",
+    "doi": "10.1111/jcpt.12418",
+    "pmid": "27378245",
+    "pmcid": "",
+    "title": "Increased risk of hospital admission for dehydration or heat-related illness after initiation of medicines: a sequence symmetry analysis",
+    "year": 2016,
+    "journal": "Journal of Clinical Pharmacy and Therapeutics",
+    "first_author": "Lisa M. Kalisch Ellett",
+    "type": "article",
+    "cited_by_count": 54
+   },
+   "resolved_by": "openalex DOI lookup (title search top-5 did not contain it)",
+   "openalex_n_references_listed": 23,
+   "openalex_n_references_fetched": 23,
+   "openalex_n_cited_by": 48,
+   "epmc_n_references": 27,
+   "epmc_n_citations": 33
+  },
+  {
+   "seed": "Layton 2020",
+   "title_query": "Heatwaves, medications, and heat-related hospitalization in older Medicare beneficiaries with chronic conditions",
+   "expected_doi": "10.1371/journal.pone.0243665",
+   "expected_doi_used": "10.1371/journal.pone.0243665",
+   "resolved": {
+    "openalex_id": "W3111886642",
+    "doi": "10.1371/journal.pone.0243665",
+    "pmid": "33301532",
+    "pmcid": "7728169",
+    "title": "Heatwaves, medications, and heat-related hospitalization in older Medicare beneficiaries with chronic conditions",
+    "year": 2020,
+    "journal": "PLoS ONE",
+    "first_author": "J. Bradley Layton",
+    "type": "article",
+    "cited_by_count": 131
+   },
+   "resolved_by": "openalex title search; DOI matches cited DOI",
+   "openalex_n_references_listed": 45,
+   "openalex_n_references_fetched": 45,
+   "openalex_n_cited_by": 128,
+   "epmc_n_references": 35,
+   "epmc_n_citations": 79
+  },
+  {
+   "seed": "Schizophrenia heat review 2025 (Sci Total Environ)",
+   "title_query": "Susceptibility of persons with schizophrenia to extreme heat: A critical review of physiological, behavioural, and social factors",
+   "expected_doi": null,
+   "pii": "S0048969725016055",
+   "crossref_title": "Susceptibility of persons with schizophrenia to extreme heat: A critical review of physiological, behavioural, and social factors",
+   "expected_doi_used": "10.1016/j.scitotenv.2025.179965",
+   "resolved": {
+    "openalex_id": "W4412707851",
+    "doi": "10.1016/j.scitotenv.2025.179965",
+    "pmid": "40714605",
+    "pmcid": "",
+    "title": "Susceptibility of persons with schizophrenia to extreme heat: A critical review of physiological, behavioural, and social factors",
+    "year": 2025,
+    "journal": "The Science of The Total Environment",
+    "first_author": "Nathalie V. Kirby",
+    "type": "review",
+    "cited_by_count": 14
+   },
+   "resolved_by": "openalex title search; DOI matches cited DOI",
+   "openalex_n_references_listed": 547,
+   "openalex_n_references_fetched": 543,
+   "openalex_n_cited_by": 14,
+   "epmc_n_references": 570,
+   "epmc_n_citations": 9
+  }
+ ]
+}

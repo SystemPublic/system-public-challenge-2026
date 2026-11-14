@@ -1,0 +1,492 @@
+{
+ "accessed": "2026-11-14",
+ "drugs": {
+  "acetaminophen": {
+   "lookup_name": "acetaminophen",
+   "rxcui": "161",
+   "rxnorm_name": "acetaminophen",
+   "tty": "IN"
+  },
+  "albuterol": {
+   "lookup_name": "albuterol",
+   "rxcui": "435",
+   "rxnorm_name": "albuterol",
+   "tty": "IN"
+  },
+  "amitriptyline": {
+   "lookup_name": "amitriptyline",
+   "rxcui": "704",
+   "rxnorm_name": "amitriptyline",
+   "tty": "IN"
+  },
+  "amlodipine": {
+   "lookup_name": "amlodipine",
+   "rxcui": "17767",
+   "rxnorm_name": "amlodipine",
+   "tty": "IN"
+  },
+  "amphetamine mixed salts": {
+   "lookup_name": "amphetamine aspartate / amphetamine sulfate / dextroamphetamine saccharate / dextroamphetamine sulfate",
+   "rxcui": "822929",
+   "rxnorm_name": "amphetamine aspartate / amphetamine sulfate / dextroamphetamine saccharate / dextroamphetamine sulfate",
+   "tty": "MIN"
+  },
+  "aripiprazole": {
+   "lookup_name": "aripiprazole",
+   "rxcui": "89013",
+   "rxnorm_name": "aripiprazole",
+   "tty": "IN"
+  },
+  "aspirin": {
+   "lookup_name": "aspirin",
+   "rxcui": "1191",
+   "rxnorm_name": "aspirin",
+   "tty": "IN"
+  },
+  "atorvastatin": {
+   "lookup_name": "atorvastatin",
+   "rxcui": "83367",
+   "rxnorm_name": "atorvastatin",
+   "tty": "IN"
+  },
+  "benztropine": {
+   "lookup_name": "benztropine",
+   "rxcui": "1424",
+   "rxnorm_name": "benztropine",
+   "tty": "IN"
+  },
+  "budesonide/formoterol": {
+   "lookup_name": "budesonide / formoterol",
+   "rxcui": "389132",
+   "rxnorm_name": "budesonide / formoterol",
+   "tty": "MIN"
+  },
+  "bumetanide": {
+   "lookup_name": "bumetanide",
+   "rxcui": "1808",
+   "rxnorm_name": "bumetanide",
+   "tty": "IN"
+  },
+  "bupropion": {
+   "lookup_name": "bupropion",
+   "rxcui": "42347",
+   "rxnorm_name": "bupropion",
+   "tty": "IN"
+  },
+  "carbamazepine": {
+   "lookup_name": "carbamazepine",
+   "rxcui": "2002",
+   "rxnorm_name": "carbamazepine",
+   "tty": "IN"
+  },
+  "carvedilol": {
+   "lookup_name": "carvedilol",
+   "rxcui": "20352",
+   "rxnorm_name": "carvedilol",
+   "tty": "IN"
+  },
+  "cetirizine": {
+   "lookup_name": "cetirizine",
+   "rxcui": "20610",
+   "rxnorm_name": "cetirizine",
+   "tty": "IN"
+  },
+  "chlorthalidone": {
+   "lookup_name": "chlorthalidone",
+   "rxcui": "2409",
+   "rxnorm_name": "chlorthalidone",
+   "tty": "IN"
+  },
+  "cholecalciferol": {
+   "lookup_name": "cholecalciferol",
+   "rxcui": "2418",
+   "rxnorm_name": "cholecalciferol",
+   "tty": "IN"
+  },
+  "citalopram": {
+   "lookup_name": "citalopram",
+   "rxcui": "2556",
+   "rxnorm_name": "citalopram",
+   "tty": "IN"
+  },
+  "clozapine": {
+   "lookup_name": "clozapine",
+   "rxcui": "2626",
+   "rxnorm_name": "clozapine",
+   "tty": "IN"
+  },
+  "dapagliflozin": {
+   "lookup_name": "dapagliflozin",
+   "rxcui": "1488564",
+   "rxnorm_name": "dapagliflozin",
+   "tty": "IN"
+  },
+  "diclofenac": {
+   "lookup_name": "diclofenac",
+   "rxcui": "3355",
+   "rxnorm_name": "diclofenac",
+   "tty": "IN"
+  },
+  "digoxin": {
+   "lookup_name": "digoxin",
+   "rxcui": "3407",
+   "rxnorm_name": "digoxin",
+   "tty": "IN"
+  },
+  "diphenhydramine": {
+   "lookup_name": "diphenhydramine",
+   "rxcui": "3498",
+   "rxnorm_name": "diphenhydramine",
+   "tty": "IN"
+  },
+  "divalproex": {
+   "lookup_name": "divalproex sodium",
+   "rxcui": "266856",
+   "rxnorm_name": "divalproex sodium",
+   "tty": "PIN"
+  },
+  "duloxetine": {
+   "lookup_name": "duloxetine",
+   "rxcui": "72625",
+   "rxnorm_name": "duloxetine",
+   "tty": "IN"
+  },
+  "empagliflozin": {
+   "lookup_name": "empagliflozin",
+   "rxcui": "1545653",
+   "rxnorm_name": "empagliflozin",
+   "tty": "IN"
+  },
+  "epinephrine": {
+   "lookup_name": "epinephrine",
+   "rxcui": "3992",
+   "rxnorm_name": "epinephrine",
+   "tty": "IN"
+  },
+  "escitalopram": {
+   "lookup_name": "escitalopram",
+   "rxcui": "321988",
+   "rxnorm_name": "escitalopram",
+   "tty": "IN"
+  },
+  "fentanyl": {
+   "lookup_name": "fentanyl",
+   "rxcui": "4337",
+   "rxnorm_name": "fentanyl",
+   "tty": "IN"
+  },
+  "fluoxetine": {
+   "lookup_name": "fluoxetine",
+   "rxcui": "4493",
+   "rxnorm_name": "fluoxetine",
+   "tty": "IN"
+  },
+  "fluticasone": {
+   "lookup_name": "fluticasone",
+   "rxcui": "41126",
+   "rxnorm_name": "fluticasone",
+   "tty": "IN"
+  },
+  "furosemide": {
+   "lookup_name": "furosemide",
+   "rxcui": "4603",
+   "rxnorm_name": "furosemide",
+   "tty": "IN"
+  },
+  "gabapentin": {
+   "lookup_name": "gabapentin",
+   "rxcui": "25480",
+   "rxnorm_name": "gabapentin",
+   "tty": "IN"
+  },
+  "glipizide": {
+   "lookup_name": "glipizide",
+   "rxcui": "4821",
+   "rxnorm_name": "glipizide",
+   "tty": "IN"
+  },
+  "guanfacine": {
+   "lookup_name": "guanfacine",
+   "rxcui": "40114",
+   "rxnorm_name": "guanfacine",
+   "tty": "IN"
+  },
+  "haloperidol": {
+   "lookup_name": "haloperidol",
+   "rxcui": "5093",
+   "rxnorm_name": "haloperidol",
+   "tty": "IN"
+  },
+  "hydrochlorothiazide": {
+   "lookup_name": "hydrochlorothiazide",
+   "rxcui": "5487",
+   "rxnorm_name": "hydrochlorothiazide",
+   "tty": "IN"
+  },
+  "hydroxyzine": {
+   "lookup_name": "hydroxyzine",
+   "rxcui": "5553",
+   "rxnorm_name": "hydroxyzine",
+   "tty": "IN"
+  },
+  "ibuprofen": {
+   "lookup_name": "ibuprofen",
+   "rxcui": "5640",
+   "rxnorm_name": "ibuprofen",
+   "tty": "IN"
+  },
+  "insulin glargine": {
+   "lookup_name": "insulin glargine",
+   "rxcui": "274783",
+   "rxnorm_name": "insulin glargine",
+   "tty": "IN"
+  },
+  "insulin lispro": {
+   "lookup_name": "insulin lispro",
+   "rxcui": "86009",
+   "rxnorm_name": "insulin lispro",
+   "tty": "IN"
+  },
+  "lamotrigine": {
+   "lookup_name": "lamotrigine",
+   "rxcui": "28439",
+   "rxnorm_name": "lamotrigine",
+   "tty": "IN"
+  },
+  "levetiracetam": {
+   "lookup_name": "levetiracetam",
+   "rxcui": "114477",
+   "rxnorm_name": "levetiracetam",
+   "tty": "IN"
+  },
+  "levothyroxine": {
+   "lookup_name": "levothyroxine",
+   "rxcui": "10582",
+   "rxnorm_name": "levothyroxine",
+   "tty": "IN"
+  },
+  "lisdexamfetamine": {
+   "lookup_name": "lisdexamfetamine",
+   "rxcui": "700810",
+   "rxnorm_name": "lisdexamfetamine",
+   "tty": "IN"
+  },
+  "lisinopril": {
+   "lookup_name": "lisinopril",
+   "rxcui": "29046",
+   "rxnorm_name": "lisinopril",
+   "tty": "IN"
+  },
+  "lithium": {
+   "lookup_name": "lithium carbonate",
+   "rxcui": "42351",
+   "rxnorm_name": "lithium carbonate",
+   "tty": "IN"
+  },
+  "losartan": {
+   "lookup_name": "losartan",
+   "rxcui": "52175",
+   "rxnorm_name": "losartan",
+   "tty": "IN"
+  },
+  "lurasidone": {
+   "lookup_name": "lurasidone",
+   "rxcui": "1040028",
+   "rxnorm_name": "lurasidone",
+   "tty": "IN"
+  },
+  "meloxicam": {
+   "lookup_name": "meloxicam",
+   "rxcui": "41493",
+   "rxnorm_name": "meloxicam",
+   "tty": "IN"
+  },
+  "metformin": {
+   "lookup_name": "metformin",
+   "rxcui": "6809",
+   "rxnorm_name": "metformin",
+   "tty": "IN"
+  },
+  "methylphenidate": {
+   "lookup_name": "methylphenidate",
+   "rxcui": "6901",
+   "rxnorm_name": "methylphenidate",
+   "tty": "IN"
+  },
+  "metoprolol": {
+   "lookup_name": "metoprolol",
+   "rxcui": "6918",
+   "rxnorm_name": "metoprolol",
+   "tty": "IN"
+  },
+  "mirabegron": {
+   "lookup_name": "mirabegron",
+   "rxcui": "1300786",
+   "rxnorm_name": "mirabegron",
+   "tty": "IN"
+  },
+  "mirtazapine": {
+   "lookup_name": "mirtazapine",
+   "rxcui": "15996",
+   "rxnorm_name": "mirtazapine",
+   "tty": "IN"
+  },
+  "montelukast": {
+   "lookup_name": "montelukast",
+   "rxcui": "88249",
+   "rxnorm_name": "montelukast",
+   "tty": "IN"
+  },
+  "naproxen": {
+   "lookup_name": "naproxen",
+   "rxcui": "7258",
+   "rxnorm_name": "naproxen",
+   "tty": "IN"
+  },
+  "olanzapine": {
+   "lookup_name": "olanzapine",
+   "rxcui": "61381",
+   "rxnorm_name": "olanzapine",
+   "tty": "IN"
+  },
+  "omeprazole": {
+   "lookup_name": "omeprazole",
+   "rxcui": "7646",
+   "rxnorm_name": "omeprazole",
+   "tty": "IN"
+  },
+  "oxcarbazepine": {
+   "lookup_name": "oxcarbazepine",
+   "rxcui": "32624",
+   "rxnorm_name": "oxcarbazepine",
+   "tty": "IN"
+  },
+  "oxybutynin": {
+   "lookup_name": "oxybutynin",
+   "rxcui": "32675",
+   "rxnorm_name": "oxybutynin",
+   "tty": "IN"
+  },
+  "oxycodone": {
+   "lookup_name": "oxycodone",
+   "rxcui": "7804",
+   "rxnorm_name": "oxycodone",
+   "tty": "IN"
+  },
+  "paliperidone": {
+   "lookup_name": "paliperidone",
+   "rxcui": "679314",
+   "rxnorm_name": "paliperidone",
+   "tty": "IN"
+  },
+  "paroxetine": {
+   "lookup_name": "paroxetine",
+   "rxcui": "32937",
+   "rxnorm_name": "paroxetine",
+   "tty": "IN"
+  },
+  "propranolol": {
+   "lookup_name": "propranolol",
+   "rxcui": "8787",
+   "rxnorm_name": "propranolol",
+   "tty": "IN"
+  },
+  "quetiapine": {
+   "lookup_name": "quetiapine",
+   "rxcui": "51272",
+   "rxnorm_name": "quetiapine",
+   "tty": "IN"
+  },
+  "risperidone": {
+   "lookup_name": "risperidone",
+   "rxcui": "35636",
+   "rxnorm_name": "risperidone",
+   "tty": "IN"
+  },
+  "sacubitril/valsartan": {
+   "lookup_name": "sacubitril / valsartan",
+   "rxcui": "1656339",
+   "rxnorm_name": "sacubitril / valsartan",
+   "tty": "MIN"
+  },
+  "semaglutide": {
+   "lookup_name": "semaglutide",
+   "rxcui": "1991302",
+   "rxnorm_name": "semaglutide",
+   "tty": "IN"
+  },
+  "sertraline": {
+   "lookup_name": "sertraline",
+   "rxcui": "36437",
+   "rxnorm_name": "sertraline",
+   "tty": "IN"
+  },
+  "solifenacin": {
+   "lookup_name": "solifenacin",
+   "rxcui": "322167",
+   "rxnorm_name": "solifenacin",
+   "tty": "IN"
+  },
+  "spironolactone": {
+   "lookup_name": "spironolactone",
+   "rxcui": "9997",
+   "rxnorm_name": "spironolactone",
+   "tty": "IN"
+  },
+  "sumatriptan": {
+   "lookup_name": "sumatriptan",
+   "rxcui": "37418",
+   "rxnorm_name": "sumatriptan",
+   "tty": "IN"
+  },
+  "tolterodine": {
+   "lookup_name": "tolterodine",
+   "rxcui": "119565",
+   "rxnorm_name": "tolterodine",
+   "tty": "IN"
+  },
+  "topiramate": {
+   "lookup_name": "topiramate",
+   "rxcui": "38404",
+   "rxnorm_name": "topiramate",
+   "tty": "IN"
+  },
+  "torsemide": {
+   "lookup_name": "torsemide",
+   "rxcui": "38413",
+   "rxnorm_name": "torsemide",
+   "tty": "IN"
+  },
+  "trazodone": {
+   "lookup_name": "trazodone",
+   "rxcui": "10737",
+   "rxnorm_name": "trazodone",
+   "tty": "IN"
+  },
+  "trospium": {
+   "lookup_name": "trospium",
+   "rxcui": "236778",
+   "rxnorm_name": "trospium",
+   "tty": "IN"
+  },
+  "venlafaxine": {
+   "lookup_name": "venlafaxine",
+   "rxcui": "39786",
+   "rxnorm_name": "venlafaxine",
+   "tty": "IN"
+  },
+  "ziprasidone": {
+   "lookup_name": "ziprasidone",
+   "rxcui": "115698",
+   "rxnorm_name": "ziprasidone",
+   "tty": "IN"
+  },
+  "zonisamide": {
+   "lookup_name": "zonisamide",
+   "rxcui": "39998",
+   "rxnorm_name": "zonisamide",
+   "tty": "IN"
+  }
+ },
+ "source": "NIH NLM RxNav REST API, https://rxnav.nlm.nih.gov/REST/rxcui.json?name=..."
+}

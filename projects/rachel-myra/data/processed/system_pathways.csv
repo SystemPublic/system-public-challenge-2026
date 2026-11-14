@@ -1,0 +1,115 @@
+drug_group,drug_group_label,in_scope_15,known_heat_drug,mediator,mediator_label,drug_leg_findings,drug_leg_studies,heat_leg_findings,heat_leg_studies,heat_leg_breakdown_studies,direct_drug_heat_findings,direct_drug_heat_studies,rel_drug_mediator_edges,rel_drug_mediator_findings,rel_drug_mediator_studies_summed,rel_heat_mediator_edges,rel_heat_mediator_findings,rel_heat_mediator_studies_summed,pathway_score_sqrt_studies,pathway_present
+lithium,Lithium,True,True,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,2,2,0,0,0,0,0,0,0.0,False
+lithium,Lithium,True,True,hyponatremia,Hyponatremia / serum sodium,6,3,7,4,ambient_temp:4,2,2,1,4,1,0,0,0,3.46,True
+lithium,Lithium,True,True,aki,Acute kidney injury,2,1,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,2,2,1,2,1,2,3,3,3.46,True
+lithium,Lithium,True,True,bp_hypotension,Blood pressure / hypotension,13,7,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,2,2,6,13,10,3,4,3,10.58,True
+lithium,Lithium,True,True,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,2,2,1,1,1,1,1,1,0.0,False
+lithium,Lithium,True,True,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,2,2,0,0,0,4,5,5,0.0,False
+loop_diuretics,Loop diuretics,True,True,dehydration,Dehydration / volume depletion,1,1,4,4,ambient_temp:4,0,0,0,0,0,0,0,0,2.0,True
+loop_diuretics,Loop diuretics,True,True,hyponatremia,Hyponatremia / serum sodium,9,5,7,4,ambient_temp:4,0,0,1,3,1,0,0,0,4.47,True
+loop_diuretics,Loop diuretics,True,True,aki,Acute kidney injury,47,35,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,0,0,2,17,17,2,3,3,20.49,True
+loop_diuretics,Loop diuretics,True,True,bp_hypotension,Blood pressure / hypotension,14,11,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,0,0,4,9,8,3,4,3,13.27,True
+loop_diuretics,Loop diuretics,True,True,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,0,0,0,0,0,1,1,1,0.0,False
+loop_diuretics,Loop diuretics,True,True,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,0,0,0,0,0,4,5,5,0.0,False
+thiazides,Thiazides,True,True,dehydration,Dehydration / volume depletion,1,1,4,4,ambient_temp:4,1,1,0,0,0,0,0,0,2.0,True
+thiazides,Thiazides,True,True,hyponatremia,Hyponatremia / serum sodium,26,20,7,4,ambient_temp:4,1,1,3,11,10,0,0,0,8.94,True
+thiazides,Thiazides,True,True,aki,Acute kidney injury,3,3,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,1,1,2,2,2,2,3,3,6.0,True
+thiazides,Thiazides,True,True,bp_hypotension,Blood pressure / hypotension,156,89,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,1,1,17,81,58,3,4,3,37.74,True
+thiazides,Thiazides,True,True,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,1,1,0,0,0,1,1,1,0.0,False
+thiazides,Thiazides,True,True,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,1,1,0,0,0,4,5,5,0.0,False
+acei_arb,ACE inhibitors / ARBs,True,False,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,1,1,0,0,0,0,0,0,0.0,False
+acei_arb,ACE inhibitors / ARBs,True,False,hyponatremia,Hyponatremia / serum sodium,5,5,7,4,ambient_temp:4,1,1,0,0,0,0,0,0,4.47,True
+acei_arb,ACE inhibitors / ARBs,True,False,aki,Acute kidney injury,83,59,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,1,1,5,63,43,2,3,3,26.61,True
+acei_arb,ACE inhibitors / ARBs,True,False,bp_hypotension,Blood pressure / hypotension,658,423,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,1,1,91,544,394,3,4,3,82.27,True
+acei_arb,ACE inhibitors / ARBs,True,False,sweating,Sweating / anhidrosis,1,1,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,1,1,1,1,1,1,1,1,2.45,True
+acei_arb,ACE inhibitors / ARBs,True,False,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,1,1,0,0,0,4,5,5,0.0,False
+sglt2,SGLT2 inhibitors,True,False,dehydration,Dehydration / volume depletion,1,1,4,4,ambient_temp:4,0,0,1,1,1,0,0,0,2.0,True
+sglt2,SGLT2 inhibitors,True,False,hyponatremia,Hyponatremia / serum sodium,0,0,7,4,ambient_temp:4,0,0,0,0,0,0,0,0,0.0,False
+sglt2,SGLT2 inhibitors,True,False,aki,Acute kidney injury,34,28,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,0,0,4,65,43,2,3,3,18.33,True
+sglt2,SGLT2 inhibitors,True,False,bp_hypotension,Blood pressure / hypotension,43,30,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,0,0,17,45,39,3,4,3,21.91,True
+sglt2,SGLT2 inhibitors,True,False,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,0,0,0,0,0,1,1,1,0.0,False
+sglt2,SGLT2 inhibitors,True,False,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,0,0,0,0,0,4,5,5,0.0,False
+insulin,Insulin (incl. pumps),True,False,dehydration,Dehydration / volume depletion,1,1,4,4,ambient_temp:4,0,0,0,0,0,0,0,0,2.0,True
+insulin,Insulin (incl. pumps),True,False,hyponatremia,Hyponatremia / serum sodium,6,4,7,4,ambient_temp:4,0,0,3,6,5,0,0,0,4.0,True
+insulin,Insulin (incl. pumps),True,False,aki,Acute kidney injury,9,8,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,0,0,3,6,5,2,3,3,9.8,True
+insulin,Insulin (incl. pumps),True,False,bp_hypotension,Blood pressure / hypotension,58,44,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,0,0,12,117,86,3,4,3,26.53,True
+insulin,Insulin (incl. pumps),True,False,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,0,0,0,0,0,1,1,1,0.0,False
+insulin,Insulin (incl. pumps),True,False,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,0,0,0,0,0,4,5,5,0.0,False
+metformin,Metformin,True,False,dehydration,Dehydration / volume depletion,1,1,4,4,ambient_temp:4,0,0,0,0,0,0,0,0,2.0,True
+metformin,Metformin,True,False,hyponatremia,Hyponatremia / serum sodium,2,1,7,4,ambient_temp:4,0,0,1,2,1,0,0,0,2.0,True
+metformin,Metformin,True,False,aki,Acute kidney injury,9,6,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,0,0,1,8,6,2,3,3,8.49,True
+metformin,Metformin,True,False,bp_hypotension,Blood pressure / hypotension,18,14,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,0,0,5,18,14,3,4,3,14.97,True
+metformin,Metformin,True,False,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,0,0,0,0,0,1,1,1,0.0,False
+metformin,Metformin,True,False,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,0,0,0,0,0,4,5,5,0.0,False
+anticholinergics,Anticholinergics (oxybutynin),True,True,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,0,0,0,0,0,0,0,0,0.0,False
+anticholinergics,Anticholinergics (oxybutynin),True,True,hyponatremia,Hyponatremia / serum sodium,2,1,7,4,ambient_temp:4,0,0,1,1,1,0,0,0,2.0,True
+anticholinergics,Anticholinergics (oxybutynin),True,True,aki,Acute kidney injury,0,0,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,0,0,0,0,0,2,3,3,0.0,False
+anticholinergics,Anticholinergics (oxybutynin),True,True,bp_hypotension,Blood pressure / hypotension,1,1,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,0,0,1,1,1,3,4,3,4.0,True
+anticholinergics,Anticholinergics (oxybutynin),True,True,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,0,0,0,0,0,1,1,1,0.0,False
+anticholinergics,Anticholinergics (oxybutynin),True,True,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,0,0,0,0,0,4,5,5,0.0,False
+antipsychotics,Antipsychotics (incl. clozapine),True,True,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,2,2,0,0,0,0,0,0,0.0,False
+antipsychotics,Antipsychotics (incl. clozapine),True,True,hyponatremia,Hyponatremia / serum sodium,9,6,7,4,ambient_temp:4,2,2,3,9,7,0,0,0,4.9,True
+antipsychotics,Antipsychotics (incl. clozapine),True,True,aki,Acute kidney injury,21,4,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,2,2,9,21,14,2,3,3,6.93,True
+antipsychotics,Antipsychotics (incl. clozapine),True,True,bp_hypotension,Blood pressure / hypotension,20,17,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,2,2,12,18,16,3,4,3,16.49,True
+antipsychotics,Antipsychotics (incl. clozapine),True,True,sweating,Sweating / anhidrosis,1,1,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,2,2,0,0,0,1,1,1,2.45,True
+antipsychotics,Antipsychotics (incl. clozapine),True,True,body_temp,Body temperature / hyperthermia,1,1,41,32,ambient_temp:19; heat_illness:14,2,2,0,0,0,4,5,5,5.66,True
+ssris,SSRIs,True,False,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,2,2,0,0,0,0,0,0,0.0,False
+ssris,SSRIs,True,False,hyponatremia,Hyponatremia / serum sodium,28,14,7,4,ambient_temp:4,2,2,7,18,13,0,0,0,7.48,True
+ssris,SSRIs,True,False,aki,Acute kidney injury,0,0,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,2,2,0,0,0,2,3,3,0.0,False
+ssris,SSRIs,True,False,bp_hypotension,Blood pressure / hypotension,26,20,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,2,2,17,29,24,3,4,3,17.89,True
+ssris,SSRIs,True,False,sweating,Sweating / anhidrosis,2,2,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,2,2,2,2,2,1,1,1,3.46,True
+ssris,SSRIs,True,False,body_temp,Body temperature / hyperthermia,1,1,41,32,ambient_temp:19; heat_illness:14,2,2,0,0,0,4,5,5,5.66,True
+topiramate_zonisamide,Topiramate / zonisamide,True,False,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,1,1,0,0,0,0,0,0,0.0,False
+topiramate_zonisamide,Topiramate / zonisamide,True,False,hyponatremia,Hyponatremia / serum sodium,0,0,7,4,ambient_temp:4,1,1,0,0,0,0,0,0,0.0,False
+topiramate_zonisamide,Topiramate / zonisamide,True,False,aki,Acute kidney injury,0,0,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,1,1,0,0,0,2,3,3,0.0,False
+topiramate_zonisamide,Topiramate / zonisamide,True,False,bp_hypotension,Blood pressure / hypotension,2,1,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,1,1,2,2,2,3,4,3,4.0,True
+topiramate_zonisamide,Topiramate / zonisamide,True,False,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,1,1,1,1,1,1,1,1,0.0,False
+topiramate_zonisamide,Topiramate / zonisamide,True,False,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,1,1,0,0,0,4,5,5,0.0,False
+adhd_stimulants,ADHD stimulants,True,False,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,0,0,0,0,0,0,0,0,0.0,False
+adhd_stimulants,ADHD stimulants,True,False,hyponatremia,Hyponatremia / serum sodium,1,1,7,4,ambient_temp:4,0,0,0,0,0,0,0,0,2.0,True
+adhd_stimulants,ADHD stimulants,True,False,aki,Acute kidney injury,0,0,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,0,0,0,0,0,2,3,3,0.0,False
+adhd_stimulants,ADHD stimulants,True,False,bp_hypotension,Blood pressure / hypotension,7,4,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,0,0,6,8,6,3,4,3,8.0,True
+adhd_stimulants,ADHD stimulants,True,False,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,0,0,0,0,0,1,1,1,0.0,False
+adhd_stimulants,ADHD stimulants,True,False,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,0,0,0,0,0,4,5,5,0.0,False
+beta_blockers,Beta blockers,True,False,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,4,3,0,0,0,0,0,0,0.0,False
+beta_blockers,Beta blockers,True,False,hyponatremia,Hyponatremia / serum sodium,0,0,7,4,ambient_temp:4,4,3,0,0,0,0,0,0,0.0,False
+beta_blockers,Beta blockers,True,False,aki,Acute kidney injury,11,10,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,4,3,5,8,7,2,3,3,10.95,True
+beta_blockers,Beta blockers,True,False,bp_hypotension,Blood pressure / hypotension,200,145,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,4,3,39,168,131,3,4,3,48.17,True
+beta_blockers,Beta blockers,True,False,sweating,Sweating / anhidrosis,2,1,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,4,3,2,2,2,1,1,1,2.45,True
+beta_blockers,Beta blockers,True,False,body_temp,Body temperature / hyperthermia,3,3,41,32,ambient_temp:19; heat_illness:14,4,3,3,3,3,4,5,5,9.8,True
+opioids_fentanyl,Fentanyl / opioid patches,True,False,dehydration,Dehydration / volume depletion,1,1,4,4,ambient_temp:4,2,1,1,1,1,0,0,0,2.0,True
+opioids_fentanyl,Fentanyl / opioid patches,True,False,hyponatremia,Hyponatremia / serum sodium,1,1,7,4,ambient_temp:4,2,1,1,1,1,0,0,0,2.0,True
+opioids_fentanyl,Fentanyl / opioid patches,True,False,aki,Acute kidney injury,9,9,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,2,1,3,7,7,2,3,3,10.39,True
+opioids_fentanyl,Fentanyl / opioid patches,True,False,bp_hypotension,Blood pressure / hypotension,39,31,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,2,1,15,33,27,3,4,3,22.27,True
+opioids_fentanyl,Fentanyl / opioid patches,True,False,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,2,1,0,0,0,1,1,1,0.0,False
+opioids_fentanyl,Fentanyl / opioid patches,True,False,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,2,1,0,0,0,4,5,5,0.0,False
+epinephrine_ai,Epinephrine auto-injectors,True,False,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,0,0,0,0,0,0,0,0,0.0,False
+epinephrine_ai,Epinephrine auto-injectors,True,False,hyponatremia,Hyponatremia / serum sodium,0,0,7,4,ambient_temp:4,0,0,0,0,0,0,0,0,0.0,False
+epinephrine_ai,Epinephrine auto-injectors,True,False,aki,Acute kidney injury,0,0,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,0,0,0,0,0,2,3,3,0.0,False
+epinephrine_ai,Epinephrine auto-injectors,True,False,bp_hypotension,Blood pressure / hypotension,2,2,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,0,0,0,0,0,3,4,3,5.66,True
+epinephrine_ai,Epinephrine auto-injectors,True,False,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,0,0,0,0,0,1,1,1,0.0,False
+epinephrine_ai,Epinephrine auto-injectors,True,False,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,0,0,0,0,0,4,5,5,0.0,False
+nsaids,NSAIDs (comparator),False,False,dehydration,Dehydration / volume depletion,1,1,4,4,ambient_temp:4,3,3,0,0,0,0,0,0,2.0,True
+nsaids,NSAIDs (comparator),False,False,hyponatremia,Hyponatremia / serum sodium,1,1,7,4,ambient_temp:4,3,3,1,1,1,0,0,0,2.0,True
+nsaids,NSAIDs (comparator),False,False,aki,Acute kidney injury,69,41,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,3,3,5,54,36,2,3,3,22.18,True
+nsaids,NSAIDs (comparator),False,False,bp_hypotension,Blood pressure / hypotension,15,12,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,3,3,6,11,9,3,4,3,13.86,True
+nsaids,NSAIDs (comparator),False,False,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,3,3,0,0,0,1,1,1,0.0,False
+nsaids,NSAIDs (comparator),False,False,body_temp,Body temperature / hyperthermia,1,1,41,32,ambient_temp:19; heat_illness:14,3,3,2,2,2,4,5,5,5.66,True
+benzodiazepines,Benzodiazepines (comparator),False,False,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,0,0,0,0,0,0,0,0,0.0,False
+benzodiazepines,Benzodiazepines (comparator),False,False,hyponatremia,Hyponatremia / serum sodium,2,2,7,4,ambient_temp:4,0,0,1,1,1,0,0,0,2.83,True
+benzodiazepines,Benzodiazepines (comparator),False,False,aki,Acute kidney injury,0,0,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,0,0,0,0,0,2,3,3,0.0,False
+benzodiazepines,Benzodiazepines (comparator),False,False,bp_hypotension,Blood pressure / hypotension,10,7,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,0,0,3,7,5,3,4,3,10.58,True
+benzodiazepines,Benzodiazepines (comparator),False,False,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,0,0,0,0,0,1,1,1,0.0,False
+benzodiazepines,Benzodiazepines (comparator),False,False,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,0,0,0,0,0,4,5,5,0.0,False
+sulfonylureas,Sulfonylureas (comparator),False,False,dehydration,Dehydration / volume depletion,0,0,4,4,ambient_temp:4,0,0,0,0,0,0,0,0,0.0,False
+sulfonylureas,Sulfonylureas (comparator),False,False,hyponatremia,Hyponatremia / serum sodium,2,1,7,4,ambient_temp:4,0,0,1,2,1,0,0,0,2.0,True
+sulfonylureas,Sulfonylureas (comparator),False,False,aki,Acute kidney injury,1,1,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,0,0,1,1,1,2,3,3,3.46,True
+sulfonylureas,Sulfonylureas (comparator),False,False,bp_hypotension,Blood pressure / hypotension,3,3,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,0,0,1,1,1,3,4,3,6.93,True
+sulfonylureas,Sulfonylureas (comparator),False,False,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,0,0,0,0,0,1,1,1,0.0,False
+sulfonylureas,Sulfonylureas (comparator),False,False,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,0,0,0,0,0,4,5,5,0.0,False
+diuretics_any,"Diuretics, any (comparator)",False,True,dehydration,Dehydration / volume depletion,2,1,4,4,ambient_temp:4,0,0,0,0,0,0,0,0,2.0,True
+diuretics_any,"Diuretics, any (comparator)",False,True,hyponatremia,Hyponatremia / serum sodium,29,16,7,4,ambient_temp:4,0,0,4,10,8,0,0,0,8.0,True
+diuretics_any,"Diuretics, any (comparator)",False,True,aki,Acute kidney injury,65,49,24,12,ambient_temp:11; heat_illness:1; heat_wave:1,0,0,2,39,34,2,3,3,24.25,True
+diuretics_any,"Diuretics, any (comparator)",False,True,bp_hypotension,Blood pressure / hypotension,37,30,21,16,ambient_temp:13; heat_illness:2; heat_wave:1,0,0,9,27,22,3,4,3,21.91,True
+diuretics_any,"Diuretics, any (comparator)",False,True,sweating,Sweating / anhidrosis,0,0,6,6,ambient_temp:4; heat_illness:1; heat_wave:1,0,0,0,0,0,1,1,1,0.0,False
+diuretics_any,"Diuretics, any (comparator)",False,True,body_temp,Body temperature / hyperthermia,0,0,41,32,ambient_temp:19; heat_illness:14,0,0,0,0,0,4,5,5,0.0,False

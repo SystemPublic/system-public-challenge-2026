@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:436387,exclude,E5 fenfluramine poisoning hyperthermia; no environmental heat,none,none,case_series
+PMID:6115102,exclude,E2 rat 5-HT hypothermia,none,none,other
+PMID:6128217,exclude,E6 drug-induced myopathy review; no heat,none,none,review
+PMID:6220780,include,I1 propranolol reduces hot-bath (40 C) tachycardia,beta_blockers,other,human_lab_study
+PMID:6259250,include,I1 propranolol and aldosterone/heat tolerance during 46 C heat exposure,beta_blockers,other,rct
+PMID:6279631,exclude,E2 mouse thymocytes cold temperature,none,none,other
+PMID:6649721,exclude,E6 sauna and walking therapy in propranolol-pretreated hypertensives; drug background only,none,none,other
+PMID:6683767,exclude,E2 animal barbital dependence,none,none,other
+PMID:6812341,exclude,E2 rat thyroxine insulin secretion,none,none,other
+PMID:7050057,include,I1 propranolol and splanchnic vasoconstriction during whole-body heat stress,beta_blockers,other,human_lab_study
+PMID:7471381,exclude,E7 swimming in cardiac patients on beta-blockers; no heat,none,none,other
+PMID:7617062,include,I1 fatal heat stroke on warm summer day with antipsychotics/anticholinergics,multiple,heat_illness,case_series
+PMID:7902993,exclude,E7 intraventricular neurotransmitter injections at normal ambient temperature,none,none,human_lab_study
+PMID:7957149,include,"I1 atenolol and scopolamine during Finnish sauna bath, cardiovascular strain",multiple,other,rct
+PMID:826962,exclude,E2 rat cannabis hypothermia,none,none,other
+PMID:8450471,exclude,E2 rat 5-HT1A hypothermia model,none,none,other
+PMID:9222810,exclude,E6 esmolol during oncologic whole-body hyperthermia,none,none,case_series
+PMID:9263392,exclude,E7 heat-inactivation of serum and protein binding,none,none,lab_bench
+PMID:9277525,include,I1 propranolol microdialysis and skin blood flow during whole-body heating,beta_blockers,sweating_thermoregulation,human_lab_study
+PMID:9459535,include,uncertain: I1 propranolol blockade and immune changes during hot-water immersion hyperthermia,beta_blockers,other,rct
+PMID:9477576,exclude,E3 FT-Raman sample rotation,none,none,lab_bench
+PMID:9503255,exclude,E7 pindolol and ipsapirone hypothermia at constant ambient temperature,beta_blockers,none,other
+PMID:9571303,include,I1 review of heat exposure effects on drug pharmacokinetics,multiple,pharmacokinetics_absorption,review
+PMID:9688046,exclude,E3 molecular dynamics of beta-blocker permeability,none,none,other
+PMID:10437710,exclude,E5 neuromuscular blockers review; malignant hyperthermia,none,none,review
+PMID:10457974,exclude,E5 malignant catatonia case,none,none,case_report
+PMID:10739230,include,"I1 fatal hyperthermia, 39 C day, benztropine (autoerotic death case 1)",anticholinergics,heat_illness,case_series
+PMID:11394759,include,I1 heat deaths series; benztropine and trifluoperazine as predisposing factors,multiple,mortality,case_series
+PMID:12098844,exclude,E3 solid-state NMR of muscarinic antagonist,none,none,lab_bench
+PMID:12789076,exclude,E5 drug-induced hyperthermia review; no environmental heat,multiple,none,review
+PMID:12875586,exclude,E7 nasal mucosal temperature reflex; no relevant drug,none,none,rct
+PMID:14751484,exclude,E5 antimuscarinic poisoning signs,anticholinergics,none,cross_sectional
+PMID:15021205,exclude,E5 drug-induced hyperthermia management review,none,none,review
+PMID:15088261,exclude,E6 sweating disorders review; anticholinergics as hyperhidrosis treatment,none,none,review
+PMID:15247159,include,uncertain: I1 glycopyrrolate and thermal hyperemia to local skin heating,anticholinergics,sweating_thermoregulation,human_lab_study
+PMID:16174785,include,I1 recurrent heat illness working in sun on benzhexol/chlorpromazine/zuclopenthixol,multiple,heat_illness,case_report
+PMID:16208529,exclude,E5 acute movement disorders review incl NMS,none,none,review
+PMID:1621627,exclude,E5 tricyclic overdose management,anticholinergics,none,review
+PMID:17474507,exclude,E7 spectrophotometric assay of desloratadine,none,none,lab_bench
+PMID:17513091,include,I1 psychotropic drugs and heat-related hospitalisation in 2003 heat wave,multiple,hospitalization_ed,case_control
+PMID:1754979,exclude,E4 metapramine agranulocytosis with fever,none,none,case_report
+PMID:17600158,include,I1 atropine attenuates cutaneous active vasodilation during heat stress,anticholinergics,sweating_thermoregulation,human_lab_study
+PMID:177967,exclude,E6 hyperhidrosis/hypohidrosis review; anticholinergics as treatment,none,none,review
+PMID:18025545,include,I1 fatal exertional heat stroke during heat wave on zuclopenthixol/quetiapine/benztropine,multiple,heat_illness,case_report
+PMID:18041893,exclude,E4 azacitidine-associated hyperthermia,none,none,case_report
+PMID:18096088,exclude,E5 toxin-induced hyperthermia review,none,none,review
+PMID:18217788,include,uncertain: I1 review of drug-induced hypohidrosis and heat illness risk,multiple,sweating_thermoregulation,review
+PMID:18294315,exclude,E6 topical glycopyrrolate for hyperhidrosis; no heat,anticholinergics,none,other
+PMID:19401983,exclude,E5 antidepressant poisoning review,none,none,review
+PMID:20393822,exclude,E6 strabismus anesthesia review,none,none,review
+PMID:20502177,exclude,E5 ADR-related hyperthermia in ICU review,none,none,review
+PMID:20860383,exclude,E3 thermosalient crystals of oxitropium,none,none,lab_bench
+PMID:21046437,exclude,E7 oxybutynin assay method,anticholinergics,none,lab_bench
+PMID:21384905,exclude,E3 benzodithiadiazine chemistry,none,none,lab_bench
+PMID:21470226,include,I1 heat-related death on 43.1 C day with oxybutynin,anticholinergics,mortality,case_report
+PMID:21635256,exclude,E3 imidafenacin hydrate transformation by NIR,anticholinergics,none,lab_bench
+PMID:2196841,exclude,E5 central anticholinergic syndrome postoperative,none,none,review
+PMID:22461927,exclude,E5 atropine eye drop ingestion toxidrome,anticholinergics,none,case_report
+PMID:22496503,include,I1 atropine blocks thermal sweating during passive heating,anticholinergics,sweating_thermoregulation,human_lab_study
+PMID:22505744,include,uncertain: I1 ipratropium prevents hot humid air bronchoconstriction in asthma,anticholinergics,other,rct
+PMID:22695976,include,I1 oxybutynin hyperthermia on hot summer days in spina bifida children,anticholinergics,hyperthermia,case_series
+PMID:23091692,exclude,E6 cholinergic urticaria with hypohidrosis; stellate block,none,none,case_report
+PMID:23261898,exclude,E5 drug-induced hyperthermia syndromes review,none,none,review
+PMID:23706777,exclude,E5 recreational tropicamide misuse,none,none,other
+PMID:24176476,exclude,E5 hyperthermia in overdose review,none,none,review
+PMID:24259154,exclude,E6 pelvic floor training systematic review,none,none,systematic_review
+PMID:24334576,exclude,E6 autoantibodies in idiopathic anhidrosis,none,none,case_series
+PMID:24471206,exclude,E5 drug-associated hyperthermic syndromes review,none,none,review
+PMID:24798647,exclude,E5 antimuscarinic toxicity polydrug overdose,none,none,case_report
+PMID:25622380,exclude,E6 neuromuscular blockade review,none,none,review
+PMID:25813563,exclude,E4 oxybutynin hyperthermia side effect without heat link,anticholinergics,none,rct
+PMID:2582686,include,uncertain: I1 thermal sweating in Parkinson's; anticholinergics no significant influence,anticholinergics,sweating_thermoregulation,cross_sectional
+PMID:26216560,exclude,E5 tropicamide injection review,none,none,review
+PMID:26503496,include,I1 heat stroke in heat wave on olanzapine/trihexyphenidyl/trazodone,multiple,heat_illness,case_report
+PMID:26526663,exclude,E6 pelvic floor training systematic review update,none,none,systematic_review
+PMID:26528941,include,"I1 atropine during uncompensable exertional heat stress, pilot crossover",anticholinergics,sweating_thermoregulation,rct
+PMID:2683549,exclude,E5 central anticholinergic syndrome review,none,none,review
+PMID:26990140,exclude,E6 bladder dysfunction pharmacology review,none,none,review
+PMID:27160370,include,"I1 heat waves, anticholinergic drug exposure, LOS and mortality in older inpatients",anticholinergics,mortality,cohort
+PMID:27272514,exclude,E5 malignant hyperthermia syndromes review,none,none,review
+PMID:28701216,include,I1 ambient temperature and diabetic GP consultations; medication effect modification,multiple,other,case_crossover
+PMID:29329111,exclude,E2 Dravet mouse muscarinic antagonists,none,none,other
+PMID:30647232,exclude,E5 Datura anticholinergic poisoning,none,none,case_report
+PMID:30765906,exclude,E5 acute drug-induced hyperthermia review,none,none,review
+PMID:31536197,exclude,E5 anticholinergic reaction study guide,none,none,review
+PMID:31642960,include,I1 narrative review drug-associated non-pyrogenic hyperthermia and heat-related admissions,multiple,heat_illness,review
+PMID:31643610,exclude,E6 general anticholinergic agents monograph; no heat data,none,none,review
+PMID:33015872,include,I1 atropine abolishes adrenergic sweating during heat exposure 35 C,anticholinergics,sweating_thermoregulation,human_lab_study
+PMID:33583621,exclude,E5 glycopyrronium wipe anticholinergic toxicity; no heat,none,none,case_report
+PMID:34055543,include,uncertain: I1 oxybutynin-induced heatstroke in Parkinson's patient,anticholinergics,heat_illness,case_report
+PMID:34102130,exclude,E5 olanzapine overdose anticholinergic toxicity,none,none,case_report
+PMID:34119011,include,uncertain: I1 biophysical model of fan use thresholds incl. anticholinergic users,anticholinergics,other,other
+PMID:34474941,exclude,E5 cetirizine overdose anticholinergic syndrome,none,none,case_report
+PMID:34773183,include,uncertain: I2 atropine films/eye drops stability under high temperature,anticholinergics,stability_potency,lab_bench
+PMID:35735006,exclude,E5 antimuscarinic toxicity peak temperature,none,none,case_control
+PMID:36531777,exclude,E4 trihexyphenidyl hyperthermia in toddler; no heat link,anticholinergics,none,case_report
+PMID:37194685,exclude,E5 hydroxyzine vs diphenhydramine poisoning,none,none,cohort
+PMID:37465041,exclude,E5 anticholinergic toxicity simulation case,none,none,other
+PMID:37536750,exclude,E8 hyoscine patch safety update summary; no data,anticholinergics,none,other
+PMID:37556617,exclude,E6 perioperative thirst; drug and heat separate factors,none,none,cross_sectional
+PMID:3769509,exclude,E5 hyperthermia in drug intoxication,none,none,case_series
+PMID:3784839,exclude,E5 tricyclic poisoning arrhythmias,none,none,review
+PMID:39206465,exclude,E3 abuse-deterrent formulations review,none,none,review
+PMID:39305816,exclude,E3 cobalt oxide nanostructures,none,none,review
+PMID:39867509,exclude,E5 dicyclomine overdose sinus pause,none,none,case_report
+PMID:40638773,exclude,E6 tetrahydrobiopterin deficiency review,none,none,review
+PMID:41402907,exclude,E8 trial protocol without results,none,none,rct
+PMID:41523499,exclude,E6 enuresis treatments and weather; no drug x heat,none,none,cohort
+PMID:41769024,exclude,E6 vancomycin anticholinergic-type syndrome,none,none,case_report
+PMID:41864034,exclude,E4 fesoterodine anticholinergic-like presentation in Perry syndrome; no heat,anticholinergics,none,case_report
+PMID:42300334,exclude,E6 exertional heat illness in runner on no relevant drug,none,none,case_report
+PMID:6126476,include,"I1 heatstroke in psychiatric patients on antipsychotics/anticholinergics, cases and review",multiple,heat_illness,case_series
+PMID:6139869,exclude,E5 NMS vs heat stroke in neuroleptic-treated patient; no heat exposure,none,none,case_report
+PMID:6145570,exclude,E5 neuroleptic malignant syndrome review,none,none,review
+PMID:661049,include,uncertain: I1 fatal heat stroke with chlorpromazine plus benztropine,multiple,heat_illness,case_report
+PMID:7487247,exclude,E5 herbal tea anticholinergic poisoning,none,none,case_series
+PMID:8046605,exclude,E3 scopolamine polymorph crystallography,none,none,lab_bench
+PMID:8164505,exclude,E2 rat atropine/pyridostigmine heat tolerance,none,none,other
+PMID:8369593,exclude,E6 anticholinergic adverse effects in elderly review; heat not focus,none,none,review
+PMID:8835047,include,I1 oxybutynin-induced heatstroke on hottest summer day,anticholinergics,heat_illness,case_report

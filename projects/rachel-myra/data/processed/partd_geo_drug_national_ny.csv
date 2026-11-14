@@ -1,0 +1,741 @@
+year,Prscrbr_Geo_Lvl,Prscrbr_Geo_Desc,Gnrc_Name,Brnd_Name,Tot_Prscrbrs,Tot_Clms,Tot_30day_Fills,Tot_Drug_Cst,Tot_Benes,GE65_Tot_Clms,GE65_Tot_Benes,Antpsyct_Drug_Flag,drug_classes
+2024,National,National,Aripiprazole,Abilify,1715,7131,9532.7,7066614.48,1478,2278,536,Y,antipsychotics
+2024,National,National,Aripiprazole,Abilify Asimtufii,2505,11620,21637.4,63132285.29,3360,1473,417,Y,antipsychotics
+2024,National,National,Aripiprazole,Abilify Maintena,19332,234939,236211.6,643465043.49,29870,39661,5015,Y,antipsychotics
+2024,National,National,Aripiprazole,Abilify Mycite,11,53,53,90322.38,16,,,Y,antipsychotics
+2024,National,National,Acebutolol Hcl,Acebutolol Hcl,14968,75703,183006.7,4441734.52,17952,71229,16954,N,beta blockers
+2024,National,National,Pioglitazone Hcl/Metformin Hcl,Actoplus Met,23,119,213,111841.22,21,119,21,N,metformin
+2024,National,National,Dextroamphetamine/Amphetamine,Adderall,3383,13721,14579.5,9097370.17,2803,5438,1159,N,ADHD stimulants
+2024,National,National,Dextroamphetamine/Amphetamine,Adderall Xr,9857,39148,41600.5,12093687.32,9214,14980,3558,N,ADHD stimulants
+2024,National,National,Insulin Lispro,Admelog,11811,46494,61411.8,9839416.53,16107,35729,12469,N,insulin
+2024,National,National,Insulin Lispro,Admelog Solostar,34910,151999,232401.8,33983282.86,50850,118143,39994,N,insulin
+2024,National,National,Amphetamine,Adzenys Xr-Odt,373,2030,2139,1131273.65,367,657,143,N,ADHD stimulants
+2024,National,National,"Insulin Regular, Human",Afrezza,1390,13150,16955.3,26857470.82,3110,11204,2656,N,insulin
+2024,National,National,Alogliptin Benz/Metformin Hcl,Alogliptin-Metformin,1570,6563,10324.9,1466301.12,1824,6066,1655,N,metformin
+2024,National,National,Ramipril,Altace,488,1888,4146,1238171.46,420,1833,407,N,ACE inhibitors/ARBs
+2024,National,National,Amiloride/Hydrochlorothiazide,Amiloride-Hydrochlorothiazide,9117,34874,91755.2,1230539.91,9115,33319,8752,N,thiazides
+2024,National,National,Amlodipine Besylate/Benazepril,Amlodipine Besylate-Benazepril,165896,1701282,4430269,30672801.99,427307,1591543,401334,N,ACE inhibitors/ARBs
+2024,National,National,Amlodipine Bes/Olmesartan Med,Amlodipine-Olmesartan,55489,347114,851576,16931514.7,94147,322005,87367,N,ACE inhibitors/ARBs
+2024,National,National,Amlodipine Besylate/Valsartan,Amlodipine-Valsartan,68332,437240,1094257.5,22855148.19,115067,403058,106470,N,ACE inhibitors/ARBs
+2024,National,National,Amlodipine/Valsartan/Hcthiazid,Amlodipine-Valsartan-Hctz,7922,27066,63375.8,10590871.86,8712,23822,7722,N,ACE inhibitors/ARBs
+2024,National,National,Amphetamine Sulfate,Amphetamine Sulfate,241,991,1080,128108.51,213,538,125,N,ADHD stimulants
+2024,National,National,Insulin Glulisine,Apidra,744,2245,4154.4,735198.05,667,1693,503,N,insulin
+2024,National,National,Insulin Glulisine,Apidra Solostar,2682,8018,14511.1,2296756.35,2523,6345,2033,N,insulin
+2024,National,National,Methylphenidate Hcl,Aptensio Xr,52,184,184,48102.07,43,24,,N,ADHD stimulants
+2024,National,National,Aripiprazole,Aripiprazole,212686,3842654,5417791.8,245152908.48,646758,1901425,340089,Y,antipsychotics
+2024,National,National,Aripiprazole,Aripiprazole Odt,2163,12795,14607.1,8148300.62,2347,5039,943,Y,antipsychotics
+2024,National,National,Aripiprazole Lauroxil,Aristada,9623,89977,107049.5,268841860.83,13087,14171,2004,Y,antipsychotics
+2024,National,National,"Aripiprazole Lauroxil,submicr.",Aristada Initio,859,1273,1293.9,3041926.6,1174,163,153,Y,antipsychotics
+2024,National,National,Asenapine Maleate,Asenapine Maleate,9391,66153,83130.7,17741054.46,10219,18843,3002,Y,antipsychotics
+2024,National,National,Candesartan Cilexetil,Atacand,768,2894,6245,1764048.11,649,2837,633,N,ACE inhibitors/ARBs
+2024,National,National,Candesartan/Hydrochlorothiazid,Atacand Hct,236,850,1825,510740.67,192,818,,N,ACE inhibitors/ARBs
+2024,National,National,Atenolol,Atenolol,307889,6457051,16484962,49725371.49,1566422,5971069,1463299,N,beta blockers
+2024,National,National,Atenolol/Chlorthalidone,Atenolol-Chlorthalidone,63859,350064,918286.5,9171684.77,90749,324965,84721,N,thiazides; beta blockers
+2024,National,National,Epinephrine,Auvi-Q,820,1035,1154,713329.08,876,749,670,N,epinephrine auto-injectors
+2024,National,National,Irbesartan/Hydrochlorothiazide,Avalide,313,1141,2538.1,730097.17,283,1101,,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Irbesartan,Avapro,1145,3828,8785.7,2297151.13,991,3751,974,N,ACE inhibitors/ARBs
+2024,National,National,Amlodipine Bes/Olmesartan Med,Azor,784,3507,6905.5,2869755.65,720,3447,707,N,ACE inhibitors/ARBs
+2024,National,National,"Insulin Glargine,hum.Rec.Anlog",Basaglar Kwikpen U-100,178229,1777068,3061021.4,664399452.73,422574,1438575,340754,N,insulin
+2024,National,National,"Insulin Glargine,hum.Rec.Anlog",Basaglar Tempo Pen U-100,1061,1835,2994.7,580890.35,1054,1524,860,N,insulin
+2024,National,National,Benazepril Hcl,Benazepril Hcl,196940,2141700,5545043.1,22284037.88,523017,2016371,495424,N,ACE inhibitors/ARBs
+2024,National,National,Benazepril/Hydrochlorothiazide,Benazepril-Hydrochlorothiazide,54371,260584,681983.7,8530534.56,66628,244881,62978,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Olmesartan Medoxomil,Benicar,4328,19323,38765.1,14001278.76,4008,18823,3893,N,ACE inhibitors/ARBs
+2024,National,National,Olmesartan/Hydrochlorothiazide,Benicar Hct,1934,8866,17006,6145963.57,1781,8605,1720,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Benztropine Mesylate,Benztropine Mesylate,94458,1943217,2298335.9,23968834.35,249137,590524,80531,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Sotalol Hcl,Betapace,52,197,397.4,534563.46,49,172,,N,beta blockers
+2024,National,National,Sotalol Hcl,Betapace Af,29,112,219,199123.76,23,112,23,N,beta blockers
+2024,National,National,Bisoprolol Fumarate,Bisoprolol Fumarate,122170,1091584,2718371.3,30236501.49,285589,1014336,266844,N,beta blockers
+2024,National,National,Bisoprolol/Hydrochlorothiazide,Bisoprolol-Hydrochlorothiazide,77259,568089,1479612.9,16517664.79,142005,534620,134512,N,thiazides; beta blockers
+2024,National,National,Bumetanide,Bumetanide,225723,2403182,4276295,78596713.16,570432,2086510,497750,N,loop diuretics
+2024,National,National,Buprenorphine,Buprenorphine,28338,455144,457866.1,112225171.36,91138,326904,65385,N,fentanyl/opioid patches
+2024,National,National,Buprenorphine,Butrans,5197,25779,26231.3,10798496.73,5869,16632,3780,N,fentanyl/opioid patches
+2024,National,National,Nebivolol Hcl,Bystolic,9461,41199,84106.1,16457287.56,9358,38768,8795,N,beta blockers
+2024,National,National,Candesartan Cilexetil,Candesartan Cilexetil,71886,493616,1193345.7,39752432.57,119875,460688,112262,N,ACE inhibitors/ARBs
+2024,National,National,Candesartan/Hydrochlorothiazid,Candesartan-Hydrochlorothiazid,21051,116186,286329.4,14349649.73,28635,108761,26970,N,ACE inhibitors/ARBs
+2024,National,National,Lumateperone Tosylate,Caplyta,17087,159155,166446.9,268348506.75,26993,34967,6009,Y,antipsychotics
+2024,National,National,Captopril,Captopril,17735,70927,156162.3,5057487.8,17054,66186,15988,N,ACE inhibitors/ARBs
+2024,National,National,Captopril/Hydrochlorothiazide,Captopril-Hydrochlorothiazide,52,129,220.8,14192.65,46,,,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Carvedilol,Carvedilol,460001,15789976,35410983,135171646.67,3645351,13925149,3230599,N,beta blockers
+2024,National,National,Carvedilol Phosphate,Carvedilol Er,20285,85737,196575.9,31913517.2,20844,80084,19455,N,beta blockers
+2024,National,National,Citalopram Hydrobromide,Celexa,1103,4196,8369.9,2557095.47,949,3204,782,N,SSRIs
+2024,National,National,Chlorpromazine Hcl,Chlorpromazine Hcl,33581,248010,276790,52588279.07,37661,75446,17367,Y,antipsychotics
+2024,National,National,Chlorthalidone,Chlorthalidone,252690,2940199,7234307.5,48325632.43,813774,2641797,737636,N,thiazides
+2024,National,National,Citalopram Hydrobromide,Citalopram Hbr,320494,6739115,13931521.8,48581143.76,1421411,5622233,1226338,N,SSRIs
+2024,National,National,Clozapine,Clozapine,34930,1134440,1140441.5,78228102.74,65028,260820,15672,Y,antipsychotics
+2024,National,National,Clozapine,Clozapine Odt,2842,36560,36674.5,16588997.08,2882,7644,651,Y,antipsychotics
+2024,National,National,Clozapine,Clozaril,759,8193,8274.6,11833374.59,589,1328,101,Y,antipsychotics
+2024,National,National,Xanomeline Tart/Trospium Chlor,Cobenfy,697,1538,1557.4,2357731.62,960,193,122,Y,anticholinergics (bladder/antiparkinson); antipsychotics
+2024,National,National,Xanomeline Tart/Trospium Chlor,Cobenfy Starter Pack,175,209,209.9,361219.23,203,29,29,Y,anticholinergics (bladder/antiparkinson); antipsychotics
+2024,National,National,Methylphenidate Hcl,Concerta,4721,19290,21343.6,10529760.41,3969,6480,1254,N,ADHD stimulants
+2024,National,National,Carvedilol,Coreg,282,689,1378.7,1036298.44,248,590,222,N,beta blockers
+2024,National,National,Carvedilol Phosphate,Coreg Cr,1217,4102,8448,8709775.36,1081,3874,1029,N,beta blockers
+2024,National,National,Nadolol,Corgard,100,167,305.3,48898.81,93,,,N,beta blockers
+2024,National,National,Methylphenidate,Cotempla Xr-Odt,51,238,277,191560.29,41,33,12,N,ADHD stimulants
+2024,National,National,Losartan Potassium,Cozaar,3384,12050,27202,4357159.31,2903,11675,2810,N,ACE inhibitors/ARBs
+2024,National,National,Dapagliflozin Propanediol,Dapagliflozin,103226,391617,456739.9,201858078.53,222989,332669,186788,N,SGLT2 inhibitors
+2024,National,National,Dapaglifloz Propaned/Metformin,Dapagliflozin-Metformin Er,4441,12161,15517.8,6210431.04,6323,10453,5239,N,metformin
+2024,National,National,Darifenacin Hydrobromide,Darifenacin Er,8010,37945,73801.2,6663163.91,10154,34477,9382,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Methylphenidate,Daytrana,205,703,738,143902.84,158,144,38,N,ADHD stimulants
+2024,National,National,Tolterodine Tartrate,Detrol,38,94,195,83601.93,35,81,,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Tolterodine Tartrate,Detrol La,448,1329,2666.4,1074204.46,411,1066,327,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Dextroamphetamine Sulfate,Dexedrine,87,254,280,509226.4,73,154,50,N,ADHD stimulants
+2024,National,National,Dexmethylphenidate Hcl,Dexmethylphenidate Hcl,6497,28852,30655.2,859796.69,5889,13606,2977,N,ADHD stimulants
+2024,National,National,Dexmethylphenidate Hcl,Dexmethylphenidate Hcl Er,9361,44704,47724.3,4372889.34,8163,15554,3079,N,ADHD stimulants
+2024,National,National,Dextroamphetamine Sulfate,Dextroamphetamine Sulfate,10713,57348,62154.5,4725873.16,9455,39078,6593,N,ADHD stimulants
+2024,National,National,Dextroamphetamine Sulfate,Dextroamphetamine Sulfate Er,7372,38707,42882.7,4659938.23,5998,25432,4056,N,ADHD stimulants
+2024,National,National,Dextroamphetamine/Amphetamine,Dextroamphetamine-Amphet Er,83062,710467,750938.2,38200087.29,114616,335138,56964,N,ADHD stimulants
+2024,National,National,Dextroamphetamine/Amphetamine,Dextroamphetamine-Amphetamine,123079,1739667,1817142.6,51195260.75,242032,828713,127436,N,ADHD stimulants
+2024,National,National,Valsartan,Diovan,6634,25890,58994.2,20729397.6,5886,25116,5688,N,ACE inhibitors/ARBs
+2024,National,National,Valsartan/Hydrochlorothiazide,Diovan Hct,2040,7542,17356.2,6483099.6,1776,7319,1722,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Chlorothiazide,Diuril,83,236,365.8,20999.1,85,151,61,N,thiazides
+2024,National,National,Amphetamine,Dyanavel Xr,376,1567,1644.6,716976.37,367,526,125,N,ADHD stimulants
+2024,National,National,Azilsartan Medoxomil,Edarbi,11787,80605,150556.4,36671602.98,16499,76827,15702,N,ACE inhibitors/ARBs
+2024,National,National,Azilsartan Med/Chlorthalidone,Edarbyclor,9187,60664,111115.8,26209558.79,12558,56801,11705,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Ethacrynic Acid,Edecrin,65,250,394.8,587364.02,53,209,,N,loop diuretics
+2024,National,National,Enalapril Maleate,Enalapril Maleate,190440,2000097,4879099.5,34831453.77,465425,1831874,430774,N,ACE inhibitors/ARBs
+2024,National,National,Enalapril/Hydrochlorothiazide,Enalapril-Hydrochlorothiazide,18390,61553,150673.3,1418815.63,19158,56825,17813,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Enalaprilat Dihydrate,Enalaprilat,5,37,39,15244.87,,,,N,ACE inhibitors/ARBs
+2024,National,National,Sacubitril/Valsartan,Entresto,216604,3897762,6531140,4019305765.7,795090,3392505,691060,N,ACE inhibitors/ARBs
+2024,National,National,Sacubitril/Valsartan,Entresto Sprinkle,96,173,224.3,144717.5,97,159,,N,ACE inhibitors/ARBs
+2024,National,National,Enalapril Maleate,Epaned,18,63,63,87690.37,14,12,,N,ACE inhibitors/ARBs
+2024,National,National,Epinephrine,Epinephrine,195858,578213,622589.4,119228613.07,458465,416102,350356,N,epinephrine auto-injectors
+2024,National,National,Epinephrine,Epipen 2-Pak,244,277,288,167423.97,243,187,169,N,epinephrine auto-injectors
+2024,National,National,Topiramate,Eprontia,301,1364,1622.9,895691.06,235,255,60,N,topiramate/zonisamide
+2024,National,National,Escitalopram Oxalate,Escitalopram Oxalate,409893,12680299,24633046.1,140944633.47,2724528,10602490,2342627,N,SSRIs
+2024,National,National,Ethacrynic Acid,Ethacrynic Acid,4672,14650,26875.3,6069352.43,4102,13337,3781,N,loop diuretics
+2024,National,National,Amphetamine Sulfate,Evekeo,25,80,97,73785.69,22,40,,N,ADHD stimulants
+2024,National,National,Amlodipine Besylate/Valsartan,Exforge,674,2644,5647.5,2053870.54,575,2561,552,N,ACE inhibitors/ARBs
+2024,National,National,Amlodipine/Valsartan/Hcthiazid,Exforge Hct,264,993,1784.7,650350.44,227,931,211,N,ACE inhibitors/ARBs
+2024,National,National,Iloperidone,Fanapt,4039,41961,44152.2,87288078.45,4227,10656,962,Y,antipsychotics
+2024,National,National,Dapagliflozin Propanediol,Farxiga,266350,5632811,9824197.5,5288833068.3,1268791,4890395,1108247,N,SGLT2 inhibitors
+2024,National,National,Fentanyl,Fentanyl,73513,820974,823694,92370775.15,116788,590086,88726,N,fentanyl/opioid patches
+2024,National,National,Fesoterodine Fumarate,Fesoterodine Fumarate Er,26731,163031,283877.5,18129403.27,37747,137912,33017,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Insulin Aspart (Niacinamide),Fiasp,16571,83307,119880.4,64059379.95,26821,60675,19969,N,insulin
+2024,National,National,Insulin Aspart (Niacinamide),Fiasp Flextouch,63475,398516,635657.3,289406664.56,131145,306148,101905,N,insulin
+2024,National,National,Insulin Aspart (Niacinamide),Fiasp Penfill,2185,5790,10222.5,4929500.27,2286,4139,1707,N,insulin
+2024,National,National,Insulin Aspart/B3/Pump Cart,Fiasp Pumpcart,71,204,322.8,280831.27,69,135,48,N,insulin
+2024,National,National,Fluoxetine Hcl,Fluoxetine Dr,1257,6347,10111.8,1258680.63,1121,3573,706,N,SSRIs
+2024,National,National,Fluoxetine Hcl,Fluoxetine Hcl,345126,7478692,14472962.5,81675179.05,1484067,5339492,1143769,N,SSRIs
+2024,National,National,Fluphenazine Decanoate,Fluphenazine Decanoate,9033,79289,90504.9,8012016.74,11372,26331,3976,Y,antipsychotics
+2024,National,National,Fluphenazine Hcl,Fluphenazine Hcl,21777,220043,249442.7,27513678.23,24947,83532,8936,Y,antipsychotics
+2024,National,National,Fluvoxamine Maleate,Fluvoxamine Maleate,44179,409524,554866.4,17262993.79,54454,182300,27600,N,SSRIs
+2024,National,National,Fluvoxamine Maleate,Fluvoxamine Maleate Er,3818,17752,23506.4,5986746.61,3469,6546,1452,N,SSRIs
+2024,National,National,Dexmethylphenidate Hcl,Focalin,281,996,1046.4,102551.32,225,417,95,N,ADHD stimulants
+2024,National,National,Dexmethylphenidate Hcl,Focalin Xr,1136,3831,3984,1059537.3,936,698,186,N,ADHD stimulants
+2024,National,National,Fosinopril Sodium,Fosinopril Sodium,42514,201894,525108.4,3878053.5,48376,193458,46554,N,ACE inhibitors/ARBs
+2024,National,National,Fosinopril/Hydrochlorothiazide,Fosinopril-Hydrochlorothiazide,3473,12563,32736,630433.54,3156,12056,3049,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Furosemide,Furoscix,1582,4363,4470.6,27179954.31,3059,3434,2438,N,loop diuretics
+2024,National,National,Furosemide,Furosemide,572440,23546781,44688270.1,118893304.37,5788385,21056153,5212524,N,loop diuretics
+2024,National,National,Oxybutynin Chloride,Gelnique,58,74,114.5,44192.58,57,59,46,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Ziprasidone Hcl,Geodon,415,2605,3509.4,5359403.96,316,579,84,Y,antipsychotics
+2024,National,National,Ziprasidone Mesylate,Geodon,52,129,129,24546.5,44,54,33,Y,antipsychotics
+2024,National,National,Glipizide/Metformin Hcl,Glipizide-Metformin,33559,224250,542070,11785429.27,58097,206243,53690,N,metformin
+2024,National,National,Metformin Hcl,Glumetza,941,3112,4964.4,19806297.91,1014,2543,831,N,metformin
+2024,National,National,Glyburide/Metformin Hcl,Glyburide-Metformin Hcl,14077,51948,119496.4,1077364.59,15587,47994,14476,N,metformin
+2024,National,National,Empagliflozin/Linagliptin,Glyxambi,17386,136680,243833.6,140998572.2,28712,121661,25616,N,SGLT2 inhibitors
+2024,National,National,Haloperidol Decanoate,Haldol Decanoate 100,17,24,24,4157.33,18,,,Y,antipsychotics
+2024,National,National,Haloperidol Decanoate,Haldol Decanoate 50,9,13,22.4,3844.81,,,,Y,antipsychotics
+2024,National,National,Haloperidol,Haloperidol,75573,938810,1054606.9,27379519.76,136114,348690,62928,Y,antipsychotics
+2024,National,National,Haloperidol Decanoate,Haloperidol Decanoate,20409,312235,320311.6,15185036.23,34882,91143,10868,Y,antipsychotics
+2024,National,National,Haloperidol Decanoate,Haloperidol Decanoate 100,1069,4291,4524.1,230114.12,1285,1223,359,Y,antipsychotics
+2024,National,National,Haloperidol Lactate,Haloperidol Lactate,18778,72937,76407.5,1667490.73,36827,54475,30887,Y,antipsychotics
+2024,National,National,Insulin Lispro,Humalog,70241,510982,845069.4,98387275.97,149233,390409,115636,N,insulin
+2024,National,National,Insulin Lispro,Humalog Junior Kwikpen,5966,17075,34009.2,3062573.67,6562,13760,5309,N,insulin
+2024,National,National,Insulin Lispro,Humalog Kwikpen U-100,166347,1391614,2551147.9,334212049.83,446965,1101659,355759,N,insulin
+2024,National,National,Insulin Lispro,Humalog Kwikpen U-200,31803,159847,285878.2,227965600.14,45813,116692,34444,N,insulin
+2024,National,National,Insulin Lispro Protamin/Lispro,Humalog Mix 50-50,105,131,172.1,23627.48,108,113,94,N,insulin
+2024,National,National,Insulin Lispro Protamin/Lispro,Humalog Mix 50-50 Kwikpen,3615,18627,30253.4,6107917.31,4267,15760,3602,N,insulin
+2024,National,National,Insulin Lispro Protamin/Lispro,Humalog Mix 75-25,10769,55067,83892.8,14313826.72,11799,47898,10207,N,insulin
+2024,National,National,Insulin Lispro Protamin/Lispro,Humalog Mix 75-25 Kwikpen,28195,157496,277941.9,53017101.15,39232,135955,33793,N,insulin
+2024,National,National,Insulin Lispro,Humalog Tempo Pen U-100,630,1307,2094,225096.55,613,981,454,N,insulin
+2024,National,National,Insulin Nph Hum/Reg Insulin Hm,Humulin 70-30,34593,231922,374091.3,32215405.79,50459,201738,43705,N,insulin
+2024,National,National,Insulin Nph Hum/Reg Insulin Hm,Humulin 70/30 Kwikpen,32752,169823,286318.3,41776263.1,41543,143060,34847,N,insulin
+2024,National,National,Insulin Nph Human Isophane,Humulin N,33366,286597,605858.4,39994592.35,79026,260197,71933,N,insulin
+2024,National,National,Insulin Nph Human Isophane,Humulin N Kwikpen,27280,162869,333419.4,29569105.6,47540,143675,41438,N,insulin
+2024,National,National,"Insulin Regular, Human",Humulin R,33797,207348,354015.2,20216249.94,60665,173938,51223,N,insulin
+2024,National,National,"Insulin Regular, Human",Humulin R U-500,4680,26993,41868.9,57311611.25,5678,14675,3339,N,insulin
+2024,National,National,"Insulin Regular, Human",Humulin R U-500 Kwikpen,17241,137888,201700.5,239525835.92,26318,80470,16218,N,insulin
+2024,National,National,Hydrochlorothiazide,Hydrochlorothiazide,450817,18456721,46518099.1,81154904.71,4942707,16808628,4544098,N,thiazides
+2024,National,National,Losartan/Hydrochlorothiazide,Hyzaar,1041,3945,8408.3,1434255.7,882,3825,853,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Indapamide,Indapamide,55330,370609,926544.3,5348863.69,97081,350519,92182,N,thiazides
+2024,National,National,Propranolol Hcl,Inderal La,343,1324,2725,7228103.55,261,1187,237,N,beta blockers
+2024,National,National,Propranolol Hcl,Inderal Xl,96,254,457.5,1080088.73,85,189,57,N,beta blockers
+2024,National,National,Propranolol Hcl,Innopran Xl,189,583,1118.5,2714866.73,169,456,136,N,beta blockers
+2024,National,National,Sotagliflozin,Inpefa,1091,7368,10194.7,5862204.72,2006,6828,1834,N,SGLT2 inhibitors
+2024,National,National,Insulin Aspart,Insulin Aspart,19806,71564,91990.8,11159257,31685,54969,24043,N,insulin
+2024,National,National,Insulin Aspart,Insulin Aspart Flexpen,67871,304493,434963.1,44639829.5,122758,241508,95232,N,insulin
+2024,National,National,Insulin Aspart,Insulin Aspart Penfill,952,1743,3003.8,322300.66,972,1282,710,N,insulin
+2024,National,National,Insulin Aspart Prot/Insuln Asp,Insulin Aspart Prot Mix 70-30,11127,36451,50623.5,7585507.61,13056,31908,11048,N,insulin
+2024,National,National,Insulin Degludec,Insulin Degludec,2116,4826,5796.5,764061.44,2488,3889,2003,N,insulin
+2024,National,National,Insulin Degludec,Insulin Degludec Pen (U-100),22250,54250,86671.9,8477072.3,29466,44498,23620,N,insulin
+2024,National,National,Insulin Degludec,Insulin Degludec Pen (U-200),13920,34815,53489,9478563.22,18263,27086,13863,N,insulin
+2024,National,National,"Insulin Glargine,hum.Rec.Anlog",Insulin Glargine,7633,18150,21610,2702518.36,10705,15029,8719,N,insulin
+2024,National,National,"Insulin Glargine,hum.Rec.Anlog",Insulin Glargine Max Solostar,3007,5675,8472.9,1676718.7,3364,4489,2603,N,insulin
+2024,National,National,"Insulin Glargine,hum.Rec.Anlog",Insulin Glargine Solostar,19218,34176,51687.8,5330246.77,23115,27923,18564,N,insulin
+2024,National,National,Insulin Glargine-Yfgn,Insulin Glargine-Yfgn,70596,437422,703684.1,36314585.81,171880,373774,144525,N,insulin
+2024,National,National,Insulin Lispro,Insulin Lispro,55574,300494,410093.6,17489297.28,106209,221083,79511,N,insulin
+2024,National,National,Insulin Lispro,Insulin Lispro Junior Kwikpen,4224,10234,17558,1570983.86,4333,7671,3286,N,insulin
+2024,National,National,Insulin Lispro,Insulin Lispro Kwikpen U-100,126132,847337,1298748,154384135.92,283389,637865,214914,N,insulin
+2024,National,National,Insulin Lispro Protamin/Lispro,Insulin Lispro Protamine Mix,11967,51059,76913.7,14229477.15,13920,42484,11562,N,insulin
+2024,National,National,Paliperidone,Invega,834,4179,5020.4,2348551.22,704,912,152,Y,antipsychotics
+2024,National,National,Paliperidone Palmitate,Invega Hafyera,2322,5854,33423.1,109386160.38,3446,1191,727,Y,antipsychotics
+2024,National,National,Paliperidone Palmitate,Invega Sustenna,32782,624354,627354.6,1876560725,72032,121595,14147,Y,antipsychotics
+2024,National,National,Paliperidone Palmitate,Invega Trinza,10774,63871,182865,549426913.87,19136,10901,3273,Y,antipsychotics
+2024,National,National,Canagliflozin/Metformin Hcl,Invokamet,3872,15740,30957.7,16378760.33,3551,13356,3051,N,SGLT2 inhibitors; metformin
+2024,National,National,Canagliflozin/Metformin Hcl,Invokamet Xr,2369,10647,20865.4,10151208.42,2418,9017,2055,N,SGLT2 inhibitors; metformin
+2024,National,National,Canagliflozin,Invokana,44480,255723,494940.2,271930940.92,55968,218106,48358,N,SGLT2 inhibitors
+2024,National,National,Irbesartan,Irbesartan,191347,2561408,6576833.4,54903123.98,630079,2425296,598950,N,ACE inhibitors/ARBs
+2024,National,National,Irbesartan/Hydrochlorothiazide,Irbesartan-Hydrochlorothiazide,76289,568579,1463357.9,13836152.1,143584,535838,135978,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Sitagliptin Phos/Metformin Hcl,Janumet,86317,743701,1409626.8,708982487.64,159269,674977,145116,N,metformin
+2024,National,National,Sitagliptin Phos/Metformin Hcl,Janumet Xr,55426,382865,749900.3,357870184.68,85899,343778,77663,N,metformin
+2024,National,National,Empagliflozin,Jardiance,380533,11364702,21135750.3,11432565806,2542517,9812846,2219512,N,SGLT2 inhibitors
+2024,National,National,Linagliptin/Metformin Hcl,Jentadueto,14415,106424,176938.8,83399130.56,20224,95001,18082,N,metformin
+2024,National,National,Linagliptin/Metformin Hcl,Jentadueto Xr,6232,38256,64453.6,30960772.2,7973,33978,7097,N,metformin
+2024,National,National,Methylphenidate Hcl,Jornay Pm,624,2964,3114.5,1405822.74,543,652,137,N,ADHD stimulants
+2024,National,National,Metoprolol Succinate,Kapspargo Sprinkle,11546,44297,54125.9,2646471.67,14573,40507,13206,N,beta blockers
+2024,National,National,Alogliptin Benz/Metformin Hcl,Kazano,42,63,86,26878.64,41,,,N,metformin
+2024,National,National,Saxagliptin Hcl/Metformin Hcl,Kombiglyze Xr,1157,2430,3537.9,1559833.14,1159,2250,1080,N,metformin
+2024,National,National,Labetalol Hcl,Labetalol Hcl,143552,1035428,2205500.3,30459155.72,240565,866996,202591,N,beta blockers
+2024,National,National,"Insulin Glargine,hum.Rec.Anlog",Lantus,134672,1116488,1630355.1,139853580.1,271673,928673,223853,N,insulin
+2024,National,National,"Insulin Glargine,hum.Rec.Anlog",Lantus Solostar,307959,5568788,10569717,698895447.49,1414933,4570796,1160328,N,insulin
+2024,National,National,Furosemide,Lasix,2470,6667,13364.7,507435.49,2262,6251,2125,N,loop diuretics
+2024,National,National,Lurasidone Hcl,Latuda,5676,24185,26963.3,39636966.05,6270,8271,1987,Y,antipsychotics
+2024,National,National,Insulin Detemir,Levemir,37443,142608,203790,30614644.8,48276,114958,38574,N,insulin
+2024,National,National,Insulin Detemir,Levemir Flexpen,113491,559280,986428.8,121268447.06,210723,455817,171733,N,insulin
+2024,National,National,Insulin Detemir,Levemir Flextouch,2847,5655,8707.4,956769.31,3073,4405,2419,N,insulin
+2024,National,National,Escitalopram Oxalate,Lexapro,4804,20260,38039.7,17586853.8,4179,15711,3400,N,SSRIs
+2024,National,National,Lisdexamfetamine Dimesylate,Lisdexamfetamine Dimesylate,37053,197467,210158.2,44486127.64,46053,83404,19997,N,ADHD stimulants
+2024,National,National,Lisinopril,Lisinopril,547146,36236137,89510810.1,252794070.91,8755462,32261019,7887413,N,ACE inhibitors/ARBs
+2024,National,National,Lisinopril/Hydrochlorothiazide,Lisinopril-Hydrochlorothiazide,284765,5640329,15100851.3,47090298.01,1498595,5106896,1368734,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Lithium Carbonate,Lithium Carbonate,66613,723876,955662.6,7122637.85,100991,262660,41620,N,lithium
+2024,National,National,Lithium Carbonate,Lithium Carbonate Er,44332,414273,564172.7,6549606.41,62137,120815,22050,N,lithium
+2024,National,National,Lithium Citrate,Lithium Citrate,344,1007,1151.1,137208.46,326,454,156,N,lithium
+2024,National,National,Lithium Carbonate,Lithobid,193,888,1352.9,1139119.25,148,440,78,N,lithium
+2024,National,National,Metoprolol Tartrate,Lopressor,280,900,2011.7,309293.8,256,833,238,N,beta blockers
+2024,National,National,Losartan Potassium,Losartan Potassium,534701,36228568,90148191.2,355057149,8907899,33375340,8243267,N,ACE inhibitors/ARBs
+2024,National,National,Losartan/Hydrochlorothiazide,Losartan-Hydrochlorothiazide,281461,5595886,14661026.3,79472025,1482128,5168762,1374831,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Benazepril/Hydrochlorothiazide,Lotensin Hct,8,38,86.5,10378.13,,38,,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Amlodipine Besylate/Benazepril,Lotrel,778,2908,6471.6,2562351.46,665,2803,642,N,ACE inhibitors/ARBs
+2024,National,National,Loxapine Succinate,Loxapine,7563,65886,79275,3665852.28,7781,22073,2620,Y,antipsychotics
+2024,National,National,Lurasidone Hcl,Lurasidone Hcl,66215,829314,977932.8,182593289.9,117840,243330,36827,Y,antipsychotics
+2024,National,National,Olanzapine/Samidorphan Malate,Lybalvi,7973,78324,81016.6,127154107.91,11653,10507,1694,Y,antipsychotics
+2024,National,National,Insulin Lispro-Aabc,Lyumjev,3811,17975,34801.6,19924650.16,5446,13160,4097,N,insulin
+2024,National,National,Insulin Lispro-Aabc,Lyumjev Kwikpen U-100,12218,73101,132553.1,56005625.43,22647,58158,18378,N,insulin
+2024,National,National,Insulin Lispro-Aabc,Lyumjev Kwikpen U-200,1895,8403,15441.4,13672689.08,2432,6249,1857,N,insulin
+2024,National,National,Insulin Lispro-Aabc,Lyumjev Tempo Pen U-100,207,407,741.1,341963.96,211,317,159,N,insulin
+2024,National,National,Metformin Hcl,Metformin Er Gastric,15982,82966,133195.9,85905079.01,22897,70540,19258,N,metformin
+2024,National,National,Metformin Hcl,Metformin Er Osmotic,23164,71410,128294.8,13301707.77,26169,61246,22417,N,metformin
+2024,National,National,Metformin Hcl,Metformin Hcl,451135,23952737,57045359.6,187995154.23,5933680,20807349,5250871,N,metformin
+2024,National,National,Metformin Hcl,Metformin Hcl Er,325216,10253071,25614446.6,101429628.6,2825442,8946832,2504418,N,metformin
+2024,National,National,Methamphetamine Hcl,Methamphetamine Hcl,51,131,140.8,207416.07,41,27,,N,ADHD stimulants
+2024,National,National,Methylphenidate Hcl,Methylin,10,31,31,2773.39,,,,N,ADHD stimulants
+2024,National,National,Methylphenidate,Methylphenidate,336,1098,1161.1,355224.12,266,310,81,N,ADHD stimulants
+2024,National,National,Methylphenidate Hcl,Methylphenidate Er,37107,225825,247581.1,19794705.82,37118,104336,18362,N,ADHD stimulants
+2024,National,National,Methylphenidate Hcl,Methylphenidate Er (La),6574,25539,28032.9,3298370.88,5516,13280,3058,N,ADHD stimulants
+2024,National,National,Methylphenidate Hcl,Methylphenidate Hcl,79394,612519,656919.9,15105543.43,103940,391649,71044,N,ADHD stimulants
+2024,National,National,Methylphenidate Hcl,Methylphenidate Hcl Cd,2527,8037,8743.9,710062.03,2142,3653,1036,N,ADHD stimulants
+2024,National,National,Methylphenidate Hcl,Methylphenidate Hcl Er (Cd),3936,15419,16404.1,1323035.29,3225,7854,1706,N,ADHD stimulants
+2024,National,National,Metolazone,Metolazone,104589,646214,1046782.7,14321534.37,212190,551775,184239,N,thiazides
+2024,National,National,Metoprolol Succinate,Metoprolol Succinate,527761,32203401,76925612.3,455833472.33,7765493,29571272,7175615,N,beta blockers
+2024,National,National,Metoprolol Tartrate,Metoprolol Tartrate,466375,15907505,34840305.7,106993801.3,3852761,14355426,3510077,N,beta blockers
+2024,National,National,Metoprolol/Hydrochlorothiazide,Metoprolol-Hydrochlorothiazide,9350,33206,82085.7,2134759.18,8997,29596,8086,N,thiazides; beta blockers
+2024,National,National,Telmisartan,Micardis,1360,4343,9094.7,1417552.96,1209,4245,1178,N,ACE inhibitors/ARBs
+2024,National,National,Telmisartan/Hydrochlorothiazid,Micardis Hct,723,2863,5790.7,784472.02,613,2790,596,N,ACE inhibitors/ARBs
+2024,National,National,Moexipril Hcl,Moexipril Hcl,5581,17124,39432.7,923728.2,5339,16744,5233,N,ACE inhibitors/ARBs
+2024,National,National,Molindone Hcl,Molindone Hcl,17,463,469.3,371682.56,64,,,Y,antipsychotics
+2024,National,National,Dextroamphetamine/Amphetamine,Mydayis,877,3902,4088,1324734.76,737,1265,230,N,ADHD stimulants
+2024,National,National,Nadolol,Nadolol,57964,262189,610361.9,14651008.18,65792,226657,57501,N,beta blockers
+2024,National,National,Nebivolol Hcl,Nebivolol Hcl,133386,1386739,3236611.7,80346560.44,348361,1284266,324142,N,beta blockers
+2024,National,National,Insulin Nph Hum/Reg Insulin Hm,Novolin 70-30,34819,170667,278213.4,26925638.46,44856,146211,38267,N,insulin
+2024,National,National,Insulin Nph Hum/Reg Insulin Hm,Novolin 70-30 Flexpen,28838,134109,209106.3,21193587.2,35824,112289,29798,N,insulin
+2024,National,National,Insulin Nph Human Isophane,Novolin N,23710,98875,169972.8,13983913.85,25770,84470,21946,N,insulin
+2024,National,National,Insulin Nph Human Isophane,Novolin N Flexpen,16314,57632,101740.7,7135526.73,17669,46973,14224,N,insulin
+2024,National,National,"Insulin Regular, Human",Novolin R,23145,106089,152440.7,10625165.75,30607,84509,24522,N,insulin
+2024,National,National,"Insulin Regular, Human",Novolin R Flexpen,18001,67202,99818.6,6594708.96,21896,53707,17441,N,insulin
+2024,National,National,Insulin Aspart,Novolog,54373,370286,595360.5,85483458.81,111294,271676,82547,N,insulin
+2024,National,National,Insulin Aspart,Novolog Flexpen,164907,1483144,2611052.3,318816941.3,479389,1148862,374084,N,insulin
+2024,National,National,Insulin Aspart Prot/Insuln Asp,Novolog Mix 70-30,12209,49681,76328.1,11417810.83,12614,42745,10730,N,insulin
+2024,National,National,Insulin Aspart Prot/Insuln Asp,Novolog Mix 70-30 Flexpen,40265,241657,401741.2,66837108.09,58637,204384,49521,N,insulin
+2024,National,National,Insulin Aspart,Novolog Penfill,3524,9353,18631.8,2230481.4,3861,6866,2870,N,insulin
+2024,National,National,Pimavanserin Tartrate,Nuplazid,10635,143279,156326,657587032.85,17114,134871,16187,Y,antipsychotics
+2024,National,National,Olanzapine,Olanzapine,211910,3738989,4620627.3,90579665.27,554229,2032204,340061,Y,antipsychotics
+2024,National,National,Olanzapine,Olanzapine Odt,39549,236594,264839.1,19345194.08,50383,105364,26681,Y,antipsychotics
+2024,National,National,Olanzapine/Fluoxetine Hcl,Olanzapine-Fluoxetine Hcl,1371,6606,9654.4,2153492.73,1269,3865,767,Y,antipsychotics
+2024,National,National,Olmesartan Medoxomil,Olmesartan Medoxomil,217200,3498420,8816093.5,69136960.89,912128,3298216,861032,N,ACE inhibitors/ARBs
+2024,National,National,Olmesartan/Amlodipin/Hcthiazid,Olmesartan-Amlodipine-Hctz,29778,159694,378013.8,18212907.47,42735,148151,39579,N,ACE inhibitors/ARBs
+2024,National,National,Olmesartan/Hydrochlorothiazide,Olmesartan-Hydrochlorothiazide,110879,962608,2453042.2,34959450.32,257846,903876,242411,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Oxybutynin Chloride,Oxybutynin Chloride,214475,2000007,3685466,34462438.4,576234,1691659,507488,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Oxybutynin Chloride,Oxybutynin Chloride Er,242081,3419297,6861432.4,76320325.77,899520,2902155,790960,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Oxybutynin,Oxytrol,439,1434,2004.2,1380315.07,425,1067,335,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Paliperidone,Paliperidone Er,34723,392451,448118.2,78203903.03,52200,103402,12277,Y,antipsychotics
+2024,National,National,Paroxetine Hcl,Paroxetine Cr,11387,38187,69318.4,3258926.8,11175,29017,8933,N,SSRIs
+2024,National,National,Paroxetine Hcl,Paroxetine Er,16523,60101,115229.1,4961502.15,16339,47280,13396,N,SSRIs
+2024,National,National,Paroxetine Hcl,Paroxetine Hcl,261754,3370613,6738151.2,45605150.64,691505,2645042,570155,N,SSRIs
+2024,National,National,Paroxetine Mesylate,Paroxetine Mesylate,1173,3191,5548.4,626033.9,1088,2340,778,N,SSRIs
+2024,National,National,Paroxetine Hcl,Paxil,738,2944,5199.2,1668362.06,624,2351,505,N,SSRIs
+2024,National,National,Paroxetine Hcl,Paxil Cr,765,3140,6013.4,2114937.06,646,2408,531,N,SSRIs
+2024,National,National,Perindopril Erbumine,Perindopril Erbumine,5064,20282,53548.3,1207355.49,5189,19816,5071,N,ACE inhibitors/ARBs
+2024,National,National,Perphenazine,Perphenazine,20408,193873,244370.2,11322125.8,22640,85326,10530,Y,antipsychotics
+2024,National,National,Perphenazine/Amitriptyline Hcl,Perphenazine-Amitriptyline,870,3570,6762.8,439257.36,823,3173,737,Y,antipsychotics
+2024,National,National,Risperidone,Perseris,2537,17529,17623.7,48325826.44,2917,3578,571,Y,antipsychotics
+2024,National,National,Pimozide,Pimozide,2204,10747,15549.4,1397144.08,1994,4825,1030,Y,antipsychotics
+2024,National,National,Pindolol,Pindolol,5193,25765,52258.7,2162769.36,5681,19968,4805,N,beta blockers
+2024,National,National,Pioglitazone Hcl/Metformin Hcl,Pioglitazone-Metformin,11033,48559,122408.9,4095810.99,13125,46012,12448,N,metformin
+2024,National,National,Propranolol Hcl,Propranolol Hcl,298317,3037292,5717421.6,53148672.56,728072,2121737,548598,N,beta blockers
+2024,National,National,Propranolol Hcl,Propranolol Hcl Er,150192,1122971,2526834.4,47901918.2,270653,886181,222679,N,beta blockers
+2024,National,National,Fluoxetine Hcl,Prozac,2556,11749,20625.8,15649211.2,2183,8511,1697,N,SSRIs
+2024,National,National,Lisinopril,Qbrelis,299,1124,1316.6,2165356.85,246,454,126,N,ACE inhibitors/ARBs
+2024,National,National,Dapagliflozin/Saxagliptin Hcl,Qtern,352,1949,3379.8,1597457.63,415,1838,389,N,SGLT2 inhibitors
+2024,National,National,Topiramate,Qudexy Xr,122,653,874.3,1187783.3,106,138,31,N,topiramate/zonisamide
+2024,National,National,Quetiapine Fumarate,Quetiapine Fumarate,357232,9336593,12940618.4,159875160.1,1405822,6204693,998580,Y,antipsychotics
+2024,National,National,Quetiapine Fumarate,Quetiapine Fumarate Er,59108,504355,681841.7,32778540.17,79638,231272,39818,Y,antipsychotics
+2024,National,National,Methylphenidate Hcl,Quillichew Er,155,644,685.2,285028.59,110,51,,N,ADHD stimulants
+2024,National,National,Methylphenidate Hcl,Quillivant Xr,73,308,336.1,188309.22,58,44,,N,ADHD stimulants
+2024,National,National,Quinapril Hcl,Quinapril Hcl,703,1093,2619.1,41648.81,684,1036,643,N,ACE inhibitors/ARBs
+2024,National,National,Quinapril/Hydrochlorothiazide,Quinapril-Hydrochlorothiazide,42,62,138,7057.2,41,,,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Ramipril,Ramipril,155858,1538830,4038607.9,17201876.65,377875,1465083,361648,N,ACE inhibitors/ARBs
+2024,National,National,Methylphenidate Hcl,Relexxii,28,77,77,39087.96,26,,,N,ADHD stimulants
+2024,National,National,Brexpiprazole,Rexulti,52660,598287,654033.3,861052780.27,94655,350946,58192,Y,antipsychotics
+2024,National,National,Insulin Glargine-Aglr,Rezvoglar Kwikpen,1560,6549,9531,585722.69,2343,5424,1908,N,insulin
+2024,National,National,Risperidone,Risperdal,1167,6767,9439.3,3641518.75,954,1705,314,Y,antipsychotics
+2024,National,National,Risperidone Microspheres,Risperdal Consta,7413,83442,83810.9,114722164.43,8310,32623,3583,Y,antipsychotics
+2024,National,National,Risperidone,Risperidone,185789,3697743,4590048.2,51652052.58,474028,1951862,267135,Y,antipsychotics
+2024,National,National,Risperidone Microspheres,Risperidone Er,4682,33587,33781.7,36137451.88,5016,15886,2492,Y,antipsychotics
+2024,National,National,Risperidone,Risperidone Odt,13082,67450,77043.8,9621692.08,13253,35067,7585,Y,antipsychotics
+2024,National,National,Methylphenidate Hcl,Ritalin,1515,5655,6256.6,720596.11,1179,4247,859,N,ADHD stimulants
+2024,National,National,Methylphenidate Hcl,Ritalin La,372,1202,1354.8,693121.04,295,455,117,N,ADHD stimulants
+2024,National,National,Asenapine Maleate,Saphris,1102,6204,7985.6,7167783.81,933,1351,235,Y,antipsychotics
+2024,National,National,Saxagliptin Hcl/Metformin Hcl,Saxagliptin-Metformin Er,2588,9244,18707.5,5848421.08,2486,8820,2377,N,metformin
+2024,National,National,Asenapine,Secuado,816,4499,4545.4,6087666.04,873,2336,480,Y,antipsychotics
+2024,National,National,Ertugliflozin/Metformin,Segluromet,605,2129,3601.5,1136457.65,583,1820,497,N,SGLT2 inhibitors; metformin
+2024,National,National,Insulin Glargine-Yfgn,Semglee (Yfgn),4972,14546,19739,6729192.84,5261,12410,4357,N,insulin
+2024,National,National,Insulin Glargine-Yfgn,Semglee (Yfgn) Pen,40341,134180,232634.5,58529912.79,51426,110329,41389,N,insulin
+2024,National,National,Quetiapine Fumarate,Seroquel,2301,11938,17546.7,8697238.22,1904,5609,1041,Y,antipsychotics
+2024,National,National,Quetiapine Fumarate,Seroquel Xr,1147,7036,9741.8,7483539.09,951,2937,414,Y,antipsychotics
+2024,National,National,Sertraline Hcl,Sertraline Hcl,439567,16142248,30157837.8,147487376.76,3197917,13118518,2688507,N,SSRIs
+2024,National,National,Sitagliptin/Metformin Hcl,Sitagliptin-Metformin,146,219,490.5,100147.09,160,206,149,N,metformin
+2024,National,National,Torsemide,Soaanz,5355,12011,15814.5,5153193.15,5341,10049,4471,N,loop diuretics
+2024,National,National,Solifenacin Succinate,Solifenacin Succinate,124370,1378953,2765796.5,67403901.27,392240,1225811,356187,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Insulin Glargine/Lixisenatide,Soliqua 100-33,29391,273306,473986.6,300070756.6,59452,246074,53384,N,insulin
+2024,National,National,Sotalol Hcl,Sotalol,99106,1092671,2553146,21941485.56,265070,1036000,252287,N,beta blockers
+2024,National,National,Sotalol Hcl,Sotalol Af,12296,54980,128724.7,1577322.29,17278,52368,16461,N,beta blockers
+2024,National,National,Sotalol Hcl,Sotylize,12,35,48.9,52480.92,,,,N,beta blockers
+2024,National,National,Ertugliflozin Pidolate,Steglatro,8892,38141,54154.2,16526999.57,11112,31663,9214,N,SGLT2 inhibitors
+2024,National,National,Ertugliflozin/Sitagliptin Phos,Steglujan,295,1119,1885.5,977514.42,271,947,237,N,SGLT2 inhibitors
+2024,National,National,Olanzapine/Fluoxetine Hcl,Symbyax,11,32,38,11142.93,11,,,Y,antipsychotics
+2024,National,National,Empagliflozin/Metformin Hcl,Synjardy,26920,187323,335721.8,180173219.84,42209,157645,35831,N,SGLT2 inhibitors; metformin
+2024,National,National,Empagliflozin/Metformin Hcl,Synjardy Xr,32850,310602,588823.2,320608316.71,70948,259980,60157,N,SGLT2 inhibitors; metformin
+2024,National,National,Telmisartan,Telmisartan,134744,1292768,3306845,37990876.05,335521,1226060,318638,N,ACE inhibitors/ARBs
+2024,National,National,Telmisartan/Amlodipine,Telmisartan-Amlodipine,6749,24838,62038.8,4339386.29,7224,23155,6762,N,ACE inhibitors/ARBs
+2024,National,National,Telmisartan/Hydrochlorothiazid,Telmisartan-Hydrochlorothiazid,46407,248720,634697.3,18304708.32,66582,237030,63454,N,ACE inhibitors/ARBs
+2024,National,National,Atenolol/Chlorthalidone,Tenoretic 50,24,76,150.1,54229.27,22,76,22,N,thiazides; beta blockers
+2024,National,National,Atenolol,Tenormin,737,2573,6033,3062050.54,605,2499,590,N,beta blockers
+2024,National,National,Chlorthalidone,Thalitone,1581,3517,5859.8,578075.12,1493,3126,1343,N,thiazides
+2024,National,National,Thioridazine Hcl,Thioridazine Hcl,3865,26131,34978.6,1515036.71,3241,15198,2019,Y,antipsychotics
+2024,National,National,Thiothixene,Thiothixene,3650,22513,31230.6,2286359.79,3067,12033,1726,Y,antipsychotics
+2024,National,National,Tolterodine Tartrate,Tolterodine Tartrate,35728,163335,279159.7,11131500.19,43929,144225,39739,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Tolterodine Tartrate,Tolterodine Tartrate Er,92233,645902,1240166.1,58926574.87,170881,572381,154598,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Topiramate,Topamax,3326,21523,33912.3,41374910.53,3051,6966,1213,N,topiramate/zonisamide
+2024,National,National,Topiramate,Topiramate,241015,3302949,5836834.3,40427718.94,690977,1711631,403804,N,topiramate/zonisamide
+2024,National,National,Topiramate,Topiramate Er,6756,35424,53219.7,28217491.75,6945,13403,2937,N,topiramate/zonisamide
+2024,National,National,Metoprolol Succinate,Toprol Xl,9946,37853,89073.5,4981861.43,9210,36621,8916,N,beta blockers
+2024,National,National,Torsemide,Torsemide,234507,2997749,5725000.1,54526361.63,733778,2657937,653492,N,loop diuretics
+2024,National,National,"Insulin Glargine,hum.Rec.Anlog",Toujeo Max Solostar,63582,513856,1009769.7,560908511.53,134329,415359,109821,N,insulin
+2024,National,National,"Insulin Glargine,hum.Rec.Anlog",Toujeo Solostar,90364,762667,1452229.7,549780031.38,189425,652033,162864,N,insulin
+2024,National,National,Fesoterodine Fumarate,Toviaz,1773,6047,9627.3,2632742.99,1674,4895,1378,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Trandolapril,Trandolapril,14236,58693,154653.1,1330040.71,14299,57001,13922,N,ACE inhibitors/ARBs
+2024,National,National,Trandolapril/Verapamil Hcl,Trandolapril-Verapamil Er,1607,5465,14041,1635287.91,1429,5284,1384,N,ACE inhibitors/ARBs
+2024,National,National,Insulin Degludec,Tresiba,13114,51540,83515.8,33483875.77,15618,41715,12665,N,insulin
+2024,National,National,Insulin Degludec,Tresiba Flextouch U-100,126129,1281627,2554753.3,825610679.25,339062,1055696,281359,N,insulin
+2024,National,National,Insulin Degludec,Tresiba Flextouch U-200,87949,893581,1730836.2,973686841.81,217361,706227,174678,N,insulin
+2024,National,National,Olmesartan/Amlodipin/Hcthiazid,Tribenzor,423,2206,3591.7,1529966.84,424,2089,400,N,ACE inhibitors/ARBs
+2024,National,National,Trifluoperazine Hcl,Trifluoperazine Hcl,5000,37157,50363.9,2113102.14,5750,26221,4173,Y,antipsychotics
+2024,National,National,Trihexyphenidyl Hcl,Trihexyphenidyl Hcl,23406,207381,276738.8,2787178.09,31122,100832,17193,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Empaglifloz/Linaglip/Metformin,Trijardy Xr,9319,112507,175727.2,99120919.15,21508,94621,18231,N,metformin
+2024,National,National,Topiramate,Trokendi Xr,1547,9736,13170.9,17908650.92,1470,3096,496,N,topiramate/zonisamide
+2024,National,National,Trospium Chloride,Trospium Chloride,47839,448004,830822.6,24323621.94,144175,415165,135733,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Trospium Chloride,Trospium Chloride Er,17952,127852,234911.1,22382771.02,38938,117400,36292,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Risperidone,Uzedy,3120,20250,23347.7,65258264.54,4436,4022,846,Y,antipsychotics
+2024,National,National,Valsartan,Valsartan,283692,4690125,11581951.8,127654681.24,1199340,4361936,1118616,N,ACE inhibitors/ARBs
+2024,National,National,Valsartan/Hydrochlorothiazide,Valsartan-Hydrochlorothiazide,163647,1711318,4513492.5,55910700.6,448197,1609016,422746,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Enalapril/Hydrochlorothiazide,Vaseretic,51,111,219.7,76498.76,47,99,,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Enalapril Maleate,Vasotec,323,1253,2591.6,3268685.76,265,1179,249,N,ACE inhibitors/ARBs
+2024,National,National,Clozapine,Versacloz,118,927,948.1,1347703.69,96,183,21,Y,antipsychotics
+2024,National,National,Solifenacin Succinate,Vesicare,1503,5390,10750.7,3980347.76,1363,4599,1171,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Solifenacin Succinate,Vesicare Ls,34,99,101,33682.03,31,42,18,N,anticholinergics (bladder/antiparkinson)
+2024,National,National,Cariprazine Hcl,Vraylar,58624,766576,816426.6,1135363316.3,117504,209822,35312,Y,antipsychotics
+2024,National,National,Lisdexamfetamine Dimesylate,Vyvanse,35064,212323,224857.2,88790645.14,41396,77257,16208,N,ADHD stimulants
+2024,National,National,Dextroamphetamine,Xelstrym,131,417,421,199942.38,131,99,31,N,ADHD stimulants
+2024,National,National,Dapaglifloz Propaned/Metformin,Xigduo Xr,24897,214951,389635.1,203450440.93,46597,180569,39570,N,metformin
+2024,National,National,Insulin Degludec/Liraglutide,Xultophy 100-3.6,9260,57192,103191.9,91242020.67,13670,51637,12351,N,insulin
+2024,National,National,Dextroamphetamine Sulfate,Zenzedi,162,562,623.7,280602.17,137,248,69,N,ADHD stimulants
+2024,National,National,Lisinopril/Hydrochlorothiazide,Zestoretic,183,659,1610.5,696347.96,183,644,,N,thiazides; ACE inhibitors/ARBs
+2024,National,National,Lisinopril,Zestril,833,2794,6816.3,3106439.96,796,2613,747,N,ACE inhibitors/ARBs
+2024,National,National,Bisoprolol/Hydrochlorothiazide,Ziac,18,37,97.1,38146.97,18,37,18,N,thiazides; beta blockers
+2024,National,National,Ziprasidone Hcl,Ziprasidone Hcl,54702,634169,837234.7,40793656.2,78069,220016,28620,Y,antipsychotics
+2024,National,National,Ziprasidone Mesylate,Ziprasidone Mesylate,823,2733,2741,489409.19,1264,1545,816,Y,antipsychotics
+2024,National,National,Sertraline Hcl,Zoloft,3275,13447,24983.1,14135080.69,2839,9875,2229,N,SSRIs
+2024,National,National,Zonisamide,Zonegran,722,4766,7504.3,20777508.12,673,897,157,N,topiramate/zonisamide
+2024,National,National,Zonisamide,Zonisade,685,3923,4235.6,4413917.47,515,1217,173,N,topiramate/zonisamide
+2024,National,National,Zonisamide,Zonisamide,38618,412204,695017.5,13553733.98,73077,202303,39850,N,topiramate/zonisamide
+2024,National,National,Olanzapine,Zyprexa,1489,8883,11874.3,12359907.39,1208,2892,420,Y,antipsychotics
+2024,National,National,Olanzapine Pamoate,Zyprexa Relprevv,202,1394,1400.8,1436272.37,252,382,75,Y,antipsychotics
+2024,National,National,Olanzapine,Zyprexa Zydis,336,1754,2254.2,3023949.06,254,420,69,Y,antipsychotics
+2024,State,New York,Aripiprazole,Abilify,199,1102,1350.5,1041476.36,195,408,75,Y,antipsychotics
+2024,State,New York,Aripiprazole,Abilify Asimtufii,173,827,1513.2,4452918.7,215,186,39,Y,antipsychotics
+2024,State,New York,Aripiprazole,Abilify Maintena,1756,19414,19530,51738216.68,2538,3962,530,Y,antipsychotics
+2024,State,New York,Acebutolol Hcl,Acebutolol Hcl,780,3441,8834.3,235145.32,894,3257,846,N,beta blockers
+2024,State,New York,Pioglitazone Hcl/Metformin Hcl,Actoplus Met,10,69,97,43184.22,,69,,N,metformin
+2024,State,New York,Dextroamphetamine/Amphetamine,Adderall,251,964,1060,706352.43,196,359,78,N,ADHD stimulants
+2024,State,New York,Dextroamphetamine/Amphetamine,Adderall Xr,663,2946,3250.7,936026.6,602,1312,287,N,ADHD stimulants
+2024,State,New York,Insulin Lispro,Admelog,909,3271,4145.1,635082.74,1196,2694,979,N,insulin
+2024,State,New York,Insulin Lispro,Admelog Solostar,4144,20434,30277.3,3464185.08,6715,17000,5517,N,insulin
+2024,State,New York,Amphetamine,Adzenys Xr-Odt,28,132,142,73647,26,69,14,N,ADHD stimulants
+2024,State,New York,"Insulin Regular, Human",Afrezza,188,2419,3199.5,4611076.09,635,2094,569,N,insulin
+2024,State,New York,Alogliptin Benz/Metformin Hcl,Alogliptin-Metformin,456,1614,2306.8,322656.95,520,1495,470,N,metformin
+2024,State,New York,Ramipril,Altace,80,309,672.6,211135.5,70,,,N,ACE inhibitors/ARBs
+2024,State,New York,Amiloride/Hydrochlorothiazide,Amiloride-Hydrochlorothiazide,559,2145,5568.1,71482.61,587,2031,560,N,thiazides
+2024,State,New York,Amlodipine Besylate/Benazepril,Amlodipine Besylate-Benazepril,13424,165074,418625.2,2835262.68,41991,153273,39210,N,ACE inhibitors/ARBs
+2024,State,New York,Amlodipine Bes/Olmesartan Med,Amlodipine-Olmesartan,5169,39811,92461.4,1706859.93,10855,37752,10278,N,ACE inhibitors/ARBs
+2024,State,New York,Amlodipine Besylate/Valsartan,Amlodipine-Valsartan,6043,46526,111797.9,1967290.62,12305,43340,11501,N,ACE inhibitors/ARBs
+2024,State,New York,Amlodipine/Valsartan/Hcthiazid,Amlodipine-Valsartan-Hctz,811,2935,6334.1,1181250.65,943,2688,858,N,ACE inhibitors/ARBs
+2024,State,New York,Amphetamine Sulfate,Amphetamine Sulfate,24,63,69,5674.72,20,33,,N,ADHD stimulants
+2024,State,New York,Insulin Glulisine,Apidra,40,118,214.1,39283.2,38,106,,N,insulin
+2024,State,New York,Insulin Glulisine,Apidra Solostar,196,560,1016.3,159091.53,177,458,155,N,insulin
+2024,State,New York,Aripiprazole,Aripiprazole,13991,278149,354595.7,14430137.85,42272,137569,22340,Y,antipsychotics
+2024,State,New York,Aripiprazole,Aripiprazole Odt,160,820,955,396596.95,152,289,60,Y,antipsychotics
+2024,State,New York,Aripiprazole Lauroxil,Aristada,716,5601,6969.4,16299559.7,846,1378,181,Y,antipsychotics
+2024,State,New York,"Aripiprazole Lauroxil,submicr.",Aristada Initio,48,57,57.9,131685.88,55,,,Y,antipsychotics
+2024,State,New York,Asenapine Maleate,Asenapine Maleate,548,3767,4400.2,902527.8,543,1089,178,Y,antipsychotics
+2024,State,New York,Candesartan Cilexetil,Atacand,100,370,850.6,238454.74,85,,,N,ACE inhibitors/ARBs
+2024,State,New York,Candesartan/Hydrochlorothiazid,Atacand Hct,40,161,313,90741.53,32,,,N,ACE inhibitors/ARBs
+2024,State,New York,Atenolol,Atenolol,20523,444422,1075427.9,3518055.87,105432,418273,99728,N,beta blockers
+2024,State,New York,Atenolol/Chlorthalidone,Atenolol-Chlorthalidone,4395,27586,68818.3,673718.49,7125,25980,6721,N,thiazides; beta blockers
+2024,State,New York,Epinephrine,Auvi-Q,42,52,54,31613.58,42,,,N,epinephrine auto-injectors
+2024,State,New York,Irbesartan/Hydrochlorothiazide,Avalide,58,213,466.6,134146.23,50,,,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Irbesartan,Avapro,198,670,1518.1,394757.41,165,,,N,ACE inhibitors/ARBs
+2024,State,New York,Amlodipine Bes/Olmesartan Med,Azor,172,1098,1754.4,739183.46,185,1083,,N,ACE inhibitors/ARBs
+2024,State,New York,"Insulin Glargine,hum.Rec.Anlog",Basaglar Kwikpen U-100,15578,209746,359763.5,69159436.96,48476,172264,39630,N,insulin
+2024,State,New York,"Insulin Glargine,hum.Rec.Anlog",Basaglar Tempo Pen U-100,141,295,441.2,73172.2,150,249,125,N,insulin
+2024,State,New York,Benazepril Hcl,Benazepril Hcl,10835,89535,227100.2,960352.89,22269,83827,20981,N,ACE inhibitors/ARBs
+2024,State,New York,Benazepril/Hydrochlorothiazide,Benazepril-Hydrochlorothiazide,2745,11976,30327,415670.84,3056,11178,2865,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Olmesartan Medoxomil,Benicar,655,4541,7402,2640926.69,768,4461,754,N,ACE inhibitors/ARBs
+2024,State,New York,Olmesartan/Hydrochlorothiazide,Benicar Hct,334,2574,3777,1389328.59,404,2516,,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Benztropine Mesylate,Benztropine Mesylate,7579,152305,169191.6,1644924.38,19774,51109,6913,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Sotalol Hcl,Betapace,1,20,20,19123.57,,0,,N,beta blockers
+2024,State,New York,Sotalol Hcl,Betapace Af,6,28,38,40207.46,,28,,N,beta blockers
+2024,State,New York,Bisoprolol Fumarate,Bisoprolol Fumarate,8379,83403,196309.5,2315754.21,21264,77199,19789,N,beta blockers
+2024,State,New York,Bisoprolol/Hydrochlorothiazide,Bisoprolol-Hydrochlorothiazide,4641,35636,92236.9,1041518.19,9026,33921,8627,N,thiazides; beta blockers
+2024,State,New York,Bumetanide,Bumetanide,12119,114409,198552.9,3536134.63,27941,102560,24931,N,loop diuretics
+2024,State,New York,Buprenorphine,Buprenorphine,1253,12172,12328.6,2985414.7,2773,8925,2090,N,fentanyl/opioid patches
+2024,State,New York,Buprenorphine,Butrans,158,736,743,309447.67,148,473,102,N,fentanyl/opioid patches
+2024,State,New York,Nebivolol Hcl,Bystolic,1306,8129,15204.9,2932259.59,1637,7791,1566,N,beta blockers
+2024,State,New York,Candesartan Cilexetil,Candesartan Cilexetil,5797,37657,94831.6,2776556.27,9639,35713,9157,N,ACE inhibitors/ARBs
+2024,State,New York,Candesartan/Hydrochlorothiazid,Candesartan-Hydrochlorothiazid,1790,7039,18818.7,821382.85,1953,6798,1883,N,ACE inhibitors/ARBs
+2024,State,New York,Lumateperone Tosylate,Caplyta,1044,12935,13483.9,21856264.46,2284,6505,1141,Y,antipsychotics
+2024,State,New York,Captopril,Captopril,1214,4456,9502.4,315180.78,1099,4166,1032,N,ACE inhibitors/ARBs
+2024,State,New York,Captopril/Hydrochlorothiazide,Captopril-Hydrochlorothiazide,6,14,32,1795.84,,14,,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Carvedilol,Carvedilol,31007,786598,1678519.1,6447297.61,181318,705269,162870,N,beta blockers
+2024,State,New York,Carvedilol Phosphate,Carvedilol Er,1829,7687,17936,2816850.75,1938,7244,1828,N,beta blockers
+2024,State,New York,Citalopram Hydrobromide,Celexa,129,539,1030,309987.25,114,426,91,N,SSRIs
+2024,State,New York,Chlorpromazine Hcl,Chlorpromazine Hcl,2490,22064,23879.1,6299428.39,3415,7867,1708,Y,antipsychotics
+2024,State,New York,Chlorthalidone,Chlorthalidone,16943,204659,487331.9,3832165,55890,184189,50795,N,thiazides
+2024,State,New York,Citalopram Hydrobromide,Citalopram Hbr,18316,319758,588157.1,2275492.04,61102,262440,52215,N,SSRIs
+2024,State,New York,Clozapine,Clozapine,3826,116237,116633.6,7624918.31,7149,28704,1854,Y,antipsychotics
+2024,State,New York,Clozapine,Clozapine Odt,346,3104,3111,1477041.04,318,843,89,Y,antipsychotics
+2024,State,New York,Clozapine,Clozaril,108,1167,1174.4,1650642.64,86,197,17,Y,antipsychotics
+2024,State,New York,Xanomeline Tart/Trospium Chlor,Cobenfy,40,82,82,132508.56,53,17,14,Y,anticholinergics (bladder/antiparkinson); antipsychotics
+2024,State,New York,Xanomeline Tart/Trospium Chlor,Cobenfy Starter Pack,8,14,14,24076.01,13,,,Y,anticholinergics (bladder/antiparkinson); antipsychotics
+2024,State,New York,Methylphenidate Hcl,Concerta,323,1430,1697,793514.61,294,478,98,N,ADHD stimulants
+2024,State,New York,Carvedilol,Coreg,35,105,178.8,124623.83,31,,,N,beta blockers
+2024,State,New York,Carvedilol Phosphate,Coreg Cr,190,767,1408,1479728.04,167,740,,N,beta blockers
+2024,State,New York,Nadolol,Corgard,14,22,38.1,6377.72,13,,,N,beta blockers
+2024,State,New York,Losartan Potassium,Cozaar,393,1637,3395.4,542751.91,349,1590,337,N,ACE inhibitors/ARBs
+2024,State,New York,Dapagliflozin Propanediol,Dapagliflozin,7993,35092,43228.5,19613970.33,18185,31255,16007,N,SGLT2 inhibitors
+2024,State,New York,Dapaglifloz Propaned/Metformin,Dapagliflozin-Metformin Er,343,977,1395.4,568007.46,494,863,421,N,metformin
+2024,State,New York,Darifenacin Hydrobromide,Darifenacin Er,609,3065,5764.7,564121.33,773,2815,717,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Methylphenidate,Daytrana,7,32,32,5704.77,,12,,N,ADHD stimulants
+2024,State,New York,Tolterodine Tartrate,Detrol La,35,134,235,95037.03,31,,,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Dextroamphetamine Sulfate,Dexedrine,7,14,20,27696.75,,,,N,ADHD stimulants
+2024,State,New York,Dexmethylphenidate Hcl,Dexmethylphenidate Hcl,376,1557,1651,47044.34,321,804,177,N,ADHD stimulants
+2024,State,New York,Dexmethylphenidate Hcl,Dexmethylphenidate Hcl Er,523,2385,2649.9,248470.7,433,930,197,N,ADHD stimulants
+2024,State,New York,Dextroamphetamine Sulfate,Dextroamphetamine Sulfate,602,3120,3394.6,220776.28,578,2211,431,N,ADHD stimulants
+2024,State,New York,Dextroamphetamine Sulfate,Dextroamphetamine Sulfate Er,366,1826,2061.3,221868.17,317,1252,222,N,ADHD stimulants
+2024,State,New York,Dextroamphetamine/Amphetamine,Dextroamphetamine-Amphet Er,4666,35307,38027.8,2117816.5,5925,15312,2831,N,ADHD stimulants
+2024,State,New York,Dextroamphetamine/Amphetamine,Dextroamphetamine-Amphetamine,7240,84343,88593.6,2516078.31,12390,37438,6251,N,ADHD stimulants
+2024,State,New York,Valsartan,Diovan,850,3899,8532.9,3012183.08,828,3815,809,N,ACE inhibitors/ARBs
+2024,State,New York,Valsartan/Hydrochlorothiazide,Diovan Hct,306,1124,2568,938296.04,256,1071,,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Azilsartan Medoxomil,Edarbi,1397,14344,24358.6,5886944.24,2622,13866,2528,N,ACE inhibitors/ARBs
+2024,State,New York,Azilsartan Med/Chlorthalidone,Edarbyclor,973,9689,15717.2,3699722.49,1773,9369,1700,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Ethacrynic Acid,Edecrin,6,19,25,32149.55,,19,,N,loop diuretics
+2024,State,New York,Enalapril Maleate,Enalapril Maleate,17836,263002,604806.3,4228415.49,59832,240278,55260,N,ACE inhibitors/ARBs
+2024,State,New York,Enalapril/Hydrochlorothiazide,Enalapril-Hydrochlorothiazide,2160,8742,20058.9,194813.63,2661,8002,2461,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Sacubitril/Valsartan,Entresto,18882,337468,568644.1,350006901.34,68583,302100,61179,N,ACE inhibitors/ARBs
+2024,State,New York,Sacubitril/Valsartan,Entresto Sprinkle,11,20,23,13360.66,,,,N,ACE inhibitors/ARBs
+2024,State,New York,Epinephrine,Epinephrine,13164,43413,45637.4,10146585.88,32146,30547,24287,N,epinephrine auto-injectors
+2024,State,New York,Epinephrine,Epipen 2-Pak,46,62,63,36301.58,45,34,28,N,epinephrine auto-injectors
+2024,State,New York,Topiramate,Eprontia,29,101,119.6,61729.7,17,20,,N,topiramate/zonisamide
+2024,State,New York,Escitalopram Oxalate,Escitalopram Oxalate,28288,857242,1513034.9,8589270.75,171537,719240,148142,N,SSRIs
+2024,State,New York,Ethacrynic Acid,Ethacrynic Acid,508,1669,2984.4,729435.6,470,1538,441,N,loop diuretics
+2024,State,New York,Amphetamine Sulfate,Evekeo,2,14,16,16995.15,,,,N,ADHD stimulants
+2024,State,New York,Amlodipine Besylate/Valsartan,Exforge,103,487,958,347134.92,90,,,N,ACE inhibitors/ARBs
+2024,State,New York,Amlodipine/Valsartan/Hcthiazid,Exforge Hct,45,179,350,120327.43,41,,,N,ACE inhibitors/ARBs
+2024,State,New York,Iloperidone,Fanapt,208,1809,1958.3,3846786.37,213,558,67,Y,antipsychotics
+2024,State,New York,Dapagliflozin Propanediol,Farxiga,19256,421006,764257.7,413578712.16,95800,381391,86925,N,SGLT2 inhibitors
+2024,State,New York,Fentanyl,Fentanyl,5155,42870,43189.7,5240259.27,7186,30798,5578,N,fentanyl/opioid patches
+2024,State,New York,Fesoterodine Fumarate,Fesoterodine Fumarate Er,1335,8409,14098.2,975711.75,1949,7223,1734,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Insulin Aspart (Niacinamide),Fiasp,803,3722,5579.5,3443559.89,1197,2560,862,N,insulin
+2024,State,New York,Insulin Aspart (Niacinamide),Fiasp Flextouch,3686,21879,34974.4,14521721.12,7137,16742,5522,N,insulin
+2024,State,New York,Insulin Aspart (Niacinamide),Fiasp Penfill,105,267,478.6,253522.19,118,204,92,N,insulin
+2024,State,New York,Insulin Aspart/B3/Pump Cart,Fiasp Pumpcart,11,26,41.1,31542.64,11,,,N,insulin
+2024,State,New York,Fluoxetine Hcl,Fluoxetine Dr,129,721,1026.7,124740.02,109,480,79,N,SSRIs
+2024,State,New York,Fluoxetine Hcl,Fluoxetine Hcl,20439,380862,648953.4,4044858.03,67829,257128,50100,N,SSRIs
+2024,State,New York,Fluphenazine Decanoate,Fluphenazine Decanoate,1202,11149,12735.8,1090225.64,1559,4116,583,Y,antipsychotics
+2024,State,New York,Fluphenazine Hcl,Fluphenazine Hcl,2616,26258,29162.3,3192989.01,3026,11763,1262,Y,antipsychotics
+2024,State,New York,Fluvoxamine Maleate,Fluvoxamine Maleate,3020,31206,40317.2,1373902.94,3909,14093,1972,N,SSRIs
+2024,State,New York,Fluvoxamine Maleate,Fluvoxamine Maleate Er,342,1735,2264.8,643112.63,320,643,138,N,SSRIs
+2024,State,New York,Dexmethylphenidate Hcl,Focalin,12,43,43,3567.94,11,,,N,ADHD stimulants
+2024,State,New York,Dexmethylphenidate Hcl,Focalin Xr,61,284,286.3,84142.26,50,40,,N,ADHD stimulants
+2024,State,New York,Fosinopril Sodium,Fosinopril Sodium,4660,23101,60080.5,400777.76,5587,22230,5417,N,ACE inhibitors/ARBs
+2024,State,New York,Fosinopril/Hydrochlorothiazide,Fosinopril-Hydrochlorothiazide,427,1530,3989.3,77865.84,393,1488,382,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Furosemide,Furoscix,106,317,319.3,1962352.04,222,271,186,N,loop diuretics
+2024,State,New York,Furosemide,Furosemide,38692,1225063,2236236.5,5805078.49,310287,1124460,285928,N,loop diuretics
+2024,State,New York,Ziprasidone Hcl,Geodon,28,213,272,476811.46,23,55,,Y,antipsychotics
+2024,State,New York,Glipizide/Metformin Hcl,Glipizide-Metformin,3123,29905,62976.4,1338690.81,6693,28065,6288,N,metformin
+2024,State,New York,Metformin Hcl,Glumetza,354,1298,2074.2,8771009.76,399,1023,320,N,metformin
+2024,State,New York,Glyburide/Metformin Hcl,Glyburide-Metformin Hcl,1004,3639,7434.7,70283.32,1141,3385,1073,N,metformin
+2024,State,New York,Empagliflozin/Linagliptin,Glyxambi,817,5229,10048.4,5754956.55,1167,4779,1075,N,SGLT2 inhibitors
+2024,State,New York,Haloperidol,Haloperidol,6618,79147,86984.3,2104191.24,11364,34499,5518,Y,antipsychotics
+2024,State,New York,Haloperidol Decanoate,Haloperidol Decanoate,2198,34915,35889.4,1702296.91,4071,12288,1502,Y,antipsychotics
+2024,State,New York,Haloperidol Decanoate,Haloperidol Decanoate 100,107,367,378.5,17251.94,155,92,39,Y,antipsychotics
+2024,State,New York,Haloperidol Lactate,Haloperidol Lactate,1504,5945,6271.4,145128.74,2423,4367,1956,Y,antipsychotics
+2024,State,New York,Insulin Lispro,Humalog,2851,18315,31277.3,3973062.77,5763,14080,4534,N,insulin
+2024,State,New York,Insulin Lispro,Humalog Junior Kwikpen,382,1032,1965.5,166922.17,403,879,334,N,insulin
+2024,State,New York,Insulin Lispro,Humalog Kwikpen U-100,9182,70470,129144.8,16264125.39,22871,56919,18620,N,insulin
+2024,State,New York,Insulin Lispro,Humalog Kwikpen U-200,1649,7535,13586.1,11254022.91,2178,5785,1721,N,insulin
+2024,State,New York,Insulin Lispro Protamin/Lispro,Humalog Mix 50-50 Kwikpen,271,1637,2616,487234.34,363,1511,330,N,insulin
+2024,State,New York,Insulin Lispro Protamin/Lispro,Humalog Mix 75-25,309,1119,1881.7,317026.13,289,1000,255,N,insulin
+2024,State,New York,Insulin Lispro Protamin/Lispro,Humalog Mix 75-25 Kwikpen,1488,8494,14819.1,2649238.57,2146,7574,1912,N,insulin
+2024,State,New York,Insulin Lispro,Humalog Tempo Pen U-100,42,80,133.3,12923.89,40,66,29,N,insulin
+2024,State,New York,Insulin Nph Hum/Reg Insulin Hm,Humulin 70-30,747,2917,5139.7,440991.44,809,2648,721,N,insulin
+2024,State,New York,Insulin Nph Hum/Reg Insulin Hm,Humulin 70/30 Kwikpen,1067,4949,7926.5,1160266.62,1258,4318,1087,N,insulin
+2024,State,New York,Insulin Nph Human Isophane,Humulin N,922,5013,10432.8,683140.49,1764,4558,1603,N,insulin
+2024,State,New York,Insulin Nph Human Isophane,Humulin N Kwikpen,1069,4586,9124.8,837520.53,1567,4019,1339,N,insulin
+2024,State,New York,"Insulin Regular, Human",Humulin R,959,4455,6868.9,395724.4,1464,3783,1255,N,insulin
+2024,State,New York,"Insulin Regular, Human",Humulin R U-500,226,1113,1874.6,2513439.54,252,596,155,N,insulin
+2024,State,New York,"Insulin Regular, Human",Humulin R U-500 Kwikpen,1024,7849,11373.3,12281185.76,1469,5267,991,N,insulin
+2024,State,New York,Hydrochlorothiazide,Hydrochlorothiazide,30544,1105251,2687987.6,4790172.19,295786,1010657,273255,N,thiazides
+2024,State,New York,Losartan/Hydrochlorothiazide,Hyzaar,195,817,1615.7,277909.09,165,795,,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Indapamide,Indapamide,3094,18457,45775.1,292346.15,5021,17588,4810,N,thiazides
+2024,State,New York,Propranolol Hcl,Inderal La,48,185,357.9,829357.3,35,185,35,N,beta blockers
+2024,State,New York,Propranolol Hcl,Inderal Xl,19,53,88,222240.96,14,,,N,beta blockers
+2024,State,New York,Propranolol Hcl,Innopran Xl,11,43,85,207297.7,,28,,N,beta blockers
+2024,State,New York,Sotagliflozin,Inpefa,100,884,1340,773877.55,216,839,205,N,SGLT2 inhibitors
+2024,State,New York,Insulin Aspart,Insulin Aspart,1054,3381,4282.6,544440.28,1535,2629,1191,N,insulin
+2024,State,New York,Insulin Aspart,Insulin Aspart Flexpen,4842,22463,32032.2,2792315.32,8490,18035,6662,N,insulin
+2024,State,New York,Insulin Aspart,Insulin Aspart Penfill,111,223,361.3,37809,112,170,82,N,insulin
+2024,State,New York,Insulin Aspart Prot/Insuln Asp,Insulin Aspart Prot Mix 70-30,856,2655,3553.2,490658.37,1024,2311,895,N,insulin
+2024,State,New York,Insulin Degludec,Insulin Degludec,101,200,251,32194.48,96,155,75,N,insulin
+2024,State,New York,Insulin Degludec,Insulin Degludec Pen (U-100),1126,2439,4146.4,379208.4,1355,1972,1093,N,insulin
+2024,State,New York,Insulin Degludec,Insulin Degludec Pen (U-200),672,1432,2382.3,365271.42,796,1133,614,N,insulin
+2024,State,New York,"Insulin Glargine,hum.Rec.Anlog",Insulin Glargine,363,479,579.7,65295.16,412,395,344,N,insulin
+2024,State,New York,"Insulin Glargine,hum.Rec.Anlog",Insulin Glargine Max Solostar,256,531,888.5,162644.05,294,451,245,N,insulin
+2024,State,New York,"Insulin Glargine,hum.Rec.Anlog",Insulin Glargine Solostar,2040,3497,5806.5,586916.52,2483,2911,2061,N,insulin
+2024,State,New York,Insulin Glargine-Yfgn,Insulin Glargine-Yfgn,4852,21232,30497.1,1397388.07,10347,18009,8653,N,insulin
+2024,State,New York,Insulin Lispro,Insulin Lispro,2890,15850,21004.5,925708.28,5544,12331,4331,N,insulin
+2024,State,New York,Insulin Lispro,Insulin Lispro Junior Kwikpen,403,953,1592.9,138660.7,406,741,326,N,insulin
+2024,State,New York,Insulin Lispro,Insulin Lispro Kwikpen U-100,9046,65678,100762.2,11325845.18,20636,51944,16373,N,insulin
+2024,State,New York,Insulin Lispro Protamin/Lispro,Insulin Lispro Protamine Mix,903,4192,6306.6,1099722.39,1052,3732,913,N,insulin
+2024,State,New York,Paliperidone,Invega,46,216,244,124076.72,35,19,,Y,antipsychotics
+2024,State,New York,Paliperidone Palmitate,Invega Hafyera,110,237,1330.2,4281974.75,143,39,24,Y,antipsychotics
+2024,State,New York,Paliperidone Palmitate,Invega Sustenna,2544,37859,38098.9,107956645.98,4742,8709,1119,Y,antipsychotics
+2024,State,New York,Paliperidone Palmitate,Invega Trinza,705,3420,9882.6,28022731.43,1064,712,224,Y,antipsychotics
+2024,State,New York,Canagliflozin/Metformin Hcl,Invokamet,297,1215,2458.4,1291578.5,286,1047,254,N,SGLT2 inhibitors; metformin
+2024,State,New York,Canagliflozin/Metformin Hcl,Invokamet Xr,204,895,1779.8,842027.98,199,799,175,N,SGLT2 inhibitors; metformin
+2024,State,New York,Canagliflozin,Invokana,3220,20012,37916.6,20471876.64,4242,17353,3706,N,SGLT2 inhibitors
+2024,State,New York,Irbesartan,Irbesartan,13779,214661,557478.8,5649545.44,53602,204845,51286,N,ACE inhibitors/ARBs
+2024,State,New York,Irbesartan/Hydrochlorothiazide,Irbesartan-Hydrochlorothiazide,6304,43797,114172.7,972105.44,11360,41869,10899,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Sitagliptin Phos/Metformin Hcl,Janumet,9580,146062,257944.5,132034386.23,28438,136175,26537,N,metformin
+2024,State,New York,Sitagliptin Phos/Metformin Hcl,Janumet Xr,5015,38642,75080.2,35255935.84,8724,35737,8110,N,metformin
+2024,State,New York,Empagliflozin,Jardiance,27371,863737,1577962.7,875790692.33,187956,764572,167289,N,SGLT2 inhibitors
+2024,State,New York,Linagliptin/Metformin Hcl,Jentadueto,2182,18550,30025.6,14135784.05,3157,17684,3001,N,metformin
+2024,State,New York,Linagliptin/Metformin Hcl,Jentadueto Xr,647,3280,6387.3,3086690.98,736,3067,693,N,metformin
+2024,State,New York,Methylphenidate Hcl,Jornay Pm,37,172,176,79430.65,28,65,11,N,ADHD stimulants
+2024,State,New York,Metoprolol Succinate,Kapspargo Sprinkle,1069,3433,4627,241412.84,1277,3062,1150,N,beta blockers
+2024,State,New York,Alogliptin Benz/Metformin Hcl,Kazano,20,30,36,13594.74,19,30,19,N,metformin
+2024,State,New York,Saxagliptin Hcl/Metformin Hcl,Kombiglyze Xr,93,172,266.7,119047.64,94,172,94,N,metformin
+2024,State,New York,Labetalol Hcl,Labetalol Hcl,14708,142980,285057.2,4250555.76,31891,122160,27496,N,beta blockers
+2024,State,New York,"Insulin Glargine,hum.Rec.Anlog",Lantus,5622,34955,47715.4,3865249.03,9037,30040,7666,N,insulin
+2024,State,New York,"Insulin Glargine,hum.Rec.Anlog",Lantus Solostar,20902,345849,660408.7,40023761.84,90476,291947,76267,N,insulin
+2024,State,New York,Furosemide,Lasix,165,410,897.3,36147.52,138,376,,N,loop diuretics
+2024,State,New York,Lurasidone Hcl,Latuda,418,3839,4059.8,5682363.89,737,2782,471,Y,antipsychotics
+2024,State,New York,Insulin Detemir,Levemir,1410,4790,6605,833643.5,1578,4262,1366,N,insulin
+2024,State,New York,Insulin Detemir,Levemir Flexpen,6898,33825,62765.4,6873043.15,12308,29199,10600,N,insulin
+2024,State,New York,Insulin Detemir,Levemir Flextouch,494,1269,2126.1,220438,519,1029,439,N,insulin
+2024,State,New York,Escitalopram Oxalate,Lexapro,588,3078,5057.6,2369874.94,573,2501,477,N,SSRIs
+2024,State,New York,Lisdexamfetamine Dimesylate,Lisdexamfetamine Dimesylate,1920,8911,9612.5,2149664.24,2139,3620,945,N,ADHD stimulants
+2024,State,New York,Lisinopril,Lisinopril,35424,1747876,4167468.1,12055544.38,422713,1555964,380545,N,ACE inhibitors/ARBs
+2024,State,New York,Lisinopril/Hydrochlorothiazide,Lisinopril-Hydrochlorothiazide,16212,252014,650220.7,2036935.71,66766,228448,61057,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Lithium Carbonate,Lithium Carbonate,5052,55395,68154.6,503801.46,7449,20241,3152,N,lithium
+2024,State,New York,Lithium Carbonate,Lithium Carbonate Er,3298,30543,38948.1,434343.62,4509,9444,1695,N,lithium
+2024,State,New York,Lithium Citrate,Lithium Citrate,25,70,81.9,11654.22,22,28,,N,lithium
+2024,State,New York,Lithium Carbonate,Lithobid,20,98,172.5,149099.05,17,68,,N,lithium
+2024,State,New York,Metoprolol Tartrate,Lopressor,16,54,109,20153.79,15,,,N,beta blockers
+2024,State,New York,Losartan Potassium,Losartan Potassium,37837,2229827,5217071.6,21026704.51,534139,2078306,498708,N,ACE inhibitors/ARBs
+2024,State,New York,Losartan/Hydrochlorothiazide,Losartan-Hydrochlorothiazide,18741,412967,992325.6,6704577.72,103722,386102,97112,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Amlodipine Besylate/Benazepril,Lotrel,125,453,961.6,362253.7,103,439,,N,ACE inhibitors/ARBs
+2024,State,New York,Loxapine Succinate,Loxapine,413,3466,3926.4,242425.99,412,1410,158,Y,antipsychotics
+2024,State,New York,Lurasidone Hcl,Lurasidone Hcl,4343,49093,56166,12804076.96,7065,17121,2610,Y,antipsychotics
+2024,State,New York,Olanzapine/Samidorphan Malate,Lybalvi,496,4749,4874.4,7634221.5,761,1265,220,Y,antipsychotics
+2024,State,New York,Insulin Lispro-Aabc,Lyumjev,178,737,1496.4,908920.51,226,521,162,N,insulin
+2024,State,New York,Insulin Lispro-Aabc,Lyumjev Kwikpen U-100,639,3284,5977.6,2449904.04,1025,2632,850,N,insulin
+2024,State,New York,Insulin Lispro-Aabc,Lyumjev Kwikpen U-200,112,548,945.2,827700.14,138,390,102,N,insulin
+2024,State,New York,Insulin Lispro-Aabc,Lyumjev Tempo Pen U-100,14,26,38.7,14143.81,14,,,N,insulin
+2024,State,New York,Metformin Hcl,Metformin Er Gastric,2928,19821,34515.5,22570918.32,5076,17738,4454,N,metformin
+2024,State,New York,Metformin Hcl,Metformin Er Osmotic,1862,5335,8908.8,891599.25,2084,4531,1784,N,metformin
+2024,State,New York,Metformin Hcl,Metformin Hcl,33130,1676316,3673540.5,16801420.04,397624,1472547,353864,N,metformin
+2024,State,New York,Metformin Hcl,Metformin Hcl Er,21498,641930,1520183.2,6914254.03,171791,563455,152874,N,metformin
+2024,State,New York,Methylphenidate,Methylphenidate,24,78,80,23610.12,15,,,N,ADHD stimulants
+2024,State,New York,Methylphenidate Hcl,Methylphenidate Er,2423,14891,16780.2,1361017.64,2468,6270,1140,N,ADHD stimulants
+2024,State,New York,Methylphenidate Hcl,Methylphenidate Er (La),458,1707,1924.4,231182.46,378,829,201,N,ADHD stimulants
+2024,State,New York,Methylphenidate Hcl,Methylphenidate Hcl,4956,35130,37532.9,839659.07,6506,22357,4534,N,ADHD stimulants
+2024,State,New York,Methylphenidate Hcl,Methylphenidate Hcl Cd,188,558,598.5,49358.65,156,233,77,N,ADHD stimulants
+2024,State,New York,Methylphenidate Hcl,Methylphenidate Hcl Er (Cd),297,1065,1131.1,92196.13,254,498,128,N,ADHD stimulants
+2024,State,New York,Metolazone,Metolazone,6190,34455,55213.3,768655.75,11219,30934,10124,N,thiazides
+2024,State,New York,Metoprolol Succinate,Metoprolol Succinate,39979,2556092,5905374.8,38132020.49,604789,2374482,563984,N,beta blockers
+2024,State,New York,Metoprolol Tartrate,Metoprolol Tartrate,31359,853710,1723313,5790139.49,202929,781436,186844,N,beta blockers
+2024,State,New York,Metoprolol/Hydrochlorothiazide,Metoprolol-Hydrochlorothiazide,857,3286,8074,206717.1,902,3076,844,N,thiazides; beta blockers
+2024,State,New York,Telmisartan,Micardis,221,958,1621.8,260586.58,206,,,N,ACE inhibitors/ARBs
+2024,State,New York,Telmisartan/Hydrochlorothiazid,Micardis Hct,120,637,1094,146832.58,112,,,N,ACE inhibitors/ARBs
+2024,State,New York,Moexipril Hcl,Moexipril Hcl,142,389,946.8,20729.23,137,,,N,ACE inhibitors/ARBs
+2024,State,New York,Molindone Hcl,Molindone Hcl,3,18,18.4,19021.23,,,,Y,antipsychotics
+2024,State,New York,Dextroamphetamine/Amphetamine,Mydayis,33,157,167,53813.52,28,77,14,N,ADHD stimulants
+2024,State,New York,Nadolol,Nadolol,5090,27386,62713.3,1622708.94,6875,24175,6138,N,beta blockers
+2024,State,New York,Nebivolol Hcl,Nebivolol Hcl,9566,121458,278243.7,7296770.01,29636,115905,28225,N,beta blockers
+2024,State,New York,Insulin Nph Hum/Reg Insulin Hm,Novolin 70-30,952,4071,6151.2,529596.57,979,3640,862,N,insulin
+2024,State,New York,Insulin Nph Hum/Reg Insulin Hm,Novolin 70-30 Flexpen,1340,5804,8905.5,823004.91,1501,4876,1273,N,insulin
+2024,State,New York,Insulin Nph Human Isophane,Novolin N,818,3493,5586.1,420431.79,830,2953,718,N,insulin
+2024,State,New York,Insulin Nph Human Isophane,Novolin N Flexpen,809,2692,4628.7,286556.96,850,2152,679,N,insulin
+2024,State,New York,"Insulin Regular, Human",Novolin R,714,3190,4191.6,287626.35,896,2620,751,N,insulin
+2024,State,New York,"Insulin Regular, Human",Novolin R Flexpen,673,2177,3386.4,185391.91,752,1766,602,N,insulin
+2024,State,New York,Insulin Aspart,Novolog,2620,19327,32647.7,5309987.55,5612,14199,4224,N,insulin
+2024,State,New York,Insulin Aspart,Novolog Flexpen,12535,131454,235037.7,26190840.33,37975,105289,30688,N,insulin
+2024,State,New York,Insulin Aspart Prot/Insuln Asp,Novolog Mix 70-30,495,1813,2664,346207.6,472,1658,416,N,insulin
+2024,State,New York,Insulin Aspart Prot/Insuln Asp,Novolog Mix 70-30 Flexpen,3056,23789,38254.4,5846850.13,5269,20988,4646,N,insulin
+2024,State,New York,Insulin Aspart,Novolog Penfill,235,608,1215.1,137593.95,282,471,223,N,insulin
+2024,State,New York,Pimavanserin Tartrate,Nuplazid,908,10599,11925,47234050.94,1293,10207,1246,Y,antipsychotics
+2024,State,New York,Olanzapine,Olanzapine,14954,268684,317700.7,5801408.47,37865,154190,23789,Y,antipsychotics
+2024,State,New York,Olanzapine,Olanzapine Odt,2594,15756,17220.1,1171178.8,3222,7927,1780,Y,antipsychotics
+2024,State,New York,Olanzapine/Fluoxetine Hcl,Olanzapine-Fluoxetine Hcl,127,722,988,214900.94,128,374,65,Y,antipsychotics
+2024,State,New York,Olmesartan Medoxomil,Olmesartan Medoxomil,13826,239980,558937,4339473.84,58729,230326,56241,N,ACE inhibitors/ARBs
+2024,State,New York,Olmesartan/Amlodipin/Hcthiazid,Olmesartan-Amlodipine-Hctz,2586,18160,40427.3,1809659.79,4714,17221,4451,N,ACE inhibitors/ARBs
+2024,State,New York,Olmesartan/Hydrochlorothiazide,Olmesartan-Hydrochlorothiazide,7222,72583,166591,2583157.1,18006,69482,17187,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Oxybutynin Chloride,Oxybutynin Chloride,11530,79909,132716.5,1277205.81,24055,67471,21176,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Oxybutynin Chloride,Oxybutynin Chloride Er,14504,205876,383482.6,4310322.29,51238,174596,45176,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Oxybutynin,Oxytrol,32,130,185.6,142784.23,31,115,,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Paliperidone,Paliperidone Er,2382,19871,22021.9,3250951.04,2926,6936,880,Y,antipsychotics
+2024,State,New York,Paroxetine Hcl,Paroxetine Cr,1022,3356,6073,317536.14,992,2633,806,N,SSRIs
+2024,State,New York,Paroxetine Hcl,Paroxetine Er,1591,6465,12143.6,570069.63,1604,5027,1328,N,SSRIs
+2024,State,New York,Paroxetine Hcl,Paroxetine Hcl,16473,211598,388868.6,2674575.93,40981,167430,34132,N,SSRIs
+2024,State,New York,Paroxetine Mesylate,Paroxetine Mesylate,74,169,265,25118.85,73,127,52,N,SSRIs
+2024,State,New York,Paroxetine Hcl,Paxil,59,227,422,133525.41,55,193,,N,SSRIs
+2024,State,New York,Paroxetine Hcl,Paxil Cr,105,445,823.5,310340.96,92,338,76,N,SSRIs
+2024,State,New York,Perindopril Erbumine,Perindopril Erbumine,450,1715,4373.9,89470.85,436,1681,,N,ACE inhibitors/ARBs
+2024,State,New York,Perphenazine,Perphenazine,2177,20295,24749.3,1095165.66,2380,9836,1225,Y,antipsychotics
+2024,State,New York,Perphenazine/Amitriptyline Hcl,Perphenazine-Amitriptyline,62,244,533.5,35878.79,56,224,,Y,antipsychotics
+2024,State,New York,Risperidone,Perseris,148,816,821.4,2247258.49,137,150,21,Y,antipsychotics
+2024,State,New York,Pimozide,Pimozide,129,617,932.3,88452.38,114,213,46,Y,antipsychotics
+2024,State,New York,Pindolol,Pindolol,470,2289,4937.6,196774.39,537,1870,465,N,beta blockers
+2024,State,New York,Pioglitazone Hcl/Metformin Hcl,Pioglitazone-Metformin,998,5861,12857.6,416138.81,1422,5650,1372,N,metformin
+2024,State,New York,Propranolol Hcl,Propranolol Hcl,17827,159963,270771.8,2479541.79,36874,110091,27714,N,beta blockers
+2024,State,New York,Propranolol Hcl,Propranolol Hcl Er,8895,67635,145603.2,2798964.64,15472,53190,12781,N,beta blockers
+2024,State,New York,Fluoxetine Hcl,Prozac,254,1339,2269.2,1729846.27,216,982,177,N,SSRIs
+2024,State,New York,Lisinopril,Qbrelis,12,33,47,48768.09,,11,,N,ACE inhibitors/ARBs
+2024,State,New York,Dapagliflozin/Saxagliptin Hcl,Qtern,11,40,110,58235.42,11,40,11,N,SGLT2 inhibitors
+2024,State,New York,Topiramate,Qudexy Xr,8,55,61,84090.6,,18,,N,topiramate/zonisamide
+2024,State,New York,Quetiapine Fumarate,Quetiapine Fumarate,24662,610357,804744.5,9964265.62,93105,427631,69779,Y,antipsychotics
+2024,State,New York,Quetiapine Fumarate,Quetiapine Fumarate Er,4116,36762,46194.7,2040342.14,5561,19052,3087,Y,antipsychotics
+2024,State,New York,Methylphenidate Hcl,Quillichew Er,5,18,18,11341.84,,0,,N,ADHD stimulants
+2024,State,New York,Methylphenidate Hcl,Quillivant Xr,3,13,13,8521.94,,0,,N,ADHD stimulants
+2024,State,New York,Quinapril Hcl,Quinapril Hcl,70,118,274.6,3656.58,69,,,N,ACE inhibitors/ARBs
+2024,State,New York,Quinapril/Hydrochlorothiazide,Quinapril-Hydrochlorothiazide,6,13,27,1003.09,,13,,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Ramipril,Ramipril,14676,212834,551632.8,2378346.49,52723,201086,50126,N,ACE inhibitors/ARBs
+2024,State,New York,Brexpiprazole,Rexulti,3834,53447,57614.8,75159406.58,8554,39209,6456,Y,antipsychotics
+2024,State,New York,Insulin Glargine-Aglr,Rezvoglar Kwikpen,57,369,421.5,28990.84,87,353,,N,insulin
+2024,State,New York,Risperidone,Risperdal,152,1064,1305.4,501446.74,122,205,31,Y,antipsychotics
+2024,State,New York,Risperidone Microspheres,Risperdal Consta,743,7685,7723.3,10155845.23,850,3266,372,Y,antipsychotics
+2024,State,New York,Risperidone,Risperidone,13415,279972,331251.7,3831549.82,35391,154757,20794,Y,antipsychotics
+2024,State,New York,Risperidone Microspheres,Risperidone Er,496,3190,3224.9,3202739.23,557,1586,273,Y,antipsychotics
+2024,State,New York,Risperidone,Risperidone Odt,1120,5233,5897.4,711573.44,1116,2988,671,Y,antipsychotics
+2024,State,New York,Methylphenidate Hcl,Ritalin,120,445,484,59929.63,100,345,72,N,ADHD stimulants
+2024,State,New York,Methylphenidate Hcl,Ritalin La,28,103,108,55818.25,21,30,,N,ADHD stimulants
+2024,State,New York,Asenapine Maleate,Saphris,60,406,466,408098.52,58,138,19,Y,antipsychotics
+2024,State,New York,Saxagliptin Hcl/Metformin Hcl,Saxagliptin-Metformin Er,227,754,1599.2,481173.31,214,740,,N,metformin
+2024,State,New York,Asenapine,Secuado,33,127,127,154684.3,32,54,16,Y,antipsychotics
+2024,State,New York,Ertugliflozin/Metformin,Segluromet,157,583,904,292248.45,150,522,131,N,SGLT2 inhibitors; metformin
+2024,State,New York,Insulin Glargine-Yfgn,Semglee (Yfgn),192,478,584,177923.49,186,397,151,N,insulin
+2024,State,New York,Insulin Glargine-Yfgn,Semglee (Yfgn) Pen,2685,9432,15665.2,3572345.2,3055,7958,2533,N,insulin
+2024,State,New York,Quetiapine Fumarate,Seroquel,225,1276,1767.7,785575.92,190,617,112,Y,antipsychotics
+2024,State,New York,Quetiapine Fumarate,Seroquel Xr,147,947,1170.7,780732.33,117,518,70,Y,antipsychotics
+2024,State,New York,Sertraline Hcl,Sertraline Hcl,29332,971875,1663901.8,8268299.2,180113,777039,150419,N,SSRIs
+2024,State,New York,Sitagliptin/Metformin Hcl,Sitagliptin-Metformin,33,48,72,30750.33,38,,,N,metformin
+2024,State,New York,Torsemide,Soaanz,567,1192,1592,450885.04,565,1031,490,N,loop diuretics
+2024,State,New York,Solifenacin Succinate,Solifenacin Succinate,6957,75934,143922.8,4402612.53,20545,67963,18764,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Insulin Glargine/Lixisenatide,Soliqua 100-33,1310,10681,19606.5,12021692.99,2413,9761,2205,N,insulin
+2024,State,New York,Sotalol Hcl,Sotalol,4679,35627,85801.2,719661.66,9342,33458,8786,N,beta blockers
+2024,State,New York,Sotalol Hcl,Sotalol Af,738,3494,8641.4,99512.11,1072,3326,1016,N,beta blockers
+2024,State,New York,Ertugliflozin Pidolate,Steglatro,1481,6148,9339,3013691.53,1748,5201,1467,N,SGLT2 inhibitors
+2024,State,New York,Ertugliflozin/Sitagliptin Phos,Steglujan,42,173,276,140122.29,38,153,,N,SGLT2 inhibitors
+2024,State,New York,Empagliflozin/Metformin Hcl,Synjardy,2705,23231,41468.8,22454827.73,4983,20830,4443,N,SGLT2 inhibitors; metformin
+2024,State,New York,Empagliflozin/Metformin Hcl,Synjardy Xr,2592,24710,47910.5,26180983.02,5721,21496,5046,N,SGLT2 inhibitors; metformin
+2024,State,New York,Telmisartan,Telmisartan,9385,98924,242492.6,2524943.39,24865,94888,23819,N,ACE inhibitors/ARBs
+2024,State,New York,Telmisartan/Amlodipine,Telmisartan-Amlodipine,486,1775,4341.4,349632.86,516,1715,500,N,ACE inhibitors/ARBs
+2024,State,New York,Telmisartan/Hydrochlorothiazid,Telmisartan-Hydrochlorothiazid,4020,24091,59755.3,1615950.99,6324,23350,6114,N,ACE inhibitors/ARBs
+2024,State,New York,Atenolol,Tenormin,79,265,598.8,299413.17,62,265,62,N,beta blockers
+2024,State,New York,Chlorthalidone,Thalitone,111,197,316,31710.15,106,173,,N,thiazides
+2024,State,New York,Thioridazine Hcl,Thioridazine Hcl,273,2332,2845.1,147274.54,254,1364,158,Y,antipsychotics
+2024,State,New York,Thiothixene,Thiothixene,301,1675,2277.3,170171.51,235,1059,154,Y,antipsychotics
+2024,State,New York,Tolterodine Tartrate,Tolterodine Tartrate,1821,8222,13706.8,510378.24,2206,7063,1972,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Tolterodine Tartrate,Tolterodine Tartrate Er,4749,32164,61005.5,3065456.91,8107,28608,7356,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Topiramate,Topamax,296,2176,3260.9,3940184.65,285,800,125,N,topiramate/zonisamide
+2024,State,New York,Topiramate,Topiramate,13866,176827,279843.8,2272148.21,34018,85688,18594,N,topiramate/zonisamide
+2024,State,New York,Topiramate,Topiramate Er,445,2488,3318.2,1901600.44,445,900,187,N,topiramate/zonisamide
+2024,State,New York,Metoprolol Succinate,Toprol Xl,1405,6239,14098.4,780133.11,1385,6049,1342,N,beta blockers
+2024,State,New York,Torsemide,Torsemide,19020,285892,534659.8,4438808.09,70248,260196,64202,N,loop diuretics
+2024,State,New York,"Insulin Glargine,hum.Rec.Anlog",Toujeo Max Solostar,3193,22888,47520,25191031.44,6317,19302,5380,N,insulin
+2024,State,New York,"Insulin Glargine,hum.Rec.Anlog",Toujeo Solostar,5274,41953,82119.7,30077613.27,10622,36716,9416,N,insulin
+2024,State,New York,Fesoterodine Fumarate,Toviaz,140,767,1088,297854.6,153,701,141,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Trandolapril,Trandolapril,435,1763,4627.9,39987.03,449,1713,433,N,ACE inhibitors/ARBs
+2024,State,New York,Trandolapril/Verapamil Hcl,Trandolapril-Verapamil Er,81,270,724.6,80744.93,75,,,N,ACE inhibitors/ARBs
+2024,State,New York,Insulin Degludec,Tresiba,461,1463,2332.1,849067.2,483,1248,398,N,insulin
+2024,State,New York,Insulin Degludec,Tresiba Flextouch U-100,7373,69692,145110.4,43766226.54,18907,58951,16121,N,insulin
+2024,State,New York,Insulin Degludec,Tresiba Flextouch U-200,4992,47227,95165.8,49115340.98,11738,39140,9844,N,insulin
+2024,State,New York,Olmesartan/Amlodipin/Hcthiazid,Tribenzor,99,779,1044,443866.84,118,751,,N,ACE inhibitors/ARBs
+2024,State,New York,Trifluoperazine Hcl,Trifluoperazine Hcl,384,2170,2984.2,140788.45,323,1518,232,Y,antipsychotics
+2024,State,New York,Trihexyphenidyl Hcl,Trihexyphenidyl Hcl,1953,15959,20382.4,188541.12,2411,8647,1444,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Empaglifloz/Linaglip/Metformin,Trijardy Xr,577,4006,7271.2,4016653.86,904,3612,818,N,metformin
+2024,State,New York,Topiramate,Trokendi Xr,102,747,977.7,1341019.41,103,358,48,N,topiramate/zonisamide
+2024,State,New York,Trospium Chloride,Trospium Chloride,3182,35085,58739.1,1712930.19,10507,31829,9740,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Trospium Chloride,Trospium Chloride Er,1366,12900,23143.5,2176222.67,3690,11734,3422,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Risperidone,Uzedy,193,1727,1894.9,5449368.48,299,699,102,Y,antipsychotics
+2024,State,New York,Valsartan,Valsartan,21245,373580,905022.8,9743467.6,96655,350097,90703,N,ACE inhibitors/ARBs
+2024,State,New York,Valsartan/Hydrochlorothiazide,Valsartan-Hydrochlorothiazide,12347,150869,384925,4601905.75,39406,142396,37276,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Enalapril/Hydrochlorothiazide,Vaseretic,11,24,58,24565.75,,,,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Enalapril Maleate,Vasotec,54,221,478.5,589607.8,46,,,N,ACE inhibitors/ARBs
+2024,State,New York,Clozapine,Versacloz,11,48,58.6,90804.11,,16,,Y,antipsychotics
+2024,State,New York,Solifenacin Succinate,Vesicare,170,844,1470,533016.1,172,777,158,N,anticholinergics (bladder/antiparkinson)
+2024,State,New York,Cariprazine Hcl,Vraylar,3102,38459,41655.1,57762482.52,6328,14720,2638,Y,antipsychotics
+2024,State,New York,Lisdexamfetamine Dimesylate,Vyvanse,1989,11715,12736.6,5044539.23,2118,5226,961,N,ADHD stimulants
+2024,State,New York,Dapaglifloz Propaned/Metformin,Xigduo Xr,1770,17074,32948.6,17192059.87,3767,15130,3373,N,metformin
+2024,State,New York,Insulin Degludec/Liraglutide,Xultophy 100-3.6,427,2078,4037.8,3308351.63,538,1896,491,N,insulin
+2024,State,New York,Dextroamphetamine Sulfate,Zenzedi,9,37,37,14087.18,,11,,N,ADHD stimulants
+2024,State,New York,Lisinopril/Hydrochlorothiazide,Zestoretic,24,87,208,85946.84,20,87,20,N,thiazides; ACE inhibitors/ARBs
+2024,State,New York,Lisinopril,Zestril,91,305,700.1,293323.07,74,,,N,ACE inhibitors/ARBs
+2024,State,New York,Ziprasidone Hcl,Ziprasidone Hcl,3156,34702,43180.8,2002508.85,4089,12129,1499,Y,antipsychotics
+2024,State,New York,Ziprasidone Mesylate,Ziprasidone Mesylate,38,70,70,10602.68,41,17,11,Y,antipsychotics
+2024,State,New York,Sertraline Hcl,Zoloft,389,1690,3029.4,1759661.47,334,1233,269,N,SSRIs
+2024,State,New York,Zonisamide,Zonegran,63,448,699.3,1773692.73,64,101,18,N,topiramate/zonisamide
+2024,State,New York,Zonisamide,Zonisade,64,268,272.2,300917.71,50,118,23,N,topiramate/zonisamide
+2024,State,New York,Zonisamide,Zonisamide,2218,22957,34752.2,763177.9,3676,10976,1959,N,topiramate/zonisamide
+2024,State,New York,Olanzapine,Zyprexa,185,1106,1331.1,1183338.37,157,536,75,Y,antipsychotics
+2024,State,New York,Olanzapine,Zyprexa Zydis,45,249,273,294698.53,31,42,,Y,antipsychotics
