@@ -1,9 +1,11 @@
 # Ground Truth
 
-**Team:** Neural Forge
-**Members:** Ali G, Muhammad Kone
-**Challenge:** Build 4: What can the research and New York City's own data confirm, question, and connect together?
-**Pitch slides:** LINK
+**Team:** Neural Forge  
+**Members:** Ali G, Muhammad Kone  
+**Challenge:** Build 4: What can the research and New York City's own data confirm, question, and connect together?  
+**Pitch slides:** https://docs.google.com/presentation/d/1wcCIf-EIL-wb1XvVmjjNq2NwbRg3RbHEy_cB-AKTRes/edit?usp=sharing  
+**Live site:** https://alighazi288.github.io/system-public-challenge-2026/projects/neural-forge/web/  
+**Published verdicts (Underlay):** https://www.underlay.org/system-community/ground-truth-heat  
 
 ## What it does
 
