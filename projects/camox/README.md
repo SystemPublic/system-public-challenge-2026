@@ -16,7 +16,9 @@ A research assistant that makes the System Public Graph usable for any question.
 - **Outside research**: recent papers from OpenAlex and PubMed, web sources and World Bank indicators for what the graph doesn't hold.
 - **Skeptic**: the strongest evidence against the user's claim.
 
-Each project has goals that every agent reads, and follow-up questions see the earlier answers. You can review and edit the plan before agents start. Answers cite DOIs inline, each checked in code against the run's tool results, with a numbered reference list (titles from OpenAlex).
+Each project has goals that every agent reads, and follow-up questions see the earlier answers. A new project with goals gets an automatic first pass: what data exists for each concept in the graph, OpenAlex and the World Bank, and where those sources disagree or run out. A project dashboard is then built from it. You can review and edit the plan before agents start, and each answer ends with suggested follow-ups.
+
+Answers cite DOIs inline, with a numbered reference list (titles from OpenAlex). A verifier agent re-checks each answer's claims against the tool results before it is shown ("Verified · N claims checked"). Every section names the source it came from, web results are marked unverified, and every World Bank indicator id links to its Data360 page.
 
 ## How we used the System Public Graph
 
@@ -24,6 +26,7 @@ Each project has goals that every agent reads, and follow-up questions see the e
 - **Graph walks:** neighbours and 1 to 3 hop paths between concepts (mediators for a theory of change), and the subgraph behind each answer, drawn in the dashboard.
 - **Findings:** filtered by concept groups (synonyms pooled), population wording and effect family. Direction splits, CI counts and medians are computed in code by `summarise_evidence`, never by the model, and different effect families are never pooled.
 - **Checks in code:** every DOI, concept id, effect size, CI and meter count in an answer must appear in that run's tool results. "Supported" needs 3 or more studies, "no evidence" needs at least three searches first, and causal verbs are rejected (the graph holds associations). An agent that fails a check retries with the error.
+- **Coverage against the literature:** the first pass compares graph study counts with OpenAlex paper counts per concept. For a youth-employment project in Kenya and Nigeria, informal employment has 25 graph studies against 50,494 OpenAlex works, and the gender gap has 2 against 188,266.
 - **Data:** the cleaned Dataverse subset (2.0M findings, 845k studies) in DuckDB, with the live System Graph API tried first for concept lookups.
 
 ## Build Challenge 2: the jobs agenda
@@ -86,7 +89,7 @@ The MCP server is at `http://localhost:8000/mcp/` (header `Authorization: Bearer
 - System Public Graph API, public-api.system.com (CC BY-NC 4.0).
 - OpenAlex API (CC0 data).
 - PubMed E-utilities, NCBI (public; individual abstracts may carry publisher copyright).
-- World Bank Indicators API and Data360 (CC BY 4.0).
+- World Bank Indicators API and Data360 (CC BY 4.0), including FAO food security series served through Data360 (FAO statistical data, CC BY 4.0).
 - OpenAI web search, used by the research agent for reports and datasets; each source is linked in the answer.
 
 ## Limitations
