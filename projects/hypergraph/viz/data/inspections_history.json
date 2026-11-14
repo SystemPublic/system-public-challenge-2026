@@ -323,6 +323,60 @@
 "n": 9809,
 "fell": 1305,
 "share": 0.133
+},
+"groups": [
+{
+"group": "pest evidence (mice, rats, roaches, flies)",
+"codes": [
+"04K",
+"04L",
+"04M",
+"04N"
+],
+"cited": 8935,
+"removed": 30,
+"share_of_citations": 0.1089,
+"share_removed": 0.0034
+},
+{
+"group": "temperature control (hot and cold holding, cooling)",
+"codes": [
+"02B",
+"02G",
+"02H"
+],
+"cited": 11233,
+"removed": 179,
+"share_of_citations": 0.1369,
+"share_removed": 0.0159
+},
+{
+"group": "contamination and handling",
+"codes": [
+"04C",
+"04H",
+"06C",
+"06D",
+"06E",
+"06F"
+],
+"cited": 16491,
+"removed": 290,
+"share_of_citations": 0.2009,
+"share_removed": 0.0176
+},
+{
+"group": "worker hygiene (clothing, eating in prep area, hand-wash sink)",
+"codes": [
+"06A",
+"06B",
+"05D"
+],
+"cited": 3469,
+"removed": 64,
+"share_of_citations": 0.0423,
+"share_removed": 0.0184
 }
+]
 }
 }

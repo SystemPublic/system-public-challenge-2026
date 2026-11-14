@@ -91,7 +91,7 @@
   .barf { background: #000; }
   .barr { background: #c8271b; }
   td.grp { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); padding-top: 14px; }
-  #histout, #codesout { max-width: 1100px; }
+  #histout, #codesout, #besideout { max-width: 1100px; }
   p.key { max-width: 1100px; font-size: 14.5px; line-height: 1.45; background: #fff8d6; border-left: 5px solid #ffd60a; padding: 10px 14px; margin: 10px 0 0; }
 </style>
 </head>
@@ -117,9 +117,11 @@
     <div id="more2" style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
       <button class="plain" id="hist">Has this always happened?</button>
       <button class="plain" id="codes">Which violations come off?</button>
+      <button class="plain" id="beside">Set the research beside the record</button>
     </div>
     <div id="histout"></div>
     <div id="codesout"></div>
+    <div id="besideout"></div>
     <div id="research">
       <button class="plain" id="why">What does research say this score predicts?</button>
       <div id="strips"></div>
@@ -331,11 +333,25 @@ $("hist").addEventListener("click", async () => {
 $("codes").addEventListener("click", async () => {
   const L = (await hist()).latest, row = c => `<tr><td><b>${esc(c.code)}</b></td><td>${esc(c.description)}</td><td class="sc">${c.cited.toLocaleString("en-US")}</td><td class="sc">${(100 * c.share).toFixed(1)}%</td></tr>`;
   $("codesout").innerHTML = `<h2 class="strip-title">Which violations come off the record</h2>`
-    + `<p class="strip-lede">April to November 2026, whole city, inspections from the year before April. Of ${L.codes_cited.toLocaleString("en-US")} violations cited, <b>${L.codes_removed.toLocaleString("en-US")} were removed and ${L.codes_added} added</b>. Judgement calls come off most often. Evidence of pests almost never does.</p>`
+    + `<p class="strip-lede">April to November 2026, whole city, inspections from the year before April. Of ${L.codes_cited.toLocaleString("en-US")} violations cited, <b>${L.codes_removed.toLocaleString("en-US")} were removed and ${L.codes_added} added</b>. Removals are rare. Practices come off about five times as often as evidence of pests.</p>`
     + `<table class="rows"><thead><tr><th>Code</th><th>Violation</th><th>Cited</th><th>Removed later</th></tr></thead><tbody>`
     + `<tr><td colspan="4" class="grp">Removed most often</td></tr>` + L.most_removed.map(row).join("")
     + `<tr><td colspan="4" class="grp">Removed least often</td></tr>` + L.least_removed.map(row).join("") + `</tbody></table>`;
   $("codesout").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+const RESEARCH = [
+  { k: "(no code)", name: "A sick or infectious food worker", says: "The leading factor: 40% to 59% of restaurant outbreaks with known factors (CDC: Lipcsei 2019, Moritz 2023).", none: "An inspection rarely sees it. No violation code for it is among those cited 200 times or more." },
+  { k: "temperature control", name: "Temperature control", says: "About ten times the odds of an outbreak (Seattle: Irwin 1989)." },
+  { k: "contamination", name: "Contamination and handling", says: "Odds ratio 4.9 for a contamination violation (Minnesota: Firestone 2020, in System's graph)." },
+  { k: "pest evidence", name: "Evidence of mice, rats, roaches or flies", says: "One study: odds ratio 3.3 (Miami-Dade: Cruz 2001, in System's graph). Not a named factor in CDC's outbreak analyses." } ];
+$("beside").addEventListener("click", async () => {
+  const L = (await hist()).latest, pct = (x, n) => (100 * x).toFixed(n) + "%";
+  const rows = RESEARCH.map(r => { const g = (L.groups || []).find(x => x.group.startsWith(r.k));
+    return `<tr><td><b>${r.name}</b></td><td>${r.says}</td>` + (g ? `<td class="sc">${pct(g.share_of_citations, 0)}</td><td class="sc"><span class="${r.k === "pest evidence" ? "" : "to"}">${pct(g.share_removed, 1)}</span></td>` : `<td colspan="2">${r.none}</td>`) + `</tr>`; }).join("");
+  $("besideout").innerHTML = `<h2 class="strip-title">What research ties to outbreaks, beside what the record keeps</h2>`
+    + `<p class="strip-lede">Removals are rare for every kind of violation. But evidence of pests is removed about <b>a fifth as often</b> as the practices that studies tie most strongly to outbreaks, and the leading cause is one an inspection rarely sees. The same shares appear in the two earlier comparisons.</p>`
+    + `<table class="rows"><thead><tr><th>Condition</th><th>What studies report</th><th>Share of citations</th><th>Removed later</th></tr></thead><tbody>${rows}</tbody></table>`;
+  $("besideout").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 $("why").addEventListener("click", () => {
   const root = $("strips"); root.textContent = "";
