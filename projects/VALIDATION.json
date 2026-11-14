@@ -1,0 +1,80 @@
+{
+  "execution": "All code cells executed in order in a local Python process, offline; not a live Colab runtime test",
+  "cells": [
+    {
+      "notebook_cell_index": 2,
+      "status": "passed",
+      "output_chars": 0
+    },
+    {
+      "notebook_cell_index": 3,
+      "status": "passed",
+      "output_chars": 53
+    },
+    {
+      "notebook_cell_index": 4,
+      "status": "passed",
+      "output_chars": 60
+    },
+    {
+      "notebook_cell_index": 6,
+      "status": "passed",
+      "output_chars": 1524
+    },
+    {
+      "notebook_cell_index": 8,
+      "status": "passed",
+      "output_chars": 880
+    },
+    {
+      "notebook_cell_index": 10,
+      "status": "passed",
+      "output_chars": 3488
+    },
+    {
+      "notebook_cell_index": 12,
+      "status": "passed",
+      "output_chars": 1056
+    },
+    {
+      "notebook_cell_index": 14,
+      "status": "passed",
+      "output_chars": 1868
+    },
+    {
+      "notebook_cell_index": 16,
+      "status": "passed",
+      "output_chars": 702
+    },
+    {
+      "notebook_cell_index": 18,
+      "status": "passed",
+      "output_chars": 3082
+    },
+    {
+      "notebook_cell_index": 20,
+      "status": "passed",
+      "output_chars": 3258
+    },
+    {
+      "notebook_cell_index": 22,
+      "status": "passed",
+      "output_chars": 1416
+    }
+  ],
+  "integrity_checks": "passed",
+  "figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figures/job_quality_relationships.png",
+    "figures/job_quality_relationships.svg"
+  ],
+  "colab_upload_picker": "present; requires interactive user upload; not exercised locally",
+  "authenticated_system_api": "not run",
+  "fulltext_review": "single AI-assisted targeted checking; independent verification pending",
+  "code_cell_count": 12,
+  "original_cells_preserved": true,
+  "standalone_graph_code_matches_notebook": true,
+  "graph_relationship_count": 7,
+  "graph_calculation_checks": "passed"
+}

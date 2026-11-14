@@ -1,0 +1,185 @@
+{
+  "prepared_date": "2026-11-14",
+  "review_status": "Single AI-assisted screening/extraction; human verification pending",
+  "live_authenticated_system_api": "not run; API key configured in user Colab is not available to this local pass",
+  "snapshot": {
+    "retrieved_utc": "2026-11-14T18:25:19.467853+00:00",
+    "dataset_doi": "10.7910/DVN/7V6JDO",
+    "dataset_version": "2.1",
+    "source_files": {
+      "associations.csv": {
+        "file_id": 14061020,
+        "md5": "c884dd1132957f69ffea45404f29db61",
+        "bytes": 442463948,
+        "metadata_md5": "c884dd1132957f69ffea45404f29db61",
+        "checksum_status": "matched"
+      },
+      "concepts.tsv": {
+        "file_id": 14061021,
+        "md5": "20a55620d9cc87ea2222272ac176affe",
+        "bytes": 8153628,
+        "metadata_md5": "c902b288797545dcc801edd3a55a4f0d",
+        "checksum_status": "tabular export differs from original-file checksum"
+      },
+      "studies.tsv": {
+        "file_id": 14061022,
+        "md5": "0b158737b5825bc0e9fb747ccd5a8807",
+        "bytes": 138932516,
+        "metadata_md5": "558e7529ee5545c7504bf412288694cc",
+        "checksum_status": "tabular export differs from original-file checksum"
+      }
+    },
+    "association_rows_scanned": 1999877,
+    "candidate_associations": 1004,
+    "candidate_study_ids": 653,
+    "matched_study_metadata": 653,
+    "attribute_patterns": {
+      "Wages / earnings": "\\b(wages?|salary|salaries|pay insecurity|low pay|hourly pay)\\b|\\b(labou?r income|employee earnings|hourly earnings|monthly earnings|work income|low.wage)\\b",
+      "Job security": "\\b(job insecurity|job security|employment insecurity|employment security|precarious employment|precarious work|temporary employment|temporary contract|fixed.term contract)\\b|\\b(insecure employment|employment precarity|precariousness|non.standard employment|nonstandard employment|casual employment|casual work|contract insecurity|employment instability)\\b",
+      "Working hours / shifts": "\\b(working hours|work hours|long hours|overtime|shift work|night shift|night work|work schedule|working time)\\b|\\b(workhours|work hours|long work|weekly hours|daily hours|rotating shift|rotational shift|shiftwork|nightshift|night.work|irregular schedule)\\b",
+      "Working conditions": "\\b(working conditions|work conditions|job strain|job demands|job control|effort.reward imbalance|occupational stress|workplace bullying)\\b",
+      "Occupational safety": "\\b(occupational exposure|occupational noise|occupational dust|workplace safety|safety training|fall protection|occupational health and safety)\\b",
+      "Insurance / benefits": "\\b(health insurance|insurance benefits|paid leave|sick leave|employment benefits)\\b",
+      "Pensions / protection": "\\b(pension|social protection|social insurance)\\b",
+      "Job satisfaction": "\\bjob satisfaction\\b",
+      "Formal / informal employment": "\\b(informal employment|informal work|formal employment|employment formality|informal sector)\\b|\\b(informal job|informal worker|informal wage|informality|unregistered employment|undeclared work|unregistered worker|formal sector)\\b"
+    },
+    "outcome_patterns": {
+      "Mental health": "\\b(mental health|psychological health|mental disorder)\\b",
+      "Depression / anxiety": "\\b(depression|depressive|anxiety)\\b",
+      "Psychological distress": "\\b(psychological distress|mental distress|emotional distress)\\b|\\b(psychiatric distress|GHQ.12|Kessler|K6|K10)\\b",
+      "Physical / self-rated health": "\\b(physical health|self.rated health|self.reported health|general health|coronary heart disease|cardiovascular disease|stroke|musculoskeletal|lung function)\\b|\\b(self.assessed health|perceived health|poor health|somatic health|physical functioning|physical functioning|bodily pain|back pain|low.back pain|hypertension|ischemic heart|ischaemic heart|myocardial infarction|diabetes|cardiometabolic|cardiovascular mortality|all.cause mortality)\\b",
+      "Life satisfaction / well-being": "\\b(life satisfaction|well.being|wellbeing)\\b|\\b(satisfaction with life|subjective well.being|psychological well.being|quality of life|happiness|flourishing)\\b",
+      "Occupational injury": "\\b(occupational injury|occupational injuries|work.related injur|work injury|work injuries)"
+    },
+    "limitations": [
+      "Purposive vocabulary; not exhaustive literature coverage",
+      "Pattern matches require exposure/outcome/population screening",
+      "Publication IDs are not independent cohorts",
+      "No paper-validated effect estimates or causal conclusions in discovery counts"
+    ]
+  },
+  "sources": [
+    {
+      "name": "System Graph public snapshot",
+      "url": "https://doi.org/10.7910/DVN/7V6JDO",
+      "version": "2.1",
+      "role": "association discovery; scientific estimates require primary-paper validation"
+    },
+    {
+      "name": "Europe PMC core metadata/abstracts",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+      "query_file": "audit/epmc_query.txt",
+      "role": "87 title/abstract screens"
+    },
+    {
+      "name": "Europe PMC full text",
+      "url_template": "https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/fullTextXML",
+      "role": "targeted methods/results review; download success is not full appraisal",
+      "download_log": "audit/fulltext_log.json"
+    },
+    {
+      "name": "ILOSTAT hours",
+      "url": "https://rplumber.ilo.org/data/indicator?format=.csv&id=HOW_TEMP_SEX_NB_A",
+      "role": "2023 context; national age and survey coverage vary",
+      "raw_sha256": "725dce64f9dffdedf29515974aaeb25cd55d72b198d7a451b71f5bb5a59c17aa",
+      "coverage": "15/22 requested settings; 7 absent from selected series/year/sex"
+    },
+    {
+      "name": "World Bank WDI",
+      "url": "https://api.worldbank.org/v2/country/BRA;PAK;GBR;USA/indicator/SL.EMP.VULN.ZS?date=2023&format=json&per_page=100",
+      "role": "2023 context, modeled ILO vulnerable employment",
+      "coverage": "4/22 retrieved; additional retrievals failed; not source-data missingness"
+    },
+    {
+      "name": "World Bank country income group",
+      "url": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+      "vintage": "FY2027; current lookup on 2026-11-14, not historical study-time classifications"
+    },
+    {
+      "name": "World Bank GLD access documentation",
+      "url": "https://worldbank.github.io/gld/Support/A%20-%20Guides%20and%20Documentation/GLD%20Manual%20Files/GLD%20content,%20storage,%20and%20access.html",
+      "role": "access reviewed; microdata not integrated"
+    }
+  ],
+  "csv_files": {
+    "data/bias_review.csv": {
+      "sha256": "25cb0905e937a8393af8546e631a8fbdd7c355ec0ef4e66bb02cd79899fa5de6",
+      "rows": 10
+    },
+    "data/checked_estimates.csv": {
+      "sha256": "884e21a9d2cfdd53bd13f54d1e0ef6add32262c7828df71f8435e400d80c1ace",
+      "rows": 24
+    },
+    "data/data_quality_issues.csv": {
+      "sha256": "41636b070ddbfae15852de0d651d2b6179d76b7df56c88bc04f0d9d0ee00987d",
+      "rows": 9
+    },
+    "data/expanded_associations.csv": {
+      "sha256": "faee7e19bb351dce1ebe5a08a61cf7f6a515f34f9a7286bcb8e572227d2a578c",
+      "rows": 1004
+    },
+    "data/expanded_concepts.csv": {
+      "sha256": "435d7ed6cdab0df9473e5e7df72cb9d872f37ac1387ceac59c4e0f2dc748518c",
+      "rows": 154
+    },
+    "data/expanded_pairs.csv": {
+      "sha256": "05c2fe86f59c7b87c48f14bca127ec006e0a9a6780b0baa56b7c21996a7a3884",
+      "rows": 1026
+    },
+    "data/expanded_studies.csv": {
+      "sha256": "c62f62ffaddc46cd4c034285e412334a86571d8db785605fc672a75ad9f64ad5",
+      "rows": 653
+    },
+    "data/geographic_coverage.csv": {
+      "sha256": "c7958b93ebc266cd67ebf4306b06a61a977b30822a7e941da65930bb23577cd8",
+      "rows": 21
+    },
+    "data/ilo_hours_2023.csv": {
+      "sha256": "faf4ebc67297e7d886909f13b6489c8cb12ecf42cd5cc2f237e80cc010be83b8",
+      "rows": 15
+    },
+    "data/ilo_missing_2023.csv": {
+      "sha256": "406e70c9c923d581807a72d6ed03d74b392c0e3ee3ab842c91ee3f86ae9c920f",
+      "rows": 7
+    },
+    "data/pooling_assessment.csv": {
+      "sha256": "26ec1db4b149b96271887f227b4d411f1f8be2c88f757bbbded786f435cbfe0e",
+      "rows": 8
+    },
+    "data/priority_association_screening.csv": {
+      "sha256": "b331fad42d5223a89f91ae74bbcd86e313b4affd54d9b85f41ed4a8602267a57",
+      "rows": 139
+    },
+    "data/remaining_study_queue.csv": {
+      "sha256": "00329098ec74a446baacfefce36e3b89da9c0e10f53762391bb6924e881efaf4",
+      "rows": 566
+    },
+    "data/search_sensitivity.csv": {
+      "sha256": "9812741bd7d09aaea7b9edd00643989ac2d559bff681422be038a75b1bb1fbdd",
+      "rows": 54
+    },
+    "data/shared_cohorts.csv": {
+      "sha256": "211bbd36fc4e1c7f46b8d3c737d78e2f5d13ca9d9bcc6ed4083e9ae90da4defe",
+      "rows": 10
+    },
+    "data/study_screening.csv": {
+      "sha256": "fd7825e09f4db5ccaf302072724bb6d4e2c5640509fe26760e00df636f841acd",
+      "rows": 87
+    },
+    "data/wdi_context_2023.csv": {
+      "sha256": "7dc92f775f12767d804433c5fe2113f01c949e2af33ae8d1905fb71da7577edf",
+      "rows": 22
+    }
+  },
+  "combined_graph_addition": {
+    "prepared_date": "2026-11-14",
+    "relationships": 7,
+    "source_note": "combined_graph_sources.md",
+    "estimates_file": "data/combined_graph_estimates.csv",
+    "estimates_sha256": "c810ee4e05e6d0caa5100f618c531da7673861499cda92be287cc4af04d08d83",
+    "standalone_code": "combined_relationship_graph.py",
+    "original_v02_extraction_counts_unchanged": true,
+    "note": "Later seven-relationship follow-up, including two explicitly labeled primary-paper life-satisfaction supplements; authenticated API not run."
+  }
+}
