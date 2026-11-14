@@ -12,6 +12,7 @@ The rules ask for work done during the event, so this section states what was no
 - The strips: `viz/comics.html`, its drawing rules (`docs/comics.md`) and seven hand-specified strips.
 - `tools/strip_from_diff.py`, which draws a strip from the difference between two versions of an Underlay collection, and versions 1.1.0 and 1.2.0 of `system-community/nyc-concordance-claims`.
 - `viz/compare.html` with `tools/demo_server.py` and `tools/compare_versions.py`: pick two versions of the claims collection, and the page draws what changed in one to three seconds, with the first frame of each strip read from System's public graph on the Underlay (`system/public-graph` v1.0.0).
+- `viz/inspections.html`: compare the June and November copies of the restaurant inspection table and drill down to one inspection in both.
 - Four registered and refereed tests: the full moon, shootings inside against outside in New York (two windows) and the same test in Chicago (`docs/conjectures.md`).
 
 ## What it does
@@ -32,7 +33,7 @@ The city side came from NYC Open Data and data.ny.gov (with each table's `rowsUp
 
 The folder runs without a System API key. A key is needed only to send new queries to the graph.
 
-The quickest thing to try is the live comparison, which needs only `requests`: run `python tools/demo_server.py 8000` and open http://localhost:8000/viz/compare.html. Pick two versions of the claims collection and press Compare. It calls the Underlay's public API, without a key, within the anonymous limit of 60 units a minute (a comparison costs about 10).
+The quickest thing to try needs only `requests`: run `python tools/demo_server.py 8000` and open http://localhost:8000/viz/inspections.html. Press Compare to see what changed in the city's restaurant inspection table between June and November 2026 (485 scores changed, all downward), and click a row to fetch that inspection from both Underlay collections. http://localhost:8000/viz/compare.html does the same for two versions of our claims collection. It calls the Underlay's public API, without a key, within the anonymous limit of 60 units a minute (a comparison costs about 10).
 
 1. Create an environment and install the requirements (Python 3.12; the list was produced by `uv pip freeze`):
    ```

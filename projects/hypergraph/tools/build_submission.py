@@ -55,7 +55,7 @@ MAX_BYTES = 25 * 1024 * 1024
 TREES = ["claims/registered", "claims/outcomes", "critique", "concord", "tools", "analyses", "sim",
          "viz", "replication", "deck", "deck2", "docs"]
 # Single files always copied, besides the figures found by scanning.
-FILES = ["figures/viz/dashboard.png"]
+FILES = ["figures/viz/dashboard.png", "data/derived/underlay_drift/changed_scores.json"]
 # Paths never copied.
 EXCLUDE = ["**/__pycache__/**", "**/*.pyc", "**/.DS_Store", "**/.env", "**/.env.*",
            "**/abstracts/**", "**/abstracts*.json", "**/abstracts*.txt", "**/abstracts_graph.txt",

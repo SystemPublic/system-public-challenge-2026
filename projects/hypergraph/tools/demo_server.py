@@ -8,7 +8,9 @@ then open http://localhost:8000/viz/compare.html
 
 A browser page cannot call the Underlay directly (the API sends no cross-origin header), so this server makes
 the calls. /api/versions lists a collection's versions. /api/compare returns strips for a pair of versions,
-built by tools/compare_versions.py. The server listens on localhost only.
+built by tools/compare_versions.py. /api/inspections/compare returns the inspections whose score differs between
+the June and November copies of the city's restaurant table, and /api/inspections/record fetches one inspection
+from both copies on the Underlay. The server listens on localhost only.
 """
 from __future__ import annotations
 
@@ -54,6 +56,23 @@ class Handler(SimpleHTTPRequestHandler):
                 if not SEMVER.match(to) or (frm and not SEMVER.match(frm)):
                     return self._json(400, {"error": "versions look like v1.2.0"})
                 return self._json(200, cv.build(owner, slug, frm, to))
+            if u.path == "/api/inspections/compare":
+                d = json.loads((ROOT / "data/derived/underlay_drift/changed_scores.json").read_text())
+                for side in ("june", "november"):  # one live call each: the version the numbers rest on
+                    v = cv.get(f"{cv.API}/collections/{d[side]['owner']}/{d[side]['slug']}/versions/{d[side]['version']}") or {}
+                    d[side].update(hash=v.get("hash"), recordCount=v.get("recordCount"), createdAt=v.get("createdAt"))
+                return self._json(200, d)
+            if u.path == "/api/inspections/record":
+                rid = q.get("id", "")
+                if not re.match(r"^[0-9]{6,10}-[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]{1,80}$", rid):
+                    return self._json(400, {"error": "bad inspection id"})
+                out = {"id": rid}
+                for side, (o, sl) in (("june", ("nyc", "restaurant-inspections")), ("november", ("system-community", "nyc-restaurant-inspections-2026-11"))):
+                    r = cv.record(o, sl, "v1.0.0", "Inspection", rid)
+                    out[side] = {"record": r, "url": f"https://www.underlay.org/api/collections/{o}/{sl}/versions/v1.0.0/records/Inspection/{rid}", "collection": f"{o}/{sl} v1.0.0"}
+                rest = cv.record("system-community", "nyc-restaurant-inspections-2026-11", "v1.0.0", "Restaurant", rid.split("-")[0])
+                out["restaurant"] = (rest or {}).get("data")
+                return self._json(200, out)
             return self._json(404, {"error": "unknown endpoint"})
         except Exception as exc:
             return self._json(502, {"error": str(exc)[:300]})

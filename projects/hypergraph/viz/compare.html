@@ -56,14 +56,19 @@
   #summary { font-size: 15px; margin: 10px 0 0; max-width: 110ch; }
   #summary b { font-variant-numeric: tabular-nums; }
   #summary .err { color: #b3261e; }
-  .more { margin: 18px 0; }
+  .claims { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+  button.claim { font: inherit; text-align: left; padding: 8px 12px; border: 2px solid #000; background: #fff; color: #000; border-radius: 4px; cursor: pointer; display: flex; flex-direction: column; gap: 2px; max-width: 34ch; }
+  button.claim span { font-size: 12px; color: #555; }
+  button.claim.gone { border-color: #c8271b; }
+  button.claim.on { background: #ffd60a; }
+  button.claim:hover { background: #fff3b0; }
 </style>
 </head>
 <body>
 <header class="site">
   <nav class="pages"><a href="compare.html" aria-current="page">Compare versions</a><a href="comics.html">Strips</a><a href="hypergraph.html">Edges as objects</a><a href="evidence.html">Test cards and provenance</a></nav>
   <h1>What changed between two versions?</h1>
-  <p class="lead">Pick two versions of a collection of tested claims on the Underlay. The page asks the Underlay for the difference, looks up each claim's relationship in System's public graph, and draws one strip per claim. Yellow was added, red was withdrawn. Nothing below is stored: every strip is drawn from the records when you press the button.</p>
+  <p class="lead">Pick two versions of a collection of tested claims on the Underlay. Press Compare, and the page asks the Underlay for the difference and lists the claims that changed. Click a claim, and it draws the strip, starting from that relationship in System's public graph. Yellow was added, red was withdrawn.</p>
   <div class="bar">
     <label>Collection<input id="coll" value="system-community/nyc-concordance-claims" size="38"></label>
     <label>From<select id="from"></select></label>
@@ -74,7 +79,6 @@
 </header>
 <main>
   <div id="strips"></div>
-  <div class="more"><button id="more" hidden>Show the rest</button></div>
 </main>
 <footer><p>Served by <code>tools/demo_server.py</code>. The comparison is <code>tools/compare_versions.py</code>. Both were written on 14 November 2026.</p></footer>
 <script>
@@ -206,16 +210,25 @@ const $ = id => document.getElementById(id);
 let ALL = [], shown = 0;
 const fontsReady = (document.fonts && document.fonts.load ? Promise.race([Promise.all([document.fonts.load('14px "Architects Daughter"'), document.fonts.load('14px "Patrick Hand"', '0123')]).then(() => document.fonts.ready), new Promise(r => setTimeout(r, 2500))]) : Promise.resolve()).catch(() => {});
 function coll() { const [owner, slug] = $("coll").value.trim().split("/"); return { owner, slug }; }
-function showMore(n) {
-  const root = $("strips");
-  for (const s of ALL.slice(shown, shown + n)) {
-    const [frag, div, frames] = drawStrip(s, null);
-    root.appendChild(frag);
+function showList() {
+  const root = $("strips"); root.textContent = "";
+  const ul = document.createElement("div"); ul.className = "claims";
+  ALL.forEach((s, k) => {
+    const b = document.createElement("button"); b.className = "claim" + (s.withdrawn ? " gone" : ""); b.dataset.k = k;
+    b.innerHTML = `<b>${s.title}</b><span>${s.verdict}${s.withdrawn ? " · confirmation withdrawn" : ""}${s.has_graph ? " · in System's graph" : ""}${s.has_revision ? " · revised" : ""}</span>`;
+    ul.appendChild(b);
+  });
+  root.appendChild(ul);
+  const out = document.createElement("div"); out.id = "drawn"; root.appendChild(out);
+  ul.addEventListener("click", e => {
+    const b = e.target.closest("button.claim"); if (!b) return;
+    ul.querySelectorAll("button.claim").forEach(x => x.classList.toggle("on", x === b));
+    out.textContent = "";
+    const [frag, div, frames] = drawStrip(ALL[+b.dataset.k], null);
+    out.appendChild(frag);
     for (const [f, i] of frames) drawFrame(f, i, div);
-  }
-  shown = Math.min(ALL.length, shown + n);
-  $("more").hidden = shown >= ALL.length;
-  $("more").textContent = `Show the rest (${ALL.length - shown} more claims)`;
+    out.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
 }
 async function loadVersions() {
   const { owner, slug } = coll();
@@ -236,17 +249,16 @@ async function compare() {
     await fontsReady;
     const m = r.meta; ALL = r.strips; shown = 0; $("strips").textContent = "";
     $("summary").innerHTML = `<b>${m.from || "nothing"} → ${m.to}</b>: <b>${m.added}</b> records added, <b>${m.updated}</b> updated, <b>${m.removed}</b> removed, in <b>${m.claims_touched}</b> claim${m.claims_touched === 1 ? "" : "s"}. `
-      + `<b>${m.strips}</b> strip${m.strips === 1 ? "" : "s"} drawn, <b>${m.with_graph_record}</b> joined to a relationship in ${m.graph}`
+      + `<b>${m.strips}</b> can be drawn as a strip, <b>${m.with_graph_record}</b> joined to a relationship in ${m.graph}`
       + (m.withdrawn ? `, <b>${m.withdrawn}</b> with a confirmation withdrawn` : "") + `. `
-      + `${((performance.now() - t0) / 1000).toFixed(1)} seconds. <a href="${m.compare}">The same difference on the Underlay</a>.`;
-    showMore(4);
+      + `${((performance.now() - t0) / 1000).toFixed(1)} seconds. <a href="${m.compare}">The same difference on the Underlay</a>. Click a claim to draw it.`;
+    showList();
   } catch (e) { $("summary").innerHTML = `<span class="err">${String(e.message || e)}</span>`; }
   $("go").disabled = false;
 }
 $("go").addEventListener("click", compare);
-$("more").addEventListener("click", () => showMore(1000));
 $("coll").addEventListener("change", () => loadVersions());
-loadVersions().then(compare).catch(e => { $("summary").innerHTML = `<span class="err">Start the server: python tools/demo_server.py</span>`; });
+loadVersions().then(() => { $("summary").textContent = "Pick two versions and press Compare."; }).catch(e => { $("summary").innerHTML = `<span class="err">Start the server: python tools/demo_server.py</span>`; });
 </script>
 </body>
 </html>
