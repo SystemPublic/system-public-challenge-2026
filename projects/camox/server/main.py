@@ -20,7 +20,7 @@ from agents import orchestrator
 from server import db
 from tools import graph  # importing tools loads .env
 
-RUNS_PER_PROFILE, RUNS_TOTAL = 10, 60       # per hour
+RUNS_PER_PROFILE, RUNS_TOTAL = 10**9, 10**9  # rate limit off for the demo
 subscribers: dict[int, list[asyncio.Queue]] = {}   # run id -> live SSE queues, only while the run is going
 events_sent: dict[int, int] = {}                    # run id -> events emitted so far
 tasks = set()
