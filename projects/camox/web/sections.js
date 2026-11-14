@@ -142,7 +142,19 @@ function source(s) {
 }
 
 const MATCH = { exact: 'Exact', narrower: 'Narrower', broader: 'Broader', proxy: 'Proxy' };
-const dataset = (d) => (d ? `<span class="ds" title="${esc(d)}">${esc(datasetName(d))}</span>` : '');
+const dataset = (d) => (d ? `<span class="ds" title="${esc(d)}">${esc(datasetName(d))}${datasetName(d) !== String(d) ? ` (${esc(d)})` : ''}</span>` : '');
+// Graph concepts link to Wikidata; ids come from the project graph, so the links fill in once it loads.
+const wd = new Map(); let wdProject = null;
+const concept = (label, id) => `<a class="concept" data-cid="${esc(id)}"${wd.has(id) ? ` href="https://www.wikidata.org/wiki/${esc(wd.get(id))}"` : ''} target="_blank" rel="noopener"><strong>${esc(label)}</strong></a>`;
+function loadWikidata() {
+  const p = new URLSearchParams(location.hash.slice(1)).get('project');
+  if (!p || p === wdProject) return;
+  wdProject = p;
+  fetch(`/api/projects/${encodeURIComponent(p)}/kg`).then((r) => r.json()).then((g) => {
+    for (const n of g.nodes || []) if (n.data?.wikidata_id) wd.set(n.id, n.data.wikidata_id);
+    document.querySelectorAll('a.concept[data-cid]:not([href])').forEach((a) => { if (wd.has(a.dataset.cid)) a.href = `https://www.wikidata.org/wiki/${wd.get(a.dataset.cid)}`; });
+  }).catch(() => { wdProject = null; });
+}
 // Indicator: its name links to Data360; the id follows as small muted text.
 const indLink = (name, id) => (id ? `<a href="${esc(wbUrl(id))}" target="_blank" rel="noopener">${esc(name || id)}</a> <span class="ind-id small muted">${esc(id)}</span>` : esc(name));
 const tier = (n) => (n >= 10 ? 'strong' : n >= 3 ? 'moderate' : 'thin');
@@ -260,14 +272,14 @@ function indicatorMap(s) {
   const id = `csv-${nextCsv++}`;
   csvs.set(id, { name: `${slug(s.seed.indicator_id || 'indicators')}-linked-indicators.csv`, text: indicatorCsv(s) });
   const rows = s.links.map((l) => `<tr data-kind="${l.cross_dataset ? 'other' : ''} ${l.data_gap ? 'gap' : ''}">
-      <td data-label="Linked to"><strong>${esc(l.concept_label)}</strong>
+      <td data-label="Linked to">${concept(l.concept_label, l.concept_id)}
         ${l.cross_dataset ? '<span class="pill s-backed">Different dataset</span>' : ''}${l.data_gap ? '<span class="pill s-partial">Data gap</span>' : ''}
         <div class="small muted">${linked(l.note)}</div>${l.dois?.length ? `<p class="dois">${l.dois.map(doiLink).join('')}</p>` : ''}</td>
       <td class="r num" data-label="Evidence">${plural(l.studies, 'study', 'studies')}</td>
       <td data-label="World Bank indicators">${l.indicators.length ? `<ul class="plain">${l.indicators.map((i) => indicator(i, l)).join('')}</ul>` : '<span class="small muted">No World Bank indicator measures this</span>'}</td>
     </tr>`).join('');
   return `<p><strong>Starting indicator:</strong> ${indLink(s.seed.name, s.seed.indicator_id)} ${dataset(s.seed.database)}</p>
-    <ul class="plain small">${s.matches.map((m) => `<li>Graph concept <strong>${esc(m.label)}</strong>: ${esc(MATCH[m.match] || m.match)} match. ${linked(m.why)}</li>`).join('')}</ul>
+    <ul class="plain small">${s.matches.map((m) => `<li>Graph concept ${concept(m.label, m.concept_id)}:${esc(MATCH[m.match] || m.match)} match. ${linked(m.why)}</li>`).join('')}</ul>
     <div class="filter" role="group" aria-label="Show links"><button type="button" class="chip" data-show="" aria-pressed="true">All ${s.links.length}</button>
       <button type="button" class="chip" data-show="other" aria-pressed="false">Other datasets ${s.links.filter((l) => l.cross_dataset).length}</button>
       <button type="button" class="chip" data-show="gap" aria-pressed="false">Data gaps ${s.links.filter((l) => l.data_gap).length}</button></div>
@@ -296,11 +308,25 @@ const KIND = { evidence: 'Evidence', eda: 'Data', policy: 'Theory of change', re
 
 const fallback = (s) => `<p class="small muted">No view for "${esc(s.type)}" sections yet, so here is its data.</p><pre class="json">${esc(JSON.stringify(s, null, 2))}</pre>`;
 
+// Each section ends with one source line built from section_sources: provider names, links, and the graph licence.
+const NAMES = [[/web search|openai/i, 'Web search (web, not checked against the graph)'], [/graph/i, 'System Public Graph'],
+  [/data360|world bank/i, 'World Bank Data360'], [/openalex/i, 'OpenAlex'], [/pubmed|ncbi/i, 'PubMed']];
+function sourceLine(sources) {
+  if (!Array.isArray(sources) || !sources.length) return '';
+  const seen = new Map();
+  for (const l of sources) {
+    const name = NAMES.find(([re]) => re.test(l))?.[1] || l;
+    if (!seen.has(name)) seen.set(name, PROVIDERS.find(([re]) => re.test(l))?.[1]);
+  }
+  const items = [...seen].map(([n, href]) => (href ? `<a href="${href}" target="_blank" rel="noopener">${esc(n)}</a>` : esc(n))).join(' · ');
+  const lic = seen.has('System Public Graph') ? ' Graph-derived content: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>.' : '';
+  return `<p class="src-line small muted">Source: ${items}.${lic}</p>`;
+}
+
 function section(s, sources) {
   let body;
   try { body = RENDERERS[s.type] ? RENDERERS[s.type](s) : fallback(s); } catch { body = fallback(s); }
-  const data = Array.isArray(sources) && sources.length ? `<p class="data-src small"><span class="muted">Sources</span> ${sourceChips(sources)}</p>` : '';
-  return `<section class="sec"><header class="sec-head"><h3>${esc(s.title || s.type)}</h3><span class="kind">${esc(KIND[s.type] || s.type)}</span></header>${data}${body}</section>`;
+  return `<section class="sec"><header class="sec-head"><h3>${esc(s.title || s.type)}</h3><span class="kind">${esc(KIND[s.type] || s.type)}</span></header>${body}${sourceLine(sources)}</section>`;
 }
 
 // Verification badge: what the checker looked at, and any issues it found.
@@ -327,6 +353,7 @@ function verification(v) {
 
 export function renderAnswer(a, run) {
   refs = { run, list: [], index: new Map() };
+  loadWikidata();
   const summary = citedText(a.summary);
   const body = (a.sections || []).map((s, i) => section(s, a.section_sources?.[i])).join('');
   const caveats = a.caveats?.length ? `<h4 class="small">Caveats</h4><ul class="caveats">${a.caveats.map((c) => `<li>${citedText(c)}</li>`).join('')}</ul>` : '';
