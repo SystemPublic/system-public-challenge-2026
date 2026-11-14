@@ -1,98 +1,237 @@
-# Style guide for dashboards and charts
+# Style guide for the NYC Concordance interface
 
-This guide sets out the visual and data-display rules taken from two working personal-finance dashboards Ida Benedetto built: a one-page reading of the current position (the "Glance") and an interactive retirement projection (the "projection page").
-Both are hand-written HTML with inline SVG and no chart library.
-The rules below record the decisions those pages make and the values they use, so another page can reproduce the same look and the same way of reading. Example figures in quotation marks are illustrative, not taken from the finance data.
+This guide sets out how the interface in `viz/` should be organised, and then how it should look.
+The organisation sections come first because they decide what a reader meets and in what order, so a redesign starts with them and settles colour later.
 
-Where this repository already fixes an encoding, that encoding stands.
-The verdict colours and mark shapes in `docs/visual_language.md` (Okabe-Ito blue, vermillion and bluish green, with grey for "unsettled") are one such case; this guide covers everything around them.
+Sources: the organisation sections come from a review of the twelve pages in `viz/` and `viz/data/claims.json` on Nov 14. The visual sections adapt the design of two working personal-finance dashboards by Ida Benedetto. `docs/visual_language.md` still explains how the strip, the paired estimates and the explorer encode the data, and this guide does not repeat it.
 
-Contents: [Principles](#principles) · [Page structure](#page-structure) · [Tokens](#tokens) · [Colour set options](#colour-set-options-for-the-verdicts) · [Colour rules](#colour-rules) · [Choosing a chart form](#choosing-a-chart-form) · [Mark specifications](#mark-specifications) · [Labels and annotation](#labels-and-annotation) · [Numbers](#numbers) · [Interaction](#interaction) · [Provenance and age of data](#provenance-and-age-of-data) · [Phone width](#phone-width) · [Accessibility](#accessibility) · [Forms the dashboards avoid](#forms-the-dashboards-avoid) · [Checklist before publishing](#checklist-before-publishing)
+Sections marked **(before 3 PM)** are the changes that would most improve what judges see. The rest can follow.
 
-## Principles
+**Organisation:** [Readers](#1-readers) · [Site map](#2-site-map-before-3-pm) · [First screen](#3-first-screen-of-every-page-before-3-pm) · [Vocabulary](#4-vocabulary-before-3-pm) · [Research map](#5-the-research-map-as-a-destination-before-3-pm) · [Claim view](#6-one-claim-view) · [Depth](#7-layers-of-depth-and-page-labels) · [Page templates](#8-page-templates) · [Entry points](#9-entry-points-for-researchers-and-city-analysts)
+**Visual design:** [Tokens](#10-tokens) · [Colour sets](#11-colour-set-options) · [Colour rules](#12-colour-rules) · [Chart forms](#13-chart-forms-for-this-content) · [Marks](#14-mark-specifications) · [Labels and numbers](#15-labels-annotation-and-numbers) · [Interaction](#16-interaction) · [Sources and versions](#17-sources-and-versions) · [Long text](#18-long-text) · [Slides](#19-slides-and-the-site) · [Phone and accessibility](#20-phone-width-and-accessibility) · [Avoid](#21-forms-to-avoid) · [Checklist](#22-checklist)
 
-1. **A question heads every section, and the figures under it answer that question.** The Glance has three: "Am I safe right now?", "Am I making progress?", "How am I doing this month?". Each question carries a one-line written answer computed from the data, followed by the cards that support it.
-2. **The page shows numbers, never a blended score.** A composite 0–100 index hides its arithmetic. The dashboards show each measure separately, and every number can open its formula.
-3. **Every figure sits against a named reference.** A bare number gives the reader nothing to compare it with. The Glance draws months of cash runway against a floor, an action line and a target, and a balance against a floor line and a comfortable band.
-4. **Label the marks directly.** A value, threshold or band carries its own text beside it. A separate legend appears only where direct labels cannot fit.
-5. **The page states how old each number is.** Age is computed when the page is viewed, from the `as_of` date, so a number from last spring cannot pass as current.
-6. **A reading surface stays separate from a scenario tool.** The Glance reads a settled position. Changing assumptions belongs on the projection page. Where the Glance allows a what-if, nothing is saved, and the page says so.
-7. **Keep the register calm.** No red-for-down, no flashing, no celebration. A fall is shown in amber.
+---
 
-## Page structure
+## Part one: organisation
 
-### Order on the page
+## 1. Readers
 
-1. **Header:** a serif title, then a lede paragraph naming every source and the date each was read ("Figures from the budget ledger, reconciled Nov 3; the net-worth snapshot of Oct 1 …").
-2. **Question sections:** each a collapsible `<details>` element that starts open. The summary row holds a faint serif number (1, 2, 3), the question as the heading, the written answer under it, and a small "Hide / Show the figures" toggle.
-3. **Cards** inside each section. One card holds one measure.
-4. **Notes** at the foot of the page in small faint text, covering what the model leaves out and how the figures relate across pages.
+Three readers, in the order they arrive.
 
-### Anatomy of a card
-
-Top to bottom:
-
-- **Name:** small capitals (12 px, weight 500, letter-spacing 0.06em, uppercase, muted colour). A pill beside it names the tool the figure comes from, or a state chip ("stale", "unsaved what-if").
-- **Headline number:** 28 px, weight 300, with the unit in 14 px muted text after it ("14 months").
-- **Count line:** one or two sentences in 14 px muted text saying what went into the number ("$50,000 of cash after the tax set-aside, at $3,500/mo of spending").
-- **Graphic,** 28 px below the count line.
-- **Figure tiles** where the card has several sub-figures: a grid of small boxes, each with a label above and a value below.
-- **Meta line:** a thin rule, then the read date, the refresh cadence, the source name and a small italic ƒ button that opens the source, formula, cadence and `as_of` date.
-
-### Layout
-
-- Content column at most 960 px wide, centred, with a 16 px side gutter on phones and 28 px from 700 px up.
-- Three equal cards in a row from 760 px up; one column below that.
-- A card with assumptions uses a two-column split from 860 px up (chart and figures on the left at 2.2 parts, an "Assumed here" aside on the right of at least 220 px). Below 860 px the aside moves under the chart, divided by a top rule.
-- Cards: white surface, 1 px border, 18 px corner radius, 28 px padding, and a soft two-layer shadow.
-
-## Tokens
-
-Define every colour, size and space as a CSS custom property on `:root`, and redefine the colours for dark mode. The values below are the ones both finance pages use.
-
-### Colour, light mode
-
-| Token | Value | Use |
+| Reader | Arrives with | Should leave able to say |
 |---|---|---|
-| `--bg` | `#eef1f4` | page background |
-| `--card` | `#ffffff` | card surface |
-| `--card2` | `#f4f6f9` | inputs, inset panels |
-| `--tile` | `#f7f9fb` | figure tiles |
-| `--ink` | `#171d24` | primary text, threshold markers |
-| `--muted` | `#5a6673` | secondary text, count lines |
-| `--faint` | `#8a97a3` | axis labels, notes |
-| `--line` | `#e1e6eb` | borders, gridlines |
-| `--line2` | `#cbd3db` | stronger borders, minor ticks |
-| `--track` | `#e4e9ee` | the empty part of a bar |
-| `--teal` | `#0f9d8a` | the measured value; links |
-| `--blue` | `#3a6ea5` | targets, bands, reference lines |
-| `--amber` | `#b4752c` | down, behind, stale, what-if |
-| `--green` | `#2c8d59` | up (direction pill only) |
-| `--red` | `#b3413a` | one warning: a threshold crossed that calls for action |
+| **Judge** (about two minutes, then a three-minute pitch) | The challenge text: confirmations, conflicts, bridges, a dashboard with sources, a map of research needed | How many claims were tested, what share the city data confirm or contest, one striking example of each, and that every claim cites its dataset versions |
+| **Researcher** | A topic or a finding from the literature | Which findings New York's data support or contradict, and which study would settle an open question |
+| **City analyst** | An agency, a neighbourhood or a policy lever | What the research and the city's own records say about their area, and how sure the answer is |
 
-Each accent also has a pale `-soft` background for chips (for example `--amber-soft: #f6ead8`).
+Design every page for the judge's first screen first. The researcher and the analyst reach their material one click deeper.
 
-### Colour, dark mode
+## 2. Site map (before 3 PM)
 
-Dark mode lightens each accent rather than inverting it: `--bg #13171b`, `--card #1a2026`, `--ink #e8ecef`, `--muted #a3aeb8`, `--faint #76838f`, `--line #2a323a`, `--teal #27a893`, `--blue #4f8ad6`, `--amber #d9a35f`, `--green #5fc08a`, `--red #e8837b`.
+The menu now lists nine links of equal weight, labelled by the form of the page ("Strips", "Edges as objects"). The home page is fourth. `compare.html` and `inspections.html` are not in it.
+
+Group the pages by what they give the reader. The main path follows the challenge's three required outputs.
+
+### Main path
+
+| Order | Menu label | File | Answers |
+|---|---|---|---|
+| 1 | **Findings** | `index.html` | What the research and the city's data confirm, contest and connect |
+| 2 | **Sources and tests** | `evidence.html` | What each claim rests on, from registration to verdict |
+| 3 | **Research needed** | new page, or an anchor in `index.html` | Which kinds of study would settle the most open claims |
+
+### Case studies
+
+| Menu label | File | Answers |
+|---|---|---|
+| Restaurant inspections | `inspections.html` | What makes a restaurant unsafe? |
+| Heat and medicines | `heat_drugs.html` | What the graph holds and lacks on heat, medicines and chronic illness |
+| City levers | `levers.html` | What the city could do, ranked on five separate components |
+| Congestion toll simulator | `simulate.html` | How a different toll schedule might change traffic |
+
+### Tools and method
+
+| Menu label | File | Answers |
+|---|---|---|
+| Graph explorer | `explorer.html` | What the System graph links to a concept |
+| Neighbourhood explorer | `explore.html` | What the city's records show for one neighbourhood |
+| Links as objects | `hypergraph.html` | Everything known about each link, and how links relate |
+| How a link changes | `comics.html` | How a link's evidence changes as new data arrive |
+| Compare versions | `compare.html` | What changed between two versions of the claims |
+| How it was built | `architecture.html` | How the pieces of the system fit together |
+
+### Menu rules
+
+- One menu, identical on every page, in the order above. The current page is marked.
+- The three groups are visible in the menu: the main path as the first links, then "Case studies" and "Tools and method" as labelled groups or dropdowns.
+- A menu label names what the reader gets. It never names the chart form.
+- A page's `<title>`, its menu label and its first heading use the same words. Today `index.html` is "NYC Concordance Evidence" in the title and "Evidence dashboard" in the menu.
+
+## 3. First screen of every page (before 3 PM)
+
+Every page opens with its question, answer, counts and next step, in this order, before any chart:
+
+1. **The page's question** as the heading.
+2. **A one-line answer computed from the data.**
+3. **The counts behind the answer.**
+4. **One link to the next step.**
+
+How to read the chart goes in a disclosure under the chart. It does not go in the opening paragraph.
+
+`inspections.html` already opens with its question ("What makes a restaurant unsafe?") and then the answer. Use it as the model.
+
+For `index.html` the first screen is:
+
+- **Heading:** "What research and New York City's data confirm, contest and connect".
+- **Answer:** one sentence with the counts, computed from `claims.json` at build time.
+- **A tally of verdicts:** one block per verdict with its count, its colour and shape, and a link that filters the strip to those claims.
+- **One example of each verdict:** the claim in plain words, with its verdict, in a single line.
+
+Today the page opens with a paragraph explaining the −1 to +1 axis.
+
+## 4. Vocabulary (before 3 PM)
+
+### Claim type and verdict
+
+Each claim has a **type**, set when it is registered, and a **verdict**, set when it is scored. The two lists use overlapping words.
+
+| Claim type | Claims | | Verdict | Claims |
+|---|---|---|---|---|
+| confirmation | 68 | | confirmed | 37 |
+| bridge | 16 | | contested | 19 |
+| conflict | 8 | | unsettled | 36 |
+| reproduction | 6 | | bridged | 1 |
+| | | | no test | 4 |
+
+Of the 16 bridge claims, one has the verdict "bridged". Nine are unsettled, three confirmed, two contested and one has no test.
+
+**The team needs to decide which list the headline counts use.** The challenge asks for "confirmations, conflicts and bridges", which reads like the types. The verdicts say how each test came out. Two workable options:
+
+- **Headline by verdict,** with the type as a filter. The first screen reports how the tests came out.
+- **Headline by type, split by verdict:** for example "16 bridges tested: 1 holds, 3 confirmed in part, 9 unsettled". The first screen uses the challenge's words.
+
+Whichever is chosen, a type word and a verdict word never appear in the same position. Where both show, the type sits in small capitals before the claim and the verdict sits in its coloured mark.
+
+### Fixed terms
+
+Define each term once, in a glossary page or disclosure, and use it the same way on every page.
+
+- **Claim:** a statement registered before the city data were looked at, with its predicted direction and what would refute it.
+- **Stance:** where the city's estimate falls between contradicting the research (−1) and agreeing with it (+1). Computed by `concord.claims.stance()`.
+- **Confirmed, contested, unsettled, bridged, no test:** the five verdicts, defined as in `concord/claims.py`.
+- **Link:** a relationship in the System graph between two concepts. Use "link" everywhere; drop "edge" in reader-facing text.
+- **Dataset version:** the exact version a figure rests on (see [Sources and versions](#17-sources-and-versions)).
+
+## 5. The research map as a destination (before 3 PM)
+
+The challenge requires "a map of what research is needed". Today it is the third section of `index.html`, below the strip and the single-claim detail.
+
+- Give it its own menu entry, either a page or an anchor that the menu jumps to.
+- Open it with its answer: which kinds of study would settle the most claims, by count. The kinds come from `RKINDS` in `viz/index.html`: individual-level data, sensor or monitoring data, imagery, an instrument or natural experiment, a longitudinal design, a within-unit design, finer resolution, and linking datasets.
+- Under the answer, the claims-by-kinds matrix as it is now. Each cell links to the claim.
+- 96 of the 98 claims carry a `research_needed` entry, so the page can say so.
+
+## 6. One claim view
+
+A claim's details are now spread over three pages: "One claim" in `index.html`, the test card and lineage in `evidence.html`, and the link contents in `hypergraph.html`.
+
+Define one claim view, reachable by URL (`#claim=<id>`) from every page that mentions a claim, with this fixed order:
+
+1. **Type and verdict,** with the verdict's colour and shape.
+2. **The claim in plain words.**
+3. **What the research says:** the graph's estimate and its interval, with the studies it comes from.
+4. **What the city data say:** the city's estimate and its interval.
+5. **The two side by side** as paired estimates (see [Chart forms](#13-chart-forms-for-this-content)).
+6. **What would settle it:** the `settle` statement and the research-needed entries.
+7. **Sources and versions:** every dataset with its version and query.
+8. **How it was tested:** registration date and hash, the referee's review, any city data fetched before registration.
+
+A worked example from the repo, claim `heat-ac-heat-calls`, verdict contested:
+
+- **Claim:** ambulance calls for heat illness rise more steeply with temperature in community districts where fewer households have air conditioning.
+- **Research says:** about +0.112 on the difference in log rate ratios, derived from case-control studies of heat death with a working air conditioner (Naughton 2002, Semenza 1996).
+- **City says:** −0.032, with a 95% interval from −0.088 to +0.024 (EMS calls, May to September, 2006–2026).
+- **Why contested:** the city's interval excludes the +0.112 the research implies.
+- **What would settle it:** heat illness by place of residence, from the Health Department's ZIP-level emergency-department data or EMS records with a location type.
+
+## 7. Layers of depth and page labels
+
+Each page has three layers. A reader reaches each deeper layer from the one above it, and no page shows a deeper layer first.
+
+1. **Verdict:** the answer and the counts.
+2. **Evidence:** the estimates, the charts and the claim views.
+3. **Method:** how claims were registered, tested and refereed, with lineage and code.
+
+Every page carries a label under its heading saying what kind of result it shows:
+
+- **Tested claims:** registered before the data were looked at, then scored.
+- **Descriptive:** what the data show, not tested against a prediction.
+- **Simulation:** a model's output, with its assumptions.
+
+`explore.html` and `simulate.html` already say this in their prose. Make it a standard label in a fixed place.
+
+## 8. Page templates
+
+| Template | Pages | Order on the page |
+|---|---|---|
+| **Overview** | Findings, Research needed | Question, answer, counts, tally or matrix, the main chart, the table of all items, notes |
+| **Case study** | inspections, heat and medicines, levers, toll simulator | Question, answer, result label, the main figure, the claims it rests on (each linking to its claim view), method, sources |
+| **Tool** | the two explorers, links as objects, compare | One line on what the tool shows, the controls in one row above the canvas, the canvas, a panel for the selected item, how to read it |
+| **Method** | sources and tests, how a link changes, how it was built | Question, a diagram of the process, the steps in order, worked example, rules |
+
+Lettered sections (A–D on `evidence.html` and `hypergraph.html`) become headings that name their content.
+
+## 9. Entry points for researchers and city analysts
+
+After the judge's path works:
+
+- **By topic,** for researchers: each topic the claims cover (for example heat, transport, food safety, construction) opens the strip filtered to that topic.
+- **By agency or lever,** for city analysts: the levers page and the strip filtered by the agency whose data the claim uses.
+- **By gap:** the research map, filtered to one kind of study.
+
+---
+
+## Part two: visual design
+
+## 10. Tokens
+
+Define every colour, size and space as a CSS custom property on `:root` in `viz/style.css`, and redefine the colours for dark mode. Pages do not override the tokens in their own `<style>` blocks. Today eleven of the twelve pages carry their own `<style>`, and `explore.html` and `architecture.html` do not load `style.css`.
+
+### Neutral colours
+
+The verdict colours come from the chosen colour set (section 11). The neutrals below are the finance dashboards' values and pair with set A. Sets B, C and D carry their own surfaces in `docs/colour_sets.html`.
+
+| Token | Light | Dark | Use |
+|---|---|---|---|
+| `--bg` | `#eef1f4` | `#13171b` | page background |
+| `--card` | `#ffffff` | `#1a2026` | panels and chart surfaces |
+| `--card2` | `#f4f6f9` | `#20272e` | inputs, inset panels |
+| `--ink` | `#171d24` | `#e8ecef` | primary text |
+| `--muted` | `#5a6673` | `#a3aeb8` | secondary text |
+| `--faint` | `#8a97a3` | `#76838f` | axis labels, notes |
+| `--line` | `#e1e6eb` | `#2a323a` | borders, gridlines |
+| `--line2` | `#cbd3db` | `#39434d` | stronger borders, the zero line |
+| `--track` | `#e4e9ee` | `#2a323a` | empty part of a bar |
+| `--accent` | `#0f9d8a` | `#27a893` | links and focus rings |
+| `--warn` | `#b3413a` | `#e8837b` | one use: a provenance problem, such as data fetched before registration |
+
 Declare the dark values twice: under `@media (prefers-color-scheme: dark)` guarded by `:root:not([data-theme="light"])`, and under `:root[data-theme="dark"]`, so a manual theme switch works.
-In dark mode only, the value marks get a soft glow (`drop-shadow(0 0 5px)` in the accent at 50–55% opacity). In light mode the glow token is transparent.
 
 ### Type
 
-- **Serif** (Spectral, falling back to Iowan Old Style and Georgia): page title, question headings, the asides' titles, and annotations on charts, in italic.
-- **Sans** (Work Sans, falling back to the system UI font): everything else.
-- Sizes: 12 px (labels, meta), 14 px (body, count lines), 17 px (lede, answers, tile values), 28 px (headline numbers), 34 px (question headings), 42 px (page title).
-- Chart text: value labels 12 px weight 500 in ink; mark labels 11 px faint; axis labels 10.5 px faint; text inside a filled bar 11 px weight 600 in white.
-- All figures use `font-variant-numeric: tabular-nums` (lining numerals of equal width) so columns of numbers line up.
+- **Serif** (Spectral, falling back to Iowan Old Style and Georgia) for page titles, question headings and italic annotations on charts.
+- **Sans** (Work Sans, falling back to the system UI font) for everything else.
+- **Sizes:** 12 px for labels, 14 px for body text, 17 px for answers and lede text, 28 px for headline counts, 34 px for section questions, 42 px for page titles.
+- **Chart text:** values 12 px weight 500 in ink, mark labels 11 px faint, axis labels 10.5 px faint.
+- **Figures:** all use `font-variant-numeric: tabular-nums` so columns line up.
 
 ### Space
 
-An 8-based scale: 8, 16, 28, 48 and 88 px. Sections are 88 px apart; cards 16 px apart; a card's graphic sits 28 px below its text.
+An 8-based scale: 8, 16, 28, 48 and 88 px. Sections are 88 px apart, panels 16 px apart, and a chart sits 28 px below its text. Content column at most 1080 px wide, with a 16 px side gutter on phones.
 
-## Colour set options for the verdicts
+## 11. Colour set options
 
-Four candidate sets are under trial, alongside the current Okabe-Ito set. `docs/colour_sets.html` draws each one on the same 22 real claims (concordance strip, verdict counts, stance scale and priority scale) in light and dark, with the validator's result under each panel. Nothing changes in `viz/style.css` until one is chosen.
+Four candidate sets are under trial, alongside the current Okabe-Ito set. `docs/colour_sets.html` draws each one on the same 22 real claims (concordance strip, verdict counts, stance scale and priority scale) in light and dark, with the palette validator's result under each panel. Open it in a browser to compare. Nothing changes in `viz/style.css` until one is chosen.
 
 | Set | Confirmed | Contested | Bridged | Unsettled | Surface |
 |---|---|---|---|---|---|
@@ -101,154 +240,129 @@ Four candidate sets are under trial, alongside the current Okabe-Ito set. `docs/
 | C · blue, orange, magenta | `#194cb1` / `#2e62c9` | `#e8721c` / `#de7515` | `#cc4da9` / `#d050ad` | `#b3b5b8` / `#5c6066` | `#ffffff` / `#141618` |
 | D · sea blue, red, olive | `#0074a5` / `#1292c0` | `#c74c3d` / `#b94739` | `#889a21` / `#89a01b` | `#b0bcc4` / `#55636e` | `#ffffff` / `#0f1419` |
 
-Each cell gives the light value, then the dark value. The stance scale runs from contested through a neutral grey to confirmed, and the priority scale is steps of the confirmed hue. Validator results, run on all pairs of the three hues: A passes every check in both modes; B's ochre is under 3:1 contrast against the paper; C in dark and D in light have a worst colour-blind separation of ΔE 7.0, which the validator allows only with a second cue. The strip supplies that cue with fixed shapes (confirmed circle, contested square, unsettled diamond, bridged triangle, no test hollow circle) and a written verdict.
+Each cell gives the light value, then the dark value.
 
-## Colour rules
+- **Scales:** the stance scale runs from contested through a neutral grey to confirmed. The priority scale is steps of the confirmed hue.
+- **Validator results,** run on all pairs of the three hues:
+  - A passes every check in both modes.
+  - B's ochre is under 3:1 contrast against the paper.
+  - C in dark and D in light have a worst colour-blind separation of ΔE 7.0, which the validator allows only with a second cue.
+- **The second cue:** the strip gives one with fixed shapes and a written verdict. Confirmed is a circle, contested a square, unsettled a diamond, bridged a triangle and no test a hollow circle.
 
-- **One role per colour.** Teal is the measured value (what you have now). Blue is a target, threshold band or reference line (what you are measuring against). Ink marks a hard threshold. Amber means attention: down, behind, stale, or a figure the reader changed. A colour never switches roles between cards.
-- **Down is amber, never red.** Red appears once on the Glance, when runway falls to the line that calls for cutting costs. Red-for-down on a short-horizon change is the trading-app pattern these pages were designed against.
-- **Show grades of one thing as steps of one hue.** The unit chart shows three spending levels as blue at 100%, 62% and 34% opacity, with the empty track for the rest. A comfortable range is a translucent blue band (fill opacity 0.16–0.24) edged with 1.5 px blue lines.
-- **Separate categories by hue only when the categories differ in kind.** Verdicts in this repository are an example, and `docs/visual_language.md` sets those colours.
-- **Colour never carries meaning alone.** Every coloured mark also has a label, a shape, a position or written text.
-- **Fills may use a gentle horizontal gradient** from 50% to 100% opacity of the accent, so a bar reads as growing toward its end. Areas under a line fade vertically from about 40% opacity to nothing.
+## 12. Colour rules
 
-## Choosing a chart form
+- **One role per colour.** The verdict colours mean the verdicts and nothing else. Links, buttons and focus rings use `--accent`. A provenance problem uses `--warn`.
+- **Verdicts always carry their shape and name.** Colour is never the only cue.
+- **Diverging scales have a grey middle.** The middle of the stance axis means "cannot tell", so it carries no hue.
+- **Magnitude is one hue, light to dark.** Priority, counts in a matrix and finding counts on a link all use steps of one hue.
+- **Graph link signs** use the confirmed hue for positive, the contested hue for negative and grey for mixed. A dashed light grey line means a link that was not sampled. The sign follows the variables as each study named them, so it is a reading aid, not an effect estimate (see `docs/visual_language.md`).
+- **Highlights for change** (a link added or withdrawn in a comic frame) use one highlight colour outside the verdict set, plus a label ("added", "withdrawn").
+
+## 13. Chart forms for this content
 
 Pick the form from the question the figure answers.
 
-| Question | Form | Example on the finance pages |
+| Question | Form | Pages |
 |---|---|---|
-| Where does one value stand against thresholds? | Track with markers (a horizontal bullet graph) | Months of runway against a floor, an action line and a target |
-| Is a value ahead of or behind a target, and by how much? | Position bar with a marker, a band and a gap bracket | Retirement balance against the floor line and the comfortable band |
-| Which named zone has the value reached? | Zone scale: adjacent segments with the value as a dot | Income this year against five named income levels |
-| How did a value change between two readings? | Two-point slope | Net worth, previous snapshot to this one |
-| How many out of 100? | Unit chart: a 10 × 10 grid of squares | Simulated markets in which the money lasts |
-| How do two quantities move over time, and where do they cross? | Line chart with a band and end labels | Balance against a rising target line, year by year |
-| What are the exact figures behind a chart? | Table under the chart | Year-by-year balance, floor line and band |
+| How did all the tests come out? | Verdict tally: one block per verdict with count, colour and shape | Findings |
+| Where does each claim fall between contradiction and agreement, and how sure is it? | Concordance strip: one row per claim on a −1 to +1 axis, an interval bar, the verdict mark, the registrant's bet as a shaded band | Findings |
+| Do the research and the city agree on size, not just direction? | Paired estimates: two rows (research, city), each a point and a 95% interval, with a line at no effect; ratios on a log axis | Claim view |
+| How do several studies combine? | Forest plot: one row per study, a pooled row at the bottom, studies ordered by weight | Links as objects |
+| What does the graph link to a concept? | Network: the concept at the centre, neighbours placed by number of findings, line width by the square root of findings | Graph explorer |
+| How do two groups of things relate through one centre? | Radial diagram with the centre in the middle and the two groups on either side | Heat and medicines |
+| How does a link change as evidence arrives? | Comic sequence: small multiples in a fixed grid, with the same layout in every frame and only the changes highlighted | How a link changes, compare versions |
+| Where is evidence dense, and where is it missing? | Matrix: rows and columns of fixed order, cells shaded by count, empty cells drawn as outlines so absence is visible | Research needed, links as objects |
+| Where in the city? | Choropleth map with a fixed sequential scale and a selected area outlined; aerial images beside the map at the same scale | Neighbourhood explorer, levers |
+| What would a policy change do? | Simulator output: each outcome as a point with its 95% interval against the current schedule, with the inputs above in one row | Toll simulator |
+| How do options rank on separate criteria? | Ranking table with one column per criterion, sortable, with no total column | City levers |
+| What are the exact figures? | Table under every chart | All |
 
-Make every chart answer one question, and say which in the card name or the heading.
+## 14. Mark specifications
 
-## Mark specifications
+- **Points:** 5–6 px radius with a 2 px ring in the surface colour, so overlapping marks stay separate.
+- **Intervals:** 3 px bars with round ends. An interval that crosses the zero line is the visual sign of "not settled", so the zero line is the one strong vertical line (1.2 px, `--line2`).
+- **Lines:** 2 px with round joins. Reference lines 1 px dashed.
+- **Bars and blocks:** 2 px gap of surface colour between adjacent fills, 3–4 px corner radius.
+- **Gridlines:** horizontal or vertical only as the axis needs, 1 px in `--line`. No chart borders.
+- **Network nodes:** size by one measure only (findings), labels on the centre and the largest neighbours, the rest on hover.
+- **Comic frames:** identical size and node positions in every frame, a frame number and date above each, and at most two highlighted changes per frame.
+- **Matrix cells:** square, with the count written in the cell when it is 1 or more.
 
-### Track with markers
+## 15. Labels, annotation and numbers
 
-- A rounded track 14–16 px tall (4–5 px radius) in `--track`, with the value as a teal fill clipped to the track.
-- Thresholds are vertical lines extending 5–6 px past the track: the ones that matter in 1.5 px ink, minor ticks in 1 px `--line2`.
-- Each threshold is labelled under the track with its value (12 px ink) and its name on a second line (11 px faint): "12 mo" over "action line".
-- The current value gets a 5 px dot at the end of the fill (with a 2 px ring in the card colour, so it separates from the fill) and an italic serif annotation above it: "14.2 months of runway".
-- The scale maximum is labelled at the right end. A value past the maximum pins to the end; the headline number gives the true figure.
+- **Label marks directly.** A legend appears only where direct labels cannot fit, and then sits above the chart.
+- **Write labels as plain words naming the thing:** "city data contradict the research", "agree". Not variable names such as `city_effect`.
+- **Annotations are italic serif sentences,** 13.5 px, with a stroke in the surface colour behind them so they stay readable over marks.
+- **Captions say what the chart shows in one or two sentences,** with the key figures in bold. They add what the chart cannot show; they do not narrate what the reader can see.
+- **Numbers:**
+  - Give an estimate with its interval: "−0.032 (95% interval −0.088 to +0.024)".
+  - Use a true minus sign (−) and en dashes for ranges.
+  - Say what a ratio or share is of.
+  - Round to the precision the interval supports.
+- **Counts that appear twice come from one source.** Verdict counts, claim totals and research-needed counts are computed from `claims.json` at build time and never typed into prose.
 
-### Position bar
+## 16. Interaction
 
-- As the track, plus a translucent blue band for a range and a 1.5 px ink line for the main target.
-- The value's own label sits inside the fill in white when it fits with 16 px to spare, and outside the fill in ink when it does not.
-- Labels above the track carry the target and the band: value on the first line, name on the second. When the two would overlap, the band label moves right of the target label; on narrow screens it is dropped if it still collides.
-- The difference between value and target is a bracket under the track (a 6 px-deep open rectangle in muted grey) with an italic annotation: "$40K past the floor line" or "$10K to the floor line".
+- **Hover:** every chart mark has a tooltip naming the claim, its verdict and its estimate. On line charts a crosshair snaps to the nearest point.
+- **Selection:** clicking a claim anywhere opens its claim view. The selected claim stays highlighted in every chart on the page.
+- **Filters:** one row of controls above the charts they affect: verdict, type, topic, agency. A filter never repaints the remaining marks with new colours.
+- **Disclosures** (`<details>`) hold how-to-read text, long tables and method detail. A disclosure's label says what it holds.
+- **What-if inputs** belong only on the toll simulator. Changed inputs turn the field amber, a note says nothing is saved, and a button returns to the stored schedule.
+- **Redraw on resize,** debounced by about 120 ms, since charts size themselves to their container.
 
-### Zone scale
+## 17. Sources and versions
 
-- Adjacent segments with a 2 px gap between them, all blue: 16% fill opacity for ordinary zones, 42% with a blue outline for the goal zone.
-- Each zone is labelled under its segment with its name and its upper value; the goal zone's label is in ink and reads "<name> · goal".
-- The value is a teal dot with an annotation above. A pace marker (where the value should be by today to reach the goal) is a dashed faint line with a small label.
-- Below 520 px wide, alternate zone labels drop to a second row so they do not collide.
+Here a source means the exact dataset version a figure rests on.
 
-### Two-point slope
+- **Every figure** has a short source line under it: dataset name and version.
+- **Version fields:** `rows_updated_at` for NYC Open Data, `Last-Modified` for NOAA, the Dataverse version for the System graph.
+- **An ƒ button** on the source line opens the full record: publisher, version, the exact query, the fetch time and the file hash.
+- **Graph findings** link to PubMed or the DOI.
+- **The registration hash** and whether the outcome cites it appear in the claim view's "How it was tested" section.
+- **A provenance problem** (city data fetched before registration, a hash mismatch) shows in `--warn` with a written reason, in the claim view and as a marker on the claim's row in the strip.
 
-- A 2 px teal line between two 4 px dots, over a teal area fading downward.
-- The dates sit under the ends (11 px faint); the values sit next to the dots (12 px ink), above the higher dot and below the lower.
-- Pair the slope with a direction pill: ▲ or ▼, the signed change and the comparison date ("▲ +$5,000 since Apr 1"). Up is green on a green-soft pill, down amber on amber-soft, no change grey.
-- With no previous reading, show the value alone, with no pill and no flat placeholder.
+## 18. Long text
 
-### Unit chart
+- **Line length:** at most about 72 characters (`max-width: 72ch`) for any paragraph.
+- **Headings:** name their content as a noun phrase or a question the section answers. No letters (A–D) or numbers alone.
+- **Lists of claims:** one line per claim with its verdict mark first and the claim in plain words; the id in small grey monospace after it.
+- **Write-ups:** an opening summary of three to five lines at the top of any page longer than two screens.
 
-- 100 squares, 13 px each with 3 px gaps and 2.5 px corners, filled left to right and top to bottom.
-- Graded fills of one hue, as in the colour rules. Each square has a tooltip naming its meaning ("market 72 of 100: lasts at the lowest spending level only").
-- A key beside the grid reads as rows: swatch, count, sentence ("**60** of every 100 markets: the money lasts at every spending level").
+## 19. Slides and the site
 
-### Line chart
+The decks (`deck/`, `deck2/`) have their own stylesheet with Source Serif 4 and IBM Plex Sans. The site uses the fonts in section 10.
 
-- 320 px tall on desktop, 250 px on phones. Margins: 18 px top, 30 px bottom, 46 px left; the right margin widens to 178 px when end labels are drawn.
-- Horizontal gridlines only, 1 px in `--line`, at round steps chosen from the data range (100K, 250K, 500K or 1M). No vertical gridlines and no chart border.
-- Axis labels in 10.5 px faint. The x axis is labelled every 5 units, and the last tick names its unit ("age 65").
-- The measured series is a 2 px teal line with round joins, over a fading teal area. A reference series is a 2 px blue line. A range is a blue band at 18% opacity edged with 1 px dashed blue lines.
-- **End labels replace the legend:** each series is named at its right end with a short coloured stroke, its name and its last value ("floor target $1.5M"). Labels closer than 15 px are pushed apart.
-- Events are marked in place: a dashed ink vertical line with an italic annotation ("saving can stop at 55"), an ink dot where two lines cross, and a bracket at the right edge showing the final gap.
-- Observed data points (as opposed to projections) are teal dots with a ring in the card colour.
+- **Shared parts:** the slides and the site use the same verdict colours, shapes, vocabulary and headline counts.
+- **Charts on slides** are the site's charts at slide size, with larger labels (at least 18 px) and fewer rows. They are not redrawn in another style.
+- **One idea per slide:** the claim, its verdict and the one figure that shows it.
+- **Fonts:** either the site moves to the decks' fonts or the decks move to the site's. Pick one pair.
 
-### Tables
+## 20. Phone width and accessibility
 
-- 12 px text, tabular numerals, right-aligned numbers with the first column left-aligned, 1 px row rules, headers in muted weight 500 with no rule above.
-- Put the table under its chart (inside a disclosure if it is long), so every plotted point has its exact figure.
+- Every chart reads its width from its container. No horizontal scrolling at 360 px.
+- On phones the strip shows the claim's short name above its row instead of beside it, and the menu collapses to the three groups.
+- Text contrast on white: ink 17:1 and muted 5.9:1 pass the 4.5:1 standard for small text. Faint (3.0:1) is for chart labels that repeat information available elsewhere.
+- Controls show a 2 px focus outline in `--accent`.
+- Small marks carry `<title>` text. Every chart has a table view.
 
-## Labels and annotation
+## 21. Forms to avoid
 
-- **Write labels as plain words naming the thing:** "floor line", "comfortable", "past the floor line". Avoid internal variable names and abbreviations the reader would have to decode.
-- **Annotations are sentences in italic serif,** 13.5 px, with a 5 px stroke in the card colour behind the text so it stays readable over lines and fills.
-- **Clamp labels to the drawing.** A label that would run off either edge switches its anchor to start or end at a 2 px inset.
-- **Captions under charts say what the chart shows in one or two sentences, with the key figures in bold:** "From **$300,000** now, with no more saving, growing 5% after inflation. The balance crosses the floor line at **55**."
-- **Every answer line names its comparison:** "14 months of runway at $3,500/mo, short of the 24-month target."
+- A blended score that combines verdicts into one number.
+- Dual axes.
+- Rainbow scales, or a hue at the middle of a diverging scale.
+- Legends far from the data when direct labels fit.
+- Node-link diagrams where a matrix would show the same relationships more legibly (more than about 30 nodes with labels).
+- How-to-read paragraphs above the first chart.
 
-## Numbers
+## 22. Checklist
 
-- Round money to whole dollars in text ($50,000). In chart labels use thousands ($50K) below a million and two decimals of millions ($1.25M) above.
-- Use an en dash for ranges with no spaces ("$80,000–$100,000/yr"), and a true minus sign (−) for negatives.
-- Give rates their unit and period: "/mo", "/yr", "% after inflation".
-- Say what a percentage is a share of. "60% at the floor" is followed by "the money lasts in 60 of every 100 simulated markets at $5,000/mo".
-- Compute derived figures in one shared script that every page loads, so two pages can never show two versions of the same number. The finance pages share one script for the formula and one for the drawing code.
-
-## Interaction
-
-- **Hover on line charts:** a faint vertical crosshair follows the pointer and snaps to the nearest data point. A dark tooltip (ink background, white 12 px text, 8 px radius, tabular numerals) shows the x value in bold and each series' value on its own line. The tooltip flips to the left of the crosshair near the right edge. Touch-move works the same way.
-- **What-if inputs:** numeric fields format with thousands separators as the reader types. A changed field turns amber, a chip on the card reads "unsaved what-if", a note counts the changed fields ("2 figures changed from the stored values. Nothing is saved; reloading the page restores them."), and a dark button returns to the stored figures. A direction pill hides while any field holds a what-if.
-- **Steppers and segment buttons** for bounded inputs: number fields keep their − and + buttons visible, and a choice among a few values uses a segmented control whose selected segment is filled in ink.
-- **Disclosures** (`<details>`) hold secondary material: what-if inputs, long tables, extra rows. A disclosure's label says what it holds: "Try other figures for cash and monthly spending (nothing is saved)".
-- Redraw charts on window resize, debounced by about 120 ms, since every chart sizes itself to its container.
-
-## Provenance and age of data
-
-- **Every card ends in a meta line:** "read Nov 3, 11 days ago · next refresh in 20 d · budget ledger · ƒ".
-- **The ƒ button opens a panel** with the full source, the formula with the actual numbers substituted, the cadence, and the `as_of` date. A reader can check any figure without leaving the page.
-- **Each figure has a cadence** (monthly, semiannual, annual, or "on re-run" for figures that hold until a model is run again). The age is compared with the cadence when the page is viewed.
-- **A stale figure** shows its age in amber at the front of the meta line ("200 days old · past its semiannual refresh"), gets an amber "stale" chip by its name, and dims its number to 45% opacity. Staleness has one stage; the day count tells how stale.
-- **A figure with no data yet** looks different from a stale one: a dashed border and no number, rather than a dimmed number.
-- **A process that keeps data current shows a status lamp:** an 8 px dot, green when its last run is recent and amber when it is late, with one line of text.
-- **The lede names each source and its date,** so the whole page's provenance can be read in one paragraph.
-
-For this repository, the same rule maps onto dataset versions: show the `rows_updated_at`, `Last-Modified` or Dataverse version beside each figure, and put the exact query behind the ƒ panel.
-
-## Phone width
-
-- Every chart reads its width from its container (`clientWidth`) and lays itself out for that width; nothing is a fixed-size image.
-- Below about 620 px, line charts drop the end labels, shorten bracket annotations ("$38K past") and reduce height to 250 px.
-- Grids collapse: four tiles become two, three cards become one.
-- No horizontal scrolling at 360 px.
-
-## Accessibility
-
-- Text contrast on white: ink 17:1 and muted 5.9:1 pass the 4.5:1 standard for small text. Faint (3.0:1), amber (3.8:1) and teal (3.4:1) do not, so the pages use them for chart labels, chips and links, and put anything the reader must read in ink or muted. In dark mode muted is 7.3:1 and faint 4.2:1 on the card.
-- Colour is always paired with a label, shape or position (see [Colour rules](#colour-rules)).
-- Interactive controls show a 2 px teal focus outline; inputs show a 3 px soft teal ring on focus.
-- Unit-chart squares and other small marks carry `<title>` text, so a screen reader or hover can name them.
-- The data behind every chart is available as a table or as written figures in tiles.
-
-## Forms the dashboards avoid
-
-- Gauges and dials: a bullet-graph track shows the same thing in less space with an exact reading.
-- Pie and donut charts: a unit chart or a bar shows a share with less distortion.
-- Legends separated from the data, when direct labels fit.
-- 3D effects, heavy borders and vertical gridlines.
-- A top-line status verdict that blends several measures. Each question's answer comes from its own figures.
-- Countdown projections ("8 years to go") on a reading page. Time estimates import growth assumptions, so they belong on the projection page with their assumptions visible.
-- Day-to-day change as the headline number.
-
-## Checklist before publishing
-
-1. Each section has a question heading and a written answer computed from the data.
-2. Each figure has a named reference to compare with (a threshold, target, band or previous reading).
-3. Each mark has its label beside it; a legend appears only where direct labels cannot fit.
-4. Colours keep their roles; down and stale are amber; no meaning depends on colour alone.
-5. Each card has a meta line with its age, cadence, source and an ƒ panel holding the formula.
-6. Stale figures dim, and missing figures look different from stale ones.
-7. The page works at 360 px and in dark mode.
-8. Every plotted figure can be read exactly in a table, a tile or a tooltip.
-9. Shared numbers come from one shared script.
+1. The page is in the site map, with the same name in its title, menu label and heading.
+2. The first screen shows the question, a computed answer, the counts and one next step.
+3. The page carries its result label: tested claims, descriptive or simulation.
+4. Claim types and verdicts are never confused, and the headline uses the agreed list.
+5. Every claim mention links to its claim view.
+6. Each figure has a source line with the dataset version and an ƒ record.
+7. Colours come from the chosen set, and every verdict also has its shape and name.
+8. The page loads `style.css` and does not override its tokens.
+9. The page works at 360 px and in dark mode.
+10. Every chart has a table view.

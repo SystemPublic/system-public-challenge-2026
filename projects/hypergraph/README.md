@@ -13,6 +13,7 @@ The rules ask for work done during the event, so this section states what was no
 - `tools/strip_from_diff.py`, which draws a strip from the difference between two versions of an Underlay collection, and versions 1.1.0 and 1.2.0 of `system-community/nyc-concordance-claims`.
 - `viz/compare.html` with `tools/demo_server.py` and `tools/compare_versions.py`: pick two versions of the claims collection, and the page draws what changed in one to three seconds, with the first frame of each strip read from System's public graph on the Underlay (`system/public-graph` v1.0.0).
 - `viz/inspections.html`: compare the June and November copies of the restaurant inspection table and drill down to one inspection in both.
+- On the same page, "Ask the tables": a typed question answered by Claude (Haiku) through the Claude command-line tool, which is given only the tables behind the page (`viz/data/ask_context.json`). It works only on a machine where that tool is installed and logged in; elsewhere the box says so.
 - Four registered and refereed tests: the full moon, shootings inside against outside in New York (two windows) and the same test in Chicago (`docs/conjectures.md`).
 
 ## What it does

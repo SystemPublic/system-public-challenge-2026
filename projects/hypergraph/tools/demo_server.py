@@ -30,6 +30,38 @@ SLUG = re.compile(r"^[A-Za-z0-9_.-]{1,80}$")
 SEMVER = re.compile(r"^v\d+\.\d+\.\d+$")
 
 
+def ask(question: str) -> dict:
+    """Answer a typed question from the tables behind the inspections page, using the Claude command-line tool.
+
+    The model gets viz/data/ask_context.json as its only material and has no tools. It needs `claude` installed and
+    logged in on this machine; without it the endpoint says so. Answers take about 7 to 12 seconds."""
+    import shutil
+    import subprocess
+    import time
+    question = re.sub(r"\s+", " ", question or "").strip()[:300]
+    if len(question) < 4:
+        return {"error": "type a question"}
+    exe = shutil.which("claude")
+    if not exe:
+        return {"error": "the Claude command-line tool is not installed on this machine"}
+    ctx = (ROOT / "viz/data/ask_context.json").read_text()
+    system = ("You answer questions about the data below for a live demo. Rules: answer in at most three short plain sentences. Use only the data given, and quote the relevant numbers. "
+              "If the data cannot answer, say so in one sentence and name one thing they can answer. Do not speculate about causes beyond the 'limits'. "
+              "Describe findings as associations, not proven causes. No markdown, no lists, no preamble.\n\nDATA:\n" + ctx)
+    work = Path.home() / "Library" / "Caches" / "nyc-concordance-ask"
+    work.mkdir(parents=True, exist_ok=True)
+    t0 = time.time()
+    try:
+        r = subprocess.run([exe, "-p", question, "--model", "haiku", "--system-prompt", system, "--tools", "", "--strict-mcp-config", "--no-session-persistence",
+                            "--setting-sources", "", "--output-format", "text"], capture_output=True, text=True, timeout=60, cwd=str(work))
+    except subprocess.TimeoutExpired:
+        return {"error": "no answer within 60 seconds"}
+    out = (r.stdout or "").strip()
+    if r.returncode != 0 or not out or out.lower().startswith("failed to authenticate"):
+        return {"error": "the Claude command-line tool did not answer; it may need logging in (run `claude` in a terminal)"}
+    return {"question": question, "answer": out[:1200], "seconds": round(time.time() - t0, 1), "model": "Claude Haiku, given only the tables on this page"}
+
+
 STARTED = __import__("time").strftime("%Y-%m-%d %H:%M:%S")
 
 
@@ -120,6 +152,8 @@ class Handler(SimpleHTTPRequestHandler):
                     v = cv.get(f"{cv.API}/collections/{d[side]['owner']}/{d[side]['slug']}/versions/{d[side]['version']}") or {}
                     d[side].update(hash=v.get("hash"), recordCount=v.get("recordCount"), createdAt=v.get("createdAt"))
                 return self._json(200, d)
+            if u.path == "/api/ask":
+                return self._json(200, ask(q.get("q", "")))
             if u.path == "/api/status":
                 return self._json(200, status(q.get("page", "")))
             if u.path == "/api/inspections/lookup":
