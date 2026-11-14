@@ -260,5 +260,6 @@ $("go").addEventListener("click", compare);
 $("coll").addEventListener("change", () => loadVersions());
 loadVersions().then(() => { $("summary").textContent = "Pick two versions and press Compare."; }).catch(e => { $("summary").innerHTML = `<span class="err">Start the server: python tools/demo_server.py</span>`; });
 </script>
+<script src="status.js"></script>
 </body>
 </html>

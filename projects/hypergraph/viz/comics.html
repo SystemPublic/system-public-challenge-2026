@@ -233,5 +233,6 @@ for (const s of COMICS.strips) {
 function drawAll() { for (const [div, frames] of pending) { div.textContent = ""; for (const [f, i] of frames) drawFrame(f, i, div); } document.body.dataset.ready = "1"; }
 (document.fonts && document.fonts.load ? Promise.race([Promise.all([document.fonts.load('14px "Architects Daughter"'), document.fonts.load('14px "Patrick Hand"', '0123')]).then(() => document.fonts.ready), new Promise(r => setTimeout(r, 2500))]) : Promise.resolve()).then(drawAll, drawAll);
 </script>
+<script src="status.js"></script>
 </body>
 </html>

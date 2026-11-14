@@ -434,5 +434,6 @@ $("s1").addEventListener("click", step1);
 storyInit();
 if (new URLSearchParams(location.search).get("auto")) { document.body.classList.add("auto"); step1().then(compare).then(() => drill(document.querySelectorAll("tr.row")[2])); }
 </script>
+<script src="status.js"></script>
 </body>
 </html>

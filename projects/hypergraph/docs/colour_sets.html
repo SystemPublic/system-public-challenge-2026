@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colour Set Trial</title>
+<style>
+:root{--bg:#f3f4f5;--card:#ffffff;--ink:#1b1f24;--muted:#56606b;--faint:#8a949e;--line:#e2e5e9;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;color-scheme:light}
+:root[data-theme="dark"]{--bg:#121417;--card:#1b1e22;--ink:#e9ebee;--muted:#a6aeb7;--faint:#76808a;--line:#2c3137;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1320px;margin:0 auto;padding:40px 16px 80px}
+h1{font-size:30px;font-weight:600;letter-spacing:-.01em;margin:0}
+.lede{color:var(--muted);max-width:760px;margin:10px 0 0}
+.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:22px 0 28px}
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{border:0;background:var(--card);color:var(--muted);font:inherit;font-size:13px;font-weight:500;padding:8px 16px;cursor:pointer}
+.seg button.on{background:var(--ink);color:var(--card)}
+.grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+.opt{background:var(--psurf);border:1px solid var(--line);border-radius:16px;padding:22px;color:var(--pink);min-width:0}
+.opt h2{font-size:19px;font-weight:600;margin:0}
+.opt .why{font-size:13px;color:var(--pmuted);margin:4px 0 0}
+.lab{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--pmuted);margin:22px 0 8px}
+.sw{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.sw div{font-size:12px;line-height:1.35}
+.sw i{display:block;height:34px;border-radius:7px;margin-bottom:6px}
+.sw b{display:block;font-weight:600}
+.sw code{font:11px ui-monospace,Menlo,monospace;color:var(--pmuted)}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.t{font:11px var(--sans);fill:var(--pmuted)} .tk{font:11px var(--sans);fill:var(--pink);font-weight:500}
+.checks{font-size:12px;color:var(--pmuted);margin-top:14px;border-top:1px solid var(--pline);padding-top:10px;line-height:1.55}
+.checks b{color:var(--pink);font-weight:600}
+.notes{font-size:13px;color:var(--muted);max-width:760px;margin-top:36px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Colour set trial</h1>
+<p class="lede">Four colour sets for the claim verdicts, each drawn on the same real claims from <code>viz/data/claims.json</code> (22 of the 98, stance computed by <code>concord.claims.stance()</code>). The current set (Okabe-Ito) is the fifth panel, for comparison. Switch light and dark to judge each in both.</p>
+<div class="bar"><span class="seg" id="theme"><button data-t="light" class="on">Light</button><button data-t="dark">Dark</button></span></div>
+<div class="grid" id="grid"></div>
+<p class="notes" id="notes"></p>
+</div>
+<script>
+const DATA={"sample":[{"id":"afford-gentrification-prevalence","v":"confirmed","s":0.957,"lo":0.777,"hi":0.995,"st":"Among the 22 New York sub-borough areas with the lowest median gross rent in 2000, a minority (4 to 11) had bo"},{"id":"afford-poor-count-shift","v":"confirmed","s":0.786,"lo":0.08,"hi":0.967,"st":"Among the 22 low-rent sub-borough areas of 2000, the number of residents below the poverty line fell more betw"},{"id":"bridge-shot-ems-link","v":"confirmed","s":1.0,"lo":1.0,"hi":1.0,"st":"Second link of the heat-violence bridge: FDNY EMS dispatches with initial call type SHOT rise with the day's N"},{"id":"construction-sheds-outnumber-nb","v":"confirmed","s":1.0,"lo":1.0,"hi":1.0,"st":"On a given day, the construction a person sees on NYC streets is mostly not new buildings: active sidewalk-she"},{"id":"construction2-rows-per-job-dobnow","v":"confirmed","s":1.0,"lo":1.0,"hi":1.0,"st":"In DOB NOW, each new-building job first permitted in 2021-2022 carries several work-permit rows by November 20"},{"id":"construction2-rows-per-job-legacy-2000s","v":"confirmed","s":1.0,"lo":1.0,"hi":1.0,"st":"In the legacy DOB permit table, each new-building job first permitted in 2000-2009 carries several permit rows"},{"id":"crz-storefront-vacancy","v":"confirmed","s":0.627,"lo":0.427,"hi":0.827,"st":"One year after the congestion toll began, the share of storefronts vacant on 31 December 2025 in the Congestio"},{"id":"commute-fhv-subway-distance","v":"contested","s":-0.998,"lo":-1.0,"hi":-0.987,"st":"Outside Manhattan, New York City taxi zones whose residents live farther from a subway or Staten Island Railwa"},{"id":"further-chinatown-shift","v":"contested","s":0.999,"lo":0.995,"hi":1.0,"st":"Recomputed from census tracts, Manhattan's Chinatown area lost about 22 percent of its non-Hispanic Asian and "},{"id":"further-datacentre-share-manhattan","v":"contested","s":-1.0,"lo":-1.0,"hi":-1.0,"st":"In calendar year 2024, data-centre use is a smaller share of Manhattan's benchmarked electricity than the 4.4 "},{"id":"further-subway-crime-per-million-repro","v":"contested","s":0,"lo":-0.2,"hi":0.2,"st":"The MTA Major Felonies table (yeek-jhmu) reproduces the Governor's figures: about 1.65 major felonies per mill"},{"id":"further-zonej-demand-growth","v":"contested","s":-1.0,"lo":-1.0,"hi":-1.0,"st":"Electricity demand in New York City is growing: weather-normalised annual energy in NYISO Zone J (N.Y.C.) rose"},{"id":"all-boats-trees-rent","v":"unsettled","s":0.817,"lo":0.161,"hi":0.972,"st":"Across New York City census tracts, a larger gain in living street trees between the 2005 and 2015 street tree"},{"id":"bridge-crz-ems-travel","v":"unsettled","s":0.362,"lo":-0.545,"hi":0.874,"st":"After the congestion toll began, the mean travel time of ambulances to incidents in the Congestion Relief Zone"},{"id":"bridge-crz-injury-crashes-v2","v":"unsettled","s":-0.53,"lo":-0.922,"hi":0.341,"st":"Re-analysis of bridge-crz-injury-crashes with a comparison area that shares the zone's geocoding regime: the c"},{"id":"bridge-crz-injury-crashes","v":"unsettled","s":-0.207,"lo":-0.84,"hi":0.629,"st":"Composed from faster speeds (mob-crz-traffic) and fewer vehicles in the Congestion Relief Zone, with the resea"},{"id":"commute-time-depression","v":"unsettled","s":-0.7,"lo":-0.951,"hi":0.113,"st":"Across New York City's 42 UHF neighbourhoods, a longer mean travel time to work goes with a higher age-adjuste"},{"id":"construction-aerial-triangulation","v":"unsettled","s":1.0,"lo":1.0,"hi":1.0,"st":"Aerial photographs (USDA NAIP) give a third, independent record of whether permitted new buildings were built:"},{"id":"construction-four-year-completion","v":"unsettled","s":-0.978,"lo":-0.997,"hi":-0.851,"st":"The share of NYC new-building jobs that reach a certificate of occupancy within four years of first permit mat"},{"id":"bridge-heat-shootings-ems","v":"bridged","s":1.0,"lo":1.0,"hi":1.0,"st":"Composed from heat and shootings (heat-shootings, NYPD) and the share of EMS gunshot dispatches that are shoot"},{"id":"bridge-crz-crash-link","v":"no_test","s":null,"lo":null,"hi":null,"st":"Research link for the congestion-pricing bridge: on urban roads, injury crashes change with mean speed as (v1/"},{"id":"further-tidal-flooding-311","v":"no_test","s":0.99,"lo":0.886,"hi":0.998,"st":"On rain-free days, 311 street-flooding complaints from ZIP codes in the tidal-flood areas of New York City (Ho"}],"counts":{"confirmed":37,"contested":19,"unsettled":36,"bridged":1,"no_test":4,"none":1},"total":98};
+const OPTS=[{"name":"A · Blue, amber, teal","why":"Cool and calm, from the finance dashboards. Contested reads as amber: needs attention, not alarm.","light":{"surf":"#ffffff","ink":"#171d24","muted":"#5a6673","line":"#e4e8ec","edge":"#56606b","confirmed":"#2e64a6","contested":"#c17924","bridged":"#0f9b89","unsettled":"#b4bcc5","mid":"#d5dae0","seq0":"#e6edf6"},"dark":{"surf":"#1a2026","ink":"#e8ecef","muted":"#a3aeb8","line":"#2a323a","edge":"#c3cbd3","confirmed":"#4682cc","contested":"#c87f2c","bridged":"#29a288","unsettled":"#59636e","mid":"#3c444d","seq0":"#243241"},"checks":{"light":"<b>Validator, light:</b> all checks pass. Worst colour-blind pair ΔE 12.1 (protan), target 8 or more.","dark":"<b>Validator, dark:</b> all checks pass. Worst colour-blind pair ΔE 11.2 (protan), target 8 or more."}},{"name":"B · Indigo, brick, ochre on warm paper","why":"Editorial, like a printed newspaper graphic. Warmer and quieter; the paper tone carries much of the character.","light":{"surf":"#fbf8f1","ink":"#22201b","muted":"#615b50","line":"#e9e3d6","edge":"#5c564b","confirmed":"#434d97","contested":"#b94834","bridged":"#bd9625","unsettled":"#bdb5a6","mid":"#ddd6c8","seq0":"#ebe9f0"},"dark":{"surf":"#211f1b","ink":"#eeeae1","muted":"#aaa294","line":"#36322b","edge":"#cbc3b4","confirmed":"#6673c1","contested":"#b2422e","bridged":"#ae912c","unsettled":"#615b51","mid":"#45413a","seq0":"#2c2c3a"},"checks":{"light":"<b>Validator, light:</b> Contrast vs surface: contrast under 3:1 (needs labels, which the strip has). Worst colour-blind pair ΔE 14.3 (deutan), target 8 or more.","dark":"<b>Validator, dark:</b> Contrast vs surface: contrast under 3:1 (needs labels, which the strip has). Worst colour-blind pair ΔE 13.4 (deutan), target 8 or more."}},{"name":"C · Blue, orange, magenta","why":"Saturated and graphic, in the spirit of city transit signage. Strongest at a distance, so good on slides.","light":{"surf":"#ffffff","ink":"#111316","muted":"#55595f","line":"#e5e6e8","edge":"#4f5358","confirmed":"#194cb1","contested":"#e8721c","bridged":"#cc4da9","unsettled":"#b3b5b8","mid":"#d6d7d9","seq0":"#e3eaf7"},"dark":{"surf":"#141618","ink":"#eceef0","muted":"#a2a7ad","line":"#2a2d31","edge":"#c6c9cd","confirmed":"#2e62c9","contested":"#de7515","bridged":"#d050ad","unsettled":"#5c6066","mid":"#3a3d42","seq0":"#1d2638"},"checks":{"light":"<b>Validator, light:</b> all checks pass. Worst colour-blind pair ΔE 10.1 (protan), target 8 or more.","dark":"<b>Validator, dark:</b> CVD separation: colour-blind separation in the 6–8 floor (legal only with shapes, which the strip has). Worst colour-blind pair ΔE 7.0 (protan), target 8 or more."}},{"name":"D · Sea blue, red, olive","why":"Map-like, the palette of a field atlas. Red for contested is the most direct reading of disagreement.","light":{"surf":"#ffffff","ink":"#152026","muted":"#53626c","line":"#e1e7ea","edge":"#4d5c66","confirmed":"#0074a5","contested":"#c74c3d","bridged":"#889a21","unsettled":"#b0bcc4","mid":"#d3dbe0","seq0":"#e0eef5"},"dark":{"surf":"#0f1419","ink":"#e6edf2","muted":"#9eadb8","line":"#253039","edge":"#bccad4","confirmed":"#1292c0","contested":"#b94739","bridged":"#89a01b","unsettled":"#55636e","mid":"#33404a","seq0":"#17303d"},"checks":{"light":"<b>Validator, light:</b> CVD separation: colour-blind separation in the 6–8 floor (legal only with shapes, which the strip has). Worst colour-blind pair ΔE 7.0 (deutan), target 8 or more.","dark":"<b>Validator, dark:</b> all checks pass. Worst colour-blind pair ΔE 11.6 (deutan), target 8 or more."}},{"name":"Current · Okabe-Ito blue, vermillion, green","why":"What viz/style.css uses now, shown for comparison.","light":{"surf":"#ffffff","ink":"#1d1d1b","muted":"#74746e","line":"#ececE7","edge":"#5f5f5b","confirmed":"#0072b2","contested":"#d55e00","bridged":"#009e73","unsettled":"#a8a8a8","mid":"#d0d0cc","seq0":"#e3eef6"},"dark":{"surf":"#1e1e1c","ink":"#ecebe6","muted":"#9a9993","line":"#2a2a28","edge":"#c9c9c3","confirmed":"#3a93d6","contested":"#e8692e","bridged":"#1a9e78","unsettled":"#6f6f6b","mid":"#3c3c39","seq0":"#202b35"},"checks":{"light":"<b>Validator, light:</b> all checks pass. Worst colour-blind pair ΔE 11.0 (deutan), target 8 or more.","dark":"<b>Validator, dark:</b> all checks pass. Worst colour-blind pair ΔE 9.7 (protan), target 8 or more."}}];
+const SHAPE={confirmed:'circle',contested:'square',unsettled:'diamond',bridged:'triangle',no_test:'hollow'};
+const NAME={confirmed:'confirmed',contested:'contested',unsettled:'unsettled',bridged:'bridged',no_test:'no test'};
+// OKLab mixing for ramps
+const lin=c=>{c/=255;return c<=0.04045?c/12.92:((c+0.055)/1.055)**2.4};
+const toLab=h=>{const r=lin(parseInt(h.slice(1,3),16)),g=lin(parseInt(h.slice(3,5),16)),b=lin(parseInt(h.slice(5,7),16));
+ const l=Math.cbrt(0.4122214708*r+0.5363325363*g+0.0514459929*b),m=Math.cbrt(0.2119034982*r+0.6806995451*g+0.1073969566*b),s=Math.cbrt(0.0883024619*r+0.2817188376*g+0.6299787005*b);
+ return[0.2104542553*l+0.7936177850*m-0.0040720468*s,1.9779984951*l-2.4285922050*m+0.4505937099*s,0.0259040371*l+0.7827717662*m-0.8086757660*s]};
+const fromLab=([L,a,b])=>{const l=(L+0.3963377774*a+0.2158037573*b)**3,m=(L-0.1055613458*a-0.0638541728*b)**3,s=(L-0.0894841775*a-1.2914855480*b)**3;
+ const f=x=>{x=Math.min(1,Math.max(0,x));x=x<=0.0031308?12.92*x:1.055*x**(1/2.4)-0.055;return Math.round(x*255).toString(16).padStart(2,'0')};
+ return'#'+f(4.0767416621*l-3.3077115913*m+0.2309699292*s)+f(-1.2684380046*l+2.6097574011*m-0.3413193965*s)+f(-0.0041960863*l-0.7034186147*m+1.7076147010*s)};
+const mix=(a,b,t)=>{const A=toLab(a),B=toLab(b);return fromLab(A.map((v,i)=>v+(B[i]-v)*t))};
+function mark(v,x,y,P){const c=P[v]||P.unsettled,r=5.5,ring='stroke="'+P.surf+'" stroke-width="2"';
+ const sh=SHAPE[v]||'circle';
+ if(sh==='circle')return'<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+c+'" '+ring+'/>';
+ if(sh==='hollow')return'<circle cx="'+x+'" cy="'+y+'" r="'+(r-1)+'" fill="'+P.surf+'" stroke="'+P.edge+'" stroke-width="1.8"/>';
+ if(sh==='square')return'<rect x="'+(x-r+.5)+'" y="'+(y-r+.5)+'" width="'+(2*r-1)+'" height="'+(2*r-1)+'" rx="1.5" fill="'+c+'" '+ring+'/>';
+ if(sh==='diamond')return'<path d="M'+x+' '+(y-r-1)+'L'+(x+r+1)+' '+y+'L'+x+' '+(y+r+1)+'L'+(x-r-1)+' '+y+'Z" fill="'+c+'" stroke="'+P.edge+'" stroke-width="1.2"/>';
+ return'<path d="M'+x+' '+(y-r-1.5)+'L'+(x+r+1.5)+' '+(y+r)+'L'+(x-r-1.5)+' '+(y+r)+'Z" fill="'+c+'" '+ring+'/>';}
+function strip(P){const W=560,L=210,R=W-14,row=17,top=26,rows=DATA.sample,H=top+rows.length*row+24,X=s=>L+(s+1)/2*(R-L);
+ let s='<svg viewBox="0 0 '+W+' '+H+'">';
+ s+='<rect x="'+X(0)+'" y="'+(top-6)+'" width="'+(X(1)-X(0))+'" height="'+(rows.length*row+4)+'" fill="'+P.confirmed+'" fill-opacity=".07"/>';
+ [-1,-.5,0,.5,1].forEach(v=>{s+='<line x1="'+X(v)+'" x2="'+X(v)+'" y1="'+(top-6)+'" y2="'+(top+rows.length*row-2)+'" stroke="'+(v===0?P.edge:P.line)+'" stroke-width="'+(v===0?1.2:1)+'"/>';
+  s+='<text class="t" x="'+X(v)+'" y="'+(top+rows.length*row+14)+'" text-anchor="middle">'+(v>0?'+':v<0?'−':'')+Math.abs(v)+'</text>';});
+ s+='<text class="t" x="'+X(-1)+'" y="12">city data contradict the research</text><text class="t" x="'+X(1)+'" y="12" text-anchor="end">agree</text>';
+ rows.forEach((r,i)=>{const y=top+i*row+4;
+  s+='<text class="tk" x="'+(L-12)+'" y="'+(y+4)+'" text-anchor="end">'+r.id.slice(0,30)+'</text>';
+  if(r.s==null){s+='<text class="t" x="'+X(0)+'" y="'+(y+4)+'" text-anchor="middle">no test</text>';return;}
+  if(r.lo!=null&&r.hi-r.lo>0.02)s+='<line x1="'+X(r.lo)+'" x2="'+X(r.hi)+'" y1="'+y+'" y2="'+y+'" stroke="'+(P[r.v]||P.unsettled)+'" stroke-width="3" stroke-linecap="round" stroke-opacity="'+(r.v==='unsettled'?1:.55)+'"/>';
+  s+=mark(r.v,X(r.s),y,P)+'<title>'+NAME[r.v]+'</title>';});
+ return s+'</svg>';}
+function counts(P){const C=DATA.counts,order=['confirmed','bridged','unsettled','contested','no_test'],tot=order.reduce((a,k)=>a+C[k],0),W=560,H=58;
+ let s='<svg viewBox="0 0 '+W+' '+H+'">',x=0;
+ order.forEach(k=>{const w=C[k]/tot*W;if(w<=0)return;const fill=k==='no_test'?P.surf:P[k];
+  s+='<rect x="'+(x+1)+'" y="4" width="'+Math.max(w-2,1.5)+'" height="20" rx="3" fill="'+fill+'"'+(k==='no_test'||k==='unsettled'?' stroke="'+P.edge+'" stroke-width="1"':'')+'/>';
+  if(w>46)s+='<text class="tk" x="'+(x+4)+'" y="42">'+C[k]+' '+NAME[k]+'</text>';x+=w;});
+ s+='<text class="t" x="'+W+'" y="56" text-anchor="end">bridged '+C.bridged+', no test '+C.no_test+'; '+tot+' scored claims</text>';
+ return s+'</svg>';}
+function ramps(P){const W=560;let s='<svg viewBox="0 0 '+W+' 74">';const n=9,w=W/n;
+ for(let i=0;i<n;i++){const t=i/(n-1),c=t<.5?mix(P.contested,P.mid,t*2):mix(P.mid,P.confirmed,(t-.5)*2);s+='<rect x="'+(i*w+1)+'" y="0" width="'+(w-2)+'" height="18" rx="3" fill="'+c+'"/>';}
+ s+='<text class="t" x="0" y="31">−1 contradict</text><text class="t" x="'+W/2+'" y="31" text-anchor="middle">0 cannot tell</text><text class="t" x="'+W+'" y="31" text-anchor="end">+1 agree</text>';
+ const m=5,mw=W/m;for(let i=0;i<m;i++){const c=mix(P.seq0,P.confirmed,i/(m-1));s+='<rect x="'+(i*mw+1)+'" y="42" width="'+(mw-2)+'" height="18" rx="3" fill="'+c+'"/>';}
+ s+='<text class="t" x="0" y="72">low priority</text><text class="t" x="'+W+'" y="72" text-anchor="end">high priority (research-needed matrix)</text>';
+ return s+'</svg>';}
+function render(theme){const g=document.getElementById('grid');g.innerHTML='';
+ OPTS.forEach(o=>{const P=o[theme],d=document.createElement('section');d.className='opt';
+  d.style.cssText='--psurf:'+P.surf+';--pink:'+P.ink+';--pmuted:'+P.muted+';--pline:'+P.line;
+  d.innerHTML='<h2>'+o.name+'</h2><p class="why">'+o.why+'</p>'
+  +'<div class="lab">Verdict colours</div><div class="sw">'+['confirmed','contested','bridged','unsettled'].map(k=>'<div><i style="background:'+P[k]+(k==='unsettled'?';outline:1px solid '+P.edge+';outline-offset:-1px':'')+'"></i><b>'+NAME[k]+'</b><code>'+P[k]+'</code></div>').join('')+'</div>'
+  +'<div class="lab">Concordance strip, 22 real claims</div>'+strip(P)
+  +'<div class="lab">All claims by verdict</div>'+counts(P)
+  +'<div class="lab">Stance scale and priority scale</div>'+ramps(P)
+  +'<div class="checks">'+o.checks[theme]+'</div>';
+  g.appendChild(d);});}
+document.querySelectorAll('#theme button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#theme button').forEach(x=>x.classList.toggle('on',x===b));document.documentElement.dataset.theme=b.dataset.t;render(b.dataset.t);});
+document.getElementById('notes').innerHTML='Shapes stay fixed across every set: confirmed circle, contested square, unsettled diamond, bridged triangle, no test hollow circle. Each verdict is also named in the tooltip, so colour is never the only cue. The checks under each panel come from the dataviz palette validator, run on all pairs of the three verdict hues, since the strip mixes them in one view.';
+render('light');
+</script>
+</body>
+</html>

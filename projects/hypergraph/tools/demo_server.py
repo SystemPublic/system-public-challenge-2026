@@ -30,6 +30,27 @@ SLUG = re.compile(r"^[A-Za-z0-9_.-]{1,80}$")
 SEMVER = re.compile(r"^v\d+\.\d+\.\d+$")
 
 
+STARTED = __import__("time").strftime("%Y-%m-%d %H:%M:%S")
+
+
+def status(page: str) -> dict:
+    """The server is up; when the page file was last changed; which commit the folder is at (if it is a git checkout)."""
+    import subprocess
+    import time
+    out = {"ok": True, "server_started": STARTED, "now": time.strftime("%Y-%m-%d %H:%M:%S")}
+    f = ROOT / "viz" / page if re.match(r"^[a-z_]+\.html$", page or "") else None
+    if f and f.exists():
+        out["page"] = page
+        out["page_changed"] = time.strftime("%Y-%m-%d %H:%M", time.localtime(f.stat().st_mtime))
+    try:
+        r = subprocess.run(["git", "-C", str(ROOT), "log", "-1", "--format=%h %cd", "--date=format:%Y-%m-%d %H:%M"], capture_output=True, text=True, timeout=5)
+        if r.returncode == 0 and r.stdout.strip():
+            out["commit"], out["commit_time"] = r.stdout.strip().split(" ", 1)
+    except Exception:
+        pass
+    return out
+
+
 def lookup(term: str) -> dict:
     """Live: ask the city's table (today) for a Manhattan restaurant by name, then fetch each of its inspections
     from the June version on the Underlay and compare the scores."""
@@ -99,6 +120,8 @@ class Handler(SimpleHTTPRequestHandler):
                     v = cv.get(f"{cv.API}/collections/{d[side]['owner']}/{d[side]['slug']}/versions/{d[side]['version']}") or {}
                     d[side].update(hash=v.get("hash"), recordCount=v.get("recordCount"), createdAt=v.get("createdAt"))
                 return self._json(200, d)
+            if u.path == "/api/status":
+                return self._json(200, status(q.get("page", "")))
             if u.path == "/api/inspections/lookup":
                 return self._json(200, lookup(q.get("q", "")))
             if u.path == "/api/inspections/history":
