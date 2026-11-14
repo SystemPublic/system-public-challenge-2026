@@ -3,7 +3,7 @@
 **Team:** CAMOX
 **Members:** Daniel Mora (daMS2005), catxu632, vishnuskulkarni, yilalalalala
 **Challenge:** Build Challenge 2 (World Bank): Can the System Public Graph improve discovery across World Bank data and research, with an initial focus on the jobs agenda?
-**Pitch slides:** TODO
+**Pitch slides:** [CAMOX pitch deck](https://docs.google.com/presentation/d/1xuA0hpksckGR269tTugImOwm2YqhYrktC_q0eEo78FI/edit?usp=sharing)
 **Live demo:** [jobs evidence map](https://camox.onrender.com/#profile=1&project=10) and [malaria and gender](https://camox.onrender.com/#profile=2&project=11) (free hosting: the first load takes about a minute). Full app with accounts: [camox.onrender.com/v2](https://camox.onrender.com/v2/) ("Try the demo" opens it read-only)
 
 ## What it does
