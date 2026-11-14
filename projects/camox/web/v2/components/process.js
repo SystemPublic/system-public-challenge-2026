@@ -33,13 +33,13 @@ export function Process({ events, live, title = (n) => n }) {
   return html`<section class=${`process ${live ? 'live' : ''}`} aria-label="How this answer was built">
     ${m.question && html`<p class="pq"><span class="eyebrow">Question</span> ${m.question}</p>`}
     <div class="pflow">
-      <div class="pcol">${node('plan', 'Plan', m.plan, m.question ? plural(lanes.length, 'agent picked', 'agents picked') : 'Choosing agents')}</div>
-      <div class="pcol plane-set">${lanes.length ? lanes.map((a) => html`<div class="plane" key=${a.name}>
+      <div class="pcol">${node('plan', 'Plan: the planner picks agents and writes their tasks', m.plan, m.question ? plural(lanes.length, 'agent picked', 'agents picked') : 'Choosing agents')}</div>
+      <div class="pcol plane-set"><span class="eyebrow">Specialist agents, in parallel, each with its data sources</span>${lanes.length ? lanes.map((a) => html`<div class="plane" key=${a.name}>
         ${node(a.name, title(a.name), a, html`${plural(a.calls.length, 'tool call', 'tool calls')} ${[...a.sources].map((s) => html`<b class=${`psrc ${BADGE[s]}`}>${s}</b>`)}`)}
         ${a.t0 && html`<span class="ptime" aria-hidden="true"><span style=${{ left: `${(100 * (a.t0 - m.start)) / span}%`, width: `${Math.max(2, (100 * ((a.t1 || m.end) - a.t0)) / span)}%` }}></span></span>`}
       </div>`) : html`<p class="small muted">Agents start after the plan.</p>`}</div>
-      <div class="pcol">${node('write', 'Write', m.write, m.write.status === 'waiting' ? 'Summary and layout' : m.fix ? 'Rewrote once' : 'Summary written')}</div>
-      <div class="pcol">${node('verify', 'Verify', m.verify, v ? `${plural(v.claims_checked, 'claim', 'claims')} checked · ${v.issues.length ? plural(v.issues.length, 'issue', 'issues') : 'no issues'}`
+      <div class="pcol">${node('write', 'Write: the formatter writes the summary from the sections', m.write, m.write.status === 'waiting' ? 'Summary and layout' : m.fix ? 'Rewrote once' : 'Summary written')}</div>
+      <div class="pcol">${node('verify', 'Verify: claims checked against tool results', m.verify, v ? `${plural(v.claims_checked, 'claim', 'claims')} checked · ${v.issues.length ? plural(v.issues.length, 'issue', 'issues') : 'no issues'}`
         : m.fix ? `Fix pass for ${plural(m.fix, 'issue', 'issues')}` : 'Claims and numbers')}</div>
     </div>
     ${picked && html`<div class="pdetail">

@@ -1,5 +1,5 @@
 // One run: the question, a live taskboard over the SSE stream, the trace, and the answer.
-import { html, useState, useEffect, api, when, dur } from '../api.js';
+import { html, useState, useEffect, useRef, api, when, dur } from '../api.js';
 import { plural, short } from '../../sections.js';
 import { Answer } from './answer.js';
 import { Process } from './process.js';
@@ -51,9 +51,10 @@ export function Turn({ run, latest, firstPass, agents = [], onDone, onAgain }) {
 
   const summary = answer ? short(String(answer.summary || '').replace(/\s*\[[^\]]*10\.\d{4}[^\]]*\]/g, ''), 170) : '';
   return html`<article class=${`turn ${latest ? 'latest' : ''}`} id=${`run-${run.id}`}>
-    ${firstPass ? html`<p class="small muted">${live ? 'First pass running, started' : 'First pass ran'} ${when(run.created_at)}</p>`
-      : html`<div class="q"><p>${run.query}</p><time class="small muted">${when(run.created_at)}</time></div>`}
+    ${firstPass ? html`<p class="small muted"><span class="eyebrow">Data run</span> ${live ? 'First pass running, started' : 'First pass ran'} ${when(run.created_at)}</p>`
+      : html`<div class="q"><span class="eyebrow">${/^(data:|first pass)/i.test(run.query) ? 'Data run' : 'Question'}</span><p>${run.query}</p><time class="small muted">${when(run.created_at)}</time></div>`}
     ${live && html`<${LiveStatus} m=${m} conn=${conn} title=${title} hasAnswer=${!!answer} />`}
+    ${live && html`<${Thread} m=${m} title=${title} />`}
     <details class="trace" open=${traceOpen} onToggle=${toggleTrace}>
       <summary>${live ? 'Agents and tool calls' : events ? `Trace · ${plural([...m.agents.values()].length, 'agent', 'agents')}, ${plural(m.tools, 'tool call', 'tool calls')}, ${dur(m.ms)}` : 'Show agents and tool calls'}</summary>
       ${traceOpen && html`<${Process} events=${events} live=${live} title=${title} />`}
@@ -75,6 +76,23 @@ function LiveStatus({ m, conn, title, hasAnswer }) {
   const pct = agents.length ? Math.round((100 * done) / agents.length) : 4;
   return html`<div class=${`live ${m.error ? 'bad' : ''}`} role="status"><i class="dot busy"></i><span>${text}</span>
     <span class="bar" aria-hidden="true"><span style=${{ width: `${m.formatting || hasAnswer ? 100 : Math.max(pct, 6)}%` }}></span></span></div>`;
+}
+
+// Live tool thread: every tool call as it arrives, newest at the bottom, with elapsed times.
+function Thread({ m, title }) {
+  const [, tick] = useState(0);
+  const ref = useRef(null);
+  useEffect(() => { const t = setInterval(() => tick((x) => x + 1), 1000); return () => clearInterval(t); }, []);
+  useEffect(() => { const el = ref.current; if (el) el.scrollTop = el.scrollHeight; }, [m.tools]);
+  const ago = (t) => (t ? `${Math.round((Date.now() - new Date(t)) / 1000)} s` : '');
+  const agents = [...m.agents.values()];
+  return html`<div class="tool-thread small">
+    <p class="muted">Run time ${ago(m.t0) || '0 s'}${agents.length ? ' · ' : ''}${agents.map((a) => html`<span key=${a.name} class="t-agent">
+      ${a.status === 'running' && html`<i class="dot busy"></i>`}${title(a.name)} ${a.status === 'running' ? ago(a.t0) : STATUS[a.status].toLowerCase()} </span>`)}</p>
+    <ol ref=${ref} style=${{ maxHeight: '14rem', overflowY: 'auto', margin: 0 }}>
+      ${!m.tools && html`<li class="muted"><i class="dot busy"></i> Planning: choosing agents for this question…</li>`}
+      ${m.all.map((t, i) => html`<li key=${i}><strong>${title(t.agent)}</strong> · ${t.tool.replaceAll('_', ' ')} · ${toolLine(t)}</li>`)}
+    </ol></div>`;
 }
 
 const STATUS = { waiting: 'Waiting', running: 'Running', retrying: 'Retrying', done: 'Done', failed: 'Failed' };
@@ -104,7 +122,7 @@ const result = (t) => short(String(t.summary || '').split(/\s+(?:->|→)\s+/).sl
 const toolLine = (t) => `${mainArg(t) ? `“${short(mainArg(t), 90)}” → ` : ''}${result(t)}`;
 
 function traceModel(events) {
-  const m = { plan: null, agents: new Map(), formatting: false, verifying: false, error: null, done: null, tools: 0, last: null, context: null };
+  const m = { all: [], t0: events[0]?.t, plan: null, agents: new Map(), formatting: false, verifying: false, error: null, done: null, tools: 0, last: null, context: null };
   const agent = (n) => m.agents.get(n) || m.agents.set(n, { name: n, status: 'waiting', tools: [], notes: [] }).get(n);
   for (const e of events) {
     if (e.type === 'context') m.context = e;
@@ -113,7 +131,7 @@ function traceModel(events) {
       m.plan = e.plan; e.plan.tasks.forEach((t) => { agent(t.agent).instruction = t.instruction; });
     }
     if (e.type === 'agent_started') Object.assign(agent(e.agent), { status: 'running', instruction: e.instruction || agent(e.agent).instruction, t0: e.t });
-    if (e.type === 'tool_call') { const a = agent(e.agent); if (a.status === 'waiting') a.status = 'running'; a.tools.push(e); m.tools++; m.last = e; }
+    if (e.type === 'tool_call') { const a = agent(e.agent); if (a.status === 'waiting') a.status = 'running'; a.tools.push(e); m.all.push(e); m.tools++; m.last = e; }
     if (e.type === 'retry') { agent(e.agent).status = 'retrying'; agent(e.agent).notes.push(['Retry', e.error]); }
     if (e.type === 'agent_done') Object.assign(agent(e.agent), { status: 'done', t1: e.t });
     if (e.type === 'agent_failed') { Object.assign(agent(e.agent), { status: 'failed', t1: e.t }); agent(e.agent).notes.push(['Failed', e.error]); }

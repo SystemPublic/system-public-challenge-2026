@@ -98,7 +98,7 @@ function findingsTable(fs, verdict) {
 }
 
 const card = (c) => `<article class="card">
-    <div class="card-head">${verdictPill(c.verdict, 'button', 'type="button" data-findings aria-expanded="false" title="Show why, and the findings"')}<h4>${esc(c.claim)}</h4></div>
+    <div class="card-head">${verdictPill(c.verdict, 'button', `type="button" data-findings aria-expanded="false" title="${esc(`${cap(c.verdict)}: ${RULES[c.verdict] || ''} Click for the findings.`)}"`)}<h4>${esc(c.claim)}</h4></div>
     ${meter(c.meter)}
     <p>${esc(c.basis)}</p>
     ${findingsTable(c.findings || [], c.verdict)}
@@ -377,7 +377,8 @@ const RENDERERS = {
   policy: (s) => `<p><strong>Policy:</strong> ${esc(s.policy)}</p><ol class="chain">${s.links.map((l) => chainLink(l, weakest(s.links))).join('')}</ol>${facts([['Gaps', s.gaps]])}`,
   research: (s) => `<p>${linked(s.summary)}</p><ol class="sources">${s.sources.map(source).join('')}</ol>`,
 };
-const KIND = { evidence: 'Evidence', eda: 'Data', policy: 'Theory of change', research: 'Sources', indicator_map: 'Indicators' };
+const KIND = { evidence: 'Evidence', eda: 'Data charts', policy: 'Theory of change', research: 'Sources', indicator_map: 'Indicators' };
+const AGENT = { evidence: 'Graph evidence agent', eda: 'Data charts agent', policy: 'Policy chain agent', research: 'Research agent', indicator_map: 'Indicator map agent' };
 
 const fallback = (s) => `<p class="small muted">No view for "${esc(s.type)}" sections yet, so here is its data.</p><pre class="json">${esc(JSON.stringify(s, null, 2))}</pre>`;
 
@@ -399,18 +400,20 @@ function sourceLine(sources) {
 function section(s, sources) {
   let body;
   try { body = RENDERERS[s.type] ? RENDERERS[s.type](s) : fallback(s); } catch { body = fallback(s); }
-  return `<section class="sec"><header class="sec-head"><h3>${esc(s.title || s.type)}</h3><span class="kind">${esc(KIND[s.type] || s.type)}</span></header>${body}${sourceLine(sources)}</section>`;
+  const from = [...new Set((sources || []).map((l) => NAMES.find(([re]) => re.test(l))?.[1] || l))].join(', ');
+  const kind = [KIND[s.type] || s.type, AGENT[s.type], from].filter(Boolean).join(' · ');
+  return `<section class="sec"><header class="sec-head"><h3>${esc(s.title || s.type)}</h3><span class="kind" title="Section type · agent that wrote it · where its data comes from">${esc(kind)}</span></header>${body}${sourceLine(sources)}</section>`;
 }
 
 // Verification badge: what the checker looked at, and any issues it found.
 export function verifyPill(v) {
-  if (!v || typeof v !== 'object') return '<span class="pill">Not verified</span>';
+  if (!v || typeof v !== 'object') return '<span class="pill" title="The verifier agent checks claims and numbers against the tool results">Not verified: the verifier did not finish</span>';
   const issues = Array.isArray(v.issues) ? v.issues : [];
   const ok = v.status === 'verified';
   const major = issues.filter((i) => i.severity === 'major').length;
-  const label = ok ? [`Verified`, `${plural(v.claims_checked ?? 0, 'claim', 'claims')} checked`, issues.length ? plural(issues.length, 'note', 'notes') : ''].filter(Boolean).join(' · ')
-    : `${plural(major || issues.length, 'issue', 'issues')} found`;
-  return `<span class="pill ${ok ? 's-backed' : 's-partial'}">${esc(label)}</span>`;
+  const label = ok ? [`Verified by the verifier agent: ${plural(v.claims_checked ?? 0, 'claim', 'claims')} checked against the tool results`, issues.length ? plural(issues.length, 'note', 'notes') : ''].filter(Boolean).join(' · ')
+    : `${plural(major || issues.length, 'issue', 'issues')} found: listed below`;
+  return `<span class="pill ${ok ? 's-backed' : 's-partial'}" title="The verifier agent re-checks the answer's claims and numbers against the agents' tool results. Click for details.">${esc(label)}</span>`;
 }
 function verification(v) {
   if (!v || typeof v !== 'object') return verifyPill(v);
@@ -431,7 +434,7 @@ export function renderAnswer(a, run) {
   const body = (a.sections || []).map((s, i) => section(s, a.section_sources?.[i])).join('');
   const caveats = a.caveats?.length ? `<h4 class="small">Caveats</h4><ul class="caveats">${a.caveats.map((c) => `<li>${citedText(c)}</li>`).join('')}</ul>` : '';
   const jump = refs.list.length ? `<a class="sources-jump small" href="#refs-${run}" data-ref="refs-${run}">Sources (${refs.list.length})</a>` : '';
-  return `<div class="answer-top"><div><div class="answer-head"><h3>Answer</h3>${verification(a.verification)}${jump}</div>
+  return `<div class="answer-top"><div><div class="answer-head"><h3>Answer</h3><span class="small muted">Summary (formatter agent, cites the sections below)</span>${verification(a.verification)}${jump}</div>
     <p class="summary">${summary}</p>${caveats}</div><div class="graph-panel"></div></div>
     ${body}${references()}`;
 }
