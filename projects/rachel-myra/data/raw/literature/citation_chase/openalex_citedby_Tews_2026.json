@@ -1,0 +1,825 @@
+[
+ {
+  "id": "https://openalex.org/W7212851120",
+  "doi": "https://doi.org/10.1080/0886022x.2026.2727744",
+  "title": "Occupational heatstroke-induced acute kidney injury: a narrative review of mechanisms, biomarkers, and the timing of blood purification initiation",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7212851120",
+   "doi": "https://doi.org/10.1080/0886022x.2026.2727744",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/42734065",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/13577279"
+  },
+  "primary_location": {
+   "id": "doi:10.1080/0886022x.2026.2727744",
+   "doi": "https://doi.org/10.1080/0886022x.2026.2727744",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1080/0886022x.2026.2727744",
+   "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/0886022X.2026.2727744?needAccess=true",
+   "source": {
+    "id": "https://openalex.org/S159051371",
+    "display_name": "Renal Failure",
+    "issn_l": "0886-022X",
+    "issn": [
+     "0886-022X",
+     "1525-6049"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "oarl",
+     "poland-40",
+     "russia-white-list-2"
+    ],
+    "host_organization": "https://openalex.org/P4310320547",
+    "host_organization_name": "Taylor & Francis",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320547",
+     "https://openalex.org/P4310320449"
+    ],
+    "host_organization_lineage_names": [
+     "Taylor & Francis",
+     "Informa"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by-nc",
+   "license_id": "https://openalex.org/licenses/cc-by-nc",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Renal Failure",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5151682800",
+     "display_name": "Sisi Wang",
+     "orcid": "https://orcid.org/0009-0001-6052-5410",
+     "observed_orcids": [
+      "https://orcid.org/0009-0001-6052-5410"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210112295",
+      "display_name": "Qianjiang Central Hospital",
+      "ror": "https://ror.org/0238gcb09",
+      "country_code": "CN",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210112295"
+      ]
+     }
+    ],
+    "countries": [
+     "CN"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Sisi Wang",
+    "raw_affiliation_strings": [
+     "Emergency Intensive Care Unit, Qianjiang Central Hospital"
+    ],
+    "raw_orcid": "https://orcid.org/0009-0001-6052-5410",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Emergency Intensive Care Unit, Qianjiang Central Hospital",
+      "institution_ids": [
+       "https://openalex.org/I4210112295"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7213470758",
+  "doi": "https://doi.org/10.1007/s11940-026-00891-9",
+  "title": "Night-Time Heat Stress, Ageing and Neurodegeneration - The Next HOT Topic",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7213470758",
+   "doi": "https://doi.org/10.1007/s11940-026-00891-9"
+  },
+  "primary_location": {
+   "id": "doi:10.1007/s11940-026-00891-9",
+   "doi": "https://doi.org/10.1007/s11940-026-00891-9",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1007/s11940-026-00891-9",
+   "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11940-026-00891-9.pdf",
+   "source": {
+    "id": "https://openalex.org/S73587531",
+    "display_name": "Current Treatment Options in Neurology",
+    "issn_l": "1092-8480",
+    "issn": [
+     "1092-8480",
+     "1534-3138"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "norway-1",
+     "poland-100",
+     "russia-white-list-1"
+    ],
+    "host_organization": "https://openalex.org/P4310319900",
+    "host_organization_name": "Springer Science+Business Media",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310319900",
+     "https://openalex.org/P4310319965"
+    ],
+    "host_organization_lineage_names": [
+     "Springer Science+Business Media",
+     "Springer Nature"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Current Treatment Options in Neurology",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5011731184",
+     "display_name": "Shawn Dexiao Kong",
+     "orcid": "https://orcid.org/0000-0002-1717-5929",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1717-5929"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I129604602",
+      "display_name": "The University of Sydney",
+      "ror": "https://ror.org/0384j8v12",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Shawn Dexiao Kong",
+    "raw_affiliation_strings": [
+     "Charles Perkins Centre, University of Sydney, Sydney, Australia",
+     "Healthy Brain Ageing Program, Brain and Mind Centre, University of Sydney,  Sydney, Australia",
+     "School of Psychology, Faculty of Science, University of Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Charles Perkins Centre, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Healthy Brain Ageing Program, Brain and Mind Centre, University of Sydney,  Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     },
+     {
+      "raw_affiliation_string": "School of Psychology, Faculty of Science, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5074444246",
+     "display_name": "Federico Tartarini",
+     "orcid": "https://orcid.org/0000-0002-8739-5062",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8739-5062"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I129604602",
+      "display_name": "The University of Sydney",
+      "ror": "https://ror.org/0384j8v12",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Federico Tartarini",
+    "raw_affiliation_strings": [
+     "School of Architecture, Design and Planning, University of Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Architecture, Design and Planning, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5074078031",
+     "display_name": "Yorgi Mavros",
+     "orcid": "https://orcid.org/0000-0002-2588-0425",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2588-0425"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I129604602",
+      "display_name": "The University of Sydney",
+      "ror": "https://ror.org/0384j8v12",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Yorgi Mavros",
+    "raw_affiliation_strings": [
+     "Charles Perkins Centre, University of Sydney, Sydney, Australia",
+     "School of Health Sciences, Faculty of Medicine and Health, University of Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Charles Perkins Centre, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     },
+     {
+      "raw_affiliation_string": "School of Health Sciences, Faculty of Medicine and Health, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5036569172",
+     "display_name": "Tamara Schikowski",
+     "orcid": "https://orcid.org/0000-0002-4559-9374",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4559-9374"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210101048",
+      "display_name": "Leibniz Institute of Environmental Medicine",
+      "ror": "https://ror.org/0163xqp73",
+      "country_code": "DE",
+      "type": "nonprofit",
+      "lineage": [
+       "https://openalex.org/I315704651",
+       "https://openalex.org/I4210101048"
+      ]
+     }
+    ],
+    "countries": [
+     "DE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Tamara Schikowski",
+    "raw_affiliation_strings": [
+     "Department of Epidemiology, IUF-Leibniz Research Institute for Environmental Medicine, D\u00fcsseldorf, Germany"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Epidemiology, IUF-Leibniz Research Institute for Environmental Medicine, D\u00fcsseldorf, Germany",
+      "institution_ids": [
+       "https://openalex.org/I4210101048"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5077825658",
+     "display_name": "Sharon Linda Naismith",
+     "orcid": "https://orcid.org/0000-0001-9076-2778",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9076-2778"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I129604602",
+      "display_name": "The University of Sydney",
+      "ror": "https://ror.org/0384j8v12",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Sharon L Naismith",
+    "raw_affiliation_strings": [
+     "Charles Perkins Centre, University of Sydney, Sydney, Australia",
+     "Healthy Brain Ageing Program, Brain and Mind Centre, University of Sydney,  Sydney, Australia",
+     "School of Psychology, Faculty of Science, University of Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Charles Perkins Centre, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Healthy Brain Ageing Program, Brain and Mind Centre, University of Sydney,  Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     },
+     {
+      "raw_affiliation_string": "School of Psychology, Faculty of Science, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7225715082",
+  "doi": "https://doi.org/10.1007/s10741-026-10695-3",
+  "title": "Heatwaves in HF: From risk to clinical action",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7225715082",
+   "doi": "https://doi.org/10.1007/s10741-026-10695-3",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/43007547"
+  },
+  "primary_location": {
+   "id": "doi:10.1007/s10741-026-10695-3",
+   "doi": "https://doi.org/10.1007/s10741-026-10695-3",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1007/s10741-026-10695-3",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S82077098",
+    "display_name": "Heart Failure Reviews",
+    "issn_l": "1382-4147",
+    "issn": [
+     "1382-4147",
+     "1573-7322"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "dongbi-c",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310319900",
+    "host_organization_name": "Springer Science+Business Media",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310319900",
+     "https://openalex.org/P4310319965"
+    ],
+    "host_organization_lineage_names": [
+     "Springer Science+Business Media",
+     "Springer Nature"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Heart Failure Reviews",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5024523034",
+     "display_name": "Antonio Luca Maria Parlati",
+     "orcid": "https://orcid.org/0009-0005-2297-7845",
+     "observed_orcids": [
+      "https://orcid.org/0009-0005-2297-7845"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I71267560",
+      "display_name": "University of Naples Federico II",
+      "ror": "https://ror.org/05290cv24",
+      "country_code": "IT",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I71267560"
+      ]
+     }
+    ],
+    "countries": [
+     "IT"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Antonio Luca Maria Parlati",
+    "raw_affiliation_strings": [
+     "Department of Advanced Biomedical Sciences, Federico II University, Via Sergio Pansini 5, Naples, 80131, Italy. almparlati@gmail.com"
+    ],
+    "raw_orcid": "https://orcid.org/0009-0005-2297-7845",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Advanced Biomedical Sciences, Federico II University, Via Sergio Pansini 5, Naples, 80131, Italy. almparlati@gmail.com",
+      "institution_ids": [
+       "https://openalex.org/I71267560"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5121769607",
+     "display_name": "Luca Martini",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210134849",
+      "display_name": "Azienda Ospedaliera Universitaria Senese",
+      "ror": "https://ror.org/02s7et124",
+      "country_code": "IT",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210134849"
+      ]
+     }
+    ],
+    "countries": [
+     "IT"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Luca Martini",
+    "raw_affiliation_strings": [
+     "Heart-Chest-Vessel Department, Cardiology Unit, Azienda Ospedaliera Universitaria Senese, Siena, Italy"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heart-Chest-Vessel Department, Cardiology Unit, Azienda Ospedaliera Universitaria Senese, Siena, Italy",
+      "institution_ids": [
+       "https://openalex.org/I4210134849"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5054138147",
+     "display_name": "Cristina Madaudo",
+     "orcid": "https://orcid.org/0000-0002-9151-4335",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-9151-4335"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210147076",
+      "display_name": "Azienda Ospedaliera Universitaria Policlinico \"Paolo Giaccone\" di Palermo",
+      "ror": "https://ror.org/05p21z194",
+      "country_code": "IT",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210147076"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I900890020",
+      "display_name": "University of Palermo",
+      "ror": "https://ror.org/044k9ta02",
+      "country_code": "IT",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I900890020"
+      ]
+     }
+    ],
+    "countries": [
+     "IT"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Cristina Madaudo",
+    "raw_affiliation_strings": [
+     "Division of Cardiology, Department of Excellence of Sciences for Health Promotion and Maternal-Child Care, Internal Medicine and Specialties (ProMISE) \"G. D'Alessandro\", Paolo Giaccone Hospital, University of Palermo, Palermo, Italy"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Division of Cardiology, Department of Excellence of Sciences for Health Promotion and Maternal-Child Care, Internal Medicine and Specialties (ProMISE) \"G. D'Alessandro\", Paolo Giaccone Hospital, University of Palermo, Palermo, Italy",
+      "institution_ids": [
+       "https://openalex.org/I4210147076",
+       "https://openalex.org/I900890020"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7225787555",
+  "doi": "https://doi.org/10.2147/cia.s645450",
+  "title": "Managing Chronic Conditions During Extreme Heat Among Older Women in China: An Interpretative Phenomenological Study to Inform Heat-Health Intervention Design",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7225787555",
+   "doi": "https://doi.org/10.2147/cia.s645450"
+  },
+  "primary_location": {
+   "id": "doi:10.2147/cia.s645450",
+   "doi": "https://doi.org/10.2147/cia.s645450",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.2147/cia.s645450",
+   "pdf_url": "https://www.dovepress.com/article/download/122176",
+   "source": {
+    "id": "https://openalex.org/S68257898",
+    "display_name": "Clinical Interventions in Aging",
+    "issn_l": "1176-9092",
+    "issn": [
+     "1176-9092",
+     "1178-1998"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doaj",
+     "dongbi-c",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "oarl",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320348",
+    "host_organization_name": "Dove Medical Press",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320348",
+     "https://openalex.org/P4310320547"
+    ],
+    "host_organization_lineage_names": [
+     "Dove Medical Press",
+     "Taylor & Francis"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by-nc",
+   "license_id": "https://openalex.org/licenses/cc-by-nc",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Clinical Interventions in Aging",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5161461971",
+     "display_name": "Heng Zhou",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I87780372",
+      "display_name": "Chongqing Medical University",
+      "ror": "https://ror.org/017z00e58",
+      "country_code": "CN",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I87780372"
+      ]
+     }
+    ],
+    "countries": [
+     "CN"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Heng Zhou",
+    "raw_affiliation_strings": [
+     "Mental Health Education and Counseling Center, Chongqing Medical University, Chongqing, People\u2019s Republic of China;"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Mental Health Education and Counseling Center, Chongqing Medical University, Chongqing, People\u2019s Republic of China;",
+      "institution_ids": [
+       "https://openalex.org/I87780372"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5161436302",
+     "display_name": "Narina A Samah",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4576418",
+      "display_name": "University of Technology Malaysia",
+      "ror": "https://ror.org/026w31v75",
+      "country_code": "MY",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4576418"
+      ]
+     }
+    ],
+    "countries": [
+     "MY"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Narina A Samah",
+    "raw_affiliation_strings": [
+     "Faculty of Educational Sciences and Technology, Universiti Teknologi Malaysia, Johor Bahru, Johor, Malaysia;"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Faculty of Educational Sciences and Technology, Universiti Teknologi Malaysia, Johor Bahru, Johor, Malaysia;",
+      "institution_ids": [
+       "https://openalex.org/I4576418"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5070327409",
+     "display_name": "\u8096\u6218\u8bf4",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I200296433",
+      "display_name": "Chinese Academy of Medical Sciences & Peking Union Medical College",
+      "ror": "https://ror.org/02drdmm93",
+      "country_code": "CN",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I200296433"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210146387",
+      "display_name": "Guang\u2019anmen Hospital",
+      "ror": "https://ror.org/04gjmb875",
+      "country_code": "CN",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210146387"
+      ]
+     }
+    ],
+    "countries": [
+     "CN"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Zhanshuo Xiao",
+    "raw_affiliation_strings": [
+     "Department of Dermatology, Guang\u2019anmen Hospital, China Academy of Chinese Medical Sciences, Beijing, People\u2019s Republic of China"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Dermatology, Guang\u2019anmen Hospital, China Academy of Chinese Medical Sciences, Beijing, People\u2019s Republic of China",
+      "institution_ids": [
+       "https://openalex.org/I200296433",
+       "https://openalex.org/I4210146387"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5100612446",
+     "display_name": "Yilin Jiang",
+     "orcid": "https://orcid.org/0000-0002-0381-2974",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-0381-2974"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I87780372",
+      "display_name": "Chongqing Medical University",
+      "ror": "https://ror.org/017z00e58",
+      "country_code": "CN",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I87780372"
+      ]
+     }
+    ],
+    "countries": [
+     "CN"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Yilin Jiang",
+    "raw_affiliation_strings": [
+     "Mental Health Education and Counseling Center, Chongqing Medical University, Chongqing, People\u2019s Republic of China;"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-0381-2974",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Mental Health Education and Counseling Center, Chongqing Medical University, Chongqing, People\u2019s Republic of China;",
+      "institution_ids": [
+       "https://openalex.org/I87780372"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

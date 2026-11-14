@@ -1,0 +1,99 @@
+{
+  "id": "sbh",
+  "name": "SBH Health System (St. Barnabas Hospital)",
+  "short_name": "SBH",
+  "region": { "city": "Bronx", "county": "Bronx County", "state": "NY", "county_fips": "36005" },
+  "timezone": "America/New_York",
+  "catchment_zips": ["10457", "10458", "10460", "10456", "10453", "10468", "10462", "10467", "10459", "10472", "10452"],
+  "catchment_source": "data/processed/sbh_catchment_zips.csv (SBH Health System 2025-2027 Community Service Plan, p.21, primary service area ranked by patients)",
+  "demo_zips": ["10453", "10457", "10458", "10460"],
+  "languages": ["en", "es"],
+  "fallback_language": "en",
+  "data_sources": {
+    "heatrisk_current": "data/processed/heatrisk_zip_current.json",
+    "heatrisk_replay": "data/processed/heatrisk_zip_replay.csv",
+    "cpc_outlook": "data/processed/cpc_outlook_nyc.json",
+    "historical_odds": "data/processed/nyc_heatwave_daily_odds.csv",
+    "historical_odds_column": "cp_p_in_heatwave_smoothed15d",
+    "historical_within_14d_column": "cp_p_heatwave_within_14d",
+    "hvi_by_zip": "data/processed/hvi_zcta.csv",
+    "hvi_source": "NYC DOHMH Heat Vulnerability Index by ZCTA 2020 (NYC Open Data 4mhf-duep); 1 = lowest, 5 = highest",
+    "ac_households": "data/processed/ac_households_nyc.csv",
+    "ac_source": "NYC DOHMH EHDP indicator 2185 (NYC Housing and Vacancy Survey), % households with AC by sub-borough area",
+    "ac_year": 2023,
+    "zip_to_ac_area": {
+      "10452": { "geotype": "Subboro", "geoid": "3", "name": "Highbridge/South Concourse", "approximate": true },
+      "10453": { "geotype": "Subboro", "geoid": "4", "name": "University Heights/Fordham", "approximate": true },
+      "10456": { "geotype": "Subboro", "geoid": "2", "name": "Morrisania/East Tremont", "approximate": true },
+      "10457": { "geotype": "Subboro", "geoid": "2", "name": "Morrisania/East Tremont", "approximate": true },
+      "10458": { "geotype": "Subboro", "geoid": "4", "name": "University Heights/Fordham", "approximate": true },
+      "10459": { "geotype": "Subboro", "geoid": "1", "name": "Mott Haven/Hunts Point", "approximate": true },
+      "10460": { "geotype": "Subboro", "geoid": "2", "name": "Morrisania/East Tremont", "approximate": true },
+      "10462": { "geotype": "Subboro", "geoid": "9", "name": "Pelham Parkway", "approximate": true },
+      "10467": { "geotype": "Subboro", "geoid": "5", "name": "Kingsbridge Heights/Mosholu", "approximate": true },
+      "10468": { "geotype": "Subboro", "geoid": "5", "name": "Kingsbridge Heights/Mosholu", "approximate": true },
+      "10472": { "geotype": "Subboro", "geoid": "7", "name": "Soundview/Parkchester", "approximate": true }
+    },
+    "cooling_places": {
+      "file": "data/processed/cooling_places_nyc.geojson",
+      "source_label": "NYC Emergency Management Cool Options finder + NYC Parks rec centers + NYC FacDB libraries + OpenStreetMap (see data/raw/place/README.md)",
+      "include_categories": ["cooling center", "library", "community centre", "recreation center", "mall", "department store", "senior centre", "social centre", "other indoor cool option"],
+      "arrive_before": "11:00",
+      "arrival_buffer_min": 15,
+      "max_radius_km": 3.0,
+      "detour_factor": { "value": 1.3, "source": "ASSUMPTION: typical urban grid circuity (network ÷ straight-line distance ≈ 1.2-1.4); replaced by routed time when cooling_match.csv exists" },
+      "walk_speed_mps": {
+        "adult": { "value": 1.07, "source": "MUTCD 2009 §4E.06 pedestrian design speed 3.5 ft/s" },
+        "older_or_mobility": { "value": 0.8, "source": "Western et al., Age and Ageing 2025 (PMC12682371): older adults about 0.77-0.9 m/s (spec §4.4a.3)" }
+      },
+      "max_walk_min": 25,
+      "naive_transit": { "wait_min": 10, "speed_kmh": 12, "source": "ASSUMPTION: naive bus estimate (10-min wait + 12 km/h door-to-door); replaced by GTFS routing when available" },
+      "older_adult_only_facility_types": ["Older Adult Center"],
+      "older_adult_min_age": 60
+    },
+    "routing": {
+      "contacts_routed": "data/processed/synthetic/contacts_routed.csv",
+      "cooling_match": "data/processed/synthetic/cooling_match.csv",
+      "fallback": "data/processed/synthetic/contacts.csv naive_travel_min (straight-line placeholder, assumption A14)",
+      "contact_travel_columns": [
+        { "minutes": "fastest_nocar_min", "mode": "fastest_nocar_mode", "why": "Conservative default: walking or subway (we don't know whether the contact has a car; free-flow driving is optimistic)" },
+        { "minutes": "fastest_min", "mode": "fastest_mode", "why": "Only when no walk/subway route exists (e.g. out-of-area contacts: driving only)" }
+      ]
+    },
+    "knowledge_base": ["data/kb/knowledge_base.json", "data/kb/mock_knowledge_base.json", "data/kb/anticholinergic_burden.csv"]
+  },
+  "alert_rules": {
+    "heatrisk_scale": "NWS/CDC HeatRisk 0-4 (0 green, 1 yellow, 2 orange, 3 red, 4 magenta)",
+    "call_today_min_heatrisk": { "very_high": 2 },
+    "call_today_if_uncovered": { "min_readiness": "high", "min_heatrisk": 3, "definition": "No trusted contact close enough (routed travel within the time budget) AND (lives alone OR not opted in to safety alerts): automation can't reach anyone in time, so a human calls." },
+    "call_before_heat_wave": { "lookahead_days": 7, "min_heatrisk": 2, "min_readiness": "high" },
+    "auto_safety_alert_min_heatrisk": 3,
+    "cooling_text_min_heatrisk": 2,
+    "heat_card_min_med_level": 2,
+    "heat_card_if_storage_sensitive": true,
+    "drill_heatrisk": 3,
+    "notes": "Alerts fire only on high-risk days (spec §4.4 safety rules, §10.4 alert fatigue). Orange (2) calls only very-high-readiness patients; red (3) and magenta (4) add high-readiness patients that automation can't cover (no close-enough contact and living alone / not opted in); other high-readiness patients are covered by the automatic safety alert, cooling-place text, check-ins and contact escalation. Red and magenta trigger the automatic safety alert for high/very-high readiness. Heat cards are non-urgent education (no DND breakthrough), so they are not gated on the forecast. Thresholds are a team design choice (ASSUMPTION), tunable per health system."
+  },
+  "escalation": {
+    "t_max_min": { "very_high": 45, "high": 60, "medium": 90, "low": 120 },
+    "t_max_source": "Spec §4.4a.1 starting values: classic heat stroke mortality more than halves if cooled below 38.9 °C within 1 h (PMC10227888; Bouchama et al., Crit Care 2007); exertional: cool within 30 min. 45/60/90 min leave time for cooling and EMS. 'low' = 120 min is an ASSUMPTION (low-readiness patients are not enrolled in active escalation by default).",
+    "tighten_to_very_high_if_heatrisk_gte": 3,
+    "response_p90_min": {
+      "patient_app_or_sms": { "value": 15, "source": "ASSUMPTION pending extraction: p90 notification response time from Pielot et al. MobileHCI 2014 (10.1145/2628363.2628364), Pielot et al. 2018, Mehrotra et al. CHI 2016 (spec §4.4a.4: medians still to extract). Replaced by the person's own p90 learned from check-ins." },
+      "patient_voice_call": { "value": 20, "source": "ASSUMPTION: voice call needs retries (two attempts ~10 min apart)." },
+      "older_adult_extra": { "value": 0, "source": "ASSUMPTION: 0 min until older-adult phone response data is extracted (spec §4.4a.8); knob kept so it can be raised without code changes." },
+      "contact": { "value": 15, "source": "ASSUMPTION pending extraction (same notification literature as above); 15 min matches the routing agent's contact rule (data/raw/routing/contacts_summary.json)." }
+    },
+    "resend_fraction_of_wait": 0.5,
+    "checkin_densify": { "min_heatrisk": 3, "min_readiness": "very_high", "add_times": ["14:00", "16:00", "18:00"] },
+    "waking_window": ["08:00", "21:00"]
+  },
+  "contacts": {
+    "final_step": "Clinic call list: a human (nurse / care manager) decides on a wellness check. The system never requests 911 or a wellness check on its own.",
+    "buddy_program": "NYC Be a Buddy (verify) / clinic volunteer buddy",
+    "clinic_call_list_label": "SBH heat call list"
+  },
+  "help_programs": {
+    "ac_assistance": "NYS HEAP Cooling Assistance (free or discounted air conditioner)"
+  }
+}

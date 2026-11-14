@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:14564256,exclude,E4 rhabdomyolysis with pneumonia; NMS excluded,antipsychotics,none,case_series
+PMID:15023108,exclude,E6 dantrolene pharmacology review,none,none,review
+PMID:15083292,include,uncertain: I1 drug-induced hyperthermia in HD; summer and dehydration as contributors,antipsychotics,hyperthermia,case_series
+PMID:15103698,exclude,E7 stability-indicating analytical method,antipsychotics,none,lab_bench
+PMID:15107195,include,I1 heat stroke during clozapine monotherapy,antipsychotics,heat_illness,case_report
+PMID:15469188,include,"uncertain: I1 review of impaired heat-stress thermoregulation in schizophrenia, neuroleptic confounding",antipsychotics,sweating_thermoregulation,review
+PMID:15533033,exclude,"E5 NMS case, no environmental heat",antipsychotics,none,case_report
+PMID:15608494,exclude,E6 postoperative hyperthermia; chlorpromazine as treatment,antipsychotics,none,case_report
+PMID:15620522,exclude,E7 stability-indicating analytical method,antipsychotics,none,lab_bench
+PMID:15734110,exclude,E5 autopsy hyperthermia cases; no environmental heat link for drug cases,multiple,none,case_series
+PMID:15991733,exclude,E5 amisulpride fatal overdose,antipsychotics,none,case_report
+PMID:16040214,exclude,E3 solid-state thermal behaviour of olanzapine polymorphs,antipsychotics,none,lab_bench
+PMID:16222094,exclude,E2 maize seedling heat tolerance,none,none,other
+PMID:16227063,exclude,E5 toxin-induced hyperthermic syndromes review,multiple,none,review
+PMID:16254491,exclude,E6 heat stroke neuropathology; no drug studied,none,none,case_series
+PMID:16378669,exclude,E5 malignant catatonia/NMS case,antipsychotics,none,case_report
+PMID:16515235,exclude,E4 ICU fever review,none,none,review
+PMID:16538186,exclude,E7 genotyping assay method,none,none,other
+PMID:16567230,exclude,E5 toxin-induced hyperthermia review,multiple,none,review
+PMID:16726141,exclude,E2 hyperthermic mice,none,none,other
+PMID:16804507,exclude,E5 recurrent NMS case,antipsychotics,none,case_report
+PMID:1685257,exclude,E5 NMS case,antipsychotics,none,case_report
+PMID:16943262,exclude,E6 L-dopa withdrawal syndrome; none of 15 drugs,none,none,case_report
+PMID:16948232,exclude,E5 lethal catatonia case,antipsychotics,none,case_report
+PMID:17087148,exclude,E2 wheat root study,none,none,other
+PMID:1713033,exclude,E2 in-vitro erythrocyte hyperthermia study,none,none,other
+PMID:17371,exclude,E2 rabbit hyperthermia study,antipsychotics,none,other
+PMID:17401555,exclude,"E7 hypothermia, not heat",antipsychotics,none,pharmacovigilance
+PMID:17482029,exclude,"E6 toxicology review, no heat",multiple,none,review
+PMID:17525560,exclude,E5 fatal NMS case,antipsychotics,none,case_report
+PMID:17583440,exclude,E5 autonomic overactivity syndromes model,none,none,review
+PMID:17640827,exclude,E6 hydrotherapy hypothesis paper,none,none,other
+PMID:17803969,exclude,E2 cell uptake study,none,none,other
+PMID:17877051,exclude,E5 anesthesia in patient with prior NMS and heat stroke; no drug-heat link,antipsychotics,none,case_report
+PMID:17981421,include,uncertain: I2 risperidone tablet degradation at 40 C/75% RH storage,antipsychotics,stability_potency,lab_bench
+PMID:18098216,exclude,E6 haematological toxicity review,antipsychotics,none,review
+PMID:18193732,exclude,E7 stability-indicating analytical method,antipsychotics,none,lab_bench
+PMID:18251210,exclude,"E8 annual geriatrics literature summary, no data",none,none,review
+PMID:18534286,include,"I2 prehospital drugs (haloperidol, ipratropium) thermally cycled to 54 C",multiple,stability_potency,lab_bench
+PMID:18712508,exclude,E6 parkinsonism-hyperpyrexia; none of 15 drugs,none,none,review
+PMID:19009597,exclude,E3 aripiprazole polymorph thermochemistry,antipsychotics,none,lab_bench
+PMID:19342269,exclude,E5 drug overdose hyperthermia autopsies,multiple,none,case_series
+PMID:19530966,exclude,E7 genotyping assay method,none,none,other
+PMID:19557101,exclude,E5 excited delirium review,none,none,review
+PMID:19615387,exclude,E2 receptor/behavioural pharmacology in animals,none,none,other
+PMID:1974232,exclude,E5 NMS case,antipsychotics,none,case_report
+PMID:1974430,exclude,E7 physico-chemical/stability characterization of investigational compound,antipsychotics,none,lab_bench
+PMID:1982391,exclude,E7 gas chromatography purity method,antipsychotics,none,lab_bench
+PMID:1983307,exclude,E5 neuroleptic poisoning review,antipsychotics,none,review
+PMID:19863904,include,"I1 case-control, 2007 summer heat; neuroleptic use in heat-related admissions",antipsychotics,hospitalization_ed,case_control
+PMID:20082998,exclude,E6 parkinsonism emergencies review,none,none,review
+PMID:20104062,include,I1 2003 heatwave deaths; antidepressant and antipsychotic use,multiple,mortality,case_control
+PMID:2039645,exclude,"E6 intraoperative hyperthermia, no drug of interest",none,none,case_report
+PMID:20528148,include,uncertain: I2 loxapine aerosol device deposition across ambient temperatures,antipsychotics,device_performance,lab_bench
+PMID:2059648,exclude,E2 in-vitro erythrocyte vesicle study,none,none,other
+PMID:21075576,exclude,E7 stability-indicating UPLC method,antipsychotics,none,lab_bench
+PMID:211608,include,I1 fatal heat stroke cases incl. psychiatric patient on neuroleptics,antipsychotics,heat_illness,case_series
+PMID:21280636,exclude,E3 chemical synthesis,none,none,other
+PMID:21283987,include,uncertain: I2 ziprasidone complex degradation at elevated temperature,antipsychotics,stability_potency,lab_bench
+PMID:2133042,exclude,E5 fatal hyperthermia syndrome neurochemistry,antipsychotics,none,case_series
+PMID:2135061,exclude,E5 NMS during tiapride,antipsychotics,none,case_report
+PMID:21397470,exclude,E6 HSAN IV; chlorpromazine for behaviour,none,none,case_report
+PMID:21440403,exclude,E5 excited delirium review,none,none,review
+PMID:21525407,exclude,E2 animal TAAR1 study,none,none,other
+PMID:2159489,exclude,E2 Neurospora study,none,none,other
+PMID:21626387,exclude,E7 olanzapine hypothermia,antipsychotics,none,case_series
+PMID:21714889,exclude,E6 NMS after antiparkinsonian withdrawal,none,none,case_report
+PMID:21777173,exclude,E5 olanzapine overdose,antipsychotics,none,case_report
+PMID:21886711,exclude,E4 DRESS fever pattern,antipsychotics,none,case_report
+PMID:21941850,exclude,E6 pharmacogenetics review,none,none,review
+PMID:21966518,exclude,E2 Candida study,none,none,other
+PMID:22004679,exclude,E7 analytical stock solution stability at ambient temperature,antipsychotics,none,lab_bench
+PMID:22010430,exclude,E5 olanzapine poisoning case series,antipsychotics,none,case_series
+PMID:22048928,exclude,E5 neuroleptic-induced catatonia,antipsychotics,none,case_series
+PMID:22114263,exclude,E2 mouse MDMA study,none,none,other
+PMID:22325880,exclude,E2 tobacco cell heat tolerance,none,none,other
+PMID:22503802,exclude,E2 cell endocytosis study,none,none,other
+PMID:2262466,exclude,E2 cat thermal tachypnea,none,none,other
+PMID:22699544,exclude,E5 movement disorder emergencies review,none,none,review
+PMID:23446196,exclude,E5 ECT for NMS review,antipsychotics,none,review
+PMID:2345717,exclude,E6 heat illness overview; no drug studied,none,none,review
+PMID:23570966,exclude,E7 biological sample stability for TDM,antipsychotics,none,lab_bench
+PMID:2371808,exclude,E5 malignant hyperthermia syndrome,none,none,review
+PMID:239134,exclude,E7 mass spectrometry metabolite identification,antipsychotics,none,lab_bench
+PMID:23978563,exclude,E5 cocaine toxicity treatment review,antipsychotics,none,review
+PMID:240174,exclude,"E7 phenothiazine injection pH stability, not heat",antipsychotics,none,lab_bench
+PMID:24156974,exclude,E7 neuroleptic hypothermia,antipsychotics,none,pharmacovigilance
+PMID:24176477,exclude,"E5 drug-induced hyperthermia review, no environmental data",none,none,review
+PMID:24356039,exclude,E5 bath salts sympathomimetic syndrome,none,none,case_report
+PMID:24375070,exclude,"E6 thermally generated aerosol QT study, no heat exposure",antipsychotics,none,rct
+PMID:24485426,exclude,E6 heat wave autopsies; no drug named in abstract,none,none,case_series
+PMID:24565885,exclude,E5 synthetic cathinones review,none,none,review
+PMID:24765654,exclude,E3 hot-melt extrusion formulation processing,antipsychotics,none,lab_bench
+PMID:24860681,include,I1 fatal exertional heat stroke working in sun; antipsychotic use,antipsychotics,heat_illness,case_report
+PMID:24941207,exclude,E4 olanzapine hepatotoxicity with fever,antipsychotics,none,case_report
+PMID:24979758,exclude,E3 graphene oxide nanomaterial,none,none,other
+PMID:25527975,exclude,E7 forced-degradation analytical method,antipsychotics,none,lab_bench
+PMID:25650049,exclude,E6 MK-212 challenge in unmedicated schizophrenia,none,none,human_lab_study
+PMID:2568673,exclude,E6 drug myopathy review,none,none,review
+PMID:2572373,exclude,"E4 clozapine review; benign hyperthermia, no environmental heat",antipsychotics,none,review
+PMID:2573107,exclude,E5 clozapine experience review,antipsychotics,none,review
+PMID:25770800,exclude,E5 excited delirium guidelines,none,none,review
+PMID:25915853,exclude,E6 suicidal drownings; no drug exposure studied,none,none,cross_sectional
+PMID:25952138,exclude,E3 polymer matrix thermal properties,antipsychotics,none,lab_bench
+PMID:25980637,exclude,E7 forced degradation/photostability method,antipsychotics,none,lab_bench
+PMID:2654542,exclude,E6 drug-induced rhabdomyolysis review,none,none,review
+PMID:26547296,exclude,E7 bioanalytical method and sample light stability,antipsychotics,none,lab_bench
+PMID:26808334,exclude,E3 chemical synthesis of iloperidone,antipsychotics,none,lab_bench
+PMID:26824434,exclude,E6 Parkinson disease heat-wave time series; drugs only in background,none,none,time_series
+PMID:26985969,exclude,E5 novel psychoactive substances review,none,none,review
+PMID:27074342,include,I1 heat stroke during heat wave on long-term clozapine,antipsychotics,heat_illness,case_report
+PMID:2716604,exclude,E5 heat stroke and NMS compared as separate cases,none,none,case_series
+PMID:27320963,exclude,E2 in-vitro FMO3 metabolism,none,none,other
+PMID:27517801,exclude,E5 excited delirium ketamine case series,none,none,case_series
+PMID:27581757,exclude,E6 ICU pyrexia review,none,none,review
+PMID:27606355,exclude,E5 antipsychotic intolerance in anti-NMDAR encephalitis,antipsychotics,none,cohort
+PMID:2762673,exclude,E6 alcohol withdrawal hyperthermia; neuroleptics excluded,none,none,case_series
+PMID:27685194,exclude,E7 risperidone hypothermia,antipsychotics,none,case_report
+PMID:2811893,exclude,E6 levodopa off-period NMS-like episode,none,none,case_report
+PMID:28245127,exclude,E3 melt extrusion salt preparation,antipsychotics,none,lab_bench

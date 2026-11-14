@@ -1,0 +1,89 @@
+{
+ "displayFieldName": "fcst_date",
+ "fieldAliases": {
+  "objectid": "objectid",
+  "fcst_date": "fcst_date",
+  "valid_seas": "valid_seas",
+  "prob": "prob",
+  "cat": "cat",
+  "idp_ingestdate": "GIS Ingest Date",
+  "idp_filedate": "GIS File Date",
+  "idp_source": "Source",
+  "st_area(shape)": "st_area(shape)",
+  "st_perimeter(shape)": "st_perimeter(shape)"
+ },
+ "fields": [
+  {
+   "name": "objectid",
+   "type": "esriFieldTypeOID",
+   "alias": "objectid"
+  },
+  {
+   "name": "fcst_date",
+   "type": "esriFieldTypeDate",
+   "alias": "fcst_date",
+   "length": 8
+  },
+  {
+   "name": "valid_seas",
+   "type": "esriFieldTypeString",
+   "alias": "valid_seas",
+   "length": 254
+  },
+  {
+   "name": "prob",
+   "type": "esriFieldTypeDouble",
+   "alias": "prob"
+  },
+  {
+   "name": "cat",
+   "type": "esriFieldTypeString",
+   "alias": "cat",
+   "length": 254
+  },
+  {
+   "name": "idp_ingestdate",
+   "type": "esriFieldTypeDate",
+   "alias": "GIS Ingest Date",
+   "length": 8
+  },
+  {
+   "name": "idp_filedate",
+   "type": "esriFieldTypeDate",
+   "alias": "GIS File Date",
+   "length": 8
+  },
+  {
+   "name": "idp_source",
+   "type": "esriFieldTypeString",
+   "alias": "Source",
+   "length": 50
+  },
+  {
+   "name": "st_area(shape)",
+   "type": "esriFieldTypeDouble",
+   "alias": "st_area(shape)"
+  },
+  {
+   "name": "st_perimeter(shape)",
+   "type": "esriFieldTypeDouble",
+   "alias": "st_perimeter(shape)"
+  }
+ ],
+ "features": [
+  {
+   "attributes": {
+    "objectid": 14,
+    "fcst_date": 1792022400000,
+    "valid_seas": "NDJ 2026-2027",
+    "prob": 40.0,
+    "cat": "Above",
+    "idp_ingestdate": 1792430297000,
+    "idp_filedate": 1792430117000,
+    "idp_source": "lead1_NDJ_temp",
+    "st_area(shape)": 3178104849114.3384,
+    "st_perimeter(shape)": 35401276.98987271
+   }
+  }
+ ]
+}

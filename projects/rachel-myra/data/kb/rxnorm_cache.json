@@ -1,0 +1,308 @@
+{
+ "amphetamine": {
+  "rxcui": "725",
+  "rxnorm_name": "amphetamine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amphetamine&search=0"
+ },
+ "aripiprazole": {
+  "rxcui": "89013",
+  "rxnorm_name": "aripiprazole",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=aripiprazole&search=0"
+ },
+ "atenolol": {
+  "rxcui": "1202",
+  "rxnorm_name": "atenolol",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=atenolol&search=0"
+ },
+ "benztropine": {
+  "rxcui": "1424",
+  "rxnorm_name": "benztropine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=benztropine&search=0"
+ },
+ "bumetanide": {
+  "rxcui": "1808",
+  "rxnorm_name": "bumetanide",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=bumetanide&search=0"
+ },
+ "buprenorphine": {
+  "rxcui": "1819",
+  "rxnorm_name": "buprenorphine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=buprenorphine&search=0"
+ },
+ "canagliflozin": {
+  "rxcui": "1373458",
+  "rxnorm_name": "canagliflozin",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=canagliflozin&search=0"
+ },
+ "carvedilol": {
+  "rxcui": "20352",
+  "rxnorm_name": "carvedilol",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=carvedilol&search=0"
+ },
+ "chlorthalidone": {
+  "rxcui": "2409",
+  "rxnorm_name": "chlorthalidone",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=chlorthalidone&search=0"
+ },
+ "citalopram": {
+  "rxcui": "2556",
+  "rxnorm_name": "citalopram",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=citalopram&search=0"
+ },
+ "clozapine": {
+  "rxcui": "2626",
+  "rxnorm_name": "clozapine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=clozapine&search=0"
+ },
+ "dapagliflozin": {
+  "rxcui": "1488564",
+  "rxnorm_name": "dapagliflozin",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=dapagliflozin&search=0"
+ },
+ "empagliflozin": {
+  "rxcui": "1545653",
+  "rxnorm_name": "empagliflozin",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=empagliflozin&search=0"
+ },
+ "enalapril": {
+  "rxcui": "3827",
+  "rxnorm_name": "enalapril",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=enalapril&search=0"
+ },
+ "epinephrine": {
+  "rxcui": "3992",
+  "rxnorm_name": "epinephrine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=epinephrine&search=0"
+ },
+ "escitalopram": {
+  "rxcui": "321988",
+  "rxnorm_name": "escitalopram",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=escitalopram&search=0"
+ },
+ "fentanyl": {
+  "rxcui": "4337",
+  "rxnorm_name": "fentanyl",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=fentanyl&search=0"
+ },
+ "fluoxetine": {
+  "rxcui": "4493",
+  "rxnorm_name": "fluoxetine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=fluoxetine&search=0"
+ },
+ "furosemide": {
+  "rxcui": "4603",
+  "rxnorm_name": "furosemide",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=furosemide&search=0"
+ },
+ "haloperidol": {
+  "rxcui": "5093",
+  "rxnorm_name": "haloperidol",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=haloperidol&search=0"
+ },
+ "hydrochlorothiazide": {
+  "rxcui": "5487",
+  "rxnorm_name": "hydrochlorothiazide",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=hydrochlorothiazide&search=0"
+ },
+ "indapamide": {
+  "rxcui": "5764",
+  "rxnorm_name": "indapamide",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=indapamide&search=0"
+ },
+ "insulin aspart": {
+  "rxcui": "51428",
+  "rxnorm_name": "insulin aspart, human",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=insulin+aspart&search=0"
+ },
+ "insulin glargine": {
+  "rxcui": "274783",
+  "rxnorm_name": "insulin glargine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=insulin+glargine&search=0"
+ },
+ "insulin human": {
+  "rxcui": "253182",
+  "rxnorm_name": "insulin, regular, human",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=insulin+human&search=0"
+ },
+ "insulin lispro": {
+  "rxcui": "86009",
+  "rxnorm_name": "insulin lispro",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=insulin+lispro&search=0"
+ },
+ "lisdexamfetamine": {
+  "rxcui": "700810",
+  "rxnorm_name": "lisdexamfetamine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lisdexamfetamine&search=0"
+ },
+ "lisinopril": {
+  "rxcui": "29046",
+  "rxnorm_name": "lisinopril",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lisinopril&search=0"
+ },
+ "lithium": {
+  "rxcui": "6448",
+  "rxnorm_name": "lithium",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lithium&search=0"
+ },
+ "lithium carbonate": {
+  "rxcui": "42351",
+  "rxnorm_name": "lithium carbonate",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lithium+carbonate&search=0"
+ },
+ "losartan": {
+  "rxcui": "52175",
+  "rxnorm_name": "losartan",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=losartan&search=0"
+ },
+ "metformin": {
+  "rxcui": "6809",
+  "rxnorm_name": "metformin",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metformin&search=0"
+ },
+ "methylphenidate": {
+  "rxcui": "6901",
+  "rxnorm_name": "methylphenidate",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=methylphenidate&search=0"
+ },
+ "metoprolol": {
+  "rxcui": "6918",
+  "rxnorm_name": "metoprolol",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metoprolol&search=0"
+ },
+ "olanzapine": {
+  "rxcui": "61381",
+  "rxnorm_name": "olanzapine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=olanzapine&search=0"
+ },
+ "olmesartan": {
+  "rxcui": "321064",
+  "rxnorm_name": "olmesartan",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=olmesartan&search=0"
+ },
+ "oxybutynin": {
+  "rxcui": "32675",
+  "rxnorm_name": "oxybutynin",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=oxybutynin&search=0"
+ },
+ "paroxetine": {
+  "rxcui": "32937",
+  "rxnorm_name": "paroxetine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=paroxetine&search=0"
+ },
+ "propranolol": {
+  "rxcui": "8787",
+  "rxnorm_name": "propranolol",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=propranolol&search=0"
+ },
+ "quetiapine": {
+  "rxcui": "51272",
+  "rxnorm_name": "quetiapine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=quetiapine&search=0"
+ },
+ "ramipril": {
+  "rxcui": "35296",
+  "rxnorm_name": "ramipril",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ramipril&search=0"
+ },
+ "risperidone": {
+  "rxcui": "35636",
+  "rxnorm_name": "risperidone",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=risperidone&search=0"
+ },
+ "sertraline": {
+  "rxcui": "36437",
+  "rxnorm_name": "sertraline",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=sertraline&search=0"
+ },
+ "solifenacin": {
+  "rxcui": "322167",
+  "rxnorm_name": "solifenacin",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=solifenacin&search=0"
+ },
+ "tolterodine": {
+  "rxcui": "119565",
+  "rxnorm_name": "tolterodine",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=tolterodine&search=0"
+ },
+ "topiramate": {
+  "rxcui": "38404",
+  "rxnorm_name": "topiramate",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=topiramate&search=0"
+ },
+ "torsemide": {
+  "rxcui": "38413",
+  "rxnorm_name": "torsemide",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=torsemide&search=0"
+ },
+ "trihexyphenidyl": {
+  "rxcui": "10811",
+  "rxnorm_name": "trihexyphenidyl",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=trihexyphenidyl&search=0"
+ },
+ "trospium": {
+  "rxcui": "236778",
+  "rxnorm_name": "trospium",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=trospium&search=0"
+ },
+ "valsartan": {
+  "rxcui": "69749",
+  "rxnorm_name": "valsartan",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=valsartan&search=0"
+ },
+ "zonisamide": {
+  "rxcui": "39998",
+  "rxnorm_name": "zonisamide",
+  "tty": "IN",
+  "via": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=zonisamide&search=0"
+ }
+}

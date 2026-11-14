@@ -1,0 +1,127 @@
+drug,outcome,heat_core_outcome,findings,distinct_studies,example_variable_pairs
+lithium,heat illness/stroke,True,0,0,
+lithium,hyperthermia/body temp,True,0,0,
+lithium,ambient heat/heat wave,True,0,0,
+lithium,sweating,True,1,1,Lithium carbonate therapy (10 weeks) <-> sweat chloride concentration
+lithium,dehydration/volume,False,0,0,
+lithium,hyponatremia,False,4,1,lithium therapy <-> hospitalization due to hyponatraemia | lithium therapy <-> hospitalization due to hyponatraemia | newly initiated lithium therapy <-> hospitalization due to hyponatraemia
+lithium,acute kidney injury,False,2,1,new use of lithium <-> acute kidney injury (AKI) | lithium values greater than 1.0 mmol/L <-> acute kidney injury (AKI)
+loop diuretics,heat illness/stroke,True,0,0,
+loop diuretics,hyperthermia/body temp,True,0,0,
+loop diuretics,ambient heat/heat wave,True,0,0,
+loop diuretics,sweating,True,0,0,
+loop diuretics,dehydration/volume,False,1,1,loop diuretic use <-> dehydration diagnosis
+loop diuretics,hyponatremia,False,8,4,dose of loop diuretics <-> hospital-acquired hyponatremia | use of furosemide <-> hospitalization due to hyponatraemia | loop diuretic users <-> 30-day mortality (among patients hospitalized with hyponatremia)
+loop diuretics,acute kidney injury,False,44,33,furosemide <-> vancomycin-induced acute kidney injury | Loop diuretics use <-> hospital mortality (among patients with cardiac surgery-associated acute kidney injury) | loop diuretics <-> risk of acute kidney injury
+thiazides,heat illness/stroke,True,0,0,
+thiazides,hyperthermia/body temp,True,0,0,
+thiazides,ambient heat/heat wave,True,0,0,
+thiazides,sweating,True,0,0,
+thiazides,dehydration/volume,False,1,1,thiazide diuretic use <-> dehydration diagnosis
+thiazides,hyponatremia,False,24,18,Exposure to thiazide diuretics <-> severe hyponatremia | history of thiazide-induced hyponatraemia <-> risk of osteoporotic fracture (among patients with thiazide-induced hyponatraemia) | Chlorthalidone <-> risk of hyponatremia
+thiazides,acute kidney injury,False,3,3,thiazide diuretics <-> risk of acute kidney injury | HCTZ Group (with Hydrochlorothiazide) [vs Placebo Group (without Hydrochlorothiazide)] <-> Onset of Acute Renal Failure | Chlorthalidone <-> acute renal failure
+diuretics (any),heat illness/stroke,True,0,0,
+diuretics (any),hyperthermia/body temp,True,0,0,
+diuretics (any),ambient heat/heat wave,True,0,0,
+diuretics (any),sweating,True,0,0,
+diuretics (any),dehydration/volume,False,2,1,thiazide diuretic use <-> dehydration diagnosis | loop diuretic use <-> dehydration diagnosis
+diuretics (any),hyponatremia,False,26,13,Exposure to thiazide diuretics <-> severe hyponatremia | hyponatremia group [vs control group] <-> use of diuretics | Thiazide diuretics <-> hyponatraemia
+diuretics (any),acute kidney injury,False,63,47,"number of drugs associated between non-steroidal anti-inflammatory drugs, ACEis, ARBs and diuretics <-> risk of acute kidney injury | RAAS inhibitors/diuretics <-> acute kidney injury | early diuretic use <-> acute kidney injury"
+ACEi/ARB,heat illness/stroke,True,0,0,
+ACEi/ARB,hyperthermia/body temp,True,0,0,
+ACEi/ARB,ambient heat/heat wave,True,0,0,
+ACEi/ARB,sweating,True,1,1,Angiotensin receptor blockers (ARBs) <-> night sweats
+ACEi/ARB,dehydration/volume,False,0,0,
+ACEi/ARB,hyponatremia,False,0,0,
+ACEi/ARB,acute kidney injury,False,82,58,renin-angiotensin-inhibitors (medication treatment) <-> acute kidney injury | angiotensin receptor blockers <-> acute kidney injury | use of angiotensin-converting enzyme inhibitors <-> acute kidney injury (AKI)
+beta blockers,heat illness/stroke,True,0,0,
+beta blockers,hyperthermia/body temp,True,1,1,patients given metoprolol [vs patients given placebo] <-> body temperature
+beta blockers,ambient heat/heat wave,True,1,1,Ambient temperature <-> daily average of atenolol
+beta blockers,sweating,True,2,1,Propranolol-treated group [vs Control group] <-> Density of active sweat glands | Propranolol-treated group [vs Control group] <-> Sweat rate
+beta blockers,dehydration/volume,False,0,0,
+beta blockers,hyponatremia,False,0,0,
+beta blockers,acute kidney injury,False,11,10,use of any Nonselective beta-blockers <-> stage 2 acute kidney injury (>200% increase in serum creatinine) | care in the acute kidney injury follow-up clinic <-> prescriptions for β-blockers | Beta-blocker responders [vs Non-responders to beta-blockers] <-> Mean number of acute kidney injury episodes
+insulin,heat illness/stroke,True,0,0,
+insulin,hyperthermia/body temp,True,0,0,
+insulin,ambient heat/heat wave,True,0,0,
+insulin,sweating,True,0,0,
+insulin,dehydration/volume,False,1,1,Patient comorbidities of insulin-dependent diabetes <-> dehydration treatments (DT)
+insulin,hyponatremia,False,6,4,insulins <-> hospitalization due to hyponatremia | use of insulin <-> hospital-acquired hyponatraemia | Cases with hospital-acquired hyponatraemia (in-hospital decrease in serum sodium >or= 7 mmol/l to < 136 mmol/l) vs. Normonatraemic controls <-> Use of insulin
+insulin,acute kidney injury,False,12,10,"Acute kidney injury non-recovery <-> hypoglycemia risk, new insulin prescriptions, mean HbA1c levels | Tissue inhibitor of metalloproteinases 2 (TIMP-2) and insulinlike growth factor binding protein 7 (IGFBP7) levels <-> survival between biomarker-positive and biomarker-negative patients in the absence of functional criteria for acute kidney injury | insulin-dependent diabetes <-> acute renal failure"
+SGLT2 inhibitors,heat illness/stroke,True,0,0,
+SGLT2 inhibitors,hyperthermia/body temp,True,0,0,
+SGLT2 inhibitors,ambient heat/heat wave,True,0,0,
+SGLT2 inhibitors,sweating,True,0,0,
+SGLT2 inhibitors,dehydration/volume,False,1,1,Empagliflozin arm [vs Metformin arm] <-> Volume depletion (among patients with T2DM during Ramadan)
+SGLT2 inhibitors,hyponatremia,False,0,0,
+SGLT2 inhibitors,acute kidney injury,False,24,20,dapagliflozin <-> acute kidney injury | use of empagliflozin <-> events of special interest (including lower limb amputations and acute renal failure [ARF]) | dapagliflozin <-> acute kidney injury
+anticholinergics,heat illness/stroke,True,0,0,
+anticholinergics,hyperthermia/body temp,True,0,0,
+anticholinergics,ambient heat/heat wave,True,0,0,
+anticholinergics,sweating,True,0,0,
+anticholinergics,dehydration/volume,False,0,0,
+anticholinergics,hyponatremia,False,2,1,anticholinergic risk scale (ARS) score <-> in-hospital mortality among patients without hyponatremia | anticholinergic risk scale (ARS) score <-> in-hospital mortality among patients with hyponatremia
+anticholinergics,acute kidney injury,False,0,0,
+antipsychotics,heat illness/stroke,True,0,0,
+antipsychotics,hyperthermia/body temp,True,1,1,drug-free schizophrenic patients [vs schizophrenic patients maintained on antipsychotic drugs] <-> body temperature
+antipsychotics,ambient heat/heat wave,True,0,0,
+antipsychotics,sweating,True,1,1,daily dose of clozapine <-> clozapine level in sweat
+antipsychotics,dehydration/volume,False,1,1,dehydration <-> risk of neuroleptic malignant syndrome
+antipsychotics,hyponatremia,False,9,6,Typical antipsychotics <-> risk of hyponatremia | use of an atypical antipsychotic <-> 30-day risk of hospitalization with hyponatremia | antipsychotic use <-> hyponatraemia/syndrome of inappropriate antidiuretic hormone secretion
+antipsychotics,acute kidney injury,False,19,4,atypical antipsychotics <-> risk of acute kidney injury | users of atypical antipsychotics <-> acute kidney injury and related outcomes | use of atypical antipsychotic drugs <-> hospitalization with acute kidney injury
+antidepressants/SSRIs,heat illness/stroke,True,0,0,
+antidepressants/SSRIs,hyperthermia/body temp,True,1,1,citalopram perfusion [vs baseline] <-> body temperature
+antidepressants/SSRIs,ambient heat/heat wave,True,0,0,
+antidepressants/SSRIs,sweating,True,0,0,
+antidepressants/SSRIs,dehydration/volume,False,0,0,
+antidepressants/SSRIs,hyponatremia,False,15,8,Fluoxetine treatment [vs Placebo treatment] <-> Number of hyponatraemia cases | newly initiated sertraline <-> hospitalization due to hyponatremia | selective serotonin reuptake inhibitor (SSRI) <-> hyponatremia reports
+antidepressants/SSRIs,acute kidney injury,False,0,0,
+topiramate/zonisamide,heat illness/stroke,True,0,0,
+topiramate/zonisamide,hyperthermia/body temp,True,0,0,
+topiramate/zonisamide,ambient heat/heat wave,True,0,0,
+topiramate/zonisamide,sweating,True,1,1,patients receiving topiramate [vs healthy controls with no signs or symptoms of pulmonary or gastrointestinal disease and a negative family history for cystic fibrosis] <-> sweat chloride concentration
+topiramate/zonisamide,dehydration/volume,False,0,0,
+topiramate/zonisamide,hyponatremia,False,0,0,
+topiramate/zonisamide,acute kidney injury,False,0,0,
+stimulants,heat illness/stroke,True,0,0,
+stimulants,hyperthermia/body temp,True,0,0,
+stimulants,ambient heat/heat wave,True,0,0,
+stimulants,sweating,True,0,0,
+stimulants,dehydration/volume,False,0,0,
+stimulants,hyponatremia,False,0,0,
+stimulants,acute kidney injury,False,0,0,
+NSAIDs,heat illness/stroke,True,0,0,
+NSAIDs,hyperthermia/body temp,True,0,0,
+NSAIDs,ambient heat/heat wave,True,1,1,Ambient temperature <-> daily average of naproxen
+NSAIDs,sweating,True,0,0,
+NSAIDs,dehydration/volume,False,1,1,Codeine/Acetaminophen group [vs Ibuprofen/Acetaminophen group] <-> emergency department visits or admission for dehydration
+NSAIDs,hyponatremia,False,1,1,non-steroidal anti-inflammatory drugs <-> hyponatremia
+NSAIDs,acute kidney injury,False,48,24,"use of ibuprofen <-> acute kidney injury | number of drugs associated between non-steroidal anti-inflammatory drugs, ACEis, ARBs and diuretics <-> risk of acute kidney injury | use of nonsteroidal anti-inflammatory drugs (NSAIDs) <-> Acute kidney injury"
+opioids/fentanyl,heat illness/stroke,True,0,0,
+opioids/fentanyl,hyperthermia/body temp,True,0,0,
+opioids/fentanyl,ambient heat/heat wave,True,2,1,daily ambient temperature <-> emergency department visits for use or overdose of opioids | daily ambient temperature <-> overdose of opioids
+opioids/fentanyl,sweating,True,0,0,
+opioids/fentanyl,dehydration/volume,False,1,1,mandated opioid consent forms <-> hospital readmission for pain/dehydration
+opioids/fentanyl,hyponatremia,False,1,1,use of opioids <-> hospital-acquired hyponatraemia
+opioids/fentanyl,acute kidney injury,False,5,5,Type of anesthesia (opioid-based anesthesia vs volatile-anesthetic-based anesthesia) <-> Acute kidney injury | opioid dependency <-> acute kidney injury | Opioid use disorder (OUD) <-> acute kidney injury (AKI)
+benzodiazepines,heat illness/stroke,True,0,0,
+benzodiazepines,hyperthermia/body temp,True,0,0,
+benzodiazepines,ambient heat/heat wave,True,0,0,
+benzodiazepines,sweating,True,0,0,
+benzodiazepines,dehydration/volume,False,0,0,
+benzodiazepines,hyponatremia,False,1,1,prescription of benzodiazepine <-> hyponatremia
+benzodiazepines,acute kidney injury,False,0,0,
+metformin,heat illness/stroke,True,0,0,
+metformin,hyperthermia/body temp,True,0,0,
+metformin,ambient heat/heat wave,True,0,0,
+metformin,sweating,True,0,0,
+metformin,dehydration/volume,False,1,1,Empagliflozin arm [vs Metformin arm] <-> Volume depletion (among patients with T2DM during Ramadan)
+metformin,hyponatremia,False,2,1,metformin <-> hospitalization due to hyponatremia | metformin <-> hospitalization due to hyponatremia
+metformin,acute kidney injury,False,8,6,Metformin <-> Acute Kidney Injury | use of metformin <-> acute renal failure | metformin use <-> risk of acute kidney injury
+sulfonylureas,heat illness/stroke,True,0,0,
+sulfonylureas,hyperthermia/body temp,True,0,0,
+sulfonylureas,ambient heat/heat wave,True,0,0,
+sulfonylureas,sweating,True,0,0,
+sulfonylureas,dehydration/volume,False,0,0,
+sulfonylureas,hyponatremia,False,2,1,sulfonylureas <-> hospitalization due to hyponatremia | sulfonylureas <-> hospitalization due to hyponatremia
+sulfonylureas,acute kidney injury,False,1,1,Sulfonylurea <-> Acute Kidney Injury

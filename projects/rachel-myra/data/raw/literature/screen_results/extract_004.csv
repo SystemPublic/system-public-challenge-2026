@@ -1,0 +1,3 @@
+record_id,drug,drug_class,outcome,population,design,heat_definition,direction,effect_type,effect_value,ci_lower,ci_upper,effect_text,notes
+DOI:10.22541/authorea.15011916/v1,antipsychotics,antipsychotics,heatwave mortality,"narrative review; cited: people with schizophrenia, 2021 British Columbia heat event",review,extreme heat / heatwaves (2021 British Columbia heat event),harm,OR,2.43,1.52,4.01,adjusted odds ratio of 2.43 (95% CI 1.52-4.01),estimate quoted from a primary study within the review; Japanese SCCS found no difference
+DOI:10.22541/authorea.15011916/v1,lithium,lithium,lithium concentration / toxicity,narrative review,review,extreme heat; seasonal,null,,,,,,no clinically important average seasonal increase in lithium concentration

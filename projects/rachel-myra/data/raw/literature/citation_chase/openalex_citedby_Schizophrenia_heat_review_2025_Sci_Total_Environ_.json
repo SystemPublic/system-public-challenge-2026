@@ -1,0 +1,4983 @@
+[
+ {
+  "id": "https://openalex.org/W7162091437",
+  "doi": "https://doi.org/10.3390/pharmacy14030074",
+  "title": "Recognizing and Mitigating the Effects of Medication on Heat-Related Illness in Older Adults: A Scoping Review",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7162091437",
+   "doi": "https://doi.org/10.3390/pharmacy14030074",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/42200961",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/13214780"
+  },
+  "primary_location": {
+   "id": "doi:10.3390/pharmacy14030074",
+   "doi": "https://doi.org/10.3390/pharmacy14030074",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.3390/pharmacy14030074",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4210228566",
+    "display_name": "Pharmacy",
+    "issn_l": "2226-4787",
+    "issn": [
+     "2226-4787"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doaj",
+     "norway-1",
+     "poland-20",
+     "russia-white-list-3",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310310987",
+    "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310310987"
+    ],
+    "host_organization_lineage_names": [
+     "Multidisciplinary Digital Publishing Institute"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Pharmacy",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 4,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5136766113",
+     "display_name": "Lily M. Tews",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Lily M. Tews",
+    "raw_affiliation_strings": [
+     "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5064414625",
+     "display_name": "Daniel T. Abazia",
+     "orcid": "https://orcid.org/0000-0002-5826-1751",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5826-1751"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Daniel T. Abazia",
+    "raw_affiliation_strings": [
+     "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-5826-1751",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5046529010",
+     "display_name": "Hayley Blackburn",
+     "orcid": "https://orcid.org/0000-0003-3908-4494",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-3908-4494"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I6750721",
+      "display_name": "University of Montana",
+      "ror": "https://ror.org/0078xmk34",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I6750721"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Hayley Blackburn",
+    "raw_affiliation_strings": [
+     "Skaggs School of Pharmacy, University of Montana, Missoula, MT 59812, USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-3908-4494",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Skaggs School of Pharmacy, University of Montana, Missoula, MT 59812, USA",
+      "institution_ids": [
+       "https://openalex.org/I6750721"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5120286563",
+     "display_name": "Kiri Carmody",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Kiri Carmody",
+    "raw_affiliation_strings": [
+     "Skaggs School of Pharmacy & Pharmaceutical Sciences, University of Colorado, Aurora, CO 80045, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Skaggs School of Pharmacy & Pharmaceutical Sciences, University of Colorado, Aurora, CO 80045, USA",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5036732523",
+     "display_name": "Mary Barna Bridgeman",
+     "orcid": "https://orcid.org/0000-0001-7947-9875",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7947-9875"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Mary Barna Bridgeman",
+    "raw_affiliation_strings": [
+     "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-7947-9875",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7203667398",
+  "doi": "https://doi.org/10.1016/j.joclim.2026.100726",
+  "title": "Preventing heat-related illness in people with severe and persistent mental illness: a quality improvement educational intervention",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7203667398",
+   "doi": "https://doi.org/10.1016/j.joclim.2026.100726",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/42662472",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/13520974"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/j.joclim.2026.100726",
+   "doi": "https://doi.org/10.1016/j.joclim.2026.100726",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1016/j.joclim.2026.100726",
+   "pdf_url": "https://www.sciencedirect.com/science/article/pii/S266727822600074X/pdf",
+   "source": {
+    "id": "https://openalex.org/S4210213993",
+    "display_name": "The Journal of Climate Change and Health",
+    "issn_l": "2667-2782",
+    "issn": [
+     "2667-2782"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doaj",
+     "dongbi-c",
+     "jufo-1",
+     "ki-jl-1",
+     "norway-1",
+     "oarl",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by-nc-nd",
+   "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "The Journal of Climate Change and Health",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 1,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5084824835",
+     "display_name": "Samantha Green",
+     "orcid": "https://orcid.org/0000-0003-4342-2070",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-4342-2070"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I185261750",
+      "display_name": "University of Toronto",
+      "ror": "https://ror.org/03dbr7087",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I185261750"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4399598460",
+      "display_name": "Unity Health Toronto",
+      "ror": "https://ror.org/012x5xb44",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4399598460"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Samantha Green",
+    "raw_affiliation_strings": [
+     "Department of Family & Community Medicine, University of Toronto, Canada",
+     "Unity Health Toronto, Canada"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-4342-2070",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Family & Community Medicine, University of Toronto, Canada",
+      "institution_ids": [
+       "https://openalex.org/I185261750"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Unity Health Toronto, Canada",
+      "institution_ids": [
+       "https://openalex.org/I4399598460"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5147417132",
+     "display_name": "Grace Kuang",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Grace Kuang",
+    "raw_affiliation_strings": [
+     "Temerty Faculty of Medicine, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Temerty Faculty of Medicine, Canada",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5073527004",
+     "display_name": "Daniel Rosenbaum",
+     "orcid": "https://orcid.org/0000-0002-4846-9380",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4846-9380"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1325899441",
+      "display_name": "University Health Network",
+      "ror": "https://ror.org/042xt5161",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1325899441"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I185261750",
+      "display_name": "University of Toronto",
+      "ror": "https://ror.org/03dbr7087",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Daniel Rosenbaum",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Toronto, Canada",
+     "University Health Network, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Toronto, Canada",
+      "institution_ids": [
+       "https://openalex.org/I185261750"
+      ]
+     },
+     {
+      "raw_affiliation_string": "University Health Network, Canada",
+      "institution_ids": [
+       "https://openalex.org/I1325899441"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5028621625",
+     "display_name": "Sarah E. Levitt",
+     "orcid": "https://orcid.org/0000-0002-9648-0373",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-9648-0373"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1325899441",
+      "display_name": "University Health Network",
+      "ror": "https://ror.org/042xt5161",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1325899441"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I185261750",
+      "display_name": "University of Toronto",
+      "ror": "https://ror.org/03dbr7087",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Sarah Levitt",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Toronto, Canada",
+     "University Health Network, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Toronto, Canada",
+      "institution_ids": [
+       "https://openalex.org/I185261750"
+      ]
+     },
+     {
+      "raw_affiliation_string": "University Health Network, Canada",
+      "institution_ids": [
+       "https://openalex.org/I1325899441"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5026709870",
+     "display_name": "Michaela Beder",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I185261750",
+      "display_name": "University of Toronto",
+      "ror": "https://ror.org/03dbr7087",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I185261750"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4399598460",
+      "display_name": "Unity Health Toronto",
+      "ror": "https://ror.org/012x5xb44",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4399598460"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Michaela Beder",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Toronto, Canada",
+     "Unity Health Toronto, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Toronto, Canada",
+      "institution_ids": [
+       "https://openalex.org/I185261750"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Unity Health Toronto, Canada",
+      "institution_ids": [
+       "https://openalex.org/I4399598460"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5147447435",
+     "display_name": "Talveer Mandur",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I185261750",
+      "display_name": "University of Toronto",
+      "ror": "https://ror.org/03dbr7087",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Talveer Mandur",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Toronto, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Toronto, Canada",
+      "institution_ids": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7165557422",
+  "doi": "https://doi.org/10.64898/2026.06.18.26355969",
+  "title": "The Effects of Extreme Heat on Mental Disorder Admissions in Hlabisa, South Africa: A 13-Year Time-Series Analysis",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7165557422",
+   "doi": "https://doi.org/10.64898/2026.06.18.26355969"
+  },
+  "primary_location": {
+   "id": "doi:10.64898/2026.06.18.26355969",
+   "doi": "https://doi.org/10.64898/2026.06.18.26355969",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.64898/2026.06.18.26355969",
+   "pdf_url": "https://www.medrxiv.org/content/medrxiv/early/2026/06/22/2026.06.18.26355969.full.pdf",
+   "source": {
+    "id": "https://openalex.org/S3005729997",
+    "display_name": "medRxiv",
+    "issn_l": null,
+    "issn": null,
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core"
+    ],
+    "host_organization": null,
+    "host_organization_name": null,
+    "host_organization_lineage": [
+     "https://openalex.org/P4310315909"
+    ],
+    "host_organization_lineage_names": [
+     "Cold Spring Harbor Laboratory Press"
+    ],
+    "type": "repository"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "submittedVersion",
+   "is_accepted": false,
+   "is_published": false,
+   "raw_source_name": "medRxiv",
+   "raw_type": "posted-content"
+  },
+  "type": "preprint",
+  "cited_by_count": 1,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5138248207",
+     "display_name": "Elisabeth Lindner",
+     "orcid": "https://orcid.org/0009-0004-7031-5080",
+     "observed_orcids": [
+      "https://orcid.org/0009-0004-7031-5080"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I223822909",
+      "display_name": "Heidelberg University",
+      "ror": "https://ror.org/038t36y30",
+      "country_code": "DE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I223822909"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2802164966",
+      "display_name": "University Hospital Heidelberg",
+      "ror": "https://ror.org/013czdx64",
+      "country_code": "DE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802164966"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405263306",
+      "display_name": "Heidelberg Institute of Global Health",
+      "ror": "https://ror.org/052rvyy58",
+      "country_code": "DE",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ],
+    "countries": [
+     "DE"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Elisabeth Lindner",
+    "raw_affiliation_strings": [
+     "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany",
+      "institution_ids": [
+       "https://openalex.org/I223822909",
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5077160522",
+     "display_name": "Frank Courteney Tanser",
+     "orcid": "https://orcid.org/0000-0001-9797-0000",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9797-0000"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I26092322",
+      "display_name": "Stellenbosch University",
+      "ror": "https://ror.org/05bk57929",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I26092322"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Frank Tanser",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+     "South African Centre for Epidemiological Modelling and Analysis (SACEMA), Centre for Epidemic Response and Innovation (CERI), School for Data Science and Computational Thinking, Stellenbosch University, Stellenbosch, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     },
+     {
+      "raw_affiliation_string": "South African Centre for Epidemiological Modelling and Analysis (SACEMA), Centre for Epidemic Response and Innovation (CERI), School for Data Science and Computational Thinking, Stellenbosch University, Stellenbosch, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I26092322"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5053572116",
+     "display_name": "Kobus Herbst",
+     "orcid": "https://orcid.org/0000-0002-5436-9386",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5436-9386"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Kobus Herbst",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5050803680",
+     "display_name": "Thobeka Mngomezulu",
+     "orcid": "https://orcid.org/0000-0002-4142-2432",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4142-2432"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Thobeka Mngomezulu",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5066823889",
+     "display_name": "Dickman Gareta",
+     "orcid": "https://orcid.org/0000-0002-4004-5655",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4004-5655"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Dickman Gareta",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5003138186",
+     "display_name": "Till B\u00e4rnighausen",
+     "orcid": "https://orcid.org/0000-0002-4182-4212",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4182-4212"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I223822909",
+      "display_name": "Heidelberg University",
+      "ror": "https://ror.org/038t36y30",
+      "country_code": "DE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I223822909"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2802164966",
+      "display_name": "University Hospital Heidelberg",
+      "ror": "https://ror.org/013czdx64",
+      "country_code": "DE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802164966"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405263306",
+      "display_name": "Heidelberg Institute of Global Health",
+      "ror": "https://ror.org/052rvyy58",
+      "country_code": "DE",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ],
+    "countries": [
+     "DE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Till B\u00e4rnighausen",
+    "raw_affiliation_strings": [
+     "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany",
+      "institution_ids": [
+       "https://openalex.org/I223822909",
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5026222310",
+     "display_name": "Gillian F. Black",
+     "orcid": "https://orcid.org/0000-0002-5081-274X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5081-274X"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Gillian F. Black",
+    "raw_affiliation_strings": [
+     "Independent researcher, Cape Town, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Independent researcher, Cape Town, South Africa",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5004033975",
+     "display_name": "M. Craig",
+     "orcid": "https://orcid.org/0000-0002-9181-2607",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-9181-2607"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Marlies H Craig",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5121245513",
+     "display_name": "Vasco Cumbe",
+     "orcid": "https://orcid.org/0000-0002-1131-8597",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1131-8597"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Vasco Cumbe",
+    "raw_affiliation_strings": [
+     "Centre of Training and Research, Beira Central Hospital (CFPS-HCB), Beira, Sofala, Mozambique",
+     "Provincial Health Directorate of Sofala, Department of Public Health, Beira, Sofala, Mozambique"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre of Training and Research, Beira Central Hospital (CFPS-HCB), Beira, Sofala, Mozambique",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Provincial Health Directorate of Sofala, Department of Public Health, Beira, Sofala, Mozambique",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5051218273",
+     "display_name": "Sammy Khagayi",
+     "orcid": "https://orcid.org/0000-0002-2470-1851",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2470-1851"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Sammy Khagayi",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5018273652",
+     "display_name": "Frederick Murunga Wekesah",
+     "orcid": "https://orcid.org/0000-0003-2333-3054",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2333-3054"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I193662353",
+      "display_name": "Utrecht University",
+      "ror": "https://ror.org/04pp8hn57",
+      "country_code": "NL",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I193662353"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I3018483916",
+      "display_name": "University Medical Center Utrecht",
+      "ror": "https://ror.org/0575yy874",
+      "country_code": "NL",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3018483916"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210129448",
+      "display_name": "African Population and Health Research Center",
+      "ror": "https://ror.org/032ztsj35",
+      "country_code": "KE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ],
+    "countries": [
+     "KE",
+     "NL"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Frederick Murunga Wekesah",
+    "raw_affiliation_strings": [
+     "African Population and Health Research Center, Nairobi, Kenya",
+     "Julius Global Health, Julius Center for Health Sciences and Primary care, University Medical Center Utrecht, Utrecht University, the Netherlands"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "African Population and Health Research Center, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I4210129448"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Julius Global Health, Julius Center for Health Sciences and Primary care, University Medical Center Utrecht, Utrecht University, the Netherlands",
+      "institution_ids": [
+       "https://openalex.org/I193662353",
+       "https://openalex.org/I3018483916"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5072737412",
+     "display_name": "Alberto Muanido",
+     "orcid": "https://orcid.org/0000-0002-6602-7834",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6602-7834"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Alberto Gabriel Muanido",
+    "raw_affiliation_strings": [
+     "Comit\u00e9 para Sa\u00fade de Mo\u00e7ambique (CSM)"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Comit\u00e9 para Sa\u00fade de Mo\u00e7ambique (CSM)",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5091562340",
+     "display_name": "Chanelle Mulopo",
+     "orcid": "https://orcid.org/0000-0001-6412-3200",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6412-3200"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I26092322",
+      "display_name": "Stellenbosch University",
+      "ror": "https://ror.org/05bk57929",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I26092322"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I869660684",
+      "display_name": "University of the Western Cape",
+      "ror": "https://ror.org/00h2vm590",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I869660684"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Chanelle Mulopo",
+    "raw_affiliation_strings": [
+     "Centre for Epidemic Response and Innovation, Stellenbosch University, Stellenbosch, South Africa",
+     "School of Public Health, University of the Western Cape, Bellville, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Epidemic Response and Innovation, Stellenbosch University, Stellenbosch, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I26092322"
+      ]
+     },
+     {
+      "raw_affiliation_string": "School of Public Health, University of the Western Cape, Bellville, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I869660684"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5049393529",
+     "display_name": "Sithembiso Ndlovu",
+     "orcid": "https://orcid.org/0000-0002-0428-7710",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-0428-7710"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Sithembiso Ndlovu",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5011296378",
+     "display_name": "Evans Omondi",
+     "orcid": "https://orcid.org/0000-0002-1779-1043",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1779-1043"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I161372803",
+      "display_name": "Strathmore University",
+      "ror": "https://ror.org/047dnqw48",
+      "country_code": "KE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I161372803"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210129448",
+      "display_name": "African Population and Health Research Center",
+      "ror": "https://ror.org/032ztsj35",
+      "country_code": "KE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ],
+    "countries": [
+     "KE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Evans Omondi",
+    "raw_affiliation_strings": [
+     "African Population and Health Research Center, Nairobi, Kenya",
+     "Institute of Mathematical Sciences, Strathmore University, Nairobi, Kenya"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "African Population and Health Research Center, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I4210129448"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Institute of Mathematical Sciences, Strathmore University, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I161372803"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5104217951",
+     "display_name": "Flavian Otieno",
+     "orcid": "https://orcid.org/0009-0000-0976-2886",
+     "observed_orcids": [
+      "https://orcid.org/0009-0000-0976-2886"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210129448",
+      "display_name": "African Population and Health Research Center",
+      "ror": "https://ror.org/032ztsj35",
+      "country_code": "KE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ],
+    "countries": [
+     "KE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Flavian Otieno",
+    "raw_affiliation_strings": [
+     "African Population and Health Research Center, Nairobi, Kenya"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "African Population and Health Research Center, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5093274244",
+     "display_name": "Henry Owoko Odero",
+     "orcid": "https://orcid.org/0000-0002-3678-4332",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3678-4332",
+      "https://orcid.org/0000-0002-8944-5289"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210129448",
+      "display_name": "African Population and Health Research Center",
+      "ror": "https://ror.org/032ztsj35",
+      "country_code": "KE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ],
+    "countries": [
+     "KE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Henry Owoko",
+    "raw_affiliation_strings": [
+     "African Population and Health Research Center, Nairobi, Kenya"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "African Population and Health Research Center, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5032284171",
+     "display_name": "Ali Si\u00e9",
+     "orcid": "https://orcid.org/0000-0002-3959-2520",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3959-2520"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210162327",
+      "display_name": "Centre de Recherche en Sant\u00e9 de Nouna",
+      "ror": "https://ror.org/059vhx348",
+      "country_code": "BF",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I4210162327"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405262603",
+      "display_name": "Institut National de Sant\u00e9 Publique du Burkina Faso",
+      "ror": "https://ror.org/047394f17",
+      "country_code": "BF",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4405262603"
+      ]
+     }
+    ],
+    "countries": [
+     "BF"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Ali Sie",
+    "raw_affiliation_strings": [
+     "Centre de recherche en Sant\u00e9 de Nouna/Institut National de sant\u00e9 Publique, Nouna, Burkina Faso"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre de recherche en Sant\u00e9 de Nouna/Institut National de sant\u00e9 Publique, Nouna, Burkina Faso",
+      "institution_ids": [
+       "https://openalex.org/I4210162327",
+       "https://openalex.org/I4405262603"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5111217753",
+     "display_name": "Mareca Sithole",
+     "orcid": "https://orcid.org/0009-0008-4235-0152",
+     "observed_orcids": [
+      "https://orcid.org/0009-0008-4235-0152"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Mareca Sithole",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5045590963",
+     "display_name": "Moustapha Tall",
+     "orcid": "https://orcid.org/0000-0003-1994-5170",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1994-5170"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210129448",
+      "display_name": "African Population and Health Research Center",
+      "ror": "https://ror.org/032ztsj35",
+      "country_code": "KE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ],
+    "countries": [
+     "KE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Moustapha Tall",
+    "raw_affiliation_strings": [
+     "African Population and Health Research Center, Nairobi, Kenya"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "African Population and Health Research Center, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5087996061",
+     "display_name": "Nafissatou Traor\u00e9",
+     "orcid": "https://orcid.org/0009-0007-2816-1905",
+     "observed_orcids": [
+      "https://orcid.org/0009-0007-2816-1905"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210162327",
+      "display_name": "Centre de Recherche en Sant\u00e9 de Nouna",
+      "ror": "https://ror.org/059vhx348",
+      "country_code": "BF",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I4210162327"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405262603",
+      "display_name": "Institut National de Sant\u00e9 Publique du Burkina Faso",
+      "ror": "https://ror.org/047394f17",
+      "country_code": "BF",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4405262603"
+      ]
+     }
+    ],
+    "countries": [
+     "BF"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Nafissatou Traor\u00e9",
+    "raw_affiliation_strings": [
+     "Centre de recherche en Sant\u00e9 de Nouna/Institut National de sant\u00e9 Publique, Nouna, Burkina Faso"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre de recherche en Sant\u00e9 de Nouna/Institut National de sant\u00e9 Publique, Nouna, Burkina Faso",
+      "institution_ids": [
+       "https://openalex.org/I4210162327",
+       "https://openalex.org/I4405262603"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5008576972",
+     "display_name": "Treffry-Goatley Astrid",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I26092322",
+      "display_name": "Stellenbosch University",
+      "ror": "https://ror.org/05bk57929",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I26092322"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Astrid Treffry-Goatley",
+    "raw_affiliation_strings": [
+     "Centre for Epidemic Response and Innovation, Stellenbosch University, Stellenbosch, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Epidemic Response and Innovation, Stellenbosch University, Stellenbosch, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I26092322"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5013030134",
+     "display_name": "Grace Nduku Wambua",
+     "orcid": "https://orcid.org/0000-0003-1795-6634",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1795-6634"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I95023434",
+      "display_name": "University of KwaZulu-Natal",
+      "ror": "https://ror.org/04qzfn040",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I95023434"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "G. Nduku Wambua",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+     "University of KwaZulu-Natal, Department of Psychiatry, Durban, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     },
+     {
+      "raw_affiliation_string": "University of KwaZulu-Natal, Department of Psychiatry, Durban, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I95023434"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5046425423",
+     "display_name": "Prasad Liyanage",
+     "orcid": "https://orcid.org/0000-0002-5174-7644",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5174-7644"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I223822909",
+      "display_name": "Heidelberg University",
+      "ror": "https://ror.org/038t36y30",
+      "country_code": "DE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I223822909"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2802164966",
+      "display_name": "University Hospital Heidelberg",
+      "ror": "https://ror.org/013czdx64",
+      "country_code": "DE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802164966"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405263306",
+      "display_name": "Heidelberg Institute of Global Health",
+      "ror": "https://ror.org/052rvyy58",
+      "country_code": "DE",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ],
+    "countries": [
+     "DE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Prasad Liyanage",
+    "raw_affiliation_strings": [
+     "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany",
+      "institution_ids": [
+       "https://openalex.org/I223822909",
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5031518026",
+     "display_name": "Collins C. Iwuji",
+     "orcid": "https://orcid.org/0000-0003-2045-1717",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2045-1717"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I100063501",
+      "display_name": "Brighton and Sussex Medical School",
+      "ror": "https://ror.org/01qz7fr76",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I100063501",
+       "https://openalex.org/I162608824",
+       "https://openalex.org/I71637028"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I162608824",
+      "display_name": "University of Sussex",
+      "ror": "https://ror.org/00ayhx656",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I162608824"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I194839184",
+      "display_name": "Liverpool School of Tropical Medicine",
+      "ror": "https://ror.org/03svjbs84",
+      "country_code": "GB",
+      "type": "other",
+      "lineage": [
+       "https://openalex.org/I194839184"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "GB",
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Collins Iwuji",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+     "Department of Global Health and Infection, Brighton and Sussex Medical School, University of Sussex & University of Brighton, Falmer, UK",
+     "Department of International Public Health, Liverpool School of Tropical Medicine"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Global Health and Infection, Brighton and Sussex Medical School, University of Sussex & University of Brighton, Falmer, UK",
+      "institution_ids": [
+       "https://openalex.org/I100063501",
+       "https://openalex.org/I162608824"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of International Public Health, Liverpool School of Tropical Medicine",
+      "institution_ids": [
+       "https://openalex.org/I194839184"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5000264051",
+     "display_name": "Aditi Bunker",
+     "orcid": "https://orcid.org/0000-0001-5906-156X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-5906-156X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I223822909",
+      "display_name": "Heidelberg University",
+      "ror": "https://ror.org/038t36y30",
+      "country_code": "DE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I223822909"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2802164966",
+      "display_name": "University Hospital Heidelberg",
+      "ror": "https://ror.org/013czdx64",
+      "country_code": "DE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802164966"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405263306",
+      "display_name": "Heidelberg Institute of Global Health",
+      "ror": "https://ror.org/052rvyy58",
+      "country_code": "DE",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ],
+    "countries": [
+     "DE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Aditi Bunker",
+    "raw_affiliation_strings": [
+     "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany",
+      "institution_ids": [
+       "https://openalex.org/I223822909",
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W4414427501",
+  "doi": "https://doi.org/10.64628/aam.3aptf6qjj",
+  "title": "People with schizophrenia were hit hard by B.C.\u2019s deadly 2021 heat dome",
+  "publication_year": 2025,
+  "ids": {
+   "openalex": "https://openalex.org/W4414427501",
+   "doi": "https://doi.org/10.64628/aam.3aptf6qjj"
+  },
+  "primary_location": {
+   "id": "doi:10.64628/aam.3aptf6qjj",
+   "doi": "https://doi.org/10.64628/aam.3aptf6qjj",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.64628/aam.3aptf6qjj",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S2764582943",
+    "display_name": "The Conversation",
+    "issn_l": null,
+    "issn": null,
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": false,
+    "listed_in": [],
+    "host_organization": "https://openalex.org/P4323289031",
+    "host_organization_name": "Conversation Media Group",
+    "host_organization_lineage": [
+     "https://openalex.org/P4323289031"
+    ],
+    "host_organization_lineage_names": [
+     "Conversation Media Group"
+    ],
+    "type": "other"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "submittedVersion",
+   "is_accepted": false,
+   "is_published": false,
+   "raw_source_name": null,
+   "raw_type": "posted-content"
+  },
+  "type": "other",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5060057610",
+     "display_name": "Liv Yoon",
+     "orcid": "https://orcid.org/0000-0003-2330-1159",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2330-1159"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I141945490",
+      "display_name": "University of British Columbia",
+      "ror": "https://ror.org/03rmrcq20",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I141945490"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Liv Yoon",
+    "raw_affiliation_strings": [
+     "University of British Columbia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of British Columbia",
+      "institution_ids": [
+       "https://openalex.org/I141945490"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5106643603",
+     "display_name": "Samantha Mew",
+     "orcid": "https://orcid.org/0009-0000-3896-5914",
+     "observed_orcids": [
+      "https://orcid.org/0009-0000-3896-5914"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I141945490",
+      "display_name": "University of British Columbia",
+      "ror": "https://ror.org/03rmrcq20",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I141945490"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Samantha Mew",
+    "raw_affiliation_strings": [
+     "University of British Columbia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of British Columbia",
+      "institution_ids": [
+       "https://openalex.org/I141945490"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7124290783",
+  "doi": "https://doi.org/10.1017/dmp.2025.10300",
+  "title": "Emergency Department Visits During the Fall 2019 Public Safety Power Shutoff Events in California",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7124290783",
+   "doi": "https://doi.org/10.1017/dmp.2025.10300",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/41536116",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/12926741"
+  },
+  "primary_location": {
+   "id": "doi:10.1017/dmp.2025.10300",
+   "doi": "https://doi.org/10.1017/dmp.2025.10300",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1017/dmp.2025.10300",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S172925388",
+    "display_name": "Disaster Medicine and Public Health Preparedness",
+    "issn_l": "1935-7893",
+    "issn": [
+     "1935-7893",
+     "1938-744X"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-40",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310311721",
+    "host_organization_name": "Cambridge University Press",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310311721",
+     "https://openalex.org/P4310311702"
+    ],
+    "host_organization_lineage_names": [
+     "Cambridge University Press",
+     "University of Cambridge"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Disaster Medicine and Public Health Preparedness",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5041169079",
+     "display_name": "Alyson B. Harding",
+     "orcid": "https://orcid.org/0000-0003-1171-9777",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1171-9777"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I130238516",
+      "display_name": "University of Minnesota",
+      "ror": "https://ror.org/017zqws13",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I130238516"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Alyson B. Harding",
+    "raw_affiliation_strings": [
+     "University of Minnesota Twin Cities"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-1171-9777",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Minnesota Twin Cities",
+      "institution_ids": [
+       "https://openalex.org/I130238516"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5037112251",
+     "display_name": "Jesse David Berman",
+     "orcid": "https://orcid.org/0000-0003-3037-556X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-3037-556X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I130238516",
+      "display_name": "University of Minnesota",
+      "ror": "https://ror.org/017zqws13",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I130238516"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Jesse D. Berman",
+    "raw_affiliation_strings": [
+     "University of Minnesota Twin Cities"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Minnesota Twin Cities",
+      "institution_ids": [
+       "https://openalex.org/I130238516"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5031480661",
+     "display_name": "Gillian A.M. Tarr",
+     "orcid": "https://orcid.org/0000-0001-7372-1034",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7372-1034"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I130238516",
+      "display_name": "University of Minnesota",
+      "ror": "https://ror.org/017zqws13",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I130238516"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Gillian A.M. Tarr",
+    "raw_affiliation_strings": [
+     "University of Minnesota Twin Cities"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Minnesota Twin Cities",
+      "institution_ids": [
+       "https://openalex.org/I130238516"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5018093955",
+     "display_name": "Darin J. Erickson",
+     "orcid": "https://orcid.org/0000-0002-4980-5796",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4980-5796"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I130238516",
+      "display_name": "University of Minnesota",
+      "ror": "https://ror.org/017zqws13",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I130238516"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Darin J. Erickson",
+    "raw_affiliation_strings": [
+     "University of Minnesota Twin Cities"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Minnesota Twin Cities",
+      "institution_ids": [
+       "https://openalex.org/I130238516"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5123129507",
+     "display_name": "Marizen R. Ramirez",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I130238516",
+      "display_name": "University of Minnesota",
+      "ror": "https://ror.org/017zqws13",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I130238516"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I204250578",
+      "display_name": "University of California, Irvine",
+      "ror": "https://ror.org/04gyf1771",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I204250578"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Marizen R. Ramirez",
+    "raw_affiliation_strings": [
+     "UC Irvine",
+     "University of Minnesota Twin Cities"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "UC Irvine",
+      "institution_ids": [
+       "https://openalex.org/I204250578"
+      ]
+     },
+     {
+      "raw_affiliation_string": "University of Minnesota Twin Cities",
+      "institution_ids": [
+       "https://openalex.org/I130238516"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7130535832",
+  "doi": "https://doi.org/10.1265/ehpm.25-00377",
+  "title": "A short-term association between hospitalizations for mental disorders and ambient temperature in Japan: an ecological study using the LIFE Study data",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7130535832",
+   "doi": "https://doi.org/10.1265/ehpm.25-00377",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/41730638",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/12950343"
+  },
+  "primary_location": {
+   "id": "doi:10.1265/ehpm.25-00377",
+   "doi": "https://doi.org/10.1265/ehpm.25-00377",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1265/ehpm.25-00377",
+   "pdf_url": "https://www.jstage.jst.go.jp/article/ehpm/31/0/31_25-00377/_pdf",
+   "source": {
+    "id": "https://openalex.org/S110451752",
+    "display_name": "Environmental Health and Preventive Medicine",
+    "issn_l": "1342-078X",
+    "issn": [
+     "1342-078X",
+     "1347-4715"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doaj",
+     "dongbi-c",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "oarl",
+     "poland-40",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310319900",
+    "host_organization_name": "Springer Science+Business Media",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310319900",
+     "https://openalex.org/P4310319965"
+    ],
+    "host_organization_lineage_names": [
+     "Springer Science+Business Media",
+     "Springer Nature"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Environmental Health and Preventive Medicine",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5019167401",
+     "display_name": "Tasuku Okui",
+     "orcid": "https://orcid.org/0000-0001-5098-8502",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-5098-8502"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210097767",
+      "display_name": "Kyushu University Hospital",
+      "ror": "https://ror.org/00ex2fc97",
+      "country_code": "JP",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I135598925",
+       "https://openalex.org/I4210097767"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Tasuku Okui",
+    "raw_affiliation_strings": [
+     "Medical Information Center, Kyushu University Hospital"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-5098-8502",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Medical Information Center, Kyushu University Hospital",
+      "institution_ids": [
+       "https://openalex.org/I4210097767"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5126373435",
+     "display_name": "Hiroaki Fukushima",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I135598925",
+      "display_name": "Kyushu University",
+      "ror": "https://ror.org/00p4k0j84",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I135598925"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Hiroaki Fukushima",
+    "raw_affiliation_strings": [
+     "Department of Medical Informatics, Faculty of Medical Sciences, Kyushu University"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Medical Informatics, Faculty of Medical Sciences, Kyushu University",
+      "institution_ids": [
+       "https://openalex.org/I135598925"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5030628435",
+     "display_name": "Megumi Maeda",
+     "orcid": "https://orcid.org/0000-0002-7252-9945",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7252-9945"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I135598925",
+      "display_name": "Kyushu University",
+      "ror": "https://ror.org/00p4k0j84",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I135598925"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Megumi Maeda",
+    "raw_affiliation_strings": [
+     "Department of Health Care Administration and Management, Kyushu University Graduate School of Medical Sciences"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Health Care Administration and Management, Kyushu University Graduate School of Medical Sciences",
+      "institution_ids": [
+       "https://openalex.org/I135598925"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5033152644",
+     "display_name": "Futoshi Oda",
+     "orcid": "https://orcid.org/0009-0009-1664-8366",
+     "observed_orcids": [
+      "https://orcid.org/0009-0009-1664-8366"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I135598925",
+      "display_name": "Kyushu University",
+      "ror": "https://ror.org/00p4k0j84",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I135598925"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Futoshi Oda",
+    "raw_affiliation_strings": [
+     "Department of Health Care Administration and Management, Kyushu University Graduate School of Medical Sciences"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Health Care Administration and Management, Kyushu University Graduate School of Medical Sciences",
+      "institution_ids": [
+       "https://openalex.org/I135598925"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5007176673",
+     "display_name": "Naoki Nakashima",
+     "orcid": "https://orcid.org/0000-0003-4926-8772",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-4926-8772"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I135598925",
+      "display_name": "Kyushu University",
+      "ror": "https://ror.org/00p4k0j84",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I135598925"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210097767",
+      "display_name": "Kyushu University Hospital",
+      "ror": "https://ror.org/00ex2fc97",
+      "country_code": "JP",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I135598925",
+       "https://openalex.org/I4210097767"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Naoki Nakashima",
+    "raw_affiliation_strings": [
+     "Department of Medical Informatics, Faculty of Medical Sciences, Kyushu University",
+     "Medical Information Center, Kyushu University Hospital"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Medical Informatics, Faculty of Medical Sciences, Kyushu University",
+      "institution_ids": [
+       "https://openalex.org/I135598925"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Medical Information Center, Kyushu University Hospital",
+      "institution_ids": [
+       "https://openalex.org/I4210097767"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5045825106",
+     "display_name": "Haruhisa Fukuda",
+     "orcid": "https://orcid.org/0000-0003-1120-1548",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1120-1548"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I135598925",
+      "display_name": "Kyushu University",
+      "ror": "https://ror.org/00p4k0j84",
+      "country_code": "JP",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I135598925"
+      ]
+     }
+    ],
+    "countries": [
+     "JP"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Haruhisa Fukuda",
+    "raw_affiliation_strings": [
+     "Center for Cohort Studies, Kyushu University Graduate School of Medical Sciences",
+     "Department of Health Care Administration and Management, Kyushu University Graduate School of Medical Sciences"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Center for Cohort Studies, Kyushu University Graduate School of Medical Sciences",
+      "institution_ids": [
+       "https://openalex.org/I135598925"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Health Care Administration and Management, Kyushu University Graduate School of Medical Sciences",
+      "institution_ids": [
+       "https://openalex.org/I135598925"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7133778066",
+  "doi": "https://doi.org/10.1177/07067437261428945",
+  "title": "Psychiatric Care Systems Are Not Prepared for the Climate Crisis: A Call for Coordination and Evidence",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7133778066",
+   "doi": "https://doi.org/10.1177/07067437261428945",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/41784107",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/12962983"
+  },
+  "primary_location": {
+   "id": "doi:10.1177/07067437261428945",
+   "doi": "https://doi.org/10.1177/07067437261428945",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1177/07067437261428945",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S8901149",
+    "display_name": "The Canadian Journal of Psychiatry",
+    "issn_l": "0706-7437",
+    "issn": [
+     "0706-7437",
+     "1497-0015"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "dongbi-b",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320017",
+    "host_organization_name": "SAGE Publishing",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320017"
+    ],
+    "host_organization_lineage_names": [
+     "SAGE Publishing"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "The Canadian Journal of Psychiatry",
+   "raw_type": "journal-article"
+  },
+  "type": "editorial",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5045192255",
+     "display_name": "Sean A. Kidd",
+     "orcid": "https://orcid.org/0000-0002-2435-786X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2435-786X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I185261750",
+      "display_name": "University of Toronto",
+      "ror": "https://ror.org/03dbr7087",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Sean A. Kidd",
+    "raw_affiliation_strings": [
+     "University of Toronto Department of Psychiatry"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-2435-786X",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Toronto Department of Psychiatry",
+      "institution_ids": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5048477685",
+     "display_name": "Siqi Xue",
+     "orcid": "https://orcid.org/0000-0002-6937-9552",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6937-9552"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I185261750",
+      "display_name": "University of Toronto",
+      "ror": "https://ror.org/03dbr7087",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Siqi Xue",
+    "raw_affiliation_strings": [
+     "University of Toronto Department of Psychiatry"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Toronto Department of Psychiatry",
+      "institution_ids": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5036965108",
+     "display_name": "Kwame Julius McKenzie",
+     "orcid": "https://orcid.org/0000-0001-6419-8130",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6419-8130"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I185261750",
+      "display_name": "University of Toronto",
+      "ror": "https://ror.org/03dbr7087",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Kwame McKenzie",
+    "raw_affiliation_strings": [
+     "University of Toronto Department of Psychiatry"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Toronto Department of Psychiatry",
+      "institution_ids": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7154507904",
+  "doi": "https://doi.org/10.1017/jme.2026.10239",
+  "title": "It\u2019s Getting Hot Out There: The Need for and Development of Law and Policy Strategies to Reduce Health Risks of Extreme Heat",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7154507904",
+   "doi": "https://doi.org/10.1017/jme.2026.10239",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/41986973"
+  },
+  "primary_location": {
+   "id": "doi:10.1017/jme.2026.10239",
+   "doi": "https://doi.org/10.1017/jme.2026.10239",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1017/jme.2026.10239",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S171945920",
+    "display_name": "The Journal of Law Medicine & Ethics",
+    "issn_l": "1073-1105",
+    "issn": [
+     "1073-1105",
+     "1748-720X"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doyens",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310311721",
+    "host_organization_name": "Cambridge University Press",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310311721",
+     "https://openalex.org/P4310311702"
+    ],
+    "host_organization_lineage_names": [
+     "Cambridge University Press",
+     "University of Cambridge"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Journal of Law, Medicine &amp; Ethics",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5114528561",
+     "display_name": "Joanne P\u00e9rodin",
+     "orcid": "https://orcid.org/0009-0008-3776-027X",
+     "observed_orcids": [
+      "https://orcid.org/0009-0008-3776-027X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4387156132",
+      "display_name": "OpenEdition Center",
+      "ror": "https://ror.org/02aja8v82",
+      "country_code": "FR",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I1294671590",
+       "https://openalex.org/I198415970",
+       "https://openalex.org/I21491767",
+       "https://openalex.org/I4387156132",
+       "https://openalex.org/I90669466"
+      ]
+     }
+    ],
+    "countries": [
+     "FR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Joanne P\u00e9rodin",
+    "raw_affiliation_strings": [
+     "CLEO Institute"
+    ],
+    "raw_orcid": "https://orcid.org/0009-0008-3776-027X",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "CLEO Institute",
+      "institution_ids": [
+       "https://openalex.org/I4387156132"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5013056775",
+     "display_name": "Betsy Lawton",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": true,
+    "raw_author_name": "Betsy Lawton",
+    "raw_affiliation_strings": [
+     "Network for Public Health Law"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Network for Public Health Law",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5133664403",
+     "display_name": "Caleb Smith",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Caleb Smith",
+    "raw_affiliation_strings": [
+     "WE ACT for Environmental Justice"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "WE ACT for Environmental Justice",
+      "institution_ids": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7156286369",
+  "doi": "https://doi.org/10.1097/ee9.0000000000000482",
+  "title": "Community severance and mental health-related hospital visits in New York City",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7156286369",
+   "doi": "https://doi.org/10.1097/ee9.0000000000000482",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/42064286",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/13124370"
+  },
+  "primary_location": {
+   "id": "doi:10.1097/ee9.0000000000000482",
+   "doi": "https://doi.org/10.1097/ee9.0000000000000482",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1097/ee9.0000000000000482",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4210236793",
+    "display_name": "Environmental Epidemiology",
+    "issn_l": "2474-7882",
+    "issn": [
+     "2474-7882"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doaj",
+     "dongbi-c",
+     "jufo-1",
+     "ki-jl-1",
+     "norway-1",
+     "oarl",
+     "poland-20",
+     "russia-white-list-2",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310318547",
+    "host_organization_name": "Wolters Kluwer",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310318547"
+    ],
+    "host_organization_lineage_names": [
+     "Wolters Kluwer"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Environmental Epidemiology",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5070079593",
+     "display_name": "Jaime Benavides",
+     "orcid": "https://orcid.org/0000-0002-1851-5155",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1851-5155"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I27804330",
+      "display_name": "Brown University",
+      "ror": "https://ror.org/05gq02987",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I27804330"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I78577930",
+      "display_name": "Columbia University",
+      "ror": "https://ror.org/00hj8s172",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I78577930"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Jaime Benavides",
+    "raw_affiliation_strings": [
+     "Department of Environmental Health Sciences, Columbia University Mailman School of Public Health, New York City, New York",
+     "Department of Epidemiology, School of Public Health, Brown University, Providence, Rhode Island"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-1851-5155",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Environmental Health Sciences, Columbia University Mailman School of Public Health, New York City, New York",
+      "institution_ids": [
+       "https://openalex.org/I78577930"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Epidemiology, School of Public Health, Brown University, Providence, Rhode Island",
+      "institution_ids": [
+       "https://openalex.org/I27804330"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5079870254",
+     "display_name": "Gali Cohen",
+     "orcid": "https://orcid.org/0000-0001-5533-3935",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-5533-3935"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I16391192",
+      "display_name": "Tel Aviv University",
+      "ror": "https://ror.org/04mhzgx49",
+      "country_code": "IL",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I16391192"
+      ]
+     }
+    ],
+    "countries": [
+     "IL"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Gali Cohen",
+    "raw_affiliation_strings": [
+     "Department of Epidemiology and Preventive Medicine, School of Public Health, Gray Faculty of Medical & Health Sciences, Tel Aviv University, Israel"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Epidemiology and Preventive Medicine, School of Public Health, Gray Faculty of Medical & Health Sciences, Tel Aviv University, Israel",
+      "institution_ids": [
+       "https://openalex.org/I16391192"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": null,
+     "display_name": "Jeff Goldsmith",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I78577930",
+      "display_name": "Columbia University",
+      "ror": "https://ror.org/00hj8s172",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I78577930"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Jeff Goldsmith",
+    "raw_affiliation_strings": [
+     "Department of Biostatistics, Columbia University Mailman School of Public Health, New York City, New York"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Biostatistics, Columbia University Mailman School of Public Health, New York City, New York",
+      "institution_ids": [
+       "https://openalex.org/I78577930"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5112478287",
+     "display_name": "Marianthi Anna Kioumourtzoglou",
+     "orcid": "https://orcid.org/0000-0001-5710-4992",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-5710-4992"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I27804330",
+      "display_name": "Brown University",
+      "ror": "https://ror.org/05gq02987",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I27804330"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I78577930",
+      "display_name": "Columbia University",
+      "ror": "https://ror.org/00hj8s172",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I78577930"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Marianthi-Anna Kioumourtzoglou",
+    "raw_affiliation_strings": [
+     "Department of Environmental Health Sciences, Columbia University Mailman School of Public Health, New York City, New York",
+     "Department of Epidemiology, School of Public Health, Brown University, Providence, Rhode Island",
+     "Institute at Brown University for the Environment and Society, Providence, Rhode Island"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Environmental Health Sciences, Columbia University Mailman School of Public Health, New York City, New York",
+      "institution_ids": [
+       "https://openalex.org/I78577930"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Epidemiology, School of Public Health, Brown University, Providence, Rhode Island",
+      "institution_ids": [
+       "https://openalex.org/I27804330"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Institute at Brown University for the Environment and Society, Providence, Rhode Island",
+      "institution_ids": [
+       "https://openalex.org/I27804330"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7162955452",
+  "doi": "https://doi.org/10.1177/10398562261455814",
+  "title": "Heat and mental health outcomes: Towards an inclusive evidence base to inform Australian practice and policy",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7162955452",
+   "doi": "https://doi.org/10.1177/10398562261455814",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/42218575"
+  },
+  "primary_location": {
+   "id": "doi:10.1177/10398562261455814",
+   "doi": "https://doi.org/10.1177/10398562261455814",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1177/10398562261455814",
+   "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/10398562261455814?download=true",
+   "source": {
+    "id": "https://openalex.org/S13240397",
+    "display_name": "Australasian Psychiatry",
+    "issn_l": "1039-8562",
+    "issn": [
+     "1039-8562",
+     "1440-1665"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-40",
+     "russia-white-list-2"
+    ],
+    "host_organization": "https://openalex.org/P4310320017",
+    "host_organization_name": "SAGE Publishing",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320017"
+    ],
+    "host_organization_lineage_names": [
+     "SAGE Publishing"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Australasian Psychiatry",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5078734687",
+     "display_name": "Fergus K. O\u2019Connor",
+     "orcid": "https://orcid.org/0000-0001-9509-7682",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9509-7682"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I11701301",
+      "display_name": "Griffith University",
+      "ror": "https://ror.org/02sc3r913",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I11701301"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Fergus K. O\u2019Connor",
+    "raw_affiliation_strings": [
+     "Griffith Institute for Human and Environmental Resilience, Griffith University, Gold Coast, QLD, Australia; and Australian Centre for Precision Health and Technology, Griffith University, Gold Coast, QLD, Australia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-9509-7682",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Griffith Institute for Human and Environmental Resilience, Griffith University, Gold Coast, QLD, Australia; and Australian Centre for Precision Health and Technology, Griffith University, Gold Coast, QLD, Australia",
+      "institution_ids": [
+       "https://openalex.org/I11701301"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7169787847",
+  "doi": "https://doi.org/10.3389/fclim.2026.1843933",
+  "title": "Environmental predictors and machine learning models for climate-health risk prediction from extreme weather events: a global systematic review",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7169787847",
+   "doi": "https://doi.org/10.3389/fclim.2026.1843933"
+  },
+  "primary_location": {
+   "id": "doi:10.3389/fclim.2026.1843933",
+   "doi": "https://doi.org/10.3389/fclim.2026.1843933",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.3389/fclim.2026.1843933",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4210213052",
+    "display_name": "Frontiers in Climate",
+    "issn_l": "2624-9553",
+    "issn": [
+     "2624-9553"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-class-a",
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "jufo-1",
+     "norway-1",
+     "poland-20",
+     "russia-white-list-2",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320527",
+    "host_organization_name": "Frontiers Media",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320527"
+    ],
+    "host_organization_lineage_names": [
+     "Frontiers Media"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Frontiers in Climate",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5066286751",
+     "display_name": "Fahad Ayaz",
+     "orcid": "https://orcid.org/0009-0000-8250-5202",
+     "observed_orcids": [
+      "https://orcid.org/0009-0000-8250-5202"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Fahad Ayaz",
+    "raw_affiliation_strings": [
+     "School of Computing"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Computing",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5136627289",
+     "display_name": "Adam Ashford",
+     "orcid": "https://orcid.org/0009-0007-0735-7802",
+     "observed_orcids": [
+      "https://orcid.org/0009-0007-0735-7802"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Adam Ashford",
+    "raw_affiliation_strings": [
+     "School of Computing"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Computing",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5066022046",
+     "display_name": "Muhammad Zeeshan Shakir",
+     "orcid": "https://orcid.org/0000-0003-4777-4719",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-4777-4719"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Muhammad Zeeshan Shakir",
+    "raw_affiliation_strings": [
+     "School of Computing"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Computing",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5080291510",
+     "display_name": "Naeem Ramzan",
+     "orcid": "https://orcid.org/0000-0002-5088-1462",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5088-1462"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Naeem Ramzan",
+    "raw_affiliation_strings": [
+     "School of Computing"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Computing",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5020293602",
+     "display_name": "Michael T. Gebreslasie",
+     "orcid": "https://orcid.org/0000-0002-4784-576X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4784-576X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I95023434",
+      "display_name": "University of KwaZulu-Natal",
+      "ror": "https://ror.org/04qzfn040",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I95023434"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Michael Gebreslasie",
+    "raw_affiliation_strings": [
+     "School of Agriculture and Science, University of KwaZulu-Natal"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Agriculture and Science, University of KwaZulu-Natal",
+      "institution_ids": [
+       "https://openalex.org/I95023434"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5136541321",
+     "display_name": "Serestina Viriri",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I95023434",
+      "display_name": "University of KwaZulu-Natal",
+      "ror": "https://ror.org/04qzfn040",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I95023434"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Serestina Viriri",
+    "raw_affiliation_strings": [
+     "School of Agriculture and Science, University of KwaZulu-Natal"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Agriculture and Science, University of KwaZulu-Natal",
+      "institution_ids": [
+       "https://openalex.org/I95023434"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5085215681",
+     "display_name": "David Lorater Ndzi",
+     "orcid": "https://orcid.org/0000-0002-1125-1978",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1125-1978"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I63072094",
+      "display_name": "University of Portsmouth",
+      "ror": "https://ror.org/03ykbk197",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I63072094"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "David Ndzi",
+    "raw_affiliation_strings": [
+     "School of Electrical and Mechanical Engineering, University of Portsmouth"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Electrical and Mechanical Engineering, University of Portsmouth",
+      "institution_ids": [
+       "https://openalex.org/I63072094"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5070218414",
+     "display_name": "Natalie Dickinson",
+     "orcid": "https://orcid.org/0000-0002-8684-3070",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8684-3070"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I868834043",
+      "display_name": "University of the West of Scotland",
+      "ror": "https://ror.org/04w3d2v20",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I868834043"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Natalie Dickinson",
+    "raw_affiliation_strings": [
+     "School of Health and Life Sciences, University of the West of Scotland"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Health and Life Sciences, University of the West of Scotland",
+      "institution_ids": [
+       "https://openalex.org/I868834043"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5025859688",
+     "display_name": "Llinos Haf Spencer",
+     "orcid": "https://orcid.org/0000-0002-7075-8015",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7075-8015"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Llinos Haf Spencer",
+    "raw_affiliation_strings": [
+     "Faculty of Nursing and Midwifery"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Faculty of Nursing and Midwifery",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5075646205",
+     "display_name": "Mary Lynch",
+     "orcid": "https://orcid.org/0000-0001-6887-3447",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6887-3447"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Mary Lynch",
+    "raw_affiliation_strings": [
+     "Faculty of Nursing and Midwifery"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Faculty of Nursing and Midwifery",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5010559786",
+     "display_name": "Fiona L. Henriquez",
+     "orcid": "https://orcid.org/0000-0002-5534-1019",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5534-1019"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I181647926",
+      "display_name": "University of Strathclyde",
+      "ror": "https://ror.org/00n3w3b69",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I181647926"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Fiona Henriquez-Mui",
+    "raw_affiliation_strings": [
+     "Department of Civil and Environmental Engineering, University of Strathclyde"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Civil and Environmental Engineering, University of Strathclyde",
+      "institution_ids": [
+       "https://openalex.org/I181647926"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5048805720",
+     "display_name": "Ozayr Haroon Mahomed",
+     "orcid": "https://orcid.org/0000-0001-8076-0453",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8076-0453"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Ozayr Mahomed",
+    "raw_affiliation_strings": [
+     "Discipline of Public Health"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Discipline of Public Health",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5083331881",
+     "display_name": "Saloshni Naidoo",
+     "orcid": "https://orcid.org/0000-0002-8844-0160",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8844-0160"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Saloshni Naidoo",
+    "raw_affiliation_strings": [
+     "Discipline of Public Health"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Discipline of Public Health",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5083189925",
+     "display_name": "Nisha Nadesan-Reddy",
+     "orcid": "https://orcid.org/0000-0002-7282-0898",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7282-0898"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Nisha Nadesan-Reddy",
+    "raw_affiliation_strings": [
+     "Discipline of Public Health"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Discipline of Public Health",
+      "institution_ids": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7212049475",
+  "doi": "https://doi.org/10.1016/s2215-0366(26)00228-2",
+  "title": "Improving access to antipsychotic medications for schizophrenia in Ethiopia, Nigeria, Rwanda, and South Africa: an evidence-based global consensus",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7212049475",
+   "doi": "https://doi.org/10.1016/s2215-0366(26)00228-2",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/42716058"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/s2215-0366(26)00228-2",
+   "doi": "https://doi.org/10.1016/s2215-0366(26)00228-2",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1016/s2215-0366(26)00228-2",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S2531556786",
+    "display_name": "The Lancet Psychiatry",
+    "issn_l": "2215-0366",
+    "issn": [
+     "2215-0366",
+     "2215-0374"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "dongbi-a",
+     "doyens",
+     "jufo-3",
+     "ki-jl-3",
+     "medline",
+     "norway-2",
+     "poland-200",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "The Lancet Psychiatry",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5039234102",
+     "display_name": "Katharine Smith",
+     "orcid": "https://orcid.org/0000-0003-2679-1472",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2679-1472"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I2802171185",
+      "display_name": "Oxford Health NHS Foundation Trust",
+      "ror": "https://ror.org/04c8bjx39",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802171185"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2803066836",
+      "display_name": "Warneford Hospital",
+      "ror": "https://ror.org/03we1zb10",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802171185",
+       "https://openalex.org/I2803066836"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I40120149",
+      "display_name": "University of Oxford",
+      "ror": "https://ror.org/052gg0110",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I40120149"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Katharine A Smith",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Oxford, Oxford, UK; Oxford Health NHS Foundation Trust, Warneford Hospital, Oxford, UK; Oxford Precision Psychiatry Lab, NIHR Oxford Health Biomedical Research Centre, Oxford, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Oxford, Oxford, UK; Oxford Health NHS Foundation Trust, Warneford Hospital, Oxford, UK; Oxford Precision Psychiatry Lab, NIHR Oxford Health Biomedical Research Centre, Oxford, UK",
+      "institution_ids": [
+       "https://openalex.org/I2802171185",
+       "https://openalex.org/I2803066836",
+       "https://openalex.org/I40120149"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5011934579",
+     "display_name": "Spyridon Siafis",
+     "orcid": "https://orcid.org/0000-0001-8264-2039",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8264-2039"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I194019607",
+      "display_name": "University of Ioannina",
+      "ror": "https://ror.org/01qg3j183",
+      "country_code": "GR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I194019607"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2802619606",
+      "display_name": "TUM Klinikum",
+      "ror": "https://ror.org/04jc43x05",
+      "country_code": "DE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802619606",
+       "https://openalex.org/I62916508"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405258522",
+      "display_name": "Deutsches Zentrum f\u00fcr Psychische Gesundheit",
+      "ror": "https://ror.org/00tkfw097",
+      "country_code": "DE",
+      "type": "nonprofit",
+      "lineage": [
+       "https://openalex.org/I4405256427",
+       "https://openalex.org/I4405258522"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I62916508",
+      "display_name": "Technical University of Munich",
+      "ror": "https://ror.org/02kkvpp62",
+      "country_code": "DE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I62916508"
+      ]
+     }
+    ],
+    "countries": [
+     "DE",
+     "GR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Spyridon Siafis",
+    "raw_affiliation_strings": [
+     "Technical University of Munich, TUM School of Medicine and Health, TUM University Hospital Rechts der Isar, Department of Psychiatry and Psychotherapy, Munich, Germany; German Center for Mental Health (DZPG), partner site Munich/Augsburg, Munich, Germany; Department of Hygiene and Epidemiology, Faculty of Medicine, School of Health Sciences, University of Ioannina, Ioannina, Greece"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Technical University of Munich, TUM School of Medicine and Health, TUM University Hospital Rechts der Isar, Department of Psychiatry and Psychotherapy, Munich, Germany; German Center for Mental Health (DZPG), partner site Munich/Augsburg, Munich, Germany; Department of Hygiene and Epidemiology, Faculty of Medicine, School of Health Sciences, University of Ioannina, Ioannina, Greece",
+      "institution_ids": [
+       "https://openalex.org/I194019607",
+       "https://openalex.org/I2802619606",
+       "https://openalex.org/I4405258522",
+       "https://openalex.org/I62916508"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5079066852",
+     "display_name": "Robert Ali McCutcheon",
+     "orcid": "https://orcid.org/0000-0003-1102-2566",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1102-2566"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I183935753",
+      "display_name": "King's College London",
+      "ror": "https://ror.org/0220mzb33",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I183935753"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2802171185",
+      "display_name": "Oxford Health NHS Foundation Trust",
+      "ror": "https://ror.org/04c8bjx39",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802171185"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I40120149",
+      "display_name": "University of Oxford",
+      "ror": "https://ror.org/052gg0110",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I40120149"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I47508984",
+      "display_name": "Imperial College London",
+      "ror": "https://ror.org/041kmwe10",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I47508984"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Robert A McCutcheon",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Oxford, Oxford, UK; TUNE-UP Service, Oxford Health NHS Foundation Trust, Oxford, UK; Department of Psychosis Studies, Institute of Psychiatry, Psychology and Neuroscience, King's College, London, UK; Division of Psychiatry, Imperial College London, London, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Oxford, Oxford, UK; TUNE-UP Service, Oxford Health NHS Foundation Trust, Oxford, UK; Department of Psychosis Studies, Institute of Psychiatry, Psychology and Neuroscience, King's College, London, UK; Division of Psychiatry, Imperial College London, London, UK",
+      "institution_ids": [
+       "https://openalex.org/I183935753",
+       "https://openalex.org/I2802171185",
+       "https://openalex.org/I40120149",
+       "https://openalex.org/I47508984"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5028065286",
+     "display_name": "Toby Pillinger",
+     "orcid": "https://orcid.org/0000-0002-6074-2626",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6074-2626"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I183935753",
+      "display_name": "King's College London",
+      "ror": "https://ror.org/0220mzb33",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I183935753"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I200323923",
+      "display_name": "South London and Maudsley NHS Foundation Trust",
+      "ror": "https://ror.org/015803449",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I200323923"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I40120149",
+      "display_name": "University of Oxford",
+      "ror": "https://ror.org/052gg0110",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I40120149"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Toby Pillinger",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Oxford, Oxford, UK; Department of Psychosis Studies, Institute of Psychiatry, Psychology and Neuroscience, King's College, London, UK; TUNE-UP Service, South London and Maudsley NHS Foundation Trust, London, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Oxford, Oxford, UK; Department of Psychosis Studies, Institute of Psychiatry, Psychology and Neuroscience, King's College, London, UK; TUNE-UP Service, South London and Maudsley NHS Foundation Trust, London, UK",
+      "institution_ids": [
+       "https://openalex.org/I183935753",
+       "https://openalex.org/I200323923",
+       "https://openalex.org/I40120149"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5055886512",
+     "display_name": "Rachel Upthegrove",
+     "orcid": "https://orcid.org/0000-0001-8204-5103",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8204-5103"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I2801901939",
+      "display_name": "Birmingham and Solihull Mental Health NHS Foundation Trust",
+      "ror": "https://ror.org/00cjeg736",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2801901939"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I40120149",
+      "display_name": "University of Oxford",
+      "ror": "https://ror.org/052gg0110",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I40120149"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I79619799",
+      "display_name": "University of Birmingham",
+      "ror": "https://ror.org/03angcq70",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I79619799"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Rachel Upthegrove",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Oxford, Oxford, UK; Early Intervention in Psychosis Services, Birmingham and Solihull Mental Health Foundation Trust, Birmingham, UK; Institute for Mental Health, University of Birmingham, Birmingham, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Oxford, Oxford, UK; Early Intervention in Psychosis Services, Birmingham and Solihull Mental Health Foundation Trust, Birmingham, UK; Institute for Mental Health, University of Birmingham, Birmingham, UK",
+      "institution_ids": [
+       "https://openalex.org/I2801901939",
+       "https://openalex.org/I40120149",
+       "https://openalex.org/I79619799"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5031351762",
+     "display_name": "James Leonard Downs",
+     "orcid": "https://orcid.org/0000-0002-4321-8574",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4321-8574"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I2801950134",
+      "display_name": "MQ: Transforming Mental Health",
+      "ror": "https://ror.org/04g6r1b21",
+      "country_code": "GB",
+      "type": "nonprofit",
+      "lineage": [
+       "https://openalex.org/I2801950134"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "James Downs",
+    "raw_affiliation_strings": [
+     "MQ Mental Health, London, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "MQ Mental Health, London, UK",
+      "institution_ids": [
+       "https://openalex.org/I2801950134"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5002528924",
+     "display_name": "Soraya Seedat",
+     "orcid": "https://orcid.org/0000-0002-5118-786X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5118-786X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I10947320",
+      "display_name": "South African Medical Research Council",
+      "ror": "https://ror.org/05q60vz69",
+      "country_code": "ZA",
+      "type": "other",
+      "lineage": [
+       "https://openalex.org/I10947320"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I26092322",
+      "display_name": "Stellenbosch University",
+      "ror": "https://ror.org/05bk57929",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I26092322"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Soraya Seedat",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, Stellenbosch University, Cape Town, South Africa; South African Medical Research Council Unit on Genomics of Brain Disorders, Stellenbosch University, Cape Town, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, Stellenbosch University, Cape Town, South Africa; South African Medical Research Council Unit on Genomics of Brain Disorders, Stellenbosch University, Cape Town, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I10947320",
+       "https://openalex.org/I26092322"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5053780405",
+     "display_name": "Emma Lawrance",
+     "orcid": "https://orcid.org/0000-0003-1343-3916",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1343-3916"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I40120149",
+      "display_name": "University of Oxford",
+      "ror": "https://ror.org/052gg0110",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I40120149"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I47508984",
+      "display_name": "Imperial College London",
+      "ror": "https://ror.org/041kmwe10",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I47508984"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Emma L Lawrance",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Oxford, Oxford, UK; Climate Cares Centre, Institute of Global Health Innovation, Imperial College London, London, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Oxford, Oxford, UK; Climate Cares Centre, Institute of Global Health Innovation, Imperial College London, London, UK",
+      "institution_ids": [
+       "https://openalex.org/I40120149",
+       "https://openalex.org/I47508984"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5088217633",
+     "display_name": "Georgia Salanti",
+     "orcid": "https://orcid.org/0000-0002-3830-8508",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3830-8508"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I118564535",
+      "display_name": "University of Bern",
+      "ror": "https://ror.org/02k7v4d05",
+      "country_code": "CH",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I118564535"
+      ]
+     }
+    ],
+    "countries": [
+     "CH"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Georgia Salanti",
+    "raw_affiliation_strings": [
+     "Institute of Social and Preventive Medicine, University of Bern, Bern, Switzerland"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Institute of Social and Preventive Medicine, University of Bern, Bern, Switzerland",
+      "institution_ids": [
+       "https://openalex.org/I118564535"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5021449162",
+     "display_name": "Oye Gureje",
+     "orcid": "https://orcid.org/0000-0003-0094-5947",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-0094-5947"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I181631907",
+      "display_name": "University of Ibadan",
+      "ror": "https://ror.org/03wx2rr30",
+      "country_code": "NG",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I181631907"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I26092322",
+      "display_name": "Stellenbosch University",
+      "ror": "https://ror.org/05bk57929",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I26092322"
+      ]
+     }
+    ],
+    "countries": [
+     "NG",
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Oye Gureje",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, Stellenbosch University, Cape Town, South Africa; WHO Collaborating Centre for Research and Training in Mental Health, Neuroscience, Drug and Alcohol Abuse, Department of Psychiatry, University of Ibadan, Ibadan, Nigeria"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, Stellenbosch University, Cape Town, South Africa; WHO Collaborating Centre for Research and Training in Mental Health, Neuroscience, Drug and Alcohol Abuse, Department of Psychiatry, University of Ibadan, Ibadan, Nigeria",
+      "institution_ids": [
+       "https://openalex.org/I181631907",
+       "https://openalex.org/I26092322"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5072673151",
+     "display_name": "Ilina Singh",
+     "orcid": "https://orcid.org/0000-0003-4497-3587",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-4497-3587"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I40120149",
+      "display_name": "University of Oxford",
+      "ror": "https://ror.org/052gg0110",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I40120149"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Ilina Singh",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Oxford, Oxford, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Oxford, Oxford, UK",
+      "institution_ids": [
+       "https://openalex.org/I40120149"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5136954167",
+     "display_name": "Jennifer Potts",
+     "orcid": "https://orcid.org/0009-0008-8846-9159",
+     "observed_orcids": [
+      "https://orcid.org/0009-0008-8846-9159"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I34931013",
+      "display_name": "National Institute for Health and Care Research",
+      "ror": "https://ror.org/0187kwz08",
+      "country_code": "GB",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I34931013"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I40120149",
+      "display_name": "University of Oxford",
+      "ror": "https://ror.org/052gg0110",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I40120149"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Jennifer Potts",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Oxford, Oxford, UK; Oxford Precision Psychiatry Lab, NIHR Oxford Health Biomedical Research Centre, Oxford, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Oxford, Oxford, UK; Oxford Precision Psychiatry Lab, NIHR Oxford Health Biomedical Research Centre, Oxford, UK",
+      "institution_ids": [
+       "https://openalex.org/I34931013",
+       "https://openalex.org/I40120149"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5102923099",
+     "display_name": "Solomon Teferra",
+     "orcid": "https://orcid.org/0000-0003-0405-1705",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-0405-1705"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I183935753",
+      "display_name": "King's College London",
+      "ror": "https://ror.org/0220mzb33",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I183935753"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4537092",
+      "display_name": "Addis Ababa University",
+      "ror": "https://ror.org/038b8e254",
+      "country_code": "ET",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4537092"
+      ]
+     }
+    ],
+    "countries": [
+     "ET",
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Solomon Teferra",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, School of Medicine, College of Health Sciences, Addis Ababa University, Addis Ababa, Ethiopia; Social, Genetics & Developmental Psychiatry (SGDP) Centre, King's College, London, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, School of Medicine, College of Health Sciences, Addis Ababa University, Addis Ababa, Ethiopia; Social, Genetics & Developmental Psychiatry (SGDP) Centre, King's College, London, UK",
+      "institution_ids": [
+       "https://openalex.org/I183935753",
+       "https://openalex.org/I4537092"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5034268793",
+     "display_name": "Claudia Sartor",
+     "orcid": "https://orcid.org/0000-0003-4536-2470",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-4536-2470"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Claudia Sartor",
+    "raw_affiliation_strings": [
+     "aves Mental Health, Johannesburg, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "aves Mental Health, Johannesburg, South Africa",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5051763916",
+     "display_name": "Charles Mudenge",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210087849",
+      "display_name": "University of Rwanda",
+      "ror": "https://ror.org/00286hs46",
+      "country_code": "RW",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4210087849"
+      ]
+     }
+    ],
+    "countries": [
+     "RW"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Charles Mudenge",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry and Behavioral Sciences, University of Rwanda, Kigali, Rwanda"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry and Behavioral Sciences, University of Rwanda, Kigali, Rwanda",
+      "institution_ids": [
+       "https://openalex.org/I4210087849"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5056944189",
+     "display_name": "Christoph Ulrich Correll",
+     "orcid": "https://orcid.org/0000-0002-7254-5646",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7254-5646",
+      "https://orcid.org/0000-0002-0868-4449"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210106353",
+      "display_name": "Donald & Barbara Zucker School of Medicine at Hofstra/Northwell",
+      "ror": "https://ror.org/01ff5td15",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I1302444339",
+       "https://openalex.org/I139290212",
+       "https://openalex.org/I4210106353"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405258522",
+      "display_name": "Deutsches Zentrum f\u00fcr Psychische Gesundheit",
+      "ror": "https://ror.org/00tkfw097",
+      "country_code": "DE",
+      "type": "nonprofit",
+      "lineage": [
+       "https://openalex.org/I4405256427",
+       "https://openalex.org/I4405258522"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I7877124",
+      "display_name": "Charit\u00e9 \u2013 Universit\u00e4tsmedizin Berlin",
+      "ror": "https://ror.org/001w7jn25",
+      "country_code": "DE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I7877124"
+      ]
+     }
+    ],
+    "countries": [
+     "DE",
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Christoph U Correll",
+    "raw_affiliation_strings": [
+     "Donald and Barbara Zucker School of Medicine at Hofstra/Northwell, Department of Psychiatry and Molecular Medicine, Hempstead, New York, NY, USA; Northwell, New Hyde Park, New York, NY, USA; Department of Child and Adolescent Psychiatry, Charit\u00e9 Universit\u00e4tsmedizin, Berlin, Germany; German Center for Mental Health (DZPG), partner site Berlin, Berlin, Germany; Einstein Center for Population Diversity (ECPD), Berlin, Germany; Einstein Center for Youth Mental Health (ECYM), Berlin, Germany"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Donald and Barbara Zucker School of Medicine at Hofstra/Northwell, Department of Psychiatry and Molecular Medicine, Hempstead, New York, NY, USA; Northwell, New Hyde Park, New York, NY, USA; Department of Child and Adolescent Psychiatry, Charit\u00e9 Universit\u00e4tsmedizin, Berlin, Germany; German Center for Mental Health (DZPG), partner site Berlin, Berlin, Germany; Einstein Center for Population Diversity (ECPD), Berlin, Germany; Einstein Center for Youth Mental Health (ECYM), Berlin, Germany",
+      "institution_ids": [
+       "https://openalex.org/I4210106353",
+       "https://openalex.org/I4405258522",
+       "https://openalex.org/I7877124"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5121113456",
+     "display_name": "Andrea Cipriani",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I2802171185",
+      "display_name": "Oxford Health NHS Foundation Trust",
+      "ror": "https://ror.org/04c8bjx39",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802171185"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2803066836",
+      "display_name": "Warneford Hospital",
+      "ror": "https://ror.org/03we1zb10",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802171185",
+       "https://openalex.org/I2803066836"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I40120149",
+      "display_name": "University of Oxford",
+      "ror": "https://ror.org/052gg0110",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I40120149"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Andrea Cipriani",
+    "raw_affiliation_strings": [
+     "Department of Psychiatry, University of Oxford, Oxford, UK; Oxford Health NHS Foundation Trust, Warneford Hospital, Oxford, UK; Oxford Precision Psychiatry Lab, NIHR Oxford Health Biomedical Research Centre, Oxford, UK. Electronic address: andrea.cipriani@psych.ox.ac.uk"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Psychiatry, University of Oxford, Oxford, UK; Oxford Health NHS Foundation Trust, Warneford Hospital, Oxford, UK; Oxford Precision Psychiatry Lab, NIHR Oxford Health Biomedical Research Centre, Oxford, UK. Electronic address: andrea.cipriani@psych.ox.ac.uk",
+      "institution_ids": [
+       "https://openalex.org/I2802171185",
+       "https://openalex.org/I2803066836",
+       "https://openalex.org/I40120149"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7216305765",
+  "doi": "https://doi.org/10.30602/sjnr.v6i2.2331",
+  "title": "PENGEMBANGAN MATERI APLIKASI PELATIHAN BHD BERBASIS WEB TERHADAP KESIAPSIAGAAN ORANG AWAM DALAM MEMBERIKAN PENANGANAN OUT-OF-HOSPITAL CARDIAC ARREST (OHCA): LITERATUR REVIEW",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7216305765",
+   "doi": "https://doi.org/10.30602/sjnr.v6i2.2331"
+  },
+  "primary_location": {
+   "id": "doi:10.30602/sjnr.v6i2.2331",
+   "doi": "https://doi.org/10.30602/sjnr.v6i2.2331",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.30602/sjnr.v6i2.2331",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4210179041",
+    "display_name": "Scientific Journal of Nursing Research",
+    "issn_l": "2655-0024",
+    "issn": [
+     "2655-0024",
+     "2655-6731"
+    ],
+    "is_oa": true,
+    "is_in_doaj": false,
+    "is_core": false,
+    "listed_in": [],
+    "host_organization": "https://openalex.org/P4310315115",
+    "host_organization_name": "Poltekkes Kemenkes Pontianak",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310315115"
+    ],
+    "host_organization_lineage_names": [
+     "Poltekkes Kemenkes Pontianak"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by-sa",
+   "license_id": "https://openalex.org/licenses/cc-by-sa",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Scientific Journal of Nursing Research",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5094582651",
+     "display_name": "Alvi Roelanda",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4405274870",
+      "display_name": "Poltekkes Kemenkes Pontianak",
+      "ror": "https://ror.org/02hcbm145",
+      "country_code": "ID",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405274870"
+      ]
+     }
+    ],
+    "countries": [
+     "ID"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Alvi Roelanda",
+    "raw_affiliation_strings": [
+     "Poltekkes Kemenkes Pontianak"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Poltekkes Kemenkes Pontianak",
+      "institution_ids": [
+       "https://openalex.org/I4405274870"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5124159856",
+     "display_name": "Haryanto Haryanto",
+     "orcid": "https://orcid.org/0000-0002-3711-1885",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3711-1885"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Haryanto Haryanto",
+    "raw_affiliation_strings": [],
+    "raw_orcid": null,
+    "affiliations": []
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5115736151",
+     "display_name": "Suriadi Suriadi",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Suriadi Suriadi",
+    "raw_affiliation_strings": [],
+    "raw_orcid": null,
+    "affiliations": []
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7225741194",
+  "doi": "https://doi.org/10.22541/authorea.15011916/v1",
+  "title": "Psychotropic medication safety during extreme heat",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7225741194",
+   "doi": "https://doi.org/10.22541/authorea.15011916/v1"
+  },
+  "primary_location": {
+   "id": "doi:10.22541/authorea.15011916/v1",
+   "doi": "https://doi.org/10.22541/authorea.15011916/v1",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.22541/authorea.15011916/v1",
+   "pdf_url": "https://www.authorea.com/doi/pdf/10.22541/authorea.15011916/v1",
+   "source": null,
+   "license": null,
+   "license_id": null,
+   "version": "submittedVersion",
+   "is_accepted": false,
+   "is_published": false,
+   "raw_source_name": null,
+   "raw_type": "posted-content"
+  },
+  "type": "preprint",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5140829318",
+     "display_name": "Jared Kyle Sieusahai",
+     "orcid": "https://orcid.org/0009-0008-2174-1293",
+     "observed_orcids": [
+      "https://orcid.org/0009-0008-2174-1293"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154425047",
+      "display_name": "University of Alberta",
+      "ror": "https://ror.org/0160cpw27",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I154425047"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Jared Sieusahai",
+    "raw_affiliation_strings": [
+     "University of Alberta Department of Medicine"
+    ],
+    "raw_orcid": "https://orcid.org/0009-0008-2174-1293",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Alberta Department of Medicine",
+      "institution_ids": [
+       "https://openalex.org/I154425047"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

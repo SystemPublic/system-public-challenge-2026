@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+DOI:10.21203/rs.3.rs-4452614/v1,exclude,"E7: analytical method validation, no heat exposure",sglt2,none,lab_bench
+PMC:PMC7208690,include,"uncertain: I1 case; SGLT2i+metformin, dehydration/AKI after farm work in summer heat",multiple,renal_aki,case_report
+PMID:27418571,include,"I2: heat-stressed dapagliflozin tablets, bioequivalence in volunteers",sglt2,stability_potency,human_lab_study
+PMID:27600862,include,I1: canagliflozin efficacy/safety in hot-climate subgroup (post hoc RCT),sglt2,other,rct
+PMID:28412482,include,uncertain: I2 dapagliflozin solid form instability at high temperature,sglt2,stability_potency,lab_bench
+PMID:32911934,exclude,E3: chemical synthesis of SGLT2 inhibitors,none,none,other
+PMID:33548908,include,"I1: canagliflozin initiation during hot humid Indian summer, volume depletion AEs",sglt2,other,cohort
+PMID:35293041,exclude,E3: organic chemistry synthesis,none,none,other
+PMID:38580424,include,uncertain: I1 heat index and eGFR decline in DAPA-CKD (dapagliflozin trial),sglt2,renal_aki,cohort
+PMID:40488044,exclude,E3: physical chemistry of dapagliflozin solutions,none,none,lab_bench
+PMID:42367684,exclude,E7: proteomics; temperature only in protein name,none,none,rct
+PMID:16322130,exclude,"E6: school emergency preparedness survey, no drug x heat",none,none,cross_sectional
+PMID:19558009,include,I2: epinephrine in unsealed syringes stored at 38 C for 5 months,epinephrine,stability_potency,lab_bench
+PMID:20527517,exclude,"E7: epinephrine prefilled syringe stability, no heat exposure",epinephrine,none,lab_bench
+PMID:25997362,include,"I2: epinephrine auto-injectors stored at 70 C, delivered dose",epinephrine,stability_potency,lab_bench
+PMID:27221065,include,I2: systematic review of epinephrine degradation with heat,epinephrine,stability_potency,systematic_review
+PMID:10963972,include,"I1: zonisamide oligohidrosis, sweat testing",topiramate_zonisamide,sweating_thermoregulation,cohort
+PMID:11737174,include,"I1: topiramate hypohidrosis, heat and exercise intolerance, 3 children",topiramate_zonisamide,sweating_thermoregulation,case_series
+PMID:11988904,include,I1: topiramate anhidrosis/hyperthermia when ambient temperature >37 C,topiramate_zonisamide,sweating_thermoregulation,case_series
+PMID:12760427,include,"I1: topiramate oligohydrosis, hyperthermia with environmental temperature",topiramate_zonisamide,sweating_thermoregulation,cross_sectional
+PMID:12770670,include,I1: FAERS zonisamide oligohidrosis/fever in children,topiramate_zonisamide,sweating_thermoregulation,pharmacovigilance
+PMID:12823583,include,"I1: topiramate hypohidrosis and heat intolerance, adult case",topiramate_zonisamide,sweating_thermoregulation,case_report
+PMID:15351089,exclude,"E6: hot water epilepsy, drug not studied",none,none,case_report
+PMID:15499695,exclude,"E8: narrative drug review, heat not the focus",topiramate_zonisamide,none,review
+PMID:15511692,include,uncertain: I1 zonisamide postmarketing survey reports hypohidrosis,topiramate_zonisamide,sweating_thermoregulation,cohort
+PMID:15519129,include,I1: review of zonisamide oligohidrosis/hyperthermia in summer,topiramate_zonisamide,hyperthermia,review
+PMID:15526956,exclude,E6: Dravet treatment; hyperthermia not drug-linked,none,none,case_series
+PMID:15795554,include,uncertain: I1 topiramate oligohydrosis-related severe hyperthermia case,topiramate_zonisamide,hyperthermia,case_report
+PMID:15797353,exclude,E4: hyperthermia listed as AE without heat link,topiramate_zonisamide,none,cohort
+PMID:15862192,exclude,E4: transient hyperthermia AE without heat link,topiramate_zonisamide,none,cohort
+PMID:16225812,exclude,E4: hyperthermia listed as AE without heat link,topiramate_zonisamide,none,cohort
+PMID:16363346,include,"I1: topiramate hypohidrosis frequency, sweat testing in children",topiramate_zonisamide,sweating_thermoregulation,cohort
+PMID:16417859,exclude,E4: hyperthermia listed as AE without heat link,topiramate_zonisamide,none,cohort
+PMID:16648001,include,"I1: topiramate hypohidrosis with hyperthermia, case",topiramate_zonisamide,sweating_thermoregulation,case_report
+PMID:17582922,exclude,"E8: narrative new-drug review, heat not the focus",topiramate_zonisamide,none,review
+PMID:18367774,include,"I1: topiramate hypohidrosis and hyperthermia, two children",topiramate_zonisamide,sweating_thermoregulation,case_series
+PMID:18396017,include,I1: heat stroke in child on topiramate,topiramate_zonisamide,heat_illness,case_report
+PMID:19050411,include,"I1: topiramate hypohidrosis, sympathetic skin responses, 2 children",topiramate_zonisamide,sweating_thermoregulation,case_series
+PMID:19549063,include,I1: incidence of topiramate hypohidrosis-related symptoms incl heat intolerance,topiramate_zonisamide,sweating_thermoregulation,cohort
+PMID:20025128,exclude,"E8: narrative zonisamide review, heat not the focus",topiramate_zonisamide,none,review
+PMID:20236344,include,"I1: topiramate reversible hypohidrosis, adult migraine case",topiramate_zonisamide,sweating_thermoregulation,case_report
+PMID:20666132,include,uncertain: I1 topiramate in Dravet; oligohidrosis reported in one patient,topiramate_zonisamide,sweating_thermoregulation,cohort
+PMID:21348254,exclude,"E6: vecuronium resistance, no heat",none,none,case_report
+PMID:21480876,exclude,E2: rat hyperthermia-induced seizure model,none,none,other
+PMID:22332980,exclude,"E8: narrative interaction review, heat stroke only mentioned",multiple,none,review
+PMID:23134493,exclude,E2: animal models of cortical dysplasia,none,none,review
+PMID:23427516,include,"I1: topiramate hypohidrosis/hyperthermia in children, avoid hot summer",topiramate_zonisamide,sweating_thermoregulation,cohort
+PMID:23773932,include,I1: topiramate hypohidrosis with hyperthermia at high environmental temperature,topiramate_zonisamide,sweating_thermoregulation,case_report
+PMID:23993866,include,I1: fatal heat stroke on topiramate,topiramate_zonisamide,heat_illness,case_report
+PMID:24290155,include,I1: exertional heat stroke on topiramate,topiramate_zonisamide,heat_illness,case_report
+PMID:24665311,exclude,E4: hyperthermia listed as AE without heat link,topiramate_zonisamide,none,cohort
+PMID:24715739,include,uncertain: I1 ADR feature titled topiramate-associated fatal heat stroke; abstract boilerplate,topiramate_zonisamide,heat_illness,case_report
+PMID:27075033,include,"I1: topiramate-induced heatstroke, adult case",topiramate_zonisamide,heat_illness,case_report
+PMID:27264138,exclude,"E6: Dravet treatment review, hyperthermia as seizure trigger",none,none,review
+PMID:27817982,exclude,"E6: Dravet genotype review, no drug x heat",none,none,review
+PMID:29437013,exclude,"E6: topiramate paresthesia case, no heat",topiramate_zonisamide,none,case_report
+PMID:33295812,exclude,E3: nanoparticle drug delivery formulation,none,none,lab_bench
+PMID:33454997,exclude,E6: idiopathic anhidrosis histology; topiramate only mentioned,none,none,cross_sectional
+PMID:33758045,include,"I1: anticholinergic polypharmacy, non-exertional hyperthermia, room >33 C",multiple,heat_illness,case_report
+PMID:33849699,exclude,"E7: topiramate suspension stability at fridge/ambient, no heat",topiramate_zonisamide,none,lab_bench
+PMID:33946010,include,uncertain: I1 pediatric ADR reports; topiramate fever with hypohidrosis,topiramate_zonisamide,hyperthermia,pharmacovigilance
+PMID:34827435,exclude,E2: rat hyperthermia-induced seizures,none,none,other
+PMID:36829251,include,"I1: FAERS hypohidrosis/anhidrosis signals incl topiramate, oxybutynin, SSRIs",multiple,sweating_thermoregulation,pharmacovigilance
+PMID:38167335,exclude,"E4: hyperthermia from infection/zonisamide, no environmental heat",topiramate_zonisamide,none,case_report
+PMID:8579857,include,I1: zonisamide oligohidrosis with heat loading test,topiramate_zonisamide,sweating_thermoregulation,cohort
+PMID:9253492,include,I1: heat stroke-like episode with zonisamide oligohidrosis,topiramate_zonisamide,heat_illness,case_report
+DOI:10.1101/2023.11.20.23298752,include,uncertain: I1 simulated transdermal fentanyl uptake vs ambient/skin temperature,opioids_fentanyl,pharmacokinetics_absorption,other
+DOI:10.1101/2025.06.22.660933,exclude,E2: mice opioid sleep study,none,none,other
+DOI:10.21203/rs.3.rs-8706028/v1,exclude,E3: solid-state NMR of fentanyl salts,none,none,lab_bench
+PMC:PMC10185231,include,uncertain: I1 methamphetamine (+fentanyl) heat stroke and contact burns in summer,multiple,heat_illness,case_series
+PMID:10411775,exclude,E5: malignant hyperthermia anesthesia case,none,none,case_report
+PMID:10451140,exclude,E5: malignant hyperthermia anesthesia case,none,none,case_report
+PMID:10820879,exclude,"E6: intraoperative hyperpyrexia, anesthetic type; fentanyl incidental",none,none,cohort
+PMID:10933030,exclude,E6: neonatal anesthesia; temperature management,none,none,case_report
+PMID:11075566,exclude,E5: MH-susceptible propofol case,none,none,case_report
+PMID:11097547,exclude,E6: hyperthermia under propofol anesthesia; fentanyl incidental,none,none,case_series
+PMID:11176084,exclude,E4: opioid suppression of pyrogen fever,opioids_fentanyl,none,human_lab_study
+PMID:11312471,exclude,"E7: anesthesia technique, hypothermia management",none,none,cohort
+PMID:11345752,exclude,E5: malignant hyperthermia susceptibility case,none,none,case_report
+PMID:11465556,exclude,E7: rewarming after anesthesia hypothermia,none,none,human_lab_study
+PMID:11465562,exclude,E7: experimental heat pain test for analgesia,none,none,rct
+PMID:11496620,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:1153156,exclude,E7: lecture on ophthalmic anesthesia,none,none,review
+PMID:11800047,exclude,E7: thermal sensory testing with alfentanil,none,none,rct
+PMID:11808827,exclude,E7: thermal thresholds with alfentanil/ketamine,none,none,rct
+PMID:11889793,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:12166284,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:12237183,exclude,E7: experimental heat pain in fibromyalgia,none,none,human_lab_study
+PMID:12382395,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:12560306,exclude,"E7: thermal pain model, intradermal sufentanil",none,none,rct
+PMID:12644419,exclude,E7: heat pain thresholds with epidural fentanyl,none,none,rct
+PMID:12696453,exclude,E6: induced hyperthermia therapy; fentanyl anesthesia incidental,none,none,case_series
+PMID:1271629,exclude,E7: thermodilution cardiac output,none,none,other
+PMID:12826552,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:13677282,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:14570661,exclude,E7: experimental heat pain with epidural fentanyl,none,none,rct
+PMID:14598679,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:14622685,include,I1: local heat increases transdermal fentanyl absorption in volunteers,opioids_fentanyl,pharmacokinetics_absorption,human_lab_study
+PMID:1464133,exclude,"E4: postoperative hyperthermia with MAOI, no environmental heat",none,none,case_report
+PMID:14661577,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:1476278,exclude,E7: perioperative hypothermia with nifedipine,none,none,cohort
+PMID:1508355,exclude,"E7: preheated epidural anesthetic solution, no heat exposure hazard",none,none,rct
+PMID:15124818,exclude,E7: analytical air sampling method for opioids,none,none,lab_bench
+PMID:1522292,exclude,E7: thermal pain model for nitrous oxide,none,none,rct
+PMID:15236048,exclude,"E2: in vitro sarcoplasmic reticulum, MH triggers",none,none,lab_bench
+PMID:15329600,exclude,"E7: experimental heat pain, dexmedetomidine vs alfentanil",none,none,rct
+PMID:15587185,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:16440711,exclude,E5: malignant hyperthermia during surgery,none,none,case_report
+PMID:16901645,exclude,E7: experimental pain models for transdermal opioids,none,none,rct
+PMID:17285421,exclude,E5: MH susceptibility anesthesia case,none,none,case_report
+PMID:17513621,exclude,E4: postoperative hyperthermia from inflammatory response,opioids_fentanyl,none,rct
+PMID:17571610,exclude,E6: hemoglobinuria after enema,none,none,case_report
+PMID:17578917,exclude,E7: placebo and mu-opioid PET with thermal pain,none,none,human_lab_study
+PMID:17898376,exclude,"E4: postoperative hyperthermia/rhabdomyolysis, no environmental heat",none,none,case_report
+PMID:1830818,exclude,E7: post-bypass hypothermia,none,none,cohort
+PMID:1833529,exclude,E7: postanesthesia shivering treatment,none,none,rct
+PMID:18649649,exclude,E4: thyroid storm-like hyperthermia,none,none,case_report
+PMID:19007525,exclude,E6: forensic methamphetamine pyrolysis marker,none,none,case_report
+PMID:19227172,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:19661852,include,uncertain: I1 brief item on heat increasing transdermal fentanyl release,opioids_fentanyl,pharmacokinetics_absorption,review

@@ -1,0 +1,57 @@
+{
+ "access_date": "2026-11-14",
+ "system_findings_source": "api",
+ "funnel_papers": {
+  "cited_distinct_papers": 83,
+  "indexed_in_system": 80,
+  "with_findings": 15,
+  "with_findings_in_dataverse": 7,
+  "finding_matches_our_claim_number": 7,
+  "mislabeled": 3
+ },
+ "number_level": {
+  "claimed_numbers_checked": 105,
+  "shared_results_number_found_in_system": 21,
+  "same_number_same_meaning": 14,
+  "mislabels": 7,
+  "direction_conflicts": 0,
+  "system_matches_present_in_dataverse": 5
+ },
+ "badges_claims": {
+  "⚠ ↗": 2,
+  "✓ ↗": 2,
+  "–": 165,
+  "✓✓": 8,
+  "⚠": 4,
+  "✓": 26,
+  "? ↗": 1,
+  "– ↗": 4,
+  "?": 7,
+  "✓ (partial)": 8,
+  "✓✓ (partial)": 1
+ },
+ "badges_claims_strict_dataverse": {
+  "⚠ ↗": 2,
+  "✓ ↗": 2,
+  "–": 165,
+  "✓ (System match API-only)": 4,
+  "⚠": 4,
+  "✓": 26,
+  "? ↗": 1,
+  "– ↗": 4,
+  "✓✓": 5,
+  "?": 7,
+  "✓ (partial)": 8
+ },
+ "badges_numbers": {
+  "⚠": 7,
+  "✓": 58,
+  "✓✓": 14,
+  "?": 26
+ },
+ "claims_corroborated": 9,
+ "claims_with_any_system_relationship": 31,
+ "reverse_unused_findings_on_cited_papers": 36,
+ "reverse_system_links_not_in_master_list": 15,
+ "note_number_conflicts": "Check 1 cannot tell 'same result, different number' from 'different result' automatically; numbers not found in System are recorded as paper_in_system_number_not_extracted, never as conflicts."
+}

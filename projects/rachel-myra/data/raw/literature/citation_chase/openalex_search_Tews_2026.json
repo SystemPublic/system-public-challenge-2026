@@ -1,0 +1,1060 @@
+[
+ {
+  "id": "https://openalex.org/W7162091437",
+  "doi": "https://doi.org/10.3390/pharmacy14030074",
+  "title": "Recognizing and Mitigating the Effects of Medication on Heat-Related Illness in Older Adults: A Scoping Review",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7162091437",
+   "doi": "https://doi.org/10.3390/pharmacy14030074",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/42200961",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/13214780"
+  },
+  "primary_location": {
+   "id": "doi:10.3390/pharmacy14030074",
+   "doi": "https://doi.org/10.3390/pharmacy14030074",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.3390/pharmacy14030074",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4210228566",
+    "display_name": "Pharmacy",
+    "issn_l": "2226-4787",
+    "issn": [
+     "2226-4787"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doaj",
+     "norway-1",
+     "poland-20",
+     "russia-white-list-3",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310310987",
+    "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310310987"
+    ],
+    "host_organization_lineage_names": [
+     "Multidisciplinary Digital Publishing Institute"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Pharmacy",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 4,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5136766113",
+     "display_name": "Lily M. Tews",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Lily M. Tews",
+    "raw_affiliation_strings": [
+     "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5064414625",
+     "display_name": "Daniel T. Abazia",
+     "orcid": "https://orcid.org/0000-0002-5826-1751",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5826-1751"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Daniel T. Abazia",
+    "raw_affiliation_strings": [
+     "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-5826-1751",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5046529010",
+     "display_name": "Hayley Blackburn",
+     "orcid": "https://orcid.org/0000-0003-3908-4494",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-3908-4494"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I6750721",
+      "display_name": "University of Montana",
+      "ror": "https://ror.org/0078xmk34",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I6750721"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Hayley Blackburn",
+    "raw_affiliation_strings": [
+     "Skaggs School of Pharmacy, University of Montana, Missoula, MT 59812, USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-3908-4494",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Skaggs School of Pharmacy, University of Montana, Missoula, MT 59812, USA",
+      "institution_ids": [
+       "https://openalex.org/I6750721"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5120286563",
+     "display_name": "Kiri Carmody",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Kiri Carmody",
+    "raw_affiliation_strings": [
+     "Skaggs School of Pharmacy & Pharmaceutical Sciences, University of Colorado, Aurora, CO 80045, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Skaggs School of Pharmacy & Pharmaceutical Sciences, University of Colorado, Aurora, CO 80045, USA",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5036732523",
+     "display_name": "Mary Barna Bridgeman",
+     "orcid": "https://orcid.org/0000-0001-7947-9875",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7947-9875"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Mary Barna Bridgeman",
+    "raw_affiliation_strings": [
+     "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-7947-9875",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W1979170814",
+  "doi": "https://doi.org/10.1016/j.proeng.2011.11.139",
+  "title": "Healthy Environment: The Need to Mitigate Urban Heat Island Effects on Human Health",
+  "publication_year": 2011,
+  "ids": {
+   "openalex": "https://openalex.org/W1979170814",
+   "doi": "https://doi.org/10.1016/j.proeng.2011.11.139",
+   "mag": "1979170814"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/j.proeng.2011.11.139",
+   "doi": "https://doi.org/10.1016/j.proeng.2011.11.139",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1016/j.proeng.2011.11.139",
+   "pdf_url": "https://www.sciencedirect.com/science/article/pii/S1877705811029481/pdf",
+   "source": {
+    "id": "https://openalex.org/S45645249",
+    "display_name": "Procedia Engineering",
+    "issn_l": "1877-7058",
+    "issn": [
+     "1877-7058"
+    ],
+    "is_oa": true,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "jufo-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by-nc-nd",
+   "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Procedia Engineering",
+   "raw_type": "journal-article"
+  },
+  "type": "conference-paper",
+  "cited_by_count": 152,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5041301768",
+     "display_name": "Parisa Shahmohamadi",
+     "orcid": "https://orcid.org/0000-0001-5852-3558",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-5852-3558"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I885383172",
+      "display_name": "National University of Malaysia",
+      "ror": "https://ror.org/00bw8d226",
+      "country_code": "MY",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I885383172"
+      ]
+     }
+    ],
+    "countries": [
+     "MY"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "P. Shahmohamadi",
+    "raw_affiliation_strings": [
+     "Department of Architecture, Faculty of Engineering and Built Environment, Universiti Kebangsaan Malaysia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Architecture, Faculty of Engineering and Built Environment, Universiti Kebangsaan Malaysia",
+      "institution_ids": [
+       "https://openalex.org/I885383172"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5044229459",
+     "display_name": "Adi Irfan Che Ani",
+     "orcid": "https://orcid.org/0000-0002-8516-6522",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8516-6522"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I885383172",
+      "display_name": "National University of Malaysia",
+      "ror": "https://ror.org/00bw8d226",
+      "country_code": "MY",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I885383172"
+      ]
+     }
+    ],
+    "countries": [
+     "MY"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "A.I. Che-Ani",
+    "raw_affiliation_strings": [
+     "Department of Architecture, Faculty of Engineering and Built Environment, Universiti Kebangsaan Malaysia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Architecture, Faculty of Engineering and Built Environment, Universiti Kebangsaan Malaysia",
+      "institution_ids": [
+       "https://openalex.org/I885383172"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5052437140",
+     "display_name": "I. Etessam",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I23946033",
+      "display_name": "University of Tehran",
+      "ror": "https://ror.org/05vf56z40",
+      "country_code": "IR",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I23946033"
+      ]
+     }
+    ],
+    "countries": [
+     "IR"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "I. Etessam",
+    "raw_affiliation_strings": [
+     "Department of Architecture and Urban Design, Faculty of Fine Art, Tehran University, Iran"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Architecture and Urban Design, Faculty of Fine Art, Tehran University, Iran",
+      "institution_ids": [
+       "https://openalex.org/I23946033"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5028417716",
+     "display_name": "Khairul Nizam Abdul Maulud",
+     "orcid": "https://orcid.org/0000-0002-9215-2778",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-9215-2778"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I885383172",
+      "display_name": "National University of Malaysia",
+      "ror": "https://ror.org/00bw8d226",
+      "country_code": "MY",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I885383172"
+      ]
+     }
+    ],
+    "countries": [
+     "MY"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "K.N.A. Maulud",
+    "raw_affiliation_strings": [
+     "Department of Civil and Structural Engineering, Faculty of Engineering and Built Environment, Universiti Kebangsaan Malaysia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Civil and Structural Engineering, Faculty of Engineering and Built Environment, Universiti Kebangsaan Malaysia",
+      "institution_ids": [
+       "https://openalex.org/I885383172"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5111887153",
+     "display_name": "Norngainy Mohd Tawil",
+     "orcid": "https://orcid.org/0009-0008-4343-3160",
+     "observed_orcids": [
+      "https://orcid.org/0009-0008-4343-3160"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I885383172",
+      "display_name": "National University of Malaysia",
+      "ror": "https://ror.org/00bw8d226",
+      "country_code": "MY",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I885383172"
+      ]
+     }
+    ],
+    "countries": [
+     "MY"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "N.M. Tawil",
+    "raw_affiliation_strings": [
+     "Department of Architecture, Faculty of Engineering and Built Environment, Universiti Kebangsaan Malaysia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Architecture, Faculty of Engineering and Built Environment, Universiti Kebangsaan Malaysia",
+      "institution_ids": [
+       "https://openalex.org/I885383172"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W3139937405",
+  "doi": "https://doi.org/10.1152/physrev.00038.2020",
+  "title": "Exercise under heat stress: thermoregulation, hydration, performance implications, and mitigation strategies",
+  "publication_year": 2021,
+  "ids": {
+   "openalex": "https://openalex.org/W3139937405",
+   "doi": "https://doi.org/10.1152/physrev.00038.2020",
+   "mag": "3139937405",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/33829868"
+  },
+  "primary_location": {
+   "id": "doi:10.1152/physrev.00038.2020",
+   "doi": "https://doi.org/10.1152/physrev.00038.2020",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1152/physrev.00038.2020",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S203035050",
+    "display_name": "Physiological Reviews",
+    "issn_l": "0031-9333",
+    "issn": [
+     "0031-9333",
+     "1522-1210"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "dongbi-a",
+     "doyens",
+     "jufo-3",
+     "ki-jl-2",
+     "medline",
+     "norway-1",
+     "poland-200",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320155",
+    "host_organization_name": "American Physiological Society",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320155"
+    ],
+    "host_organization_lineage_names": [
+     "American Physiological Society"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Physiological Reviews",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 791,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5091387941",
+     "display_name": "Julien D. P\u00e9riard",
+     "orcid": "https://orcid.org/0000-0002-6266-4246",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6266-4246"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I188329596",
+      "display_name": "University of Canberra",
+      "ror": "https://ror.org/04s1nv328",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I188329596"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Julien D. P\u00e9riard",
+    "raw_affiliation_strings": [
+     "University of Canberra Research Institute for Sport and Exercise, Bruce, Australia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-6266-4246",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Canberra Research Institute for Sport and Exercise, Bruce, Australia",
+      "institution_ids": [
+       "https://openalex.org/I188329596"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5043851068",
+     "display_name": "Thijs M.H. Eijsvogels",
+     "orcid": "https://orcid.org/0000-0003-0747-4471",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-0747-4471"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I2802934949",
+      "display_name": "Radboud University Medical Center",
+      "ror": "https://ror.org/05wg1m734",
+      "country_code": "NL",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802934949"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405268322",
+      "display_name": "Radboud Institute for Health Sciences",
+      "ror": "https://ror.org/00k5r1z23",
+      "country_code": "NL",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4405268322"
+      ]
+     }
+    ],
+    "countries": [
+     "NL"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Thijs M. H. Eijsvogels",
+    "raw_affiliation_strings": [
+     "Department of Physiology, Radboud Institute for Health Sciences, Radboud University Medical Center, Nijmegen, The Netherlands"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-0747-4471",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Physiology, Radboud Institute for Health Sciences, Radboud University Medical Center, Nijmegen, The Netherlands",
+      "institution_ids": [
+       "https://openalex.org/I2802934949",
+       "https://openalex.org/I4405268322"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5086883303",
+     "display_name": "H.A.M. Daanen",
+     "orcid": "https://orcid.org/0000-0002-7459-0678",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-7459-0678"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I865915315",
+      "display_name": "Vrije Universiteit Amsterdam",
+      "ror": "https://ror.org/008xxew50",
+      "country_code": "NL",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I865915315"
+      ]
+     }
+    ],
+    "countries": [
+     "NL"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Hein A. M. Daanen",
+    "raw_affiliation_strings": [
+     "Department of Human Movement Sciences, Faculty of Behavioural and Movement Sciences, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-7459-0678",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Human Movement Sciences, Faculty of Behavioural and Movement Sciences, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands",
+      "institution_ids": [
+       "https://openalex.org/I865915315"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2989582073",
+  "doi": "https://doi.org/10.3389/fphys.2019.01485",
+  "title": "Heat Adaptation in Military Personnel: Mitigating Risk, Maximizing Performance",
+  "publication_year": 2019,
+  "ids": {
+   "openalex": "https://openalex.org/W2989582073",
+   "doi": "https://doi.org/10.3389/fphys.2019.01485",
+   "mag": "2989582073",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/31920694",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/6928107"
+  },
+  "primary_location": {
+   "id": "doi:10.3389/fphys.2019.01485",
+   "doi": "https://doi.org/10.3389/fphys.2019.01485",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.3389/fphys.2019.01485",
+   "pdf_url": "https://www.frontiersin.org/articles/10.3389/fphys.2019.01485/pdf",
+   "source": {
+    "id": "https://openalex.org/S52732750",
+    "display_name": "Frontiers in Physiology",
+    "issn_l": "1664-042X",
+    "issn": [
+     "1664-042X"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "norway-1",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320527",
+    "host_organization_name": "Frontiers Media",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320527"
+    ],
+    "host_organization_lineage_names": [
+     "Frontiers Media"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Frontiers in Physiology",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 99,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5072994309",
+     "display_name": "Iain Parsons",
+     "orcid": "https://orcid.org/0000-0002-8577-8289",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8577-8289"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I183935753",
+      "display_name": "King's College London",
+      "ror": "https://ror.org/0220mzb33",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I124357947",
+       "https://openalex.org/I183935753"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405273129",
+      "display_name": "Royal Centre for Defence Medicine",
+      "ror": "https://ror.org/05atb2w70",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4405273129"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Iain T. Parsons",
+    "raw_affiliation_strings": [
+     "Academic Department of Military Medicine, Research and Clinical Innovation, Royal Centre for Defence Medicine, Birmingham, United Kingdom",
+     "School of Cardiovascular Medicine & Sciences, Faculty of Life Sciences & Medicine, King's College London, London, United Kingdom"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Academic Department of Military Medicine, Research and Clinical Innovation, Royal Centre for Defence Medicine, Birmingham, United Kingdom",
+      "institution_ids": [
+       "https://openalex.org/I4405273129"
+      ]
+     },
+     {
+      "raw_affiliation_string": "School of Cardiovascular Medicine & Sciences, Faculty of Life Sciences & Medicine, King's College London, London, United Kingdom",
+      "institution_ids": [
+       "https://openalex.org/I183935753"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5013130139",
+     "display_name": "Michael John Stacey",
+     "orcid": "https://orcid.org/0000-0002-5086-9025",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5086-9025"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I153355300",
+      "display_name": "Imperial College Healthcare NHS Trust",
+      "ror": "https://ror.org/056ffv270",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I153355300"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405273129",
+      "display_name": "Royal Centre for Defence Medicine",
+      "ror": "https://ror.org/05atb2w70",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4405273129"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Michael J. Stacey",
+    "raw_affiliation_strings": [
+     "Academic Department of Military Medicine, Research and Clinical Innovation, Royal Centre for Defence Medicine, Birmingham, United Kingdom",
+     "Department of Diabetes and Endocrinology, Imperial College Healthcare NHS Trust, London, United Kingdom"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Academic Department of Military Medicine, Research and Clinical Innovation, Royal Centre for Defence Medicine, Birmingham, United Kingdom",
+      "institution_ids": [
+       "https://openalex.org/I4405273129"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Diabetes and Endocrinology, Imperial College Healthcare NHS Trust, London, United Kingdom",
+      "institution_ids": [
+       "https://openalex.org/I153355300"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5103576099",
+     "display_name": "David Richard Woods",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4405273129",
+      "display_name": "Royal Centre for Defence Medicine",
+      "ror": "https://ror.org/05atb2w70",
+      "country_code": "GB",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4405273129"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I84027002",
+      "display_name": "Leeds Beckett University",
+      "ror": "https://ror.org/02xsh5r57",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I84027002"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "David R. Woods",
+    "raw_affiliation_strings": [
+     "Academic Department of Military Medicine, Research and Clinical Innovation, Royal Centre for Defence Medicine, Birmingham, United Kingdom",
+     "Department of Sport and Exercise Endocrinology, Carnegie Research Institute, Leeds Beckett University, Leeds, United Kingdom"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Academic Department of Military Medicine, Research and Clinical Innovation, Royal Centre for Defence Medicine, Birmingham, United Kingdom",
+      "institution_ids": [
+       "https://openalex.org/I4405273129"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Sport and Exercise Endocrinology, Carnegie Research Institute, Leeds Beckett University, Leeds, United Kingdom",
+      "institution_ids": [
+       "https://openalex.org/I84027002"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W4392366887",
+  "doi": "https://doi.org/10.1016/j.outlook.2024.102150",
+  "title": "Application of the socioecological model to mitigate risks of heat illness",
+  "publication_year": 2024,
+  "ids": {
+   "openalex": "https://openalex.org/W4392366887",
+   "doi": "https://doi.org/10.1016/j.outlook.2024.102150",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/38442464",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/11389656"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/j.outlook.2024.102150",
+   "doi": "https://doi.org/10.1016/j.outlook.2024.102150",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1016/j.outlook.2024.102150",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S163228481",
+    "display_name": "Nursing Outlook",
+    "issn_l": "0029-6554",
+    "issn": [
+     "0029-6554",
+     "1528-3968"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-2",
+     "medline",
+     "norway-1",
+     "poland-100",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Nursing Outlook",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 15,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5039587856",
+     "display_name": "Jean M. Bernhardt",
+     "orcid": "https://orcid.org/0000-0001-9880-8590",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9880-8590"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I158133745",
+      "display_name": "MGH Institute of Health Professions",
+      "ror": "https://ror.org/037msyf12",
+      "country_code": "US",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I158133745"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Jean M. Bernhardt",
+    "raw_affiliation_strings": [
+     "School of Nursing, MGH Institute of Health Professions, Charlestown, MA. Electronic address: jmbernhardt@mghihp.edu"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Nursing, MGH Institute of Health Professions, Charlestown, MA. Electronic address: jmbernhardt@mghihp.edu",
+      "institution_ids": [
+       "https://openalex.org/I158133745"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5006561624",
+     "display_name": "Azita Amiri",
+     "orcid": "https://orcid.org/0000-0002-8569-8908",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8569-8908"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I82495205",
+      "display_name": "University of Alabama in Huntsville",
+      "ror": "https://ror.org/02zsxwr40",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I82495205"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Azita Amiri",
+    "raw_affiliation_strings": [
+     "College of Nursing, The University of Alabama Huntsville, Huntsville, AL"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "College of Nursing, The University of Alabama Huntsville, Huntsville, AL",
+      "institution_ids": [
+       "https://openalex.org/I82495205"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

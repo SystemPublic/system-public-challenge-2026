@@ -1,0 +1,20 @@
+drug_group,drug_label,in_15,drug_mediator_studies_all,drug_mediator_studies_nonbp,nonbp_share,score_total,score_nonbp,concept_drug_mediator_studies_summed,concept_drug_mediator_studies_nonbp,direct_drug_heat_studies,rank_nonbp_share,rank_score_total,rank_score_nonbp,rank_concept_drug_mediator_studies_nonbp
+lithium,Lithium,True,2,2,1.0,5.913,5.913,14,3,2,1,16,14,13
+insulin,Insulin (incl. pumps),True,14,14,1.0,25.951,25.951,127,13,2,2,11,8,9
+metformin,Metformin,True,13,13,1.0,16.766,16.766,27,11,0,3,12,12,11
+adhd_stimulants,ADHD stimulants,True,1,1,1.0,8.426,8.426,8,0,2,4,14,13,18
+nsaids,NSAIDs (comparator),False,50,50,1.0,43.11,43.11,60,46,1,5,6,1,4
+sulfonylureas,Sulfonylureas (comparator),False,2,2,1.0,5.913,5.913,3,2,0,6,17,15,15
+sglt2,SGLT2 inhibitors,True,42,41,0.976,36.256,31.06,92,46,0,7,9,6,3
+diuretics_any,"Diuretics, any (comparator)",False,86,79,0.919,55.613,41.865,79,47,0,8,2,2,2
+thiazides,Thiazides,True,32,29,0.906,30.318,21.318,113,20,1,9,10,11,7
+loop_diuretics,Loop diuretics,True,49,44,0.898,43.551,31.932,51,33,0,10,5,4,5
+acei_arb,ACE inhibitors / ARBs,True,79,57,0.722,62.278,36.822,650,49,0,11,1,3,1
+anticholinergics,Anticholinergics (oxybutynin),True,3,2,0.667,10.962,5.766,7,2,0,12,13,16,14
+ssris,SSRIs,True,33,22,0.667,41.027,23.793,45,19,0,13,8,10,8
+antipsychotics,Antipsychotics (incl. clozapine),True,21,12,0.571,41.103,24.671,39,23,0,14,7,9,6
+opioids_fentanyl,Fentanyl / opioid patches,True,24,13,0.542,45.091,27.857,31,6,2,15,4,7,12
+benzodiazepines,Benzodiazepines (comparator),False,2,1,0.5,7.645,2.449,8,1,1,16,15,17,17
+beta_blockers,Beta blockers,True,27,13,0.481,50.782,31.34,211,13,1,17,3,5,10
+topiramate_zonisamide,Topiramate / zonisamide,True,0,0,0.0,0.0,0.0,3,1,0,18,18,18,16
+epinephrine_ai,Epinephrine auto-injectors,True,0,0,0.0,0.0,0.0,0,0,0,19,19,19,19

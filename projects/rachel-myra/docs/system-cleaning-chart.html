@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Cleaning Chart</title>
+<style>
+  /* Colors are the site's design tokens (web/src/styles/tokens.css). The site is light-mode only. */
+  :root {
+    --ui-page:#ffffff; --ui-surface:#f7f7f5; --ui-line:#d4d4d0; --ui-line-strong:#6b6b66;
+    --ui-ink:#141414; --ui-ink-muted:#4b5563;
+    --verify-double-bg:#d1fae5; --verify-double-fg:#065f46;
+    --verify-single-bg:#ecfdf5; --verify-single-fg:#065f46;
+    --verify-conflict-bg:#fef3c7; --verify-conflict-fg:#92400e;
+    --verify-unverified-bg:#e5e7eb; --verify-unverified-fg:#374151;
+    --layer-graph-bg:#eef2ff; --layer-graph-fg:#3730a3;
+    --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--ui-page); color:var(--ui-ink); font:16px/1.5 var(--font-body); }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 48px; }
+  .eyebrow { display:inline-block; font-size:12px; font-weight:600; letter-spacing:.04em; color:var(--layer-graph-fg);
+             background:var(--layer-graph-bg); border-radius:999px; padding:2px 10px; margin-bottom:10px; }
+  h1 { font-size: 26px; line-height:1.25; margin: 0 0 6px; }
+  .lede { color: var(--ui-ink-muted); margin: 0 0 22px; max-width: 720px; }
+  .card { background:var(--ui-surface); border:1px solid var(--ui-line); border-radius:12px; padding:20px 20px 14px; }
+  .legend { display:flex; flex-wrap:wrap; gap:8px 14px; margin: 0 0 12px; font-size:14px; }
+  .chip { display:inline-flex; align-items:center; gap:6px; border-radius:6px; padding:1px 8px; font-weight:600; font-size:13px; border:1px solid; }
+  .pair { display:inline-flex; gap:6px; align-items:center; white-space:nowrap; }
+  .legend .desc { color:var(--ui-ink-muted); font-weight:400; }
+  svg { display:block; width:100%; height:auto; }
+  .lbl { fill:var(--ui-ink); font-size:14px; font-weight:600; }
+  .sub { fill:var(--ui-ink-muted); font-size:12.5px; }
+  .seg-t { font-size:13px; font-weight:700; pointer-events:none; }
+  .ax { fill:var(--ui-ink-muted); font-size:12px; }
+  .seg { cursor:default; }
+  .seg:hover { filter: brightness(.96); }
+  .steps { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:12px; margin-top:18px; }
+  .step { background:var(--ui-page); border:1px solid var(--ui-line); border-left:4px solid var(--layer-graph-fg); border-radius:8px; padding:12px 14px; }
+  .step .n { font-size:26px; font-weight:700; font-variant-numeric: tabular-nums; }
+  .step .t { font-size:14px; color:var(--ui-ink-muted); line-height:1.4; }
+  details { margin-top:10px; font-size:14px; color:var(--ui-ink-muted); }
+  table { border-collapse:collapse; margin-top:6px; }
+  td, th { padding:3px 14px 3px 0; text-align:left; font-variant-numeric: tabular-nums; }
+  th { font-weight:600; }
+  .foot { font-size:13px; color:var(--ui-ink-muted); margin:14px 0 0; }
+  #tip { position:fixed; pointer-events:none; background:var(--ui-page); border:1px solid var(--ui-line-strong); border-radius:8px;
+         padding:6px 10px; font-size:13px; opacity:0; transition:opacity .08s; max-width:260px; box-shadow:none; }
+</style>
+</head>
+<body>
+<main>
+  <span class="eyebrow">① System Public Graph</span>
+  <h1>System checked every number we quote, and caught its own mistakes</h1>
+  <p class="lede">The 105 numbers in our evidence base, by verification badge, before and after the live System API check (14 Nov 2026). System works as a second, independent extractor: where it pulled the same result from the same paper, the numbers agreed every time.</p>
+
+  <section class="card">
+    <div class="legend">
+      <span class="pair"><span class="chip" style="background:var(--verify-double-fg);color:var(--ui-page);border-color:var(--verify-double-fg)">✓✓ Double-verified</span><span class="desc">in the abstract and System has the same value</span></span>
+      <span class="pair"><span class="chip" style="background:var(--verify-double-bg);color:var(--verify-double-fg);border-color:var(--verify-double-fg)">✓ Verified</span><span class="desc">in the abstract</span></span>
+      <span class="pair"><span class="chip" style="background:var(--verify-conflict-bg);color:var(--verify-conflict-fg);border-color:var(--verify-conflict-fg)">⚠ System mislabel</span><span class="desc">our number is right, System's label is wrong</span></span>
+      <span class="pair"><span class="chip" style="background:var(--verify-unverified-bg);color:var(--verify-unverified-fg);border-color:var(--verify-unverified-fg)">? Unverified</span><span class="desc">hidden from public views</span></span>
+    </div>
+    <div id="chart"></div>
+    <details><summary>Show as table</summary>
+      <table>
+        <tr><th></th><th>✓✓</th><th>✓</th><th>⚠ System mislabel</th><th>?</th><th>Total</th></tr>
+        <tr><td>Before (overnight, Dataverse bulk release)</td><td>5</td><td>74</td><td>0</td><td>26</td><td>105</td></tr>
+        <tr><td>After (live System API)</td><td>14</td><td>58</td><td>7</td><td>26</td><td>105</td></tr>
+      </table>
+    </details>
+
+    <div class="steps">
+      <div class="step"><div class="n">80 / 83</div><div class="t">papers we cite found in System (the bulk release had 7)</div></div>
+      <div class="step"><div class="n">+9</div><div class="t">numbers upgraded to ✓✓: System extracted the same value</div></div>
+      <div class="step"><div class="n">0</div><div class="t">number or direction conflicts between System and us</div></div>
+      <div class="step"><div class="n">7</div><div class="t">System mislabels on 3 papers: our claims keep ✓, the errors go on a fix list for System</div></div>
+    </div>
+  </section>
+  <p class="foot">Source: <code>data/processed/system_api_verification_numbers.csv</code> and the overnight <code>_dataverse_fallback</code> run. 1,902 API calls; 15,001 System findings pulled. "?" numbers didn't appear verbatim in their abstract, so neither run could verify them.</p>
+</main>
+<div id="tip" role="tooltip"></div>
+<script>
+const rows = [
+  { label: 'Before', sub: 'overnight · Dataverse bulk release', v: [5, 74, 0, 26] },
+  { label: 'After', sub: 'live System API', v: [14, 58, 7, 26] },
+];
+const cats = [
+  { name: '✓✓ Double-verified', short: '✓✓', fill: 'var(--verify-double-fg)', text: 'var(--ui-page)', stroke: 'var(--verify-double-fg)' },
+  { name: '✓ Verified',         short: '✓',  fill: 'var(--verify-double-bg)', text: 'var(--verify-double-fg)', stroke: 'var(--verify-double-fg)' },
+  { name: '⚠ System mislabel',  short: '⚠',  fill: 'var(--verify-conflict-bg)', text: 'var(--verify-conflict-fg)', stroke: 'var(--verify-conflict-fg)' },
+  { name: '? Unverified',       short: '?',  fill: 'var(--verify-unverified-bg)', text: 'var(--verify-unverified-fg)', stroke: 'var(--verify-unverified-fg)' },
+];
+const W = 920, labW = 200, plotW = W - labW - 20, bh = 54, gap = 34, padT = 6, total = 105;
+const H = padT + rows.length * (bh + gap) + 10;
+const sx = v => plotW * v / total;
+let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Verification badges of 105 numbers, before and after the System API check">`;
+[0, 25, 50, 75, 105].forEach(t => {
+  const x = labW + sx(t);
+  s += `<line x1="${x}" x2="${x}" y1="${padT - 2}" y2="${H - 26}" stroke="var(--ui-line)" stroke-dasharray="2 3"/>`;
+  s += `<text class="ax" x="${x}" y="${H - 8}" text-anchor="middle">${t}</text>`;
+});
+rows.forEach((r, i) => {
+  const y = padT + i * (bh + gap);
+  s += `<text class="lbl" x="${labW - 14}" y="${y + bh / 2 - 2}" text-anchor="end">${r.label}</text>`;
+  s += `<text class="sub" x="${labW - 14}" y="${y + bh / 2 + 16}" text-anchor="end">${r.sub}</text>`;
+  let x = labW;
+  r.v.forEach((v, j) => {
+    if (!v) return;
+    const w = sx(v), c = cats[j];
+    const tipTxt = `<b>${r.label}: ${c.name}</b><br>${v} of 105 numbers`;
+    s += `<rect class="seg" x="${x + 1}" y="${y}" width="${Math.max(1, w - 2)}" height="${bh}" rx="4" fill="${c.fill}" stroke="${c.stroke}" stroke-width="1" data-tip="${encodeURIComponent(tipTxt)}"/>`;
+    const txt = w > 70 ? `${c.short}  ${v}` : `${v}`;
+    s += `<text class="seg-t" x="${x + w / 2}" y="${y + bh / 2 + 5}" text-anchor="middle" fill="${c.text}">${txt}</text>`;
+    x += w;
+  });
+});
+s += `</svg>`;
+const el = document.getElementById('chart');
+el.innerHTML = s;
+const tip = document.getElementById('tip');
+el.querySelectorAll('.seg').forEach(seg => {
+  seg.addEventListener('mousemove', e => {
+    tip.innerHTML = decodeURIComponent(seg.dataset.tip); tip.style.opacity = 1;
+    tip.style.left = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8) + 'px'; tip.style.top = (e.clientY + 14) + 'px';
+  });
+  seg.addEventListener('mouseleave', () => tip.style.opacity = 0);
+});
+</script>
+</body>
+</html>

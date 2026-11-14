@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "../styles/shadcn.css";
+@import "../styles/tokens.css";
+
+/* Risk-group utilities are built from strings in src/lib/risk.ts; always generate them. */
+@source inline("{bg,text,border,ring,fill,stroke,outline}-risk-{high,medium,low}{,-on,-tint,-ink}");
+
+/*
+ * Tailwind v4 theme extension: exposes the design tokens in tokens.css as
+ * utilities, e.g. bg-adjust-solid, text-hold-ink, border-store-ink,
+ * bg-verify-double-bg, text-patient-xl, min-h-tap.
+ */
+@theme inline {
+  --color-page: var(--ui-page);
+  --color-surface: var(--ui-surface);
+  --color-line: var(--ui-line);
+  --color-line-strong: var(--ui-line-strong);
+  --color-ink: var(--ui-ink);
+  --color-ink-muted: var(--ui-ink-muted);
+  --color-missing: var(--ui-missing);
+
+  --color-adjust-solid: var(--bucket-adjust-solid);
+  --color-adjust-on: var(--bucket-adjust-on);
+  --color-adjust-tint: var(--bucket-adjust-tint);
+  --color-adjust-ink: var(--bucket-adjust-ink);
+  --color-hold-solid: var(--bucket-hold-solid);
+  --color-hold-on: var(--bucket-hold-on);
+  --color-hold-tint: var(--bucket-hold-tint);
+  --color-hold-ink: var(--bucket-hold-ink);
+  --color-monitor-solid: var(--bucket-monitor-solid);
+  --color-monitor-on: var(--bucket-monitor-on);
+  --color-monitor-tint: var(--bucket-monitor-tint);
+  --color-monitor-ink: var(--bucket-monitor-ink);
+  --color-store-solid: var(--bucket-store-solid);
+  --color-store-on: var(--bucket-store-on);
+  --color-store-tint: var(--bucket-store-tint);
+  --color-store-ink: var(--bucket-store-ink);
+
+  --color-risk-high: var(--risk-high);
+  --color-risk-high-on: var(--risk-high-on);
+  --color-risk-high-tint: var(--risk-high-tint);
+  --color-risk-high-ink: var(--risk-high-ink);
+  --color-risk-medium: var(--risk-medium);
+  --color-risk-medium-on: var(--risk-medium-on);
+  --color-risk-medium-tint: var(--risk-medium-tint);
+  --color-risk-medium-ink: var(--risk-medium-ink);
+  --color-risk-low: var(--risk-low);
+  --color-risk-low-on: var(--risk-low-on);
+  --color-risk-low-tint: var(--risk-low-tint);
+  --color-risk-low-ink: var(--risk-low-ink);
+
+  --color-gap-ring: var(--gap-ring);
+
+  --color-verify-double-bg: var(--verify-double-bg);
+  --color-verify-double-fg: var(--verify-double-fg);
+  --color-verify-single-bg: var(--verify-single-bg);
+  --color-verify-single-fg: var(--verify-single-fg);
+  --color-verify-corrob-bg: var(--verify-corrob-bg);
+  --color-verify-corrob-fg: var(--verify-corrob-fg);
+  --color-verify-conflict-bg: var(--verify-conflict-bg);
+  --color-verify-conflict-fg: var(--verify-conflict-fg);
+  --color-verify-unverified-bg: var(--verify-unverified-bg);
+  --color-verify-unverified-fg: var(--verify-unverified-fg);
+
+  --color-layer-graph-bg: var(--layer-graph-bg);
+  --color-layer-graph-fg: var(--layer-graph-fg);
+  --color-layer-lit-bg: var(--layer-lit-bg);
+  --color-layer-lit-fg: var(--layer-lit-fg);
+  --color-layer-fda-bg: var(--layer-fda-bg);
+  --color-layer-fda-fg: var(--layer-fda-fg);
+
+  --color-compass-up: var(--compass-up);
+  --color-compass-down: var(--compass-down);
+  --color-compass-depends: var(--compass-depends);
+
+  --font-sans: var(--font-body);
+
+  --text-patient-base: var(--patient-text-base);
+  --text-patient-lg: var(--patient-text-lg);
+  --text-patient-xl: var(--patient-text-xl);
+  --text-patient-2xl: var(--patient-text-2xl);
+
+  --spacing-tap: var(--patient-tap-target);
+  --radius-tile: var(--tile-radius);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--ui-page);
+  color: var(--ui-ink);
+  font-family: var(--font-body);
+}
+
+/* Visible keyboard focus everywhere (accessibility). */
+:focus-visible {
+  outline: 3px solid #0a5f66;
+  outline-offset: 2px;
+}

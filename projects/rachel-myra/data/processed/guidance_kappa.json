@@ -1,0 +1,336 @@
+{
+  "method": "Cohen's kappa (unweighted), pass1 keyword-then-read vs pass2 read-whole-section",
+  "n_pass1_quotes_not_verbatim": 0,
+  "core": {
+    "n_cells": 135,
+    "mentioned": {
+      "kappa": 0.955,
+      "percent_agreement": 97.8,
+      "n_disagree": 3
+    },
+    "mention_level": {
+      "kappa": 0.95,
+      "percent_agreement": 97.0,
+      "n_disagree": 4
+    },
+    "action_type": {
+      "kappa": 0.929,
+      "percent_agreement": 95.6,
+      "n_disagree": 6
+    },
+    "specificity": {
+      "kappa": 0.951,
+      "percent_agreement": 97.0,
+      "n_disagree": 4
+    },
+    "evidence_cited": {
+      "kappa": 0.917,
+      "percent_agreement": 97.8,
+      "n_disagree": 3
+    }
+  },
+  "all": {
+    "n_cells": 306,
+    "mentioned": {
+      "kappa": 0.967,
+      "percent_agreement": 98.4,
+      "n_disagree": 5
+    },
+    "mention_level": {
+      "kappa": 0.92,
+      "percent_agreement": 95.4,
+      "n_disagree": 14
+    },
+    "action_type": {
+      "kappa": 0.95,
+      "percent_agreement": 97.1,
+      "n_disagree": 9
+    },
+    "specificity": {
+      "kappa": 0.961,
+      "percent_agreement": 97.7,
+      "n_disagree": 7
+    },
+    "evidence_cited": {
+      "kappa": 0.93,
+      "percent_agreement": 98.4,
+      "n_disagree": 5
+    }
+  },
+  "resolution": {
+    "n_disagreeing_cells": 24,
+    "resolved_to_pass1": 10,
+    "resolved_to_pass2": 14
+  },
+  "coverage_core_drugs": {
+    "lithium": {
+      "mentioned_of_8": 8,
+      "specific_action_of_8": 2,
+      "specific_action_of_8_strict_germany_BMG_only": 1,
+      "sources_with_specific_action": [
+        "HC",
+        "GER_HEID"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "UKHSA",
+        "HC",
+        "ANSM",
+        "WHO_EUR",
+        "VIC",
+        "GER_HEID"
+      ],
+      "umbrella_only": []
+    },
+    "loop_diuretics": {
+      "mentioned_of_8": 6,
+      "specific_action_of_8": 1,
+      "specific_action_of_8_strict_germany_BMG_only": 1,
+      "sources_with_specific_action": [
+        "ANSM"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "UKHSA",
+        "HC",
+        "ANSM",
+        "VIC"
+      ],
+      "umbrella_only": [
+        "WHO_EUR",
+        "GER_HEID"
+      ]
+    },
+    "thiazides": {
+      "mentioned_of_8": 4,
+      "specific_action_of_8": 1,
+      "specific_action_of_8_strict_germany_BMG_only": 1,
+      "sources_with_specific_action": [
+        "ANSM"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "ANSM",
+        "VIC"
+      ],
+      "umbrella_only": [
+        "UKHSA",
+        "HC",
+        "WHO_EUR",
+        "GER_HEID"
+      ]
+    },
+    "acei_arb": {
+      "mentioned_of_8": 6,
+      "specific_action_of_8": 1,
+      "specific_action_of_8_strict_germany_BMG_only": 0,
+      "sources_with_specific_action": [
+        "GER_HEID"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "HC",
+        "ANSM",
+        "VIC",
+        "GER_HEID"
+      ],
+      "umbrella_only": [
+        "UKHSA",
+        "WHO_EUR"
+      ]
+    },
+    "sglt2": {
+      "mentioned_of_8": 0,
+      "specific_action_of_8": 0,
+      "specific_action_of_8_strict_germany_BMG_only": 0,
+      "sources_with_specific_action": [],
+      "sources_mentioning": [],
+      "umbrella_only": [
+        "ANSM"
+      ]
+    },
+    "insulin": {
+      "mentioned_of_8": 6,
+      "specific_action_of_8": 6,
+      "specific_action_of_8_strict_germany_BMG_only": 5,
+      "sources_with_specific_action": [
+        "CDC",
+        "NYC",
+        "HC",
+        "ANSM",
+        "WHO_EUR",
+        "GER_HEID"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "HC",
+        "ANSM",
+        "WHO_EUR",
+        "GER_HEID"
+      ],
+      "umbrella_only": []
+    },
+    "metformin": {
+      "mentioned_of_8": 2,
+      "specific_action_of_8": 0,
+      "specific_action_of_8_strict_germany_BMG_only": 0,
+      "sources_with_specific_action": [],
+      "sources_mentioning": [
+        "ANSM",
+        "VIC"
+      ],
+      "umbrella_only": []
+    },
+    "anticholinergics_oxybutynin": {
+      "mentioned_of_8": 8,
+      "specific_action_of_8": 1,
+      "specific_action_of_8_strict_germany_BMG_only": 0,
+      "sources_with_specific_action": [
+        "GER_HEID"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "UKHSA",
+        "HC",
+        "ANSM",
+        "WHO_EUR",
+        "VIC",
+        "GER_HEID"
+      ],
+      "umbrella_only": []
+    },
+    "antipsychotics_clozapine": {
+      "mentioned_of_8": 8,
+      "specific_action_of_8": 2,
+      "specific_action_of_8_strict_germany_BMG_only": 1,
+      "sources_with_specific_action": [
+        "WHO_EUR",
+        "GER_HEID"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "UKHSA",
+        "HC",
+        "ANSM",
+        "WHO_EUR",
+        "VIC",
+        "GER_HEID"
+      ],
+      "umbrella_only": []
+    },
+    "ssri": {
+      "mentioned_of_8": 5,
+      "specific_action_of_8": 1,
+      "specific_action_of_8_strict_germany_BMG_only": 1,
+      "sources_with_specific_action": [
+        "HC"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "HC",
+        "ANSM",
+        "GER_HEID"
+      ],
+      "umbrella_only": [
+        "UKHSA",
+        "WHO_EUR"
+      ]
+    },
+    "topiramate_zonisamide": {
+      "mentioned_of_8": 4,
+      "specific_action_of_8": 1,
+      "specific_action_of_8_strict_germany_BMG_only": 1,
+      "sources_with_specific_action": [
+        "HC"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "HC",
+        "GER_HEID"
+      ],
+      "umbrella_only": [
+        "UKHSA",
+        "ANSM",
+        "WHO_EUR"
+      ]
+    },
+    "adhd_stimulants": {
+      "mentioned_of_8": 6,
+      "specific_action_of_8": 1,
+      "specific_action_of_8_strict_germany_BMG_only": 0,
+      "sources_with_specific_action": [
+        "GER_HEID"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "HC",
+        "ANSM",
+        "VIC",
+        "GER_HEID"
+      ],
+      "umbrella_only": [
+        "WHO_EUR"
+      ]
+    },
+    "beta_blockers": {
+      "mentioned_of_8": 8,
+      "specific_action_of_8": 0,
+      "specific_action_of_8_strict_germany_BMG_only": 0,
+      "sources_with_specific_action": [],
+      "sources_mentioning": [
+        "CDC",
+        "NYC",
+        "UKHSA",
+        "HC",
+        "ANSM",
+        "WHO_EUR",
+        "VIC",
+        "GER_HEID"
+      ],
+      "umbrella_only": []
+    },
+    "opioid_patches_fentanyl": {
+      "mentioned_of_8": 1,
+      "specific_action_of_8": 1,
+      "specific_action_of_8_strict_germany_BMG_only": 0,
+      "sources_with_specific_action": [
+        "GER_HEID"
+      ],
+      "sources_mentioning": [
+        "GER_HEID"
+      ],
+      "umbrella_only": [
+        "CDC",
+        "NYC",
+        "UKHSA",
+        "ANSM"
+      ]
+    },
+    "epinephrine_autoinjector": {
+      "mentioned_of_8": 2,
+      "specific_action_of_8": 1,
+      "specific_action_of_8_strict_germany_BMG_only": 1,
+      "sources_with_specific_action": [
+        "NYC"
+      ],
+      "sources_mentioning": [
+        "CDC",
+        "NYC"
+      ],
+      "umbrella_only": [
+        "WHO_EUR"
+      ]
+    }
+  },
+  "note": "Both passes were done by AI (pass 1: a separate Claude subagent coding keyword-hit excerpts blind to pass 2; pass 2: Claude reading whole medication sections). This is an automated substitute for two human coders, not independent human double-coding. Germany counted as one jurisdiction = BMG federal plans + the Heidelberger Hitze-Tabelle they reference."
+}

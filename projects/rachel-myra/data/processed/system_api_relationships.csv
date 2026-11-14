@@ -1,0 +1,402 @@
+relationship_id,source_label,source_id,target_label,target_id,num_findings,num_studies,last_published_date,last_updated,edge_type,source_groups,target_groups
+eK6Lv3iVM8|uWNNlnauQq,hydrochlorothiazide,eK6Lv3iVM8,blood pressure,uWNNlnauQq,62,42,2022-12-01T00:00:00,2024-06-03T14:20:24.946737,drug-mediator,drug:thiazides,mediator:bp_hypotension
+IMhgtons9f|uWNNlnauQq,losartan,IMhgtons9f,blood pressure,uWNNlnauQq,50,41,2023-01-01T00:00:00,2025-09-02T14:48:34.329582,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+DB654gPUwk|uWNNlnauQq,telmisartan,DB654gPUwk,blood pressure,uWNNlnauQq,66,40,2024-01-01T00:00:00,2026-03-26T21:10:10.978115,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+A6Dsv1dmTR|dwy4MR0rcR,diuretic,A6Dsv1dmTR,acute kidney injury,dwy4MR0rcR,40,36,2024-09-05T00:00:00,2024-09-07T02:38:48.268989,drug-mediator,drug:diuretics_any,mediator:aki
+FcEKOuc-aO|uWNNlnauQq,captopril,FcEKOuc-aO,blood pressure,uWNNlnauQq,42,34,2024-02-01T00:00:00,2024-06-03T14:20:15.566556,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+hhvMEgyj98|dwy4MR0rcR,gliflozins,hhvMEgyj98,acute kidney injury,dwy4MR0rcR,50,32,2025-10-24T00:00:00,2025-10-27T14:22:07.975005,drug-mediator,drug:sglt2,mediator:aki
+Kcf5q8gDX9|dwy4MR0rcR,ACE inhibitor,Kcf5q8gDX9,acute kidney injury,dwy4MR0rcR,45,31,2024-11-01T00:00:00,2026-03-26T21:10:10.978115,drug-mediator,drug:acei_arb,mediator:aki
+2RzIlqCjcm|uWNNlnauQq,insulin,2RzIlqCjcm,blood pressure,uWNNlnauQq,51,30,2023-05-24T00:00:00,2024-08-20T03:02:06.945488,drug-mediator,drug:insulin,mediator:bp_hypotension
+nceJeKpSLI|dwy4MR0rcR,non-steroidal anti-inflammatory drug,nceJeKpSLI,acute kidney injury,dwy4MR0rcR,41,29,2025-12-01T00:00:00,2026-03-26T21:10:10.978115,drug-mediator,drug:nsaids,mediator:aki
+pyYvCJvU6w|uWNNlnauQq,valsartan,pyYvCJvU6w,blood pressure,uWNNlnauQq,39,29,2024-12-01T00:00:00,2025-08-25T15:06:24.578260,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+Kcf5q8gDX9|uWNNlnauQq,ACE inhibitor,Kcf5q8gDX9,blood pressure,uWNNlnauQq,42,28,2021-07-01T00:00:00,2026-03-26T21:10:10.978115,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+FcEKOuc-aO|ZgE4MD4rlh,captopril,FcEKOuc-aO,arterial blood pressure,ZgE4MD4rlh,31,28,2001-11-01T00:00:00,2024-10-19T03:04:37.523551,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+OAxaWqnsYC|uWNNlnauQq,atenolol,OAxaWqnsYC,blood pressure,uWNNlnauQq,32,26,2020-01-01T00:00:00,2025-08-24T14:06:52.602755,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+Z7oxoU6RYn|uWNNlnauQq,irbesartan,Z7oxoU6RYn,blood pressure,uWNNlnauQq,51,24,2023-02-01T00:00:00,2025-08-24T02:09:19.457934,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+8RhqtSYdIx|uWNNlnauQq,labetalol,8RhqtSYdIx,blood pressure,uWNNlnauQq,27,24,2023-12-01T00:00:00,2024-10-20T18:05:20.513001,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+Xj7gGQNPhf|uWNNlnauQq,enalapril,Xj7gGQNPhf,blood pressure,uWNNlnauQq,27,23,2023-05-31T00:00:00,2024-06-03T14:19:42.879655,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+wqj_TgiAW1|uWNNlnauQq,insulins,wqj_TgiAW1,blood pressure,uWNNlnauQq,33,21,2023-05-24T00:00:00,2024-06-03T14:20:15.562350,drug-mediator,drug:insulin,mediator:bp_hypotension
+A6Dsv1dmTR|uWNNlnauQq,diuretic,A6Dsv1dmTR,blood pressure,uWNNlnauQq,25,21,2020-08-28T00:00:00,2024-06-03T14:20:15.562441,drug-mediator,drug:diuretics_any,mediator:bp_hypotension
+SjDsvIgB5i|uWNNlnauQq,perindopril,SjDsvIgB5i,blood pressure,uWNNlnauQq,23,18,2022-06-16T00:00:00,2024-06-03T14:19:55.931715,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+HacH3Zcl3_|dwy4MR0rcR,furosemide,HacH3Zcl3_,acute kidney injury,dwy4MR0rcR,18,18,2024-01-01T00:00:00,2026-03-26T21:09:51.562462,drug-mediator,drug:loop_diuretics,mediator:aki
+mfsRYR2_AI|uWNNlnauQq,angiotensin receptor antagonists,mfsRYR2_AI,blood pressure,uWNNlnauQq,28,17,2023-12-31T00:00:00,2025-09-03T02:47:41.626418,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+q-I16SWsO4|uWNNlnauQq,lisinopril,q-I16SWsO4,blood pressure,uWNNlnauQq,27,17,2020-08-03T00:00:00,2024-10-20T18:05:20.513001,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+7FjcisZbI_|uWNNlnauQq,(RS)-metoprolol,7FjcisZbI_,blood pressure,uWNNlnauQq,24,16,2023-03-01T00:00:00,2024-06-03T14:20:15.559651,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+Xj7gGQNPhf|ZgE4MD4rlh,enalapril,Xj7gGQNPhf,arterial blood pressure,ZgE4MD4rlh,18,16,2013-08-01T00:00:00,2024-06-03T14:19:55.929994,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+IMhgtons9f|ZgE4MD4rlh,losartan,IMhgtons9f,arterial blood pressure,ZgE4MD4rlh,20,16,2016-02-01T00:00:00,2024-06-03T14:19:55.930006,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+WYDlXi2szb|uWNNlnauQq,nebivolol,WYDlXi2szb,blood pressure,uWNNlnauQq,28,16,2020-01-01T00:00:00,2024-06-03T14:20:15.560018,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+McSC_4AVn6|uWNNlnauQq,candesartan,McSC_4AVn6,blood pressure,uWNNlnauQq,21,16,2016-06-01T00:00:00,2026-03-26T21:10:10.978115,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+P74L_ZHoQM|uWNNlnauQq,olmesartan,P74L_ZHoQM,blood pressure,uWNNlnauQq,16,15,2018-12-01T00:00:00,2024-06-03T14:19:55.929371,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+uWNNlnauQq|2RzIlqCjcm,blood pressure,uWNNlnauQq,insulin,2RzIlqCjcm,24,13,2014-01-01T00:00:00,2024-08-20T03:02:06.945488,drug-mediator,mediator:bp_hypotension,drug:insulin
+hhvMEgyj98|uWNNlnauQq,gliflozins,hhvMEgyj98,blood pressure,uWNNlnauQq,19,13,2024-05-01T00:00:00,2025-09-02T02:49:26.529251,drug-mediator,drug:sglt2,mediator:bp_hypotension
+2RzIlqCjcm|tT5LvW72gI,insulin,2RzIlqCjcm,diastolic blood pressure,tT5LvW72gI,14,13,1999-08-01T00:00:00,2024-10-20T18:05:20.513001,drug-mediator,drug:insulin,mediator:bp_hypotension
+hNN7NLlha_|uWNNlnauQq,ramipril,hNN7NLlha_,blood pressure,uWNNlnauQq,17,13,2024-12-10T00:00:00,2024-12-14T02:39:18.354050,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+sScGTB5I2A|uWNNlnauQq,Bisoprolol,sScGTB5I2A,blood pressure,uWNNlnauQq,16,12,2021-06-01T00:00:00,2024-06-03T14:19:55.925235,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+DVPdh9276g|uWNNlnauQq,beta blocker,DVPdh9276g,blood pressure,uWNNlnauQq,18,12,2019-04-01T00:00:00,2026-03-26T21:09:51.562462,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+akHzlhGK6Z|uWNNlnauQq,chlorthalidone,akHzlhGK6Z,blood pressure,uWNNlnauQq,16,12,2022-09-20T00:00:00,2024-06-03T14:19:55.925612,drug-mediator,drug:thiazides,mediator:bp_hypotension
+2RzIlqCjcm|uboWgSu-kS,insulin,2RzIlqCjcm,systolic blood pressure,uboWgSu-kS,16,12,2004-01-01T00:00:00,2024-10-20T18:05:20.513001,drug-mediator,drug:insulin,mediator:bp_hypotension
+mfsRYR2_AI|dwy4MR0rcR,angiotensin receptor antagonists,mfsRYR2_AI,acute kidney injury,dwy4MR0rcR,20,11,2024-09-01T00:00:00,2025-09-02T14:48:23.257977,drug-mediator,drug:acei_arb,mediator:aki
+5cuQzZnxtY|uWNNlnauQq,carvedilol,5cuQzZnxtY,blood pressure,uWNNlnauQq,16,11,2021-03-01T00:00:00,2024-06-03T14:19:55.923881,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+Kcf5q8gDX9|m4eAsiRDXQ,ACE inhibitor,Kcf5q8gDX9,hypotension,m4eAsiRDXQ,12,10,2025-12-12T00:00:00,2026-03-26T21:09:51.562462,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+2RzIlqCjcm|ZgE4MD4rlh,insulin,2RzIlqCjcm,arterial blood pressure,ZgE4MD4rlh,12,10,2003-05-01T00:00:00,2024-08-20T03:01:57.709485,drug-mediator,drug:insulin,mediator:bp_hypotension
+22d9NIq-tN|uWNNlnauQq,amlodipine/valsartan,22d9NIq-tN,blood pressure,uWNNlnauQq,23,10,2019-02-01T00:00:00,2024-06-03T14:20:15.558018,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+u3p7wGPvPL|uWNNlnauQq,propranolol,u3p7wGPvPL,blood pressure,uWNNlnauQq,12,10,1997-02-01T00:00:00,2024-10-19T03:04:17.868122,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+lql492pWuk|uWNNlnauQq,metformin,lql492pWuk,blood pressure,uWNNlnauQq,15,10,2026-01-01T00:00:00,2026-03-26T21:09:51.562462,drug-mediator,drug:metformin,mediator:bp_hypotension
+lql492pWuk|dwy4MR0rcR,metformin,lql492pWuk,acute kidney injury,dwy4MR0rcR,12,10,2025-01-01T00:00:00,2025-08-24T14:06:25.258952,drug-mediator,drug:metformin,mediator:aki
+Kcf5q8gDX9|ZgE4MD4rlh,ACE inhibitor,Kcf5q8gDX9,arterial blood pressure,ZgE4MD4rlh,11,9,2022-07-01T00:00:00,2024-06-03T14:19:11.393085,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+b0cdBpYHKK|dwy4MR0rcR,Sodium Potassium Chloride Symporter Inhibitors,b0cdBpYHKK,acute kidney injury,dwy4MR0rcR,13,9,2024-03-01T00:00:00,2024-06-03T14:19:42.887778,drug-mediator,drug:loop_diuretics,mediator:aki
+EK6bztrnrT|uWNNlnauQq,benazepril,EK6bztrnrT,blood pressure,uWNNlnauQq,14,9,2017-01-01T00:00:00,2024-06-03T14:19:42.886787,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+IjmedHpk0D|uWNNlnauQq,olmesartan medoxomil,IjmedHpk0D,blood pressure,uWNNlnauQq,12,9,2017-04-01T00:00:00,2024-06-03T14:19:42.886924,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+mI9WZrt0dL|uWNNlnauQq,fosinopril,mI9WZrt0dL,blood pressure,uWNNlnauQq,11,9,2014-10-01T00:00:00,2024-06-03T14:19:42.887359,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+mgRDS5mimT|dwy4MR0rcR,ibuprofen,mgRDS5mimT,acute kidney injury,dwy4MR0rcR,17,8,2024-12-01T00:00:00,2026-03-26T21:09:51.562462,drug-mediator,drug:nsaids,mediator:aki
+ZgE4MD4rlh|2RzIlqCjcm,arterial blood pressure,ZgE4MD4rlh,insulin,2RzIlqCjcm,11,8,2000-05-01T00:00:00,2024-08-20T03:01:57.709485,drug-mediator,mediator:bp_hypotension,drug:insulin
+gF_gh_5Orw|uWNNlnauQq,candesartan cilexetil,gF_gh_5Orw,blood pressure,uWNNlnauQq,14,8,2025-08-25T00:00:00,2025-09-05T14:28:11.930945,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+u3p7wGPvPL|ZgE4MD4rlh,propranolol,u3p7wGPvPL,arterial blood pressure,ZgE4MD4rlh,9,7,2006-12-01T00:00:00,2024-06-03T14:17:38.869774,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+6WjhLJwfFc|uWNNlnauQq,eprosartan,6WjhLJwfFc,blood pressure,uWNNlnauQq,9,7,2010-06-01T00:00:00,2024-06-03T14:19:23.237323,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+BCkbAENZTS|uWNNlnauQq,canagliflozin,BCkbAENZTS,blood pressure,uWNNlnauQq,10,7,2023-01-01T00:00:00,2024-06-03T14:18:51.538392,drug-mediator,drug:sglt2,mediator:bp_hypotension
+KkBcwbG3bl|uWNNlnauQq,indapamide,KkBcwbG3bl,blood pressure,uWNNlnauQq,13,7,2013-09-01T00:00:00,2024-06-03T14:19:42.883195,drug-mediator,drug:thiazides,mediator:bp_hypotension
+FXpRF2f4Ae|m4eAsiRDXQ,fentanyl,FXpRF2f4Ae,hypotension,m4eAsiRDXQ,10,7,2024-05-24T00:00:00,2024-10-20T18:05:09.575894,drug-mediator,drug:opioids_fentanyl,mediator:bp_hypotension
+DWzSiBDXty|GiyIgG3cvi,selective serotonin reuptake inhibitor,DWzSiBDXty,hyponatremia,GiyIgG3cvi,11,7,2025-08-05T00:00:00,2026-03-26T21:09:51.562462,drug-mediator,drug:ssris,mediator:hyponatremia
+TDX9naIdBm|GiyIgG3cvi,Sodium Chloride Symporter Inhibitors,TDX9naIdBm,hyponatremia,GiyIgG3cvi,12,6,2024-01-01T00:00:00,2024-06-03T14:19:11.399535,drug-mediator,drug:thiazides,mediator:hyponatremia
+gwk0XVG6M2|dwy4MR0rcR,empagliflozin,gwk0XVG6M2,acute kidney injury,dwy4MR0rcR,7,6,2024-04-01T00:00:00,2025-09-03T02:47:24.514920,drug-mediator,drug:sglt2,mediator:aki
+HacH3Zcl3_|ZgE4MD4rlh,furosemide,HacH3Zcl3_,arterial blood pressure,ZgE4MD4rlh,6,6,2003-03-01T00:00:00,2024-06-03T14:18:40.716884,drug-mediator,drug:loop_diuretics,mediator:bp_hypotension
+asqvxp4itv|uWNNlnauQq,angiotensin II receptor antagonist,asqvxp4itv,blood pressure,uWNNlnauQq,5,5,2006-11-01T00:00:00,2024-06-03T14:14:40.177238,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+mfsRYR2_AI|m4eAsiRDXQ,angiotensin receptor antagonists,mfsRYR2_AI,hypotension,m4eAsiRDXQ,6,5,2024-09-01T00:00:00,2025-09-02T14:48:04.285498,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+ujlY6wVzB0|GiyIgG3cvi,antipsychotics,ujlY6wVzB0,hyponatremia,GiyIgG3cvi,6,5,2021-07-14T00:00:00,2024-10-19T03:04:17.868122,drug-mediator,drug:antipsychotics,mediator:hyponatremia
+OAxaWqnsYC|ZgE4MD4rlh,atenolol,OAxaWqnsYC,arterial blood pressure,ZgE4MD4rlh,7,5,2011-04-01T00:00:00,2024-06-03T14:17:49.793633,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+4d0MJgfeVB|uWNNlnauQq,azilsartan medoxomil,4d0MJgfeVB,blood pressure,uWNNlnauQq,5,5,2021-02-01T00:00:00,2025-09-03T02:47:24.514920,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+JDaZEOGtSs|uWNNlnauQq,trandolapril,JDaZEOGtSs,blood pressure,uWNNlnauQq,5,5,2020-01-01T00:00:00,2024-06-03T14:18:09.994336,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+JKKt4-VA9B|uWNNlnauQq,quinapril,JKKt4-VA9B,blood pressure,uWNNlnauQq,9,5,2008-11-01T00:00:00,2024-10-20T18:05:09.575894,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+HacH3Zcl3_|uWNNlnauQq,furosemide,HacH3Zcl3_,blood pressure,uWNNlnauQq,7,5,2025-01-29T00:00:00,2025-02-02T02:22:53.055877,drug-mediator,drug:loop_diuretics,mediator:bp_hypotension
+hhvMEgyj98|uboWgSu-kS,gliflozins,hhvMEgyj98,systolic blood pressure,uboWgSu-kS,5,5,2024-03-01T00:00:00,2025-09-02T02:49:10.529643,drug-mediator,drug:sglt2,mediator:bp_hypotension
+RFP3Vz-YwQ|GiyIgG3cvi,thiazide,RFP3Vz-YwQ,hyponatremia,GiyIgG3cvi,5,5,2024-04-02T00:00:00,2024-06-03T14:18:20.842188,drug-mediator,drug:thiazides,mediator:hyponatremia
+DWzSiBDXty|njRsZA9iEn,selective serotonin reuptake inhibitor,DWzSiBDXty,orthostatic hypotension,njRsZA9iEn,5,5,2020-11-01T00:00:00,2024-06-03T14:17:49.800556,drug-mediator,drug:ssris,mediator:bp_hypotension
+uWNNlnauQq|Kcf5q8gDX9,blood pressure,uWNNlnauQq,ACE inhibitor,Kcf5q8gDX9,5,4,2023-05-01T00:00:00,2024-06-03T14:18:10.000484,drug-mediator,mediator:bp_hypotension,drug:acei_arb
+sScGTB5I2A|ZgE4MD4rlh,Bisoprolol,sScGTB5I2A,arterial blood pressure,ZgE4MD4rlh,5,4,2022-06-01T00:00:00,2024-06-03T14:17:38.876994,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+2RzIlqCjcm|dwy4MR0rcR,insulin,2RzIlqCjcm,acute kidney injury,dwy4MR0rcR,5,4,2021-06-01T00:00:00,2026-03-26T21:09:40.346898,drug-mediator,drug:insulin,mediator:aki
+ujlY6wVzB0|dwy4MR0rcR,antipsychotics,ujlY6wVzB0,acute kidney injury,dwy4MR0rcR,9,4,2022-08-01T00:00:00,2024-06-03T14:18:40.718905,drug-mediator,drug:antipsychotics,mediator:aki
+DVPdh9276g|dwy4MR0rcR,beta blocker,DVPdh9276g,acute kidney injury,dwy4MR0rcR,5,4,2023-10-01T00:00:00,2024-06-03T14:18:40.723423,drug-mediator,drug:beta_blockers,mediator:aki
+6WjhLJwfFc|ZgE4MD4rlh,eprosartan,6WjhLJwfFc,arterial blood pressure,ZgE4MD4rlh,4,4,2008-08-01T00:00:00,2024-06-03T14:17:19.081295,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+hNN7NLlha_|ZgE4MD4rlh,ramipril,hNN7NLlha_,arterial blood pressure,ZgE4MD4rlh,5,4,2007-08-01T00:00:00,2024-06-03T14:12:53.987588,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+DVPdh9276g|m4eAsiRDXQ,beta blocker,DVPdh9276g,hypotension,m4eAsiRDXQ,4,4,2024-11-11T00:00:00,2025-08-23T14:16:45.081378,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+XQE2M0qtg7|uWNNlnauQq,diazepam,XQE2M0qtg7,blood pressure,uWNNlnauQq,7,4,2025-03-11T00:00:00,2025-03-14T14:22:46.336398,drug-mediator,drug:benzodiazepines,mediator:bp_hypotension
+hc_z79riv0|uWNNlnauQq,enalaprilat dihydrate,hc_z79riv0,blood pressure,uWNNlnauQq,6,4,2015-05-01T00:00:00,2024-06-03T14:17:19.080702,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+gwk0XVG6M2|uWNNlnauQq,empagliflozin,gwk0XVG6M2,blood pressure,uWNNlnauQq,9,4,2023-01-01T00:00:00,2024-06-03T14:19:42.880721,drug-mediator,drug:sglt2,mediator:bp_hypotension
+FcEKOuc-aO|uboWgSu-kS,captopril,FcEKOuc-aO,systolic blood pressure,uboWgSu-kS,4,4,2018-12-01T00:00:00,2024-06-03T14:17:38.870096,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+akHzlhGK6Z|GiyIgG3cvi,chlorthalidone,akHzlhGK6Z,hyponatremia,GiyIgG3cvi,5,4,2021-09-01T00:00:00,2024-06-03T14:17:49.797405,drug-mediator,drug:thiazides,mediator:hyponatremia
+oGpQ21VX-b|dwy4MR0rcR,dapagliflozin,oGpQ21VX-b,acute kidney injury,dwy4MR0rcR,7,4,2024-04-01T00:00:00,2026-03-26T21:09:40.346898,drug-mediator,drug:sglt2,mediator:aki
+eK6Lv3iVM8|tT5LvW72gI,hydrochlorothiazide,eK6Lv3iVM8,diastolic blood pressure,tT5LvW72gI,4,4,2014-10-01T00:00:00,2024-06-03T14:02:20.319368,drug-mediator,drug:thiazides,mediator:bp_hypotension
+pyYvCJvU6w|m4eAsiRDXQ,valsartan,pyYvCJvU6w,hypotension,m4eAsiRDXQ,5,4,2025-04-21T00:00:00,2025-04-26T14:57:21.715667,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+3lmAiW35EL|m4eAsiRDXQ,morphine,3lmAiW35EL,hypotension,m4eAsiRDXQ,4,4,2016-01-01T00:00:00,2024-06-03T14:17:19.081374,drug-mediator,drug:opioids_fentanyl,mediator:bp_hypotension
+KkBcwbG3bl|ZgE4MD4rlh,indapamide,KkBcwbG3bl,arterial blood pressure,ZgE4MD4rlh,4,4,2004-05-01T00:00:00,2024-06-03T14:17:19.082341,drug-mediator,drug:thiazides,mediator:bp_hypotension
+3lmAiW35EL|ZgE4MD4rlh,morphine,3lmAiW35EL,arterial blood pressure,ZgE4MD4rlh,4,4,2022-07-01T00:00:00,2024-06-03T14:08:37.954046,drug-mediator,drug:opioids_fentanyl,mediator:bp_hypotension
+7FjcisZbI_|ZgE4MD4rlh,(RS)-metoprolol,7FjcisZbI_,arterial blood pressure,ZgE4MD4rlh,3,3,2007-07-01T00:00:00,2024-06-03T14:13:04.708752,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+Kcf5q8gDX9|uboWgSu-kS,ACE inhibitor,Kcf5q8gDX9,systolic blood pressure,uboWgSu-kS,3,3,2022-03-01T00:00:00,2024-06-03T14:17:19.077920,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+TDX9naIdBm|uWNNlnauQq,Sodium Chloride Symporter Inhibitors,TDX9naIdBm,blood pressure,uWNNlnauQq,4,3,2023-07-01T00:00:00,2024-06-03T14:17:19.076631,drug-mediator,drug:thiazides,mediator:bp_hypotension
+dwy4MR0rcR|A6Dsv1dmTR,acute kidney injury,dwy4MR0rcR,diuretic,A6Dsv1dmTR,4,3,2016-01-01T00:00:00,2024-06-03T14:17:19.080105,drug-mediator,mediator:aki,drug:diuretics_any
+3lmAiW35EL|dwy4MR0rcR,morphine,3lmAiW35EL,acute kidney injury,dwy4MR0rcR,3,3,2024-01-01T00:00:00,2024-06-04T15:39:39.414772,drug-mediator,drug:opioids_fentanyl,mediator:aki
+DB654gPUwk|jq6aIWKnPC,telmisartan,DB654gPUwk,ambulatory blood pressure monitoring,jq6aIWKnPC,4,3,2014-01-01T00:00:00,2025-09-01T14:54:30.329317,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+mfsRYR2_AI|ZgE4MD4rlh,angiotensin receptor antagonists,mfsRYR2_AI,arterial blood pressure,ZgE4MD4rlh,3,3,2000-01-01T00:00:00,2024-06-03T14:13:37.275199,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+ujlY6wVzB0|njRsZA9iEn,antipsychotics,ujlY6wVzB0,orthostatic hypotension,njRsZA9iEn,3,3,2024-04-01T00:00:00,2024-06-03T14:02:00.761776,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+mgRDS5mimT|ZgE4MD4rlh,ibuprofen,mgRDS5mimT,arterial blood pressure,ZgE4MD4rlh,3,3,2019-12-01T00:00:00,2024-06-03T14:11:20.258070,drug-mediator,drug:nsaids,mediator:bp_hypotension
+hc_z79riv0|ZgE4MD4rlh,enalaprilat dihydrate,hc_z79riv0,arterial blood pressure,ZgE4MD4rlh,3,3,2003-07-01T00:00:00,2024-06-03T14:08:37.958492,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+FXpRF2f4Ae|ZgE4MD4rlh,fentanyl,FXpRF2f4Ae,arterial blood pressure,ZgE4MD4rlh,3,3,2022-08-01T00:00:00,2024-10-19T03:04:05.185338,drug-mediator,drug:opioids_fentanyl,mediator:bp_hypotension
+8RhqtSYdIx|ZgE4MD4rlh,labetalol,8RhqtSYdIx,arterial blood pressure,ZgE4MD4rlh,3,3,2017-11-01T00:00:00,2024-06-03T14:07:03.933992,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+A6Dsv1dmTR|ZgE4MD4rlh,diuretic,A6Dsv1dmTR,arterial blood pressure,ZgE4MD4rlh,3,3,2017-11-01T00:00:00,2024-06-03T14:17:19.079042,drug-mediator,drug:diuretics_any,mediator:bp_hypotension
+DVPdh9276g|ZgE4MD4rlh,beta blocker,DVPdh9276g,arterial blood pressure,ZgE4MD4rlh,3,3,1999-03-01T00:00:00,2024-06-03T14:17:19.080213,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+JKKt4-VA9B|ZgE4MD4rlh,quinapril,JKKt4-VA9B,arterial blood pressure,ZgE4MD4rlh,3,3,1996-01-01T00:00:00,2024-06-03T14:17:19.080325,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+SjDsvIgB5i|ZgE4MD4rlh,perindopril,SjDsvIgB5i,arterial blood pressure,ZgE4MD4rlh,3,3,2022-11-01T00:00:00,2025-09-02T14:47:53.167827,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+FXpRF2f4Ae|uWNNlnauQq,fentanyl,FXpRF2f4Ae,blood pressure,uWNNlnauQq,3,3,2024-07-04T00:00:00,2024-07-06T03:08:19.365166,drug-mediator,drug:opioids_fentanyl,mediator:bp_hypotension
+alVRObDo-N|uWNNlnauQq,moexipril,alVRObDo-N,blood pressure,uWNNlnauQq,6,3,2005-04-20T00:00:00,2024-06-03T14:18:40.720840,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+2eHrRvoaAf|uWNNlnauQq,"Insulin, Lente",2eHrRvoaAf,blood pressure,uWNNlnauQq,3,3,2023-05-24T00:00:00,2024-06-03T14:14:40.176264,drug-mediator,drug:insulin,mediator:bp_hypotension
+vp7vIW8F5J|uWNNlnauQq,"rel-(αR,α′R,2R,2′S)-nebivolol",vp7vIW8F5J,blood pressure,uWNNlnauQq,3,3,2025-06-10T00:00:00,2025-06-12T03:04:49.381651,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+DWzSiBDXty|uWNNlnauQq,selective serotonin reuptake inhibitor,DWzSiBDXty,blood pressure,uWNNlnauQq,6,3,2023-11-01T00:00:00,2025-09-02T02:49:10.529643,drug-mediator,drug:ssris,mediator:bp_hypotension
+EKqEY2Dj2O|uWNNlnauQq,imidapril,EKqEY2Dj2O,blood pressure,uWNNlnauQq,3,3,2011-04-01T00:00:00,2024-06-03T14:16:02.982480,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+A6Dsv1dmTR|GiyIgG3cvi,diuretic,A6Dsv1dmTR,hyponatremia,GiyIgG3cvi,6,3,2023-06-01T00:00:00,2024-06-03T14:17:49.797862,drug-mediator,drug:diuretics_any,mediator:hyponatremia
+Xj7gGQNPhf|m4eAsiRDXQ,enalapril,Xj7gGQNPhf,hypotension,m4eAsiRDXQ,3,3,2000-11-04T00:00:00,2024-06-03T14:17:19.075868,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+Xj7gGQNPhf|uboWgSu-kS,enalapril,Xj7gGQNPhf,systolic blood pressure,uboWgSu-kS,3,3,1989-04-01T00:00:00,2024-06-03T14:17:19.078921,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+eK6Lv3iVM8|uboWgSu-kS,hydrochlorothiazide,eK6Lv3iVM8,systolic blood pressure,uboWgSu-kS,3,3,2014-10-01T00:00:00,2024-06-03T14:13:37.277179,drug-mediator,drug:thiazides,mediator:bp_hypotension
+wqj_TgiAW1|GiyIgG3cvi,insulins,wqj_TgiAW1,hyponatremia,GiyIgG3cvi,4,3,2022-10-01T00:00:00,2024-06-03T14:18:09.996165,drug-mediator,drug:insulin,mediator:hyponatremia
+lql492pWuk|uboWgSu-kS,metformin,lql492pWuk,systolic blood pressure,uboWgSu-kS,3,3,2023-06-01T00:00:00,2024-06-03T14:17:19.078940,drug-mediator,drug:metformin,mediator:bp_hypotension
+2oXEjVTSE4|dwy4MR0rcR,opioid-related disorders,2oXEjVTSE4,acute kidney injury,dwy4MR0rcR,3,3,2022-08-01T00:00:00,2024-06-03T14:17:19.075075,drug-mediator,drug:opioids_fentanyl,mediator:aki
+pyYvCJvU6w|uboWgSu-kS,valsartan,pyYvCJvU6w,systolic blood pressure,uboWgSu-kS,3,3,2025-03-10T00:00:00,2025-03-14T02:21:05.217318,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+9CJNSbirWZ|uboWgSu-kS,sotagliflozin,9CJNSbirWZ,systolic blood pressure,uboWgSu-kS,3,3,2025-04-01T00:00:00,2025-08-23T14:16:45.081378,drug-mediator,drug:sglt2,mediator:bp_hypotension
+uH0rXBHt_r|GiyIgG3cvi,(RS)-citalopram,uH0rXBHt_r,hyponatremia,GiyIgG3cvi,2,2,2018-01-01T00:00:00,2024-06-03T14:16:15.195919,drug-mediator,drug:ssris,mediator:hyponatremia
+uWNNlnauQq|7FjcisZbI_,blood pressure,uWNNlnauQq,(RS)-metoprolol,7FjcisZbI_,4,2,2025-07-02T00:00:00,2026-03-26T21:09:18.619738,drug-mediator,mediator:bp_hypotension,drug:beta_blockers
+7FjcisZbI_|uboWgSu-kS,(RS)-metoprolol,7FjcisZbI_,systolic blood pressure,uboWgSu-kS,2,2,2012-09-01T00:00:00,2024-06-03T14:13:57.186556,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+7FjcisZbI_|m4eAsiRDXQ,(RS)-metoprolol,7FjcisZbI_,hypotension,m4eAsiRDXQ,2,2,2025-03-01T00:00:00,2025-09-02T14:47:33.516600,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+Kcf5q8gDX9|tT5LvW72gI,ACE inhibitor,Kcf5q8gDX9,diastolic blood pressure,tT5LvW72gI,2,2,2022-03-01T00:00:00,2024-06-03T14:15:11.384377,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+dwy4MR0rcR|Kcf5q8gDX9,acute kidney injury,dwy4MR0rcR,ACE inhibitor,Kcf5q8gDX9,2,2,2023-05-01T00:00:00,2024-06-03T14:09:51.976327,drug-mediator,mediator:aki,drug:acei_arb
+sScGTB5I2A|uboWgSu-kS,Bisoprolol,sScGTB5I2A,systolic blood pressure,uboWgSu-kS,2,2,1994-02-01T00:00:00,2024-06-03T14:03:32.751829,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+ESWjbkHiFu|uWNNlnauQq,DL-amphetamine,ESWjbkHiFu,blood pressure,uWNNlnauQq,2,2,2021-12-01T00:00:00,2025-08-26T03:07:47.649889,drug-mediator,drug:adhd_stimulants,mediator:bp_hypotension
+b0cdBpYHKK|uWNNlnauQq,Sodium Potassium Chloride Symporter Inhibitors,b0cdBpYHKK,blood pressure,uWNNlnauQq,2,2,2023-01-01T00:00:00,2024-06-03T14:12:53.991074,drug-mediator,drug:loop_diuretics,mediator:bp_hypotension
+b0cdBpYHKK|GiyIgG3cvi,Sodium Potassium Chloride Symporter Inhibitors,b0cdBpYHKK,hyponatremia,GiyIgG3cvi,4,2,2018-06-01T00:00:00,2024-06-03T14:18:09.995122,drug-mediator,drug:loop_diuretics,mediator:hyponatremia
+b0cdBpYHKK|njRsZA9iEn,Sodium Potassium Chloride Symporter Inhibitors,b0cdBpYHKK,orthostatic hypotension,njRsZA9iEn,2,2,2016-08-01T00:00:00,2024-06-03T14:00:58.301374,drug-mediator,drug:loop_diuretics,mediator:bp_hypotension
+0XxfwfEzjV|dwy4MR0rcR,celecoxib,0XxfwfEzjV,acute kidney injury,dwy4MR0rcR,2,2,2009-10-01T00:00:00,2026-03-26T21:09:07.043977,drug-mediator,drug:nsaids,mediator:aki
+TKMYLXzPwH|dwy4MR0rcR,diclofenac,TKMYLXzPwH,acute kidney injury,dwy4MR0rcR,2,2,2018-01-01T00:00:00,2026-03-26T21:09:18.619738,drug-mediator,drug:nsaids,mediator:aki
+tVL9qvp2IM|dwy4MR0rcR,torasemide,tVL9qvp2IM,acute kidney injury,dwy4MR0rcR,2,2,2025-04-01T00:00:00,2025-03-26T14:21:16.982382,drug-mediator,drug:loop_diuretics,mediator:aki
+wqj_TgiAW1|dwy4MR0rcR,insulins,wqj_TgiAW1,acute kidney injury,dwy4MR0rcR,2,2,2022-06-20T00:00:00,2024-06-03T14:15:44.303702,drug-mediator,drug:insulin,mediator:aki
+BCkbAENZTS|dwy4MR0rcR,canagliflozin,BCkbAENZTS,acute kidney injury,dwy4MR0rcR,3,2,2024-10-15T00:00:00,2024-12-30T14:34:55.354202,drug-mediator,drug:sglt2,mediator:aki
+tEPKKhFBgG|dwy4MR0rcR,risperidone,tEPKKhFBgG,acute kidney injury,dwy4MR0rcR,3,2,2022-08-01T00:00:00,2024-06-03T13:57:12.029400,drug-mediator,drug:antipsychotics,mediator:aki
+rL28dXGhRi|dwy4MR0rcR,naproxen,rL28dXGhRi,acute kidney injury,dwy4MR0rcR,2,2,2009-10-01T00:00:00,2024-06-03T14:16:15.195535,drug-mediator,drug:nsaids,mediator:aki
+xTCyfzs2ZT|dwy4MR0rcR,olanzapine,xTCyfzs2ZT,acute kidney injury,dwy4MR0rcR,3,2,2022-08-01T00:00:00,2024-06-03T14:17:38.871842,drug-mediator,drug:antipsychotics,mediator:aki
+IMhgtons9f|jq6aIWKnPC,losartan,IMhgtons9f,ambulatory blood pressure monitoring,jq6aIWKnPC,3,2,2001-06-01T00:00:00,2024-06-03T13:54:32.352858,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+IjmedHpk0D|jq6aIWKnPC,olmesartan medoxomil,IjmedHpk0D,ambulatory blood pressure monitoring,jq6aIWKnPC,2,2,2017-04-01T00:00:00,2024-06-03T14:12:03.800518,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+Z7oxoU6RYn|jq6aIWKnPC,irbesartan,Z7oxoU6RYn,ambulatory blood pressure monitoring,jq6aIWKnPC,4,2,2023-05-01T00:00:00,2024-06-03T14:17:49.799831,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+asqvxp4itv|uboWgSu-kS,angiotensin II receptor antagonist,asqvxp4itv,systolic blood pressure,uboWgSu-kS,2,2,2021-02-01T00:00:00,2024-06-03T14:04:53.419769,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+mfsRYR2_AI|uboWgSu-kS,angiotensin receptor antagonists,mfsRYR2_AI,systolic blood pressure,uboWgSu-kS,2,2,2021-02-01T00:00:00,2024-06-03T14:15:44.305044,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+4tK_Z18ObT|uWNNlnauQq,antidepressant,4tK_Z18ObT,blood pressure,uWNNlnauQq,3,2,2022-02-01T00:00:00,2024-06-03T14:16:34.415865,drug-mediator,drug:ssris,mediator:bp_hypotension
+ujlY6wVzB0|uWNNlnauQq,antipsychotics,ujlY6wVzB0,blood pressure,uWNNlnauQq,2,2,2016-04-01T00:00:00,2024-06-03T14:14:08.919122,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+ujlY6wVzB0|m4eAsiRDXQ,antipsychotics,ujlY6wVzB0,hypotension,m4eAsiRDXQ,2,2,2014-08-19T00:00:00,2024-06-03T14:13:37.271942,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+XQE2M0qtg7|ZgE4MD4rlh,diazepam,XQE2M0qtg7,arterial blood pressure,ZgE4MD4rlh,2,2,2022-06-01T00:00:00,2024-06-03T13:59:11.717650,drug-mediator,drug:benzodiazepines,mediator:bp_hypotension
+P74L_ZHoQM|ZgE4MD4rlh,olmesartan,P74L_ZHoQM,arterial blood pressure,ZgE4MD4rlh,2,2,2009-10-01T00:00:00,2024-06-03T14:14:08.924303,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+JDaZEOGtSs|ZgE4MD4rlh,trandolapril,JDaZEOGtSs,arterial blood pressure,ZgE4MD4rlh,2,2,2007-06-01T00:00:00,2024-06-03T14:13:37.269117,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+5cuQzZnxtY|ZgE4MD4rlh,carvedilol,5cuQzZnxtY,arterial blood pressure,ZgE4MD4rlh,2,2,2006-04-01T00:00:00,2024-06-03T14:12:53.983220,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+mI9WZrt0dL|ZgE4MD4rlh,fosinopril,mI9WZrt0dL,arterial blood pressure,ZgE4MD4rlh,2,2,2001-07-01T00:00:00,2024-06-03T14:10:14.445615,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+p8kiNa0Nw1|ZgE4MD4rlh,lithium,p8kiNa0Nw1,arterial blood pressure,ZgE4MD4rlh,2,2,2000-03-01T00:00:00,2024-06-03T14:14:40.172635,drug-mediator,drug:lithium,mediator:bp_hypotension
+q-I16SWsO4|ZgE4MD4rlh,lisinopril,q-I16SWsO4,arterial blood pressure,ZgE4MD4rlh,3,2,1999-06-01T00:00:00,2024-06-03T14:13:57.185514,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+OAxaWqnsYC|uboWgSu-kS,atenolol,OAxaWqnsYC,systolic blood pressure,uboWgSu-kS,2,2,1993-04-01T00:00:00,2024-06-03T14:13:04.705369,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+OAxaWqnsYC|tT5LvW72gI,atenolol,OAxaWqnsYC,diastolic blood pressure,tT5LvW72gI,3,2,1993-04-01T00:00:00,2024-06-03T14:16:34.414954,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+uWNNlnauQq|A6Dsv1dmTR,blood pressure,uWNNlnauQq,diuretic,A6Dsv1dmTR,2,2,2019-07-01T00:00:00,2024-06-03T14:16:15.190753,drug-mediator,mediator:bp_hypotension,drug:diuretics_any
+0XxfwfEzjV|uWNNlnauQq,celecoxib,0XxfwfEzjV,blood pressure,uWNNlnauQq,2,2,2003-11-01T00:00:00,2024-06-03T13:53:14.419271,drug-mediator,drug:nsaids,mediator:bp_hypotension
+uWNNlnauQq|p8kiNa0Nw1,blood pressure,uWNNlnauQq,lithium,p8kiNa0Nw1,2,2,1997-07-01T00:00:00,2024-10-19T03:03:43.502510,drug-mediator,mediator:bp_hypotension,drug:lithium
+K26lwe0vlM|uWNNlnauQq,perindoprilat,K26lwe0vlM,blood pressure,uWNNlnauQq,2,2,1999-10-01T00:00:00,2025-09-02T14:47:53.167827,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+nceJeKpSLI|uWNNlnauQq,non-steroidal anti-inflammatory drug,nceJeKpSLI,blood pressure,uWNNlnauQq,2,2,2021-01-01T00:00:00,2025-08-24T02:08:31.258503,drug-mediator,drug:nsaids,mediator:bp_hypotension
+gF_gh_5Orw|tT5LvW72gI,candesartan cilexetil,gF_gh_5Orw,diastolic blood pressure,tT5LvW72gI,3,2,2006-01-01T00:00:00,2024-06-03T14:16:15.192569,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+FcEKOuc-aO|tT5LvW72gI,captopril,FcEKOuc-aO,diastolic blood pressure,tT5LvW72gI,2,2,1993-09-01T00:00:00,2024-06-03T14:14:40.171977,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+5cuQzZnxtY|uboWgSu-kS,carvedilol,5cuQzZnxtY,systolic blood pressure,uboWgSu-kS,2,2,2021-05-01T00:00:00,2024-06-03T14:05:39.073071,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+akHzlhGK6Z|uboWgSu-kS,chlorthalidone,akHzlhGK6Z,systolic blood pressure,uboWgSu-kS,2,2,2021-02-01T00:00:00,2024-06-03T14:15:11.383523,drug-mediator,drug:thiazides,mediator:bp_hypotension
+IjmedHpk0D|tT5LvW72gI,olmesartan medoxomil,IjmedHpk0D,diastolic blood pressure,tT5LvW72gI,2,2,2016-01-01T00:00:00,2024-06-03T14:11:51.417189,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+u3p7wGPvPL|tT5LvW72gI,propranolol,u3p7wGPvPL,diastolic blood pressure,tT5LvW72gI,2,2,1987-01-01T00:00:00,2024-06-03T14:15:11.389000,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+GiyIgG3cvi|A6Dsv1dmTR,hyponatremia,GiyIgG3cvi,diuretic,A6Dsv1dmTR,2,2,2013-07-31T00:00:00,2024-06-03T14:14:40.173343,drug-mediator,mediator:hyponatremia,drug:diuretics_any
+gwk0XVG6M2|uboWgSu-kS,empagliflozin,gwk0XVG6M2,systolic blood pressure,uboWgSu-kS,2,2,2025-12-01T00:00:00,2025-09-02T14:47:53.167827,drug-mediator,drug:sglt2,mediator:bp_hypotension
+OPlwMIioCF|GiyIgG3cvi,fluoxetine,OPlwMIioCF,hyponatremia,GiyIgG3cvi,3,2,2023-03-01T00:00:00,2024-06-03T14:17:07.093513,drug-mediator,drug:ssris,mediator:hyponatremia
+0OE1xGhJA8|GiyIgG3cvi,potassium-sparing diuretic,0OE1xGhJA8,hyponatremia,GiyIgG3cvi,2,2,2016-01-01T00:00:00,2024-06-03T14:15:44.303987,drug-mediator,drug:diuretics_any,mediator:hyponatremia
+DB654gPUwk|m4eAsiRDXQ,telmisartan,DB654gPUwk,hypotension,m4eAsiRDXQ,4,2,2020-12-01T00:00:00,2024-06-03T14:18:09.991633,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+uboWgSu-kS|2RzIlqCjcm,systolic blood pressure,uboWgSu-kS,insulin,2RzIlqCjcm,2,2,2006-09-11T00:00:00,2024-08-20T03:01:04.912930,drug-mediator,mediator:bp_hypotension,drug:insulin
+p8kiNa0Nw1|uboWgSu-kS,lithium,p8kiNa0Nw1,systolic blood pressure,uboWgSu-kS,3,2,1987-11-01T00:00:00,2024-06-03T13:59:11.717292,drug-mediator,drug:lithium,mediator:bp_hypotension
+p8kiNa0Nw1|tT5LvW72gI,lithium,p8kiNa0Nw1,diastolic blood pressure,tT5LvW72gI,2,2,2000-03-01T00:00:00,2024-06-03T14:14:59.499907,drug-mediator,drug:lithium,mediator:bp_hypotension
+p8kiNa0Nw1|uWNNlnauQq,lithium,p8kiNa0Nw1,blood pressure,uWNNlnauQq,2,2,2000-03-01T00:00:00,2024-06-03T14:12:22.030202,drug-mediator,drug:lithium,mediator:bp_hypotension
+IMhgtons9f|uboWgSu-kS,losartan,IMhgtons9f,systolic blood pressure,uboWgSu-kS,2,2,2010-11-01T00:00:00,2024-06-03T14:16:02.978683,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+WYDlXi2szb|tT5LvW72gI,nebivolol,WYDlXi2szb,diastolic blood pressure,tT5LvW72gI,2,2,2013-04-01T00:00:00,2024-06-03T14:15:44.305610,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+u3p7wGPvPL|uboWgSu-kS,propranolol,u3p7wGPvPL,systolic blood pressure,uboWgSu-kS,2,2,1989-12-01T00:00:00,2024-10-20T18:04:49.133335,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+u3p7wGPvPL|GNCkDGlDyr,propranolol,u3p7wGPvPL,sweat,GNCkDGlDyr,3,2,2018-12-01T00:00:00,2024-06-03T14:08:37.954340,drug-mediator,drug:beta_blockers,mediator:sweating
+DB654gPUwk|uboWgSu-kS,telmisartan,DB654gPUwk,systolic blood pressure,uboWgSu-kS,2,2,2021-05-01T00:00:00,2024-06-03T14:15:44.303655,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+pyYvCJvU6w|ZgE4MD4rlh,valsartan,pyYvCJvU6w,arterial blood pressure,ZgE4MD4rlh,2,2,2020-02-01T00:00:00,2024-06-03T14:15:11.383645,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+uH0rXBHt_r|njRsZA9iEn,(RS)-citalopram,uH0rXBHt_r,orthostatic hypotension,njRsZA9iEn,2,1,2017-09-01T00:00:00,2024-06-03T14:14:28.082234,drug-mediator,drug:ssris,mediator:bp_hypotension
+7FjcisZbI_|CPu3fKZt34,(RS)-metoprolol,7FjcisZbI_,body temperature,CPu3fKZt34,1,1,1988-07-01T00:00:00,2024-06-03T14:03:32.750276,drug-mediator,drug:beta_blockers,mediator:body_temp
+jq6aIWKnPC|7FjcisZbI_,ambulatory blood pressure monitoring,jq6aIWKnPC,(RS)-metoprolol,7FjcisZbI_,1,1,2006-09-01T00:00:00,2024-06-03T13:59:30.086099,drug-mediator,mediator:bp_hypotension,drug:beta_blockers
+ZgE4MD4rlh|7FjcisZbI_,arterial blood pressure,ZgE4MD4rlh,(RS)-metoprolol,7FjcisZbI_,3,1,1979-11-01T00:00:00,2024-06-03T14:16:34.411623,drug-mediator,mediator:bp_hypotension,drug:beta_blockers
+3OxGpMom7m|GNCkDGlDyr,(RS)-oxybutynin,3OxGpMom7m,sweat,GNCkDGlDyr,1,1,2023-07-01T00:00:00,2024-06-03T14:06:11.283346,drug-mediator,drug:anticholinergics,mediator:sweating
+Kcf5q8gDX9|ewCh_VoJr4,ACE inhibitor,Kcf5q8gDX9,dehydration,ewCh_VoJr4,1,1,2018-03-01T00:00:00,2024-06-03T14:04:03.900500,drug-mediator,drug:acei_arb,mediator:dehydration
+Kcf5q8gDX9|GiyIgG3cvi,ACE inhibitor,Kcf5q8gDX9,hyponatremia,GiyIgG3cvi,1,1,2020-10-01T00:00:00,2024-06-03T14:02:51.402794,drug-mediator,drug:acei_arb,mediator:hyponatremia
+uboWgSu-kS|Kcf5q8gDX9,systolic blood pressure,uboWgSu-kS,ACE inhibitor,Kcf5q8gDX9,1,1,2015-01-01T00:00:00,2024-06-03T14:04:53.417240,drug-mediator,mediator:bp_hypotension,drug:acei_arb
+ZgE4MD4rlh|Kcf5q8gDX9,arterial blood pressure,ZgE4MD4rlh,ACE inhibitor,Kcf5q8gDX9,1,1,1988-01-01T00:00:00,2024-10-20T18:04:16.238902,drug-mediator,mediator:bp_hypotension,drug:acei_arb
+sScGTB5I2A|jq6aIWKnPC,Bisoprolol,sScGTB5I2A,ambulatory blood pressure monitoring,jq6aIWKnPC,1,1,1993-07-01T00:00:00,2024-06-03T14:10:47.646694,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+sScGTB5I2A|tT5LvW72gI,Bisoprolol,sScGTB5I2A,diastolic blood pressure,tT5LvW72gI,3,1,1993-02-01T00:00:00,2024-06-03T14:16:34.414110,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+sScGTB5I2A|m4eAsiRDXQ,Bisoprolol,sScGTB5I2A,hypotension,m4eAsiRDXQ,1,1,2021-11-10T00:00:00,2024-06-03T14:05:05.589519,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+ESWjbkHiFu|uboWgSu-kS,DL-amphetamine,ESWjbkHiFu,systolic blood pressure,uboWgSu-kS,1,1,2009-10-15T00:00:00,2025-09-02T02:48:44.676982,drug-mediator,drug:adhd_stimulants,mediator:bp_hypotension
+TDX9naIdBm|dwy4MR0rcR,Sodium Chloride Symporter Inhibitors,TDX9naIdBm,acute kidney injury,dwy4MR0rcR,1,1,2024-03-01T00:00:00,2024-06-03T14:03:32.747389,drug-mediator,drug:thiazides,mediator:aki
+TDX9naIdBm|ewCh_VoJr4,Sodium Chloride Symporter Inhibitors,TDX9naIdBm,dehydration,ewCh_VoJr4,1,1,2003-08-01T00:00:00,2024-06-03T13:58:30.524078,drug-mediator,drug:thiazides,mediator:dehydration
+TDX9naIdBm|ZgE4MD4rlh,Sodium Chloride Symporter Inhibitors,TDX9naIdBm,arterial blood pressure,ZgE4MD4rlh,1,1,1988-11-01T00:00:00,2024-06-03T14:07:15.239635,drug-mediator,drug:thiazides,mediator:bp_hypotension
+b0cdBpYHKK|ewCh_VoJr4,Sodium Potassium Chloride Symporter Inhibitors,b0cdBpYHKK,dehydration,ewCh_VoJr4,1,1,2003-08-01T00:00:00,2024-06-03T13:58:30.524097,drug-mediator,drug:loop_diuretics,mediator:dehydration
+eK6Lv3iVM8|dwy4MR0rcR,hydrochlorothiazide,eK6Lv3iVM8,acute kidney injury,dwy4MR0rcR,1,1,2021-08-13T00:00:00,2024-06-03T13:53:43.907583,drug-mediator,drug:thiazides,mediator:aki
+dwy4MR0rcR|DVPdh9276g,acute kidney injury,dwy4MR0rcR,beta blocker,DVPdh9276g,1,1,2017-06-01T00:00:00,2024-06-03T13:54:01.959635,drug-mediator,mediator:aki,drug:beta_blockers
+vHOH3XFLDI|dwy4MR0rcR,quetiapine,vHOH3XFLDI,acute kidney injury,dwy4MR0rcR,1,1,2017-04-01T00:00:00,2024-06-03T14:03:02.909618,drug-mediator,drug:antipsychotics,mediator:aki
+akHzlhGK6Z|dwy4MR0rcR,chlorthalidone,akHzlhGK6Z,acute kidney injury,dwy4MR0rcR,1,1,2020-04-01T00:00:00,2024-06-03T14:02:32.040919,drug-mediator,drug:thiazides,mediator:aki
+dwy4MR0rcR|u3p7wGPvPL,acute kidney injury,dwy4MR0rcR,propranolol,u3p7wGPvPL,1,1,1985-08-01T00:00:00,2024-06-03T14:01:29.765394,drug-mediator,mediator:aki,drug:beta_blockers
+gtg5bHnBPz|dwy4MR0rcR,quetiapine fumarate,gtg5bHnBPz,acute kidney injury,dwy4MR0rcR,2,1,2022-08-01T00:00:00,2024-06-03T13:57:12.029325,drug-mediator,drug:antipsychotics,mediator:aki
+m01ZxbXWsB|dwy4MR0rcR,aripiprazole,m01ZxbXWsB,acute kidney injury,dwy4MR0rcR,1,1,2017-04-01T00:00:00,2024-06-03T13:54:13.904331,drug-mediator,drug:antipsychotics,mediator:aki
+u3p7wGPvPL|dwy4MR0rcR,propranolol,u3p7wGPvPL,acute kidney injury,dwy4MR0rcR,1,1,2022-08-01T00:00:00,2024-06-03T14:11:51.413660,drug-mediator,drug:beta_blockers,mediator:aki
+GzqypomiON|dwy4MR0rcR,fluphenazine,GzqypomiON,acute kidney injury,dwy4MR0rcR,1,1,2017-04-01T00:00:00,2024-06-03T13:54:13.904252,drug-mediator,drug:antipsychotics,mediator:aki
+_F-5JB7RQu|dwy4MR0rcR,sulfonylurea,_F-5JB7RQu,acute kidney injury,dwy4MR0rcR,1,1,2021-06-01T00:00:00,2024-06-03T13:53:14.414025,drug-mediator,drug:sulfonylureas,mediator:aki
+LFVGpCjvUa|dwy4MR0rcR,haloperidol,LFVGpCjvUa,acute kidney injury,dwy4MR0rcR,1,1,2017-04-01T00:00:00,2024-06-03T13:54:13.904233,drug-mediator,drug:antipsychotics,mediator:aki
+dwy4MR0rcR|wqj_TgiAW1,acute kidney injury,dwy4MR0rcR,insulins,wqj_TgiAW1,1,1,2024-12-10T00:00:00,2024-12-14T14:38:36.197828,drug-mediator,mediator:aki,drug:insulin
+dwy4MR0rcR|mfsRYR2_AI,acute kidney injury,dwy4MR0rcR,angiotensin receptor antagonists,mfsRYR2_AI,1,1,2013-12-01T00:00:00,2024-06-03T14:09:39.963025,drug-mediator,mediator:aki,drug:acei_arb
+hhvMEgyj98|jq6aIWKnPC,gliflozins,hhvMEgyj98,ambulatory blood pressure monitoring,jq6aIWKnPC,1,1,2021-12-01T00:00:00,2024-06-03T14:03:32.749410,drug-mediator,drug:sglt2,mediator:bp_hypotension
+WYDlXi2szb|jq6aIWKnPC,nebivolol,WYDlXi2szb,ambulatory blood pressure monitoring,jq6aIWKnPC,1,1,2001-08-01T00:00:00,2024-06-03T14:09:39.966381,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+gwk0XVG6M2|jq6aIWKnPC,empagliflozin,gwk0XVG6M2,ambulatory blood pressure monitoring,jq6aIWKnPC,1,1,2015-03-01T00:00:00,2024-06-03T14:06:11.291880,drug-mediator,drug:sglt2,mediator:bp_hypotension
+McSC_4AVn6|jq6aIWKnPC,candesartan,McSC_4AVn6,ambulatory blood pressure monitoring,jq6aIWKnPC,1,1,2007-07-01T00:00:00,2024-06-03T14:07:35.639798,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+BCkbAENZTS|jq6aIWKnPC,canagliflozin,BCkbAENZTS,ambulatory blood pressure monitoring,jq6aIWKnPC,1,1,2018-10-01T00:00:00,2024-06-03T14:01:49.484097,drug-mediator,drug:sglt2,mediator:bp_hypotension
+pyYvCJvU6w|jq6aIWKnPC,valsartan,pyYvCJvU6w,ambulatory blood pressure monitoring,jq6aIWKnPC,1,1,2023-03-01T00:00:00,2024-06-03T13:57:12.022413,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+jq6aIWKnPC|JDaZEOGtSs,ambulatory blood pressure monitoring,jq6aIWKnPC,trandolapril,JDaZEOGtSs,4,1,2000-06-01T00:00:00,2024-06-03T14:18:20.838260,drug-mediator,mediator:bp_hypotension,drug:acei_arb
+JUtUa3Bloz|uWNNlnauQq,amphetamines,JUtUa3Bloz,blood pressure,uWNNlnauQq,2,1,2005-12-01T00:00:00,2024-06-03T14:12:53.984175,drug-mediator,drug:adhd_stimulants,mediator:bp_hypotension
+asqvxp4itv|dwy4MR0rcR,angiotensin II receptor antagonist,asqvxp4itv,acute kidney injury,dwy4MR0rcR,1,1,2024-01-05T00:00:00,2024-06-03T14:05:05.588113,drug-mediator,drug:acei_arb,mediator:aki
+asqvxp4itv|tT5LvW72gI,angiotensin II receptor antagonist,asqvxp4itv,diastolic blood pressure,tT5LvW72gI,1,1,2008-03-01T00:00:00,2024-06-03T14:04:53.419604,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+mfsRYR2_AI|QfUlQKPD7z,angiotensin receptor antagonists,mfsRYR2_AI,night sweats,QfUlQKPD7z,1,1,2015-03-01T00:00:00,2024-06-03T14:04:53.422630,drug-mediator,drug:acei_arb,mediator:sweating
+mfsRYR2_AI|njRsZA9iEn,angiotensin receptor antagonists,mfsRYR2_AI,orthostatic hypotension,njRsZA9iEn,1,1,2017-04-01T00:00:00,2024-06-03T14:07:35.646560,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+syRWr6L9uu|uWNNlnauQq,anticholinergic,syRWr6L9uu,blood pressure,uWNNlnauQq,1,1,2015-08-01T00:00:00,2024-06-03T14:05:39.064520,drug-mediator,drug:anticholinergics,mediator:bp_hypotension
+syRWr6L9uu|m4eAsiRDXQ,anticholinergic,syRWr6L9uu,hypotension,m4eAsiRDXQ,1,1,2021-10-01T00:00:00,2024-06-03T14:00:19.603522,drug-mediator,drug:anticholinergics,mediator:bp_hypotension
+A9HjVmhApk|GiyIgG3cvi,anticholinergic toxidrome,A9HjVmhApk,hyponatremia,GiyIgG3cvi,1,1,2011-10-01T00:00:00,2024-06-03T14:11:51.408605,drug-mediator,drug:anticholinergics,mediator:hyponatremia
+A9HjVmhApk|uWNNlnauQq,anticholinergic toxidrome,A9HjVmhApk,blood pressure,uWNNlnauQq,1,1,2015-08-01T00:00:00,2024-06-03T14:05:39.064513,drug-mediator,drug:anticholinergics,mediator:bp_hypotension
+uWNNlnauQq|4tK_Z18ObT,blood pressure,uWNNlnauQq,antidepressant,4tK_Z18ObT,1,1,2022-11-03T00:00:00,2024-06-03T13:54:01.960051,drug-mediator,mediator:bp_hypotension,drug:ssris
+GiyIgG3cvi|4tK_Z18ObT,hyponatremia,GiyIgG3cvi,antidepressant,4tK_Z18ObT,1,1,2013-12-01T00:00:00,2024-06-03T14:09:08.648586,drug-mediator,mediator:hyponatremia,drug:ssris
+m4eAsiRDXQ|4tK_Z18ObT,hypotension,m4eAsiRDXQ,antidepressant,4tK_Z18ObT,1,1,2018-01-01T00:00:00,2024-06-03T14:11:31.736896,drug-mediator,mediator:bp_hypotension,drug:ssris
+4tK_Z18ObT|QwT0YUJizC,antidepressant,4tK_Z18ObT,hyperhidrosis,QwT0YUJizC,1,1,2017-12-01T00:00:00,2025-09-03T02:46:45.264662,drug-mediator,drug:ssris,mediator:sweating
+4tK_Z18ObT|uUAR2MPR25,antidepressant,4tK_Z18ObT,syndrome of Inappropriate antidiuretic hormone secretion,uUAR2MPR25,1,1,2019-06-01T00:00:00,2024-06-03T14:00:00.745945,drug-mediator,drug:ssris,mediator:hyponatremia
+4tK_Z18ObT|njRsZA9iEn,antidepressant,4tK_Z18ObT,orthostatic hypotension,njRsZA9iEn,1,1,2013-07-15T00:00:00,2024-06-03T13:59:00.607970,drug-mediator,drug:ssris,mediator:bp_hypotension
+4tK_Z18ObT|GiyIgG3cvi,antidepressant,4tK_Z18ObT,hyponatremia,GiyIgG3cvi,1,1,2011-08-01T00:00:00,2024-06-03T14:07:15.243107,drug-mediator,drug:ssris,mediator:hyponatremia
+4tK_Z18ObT|m4eAsiRDXQ,antidepressant,4tK_Z18ObT,hypotension,m4eAsiRDXQ,1,1,1998-12-01T00:00:00,2024-06-03T14:05:05.594344,drug-mediator,drug:ssris,mediator:bp_hypotension
+ujlY6wVzB0|uUAR2MPR25,antipsychotics,ujlY6wVzB0,syndrome of Inappropriate antidiuretic hormone secretion,uUAR2MPR25,1,1,2010-07-01T00:00:00,2024-06-03T14:00:19.603886,drug-mediator,drug:antipsychotics,mediator:hyponatremia
+m01ZxbXWsB|GiyIgG3cvi,aripiprazole,m01ZxbXWsB,hyponatremia,GiyIgG3cvi,2,1,2019-02-01T00:00:00,2024-06-03T13:54:43.487353,drug-mediator,drug:antipsychotics,mediator:hyponatremia
+hhvMEgyj98|ZgE4MD4rlh,gliflozins,hhvMEgyj98,arterial blood pressure,ZgE4MD4rlh,1,1,2023-10-01T00:00:00,2024-06-03T13:54:32.355706,drug-mediator,drug:sglt2,mediator:bp_hypotension
+eK6Lv3iVM8|ZgE4MD4rlh,hydrochlorothiazide,eK6Lv3iVM8,arterial blood pressure,ZgE4MD4rlh,2,1,2024-05-14T00:00:00,2024-06-03T14:02:51.392482,drug-mediator,drug:thiazides,mediator:bp_hypotension
+WYDlXi2szb|ZgE4MD4rlh,nebivolol,WYDlXi2szb,arterial blood pressure,ZgE4MD4rlh,1,1,2008-02-01T00:00:00,2024-06-03T14:01:49.487153,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+O1yoD9gyHA|ZgE4MD4rlh,lithium chloride,O1yoD9gyHA,arterial blood pressure,ZgE4MD4rlh,3,1,1989-02-01T00:00:00,2024-06-03T14:16:34.413994,drug-mediator,drug:lithium,mediator:bp_hypotension
+Lb0C2H7U6X|ZgE4MD4rlh,sertraline,Lb0C2H7U6X,arterial blood pressure,ZgE4MD4rlh,1,1,2014-02-01T00:00:00,2024-06-03T14:11:20.256383,drug-mediator,drug:ssris,mediator:bp_hypotension
+KaWf4JBjOQ|ZgE4MD4rlh,glyburide,KaWf4JBjOQ,arterial blood pressure,ZgE4MD4rlh,2,1,2004-11-15T00:00:00,2024-06-03T13:56:42.164835,drug-mediator,drug:sulfonylureas,mediator:bp_hypotension
+IjmedHpk0D|ZgE4MD4rlh,olmesartan medoxomil,IjmedHpk0D,arterial blood pressure,ZgE4MD4rlh,1,1,2008-03-01T00:00:00,2024-06-03T14:05:05.590157,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+lql492pWuk|ZgE4MD4rlh,metformin,lql492pWuk,arterial blood pressure,ZgE4MD4rlh,1,1,2001-10-01T00:00:00,2024-06-03T13:56:42.165997,drug-mediator,drug:metformin,mediator:bp_hypotension
+YP9P2hMD8c|ZgE4MD4rlh,scopolamine hydrobromide trihydrate,YP9P2hMD8c,arterial blood pressure,ZgE4MD4rlh,1,1,2007-08-01T00:00:00,2024-06-03T13:54:13.899045,drug-mediator,drug:anticholinergics,mediator:bp_hypotension
+zryvuciYuN|ZgE4MD4rlh,chlorpromazine,zryvuciYuN,arterial blood pressure,ZgE4MD4rlh,1,1,2020-10-01T00:00:00,2024-06-03T14:12:22.029145,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+22d9NIq-tN|ZgE4MD4rlh,amlodipine/valsartan,22d9NIq-tN,arterial blood pressure,ZgE4MD4rlh,1,1,2012-02-01T00:00:00,2024-06-03T14:11:20.254607,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+SpPNEhjAPT|ZgE4MD4rlh,insulin pump,SpPNEhjAPT,arterial blood pressure,ZgE4MD4rlh,1,1,1991-03-14T00:00:00,2024-06-03T13:59:11.713282,drug-mediator,drug:insulin,mediator:bp_hypotension
+gwk0XVG6M2|ZgE4MD4rlh,empagliflozin,gwk0XVG6M2,arterial blood pressure,ZgE4MD4rlh,1,1,2015-12-01T00:00:00,2024-06-03T14:08:49.532992,drug-mediator,drug:sglt2,mediator:bp_hypotension
+Z7oxoU6RYn|ZgE4MD4rlh,irbesartan,Z7oxoU6RYn,arterial blood pressure,ZgE4MD4rlh,1,1,2009-04-01T00:00:00,2024-06-03T14:07:15.243086,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+nceJeKpSLI|ZgE4MD4rlh,non-steroidal anti-inflammatory drug,nceJeKpSLI,arterial blood pressure,ZgE4MD4rlh,1,1,2018-12-01T00:00:00,2024-06-03T13:52:44.416058,drug-mediator,drug:nsaids,mediator:bp_hypotension
+McSC_4AVn6|ZgE4MD4rlh,candesartan,McSC_4AVn6,arterial blood pressure,ZgE4MD4rlh,1,1,2006-03-01T00:00:00,2024-06-03T13:59:30.078671,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+3IssD8QRjY|ZgE4MD4rlh,diphenhydramine,3IssD8QRjY,arterial blood pressure,ZgE4MD4rlh,1,1,1991-03-01T00:00:00,2024-06-03T14:11:51.417161,drug-mediator,drug:anticholinergics,mediator:bp_hypotension
+OAxaWqnsYC|567CGPkQXm,atenolol,OAxaWqnsYC,skin temperature,567CGPkQXm,1,1,1991-11-02T00:00:00,2024-06-03T13:53:43.910186,drug-mediator,drug:beta_blockers,mediator:body_temp
+xQblosroTI|uWNNlnauQq,azilsartan,xQblosroTI,blood pressure,uWNNlnauQq,1,1,2016-01-01T00:00:00,2024-06-03T13:54:01.962853,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+MC-lJ8qrQ3|GiyIgG3cvi,benzodiazepine,MC-lJ8qrQ3,hyponatremia,GiyIgG3cvi,1,1,2023-12-01T00:00:00,2024-06-03T14:08:06.213151,drug-mediator,drug:benzodiazepines,mediator:hyponatremia
+MC-lJ8qrQ3|m4eAsiRDXQ,benzodiazepine,MC-lJ8qrQ3,hypotension,m4eAsiRDXQ,1,1,2018-04-01T00:00:00,2024-06-03T14:10:47.653268,drug-mediator,drug:benzodiazepines,mediator:bp_hypotension
+DVPdh9276g|uboWgSu-kS,beta blocker,DVPdh9276g,systolic blood pressure,uboWgSu-kS,1,1,,2024-06-03T13:56:00.451370,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+uWNNlnauQq|P74L_ZHoQM,blood pressure,uWNNlnauQq,olmesartan,P74L_ZHoQM,6,1,2017-01-01T00:00:00,2024-06-03T13:52:31.865813,drug-mediator,mediator:bp_hypotension,drug:acei_arb
+mgRDS5mimT|uWNNlnauQq,ibuprofen,mgRDS5mimT,blood pressure,uWNNlnauQq,3,1,2017-11-21T00:00:00,2024-06-03T14:04:03.901838,drug-mediator,drug:nsaids,mediator:bp_hypotension
+lVTHD2WJtM|uWNNlnauQq,polythiazide,lVTHD2WJtM,blood pressure,uWNNlnauQq,1,1,1981-01-01T00:00:00,2024-06-03T14:04:34.008644,drug-mediator,drug:thiazides,mediator:bp_hypotension
+RtRLX57NYn|uWNNlnauQq,paroxetine,RtRLX57NYn,blood pressure,uWNNlnauQq,1,1,2005-11-01T00:00:00,2024-06-03T14:03:22.115427,drug-mediator,drug:ssris,mediator:bp_hypotension
+uWNNlnauQq|FXpRF2f4Ae,blood pressure,uWNNlnauQq,fentanyl,FXpRF2f4Ae,1,1,2024-05-26T00:00:00,2024-06-20T15:05:45.471232,drug-mediator,mediator:bp_hypotension,drug:opioids_fentanyl
+dHeZGEao6O|uWNNlnauQq,methylphenidate,dHeZGEao6O,blood pressure,uWNNlnauQq,1,1,2003-03-01T00:00:00,2024-06-03T14:10:14.443786,drug-mediator,drug:adhd_stimulants,mediator:bp_hypotension
+0OE1xGhJA8|uWNNlnauQq,potassium-sparing diuretic,0OE1xGhJA8,blood pressure,uWNNlnauQq,2,1,2019-09-01T00:00:00,2024-06-03T14:13:57.180408,drug-mediator,drug:diuretics_any,mediator:bp_hypotension
+SfNp4oeLKo|uWNNlnauQq,escitalopram,SfNp4oeLKo,blood pressure,uWNNlnauQq,1,1,2013-11-01T00:00:00,2024-06-03T13:54:01.958109,drug-mediator,drug:ssris,mediator:bp_hypotension
+LFVGpCjvUa|uWNNlnauQq,haloperidol,LFVGpCjvUa,blood pressure,uWNNlnauQq,1,1,1988-01-01T00:00:00,2024-06-03T13:54:43.489286,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+9CJNSbirWZ|uWNNlnauQq,sotagliflozin,9CJNSbirWZ,blood pressure,uWNNlnauQq,2,1,2022-12-01T00:00:00,2024-06-03T14:14:28.076821,drug-mediator,drug:sglt2,mediator:bp_hypotension
+uWNNlnauQq|FcEKOuc-aO,blood pressure,uWNNlnauQq,captopril,FcEKOuc-aO,1,1,1982-01-01T00:00:00,2024-06-03T13:59:11.718055,drug-mediator,mediator:bp_hypotension,drug:acei_arb
+kK0ElG3oNJ|uWNNlnauQq,aliskiren/amlodipine/hydrochlorothiazide,kK0ElG3oNJ,blood pressure,uWNNlnauQq,1,1,,2024-06-03T13:58:12.213871,drug-mediator,drug:thiazides,mediator:bp_hypotension
+hdTcTFaywK|uWNNlnauQq,cyclopenthiazide,hdTcTFaywK,blood pressure,uWNNlnauQq,1,1,1989-04-01T00:00:00,2024-06-03T13:56:42.164324,drug-mediator,drug:thiazides,mediator:bp_hypotension
+KiI10sdEDy|uWNNlnauQq,dextroamphetamine,KiI10sdEDy,blood pressure,uWNNlnauQq,2,1,2003-02-01T00:00:00,2024-06-03T14:13:04.708594,drug-mediator,drug:adhd_stimulants,mediator:bp_hypotension
+uWNNlnauQq|pyYvCJvU6w,blood pressure,uWNNlnauQq,valsartan,pyYvCJvU6w,1,1,2021-02-01T00:00:00,2024-06-03T14:08:49.530749,drug-mediator,mediator:bp_hypotension,drug:acei_arb
+OPlwMIioCF|uWNNlnauQq,fluoxetine,OPlwMIioCF,blood pressure,uWNNlnauQq,1,1,1998-01-01T00:00:00,2024-06-03T13:59:00.608948,drug-mediator,drug:ssris,mediator:bp_hypotension
+uWNNlnauQq|XpRyYAtXCw,blood pressure,uWNNlnauQq,tricyclic antidepressant,XpRyYAtXCw,1,1,1988-09-01T00:00:00,2024-06-03T13:54:13.900337,drug-mediator,mediator:bp_hypotension,drug:ssris
+3lmAiW35EL|uWNNlnauQq,morphine,3lmAiW35EL,blood pressure,uWNNlnauQq,1,1,1981-05-01T00:00:00,2024-06-03T13:56:11.792681,drug-mediator,drug:opioids_fentanyl,mediator:bp_hypotension
+jt7RRRG7OJ|uWNNlnauQq,ziprasidone,jt7RRRG7OJ,blood pressure,uWNNlnauQq,1,1,2010-10-01T00:00:00,2024-06-03T14:03:02.908108,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+cWixkjMT4c|uWNNlnauQq,sitagliptin/metformin,cWixkjMT4c,blood pressure,uWNNlnauQq,1,1,2015-06-01T00:00:00,2024-06-03T14:11:51.415494,drug-mediator,drug:metformin,mediator:bp_hypotension
+qm-6k3XgFz|uWNNlnauQq,metolazone,qm-6k3XgFz,blood pressure,uWNNlnauQq,1,1,1977-04-01T00:00:00,2024-06-03T14:07:35.642838,drug-mediator,drug:thiazides,mediator:bp_hypotension
+eK6Lv3iVM8|lds57YClPy,hydrochlorothiazide,eK6Lv3iVM8,blood pressure measurement,lds57YClPy,1,1,2011-01-01T00:00:00,2024-06-03T14:06:43.175015,drug-mediator,drug:thiazides,mediator:bp_hypotension
+lds57YClPy|JDaZEOGtSs,blood pressure measurement,lds57YClPy,trandolapril,JDaZEOGtSs,4,1,2000-06-01T00:00:00,2024-06-03T14:18:20.838280,drug-mediator,mediator:bp_hypotension,drug:acei_arb
+A6Dsv1dmTR|CBe9feDxmw,diuretic,A6Dsv1dmTR,blood pressure monitor,CBe9feDxmw,1,1,2017-08-03T00:00:00,2024-06-03T13:58:30.526864,drug-mediator,drug:diuretics_any,mediator:bp_hypotension
+WYDlXi2szb|CBe9feDxmw,nebivolol,WYDlXi2szb,blood pressure monitor,CBe9feDxmw,1,1,2020-01-01T00:00:00,2024-06-03T13:58:00.962339,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+6WjhLJwfFc|CBe9feDxmw,eprosartan,6WjhLJwfFc,blood pressure monitor,CBe9feDxmw,1,1,2010-06-01T00:00:00,2024-06-03T13:59:42.475348,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+eK6Lv3iVM8|CBe9feDxmw,hydrochlorothiazide,eK6Lv3iVM8,blood pressure monitor,CBe9feDxmw,1,1,2010-06-01T00:00:00,2024-06-03T13:59:42.475508,drug-mediator,drug:thiazides,mediator:bp_hypotension
+CPu3fKZt34|2RzIlqCjcm,body temperature,CPu3fKZt34,insulin,2RzIlqCjcm,2,1,2019-05-01T00:00:00,2024-06-03T13:52:44.418032,drug-mediator,mediator:body_temp,drug:insulin
+TKMYLXzPwH|CPu3fKZt34,diclofenac,TKMYLXzPwH,body temperature,CPu3fKZt34,1,1,2013-05-12T00:00:00,2024-06-03T13:59:42.478000,drug-mediator,drug:nsaids,mediator:body_temp
+cOSZokNaP1|njRsZA9iEn,bumetanide,cOSZokNaP1,orthostatic hypotension,njRsZA9iEn,1,1,2021-07-01T00:00:00,2024-06-03T13:58:12.215054,drug-mediator,drug:loop_diuretics,mediator:bp_hypotension
+McSC_4AVn6|uboWgSu-kS,candesartan,McSC_4AVn6,systolic blood pressure,uboWgSu-kS,1,1,2004-09-01T00:00:00,2024-06-03T14:02:20.322389,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+gF_gh_5Orw|uboWgSu-kS,candesartan cilexetil,gF_gh_5Orw,systolic blood pressure,uboWgSu-kS,1,1,2006-01-01T00:00:00,2024-06-03T13:57:42.865917,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+FcEKOuc-aO|m4eAsiRDXQ,captopril,FcEKOuc-aO,hypotension,m4eAsiRDXQ,1,1,2001-11-01T00:00:00,2024-06-03T14:00:46.063742,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+FcEKOuc-aO|njRsZA9iEn,captopril,FcEKOuc-aO,orthostatic hypotension,njRsZA9iEn,1,1,1999-06-01T00:00:00,2024-06-03T13:59:00.610553,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+tT5LvW72gI|FcEKOuc-aO,diastolic blood pressure,tT5LvW72gI,captopril,FcEKOuc-aO,1,1,1982-01-01T00:00:00,2024-06-03T14:00:19.606046,drug-mediator,mediator:bp_hypotension,drug:acei_arb
+5cuQzZnxtY|dwy4MR0rcR,carvedilol,5cuQzZnxtY,acute kidney injury,dwy4MR0rcR,1,1,2019-11-01T00:00:00,2024-06-03T14:11:51.413724,drug-mediator,drug:beta_blockers,mediator:aki
+5cuQzZnxtY|tT5LvW72gI,carvedilol,5cuQzZnxtY,diastolic blood pressure,tT5LvW72gI,1,1,2008-04-01T00:00:00,2024-06-03T13:55:13.502726,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+5cuQzZnxtY|m4eAsiRDXQ,carvedilol,5cuQzZnxtY,hypotension,m4eAsiRDXQ,1,1,2018-09-01T00:00:00,2024-06-03T14:05:05.591744,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+0XxfwfEzjV|uboWgSu-kS,celecoxib,0XxfwfEzjV,systolic blood pressure,uboWgSu-kS,1,1,2015-01-01T00:00:00,2024-06-03T13:53:02.421543,drug-mediator,drug:nsaids,mediator:bp_hypotension
+zryvuciYuN|m4eAsiRDXQ,chlorpromazine,zryvuciYuN,hypotension,m4eAsiRDXQ,1,1,2010-04-14T00:00:00,2025-08-24T02:08:33.437940,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+akHzlhGK6Z|tT5LvW72gI,chlorthalidone,akHzlhGK6Z,diastolic blood pressure,tT5LvW72gI,1,1,1985-12-01T00:00:00,2024-06-03T14:07:35.643875,drug-mediator,drug:thiazides,mediator:bp_hypotension
+oGpQ21VX-b|uWNNlnauQq,dapagliflozin,oGpQ21VX-b,blood pressure,uWNNlnauQq,1,1,2015-06-01T00:00:00,2024-06-03T13:58:41.826067,drug-mediator,drug:sglt2,mediator:bp_hypotension
+oGpQ21VX-b|uboWgSu-kS,dapagliflozin,oGpQ21VX-b,systolic blood pressure,uboWgSu-kS,1,1,2014-11-01T00:00:00,2024-06-03T13:59:11.710631,drug-mediator,drug:sglt2,mediator:bp_hypotension
+hhvMEgyj98|ewCh_VoJr4,gliflozins,hhvMEgyj98,dehydration,ewCh_VoJr4,1,1,2023-01-24T00:00:00,2024-06-03T14:06:11.290500,drug-mediator,drug:sglt2,mediator:dehydration
+gwk0XVG6M2|tT5LvW72gI,empagliflozin,gwk0XVG6M2,diastolic blood pressure,tT5LvW72gI,1,1,2023-01-24T00:00:00,2024-06-03T13:52:31.865983,drug-mediator,drug:sglt2,mediator:bp_hypotension
+8RhqtSYdIx|tT5LvW72gI,labetalol,8RhqtSYdIx,diastolic blood pressure,tT5LvW72gI,1,1,1988-07-01T00:00:00,2024-06-03T13:55:31.310742,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+q-I16SWsO4|tT5LvW72gI,lisinopril,q-I16SWsO4,diastolic blood pressure,tT5LvW72gI,1,1,2001-03-01T00:00:00,2024-06-03T14:05:05.595027,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+pyYvCJvU6w|tT5LvW72gI,valsartan,pyYvCJvU6w,diastolic blood pressure,tT5LvW72gI,2,1,2015-08-01T00:00:00,2024-06-03T13:53:14.413965,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+22d9NIq-tN|tT5LvW72gI,amlodipine/valsartan,22d9NIq-tN,diastolic blood pressure,tT5LvW72gI,1,1,2015-08-01T00:00:00,2024-06-03T13:59:42.484277,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+9CJNSbirWZ|tT5LvW72gI,sotagliflozin,9CJNSbirWZ,diastolic blood pressure,tT5LvW72gI,1,1,2022-12-01T00:00:00,2024-06-03T14:08:17.073695,drug-mediator,drug:sglt2,mediator:bp_hypotension
+Cn4s1jIrwa|tT5LvW72gI,bendroflumethiazide,Cn4s1jIrwa,diastolic blood pressure,tT5LvW72gI,1,1,1999-05-01T00:00:00,2024-06-03T14:06:11.282870,drug-mediator,drug:thiazides,mediator:bp_hypotension
+SjDsvIgB5i|tT5LvW72gI,perindopril,SjDsvIgB5i,diastolic blood pressure,tT5LvW72gI,1,1,2022-11-01T00:00:00,2025-09-02T14:47:55.347799,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+jt7RRRG7OJ|tT5LvW72gI,ziprasidone,jt7RRRG7OJ,diastolic blood pressure,tT5LvW72gI,1,1,2006-09-01T00:00:00,2025-09-03T02:46:45.271793,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+a9WeQM3szB|tT5LvW72gI,topiramate,a9WeQM3szB,diastolic blood pressure,tT5LvW72gI,1,1,2008-06-09T00:00:00,2024-06-03T14:03:32.747830,drug-mediator,drug:topiramate_zonisamide,mediator:bp_hypotension
+lql492pWuk|tT5LvW72gI,metformin,lql492pWuk,diastolic blood pressure,tT5LvW72gI,1,1,2009-04-01T00:00:00,2024-06-03T14:02:00.758854,drug-mediator,drug:metformin,mediator:bp_hypotension
+hNN7NLlha_|tT5LvW72gI,ramipril,hNN7NLlha_,diastolic blood pressure,tT5LvW72gI,1,1,1996-01-01T00:00:00,2024-06-03T14:02:00.758996,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+Lb0C2H7U6X|tT5LvW72gI,sertraline,Lb0C2H7U6X,diastolic blood pressure,tT5LvW72gI,1,1,2014-02-01T00:00:00,2024-06-03T14:11:20.256448,drug-mediator,drug:ssris,mediator:bp_hypotension
+TKMYLXzPwH|Nnr_i0oykd,diclofenac,TKMYLXzPwH,human body temperature,Nnr_i0oykd,1,1,2001-02-01T00:00:00,2024-06-03T14:04:53.426351,drug-mediator,drug:nsaids,mediator:body_temp
+A6Dsv1dmTR|uboWgSu-kS,diuretic,A6Dsv1dmTR,systolic blood pressure,uboWgSu-kS,1,1,1984-12-01T00:00:00,2024-06-03T14:07:35.637171,drug-mediator,drug:diuretics_any,mediator:bp_hypotension
+A6Dsv1dmTR|m4eAsiRDXQ,diuretic,A6Dsv1dmTR,hypotension,m4eAsiRDXQ,1,1,2009-09-01T00:00:00,2024-06-03T14:00:19.598232,drug-mediator,drug:diuretics_any,mediator:bp_hypotension
+A6Dsv1dmTR|njRsZA9iEn,diuretic,A6Dsv1dmTR,orthostatic hypotension,njRsZA9iEn,1,1,2016-06-01T00:00:00,2024-06-03T14:09:51.973080,drug-mediator,drug:diuretics_any,mediator:bp_hypotension
+Xj7gGQNPhf|tT5LvW72gI,enalapril,Xj7gGQNPhf,diastolic blood pressure,tT5LvW72gI,1,1,,2024-06-03T14:08:37.955221,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+FXpRF2f4Ae|n9flyUKElH,fentanyl,FXpRF2f4Ae,orthostatic intolerance,n9flyUKElH,1,1,2012-08-01T00:00:00,2024-06-03T14:03:22.116920,drug-mediator,drug:opioids_fentanyl,mediator:bp_hypotension
+8EVQny-RRh|GiyIgG3cvi,fluvoxamine,8EVQny-RRh,hyponatremia,GiyIgG3cvi,2,1,2022-06-01T00:00:00,2024-06-03T13:54:13.898347,drug-mediator,drug:ssris,mediator:hyponatremia
+mI9WZrt0dL|m4eAsiRDXQ,fosinopril,mI9WZrt0dL,hypotension,m4eAsiRDXQ,1,1,1998-01-01T00:00:00,2024-06-03T14:09:08.651825,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+HacH3Zcl3_|GiyIgG3cvi,furosemide,HacH3Zcl3_,hyponatremia,GiyIgG3cvi,3,1,2021-09-01T00:00:00,2024-06-03T14:16:34.411429,drug-mediator,drug:loop_diuretics,mediator:hyponatremia
+HacH3Zcl3_|m4eAsiRDXQ,furosemide,HacH3Zcl3_,hypotension,m4eAsiRDXQ,1,1,2010-11-01T00:00:00,2024-06-03T13:55:01.112316,drug-mediator,drug:loop_diuretics,mediator:bp_hypotension
+hhvMEgyj98|tT5LvW72gI,gliflozins,hhvMEgyj98,diastolic blood pressure,tT5LvW72gI,1,1,2019-11-19T00:00:00,2024-06-03T14:09:08.648665,drug-mediator,drug:sglt2,mediator:bp_hypotension
+hhvMEgyj98|m4eAsiRDXQ,gliflozins,hhvMEgyj98,hypotension,m4eAsiRDXQ,1,1,2024-01-25T00:00:00,2024-06-03T14:10:14.446441,drug-mediator,drug:sglt2,mediator:bp_hypotension
+hhvMEgyj98|rlOKG-Onc6,gliflozins,hhvMEgyj98,hypovolemia,rlOKG-Onc6,1,1,2023-02-24T00:00:00,2024-06-03T13:55:13.502671,drug-mediator,drug:sglt2,mediator:dehydration
+LFVGpCjvUa|ZgE4MD4rlh,haloperidol,LFVGpCjvUa,arterial blood pressure,ZgE4MD4rlh,1,1,1991-11-01T00:00:00,2024-06-03T13:54:01.956418,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+eK6Lv3iVM8|m4eAsiRDXQ,hydrochlorothiazide,eK6Lv3iVM8,hypotension,m4eAsiRDXQ,1,1,1998-01-01T00:00:00,2024-06-03T14:08:17.072676,drug-mediator,drug:thiazides,mediator:bp_hypotension
+GiyIgG3cvi|eK6Lv3iVM8,hyponatremia,GiyIgG3cvi,hydrochlorothiazide,eK6Lv3iVM8,1,1,2024-03-01T00:00:00,2024-06-03T14:11:31.737514,drug-mediator,mediator:hyponatremia,drug:thiazides
+_F-5JB7RQu|GiyIgG3cvi,sulfonylurea,_F-5JB7RQu,hyponatremia,GiyIgG3cvi,2,1,2020-03-01T00:00:00,2024-06-03T14:15:31.807516,drug-mediator,drug:sulfonylureas,mediator:hyponatremia
+lql492pWuk|GiyIgG3cvi,metformin,lql492pWuk,hyponatremia,GiyIgG3cvi,2,1,2020-03-01T00:00:00,2024-06-03T14:15:31.807697,drug-mediator,drug:metformin,mediator:hyponatremia
+gtg5bHnBPz|GiyIgG3cvi,quetiapine fumarate,gtg5bHnBPz,hyponatremia,GiyIgG3cvi,1,1,2022-10-01T00:00:00,2024-06-03T14:05:05.597086,drug-mediator,drug:antipsychotics,mediator:hyponatremia
+nceJeKpSLI|GiyIgG3cvi,non-steroidal anti-inflammatory drug,nceJeKpSLI,hyponatremia,GiyIgG3cvi,1,1,2019-01-01T00:00:00,2026-03-26T21:09:07.043977,drug-mediator,drug:nsaids,mediator:hyponatremia
+XpRyYAtXCw|GiyIgG3cvi,tricyclic antidepressant,XpRyYAtXCw,hyponatremia,GiyIgG3cvi,2,1,2018-01-01T00:00:00,2024-06-03T14:16:15.195912,drug-mediator,drug:ssris,mediator:hyponatremia
+Iw5Xd3Xj2H|GiyIgG3cvi,antidiuretic,Iw5Xd3Xj2H,hyponatremia,GiyIgG3cvi,1,1,2017-09-01T00:00:00,2024-06-03T14:06:43.177542,drug-mediator,drug:diuretics_any,mediator:hyponatremia
+tEPKKhFBgG|GiyIgG3cvi,risperidone,tEPKKhFBgG,hyponatremia,GiyIgG3cvi,2,1,2019-02-01T00:00:00,2026-03-26T21:09:18.619738,drug-mediator,drug:antipsychotics,mediator:hyponatremia
+Lb0C2H7U6X|GiyIgG3cvi,sertraline,Lb0C2H7U6X,hyponatremia,GiyIgG3cvi,1,1,2018-01-01T00:00:00,2024-06-03T14:12:34.406252,drug-mediator,drug:ssris,mediator:hyponatremia
+p8kiNa0Nw1|GiyIgG3cvi,lithium,p8kiNa0Nw1,hyponatremia,GiyIgG3cvi,4,1,2021-02-01T00:00:00,2024-06-03T14:16:15.192731,drug-mediator,drug:lithium,mediator:hyponatremia
+GiyIgG3cvi|wqj_TgiAW1,hyponatremia,GiyIgG3cvi,insulins,wqj_TgiAW1,1,1,2007-03-01T00:00:00,2024-06-03T14:01:29.773617,drug-mediator,mediator:hyponatremia,drug:insulin
+xTCyfzs2ZT|m4eAsiRDXQ,olanzapine,xTCyfzs2ZT,hypotension,m4eAsiRDXQ,1,1,2023-01-01T00:00:00,2024-06-03T14:00:46.059843,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+gtg5bHnBPz|m4eAsiRDXQ,quetiapine fumarate,gtg5bHnBPz,hypotension,m4eAsiRDXQ,1,1,2008-11-01T00:00:00,2024-06-03T14:01:29.764588,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+JDaZEOGtSs|m4eAsiRDXQ,trandolapril,JDaZEOGtSs,hypotension,m4eAsiRDXQ,1,1,2013-11-01T00:00:00,2024-06-03T13:57:00.677307,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+qm-6k3XgFz|m4eAsiRDXQ,metolazone,qm-6k3XgFz,hypotension,m4eAsiRDXQ,1,1,2014-11-01T00:00:00,2024-06-03T14:08:06.206379,drug-mediator,drug:thiazides,mediator:bp_hypotension
+Lb0C2H7U6X|m4eAsiRDXQ,sertraline,Lb0C2H7U6X,hypotension,m4eAsiRDXQ,1,1,1998-04-01T00:00:00,2024-06-03T13:59:00.610899,drug-mediator,drug:ssris,mediator:bp_hypotension
+8RhqtSYdIx|m4eAsiRDXQ,labetalol,8RhqtSYdIx,hypotension,m4eAsiRDXQ,1,1,2016-01-01T00:00:00,2024-06-03T13:56:00.454201,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+XpRyYAtXCw|m4eAsiRDXQ,tricyclic antidepressant,XpRyYAtXCw,hypotension,m4eAsiRDXQ,2,1,1978-01-13T00:00:00,2024-06-03T13:56:11.787809,drug-mediator,drug:ssris,mediator:bp_hypotension
+Z7oxoU6RYn|m4eAsiRDXQ,irbesartan,Z7oxoU6RYn,hypotension,m4eAsiRDXQ,1,1,2015-01-01T00:00:00,2024-06-03T13:54:43.489403,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+mgRDS5mimT|uboWgSu-kS,ibuprofen,mgRDS5mimT,systolic blood pressure,uboWgSu-kS,2,1,1996-03-01T00:00:00,2024-06-03T14:16:15.193961,drug-mediator,drug:nsaids,mediator:bp_hypotension
+KkBcwbG3bl|uboWgSu-kS,indapamide,KkBcwbG3bl,systolic blood pressure,uboWgSu-kS,1,1,2009-11-01T00:00:00,2025-09-02T02:48:33.851239,drug-mediator,drug:thiazides,mediator:bp_hypotension
+2RzIlqCjcm|VhsTOirSSr,insulin,2RzIlqCjcm,serum sodium level,VhsTOirSSr,1,1,2004-09-01T00:00:00,2024-08-20T03:00:39.988315,drug-mediator,drug:insulin,mediator:hyponatremia
+SpPNEhjAPT|uWNNlnauQq,insulin pump,SpPNEhjAPT,blood pressure,uWNNlnauQq,1,1,2021-07-23T00:00:00,2024-06-03T14:03:22.121495,drug-mediator,drug:insulin,mediator:bp_hypotension
+Z7oxoU6RYn|uboWgSu-kS,irbesartan,Z7oxoU6RYn,systolic blood pressure,uboWgSu-kS,1,1,2003-11-01T00:00:00,2024-06-03T14:08:17.074427,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+8RhqtSYdIx|uboWgSu-kS,labetalol,8RhqtSYdIx,systolic blood pressure,uboWgSu-kS,1,1,1986-06-01T00:00:00,2024-06-03T13:57:42.867053,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+q-I16SWsO4|uboWgSu-kS,lisinopril,q-I16SWsO4,systolic blood pressure,uboWgSu-kS,1,1,1995-05-01T00:00:00,2024-06-03T13:54:43.487855,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+p8kiNa0Nw1|dwy4MR0rcR,lithium,p8kiNa0Nw1,acute kidney injury,dwy4MR0rcR,2,1,2023-07-03T00:00:00,2024-06-03T14:01:17.725047,drug-mediator,drug:lithium,mediator:aki
+Try6QSLoWy|GNCkDGlDyr,lithium carbonate,Try6QSLoWy,sweat,GNCkDGlDyr,1,1,1990-01-01T00:00:00,2024-06-03T13:57:12.029798,drug-mediator,drug:lithium,mediator:sweating
+IMhgtons9f|tT5LvW72gI,losartan,IMhgtons9f,diastolic blood pressure,tT5LvW72gI,1,1,2010-04-01T00:00:00,2024-06-03T13:58:41.827104,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+8F846MKo5N|uboWgSu-kS,methylphenidate hydrochloride,8F846MKo5N,systolic blood pressure,uboWgSu-kS,1,1,2020-01-01T00:00:00,2024-06-03T13:53:31.831123,drug-mediator,drug:adhd_stimulants,mediator:bp_hypotension
+8F846MKo5N|tT5LvW72gI,methylphenidate hydrochloride,8F846MKo5N,diastolic blood pressure,tT5LvW72gI,1,1,2020-01-01T00:00:00,2024-06-03T14:01:17.730347,drug-mediator,drug:adhd_stimulants,mediator:bp_hypotension
+3lmAiW35EL|Jvd6xBSK0D,morphine,3lmAiW35EL,venous blood pressure,Jvd6xBSK0D,2,1,1974-12-01T00:00:00,2024-06-03T13:58:12.212834,drug-mediator,drug:opioids_fentanyl,mediator:bp_hypotension
+rL28dXGhRi|uWNNlnauQq,naproxen,rL28dXGhRi,blood pressure,uWNNlnauQq,1,1,2009-09-15T00:00:00,2024-06-03T14:05:26.154221,drug-mediator,drug:nsaids,mediator:bp_hypotension
+rL28dXGhRi|uboWgSu-kS,naproxen,rL28dXGhRi,systolic blood pressure,uboWgSu-kS,2,1,2009-09-15T00:00:00,2024-06-03T14:14:28.081741,drug-mediator,drug:nsaids,mediator:bp_hypotension
+WYDlXi2szb|uboWgSu-kS,nebivolol,WYDlXi2szb,systolic blood pressure,uboWgSu-kS,1,1,,2024-06-03T14:01:49.484649,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+DWzSiBDXty|QfUlQKPD7z,selective serotonin reuptake inhibitor,DWzSiBDXty,night sweats,QfUlQKPD7z,1,1,2015-03-01T00:00:00,2024-06-03T14:04:53.423168,drug-mediator,drug:ssris,mediator:sweating
+nceJeKpSLI|uboWgSu-kS,non-steroidal anti-inflammatory drug,nceJeKpSLI,systolic blood pressure,uboWgSu-kS,1,1,1993-05-01T00:00:00,2024-06-03T13:53:31.822573,drug-mediator,drug:nsaids,mediator:bp_hypotension
+IjmedHpk0D|uboWgSu-kS,olmesartan medoxomil,IjmedHpk0D,systolic blood pressure,uboWgSu-kS,1,1,2011-01-01T00:00:00,2024-06-03T13:57:42.865317,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+njRsZA9iEn|0OE1xGhJA8,orthostatic hypotension,njRsZA9iEn,potassium-sparing diuretic,0OE1xGhJA8,1,1,2023-12-01T00:00:00,2024-06-03T14:04:22.491002,drug-mediator,mediator:bp_hypotension,drug:diuretics_any
+XpRyYAtXCw|njRsZA9iEn,tricyclic antidepressant,XpRyYAtXCw,orthostatic hypotension,njRsZA9iEn,1,1,2016-02-01T00:00:00,2024-06-03T14:04:03.902635,drug-mediator,drug:ssris,mediator:bp_hypotension
+SjDsvIgB5i|uboWgSu-kS,perindopril,SjDsvIgB5i,systolic blood pressure,uboWgSu-kS,1,1,2022-11-01T00:00:00,2025-09-02T14:47:55.348095,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+u3p7wGPvPL|DC9RYf7oDc,propranolol,u3p7wGPvPL,post-exercise hypotension,DC9RYf7oDc,1,1,1991-08-01T00:00:00,2024-06-03T13:53:02.420159,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+u3p7wGPvPL|567CGPkQXm,propranolol,u3p7wGPvPL,skin temperature,567CGPkQXm,1,1,2011-05-01T00:00:00,2024-06-03T13:56:11.792658,drug-mediator,drug:beta_blockers,mediator:body_temp
+u3p7wGPvPL|Jvd6xBSK0D,propranolol,u3p7wGPvPL,venous blood pressure,Jvd6xBSK0D,1,1,2018-01-01T00:00:00,2024-06-03T13:54:13.899156,drug-mediator,drug:beta_blockers,mediator:bp_hypotension
+DWzSiBDXty|uboWgSu-kS,selective serotonin reuptake inhibitor,DWzSiBDXty,systolic blood pressure,uboWgSu-kS,1,1,2023-11-01T00:00:00,2025-09-02T02:48:33.851230,drug-mediator,drug:ssris,mediator:bp_hypotension
+Lb0C2H7U6X|uboWgSu-kS,sertraline,Lb0C2H7U6X,systolic blood pressure,uboWgSu-kS,1,1,2014-02-01T00:00:00,2024-06-03T14:11:20.256316,drug-mediator,drug:ssris,mediator:bp_hypotension
+a9WeQM3szB|GNCkDGlDyr,topiramate,a9WeQM3szB,sweat,GNCkDGlDyr,1,1,2012-05-01T00:00:00,2024-06-03T14:07:03.933302,drug-mediator,drug:topiramate_zonisamide,mediator:sweating
+Cn4s1jIrwa|uboWgSu-kS,bendroflumethiazide,Cn4s1jIrwa,systolic blood pressure,uboWgSu-kS,1,1,1999-05-01T00:00:00,2024-06-03T14:05:59.129396,drug-mediator,drug:thiazides,mediator:bp_hypotension
+jt7RRRG7OJ|uboWgSu-kS,ziprasidone,jt7RRRG7OJ,systolic blood pressure,uboWgSu-kS,3,1,2006-09-01T00:00:00,2025-09-03T02:47:15.593288,drug-mediator,drug:antipsychotics,mediator:bp_hypotension
+K26lwe0vlM|uboWgSu-kS,perindoprilat,K26lwe0vlM,systolic blood pressure,uboWgSu-kS,1,1,2014-10-01T00:00:00,2024-06-03T14:11:20.254905,drug-mediator,drug:acei_arb,mediator:bp_hypotension
+a9WeQM3szB|uboWgSu-kS,topiramate,a9WeQM3szB,systolic blood pressure,uboWgSu-kS,1,1,2008-06-09T00:00:00,2024-06-03T14:03:32.747814,drug-mediator,drug:topiramate_zonisamide,mediator:bp_hypotension
+RFP3Vz-YwQ|uWNNlnauQq,thiazide,RFP3Vz-YwQ,blood pressure,uWNNlnauQq,2,1,2013-01-01T00:00:00,2024-06-03T14:16:02.978788,drug-mediator,drug:thiazides,mediator:bp_hypotension
+RFP3Vz-YwQ|ZgE4MD4rlh,thiazide,RFP3Vz-YwQ,arterial blood pressure,ZgE4MD4rlh,1,1,2013-01-01T00:00:00,2024-06-03T14:11:20.254668,drug-mediator,drug:thiazides,mediator:bp_hypotension
+tVL9qvp2IM|ZgE4MD4rlh,torasemide,tVL9qvp2IM,arterial blood pressure,ZgE4MD4rlh,1,1,2018-07-01T00:00:00,2024-06-03T14:05:05.589554,drug-mediator,drug:loop_diuretics,mediator:bp_hypotension
+jt7RRRG7OJ|dwy4MR0rcR,ziprasidone,jt7RRRG7OJ,acute kidney injury,dwy4MR0rcR,1,1,2017-04-01T00:00:00,2024-06-03T14:03:02.909518,drug-mediator,drug:antipsychotics,mediator:aki
+rYCo7LTyzN|dwy4MR0rcR,heat stroke,rYCo7LTyzN,acute kidney injury,dwy4MR0rcR,2,2,2020-07-15T00:00:00,2024-06-03T14:16:02.985939,heat-mediator,heat:heat_illness,mediator:aki
+PtQBvGm5CM|567CGPkQXm,heat illness,PtQBvGm5CM,skin temperature,567CGPkQXm,2,2,2024-01-03T00:00:00,2024-06-03T14:02:00.759713,heat-mediator,heat:heat_illness,mediator:body_temp
+4ixfP1w8VB|mUxSLRMwIy,thermoregulation,4ixfP1w8VB,air temperature,mUxSLRMwIy,1,1,2013-10-01T00:00:00,2024-06-18T14:35:24.110603,heat-mediator,mediator:body_temp,heat:ambient_temp
+PtQBvGm5CM|ZgE4MD4rlh,heat illness,PtQBvGm5CM,arterial blood pressure,ZgE4MD4rlh,2,1,2013-01-01T00:00:00,2024-06-03T13:55:13.501656,heat-mediator,heat:heat_illness,mediator:bp_hypotension
+PtQBvGm5CM|CPu3fKZt34,heat illness,PtQBvGm5CM,body temperature,CPu3fKZt34,1,1,2013-02-01T00:00:00,2024-06-03T13:57:42.860732,heat-mediator,heat:heat_illness,mediator:body_temp
+wpUeTjUbAc|CPu3fKZt34,extreme heat,wpUeTjUbAc,body temperature,CPu3fKZt34,2,1,2013-01-01T00:00:00,2024-06-03T13:56:00.455914,heat-mediator,heat:extreme_heat,mediator:body_temp
+wpUeTjUbAc|Nnr_i0oykd,extreme heat,wpUeTjUbAc,human body temperature,Nnr_i0oykd,1,1,2018-03-01T00:00:00,2024-06-03T13:53:43.910728,heat-mediator,heat:extreme_heat,mediator:body_temp
+wpUeTjUbAc|dwy4MR0rcR,extreme heat,wpUeTjUbAc,acute kidney injury,dwy4MR0rcR,1,1,2008-12-01T00:00:00,2024-06-03T14:09:08.654594,heat-mediator,heat:extreme_heat,mediator:aki
+PtQBvGm5CM|4ixfP1w8VB,heat illness,PtQBvGm5CM,thermoregulation,4ixfP1w8VB,1,1,2024-12-20T00:00:00,2024-12-22T14:35:04.873846,heat-mediator,heat:heat_illness,mediator:body_temp
+rYCo7LTyzN|ccjhPmdWrg,heat stroke,rYCo7LTyzN,sweating,ccjhPmdWrg,1,1,2020-04-26T00:00:00,2024-06-03T14:05:59.122538,heat-mediator,heat:heat_illness,mediator:sweating
+rYCo7LTyzN|uWNNlnauQq,heat stroke,rYCo7LTyzN,blood pressure,uWNNlnauQq,1,1,2021-02-01T00:00:00,2024-06-03T13:59:42.477401,heat-mediator,heat:heat_illness,mediator:bp_hypotension
+rYCo7LTyzN|uboWgSu-kS,heat stroke,rYCo7LTyzN,systolic blood pressure,uboWgSu-kS,1,1,2021-02-01T00:00:00,2024-06-03T13:59:42.477838,heat-mediator,heat:heat_illness,mediator:bp_hypotension

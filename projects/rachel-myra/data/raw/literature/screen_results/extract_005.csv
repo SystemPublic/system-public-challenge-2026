@@ -1,0 +1,7 @@
+record_id,drug,drug_class,outcome,population,design,heat_definition,direction,effect_type,effect_value,ci_lower,ci_upper,effect_text,notes
+PMID:21214621,lithium,lithium,heat stroke/heat exhaustion risk during heatwaves,people with mental health/substance conditions (discussion paper),review,heatwaves / extreme heat,harm,,,,,,narrative discussion paper; no data
+PMID:21214621,neuroleptic drugs,antipsychotics,heat stroke/heat exhaustion risk during heatwaves,people with mental health/substance conditions (discussion paper),review,heatwaves / extreme heat,harm,,,,,,narrative discussion paper; no data
+PMID:21214621,anticholinergic drugs,anticholinergics,heat stroke/heat exhaustion risk during heatwaves,people with mental health/substance conditions (discussion paper),review,heatwaves / extreme heat,harm,,,,,,narrative discussion paper; no data
+PMID:24615,lithium,lithium,heat illness syndrome vs lithium intoxication (shared mechanism),review,review,not stated,not_stated,,,,,,speculative review; antipsychotics/phenothiazines in MeSH
+PMID:30022444,"lithium carbonate, clozapine",multiple,heatstroke with cerebellar MRI changes,case report: woman with schizophrenia,case_report,heatstroke occurring in March (not summer),harm,,,,,,authors suggest antipsychotic use raises heatstroke risk
+PMID:31782314,lithium,lithium,serum lithium concentration,"2493 patients, 11,912 serum levels, Sydney 2008-2018",cohort,preceding 5 days maximum temperatures; season,null,correlation r,-0.008,,,"(r = -0.008, p = 0.399)","longitudinal subset r = 0.008, 95% CI -0.04 to 0.06"

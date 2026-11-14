@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:42560130,exclude,E6: heatstroke TTM trial; chlorpromazine only as shivering rescue,none,none,rct
+PMID:42662472,exclude,E6: clinician heat education QI; drugs only background,none,none,other
+PMID:44988,include,I1: two fatal heatstrokes on neuroleptics during heat wave,antipsychotics,heat_illness,case_series
+PMID:608659,exclude,"E5: NMS case series, no environmental heat link",antipsychotics,none,case_series
+PMID:611014,exclude,E5: neuroleptic malignant syndrome cases,antipsychotics,none,case_series
+PMID:611015,include,I1: hyperthermia 42C on fluphenazine decanoate during 1976 heat wave,antipsychotics,hyperthermia,case_report
+PMID:6117180,exclude,E5: long-acting neuroleptics review; malignant hyperthermia only,antipsychotics,none,review
+PMID:6124500,include,I1: review of heatstroke prevention in psychiatric patients on psychotropics,antipsychotics,heat_illness,review
+PMID:6125612,exclude,E2: rat pharmacology of zotepine,antipsychotics,none,lab_bench
+PMID:6133493,exclude,"E5: rhabdomyolysis/NMS cases, no environmental heat",antipsychotics,none,case_series
+PMID:6137352,exclude,E5: NMS therapy review,antipsychotics,none,review
+PMID:6142817,exclude,E5: pernicious catatonia review,none,none,case_series
+PMID:6145281,exclude,"E5: fatal neuroleptic hyperthermia/NMS, no environmental heat",antipsychotics,none,case_series
+PMID:6580711,exclude,E5: trismus differential diagnosis,none,none,review
+PMID:6697897,exclude,E5: NMS case on fluphenazine,antipsychotics,none,case_report
+PMID:6722708,exclude,E5: lethal catatonia/NMS case,none,none,case_report
+PMID:681307,exclude,"E4: haloperidol hyperthermia in withdrawal, no environmental heat",antipsychotics,none,case_report
+PMID:6842224,include,uncertain: I1 heat stroke attributed to perphenazine plus amitriptyline,multiple,heat_illness,case_report
+PMID:7199085,exclude,E2: rabbit apomorphine hyperthermia,none,none,lab_bench
+PMID:7267161,exclude,"E6: autonomic conditioning in schizophrenics, no heat",none,none,other
+PMID:7296306,exclude,E6: hypothalamic dysthermia after surgery; chlorpromazine as treatment,none,none,case_report
+PMID:7550974,exclude,E7: GC analytical thermal degradation of clozapine-N-oxide,none,none,lab_bench
+PMID:7569118,exclude,E5: haloperidol rhabdomyolysis without hyperthermia or heat,antipsychotics,none,case_report
+PMID:762029,exclude,E5: haloperidol NMS-like reactions in adolescents,antipsychotics,none,case_series
+PMID:7675958,exclude,E6: MDMA pharmacology review; MDMA not a study drug class,none,none,review
+PMID:7756353,exclude,E2: erythrocyte membrane dye binding in vitro,none,none,lab_bench
+PMID:7779461,exclude,E5: amisulpride overdose hyperthermia,antipsychotics,none,case_series
+PMID:7800095,exclude,E7: neuroleptic-induced hypothermia,antipsychotics,none,case_series
+PMID:7856468,exclude,E5: haloperidol hyperthermic reaction with central core disease,antipsychotics,none,case_report
+PMID:7902026,exclude,E5: drug-induced hyperthermia (NMS/serotonin syndrome),none,none,case_series
+PMID:7902992,exclude,E5: levomepromazine overdose/lethal catatonia,antipsychotics,none,case_report
+PMID:7914522,exclude,E6: general heatstroke article; neuroleptic disorders only mentioned,none,none,other
+PMID:8010552,exclude,E5: psychostimulant overdose hyperthermia review,none,none,review
+PMID:8023100,exclude,E6: Parkinson akinetic crisis,none,none,case_series
+PMID:8097554,exclude,E2: E. coli heat shock DNA study,none,none,lab_bench
+PMID:8163804,exclude,E5: NMS without fever case,antipsychotics,none,case_report
+PMID:8232685,exclude,"E4: infections on high-dose clozapine, no heat",antipsychotics,none,case_report
+PMID:8412366,exclude,E6: central autonomic network review,none,none,review
+PMID:8562725,exclude,"E5: NMS after polytrauma, no environmental heat",antipsychotics,none,case_report
+PMID:8588059,include,"I1: RCT haloperidol vs placebo under 52C heat exposure, cortisol response",antipsychotics,other,rct
+PMID:8611967,exclude,E7: clozapine serum assay method,none,none,lab_bench
+PMID:8699843,include,I1: heat stroke rhabdomyolysis during mountaineering in antipsychotic users,antipsychotics,heat_illness,case_series
+PMID:9050660,exclude,E6: thermal balloon endometrial ablation,none,none,cohort
+PMID:9128030,exclude,E5: NMS from haloperidol/chlorpromazine,antipsychotics,none,case_report
+PMID:9167437,include,I1: 1995 heat wave heat stroke cases incl. neuroleptic and nortriptyline users,multiple,heat_illness,case_series
+PMID:9219078,include,I1: NMS cluster during very hot summer in learning disabilities,antipsychotics,hyperthermia,case_series
+PMID:9235098,exclude,"E5: NMS case series, no environmental heat",antipsychotics,none,case_series
+PMID:9288412,include,uncertain: I1 RCT haloperidol x 52C heat exposure on timing performance,antipsychotics,other,rct
+PMID:9382208,exclude,E6: MDMA intoxication review,none,none,review
+PMID:9387804,exclude,E6: NMS-like syndrome in Parkinson on dopaminergic drugs; no study drug,none,none,case_series
+PMID:9463060,exclude,"E5: NMS arrhythmias, no environmental heat",antipsychotics,none,case_series
+PMID:9523793,exclude,E6: baclofen withdrawal hyperthermia,none,none,case_report
+PMID:9712220,include,"I1: psychiatric inpatient heat wave deaths across antipsychotic eras, NYC",antipsychotics,mortality,cohort
+PMID:9798607,exclude,E5: malignant hyperthermia review,none,none,review
+PMID:14667052,exclude,E6: herbicide screening in plants,none,none,lab_bench
+PMID:16163098,exclude,E6: warmed liposuction infiltration solutions,none,none,other
+PMID:17708522,exclude,E6: pesticide leaching model,none,none,other
+PMID:19211217,exclude,E5: anesthesia in myotonic dystrophy,none,none,case_series
+PMID:19232334,exclude,E6: seasonal pseudohypokalemia in samples; no study drug,none,none,cross_sectional
+PMID:19284723,exclude,E3: benzothiazine organic synthesis,none,none,lab_bench
+PMID:24161916,exclude,E2: mecamylamine receptor pharmacology in oocytes/animals,none,none,lab_bench
+PMID:31649987,exclude,E6: capillary blood sampling device storage; not a medicine,none,none,lab_bench
+PMID:31817602,exclude,E3: ultrasonic transducer engineering,none,none,lab_bench
+PMID:31952587,exclude,E3: nanocomposite membrane materials,none,none,lab_bench
+PMID:33466651,exclude,E3: LiFe5O8 nanomaterial synthesis,none,none,lab_bench
+PMID:33508784,exclude,"E5: drug-induced hyperthermic syndromes review, no environmental heat focus",none,none,review
+PMID:38642231,exclude,E3: Li4SiO4 CO2 sorbent,none,none,lab_bench
+PMID:39542220,exclude,E5: malignant syndromes narrative review,none,none,review
+PMID:40127613,exclude,E6: bentazone herbicide detection in water,none,none,lab_bench
+PMID:40746904,exclude,"E5: drug-related hyperthermia/rigidity case, no environmental heat",none,none,case_report
+PMID:41035186,exclude,E4: epidural-related intrapartum fever with sufentanil,none,none,rct
+PMID:42398598,exclude,E6: food protein glycation study,none,none,lab_bench
+PMID:42562502,exclude,E6: food processing study,none,none,lab_bench
+PMID:42721587,exclude,E6: food thermal processing study,none,none,lab_bench
+PMID:7946858,exclude,E7: heat used only as experimental pain stimulus with alfentanil,none,none,rct
+PMID:42721741,exclude,E2: heat-stressed broilers dietary study,none,none,lab_bench
+DOI:10.21203/rs.3.rs-118285/v1,exclude,"E7: exercise/cold-induced anaphylaxis, no heat",none,none,case_report
+PMID:11310775,exclude,E6: NEAT overfeeding review,none,none,review
+PMID:12793933,exclude,E7: catecholamine infusion stability at ambient temperature only,none,none,lab_bench
+PMID:15061431,include,I2: field stability of epinephrine and atropine autoinjectors in hot ambulances,multiple,stability_potency,lab_bench
+PMID:15321530,exclude,E7: anesthetic syringe stability at room temperature only,none,none,lab_bench
+PMID:18295471,exclude,"E7: lidocaine-adrenaline mixture stability at 24C, light effect",none,none,lab_bench
+PMID:21043703,exclude,"E6: platelet-rich plasma storage, not a medicine",none,none,lab_bench
+PMID:2169378,exclude,"E6: hyperinsulinemic clamp thermogenesis, no heat exposure",none,none,rct
+PMID:22478919,exclude,E7: buffered lidocaine-epinephrine stability under refrigeration only,none,none,lab_bench
+PMID:22794696,exclude,E6: food allergy review; autoinjector use only,none,none,review
+PMID:23682525,include,"I2: adrenaline stability in hot ambulance and storage room, Thailand",epinephrine,stability_potency,lab_bench
+PMID:25306896,exclude,E6: anaphylaxis augmenting factors review,none,none,review
+PMID:26001487,exclude,"E7: epinephrine autoinjector freeze-thaw, cold only",epinephrine,none,lab_bench
+PMID:26022875,exclude,E6: fish/shellfish allergy review,none,none,review
+PMID:26859654,exclude,E7: prefilled lidocaine syringe sterility at room/cold temperature,none,none,lab_bench
+PMID:27822074,exclude,E6: exercise-induced anaphylaxis diagnosis review,none,none,review
+PMID:27885969,exclude,"E8: conference proceedings abstract listing, no extractable data",none,none,other
+PMID:2841885,exclude,"E6: ICU sedation regimens, no heat",none,none,rct
+PMID:2916782,include,I2: prehospital drugs incl. epinephrine under simulated environmental heat extremes,epinephrine,stability_potency,lab_bench
+PMID:29373043,exclude,"E7: expired epinephrine in climate-controlled storage, no heat",epinephrine,none,lab_bench
+PMID:31092105,exclude,"E7: refrigerated medication waste initiative, no heat",none,none,other
+PMID:31095868,exclude,E6: syringe size and injection pain,none,none,other
+PMID:31690391,exclude,E6: food allergy review,none,none,review
+PMID:32970535,exclude,E6: anisakiasis allergy case,none,none,case_report
+PMID:33162098,exclude,E2: heat stress in dairy ewes,none,none,rct
+PMID:36162799,exclude,E6: broad anaphylaxis review; epinephrine heat degradation only mentioned,none,none,review
+PMID:3683746,exclude,E2: chromaffin cell culture,none,none,lab_bench
+PMID:37394178,exclude,E7: intranasal epinephrine PK; room-temperature stability only,none,none,other
+PMID:37438091,exclude,E7: Y-site compatibility at room temperature,none,none,lab_bench
+PMID:37595177,exclude,E7: diluted epinephrine stability at 4C and 25C room temperature,none,none,lab_bench
+PMID:38875453,exclude,"E7: autoinjector freezing, cold only",epinephrine,none,lab_bench
+PMID:39503141,exclude,E7: diluted epinephrine stability at 4C/20C,none,none,lab_bench
+PMID:40003043,exclude,E6: shrimp population ecology,none,none,other
+PMID:40051200,exclude,E6: lipid transfer protein allergy statement,none,none,other
+PMID:40067908,exclude,E2: mouse SIRT6 thermogenesis,none,none,lab_bench
+PMID:40497018,exclude,E7: intranasal epinephrine PK; stability at 20C only,none,none,rct
+PMID:41665574,exclude,E7: buffered lidocaine-epinephrine room temp/refrigeration stability,none,none,review
+PMID:41796069,exclude,E6: intranasal adrenaline review; thermal stability only mentioned,none,none,review
+PMID:41804626,exclude,E6: mastocytosis syncope case,none,none,case_report
+PMID:42166904,include,"I2: 1-year EMS vehicle heat exposure stability of epinephrine, furosemide, insulin, Qatar",multiple,stability_potency,lab_bench
+PMID:42658848,exclude,E6: ClO2 sterilization of cold-chain devices,none,none,lab_bench
+PMID:42769349,exclude,E7: cold urticaria cryoneurolysis case,none,none,case_report
+PMID:42924385,include,I2: scoping review of post-dispensing heat exposure and medicine stability,multiple,stability_potency,review
+PMID:6705233,exclude,E7: catecholamine assay deconjugation by heat,none,none,lab_bench

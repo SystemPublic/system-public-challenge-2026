@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Cleaning Charts</title>
+<style>
+  /* Colors are the site's design tokens (web/src/styles/tokens.css). The site is light-mode only. */
+  :root {
+    color-scheme: light;
+    --ui-page:#ffffff; --ui-surface:#f7f7f5; --ui-line:#d4d4d0; --ui-line-strong:#6b6b66;
+    --ui-ink:#141414; --ui-ink-muted:#4b5563;
+    --layer-graph-bg:#eef2ff; --layer-graph-fg:#3730a3;
+    --layer-lit-bg:#f0fdf4; --layer-lit-fg:#166534;
+    /* local aliases onto the tokens */
+    --surface-0:var(--ui-page); --surface-1:var(--ui-surface); --border:var(--ui-line); --grid:var(--ui-line);
+    --text-primary:var(--ui-ink); --text-secondary:var(--ui-ink-muted); --text-muted:var(--ui-ink-muted);
+    --series-1:var(--layer-graph-fg);   /* System API */
+    --series-2:var(--ui-line-strong);   /* Dataverse fallback / overnight */
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--surface-0); color:var(--text-primary);
+         font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 1080px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  .lede { color: var(--text-secondary); margin: 0 0 24px; max-width: 760px; }
+  .tiles { display:grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); gap:12px; margin-bottom: 24px; }
+  .tile { background:var(--surface-1); border:1px solid var(--border); border-radius:10px; padding:14px 16px; }
+  .tile .v { font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .tile .l { color: var(--text-secondary); font-size: 13px; line-height: 1.35; }
+  .grid2 { display:grid; grid-template-columns: repeat(auto-fit, minmax(440px,1fr)); gap:16px; }
+  @media (max-width: 520px) { .grid2 { grid-template-columns: 1fr; } }
+  .card { background:var(--surface-1); border:1px solid var(--border); border-radius:12px; padding:18px 18px 12px; margin-bottom:16px; min-width:0; }
+  .card h2 { font-size: 16px; margin: 0 0 2px; }
+  .card .sub { color: var(--text-secondary); font-size: 13px; margin: 0 0 10px; }
+  .legend { display:flex; gap:16px; font-size: 13px; color: var(--text-secondary); margin: 0 0 6px; flex-wrap:wrap; }
+  .legend span::before { content:""; display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; background:var(--c); vertical-align:-1px; }
+  svg { display:block; width:100%; height:auto; overflow:visible; }
+  .lbl { fill: var(--text-secondary); font-size: 12px; }
+  .val { fill: var(--text-primary); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .ax  { fill: var(--text-muted); font-size: 11px; }
+  .gridl { stroke: var(--grid); }
+  .bar { transition: opacity .1s; }
+  .hit:hover + .bar, .bar:hover { opacity: .8; }
+  details { margin-top: 6px; font-size: 13px; color: var(--text-secondary); }
+  details table { border-collapse: collapse; margin-top: 6px; }
+  td, th { padding: 3px 10px 3px 0; text-align:left; font-variant-numeric: tabular-nums; }
+  th { color: var(--text-muted); font-weight: 600; }
+  .note { font-size: 12.5px; color: var(--text-muted); margin: 6px 0 0; }
+  #tip { position: fixed; pointer-events:none; background:var(--surface-1); color:var(--text-primary);
+         border:1px solid var(--border); border-radius:8px; padding:6px 10px; font-size:12.5px;
+         box-shadow:none; opacity:0; transition: opacity .08s; max-width: 280px; z-index:10; }
+  .log { width:100%; border-collapse: collapse; font-size: 13.5px; }
+  .log th, .log td { border-bottom: 1px solid var(--border); padding: 8px 10px 8px 0; vertical-align: top; }
+  .log td:nth-child(3) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .tag { display:inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px; border:1px solid var(--border); color: var(--text-secondary); }
+  .tag.sys { border-color: var(--series-1); color: var(--series-1); }
+</style>
+</head>
+<body>
+<main>
+  <h1>How we cleaned and processed the data</h1>
+  <p class="lede">The overnight pipeline (commit 95fb864) plus the live System Public Graph API run of 14 Nov 2026. System acts as a second, independent extractor: it checks our numbers, catches its own mislabels, and points to evidence we missed. Counts come from <code>data/processed/</code>.</p>
+
+  <div class="tiles">
+    <div class="tile"><div class="v">80 / 83</div><div class="l">papers we cite are indexed in the System API (Dataverse release: 7)</div></div>
+    <div class="tile"><div class="v">14</div><div class="l">of our numbers double-verified by System (overnight fallback: 5)</div></div>
+    <div class="tile"><div class="v">0</div><div class="l">number or direction conflicts between System and us</div></div>
+    <div class="tile"><div class="v">3</div><div class="l">papers System mislabels or drops the drug on: sent to the fix list</div></div>
+    <div class="tile"><div class="v">1,902</div><div class="l">API calls used, of 10,000 per day; all cached for reruns</div></div>
+  </div>
+
+  <div class="grid2">
+    <section class="card">
+      <h2>The live API could check far more than the fallback</h2>
+      <p class="sub">Our 83 cited papers at each step, live API vs. Dataverse v2.1 bulk release</p>
+      <div class="legend"><span style="--c:var(--series-1)">System API</span><span style="--c:var(--series-2)">Dataverse fallback (overnight)</span></div>
+      <div id="c1"></div>
+    </section>
+
+    <section class="card">
+      <h2>Number badges before and after the API run</h2>
+      <p class="sub">105 numbers we quote, by verification badge</p>
+      <div class="legend"><span style="--c:var(--series-2)">Overnight (Dataverse)</span><span style="--c:var(--series-1)">Now (System API)</span></div>
+      <div id="c3"></div>
+      <p class="note">✓✓ = in the abstract and System has the same value · ✓ = in the abstract · ⚠ = System's label for the number is wrong · ? = not found in the abstract (hidden from public views).</p>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>What System said about each number we quote</h2>
+    <p class="sub">105 claimed numbers, by System API result</p>
+    <div id="c2"></div>
+    <p class="note">Most cited papers are indexed but have no extracted findings: System extracts from abstract text only, and only for part of PubMed. "Mislabel" means the number matches but System names the wrong drug or no drug (Martin-Latry 2007, Layton 2020, Wong 2024). These keep our ✓ and go on the fix list for System.</p>
+  </section>
+
+  <div class="grid2">
+    <section class="card">
+      <h2>Literature: 5,995 records down to 108 checked numbers</h2>
+      <p class="sub">Records at each screening step</p>
+      <div id="c4"></div>
+      <p class="note">Rule filter, then Claude screening under fixed rules. Every extracted number must appear verbatim in its abstract.</p>
+    </section>
+
+    <section class="card">
+      <h2>Narrowing System's 2 million findings</h2>
+      <p class="sub">Dataverse findings kept at each filter (log scale)</p>
+      <div id="c5"></div>
+      <p class="note">Blood-pressure findings are mostly antihypertensive efficacy trials, so heat-risk pathways use the non-BP findings only.</p>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Where System has kidney, sodium or dehydration evidence, and where it's empty</h2>
+    <p class="sub">System API studies linking each of our 15 drugs to a non-blood-pressure heat mediator (dehydration, low sodium, kidney injury)</p>
+    <div id="c6"></div>
+    <p class="note">The drugs that harm through sweating and thermoregulation (anticholinergics, topiramate, stimulants) are almost absent. That gap is itself a finding: the graph under-represents the mechanism behind several classic heat drugs.</p>
+  </section>
+
+  <section class="card">
+    <h2>Cleaning log</h2>
+    <p class="sub">Every change made to the data on 14 Nov, and what drove it</p>
+    <table class="log">
+      <thead><tr><th>Step</th><th>What and why</th><th>Before → after</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag sys">System API</span></td><td>Replaced the overnight Dataverse fallback with the live API (the key was rejected overnight and works now). Batches that overloaded the server were split and fetched 8 at a time.</td><td>7 → 80 cited papers indexed; 15,001 findings</td></tr>
+        <tr><td><span class="tag sys">System API</span></td><td>Second-extractor check: our number vs. System's for the same paper (same value at the paper's precision, same meaning, same direction)</td><td>5 → 14 numbers ✓✓</td></tr>
+        <tr><td><span class="tag sys">System API</span></td><td>System's mislabels no longer downgrade our claims: the number is verified in the abstract, so the claim keeps ✓ and the error goes to the fix list</td><td>6 claims ⚠ → ✓ + audit note</td></tr>
+        <tr><td><span class="tag sys">System API</span></td><td>Knowledge base prefers the API files over the Dataverse fallback when both exist, so nothing is counted twice</td><td>2 sources → 1</td></tr>
+        <tr><td><span class="tag sys">System rule</span></td><td>API findings also present in the Dataverse release are kept as evidence (System estimates ~20% of API extractions are inaccurate); API-only matches are marked</td><td>14 ✓✓ → 5 strict ✓✓</td></tr>
+        <tr><td><span class="tag sys">Reverse check</span></td><td>Evidence System has that we don't use: an unused heat → drug-induced hyponatremia OR 2.21 on a paper we cite, a lithium × temperature study, and 15 strong drug → mediator links</td><td>17 candidates in <code>system_audit_fix_list.csv</code></td></tr>
+        <tr><td><span class="tag">Labels</span></td><td>FDA label heat sentences: the same sentence repeated within a label field (mostly insulin storage lines). Deduplicated, and the script fixed.</td><td>369 → 299 rows</td></tr>
+        <tr><td><span class="tag">Dataverse</span></td><td>Downloaded the bulk release locally for the API-vs-Dataverse cross-check; checksums match the manifest</td><td>442 MB + 134 MB, MD5 ✓</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+<div id="tip" role="tooltip"></div>
+
+<script>
+const tip = document.getElementById('tip');
+const fmt = n => n.toLocaleString('en-US');
+function showTip(e, html) { tip.innerHTML = html; tip.style.opacity = 1;
+  const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8);
+  tip.style.left = x + 'px'; tip.style.top = (e.clientY + 14) + 'px'; }
+function hideTip() { tip.style.opacity = 0; }
+
+/* Horizontal bars. rows: [{label, values:[...]}]; series: [{name, color}] */
+function hbar(el, rows, series, opt = {}) {
+  const W = opt.W || 640, labW = opt.labW || 170, valW = 70, bh = opt.bh || 14, gap = 2, rowGap = opt.rowGap || 14;
+  const groupH = series.length * bh + (series.length - 1) * gap;
+  const H = rows.length * (groupH + rowGap) + 20;
+  const max = opt.max || Math.max(...rows.flatMap(r => r.values));
+  const plotW = W - labW - valW;
+  const sx = opt.log ? v => v <= 0 ? 0 : plotW * Math.log10(v) / Math.log10(max)
+                     : v => plotW * v / max;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${opt.aria || ''}">`;
+  const ticks = opt.log ? [1, 10, 100, 1e3, 1e4, 1e5, 1e6].filter(t => t <= max)
+                        : [0, .25, .5, .75, 1].map(f => Math.round(max * f));
+  ticks.forEach(t => { const x = labW + sx(t);
+    s += `<line class="gridl" x1="${x}" x2="${x}" y1="0" y2="${H - 18}"/>`;
+    s += `<text class="ax" x="${x}" y="${H - 4}" text-anchor="middle">${t >= 1e6 ? (t/1e6)+'M' : t >= 1e3 ? (t/1e3)+'k' : t}</text>`; });
+  rows.forEach((r, i) => {
+    const y0 = i * (groupH + rowGap) + 4;
+    s += `<text class="lbl" x="${labW - 10}" y="${y0 + groupH / 2 + 4}" text-anchor="end">${r.label}</text>`;
+    r.values.forEach((v, j) => {
+      const y = y0 + j * (bh + gap), w = Math.max(v > 0 ? 2 : 0, sx(v));
+      const col = r.colors ? r.colors[j] : series[j].color;
+      const tipHtml = `<b>${r.label}</b><br>${series[j].name}: ${fmt(v)}${r.note ? '<br>' + r.note : ''}`;
+      s += `<rect class="hit" x="${labW}" y="${y - 1}" width="${plotW}" height="${bh + 2}" fill="transparent" data-tip="${encodeURIComponent(tipHtml)}"/>`;
+      s += `<path class="bar" d="M${labW},${y} h${Math.max(0, w - 4)} a4,4 0 0 1 4,4 v${bh - 8} a4,4 0 0 1 -4,4 h${-Math.max(0, w - 4)} z" fill="${col}" pointer-events="none"/>`;
+      if (opt.labels !== false) s += `<text class="val" x="${labW + w + 6}" y="${y + bh - 3}">${opt.valFmt ? opt.valFmt(v, r) : fmt(v)}</text>`;
+    });
+  });
+  s += `</svg>`;
+  // table view
+  s += `<details><summary>Show as table</summary><table><tr><th></th>${series.map(x => `<th>${x.name}</th>`).join('')}</tr>` +
+       rows.map(r => `<tr><td>${r.label}</td>${r.values.map(v => `<td>${fmt(v)}</td>`).join('')}</tr>`).join('') + `</table></details>`;
+  el.innerHTML = s;
+  el.querySelectorAll('.hit').forEach(h => {
+    h.addEventListener('mousemove', e => showTip(e, decodeURIComponent(h.dataset.tip)));
+    h.addEventListener('mouseleave', hideTip);
+  });
+}
+const S1 = 'var(--series-1)', S2 = 'var(--series-2)';
+
+hbar(document.getElementById('c1'), [
+  { label: 'Papers we cite', values: [83, 83] },
+  { label: 'Indexed in System', values: [80, 7] },
+  { label: 'With extracted findings', values: [15, 7] },
+  { label: 'Same number as ours', values: [7, 4] },
+  { label: 'System mislabel caught', values: [3, 0] },
+], [{ name: 'System API', color: S1 }, { name: 'Dataverse fallback', color: S2 }], { W: 440, labW: 150, aria: 'Paper funnel API vs Dataverse' });
+
+hbar(document.getElementById('c3'), [
+  { label: '✓✓ double-verified', values: [5, 14] },
+  { label: '✓ in abstract', values: [74, 58] },
+  { label: '⚠ System mislabel', values: [0, 7] },
+  { label: '? not in abstract', values: [26, 26] },
+], [{ name: 'Overnight (Dataverse)', color: S2 }, { name: 'Now (System API)', color: S1 }], { W: 440, labW: 135, aria: 'Number badges before and after' });
+
+hbar(document.getElementById('c2'), [
+  { label: 'Paper indexed, no findings', values: [65] },
+  { label: 'Same number, same meaning', values: [14], note: 'includes 2 derived matches (a difference of two means)' },
+  { label: 'Integer, not compared', values: [8], note: 'counts and sample sizes are never matched' },
+  { label: 'Mislabel (System names wrong / no drug)', values: [7] },
+  { label: 'Paper in System, number not extracted', values: [7] },
+  { label: 'Paper not in System', values: [4] },
+], [{ name: 'Numbers', color: S1 }], { W: 1000, labW: 280, bh: 18, rowGap: 10, aria: 'System result per number' });
+
+const LIT = 'var(--layer-lit-fg)', GRAPH = 'var(--layer-graph-fg)';
+hbar(document.getElementById('c4'), [
+  { label: 'Unique records', values: [5995], colors: [LIT] },
+  { label: 'Pass rule filter', values: [2773], colors: [LIT] },
+  { label: 'Included by Claude', values: [333], colors: [LIT], note: '110 of these included on doubt' },
+  { label: 'Extraction rows', values: [367], colors: [LIT], note: 'one per included record × drug' },
+  { label: 'Number verbatim in abstract', values: [108], colors: [LIT] },
+], [{ name: 'Records' }], { W: 440, labW: 170, bh: 16, rowGap: 10, aria: 'Literature funnel' });
+
+hbar(document.getElementById('c5'), [
+  { label: 'All Dataverse findings', values: [1999877], colors: [GRAPH] },
+  { label: 'Name a drug, heat or mediator', values: [94340], colors: [GRAPH] },
+  { label: 'Drug → mediator', values: [1644], colors: [GRAPH], note: '1,082 studies' },
+  { label: 'In-scope, non-BP', values: [337], colors: [GRAPH], note: '227 studies' },
+  { label: 'Direct drug × heat', values: [18], colors: [GRAPH], note: '14 studies; 9 unflagged' },
+], [{ name: 'Findings' }], { W: 440, labW: 175, bh: 16, rowGap: 10, log: true, max: 2e6, aria: 'System findings funnel, log scale' });
+
+const drugs = [
+  ['ACE inhibitors / ARBs', 57], ['Loop diuretics', 44], ['SGLT2 inhibitors', 41], ['Thiazides', 29],
+  ['SSRIs', 22], ['Insulin (incl. pumps)', 14], ['Metformin', 13], ['Beta blockers', 13],
+  ['Fentanyl / opioid patches', 13], ['Antipsychotics', 12], ['Lithium', 2], ['Anticholinergics', 2],
+  ['ADHD stimulants', 1], ['Topiramate / zonisamide', 0], ['Epinephrine auto-injectors', 0]];
+hbar(document.getElementById('c6'), drugs.map(([l, v]) => ({ label: l, values: [v] })),
+  [{ name: 'Studies (non-BP mediator)', color: S1 }],
+  { W: 1000, labW: 200, bh: 16, rowGap: 8, aria: 'Non-BP mediator studies per drug', valFmt: v => v === 0 ? '0 · gap' : fmt(v) });
+</script>
+</body>
+</html>

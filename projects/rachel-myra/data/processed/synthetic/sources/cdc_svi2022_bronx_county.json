@@ -1,0 +1,73 @@
+{
+ "objectIdFieldName": "GRASP_ID",
+ "globalIdFieldName": "",
+ "geometryType": "esriGeometryPolygon",
+ "spatialReference": {
+  "wkid": 102100,
+  "latestWkid": 3857
+ },
+ "fields": [
+  {
+   "name": "FIPS",
+   "alias": "Tract-level FIPS code",
+   "type": "esriFieldTypeString",
+   "length": 30
+  },
+  {
+   "name": "LOCATION",
+   "alias": "Text description of tract, county, state",
+   "type": "esriFieldTypeString",
+   "length": 255
+  },
+  {
+   "name": "E_TOTPOP",
+   "alias": "Population estimate, 2018-2022 ACS",
+   "type": "esriFieldTypeInteger"
+  },
+  {
+   "name": "EP_AGE65",
+   "alias": "Percentage of persons aged 65 and older estimate, 2018-2022 ACS",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "name": "EP_AGE17",
+   "alias": "Percentage of persons aged 17 and younger estimate, 2018-2022 ACS",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "name": "EP_LIMENG",
+   "alias": "Percentage of persons (age 5+) who speak English \"less than well\" estimate, 2018-2022 ACS",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "name": "EP_DISABL",
+   "alias": "Percentage of civilian noninstitutionalized population with a disability estimate, 2018-2022 ACS",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "name": "EP_NOVEH",
+   "alias": "Percentage of households with no vehicle available estimate",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "name": "EP_MUNIT",
+   "alias": "Percentage of housing in structures with 10 or more units estimate",
+   "type": "esriFieldTypeDouble"
+  }
+ ],
+ "features": [
+  {
+   "attributes": {
+    "FIPS": "36005",
+    "LOCATION": "Bronx County, New York",
+    "E_TOTPOP": 1443229,
+    "EP_AGE65": 13.3,
+    "EP_AGE17": 24.7,
+    "EP_LIMENG": 14.5,
+    "EP_DISABL": 15.8,
+    "EP_NOVEH": 60.2,
+    "EP_MUNIT": 67.5
+   }
+  }
+ ]
+}

@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:35854077,exclude,E3: vaccine powder formulation; accelerated ageing temperature not stated,none,none,other
+PMID:35879500,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:35915199,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:35915320,exclude,"E7: storage stability at 22 C and humidity only, no heat",none,none,other
+PMID:35927131,exclude,"E3: enzyme engineering for CGM sensors, not device heat exposure",none,none,other
+PMID:35954117,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:35993265,exclude,E6: glucometer validation in honeybee hemolymph; no heat,none,none,other
+PMID:36014394,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:36050392,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:36071354,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:36126785,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:36166592,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:36170350,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:36274184,exclude,"E7: inhaler storage at 5 and 25 C only, no elevated temperature",none,none,other
+PMID:36297335,include,uncertain: I2 DPI ciprofloxacin powder stored 40 C/75% RH 6 months,storage_other,stability_potency,lab_bench
+PMID:36715137,include,uncertain: I2 CGM accuracy during passive whole-body heating,storage_other,device_performance,human_lab_study
+PMID:36730066,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:36738807,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:36862099,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:37005236,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:37196729,exclude,E6: analytical method for propellant in plasma; not heat stability,none,none,other
+PMID:37216011,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:37307962,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:37364778,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:37383252,exclude,"E8: commentary on inhaled measles vaccination, no heat data",none,none,other
+PMID:37392870,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:37406948,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:37467335,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:37529674,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:37652872,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:37674394,exclude,E7: HPLC analytical method; column temperature only,none,none,other
+PMID:37680064,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:37737115,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:37765321,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:37827656,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:37926726,exclude,E3: propellant resistivity physics,none,none,other
+PMID:37992319,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:38156961,exclude,"E7: arm heating used as blood sampling procedure, not device heat exposure",none,none,other
+PMID:38207113,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:38220286,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:38417723,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:38573435,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:38600288,include,uncertain: I2 pMDI accelerated stability at 40 C for 3 months,storage_other,stability_potency,lab_bench
+PMID:39038591,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:39450337,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:39469425,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:39519819,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:39523533,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:39727834,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:39771520,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:39788127,exclude,E7: urine test strip pre-analytics at room temp and 2-8 C only,none,none,other
+PMID:39921630,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:39945036,exclude,"E7: EV powder storage at -20 to 20 C only, no heat",none,none,other
+PMID:40047709,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:40168213,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:40190234,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:40204195,exclude,E6: salivary glucose stability; not glucose meters under heat,none,none,other
+PMID:40284431,include,uncertain: I2 nanocrystal DPI accelerated storage 40 C/75% RH,storage_other,stability_potency,lab_bench
+PMID:40345404,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:40350001,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:40392626,exclude,"E7: surfactant powder stored at 25, 5, -20 C only, no heat",none,none,other
+PMID:40409910,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:40441114,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:40457138,exclude,"E3: propellant physics of MDI sprays, no heat storage",none,none,other
+PMID:40474266,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:40546120,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:40569096,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:40582521,include,uncertain: I2 inhalable OGN powder stored 28 days at 60 C,storage_other,stability_potency,lab_bench
+PMID:40592288,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:40623611,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:40710056,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:40733086,exclude,"E7: humidity exposure at 25 C, no elevated temperature",none,none,other
+PMID:40750050,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:40760229,exclude,E7: phage powder storage at 4 and 20 C only,none,none,other
+PMID:40882457,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:40903124,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:40930506,exclude,E6: review of cycling technology; no drug x heat,none,none,other
+PMID:41012458,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:41135996,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:41156462,exclude,E6: review of AI in endurance sports; no drug x heat,none,none,other
+PMID:41177380,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:41258444,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:41280804,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:41292383,exclude,E6: perioperative monitoring case; no heat,none,none,other
+PMID:41338310,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:41440257,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:41440292,exclude,E6: review of glucose meters for environmental toxicants,none,none,other
+PMID:41478037,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:41480115,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:41502843,exclude,E7: glucose meter affected by low temperature only; no heat result,none,none,other
+PMID:41512475,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:41679558,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:41706652,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:41713340,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:41737687,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:41759644,include,uncertain: I2 inhaled mAb powders at 40 C/75% RH one month,storage_other,stability_potency,lab_bench
+PMID:41794351,include,uncertain: I2 inhaled protein powder 3 months at 40 C,storage_other,stability_potency,lab_bench
+PMID:41803678,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:41829942,exclude,E6: CGM eating schedules; no heat,none,none,other
+PMID:41876048,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:42041414,exclude,E3: sensor engineering with temperature compensation 10-35 C,none,none,other
+PMID:42156732,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:42190402,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:42217397,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:42314049,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:42389202,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:42449031,exclude,E7: powder stable at room temperature only,none,none,other
+PMID:42546983,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:42580640,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:42607969,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:42612848,exclude,E3: inhaled powder formulation/process development; no heat storage stability,none,none,other
+PMID:42648816,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:42674048,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:42698516,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:42701953,exclude,E6: asthma psychosocial review; no inhaler heat stability,none,none,other
+PMID:42753880,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:42925695,exclude,"E6: not one of 15 drugs, inhalers or glucose strips/meters",none,none,other
+PMID:42949962,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:42957678,exclude,"E3: biosensor/assay engineering, not heat effect on glucose meters/strips",none,none,other
+PMID:42965425,exclude,"E6: topical semisolid dispensers, not inhalers or 15 drugs",none,none,other

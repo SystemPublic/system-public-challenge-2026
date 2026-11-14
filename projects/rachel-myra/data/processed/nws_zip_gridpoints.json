@@ -1,0 +1,2305 @@
+{
+ "fetched_utc": "2026-11-14T06:10:39Z",
+ "source": "https://api.weather.gov (NWS API), User-Agent: missing-label-hackathon (research prototype)",
+ "zips": [
+  {
+   "zip": "10453",
+   "centroid_lat": 40.8525,
+   "centroid_lon": -73.9133,
+   "centroid_source": "US Census 2024 Gazetteer ZCTA internal point",
+   "office": "OKX",
+   "cwa": "OKX",
+   "grid_x": 35,
+   "grid_y": 49,
+   "forecast_url": "https://api.weather.gov/gridpoints/OKX/35,49/forecast",
+   "forecast_hourly_url": "https://api.weather.gov/gridpoints/OKX/35,49/forecast/hourly",
+   "forecast_grid_data_url": "https://api.weather.gov/gridpoints/OKX/35,49",
+   "observation_stations_url": "https://api.weather.gov/gridpoints/OKX/35,49/stations",
+   "forecast_zone": "NYZ073",
+   "county_zone": "NYC005",
+   "fire_weather_zone": "NYZ212",
+   "radar_station": "KOKX",
+   "relative_location": {
+    "city": "New York",
+    "state": "NY",
+    "distance": {
+     "unitCode": "wmoUnit:m",
+     "value": 0
+    },
+    "bearing": {
+     "unitCode": "wmoUnit:degree_(angle)",
+     "value": 0
+    }
+   },
+   "sample_forecast_hourly": {
+    "generated_at": "2026-11-14T05:48:01+00:00",
+    "update_time": "2026-11-13T23:46:23+00:00",
+    "periods_total": 156,
+    "periods_first_48": [
+     {
+      "start": "2026-11-14T00:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": 0,
+      "rh_pct": 76,
+      "pop_pct": 5,
+      "wind": "7 mph NW",
+      "short": "Cloudy"
+     },
+     {
+      "start": "2026-11-14T01:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": 0,
+      "rh_pct": 79,
+      "pop_pct": 3,
+      "wind": "6 mph NW",
+      "short": "Cloudy"
+     },
+     {
+      "start": "2026-11-14T02:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": 0,
+      "rh_pct": 79,
+      "pop_pct": 3,
+      "wind": "6 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T03:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 79,
+      "pop_pct": 3,
+      "wind": "6 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T04:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 79,
+      "pop_pct": 2,
+      "wind": "6 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T05:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -1.1111111111111112,
+      "rh_pct": 75,
+      "pop_pct": 2,
+      "wind": "6 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T06:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -1.6666666666666667,
+      "rh_pct": 72,
+      "pop_pct": 2,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T07:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -1.6666666666666667,
+      "rh_pct": 72,
+      "pop_pct": 0,
+      "wind": "7 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T08:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": -1.1111111111111112,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T09:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T10:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 0,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T11:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 0,
+      "rh_pct": 65,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T12:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 0,
+      "rh_pct": 62,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T13:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 63,
+      "pop_pct": 1,
+      "wind": "13 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T14:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 63,
+      "pop_pct": 1,
+      "wind": "12 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T15:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 63,
+      "pop_pct": 1,
+      "wind": "12 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T16:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 65,
+      "pop_pct": 2,
+      "wind": "12 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T17:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 65,
+      "pop_pct": 2,
+      "wind": "10 mph W",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T18:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 68,
+      "pop_pct": 2,
+      "wind": "10 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T19:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T20:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T21:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T22:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T23:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph W",
+      "short": "Partly Cloudy"
+     },
+     {
+      "start": "2026-11-15T00:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph W",
+      "short": "Partly Cloudy"
+     },
+     {
+      "start": "2026-11-15T01:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T02:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph W",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T03:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T04:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T05:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T06:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T07:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 82,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T08:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T09:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 68,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T10:00:00-05:00",
+      "temp_f": 47,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 63,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T11:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 56,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T12:00:00-05:00",
+      "temp_f": 50,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 54,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T13:00:00-05:00",
+      "temp_f": 50,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 52,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Mostly Sunny"
+     },
+     {
+      "start": "2026-11-15T14:00:00-05:00",
+      "temp_f": 51,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 50,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Mostly Sunny"
+     },
+     {
+      "start": "2026-11-15T15:00:00-05:00",
+      "temp_f": 50,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 52,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T16:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 54,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T17:00:00-05:00",
+      "temp_f": 48,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 56,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T18:00:00-05:00",
+      "temp_f": 46,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 60,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T19:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 65,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T20:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 67,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T21:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "7 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T22:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "6 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T23:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "5 mph NW",
+      "short": "Mostly Clear"
+     }
+    ]
+   },
+   "sample_forecast_7day": {
+    "generated_at": "2026-11-13T23:54:47+00:00",
+    "periods": [
+     {
+      "name": "Tonight",
+      "start": "2026-11-13T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 35,
+      "short": "Chance Light Rain then Cloudy"
+     },
+     {
+      "name": "Saturday",
+      "start": "2026-11-14T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 47,
+      "short": "Partly Sunny"
+     },
+     {
+      "name": "Saturday Night",
+      "start": "2026-11-14T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 38,
+      "short": "Partly Cloudy"
+     },
+     {
+      "name": "Sunday",
+      "start": "2026-11-15T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 51,
+      "short": "Sunny"
+     },
+     {
+      "name": "Sunday Night",
+      "start": "2026-11-15T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 37,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Monday",
+      "start": "2026-11-16T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 54,
+      "short": "Sunny"
+     },
+     {
+      "name": "Monday Night",
+      "start": "2026-11-16T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 37,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Tuesday",
+      "start": "2026-11-17T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 58,
+      "short": "Sunny"
+     },
+     {
+      "name": "Tuesday Night",
+      "start": "2026-11-17T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 40,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Wednesday",
+      "start": "2026-11-18T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 61,
+      "short": "Sunny"
+     },
+     {
+      "name": "Wednesday Night",
+      "start": "2026-11-18T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 40,
+      "short": "Clear"
+     },
+     {
+      "name": "Thursday",
+      "start": "2026-11-19T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 62,
+      "short": "Sunny"
+     },
+     {
+      "name": "Thursday Night",
+      "start": "2026-11-19T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 41,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Friday",
+      "start": "2026-11-20T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 63,
+      "short": "Mostly Sunny"
+     }
+    ]
+   }
+  },
+  {
+   "zip": "10457",
+   "centroid_lat": 40.8457,
+   "centroid_lon": -73.8979,
+   "centroid_source": "US Census 2024 Gazetteer ZCTA internal point",
+   "office": "OKX",
+   "cwa": "OKX",
+   "grid_x": 36,
+   "grid_y": 49,
+   "forecast_url": "https://api.weather.gov/gridpoints/OKX/36,49/forecast",
+   "forecast_hourly_url": "https://api.weather.gov/gridpoints/OKX/36,49/forecast/hourly",
+   "forecast_grid_data_url": "https://api.weather.gov/gridpoints/OKX/36,49",
+   "observation_stations_url": "https://api.weather.gov/gridpoints/OKX/36,49/stations",
+   "forecast_zone": "NYZ073",
+   "county_zone": "NYC005",
+   "fire_weather_zone": "NYZ212",
+   "radar_station": "KOKX",
+   "relative_location": {
+    "city": "New York",
+    "state": "NY",
+    "distance": {
+     "unitCode": "wmoUnit:m",
+     "value": 0
+    },
+    "bearing": {
+     "unitCode": "wmoUnit:degree_(angle)",
+     "value": 0
+    }
+   },
+   "sample_forecast_hourly": {
+    "generated_at": "2026-11-14T06:10:41+00:00",
+    "update_time": "2026-11-13T23:46:23+00:00",
+    "periods_total": 156,
+    "periods_first_48": [
+     {
+      "start": "2026-11-14T01:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 76,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Cloudy"
+     },
+     {
+      "start": "2026-11-14T02:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 79,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T03:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 79,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T04:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 79,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T05:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -1.1111111111111112,
+      "rh_pct": 75,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T06:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -1.6666666666666667,
+      "rh_pct": 72,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T07:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": -1.6666666666666667,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "7 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T08:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": -1.1111111111111112,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T09:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T10:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 0,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T11:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0,
+      "rh_pct": 67,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T12:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 0,
+      "rh_pct": 62,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T13:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0,
+      "rh_pct": 60,
+      "pop_pct": 1,
+      "wind": "13 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T14:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0,
+      "rh_pct": 60,
+      "pop_pct": 1,
+      "wind": "12 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T15:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 63,
+      "pop_pct": 1,
+      "wind": "12 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T16:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 63,
+      "pop_pct": 2,
+      "wind": "12 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T17:00:00-05:00",
+      "temp_f": 46,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 63,
+      "pop_pct": 2,
+      "wind": "10 mph W",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T18:00:00-05:00",
+      "temp_f": 46,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 65,
+      "pop_pct": 2,
+      "wind": "10 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T19:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 68,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T20:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T21:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T22:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T23:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Partly Cloudy"
+     },
+     {
+      "start": "2026-11-15T00:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph W",
+      "short": "Partly Cloudy"
+     },
+     {
+      "start": "2026-11-15T01:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T02:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph W",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T03:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T04:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T05:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T06:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T07:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 82,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T08:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T09:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T10:00:00-05:00",
+      "temp_f": 46,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 63,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T11:00:00-05:00",
+      "temp_f": 48,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 56,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T12:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 54,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T13:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 0,
+      "rh_pct": 52,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Mostly Sunny"
+     },
+     {
+      "start": "2026-11-15T14:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 0,
+      "rh_pct": 52,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Mostly Sunny"
+     },
+     {
+      "start": "2026-11-15T15:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 0,
+      "rh_pct": 52,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T16:00:00-05:00",
+      "temp_f": 48,
+      "dewpoint_c": 0,
+      "rh_pct": 54,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T17:00:00-05:00",
+      "temp_f": 47,
+      "dewpoint_c": 0,
+      "rh_pct": 56,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T18:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0,
+      "rh_pct": 60,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T19:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 0,
+      "rh_pct": 62,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T20:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 0,
+      "rh_pct": 65,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T21:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "7 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T22:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "6 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T23:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "5 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-16T00:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "5 mph NW",
+      "short": "Mostly Clear"
+     }
+    ]
+   },
+   "sample_forecast_7day": {
+    "generated_at": "2026-11-14T01:11:30+00:00",
+    "periods": [
+     {
+      "name": "Tonight",
+      "start": "2026-11-13T20:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 36,
+      "short": "Cloudy"
+     },
+     {
+      "name": "Saturday",
+      "start": "2026-11-14T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 46,
+      "short": "Partly Sunny"
+     },
+     {
+      "name": "Saturday Night",
+      "start": "2026-11-14T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 38,
+      "short": "Partly Cloudy"
+     },
+     {
+      "name": "Sunday",
+      "start": "2026-11-15T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 50,
+      "short": "Sunny"
+     },
+     {
+      "name": "Sunday Night",
+      "start": "2026-11-15T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 37,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Monday",
+      "start": "2026-11-16T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 53,
+      "short": "Sunny"
+     },
+     {
+      "name": "Monday Night",
+      "start": "2026-11-16T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 37,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Tuesday",
+      "start": "2026-11-17T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 57,
+      "short": "Sunny"
+     },
+     {
+      "name": "Tuesday Night",
+      "start": "2026-11-17T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 40,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Wednesday",
+      "start": "2026-11-18T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 61,
+      "short": "Sunny"
+     },
+     {
+      "name": "Wednesday Night",
+      "start": "2026-11-18T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 40,
+      "short": "Clear"
+     },
+     {
+      "name": "Thursday",
+      "start": "2026-11-19T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 62,
+      "short": "Sunny"
+     },
+     {
+      "name": "Thursday Night",
+      "start": "2026-11-19T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 41,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Friday",
+      "start": "2026-11-20T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 63,
+      "short": "Mostly Sunny"
+     }
+    ]
+   }
+  },
+  {
+   "zip": "10458",
+   "centroid_lat": 40.8625,
+   "centroid_lon": -73.8864,
+   "centroid_source": "US Census 2024 Gazetteer ZCTA internal point",
+   "office": "OKX",
+   "cwa": "OKX",
+   "grid_x": 36,
+   "grid_y": 49,
+   "forecast_url": "https://api.weather.gov/gridpoints/OKX/36,49/forecast",
+   "forecast_hourly_url": "https://api.weather.gov/gridpoints/OKX/36,49/forecast/hourly",
+   "forecast_grid_data_url": "https://api.weather.gov/gridpoints/OKX/36,49",
+   "observation_stations_url": "https://api.weather.gov/gridpoints/OKX/36,49/stations",
+   "forecast_zone": "NYZ073",
+   "county_zone": "NYC005",
+   "fire_weather_zone": "NYZ212",
+   "radar_station": "KOKX",
+   "relative_location": {
+    "city": "New York",
+    "state": "NY",
+    "distance": {
+     "unitCode": "wmoUnit:m",
+     "value": 0
+    },
+    "bearing": {
+     "unitCode": "wmoUnit:degree_(angle)",
+     "value": 0
+    }
+   },
+   "sample_forecast_hourly": {
+    "generated_at": "2026-11-14T06:10:41+00:00",
+    "update_time": "2026-11-13T23:46:23+00:00",
+    "periods_total": 156,
+    "periods_first_48": [
+     {
+      "start": "2026-11-14T01:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 76,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Cloudy"
+     },
+     {
+      "start": "2026-11-14T02:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 79,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T03:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 79,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T04:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 79,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T05:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -1.1111111111111112,
+      "rh_pct": 75,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T06:00:00-05:00",
+      "temp_f": 37,
+      "dewpoint_c": -1.6666666666666667,
+      "rh_pct": 72,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T07:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": -1.6666666666666667,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "7 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T08:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": -1.1111111111111112,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T09:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T10:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 0,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T11:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0,
+      "rh_pct": 67,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T12:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 0,
+      "rh_pct": 62,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T13:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0,
+      "rh_pct": 60,
+      "pop_pct": 1,
+      "wind": "13 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T14:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0,
+      "rh_pct": 60,
+      "pop_pct": 1,
+      "wind": "12 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T15:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 63,
+      "pop_pct": 1,
+      "wind": "12 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T16:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 63,
+      "pop_pct": 2,
+      "wind": "12 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T17:00:00-05:00",
+      "temp_f": 46,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 63,
+      "pop_pct": 2,
+      "wind": "10 mph W",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T18:00:00-05:00",
+      "temp_f": 46,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 65,
+      "pop_pct": 2,
+      "wind": "10 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T19:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 68,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T20:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T21:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T22:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T23:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Partly Cloudy"
+     },
+     {
+      "start": "2026-11-15T00:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph W",
+      "short": "Partly Cloudy"
+     },
+     {
+      "start": "2026-11-15T01:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T02:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph W",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T03:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T04:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T05:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T06:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T07:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 82,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T08:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T09:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T10:00:00-05:00",
+      "temp_f": 46,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 63,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T11:00:00-05:00",
+      "temp_f": 48,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 56,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T12:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 54,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T13:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 0,
+      "rh_pct": 52,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Mostly Sunny"
+     },
+     {
+      "start": "2026-11-15T14:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 0,
+      "rh_pct": 52,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Mostly Sunny"
+     },
+     {
+      "start": "2026-11-15T15:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 0,
+      "rh_pct": 52,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T16:00:00-05:00",
+      "temp_f": 48,
+      "dewpoint_c": 0,
+      "rh_pct": 54,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T17:00:00-05:00",
+      "temp_f": 47,
+      "dewpoint_c": 0,
+      "rh_pct": 56,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T18:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0,
+      "rh_pct": 60,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T19:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 0,
+      "rh_pct": 62,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T20:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 0,
+      "rh_pct": 65,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T21:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "7 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T22:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "6 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T23:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "5 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-16T00:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "5 mph NW",
+      "short": "Mostly Clear"
+     }
+    ]
+   },
+   "sample_forecast_7day": {
+    "generated_at": "2026-11-14T03:41:37+00:00",
+    "periods": [
+     {
+      "name": "Tonight",
+      "start": "2026-11-13T22:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 36,
+      "short": "Cloudy"
+     },
+     {
+      "name": "Saturday",
+      "start": "2026-11-14T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 46,
+      "short": "Partly Sunny"
+     },
+     {
+      "name": "Saturday Night",
+      "start": "2026-11-14T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 38,
+      "short": "Partly Cloudy"
+     },
+     {
+      "name": "Sunday",
+      "start": "2026-11-15T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 50,
+      "short": "Sunny"
+     },
+     {
+      "name": "Sunday Night",
+      "start": "2026-11-15T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 37,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Monday",
+      "start": "2026-11-16T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 53,
+      "short": "Sunny"
+     },
+     {
+      "name": "Monday Night",
+      "start": "2026-11-16T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 37,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Tuesday",
+      "start": "2026-11-17T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 57,
+      "short": "Sunny"
+     },
+     {
+      "name": "Tuesday Night",
+      "start": "2026-11-17T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 40,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Wednesday",
+      "start": "2026-11-18T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 61,
+      "short": "Sunny"
+     },
+     {
+      "name": "Wednesday Night",
+      "start": "2026-11-18T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 40,
+      "short": "Clear"
+     },
+     {
+      "name": "Thursday",
+      "start": "2026-11-19T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 62,
+      "short": "Sunny"
+     },
+     {
+      "name": "Thursday Night",
+      "start": "2026-11-19T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 41,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Friday",
+      "start": "2026-11-20T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 63,
+      "short": "Mostly Sunny"
+     }
+    ]
+   }
+  },
+  {
+   "zip": "10460",
+   "centroid_lat": 40.8423,
+   "centroid_lon": -73.8791,
+   "centroid_source": "US Census 2024 Gazetteer ZCTA internal point",
+   "office": "OKX",
+   "cwa": "OKX",
+   "grid_x": 37,
+   "grid_y": 48,
+   "forecast_url": "https://api.weather.gov/gridpoints/OKX/37,48/forecast",
+   "forecast_hourly_url": "https://api.weather.gov/gridpoints/OKX/37,48/forecast/hourly",
+   "forecast_grid_data_url": "https://api.weather.gov/gridpoints/OKX/37,48",
+   "observation_stations_url": "https://api.weather.gov/gridpoints/OKX/37,48/stations",
+   "forecast_zone": "NYZ073",
+   "county_zone": "NYC005",
+   "fire_weather_zone": "NYZ212",
+   "radar_station": "KOKX",
+   "relative_location": {
+    "city": "New York",
+    "state": "NY",
+    "distance": {
+     "unitCode": "wmoUnit:m",
+     "value": 0
+    },
+    "bearing": {
+     "unitCode": "wmoUnit:degree_(angle)",
+     "value": 0
+    }
+   },
+   "sample_forecast_hourly": {
+    "generated_at": "2026-11-14T05:20:46+00:00",
+    "update_time": "2026-11-13T23:46:23+00:00",
+    "periods_total": 156,
+    "periods_first_48": [
+     {
+      "start": "2026-11-14T00:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 0,
+      "rh_pct": 73,
+      "pop_pct": 5,
+      "wind": "7 mph N",
+      "short": "Cloudy"
+     },
+     {
+      "start": "2026-11-14T01:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": 0,
+      "rh_pct": 76,
+      "pop_pct": 3,
+      "wind": "7 mph N",
+      "short": "Cloudy"
+     },
+     {
+      "start": "2026-11-14T02:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 73,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T03:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 76,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T04:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": -1.1111111111111112,
+      "rh_pct": 73,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T05:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": -1.1111111111111112,
+      "rh_pct": 73,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T06:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": -1.1111111111111112,
+      "rh_pct": 73,
+      "pop_pct": 3,
+      "wind": "7 mph NW",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T07:00:00-05:00",
+      "temp_f": 38,
+      "dewpoint_c": -1.1111111111111112,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "7 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T08:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T09:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": -0.5555555555555556,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T10:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 0,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T11:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 0,
+      "rh_pct": 67,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T12:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 65,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T13:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 63,
+      "pop_pct": 1,
+      "wind": "13 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T14:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 63,
+      "pop_pct": 1,
+      "wind": "13 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T15:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 65,
+      "pop_pct": 1,
+      "wind": "12 mph NW",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T16:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 65,
+      "pop_pct": 2,
+      "wind": "12 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T17:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 68,
+      "pop_pct": 2,
+      "wind": "10 mph W",
+      "short": "Partly Sunny"
+     },
+     {
+      "start": "2026-11-14T18:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 68,
+      "pop_pct": 2,
+      "wind": "10 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T19:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T20:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T21:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T22:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Mostly Cloudy"
+     },
+     {
+      "start": "2026-11-14T23:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "9 mph W",
+      "short": "Partly Cloudy"
+     },
+     {
+      "start": "2026-11-15T00:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Partly Cloudy"
+     },
+     {
+      "start": "2026-11-15T01:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "8 mph W",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T02:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 2.2222222222222223,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T03:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T04:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 82,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T05:00:00-05:00",
+      "temp_f": 40,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 79,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T06:00:00-05:00",
+      "temp_f": 39,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 82,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T07:00:00-05:00",
+      "temp_f": 41,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T08:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 76,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T09:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T10:00:00-05:00",
+      "temp_f": 46,
+      "dewpoint_c": 1.6666666666666667,
+      "rh_pct": 65,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T11:00:00-05:00",
+      "temp_f": 48,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 58,
+      "pop_pct": 0,
+      "wind": "14 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T12:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 56,
+      "pop_pct": 0,
+      "wind": "14 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T13:00:00-05:00",
+      "temp_f": 50,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 52,
+      "pop_pct": 0,
+      "wind": "14 mph NW",
+      "short": "Mostly Sunny"
+     },
+     {
+      "start": "2026-11-15T14:00:00-05:00",
+      "temp_f": 51,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 50,
+      "pop_pct": 0,
+      "wind": "14 mph NW",
+      "short": "Mostly Sunny"
+     },
+     {
+      "start": "2026-11-15T15:00:00-05:00",
+      "temp_f": 50,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 52,
+      "pop_pct": 0,
+      "wind": "13 mph NW",
+      "short": "Mostly Sunny"
+     },
+     {
+      "start": "2026-11-15T16:00:00-05:00",
+      "temp_f": 49,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 54,
+      "pop_pct": 0,
+      "wind": "12 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T17:00:00-05:00",
+      "temp_f": 48,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 56,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Sunny"
+     },
+     {
+      "start": "2026-11-15T18:00:00-05:00",
+      "temp_f": 46,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 60,
+      "pop_pct": 0,
+      "wind": "10 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T19:00:00-05:00",
+      "temp_f": 45,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 63,
+      "pop_pct": 0,
+      "wind": "9 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T20:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 0.5555555555555556,
+      "rh_pct": 65,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T21:00:00-05:00",
+      "temp_f": 44,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 68,
+      "pop_pct": 0,
+      "wind": "8 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T22:00:00-05:00",
+      "temp_f": 43,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 70,
+      "pop_pct": 0,
+      "wind": "7 mph NW",
+      "short": "Mostly Clear"
+     },
+     {
+      "start": "2026-11-15T23:00:00-05:00",
+      "temp_f": 42,
+      "dewpoint_c": 1.1111111111111112,
+      "rh_pct": 73,
+      "pop_pct": 0,
+      "wind": "6 mph NW",
+      "short": "Mostly Clear"
+     }
+    ]
+   },
+   "sample_forecast_7day": {
+    "generated_at": "2026-11-14T02:38:51+00:00",
+    "periods": [
+     {
+      "name": "Tonight",
+      "start": "2026-11-13T21:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 36,
+      "short": "Cloudy"
+     },
+     {
+      "name": "Saturday",
+      "start": "2026-11-14T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 47,
+      "short": "Partly Sunny"
+     },
+     {
+      "name": "Saturday Night",
+      "start": "2026-11-14T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 39,
+      "short": "Partly Cloudy"
+     },
+     {
+      "name": "Sunday",
+      "start": "2026-11-15T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 51,
+      "short": "Sunny"
+     },
+     {
+      "name": "Sunday Night",
+      "start": "2026-11-15T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 37,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Monday",
+      "start": "2026-11-16T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 54,
+      "short": "Sunny"
+     },
+     {
+      "name": "Monday Night",
+      "start": "2026-11-16T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 37,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Tuesday",
+      "start": "2026-11-17T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 57,
+      "short": "Sunny"
+     },
+     {
+      "name": "Tuesday Night",
+      "start": "2026-11-17T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 40,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Wednesday",
+      "start": "2026-11-18T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 61,
+      "short": "Sunny"
+     },
+     {
+      "name": "Wednesday Night",
+      "start": "2026-11-18T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 41,
+      "short": "Clear"
+     },
+     {
+      "name": "Thursday",
+      "start": "2026-11-19T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 62,
+      "short": "Sunny"
+     },
+     {
+      "name": "Thursday Night",
+      "start": "2026-11-19T18:00:00-05:00",
+      "is_daytime": false,
+      "temp_f": 42,
+      "short": "Mostly Clear"
+     },
+     {
+      "name": "Friday",
+      "start": "2026-11-20T06:00:00-05:00",
+      "is_daytime": true,
+      "temp_f": 63,
+      "short": "Mostly Sunny"
+     }
+    ]
+   }
+  }
+ ],
+ "active_alerts_by_zone": {
+  "NYC005": [],
+  "NYZ073": []
+ },
+ "active_heat_alerts_area_NY": [],
+ "active_alerts_area_NY_total": 0,
+ "how_to_use": {
+  "hourly_forecast": "GET forecast_hourly_url (Accept: application/geo+json, User-Agent required); periods[].temperature (F), dewpoint (degC), relativeHumidity (%)",
+  "raw_grid": "GET forecast_grid_data_url -> properties.heatIndex / apparentTemperature / maxTemperature / minTemperature / relativeHumidity time series (SI units, ISO8601 durations)",
+  "alerts": "GET https://api.weather.gov/alerts/active?zone=<forecast_zone> ; heat events: Excessive Heat Warning, Excessive Heat Watch, Extreme Heat Warning, Extreme Heat Watch, Heat Advisory"
+ }
+}

@@ -1,0 +1,38 @@
+kind,paper_key,cited_in,system_id,variable_1_name,variable_2_name,statistic_type,statistic_value,ci_lower,ci_upper,p_value,in_dataverse
+unused_finding_on_cited_paper,PMID:29116624,graph_status:R28 | master_list:R28 | report:line 41,t1LGX1MD05,"concomitant use of diuretics, non-steroidal anti-inflammatory drugs, and angiotensin-converting enzyme inhibitors/angiotensin receptor blockers (triple whammy, TW)",in-hospital acute kidney injury (AKI),OR,0.79,0.34,1.83,0.58,yes_same_id
+unused_finding_on_cited_paper,PMID:29217346,graph_status:R76 | master_list:R76 | report:line 116,q5K_QIGKfA,Hydrochlorothiazide use,basal cell carcinoma,odds ratio (OR),1.29,1.23,1.35,,yes_same_id
+unused_finding_on_cited_paper,PMID:29217346,graph_status:R76 | master_list:R76 | report:line 116,01UYVUpkTM,Hydrochlorothiazide use,squamous cell carcinoma (SCC),odds ratio (OR),7.38,6.32,8.6,,yes_same_id
+unused_finding_on_cited_paper,PMID:29217346,graph_status:R76 | master_list:R76 | report:line 116,VyPCdTSsRy,Hydrochlorothiazide use,basal cell carcinoma,odds ratio (OR),1.54,1.38,1.71,,yes_same_id
+unused_finding_on_cited_paper,PMID:29217346,graph_status:R76 | master_list:R76 | report:line 116,NNr9sPxE2V,Hydrochlorothiazide use,squamous cell carcinoma (SCC),odds ratio (OR),3.98,3.68,4.31,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,CRsyKCSj9O,body mass index (BMI),severe heat illness (SHI),odds ratio,2.26,1.16,4.39,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,kD7S4_ysBO,body mass index (BMI),severe heat illness (SHI),odds ratio,1.94,1.47,2.56,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,LYDYE16Ot9,prior severe heat illness (SHI),mild heat illness (MHI),odds ratio,4.02,2.67,6.03,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,gxFhImodZd,tobacco use,mild heat illness (MHI),odds ratio,1.55,1.37,1.77,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,Oz7wsnxr1o,body mass index (BMI),mild heat illness (MHI),odds ratio,1.5,1.01,2.21,,yes_same_id
+unused_finding_on_cited_paper,PMID:29613996,graph_status:R14 | graph_status:R23 | graph_status:R29 | master_list:R14 | master_list:R23 | master_list:R29 | report:line 61 | report:line 74,Rza6q-jkz9,body mass index (BMI),mild heat illness (MHI),odds ratio,1.41,1.19,1.67,,yes_same_id
+unused_finding_on_cited_paper,PMID:30130598,graph_status:R75 | master_list:R75 | report:line 116,gyaSOUSivM,voriconazole use,basal cell carcinoma,relative risk,0.84,0.41,1.71,,yes_same_id
+unused_finding_on_cited_paper,PMID:30130598,graph_status:R75 | master_list:R75 | report:line 116,jDST6i75ah,voriconazole use,cutaneous squamous cell carcinoma,relative risk,1.86,1.36,2.55,,yes_same_id
+unused_finding_on_cited_paper,PMID:31397862,graph_status:R79 | master_list:R79 | report:line 114,JiOXd6o0XH,Extreme heat events (EHEs),risk of mortality among patients with end-stage renal disease living with chronic obstructive pulmonary disease,rate ratio,1.6,1.24,2.06,,yes_same_id
+unused_finding_on_cited_paper,PMID:31397862,graph_status:R79 | master_list:R79 | report:line 114,ksY7IPbn_V,Extreme heat events (EHEs),risk of mortality among patients with end-stage renal disease living with congestive heart failure,rate ratio,1.55,1.27,1.89,,yes_same_id
+unused_finding_on_cited_paper,PMID:31397862,graph_status:R79 | master_list:R79 | report:line 114,4LoksJWOMv,Extreme heat events (EHEs),risk of mortality among patients with end-stage renal disease (ESRD),rate ratio,1.45,1.04,2.02,,yes_same_id
+unused_finding_on_cited_paper,PMID:39585835,master_list:R37 | report:line 48,JHfFwZt_bW,cases with three or more risk factors for discontinuing SGLT2 inhibitors in diabetic patients with heart failure,cases with no risk factor,adjusted hazard ratio,3.04,2.83,3.28,0.001,yes_same_id
+system_link_not_in_master_list,,,,ACE inhibitors / ARBs,bp_hypotension,387 studies; ratio up 43 / down 9,,,,,
+system_link_not_in_master_list,,,,Beta blockers,bp_hypotension,138 studies; ratio up 7 / down 5,,,,,
+system_link_not_in_master_list,,,,Thiazides,bp_hypotension,89 studies; ratio up 3 / down 0,,,,,
+system_link_not_in_master_list,,,,Insulin (incl. pumps),bp_hypotension,37 studies; ratio up 2 / down 1,,,,,
+system_link_not_in_master_list,,,,Loop diuretics,aki,35 studies; ratio up 31 / down 10,,,,,
+system_link_not_in_master_list,,,,SGLT2 inhibitors,bp_hypotension,30 studies; ratio up 5 / down 0,,,,,
+system_link_not_in_master_list,,,,Fentanyl / opioid patches,bp_hypotension,29 studies; ratio up 10 / down 2,,,,,
+system_link_not_in_master_list,,,,SGLT2 inhibitors,aki,28 studies; ratio up 4 / down 28,,,,,
+system_link_not_in_master_list,,,,SSRIs,bp_hypotension,20 studies; ratio up 14 / down 2,,,,,
+system_link_not_in_master_list,,,,Antipsychotics (incl. clozapine),bp_hypotension,15 studies; ratio up 9 / down 3,,,,,
+system_link_not_in_master_list,,,,Loop diuretics,bp_hypotension,11 studies; ratio up 3 / down 2,,,,,
+system_link_not_in_master_list,,,,Metformin,bp_hypotension,11 studies; ratio up 0 / down 0,,,,,
+system_link_not_in_master_list,,,,Fentanyl / opioid patches,aki,9 studies; ratio up 7 / down 0,,,,,
+system_link_not_in_master_list,,,,Beta blockers,aki,9 studies; ratio up 4 / down 2,,,,,
+system_link_not_in_master_list,,,,Insulin (incl. pumps),aki,8 studies; ratio up 8 / down 0,,,,,
+system_link_not_in_master_list,,,,Lithium,bp_hypotension,7 studies; ratio up 0 / down 0,,,,,
+system_link_not_in_master_list,,,,Metformin,aki,6 studies; ratio up 3 / down 5,,,,,
+system_link_not_in_master_list,,,,Antipsychotics (incl. clozapine),hyponatremia,6 studies; ratio up 9 / down 0,,,,,
+system_link_not_in_master_list,,,,Loop diuretics,hyponatremia,5 studies; ratio up 6 / down 2,,,,,
+system_link_not_in_master_list,,,,ACE inhibitors / ARBs,hyponatremia,5 studies; ratio up 1 / down 0,,,,,

@@ -1,0 +1,228 @@
+{
+ "fetched_utc": "2026-11-14T06:14:00Z",
+ "point": {
+  "name": "Bronx (SBH area, ZIP 10457 centroid)",
+  "lat": 40.8457,
+  "lon": -73.8979
+ },
+ "note": "prob = probability (%) of favored tercile vs 1991-2020 normals; EC = equal chances 33/33/33. p_above_normal_est_pct is derived (see script docstring), not published by CPC.",
+ "outlooks": [
+  {
+   "outlook": "6-10 day temperature",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_6_10_day_outlk/MapServer/0",
+   "issued": "2026-11-13",
+   "valid_start": "2026-11-19",
+   "valid_end": "2026-11-23",
+   "valid_season": null,
+   "favored_category": "Above",
+   "prob_favored_pct": 70.0,
+   "p_above_normal_est_pct": 70.0,
+   "service_file_date_utc": "2026-11-13"
+  },
+  {
+   "outlook": "8-14 day temperature",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_8_14_day_outlk/MapServer/0",
+   "issued": "2026-11-13",
+   "valid_start": "2026-11-21",
+   "valid_end": "2026-11-27",
+   "valid_season": null,
+   "favored_category": "Above",
+   "prob_favored_pct": 60.0,
+   "p_above_normal_est_pct": 60.0,
+   "service_file_date_utc": "2026-11-13"
+  },
+  {
+   "outlook": "Week 3-4 temperature",
+   "source": "https://ftp.cpc.ncep.noaa.gov/GIS/us_tempprcpfcst/wk34temp_latest.zip",
+   "shapefile_member": "wk34temp_latest",
+   "fields": [
+    "Fcst_Date",
+    "Start_Date",
+    "End_Date",
+    "Prob",
+    "Cat"
+   ],
+   "record_at_point": {
+    "Fcst_Date": "2026-11-13",
+    "Start_Date": "2026-11-28",
+    "End_Date": "2026-12-11",
+    "Prob": "40.0",
+    "Cat": "Above"
+   },
+   "issued": "2026-11-13",
+   "valid_start": "2026-11-28",
+   "valid_end": "2026-12-11",
+   "favored_category": "Above",
+   "prob_favored_pct": 40.0,
+   "p_above_normal_est_pct": 40.0
+  },
+  {
+   "outlook": "Monthly temperature",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_mthly_temp_outlk/MapServer/0",
+   "issued": "2026-10-31",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "Nov 2026",
+   "favored_category": "Above",
+   "prob_favored_pct": 50.0,
+   "p_above_normal_est_pct": 50.0,
+   "service_file_date_utc": "2026-10-31"
+  },
+  {
+   "outlook": "Seasonal temperature lead 1",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/0",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "NDJ 2026-2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 40.0,
+   "p_above_normal_est_pct": 40.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 2",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/1",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "DJF 2026-2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 40.0,
+   "p_above_normal_est_pct": 40.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 3",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/2",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "JFM 2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 50.0,
+   "p_above_normal_est_pct": 50.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 4",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/3",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "FMA 2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 50.0,
+   "p_above_normal_est_pct": 50.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 5",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/4",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "MAM 2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 50.0,
+   "p_above_normal_est_pct": 50.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 6",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/5",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "AMJ 2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 40.0,
+   "p_above_normal_est_pct": 40.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 7",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/6",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "MJJ 2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 50.0,
+   "p_above_normal_est_pct": 50.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 8",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/7",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "JJA 2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 50.0,
+   "p_above_normal_est_pct": 50.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 9",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/8",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "JAS 2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 50.0,
+   "p_above_normal_est_pct": 50.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 10",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/9",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "ASO 2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 50.0,
+   "p_above_normal_est_pct": 50.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 11",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/10",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "SON 2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 50.0,
+   "p_above_normal_est_pct": 50.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 12",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/11",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "OND 2027",
+   "favored_category": "Above",
+   "prob_favored_pct": 40.0,
+   "p_above_normal_est_pct": 40.0,
+   "service_file_date_utc": "2026-10-19"
+  },
+  {
+   "outlook": "Seasonal temperature lead 13",
+   "source": "https://mapservices.weather.noaa.gov/vector/rest/services/outlooks/cpc_sea_temp_outlk/MapServer/12",
+   "issued": "2026-10-15",
+   "valid_start": null,
+   "valid_end": null,
+   "valid_season": "NDJ 2027-2028",
+   "favored_category": "EC",
+   "prob_favored_pct": 33.0,
+   "p_above_normal_est_pct": 33.3,
+   "service_file_date_utc": "2026-10-19"
+  }
+ ]
+}

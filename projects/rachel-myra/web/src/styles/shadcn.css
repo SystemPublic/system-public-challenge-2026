@@ -1,0 +1,74 @@
+/* shadcn/ui theme layer (hero + ui/* components). Imported from globals.css after tailwindcss.
+   Names here don't collide with tokens.css; the app's own fonts and Okabe–Ito palette stay as they are. */
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-muted-2: var(--muted-2);
+  --color-muted-2-foreground: var(--muted-2-foreground);
+  --radius-xs: calc(var(--radius) - 4px);
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-border-beam: border-beam calc(var(--duration) * 1s) infinite linear;
+}
+
+:root {
+  /* Mapped to Rachel's tokens (tokens.css) so shadcn components use the app palette. No black buttons:
+     primary = the app teal (--bucket-store-solid #0e7c86, white text 4.95:1). */
+  --background: var(--ui-page);
+  --foreground: var(--ui-ink);
+  --card: var(--ui-page);
+  --card-foreground: var(--ui-ink);
+  --popover: var(--ui-page);
+  --popover-foreground: var(--ui-ink);
+  --primary: var(--bucket-store-solid);
+  --primary-foreground: var(--bucket-store-on);
+  --secondary: var(--ui-surface);
+  --secondary-foreground: var(--ui-ink);
+  --muted: var(--ui-surface);
+  --muted-foreground: var(--ui-ink-muted);
+  --accent: var(--bucket-store-tint);
+  --accent-foreground: var(--bucket-store-ink);
+  --destructive: var(--bucket-hold-solid);
+  --destructive-foreground: var(--bucket-hold-on);
+  --border: var(--ui-line);
+  --input: var(--ui-line-strong);
+  --ring: var(--bucket-store-solid);
+  --radius: 8px;
+  --muted-2: var(--ui-line);
+  --muted-2-foreground: var(--ui-ink-muted);
+}
+
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

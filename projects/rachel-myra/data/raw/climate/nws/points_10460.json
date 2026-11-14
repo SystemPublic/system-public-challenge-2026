@@ -1,0 +1,112 @@
+{
+ "@context": [
+  "https://geojson.org/geojson-ld/geojson-context.jsonld",
+  {
+   "@version": "1.1",
+   "wx": "https://api.weather.gov/ontology#",
+   "s": "https://schema.org/",
+   "geo": "http://www.opengis.net/ont/geosparql#",
+   "unit": "http://codes.wmo.int/common/unit/",
+   "@vocab": "https://api.weather.gov/ontology#",
+   "geometry": {
+    "@id": "s:GeoCoordinates",
+    "@type": "geo:wktLiteral"
+   },
+   "city": "s:addressLocality",
+   "state": "s:addressRegion",
+   "distance": {
+    "@id": "s:Distance",
+    "@type": "s:QuantitativeValue"
+   },
+   "bearing": {
+    "@type": "s:QuantitativeValue"
+   },
+   "value": {
+    "@id": "s:value"
+   },
+   "unitCode": {
+    "@id": "s:unitCode",
+    "@type": "@id"
+   },
+   "forecastOffice": {
+    "@type": "@id"
+   },
+   "forecastGridData": {
+    "@type": "@id"
+   },
+   "publicZone": {
+    "@type": "@id"
+   },
+   "county": {
+    "@type": "@id"
+   }
+  }
+ ],
+ "id": "https://api.weather.gov/points/40.8423,-73.8791",
+ "type": "Feature",
+ "geometry": {
+  "type": "Point",
+  "coordinates": [
+   -73.8791,
+   40.8423
+  ]
+ },
+ "properties": {
+  "@id": "https://api.weather.gov/points/40.8423,-73.8791",
+  "@type": "wx:Point",
+  "cwa": "OKX",
+  "type": "land",
+  "forecastOffice": "https://api.weather.gov/offices/OKX",
+  "gridId": "OKX",
+  "gridX": 37,
+  "gridY": 48,
+  "forecast": "https://api.weather.gov/gridpoints/OKX/37,48/forecast",
+  "forecastHourly": "https://api.weather.gov/gridpoints/OKX/37,48/forecast/hourly",
+  "forecastGridData": "https://api.weather.gov/gridpoints/OKX/37,48",
+  "observationStations": "https://api.weather.gov/gridpoints/OKX/37,48/stations",
+  "relativeLocation": {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9386769,
+     40.6627117
+    ]
+   },
+   "properties": {
+    "city": "New York",
+    "state": "NY",
+    "distance": {
+     "unitCode": "wmoUnit:m",
+     "value": 0
+    },
+    "bearing": {
+     "unitCode": "wmoUnit:degree_(angle)",
+     "value": 0
+    }
+   }
+  },
+  "forecastZone": "https://api.weather.gov/zones/forecast/NYZ073",
+  "county": "https://api.weather.gov/zones/county/NYC005",
+  "fireWeatherZone": "https://api.weather.gov/zones/fire/NYZ212",
+  "timeZone": "America/New_York",
+  "radarStation": "KOKX",
+  "astronomicalData": {
+   "sunrise": "2026-11-14T06:41:40-05:00",
+   "sunset": "2026-11-14T16:38:15-05:00",
+   "transit": "2026-11-14T11:39:58-05:00",
+   "civilTwilightBegin": "2026-11-14T06:12:26-05:00",
+   "civilTwilightEnd": "2026-11-14T17:07:30-05:00",
+   "nauticalTwilightBegin": "2026-11-14T05:39:19-05:00",
+   "nauticalTwilightEnd": "2026-11-14T17:40:36-05:00",
+   "astronomicalTwilightBegin": "2026-11-14T05:06:56-05:00",
+   "astronomicalTwilightEnd": "2026-11-14T18:13:00-05:00"
+  },
+  "nwr": {
+   "transmitter": "KWO35",
+   "sameCode": "036005",
+   "areaBroadcast": "https://api.weather.gov/radio/KWO35/broadcast",
+   "pointBroadcast": "https://api.weather.gov/points/40.8423,-73.8791/radio"
+  }
+ }
+}

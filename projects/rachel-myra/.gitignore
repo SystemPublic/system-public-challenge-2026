@@ -1,0 +1,20 @@
+# Secrets
+.env
+.env.local
+.env*.local
+
+# Large raw downloads (overnight scrapers)
+data/raw/system/dataverse/
+data/raw/**/*.zip
+data/raw/**/*.gz
+
+# Caches / build output
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+.next/
+
+# Local SQLite database (synthetic demo data)
+db/*.sqlite
+db/*.sqlite-*

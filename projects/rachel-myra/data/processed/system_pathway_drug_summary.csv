@@ -1,0 +1,20 @@
+drug_group,drug_group_label,in_scope_15,known_heat_drug,drug_mediator_findings_total,drug_mediator_studies_total,mediators_with_pathway,mediators_list,pathway_score_total,pathway_score_excl_bp,direct_drug_heat_findings,direct_drug_heat_studies,all_findings_naming_drug,all_studies_naming_drug,nonbp_mediator_studies,share_studies_on_nonbp_mediators,rank_share_nonbp,rank_total,rank_excl_bp
+diuretics_any,"Diuretics, any (comparator)",False,True,133,96,3,aki(49); bp_hypotension(30); hyponatremia(16),56.16,34.25,0,0,1354,809,66,0.0816,2,3,1
+acei_arb,ACE inhibitors / ARBs,True,False,747,485,3,bp_hypotension(423); aki(59); hyponatremia(5),115.8,33.53,1,1,5050,2800,65,0.0232,6,1,2
+nsaids,NSAIDs (comparator),False,False,87,55,2,aki(41); bp_hypotension(12),45.7,31.84,3,3,2426,1393,44,0.0316,5,5,3
+loop_diuretics,Loop diuretics,True,True,71,52,3,aki(35); bp_hypotension(11); hyponatremia(5),40.23,26.96,0,0,688,452,41,0.0907,1,8,4
+beta_blockers,Beta blockers,True,False,216,158,3,bp_hypotension(145); aki(10); body_temp(3),71.37,23.2,4,3,3282,1885,13,0.0069,9,2,5
+sglt2,SGLT2 inhibitors,True,False,78,59,2,bp_hypotension(30); aki(28),42.24,20.33,0,0,1925,841,29,0.0345,4,7,6
+antipsychotics,Antipsychotics (incl. clozapine),True,True,52,28,3,bp_hypotension(17); hyponatremia(6); aki(4),36.43,19.94,2,2,4989,2331,12,0.0051,11,10,7
+thiazides,Thiazides,True,True,186,112,3,bp_hypotension(89); hyponatremia(20); aki(3),54.68,16.94,1,1,759,422,23,0.0545,3,4,8
+ssris,SSRIs,True,False,57,37,3,bp_hypotension(20); hyponatremia(14); sweating(2),34.49,16.6,2,2,4221,2257,17,0.0075,8,11,9
+insulin,Insulin (incl. pumps),True,False,74,57,3,bp_hypotension(44); aki(8); hyponatremia(4),42.33,15.8,0,0,7038,4501,13,0.0029,13,6,10
+opioids_fentanyl,Fentanyl / opioid patches,True,False,50,42,2,bp_hypotension(31); aki(9),36.66,14.39,2,1,11413,6098,11,0.0018,16,9,11
+metformin,Metformin,True,False,30,22,2,bp_hypotension(14); aki(6),27.46,12.49,0,0,3008,1560,8,0.0051,10,12,12
+lithium,Lithium,True,True,21,11,2,bp_hypotension(7); hyponatremia(3),17.5,6.92,2,2,598,336,4,0.0119,7,13,13
+sulfonylureas,Sulfonylureas (comparator),False,False,6,5,1,bp_hypotension(3),12.39,5.46,0,0,913,524,2,0.0038,12,15,14
+benzodiazepines,Benzodiazepines (comparator),False,False,12,9,2,bp_hypotension(7); hyponatremia(2),13.41,2.83,0,0,1926,1083,2,0.0018,17,14,15
+anticholinergics,Anticholinergics (oxybutynin),True,True,3,2,0,,6.0,2.0,0,0,955,540,1,0.0019,15,17,16
+adhd_stimulants,ADHD stimulants,True,False,8,5,1,bp_hypotension(4),10.0,2.0,0,0,626,377,1,0.0027,14,16,17
+topiramate_zonisamide,Topiramate / zonisamide,True,False,2,1,0,,4.0,0.0,1,1,262,165,0,0.0,18,19,18
+epinephrine_ai,Epinephrine auto-injectors,True,False,2,2,1,bp_hypotension(2),5.66,0.0,0,0,191,121,0,0.0,19,18,19

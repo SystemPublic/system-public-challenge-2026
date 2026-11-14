@@ -1,0 +1,22 @@
+query_id,group,label,pubmed_count_all,pubmed_count_human_filter,pubmed_retrieved,epmc_count_title_abstract,epmc_retrieved,epmc_count_fulltext_incl_oa,capped
+drug_lithium,drug x heat,lithium,824,768,768,519,519,2049,no
+drug_loop_diuretics,drug x heat,loop diuretics,71,48,48,46,46,1483,no
+drug_thiazides,drug x heat,thiazides,54,44,44,22,22,685,no
+drug_ace_inhibitors_arbs,drug x heat,ACE inhibitors/ARBs,174,109,109,68,68,2094,no
+drug_sglt2_inhibitors,drug x heat,SGLT2 inhibitors,9,8,8,9,9,436,no
+drug_insulin_incl_pumps,drug x heat,insulin (incl. pumps),184,130,130,40,40,832,no
+drug_metformin,drug x heat,metformin,52,41,41,48,48,1803,no
+drug_anticholinergics_oxybutynin,drug x heat,anticholinergics (oxybutynin),206,144,144,121,121,2188,no
+drug_antipsychotics_incl_clozapine,drug x heat,antipsychotics (incl. clozapine),1023,779,779,822,822,5493,no
+drug_ssris,drug x heat,SSRIs,258,129,129,167,167,2455,no
+drug_topiramate_zonisamide,drug x heat,topiramate/zonisamide,71,61,61,59,59,913,no
+drug_adhd_stimulants,drug x heat,ADHD stimulants,243,71,71,24,24,768,no
+drug_beta_blockers,drug x heat,beta blockers,440,203,203,254,254,3279,no
+drug_fentanyl_opioid_patches,drug x heat,fentanyl/opioid patches,293,206,206,144,144,2654,no
+drug_epinephrine_auto_injectors,drug x heat,epinephrine auto-injectors,7,7,7,1,1,50,no
+storage_insulin,storage/stability,storage: insulin,606,606,606,521,521,,no
+storage_epinephrine_auto_injector,storage/stability,storage: epinephrine auto-injector,83,83,83,16,16,,no
+storage_inhalers,storage/stability,storage: inhalers,269,269,269,182,182,,no
+storage_glucose_test_strips_meters,storage/stability,storage: glucose test strips/meters,260,260,260,167,167,,no
+storage_mail_order_delivery_temperature,storage/stability,storage: mail-order / delivery temperature,346,346,346,75,75,,no
+storage_medicines_in_heat_general,storage/stability,storage: medicines in heat (general),1290,1290,1290,25,25,,no

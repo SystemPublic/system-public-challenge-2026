@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:17021453,exclude,E5 party drugs and anesthesia review; hyperthermia not linked to heat,beta_blockers,none,review
+PMID:17240382,exclude,E3 chromatography adsorption thermodynamics of propranolol,beta_blockers,none,lab_bench
+PMID:17268093,exclude,E7 HPLC assay of bisoprolol at ambient temperature,beta_blockers,none,lab_bench
+PMID:1739398,exclude,E4 thyroid storm review; beta-blockers as treatment,beta_blockers,none,review
+PMID:17427648,exclude,E4 central fever controlled by propranolol; no environmental heat,beta_blockers,none,case_report
+PMID:18304765,exclude,E3 polyelectrolyte microcapsule thermal treatment,none,none,lab_bench
+PMID:18483164,include,uncertain: I1 propranolol+yohimbine blunt skin vasodilation to local heating,beta_blockers,sweating_thermoregulation,human_lab_study
+PMID:18973636,exclude,E5 amphetamine toxicity review; no environmental heat,beta_blockers,none,review
+PMID:19549569,exclude,E3 hot-melt extrusion drug release modeling,beta_blockers,none,lab_bench
+PMID:19690633,include,uncertain: I2 betaxolol enantiomers stability at 70 C for 7 days,beta_blockers,stability_potency,lab_bench
+PMID:1977228,exclude,E7 beta-blockers and facultative thermogenesis/obesity; no heat exposure,beta_blockers,none,review
+PMID:19837098,exclude,E6 laser Doppler reproducibility; no relevant drug,none,none,other
+PMID:19883298,exclude,E3 thermostabilizing mutations of adrenergic receptors,none,none,lab_bench
+PMID:199909,exclude,E2 rat amitriptyline hypothermia,none,none,other
+PMID:20236919,exclude,E6 dental local anesthetics review,none,none,review
+PMID:2045626,exclude,E4 central hyperthermia syndrome treated with propranolol,beta_blockers,none,case_series
+PMID:20595543,include,"I1 atenolol during exercise with induced hyperthermia, stroke volume",beta_blockers,other,rct
+PMID:20618871,exclude,E6 potassium homeostasis review; no heat,none,none,review
+PMID:20643722,exclude,E4 levothyroxine-induced thyroid storm treated with propranolol,beta_blockers,none,case_report
+PMID:20933084,exclude,E3 Raman monitoring of hot-melt extrusion,beta_blockers,none,lab_bench
+PMID:20945127,exclude,E3 chiral synthesis of nadolol,beta_blockers,none,lab_bench
+PMID:20950675,exclude,E2 mice methamphetamine hyperthermia,none,none,other
+PMID:21168487,exclude,E3 hot-melt extrusion matrices,beta_blockers,none,lab_bench
+PMID:21330615,include,uncertain: I1 yohimbine+propranolol and skin vasodilation to local heating by age/fitness,beta_blockers,sweating_thermoregulation,human_lab_study
+PMID:22162094,include,I1 heat-related serious ADRs in elderly during 2003/2006 French heat waves,multiple,other,pharmacovigilance
+PMID:22214183,exclude,E2 rat brown adipose tissue imaging,none,none,other
+PMID:22269939,exclude,E3 NIR monitoring of hot-melt extrusion,beta_blockers,none,lab_bench
+PMID:22342704,exclude,E2 mouse vaccine adjuvant,none,none,other
+PMID:22404145,exclude,E5 carvedilol vs MDMA-induced hyperthermia; no environmental heat,beta_blockers,none,rct
+PMID:22454884,include,I1 propranolol in men exercising in heat: body temperature and renin,beta_blockers,sweating_thermoregulation,human_lab_study
+PMID:22486965,exclude,E3 melt granulation of carvedilol,beta_blockers,none,lab_bench
+PMID:2259241,exclude,E7 nutrient intake and thermogenesis review; no heat exposure,beta_blockers,none,review
+PMID:22709558,include,I1 propranolol iontophoresis and sweating during heat acclimation,beta_blockers,sweating_thermoregulation,human_lab_study
+PMID:22778012,exclude,E7 HPLC of beta-blockers in natural waters,beta_blockers,none,lab_bench
+PMID:230156,exclude,E2 isolated rabbit atria hypothermia,none,none,other
+PMID:23050394,exclude,E7 atenolol capsule stability at ambient temperature only,beta_blockers,none,lab_bench
+PMID:23070986,exclude,E7 experimental heat pain sensitivity with propranolol,beta_blockers,none,rct
+PMID:23248967,exclude,E3 thermal sintering tablet formulation,beta_blockers,none,lab_bench
+PMID:23262428,exclude,E3 hot-melt extruded solid dispersions,beta_blockers,none,lab_bench
+PMID:23780802,exclude,E4 paroxysmal sympathetic hyperactivity review,beta_blockers,none,review
+PMID:23781423,exclude,E7 HPLC assay amlodipine/nebivolol,beta_blockers,none,lab_bench
+PMID:24228459,exclude,E4 thyrotoxicosis case managed with beta-blockers,beta_blockers,none,case_report
+PMID:24331054,exclude,E3 Raman validation during hot-melt extrusion,beta_blockers,none,lab_bench
+PMID:24721100,exclude,E3 starch graft copolymer drug carriers,none,none,lab_bench
+PMID:25448075,exclude,E3 polyurethane hot-melt extrusion matrices,beta_blockers,none,lab_bench
+PMID:25746946,include,uncertain: I2 accelerated thermal stability of atenolol-excipient mixtures at 40-180 C,beta_blockers,stability_potency,lab_bench
+PMID:2575664,exclude,E7 HPLC assay of atenolol enantiomers,beta_blockers,none,lab_bench
+PMID:25787731,exclude,E3 liposome cholesterol stability; atenolol only model drug,none,none,lab_bench
+PMID:26036822,exclude,E6 soldier heat illness risk factors; no relevant drug,none,none,cross_sectional
+PMID:26136480,exclude,E2 mice TRPV1 thermoregulation,none,none,other
+PMID:26142246,include,uncertain: I2 metoprolol multiparticulates stable at 40 C/75% RH for 3 months,beta_blockers,stability_potency,lab_bench
+PMID:26167316,exclude,E4 paroxysmal sympathetic hyperactivity after stroke treated with propranolol,beta_blockers,none,case_report
+PMID:2642051,exclude,E3 chiral derivatizing agents synthesis,none,none,lab_bench
+PMID:26906168,exclude,E3 metoprolol succinate polymorph characterization,beta_blockers,none,lab_bench
+PMID:27677782,exclude,E2 rat MDMA brain hyperthermia; carvedilol/clozapine as treatment,none,none,review
+PMID:28071840,include,"I1 propranolol and skin blood flow to local heating in hot environment, burned children",beta_blockers,sweating_thermoregulation,rct
+PMID:2820920,include,I1 atenolol/propranolol thermoregulation during prolonged exercise in warm environment,beta_blockers,sweating_thermoregulation,rct
+PMID:28458893,exclude,E4 thyroid storm with sepsis,beta_blockers,none,case_report
+PMID:2858466,include,I1 propranolol/atenolol thermoregulation and sweating during exercise in heat,beta_blockers,sweating_thermoregulation,human_lab_study
+PMID:28603020,exclude,E3 hot melt extrusion mesoporous silica,beta_blockers,none,lab_bench
+PMID:2862686,exclude,E6 heat intolerance correlates; no specific drug of the 15,none,none,review
+PMID:2862980,exclude,E6 calcium channel blockers and anaesthesia review,none,none,review
+PMID:2865156,exclude,E7 cold sensitivity with beta-blockade,beta_blockers,none,rct
+PMID:28661984,include,"I1 propranolol and exercise-heat stress thermoregulation, burned children RCT",beta_blockers,sweating_thermoregulation,rct
+PMID:2867658,exclude,E7 heat-stable LDH enzyme in myocardial infarction,none,none,cohort
+PMID:2868515,exclude,E6 blood lactate training review,none,none,review
+PMID:2870738,exclude,E3 thermal stability of alpha1-acid glycoprotein,none,none,lab_bench
+PMID:2877043,exclude,E7 digital artery pressure at warm/cold conditions; no heat hazard,beta_blockers,none,human_lab_study
+PMID:2885298,include,I1 propranolol raises esophageal temperature during exercise at 22 and 32 C,beta_blockers,hyperthermia,human_lab_study
+PMID:28939923,exclude,E4 thyroid storm and myxedema coma review,beta_blockers,none,review
+PMID:29145995,exclude,E3 PLGA hot-melt extruded implants,beta_blockers,none,lab_bench
+PMID:29262152,exclude,E6 EMS temperature assessment study guide,none,none,review
+PMID:29437806,exclude,E4 febrile rhabdomyolysis in Stuve-Wiedemann syndrome,none,none,case_report
+PMID:29458210,exclude,E3 hot-melt extrusion SMEDDS,beta_blockers,none,lab_bench
+PMID:29793029,exclude,E3 heat-activated persulfate wastewater degradation of atenolol,none,none,lab_bench
+PMID:29948916,exclude,E3 hot-melt extrusion metoprolol formulation,beta_blockers,none,lab_bench
+PMID:30429730,exclude,E4 TBI sympathetic storm treated with propranolol,beta_blockers,none,rct
+PMID:31984161,exclude,E4 paroxysmal sympathetic hyperactivity after TBI,beta_blockers,none,case_report
+PMID:32517724,exclude,E7 clozapine-associated hypothermia; no heat,antipsychotics,none,case_report
+PMID:32802737,exclude,E4 thyroid storm with influenza,beta_blockers,none,case_report
+PMID:33031256,exclude,E5 ecstasy hyperthermia treated with carvedilol; no environmental heat,beta_blockers,none,case_report
+PMID:33301532,include,"I1 heat-sensitizing medications, heatwaves and heat-related hospitalization (SCCS)",multiple,hospitalization_ed,case_crossover
+PMID:33332783,exclude,E4 posttraumatic hyperthermia attenuated by beta-blockers; no environmental heat,beta_blockers,none,cohort
+PMID:33714814,exclude,E6 drought and pharmaceutical concentrations in rivers,none,none,time_series
+PMID:33749695,exclude,E4 thyrotoxicosis heart failure,beta_blockers,none,case_report
+PMID:33912193,exclude,E4 PSH in anti-NMDAR encephalitis,beta_blockers,none,cohort
+PMID:33948409,exclude,E4 thyroid storm after iodinated contrast,beta_blockers,none,case_report
+PMID:3431376,include,I1 propranolol alters exercise core temperature in coronary patients,beta_blockers,hyperthermia,human_lab_study
+PMID:34314021,exclude,E6 oxybutynin/propranolol as treatment of Harlequin syndrome hyperhidrosis,multiple,none,case_report
+PMID:3474143,exclude,E2 rat prostaglandin hyperglycemia,none,none,other
+PMID:35338718,exclude,E3 capillary electrochromatography column,none,none,lab_bench
+PMID:35550491,exclude,E3 thermal analysis of carvedilol phases,beta_blockers,none,lab_bench
+PMID:35811629,exclude,E3 3D printing thermal processing preformulation,beta_blockers,none,lab_bench
+PMID:36289804,exclude,E6 general heat illness review; drugs only listed as risk factors,multiple,none,review
+PMID:37104908,exclude,E4 thyroid storm review,beta_blockers,none,review
+PMID:3728515,include,I1 exercise-heat hyperkalemia and sinus arrest on propranolol/verapamil,beta_blockers,electrolyte_hyponatremia,case_report
+PMID:38857500,exclude,E6 heat exposure myocardial blood flow; beta-blockers withheld,none,none,other
+PMID:39149065,exclude,E3 biochar adsorption of pharmaceuticals,none,none,lab_bench
+PMID:39415898,exclude,E4 PSH in neurosyphilis,beta_blockers,none,case_report
+PMID:39513185,include,I1 SR/MA medications and core temperature during heat stress,multiple,sweating_thermoregulation,meta_analysis
+PMID:39705590,include,I1 propranolol iontophoresis and forearm sweating during exercise in heat,beta_blockers,sweating_thermoregulation,human_lab_study
+PMID:39787792,exclude,E4 PSH after TBI review,beta_blockers,none,review
+PMID:3993552,include,"I1 propranolol/atenolol thermoregulation during 2-h exercise in heat, RCT",beta_blockers,sweating_thermoregulation,rct
+PMID:39968423,exclude,E4 PSH after diffuse axonal injury treated with propranolol,beta_blockers,none,case_report
+PMID:40410825,exclude,E7 HPLC assay felodipine/metoprolol,beta_blockers,none,lab_bench
+PMID:40432714,exclude,E6 propranolol for kaposiform hemangioendothelioma,none,none,case_series
+PMID:40726736,exclude,E4 perioperative thyroid storm,beta_blockers,none,case_report
+PMID:40908823,exclude,E4 refractory PSH treated with bromocriptine,none,none,case_report
+PMID:41122889,exclude,E6 AHA resuscitation guidelines; no drug x heat data,none,none,other
+PMID:41134617,exclude,E2 zebrafish teaching practical,none,none,other
+PMID:4147190,include,I1 propranolol vs atropine effect on thermal sweating in heat,multiple,sweating_thermoregulation,human_lab_study
+PMID:41472144,exclude,E2 dog thyroid storm,none,none,case_report
+PMID:41631575,exclude,E4 propranolol for hyperthermia from PSH in TBI,beta_blockers,none,cohort
+PMID:41655224,exclude,E4 thyroid storm review,beta_blockers,none,review
+PMID:41691782,exclude,E6 heat stress review; beta-blockers only listed as treatments,none,none,review
+PMID:41794190,include,uncertain: I1 narrative review heat therapy BP responses focused on beta-blocker users,beta_blockers,other,review
+PMID:42054143,include,I1 heat illness case series; antipsychotics and beta blockers frequent home meds,multiple,heat_illness,case_series
+PMID:42104241,exclude,E4 propranolol prophylaxis of PSH after TBI,beta_blockers,none,rct
+PMID:42885116,exclude,E6 umbrella review coronary triggers; beta-blocker not linked to heat,none,none,systematic_review
+PMID:42987702,exclude,E2 mice cocaine place preference,none,none,other

@@ -1,0 +1,16 @@
+heat_concept,drug_group,association_id,study_id,variable_pair
+hot,opioids/fentanyl,2guB8ts2vr,wxdUTF0VzD,heat application [vs no heat application] <-> area under the curve (of fentanyl plasma concentration over time)
+hot,insulin,xCKpWBTLOA,A67pcYq8JQ,Heat Exposure Test [vs Insulin-Tolerance Test] <-> Peak GH response
+hot,insulin,QNriqqStl2,zhZCl2I5fX,Peak of hypoglycaemia induced by insulin infusion [vs Baseline] <-> Heat production
+hot,insulin,hePs_Weql4,A67pcYq8JQ,Heat Exposure Test group [vs Insulin-Tolerance Test group] <-> Specificity
+hot,opioids/fentanyl,2OPsrNNdS9,q5HuZILgU4,administration of oral opioids (commonly used dosages) <-> heat stimuli
+hot,opioids/fentanyl,afGlflo0u8,ttCrYNDOsT,Opioid-treated group [vs Controls] <-> Heat tolerance threshold
+hot,insulin,II9Rvm2eN2,u46xf0wAoN,"Passive heat therapy [vs moderate-intensity continuous training] <-> aerobic capacity, whole body insulin sensitivity"
+hot,insulin,vo2tmpoUpr,A5D3qAfXJ4,Heat stress <-> Circulating insulin
+hot,opioids/fentanyl,Ln3Axwh5fH,xtIxvtXTxP,with local heat [vs without local heat] <-> Maximum concentration (C(max)) (of fentanyl in serum)
+body temperature,beta blockers,O-2W6gQMCh,KY_zswYi13,patients given metoprolol [vs patients given placebo] <-> body temperature
+body temperature,antidepressants/SSRIs,CSMfNw8shj,ZFowvIH8Ta,citalopram perfusion [vs baseline] <-> body temperature
+body temperature,insulin,DmiZHvV4MO,Us88ybfzlX,body temperature <-> insulin
+body temperature,antipsychotics,enU04i2IMu,QDY5PJlyYJ,drug-free schizophrenic patients [vs schizophrenic patients maintained on antipsychotic drugs] <-> body temperature
+body temperature,stimulants,h78g-SgBaH,_QonHBby6c,bupropion [vs methylphenidate] <-> body temperature
+body temperature,insulin,vqSY4Zu3FA,Us88ybfzlX,body temperature <-> insulin

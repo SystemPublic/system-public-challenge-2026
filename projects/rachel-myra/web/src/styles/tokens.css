@@ -1,0 +1,114 @@
+/*
+ * The Missing Label: design tokens (spec §3.3). Light mode only, no dark mode.
+ *
+ * Every color pair below that carries text was checked against WCAG 2.1 AA
+ * (4.5:1 for normal text; 3:1 for UI graphics/borders). Ratios are noted
+ * inline and summarised in web/README.md ("Design tokens and contrast").
+ *
+ * Bucket hues come from the Okabe–Ito colorblind-safe palette. Colors are
+ * never the only cue: every bucket also has a letter (A / H / M / S) and an
+ * icon, and every meter has a text label.
+ */
+
+:root {
+  /* ---- Neutrals ---------------------------------------------------- */
+  --ui-page: #ffffff;
+  --ui-surface: #f7f7f5;       /* cards, panels */
+  --ui-line: #d4d4d0;          /* hairlines (decorative only) */
+  --ui-line-strong: #6b6b66;   /* 5.36:1 on white: meaningful borders */
+  --ui-ink: #141414;           /* 18.4:1 on white */
+  --ui-ink-muted: #4b5563;     /* 7.56:1 on white; 7.05:1 on surface */
+  --ui-missing: #4b5563;       /* the "—" for missing data */
+
+  /* ---- Action buckets (one color each, used everywhere) ------------ */
+  /* solid  = tile fill when evidence is Strong
+     tint   = tile fill when evidence is Some
+     ink    = text/borders on white or tint; outline when Early signs
+     on     = text color on the solid fill                                */
+
+  /* Adjust dose: Okabe–Ito orange */
+  --bucket-adjust-solid: #e69f00;
+  --bucket-adjust-on: #141414;    /* 8.18:1 on solid */
+  --bucket-adjust-tint: #fcf0d6;
+  --bucket-adjust-ink: #8a5a00;   /* 5.93:1 on white, 5.24:1 on tint */
+
+  /* Hold / substitute: Okabe–Ito vermillion */
+  --bucket-hold-solid: #d55e00;
+  --bucket-hold-on: #141414;      /* 4.76:1 on solid */
+  --bucket-hold-tint: #fbe3d6;
+  --bucket-hold-ink: #a0410a;     /* 6.45:1 on white, 5.24:1 on tint */
+
+  /* Monitor: Okabe–Ito reddish purple */
+  --bucket-monitor-solid: #cc79a7;
+  --bucket-monitor-on: #141414;   /* 6.02:1 on solid */
+  --bucket-monitor-tint: #f6e4ee;
+  --bucket-monitor-ink: #9c3d74;  /* 6.30:1 on white, 5.18:1 on tint */
+
+  /* Store cool: teal (Rachel, 14 Nov: warmer than Okabe–Ito blue; still CVD-distinct from orange/yellow/purple) */
+  --bucket-store-solid: #0e7c86;
+  --bucket-store-on: #ffffff;     /* 4.95:1 on solid */
+  --bucket-store-tint: #d9f0f1;
+  --bucket-store-ink: #0a5f66;    /* 7.39:1 on white, 6.22:1 on tint */
+
+  /* ---- Risk groups (High / Medium / Low), same chip style --------- */
+  /* High = Hold vermillion; Medium = yellow; Low = Store-cool teal.
+     Yellow dots on a light map need a thin dark outline (--risk-medium-ink). */
+  --risk-high: #d55e00;
+  --risk-high-on: #141414;        /* 4.76:1 on solid */
+  --risk-high-tint: #fbe3d6;
+  --risk-high-ink: #a0410a;       /* 6.45:1 on white, 5.24:1 on tint */
+  --risk-medium: #f0c419;
+  --risk-medium-on: #141414;      /* ~11.9:1 on solid */
+  --risk-medium-tint: #fdf4d3;
+  --risk-medium-ink: #7a5c00;     /* ~6.3:1 on white, ~5.8:1 on tint */
+  --risk-low: #0e7c86;
+  --risk-low-on: #ffffff;         /* 4.95:1 on solid */
+  --risk-low-tint: #d9f0f1;
+  --risk-low-ink: #0a5f66;        /* 7.39:1 on white, 6.07:1 on tint */
+
+  /* ---- Guidance gap ring / "!" badge ------------------------------- */
+  --gap-ring: #141414;            /* dashed ring, 18.4:1 on white */
+  --gap-badge-bg: #d55e00;       /* Hold vermillion: black is never a text background */
+  --gap-badge-fg: #141414;       /* 4.76:1 on bg */
+
+  /* ---- Evidence meter (Strong / Some / Early signs) ---------------- */
+  --meter-on: #141414;            /* filled segment */
+  --meter-off: #ffffff;           /* empty segment, bordered by --meter-line */
+  --meter-line: #6b6b66;          /* 5.36:1 on white (graphic, needs 3:1) */
+
+  /* ---- Verification badges (✓✓ ✓ ↗ ⚠ ?) ---------------------------- */
+  --verify-double-bg: #d1fae5;  --verify-double-fg: #065f46;   /* 6.78:1 */
+  --verify-single-bg: #ecfdf5;  --verify-single-fg: #065f46;   /* 7.29:1 */
+  --verify-corrob-bg: #dbeafe;  --verify-corrob-fg: #1e40af;   /* 7.15:1 */
+  --verify-conflict-bg: #fef3c7; --verify-conflict-fg: #92400e; /* 6.37:1 */
+  --verify-unverified-bg: #e5e7eb; --verify-unverified-fg: #374151; /* 8.33:1 */
+
+  /* ---- Evidence-layer tags (① graph ② literature ③ FDA) ------------ */
+  --layer-graph-bg: #eef2ff;  --layer-graph-fg: #3730a3;   /* 8.88:1 */
+  --layer-lit-bg: #f0fdf4;    --layer-lit-fg: #166534;     /* 6.8:1 */
+  --layer-fda-bg: #fff7ed;    --layer-fda-fg: #9a3412;     /* 6.88:1 */
+
+  /* ---- Heat Dose Compass arrows (direction only, no numbers) ------- */
+  --compass-up: #a0410a;      /* ↑ acts stronger in heat; 6.45:1 */
+  --compass-down: #0a5f66;    /* ↓ acts weaker in heat;   7.39:1 */
+  --compass-depends: #4b5563; /* ↕ depends;               7.56:1 */
+
+  /* ---- Type ------------------------------------------------------- */
+  --font-body: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  /* Clinician scale (dense but readable) */
+  --text-clin-xs: 0.75rem;   /* 12px: chips only */
+  --text-clin-sm: 0.875rem;  /* 14px */
+  --text-clin-base: 1rem;    /* 16px */
+
+  /* Patient app: large type for older adults (spec §3.3) */
+  --patient-text-base: 1.25rem;   /* 20px body minimum */
+  --patient-text-lg: 1.5rem;      /* 24px */
+  --patient-text-xl: 1.875rem;    /* 30px */
+  --patient-text-2xl: 2.375rem;   /* 38px headings */
+  --patient-line-height: 1.5;
+  --patient-tap-target: 3.5rem;   /* 56px, above the 44px minimum */
+
+  --tile-radius: 0.5rem;
+}

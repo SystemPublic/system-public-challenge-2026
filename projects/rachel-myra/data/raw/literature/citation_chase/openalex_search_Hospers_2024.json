@@ -1,0 +1,1829 @@
+[
+ {
+  "id": "https://openalex.org/W4403730929",
+  "doi": "https://doi.org/10.1016/j.eclinm.2024.102886",
+  "title": "The effect of prescription and over-the-counter medications on core temperature in adults during heat stress: a systematic review and meta-analysis",
+  "publication_year": 2024,
+  "ids": {
+   "openalex": "https://openalex.org/W4403730929",
+   "doi": "https://doi.org/10.1016/j.eclinm.2024.102886",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/39513185",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/11541675"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/j.eclinm.2024.102886",
+   "doi": "https://doi.org/10.1016/j.eclinm.2024.102886",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1016/j.eclinm.2024.102886",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S2898347799",
+    "display_name": "EClinicalMedicine",
+    "issn_l": "2589-5370",
+    "issn": [
+     "2589-5370"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doaj",
+     "dongbi-b",
+     "doyens",
+     "jufo-1",
+     "ki-jl-2",
+     "norway-1",
+     "oarl",
+     "poland-20",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by-nc",
+   "license_id": "https://openalex.org/licenses/cc-by-nc",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "eClinicalMedicine",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 74,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5025301708",
+     "display_name": "Lily Hospers",
+     "orcid": "https://orcid.org/0000-0002-2585-8287",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2585-8287"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I129604602",
+      "display_name": "The University of Sydney",
+      "ror": "https://ror.org/0384j8v12",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Lily Hospers",
+    "raw_affiliation_strings": [
+     "Heat and Health Research Centre, Faculty of Medicine and Health, University of Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heat and Health Research Centre, Faculty of Medicine and Health, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5029721543",
+     "display_name": "Gabrielle A. Dillon",
+     "orcid": "https://orcid.org/0000-0001-5365-2852",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-5365-2852"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I130769515",
+      "display_name": "Pennsylvania State University",
+      "ror": "https://ror.org/04p491231",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I130769515"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I157725225",
+      "display_name": "University of Illinois Urbana-Champaign",
+      "ror": "https://ror.org/047426m28",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I157725225"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Gabrielle A. Dillon",
+    "raw_affiliation_strings": [
+     "Department of Health and Kinesiology, University of Illinois, Urbana, IL, USA",
+     "Noll Laboratory, Department of Kinesiology, The Pennsylvania State University, University Park, State College, PA, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Health and Kinesiology, University of Illinois, Urbana, IL, USA",
+      "institution_ids": [
+       "https://openalex.org/I157725225"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Noll Laboratory, Department of Kinesiology, The Pennsylvania State University, University Park, State College, PA, USA",
+      "institution_ids": [
+       "https://openalex.org/I130769515"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5045823606",
+     "display_name": "Andrew J. McLachlan",
+     "orcid": "https://orcid.org/0000-0003-4674-0242",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-4674-0242"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I129604602",
+      "display_name": "The University of Sydney",
+      "ror": "https://ror.org/0384j8v12",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Andrew J. McLachlan",
+    "raw_affiliation_strings": [
+     "Sydney Pharmacy School, Faculty of Medicine and Health, University of Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Sydney Pharmacy School, Faculty of Medicine and Health, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5020687550",
+     "display_name": "Lacy M. Alexander",
+     "orcid": "https://orcid.org/0000-0002-1294-8582",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1294-8582"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I130769515",
+      "display_name": "Pennsylvania State University",
+      "ror": "https://ror.org/04p491231",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I130769515"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Lacy M. Alexander",
+    "raw_affiliation_strings": [
+     "Noll Laboratory, Department of Kinesiology, The Pennsylvania State University, University Park, State College, PA, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Noll Laboratory, Department of Kinesiology, The Pennsylvania State University, University Park, State College, PA, USA",
+      "institution_ids": [
+       "https://openalex.org/I130769515"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5024732141",
+     "display_name": "W. Larry Kenney",
+     "orcid": "https://orcid.org/0000-0002-1326-8175",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1326-8175"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I130769515",
+      "display_name": "Pennsylvania State University",
+      "ror": "https://ror.org/04p491231",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I130769515"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "W Larry Kenney",
+    "raw_affiliation_strings": [
+     "Noll Laboratory, Department of Kinesiology, The Pennsylvania State University, University Park, State College, PA, USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-1326-8175",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Noll Laboratory, Department of Kinesiology, The Pennsylvania State University, University Park, State College, PA, USA",
+      "institution_ids": [
+       "https://openalex.org/I130769515"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5029854418",
+     "display_name": "Anthony Guy Capon",
+     "orcid": "https://orcid.org/0000-0003-0354-6810",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-0354-6810"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I56590836",
+      "display_name": "Monash University",
+      "ror": "https://ror.org/02bfwt286",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I56590836"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Anthony Capon",
+    "raw_affiliation_strings": [
+     "Monash Sustainable Development Institute, Monash University, Melbourne, VIC, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Monash Sustainable Development Institute, Monash University, Melbourne, VIC, Australia",
+      "institution_ids": [
+       "https://openalex.org/I56590836"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5015997009",
+     "display_name": "Kristie L. Ebi",
+     "orcid": "https://orcid.org/0000-0003-4746-8236",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-4746-8236"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I201448701",
+      "display_name": "University of Washington",
+      "ror": "https://ror.org/00cvxb145",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I201448701"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Kristie L. Ebi",
+    "raw_affiliation_strings": [
+     "Center for Health and the Global Environment, University of Washington, WA, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Center for Health and the Global Environment, University of Washington, WA, USA",
+      "institution_ids": [
+       "https://openalex.org/I201448701"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5084997309",
+     "display_name": "Edward Tom Ashworth",
+     "orcid": "https://orcid.org/0000-0001-9147-6116",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9147-6116"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I129604602",
+      "display_name": "The University of Sydney",
+      "ror": "https://ror.org/0384j8v12",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Edward Ashworth",
+    "raw_affiliation_strings": [
+     "Heat and Health Research Centre, Faculty of Medicine and Health, University of Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heat and Health Research Centre, Faculty of Medicine and Health, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5041733024",
+     "display_name": "Ollie Jay",
+     "orcid": "https://orcid.org/0000-0002-6076-6337",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6076-6337"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I129604602",
+      "display_name": "The University of Sydney",
+      "ror": "https://ror.org/0384j8v12",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Ollie Jay",
+    "raw_affiliation_strings": [
+     "Heat and Health Research Centre, Faculty of Medicine and Health, University of Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-6076-6337",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heat and Health Research Centre, Faculty of Medicine and Health, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5074078031",
+     "display_name": "Yorgi Mavros",
+     "orcid": "https://orcid.org/0000-0002-2588-0425",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2588-0425"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I129604602",
+      "display_name": "The University of Sydney",
+      "ror": "https://ror.org/0384j8v12",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Yorgi Mavros",
+    "raw_affiliation_strings": [
+     "Heat and Health Research Centre, Faculty of Medicine and Health, University of Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-2588-0425",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heat and Health Research Centre, Faculty of Medicine and Health, University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W4407782547",
+  "doi": "https://doi.org/10.1111/all.16507",
+  "title": "The Effect of Oral Antihistamines on the Sweating Response During Heat Stress in Adults",
+  "publication_year": 2025,
+  "ids": {
+   "openalex": "https://openalex.org/W4407782547",
+   "doi": "https://doi.org/10.1111/all.16507",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/39976187",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/12444814"
+  },
+  "primary_location": {
+   "id": "doi:10.1111/all.16507",
+   "doi": "https://doi.org/10.1111/all.16507",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1111/all.16507",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S68090385",
+    "display_name": "Allergy",
+    "issn_l": "0105-4538",
+    "issn": [
+     "0105-4538",
+     "1398-9995"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-a",
+     "doyens",
+     "jufo-3",
+     "ki-jl-2",
+     "medline",
+     "norway-2",
+     "poland-140",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by-nc",
+   "license_id": "https://openalex.org/licenses/cc-by-nc",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Allergy",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 1,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5059801393",
+     "display_name": "Douglas Newhouse",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I72541430",
+      "display_name": "Lakehead University",
+      "ror": "https://ror.org/023p7mg82",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I72541430"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Douglas Newhouse",
+    "raw_affiliation_strings": [
+     "School of Kinesiology, Lakehead University, Thunder Bay, Ontario, Canada",
+     "The Centre for Research in Occupational Safety & Health Sudbury Ontario Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Kinesiology, Lakehead University, Thunder Bay, Ontario, Canada",
+      "institution_ids": [
+       "https://openalex.org/I72541430"
+      ]
+     },
+     {
+      "raw_affiliation_string": "The Centre for Research in Occupational Safety & Health Sudbury Ontario Canada",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5083481999",
+     "display_name": "Taryn Klarner",
+     "orcid": "https://orcid.org/0000-0003-1666-7953",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1666-7953"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I72541430",
+      "display_name": "Lakehead University",
+      "ror": "https://ror.org/023p7mg82",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I72541430"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Taryn Klarner",
+    "raw_affiliation_strings": [
+     "School of Kinesiology, Lakehead University, Thunder Bay, Ontario, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Kinesiology, Lakehead University, Thunder Bay, Ontario, Canada",
+      "institution_ids": [
+       "https://openalex.org/I72541430"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5109763894",
+     "display_name": "Mario Nucci",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I7899908",
+      "display_name": "NOSM University",
+      "ror": "https://ror.org/05yb43k62",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I7899908"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Mario Nucci",
+    "raw_affiliation_strings": [
+     "Northern Ontario School of Medicine University, Thunder Bay, Ontario, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Northern Ontario School of Medicine University, Thunder Bay, Ontario, Canada",
+      "institution_ids": [
+       "https://openalex.org/I7899908"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5051236275",
+     "display_name": "Nicholas Ravanelli",
+     "orcid": "https://orcid.org/0000-0002-4894-9552",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4894-9552"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I165932596",
+      "display_name": "National University of Singapore",
+      "ror": "https://ror.org/01tgyzw49",
+      "country_code": "SG",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I165932596"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I72541430",
+      "display_name": "Lakehead University",
+      "ror": "https://ror.org/023p7mg82",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I72541430"
+      ]
+     }
+    ],
+    "countries": [
+     "CA",
+     "SG"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Nicholas Ravanelli",
+    "raw_affiliation_strings": [
+     "Department of Physiology, Yong Loo Lin School of Medicine, National University of Singapore, Singapore, Singapore",
+     "Heat Resilience & Performance Centre, Yong Loo Lin School of Medicine National University of Singapore Singapore Singapore",
+     "Human Potential Translational Research Programme, Yong Loo Lin School of Medicine, National University of Singapore, Singapore, Singapore",
+     "School of Kinesiology, Lakehead University, Thunder Bay, Ontario, Canada",
+     "The Centre for Research in Occupational Safety & Health Sudbury Ontario Canada"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-4894-9552",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Physiology, Yong Loo Lin School of Medicine, National University of Singapore, Singapore, Singapore",
+      "institution_ids": [
+       "https://openalex.org/I165932596"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Heat Resilience & Performance Centre, Yong Loo Lin School of Medicine National University of Singapore Singapore Singapore",
+      "institution_ids": [
+       "https://openalex.org/I165932596"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Human Potential Translational Research Programme, Yong Loo Lin School of Medicine, National University of Singapore, Singapore, Singapore",
+      "institution_ids": [
+       "https://openalex.org/I165932596"
+      ]
+     },
+     {
+      "raw_affiliation_string": "School of Kinesiology, Lakehead University, Thunder Bay, Ontario, Canada",
+      "institution_ids": [
+       "https://openalex.org/I72541430"
+      ]
+     },
+     {
+      "raw_affiliation_string": "The Centre for Research in Occupational Safety & Health Sudbury Ontario Canada",
+      "institution_ids": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7225741194",
+  "doi": "https://doi.org/10.22541/authorea.15011916/v1",
+  "title": "Psychotropic medication safety during extreme heat",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7225741194",
+   "doi": "https://doi.org/10.22541/authorea.15011916/v1"
+  },
+  "primary_location": {
+   "id": "doi:10.22541/authorea.15011916/v1",
+   "doi": "https://doi.org/10.22541/authorea.15011916/v1",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.22541/authorea.15011916/v1",
+   "pdf_url": "https://www.authorea.com/doi/pdf/10.22541/authorea.15011916/v1",
+   "source": null,
+   "license": null,
+   "license_id": null,
+   "version": "submittedVersion",
+   "is_accepted": false,
+   "is_published": false,
+   "raw_source_name": null,
+   "raw_type": "posted-content"
+  },
+  "type": "preprint",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5140829318",
+     "display_name": "Jared Kyle Sieusahai",
+     "orcid": "https://orcid.org/0009-0008-2174-1293",
+     "observed_orcids": [
+      "https://orcid.org/0009-0008-2174-1293"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154425047",
+      "display_name": "University of Alberta",
+      "ror": "https://ror.org/0160cpw27",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I154425047"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Jared Sieusahai",
+    "raw_affiliation_strings": [
+     "University of Alberta Department of Medicine"
+    ],
+    "raw_orcid": "https://orcid.org/0009-0008-2174-1293",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Alberta Department of Medicine",
+      "institution_ids": [
+       "https://openalex.org/I154425047"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7216578358",
+  "doi": "https://doi.org/10.1096/fj.202603273r",
+  "title": "Physiological Responses to Intermittent Environmental Heat Stress in Mice",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7216578358",
+   "doi": "https://doi.org/10.1096/fj.202603273r",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/42823851",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/13726869"
+  },
+  "primary_location": {
+   "id": "doi:10.1096/fj.202603273r",
+   "doi": "https://doi.org/10.1096/fj.202603273r",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1096/fj.202603273r",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S25293849",
+    "display_name": "The FASEB Journal",
+    "issn_l": "0892-6638",
+    "issn": [
+     "0892-6638",
+     "1530-6860"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-c",
+     "doyens",
+     "jufo-2",
+     "ki-jl-2",
+     "medline",
+     "norway-2",
+     "poland-140",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "The FASEB Journal",
+   "raw_type": "journal-article"
+  },
+  "type": "article",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5155409033",
+     "display_name": "Hibah Husain",
+     "orcid": "https://orcid.org/0000-0003-1194-6144",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1194-6144"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I19716509",
+      "display_name": "Jamia Hamdard",
+      "ror": "https://ror.org/03dwxvb85",
+      "country_code": "IN",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I19716509"
+      ]
+     }
+    ],
+    "countries": [
+     "IN",
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Hibah Husain",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Department of Pharmacology, School of Pharmaceutical Education and Research Jamia Hamdard (Hamdard University)  New Delhi India",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-1194-6144",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Pharmacology, School of Pharmaceutical Education and Research Jamia Hamdard (Hamdard University)  New Delhi India",
+      "institution_ids": [
+       "https://openalex.org/I19716509"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5016124062",
+     "display_name": "Samantha A. McFall",
+     "orcid": "https://orcid.org/0000-0003-2674-1969",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2674-1969"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Samantha A. McFall",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Department of Pharmacology and Toxicology University of Louisville  Louisville Kentucky USA",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Pharmacology and Toxicology University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5004341480",
+     "display_name": "Marina V. Malovichko",
+     "orcid": "https://orcid.org/0000-0003-2127-5858",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2127-5858"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Marina V. Malovichko",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5045136976",
+     "display_name": "Nalinie S. M. D. Wickramasinghe",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Nalinie S. Wickramasinghe",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5034423745",
+     "display_name": "Breandon S. Taylor",
+     "orcid": "https://orcid.org/0000-0001-6232-9838",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6232-9838"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Breandon S. Taylor",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Department of Pharmacology and Toxicology University of Louisville  Louisville Kentucky USA",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Pharmacology and Toxicology University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5154714764",
+     "display_name": "Heather Stowers",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Heather Stowers",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5025536647",
+     "display_name": "Israel D. Sithu",
+     "orcid": "https://orcid.org/0000-0001-7752-7300",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7752-7300"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Israel D. Sithu",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5044279007",
+     "display_name": "Mohammad Tariq Malik",
+     "orcid": "https://orcid.org/0000-0001-9972-5850",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9972-5850"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Mohammad T. Malik",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5042972055",
+     "display_name": "Igor N. Zelko",
+     "orcid": "https://orcid.org/0000-0003-3976-3884",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-3976-3884"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Igor N. Zelko",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5153644229",
+     "display_name": "Abul Kalam Najmi",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I19716509",
+      "display_name": "Jamia Hamdard",
+      "ror": "https://ror.org/03dwxvb85",
+      "country_code": "IN",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I19716509"
+      ]
+     }
+    ],
+    "countries": [
+     "IN"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Abul Kalam Najmi",
+    "raw_affiliation_strings": [
+     "Department of Pharmacology, School of Pharmaceutical Education and Research Jamia Hamdard (Hamdard University)  New Delhi India"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Pharmacology, School of Pharmaceutical Education and Research Jamia Hamdard (Hamdard University)  New Delhi India",
+      "institution_ids": [
+       "https://openalex.org/I19716509"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5076106126",
+     "display_name": "Mohd Akhtar",
+     "orcid": "https://orcid.org/0000-0002-3333-2672",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3333-2672"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I19716509",
+      "display_name": "Jamia Hamdard",
+      "ror": "https://ror.org/03dwxvb85",
+      "country_code": "IN",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I19716509"
+      ]
+     }
+    ],
+    "countries": [
+     "IN"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Mohd Akhtar",
+    "raw_affiliation_strings": [
+     "Department of Pharmacology, School of Pharmaceutical Education and Research Jamia Hamdard (Hamdard University)  New Delhi India"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-3333-2672",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Pharmacology, School of Pharmaceutical Education and Research Jamia Hamdard (Hamdard University)  New Delhi India",
+      "institution_ids": [
+       "https://openalex.org/I19716509"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5069642403",
+     "display_name": "Daniel J. Conklin",
+     "orcid": "https://orcid.org/0000-0002-8385-9982",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8385-9982"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Daniel J. Conklin",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Department of Pharmacology and Toxicology University of Louisville  Louisville Kentucky USA",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Pharmacology and Toxicology University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5128886180",
+     "display_name": "Sanjay Srivastava",
+     "orcid": "https://orcid.org/0000-0002-1976-0398",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1976-0398"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I142740786",
+      "display_name": "University of Louisville",
+      "ror": "https://ror.org/01ckdn478",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Sanjay Srivastava",
+    "raw_affiliation_strings": [
+     "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+     "Department of Pharmacology and Toxicology University of Louisville  Louisville Kentucky USA",
+     "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+     "Superfund Research Center University of Louisville  Louisville Kentucky USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-1976-0398",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Christina Lee Brown Envirome Institute University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Pharmacology and Toxicology University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Division of Environmental Medicine, Department of Medicine University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Superfund Research Center University of Louisville  Louisville Kentucky USA",
+      "institution_ids": [
+       "https://openalex.org/I142740786"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7162091437",
+  "doi": "https://doi.org/10.3390/pharmacy14030074",
+  "title": "Recognizing and Mitigating the Effects of Medication on Heat-Related Illness in Older Adults: A Scoping Review",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7162091437",
+   "doi": "https://doi.org/10.3390/pharmacy14030074",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/42200961",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/13214780"
+  },
+  "primary_location": {
+   "id": "doi:10.3390/pharmacy14030074",
+   "doi": "https://doi.org/10.3390/pharmacy14030074",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.3390/pharmacy14030074",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S4210228566",
+    "display_name": "Pharmacy",
+    "issn_l": "2226-4787",
+    "issn": [
+     "2226-4787"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doaj",
+     "norway-1",
+     "poland-20",
+     "russia-white-list-3",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310310987",
+    "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310310987"
+    ],
+    "host_organization_lineage_names": [
+     "Multidisciplinary Digital Publishing Institute"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Pharmacy",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 4,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5136766113",
+     "display_name": "Lily M. Tews",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Lily M. Tews",
+    "raw_affiliation_strings": [
+     "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5064414625",
+     "display_name": "Daniel T. Abazia",
+     "orcid": "https://orcid.org/0000-0002-5826-1751",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5826-1751"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Daniel T. Abazia",
+    "raw_affiliation_strings": [
+     "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-5826-1751",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5046529010",
+     "display_name": "Hayley Blackburn",
+     "orcid": "https://orcid.org/0000-0003-3908-4494",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-3908-4494"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I6750721",
+      "display_name": "University of Montana",
+      "ror": "https://ror.org/0078xmk34",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I6750721"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Hayley Blackburn",
+    "raw_affiliation_strings": [
+     "Skaggs School of Pharmacy, University of Montana, Missoula, MT 59812, USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-3908-4494",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Skaggs School of Pharmacy, University of Montana, Missoula, MT 59812, USA",
+      "institution_ids": [
+       "https://openalex.org/I6750721"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5120286563",
+     "display_name": "Kiri Carmody",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Kiri Carmody",
+    "raw_affiliation_strings": [
+     "Skaggs School of Pharmacy & Pharmaceutical Sciences, University of Colorado, Aurora, CO 80045, USA"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Skaggs School of Pharmacy & Pharmaceutical Sciences, University of Colorado, Aurora, CO 80045, USA",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5036732523",
+     "display_name": "Mary Barna Bridgeman",
+     "orcid": "https://orcid.org/0000-0001-7947-9875",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7947-9875"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I102322142",
+      "display_name": "Rutgers, The State University of New Jersey",
+      "ror": "https://ror.org/05vt9qd57",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Mary Barna Bridgeman",
+    "raw_affiliation_strings": [
+     "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-7947-9875",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Ernest Mario School of Pharmacy, Rutgers, The State University of New Jersey, Piscataway, NJ 08854, USA",
+      "institution_ids": [
+       "https://openalex.org/I102322142"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

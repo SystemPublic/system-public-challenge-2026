@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:21303639,exclude,E7 dexterity in insulin users; no heat exposure,insulin,none,other
+PMID:21332191,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:21344414,exclude,E3 forced aggregation of PEG-insulin at 75C; formulation chemistry,insulin,none,other
+PMID:21372220,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:21485029,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:21520027,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:21695629,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:21722580,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:21740410,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:21741054,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:21791624,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:21958442,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:22081312,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:22142903,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:22216122,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:22396654,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:22538136,exclude,E3 single-chain insulin analog design; protein engineering,insulin,none,other
+PMID:22641195,exclude,E7 insulin analog engineering review; not about heat,insulin,none,other
+PMID:22654830,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:22806254,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:22860060,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:22944697,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:23077739,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:23078126,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:23263515,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:23387888,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:23435571,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:23536200,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:23819749,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:23828811,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:23861810,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:23924818,exclude,E3 compounded oral insulin suspension; refrigerated storage only,insulin,none,other
+PMID:23981336,exclude,E3 inhaled insulin powder formulation,insulin,none,other
+PMID:24067174,include,uncertain: I2 review notes heat degrades insulin; storage strategies,insulin,stability_potency,review
+PMID:24096869,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:24186360,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:24261972,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:24285857,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:24434563,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:24450159,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:24466022,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:24470091,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:24555434,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:24786827,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:24811232,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:24869908,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:24871527,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:24920162,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:2493704,exclude,E7 vibration-induced insulin flocculation case; no heat,insulin,other,case_report
+PMID:25015100,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:25058511,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:25061142,exclude,E7 altitude and cold; not heat,insulin,none,other
+PMID:25069746,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:25131090,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:25224297,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:2524251,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:25255060,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:25381162,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:25438557,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:25464795,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:25594176,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:25693689,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:25701199,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:25714089,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:25733887,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:25758258,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:25818062,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:25841380,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:25852715,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:25876911,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:25965061,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:26085565,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:26123194,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:26165790,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:26291587,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:26409325,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:26551029,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:26727580,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:2678633,exclude,E7 insulin clamp study; not about heat,none,none,other
+PMID:26797672,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:26826013,exclude,E7 insulin vials submerged in water; no heat measured,insulin,other,lab_bench
+PMID:2687268,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:26894538,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:26900952,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:27033594,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:27185267,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:2726778,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:27386151,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:27404435,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:27432286,include,uncertain: I2 insulin bag stability at 25C room temperature vs 4C,insulin,stability_potency,lab_bench
+PMID:27472257,include,I2 cooling devices for insulin storage in hot climates,insulin,device_performance,lab_bench
+PMID:27528697,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:27693646,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:27761974,exclude,E3 synthetic insulin analogue thermal stability chemistry,insulin,none,other
+PMID:27809308,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:27823956,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:27994380,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:28032772,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:28044441,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:28107204,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:28133791,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:28376584,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:28386236,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:28426711,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:28445749,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:28585199,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:28635330,exclude,E6 none of the 15 drugs studied with heat,none,none,other
+PMID:28707279,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:28832184,exclude,"E7 insulin pumps at high altitude, cold; not heat",insulin,device_performance,cohort
+PMID:28837599,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:28925409,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:29051035,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:29052864,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:29094526,exclude,E7 cold-chain refrigeration only,insulin,none,other
+PMID:2910579,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other
+PMID:29134977,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:29368833,exclude,"E2 animal/in-vitro biology, no drug product heat data",none,none,other
+PMID:29401384,exclude,"E3 protein/formulation chemistry, not product heat storage",none,none,other
+PMID:2951208,exclude,E3 zinc-stabilized insulin formulation chemistry,insulin,none,other
+PMID:29521111,exclude,E7 not about heat exposure (assay/sample stability or cold),none,none,other

@@ -1,0 +1,307 @@
+source_id,drug_id,mentioned,mention_level,action_type,all_actions,specificity,evidence_cited,quote,location,coder
+CDC,lithium,yes,specific,general_caution,general_caution,generic,no,"Drug toxicity from reduced clearance of medications in people who are dehydrated, especially for medications with a narrow therapeutic index (e.g., apixaban, carbamazepine, and lithium)","CDC clinicians page, line 15",pass1_keyword_then_read
+CDC,loop_diuretics,yes,specific,general_caution,general_caution,generic,no,Diuretics / Furosemide Hydrochlorothiazide Acetazolamide / Electrolyte imbalance,"CDC clinicians page, line 43",pass1_keyword_then_read
+CDC,thiazides,yes,specific,general_caution,general_caution,generic,no,Diuretics / Furosemide Hydrochlorothiazide Acetazolamide / Electrolyte imbalance,"CDC clinicians page, line 43",pass1_keyword_then_read
+CDC,acei_arb,yes,specific,general_caution,general_caution,generic,no,Angiotensin Converting Enzyme Inhibitor (ACEi) and Angiotensin II Receptor blockers (ARBs) / ACEi: / Enalapril,"CDC clinicians page, line 61",pass1_keyword_then_read
+CDC,sglt2,no,none,none,none,none,no,,,pass1_keyword_then_read
+CDC,insulin,yes,specific,storage,storage,specific,no,Remind patients that insulin can be degraded by heat and should be refrigerated.,"CDC clinicians page, line 29",pass1_keyword_then_read
+CDC,metformin,no,none,none,none,none,no,,,pass1_keyword_then_read
+CDC,anticholinergics_oxybutynin,yes,specific,general_caution,general_caution,generic,no,"Interference with central thermoregulation (e.g., antipsychotics, anticholinergics, stimulants)","CDC clinicians page, line 11",pass1_keyword_then_read
+CDC,antipsychotics_clozapine,yes,specific,general_caution,general_caution,generic,no,"Antipsychotics / Haloperidol, Olanzapine, Quetiapine, Risperidone / Impaired sweating","CDC clinicians page, line 89",pass1_keyword_then_read
+CDC,ssri,yes,specific,general_caution,general_caution,generic,no,"Selective Serotonin Reuptake Inhibitors (SSRI) and Serotonin and Norepinephrine Reuptake Inhibitors (SNRI) / SSRI: / Fluoxetine, Sertraline","CDC clinicians page, line 93",pass1_keyword_then_read
+CDC,topiramate_zonisamide,yes,specific,general_caution,general_caution,generic,no,Antiseizure medications / Topiramate / Decreased sweating,"CDC clinicians page, line 103",pass1_keyword_then_read
+CDC,adhd_stimulants,yes,specific,general_caution,general_caution,generic,no,"Impaired heat perception / Amphetamine, Methylphenidate / Increased body temperature","CDC clinicians page, line 137",pass1_keyword_then_read
+CDC,beta_blockers,yes,specific,general_caution,general_caution,generic,no,Beta blockers / Atenolol / Metoprolol,"CDC clinicians page, line 48",pass1_keyword_then_read
+CDC,opioid_patches_fentanyl,no,umbrella,none,none,none,no,"Sedation or cognitive impairment with increased risk of falls and reduced thirst sensation (e.g., opiates, benzodiazepines","CDC clinicians page, line 17",pass1_keyword_then_read
+CDC,epinephrine_autoinjector,yes,specific,storage,storage,specific,no,EpiPens may malfunction or deliver less epinephrine when exposed to heat.,"CDC clinicians page, line 18",pass1_keyword_then_read
+CDC,ccb,yes,specific,general_caution,general_caution,generic,no,Calcium channel blocker / Amlodipine / Felodipine,"CDC clinicians page, line 55",pass1_keyword_then_read
+CDC,nitrates,yes,specific,general_caution,general_caution,generic,no,"Antianginals / Nitrates / Glyceryl Trinitrate, Isosorbide Mononitrate","CDC clinicians page, line 79",pass1_keyword_then_read
+CDC,nsaids,yes,specific,general_caution,general_caution,generic,no,Nonsteroidal anti-inflammatory drugs (NSAIDS) / Kidney injury with dehydration,"CDC clinicians page, line 116",pass1_keyword_then_read
+CDC,acetaminophen,yes,specific,general_caution,general_caution,generic,no,Acetaminophen / Heat related liver injury increase risk for acetaminophen hepatoxicity,"CDC clinicians page, line 121",pass1_keyword_then_read
+CDC,tca,yes,specific,general_caution,general_caution,generic,no,"Tricyclic antidepressants (TCAs) / Amitriptyline, Clomipramine / Decreased sweating","CDC clinicians page, line 100",pass1_keyword_then_read
+CDC,antihistamines_1stgen,yes,specific,general_caution,general_caution,generic,no,"Antihistamines with anticholinergic properties / Promethazine, Doxylamine, Diphenhydramine / Decreased sweating","CDC clinicians page, line 111",pass1_keyword_then_read
+CDC,antiparkinson,no,none,none,none,none,no,,,pass1_keyword_then_read
+CDC,benzodiazepines_anxiolytics,yes,specific,general_caution,general_caution,generic,no,"Sedation or cognitive impairment with increased risk of falls and reduced thirst sensation (e.g., opiates, benzodiazepines, typical and atypical antipsychotic medications, antidepressants, anticonvulsants)","CDC clinicians page, line 17",pass1_keyword_then_read
+CDC,carbamazepine_oxcarbazepine,yes,specific,general_caution,general_caution,generic,no,"Carbamazepine / Dizziness and weakness, especially after increased dose","CDC clinicians page, line 109",pass1_keyword_then_read
+CDC,digoxin,no,none,none,none,none,no,,,pass1_keyword_then_read
+CDC,levothyroxine,yes,specific,general_caution,general_caution,generic,no,Thyroid replacement / Levothyroxine / Excessive sweating,"CDC clinicians page, line 129",pass1_keyword_then_read
+CDC,laxatives,yes,specific,general_caution,general_caution,generic,no,"kidney injury from nephrotoxic drugs (non-steroidal anti-inflammatory drugs [NSAIDs], diuretics, beta blockers, TCAs, laxatives)","CDC clinicians page, line 13",pass1_keyword_then_read
+CDC,snri,yes,specific,general_caution,general_caution,generic,no,SNRI: / Duloxatine / Venlafaxine,"CDC clinicians page, line 96",pass1_keyword_then_read
+CDC,glp1_dpp4,no,none,none,none,none,no,,,pass1_keyword_then_read
+CDC,sulfonylureas,no,none,none,none,none,no,,,pass1_keyword_then_read
+CDC,cholinesterase_inhibitors,no,none,none,none,none,no,,,pass1_keyword_then_read
+CDC,photosensitizing_antimicrobials,yes,specific,general_caution,general_caution,specific,no,"Some medications can increase the sensitivity of the skin to the sun. Antifungal medications like flucytosine, griseofulvin, and voriconazole and antibiotics like metronidazole","CDC clinicians page, line 19",pass1_keyword_then_read
+CDC,inhalers,yes,specific,storage,storage,specific,no,Remind patients that inhalers can malfunction or burst from extreme heat.,"CDC clinicians page, line 29",pass1_keyword_then_read
+CDC,transdermal_other,no,none,none,none,none,no,,,pass1_keyword_then_read
+NYC,lithium,yes,specific,general_caution,general_caution,generic,no,Mood stabilizer / Example: Lithium / May cause:,"NYC provider page, line 319",pass1_keyword_then_read
+NYC,loop_diuretics,yes,specific,general_caution,general_caution,generic,no,"Diuretics / Examples: Furosemide, Hydrochlorothiazide, Acetazolamide","NYC provider page, line 263",pass1_keyword_then_read
+NYC,thiazides,yes,specific,general_caution,general_caution,generic,no,"Diuretics / Examples: Furosemide, Hydrochlorothiazide, Acetazolamide","NYC provider page, line 263",pass1_keyword_then_read
+NYC,acei_arb,yes,specific,general_caution,general_caution,generic,no,"Examples: ACEi: Enalapril, Lisinopril, Ramipril; ARB: Valsartan, Losartan","NYC provider page, line 219",pass1_keyword_then_read
+NYC,sglt2,no,none,none,none,none,no,,,pass1_keyword_then_read
+NYC,insulin,yes,specific,monitor,monitor;storage,specific,no,High temperatures can change how the body uses insulin. People with diabetes / should check their blood sugar more frequently.,"NYC HAN 2026 #23, PDF p. 2",pass1_keyword_then_read
+NYC,metformin,no,none,none,none,none,no,,,pass1_keyword_then_read
+NYC,anticholinergics_oxybutynin,yes,specific,general_caution,general_caution,generic,no,"Interference with central thermoregulation (for example, antipsychotics, anticholinergics, stimulants)","NYC provider page, line 63",pass1_keyword_then_read
+NYC,antipsychotics_clozapine,yes,specific,general_caution,general_caution,generic,no,"Antipsychotics / Examples: Haloperidol, Olanzapine, Quetiapine, Risperidone","NYC provider page, line 307",pass1_keyword_then_read
+NYC,ssri,yes,specific,general_caution,general_caution,generic,no,"Examples: SSRI: Fluoxetine, Sertraline; SNRI: Duloxatine, Venlafaxine","NYC provider page, line 329",pass1_keyword_then_read
+NYC,topiramate_zonisamide,yes,specific,general_caution,general_caution,generic,no,Increased urination / Example: Topiramate / May cause:,"NYC provider page, line 207",pass1_keyword_then_read
+NYC,adhd_stimulants,yes,specific,general_caution,general_caution,generic,no,"Impaired heat perception / Examples: Amphetamine, Methylphenidate / May cause:","NYC provider page, line 357",pass1_keyword_then_read
+NYC,beta_blockers,yes,specific,general_caution,general_caution,generic,no,"Beta blockers / Examples: Atenolol, Metoprolol, Propranolol","NYC provider page, line 237",pass1_keyword_then_read
+NYC,opioid_patches_fentanyl,no,umbrella,none,none,none,no,"Sedation or cognitive impairment with increased risk of falls and reduced thirst sensation (for example, opiates, benzodiazepines","NYC provider page, line 75",pass1_keyword_then_read
+NYC,epinephrine_autoinjector,yes,specific,storage,storage,specific,no,EpiPens may malfunction or deliver less epinephrine when exposed to heat.,"NYC provider page, line 113",pass1_keyword_then_read
+NYC,ccb,yes,specific,general_caution,general_caution,generic,no,"Calcium channel blocker / Examples: Amlodipine, Felodipine, Nifedipine","NYC provider page, line 251",pass1_keyword_then_read
+NYC,nitrates,yes,specific,general_caution,general_caution,generic,no,"Nitrates / Examples: Glyceryl Trinitrate, Isosorbide Mononitrate","NYC provider page, line 279",pass1_keyword_then_read
+NYC,nsaids,yes,specific,general_caution,general_caution,generic,no,Kidney injury with dehydration / Nonsteroidal anti-inflammatory drugs (NSAIDS),"NYC provider page, line 159",pass1_keyword_then_read
+NYC,acetaminophen,yes,specific,general_caution,general_caution,generic,no,Heat related liver injury increase risk for acetaminophen hepatoxicity,"NYC provider page, line 149",pass1_keyword_then_read
+NYC,tca,yes,specific,general_caution,general_caution,generic,no,"Tricyclic antidepressants (TCA) / Examples: Amitriptyline, Clomipramine","NYC provider page, line 337",pass1_keyword_then_read
+NYC,antihistamines_1stgen,yes,specific,general_caution,general_caution,generic,no,"Antihistamines with anticholinergic properties / Examples: Diphenhydramine, Doxylamine, Promethazine","NYC provider page, line 173",pass1_keyword_then_read
+NYC,antiparkinson,no,none,none,none,none,no,,,pass1_keyword_then_read
+NYC,benzodiazepines_anxiolytics,yes,specific,general_caution,general_caution,generic,no,"(for example, opiates, benzodiazepines, typical and atypical antipsychotic medications, antidepressants, anticonvulsants)","NYC provider page, line 75",pass1_keyword_then_read
+NYC,carbamazepine_oxcarbazepine,yes,specific,general_caution,general_caution,generic,no,Antiseizure Medications / Example: Carbamazepine / May cause:,"NYC provider page, line 193",pass1_keyword_then_read
+NYC,digoxin,no,none,none,none,none,no,,,pass1_keyword_then_read
+NYC,levothyroxine,yes,specific,general_caution,general_caution,generic,no,Thyroid Replacements / Example: Levothyroxine,"NYC provider page, line 363",pass1_keyword_then_read
+NYC,laxatives,yes,specific,general_caution,general_caution,generic,no,"kidney injury from nephrotoxic drugs (non-steroidal anti-inflammatory drugs [NSAIDs], diuretics, beta blockers, TCAs, laxatives)","NYC provider page, line 67",pass1_keyword_then_read
+NYC,snri,yes,specific,general_caution,general_caution,generic,no,"Examples: SSRI: Fluoxetine, Sertraline; SNRI: Duloxatine, Venlafaxine","NYC provider page, line 329",pass1_keyword_then_read
+NYC,glp1_dpp4,no,none,none,none,none,no,,,pass1_keyword_then_read
+NYC,sulfonylureas,no,none,none,none,none,no,,,pass1_keyword_then_read
+NYC,cholinesterase_inhibitors,no,none,none,none,none,no,,,pass1_keyword_then_read
+NYC,photosensitizing_antimicrobials,yes,specific,general_caution,general_caution,specific,no,"Counsel patients taking medications that increase sun sensitivity: / Antifungal medications like flucytosine, griseofulvin, and voriconazole and antibiotics like metronidazole, tetracyclines and fluoroquinolones can increase sun sensitivity","NYC provider page, line 101",pass1_keyword_then_read
+NYC,inhalers,yes,specific,storage,storage,specific,no,"Provide guidance on proper storage of medications. Counsel patients not to leave medications in a car or other places that can get excessively hot. / Inhalers, for example, can burst in hot environments","NYC provider page, line 111",pass1_keyword_then_read
+NYC,transdermal_other,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,lithium,yes,specific,general_caution,general_caution,generic,no,"agents with levels affected by dehydration, such as lithium, digoxin, antiepileptics","UKHSA healthcare professionals page, line 207",pass1_keyword_then_read
+UKHSA,loop_diuretics,yes,specific,general_caution,general_caution,generic,no,"diuretics, especially loop diuretics, which can lead to dehydration and electrolyte abnormalities","UKHSA healthcare professionals page, line 202",pass1_keyword_then_read
+UKHSA,thiazides,no,umbrella,none,none,none,no,"diuretics, especially loop diuretics, which can lead to dehydration and electrolyte abnormalities","UKHSA healthcare professionals page, line 202",pass1_keyword_then_read
+UKHSA,acei_arb,no,umbrella,none,none,none,no,medications that interfere with cardiovascular responses such as antihypertensives and antianginal drugs,"UKHSA healthcare professionals page, line 203",pass1_keyword_then_read
+UKHSA,sglt2,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,insulin,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,metformin,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,anticholinergics_oxybutynin,yes,specific,general_caution,general_caution,generic,no,"medications that interfere with sweating, such as anticholinergics or beta blockers","UKHSA healthcare professionals page, line 204",pass1_keyword_then_read
+UKHSA,antipsychotics_clozapine,yes,specific,general_caution,general_caution,generic,no,"medications that can interfere with central nervous system thermoregulation, such as neuroleptics and serotoninergic agonists","UKHSA healthcare professionals page, line 209",pass1_keyword_then_read
+UKHSA,ssri,no,umbrella,none,none,none,no,"medications that can interfere with central nervous system thermoregulation, such as neuroleptics and serotoninergic agonists","UKHSA healthcare professionals page, line 209",pass1_keyword_then_read
+UKHSA,topiramate_zonisamide,no,umbrella,none,none,none,no,"agents with levels affected by dehydration, such as lithium, digoxin, antiepileptics","UKHSA healthcare professionals page, line 207",pass1_keyword_then_read
+UKHSA,adhd_stimulants,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,beta_blockers,yes,specific,general_caution,general_caution,generic,no,"medications that interfere with sweating, such as anticholinergics or beta blockers","UKHSA healthcare professionals page, line 203",pass1_keyword_then_read
+UKHSA,opioid_patches_fentanyl,no,umbrella,none,none,none,no,"medications that cause diarrhoea or vomiting, such as colchicine, antibiotics and opiates, which can lead to dehydration","UKHSA healthcare professionals page, line 205",pass1_keyword_then_read
+UKHSA,epinephrine_autoinjector,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,ccb,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,nitrates,yes,specific,general_caution,general_caution,generic,no,medications that interfere with cardiovascular responses such as antihypertensives and antianginal drugs,"UKHSA healthcare professionals page, line 203",pass1_keyword_then_read
+UKHSA,nsaids,yes,specific,general_caution,general_caution,generic,no,"medications that can impair renal function, such as certain antimicrobials, immunosuppressants, non-steroidal anti-inflammatories","UKHSA healthcare professionals page, line 206",pass1_keyword_then_read
+UKHSA,acetaminophen,yes,specific,hold_or_substitute,hold_or_substitute,specific,no,do not give them aspirin or paracetamol,"UKHSA healthcare professionals page, line 157",pass1_keyword_then_read
+UKHSA,tca,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,antihistamines_1stgen,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,antiparkinson,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,benzodiazepines_anxiolytics,yes,specific,general_caution,general_caution,generic,no,"drugs that alter states of alertness, such as hypnotics, anxiolytics and analgesics","UKHSA healthcare professionals page, line 208",pass1_keyword_then_read
+UKHSA,carbamazepine_oxcarbazepine,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,digoxin,yes,specific,general_caution,general_caution,generic,no,"agents with levels affected by dehydration, such as lithium, digoxin, antiepileptics","UKHSA healthcare professionals page, line 207",pass1_keyword_then_read
+UKHSA,levothyroxine,yes,specific,general_caution,general_caution,generic,no,drugs that increase the basal metabolic rate such as thyroxine,"UKHSA healthcare professionals page, line 210",pass1_keyword_then_read
+UKHSA,laxatives,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,snri,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,glp1_dpp4,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,sulfonylureas,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,cholinesterase_inhibitors,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,photosensitizing_antimicrobials,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,inhalers,no,none,none,none,none,no,,,pass1_keyword_then_read
+UKHSA,transdermal_other,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,lithium,yes,specific,general_caution,general_caution,specific,yes,11.5% of lithium poisonings requiring hospitalization were due to summer heat exposure and consequent dehydration.Reference 191 Hydrate with water rather than an electrolyte solution to minimize potential hypernatremic complications.,"Health Canada 2011 technical guide, line 836",pass1_keyword_then_read
+HC,loop_diuretics,yes,specific,general_caution,general_caution,generic,no,Diuretics / (e.g. Lasix) / Can lead to dehydration and hyponatremia is a common side effect,"Health Canada 2011 technical guide, line 1369",pass1_keyword_then_read
+HC,thiazides,no,umbrella,none,none,none,no,4.4.2 Cardiovascular Drugs / Diuretics / Univariate analysis of 345 people admitted with heat stroke in France in August 2003 showed that the use of diuretics,"Health Canada 2011 technical guide, line 844",pass1_keyword_then_read
+HC,acei_arb,yes,specific,general_caution,general_caution,generic,yes,"With ACE-II inhibitors, hyponatremia is also a side effect: OR 12.2 (CI95 1.26-21.2).Reference 209","Health Canada 2011 technical guide, line 848",pass1_keyword_then_read
+HC,sglt2,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,insulin,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,metformin,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,anticholinergics_oxybutynin,yes,specific,general_caution,general_caution,generic,yes,"one publication makes an association between hospital admissions and anticholinergics (OR 6.0, CI951.8-19.6)Reference 180","Health Canada 2011 technical guide, line 842",pass1_keyword_then_read
+HC,antipsychotics_clozapine,yes,specific,general_caution,general_caution,generic,yes,"For individuals on neuroleptics, the odds of death due to heat stroke during an EHE were also found to be elevated in three other studies, with OR 1.90 (CI951.3-2.8)Reference 13","Health Canada 2011 technical guide, line 825",pass1_keyword_then_read
+HC,ssri,yes,specific,general_caution,general_caution,specific,yes,"Hyponatremia is a side effect of SSRIs and can be dangerous for patients taking these drugs during an EHE. A sizeable number of studies have established a link between hyponatremia and SSRIs,Reference 184 Reference 186","Health Canada 2011 technical guide, line 834",pass1_keyword_then_read
+HC,topiramate_zonisamide,yes,specific,monitor,monitor;general_caution,specific,yes,Topiramate: watch for hyperthermia and heat intolerance.,"Health Canada 2011 technical guide, line 889",pass1_keyword_then_read
+HC,adhd_stimulants,yes,specific,general_caution,general_caution,generic,no,An 11-year-old girl who was taking two amphetamines (phentermine and propylhexedrine hydrochloride) for weight loss,"Health Canada 2011 technical guide, line 804",pass1_keyword_then_read
+HC,beta_blockers,yes,specific,general_caution,general_caution,generic,no,"Antiadrenergics and β-Blockers / (e.g. Atenolol, Metoprolol) / Can decrease cardiac output","Health Canada 2011 technical guide, line 1348",pass1_keyword_then_read
+HC,opioid_patches_fentanyl,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,epinephrine_autoinjector,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,ccb,yes,specific,monitor,monitor;general_caution,specific,yes,"The side effects of calcium channel blockers should also be monitored during the summer months. Diarrhea is the most frequently cited side effect,Reference 210Reference 212","Health Canada 2011 technical guide, line 848",pass1_keyword_then_read
+HC,nitrates,yes,specific,general_caution,general_caution,generic,yes,"With nitrate vasodilators, vomiting can affect 24% of the study population,Reference 207","Health Canada 2011 technical guide, line 848",pass1_keyword_then_read
+HC,nsaids,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,acetaminophen,no,umbrella,none,none,none,no,"Chronic illness (in addition to cardiovascular, renal, neurologic and respiratory) / On antipyretics","Health Canada 2011 technical guide, line 725",pass1_keyword_then_read
+HC,tca,yes,specific,general_caution,general_caution,generic,yes,"with tricyclic antidepressants featuring most prominently (OR 2.2, CI95 1.80-2.69).Reference 183","Health Canada 2011 technical guide, line 831",pass1_keyword_then_read
+HC,antihistamines_1stgen,yes,specific,general_caution,general_caution,generic,no,Antihistamines / (e.g. Brompheniramine) / Can inhibit the sweating mechanism,"Health Canada 2011 technical guide, line 1357",pass1_keyword_then_read
+HC,antiparkinson,yes,specific,general_caution,general_caution,generic,yes,the drugs significantly associated with deaths during the 2003 French EHE were anti-Parkinson's agents: OR 6.02 (CI95 0.72-50.37),"Health Canada 2011 technical guide, line 844",pass1_keyword_then_read
+HC,benzodiazepines_anxiolytics,yes,specific,general_caution,general_caution,generic,yes,Anxiolytics / 2.4 / 1.3-4.4,"Health Canada 2011 technical guide, line 821",pass1_keyword_then_read
+HC,carbamazepine_oxcarbazepine,yes,specific,general_caution,general_caution,specific,no,Oxcarbazepine and carbamazepine: take precautions against hyponatremia and hyperhydration.,"Health Canada 2011 technical guide, line 890",pass1_keyword_then_read
+HC,digoxin,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,levothyroxine,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,laxatives,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,snri,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,glp1_dpp4,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,sulfonylureas,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,cholinesterase_inhibitors,yes,specific,monitor,monitor;general_caution,specific,yes,"Cholinesterase inhibitors, which are used in treating Alzheimer's disease, do not figure very prominently in the literature on the implication of drugs during EHEs, but they do have side effects that need to be monitored during EHEs.","Health Canada 2011 technical guide, line 840",pass1_keyword_then_read
+HC,photosensitizing_antimicrobials,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,inhalers,no,none,none,none,none,no,,,pass1_keyword_then_read
+HC,transdermal_other,no,none,none,none,none,no,,,pass1_keyword_then_read
+ANSM,lithium,yes,specific,general_caution,general_caution,generic,no,Sels de lithium Profil cinétique affecté par la déshydratation,"ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,loop_diuretics,yes,specific,monitor,monitor;general_caution,specific,no,"Diurétiques, en particulier les diurétiques de l’anse (furosémide) et diurétiques thiazidiques et distaux au long cours","ANSM mise au point 2017, PDF p. 7",pass1_keyword_then_read
+ANSM,thiazides,yes,specific,monitor,monitor;general_caution,specific,no,"Diurétiques, en particulier les diurétiques de l’anse (furosémide) et diurétiques thiazidiques et distaux au long cours","ANSM mise au point 2017, PDF p. 7",pass1_keyword_then_read
+ANSM,acei_arb,yes,specific,general_caution,general_caution,generic,yes,"les inhibiteurs de l’enzyme de conversion de l’angiotensine, les antidépresseurs / sérotoninergiques, les inhibiteurs de la pompe à proton, la digoxine, les benzodiazépines, les / hypoglycémiants oraux, les sartans, les antagonistes calciques et les β-bloquants10.","ANSM mise au point 2017, PDF p. 3",pass1_keyword_then_read
+ANSM,sglt2,no,umbrella,none,none,none,no,certains hypoglycémiants oraux (biguanides et sulfamides hypoglycémiants),"ANSM mise au point 2017, PDF p. 4",pass1_keyword_then_read
+ANSM,insulin,yes,specific,storage,storage,specific,no,"Médicaments biologiques (insuline, somatropine...) en présentation multidose qui se conservent / hors du réfrigérateur après ouverture à des températures ne dépassant pas 25°C ou 30°C","ANSM mise au point 2017, PDF p. 9",pass1_keyword_then_read
+ANSM,metformin,yes,specific,general_caution,general_caution,generic,no,Biguanides et sulfamides hypoglycémiants Profil cinétique affecté par la déshydratation,"ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,anticholinergics_oxybutynin,yes,specific,general_caution,general_caution,generic,no,"certains antispasmodiques, en particulier ceux à visée urinaire (oxybutynine, toltérodine,","ANSM mise au point 2017, PDF p. 4",pass1_keyword_then_read
+ANSM,antipsychotics_clozapine,yes,specific,general_caution,general_caution,generic,yes,"prise d’un psychotrope, en particulier antidépresseur ou neuroleptique, est associée à une / augmentation du risque de décès chez le sujet âgé pendant une vague de chaleur.","ANSM mise au point 2017, PDF p. 3",pass1_keyword_then_read
+ANSM,ssri,yes,specific,general_caution,general_caution,generic,no,"IRS, IRSNA, IMAO sélectifs (moclobémide, sélégiline, rasagiline) Hyperthermie","ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,topiramate_zonisamide,no,umbrella,none,none,none,no,Anti-épileptiques Profil cinétique affecté par la déshydratation,"ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,adhd_stimulants,yes,specific,general_caution,general_caution,generic,no,"l’usage de certaines drogues, en particulier les substances amphétaminiques et la cocaïne","ANSM mise au point 2017, PDF p. 5",pass1_keyword_then_read
+ANSM,beta_blockers,yes,specific,general_caution,general_caution,generic,yes,"les inhibiteurs de l’enzyme de conversion de l’angiotensine, les antidépresseurs / sérotoninergiques, les inhibiteurs de la pompe à proton, la digoxine, les benzodiazépines, les / hypoglycémiants oraux, les sartans, les antagonistes calciques et les β-bloquants10.","ANSM mise au point 2017, PDF p. 3",pass1_keyword_then_read
+ANSM,opioid_patches_fentanyl,no,umbrella,none,none,none,no,"la pharmacocinétique des dispositifs transdermiques peut être modifiée en raison de la / vasodilatation sous-cutanée, et de l’hypersudation susceptible d’entrainer un décollement.","ANSM mise au point 2017, PDF p. 4",pass1_keyword_then_read
+ANSM,epinephrine_autoinjector,no,none,none,none,none,no,,,pass1_keyword_then_read
+ANSM,ccb,yes,specific,general_caution,general_caution,generic,yes,"les inhibiteurs de l’enzyme de conversion de l’angiotensine, les antidépresseurs / sérotoninergiques, les inhibiteurs de la pompe à proton, la digoxine, les benzodiazépines, les / hypoglycémiants oraux, les sartans, les antagonistes calciques et les β-bloquants10.","ANSM mise au point 2017, PDF p. 3",pass1_keyword_then_read
+ANSM,nitrates,yes,specific,general_caution,general_caution,generic,no,Anti-angoreux Diminution de la pression artérielle,"ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,nsaids,yes,specific,hold_or_substitute,hold_or_substitute;general_caution,specific,no,"éviter la prescription d’anti-inflammatoires non stéroïdiens (aspirine, AINS classiques, / inhibiteurs de la COX-2), particulièrement néphrotoxiques en cas de déshydratation","ANSM mise au point 2017, PDF p. 1",pass1_keyword_then_read
+ANSM,acetaminophen,yes,specific,hold_or_substitute,hold_or_substitute,specific,no,"en cas de fièvre, éviter la prescription de paracétamol (inefficacité pour traiter le coup de / chaleur et possible aggravation de l’atteinte hépatique souvent présente)","ANSM mise au point 2017, PDF p. 1",pass1_keyword_then_read
+ANSM,tca,yes,specific,general_caution,general_caution,generic,no,Antidépresseurs imipraminiques Diminution de la perte calorique,"ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,antihistamines_1stgen,yes,specific,general_caution,general_caution,generic,no,Antihistaminiques de première génération Diminution de la perte calorique (propriétés atropiniques),"ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,antiparkinson,yes,specific,general_caution,general_caution,generic,no,"antiparkinsoniens atropiniques (trihexyphénidyle, tropatépine, bipéridène","ANSM mise au point 2017, PDF p. 4",pass1_keyword_then_read
+ANSM,benzodiazepines_anxiolytics,yes,specific,general_caution,general_caution,generic,yes,"les inhibiteurs de l’enzyme de conversion de l’angiotensine, les antidépresseurs / sérotoninergiques, les inhibiteurs de la pompe à proton, la digoxine, les benzodiazépines, les / hypoglycémiants oraux, les sartans, les antagonistes calciques et les β-bloquants10.","ANSM mise au point 2017, PDF p. 3",pass1_keyword_then_read
+ANSM,carbamazepine_oxcarbazepine,no,umbrella,none,none,none,no,Anti-épileptiques Profil cinétique affecté par la déshydratation,"ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,digoxin,yes,specific,general_caution,general_caution,generic,yes,"les inhibiteurs de l’enzyme de conversion de l’angiotensine, les antidépresseurs / sérotoninergiques, les inhibiteurs de la pompe à proton, la digoxine, les benzodiazépines, les / hypoglycémiants oraux, les sartans, les antagonistes calciques et les β-bloquants10.","ANSM mise au point 2017, PDF p. 3",pass1_keyword_then_read
+ANSM,levothyroxine,yes,specific,general_caution,general_caution,generic,no,Les hormones thyroïdiennes induisent la production endogène de chaleur en augmentant le / métabolisme basal.,"ANSM mise au point 2017, PDF p. 5",pass1_keyword_then_read
+ANSM,laxatives,no,none,none,none,none,no,,,pass1_keyword_then_read
+ANSM,snri,yes,specific,general_caution,general_caution,generic,no,"IRS, IRSNA, IMAO sélectifs (moclobémide, sélégiline, rasagiline) Hyperthermie","ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,glp1_dpp4,yes,specific,general_caution,general_caution,generic,no,"Gliptines et agonistes récepteur GLP-1 (liraglutide, exenatine) Altération de la fonction rénale","ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,sulfonylureas,yes,specific,general_caution,general_caution,generic,no,Biguanides et sulfamides hypoglycémiants Profil cinétique affecté par la déshydratation,"ANSM mise au point 2017, PDF p. 8",pass1_keyword_then_read
+ANSM,cholinesterase_inhibitors,no,none,none,none,none,no,,,pass1_keyword_then_read
+ANSM,photosensitizing_antimicrobials,no,none,none,none,none,no,,,pass1_keyword_then_read
+ANSM,inhalers,no,none,none,none,none,no,,,pass1_keyword_then_read
+ANSM,transdermal_other,yes,specific,general_caution,general_caution,generic,no,"la pharmacocinétique des dispositifs transdermiques peut être modifiée en raison de la / vasodilatation sous-cutanée, et de l’hypersudation susceptible d’entrainer un décollement.","ANSM mise au point 2017, PDF p. 4",pass1_keyword_then_read
+WHO_EUR,lithium,yes,specific,general_caution,general_caution,generic,no,"Run pre-season medication reviews for and with patients on medications that / affect thermoregulation or fluid balance (such as diuretics, antihypertensives, / anticholinergics, antipsychotics, antidepressants and lithium), and document / adjustments and counselling.","WHO/Europe 2026 HHAP guidance 2nd ed, PDF p. 214",pass1_keyword_then_read
+WHO_EUR,loop_diuretics,no,umbrella,none,none,none,no,"Run pre-season medication reviews for and with patients on medications that / affect thermoregulation or fluid balance (such as diuretics, antihypertensives, / anticholinergics, antipsychotics, antidepressants and lithium), and document / adjustments and counselling.","WHO/Europe 2026 HHAP guidance 2nd ed, PDF p. 214",pass1_keyword_then_read
+WHO_EUR,thiazides,no,umbrella,none,none,none,no,"Run pre-season medication reviews for and with patients on medications that / affect thermoregulation or fluid balance (such as diuretics, antihypertensives, / anticholinergics, antipsychotics, antidepressants and lithium), and document / adjustments and counselling.","WHO/Europe 2026 HHAP guidance 2nd ed, PDF p. 214",pass1_keyword_then_read
+WHO_EUR,acei_arb,no,umbrella,none,none,none,no,"Run pre-season medication reviews for and with patients on medications that / affect thermoregulation or fluid balance (such as diuretics, antihypertensives, / anticholinergics, antipsychotics, antidepressants and lithium), and document / adjustments and counselling.","WHO/Europe 2026 HHAP guidance 2nd ed, PDF p. 214",pass1_keyword_then_read
+WHO_EUR,sglt2,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,insulin,yes,specific,storage,storage,specific,no,"This is particularly important / for emergency drugs, including antibiotics, adrenergic / drugs, insulin, analgesics and sedatives.","WHO/Europe 2011 public health advice, PDF p. 14",pass1_keyword_then_read
+WHO_EUR,metformin,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,anticholinergics_oxybutynin,yes,specific,general_caution,general_caution,generic,yes,"Some medicines – including diuretics, anticholinergics and / neuroleptics – may further affect sweating, hydration, renal function or cardiovascular / response (19–22).","WHO/Europe 2026 HHAP guidance 2nd ed, PDF p. 86",pass1_keyword_then_read
+WHO_EUR,antipsychotics_clozapine,yes,specific,storage,storage;general_caution,specific,yes,proper temperature management of heat- / sensitive pharmaceuticals such as antipsychotics during transportation and storage (16).,"WHO/Europe 2026 HHAP guidance 2nd ed, PDF p. 128",pass1_keyword_then_read
+WHO_EUR,ssri,no,umbrella,none,none,none,no,"Run pre-season medication reviews for and with patients on medications that / affect thermoregulation or fluid balance (such as diuretics, antihypertensives, / anticholinergics, antipsychotics, antidepressants and lithium), and document / adjustments and counselling.","WHO/Europe 2026 HHAP guidance 2nd ed, PDF p. 214",pass1_keyword_then_read
+WHO_EUR,topiramate_zonisamide,no,umbrella,none,none,none,no,Antihypertensives and diuretics / Antiepileptics,"WHO/Europe 2011 public health advice, PDF p. 13",pass1_keyword_then_read
+WHO_EUR,adhd_stimulants,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,beta_blockers,yes,specific,general_caution,general_caution,generic,no,Antiadrenergics and beta-blockers / Sympathomimetics,"WHO/Europe 2011 public health advice, PDF p. 13",pass1_keyword_then_read
+WHO_EUR,opioid_patches_fentanyl,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,epinephrine_autoinjector,no,umbrella,none,none,none,no,"This is particularly important / for emergency drugs, including antibiotics, adrenergic / drugs, insulin, analgesics and sedatives.","WHO/Europe 2011 public health advice, PDF p. 14",pass1_keyword_then_read
+WHO_EUR,ccb,yes,specific,general_caution,general_caution,generic,no,"Vasodilators, including nitrates and calcium channel blockers, can worsen / hypotension in vulnerable patients","WHO/Europe 2011 public health advice, PDF p. 13",pass1_keyword_then_read
+WHO_EUR,nitrates,yes,specific,general_caution,general_caution,generic,no,"Vasodilators, including nitrates and calcium channel blockers, can worsen / hypotension in vulnerable patients","WHO/Europe 2011 public health advice, PDF p. 13",pass1_keyword_then_read
+WHO_EUR,nsaids,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,acetaminophen,yes,specific,hold_or_substitute,hold_or_substitute,specific,no,Antipyretics such as acetylsalicylic acid and acetaminophen should be avoided because / of their potential to aggravate the coagulopathy and liver injury of heatstroke.,"WHO/Europe 2011 public health advice, PDF p. 19",pass1_keyword_then_read
+WHO_EUR,tca,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,antihistamines_1stgen,no,umbrella,none,none,none,no,Anti-cholinergics / Antipsychotics / Antihistamines / Anti-Parkinson agents,"WHO/Europe 2011 public health advice, PDF p. 13",pass1_keyword_then_read
+WHO_EUR,antiparkinson,yes,specific,general_caution,general_caution,generic,no,Antipsychotics / Antihistamines / Anti-Parkinson agents / Antidepressants,"WHO/Europe 2011 public health advice, PDF p. 13",pass1_keyword_then_read
+WHO_EUR,benzodiazepines_anxiolytics,yes,specific,general_caution,general_caution,generic,no,Antidepressants / Anxiolytics and muscle relaxants,"WHO/Europe 2011 public health advice, PDF p. 13",pass1_keyword_then_read
+WHO_EUR,carbamazepine_oxcarbazepine,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,digoxin,yes,specific,general_caution,general_caution,generic,no,"particularly those with a narrow therapeutic index, such / as digoxin or lithium.","WHO/Europe 2011 public health advice, PDF p. 14",pass1_keyword_then_read
+WHO_EUR,levothyroxine,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,laxatives,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,snri,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,glp1_dpp4,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,sulfonylureas,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,cholinesterase_inhibitors,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,photosensitizing_antimicrobials,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,inhalers,no,none,none,none,none,no,,,pass1_keyword_then_read
+WHO_EUR,transdermal_other,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,lithium,yes,specific,general_caution,general_caution,generic,no,"Increased toxicity for drugs with a narrow therapeutic index in dehydration / Various / Digoxin, immunosuppressants, lithium, metformin, warfarin","Victoria DH clinicians page, line 92",pass1_keyword_then_read
+VIC,loop_diuretics,yes,specific,general_caution,general_caution,generic,no,"Diuretics / Frusemide, hydrochlorothiazide, acetazolamide, aldosterone","Victoria DH clinicians page, line 82",pass1_keyword_then_read
+VIC,thiazides,yes,specific,general_caution,general_caution,generic,no,"Diuretics / Frusemide, hydrochlorothiazide, acetazolamide, aldosterone","Victoria DH clinicians page, line 82",pass1_keyword_then_read
+VIC,acei_arb,yes,specific,general_caution,general_caution,generic,no,"Angiotensin-converting enzyme (ACE) inhibitors / Enalapril, perindopril, ramipril / Dehydration","Victoria DH clinicians page, line 78",pass1_keyword_then_read
+VIC,sglt2,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,insulin,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,metformin,yes,specific,general_caution,general_caution,generic,no,"Increased toxicity for drugs with a narrow therapeutic index in dehydration / Various / Digoxin, immunosuppressants, lithium, metformin, warfarin","Victoria DH clinicians page, line 92",pass1_keyword_then_read
+VIC,anticholinergics_oxybutynin,yes,specific,general_caution,general_caution,generic,no,"Other anticholinergics / Benztropine, hyoscine, clozapine, olanzapine, quetiapine, oxybutynin, solifenacin","Victoria DH clinicians page, line 67",pass1_keyword_then_read
+VIC,antipsychotics_clozapine,yes,specific,general_caution,general_caution,generic,no,"Antipsychotic drugs / Clozapine, olanzapine, quetiapine, risperidone","Victoria DH clinicians page, line 71",pass1_keyword_then_read
+VIC,ssri,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,topiramate_zonisamide,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,adhd_stimulants,yes,specific,general_caution,general_caution,generic,no,"Stimulants / Amphetamines, cocaine, thyroxine","Victoria DH clinicians page, line 73",pass1_keyword_then_read
+VIC,beta_blockers,yes,specific,general_caution,general_caution,generic,no,"Reduced vasodilation / Beta-blockers / Atenolol, metoprolol, propranolol","Victoria DH clinicians page, line 55",pass1_keyword_then_read
+VIC,opioid_patches_fentanyl,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,epinephrine_autoinjector,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,ccb,yes,specific,general_caution,general_caution,generic,no,"All antihypertensives, particularly vasodilators such as nitrates and calcium channel blockers / Nitrates: glyceryl trinitrate, isosorbide mononitrate / Calcium channel blockers: Amlodipine, felodipine, nifedipine","Victoria DH clinicians page, line 87",pass1_keyword_then_read
+VIC,nitrates,yes,specific,general_caution,general_caution,generic,no,"All antihypertensives, particularly vasodilators such as nitrates and calcium channel blockers / Nitrates: glyceryl trinitrate, isosorbide mononitrate / Calcium channel blockers: Amlodipine, felodipine, nifedipine","Victoria DH clinicians page, line 87",pass1_keyword_then_read
+VIC,nsaids,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,acetaminophen,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,tca,yes,specific,general_caution,general_caution,generic,no,"Anticholinergics – tricyclic antidepressants / Amitriptyline, clomipramine, dothiepin","Victoria DH clinicians page, line 60",pass1_keyword_then_read
+VIC,antihistamines_1stgen,yes,specific,general_caution,general_caution,generic,no,"Anticholinergics – sedating antihistamines / Promethazine, doxylamine, diphenhydramine","Victoria DH clinicians page, line 62",pass1_keyword_then_read
+VIC,antiparkinson,yes,specific,general_caution,general_caution,generic,no,"Other anticholinergics / Benztropine, hyoscine, clozapine, olanzapine, quetiapine, oxybutynin, solifenacin","Victoria DH clinicians page, line 67",pass1_keyword_then_read
+VIC,benzodiazepines_anxiolytics,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,carbamazepine_oxcarbazepine,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,digoxin,yes,specific,general_caution,general_caution,generic,no,"Increased toxicity for drugs with a narrow therapeutic index in dehydration / Various / Digoxin, immunosuppressants, lithium, metformin, warfarin","Victoria DH clinicians page, line 92",pass1_keyword_then_read
+VIC,levothyroxine,yes,specific,general_caution,general_caution,generic,no,"Stimulants / Amphetamines, cocaine, thyroxine","Victoria DH clinicians page, line 74",pass1_keyword_then_read
+VIC,laxatives,yes,specific,general_caution,general_caution,generic,no,"Stimulant laxatives / Senna extract, bisacodyl","Victoria DH clinicians page, line 84",pass1_keyword_then_read
+VIC,snri,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,glp1_dpp4,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,sulfonylureas,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,cholinesterase_inhibitors,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,photosensitizing_antimicrobials,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,inhalers,no,none,none,none,none,no,,,pass1_keyword_then_read
+VIC,transdermal_other,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,lithium,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,loop_diuretics,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,thiazides,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,acei_arb,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,sglt2,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,insulin,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,metformin,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,anticholinergics_oxybutynin,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,antipsychotics_clozapine,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,ssri,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,topiramate_zonisamide,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,adhd_stimulants,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,beta_blockers,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,opioid_patches_fentanyl,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,epinephrine_autoinjector,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,ccb,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,nitrates,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,nsaids,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,acetaminophen,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,tca,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,antihistamines_1stgen,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,antiparkinson,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,benzodiazepines_anxiolytics,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,carbamazepine_oxcarbazepine,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,digoxin,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,levothyroxine,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,laxatives,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,snri,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,glp1_dpp4,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,sulfonylureas,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,cholinesterase_inhibitors,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,photosensitizing_antimicrobials,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,inhalers,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_BMG,transdermal_other,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,lithium,yes,specific,monitor,monitor,specific,yes,"Lithium Spiegelkontrolle. Besondere Vorsicht bei Polyurie / Diabetes / insipidus / 45 (35, 36)","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,loop_diuretics,no,umbrella,none,none,none,no,"Diuretika Gewichtsmonitoring, ausreichende Flüssigkeits- und ggf. / Elektrolytzufuhr / ? ? 22, 33, 50, 56,","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,thiazides,no,umbrella,none,none,none,no,"Diuretika Gewichtsmonitoring, ausreichende Flüssigkeits- und ggf. / Elektrolytzufuhr / ? ? 22, 33, 50, 56,","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,acei_arb,yes,specific,monitor,monitor,specific,yes,"ACE-Hemmer, AT1-Rezeptor-Antagonisten Trinkprotokoll führen um adäquate Flüssigkeitszufuhr zu / überwachen. / ? 30, 32, 56, 57,","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,sglt2,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,insulin,yes,specific,adjust_dose,adjust_dose;monitor,specific,yes,"Subcutan applizierte Arzneimittel (schnell wirksames Insulin) Intensivierte Überwachung, ggf. Dosisanpassung 24, 39","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 2",pass1_keyword_then_read
+GER_HEID,metformin,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,anticholinergics_oxybutynin,yes,specific,hold_or_substitute,hold_or_substitute,specific,yes,"Urologische anticholinerge Spasmolytika / (z. B. Oxybutynin, Solifenacin, Tolterodin) / Therapiewechsel auf weniger anticholinerge Vertreter","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 2",pass1_keyword_then_read
+GER_HEID,antipsychotics_clozapine,yes,specific,adjust_dose,adjust_dose;monitor,specific,yes,"Perazin, Perphenazin, Thioridazin, aber auch Clozapin, Olanzapin, / Pimozid, Quetiapin, Risperidon, sowie Butyrophenone wie / Benperidol, Bromperidol, Haloperidol, Melperon, Pipamperon) / Enges UAW-Monitoring und ggf. Dosisanpassung 5,7, 23, 27, 29,","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,ssri,yes,specific,general_caution,general_caution,generic,yes,"SSRI, SNRI (insb. auch in Kombination mit Lithium), / NDRI (Bupropion) / 31 (35, 36), 59,","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 2",pass1_keyword_then_read
+GER_HEID,topiramate_zonisamide,yes,specific,general_caution,general_caution,generic,yes,"Topiramat, Zonisamid 11-14","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 2",pass1_keyword_then_read
+GER_HEID,adhd_stimulants,yes,specific,monitor,monitor,specific,yes,"Sympathomimetika, zentral wirkend / (z. B. Methylphenidat, Modafinil) / Enges UAW-Monitoring 6, 43, 52, 53,","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 2",pass1_keyword_then_read
+GER_HEID,beta_blockers,yes,specific,general_caution,general_caution,generic,yes,"Betablocker 4, 58, 59","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,opioid_patches_fentanyl,yes,specific,adjust_dose,adjust_dose;monitor,specific,yes,"Opioide als transdermale therapeutische Systeme (Pflaster) Enges UAW-Monitoring und ggf. Dosisanpassung 1, 7, 21, 34, 44","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 2",pass1_keyword_then_read
+GER_HEID,epinephrine_autoinjector,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,ccb,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,nitrates,yes,specific,general_caution,general_caution,generic,yes,"Transdermale therapeutische Systeme (Pflaster, z. B. organische / Nitrate, Testosteron, Nicotin) / 15, 16, 17, 18,","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 2",pass1_keyword_then_read
+GER_HEID,nsaids,yes,specific,general_caution,general_caution,generic,yes,"NSAID (inkl. COX-2 Hemmer) ? 41, 42, 57, 60","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,acetaminophen,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,tca,yes,specific,hold_or_substitute,hold_or_substitute,specific,yes,"Trizyklika / (z. B. Amitriptylin, Desipramin, Doxepin) / Möglichst vermeiden, Therapiewechsel auf weniger","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 2",pass1_keyword_then_read
+GER_HEID,antihistamines_1stgen,yes,specific,hold_or_substitute,hold_or_substitute,specific,yes,"(z. B. Clemastin, Cyproheptadin, Dimetinden, Diphenhydramin, / Doxylamin, Hydroxycin, Promethazin) / Wechsel auf H1-Antagonisten höherer Generationen / erwägen / 45, 59","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,antiparkinson,yes,specific,general_caution,general_caution,generic,yes,"Anticholinerge Antiparkinsonika / (z. B. Trihexiphenidyl, Procyclidin) / 8, 25, 58, 59","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,benzodiazepines_anxiolytics,yes,specific,adjust_dose,adjust_dose;monitor,specific,yes,"Benzodiazepine Enges UAW-Monitoring und ggf. Dosisanpassung 45, 59","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,carbamazepine_oxcarbazepine,yes,specific,general_caution,general_caution,generic,yes,"Carbamazepin, Oxcarbazepin, Eslicarbazepin 7,19, 59","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,digoxin,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,levothyroxine,yes,specific,monitor,monitor,specific,yes,Levothyroxin (bei arzneimittelinduzierter Hyperthyreose) TSH-Kontrolle 51,"Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,laxatives,yes,specific,monitor,monitor,specific,no,"Laxanzien (z. B. Bisacodyl, Natriumpicosulfat, Glaubersalz, / Bittersalz) / Gewichtsmonitoring, ausreichende Flüssigkeits- und ggf.","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 1",pass1_keyword_then_read
+GER_HEID,snri,yes,specific,general_caution,general_caution,generic,yes,"SSRI, SNRI (insb. auch in Kombination mit Lithium), / NDRI (Bupropion) / 31 (35, 36), 59,","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 2",pass1_keyword_then_read
+GER_HEID,glp1_dpp4,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,sulfonylureas,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,cholinesterase_inhibitors,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,photosensitizing_antimicrobials,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,inhalers,no,none,none,none,none,no,,,pass1_keyword_then_read
+GER_HEID,transdermal_other,yes,specific,general_caution,general_caution,generic,yes,"Transdermale therapeutische Systeme (Pflaster, z. B. organische / Nitrate, Testosteron, Nicotin) / 15, 16, 17, 18,","Heidelberger Hitze-Tabelle (Stand 07.07.2026), PDF p. 2",pass1_keyword_then_read

@@ -1,0 +1,288 @@
+<title>Cool-Aid and the System API</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+  /* Layout: the app's own frame (disclaimer strip, logo header, centered hero), then one card per part of the story.
+     Colors, type and card style are Cool-Aid's (web/src/styles/tokens.css, shadcn Card). The app is light-mode only, so this page is too. */
+  :root {
+    --page:#ffffff; --surface:#f7f7f5; --line:#d4d4d0; --line-strong:#6b6b66;
+    --ink:#141414; --muted:#4b5563;
+    --teal:#0e7c86; --teal-ink:#0a5f66; --teal-tint:#d9f0f1;
+    --heat:#d55e00; --heat-ink:#a0410a; --heat-tint:#fbe3d6;
+    --graph:#3730a3; --graph-bg:#eef2ff;
+    --lit:#166534; --lit-bg:#f0fdf4;
+    --fda:#9a3412; --fda-bg:#fff7ed;
+    --pat:#9c3d74; --pat-bg:#f6e4ee;
+    --ok:#065f46; --ok-bg:#d1fae5;
+    --warn:#92400e; --warn-bg:#fef3c7;
+    --unv:#374151; --unv-bg:#e5e7eb;
+    --font: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --radius: 8px;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--page); color: var(--ink); font: 16px/1.55 var(--font); }
+  .gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .inner { max-width: 1040px; margin: 0 auto; }
+  h1, h2, h3 { text-wrap: balance; line-height: 1.2; margin: 0; letter-spacing: -.015em; }
+  p { margin: 0; }
+  .muted { color: var(--muted); }
+
+  /* App frame */
+  .strip { background: var(--surface); border-bottom: 1px solid var(--line); padding-block: 4px; text-align: center; font-size: 12px; color: var(--muted); }
+  .bar { border-bottom: 1px solid var(--line); padding-block: 12px; }
+  .bar .inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; }
+  .logo { display: inline-flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 800; letter-spacing: -.02em; color: var(--teal); }
+  .logo svg { width: 28px; height: 28px; }
+  .bar .where { font-size: 14px; font-weight: 600; color: var(--ink); border-bottom: 2px solid var(--ink); padding-bottom: 2px; }
+
+  main .inner { display: grid; gap: 20px; padding-block: 40px 56px; }
+  .hero { text-align: center; display: grid; gap: 12px; justify-items: center; padding-bottom: 12px; }
+  .hero .eyebrow { font-size: 14px; font-weight: 500; color: var(--muted); }
+  .hero h1 { font-size: clamp(30px, 5vw, 48px); font-weight: 600; max-width: 18ch; }
+  .hero p { max-width: 62ch; font-size: 18px; color: var(--muted); }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .stat { border: 1px solid var(--line); border-radius: var(--radius); background: var(--page); box-shadow: 0 1px 2px rgba(20,20,20,.05); padding: 16px 18px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+  .stat .n { font-size: 30px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; color: var(--teal); }
+  .stat .t { font-size: 14px; color: var(--muted); line-height: 1.4; }
+
+  .card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--page); box-shadow: 0 1px 2px rgba(20,20,20,.05); padding: 24px; display: grid; gap: 14px; min-width: 0; }
+  @media (max-width: 560px) { .card { padding: 18px 16px; } }
+  .card h2 { font-size: 24px; font-weight: 600; }
+  .card > p { max-width: 70ch; }
+  .tag { justify-self: start; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; border: 1px solid; padding: 1px 10px; font-size: 12.5px; font-weight: 700; }
+  .tag.sys { color: var(--graph); background: var(--graph-bg); border-color: var(--graph); }
+  .tag.plain { color: var(--teal-ink); background: var(--teal-tint); border-color: var(--teal-ink); }
+  .take { background: var(--teal-tint); color: var(--teal-ink); border-radius: var(--radius); padding: 12px 16px; font-weight: 600; }
+
+  .lanes { display: grid; gap: 8px; }
+  .lane { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 14px; align-items: baseline; font-size: 14.5px; border-radius: var(--radius); padding: 12px 16px; border: 1px solid; }
+  .lane h3 { font-size: 15px; font-weight: 700; }
+  .lane ul { margin: 0; padding-left: 18px; font-size: 14.5px; }
+  .lane li + li { margin-top: 2px; }
+  @media (max-width: 600px) { .lane { grid-template-columns: 1fr; gap: 4px; } }
+  .kb { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 15px; }
+  .kb .arrow { color: var(--muted); }
+  .kb .pill { border-radius: 999px; padding: 4px 12px; background: var(--teal); color: #ffffff; font-weight: 700; }
+
+  .jobs { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .job { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 4px; align-content: start; }
+  .job .h { font-size: 13px; font-weight: 700; color: var(--teal-ink); letter-spacing: .02em; }
+  .job .k { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .job .d { font-size: 14px; color: var(--muted); }
+
+  .chart { overflow-x: auto; }
+  h3.sub { font-size: 15px; font-weight: 700; margin-top: 6px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13.5px; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend .chip { font-style: normal; min-width: 30px; height: 22px; font-size: 12px; }
+  svg { display: block; width: 100%; height: auto; }
+  svg text { font-family: var(--font); }
+
+  .rules { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
+  .rules li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; align-items: start; }
+  .chip { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 24px; padding: 0 6px; border-radius: 999px; font-size: 12.5px; font-weight: 800; border: 1.5px solid; }
+
+  footer { border-top: 1px solid var(--line); }
+  footer .inner { padding-block: 20px 32px; font-size: 13px; color: var(--muted); display: grid; gap: 4px; }
+</style>
+
+<div class="strip gutter">Prototype with synthetic patients. Not medical advice.</div>
+<div class="bar gutter">
+  <div class="inner">
+    <span class="logo">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><g transform="rotate(-45 32 32)"><rect x="6" y="19" width="52" height="26" rx="13" fill="#0e7c86"/><path d="M19 19h13v26H19a13 13 0 0 1 0-26z" fill="#d55e00"/><rect x="31" y="19" width="2" height="26" fill="#ffffff"/></g></svg>
+      Cool-Aid
+    </span>
+    <span class="where">Built on the System Public Graph</span>
+  </div>
+</div>
+
+<main class="gutter">
+  <div class="inner">
+    <section class="hero">
+      <p class="eyebrow">Heat wave forecast · Bronx clinic · June 24, 2025 (replay)</p>
+      <h1>How Cool-Aid uses the System API</h1>
+      <p>Which patients are at risk in a heat wave because of their medicines? System is how we found the evidence, and how we checked it.</p>
+    </section>
+
+    <div class="stats">
+      <div class="stat"><div class="n">15,001</div><div class="t">System findings pulled</div></div>
+      <div class="stat"><div class="n">38</div><div class="t">medicine → body ← heat pathways</div></div>
+      <div class="stat"><div class="n">80 of 83</div><div class="t">cited papers found in System</div></div>
+      <div class="stat"><div class="n">0</div><div class="t">conflicts with our numbers</div></div>
+    </div>
+
+    <section class="card" aria-labelledby="h-data">
+      <span class="tag plain">The data</span>
+      <h2 id="h-data">Five data sources, one evidence base</h2>
+      <div class="lanes">
+        <div class="lane" style="border-color:var(--graph);background:var(--graph-bg)">
+          <h3 style="color:var(--graph)">System Public Graph</h3>
+<p>Live API (40.3M studies) + Dataverse bulk release</p>
+        </div>
+        <div class="lane" style="border-color:var(--lit);background:var(--lit-bg)">
+          <h3 style="color:var(--lit)">Medical literature</h3>
+<p>5,995 records screened → 83 papers cited</p>
+        </div>
+        <div class="lane" style="border-color:var(--fda);background:var(--fda-bg)">
+          <h3 style="color:var(--fda)">FDA &amp; guidance</h3>
+<p>Drug labels, adverse-event reports, 13 guidance documents</p>
+        </div>
+        <div class="lane" style="border-color:var(--teal);background:var(--teal-tint)">
+          <h3 style="color:var(--teal-ink)">Place &amp; climate</h3>
+<p>HeatRisk forecasts, vulnerability maps, 1,868 cooling places</p>
+        </div>
+        <div class="lane" style="border-color:var(--pat);background:var(--pat-bg)">
+          <h3 style="color:var(--pat)">Patients (synthetic)</h3>
+<p>300 synthetic patients, no real data</p>
+        </div>
+      </div>
+      <div class="kb"><span class="muted">→</span><span class="pill">15 medicine groups</span><span class="pill">101 sourced claims</span></div>
+    </section>
+
+    <section class="card" aria-labelledby="h-jobs">
+      <span class="tag sys">System API</span>
+      <h2 id="h-jobs">Four jobs for System</h2>
+      <div class="jobs">
+        <div class="job"><span class="h">FIND</span><span class="k">38 pathways</span><span class="d">medicine and heat, same weak spot</span></div>
+        <div class="job"><span class="h">CHECK</span><span class="k">7 papers match</span><span class="d">same paper, same number</span></div>
+        <div class="job"><span class="h">SPOT GAPS</span><span class="k">0 to 2 studies</span><span class="d">for sweat-blocking medicines</span></div>
+        <div class="job"><span class="h">POWER THE APP</span><span class="k">Live</span><span class="d">study counts in the app</span></div>
+      </div>
+      <p class="muted">1,902 API calls, all cached and rerunnable.</p>
+    </section>
+
+    <section class="card" aria-labelledby="h-find">
+      <span class="tag sys">Find</span>
+      <h2 id="h-find">From 5.9 million findings to 38 pathways</h2>
+      <p>Join two well-studied halves: <b>medicine → body effect ← heat</b>.</p>
+      <div class="chart" id="find" role="img" aria-label="Funnel: 5.9 million findings, 15,001 match our terms, 912 link a medicine or heat to a body effect, 806 after dropping blood-pressure trials, 38 pathways"></div>
+      <p class="take">For 22 of these 38, no study has tested the medicine in the heat; System connects the two halves.</p>
+    </section>
+
+    <section class="card" aria-labelledby="h-check">
+      <span class="tag sys">Check</span>
+      <h2 id="h-check">Did System read the papers the same way we did?</h2>
+      <p>We pulled every number from each paper ourselves. System pulls numbers from papers too. Where both read the same paper, we compared.</p>
+      <div class="chart" id="check" role="img" aria-label="83 papers we cite; System has 80; System pulled numbers from 15; of those 15, 7 match our number, 3 System labeled with the wrong drug, 5 are about a different result"></div>
+      <p class="take">System nearly always found the same result as us. If the results were different, we hid the data from our service.</p>
+    </section>
+
+    <section class="card" aria-labelledby="h-gaps">
+      <span class="tag sys">Spot gaps</span>
+      <h2 id="h-gaps">Where the evidence is thin</h2>
+      <p>Sweat-blocking medicines barely appear, so Cool-Aid marks them "Early signs".</p>
+      <div class="chart" id="gaps" role="img" aria-label="System studies linking each medicine group to a heat-related body effect"></div>
+    </section>
+
+    <section class="card" aria-labelledby="h-more">
+      <span class="tag sys">Reverse check</span>
+      <h2 id="h-more">What System found that we missed</h2>
+      <div class="stats">
+        <div class="stat"><div class="n">36</div><div class="t">unused findings on our papers</div></div>
+        <div class="stat"><div class="n">15</div><div class="t">papers we were missing</div></div>
+        <div class="stat"><div class="n">OR 2.21</div><div class="t">heat → drug-induced low sodium</div></div>
+        <div class="stat"><div class="n">n = 63</div><div class="t">new lithium-vs-temperature study</div></div>
+      </div>
+      <p class="muted">A person checks each one before it reaches the app.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="gutter">
+  <div class="inner">
+    <p>Prototype with synthetic patients. Not medical advice.</p>
+    <p>Sources: System Public Graph (14 Nov 2026), PubMed, openFDA, NWS, NOAA, CDC, NYC open data.</p>
+  </div>
+</footer>
+
+<script>
+const C = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = n => n.toLocaleString('en-US');
+const F = 'font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"';
+
+// Find: stepped funnel; band width on a log scale (5.9M next to 38 would not show otherwise).
+(function () {
+  const steps = [
+    { n: 5944001, s: '5.9M', label: 'All findings in System' },
+    { n: 15001, label: 'About our medicines or heat' },
+    { n: 912, label: 'Linked to a body effect' },
+    { n: 806, label: 'Minus blood-pressure trials' },
+    { n: 38, label: 'Pathways', solid: true },
+  ];
+  const W = 900, bandH = 46, gap = 10, maxW = 360, minW = 60, cx = 190, tx = 400;
+  const lo = Math.log10(38), hi = Math.log10(5944001);
+  const wd = v => minW + (maxW - minW) * (Math.log10(v) - lo) / (hi - lo);
+  const H = steps.length * (bandH + gap) - gap + 22;
+  let s = `<svg viewBox="0 0 ${W} ${H}" ${F}>`;
+  steps.forEach((st, i) => {
+    const y = i * (bandH + gap), w = wd(st.n);
+    if (i) { const pw = wd(steps[i - 1].n), py = y - gap;
+      s += `<polygon points="${cx - pw / 2},${py} ${cx + pw / 2},${py} ${cx + w / 2},${y} ${cx - w / 2},${y}" fill="${C('--teal')}" opacity=".14"/>`; }
+    s += `<rect x="${cx - w / 2}" y="${y}" width="${w}" height="${bandH}" rx="8" fill="${st.solid ? C('--teal') : C('--teal-tint')}" stroke="${C('--teal')}" stroke-width="1.5"/>`;
+    s += `<text x="${cx}" y="${y + bandH / 2 + 7}" text-anchor="middle" font-size="20" font-weight="700" fill="${st.solid ? '#ffffff' : C('--teal-ink')}">${st.s || fmt(st.n)}</text>`;
+    s += `<text x="${tx}" y="${y + bandH / 2 + 5}" font-size="15" font-weight="700" fill="${C('--ink')}">${st.label}</text>`;
+  });
+  s += `<text x="${cx}" y="${H - 4}" text-anchor="middle" font-size="12" fill="${C('--muted')}">band width on a log scale</text>`;
+  document.getElementById('find').innerHTML = s + '</svg>';
+})();
+
+// Check 1: papers System could check, then what the 15 showed.
+(function () {
+  const W = 900, x0 = 230, pw = 600, rh = 46;
+  const rows = [
+    { n: 83, label: 'Papers we cite' },
+    { n: 80, label: 'System has the paper' },
+    { n: 15, label: 'System pulled numbers' },
+  ];
+  const H = 3 * rh + 22 + 90;
+  let s = `<svg viewBox="0 0 ${W} ${H}" ${F}>`;
+  rows.forEach((r, i) => {
+    const y = i * rh, w = pw * r.n / 83;
+    s += `<text x="${x0 - 12}" y="${y + 25}" text-anchor="end" font-size="14" font-weight="600" fill="${C('--ink')}">${r.label}</text>`;
+    s += `<rect x="${x0}" y="${y + 6}" width="${w}" height="28" rx="6" fill="${C('--teal-tint')}" stroke="${C('--teal')}" stroke-width="1.5"/>`;
+    s += `<text x="${x0 + w + 8}" y="${y + 26}" font-size="15" font-weight="700" fill="${C('--teal-ink')}">${r.n}</text>`;
+  });
+  // zoom-in: the 15 papers, full width
+  const y15 = 2 * rh + 6, w15 = pw * 15 / 83, zy = 3 * rh + 22;
+  s += `<polygon points="${x0},${y15 + 28} ${x0 + w15},${y15 + 28} ${x0 + pw},${zy} ${x0},${zy}" fill="${C('--teal')}" opacity=".10"/>`;
+  s += `<text x="${x0 - 12}" y="${zy + 22}" text-anchor="end" font-size="14" font-weight="600" fill="${C('--ink')}">Those 15 papers</text>`;
+  const segs = [
+    { n: 7, label: 'same number as ours', fill: C('--ok'), ink: '#ffffff', stroke: C('--ok') },
+    { n: 3, label: 'wrong drug', fill: C('--warn-bg'), ink: C('--warn'), stroke: C('--warn') },
+    { n: 5, label: 'a different result', fill: C('--unv-bg'), ink: C('--unv'), stroke: C('--line-strong') },
+  ];
+  let x = x0;
+  segs.forEach(g => { const w = pw * g.n / 15;
+    s += `<rect x="${x + 1}" y="${zy}" width="${w - 2}" height="36" rx="6" fill="${g.fill}" stroke="${g.stroke}" stroke-width="1.5"/>`;
+    s += `<text x="${x + w / 2}" y="${zy + 23}" text-anchor="middle" font-size="15" font-weight="800" fill="${g.ink}">${g.n}</text>`;
+    s += `<text x="${x + w / 2}" y="${zy + 56}" text-anchor="middle" font-size="13" font-weight="600" fill="${g.stroke === C('--line-strong') ? C('--muted') : g.stroke}">${g.label}</text>`;
+    x += w; });
+  document.getElementById('check').innerHTML = s + '</svg>';
+})();
+
+// Spot gaps: System studies per medicine group (kidney, sodium and fluid effects).
+(function () {
+  const d = [['ACE inhibitors / ARBs', 57], ['Loop diuretics', 44], ['SGLT2 inhibitors', 41], ['Thiazides', 29], ['SSRIs', 22], ['Insulin', 14],
+    ['Metformin', 13], ['Beta blockers', 13], ['Opioid patches', 13], ['Antipsychotics', 12], ['Lithium', 2], ['Anticholinergics', 2],
+    ['ADHD stimulants', 1], ['Topiramate / zonisamide', 0], ['Epinephrine auto-injectors', 0]];
+  const thin = new Set(['Anticholinergics', 'ADHD stimulants', 'Topiramate / zonisamide']);
+  const W = 900, x0 = 220, pw = 580, rh = 26, top = 30, H = top + d.length * rh + 26;
+  let s = `<svg viewBox="0 0 ${W} ${H}" ${F}>`;
+  s += `<rect x="${x0}" y="4" width="12" height="12" rx="3" fill="${C('--teal')}"/><text x="${x0 + 18}" y="14" font-size="12.5" fill="${C('--muted')}">System studies per medicine</text>`;
+  s += `<rect x="${x0}" y="20" width="0" height="0" fill="none"/>`;
+  [0, 20, 40, 60].forEach(t => { const x = x0 + pw * t / 60;
+    s += `<line x1="${x}" x2="${x}" y1="${top}" y2="${top + d.length * rh}" stroke="${C('--line')}" stroke-dasharray="2 3"/>`;
+    s += `<text x="${x}" y="${top + d.length * rh + 18}" text-anchor="middle" font-size="12" fill="${C('--muted')}">${t}</text>`; });
+  d.forEach(([name, n], i) => { const y = top + i * rh, w = Math.max(3, pw * n / 60), hot = thin.has(name);
+    s += `<text x="${x0 - 10}" y="${y + 17}" text-anchor="end" font-size="13" fill="${C('--ink')}" ${hot ? 'font-weight="700"' : ''}>${name}</text>`;
+    s += `<rect x="${x0}" y="${y + 5}" width="${w}" height="${rh - 10}" rx="4" fill="${hot ? C('--heat') : C('--teal')}"/>`;
+    s += `<text x="${x0 + w + 6}" y="${y + 17}" font-size="12.5" font-weight="700" fill="${hot ? C('--heat-ink') : C('--ink')}">${n}</text>`; });
+  document.getElementById('gaps').innerHTML = s + '</svg>';
+})();
+</script>

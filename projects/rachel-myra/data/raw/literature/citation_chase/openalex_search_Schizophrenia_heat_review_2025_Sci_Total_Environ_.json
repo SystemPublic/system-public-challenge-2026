@@ -1,0 +1,2303 @@
+[
+ {
+  "id": "https://openalex.org/W4412707851",
+  "doi": "https://doi.org/10.1016/j.scitotenv.2025.179965",
+  "title": "Susceptibility of persons with schizophrenia to extreme heat: A critical review of physiological, behavioural, and social factors",
+  "publication_year": 2025,
+  "ids": {
+   "openalex": "https://openalex.org/W4412707851",
+   "doi": "https://doi.org/10.1016/j.scitotenv.2025.179965",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/40714605"
+  },
+  "primary_location": {
+   "id": "doi:10.1016/j.scitotenv.2025.179965",
+   "doi": "https://doi.org/10.1016/j.scitotenv.2025.179965",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1016/j.scitotenv.2025.179965",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S86852077",
+    "display_name": "The Science of The Total Environment",
+    "issn_l": "0048-9697",
+    "issn": [
+     "0048-9697",
+     "1879-1026"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-class-a",
+     "anvur-scientific",
+     "cwts-core",
+     "jufo-2",
+     "medline",
+     "norway-2",
+     "poland-200",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320990",
+    "host_organization_name": "Elsevier BV",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320990"
+    ],
+    "host_organization_lineage_names": [
+     "Elsevier BV"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by-nc",
+   "license_id": "https://openalex.org/licenses/cc-by-nc",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Science of The Total Environment",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 14,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5005754752",
+     "display_name": "Nathalie V. Kirby",
+     "orcid": "https://orcid.org/0000-0002-2899-2115",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2899-2115"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I153718931",
+      "display_name": "University of Ottawa",
+      "ror": "https://ror.org/03c4mmv16",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I153718931"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Nathalie V. Kirby",
+    "raw_affiliation_strings": [
+     "Human and Environmental Physiology Research Unit, School of Human Kinetics, University of Ottawa, Ottawa, ON, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Human and Environmental Physiology Research Unit, School of Human Kinetics, University of Ottawa, Ottawa, ON, Canada",
+      "institution_ids": [
+       "https://openalex.org/I153718931"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5069705848",
+     "display_name": "Emily J. Tetzlaff",
+     "orcid": "https://orcid.org/0000-0002-4192-474X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4192-474X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I153718931",
+      "display_name": "University of Ottawa",
+      "ror": "https://ror.org/03c4mmv16",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I153718931"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Emily J. Tetzlaff",
+    "raw_affiliation_strings": [
+     "Human and Environmental Physiology Research Unit, School of Human Kinetics, University of Ottawa, Ottawa, ON, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Human and Environmental Physiology Research Unit, School of Human Kinetics, University of Ottawa, Ottawa, ON, Canada",
+      "institution_ids": [
+       "https://openalex.org/I153718931"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5045192255",
+     "display_name": "Sean A. Kidd",
+     "orcid": "https://orcid.org/0000-0002-2435-786X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2435-786X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1338135719",
+      "display_name": "Centre for Addiction and Mental Health",
+      "ror": "https://ror.org/03e71c577",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1338135719"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I185261750",
+      "display_name": "University of Toronto",
+      "ror": "https://ror.org/03dbr7087",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Sean A. Kidd",
+    "raw_affiliation_strings": [
+     "Centre for Addiction and Mental Health, Toronto, ON, Canada; Department of Psychiatry, Temerty Faculty of Medicine, University of Toronto, Toronto, ON, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Addiction and Mental Health, Toronto, ON, Canada; Department of Psychiatry, Temerty Faculty of Medicine, University of Toronto, Toronto, ON, Canada",
+      "institution_ids": [
+       "https://openalex.org/I1338135719",
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5019969185",
+     "display_name": "Eric E. Brown",
+     "orcid": "https://orcid.org/0000-0002-1575-2606",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1575-2606"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1338135719",
+      "display_name": "Centre for Addiction and Mental Health",
+      "ror": "https://ror.org/03e71c577",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1338135719"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I185261750",
+      "display_name": "University of Toronto",
+      "ror": "https://ror.org/03dbr7087",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Eric E. Brown",
+    "raw_affiliation_strings": [
+     "Centre for Addiction and Mental Health, Toronto, ON, Canada; Department of Psychiatry, Temerty Faculty of Medicine, University of Toronto, Toronto, ON, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Addiction and Mental Health, Toronto, ON, Canada; Department of Psychiatry, Temerty Faculty of Medicine, University of Toronto, Toronto, ON, Canada",
+      "institution_ids": [
+       "https://openalex.org/I1338135719",
+       "https://openalex.org/I185261750"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5004270047",
+     "display_name": "Mariya Bezgrebelna",
+     "orcid": "https://orcid.org/0009-0005-3765-7692",
+     "observed_orcids": [
+      "https://orcid.org/0009-0005-3765-7692"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1338135719",
+      "display_name": "Centre for Addiction and Mental Health",
+      "ror": "https://ror.org/03e71c577",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1338135719"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Mariya Bezgrebelna",
+    "raw_affiliation_strings": [
+     "Centre for Addiction and Mental Health, Toronto, ON, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Addiction and Mental Health, Toronto, ON, Canada",
+      "institution_ids": [
+       "https://openalex.org/I1338135719"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5060057610",
+     "display_name": "Liv Yoon",
+     "orcid": "https://orcid.org/0000-0003-2330-1159",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2330-1159"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I141945490",
+      "display_name": "University of British Columbia",
+      "ror": "https://ror.org/03rmrcq20",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I141945490"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Liv Yoon",
+    "raw_affiliation_strings": [
+     "School of Kinesiology, University of British Columbia, Vancouver, BC, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Kinesiology, University of British Columbia, Vancouver, BC, Canada",
+      "institution_ids": [
+       "https://openalex.org/I141945490"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5038407278",
+     "display_name": "Sarah B. Henderson",
+     "orcid": "https://orcid.org/0000-0002-3329-184X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3329-184X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I2802940977",
+      "display_name": "BC Centre for Disease Control",
+      "ror": "https://ror.org/05jyzx602",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1308729876",
+       "https://openalex.org/I156965999",
+       "https://openalex.org/I2802940977"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Sarah B. Henderson",
+    "raw_affiliation_strings": [
+     "Environmental Health Services, BC Centre for Disease Control, Vancouver, BC, Canada"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Environmental Health Services, BC Centre for Disease Control, Vancouver, BC, Canada",
+      "institution_ids": [
+       "https://openalex.org/I2802940977"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5053621769",
+     "display_name": "Glen Patrick Kenny",
+     "orcid": "https://orcid.org/0000-0001-8683-6973",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8683-6973"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I153718931",
+      "display_name": "University of Ottawa",
+      "ror": "https://ror.org/03c4mmv16",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I153718931"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4388482656",
+      "display_name": "Ottawa Hospital Research Institute",
+      "ror": "https://ror.org/05jtef216",
+      "country_code": "CA",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I153718931",
+       "https://openalex.org/I2800722420",
+       "https://openalex.org/I4388482656"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Glen P. Kenny",
+    "raw_affiliation_strings": [
+     "Human and Environmental Physiology Research Unit, School of Human Kinetics, University of Ottawa, Ottawa, ON, Canada; Clinical Epidemiology Program, Ottawa Hospital Research Institute, Ottawa, ON, Canada. Electronic address: gkenny@uottawa.ca"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Human and Environmental Physiology Research Unit, School of Human Kinetics, University of Ottawa, Ottawa, ON, Canada; Clinical Epidemiology Program, Ottawa Hospital Research Institute, Ottawa, ON, Canada. Electronic address: gkenny@uottawa.ca",
+      "institution_ids": [
+       "https://openalex.org/I153718931",
+       "https://openalex.org/I4388482656"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7225741194",
+  "doi": "https://doi.org/10.22541/authorea.15011916/v1",
+  "title": "Psychotropic medication safety during extreme heat",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7225741194",
+   "doi": "https://doi.org/10.22541/authorea.15011916/v1"
+  },
+  "primary_location": {
+   "id": "doi:10.22541/authorea.15011916/v1",
+   "doi": "https://doi.org/10.22541/authorea.15011916/v1",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.22541/authorea.15011916/v1",
+   "pdf_url": "https://www.authorea.com/doi/pdf/10.22541/authorea.15011916/v1",
+   "source": null,
+   "license": null,
+   "license_id": null,
+   "version": "submittedVersion",
+   "is_accepted": false,
+   "is_published": false,
+   "raw_source_name": null,
+   "raw_type": "posted-content"
+  },
+  "type": "preprint",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5140829318",
+     "display_name": "Jared Kyle Sieusahai",
+     "orcid": "https://orcid.org/0009-0008-2174-1293",
+     "observed_orcids": [
+      "https://orcid.org/0009-0008-2174-1293"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I154425047",
+      "display_name": "University of Alberta",
+      "ror": "https://ror.org/0160cpw27",
+      "country_code": "CA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I154425047"
+      ]
+     }
+    ],
+    "countries": [
+     "CA"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Jared Sieusahai",
+    "raw_affiliation_strings": [
+     "University of Alberta Department of Medicine"
+    ],
+    "raw_orcid": "https://orcid.org/0009-0008-2174-1293",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Alberta Department of Medicine",
+      "institution_ids": [
+       "https://openalex.org/I154425047"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W3122208075",
+  "doi": "https://doi.org/10.1155/2021/8881770",
+  "title": "Oxidative Stress\u2010Related Mechanisms in Schizophrenia Pathogenesis and New Treatment Perspectives",
+  "publication_year": 2021,
+  "ids": {
+   "openalex": "https://openalex.org/W3122208075",
+   "doi": "https://doi.org/10.1155/2021/8881770",
+   "mag": "3122208075",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/33552387",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/7847339"
+  },
+  "primary_location": {
+   "id": "doi:10.1155/2021/8881770",
+   "doi": "https://doi.org/10.1155/2021/8881770",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1155/2021/8881770",
+   "pdf_url": "https://downloads.hindawi.com/journals/omcl/2021/8881770.pdf",
+   "source": {
+    "id": "https://openalex.org/S20935308",
+    "display_name": "Oxidative Medicine and Cellular Longevity",
+    "issn_l": "1942-0994",
+    "issn": [
+     "1942-0994",
+     "1942-0900"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "doyens",
+     "medline",
+     "poland-20"
+    ],
+    "host_organization": "https://openalex.org/P4310319869",
+    "host_organization_name": "Hindawi Publishing Corporation",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310319869",
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Hindawi Publishing Corporation",
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Oxidative Medicine and Cellular Longevity",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 257,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5024586103",
+     "display_name": "Evgeny A. Ermakov",
+     "orcid": "https://orcid.org/0000-0002-1084-6419",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1084-6419"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1313323035",
+      "display_name": "Russian Academy of Sciences",
+      "ror": "https://ror.org/05qrfxd25",
+      "country_code": "RU",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I1313323035"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210091979",
+      "display_name": "Institute of Chemical Biology and Fundamental Medicine",
+      "ror": "https://ror.org/00gmz2d02",
+      "country_code": "RU",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210091979",
+       "https://openalex.org/I4210129690"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210127387",
+      "display_name": "Siberian Branch of the Russian Academy of Sciences",
+      "ror": "https://ror.org/02frkq021",
+      "country_code": "RU",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210127387"
+      ]
+     }
+    ],
+    "countries": [
+     "RU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Evgeny A. Ermakov",
+    "raw_affiliation_strings": [
+     "Laboratory of Repair Enzymes, Institute of Chemical Biology and Fundamental Medicine, Siberian Division of Russian Academy of Sciences, Novosibirsk 630090, Russia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-1084-6419",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratory of Repair Enzymes, Institute of Chemical Biology and Fundamental Medicine, Siberian Division of Russian Academy of Sciences, Novosibirsk 630090, Russia",
+      "institution_ids": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210091979",
+       "https://openalex.org/I4210127387"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5056292889",
+     "display_name": "Elena M. Dmitrieva",
+     "orcid": "https://orcid.org/0000-0003-0914-5727",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-0914-5727"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1313323035",
+      "display_name": "Russian Academy of Sciences",
+      "ror": "https://ror.org/05qrfxd25",
+      "country_code": "RU",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I1313323035"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210114057",
+      "display_name": "Mental Health Research Institute, Tomsk National Research Medical Center, Russian Academy of Sciences",
+      "ror": "https://ror.org/026md7341",
+      "country_code": "RU",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210114057",
+       "https://openalex.org/I4210118499"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210118499",
+      "display_name": "Tomsk National Research Medical Center",
+      "ror": "https://ror.org/01z0w8p93",
+      "country_code": "RU",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210118499"
+      ]
+     }
+    ],
+    "countries": [
+     "RU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Elena M. Dmitrieva",
+    "raw_affiliation_strings": [
+     "Laboratory of Molecular Genetics and Biochemistry, Mental Health Research Institute, Tomsk National Research Medical Center of the Russian Academy of Sciences, Tomsk 634014, Russia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-0914-5727",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratory of Molecular Genetics and Biochemistry, Mental Health Research Institute, Tomsk National Research Medical Center of the Russian Academy of Sciences, Tomsk 634014, Russia",
+      "institution_ids": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210114057",
+       "https://openalex.org/I4210118499"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5112747528",
+     "display_name": "Daria A. Parshukova",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1313323035",
+      "display_name": "Russian Academy of Sciences",
+      "ror": "https://ror.org/05qrfxd25",
+      "country_code": "RU",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I1313323035"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210114057",
+      "display_name": "Mental Health Research Institute, Tomsk National Research Medical Center, Russian Academy of Sciences",
+      "ror": "https://ror.org/026md7341",
+      "country_code": "RU",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210114057",
+       "https://openalex.org/I4210118499"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210118499",
+      "display_name": "Tomsk National Research Medical Center",
+      "ror": "https://ror.org/01z0w8p93",
+      "country_code": "RU",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210118499"
+      ]
+     }
+    ],
+    "countries": [
+     "RU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Daria A. Parshukova",
+    "raw_affiliation_strings": [
+     "Laboratory of Molecular Genetics and Biochemistry, Mental Health Research Institute, Tomsk National Research Medical Center of the Russian Academy of Sciences, Tomsk 634014, Russia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-2760-0252",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratory of Molecular Genetics and Biochemistry, Mental Health Research Institute, Tomsk National Research Medical Center of the Russian Academy of Sciences, Tomsk 634014, Russia",
+      "institution_ids": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210114057",
+       "https://openalex.org/I4210118499"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5031152476",
+     "display_name": "Daria V. Kazantseva",
+     "orcid": "https://orcid.org/0000-0001-8050-269X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8050-269X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I196530094",
+      "display_name": "Siberian State Medical University",
+      "ror": "https://ror.org/01yecy831",
+      "country_code": "RU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I196530094"
+      ]
+     }
+    ],
+    "countries": [
+     "RU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Daria V. Kazantseva",
+    "raw_affiliation_strings": [
+     "Siberian State Medical University, Tomsk 634055, Russia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-8050-269X",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Siberian State Medical University, Tomsk 634055, Russia",
+      "institution_ids": [
+       "https://openalex.org/I196530094"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5053493654",
+     "display_name": "Alisa R. Vasilieva",
+     "orcid": "https://orcid.org/0000-0002-1636-3899",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1636-3899"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I196530094",
+      "display_name": "Siberian State Medical University",
+      "ror": "https://ror.org/01yecy831",
+      "country_code": "RU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I196530094"
+      ]
+     }
+    ],
+    "countries": [
+     "RU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Alisa R. Vasilieva",
+    "raw_affiliation_strings": [
+     "Siberian State Medical University, Tomsk 634055, Russia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-1636-3899",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Siberian State Medical University, Tomsk 634055, Russia",
+      "institution_ids": [
+       "https://openalex.org/I196530094"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5009939196",
+     "display_name": "Liudmila P. Smirnova",
+     "orcid": "https://orcid.org/0000-0003-0083-9124",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-0083-9124"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I1313323035",
+      "display_name": "Russian Academy of Sciences",
+      "ror": "https://ror.org/05qrfxd25",
+      "country_code": "RU",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I1313323035"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210114057",
+      "display_name": "Mental Health Research Institute, Tomsk National Research Medical Center, Russian Academy of Sciences",
+      "ror": "https://ror.org/026md7341",
+      "country_code": "RU",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210114057",
+       "https://openalex.org/I4210118499"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210118499",
+      "display_name": "Tomsk National Research Medical Center",
+      "ror": "https://ror.org/01z0w8p93",
+      "country_code": "RU",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210118499"
+      ]
+     }
+    ],
+    "countries": [
+     "RU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Liudmila P. Smirnova",
+    "raw_affiliation_strings": [
+     "Laboratory of Molecular Genetics and Biochemistry, Mental Health Research Institute, Tomsk National Research Medical Center of the Russian Academy of Sciences, Tomsk 634014, Russia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-0083-9124",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Laboratory of Molecular Genetics and Biochemistry, Mental Health Research Institute, Tomsk National Research Medical Center of the Russian Academy of Sciences, Tomsk 634014, Russia",
+      "institution_ids": [
+       "https://openalex.org/I1313323035",
+       "https://openalex.org/I4210114057",
+       "https://openalex.org/I4210118499"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W7165557422",
+  "doi": "https://doi.org/10.64898/2026.06.18.26355969",
+  "title": "The Effects of Extreme Heat on Mental Disorder Admissions in Hlabisa, South Africa: A 13-Year Time-Series Analysis",
+  "publication_year": 2026,
+  "ids": {
+   "openalex": "https://openalex.org/W7165557422",
+   "doi": "https://doi.org/10.64898/2026.06.18.26355969"
+  },
+  "primary_location": {
+   "id": "doi:10.64898/2026.06.18.26355969",
+   "doi": "https://doi.org/10.64898/2026.06.18.26355969",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.64898/2026.06.18.26355969",
+   "pdf_url": "https://www.medrxiv.org/content/medrxiv/early/2026/06/22/2026.06.18.26355969.full.pdf",
+   "source": {
+    "id": "https://openalex.org/S3005729997",
+    "display_name": "medRxiv",
+    "issn_l": null,
+    "issn": null,
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core"
+    ],
+    "host_organization": null,
+    "host_organization_name": null,
+    "host_organization_lineage": [
+     "https://openalex.org/P4310315909"
+    ],
+    "host_organization_lineage_names": [
+     "Cold Spring Harbor Laboratory Press"
+    ],
+    "type": "repository"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "submittedVersion",
+   "is_accepted": false,
+   "is_published": false,
+   "raw_source_name": "medRxiv",
+   "raw_type": "posted-content"
+  },
+  "type": "preprint",
+  "cited_by_count": 1,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5138248207",
+     "display_name": "Elisabeth Lindner",
+     "orcid": "https://orcid.org/0009-0004-7031-5080",
+     "observed_orcids": [
+      "https://orcid.org/0009-0004-7031-5080"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I223822909",
+      "display_name": "Heidelberg University",
+      "ror": "https://ror.org/038t36y30",
+      "country_code": "DE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I223822909"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2802164966",
+      "display_name": "University Hospital Heidelberg",
+      "ror": "https://ror.org/013czdx64",
+      "country_code": "DE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802164966"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405263306",
+      "display_name": "Heidelberg Institute of Global Health",
+      "ror": "https://ror.org/052rvyy58",
+      "country_code": "DE",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ],
+    "countries": [
+     "DE"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Elisabeth Lindner",
+    "raw_affiliation_strings": [
+     "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany",
+      "institution_ids": [
+       "https://openalex.org/I223822909",
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5077160522",
+     "display_name": "Frank Courteney Tanser",
+     "orcid": "https://orcid.org/0000-0001-9797-0000",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-9797-0000"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I26092322",
+      "display_name": "Stellenbosch University",
+      "ror": "https://ror.org/05bk57929",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I26092322"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Frank Tanser",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+     "South African Centre for Epidemiological Modelling and Analysis (SACEMA), Centre for Epidemic Response and Innovation (CERI), School for Data Science and Computational Thinking, Stellenbosch University, Stellenbosch, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     },
+     {
+      "raw_affiliation_string": "South African Centre for Epidemiological Modelling and Analysis (SACEMA), Centre for Epidemic Response and Innovation (CERI), School for Data Science and Computational Thinking, Stellenbosch University, Stellenbosch, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I26092322"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5053572116",
+     "display_name": "Kobus Herbst",
+     "orcid": "https://orcid.org/0000-0002-5436-9386",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5436-9386"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Kobus Herbst",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5050803680",
+     "display_name": "Thobeka Mngomezulu",
+     "orcid": "https://orcid.org/0000-0002-4142-2432",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4142-2432"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Thobeka Mngomezulu",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5066823889",
+     "display_name": "Dickman Gareta",
+     "orcid": "https://orcid.org/0000-0002-4004-5655",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4004-5655"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Dickman Gareta",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5003138186",
+     "display_name": "Till B\u00e4rnighausen",
+     "orcid": "https://orcid.org/0000-0002-4182-4212",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-4182-4212"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I223822909",
+      "display_name": "Heidelberg University",
+      "ror": "https://ror.org/038t36y30",
+      "country_code": "DE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I223822909"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2802164966",
+      "display_name": "University Hospital Heidelberg",
+      "ror": "https://ror.org/013czdx64",
+      "country_code": "DE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802164966"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405263306",
+      "display_name": "Heidelberg Institute of Global Health",
+      "ror": "https://ror.org/052rvyy58",
+      "country_code": "DE",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ],
+    "countries": [
+     "DE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Till B\u00e4rnighausen",
+    "raw_affiliation_strings": [
+     "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany",
+      "institution_ids": [
+       "https://openalex.org/I223822909",
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5026222310",
+     "display_name": "Gillian F. Black",
+     "orcid": "https://orcid.org/0000-0002-5081-274X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5081-274X"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Gillian F. Black",
+    "raw_affiliation_strings": [
+     "Independent researcher, Cape Town, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Independent researcher, Cape Town, South Africa",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5004033975",
+     "display_name": "M. Craig",
+     "orcid": "https://orcid.org/0000-0002-9181-2607",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-9181-2607"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Marlies H Craig",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5121245513",
+     "display_name": "Vasco Cumbe",
+     "orcid": "https://orcid.org/0000-0002-1131-8597",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1131-8597"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Vasco Cumbe",
+    "raw_affiliation_strings": [
+     "Centre of Training and Research, Beira Central Hospital (CFPS-HCB), Beira, Sofala, Mozambique",
+     "Provincial Health Directorate of Sofala, Department of Public Health, Beira, Sofala, Mozambique"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre of Training and Research, Beira Central Hospital (CFPS-HCB), Beira, Sofala, Mozambique",
+      "institution_ids": []
+     },
+     {
+      "raw_affiliation_string": "Provincial Health Directorate of Sofala, Department of Public Health, Beira, Sofala, Mozambique",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5051218273",
+     "display_name": "Sammy Khagayi",
+     "orcid": "https://orcid.org/0000-0002-2470-1851",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2470-1851"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Sammy Khagayi",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5018273652",
+     "display_name": "Frederick Murunga Wekesah",
+     "orcid": "https://orcid.org/0000-0003-2333-3054",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2333-3054"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I193662353",
+      "display_name": "Utrecht University",
+      "ror": "https://ror.org/04pp8hn57",
+      "country_code": "NL",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I193662353"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I3018483916",
+      "display_name": "University Medical Center Utrecht",
+      "ror": "https://ror.org/0575yy874",
+      "country_code": "NL",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I3018483916"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210129448",
+      "display_name": "African Population and Health Research Center",
+      "ror": "https://ror.org/032ztsj35",
+      "country_code": "KE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ],
+    "countries": [
+     "KE",
+     "NL"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Frederick Murunga Wekesah",
+    "raw_affiliation_strings": [
+     "African Population and Health Research Center, Nairobi, Kenya",
+     "Julius Global Health, Julius Center for Health Sciences and Primary care, University Medical Center Utrecht, Utrecht University, the Netherlands"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "African Population and Health Research Center, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I4210129448"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Julius Global Health, Julius Center for Health Sciences and Primary care, University Medical Center Utrecht, Utrecht University, the Netherlands",
+      "institution_ids": [
+       "https://openalex.org/I193662353",
+       "https://openalex.org/I3018483916"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5072737412",
+     "display_name": "Alberto Muanido",
+     "orcid": "https://orcid.org/0000-0002-6602-7834",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6602-7834"
+     ]
+    },
+    "institutions": [],
+    "countries": [],
+    "is_corresponding": false,
+    "raw_author_name": "Alberto Gabriel Muanido",
+    "raw_affiliation_strings": [
+     "Comit\u00e9 para Sa\u00fade de Mo\u00e7ambique (CSM)"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Comit\u00e9 para Sa\u00fade de Mo\u00e7ambique (CSM)",
+      "institution_ids": []
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5091562340",
+     "display_name": "Chanelle Mulopo",
+     "orcid": "https://orcid.org/0000-0001-6412-3200",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-6412-3200"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I26092322",
+      "display_name": "Stellenbosch University",
+      "ror": "https://ror.org/05bk57929",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I26092322"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I869660684",
+      "display_name": "University of the Western Cape",
+      "ror": "https://ror.org/00h2vm590",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I869660684"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Chanelle Mulopo",
+    "raw_affiliation_strings": [
+     "Centre for Epidemic Response and Innovation, Stellenbosch University, Stellenbosch, South Africa",
+     "School of Public Health, University of the Western Cape, Bellville, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Epidemic Response and Innovation, Stellenbosch University, Stellenbosch, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I26092322"
+      ]
+     },
+     {
+      "raw_affiliation_string": "School of Public Health, University of the Western Cape, Bellville, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I869660684"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5049393529",
+     "display_name": "Sithembiso Ndlovu",
+     "orcid": "https://orcid.org/0000-0002-0428-7710",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-0428-7710"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Sithembiso Ndlovu",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5011296378",
+     "display_name": "Evans Omondi",
+     "orcid": "https://orcid.org/0000-0002-1779-1043",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-1779-1043"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I161372803",
+      "display_name": "Strathmore University",
+      "ror": "https://ror.org/047dnqw48",
+      "country_code": "KE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I161372803"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210129448",
+      "display_name": "African Population and Health Research Center",
+      "ror": "https://ror.org/032ztsj35",
+      "country_code": "KE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ],
+    "countries": [
+     "KE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Evans Omondi",
+    "raw_affiliation_strings": [
+     "African Population and Health Research Center, Nairobi, Kenya",
+     "Institute of Mathematical Sciences, Strathmore University, Nairobi, Kenya"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "African Population and Health Research Center, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I4210129448"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Institute of Mathematical Sciences, Strathmore University, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I161372803"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5104217951",
+     "display_name": "Flavian Otieno",
+     "orcid": "https://orcid.org/0009-0000-0976-2886",
+     "observed_orcids": [
+      "https://orcid.org/0009-0000-0976-2886"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210129448",
+      "display_name": "African Population and Health Research Center",
+      "ror": "https://ror.org/032ztsj35",
+      "country_code": "KE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ],
+    "countries": [
+     "KE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Flavian Otieno",
+    "raw_affiliation_strings": [
+     "African Population and Health Research Center, Nairobi, Kenya"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "African Population and Health Research Center, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5093274244",
+     "display_name": "Henry Owoko Odero",
+     "orcid": "https://orcid.org/0000-0002-3678-4332",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3678-4332",
+      "https://orcid.org/0000-0002-8944-5289"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210129448",
+      "display_name": "African Population and Health Research Center",
+      "ror": "https://ror.org/032ztsj35",
+      "country_code": "KE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ],
+    "countries": [
+     "KE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Henry Owoko",
+    "raw_affiliation_strings": [
+     "African Population and Health Research Center, Nairobi, Kenya"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "African Population and Health Research Center, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5032284171",
+     "display_name": "Ali Si\u00e9",
+     "orcid": "https://orcid.org/0000-0002-3959-2520",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3959-2520"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210162327",
+      "display_name": "Centre de Recherche en Sant\u00e9 de Nouna",
+      "ror": "https://ror.org/059vhx348",
+      "country_code": "BF",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I4210162327"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405262603",
+      "display_name": "Institut National de Sant\u00e9 Publique du Burkina Faso",
+      "ror": "https://ror.org/047394f17",
+      "country_code": "BF",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4405262603"
+      ]
+     }
+    ],
+    "countries": [
+     "BF"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Ali Sie",
+    "raw_affiliation_strings": [
+     "Centre de recherche en Sant\u00e9 de Nouna/Institut National de sant\u00e9 Publique, Nouna, Burkina Faso"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre de recherche en Sant\u00e9 de Nouna/Institut National de sant\u00e9 Publique, Nouna, Burkina Faso",
+      "institution_ids": [
+       "https://openalex.org/I4210162327",
+       "https://openalex.org/I4405262603"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5111217753",
+     "display_name": "Mareca Sithole",
+     "orcid": "https://orcid.org/0009-0008-4235-0152",
+     "observed_orcids": [
+      "https://orcid.org/0009-0008-4235-0152"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Mareca Sithole",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5045590963",
+     "display_name": "Moustapha Tall",
+     "orcid": "https://orcid.org/0000-0003-1994-5170",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1994-5170"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210129448",
+      "display_name": "African Population and Health Research Center",
+      "ror": "https://ror.org/032ztsj35",
+      "country_code": "KE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ],
+    "countries": [
+     "KE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Moustapha Tall",
+    "raw_affiliation_strings": [
+     "African Population and Health Research Center, Nairobi, Kenya"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "African Population and Health Research Center, Nairobi, Kenya",
+      "institution_ids": [
+       "https://openalex.org/I4210129448"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5087996061",
+     "display_name": "Nafissatou Traor\u00e9",
+     "orcid": "https://orcid.org/0009-0007-2816-1905",
+     "observed_orcids": [
+      "https://orcid.org/0009-0007-2816-1905"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210162327",
+      "display_name": "Centre de Recherche en Sant\u00e9 de Nouna",
+      "ror": "https://ror.org/059vhx348",
+      "country_code": "BF",
+      "type": "government",
+      "lineage": [
+       "https://openalex.org/I4210162327"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405262603",
+      "display_name": "Institut National de Sant\u00e9 Publique du Burkina Faso",
+      "ror": "https://ror.org/047394f17",
+      "country_code": "BF",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4405262603"
+      ]
+     }
+    ],
+    "countries": [
+     "BF"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Nafissatou Traor\u00e9",
+    "raw_affiliation_strings": [
+     "Centre de recherche en Sant\u00e9 de Nouna/Institut National de sant\u00e9 Publique, Nouna, Burkina Faso"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre de recherche en Sant\u00e9 de Nouna/Institut National de sant\u00e9 Publique, Nouna, Burkina Faso",
+      "institution_ids": [
+       "https://openalex.org/I4210162327",
+       "https://openalex.org/I4405262603"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5008576972",
+     "display_name": "Treffry-Goatley Astrid",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I26092322",
+      "display_name": "Stellenbosch University",
+      "ror": "https://ror.org/05bk57929",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I26092322"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Astrid Treffry-Goatley",
+    "raw_affiliation_strings": [
+     "Centre for Epidemic Response and Innovation, Stellenbosch University, Stellenbosch, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Epidemic Response and Innovation, Stellenbosch University, Stellenbosch, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I26092322"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5013030134",
+     "display_name": "Grace Nduku Wambua",
+     "orcid": "https://orcid.org/0000-0003-1795-6634",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1795-6634"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I95023434",
+      "display_name": "University of KwaZulu-Natal",
+      "ror": "https://ror.org/04qzfn040",
+      "country_code": "ZA",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I95023434"
+      ]
+     }
+    ],
+    "countries": [
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "G. Nduku Wambua",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+     "University of KwaZulu-Natal, Department of Psychiatry, Durban, South Africa"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     },
+     {
+      "raw_affiliation_string": "University of KwaZulu-Natal, Department of Psychiatry, Durban, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I95023434"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5046425423",
+     "display_name": "Prasad Liyanage",
+     "orcid": "https://orcid.org/0000-0002-5174-7644",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-5174-7644"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I223822909",
+      "display_name": "Heidelberg University",
+      "ror": "https://ror.org/038t36y30",
+      "country_code": "DE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I223822909"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2802164966",
+      "display_name": "University Hospital Heidelberg",
+      "ror": "https://ror.org/013czdx64",
+      "country_code": "DE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802164966"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405263306",
+      "display_name": "Heidelberg Institute of Global Health",
+      "ror": "https://ror.org/052rvyy58",
+      "country_code": "DE",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ],
+    "countries": [
+     "DE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Prasad Liyanage",
+    "raw_affiliation_strings": [
+     "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany",
+      "institution_ids": [
+       "https://openalex.org/I223822909",
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5031518026",
+     "display_name": "Collins C. Iwuji",
+     "orcid": "https://orcid.org/0000-0003-2045-1717",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-2045-1717"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I100063501",
+      "display_name": "Brighton and Sussex Medical School",
+      "ror": "https://ror.org/01qz7fr76",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I100063501",
+       "https://openalex.org/I162608824",
+       "https://openalex.org/I71637028"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I162608824",
+      "display_name": "University of Sussex",
+      "ror": "https://ror.org/00ayhx656",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I162608824"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I194839184",
+      "display_name": "Liverpool School of Tropical Medicine",
+      "ror": "https://ror.org/03svjbs84",
+      "country_code": "GB",
+      "type": "other",
+      "lineage": [
+       "https://openalex.org/I194839184"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4210127310",
+      "display_name": "Africa Health Research Institute",
+      "ror": "https://ror.org/034m6ke32",
+      "country_code": "ZA",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I4210127310",
+       "https://openalex.org/I87048295"
+      ]
+     }
+    ],
+    "countries": [
+     "GB",
+     "ZA"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Collins Iwuji",
+    "raw_affiliation_strings": [
+     "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+     "Department of Global Health and Infection, Brighton and Sussex Medical School, University of Sussex & University of Brighton, Falmer, UK",
+     "Department of International Public Health, Liverpool School of Tropical Medicine"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Africa Health Research Institute, KwaZulu-Natal, South Africa",
+      "institution_ids": [
+       "https://openalex.org/I4210127310"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Global Health and Infection, Brighton and Sussex Medical School, University of Sussex & University of Brighton, Falmer, UK",
+      "institution_ids": [
+       "https://openalex.org/I100063501",
+       "https://openalex.org/I162608824"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of International Public Health, Liverpool School of Tropical Medicine",
+      "institution_ids": [
+       "https://openalex.org/I194839184"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5000264051",
+     "display_name": "Aditi Bunker",
+     "orcid": "https://orcid.org/0000-0001-5906-156X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-5906-156X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I223822909",
+      "display_name": "Heidelberg University",
+      "ror": "https://ror.org/038t36y30",
+      "country_code": "DE",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I223822909"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I2802164966",
+      "display_name": "University Hospital Heidelberg",
+      "ror": "https://ror.org/013czdx64",
+      "country_code": "DE",
+      "type": "healthcare",
+      "lineage": [
+       "https://openalex.org/I2802164966"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405263306",
+      "display_name": "Heidelberg Institute of Global Health",
+      "ror": "https://ror.org/052rvyy58",
+      "country_code": "DE",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ],
+    "countries": [
+     "DE"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Aditi Bunker",
+    "raw_affiliation_strings": [
+     "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany",
+      "institution_ids": [
+       "https://openalex.org/I223822909",
+       "https://openalex.org/I2802164966",
+       "https://openalex.org/I4405263306"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W2410179745",
+  "doi": "https://doi.org/10.1186/s13728-016-0048-y",
+  "title": "Psychological factors in exceptional, extreme and torturous environments",
+  "publication_year": 2016,
+  "ids": {
+   "openalex": "https://openalex.org/W2410179745",
+   "doi": "https://doi.org/10.1186/s13728-016-0048-y",
+   "mag": "2410179745",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/27257476",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/4890253"
+  },
+  "primary_location": {
+   "id": "doi:10.1186/s13728-016-0048-y",
+   "doi": "https://doi.org/10.1186/s13728-016-0048-y",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.1186/s13728-016-0048-y",
+   "pdf_url": "https://extremephysiolmed.biomedcentral.com/track/pdf/10.1186/s13728-016-0048-y",
+   "source": {
+    "id": "https://openalex.org/S2764634027",
+    "display_name": "Extreme Physiology & Medicine",
+    "issn_l": "2046-7648",
+    "issn": [
+     "2046-7648"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "cwts-core",
+     "norway-1",
+     "poland-140",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320256",
+    "host_organization_name": "BioMed Central",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320256",
+     "https://openalex.org/P4310319965"
+    ],
+    "host_organization_lineage_names": [
+     "BioMed Central",
+     "Springer Nature"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Extreme Physiology &amp; Medicine",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 98,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5046699986",
+     "display_name": "John Leach",
+     "orcid": "https://orcid.org/0000-0001-7428-8463",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7428-8463"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I63072094",
+      "display_name": "University of Portsmouth",
+      "ror": "https://ror.org/03ykbk197",
+      "country_code": "GB",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I63072094"
+      ]
+     }
+    ],
+    "countries": [
+     "GB"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "John Leach",
+    "raw_affiliation_strings": [
+     "Extreme Environmental Medicine & Science Group, Extreme Environments Laboratory, University of Portsmouth, Portsmouth, PO1 2ER, UK"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Extreme Environmental Medicine & Science Group, Extreme Environments Laboratory, University of Portsmouth, Portsmouth, PO1 2ER, UK",
+      "institution_ids": [
+       "https://openalex.org/I63072094"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

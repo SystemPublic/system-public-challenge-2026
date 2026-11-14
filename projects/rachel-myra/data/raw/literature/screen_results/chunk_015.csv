@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:7660152,exclude,E7 platelet analyzer field trial; room temperature sample handling,none,none,other
+PMID:8363680,include,"uncertain: I2 ACLS drugs (epinephrine, atropine per MeSH) exposed to 70C",multiple,stability_potency,lab_bench
+PMID:9129628,exclude,E6 saphenous vein preservation solution; not drug heat stability,none,none,lab_bench
+PMID:30688867,exclude,E7 antiepileptic assay on dried plasma spots; sample handling,topiramate_zonisamide,none,lab_bench
+PAT:EP1551436,exclude,E3 amylin agonist formulation patent; no heat stability data,none,none,other
+PAT:NZ536813,exclude,E3 amylin agonist formulation patent; no heat stability data,none,none,other
+PAT:US2003092606,exclude,E3 amylin agonist formulation patent; no heat stability data,none,none,other
+PAT:US7312196,exclude,E3 amylin agonist formulation patent; no heat stability data,none,none,other
+PAT:WO03101395,exclude,E3 amylin agonist formulation patent; no heat stability data,none,none,other
+PMID:15128110,exclude,"E3 experimental glucose affinity sensor engineering, not a meter/strip",none,none,lab_bench
+PMID:19555249,exclude,E3 microneedle array processing/materials,none,none,lab_bench
+PMID:22838073,exclude,E3 hot-melt extrusion manufacturing review,none,none,review
+PMID:23382975,exclude,E7 experimental heat pain thresholds with remifentanil; no environmental heat,opioids_fentanyl,none,human_lab_study
+PMID:2357832,exclude,E7 heat-treating urine samples for drug assays; lab conditions,none,none,lab_bench
+PMID:23982088,include,I2 morphine syringes stored at 37C during shipping extremes,opioids_fentanyl,stability_potency,lab_bench
+PMID:23982089,include,I2 morphine/clonidine syringes stored at 37C shipping extremes,opioids_fentanyl,stability_potency,lab_bench
+PMID:23982090,include,I2 morphine/bupivacaine syringes stored at 37C shipping extremes,opioids_fentanyl,stability_potency,lab_bench
+PMID:23982091,include,I2 hydromorphone syringes stored at 37C shipping extremes,opioids_fentanyl,stability_potency,lab_bench
+PMID:24006953,exclude,"E6 rotigotine patch, not one of 15 drugs; cold chain",none,none,human_lab_study
+PMID:25448542,exclude,E6 influenza vaccine microneedle patch,none,none,lab_bench
+PMID:26620313,exclude,E6 influenza vaccine microneedle patch,none,none,lab_bench
+PMID:28042019,exclude,E2 endomorphin analogs in animals,none,none,lab_bench
+PMID:30098648,exclude,E6 rotigotine pharmacokinetics; no heat,none,none,human_lab_study
+PMID:32279692,exclude,E6 naloxone nasal spray; opioid antagonist not among 15 drugs,none,none,lab_bench
+PMID:34856203,exclude,E2 pioglitazone in rodents,none,none,lab_bench
+PMID:36934885,exclude,E6 exenatide microneedle; not among 15 drugs,none,none,lab_bench
+PMID:37235232,exclude,E3 nanoparticle immunoassay for drugs in hair,none,none,lab_bench
+PMID:38869381,exclude,E7 urine fentanyl test strip analytical evaluation,none,none,lab_bench
+PMID:38972523,exclude,E6 hydroxytyrosol formulation stability,none,none,lab_bench
+PMID:38997947,include,uncertain: I2 fentanyl analog degradation at 20-60C (forensic samples),opioids_fentanyl,stability_potency,lab_bench
+PMID:39371371,exclude,E7 drug-checking test strips analytical performance,none,none,lab_bench
+PMID:39379675,exclude,E3 sweat glucose sensor materials,none,none,lab_bench
+PMID:40499765,exclude,E6 RNA vaccine microneedle lyophilization,none,none,lab_bench
+PMID:40645308,exclude,E3 nalbuphine inhalable powder formulation,none,none,lab_bench
+PMID:41531570,exclude,E7 nitazene test strips review; no heat,none,none,systematic_review
+PMID:42997588,exclude,E7 Y-site admixtures at room temperature only,multiple,none,lab_bench
+PMID:6349853,exclude,E7 morphine test strip immunoassay,none,none,lab_bench
+PMID:8809642,exclude,E6 heat sterilization (autoclaving) of morphine during manufacture,opioids_fentanyl,none,lab_bench
+AGR:IND601259063,exclude,E2 livestock heat stress; no drug,none,none,other
+AGR:IND608029316,exclude,E6 forage sample handling for equine nutrition,none,none,other
+AGR:IND608659669,exclude,E6 forage sample handling for equine nutrition,none,none,other
+AGR:IND608976308,exclude,E2 herbal polysaccharide hypoglycemic effect in animals,none,none,lab_bench
+AGR:IND609359017,exclude,E3 milk powder processing,none,none,lab_bench
+CBA:548714,exclude,E7 piracetam-insulin mixture at room temperature only,insulin,none,lab_bench
+CBA:618090,exclude,E7 insulin in infusion mixture at room temperature only,insulin,none,lab_bench
+DOI:10.1002/agj2.21009,exclude,E2 plant reference gene study,none,none,lab_bench
+DOI:10.1016/j.idairyj.2012.09.001,exclude,"E3 milk filtration, bovine insulin analysis",none,none,lab_bench
+DOI:10.1101/2021.10.11.463939,exclude,E2 animal/cell metabolic biology; no drug heat exposure,none,none,lab_bench
+DOI:10.1101/2022.07.25.501420,exclude,E3 protein engineering of halogenated insulin,none,none,lab_bench
+DOI:10.1101/2023.10.04.560877,exclude,E2 mouse metabolic syndrome microglia,none,none,lab_bench
+DOI:10.1101/2024.07.09.602715,exclude,E2 heat-killed probiotic in C. elegans,none,none,lab_bench
+DOI:10.1101/2024.10.01.616204,exclude,E7 blood sample tubes for insulin assay at room temperature,none,none,lab_bench
+DOI:10.1101/2025.01.29.635377,include,uncertain: I2 oral insulin tablet stability under 30-40C heat stress,insulin,stability_potency,lab_bench
+DOI:10.1101/2025.02.26.640446,exclude,E2 animal/cell metabolic biology; no drug heat exposure,none,none,lab_bench
+DOI:10.1101/2025.10.26.684708,exclude,E2 animal/cell metabolic biology; no drug heat exposure,none,none,lab_bench
+DOI:10.1111/anu.13150,exclude,E2 fish nutrition study,none,none,other
+DOI:10.1111/phen.12173,exclude,E2 Drosophila genetics,none,none,lab_bench
+DOI:10.20944/preprints202404.0902.v1,exclude,E3 3D printed microfluidic channel engineering,none,none,lab_bench
+DOI:10.21203/rs.2.19490/v2,exclude,E2 animal/cell metabolic biology; no drug heat exposure,none,none,lab_bench
+DOI:10.21203/rs.3.rs-8324434/v1,exclude,E2 animal/cell metabolic biology; no drug heat exposure,none,none,lab_bench
+DOI:10.22541/au.174222222.29765716/v1,exclude,E6 osteoarthritis insulin resistance review,none,none,review
+ETH:585489,exclude,E6 insulin secretion proteomics dissertation,none,none,other
+PAT:CA2524816,exclude,E3 aerosol insulin formulation patent; vaporization chemistry,none,none,other
+PAT:CN101352475,exclude,E3 herbal extract medicament patent,none,none,other
+PAT:EP1044015,exclude,E3 amylin agonist formulation patent; no heat stability data,none,none,other
+PAT:EP1307107,exclude,E3 oil/fat composition patent,none,none,other
+PAT:EP1430783,exclude,E3 oil/fat composition patent,none,none,other
+PAT:EP1626746,exclude,E3 aerosol insulin formulation patent; vaporization chemistry,none,none,other
+PAT:JP10007586,exclude,E3 hepatocyte growth factor patent,none,none,other
+PAT:US2001043934,exclude,E3 amylin agonist formulation patent; no heat stability data,none,none,other
+PAT:US2003198727,exclude,E3 oil/fat composition patent,none,none,other
+PAT:US6136784,exclude,E3 amylin agonist formulation patent; no heat stability data,none,none,other
+PAT:US6410511,exclude,E3 amylin agonist formulation patent; no heat stability data,none,none,other
+PAT:US7008661,exclude,E3 oil/fat composition patent,none,none,other
+PAT:WO0211550,exclude,E3 oil/fat composition patent,none,none,other
+PAT:WO2004100872,exclude,E3 aerosol insulin formulation patent; vaporization chemistry,none,none,other
+PAT:WO2007038773,exclude,E3 injectable device patent; no heat data,none,none,other
+PAT:WO9934822,exclude,E3 amylin agonist formulation patent; no heat stability data,none,none,other
+PMC:PMC6666778,exclude,E2 livestock heat stress; no drug,none,none,other
+PMC:PMC6897729,exclude,E2 dog adipose gene expression,none,none,other
+PMC:PMC7207616,exclude,E2 sheep adipose programming,none,none,other
+PMC:PMC7208142,exclude,E6 hypoglycemia case from medication error; no heat link,none,none,case_report
+PMC:PMC7208442,exclude,E7 insulin vials at room temperature per label; no heat exposure,insulin,none,lab_bench
+PMC:PMC7208819,exclude,E2 animal/cell metabolic biology; no drug heat exposure,none,none,lab_bench
+PMC:PMC7257431,exclude,E2 animal/cell metabolic biology; no drug heat exposure,none,none,lab_bench
+PMID:10191034,exclude,E6 endothelial cell organ preservation model,none,none,lab_bench
+PMID:10524358,exclude,E2 mushroom extract adipocyte cell study,none,none,lab_bench
+PMID:10556565,exclude,E2 chaperone/heat shock protein biochemistry; not a medicine,none,none,lab_bench
+PMID:10581247,exclude,E2 chaperone/heat shock protein biochemistry; not a medicine,none,none,lab_bench
+PMID:10600391,exclude,E2 chaperone/heat shock protein biochemistry; not a medicine,none,none,lab_bench
+PMID:10669912,exclude,E3 insulin microsphere formulation engineering,none,none,lab_bench
+PMID:10684623,exclude,E2 chaperone/heat shock protein biochemistry; not a medicine,none,none,lab_bench
+PMID:10752312,exclude,E2 islet isolation cold storage in animals,none,none,lab_bench
+PMID:10849834,exclude,E7 shear effects on insulin suspension; not heat,insulin,none,lab_bench
+PMID:10878454,exclude,E2 liver cold preservation solution,none,none,lab_bench
+PMID:109340,exclude,E6 insulin resistance case from tissue degradation; no heat,none,none,case_report
+PMID:10953451,exclude,E7 UV photodegradation of insulin for radiolabeling,none,none,lab_bench
+PMID:11029975,exclude,E6 overfeeding study; no drug or heat,none,none,other
+PMID:11178910,exclude,E2 chaperone/heat shock protein biochemistry; not a medicine,none,none,lab_bench
+PMID:11202859,exclude,E6 dental cell storage media,none,none,lab_bench
+PMID:11214479,exclude,E6 wound treatment review,none,none,review
+PMID:11216004,exclude,E7 insulin mass spectrometry assay method,none,none,lab_bench
+PMID:11216750,exclude,E2 cardiac allograft preservation in animals,none,none,lab_bench
+PMID:11311219,exclude,E7 blood hormone sample storage temperatures; lithium heparin tubes,none,none,lab_bench
+PMID:11368178,exclude,E2 chaperone/heat shock protein biochemistry; not a medicine,none,none,lab_bench
+PMID:11405086,exclude,E2 rat liver rewarming ischemia,none,none,lab_bench
+PMID:11475768,exclude,E6 dental cell storage media with growth factors,none,none,lab_bench
+PMID:11510834,exclude,E3 ionic liquid MALDI matrices,none,none,lab_bench
+PMID:11571440,exclude,E6 renal cell cold storage and rewarming,none,none,lab_bench
+PMID:11606174,exclude,E7 altitude and cold effects on glucose meters/insulin; not heat,insulin,none,cohort
+PMID:11681813,exclude,E6 critical illness thermogenesis lecture,none,none,review
+PMID:11888936,exclude,E2 chaperone/heat shock protein biochemistry; not a medicine,none,none,lab_bench
+PMID:11943411,exclude,E3 insulin nanosphere formulation,none,none,lab_bench
+PMID:12009728,exclude,E2 rat hepatocyte preservation,none,none,lab_bench
+PMID:12062649,exclude,E3 insulin-cyclodextrin complex formulation chemistry,insulin,none,lab_bench
+PMID:12086021,exclude,E2 kidney preservation modalities,none,none,lab_bench
+PMID:12111230,exclude,E2 carnivorous plant peptide degradation,none,none,lab_bench
+PMID:12169020,exclude,E2 longevity signaling review in model organisms,none,none,review
+PMID:12176992,exclude,E2 chaperone/heat shock protein biochemistry; not a medicine,none,none,lab_bench
+PMID:12237331,exclude,E2 chaperone/heat shock protein biochemistry; not a medicine,none,none,lab_bench

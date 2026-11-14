@@ -1,0 +1,451 @@
+[
+ {
+  "id": "https://openalex.org/W7218123569",
+  "doi": null,
+  "title": "Predicting and Mitigating Heat-Related Illnesses in The Construction Industry",
+  "publication_year": 2025,
+  "ids": {
+   "openalex": "https://openalex.org/W7218123569"
+  },
+  "primary_location": {
+   "id": "pmh:oai:digital.library.adelaide.edu.au:2440/152701",
+   "doi": null,
+   "is_oa": true,
+   "landing_page_url": "https://hdl.handle.net/2440/152701",
+   "pdf_url": "https://digital.library.adelaide.edu.au/server/api/core/bitstreams/55d10cd3-042e-4626-ba9b-26ac3e6232fd/content",
+   "source": {
+    "id": "https://openalex.org/S4306401835",
+    "display_name": "Adelaide Research & Scholarship (AR&S) (University of Adelaide)",
+    "issn_l": null,
+    "issn": null,
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": false,
+    "listed_in": [],
+    "host_organization": "https://openalex.org/I5681781",
+    "host_organization_name": "The University of Adelaide",
+    "host_organization_lineage": [
+     "https://openalex.org/I5681781"
+    ],
+    "host_organization_lineage_names": [],
+    "type": "repository"
+   },
+   "license": "other-oa",
+   "license_id": "https://openalex.org/licenses/other-oa",
+   "version": "submittedVersion",
+   "is_accepted": false,
+   "is_published": false,
+   "raw_source_name": null,
+   "raw_type": "Thesis"
+  },
+  "type": "dissertation",
+  "cited_by_count": 0,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5048813624",
+     "display_name": "Seyed Armin Mirhosseini",
+     "orcid": "https://orcid.org/0000-0001-8623-8367",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-8623-8367"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I5681781",
+      "display_name": "The University of Adelaide",
+      "ror": "https://ror.org/00892tw58",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I4405259444",
+       "https://openalex.org/I5681781"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Mirhosseini, Seyed Armin",
+    "raw_affiliation_strings": [
+     "University of Adelaide , Adelaide , Australia"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "University of Adelaide , Adelaide , Australia",
+      "institution_ids": [
+       "https://openalex.org/I5681781"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "https://openalex.org/W3156362575",
+  "doi": "https://doi.org/10.23889/ijpds.v6i1.1418",
+  "title": "The changing face of Australian data reforms: Impact on pharmacoepidemiology research",
+  "publication_year": 2021,
+  "ids": {
+   "openalex": "https://openalex.org/W3156362575",
+   "doi": "https://doi.org/10.23889/ijpds.v6i1.1418",
+   "mag": "3156362575",
+   "pmid": "https://pubmed.ncbi.nlm.nih.gov/34007904",
+   "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/8107783"
+  },
+  "primary_location": {
+   "id": "doi:10.23889/ijpds.v6i1.1418",
+   "doi": "https://doi.org/10.23889/ijpds.v6i1.1418",
+   "is_oa": true,
+   "landing_page_url": "https://doi.org/10.23889/ijpds.v6i1.1418",
+   "pdf_url": "https://ijpds.org/article/download/1418/3112",
+   "source": {
+    "id": "https://openalex.org/S2764528117",
+    "display_name": "International Journal for Population Data Science",
+    "issn_l": "2399-4908",
+    "issn": [
+     "2399-4908"
+    ],
+    "is_oa": true,
+    "is_in_doaj": true,
+    "is_core": true,
+    "listed_in": [
+     "anvur-class-a",
+     "anvur-scientific",
+     "cwts-core",
+     "doaj",
+     "dongbi-c",
+     "jufo-1",
+     "ki-jl-1",
+     "medline",
+     "norway-1",
+     "poland-20",
+     "russia-white-list-1"
+    ],
+    "host_organization": "https://openalex.org/P4310311758",
+    "host_organization_name": "Swansea University",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310311758"
+    ],
+    "host_organization_lineage_names": [
+     "Swansea University"
+    ],
+    "type": "journal"
+   },
+   "license": "cc-by",
+   "license_id": "https://openalex.org/licenses/cc-by",
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "International Journal of Population Data Science",
+   "raw_type": "journal-article"
+  },
+  "type": "review",
+  "cited_by_count": 16,
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5066745889",
+     "display_name": "Juliana de Oliveira Costa",
+     "orcid": "https://orcid.org/0000-0002-8355-023X",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-8355-023X"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I31746571",
+      "display_name": "UNSW Sydney",
+      "ror": "https://ror.org/03r8z3t63",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I31746571"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405259469",
+      "display_name": "Centre for Big Data Research in Health",
+      "ror": "https://ror.org/029g70m06",
+      "country_code": "AU",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I31746571",
+       "https://openalex.org/I4405259469"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Juliana De Oliveira Costa",
+    "raw_affiliation_strings": [
+     "Centre for Big Data Research in Health, Faculty of Medicine, UNSW Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-8355-023X",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Big Data Research in Health, Faculty of Medicine, UNSW Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I31746571",
+       "https://openalex.org/I4405259469"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5060673985",
+     "display_name": "Claudia Bruno",
+     "orcid": "https://orcid.org/0000-0001-7789-3415",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7789-3415"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I31746571",
+      "display_name": "UNSW Sydney",
+      "ror": "https://ror.org/03r8z3t63",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I31746571"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405259469",
+      "display_name": "Centre for Big Data Research in Health",
+      "ror": "https://ror.org/029g70m06",
+      "country_code": "AU",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I31746571",
+       "https://openalex.org/I4405259469"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Claudia Bruno",
+    "raw_affiliation_strings": [
+     "Centre for Big Data Research in Health, Faculty of Medicine, UNSW Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-7789-3415",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Big Data Research in Health, Faculty of Medicine, UNSW Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I31746571",
+       "https://openalex.org/I4405259469"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5016316637",
+     "display_name": "Andrea L. Schaffer",
+     "orcid": "https://orcid.org/0000-0002-3701-4997",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-3701-4997"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I31746571",
+      "display_name": "UNSW Sydney",
+      "ror": "https://ror.org/03r8z3t63",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I31746571"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405259469",
+      "display_name": "Centre for Big Data Research in Health",
+      "ror": "https://ror.org/029g70m06",
+      "country_code": "AU",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I31746571",
+       "https://openalex.org/I4405259469"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Andrea L Schaffer",
+    "raw_affiliation_strings": [
+     "Centre for Big Data Research in Health, Faculty of Medicine, UNSW Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0002-3701-4997",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Big Data Research in Health, Faculty of Medicine, UNSW Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I31746571",
+       "https://openalex.org/I4405259469"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5067109320",
+     "display_name": "Smriti Raichand",
+     "orcid": "https://orcid.org/0000-0003-3419-5179",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-3419-5179"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I31746571",
+      "display_name": "UNSW Sydney",
+      "ror": "https://ror.org/03r8z3t63",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I31746571"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405259469",
+      "display_name": "Centre for Big Data Research in Health",
+      "ror": "https://ror.org/029g70m06",
+      "country_code": "AU",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I31746571",
+       "https://openalex.org/I4405259469"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Smriti Raichand",
+    "raw_affiliation_strings": [
+     "Centre for Big Data Research in Health, Faculty of Medicine, UNSW Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-3419-5179",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Big Data Research in Health, Faculty of Medicine, UNSW Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I31746571",
+       "https://openalex.org/I4405259469"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5039494044",
+     "display_name": "Emily Aspasia Karanges",
+     "orcid": "https://orcid.org/0000-0001-7922-2762",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7922-2762"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I129604602",
+      "display_name": "The University of Sydney",
+      "ror": "https://ror.org/0384j8v12",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Emily A Karanges",
+    "raw_affiliation_strings": [
+     "School of Pharmacy, Faculty of Medicine and Health, The University of Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-7922-2762",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "School of Pharmacy, Faculty of Medicine and Health, The University of Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I129604602"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5019760776",
+     "display_name": "Sallie\u2010Anne Pearson",
+     "orcid": "https://orcid.org/0000-0001-7137-6855",
+     "observed_orcids": [
+      "https://orcid.org/0000-0001-7137-6855"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I31746571",
+      "display_name": "UNSW Sydney",
+      "ror": "https://ror.org/03r8z3t63",
+      "country_code": "AU",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I31746571"
+      ]
+     },
+     {
+      "id": "https://openalex.org/I4405259469",
+      "display_name": "Centre for Big Data Research in Health",
+      "ror": "https://ror.org/029g70m06",
+      "country_code": "AU",
+      "type": "facility",
+      "lineage": [
+       "https://openalex.org/I31746571",
+       "https://openalex.org/I4405259469"
+      ]
+     }
+    ],
+    "countries": [
+     "AU"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Sallie-Anne Pearson",
+    "raw_affiliation_strings": [
+     "Centre for Big Data Research in Health, Faculty of Medicine, UNSW Sydney, Sydney, Australia"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0001-7137-6855",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Centre for Big Data Research in Health, Faculty of Medicine, UNSW Sydney, Sydney, Australia",
+      "institution_ids": [
+       "https://openalex.org/I31746571",
+       "https://openalex.org/I4405259469"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

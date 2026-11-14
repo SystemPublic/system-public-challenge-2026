@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:6141705,exclude,"E6 MI infarct size; 'heat-stable' enzyme, furosemide incidental",none,none,cohort
+PMID:6571819,exclude,E2 in vitro erythrocyte sodium transport,none,none,other
+PMID:6679993,exclude,E6 diuretic and heat dehydration compared separately; no drug x heat,none,none,human_lab_study
+PMID:8329786,exclude,E6 ciprofloxacin Y-site compatibility at 25C,none,none,lab_bench
+PMID:9404801,exclude,"E6 cocaine rhabdomyolysis; no hyperthermia, furosemide as treatment",none,none,case_report
+PMID:9523993,exclude,E3 drug-albumin binding molecular dynamics,none,none,other
+AGR:IND608906476,exclude,E3 lithium bromide refrigeration engineering,none,none,other
+DOI:10.1007/s11746-012-2074-2,exclude,E3 lithium carbonate biodiesel catalyst,none,none,other
+DOI:10.1101/2022.05.08.491110,exclude,E3 hot-spring bacteria with lithium solutes; not a medicine,none,none,other
+DOI:10.1101/678680,exclude,E3 hot-spring microbiology; lithium as solute,none,none,other
+DOI:10.20944/preprints202505.2318.v1,exclude,E3 lithium grease compatibility,none,none,other
+DOI:10.20944/preprints202605.0335.v1,exclude,E6 Australia disaster vulnerability; lithium as commodity,none,none,other
+DOI:10.21203/rs.3.rs-11204467/v1,exclude,E3 lithium hydride electrode plasma physics,none,none,other
+DOI:10.21203/rs.3.rs-11204467/v2,exclude,E3 lithium hydride electrode plasma physics,none,none,other
+DOI:10.21203/rs.3.rs-1394191/v1,exclude,E3 LiCl sorbent water harvesting,none,none,other
+DOI:10.21203/rs.3.rs-2734389/v1,exclude,E3 liquid lithium fusion engineering,none,none,other
+DOI:10.21203/rs.3.rs-3651614/v1,exclude,E3 geothermal lithium mineralogy,none,none,other
+DOI:10.21203/rs.3.rs-733074/v1,exclude,E3 PbLi liquid-metal coatings,none,none,other
+DOI:10.21203/rs.3.rs-7726847/v1,exclude,E3 ion separation membrane for lithium extraction,none,none,other
+DOI:10.22541/authorea.15011916/v1,include,"I1 narrative review of psychotropic (antipsychotic, lithium) safety in extreme heat",multiple,mortality,review
+PAT:CN101264435,exclude,E3 pottery manufacturing patent,none,none,other
+PAT:EP0291569,exclude,E3 device patent; lithium oxide material,none,none,other
+PAT:EP0492695,exclude,E3 methane catalyst patent,none,none,other
+PAT:KR20090093567,exclude,E3 lithium grease patent,none,none,other
+PAT:WO9501982,exclude,E3 alkyllithium chemical process patent,none,none,other
+PMC:PMC5887440,exclude,E4 valproate DRESS with fever; no environmental heat,none,none,case_report
+PMC:PMC9480396,exclude,E4 lithium toxicity with hyperthermia; no environmental heat link,none,none,case_report
+PMID:10066168,exclude,E3 high-pressure CO2 materials physics,none,none,other
+PMID:10443559,exclude,E6 lithium vs vinca alkaloid neurotoxicity; no heat,none,none,other
+PMID:10489899,exclude,E2 in vitro cell heat shock; lithium salt as reagent,none,none,other
+PMID:1055382,exclude,E3 ribosome biochemistry with LiCl reagent,none,none,other
+PMID:10598115,exclude,E3 food microbiology spore heat resistance in LiCl,none,none,other
+PMID:10615270,exclude,"E6 lab sample temperature and potassium; lithium-heparin tubes, not drug",none,none,other
+PMID:10713065,exclude,E2 in vitro neuroblastoma cell heat shock apoptosis,none,none,other
+PMID:10772175,exclude,E7 lithium serum assay method,none,none,other
+PMID:10928552,exclude,E3 ribosome microcalorimetry with LiCl,none,none,other
+PMID:11007268,exclude,E3 peptide chemistry in LiCl/DMF,none,none,other
+PMID:11203671,exclude,E3 lithium disilicate dental ceramic,none,none,other
+PMID:11209597,exclude,E3 inorganic chemistry lithium salt,none,none,other
+PMID:11240070,exclude,E3 PCB dechlorination chemistry,none,none,other
+PMID:11254123,exclude,E2 yeast genetics heat stress; lithium as salt stressor,none,none,other
+PMID:11472119,exclude,E3 organolithium synthesis chemistry,none,none,other
+PMID:11495916,exclude,E2 in vitro neuroblastoma cell heat shock,none,none,other
+PMID:11542227,exclude,E3 LiF radiation dosimetry in space,none,none,other
+PMID:11669690,exclude,E3 ionic liquid chemistry with LiCl,none,none,other
+PMID:11720486,exclude,E3 magnesium amidinate chemistry,none,none,other
+PMID:11914086,exclude,E2 bacterial enzyme inhibition by lithium in vitro,none,none,other
+PMID:11996557,exclude,E3 organolithium asymmetric synthesis,none,none,other
+PMID:12108783,exclude,E3 radiation dosimeter comparison (LiF),none,none,other
+PMID:12111384,exclude,E3 computational organolithium chemistry,none,none,other
+PMID:12227827,exclude,"E3 macrocycle synthesis, lithium ion binding",none,none,other
+PMID:1232559,exclude,"E2 mouse heart norepinephrine with lithium; cold, not heat",none,none,other
+PMID:12382747,exclude,E3 LiF thermoluminescent detector annealing,none,none,other
+PMID:12382868,exclude,E3 LiF thermoluminescent phosphor,none,none,other
+PMID:12382871,exclude,E3 Li3PO4 phosphor,none,none,other
+PMID:12382882,exclude,E3 LiF thermoluminescent detectors,none,none,other
+PMID:12382896,exclude,E3 LiF thermoluminescent readout,none,none,other
+PMID:12382923,exclude,E3 LiF thermoluminescent pellets,none,none,other
+PMID:12450723,exclude,E3 lithium disilicate dental ceramic,none,none,other
+PMID:12612807,exclude,"E3 Candida transformation protocol (lithium acetate, heat shock)",none,none,other
+PMID:1317137,exclude,E6 LiCl-coated heat-moisture exchanger lithium exposure; no heat exposure,none,none,other
+PMID:14737765,exclude,E3 lithium disilicate dental ceramic heat treatment,none,none,other
+PMID:14870712,exclude,E3 cellulose chromatography in LiCl/DMAc,none,none,other
+PMID:15276638,exclude,E3 high-temperature NMR of lithium materials,none,none,other
+PMID:15353664,exclude,E3 LiF dosimeter fading,none,none,other
+PMID:15368233,exclude,E3 dental glass-ceramic hot pressing,none,none,other
+PMID:15583561,exclude,E3 dental crown fracture load,none,none,other
+PMID:15685585,exclude,E3 organic synthesis with lithium reagents,none,none,other
+PMID:15803650,exclude,E3 archaeal lipid chemistry with LiAlH4,none,none,other
+PMID:15878784,exclude,E3 dental glass-ceramic strength,none,none,other
+PMID:15961153,exclude,E3 aluminosilicate glass crystallization,none,none,other
+PMID:1597385,exclude,E3 thermoluminescent crystal dosimetry,none,none,other
+PMID:15997291,exclude,E3 organolithium thermal decomposition,none,none,other
+PMID:16075111,exclude,E3 silylene/lithium amide chemistry,none,none,other
+PMID:16267412,exclude,E7 rhabdomyolysis causes incl. psychotropics; no heat exposure analysed,none,none,case_series
+PMID:16365289,exclude,E3 fungal gene for lithium salt tolerance,none,none,other
+PMID:16581930,exclude,E3 LiF dosimeter glow curves,none,none,other
+PMID:16594363,exclude,E3 dental ceramic surface roughness,none,none,other
+PMID:16599602,exclude,E3 nucleoside chemistry with lithium reagent,none,none,other
+PMID:16599612,exclude,E3 organic chemistry with lithium amide,none,none,other
+PMID:16735561,exclude,E3 LiF mixed-field dosimetry,none,none,other
+PMID:16770549,exclude,E3 lithium borate glass microsphere synthesis,none,none,other
+PMID:1680244,exclude,E5 neuroleptic-lithium hyperthermia/neurotoxicity; no environmental heat link,none,none,case_series
+PMID:16883427,exclude,E3 polymer chemistry with butyl lithium,none,none,other
+PMID:16968712,exclude,E3 LiF thermoluminescent material development,none,none,other
+PMID:17156413,exclude,E2 Arabidopsis heat/salt stress gene,none,none,other
+PMID:17235191,exclude,E3 titanate crystallography,none,none,other
+PMID:17241743,exclude,"E2 soybean enzyme biochemistry, lithium inhibition",none,none,other
+PMID:17315647,exclude,E3 lithium disilicate dental glass-ceramic,none,none,other
+PMID:17367210,exclude,E2 fungal pathogen transcriptomics; lithium stressor,none,none,other
+PMID:17401334,exclude,"E3 yeast transformation protocol (lithium acetate, heat shock)",none,none,other
+PMID:17401335,exclude,"E3 yeast transformation protocol (lithium acetate, heat shock)",none,none,other
+PMID:17401336,exclude,E3 yeast transformation protocol (lithium acetate),none,none,other
+PMID:17416592,exclude,E3 LiF dosimeter residual signal,none,none,other
+PMID:17434655,exclude,E3 aluminium leaching chemistry with lithium salts,none,none,other
+PMID:17513859,exclude,E3 LiF dosimeter readout,none,none,other
+PMID:17578870,exclude,E3 LiF neutron-gamma dosimetry,none,none,other
+PMID:17579711,exclude,E3 nucleic acid extraction methods,none,none,other
+PMID:17898764,exclude,E3 dense liquid sodium physics,none,none,other
+PMID:17986087,exclude,E2 yeast stress genetics; LiCl stressor,none,none,other
+PMID:18171064,exclude,E3 polymer chemistry with organolithium,none,none,other
+PMID:18215062,exclude,E3 lithium aminoborohydride chemistry,none,none,other
+PMID:18349942,exclude,E3 lithium vapor EUV light source,none,none,other
+PMID:18462984,exclude,E3 lithium cobalt oxide nanomaterial synthesis,none,none,other
+PMID:18617430,exclude,"E7 blood sample storage temperature; lithium heparin tubes, not drug",none,none,other
+PMID:1862222,exclude,E5 lithium-TCA malignant hyperthermia-like syndrome; no environmental heat,none,none,case_report
+PMID:18681936,exclude,E3 dental glass-ceramic heat-pressing,none,none,other
+PMID:18719952,exclude,"E3 dental cement storage errors, glass-ceramic crowns",none,none,other
+PMID:18783276,exclude,E3 organic synthesis with lithium alcoholates,none,none,other
+PMID:18977489,exclude,E3 lithium-intercalated nanocomposite,none,none,other
+PMID:19044600,exclude,E3 lithium tokamak diagnostics,none,none,other
+PMID:19149064,exclude,E3 lithium disilicate ceramic heat treatment,none,none,other
+PMID:19233367,exclude,E3 valinomycin-lithium complex electrophoresis,none,none,other
+PMID:19259043,exclude,E6 AKI dialysis review; no relevant drug x heat,none,none,review
+PMID:19329109,exclude,E3 chitosan in LiOH/urea solvent,none,none,other
+PMID:19399090,exclude,E3 lithium phosphor for lamps,none,none,other
+PMID:19489587,exclude,E3 lithium aluminate CO2 capture,none,none,other
+PMID:19655891,exclude,E3 silicate melt viscosity,none,none,other
+PMID:19700634,exclude,E2 Candida transformation heat/LiOAc stress genetics,none,none,other
+PMID:19753375,exclude,E3 zincation chemistry with LiCl,none,none,other

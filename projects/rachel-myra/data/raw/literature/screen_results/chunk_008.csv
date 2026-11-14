@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:14743484,exclude,E3 physical chemistry of enalaprilat isomerization,ace_arb,none,lab_bench
+PMID:15760260,exclude,"E6 vascular medicine review, no heat",ace_arb,none,review
+PMID:16052444,exclude,E6 swallowing syncope after hot coffee; no heat exposure x drug,multiple,none,case_report
+PMID:16787009,exclude,E6 enzyme immobilization food chemistry,none,none,lab_bench
+PMID:16924603,include,I1 serious ADRs in elderly during 2003 French heat wave,multiple,other,pharmacovigilance
+PMID:17243703,exclude,E6 coffee melanoidin ACE inhibition,none,none,lab_bench
+PMID:17326279,include,uncertain: I1 drug-specific heatwave ADR guidance (narrative),multiple,heat_illness,review
+PMID:17618628,exclude,E3 calorimetric binding thermodynamics,ace_arb,none,lab_bench
+PMID:17976260,exclude,E3 inclusion compound formulation,ace_arb,none,lab_bench
+PMID:17993594,include,"uncertain: I1 losartan and skin vasodilation to local heating, POTS",ace_arb,sweating_thermoregulation,human_lab_study
+PMID:18469148,include,"uncertain: I1 losartan/ANG II and cutaneous local heating response, volunteers",ace_arb,sweating_thermoregulation,human_lab_study
+PMID:19007490,exclude,E7 bioanalytical LC-MS method,ace_arb,none,lab_bench
+PMID:19177902,include,"I2 captopril solution stability vs temperature, storage at 36 C",ace_arb,stability_potency,lab_bench
+PMID:19218147,exclude,E6 Akt enzyme review,ace_arb,none,review
+PMID:19646044,exclude,E6 food protein ACE-inhibitory activity,none,none,lab_bench
+PMID:20122808,exclude,"E7 oxidative forced degradation impurities, not heat",ace_arb,none,lab_bench
+PMID:20301469,exclude,E6 Fabry disease review,none,none,review
+PMID:21952935,exclude,E2 rat study,ace_arb,none,other
+PMID:22136482,exclude,E7 analytical method (fexofenadine),none,none,lab_bench
+PMID:22153713,exclude,E6 soy sauce fermentation peptides,none,none,lab_bench
+PMID:22348774,include,uncertain: I2 ACE inhibitor degradation under forced ageing at 45 C,ace_arb,stability_potency,lab_bench
+PMID:22568033,exclude,E7 analytical HPLC method,ace_arb,none,lab_bench
+PMID:22777915,exclude,E6 food protein processing,none,none,lab_bench
+PMID:22803969,exclude,E3 thermal analysis/DSC of valsartan solid,ace_arb,none,lab_bench
+PMID:22864745,exclude,E3 polymorph crystallization of valsartan,ace_arb,none,lab_bench
+PMID:22877875,exclude,E3 salt synthesis and crystal structure of ramipril,ace_arb,none,lab_bench
+PMID:22916808,exclude,E6 faba bean food extracts,none,none,lab_bench
+PMID:22960502,exclude,E7 forced degradation (acid/neutral) impurity profiling,ace_arb,none,lab_bench
+PMID:23194546,exclude,E6 whey protein hydrolysates,none,none,lab_bench
+PMID:23720845,include,"I1 cardiac drugs (ACEi, ARB, diuretics) and tolerance of 2010 abnormal heat",multiple,other,cross_sectional
+PMID:23744384,exclude,E3 crystal structure of perindopril cyclization product,ace_arb,none,lab_bench
+PMID:23907513,include,uncertain: I2 imidapril solid-state degradation at high temperature/humidity,ace_arb,stability_potency,lab_bench
+PMID:24391962,include,uncertain: I1 ambient temperature-BP association modified by benazepril,ace_arb,other,cohort
+PMID:24510707,exclude,E6 food-derived casein peptides heat treatment,none,none,lab_bench
+PMID:24700168,exclude,E6 food Maillard reaction peptides,none,none,lab_bench
+PMID:24856823,include,I1 sudden collapse in heat in patients on angiotensin receptor blockers,ace_arb,heat_illness,case_series
+PMID:24898407,exclude,E2 mouse humid heat model with valsartan,ace_arb,none,other
+PMID:25005760,exclude,E6 seasonal LUTS; anticholinergic users excluded,none,none,cohort
+PMID:2600732,include,uncertain: I2 IV ACE inhibitor RS-10029 stability incl. 50 C storage,ace_arb,stability_potency,lab_bench
+PMID:26073686,include,I1 narrative commentary on medicines and heat-related illness,multiple,heat_illness,review
+PMID:26185757,exclude,E3 formulation thermal treatment of lisinopril tablets,ace_arb,none,lab_bench
+PMID:26591355,exclude,"E6 TCM damp-heat syndrome trial; losartan comparator, no heat",ace_arb,none,rct
+PMID:26840715,include,uncertain: I1 heat chamber exposure in hypertensives using ACE inhibitors,ace_arb,other,human_lab_study
+PMID:27378245,include,I1 hospital admission for dehydration/heat illness after medicine initiation,multiple,hospitalization_ed,pharmacovigilance
+PMID:27521506,exclude,E6 NASH/CKD pharmacology review,ace_arb,none,review
+PMID:28157068,exclude,"E6 Fabry/IgA nephropathy case series, no heat",ace_arb,none,case_series
+PMID:29116624,include,"I1 triple whammy (diuretic+NSAID+ACEi/ARB), heat waves and in-hospital AKI",multiple,renal_aki,cohort
+PMID:29201089,include,"I2 perindopril solid-state thermostability (isothermal, humidity)",ace_arb,stability_potency,lab_bench
+PMID:29579986,exclude,E6 ohmic heating of whey,none,none,lab_bench
+PMID:29705104,exclude,E3 3D-printing manufacturing temperature of ramipril,ace_arb,none,lab_bench
+PMID:29973522,exclude,E6 fish gelatin ACE-inhibitory peptides,none,none,lab_bench
+PMID:30097074,exclude,E7 analytical method (azelastine),none,none,lab_bench
+PMID:3022996,exclude,"E6 serum ACE assay inhibitor, no heat",none,none,other
+PMID:30790328,exclude,E6 heat-killed bacteria cosmetic extract,none,none,lab_bench
+PMID:30829574,include,"uncertain: I1 ambient temperature-home BP, modified by ARBs",ace_arb,other,cohort
+PMID:31090380,include,I1 narrative review of cardiovascular drugs during heat waves,multiple,other,review
+PMID:31091647,exclude,"E4 drug-induced rhabdomyolysis, no heat link",ace_arb,none,case_report
+PMID:31132400,exclude,E3 hot-melt extrusion process design,ace_arb,none,lab_bench
+PMID:32360547,exclude,E3 hot-melt extrusion process analytics,ace_arb,none,lab_bench
+PMID:32660835,exclude,"E6 heart failure renal function guidance, no heat x drug focus",ace_arb,none,review
+PMID:34260006,exclude,E6 HIPEC therapeutic hyperthermia AKI; ARB incidental risk factor,ace_arb,none,cohort
+PMID:34450371,exclude,E3 environmental water treatment degradation of losartan,ace_arb,none,lab_bench
+PMID:3511345,exclude,E2 rat/plasma vasopressor substance study,ace_arb,none,other
+PMID:35905961,exclude,E6 wastewater antibiotic-resistant bacteria (ARB acronym),none,none,other
+PMID:36362874,exclude,E6 lentil heat tolerance agronomy,none,none,other
+PMID:37055678,exclude,"E6 temperature and bowel cleansing; drugs independent factors, not heat-modified",multiple,none,cohort
+PMID:37280056,exclude,"E6 seasonal potassium and ACEi prescribing patterns, no heat harm",ace_arb,none,time_series
+PMID:37336722,exclude,E6 antibiotic-resistant bacteria heat treatment,none,none,lab_bench
+PMID:37343443,exclude,E6 landfill arsenate microbiology,none,none,lab_bench
+PMID:37393874,exclude,E6 wastewater antibiotic resistance,none,none,other
+PMID:37827766,exclude,E6 constructed wetlands ARG review,none,none,review
+PMID:38141016,exclude,E3 biosensor for resistance genes,none,none,lab_bench
+PMID:38142997,exclude,E6 fertilizer microplastics/ARGs,none,none,review
+PMID:38422695,exclude,E6 pharmaceutical bioaccumulation in invertebrates,none,none,other
+PMID:38452536,exclude,E6 food-derived ACE inhibitory peptides,none,none,lab_bench
+PMID:39152212,exclude,E2 mouse thermoresponsive hydrogel delivery,ace_arb,none,other
+PMID:39423097,exclude,"E6 Fabry disease case, no heat",ace_arb,none,case_report
+PMID:39488046,exclude,E6 whey protein digestion,none,none,other
+PMID:40095927,include,I1 antihypertensive medication and critical environmental heat limits,multiple,sweating_thermoregulation,human_lab_study
+PMID:40444028,include,I1 medication use modifying heat-related volume depletion/AKI ED visits,multiple,renal_aki,case_crossover
+PMID:40760521,exclude,E6 heatstroke case; antihypertensives given only as later treatment,multiple,none,case_report
+PMID:41188481,exclude,E7 analytical HPLC method,ace_arb,none,lab_bench
+PMID:41260347,exclude,E3 hot-melt extrusion formulation of telmisartan,ace_arb,none,lab_bench
+PMID:41553342,exclude,E6 natural product ACE inhibition chemistry,none,none,lab_bench
+PMID:42200961,include,I1 scoping review of medications and heat-related illness in older adults,multiple,heat_illness,systematic_review
+PMID:42511262,exclude,E6 food whey hydrolysate,none,none,lab_bench
+PMID:6282979,exclude,E6 skin ACE enzyme biochemistry,none,none,lab_bench
+PMID:6293756,exclude,E6 kidney ACE enzyme biochemistry,none,none,lab_bench
+PMID:6963,exclude,E6 ACE enzyme in sarcoidosis lymph nodes,none,none,other
+PMID:7784396,exclude,E6 natto ACE inhibitors (food),none,none,lab_bench
+PMID:8321860,exclude,E3 polymorph spectroscopy of losartan,ace_arb,none,lab_bench
+PMID:8352651,exclude,E6 archaebacterial enzyme characterization,none,none,lab_bench
+PMID:8537172,exclude,E6 microbial ACE inhibitor isolation chemistry,none,none,lab_bench
+PMID:9589401,exclude,E7 analytical methods for ACE inhibitors,ace_arb,none,lab_bench
+DOI:10.21203/rs.3.rs-25798/v1,exclude,E4 thyrotoxicosis fever case; beta blocker treatment only,beta_blockers,none,case_report
+DOI:10.64898/2026.06.18.733153,exclude,E2 lipoatrophic mouse thermoregulation,beta_blockers,none,other
+PMID:10203975,exclude,E6 prion disease case with hyperthermia; atenolol test only,none,none,case_report
+PMID:10205633,exclude,E3 propranolol gellan bead formulation,beta_blockers,none,lab_bench
+PMID:1033508,exclude,E2 rat morphine withdrawal conditioning,none,none,other
+PMID:10426,exclude,E2 animal cardiac pharmacology,none,none,other
+PMID:10714614,exclude,E3 thermodynamics of chiral drug dissolution,beta_blockers,none,lab_bench
+PMID:11012559,include,"I1 propranolol vs placebo at 40 C ambient, cardiovascular reflexes",beta_blockers,other,human_lab_study
+PMID:11214769,exclude,E7 cold exposure only (carvedilol),beta_blockers,none,rct
+PMID:11334359,exclude,E7 bioanalytical HPLC method,beta_blockers,none,lab_bench
+PMID:11862668,include,uncertain: I2 atenolol solution thermostability at 90 C,beta_blockers,stability_potency,lab_bench
+PMID:12062653,exclude,E7 spectrophotometric assay methods,beta_blockers,none,lab_bench
+PMID:12083996,exclude,E6 travoprost review; timolol comparator only,beta_blockers,none,review
+PMID:12650744,exclude,E2 mouse stress-induced hyperthermia,multiple,none,other
+PMID:12779288,exclude,E3 film coating formulation,beta_blockers,none,lab_bench
+PMID:1335440,include,I1 propranolol and heat exposure tolerance in healthy men,beta_blockers,sweating_thermoregulation,human_lab_study
+PMID:1369817,exclude,E5 cocaine body-packer toxicity; propranolol as treatment,none,none,case_report
+PMID:1386427,include,"I1 propranolol and thermal dehydration test, sweat electrolytes, hypertensives",beta_blockers,sweating_thermoregulation,human_lab_study
+PMID:14998101,exclude,E6 sympathetic storming after TBI review,beta_blockers,none,review
+PMID:15098517,exclude,E4 thyroid storm case; beta blockers as treatment,beta_blockers,none,case_report
+PMID:15484221,exclude,E7 bioanalytical HPLC method,beta_blockers,none,lab_bench
+PMID:160312,exclude,E2 rat morphine hyperthermia,none,none,other
+PMID:16159077,exclude,E6 paroxysmal sympathetic storm treated with labetalol,beta_blockers,none,case_series
+PMID:16553641,exclude,E2 review of animal radio-frequency heating studies,beta_blockers,none,review
+PMID:1679517,include,uncertain: I1 beta-blockers and exercise; notes exertional hyperthermia risk,beta_blockers,hyperthermia,review
+PMID:17010544,exclude,E3 hot-melt extrusion manufacturing,beta_blockers,none,lab_bench

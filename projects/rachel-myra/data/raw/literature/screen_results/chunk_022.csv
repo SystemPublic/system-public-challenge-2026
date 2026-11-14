@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:26292960,include,I2 glucose meters/strips after 1 h at 50C,storage_other,device_performance,lab_bench
+PMID:26352860,include,uncertain: I2 Spiromax DPI dose after high-temperature exposure,storage_other,device_performance,lab_bench
+PMID:26568639,exclude,E3 microwave noninvasive glucose sensor engineering,none,none,lab_bench
+PMID:26609733,exclude,E3 voriconazole DPI formulation,none,none,lab_bench
+PMID:26806464,exclude,E7 DPI capsule test method; no heat,none,none,lab_bench
+PMID:26825254,exclude,E3 thermo-stabilised nebulizer engineering,none,none,lab_bench
+PMID:26836711,exclude,E3 rivastigmine DPI formulation,none,none,lab_bench
+PMID:26908568,include,I2 POC glucose strips at 33-34C tropical hospital wards,storage_other,device_performance,lab_bench
+PMID:26970252,exclude,E7 spray-dried powder humidity only,none,none,lab_bench
+PMID:27055358,exclude,E6 glucose meter used for microbial biotoxicity assay,none,none,lab_bench
+PMID:27349791,exclude,E3 ibuprofen DPI formulation,none,none,lab_bench
+PMID:27853177,include,I2 budesonide DPIs stored at 40C/75% RH,storage_other,device_performance,lab_bench
+PMID:28088457,exclude,E3 glucose-binding protein formulation for CGM,none,none,lab_bench
+PMID:28271104,exclude,E6 paper nucleic acid test device,none,none,lab_bench
+PMID:28418683,exclude,E3 tobramycin inhalation powder state diagram,none,none,lab_bench
+PMID:28479348,exclude,E3 large porous particle formulation,none,none,lab_bench
+PMID:28513731,exclude,E3 nanoprism paper glucose sensor,none,none,lab_bench
+PMID:28560037,exclude,"E7 MDI cloud velocity; temperature controlled, not varied",none,none,lab_bench
+PMID:28655664,exclude,E7 spray-dried powder humidity only,none,none,lab_bench
+PMID:28709940,exclude,E7 salbutamol powder humidity only,none,none,lab_bench
+PMID:28772952,exclude,E7 lactose mixtures humidity only,none,none,lab_bench
+PMID:28903066,exclude,E3 itraconazole inhalation formulation development,none,none,lab_bench
+PMID:2894403,exclude,E6 solid phase chemistry analysers comparison,none,none,lab_bench
+PMID:28965047,exclude,E3 ciprofloxacin DPI formulation stability,none,none,lab_bench
+PMID:28978974,exclude,E3 noninvasive multisensor glucometer engineering,none,none,lab_bench
+PMID:29216744,include,I2 budesonide Easyhaler dose after 30C/60% RH exposure,storage_other,device_performance,lab_bench
+PMID:29425761,exclude,E3 protein-copolymer dry powder formulation,none,none,lab_bench
+PMID:29486303,exclude,E6 bacteriophage powder storage; not in-scope product,none,none,lab_bench
+PMID:29678544,exclude,E3 ciprofloxacin powder excipient formulation,none,none,lab_bench
+PMID:29697255,exclude,E6 troponin lateral flow assay,none,none,lab_bench
+PMID:29856921,exclude,E3 lactose carrier design,none,none,lab_bench
+PMID:29996898,exclude,E6 filariasis antigen QC material,none,none,lab_bench
+PMID:30130605,exclude,E3 roflumilast DPI formulation,none,none,lab_bench
+PMID:30213995,exclude,E3 ZnO nanorod glucose biosensor,none,none,lab_bench
+PMID:30239455,exclude,E6 T1D racing driver case; no drug x heat analysis,none,none,case_report
+PMID:30276666,exclude,E3 sildenafil DPI formulation,none,none,lab_bench
+PMID:30424439,exclude,E3 plasmonic fiber glucometer engineering,none,none,lab_bench
+PMID:30584713,exclude,E6 Ebola lateral flow assay,none,none,lab_bench
+PMID:30603749,exclude,E3 photonic crystal films,none,none,lab_bench
+PMID:30726751,exclude,E3 glucose biosensor nanoplatform,none,none,lab_bench
+PMID:30764199,exclude,E6 onion bulb rot,none,none,lab_bench
+PMID:30809740,exclude,E3 infliximab dry powder formulation,none,none,lab_bench
+PMID:30812164,exclude,E6 Enterobacteriaceae identification kit,none,none,lab_bench
+PMID:30902103,exclude,E3 OZ439 oral nanoparticle formulation,none,none,lab_bench
+PMID:30946963,include,"I2 tiotropium Handihaler after patients summer use, Amman",storage_other,device_performance,lab_bench
+PMID:30951858,exclude,E3 pullulan trehalose microparticle platform,none,none,lab_bench
+PMID:30990097,exclude,E7 co-spray dried powders humidity at 25C,none,none,lab_bench
+PMID:30999050,exclude,E3 budesonide-arginine co-amorphous powder,none,none,lab_bench
+PMID:31004652,exclude,E3 DPI electrostatics,none,none,lab_bench
+PMID:31077763,exclude,E3 siRNA spray drying process stress,none,none,lab_bench
+PMID:31086107,exclude,E3 isoniazid DPI formulation,none,none,lab_bench
+PMID:31199708,include,I2 Ventolin Evohaler dose after summer patient use up to 40.4C,storage_other,device_performance,lab_bench
+PMID:31352077,include,"I2 Respimat dose after summer patient use, Amman",storage_other,device_performance,lab_bench
+PMID:31454254,exclude,E3 micronized drug annealing,none,none,lab_bench
+PMID:31480343,exclude,E7 CGM accuracy during exercise; no heat,none,none,other
+PMID:31513868,exclude,E3 bedaquiline inhalation powder,none,none,lab_bench
+PMID:31536784,exclude,E3 trehalose amino acid formulation,none,none,lab_bench
+PMID:31731974,exclude,E3 glucose dehydrogenase enzyme thermostability engineering,none,none,lab_bench
+PMID:31746925,exclude,E3 copper nanocluster composite,none,none,lab_bench
+PMID:31786953,exclude,E6 sterilisation of implant biosensor coating,none,none,lab_bench
+PMID:31811928,exclude,E3 pDNA powder formulation,none,none,lab_bench
+PMID:31935973,exclude,E6 salivary pepsin test,none,none,lab_bench
+PMID:31936628,exclude,E3 carrier-free DPI review,none,none,review
+PMID:31937148,exclude,E3 theophylline cocrystal SFD formulation,none,none,lab_bench
+PMID:31981702,exclude,E3 ciprofloxacin liposome powder,none,none,lab_bench
+PMID:32126109,exclude,E2 glucose measurement in sea turtles,none,none,lab_bench
+PMID:32440940,exclude,E3 CFD spray drying model,none,none,lab_bench
+PMID:32445908,exclude,E3 voriconazole SFD particles,none,none,lab_bench
+PMID:32447731,exclude,E3 paper biosensor polyphenol oxidase,none,none,lab_bench
+PMID:32739389,exclude,E3 amorphous solid dispersion review,none,none,review
+PMID:32771765,exclude,E3 quantum dot film sensor,none,none,lab_bench
+PMID:32811193,exclude,E3 amorphous inhalation powders review,none,none,review
+PMID:32976512,exclude,E6 brucellosis test strip,none,none,lab_bench
+PMID:33059012,exclude,E6 phage-ciprofloxacin powder storage at 4/25C,none,none,lab_bench
+PMID:33075466,exclude,E3 levofloxacin DPI formulation,none,none,lab_bench
+PMID:33095328,exclude,E6 Salmonella immunoassay,none,none,lab_bench
+PMID:33105618,exclude,E3 remdesivir inhalation powder,none,none,lab_bench
+PMID:33142877,exclude,E3 impedance glucose sensing temperature correction,none,none,lab_bench
+PMID:33171338,exclude,E7 analytical HPLC method development,none,none,lab_bench
+PMID:33375607,exclude,E3 lactomorphin inhalation powder formulation; no heat results,none,none,lab_bench
+PMID:33705876,exclude,E3 biologic dry powder review,none,none,review
+PMID:33750391,exclude,E8 diagnostics policy commentary,none,none,other
+PMID:33760265,exclude,E6 IL-6 lateral flow strip,none,none,lab_bench
+PMID:33860409,exclude,E3 surfactant EEG powder formulation,none,none,lab_bench
+PMID:33896355,exclude,E3 vancomycin powder formulation,none,none,lab_bench
+PMID:33934788,exclude,E6 CRP lateral flow strip,none,none,lab_bench
+PMID:34004219,exclude,E3 micronized drug substance accelerated stability method,none,none,lab_bench
+PMID:34051384,exclude,E3 disposable glucose sensor mediator chemistry,none,none,lab_bench
+PMID:34144139,exclude,E6 ciprofloxacin liposome powder storage; not in-scope,none,none,lab_bench
+PMID:34230213,include,I2 albuterol HFA inhaler fine-particle fraction at 45C,storage_other,device_performance,lab_bench
+PMID:34250063,exclude,E6 porcine virus test strip,none,none,lab_bench
+PMID:34256969,exclude,E6 TB vaccine powder thermostability,none,none,lab_bench
+PMID:34467438,exclude,E3 bevacizumab powder formulation,none,none,lab_bench
+PMID:34538539,exclude,E6 dermatophyte immunochromatographic test,none,none,lab_bench
+PMID:3454651,exclude,E3 quinoprotein glucose sensor,none,none,lab_bench
+PMID:34740761,exclude,E3 lipid microparticle spray drying,none,none,lab_bench
+PMID:34745284,exclude,E3 curcumin SLN DPI,none,none,lab_bench
+PMID:34791545,exclude,E7 lactose humidity/storage; no heat,none,none,lab_bench
+PMID:34865902,exclude,E3 H2S gas sensor,none,none,lab_bench
+PMID:34875354,exclude,E3 carbohydrate excipient particles,none,none,lab_bench
+PMID:34889119,include,I2 blood glucose sensor strips stored 3 months at 60C,storage_other,device_performance,lab_bench
+PMID:34998923,exclude,E3 methionine composite particles,none,none,lab_bench
+PMID:35041913,exclude,E3 fluticasone MgSt coating process,none,none,lab_bench
+PMID:35062385,exclude,E7 review of glucose monitoring technologies; heat not focus,none,none,review
+PMID:35147870,exclude,E3 CFD spray drying tobramycin,none,none,lab_bench
+PMID:35189314,exclude,E6 inhalable viral vaccine thermostability,none,none,lab_bench
+PMID:35227048,exclude,E7 analytical HPLC method with forced degradation only,none,none,lab_bench
+PMID:35245909,exclude,E3 acetone gas sensor,none,none,lab_bench
+PMID:35259440,exclude,E3 monoclonal antibody powder TFFD,none,none,lab_bench
+PMID:35275749,exclude,E3 ivermectin inhalable powder,none,none,lab_bench
+PMID:35328299,exclude,E7 handheld device user experiences; no heat data,none,none,other
+PMID:35341528,exclude,E6 GMO maize biosensor,none,none,lab_bench
+PMID:35370200,exclude,E3 biopharmaceutical DPI caking,none,none,lab_bench
+PMID:35453097,exclude,E6 PSA nanoliposome detection,none,none,lab_bench
+PMID:35470067,exclude,E3 expired lactose carriers,none,none,lab_bench
+PMID:35549522,exclude,E7 CGM interference test protocol,none,none,lab_bench
+PMID:35596991,exclude,E3 H2S sensor nanochains,none,none,lab_bench
+PMID:35700797,exclude,E3 voriconazole NCSD powder,none,none,lab_bench
+PMID:35819023,exclude,E3 sulfur mustard chemosensor,none,none,lab_bench
+PMID:35830743,exclude,E6 urinary sodium test strip,none,none,lab_bench

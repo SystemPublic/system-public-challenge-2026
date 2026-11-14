@@ -1,0 +1,61 @@
+row_id,drug_or_class,pmid,graph_status,n_findings,example_findings
+R01,Anticholinergics,17513091,"indexed, findings",3,use of psychotropic drugs <-> admission for heat-related pathologies | use of psychotropic drugs <-> admission for heat-related pathologies
+R01,Anticholinergics,39513185,"indexed, no findings",0,
+R02,Oxybutynin,8835047,"indexed, no findings",0,
+R02,Oxybutynin,34055543,"indexed, no findings",0,
+R03,Diphenhydramine,39140777,"indexed, no findings",0,
+R04,"Topiramate, zonisamide (children)",12770670,"indexed, no findings",0,
+R04,"Topiramate, zonisamide (children)",15519129,"indexed, no findings",0,
+R04,"Topiramate, zonisamide (children)",12760427,"indexed, no findings",0,
+R05,Topiramate (adults),23993866,"indexed, no findings",0,
+R05,Topiramate (adults),15795554,"indexed, no findings",0,
+R07,Antipsychotics,17513091,"indexed, findings",3,use of psychotropic drugs <-> admission for heat-related pathologies | use of psychotropic drugs <-> admission for heat-related pathologies
+R08,Antipsychotic + anticholinergic in outdoor workers,18025545,"indexed, no findings",0,
+R09,Antipsychotics (hypothermia),21956608,"indexed, no findings",0,
+R10,Clozapine,31378552,"indexed, no findings",0,
+R12,Beta blockers,39513185,"indexed, no findings",0,
+R14,ADHD stimulants,29613996,"indexed, findings",6,body mass index (BMI) <-> severe heat illness (SHI) | body mass index (BMI) <-> severe heat illness (SHI)
+R14,ADHD stimulants,25469604,"indexed, no findings",0,
+R15,Prescribed appetite suppressants,6128802,"indexed, no findings",0,
+R16,"Aspirin, clopidogrel",23135368,"indexed, no findings",0,
+R16,"Aspirin, clopidogrel",40350968,"indexed, no findings",0,
+R19,Anti-Parkinson drugs,39513185,"indexed, no findings",0,
+R22,"Benzodiazepines, hypnotics",17513091,"indexed, findings",3,use of psychotropic drugs <-> admission for heat-related pathologies | use of psychotropic drugs <-> admission for heat-related pathologies
+R23,Opioids,29613996,"indexed, findings",6,body mass index (BMI) <-> severe heat illness (SHI) | body mass index (BMI) <-> severe heat illness (SHI)
+R26,Non-loop diuretics,42710533,not indexed,0,
+R26,Non-loop diuretics,39513185,"indexed, no findings",0,
+R27,ACE inhibitors / ARBs (+ diuretic),42710533,not indexed,0,
+R27,ACE inhibitors / ARBs (+ diuretic),27992525,"indexed, no findings",0,
+R28,'Triple whammy',29116624,"indexed, findings",2,"concomitant use of diuretics, non-steroidal anti-i <-> in-hospital acute kidney injury (AKI) | concomitant use of diuretics, non-steroidal anti-i <-> in-hospital acute kidney injury (AKI)"
+R29,NSAIDs,29613996,"indexed, findings",6,body mass index (BMI) <-> severe heat illness (SHI) | body mass index (BMI) <-> severe heat illness (SHI)
+R33,Dabigatran,25534224,"indexed, no findings",0,
+R40,Vasodilators,42710533,not indexed,0,
+R42,Warfarin,33903173,"indexed, no findings",0,
+R47,Insulin pens in use,36585035,"indexed, findings",1,HT insulin pen group [vs refrigerated insulin pen  <-> mean glucose levels
+R47,Insulin pens in use,33534816,"indexed, no findings",0,
+R48,Insulin above 37 C,19797814,"indexed, no findings",0,
+R49,Insulin pumps,27789976,"indexed, no findings",0,
+R49,Insulin pumps,19424950,"indexed, no findings",0,
+R55,Patches and sensors (adhesion),24876416,"indexed, no findings",0,
+R56,Epinephrine auto-injectors,25997362,"indexed, no findings",0,
+R56,Epinephrine auto-injectors,27221065,"indexed, no findings",0,
+R58,EMS drug kits,24548058,"indexed, no findings",0,
+R58,EMS drug kits,23711878,"indexed, no findings",0,
+R58,EMS drug kits,8179739,"indexed, no findings",0,
+R58,EMS drug kits,32686630,"indexed, no findings",0,
+R58,EMS drug kits,40596924,"indexed, no findings",0,
+R59,Ketamine (EMS),38173689,"indexed, no findings",0,
+R59,Ketamine (EMS),34028315,"indexed, no findings",0,
+R60,Degraded tetracycline,14258922,"indexed, no findings",0,
+R60,Degraded tetracycline,5547594,"indexed, no findings",0,
+R64,Mail-order medicines,18463345,"indexed, no findings",0,
+R67,Power-dependent devices,16263671,"indexed, no findings",0,
+R67,Power-dependent devices,37219950,"indexed, no findings",0,
+R67,Power-dependent devices,35977265,"indexed, findings",3,power loss from Hurricane Irma <-> mortality within 7 days (in all affected NH reside | power loss from Hurricane Irma <-> mortality within 30 days (among all affected NH re
+R67,Power-dependent devices,40692025,"indexed, no findings",0,
+R68,Refrigerated drugs,36380330,"indexed, no findings",0,
+R69,Missed refills,40545799,"indexed, no findings",0,
+R75,Voriconazole,30130598,"indexed, findings",3,longer duration of voriconazole use <-> cutaneous squamous cell carcinoma | voriconazole use <-> cutaneous squamous cell carcinoma
+R75,Voriconazole,22484291,"indexed, no findings",0,
+R76,Hydrochlorothiazide,29217346,"indexed, findings",4,Hydrochlorothiazide use <-> squamous cell carcinoma (SCC) | Hydrochlorothiazide use <-> basal cell carcinoma
+R79,Dialysis patients,31397862,"indexed, findings",7,Extreme heat events (EHEs) <-> risk of hospital admission among patients with end | Extreme heat events (EHEs) <-> risk of mortality among patients with end-stage re

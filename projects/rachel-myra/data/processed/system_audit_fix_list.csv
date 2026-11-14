@@ -1,0 +1,27 @@
+action,type,paper,detail,source
+report_to_System,mislabel_or_drug_dropped,PMID:17513091,"our 6.0: mislabel:System says 'psychotropic', claim is anticholinergics",system_api_verification_numbers.csv
+report_to_System,mislabel_or_drug_dropped,PMID:33301532,our 1.16: mislabel_or_unnamed:System variables name no drug: heatwaves || heat-related hospitalization (among older patients with chronic conditions),system_api_verification_numbers.csv
+report_to_System,mislabel_or_drug_dropped,PMID:33301532,our 1.37: mislabel_or_unnamed:System variables name no drug: heatwaves || heat-related hospitalization among older patients with chronic conditions,system_api_verification_numbers.csv
+report_to_System,finding_not_extracted,PMID:33301532,"our number 1.54 (Layton et al., PLoS One 2020) is in the abstract but not in System",system_api_verification_numbers.csv
+report_to_System,finding_not_extracted,PMID:33301532,"our number 1.84 (Layton et al., PLoS One 2020) is in the abstract but not in System",system_api_verification_numbers.csv
+report_to_System,finding_not_extracted,PMID:33301532,"our number 1.64 (Layton et al., PLoS One 2020) is in the abstract but not in System",system_api_verification_numbers.csv
+report_to_System,mislabel_or_drug_dropped,PMID:39648665,our 1.48: mislabel_or_unnamed:System variables name no drug: heatwave || heat-related illness,system_api_verification_numbers.csv
+report_to_System,finding_not_extracted,PMID:39648665,"our number 1.45 (Wong et al., Psychol Med 2024) is in the abstract but not in System",system_api_verification_numbers.csv
+report_to_System,finding_not_extracted,PMID:39648665,"our number 0.53 (Wong et al., Psychol Med 2024) is in the abstract but not in System",system_api_verification_numbers.csv
+candidate_for_master_list,unused_heat_finding_on_cited_paper,PMID:28737683,"System: outdoor temperature in Sweden -> reporting of drug-induced hyponatremia, OR 2.21 (API only, not in Dataverse). Cited at master_list R30; number unused.",system_api_reverse_check.csv
+candidate_for_master_list,new_paper_from_System,PMID:25163443,"Lithium dose-level ratio vs mean daily temperature, beta -0.17, p=0.08, n=63 (McGill 2014). Not significant; lithium population evidence currently only an unverified thesis.",system_drug_heat_direct_findings.csv
+candidate_for_master_list,strong_System_link_missing,,SGLT2 inhibitors -> aki: 32 studies; ratio up 6 / down 31,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Loop diuretics -> aki: 31 studies; ratio up 27 / down 4,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,ACE inhibitors / ARBs -> bp_hypotension: 24 studies; ratio up 13 / down 4,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Beta blockers -> bp_hypotension: 14 studies; ratio up 10 / down 2,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Metformin -> aki: 11 studies; ratio up 4 / down 8,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Fentanyl / opioid patches -> bp_hypotension: 11 studies; ratio up 6 / down 1,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,SSRIs -> bp_hypotension: 11 studies; ratio up 9 / down 2,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Loop diuretics -> hyponatremia: 10 studies; ratio up 6 / down 2,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Antipsychotics (incl. clozapine) -> bp_hypotension: 10 studies; ratio up 7 / down 1,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Insulin (incl. pumps) -> aki: 8 studies; ratio up 7 / down 1,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Beta blockers -> aki: 8 studies; ratio up 3 / down 1,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Fentanyl / opioid patches -> aki: 8 studies; ratio up 7 / down 0,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,ACE inhibitors / ARBs -> hyponatremia: 8 studies; ratio up 4 / down 0,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Antipsychotics (incl. clozapine) -> hyponatremia: 6 studies; ratio up 10 / down 3,system_api_reverse_check.csv
+candidate_for_master_list,strong_System_link_missing,,Loop diuretics -> bp_hypotension: 5 studies; ratio up 2 / down 1,system_api_reverse_check.csv

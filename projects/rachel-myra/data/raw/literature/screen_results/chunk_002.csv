@@ -1,0 +1,121 @@
+record_id,decision,reason,drug_class,outcome_type,design
+PMID:19874647,exclude,"E7: forensic pyrolysis of fentanyl, not heat exposure of patients",none,none,lab_bench
+PMID:19967778,include,I2: in vitro fentanyl transdermal permeation at 40 C vs 32 C,opioids_fentanyl,pharmacokinetics_absorption,lab_bench
+PMID:20336422,exclude,E7: experimental heat/capsaicin pain models,none,none,review
+PMID:20560385,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:20585812,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:20737278,exclude,E6: local warming for rocuronium injection pain,none,none,rct
+PMID:20845628,exclude,E7: postanesthetic shivering prophylaxis,none,none,rct
+PMID:21138531,exclude,E7: experimental pain PK/PD of transdermal opioids,none,none,rct
+PMID:21636932,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:21646442,exclude,E7: thermal hyperalgesia pain model for potency,none,none,rct
+PMID:21800670,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:21840705,exclude,E4: epidural-associated maternal fever,none,none,rct
+PMID:22011869,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:22626813,exclude,E7: prewarming airway device,none,none,rct
+PMID:22835002,include,"I1: fentanyl patch toxicity while sun tanning, heated environment",opioids_fentanyl,drug_toxicity_levels,case_report
+PMID:22860304,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:23021168,exclude,"E7: warm vs cool water colonoscopy, sedation dose",none,none,rct
+PMID:2337243,exclude,"E7: shivering after extradural analgesia, warmed injectate",none,none,other
+PMID:23440583,exclude,E2: rat opioid hyperthermia,none,none,other
+PMID:23476663,exclude,"E4: paroxysmal sympathetic storming, no environmental heat",none,none,case_report
+PMID:23796482,exclude,E2: veterinary SSRI toxicosis review (serotonin syndrome),none,none,review
+PMID:2386307,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:24122405,exclude,"E7: sweating symptom with fentanyl, no heat link",opioids_fentanyl,none,cohort
+PMID:24575270,exclude,E6: anesthesia complications in children,none,none,cohort
+PMID:25115506,exclude,E6: neonatal radiant warmer heat balance; fentanyl incidental sedation,none,none,human_lab_study
+PMID:2567581,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:26689076,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:27111691,exclude,E5: malignant hyperthermia in muscle biopsy anesthesia,none,none,cohort
+PMID:27156124,exclude,"E5: novel psychoactive stimulant toxicity, no environmental heat",none,none,case_report
+PMID:27252070,exclude,E5: neuroleptic malignant syndrome case,none,none,case_report
+PMID:27752976,exclude,"E8: narrative pharmacogenomics review, no heat",none,none,review
+PMID:27811495,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:28059581,include,"I2: field medication stability at 45 C incl fentanyl, diphenhydramine, atropine",multiple,stability_potency,lab_bench
+PMID:28464270,exclude,E7: nonpainful heat hyperalgesia model with alfentanil,none,none,rct
+PMID:29123703,exclude,E4: opioid withdrawal hyperthermia,none,none,case_report
+PMID:29158865,exclude,E6: meningioma surgery complications,none,none,cohort
+PMID:2938058,exclude,E7: experimental thermal pain with fentanyl,none,none,human_lab_study
+PMID:29626346,exclude,E6: propofol sedation in Brugada syndrome,none,none,cohort
+PMID:2968058,exclude,E7: hypothermic bypass and sufentanil levels,none,none,cohort
+PMID:29933824,exclude,"E5: illicit drug review, stimulant hyperthermia without heat link",none,none,review
+PMID:29982991,exclude,"E7: fentanyl/ketamine compatibility at ambient 26-28 C, not heat excursion",opioids_fentanyl,none,lab_bench
+PMID:30001249,exclude,"E4: paroxysmal sympathetic hyperactivity, no environmental heat",none,none,case_report
+PMID:30211725,exclude,E7: thermal thresholds after remifentanil,none,none,rct
+PMID:3036972,exclude,E6: therapeutic whole-body hyperthermia,none,none,case_series
+PMID:30985539,exclude,E7: perioperative warming to prevent hypothermia,none,none,rct
+PMID:31491368,exclude,E7: urine specimen drug stability in test cups,none,none,lab_bench
+PMID:31594202,exclude,E6: local heat therapy for pain,none,none,rct
+PMID:32025911,exclude,E6: congenital anhidrosis anesthesia; opioid not heat-related,none,none,case_report
+PMID:32702372,include,I2: in vitro heat effects on fentanyl transdermal systems 32 vs 42 C,opioids_fentanyl,pharmacokinetics_absorption,lab_bench
+PMID:3285124,exclude,"E5: designer drug review, stimulant overdose hyperthermia",none,none,review
+PMID:32934403,exclude,E6: anesthesia during hyperthermic intraperitoneal chemotherapy,none,none,rct
+PMID:33019461,exclude,"E4: autonomic instability treated with fentanyl patch, no heat exposure",none,none,case_report
+PMID:33268747,exclude,E5: suspected malignant hyperthermia/rhabdomyolysis postoperatively,none,none,case_report
+PMID:3340422,exclude,E7: thermal pain psychophysics with fentanyl,none,none,rct
+PMID:34838928,include,"I1: transient heat (42 C) increases fentanyl TDS bioavailability, human PK",opioids_fentanyl,pharmacokinetics_absorption,human_lab_study
+PMID:35431747,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:35717271,include,"I2: real-life EMS car temperatures up to 33.9 C, fentanyl and epinephrine stability",multiple,stability_potency,lab_bench
+PMID:36168915,exclude,E3: fentanyl vapor pressure for detection,none,none,lab_bench
+PMID:36781340,exclude,"E5: drug-induced hyperthermia (cocaine/adulterant), no environmental heat",none,none,case_series
+PMID:37947771,exclude,E3: computational fentanyl thermal degradation chemistry,none,none,other
+PMID:38056933,exclude,E6: Dravet anesthesia; fentanyl incidental,none,none,case_report
+PMID:38986719,include,uncertain: I1 simulated transdermal fentanyl uptake vs seasonal ambient temperature,opioids_fentanyl,pharmacokinetics_absorption,other
+PMID:39507144,exclude,"E5: cocaine hyperthermia, no environmental heat",none,none,case_report
+PMID:4061805,exclude,E6: therapeutic whole-body hyperthermia,none,none,case_series
+PMID:40996401,exclude,E5: malignant hyperthermia case,none,none,case_report
+PMID:41193014,include,uncertain: I1 summer heatstroke ED cases with methamphetamine/fentanyl use,multiple,heat_illness,case_series
+PMID:41205399,include,"I1: heat-involved overdose deaths, methamphetamine toxicology aOR",adhd_stimulants,mortality,cross_sectional
+PMID:42275875,exclude,E2: emodin TRPV1 mouse pain models,none,none,other
+PMID:42366387,exclude,E4: paroxysmal sympathetic hyperactivity case,none,none,case_report
+PMID:42539894,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:42726827,exclude,E6: spinal fixation forensic study,none,none,cohort
+PMID:42976541,exclude,"E2: dual-target analgesic synthesis, mouse hyperthermia",none,none,other
+PMID:495763,exclude,E6: hyperthermic cancer therapy under anesthesia,none,none,cohort
+PMID:6605099,exclude,E7: temperature gradients during hypothermic bypass,none,none,cohort
+PMID:686331,exclude,E5: malignant hyperpyrexia case,none,none,case_report
+PMID:7126396,exclude,E7: perioperative heat loss prevention,none,none,rct
+PMID:7609301,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:770064,exclude,E5: malignant hyperpyrexia review,none,none,review
+PMID:8023241,exclude,E6: therapeutic whole-body hyperthermia for cancer,none,none,case_series
+PMID:8160994,exclude,E6: hyperthermic peritoneal perfusion; drugs incidental,none,none,case_series
+PMID:8250206,exclude,E5: mitochondrial myopathy with MH susceptibility,none,none,case_report
+PMID:8324104,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:8468794,exclude,E6: brain monitoring during therapeutic hyperthermia,none,none,case_report
+PMID:8470783,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:8868536,exclude,E5: malignant hyperthermia precautions case,none,none,case_report
+PMID:8967597,exclude,E7: heat and moisture exchanger in anesthesia,none,none,rct
+PMID:8986182,exclude,E7: fluid warming against hypothermia,none,none,rct
+PMID:8989012,exclude,E7: PET of fentanyl analgesia with thermal stimuli,none,none,human_lab_study
+PMID:9327311,exclude,E7: rewarming on cardiopulmonary bypass,none,none,rct
+PMID:9670269,exclude,E6: isolated hyperthermic liver perfusion anesthesia,none,none,case_series
+PMID:9872702,exclude,E7: syringe compatibility at room temperature/4 C,none,none,lab_bench
+DOI:10.1101/2024.04.16.589767,exclude,E7: insulin analog crystallography,none,none,lab_bench
+DOI:10.1101/611376,include,"uncertain: I2 insulin fibrillation at high temperature, resveratrol stabiliser",insulin,stability_potency,lab_bench
+DOI:10.20944/preprints202308.0806.v1,exclude,E6: hyperosmolar syndrome review; hyperthermia as complication,none,none,review
+PMID:10052992,include,I2: heat-stressed NPH insulin formulations form protein cross-links,insulin,stability_potency,lab_bench
+PMID:1118083,exclude,E7: heat-stable alkaline phosphatase assay,none,none,cohort
+PMID:11517220,exclude,E3: insulin analog thermodynamic chemistry,none,none,lab_bench
+PMID:11976805,exclude,E7: clamp blood sampling method,none,none,other
+PMID:12036720,exclude,E3: hydrogel peptide delivery system development,none,none,lab_bench
+PMID:12396425,exclude,E3: thermal inkjet aerosol engineering,none,none,lab_bench
+PMID:12581612,exclude,E6: hypothesis on heat shock and beta cells,none,none,review
+PMID:1267120,exclude,E5: malignant hyperpyrexia case,none,none,case_report
+PMID:1397784,exclude,E7: type 1 diabetes incidence epidemiology,none,none,cohort
+PMID:14694290,exclude,E6: stroke acute care review,none,none,review
+PMID:14708239,exclude,E4: pyelonephritis fever in diabetes,none,none,cohort
+PMID:15128628,exclude,E6: ambulatory surgery selection survey,none,none,cross_sectional
+PMID:1516503,exclude,E7: thermal sensory thresholds in NIDDM,none,none,cohort
+PMID:15251837,include,uncertain: I2 insulin pen accuracy after thermal stress tests,insulin,device_performance,lab_bench
+PMID:15653157,exclude,E3: thermosensitive hydrogel protein release,none,none,lab_bench
+PMID:15774170,exclude,E4: intensive insulin therapy in sepsis,none,none,rct
+PMID:15913826,exclude,E3: microgel protein encapsulation,none,none,lab_bench
+PMID:16250555,exclude,E6: burn hypermetabolism review; ambient warming not drug x heat,none,none,review
+PMID:16403445,exclude,E2: in vitro heat-regulated insulin gene expression,none,none,lab_bench
+PMID:16800757,include,I2: insulin lispro stability in pumps at 37 C with agitation,insulin,stability_potency,lab_bench
+PMID:17287466,exclude,E2: diabetic rat hyperalgesia,none,none,other
+PMID:17484176,exclude,E6: postoperative care review,none,none,review
+PMID:1850685,exclude,E6: local heating microvascular response; insulin incidental,none,none,case_control
+PMID:18716048,exclude,"E7: insulin clamp and orthostatic stress, no heat exposure",none,none,human_lab_study
+PMID:1914533,exclude,E7: insulin absorption review; heat not mentioned in abstract,insulin,none,review
+PMID:19337558,exclude,E7: skin microvascular reactivity in diabetes,none,none,case_control
