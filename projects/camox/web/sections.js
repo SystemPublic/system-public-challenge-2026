@@ -285,15 +285,20 @@ function section(s, sources) {
 }
 
 // Verification badge: what the checker looked at, and any issues it found.
-function verification(v) {
+export function verifyPill(v) {
   if (!v || typeof v !== 'object') return '<span class="pill">Not verified</span>';
   const issues = Array.isArray(v.issues) ? v.issues : [];
-  const checks = Array.isArray(v.code_checks) ? v.code_checks : [];
   const ok = v.status === 'verified';
   const major = issues.filter((i) => i.severity === 'major').length;
   const label = ok ? [`Verified`, `${plural(v.claims_checked ?? 0, 'claim', 'claims')} checked`, issues.length ? plural(issues.length, 'note', 'notes') : ''].filter(Boolean).join(' · ')
     : `${plural(major || issues.length, 'issue', 'issues')} found`;
-  return `<details class="verify ${ok ? 'ok' : 'issues'}"><summary><span class="pill ${ok ? 's-backed' : 's-partial'}">${esc(label)}</span></summary>
+  return `<span class="pill ${ok ? 's-backed' : 's-partial'}">${esc(label)}</span>`;
+}
+function verification(v) {
+  if (!v || typeof v !== 'object') return verifyPill(v);
+  const issues = Array.isArray(v.issues) ? v.issues : [];
+  const checks = Array.isArray(v.code_checks) ? v.code_checks : [];
+  return `<details class="verify ${v.status === 'verified' ? 'ok' : 'issues'}"><summary>${verifyPill(v)}</summary>
     <div class="verify-body small">
       ${issues.length ? `<ul>${issues.map((i) => `<li><strong>${esc(cap(String(i.severity || 'minor')))}:</strong> ${esc(i.problem)}${i.claim ? `<div class="muted">Claim: ${esc(i.claim)}</div>` : ''}</li>`).join('')}</ul>` : ''}
       ${Number.isFinite(v.claims_checked) ? `<p>${plural(v.claims_checked, 'claim', 'claims')} in the answer checked against the tool results.</p>` : ''}

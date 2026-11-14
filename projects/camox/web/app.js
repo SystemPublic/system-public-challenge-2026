@@ -1,5 +1,5 @@
 // State, API calls, the run event stream and page layout. Section rendering is in sections.js, the graph in graph.js.
-import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv, renderMyList, kpiStrip } from './sections.js';
+import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv, renderMyList, kpiStrip, verifyPill } from './sections.js';
 import { drawGraph } from './graph.js';
 import { bindDashboard } from './dashboard.js';
 import { mountKG } from './kg.js';
@@ -205,12 +205,10 @@ function renderWorkspace() {
   renderMyList($('.my-list'));
   renderOverview();
   const runs = [...pj.runs].sort((a, b) => a.id - b.id);
-  const fps = runs.filter(isFirstPass); const fpDone = fps.filter((r) => r.answer).at(-1);
-  const asked = runs.filter(inThread);
-  const lastDone = asked.filter((r) => r.answer).at(-1);
+  const fps = runs.filter(isFirstPass);
   if (fps.length) $('#first-pass').innerHTML = '';
-  fps.forEach((r) => mountTurn(r, r === fpDone, $('#first-pass')));
-  asked.forEach((r) => mountTurn(r, r === lastDone));
+  fps.forEach((r) => mountTurn(r, $('#first-pass')));
+  runs.filter(inThread).forEach((r) => mountTurn(r));
   bindFirstPass();
   bindComposer();
 }
@@ -274,7 +272,7 @@ function bindFirstPass() {
     try {
       const { run_id: id } = await api(`/api/projects/${state.project.id}/runs`, { method: 'POST', body: { query: FIRST_PASS } });
       box.innerHTML = '';
-      mountTurn({ id, query: FIRST_PASS, status: 'running', created_at: new Date().toISOString(), answer: null }, true, box);
+      mountTurn({ id, query: FIRST_PASS, status: 'running', created_at: new Date().toISOString(), answer: null }, box);
     } catch (err) { e.target.disabled = false; notice(`Could not start the first pass: ${err.message}.`, 'Try again in a moment.'); }
   };
 }
@@ -355,7 +353,7 @@ const projectView = (pj) => `<header class="project-head"><h1>${esc(pj.title)}</
   ${block('kg', 'Knowledge graph', 'The entities in this project\'s answers and the facts linking them, with the studies behind each.', '<div id="kg"></div>')}
   ${block('ml', 'My list', 'Indicators you picked from this project\'s indicator maps, to download as CSV.', '<div class="my-list"></div>')}
   ${block('rp', 'Report', 'A cited report of this project, with references and data provenance, to print or save as PDF.', '<div id="report"></div>')}
-  ${block('qs', 'Questions', 'Ask about this project. Every answer reads the goals and the earlier answers. Older answers fold away; reply under the latest.', `${threadHead()}
+  ${block('qs', 'Questions', 'Ask about this project. Every answer reads the goals and the earlier answers. Each answer folds to one line; open it to read the full analysis.', `${threadHead()}
   <form id="composer" class="composer">
     <label for="q">${pj.runs.some(inThread) ? 'Ask a new question' : 'Ask a question'}</label>
     <textarea id="q" rows="3" placeholder="${esc(examples(state.profile)[0])}"></textarea>
@@ -436,8 +434,13 @@ function bindComposer() {
 // KPI strip computed from every indicator map in the project; redrawn when a new answer arrives.
 const renderOverview = () => { const o = $('#overview'); if (o) o.innerHTML = kpiStrip(state.project.runs); };
 
+const turnBody = `<p class="context small muted" hidden></p><div class="status-line" role="status" hidden></div>
+  <details class="trace"><summary>Show agents and tool calls</summary><div class="trace-body"></div></details><div class="answer"></div>`;
+
 // Turns: one per run --------------------------------------------------------------------------------
-function mountTurn(run, latest, box = $('#thread')) {
+// A stored answer folds to its question, verification badge and first sentence; a live run stays open.
+const firstSentence = (t) => { const s = String(t || '').replace(/\s*\[[^\]]*10\.\d{4}[^\]]*\]/g, ''); return short(s.match(/^.*?[.!?](?=\s|$)/s)?.[0] || s, 240); };
+function mountTurn(run, box = $('#thread')) {
   const fp = box.id === 'first-pass';
   if (run.status === 'failed' && !run.answer) {
     box.insertAdjacentHTML('beforeend', failedTurn(run, fp));
@@ -446,18 +449,17 @@ function mountTurn(run, latest, box = $('#thread')) {
   box.insertAdjacentHTML('beforeend', `<section class="turn" id="run-${run.id}">
     ${fp ? `<p class="small muted fp-when">${run.status === 'running' ? 'First pass running, started' : 'First pass ran'} ${esc(when(run.created_at))}</p>`
       : `<div class="q"><p>${esc(run.query)}</p><time class="small muted">${esc(when(run.created_at))}</time></div>`}
-    <p class="context small muted" hidden></p>
-    <div class="status-line" role="status" hidden></div>
-    <details class="trace"><summary>Show agents and tool calls</summary><div class="trace-body"></div></details>
-    ${latest || !run.answer ? '<div class="answer"></div>' : `<details class="older"><summary><span class="more-label">Show the answer</span> <span class="muted">${esc(short(run.answer.summary.replace(/\s*\[[^\]]*10\.\d{4}[^\]]*\]/g, ''), 170))}</span></summary><div class="answer"></div></details>`}</section>`);
+    ${run.answer ? `<p class="brief">${verifyPill(run.answer.verification)} ${esc(firstSentence(run.answer.summary))}</p>
+      <details class="older"><summary><span class="more-label">Read the full analysis</span></summary>${turnBody}</details>` : turnBody}</section>`);
   const el = $(`#run-${run.id}`);
   el.run = run;
   if (run.status === 'running') {
     $('.trace', el).open = true;
     follow(run.id, el);
   } else {
-    if (run.answer) mountAnswer(el, run.answer, latest);
+    if (run.answer) mountAnswer(el, run.answer, false);
     else status(el, 'This run finished without an answer. Open the trace to see which step failed, then ask again.', true);
+    $('details.older', el)?.addEventListener('toggle', (e) => e.target.open && $('.graph-panel > button', el)?.click());
     // Stored events give the context line now and the trace when it is opened.
     const tr = $('.trace', el);
     const events = () => (el.events ??= api(`/api/runs/${run.id}`).then((r) => r.events || []));
@@ -491,7 +493,7 @@ document.addEventListener('click', (e) => {
 async function startRun(query, plan = null) {
   const { run_id: id } = await api(`/api/projects/${state.project.id}/runs`, { method: 'POST', body: { query, agents: state.pinned.size ? [...state.pinned] : null, plan, thread_id: state.thread } });
   $('#thread .empty-line')?.remove();
-  const el = mountTurn({ id, query, status: 'running', created_at: new Date().toISOString(), answer: null }, true);
+  const el = mountTurn({ id, query, status: 'running', created_at: new Date().toISOString(), answer: null });
   el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   return el;
 }
