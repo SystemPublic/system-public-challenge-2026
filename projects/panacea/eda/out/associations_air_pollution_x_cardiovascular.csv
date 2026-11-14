@@ -1,0 +1,316 @@
+pubmed_id,study_id,statistic_type,system_statistic_type,statistic_value,ci_lower,ci_upper,p_value,variable_1_concept_id,variable_2_concept_id,variable_1_name,variable_2_name,statistic_type_norm,system_statistic_type_norm
+28557713,S_KJGPKUAR,OR,odds_ratio,1.54,1.06,3.24,,P6IzhScRdx,G-cA8ng8z2,maternal exposure to ambient air pollution,risk of congenital heart defects in offspring,OR,odds_ratio
+12215581,1B2NndRSjT,relative risk,relative_risk_ratio,1.04,1.01,1.08,0.001,ak7lpHYuXE,SimY67XTIv,air pollutants,ischemic stroke mortality,relative risk,relative_risk_ratio
+30566212,O1_a29NKQz,OR,odds_ratio,1.67,,,0.001,Cv_Ldh0HRR,LvmcmY8Gys,SO2,ST-segment elevation myocardial infarction (STEMI),OR,odds_ratio
+33106468,l86rdqWHyv,hazard ratio (HR),hazard_ratio,2.35,1.94,2.84,,CCVZABeZcW,SimY67XTIv,Carbon monoxide (CO) poisoning,incidence of ischemic stroke,hazard ratio (HR),hazard_ratio
+30566212,O1_a29NKQz,OR,odds_ratio,1.287,,,0.011,DC_F0GO0WQ,LvmcmY8Gys,NO2,ST-segment elevation myocardial infarction (STEMI),OR,odds_ratio
+37474604,yGycvNAX4Z,r,pearson_r,0.63,,,0.001,P6IzhScRdx,fo-h4u_aJp,Household air pollution long-term exposure,prevalence of elevated hypertension,r,pearson_r
+34800453,BhMqwFunRw,RR,relative_risk_ratio,1.22,1.01,1.47,0.05,JMeOsYIcbL,SimY67XTIv,ozone,ischemic stroke morbidity among type 2 diabetes patients,RR,relative_risk_ratio
+28850858,lJxVC1TH2t,hazard ratio,hazard_ratio,1.25,1.19,1.31,,P6IzhScRdx,0GgadM9ouC,long-term exposure to fine particulate matter air pollution,cardiovascular disease,hazard ratio,hazard_ratio
+24906068,y-R-B6Ph2m,incidence rate ratios (IRR),incident_rate_ratio,1.02,,,,DC_F0GO0WQ,SimY67XTIv,nitrogen dioxide (NO2),ischemic stroke,incidence rate ratios (IRR),incident_rate_ratio
+39799658,ThEqnC3RcZ,relative risk,relative_risk_ratio,1.27,1.01,1.52,,DC_F0GO0WQ,SimY67XTIv,NO2,risk of ischemic stroke,relative risk,relative_risk_ratio
+34800453,BhMqwFunRw,RR,relative_risk_ratio,0.86,0.76,0.97,0.01,JMeOsYIcbL,SimY67XTIv,ozone,ischemic stroke morbidity among type 2 diabetes patients,RR,relative_risk_ratio
+27367707,W2kBsqoYfK,relative risk,relative_risk_ratio,1.021,1.003,1.039,,ak7lpHYuXE,jQx2Q-ElPQ,daily increases in air pollutants,arrhythmia hospitalization or mortality,relative risk,relative_risk_ratio
+33177548,yj9L84ty2p,hazard ratio,hazard_ratio,1.35,1.13,1.61,,CCVZABeZcW,9YqpsXAD_S,Exhaled carbon monoxide (COex) level,hemorrhagic stroke,hazard ratio,hazard_ratio
+31449466,3nX1ymqzUS,hazard ratio,hazard_ratio,1.05,1.03,1.06,,JMeOsYIcbL,XW9F7OPopQ,ozone ([Formula: see text]),incidence of stroke,hazard ratio,hazard_ratio
+21944840,VPJx8YnHbC,odds ratio (OR),odds_ratio,1.06,1.0,1.12,,ak7lpHYuXE,fo-h4u_aJp,daily concentrations of several air pollutants,emergency department visits for hypertension,odds ratio (OR),odds_ratio
+8553276,rAJoiTlUUp,relative risk,relative_risk_ratio,1.14,,,,P6IzhScRdx,0GgadM9ouC,air pollution episode,cardiovascular diseases mortality,relative risk,relative_risk_ratio
+33278806,pQQIumNANW,hazard ratio,hazard_ratio,7.47,2.76,20.26,,ET5-8-2eBO,SimY67XTIv,carbon monoxide intoxication,ischemic stroke,hazard ratio,hazard_ratio
+31999950,ho3Ns6qJpY,odds ratio,odds_ratio,1.034,1.021,1.047,0.001,P6IzhScRdx,mz6SXR841t,exposure to ambient air pollution,incidence of out-of-hospital cardiac arrest,odds ratio,odds_ratio
+31999950,ho3Ns6qJpY,odds ratio,odds_ratio,1.016,1.007,1.025,0.001,P6IzhScRdx,mz6SXR841t,exposure to ambient air pollution,incidence of out-of-hospital cardiac arrest,odds ratio,odds_ratio
+36494401,fK5saKTLQu,Spearman correlation,spearman_correlation,0.99,,,0.001,P6IzhScRdx,0GgadM9ouC,exposure to ambient particulate and air pollution,mortality of cardiovascular disease,Spearman correlation,spearman_correlation
+37478679,_OImiRIhCt,hazard ratio,hazard_ratio,1.521,1.419,1.631,0.001,DC_F0GO0WQ,fo-h4u_aJp,nitrogen dioxide (NO2) exposure,incidence of hypertension,hazard ratio,hazard_ratio
+26703428,ihqpsolfU-,hazard ratio,hazard_ratio,6.45,3.3,12.6,0.001,ET5-8-2eBO,SimY67XTIv,carbon monoxide-poisoning cohort,ischemic stroke,hazard ratio,hazard_ratio
+32076565,0L4MGDrkCv,OR,odds_ratio,1.06,1.05,1.07,,P6IzhScRdx,SimY67XTIv,air pollution exceeding the national median,ischaemic stroke hospitalisations,OR,odds_ratio
+33221594,m6ZUnPt6Z-,beta,coefficient,-0.13,-0.22,-0.03,,P6IzhScRdx,OmSPyYqNuD,exposure to household air pollution from solid fuel combustion for cooking and heating,heart rate variability,beta,coefficient
+23208275,X3JBXqTL6v,hazard ratio,hazard_ratio,1.2,1.04,1.39,,P6IzhScRdx,SimY67XTIv,long-term exposure to traffic-related air pollution,ischemic stroke mortality,hazard ratio,hazard_ratio
+34478722,-4ePk17SaX,hazard ratio,hazard_ratio,1.062,1.041,1.084,,JMeOsYIcbL,rTbYdlAa-H,Ozone (O),Acute myocardial infarction,hazard ratio,hazard_ratio
+28711568,P4CEH-3uQk,odds ratio,odds_ratio,1.03,1.0,1.07,,P6IzhScRdx,KuOsQy6Xym,long-term exposure to ambient air pollution,hypertension,odds ratio,odds_ratio
+24301354,P33eiiBiQr,odds ratio,odds_ratio,1.3,1.1,1.54,,P6IzhScRdx,SimY67XTIv,Air Quality Health Index (AQHI),emergency department visits for acute ischemic stroke,odds ratio,odds_ratio
+36642530,7HfARVHg2e,OR,odds_ratio,1.013,1.001,1.024,,ak7lpHYuXE,G-cA8ng8z2,gestational exposure to air pollutants,congenital heart disease,OR,odds_ratio
+31289812,4mCApmIDKX,hazard ratio,hazard_ratio,1.16,1.09,1.22,0.001,P6IzhScRdx,0GgadM9ouC,Ambient air pollution,cause-specific cardiovascular disease mortality,hazard ratio,hazard_ratio
+23357184,uqDR-rRb03,odds ratio,odds_ratio,1.11,1.04,1.18,,P6IzhScRdx,KuOsQy6Xym,residential long-term exposure to air pollution,hypertension,odds ratio,odds_ratio
+36921285,H7er-ZE3hs,hazard ratio,hazard_ratio,1.028,1.017,1.04,,DC_F0GO0WQ,XW9F7OPopQ,Nitrogen dioxide (NO2),risk of stroke,hazard ratio,hazard_ratio
+20702540,vHU8pQ4ETi,OR,odds_ratio,1.115,1.027,1.209,,JMeOsYIcbL,SimY67XTIv,exposure to ozone (O3),recurrent ischaemic cerebrovascular events,OR,odds_ratio
+23406673,pkdUt8rTUN,relative risk,relative_risk_ratio,1.044,1.004,1.085,0.05,JMeOsYIcbL,fEPvZSrVRx,20-ppb increase in ozone in the previous 1 to 3 hours,risk of out-of-hospital cardiac arrest,relative risk,relative_risk_ratio
+29848499,3AUGlDCN7r,beta,coefficient,1372.1,,,0.001,JMeOsYIcbL,0GgadM9ouC,Ozone,Cardiovascular diseases mortality,beta,coefficient
+21944840,VPJx8YnHbC,odds ratio (OR),odds_ratio,1.04,1.0,1.08,,ak7lpHYuXE,fo-h4u_aJp,daily concentrations of several air pollutants,emergency department visits for hypertension,odds ratio (OR),odds_ratio
+30976038,8H1Nn2RsJC,odds ratio,odds_ratio,1.74,1.12,2.71,0.001,P6IzhScRdx,KuOsQy6Xym,ambient air pollution,hypertension,odds ratio,odds_ratio
+37295302,_MBG0xhDze,odds ratio,odds_ratio,1.19,,,,JMeOsYIcbL,XW9F7OPopQ,long-term ozone exposure,stroke (among adults living in 11 prefecture-level areas in Zhejiang Province),odds ratio,odds_ratio
+22577602,jWxuRfvt06,odds ratio,odds_ratio,1.12,1.02,1.23,,Cv_Ldh0HRR,SimY67XTIv,ambient sulfur dioxide,number of emergency department visits for ischemic stroke,odds ratio,odds_ratio
+37665504,y9engPIKUH,odds ratio,odds_ratio,1.17,1.14,1.2,,JMeOsYIcbL,G-cA8ng8z2,maternal ozone (O3) exposure,congenital heart defects (CHDs) in offspring,odds ratio,odds_ratio
+20339125,DICoJ9uEeT,hazard ratio,hazard_ratio,1.28,1.11,1.48,0.001,DC_F0GO0WQ,XW9F7OPopQ,outdoor concentrations of nitrogen dioxide,risk of death among stroke patients,hazard ratio,hazard_ratio
+34536646,7kFhPZRf4R,odds ratio,odds_ratio,1.55,1.2,2.0,,DC_F0GO0WQ,SimY67XTIv,Nitrogen dioxide concentrations,ischemic stroke mortality,odds ratio,odds_ratio
+30677672,fhUEmkk0I_,relative risk,relative_risk_ratio,1.94,1.02,3.67,,P6IzhScRdx,0GgadM9ouC,Air pollution level,Cardiovascular disease,relative risk,relative_risk_ratio
+25650956,_gPf6S5aTM,OR,odds_ratio,1.095,1.003,1.169,,P6IzhScRdx,rTbYdlAa-H,air pollution,acute myocardial infarction,OR,odds_ratio
+37086881,ttRn8ujGe1,hazard ratio,hazard_ratio,1.13,1.03,1.24,,P6IzhScRdx,jt0p0t_A6y,Air pollution,risk of myocardial infarction,hazard ratio,hazard_ratio
+34385046,e8vZiSPJdQ,hazard ratio,hazard_ratio,1.06,1.04,1.09,,JMeOsYIcbL,XW9F7OPopQ,long-term exposure to ozone,death from stroke,hazard ratio,hazard_ratio
+36921285,H7er-ZE3hs,hazard ratio,hazard_ratio,1.091,1.074,1.108,,P6IzhScRdx,XW9F7OPopQ,Air pollution from non-traffic sources,risk of stroke,hazard ratio,hazard_ratio
+36494401,fK5saKTLQu,Spearman correlation,spearman_correlation,0.94,,,0.001,JMeOsYIcbL,0GgadM9ouC,exposure to ambient ozone pollution,mortality of cardiovascular disease,Spearman correlation,spearman_correlation
+29848499,3AUGlDCN7r,beta,coefficient,21.8,,,0.001,JMeOsYIcbL,0GgadM9ouC,Ozone,Cardiovascular diseases mortality,beta,coefficient
+31289812,4mCApmIDKX,hazard ratio,hazard_ratio,1.19,1.1,1.28,0.001,P6IzhScRdx,0GgadM9ouC,Ambient air pollution,cause-specific cardiovascular disease mortality,hazard ratio,hazard_ratio
+25650956,_gPf6S5aTM,OR,odds_ratio,1.12,1.001,1.255,,P6IzhScRdx,rTbYdlAa-H,air pollution,acute myocardial infarction,OR,odds_ratio
+36809617,E92OXfafjf,RR,relative_risk_ratio,1.021,1.006,1.035,0.001,DC_F0GO0WQ,SimY67XTIv,ambient nitrogen dioxide (NO2) exposure,hospital admissions for ischaemic stroke,RR,relative_risk_ratio
+23357184,uqDR-rRb03,odds ratio,odds_ratio,1.12,1.08,1.16,,P6IzhScRdx,KuOsQy6Xym,residential long-term exposure to air pollution,hypertension,odds ratio,odds_ratio
+27168738,xZ2X-B0muj,OR,odds_ratio,0.87,0.63,1.95,,Cv_Ldh0HRR,rTbYdlAa-H,Sulphurdioxide (SO2),acute myocardial infarctions,OR,odds_ratio
+36171142,EywmA7Et1m,hazard ratio,hazard_ratio,1.04,1.02,1.06,,P6IzhScRdx,XW9F7OPopQ,ambient air pollution,post-stroke cardiovascular diseases,hazard ratio,hazard_ratio
+28953453,rEnSyIb0rw,incidence rate ratio (IRR),incident_rate_ratio,1.07,1.01,1.14,,DC_F0GO0WQ,of1GEB2i2t,nitrogen dioxide (NO2),incident heart failure,incidence rate ratio (IRR),incident_rate_ratio
+33106468,l86rdqWHyv,standardized incidence ratio (SIR),incident_rate_ratio,19.49,17.92,21.12,,CCVZABeZcW,9YqpsXAD_S,Carbon monoxide (CO) poisoning,incidence of ischemic and hemorrhagic strokes,standardized incidence ratio (SIR),incident_rate_ratio
+26705853,uAFXoy5s4p,odds ratio,odds_ratio,1.34,0.98,1.83,,P6IzhScRdx,G-cA8ng8z2,maternal exposure to prenatal traffic-related air pollution,risk of cardiac defects,odds ratio,odds_ratio
+27773865,k4kWv8CrBu,relative risk,relative_risk_ratio,1.168,1.128,1.21,0.001,P6IzhScRdx,aw2bznU6MK,domestic air pollution,rheumatic heart disease,relative risk,relative_risk_ratio
+9755140,0dd4PsSgqG,relative risk,relative_risk_ratio,1.02,0.95,1.1,,CCVZABeZcW,of1GEB2i2t,maximum hourly levels of carbon monoxide,hospital admissions for congestive heart failure,relative risk,relative_risk_ratio
+33527989,nym2-nBc9b,hazard ratios (HRs),hazard_ratio,1.31,1.17,1.48,0.001,P6IzhScRdx,of1GEB2i2t,air pollution score,incident heart failure,hazard ratios (HRs),hazard_ratio
+24283370,xL9ZML4zf_,relative risk,relative_risk_ratio,4.0,2.0,7.0,,ak7lpHYuXE,SimY67XTIv,fine particles (PM2.5) levels,hospital admissions for ischemic stroke,relative risk,relative_risk_ratio
+36651483,TJX87OT-xL,OR,odds_ratio,2.3,1.5,3.54,0.0001,ak7lpHYuXE,GPvAv7fRbV,"exposure to ambient PM10, SO2, NO2, and CO",pre-hypertension and hypertension,OR,odds_ratio
+27367707,W2kBsqoYfK,relative risk,relative_risk_ratio,1.041,1.017,1.065,,ak7lpHYuXE,jQx2Q-ElPQ,daily increases in air pollutants,arrhythmia hospitalization or mortality,relative risk,relative_risk_ratio
+24835336,ddZUwaHzIz,hazard ratio,hazard_ratio,1.19,0.88,1.62,,ak7lpHYuXE,XW9F7OPopQ,long-term exposure to multiple air pollutants,incidence of stroke,hazard ratio,hazard_ratio
+34417486,GT2ObRillj,R,pearson_r,0.45,,,,Cv_Ldh0HRR,0GgadM9ouC,SO2,cardiovascular disease,R,pearson_r
+27367707,W2kBsqoYfK,relative risk,relative_risk_ratio,1.009,1.004,1.014,,ak7lpHYuXE,jQx2Q-ElPQ,daily increases in air pollutants,arrhythmia hospitalization or mortality,relative risk,relative_risk_ratio
+24915237,d0cEzF4R2p,OR,odds_ratio,1.78,1.04,3.03,,P6IzhScRdx,rTbYdlAa-H,long-term traffic-related air pollution exposure,risk of acute myocardial infarction,OR,odds_ratio
+24589872,OpwSrdn8uU,hazard ratio,hazard_ratio,1.0,,,,ak7lpHYuXE,0GgadM9ouC,long-term exposure to several air pollutants,specific cardiovascular causes of death,hazard ratio,hazard_ratio
+34478722,-4ePk17SaX,hazard ratio,hazard_ratio,0.995,0.965,1.03,,DC_F0GO0WQ,XW9F7OPopQ,Nitrogen dioxide (NO),Stroke,hazard ratio,hazard_ratio
+35974459,D_yknZVTOK,incidence rate ratio (IRR),incident_rate_ratio,1.07,1.04,1.1,,CCVZABeZcW,SimY67XTIv,Carbon monoxide (CO),incidence of acute ischemic stroke,incidence rate ratio (IRR),incident_rate_ratio
+7801074,HkRHw54X8J,rate ratio,relative_risk_ratio,2.0,1.28,2.92,,CCVZABeZcW,0GgadM9ouC,carbon monoxide exposure,morbidity and mortality from cardiovascular diseases,rate ratio,relative_risk_ratio
+27072425,kyiZoaLmQ7,OR,odds_ratio,1.32,1.0,1.73,,CCVZABeZcW,LvmcmY8Gys,each 0.22 p.p.m. increase in 48-h carbon monoxide concentrations,ST-elevation myocardial infarctions,OR,odds_ratio
+30688288,PwccjJyeoj,odds ratio (OR),odds_ratio,1.13,1.01,1.23,0.007,DC_F0GO0WQ,jt0p0t_A6y,outdoor nitrogen dioxide (NO2) levels,number of hospitalizations due to myocardial infarction,odds ratio (OR),odds_ratio
+15458012,--V1V1nLHt,odds ratio (OR),odds_ratio,1.43,1.07,1.92,0.05,DC_F0GO0WQ,jt0p0t_A6y,Nitrogen dioxide (NO2) exposure,risk of myocardial infarction,odds ratio (OR),odds_ratio
+34417486,GT2ObRillj,R,pearson_r,0.4,,,,Cv_Ldh0HRR,0GgadM9ouC,SO2,cardiovascular disease,R,pearson_r
+28963562,3ZAIVx13Ti,odds ratio,odds_ratio,1.05,0.91,1.21,,JMeOsYIcbL,lHFynWU2q2,exposure to ozone,false positives in fetal heart rate monitoring,odds ratio,odds_ratio
+29954383,0ai1Ue4RKZ,Prevalence Rate Ratios (PRRs),relative_risk_ratio,1.14,,,,P6IzhScRdx,GPvAv7fRbV,long-term exposure to ambient air pollution,prehypertension,Prevalence Rate Ratios (PRRs),relative_risk_ratio
+36171142,EywmA7Et1m,hazard ratio,hazard_ratio,1.01,1.0,1.02,,P6IzhScRdx,XW9F7OPopQ,ambient air pollution,transition from healthy to incident stroke,hazard ratio,hazard_ratio
+35974459,D_yknZVTOK,incidence rate ratio (IRR),incident_rate_ratio,1.07,1.04,1.11,,CCVZABeZcW,SimY67XTIv,Carbon monoxide (CO),incidence of acute ischemic stroke,incidence rate ratio (IRR),incident_rate_ratio
+29446990,3YVGAzNhoh,odds ratio (OR),odds_ratio,0.4,0.21,0.77,0.001,DC_F0GO0WQ,jt0p0t_A6y,nitrogen dioxide (NO2),risk of myocardial infarction,odds ratio (OR),odds_ratio
+34800453,BhMqwFunRw,RR,relative_risk_ratio,1.52,1.21,1.91,0.05,JMeOsYIcbL,SimY67XTIv,ozone,ischemic stroke morbidity among type 2 diabetes patients,RR,relative_risk_ratio
+33990187,64pm8fFU9G,aOR,adjusted_odds_ratio,1.14,1.12,2.43,,ak7lpHYuXE,G-cA8ng8z2,air pollutants PM,congenital heart disease,aOR,adjusted_odds_ratio
+35974459,D_yknZVTOK,incidence rate ratio (IRR),incident_rate_ratio,1.05,1.01,1.08,,JMeOsYIcbL,SimY67XTIv,Ozone (O3),incidence of acute ischemic stroke,incidence rate ratio (IRR),incident_rate_ratio
+33037069,yQDdu-gfZM,odds ratio,odds_ratio,1.2,1.03,1.4,,P6IzhScRdx,rTbYdlAa-H,"short-term exposure to air pollution (ozone [O3], nitrogen dioxide [NO2], sulfur dioxide [SO2], carbon monoxide [CO], particulate matter < 10 μm in diameter [PM10] and particulate matter < 2.5 μm in diameter [PM2.5])",hospital admissions for myocardial infarction,odds ratio,odds_ratio
+33816520,RkVzFUgc8V,relative risk,relative_risk_ratio,1.18,1.11,1.26,,ak7lpHYuXE,jt0p0t_A6y,ambient air pollution exposure (PM2.5 and PM10),risk of myocardial infarction,relative risk,relative_risk_ratio
+29446990,3YVGAzNhoh,odds ratio (OR),odds_ratio,1.73,0.91,3.28,,DC_F0GO0WQ,jt0p0t_A6y,nitrogen dioxide (NO2),risk of myocardial infarction,odds ratio (OR),odds_ratio
+34993759,AWVjkOlHE-,mean_difference_unstandardized,mean_difference_unstandardized,-3.59,,,0.04,zmOHHFSXfv,CCVZABeZcW,Patients with pulmonary hypertension [vs Patients without pulmonary hypertension],Total diffusion capacity for carbon monoxide (DLCO),mean_difference_unstandardized,mean_difference_unstandardized
+24301354,P33eiiBiQr,odds ratio,odds_ratio,1.23,1.08,1.4,,P6IzhScRdx,SimY67XTIv,Air Quality Health Index (AQHI),emergency department visits for acute ischemic stroke,odds ratio,odds_ratio
+27168738,xZ2X-B0muj,OR,odds_ratio,1.08,1.02,1.21,,CCVZABeZcW,rTbYdlAa-H,Carbon monoxide,acute myocardial infarctions,OR,odds_ratio
+28963562,3ZAIVx13Ti,odds ratio,odds_ratio,1.06,0.96,1.17,,DC_F0GO0WQ,lHFynWU2q2,exposure to nitrogen dioxide,false positives in fetal heart rate monitoring,odds ratio,odds_ratio
+37755738,_aXbImkEd7,Hazard ratio,hazard_ratio,1.38,1.02,1.86,,ak7lpHYuXE,0GgadM9ouC,long-term exposure to atmospheric PM2.5,cardiovascular disease mortality,Hazard ratio,hazard_ratio
+34800453,BhMqwFunRw,RR,relative_risk_ratio,1.34,1.1,1.63,0.01,JMeOsYIcbL,SimY67XTIv,ozone,ischemic stroke morbidity among type 2 diabetes patients,RR,relative_risk_ratio
+23611182,NT9orh0dSO,relative risk,relative_risk_ratio,0.1,0.06,0.15,,ak7lpHYuXE,rTbYdlAa-H,fine particles (PM2.5) levels,hospital admissions for myocardial infarction,relative risk,relative_risk_ratio
+36446272,oPF0aiS1wM,relative risk,relative_risk_ratio,1.08,0.89,1.32,,P6IzhScRdx,XW9F7OPopQ,long-term exposure to traffic-related air pollution,stroke (of/among/in ___),relative risk,relative_risk_ratio
+38383041,ItcHB8keSl,relative risk,relative_risk_ratio,1.29,1.28,1.3,,ak7lpHYuXE,0GgadM9ouC,PM2.5 exposure,hospital admissions for cardiovascular diseases,relative risk,relative_risk_ratio
+36171142,EywmA7Et1m,hazard ratio,hazard_ratio,1.02,1.0,1.03,,P6IzhScRdx,XW9F7OPopQ,ambient air pollution,transition from healthy to incident stroke,hazard ratio,hazard_ratio
+33866825,eT26o7zyJM,hazard ratio,hazard_ratio,2.01,1.74,2.32,,ET5-8-2eBO,hetipX0cZf,Carbon monoxide poisoning,congestive heart failure,hazard ratio,hazard_ratio
+21944840,VPJx8YnHbC,odds ratio (OR),odds_ratio,1.07,1.01,1.11,,ak7lpHYuXE,fo-h4u_aJp,daily concentrations of several air pollutants,emergency department visits for hypertension,odds ratio (OR),odds_ratio
+22432017,LUK73cM4ae,odds,odds_ratio,1.32,1.23,1.43,,P6IzhScRdx,0GgadM9ouC,Particulate matter (PM) air pollution,cardiovascular disease,odds,odds_ratio
+7573618,YoJ_EjqRn3,relative risk,relative_risk_ratio,1.1,,,,CCVZABeZcW,of1GEB2i2t,ambient carbon monoxide levels,hospital admissions for congestive heart failure,relative risk,relative_risk_ratio
+24302272,bddArvOAHS,odds ratio,odds_ratio,1.02,1.01,1.05,,JMeOsYIcbL,mz6SXR841t,Ozone (O3),out-of-hospital cardiac arrest,odds ratio,odds_ratio
+22544506,QWfWTmPjj9,adjusted OR,adjusted_odds_ratio,1.11,1.0,1.23,,ak7lpHYuXE,WdTYQ8MJsC,Particle (<10 μm-PM10; <2.5 μm-PM2.5) and ozone (O3) exposure concentrations,gestational hypertension,adjusted OR,adjusted_odds_ratio
+35544998,cLP4UeCUFN,hazard ratio,hazard_ratio,1.09,1.07,1.12,,P6IzhScRdx,0GgadM9ouC,long-term exposure to air pollution,mortality from cardiovascular disease,hazard ratio,hazard_ratio
+7801074,HkRHw54X8J,rate ratio,relative_risk_ratio,2.3,0.97,6.35,,CCVZABeZcW,0GgadM9ouC,carbon monoxide exposure,morbidity and mortality from cardiovascular diseases,rate ratio,relative_risk_ratio
+33106468,l86rdqWHyv,hazard ratio (HR),hazard_ratio,1.76,1.11,2.78,,CCVZABeZcW,9YqpsXAD_S,Carbon monoxide (CO) poisoning,incidence of hemorrhagic stroke,hazard ratio (HR),hazard_ratio
+36983207,fAWZ7nfR-c,relative risk,relative_risk_ratio,1.036,1.008,1.064,0.05,DC_F0GO0WQ,XW9F7OPopQ,concentrations of NO2,stroke incidence,relative risk,relative_risk_ratio
+38085043,SoP7AWe_4L,hazard ratio,hazard_ratio,4.88,4.35,5.47,,P6IzhScRdx,jt0p0t_A6y,highest polygenic risk score and air pollution score,incidents of myocardial infarction,hazard ratio,hazard_ratio
+32855345,m3OdXT0-kb,OR,odds_ratio,1.9,1.06,3.42,,JMeOsYIcbL,SimY67XTIv,Ozone,ischaemic stroke occurrence,OR,odds_ratio
+28763732,Xr3fYhS-sH,odds ratio (OR),odds_ratio,0.85,0.68,1.04,,DC_F0GO0WQ,ykiJVOKBa2,Nitrogen dioxide exposure,atrial septal defects,odds ratio (OR),odds_ratio
+37121155,lLm_BX9b1C,relative risk,relative_risk_ratio,1.26,1.16,1.37,,P6IzhScRdx,XW9F7OPopQ,air pollution,risk of stroke,relative risk,relative_risk_ratio
+30700142,wC-gaZ20SP,hazard ratio,hazard_ratio,1.06,1.04,1.08,0.05,P6IzhScRdx,0GgadM9ouC,long-term exposure to ambient air pollution,cardiovascular disease mortality risk,hazard ratio,hazard_ratio
+36446272,oPF0aiS1wM,relative risk,relative_risk_ratio,1.03,0.98,1.09,,P6IzhScRdx,XW9F7OPopQ,long-term exposure to traffic-related air pollution,stroke ([of/among/in] ___),relative risk,relative_risk_ratio
+20165608,oS0VW8QEeM,relative risk,relative_risk_ratio,2.78,,,,P6IzhScRdx,0GgadM9ouC,exposure to air pollution,cardiovascular diseases,relative risk,relative_risk_ratio
+32069739,xIruMuSZhy,odds ratio,odds_ratio,1.029,1.001,1.057,0.001,P6IzhScRdx,KuOsQy6Xym,long-term exposure to air pollution,hypertension,odds ratio,odds_ratio
+35709807,zCrYJk7WML,hazard ratio,hazard_ratio,1.063,1.002,1.128,,JMeOsYIcbL,XW9F7OPopQ,long-term ozone exposure,stroke mortality (among Chinese adults aged 18 years and older),hazard ratio,hazard_ratio
+31387019,gk6KuL5igU,hazard ratio,hazard_ratio,1.02,1.01,1.04,,DC_F0GO0WQ,of1GEB2i2t,exposure to nitrogen dioxide (NO),incidence of congestive heart failure,hazard ratio,hazard_ratio
+37295302,_MBG0xhDze,odds ratio,odds_ratio,1.15,,,,JMeOsYIcbL,0GgadM9ouC,long-term ozone exposure,cardiovascular diseases,odds ratio,odds_ratio
+39180936,4t_9TOuVpV,odds ratio,odds_ratio,1.19,1.04,1.37,,CCVZABeZcW,fo-h4u_aJp,higher concentrations of carbon monoxide,hypertension prevalence,odds ratio,odds_ratio
+37783139,bbzJcp8XUi,odds ratio,odds_ratio,1.1,1.07,1.13,0.001,Cv_Ldh0HRR,SimY67XTIv,concentrations of sulfur dioxide (SO2),ischemic stroke mortality,odds ratio,odds_ratio
+24231417,SssQ9Or6ui,relative risk,relative_risk_ratio,1.24,0.93,1.66,,P6IzhScRdx,SimY67XTIv,air pollution exposure,hospital admissions for ischemic heart disease (IHD) or cerebrovascular disease (cerebrovascular event [CVE]),relative risk,relative_risk_ratio
+28477578,h31R0Bi9Yc,relative risk (RR),relative_risk_ratio,2.7,1.1,4.2,,Cv_Ldh0HRR,rTbYdlAa-H,short-term exposure to air sulfur dioxide,acute myocardial infarction (MI),relative risk (RR),relative_risk_ratio
+36035228,nNIthdGIZ5,odds ratio,odds_ratio,1.011,1.003,1.019,0.01,JMeOsYIcbL,fEPvZSrVRx,Ozone exposure,risk of of hospital cardiac arrest,odds ratio,odds_ratio
+24301354,P33eiiBiQr,odds ratio,odds_ratio,1.15,1.01,1.31,,P6IzhScRdx,SimY67XTIv,Air Quality Health Index (AQHI),emergency department visits for acute ischemic stroke,odds ratio,odds_ratio
+26867595,5mZSamPBes,incidence rate ratio,incident_rate_ratio,1.02,0.86,1.21,,P6IzhScRdx,jt0p0t_A6y,air pollution,incident myocardial infarction,incidence rate ratio,incident_rate_ratio
+12215581,1B2NndRSjT,relative risk,relative_risk_ratio,1.03,1.0,1.06,,ak7lpHYuXE,SimY67XTIv,air pollutants,ischemic stroke mortality,relative risk,relative_risk_ratio
+37054795,eXbuxVhh3I,hazard ratio,hazard_ratio,1.07,1.04,1.09,0.001,P6IzhScRdx,fo-h4u_aJp,ambient air pollution,incidence of hypertension,hazard ratio,hazard_ratio
+22332153,t3THtE8gJV,odds ratio,odds_ratio,1.11,1.03,1.2,0.006,P6IzhScRdx,SimY67XTIv,daily changes in level of ambient fine particulate matter air pollution (PM <2.5 μm in diameter [PM(2.5)]),ischemic stroke onset,odds ratio,odds_ratio
+24549995,yv-wikkBu7,relative risk,relative_risk_ratio,1.047,1.007,1.089,0.022,DC_F0GO0WQ,0GgadM9ouC,outdoor concentrations of nitrogen dioxide (NO2),daily number of hospital admissions due to cardiovascular diseases,relative risk,relative_risk_ratio
+35131328,uUrtRB9xbA,OR,odds_ratio,1.01,,,,P6IzhScRdx,0GgadM9ouC,Exposure duration to industry-related air pollution (years),medication for cardiovascular diseases,OR,odds_ratio
+24915237,d0cEzF4R2p,OR,odds_ratio,1.78,1.04,3.03,,DC_F0GO0WQ,rTbYdlAa-H,long-term NO2 exposure,risk of acute myocardial infarction,OR,odds_ratio
+35605364,6vnEsSk4j8,hazard ratio,hazard_ratio,1.28,1.15,1.43,,JMeOsYIcbL,XW9F7OPopQ,long-term exposure to ozone (O),overall stroke (among the Chinese population),hazard ratio,hazard_ratio
+15204752,sQfwmIOwPm,odds ratio (OR),odds_ratio,0.61,0.31,1.18,,ak7lpHYuXE,jQx2Q-ElPQ,"Air pollutant (PM(2.5), PM(10), SO(4)(2-), elemental carbon [EC], organic carbon [OC], O(3), SO(2), NO(2), and CO)",incidence of cardiac arrhythmia,odds ratio (OR),odds_ratio
+32593048,bqJemdD2oG,hazard ratio,hazard_ratio,1.07,0.8,1.44,,P6IzhScRdx,9YqpsXAD_S,long-term exposure to air pollution,incidence of hemorrhagic stroke,hazard ratio,hazard_ratio
+34800453,BhMqwFunRw,RR,relative_risk_ratio,0.85,0.75,0.96,0.01,JMeOsYIcbL,SimY67XTIv,ozone,ischemic stroke morbidity among type 2 diabetes patients,RR,relative_risk_ratio
+38173697,ULagBgiKtw,relative risk,relative_risk_ratio,1.0032,1.0008,1.0056,,DC_F0GO0WQ,0GgadM9ouC,NO2 concentration,cardiovascular disease admissions,relative risk,relative_risk_ratio
+38173697,ULagBgiKtw,relative risk,relative_risk_ratio,1.004,1.0024,1.0057,,Cv_Ldh0HRR,0GgadM9ouC,SO2 concentration,cardiovascular disease admissions,relative risk,relative_risk_ratio
+15458012,--V1V1nLHt,odds ratio (OR),odds_ratio,1.43,1.04,1.96,0.05,DC_F0GO0WQ,jt0p0t_A6y,Nitrogen dioxide (NO2) exposure,risk of myocardial infarction,odds ratio (OR),odds_ratio
+8033849,keZkkPX94Z,relative risk,relative_risk_ratio,1.08,,,,P6IzhScRdx,0GgadM9ouC,Particulate air pollution,risk for cardiovascular disease,relative risk,relative_risk_ratio
+37774546,amKpj4sPL3,odds ratio,odds_ratio,1.022,1.005,1.04,,Cv_Ldh0HRR,9YqpsXAD_S,exposure to sulfur dioxide (SO2),Hemorrhagic stroke risk,odds ratio,odds_ratio
+26645834,t-s3wQikmi,odds ratio,odds_ratio,1.15,1.03,1.29,,P6IzhScRdx,LvmcmY8Gys,short-term exposure to fine particulate matter air pollution,ST-segment elevation myocardial infarction,odds ratio,odds_ratio
+30566212,O1_a29NKQz,OR,odds_ratio,1.522,,,0.009,Cv_Ldh0HRR,TM1YPafvM8,SO2,non-ST-segment elevation myocardial infarction,OR,odds_ratio
+35605364,6vnEsSk4j8,hazard ratio,hazard_ratio,1.22,1.0,1.49,,JMeOsYIcbL,SimY67XTIv,long-term exposure to ozone (O),ischemic stroke,hazard ratio,hazard_ratio
+37783139,bbzJcp8XUi,odds ratio,odds_ratio,1.13,1.08,1.19,0.001,DC_F0GO0WQ,SimY67XTIv,concentrations of nitrogen dioxide (NO2),ischemic stroke mortality,odds ratio,odds_ratio
+15458012,--V1V1nLHt,odds ratio (OR),odds_ratio,1.17,1.01,1.35,0.05,DC_F0GO0WQ,jt0p0t_A6y,Nitrogen dioxide (NO2) exposure,risk of myocardial infarction,odds ratio (OR),odds_ratio
+7801074,HkRHw54X8J,rate ratio,relative_risk_ratio,3.0,0.96,9.78,,CCVZABeZcW,0GgadM9ouC,carbon monoxide exposure,morbidity and mortality from cardiovascular diseases,rate ratio,relative_risk_ratio
+24283370,xL9ZML4zf_,relative risk,relative_risk_ratio,11.0,8.0,14.0,,ak7lpHYuXE,SimY67XTIv,fine particles (PM2.5) levels,hospital admissions for ischemic stroke,relative risk,relative_risk_ratio
+33527989,nym2-nBc9b,hazard ratios (HRs),hazard_ratio,1.21,1.09,1.35,0.001,P6IzhScRdx,of1GEB2i2t,air pollution score,incident heart failure,hazard ratios (HRs),hazard_ratio
+27072425,kyiZoaLmQ7,OR,odds_ratio,1.27,1.0,1.63,,JMeOsYIcbL,LvmcmY8Gys,each 19.9 p.p.b. increase in ozone (O3),ST-elevation myocardial infarctions,OR,odds_ratio
+37429056,cJUcT7YP0o,Rate Ratio (RR),relative_risk_ratio,1.002,1.0,1.004,,DC_F0GO0WQ,jt0p0t_A6y,Nitrogen dioxide (NO2) concentrations,Myocardial infarction hospitalizations,Rate Ratio (RR),relative_risk_ratio
+33037069,yQDdu-gfZM,odds ratio,odds_ratio,0.9,0.78,1.04,,P6IzhScRdx,rTbYdlAa-H,"short-term exposure to air pollution (ozone [O3], nitrogen dioxide [NO2], sulfur dioxide [SO2], carbon monoxide [CO], particulate matter < 10 μm in diameter [PM10] and particulate matter < 2.5 μm in diameter [PM2.5])",hospital admissions for myocardial infarction,odds ratio,odds_ratio
+36330973,yH5dZsDvr1,odds ratio,odds_ratio,3.04,1.18,7.89,0.03,ak7lpHYuXE,fo-h4u_aJp,household air pollutants exposure,risk of hypertension,odds ratio,odds_ratio
+36446272,oPF0aiS1wM,relative risk,relative_risk_ratio,0.98,0.92,1.05,,P6IzhScRdx,XW9F7OPopQ,long-term exposure to traffic-related air pollution,stroke (of/among/in ___),relative risk,relative_risk_ratio
+40259033,g01QQqlGrP,hazard ratio,hazard_ratio,1.06,1.028,1.092,,ak7lpHYuXE,0GgadM9ouC,PM2.5 exposure,cardiovascular disease risk,hazard ratio,hazard_ratio
+15517080,enD14abH13,relative risk,relative_risk_ratio,1.03,1.02,1.05,,Cv_Ldh0HRR,jt0p0t_A6y,sulfur dioxide concentrations,myocardial infarction deaths,relative risk,relative_risk_ratio
+9755140,0dd4PsSgqG,relative risk,relative_risk_ratio,1.09,1.04,1.14,,CCVZABeZcW,of1GEB2i2t,maximum hourly levels of carbon monoxide,hospital admissions for congestive heart failure,relative risk,relative_risk_ratio
+37429056,cJUcT7YP0o,Cumulative Rate Ratio (RR),relative_risk_ratio,1.015,1.008,1.021,0.05,DC_F0GO0WQ,jt0p0t_A6y,Nitrogen dioxide (NO2) concentrations,Myocardial infarction hospitalizations,Cumulative Rate Ratio (RR),relative_risk_ratio
+37339064,ztiCqsa2Qo,odds ratio,odds_ratio,1.19,1.12,1.25,0.05,DC_F0GO0WQ,ykiJVOKBa2,nitrogen dioxide (NO2),risk of atrial septal defects,odds ratio,odds_ratio
+36502895,c4IUXyUbdN,hazard ratio,hazard_ratio,0.82,0.71,0.95,,DC_F0GO0WQ,fo-h4u_aJp,living in areas with lower nitrogen dioxide concentrations,risk of hypertension,hazard ratio,hazard_ratio
+36446272,oPF0aiS1wM,relative risk,relative_risk_ratio,0.99,0.94,1.04,,P6IzhScRdx,XW9F7OPopQ,long-term exposure to traffic-related air pollution,stroke (among the general population),relative risk,relative_risk_ratio
+22052517,dWUISpjXC_,hazard ratio,hazard_ratio,1.05,0.99,1.11,,P6IzhScRdx,XW9F7OPopQ,long-term exposure to traffic-related air pollution,incident and fatal stroke (among the study participants),hazard ratio,hazard_ratio
+27367707,W2kBsqoYfK,relative risk,relative_risk_ratio,1.015,1.006,1.024,,ak7lpHYuXE,jQx2Q-ElPQ,daily increases in air pollutants,arrhythmia hospitalization or mortality,relative risk,relative_risk_ratio
+27367707,W2kBsqoYfK,relative risk,relative_risk_ratio,1.036,1.02,1.053,,ak7lpHYuXE,jQx2Q-ElPQ,daily increases in air pollutants,arrhythmia hospitalization or mortality,relative risk,relative_risk_ratio
+38483442,dSWxl2xNpD,odds ratio,odds_ratio,1.99,1.58,2.51,,ak7lpHYuXE,KuOsQy6Xym,"long-term exposure to PM1, PM2.5, and PM10",hypertension,odds ratio,odds_ratio
+31382185,cbQSJ2bjtB,odds ratio (OR),odds_ratio,1.18,1.03,1.34,,P6IzhScRdx,9YqpsXAD_S,daily variation in ambient air pollution,risk of hemorrhagic stroke,odds ratio (OR),odds_ratio
+37758483,4R79OX2-5p,relative risk,relative_risk_ratio,1.28,1.21,1.36,,DC_F0GO0WQ,SimY67XTIv,concentration of NO2,ischemic stroke incidence,relative risk,relative_risk_ratio
+35605364,6vnEsSk4j8,hazard ratio,hazard_ratio,1.39,1.16,1.67,,JMeOsYIcbL,9YqpsXAD_S,long-term exposure to ozone (O),hemorrhagic stroke,hazard ratio,hazard_ratio
+22432017,LUK73cM4ae,odds,odds_ratio,1.15,1.07,1.22,,P6IzhScRdx,0GgadM9ouC,Particulate matter (PM) air pollution,cardiovascular disease,odds,odds_ratio
+30992518,Vc_WG3ZSNO,risk ratio,relative_risk_ratio,1.005,1.003,1.007,0.001,JMeOsYIcbL,0GgadM9ouC,"long-term, daily 1-h maximum O (ozone) exposures",mortality from cardiovascular-related causes,risk ratio,relative_risk_ratio
+24549995,yv-wikkBu7,relative risk,relative_risk_ratio,1.049,1.009,1.091,0.016,DC_F0GO0WQ,0GgadM9ouC,outdoor concentrations of nitrogen dioxide (NO2),daily number of hospital admissions due to cardiovascular diseases,relative risk,relative_risk_ratio
+37978283,3hSF47ZbMh,OR,odds_ratio,1.0567,1.0142,1.101,0.0085,ak7lpHYuXE,FUinUSBBJq,PM2.5 exposure,Essential hypertension (secondary),OR,odds_ratio
+37774546,amKpj4sPL3,odds ratio,odds_ratio,1.026,1.004,1.047,,DC_F0GO0WQ,9YqpsXAD_S,exposure to nitrogen dioxide (NO2),Hemorrhagic stroke risk,odds ratio,odds_ratio
+25285824,MCe_xtuWi0,odds ratio,odds_ratio,1.17,1.02,1.33,,P6IzhScRdx,mz6SXR841t,short-term exposure to outdoor air pollution,out-of-hospital cardiac arrest,odds ratio,odds_ratio
+15458012,--V1V1nLHt,odds ratio (OR),odds_ratio,1.34,1.08,1.67,0.05,DC_F0GO0WQ,jt0p0t_A6y,Nitrogen dioxide (NO2) exposure,risk of myocardial infarction,odds ratio (OR),odds_ratio
+28177951,vUIjXrc2Xr,odds ratio (OR),odds_ratio,1.06,1.03,1.08,,ak7lpHYuXE,rTbYdlAa-H,ambient PM2.5,hospital admissions for myocardial infarction,odds ratio (OR),odds_ratio
+27168738,xZ2X-B0muj,OR,odds_ratio,0.82,0.75,1.02,,DC_F0GO0WQ,rTbYdlAa-H,Nitrogen dioxide (NO2),acute myocardial infarctions,OR,odds_ratio
+28963562,3ZAIVx13Ti,odds ratio,odds_ratio,1.06,0.96,1.17,,Cv_Ldh0HRR,lHFynWU2q2,exposure to sulfur dioxide,false positives in fetal heart rate monitoring,odds ratio,odds_ratio
+26703428,ihqpsolfU-,hazard ratio,hazard_ratio,2.76,2.13,3.58,0.001,ET5-8-2eBO,SimY67XTIv,carbon monoxide-poisoning cohort,ischemic stroke,hazard ratio,hazard_ratio
+26329139,9dKdPds4ZP,odds ratio,odds_ratio,0.98,0.96,1.01,,JMeOsYIcbL,SimY67XTIv,short-term exposure to ambient ozone air pollution,hospitalization for ischemic stroke,odds ratio,odds_ratio
+38173697,ULagBgiKtw,relative risk,relative_risk_ratio,0.9981,0.9972,0.9991,,JMeOsYIcbL,0GgadM9ouC,O3 concentration,cardiovascular disease admissions,relative risk,relative_risk_ratio
+25605445,Awx9yQZf4x,hazard ratio,hazard_ratio,1.04,1.01,1.06,,DC_F0GO0WQ,0GgadM9ouC,exposure to nitrogen dioxide (NO2),mortality from cardiovascular disease,hazard ratio,hazard_ratio
+31999950,ho3Ns6qJpY,odds ratio,odds_ratio,1.015,1.008,1.022,0.001,P6IzhScRdx,mz6SXR841t,exposure to ambient air pollution,incidence of out-of-hospital cardiac arrest,odds ratio,odds_ratio
+30976038,8H1Nn2RsJC,odds ratio,odds_ratio,1.53,1.23,1.91,0.001,P6IzhScRdx,KuOsQy6Xym,ambient air pollution,hypertension,odds ratio,odds_ratio
+35605364,6vnEsSk4j8,hazard ratio,hazard_ratio,1.21,0.9,1.63,,JMeOsYIcbL,jt0p0t_A6y,long-term exposure to ozone (O),myocardial infarction (MI),hazard ratio,hazard_ratio
+36983207,fAWZ7nfR-c,relative risk,relative_risk_ratio,1.053,1.024,1.082,0.05,DC_F0GO0WQ,jt0p0t_A6y,concentrations of NO2,myocardial infarction incidence,relative risk,relative_risk_ratio
+37339064,ztiCqsa2Qo,odds ratio,odds_ratio,1.1,1.07,1.13,0.05,DC_F0GO0WQ,G-cA8ng8z2,nitrogen dioxide (NO2),risk of critical and noncritical heart defects,odds ratio,odds_ratio
+26976793,FPfc37yN6T,relative risk,relative_risk_ratio,1.004,1.001,1.008,,P6IzhScRdx,of1GEB2i2t,exposure to air pollution,acute heart failure,relative risk,relative_risk_ratio
+7785670,ncwfr4TEJO,relative risk,relative_risk_ratio,1.022,1.01,1.034,,CCVZABeZcW,of1GEB2i2t,Carbon monoxide exposure (CO),heart failure admissions,relative risk,relative_risk_ratio
+31898503,LtaUjdyrc4,relative risk (RR),relative_risk_ratio,0.79,0.66,0.94,,P6IzhScRdx,SimY67XTIv,air pollution,ischemic stroke onset,relative risk (RR),relative_risk_ratio
+37478679,_OImiRIhCt,hazard ratio,hazard_ratio,1.664,1.485,1.865,0.001,DC_F0GO0WQ,XW9F7OPopQ,nitrogen dioxide (NO2) exposure,incidence of stroke,hazard ratio,hazard_ratio
+32279275,TT11FKcWuH,hazard ratio,hazard_ratio,1.176,1.163,1.189,,Cv_Ldh0HRR,fo-h4u_aJp,accumulative exposure of air sulfur dioxide,hypertension risks,hazard ratio,hazard_ratio
+24302272,bddArvOAHS,odds ratio,odds_ratio,1.04,1.01,1.07,,JMeOsYIcbL,mz6SXR841t,Ozone (O3),out-of-hospital cardiac arrest,odds ratio,odds_ratio
+35605364,6vnEsSk4j8,hazard ratio,hazard_ratio,1.22,1.13,1.33,,JMeOsYIcbL,0GgadM9ouC,long-term exposure to ozone (O),cause-specific cardiovascular disease (CVD) mortality,hazard ratio,hazard_ratio
+27015421,pC10A1WTEw,odds ratio,odds_ratio,1.55,1.22,1.97,0.001,JMeOsYIcbL,SimY67XTIv,ozone concentrations,ischemic stroke occurrence,odds ratio,odds_ratio
+36446272,oPF0aiS1wM,relative risk,relative_risk_ratio,1.09,0.96,1.23,,P6IzhScRdx,XW9F7OPopQ,long-term exposure to traffic-related air pollution,stroke (of/among/in a specified population),relative risk,relative_risk_ratio
+34478722,-4ePk17SaX,hazard ratio,hazard_ratio,1.055,1.028,1.082,,JMeOsYIcbL,XW9F7OPopQ,Ozone (O),Stroke,hazard ratio,hazard_ratio
+30366659,KHqfUlIO_j,hazard ratio,hazard_ratio,1.15,1.12,1.18,,DC_F0GO0WQ,jt0p0t_A6y,nitrogen dioxide (NO),myocardial infarction,hazard ratio,hazard_ratio
+15204752,sQfwmIOwPm,odds ratio (OR),odds_ratio,1.55,0.51,4.7,,ak7lpHYuXE,jQx2Q-ElPQ,"Air pollutant (PM(2.5), PM(10), SO(4)(2-), elemental carbon [EC], organic carbon [OC], O(3), SO(2), NO(2), and CO)",incidence of cardiac arrhythmia,odds ratio (OR),odds_ratio
+33278806,pQQIumNANW,hazard ratio,hazard_ratio,1.84,1.53,2.2,,ET5-8-2eBO,SimY67XTIv,carbon monoxide intoxication,ischemic stroke,hazard ratio,hazard_ratio
+28930181,aLRvrXoChe,relative risk,relative_risk_ratio,1.0509,1.0353,1.0668,,P6IzhScRdx,SimY67XTIv,exposure to ambient air pollution,risk of ischemic strokes,relative risk,relative_risk_ratio
+38115171,Cr0jMvSS6Q,β,coefficient,0.06,0.01,0.1,,DC_F0GO0WQ,XW9F7OPopQ,NO2,stroke prevalence (among adults aged ≥45 years),β,coefficient
+34036506,ntemSEsP13,RR,relative_risk_ratio,1.043,0.991,1.098,,P6IzhScRdx,of1GEB2i2t,air quality health index,heart failure hospitalization,RR,relative_risk_ratio
+38739852,-_ZtaVUX8t,relative risk,relative_risk_ratio,1.027,1.013,1.042,,DC_F0GO0WQ,rTbYdlAa-H,NO2 concentration,acute myocardial infarction hospitalization,relative risk,relative_risk_ratio
+30617889,9JYQbhpH3X,RR,relative_risk_ratio,1.52,1.16,1.99,0.05,ak7lpHYuXE,0GgadM9ouC,short-term exposure to ambient air pollutants,cardiovascular disease (CVD) events,RR,relative_risk_ratio
+37978283,3hSF47ZbMh,OR,odds_ratio,1.0208,1.002,1.0401,0.0301,ak7lpHYuXE,XW9F7OPopQ,PM2.5 exposure,Stroke,OR,odds_ratio
+34036506,ntemSEsP13,RR,relative_risk_ratio,1.059,1.001,1.121,,P6IzhScRdx,jt0p0t_A6y,air quality health index,myocardial infarction (MI) hospitalization,RR,relative_risk_ratio
+24302272,bddArvOAHS,odds ratio,odds_ratio,1.05,1.01,1.09,,JMeOsYIcbL,mz6SXR841t,Ozone (O3),out-of-hospital cardiac arrest,odds ratio,odds_ratio
+31483570,8fEAGl4iNG,r,pearson_r,0.2196,,,0.001,ak7lpHYuXE,of1GEB2i2t,NOX air pollutant formed by combustion systems and motor vehicles,Heart failure hospital admissions,r,pearson_r
+31898503,LtaUjdyrc4,relative risk (RR),relative_risk_ratio,1.37,1.13,1.67,,P6IzhScRdx,SimY67XTIv,air pollution,ischemic stroke onset,relative risk (RR),relative_risk_ratio
+28334645,40e-8tmoHC,hazard ratio,hazard_ratio,1.02,0.96,1.08,,P6IzhScRdx,jt0p0t_A6y,air pollution,risk of myocardial infarction (MI),hazard ratio,hazard_ratio
+24302272,bddArvOAHS,odds ratio,odds_ratio,1.13,1.06,1.21,,JMeOsYIcbL,mz6SXR841t,Ozone (O3),out-of-hospital cardiac arrest,odds ratio,odds_ratio
+31898503,LtaUjdyrc4,relative risk (RR),relative_risk_ratio,1.29,1.03,1.61,,P6IzhScRdx,SimY67XTIv,air pollution,ischemic stroke onset,relative risk (RR),relative_risk_ratio
+33838617,s4H3-W2yVa,odds ratio,odds_ratio,1.09,1.01,1.18,,P6IzhScRdx,G-cA8ng8z2,maternal exposure to ambient air pollution,congenital heart defects,odds ratio,odds_ratio
+30976038,8H1Nn2RsJC,odds ratio,odds_ratio,1.2,1.03,1.39,0.001,P6IzhScRdx,KuOsQy6Xym,ambient air pollution,hypertension,odds ratio,odds_ratio
+32593048,bqJemdD2oG,hazard ratio,hazard_ratio,1.13,1.01,1.26,,P6IzhScRdx,SimY67XTIv,long-term exposure to air pollution,incidence of ischemic stroke,hazard ratio,hazard_ratio
+35186842,FfbzB_dyV6,relative risk,relative_risk_ratio,1.11,1.08,1.13,,ak7lpHYuXE,XW9F7OPopQ,PM2.5 exposure,stroke (among participants),relative risk,relative_risk_ratio
+31999950,ho3Ns6qJpY,odds ratio,odds_ratio,1.033,1.023,1.043,0.001,P6IzhScRdx,mz6SXR841t,exposure to ambient air pollution,incidence of out-of-hospital cardiac arrest,odds ratio,odds_ratio
+29747111,7qRZ5YqO2A,odds ratio,odds_ratio,2.08,1.3,3.31,,Nw53jOQJ-3,fo-h4u_aJp,indoor air pollution exposure index,hypertension risk,odds ratio,odds_ratio
+31999950,ho3Ns6qJpY,odds ratio,odds_ratio,1.016,1.009,1.023,0.001,P6IzhScRdx,mz6SXR841t,exposure to ambient air pollution,incidence of out-of-hospital cardiac arrest,odds ratio,odds_ratio
+16020647,pO0bhu8QWP,odds ratio (OR),odds_ratio,0.96,0.91,1.01,0.11,JMeOsYIcbL,OmSPyYqNuD,Air pollutant concentrations of ozone (O(3)),resting heart rate (RHR),odds ratio (OR),odds_ratio
+20538697,8Z5jKeQ5Cq,relative risk,relative_risk_ratio,1.36,1.19,1.56,,ak7lpHYuXE,XW9F7OPopQ,long-term air pollution levels,incidence of nonhemorrhagic stroke,relative risk,relative_risk_ratio
+30700142,wC-gaZ20SP,hazard ratio,hazard_ratio,1.13,1.08,1.18,0.05,P6IzhScRdx,0GgadM9ouC,long-term exposure to ambient air pollution,cardiovascular disease mortality risk,hazard ratio,hazard_ratio
+33100134,niTKmtMxNK,hazard ratio,hazard_ratio,1.43,1.15,1.77,0.001,CCVZABeZcW,of1GEB2i2t,exhaled carbon monoxide (eCO),risk of heart failure with reduced ejection fraction,hazard ratio,hazard_ratio
+36642530,7HfARVHg2e,OR,odds_ratio,1.008,1.001,1.016,,ak7lpHYuXE,G-cA8ng8z2,gestational exposure to air pollutants,congenital heart disease,OR,odds_ratio
+31289812,4mCApmIDKX,hazard ratio,hazard_ratio,1.14,1.02,1.27,0.001,P6IzhScRdx,0GgadM9ouC,Ambient air pollution,cause-specific cardiovascular disease mortality,hazard ratio,hazard_ratio
+33527989,nym2-nBc9b,hazard ratios (HRs),hazard_ratio,1.16,1.05,1.28,0.001,P6IzhScRdx,of1GEB2i2t,air pollution score,incident heart failure,hazard ratios (HRs),hazard_ratio
+35640330,sYeqxVcqbH,mean_difference_unstandardized,mean_difference_unstandardized,11.0,,,0.001,XW9F7OPopQ,CCVZABeZcW,Stroke Patients (SP) group [vs Non-Stroke Patients (NSP) group],Exhaled Carbon Monoxide,mean_difference_unstandardized,mean_difference_unstandardized
+31253484,5GAwT4qkRG,OR,odds_ratio,1.09,1.08,1.1,,DC_F0GO0WQ,KuOsQy6Xym,NO2,hypertension,OR,odds_ratio
+31449466,3nX1ymqzUS,hazard ratio,hazard_ratio,1.04,1.01,1.06,,DC_F0GO0WQ,XW9F7OPopQ,nitrogen dioxide ([Formula: see text]),incidence of stroke,hazard ratio,hazard_ratio
+25003348,Qd692hloTy,OR,odds_ratio,1.16,0.99,1.36,,DC_F0GO0WQ,fo-h4u_aJp,long-term exposure to outdoor nitrogen dioxide (NO2),prevalent hypertension,OR,odds_ratio
+33527989,nym2-nBc9b,hazard ratios (HRs),hazard_ratio,1.19,1.08,1.32,0.001,P6IzhScRdx,of1GEB2i2t,air pollution score,incident heart failure,hazard ratios (HRs),hazard_ratio
+15302001,EGikE_G6wv,mean_difference_unstandardized,mean_difference_unstandardized,-25.0,,,0.02,of1GEB2i2t,CCVZABeZcW,heart failure patients [vs healthy subjects],Lung diffusion for carbon monoxide (DLco),mean_difference_unstandardized,mean_difference_unstandardized
+33816520,RkVzFUgc8V,relative risk,relative_risk_ratio,1.03,1.0,1.05,,ak7lpHYuXE,jt0p0t_A6y,ambient air pollution exposure (PM2.5 and PM10),risk of myocardial infarction,relative risk,relative_risk_ratio
+35449329,aBC2Va7xr9,OR,odds_ratio,1.17,1.09,1.25,0.001,P6IzhScRdx,fo-h4u_aJp,ambient air pollution,hypertension defined by the different criteria,OR,odds_ratio
+33100134,niTKmtMxNK,hazard ratio,hazard_ratio,1.39,1.19,1.62,0.001,CCVZABeZcW,of1GEB2i2t,exhaled carbon monoxide (eCO),risk of heart failure,hazard ratio,hazard_ratio
+26645834,t-s3wQikmi,odds ratio,odds_ratio,1.02,0.97,1.08,,P6IzhScRdx,TM1YPafvM8,short-term exposure to fine particulate matter air pollution,non-ST-segment elevation myocardial infarction,odds ratio,odds_ratio
+38911616,yYLrh8WXwB,odds ratio,odds_ratio,1.4,1.02,1.93,0.0386,ak7lpHYuXE,of1GEB2i2t,PM2.5 exposure,heart failure,odds ratio,odds_ratio
+33177548,yj9L84ty2p,hazard ratio,hazard_ratio,1.87,1.73,2.01,,CCVZABeZcW,SimY67XTIv,Exhaled carbon monoxide (COex) level,ischemic stroke,hazard ratio,hazard_ratio
+30357335,4Ldu-o8vAF,hazard ratio,hazard_ratio,1.024,1.005,1.043,,DC_F0GO0WQ,jt0p0t_A6y,NO2 concentration,death due to myocardial infarction,hazard ratio,hazard_ratio
+22577602,jWxuRfvt06,odds ratio,odds_ratio,1.17,1.01,1.33,,Cv_Ldh0HRR,SimY67XTIv,ambient sulfur dioxide,number of emergency department visits for ischemic stroke,odds ratio,odds_ratio
+27367707,W2kBsqoYfK,relative risk,relative_risk_ratio,1.012,0.997,1.027,,ak7lpHYuXE,jQx2Q-ElPQ,daily increases in air pollutants,arrhythmia hospitalization or mortality,relative risk,relative_risk_ratio
+30617889,9JYQbhpH3X,RR,relative_risk_ratio,1.22,1.0,1.48,,ak7lpHYuXE,0GgadM9ouC,short-term exposure to ambient air pollutants,cardiovascular disease (CVD) events,RR,relative_risk_ratio
+31289812,4mCApmIDKX,hazard ratio,hazard_ratio,1.04,1.0,1.08,,P6IzhScRdx,0GgadM9ouC,Ambient air pollution,cause-specific cardiovascular disease mortality,hazard ratio,hazard_ratio
+30165598,tnT3J4tPEM,hazard ratio,hazard_ratio,1.04,1.03,1.06,,DC_F0GO0WQ,of1GEB2i2t,nitrogen dioxide,incident congestive heart failure,hazard ratio,hazard_ratio
+26703428,ihqpsolfU-,hazard ratio,hazard_ratio,2.6,2.15,3.15,0.001,ET5-8-2eBO,SimY67XTIv,carbon monoxide-poisoning cohort,ischemic stroke,hazard ratio,hazard_ratio
+30976038,8H1Nn2RsJC,odds ratio,odds_ratio,1.3,1.12,1.52,0.001,P6IzhScRdx,KuOsQy6Xym,ambient air pollution,hypertension,odds ratio,odds_ratio
+36651483,TJX87OT-xL,OR,odds_ratio,1.85,1.39,2.46,0.0001,ak7lpHYuXE,GPvAv7fRbV,"exposure to ambient PM10, SO2, NO2, and CO",pre-hypertension and hypertension,OR,odds_ratio
+33177548,yj9L84ty2p,hazard ratio,hazard_ratio,1.65,1.5,1.8,,CCVZABeZcW,SimY67XTIv,Exhaled carbon monoxide (COex) level,ischemic stroke,hazard ratio,hazard_ratio
+37121155,lLm_BX9b1C,relative risk,relative_risk_ratio,1.28,1.22,1.34,,P6IzhScRdx,XW9F7OPopQ,air pollution,risk of stroke,relative risk,relative_risk_ratio
+30688288,PwccjJyeoj,odds ratio (OR),odds_ratio,1.12,1.01,1.31,0.01,DC_F0GO0WQ,jt0p0t_A6y,outdoor nitrogen dioxide (NO2) levels,number of hospitalizations due to myocardial infarction,odds ratio (OR),odds_ratio
+29271700,GljEA5V5FU,odds ratio (OR),odds_ratio,1.2,1.03,1.4,,ak7lpHYuXE,fo-h4u_aJp,gaseous air pollutants exposure,hospital admissions for hypertension,odds ratio (OR),odds_ratio
+38280465,UdvY2rom8i,hazard ratio,hazard_ratio,1.07,1.003,1.15,,P6IzhScRdx,XW9F7OPopQ,long-term exposure to air pollution,stroke risk,hazard ratio,hazard_ratio
+30566212,O1_a29NKQz,OR,odds_ratio,1.55,,,0.005,Cv_Ldh0HRR,LvmcmY8Gys,SO2,ST-segment elevation myocardial infarction (STEMI),OR,odds_ratio
+34800453,BhMqwFunRw,RR,relative_risk_ratio,0.88,0.8,0.98,0.01,JMeOsYIcbL,SimY67XTIv,ozone,ischemic stroke morbidity among type 2 diabetes patients,RR,relative_risk_ratio
+28953453,rEnSyIb0rw,incidence rate ratio (IRR),incident_rate_ratio,1.11,1.07,1.16,,DC_F0GO0WQ,of1GEB2i2t,nitrogen dioxide (NO2),incident heart failure,incidence rate ratio (IRR),incident_rate_ratio
+20702540,vHU8pQ4ETi,OR,odds_ratio,1.111,1.02,1.211,,JMeOsYIcbL,jt0p0t_A6y,exposure to ozone (O3),myocardial infarction (MI) with hypercholesterolaemia,OR,odds_ratio
+33428721,M_OIKYBNjy,hazard ratio,hazard_ratio,1.404,1.135,1.737,0.002,ak7lpHYuXE,0GgadM9ouC,PM2.5 exposure,major adverse cardiovascular events,hazard ratio,hazard_ratio
+33278806,pQQIumNANW,hazard ratio,hazard_ratio,2.31,2.01,2.65,,ET5-8-2eBO,SimY67XTIv,carbon monoxide intoxication,ischemic stroke,hazard ratio,hazard_ratio
+26703428,ihqpsolfU-,hazard ratio,hazard_ratio,6.45,3.3,12.6,0.001,ET5-8-2eBO,SimY67XTIv,carbon monoxide-poisoning cohort aged 20-34 years,ischemic stroke,hazard ratio,hazard_ratio
+21944840,VPJx8YnHbC,odds ratio (OR),odds_ratio,1.06,1.01,1.11,,ak7lpHYuXE,fo-h4u_aJp,daily concentrations of several air pollutants,emergency department visits for hypertension,odds ratio (OR),odds_ratio
+37107848,HguCJ-bYUc,OR,odds_ratio,1.03,1.001,1.058,0.04,ak7lpHYuXE,SimY67XTIv,air pollutants,mortality due to ischemic stroke (IS),OR,odds_ratio
+15204752,sQfwmIOwPm,odds ratio (OR),odds_ratio,1.09,0.86,1.37,,ak7lpHYuXE,jQx2Q-ElPQ,"Air pollutant (PM(2.5), PM(10), SO(4)(2-), elemental carbon [EC], organic carbon [OC], O(3), SO(2), NO(2), and CO)",incidence of cardiac arrhythmia,odds ratio (OR),odds_ratio
+23611182,NT9orh0dSO,relative risk,relative_risk_ratio,0.05,0.01,0.09,,ak7lpHYuXE,rTbYdlAa-H,fine particles (PM2.5) levels,hospital admissions for myocardial infarction,relative risk,relative_risk_ratio
+28930181,aLRvrXoChe,relative risk,relative_risk_ratio,1.0509,1.0353,1.0668,,P6IzhScRdx,SimY67XTIv,short-term exposure to ambient air pollution,risk of ischemic strokes,relative risk,relative_risk_ratio
+31898503,LtaUjdyrc4,relative risk (RR),relative_risk_ratio,1.5,1.22,1.84,,P6IzhScRdx,SimY67XTIv,air pollution,ischemic stroke onset,relative risk (RR),relative_risk_ratio
+35974459,D_yknZVTOK,incidence rate ratio (IRR),incident_rate_ratio,1.05,1.02,1.08,,CCVZABeZcW,SimY67XTIv,Carbon monoxide (CO),incidence of acute ischemic stroke,incidence rate ratio (IRR),incident_rate_ratio
+28711568,P4CEH-3uQk,odds ratio,odds_ratio,1.17,1.09,1.25,,P6IzhScRdx,GPvAv7fRbV,long-term exposure to ambient air pollution,prehypertension,odds ratio,odds_ratio
+15204752,sQfwmIOwPm,odds ratio (OR),odds_ratio,2.27,0.67,7.66,,ak7lpHYuXE,jQx2Q-ElPQ,"Air pollutant (PM(2.5), PM(10), SO(4)(2-), elemental carbon [EC], organic carbon [OC], O(3), SO(2), NO(2), and CO)",incidence of cardiac arrhythmia,odds ratio (OR),odds_ratio
+31483570,8fEAGl4iNG,r,pearson_r,0.2692,,,0.001,Cv_Ldh0HRR,of1GEB2i2t,SO2,Heart failure hospital admissions,r,pearson_r
+36651483,TJX87OT-xL,OR,odds_ratio,1.4,0.93,2.12,,ak7lpHYuXE,GPvAv7fRbV,"exposure to ambient PM10, SO2, NO2, and CO",pre-hypertension and hypertension,OR,odds_ratio
+30244357,IZNXQzXX4p,incidence rate ratio,incident_rate_ratio,1.45,1.06,1.98,,ET5-8-2eBO,jt0p0t_A6y,Carbon monoxide poisoning,risk of myocardial infarction,incidence rate ratio,incident_rate_ratio
+29101696,oa3ea7Tyna,odds ratio (OR),odds_ratio,1.55,1.2,1.99,0.005,P6IzhScRdx,fo-h4u_aJp,exposure to high levels of air pollution,prevalence of hypertension,odds ratio (OR),odds_ratio
+31898503,LtaUjdyrc4,relative risk (RR),relative_risk_ratio,1.25,1.04,1.49,,P6IzhScRdx,SimY67XTIv,air pollution,ischemic stroke onset,relative risk (RR),relative_risk_ratio
+33221594,m6ZUnPt6Z-,beta,coefficient,0.03,-0.06,0.13,,P6IzhScRdx,OmSPyYqNuD,exposure to household air pollution from solid fuel combustion for cooking and heating,heart rate variability,beta,coefficient
+26324253,8sM5dpdx-k,OR,odds_ratio,13.5,2.6,70.5,,P6IzhScRdx,G-cA8ng8z2,air pollution,risk of congenital heart defect,OR,odds_ratio
+26703428,ihqpsolfU-,hazard ratio,hazard_ratio,2.76,2.13,3.58,0.001,ET5-8-2eBO,SimY67XTIv,carbon monoxide-poisoning cohort without comorbidities,ischemic stroke,hazard ratio,hazard_ratio
+24231417,SssQ9Or6ui,relative risk,relative_risk_ratio,1.12,0.96,1.32,,DC_F0GO0WQ,SimY67XTIv,nitrogen dioxide (NO 2 ),hospital admissions for ischemic heart disease (IHD) or cerebrovascular disease (cerebrovascular event [CVE]),relative risk,relative_risk_ratio
+9755140,0dd4PsSgqG,relative risk,relative_risk_ratio,1.15,1.09,1.22,,CCVZABeZcW,of1GEB2i2t,maximum hourly levels of carbon monoxide,hospital admissions for congestive heart failure,relative risk,relative_risk_ratio
+30677672,fhUEmkk0I_,relative risk,relative_risk_ratio,2.06,1.09,3.88,,P6IzhScRdx,0GgadM9ouC,Air pollution level,Cardiovascular disease,relative risk,relative_risk_ratio
+34800453,BhMqwFunRw,RR,relative_risk_ratio,1.33,1.12,1.57,0.01,JMeOsYIcbL,SimY67XTIv,ozone,ischemic stroke morbidity among type 2 diabetes patients,RR,relative_risk_ratio
+34677770,v5H0i9WWal,RR,relative_risk_ratio,1.01,1.001,1.03,,Cv_Ldh0HRR,0GgadM9ouC,SO2 (sulfur dioxide),total cardiovascular diseases,RR,relative_risk_ratio
+26362862,z8Vte40alf,RR,relative_risk_ratio,2.5,1.46,4.49,,P6IzhScRdx,fo-h4u_aJp,Exposure to air pollution,risk for developing hypertension,RR,relative_risk_ratio
+31067132,g5AKVCb9Oh,hazard ratio,hazard_ratio,1.08,0.99,1.17,,P6IzhScRdx,0GgadM9ouC,Household air pollution (HAP) from solid fuel use for cooking,fatal or nonfatal cardiovascular disease,hazard ratio,hazard_ratio
+34478722,-4ePk17SaX,hazard ratio,hazard_ratio,1.025,1.001,1.05,,DC_F0GO0WQ,rTbYdlAa-H,Nitrogen dioxide (NO),Acute myocardial infarction,hazard ratio,hazard_ratio
+37478679,_OImiRIhCt,hazard ratio,hazard_ratio,1.558,1.477,1.642,0.001,DC_F0GO0WQ,0GgadM9ouC,nitrogen dioxide (NO2) exposure,incidence of cardiovascular disease,hazard ratio,hazard_ratio
+37086881,ttRn8ujGe1,hazard ratio,hazard_ratio,1.16,1.1,1.22,,P6IzhScRdx,jt0p0t_A6y,Air pollution,risk of myocardial infarction,hazard ratio,hazard_ratio
+23357184,uqDR-rRb03,odds ratio,odds_ratio,1.13,1.06,1.2,,P6IzhScRdx,KuOsQy6Xym,residential long-term exposure to air pollution,hypertension,odds ratio,odds_ratio
+29271700,GljEA5V5FU,odds ratio (OR),odds_ratio,1.2,1.02,1.42,,ak7lpHYuXE,fo-h4u_aJp,gaseous air pollutants exposure,hospital admissions for hypertension,odds ratio (OR),odds_ratio
+23772934,I9au3stZia,adjusted odds ratio,adjusted_odds_ratio,0.4,0.2,0.8,,CCVZABeZcW,ykiJVOKBa2,Carbon monoxide,secundum atrial septal defects,adjusted odds ratio,adjusted_odds_ratio
+32758862,nZ7FQ3L4Nd,odds ratio,odds_ratio,1.09,1.01,1.18,0.03,DC_F0GO0WQ,LvmcmY8Gys,interquartile-range increase in pollutants-nitrogen dioxide concentration,number of non-ST-segment elevation myocardial infarction hospitalizations,odds ratio,odds_ratio
+34417486,GT2ObRillj,R,pearson_r,0.46,,,0.001,CCVZABeZcW,0GgadM9ouC,Carbon Monoxide (CO),cardiovascular disease,R,pearson_r
+37107848,HguCJ-bYUc,OR,odds_ratio,1.025,1.001,1.05,0.04,ak7lpHYuXE,SimY67XTIv,air pollutants,mortality due to ischemic stroke (IS),OR,odds_ratio
+30617889,9JYQbhpH3X,RR,relative_risk_ratio,1.08,1.02,1.14,0.05,ak7lpHYuXE,0GgadM9ouC,short-term exposure to ambient air pollutants,cardiovascular disease (CVD) events,RR,relative_risk_ratio
+36171142,EywmA7Et1m,hazard ratio,hazard_ratio,1.24,1.1,1.4,,P6IzhScRdx,XW9F7OPopQ,ambient air pollution,transition from healthy to incident stroke,hazard ratio,hazard_ratio
+37235386,5qR5zsc8xz,hazard ratio,hazard_ratio,1.048,1.034,1.062,,DC_F0GO0WQ,jt0p0t_A6y,NO2,risk of myocardial infarction,hazard ratio,hazard_ratio
+28557713,S_KJGPKUAR,OR,odds_ratio,1.29,1.17,2.23,,P6IzhScRdx,G-cA8ng8z2,maternal exposure to ambient air pollution,risk of congenital heart defects in offspring,OR,odds_ratio
+7801074,HkRHw54X8J,rate ratio,relative_risk_ratio,2.1,1.24,3.38,,CCVZABeZcW,0GgadM9ouC,carbon monoxide exposure,morbidity and mortality from cardiovascular diseases,rate ratio,relative_risk_ratio
+31289812,4mCApmIDKX,hazard ratio,hazard_ratio,1.08,1.03,1.13,0.001,P6IzhScRdx,0GgadM9ouC,Ambient air pollution,cause-specific cardiovascular disease mortality,hazard ratio,hazard_ratio
+30566212,O1_a29NKQz,OR,odds_ratio,1.265,,,0.02,DC_F0GO0WQ,LvmcmY8Gys,NO2,ST-segment elevation myocardial infarction (STEMI),OR,odds_ratio
+34800453,BhMqwFunRw,RR,relative_risk_ratio,1.32,1.07,1.63,0.01,JMeOsYIcbL,SimY67XTIv,ozone,ischemic stroke morbidity among type 2 diabetes patients,RR,relative_risk_ratio
+38439026,TsZMtH0Kni,hazard ratio,hazard_ratio,1.09,1.05,1.14,,ak7lpHYuXE,0GgadM9ouC,air pollutant exposure,risk of Cardiovascular disease,hazard ratio,hazard_ratio
+32855345,m3OdXT0-kb,OR,odds_ratio,1.83,1.16,2.87,,JMeOsYIcbL,SimY67XTIv,Ozone,ischaemic stroke occurrence,OR,odds_ratio
+7801074,HkRHw54X8J,rate ratio,relative_risk_ratio,2.7,1.13,12.11,,CCVZABeZcW,0GgadM9ouC,carbon monoxide exposure,morbidity and mortality from cardiovascular diseases,rate ratio,relative_risk_ratio
+37107848,HguCJ-bYUc,OR,odds_ratio,1.037,1.007,1.069,0.01,ak7lpHYuXE,SimY67XTIv,air pollutants,mortality due to ischemic stroke (IS),OR,odds_ratio
+24589872,OpwSrdn8uU,hazard ratio,hazard_ratio,1.0,,,,ak7lpHYuXE,0GgadM9ouC,long-term exposure to several air pollutants,all cardiovascular disease mortality,hazard ratio,hazard_ratio
+33866825,eT26o7zyJM,hazard ratio,hazard_ratio,1.85,1.55,2.21,,ET5-8-2eBO,hetipX0cZf,Carbon monoxide poisoning,congestive heart failure,hazard ratio,hazard_ratio
+22868897,un7FF9eRHF,fatality-rate ratio,relative_risk_ratio,1.65,1.06,2.57,,DC_F0GO0WQ,SimY67XTIv,NO2 levels,acute case-fatality of stroke,fatality-rate ratio,relative_risk_ratio
+29954383,0ai1Ue4RKZ,Prevalence Rate Ratios (PRRs),relative_risk_ratio,1.2,,,,P6IzhScRdx,GPvAv7fRbV,long-term exposure to ambient air pollution,prehypertension,Prevalence Rate Ratios (PRRs),relative_risk_ratio
+31898503,LtaUjdyrc4,relative risk (RR),relative_risk_ratio,1.26,1.04,1.53,,P6IzhScRdx,SimY67XTIv,air pollution,ischemic stroke onset,relative risk (RR),relative_risk_ratio
+27829205,GlTQ7M9Xc3,OR,odds_ratio,0.97,0.87,1.07,,JMeOsYIcbL,SimY67XTIv,ozone (O),odds of ischemic stroke,OR,odds_ratio
+37295302,_MBG0xhDze,odds ratio,odds_ratio,1.07,,,,JMeOsYIcbL,KuOsQy6Xym,long-term ozone exposure,hypertension,odds ratio,odds_ratio
+31801101,_ioMNfcQzt,relative risk,relative_risk_ratio,0.85,0.76,0.97,,P6IzhScRdx,rTbYdlAa-H,Hong Kong's air quality health index policy,hospital admissions for acute myocardial infarction (AMI),relative risk,relative_risk_ratio
+33919563,c7t_r57bwv,HR,hazard_ratio,2.38,1.94,2.92,0.001,ak7lpHYuXE,0GgadM9ouC,Ambient air pollutants,total cardiovascular disease mortality,HR,hazard_ratio
+33462392,1LwbxXzfgJ,hazard ratio,hazard_ratio,1.555,1.527,1.584,,P6IzhScRdx,fo-h4u_aJp,long-term exposure to PM air pollution,incident hypertension,hazard ratio,hazard_ratio
+29747111,7qRZ5YqO2A,odds ratio,odds_ratio,2.52,1.46,4.36,,Nw53jOQJ-3,fo-h4u_aJp,indoor air pollution exposure index,hypertension risk,odds ratio,odds_ratio

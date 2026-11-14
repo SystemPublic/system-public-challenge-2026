@@ -1,0 +1,4 @@
+check,measure1,measure2,spearman_uhf42,n_districts,expectation
+surface temperature vs heat ED visits (rate),measure:688,measure:537,0.256,42,SPG: heat x emergency care = 70 associations with positive effect sizes; expect rho > 0
+grass and tree cover vs surface temperature,measure:690,measure:688,-0.396,42,SPG: green space x heat = 12 associations; expect rho < 0 (cover cools surfaces)
+grass and tree cover vs heat ED visits (rate),measure:690,measure:537,0.024,42,"SPG: green space x emergency care = 0 associations; naive cross-sectional rho near 0 would show the link is mediated (via heat), not direct - i.e. exactly what a study needs to untangle"

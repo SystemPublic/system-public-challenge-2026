@@ -1,0 +1,57 @@
+pubmed_id,study_id,statistic_type,system_statistic_type,statistic_value,ci_lower,ci_upper,p_value,variable_1_concept_id,variable_2_concept_id,variable_1_name,variable_2_name,statistic_type_norm,system_statistic_type_norm
+27812194,a-HhOpk_87,odds ratio,odds_ratio,1.1,,,0.044,DC_F0GO0WQ,Gl-I4wBZ5r,NO2,PTB-related hospital admissions,odds ratio,odds_ratio
+19501385,--564kq_b1,odds ratio (OR),odds_ratio,1.014,1.004,1.024,0.001,Cv_Ldh0HRR,nS9fqJ01TW,sulfur dioxide (SO(2)),hospital emergency room visits of cardiovascular diseases,odds ratio (OR),odds_ratio
+7491552,L6dRLBltwJ,relative risk,relative_risk_ratio,1.056,1.011,1.104,0.001,DC_F0GO0WQ,nS9fqJ01TW,nitrogen dioxide,adult emergency room visits for asthma,relative risk,relative_risk_ratio
+27644030,BF2ABlSvBO,adjusted relative risk,relative_risk_ratio,1.44,1.19,1.74,,DC_F0GO0WQ,Gl-I4wBZ5r,spatial variation in nitrogen dioxide concentrations,hospital admissions for respiratory and cardiovascular causes,adjusted relative risk,relative_risk_ratio
+17727917,Gs3qm1JUYG,excess relative risk (ERR),relative_risk_ratio,0.1,-0.2,0.5,,JMeOsYIcbL,Gl-I4wBZ5r,ozone,hospitalizations for cardiovascular diseases,excess relative risk (ERR),relative_risk_ratio
+27644030,BF2ABlSvBO,adjusted relative risk,relative_risk_ratio,2.81,2.16,3.65,,DC_F0GO0WQ,Gl-I4wBZ5r,spatial variation in nitrogen dioxide concentrations,hospital admissions for respiratory and cardiovascular causes,adjusted relative risk,relative_risk_ratio
+15562633,C-YsSfrkiA,relative risk,relative_risk_ratio,1.32,1.08,1.62,,Cv_Ldh0HRR,Gl-I4wBZ5r,sulfur dioxide,"hospitalization (of ischemic heart diseases during the summer months of June, July, and August)",relative risk,relative_risk_ratio
+34319408,VWidiyTldb,RR,relative_risk_ratio,1.07,1.01,1.12,,ak7lpHYuXE,kZIzSorHA_,air pollutants,emergency ambulance dispatches,RR,relative_risk_ratio
+27644030,BF2ABlSvBO,adjusted relative risk,relative_risk_ratio,2.34,1.83,3.01,,DC_F0GO0WQ,Gl-I4wBZ5r,spatial variation in nitrogen dioxide concentrations,hospital admissions for respiratory and cardiovascular causes,adjusted relative risk,relative_risk_ratio
+34988821,OL2ivX7BnG,excess relative risk (ERR),relative_risk_ratio,0.76,0.19,1.34,,DC_F0GO0WQ,kZIzSorHA_,nitrogen dioxide (NO),emergency ambulance calls for cardiovascular diseases,excess relative risk (ERR),relative_risk_ratio
+29149802,ecs91w_pFv,RR,relative_risk_ratio,1.08,,,0.031,JMeOsYIcbL,kZIzSorHA_,"exposure to CO, PM10, and ozone",daily emergency ambulance calls,RR,relative_risk_ratio
+27644030,BF2ABlSvBO,adjusted relative risk,relative_risk_ratio,1.5,1.24,1.82,,DC_F0GO0WQ,Gl-I4wBZ5r,spatial variation in nitrogen dioxide concentrations,hospital admissions for respiratory and cardiovascular causes,adjusted relative risk,relative_risk_ratio
+12094105,dtik9873Au,relative risk,relative_risk_ratio,1.12,1.07,1.16,,JMeOsYIcbL,Gl-I4wBZ5r,ozone,hospitalization for asthma,relative risk,relative_risk_ratio
+34988821,OL2ivX7BnG,excess relative risk (ERR),relative_risk_ratio,0.77,0.31,1.23,,DC_F0GO0WQ,kZIzSorHA_,nitrogen dioxide (NO),emergency ambulance calls for all-cause diseases,excess relative risk (ERR),relative_risk_ratio
+12094105,dtik9873Au,relative risk,relative_risk_ratio,1.11,1.06,1.17,,Cv_Ldh0HRR,Gl-I4wBZ5r,sulfur dioxide,hospitalization for asthma,relative risk,relative_risk_ratio
+22245540,ObUBH0nx3N,odds ratio (OR),odds_ratio,1.88,1.19,2.97,,P6IzhScRdx,Gl-I4wBZ5r,exposure to air pollution,hospital admission for cardiovascular or respiratory diseases,odds ratio (OR),odds_ratio
+35802828,O45CJ4qR9L,odds ratio,odds_ratio,0.97,0.929,1.014,,ak7lpHYuXE,Gl-I4wBZ5r,Outdoor particulate and gaseous air pollutants,respiratory hospitalizations in children,odds ratio,odds_ratio
+22245540,ObUBH0nx3N,odds ratio (OR),odds_ratio,1.31,1.1,1.56,,P6IzhScRdx,Gl-I4wBZ5r,exposure to air pollution,hospital admission for cardiovascular or respiratory diseases,odds ratio (OR),odds_ratio
+39819469,xkaV9aZYIW,odds ratio,odds_ratio,1.015,1.0113,1.019,,ak7lpHYuXE,Gl-I4wBZ5r,PM2.5 exposure,risk of hospitalisation (among elderly),odds ratio,odds_ratio
+12094105,dtik9873Au,relative risk,relative_risk_ratio,1.15,1.1,1.2,,DC_F0GO0WQ,Gl-I4wBZ5r,nitrogen dioxide,hospitalization for asthma,relative risk,relative_risk_ratio
+31681705,SK8d7ZpK_f,support vector regression (SVR),coefficient,0.378,,,0.001,P6IzhScRdx,Gl-I4wBZ5r,air pollution data,daily hospital admissions for the upcoming day,support vector regression (SVR),coefficient
+14747598,1M9soIgEqm,odds ratio (OR),odds_ratio,1.4,1.0,1.94,,Cv_Ldh0HRR,nS9fqJ01TW,Sulphur dioxide (SO2) episode,Emergency hospital admissions in Nottingham in the episode week,odds ratio (OR),odds_ratio
+29149802,ecs91w_pFv,RR,relative_risk_ratio,1.1,,,0.018,JMeOsYIcbL,kZIzSorHA_,"exposure to CO, PM10, and ozone",daily emergency ambulance calls,RR,relative_risk_ratio
+15562633,C-YsSfrkiA,relative risk,relative_risk_ratio,1.1,1.05,1.15,,JMeOsYIcbL,Gl-I4wBZ5r,ozone,hospitalization (among the elderly population),relative risk,relative_risk_ratio
+7491552,L6dRLBltwJ,relative risk,relative_risk_ratio,1.045,1.009,1.081,0.001,DC_F0GO0WQ,nS9fqJ01TW,nitrogen dioxide,adult emergency room visits for asthma,relative risk,relative_risk_ratio
+29149802,ecs91w_pFv,RR,relative_risk_ratio,1.04,,,0.031,JMeOsYIcbL,kZIzSorHA_,"exposure to CO, PM10, and ozone",daily emergency ambulance calls,RR,relative_risk_ratio
+19501385,--564kq_b1,odds ratio (OR),odds_ratio,1.016,1.003,1.029,0.001,DC_F0GO0WQ,nS9fqJ01TW,nitrogen dioxide (NO(2)),hospital emergency room visits of cardiovascular diseases,odds ratio (OR),odds_ratio
+38062177,-hnb3IXdq1,relative risk,relative_risk_ratio,1.0997,1.02,1.1885,,Cv_Ldh0HRR,Gl-I4wBZ5r,sulfur dioxide (SO2),hospitalizations for mental disorders,relative risk,relative_risk_ratio
+34988821,OL2ivX7BnG,excess relative risk (ERR),relative_risk_ratio,0.06,-1.57,1.73,,DC_F0GO0WQ,kZIzSorHA_,nitrogen dioxide (NO),emergency ambulance calls for respiratory diseases,excess relative risk (ERR),relative_risk_ratio
+36809617,E92OXfafjf,RR,relative_risk_ratio,1.019,1.005,1.032,0.001,DC_F0GO0WQ,Gl-I4wBZ5r,ambient nitrogen dioxide (NO2) exposure,hospital admissions for cardiovascular diseases (CVDs),RR,relative_risk_ratio
+34988821,OL2ivX7BnG,excess relative risk (ERR),relative_risk_ratio,0.33,0.05,0.6,0.001,DC_F0GO0WQ,kZIzSorHA_,nitrogen dioxide (NO),emergency ambulance calls for all-cause diseases,excess relative risk (ERR),relative_risk_ratio
+35802828,O45CJ4qR9L,odds ratio,odds_ratio,1.004,0.955,1.056,,ak7lpHYuXE,Gl-I4wBZ5r,outdoor particulate and gaseous air pollutants,respiratory hospitalizations in children,odds ratio,odds_ratio
+34988821,OL2ivX7BnG,excess relative risk (ERR),relative_risk_ratio,1.07,0.4,1.76,,DC_F0GO0WQ,kZIzSorHA_,nitrogen dioxide (NO),emergency ambulance calls for all-cause diseases,excess relative risk (ERR),relative_risk_ratio
+15562633,C-YsSfrkiA,relative risk,relative_risk_ratio,0.95,0.9,1.01,,Cv_Ldh0HRR,Gl-I4wBZ5r,sulfur dioxide,hospitalization (among the elderly population),relative risk,relative_risk_ratio
+29149802,ecs91w_pFv,RR,relative_risk_ratio,1.07,,,0.03,JMeOsYIcbL,kZIzSorHA_,"exposure to CO, PM10, and ozone",daily emergency ambulance calls,RR,relative_risk_ratio
+17727917,Gs3qm1JUYG,excess relative risk (ERR),relative_risk_ratio,1.1,0.6,1.6,,DC_F0GO0WQ,Gl-I4wBZ5r,nitrogen dioxide (NO(2)),hospitalizations for cardiovascular diseases,excess relative risk (ERR),relative_risk_ratio
+12094105,dtik9873Au,relative risk,relative_risk_ratio,1.16,1.1,1.22,,CCVZABeZcW,Gl-I4wBZ5r,carbon monoxide,hospitalization for asthma,relative risk,relative_risk_ratio
+15562633,C-YsSfrkiA,relative risk,relative_risk_ratio,1.07,1.01,1.13,,CCVZABeZcW,Gl-I4wBZ5r,carbon monoxide,"hospitalization (among the elderly population in Seoul, Korea)",relative risk,relative_risk_ratio
+27812194,a-HhOpk_87,odds ratio,odds_ratio,1.21,,,0.001,DC_F0GO0WQ,Gl-I4wBZ5r,NO2,PTB-related hospital admissions,odds ratio,odds_ratio
+9229208,M1BHEs4FeM,relative risk,relative_risk_ratio,1.065,1.028,1.104,,CCVZABeZcW,Gl-I4wBZ5r,daily high-hour ambient carbon monoxide concentration,hospitalization rates (of congestive heart failure in the elderly),relative risk,relative_risk_ratio
+29149802,ecs91w_pFv,RR,relative_risk_ratio,1.05,,,0.028,JMeOsYIcbL,kZIzSorHA_,"exposure to CO, PM10, and ozone",daily emergency ambulance calls,RR,relative_risk_ratio
+15562633,C-YsSfrkiA,relative risk,relative_risk_ratio,1.08,1.03,1.14,,DC_F0GO0WQ,Gl-I4wBZ5r,nitrogen dioxide,hospitalization (among the elderly population),relative risk,relative_risk_ratio
+35802828,O45CJ4qR9L,odds ratio,odds_ratio,1.084,1.007,1.167,,ak7lpHYuXE,Gl-I4wBZ5r,Outdoor particulate and gaseous air pollutants,respiratory hospitalizations in children,odds ratio,odds_ratio
+35802828,O45CJ4qR9L,odds ratio,odds_ratio,1.004,0.955,1.056,,ak7lpHYuXE,Gl-I4wBZ5r,Outdoor particulate and gaseous air pollutants,respiratory hospitalizations in children,odds ratio,odds_ratio
+38062177,-hnb3IXdq1,relative risk,relative_risk_ratio,1.0099,1.0005,1.0194,,JMeOsYIcbL,Gl-I4wBZ5r,ozone (O3),hospitalizations for mental disorders,relative risk,relative_risk_ratio
+7768231,4n-566BrlA,beta,coefficient,6.8,,,,Cv_Ldh0HRR,nS9fqJ01TW,Sulfur dioxide,emergency room visits,beta,coefficient
+26531803,7MOjQ5seSK,relative risk,relative_risk_ratio,1.15,1.08,1.22,,ak7lpHYuXE,nS9fqJ01TW,daily concentrations of PM2.5,emergency room visits for all causes,relative risk,relative_risk_ratio
+22245540,ObUBH0nx3N,odds ratio (OR),odds_ratio,1.67,1.08,2.58,,P6IzhScRdx,Gl-I4wBZ5r,exposure to air pollution,hospital admission for cardiovascular or respiratory diseases,odds ratio (OR),odds_ratio
+30643751,aOjThv-4Yq,relative risk,relative_risk_ratio,1.009,1.006,1.013,,ak7lpHYuXE,nS9fqJ01TW,air pollutant levels,rate of hospital emergency admissions due to cardiovascular diseases,relative risk,relative_risk_ratio
+22245540,ObUBH0nx3N,odds ratio (OR),odds_ratio,1.38,1.18,1.61,,P6IzhScRdx,Gl-I4wBZ5r,exposure to air pollution,hospital admission for cardiovascular or respiratory diseases,odds ratio (OR),odds_ratio
+27644030,BF2ABlSvBO,adjusted relative risk,relative_risk_ratio,1.6,1.31,1.96,,DC_F0GO0WQ,Gl-I4wBZ5r,spatial variation in nitrogen dioxide concentrations,hospital admissions for respiratory and cardiovascular causes,adjusted relative risk,relative_risk_ratio
+27812194,a-HhOpk_87,odds ratio,odds_ratio,0.92,,,0.029,Cv_Ldh0HRR,Gl-I4wBZ5r,SO2,PTB-related hospital admissions,odds ratio,odds_ratio
+34319408,VWidiyTldb,RR,relative_risk_ratio,1.05,1.0,1.11,,ak7lpHYuXE,kZIzSorHA_,air pollutants,emergency ambulance dispatches,RR,relative_risk_ratio
+35001229,ukJdgIGNe0,relative risk (RR),relative_risk_ratio,1.014,1.008,1.02,0.001,JMeOsYIcbL,nS9fqJ01TW,Increase in Ozone concentration (per inter-quartile range (IQR) of 31 μg/m3),respiratory emergency room visits,relative risk (RR),relative_risk_ratio
+23246721,dEBmXiwoX7,coefficient,coefficient,0.51,0.09,0.93,,P6IzhScRdx,nS9fqJ01TW,Air Quality Health Index (AQHI),emergency room visits,coefficient,coefficient
+27644030,BF2ABlSvBO,adjusted relative risk,relative_risk_ratio,1.87,1.46,2.4,,DC_F0GO0WQ,Gl-I4wBZ5r,spatial variation in nitrogen dioxide concentrations,hospital admissions for respiratory and cardiovascular causes,adjusted relative risk,relative_risk_ratio

@@ -1,0 +1,5 @@
+qid,wd_label,wd_desc,found,matched_token,p494_sample,nyc_id,spg_system_id,spg_label,spg_in_challenge_domains,method
+Q5326566,early-onset Alzheimer's disease,,sparql_p494=G30.0,G30.0,G30.0,deaths:alzheimer's disease,,,False,sparql_p494
+Q2319892,chronic lower respiratory diseases,,sparql_p494=J40-J47,J40-J47,J40-J47,deaths:chronic lower respiratory diseases,,,False,sparql_p494
+Q18968199,obsolete benign hypertensive heart disease,,sparql_p494=I11.9,I11.9,I11.9,deaths:diseases of heart,,,False,sparql_p494
+Q4072473,autoaggression,,sparql_p494=X60-X84,X60-X84,X60-X84,deaths:intentional self-harm,,,False,sparql_p494

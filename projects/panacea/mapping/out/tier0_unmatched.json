@@ -1,0 +1,230 @@
+[
+  {
+    "nyc_id": "deaths:accidents except drug poisoning",
+    "cause": "Accidents Except Drug Poisoning",
+    "icd10": [
+      "V01-X39",
+      "X43",
+      "X45-X59",
+      "Y85-Y86"
+    ],
+    "terms": [
+      "Accidents Except Drug Poisoning",
+      "unintentional injury",
+      "injury"
+    ]
+  },
+  {
+    "nyc_id": "deaths:anemias",
+    "cause": "Anemias",
+    "icd10": [
+      "D50-D64"
+    ],
+    "terms": [
+      "Anemias",
+      "anemia"
+    ]
+  },
+  {
+    "nyc_id": "deaths:assault",
+    "cause": "Assault",
+    "icd10": [
+      "U01-U02",
+      "Y87.1",
+      "X85-Y09; Homicide: Y87.1",
+      "X85-Y09"
+    ],
+    "terms": [
+      "Assault",
+      "assault"
+    ]
+  },
+  {
+    "nyc_id": "deaths:cerebrovascular disease",
+    "cause": "Cerebrovascular Disease",
+    "icd10": [
+      "I60-I69"
+    ],
+    "terms": [
+      "Cerebrovascular Disease",
+      "cerebrovascular disease",
+      "stroke"
+    ]
+  },
+  {
+    "nyc_id": "deaths:cholelithiasis and disorders of gallbladder",
+    "cause": "Cholelithiasis and Disorders of Gallbladder",
+    "icd10": [
+      "K80-K82"
+    ],
+    "terms": [
+      "Cholelithiasis and Disorders of Gallbladder",
+      "gallstone"
+    ]
+  },
+  {
+    "nyc_id": "deaths:complications of medical and surgical care",
+    "cause": "Complications of Medical and Surgical Care",
+    "icd10": [
+      "Y40-Y84",
+      "Y88"
+    ],
+    "terms": [
+      "Complications of Medical and Surgical Care",
+      "adverse effect",
+      "medical error"
+    ]
+  },
+  {
+    "nyc_id": "deaths:congenital malformations, deformations, and chromosomal abnormalities",
+    "cause": "Congenital Malformations, Deformations, and Chromosomal Abnormalities",
+    "icd10": [
+      "Q00-Q99"
+    ],
+    "terms": [
+      "Congenital Malformations, Deformations, and Chromosomal Abnormalities",
+      "congenital disorder"
+    ]
+  },
+  {
+    "nyc_id": "deaths:diabetes mellitus",
+    "cause": "Diabetes Mellitus",
+    "icd10": [
+      "E10-E14"
+    ],
+    "terms": [
+      "Diabetes Mellitus",
+      "diabetes mellitus"
+    ]
+  },
+  {
+    "nyc_id": "deaths:human immunodeficiency virus disease",
+    "cause": "Human Immunodeficiency Virus Disease",
+    "icd10": [
+      "B20-B24"
+    ],
+    "terms": [
+      "Human Immunodeficiency Virus Disease",
+      "HIV/AIDS"
+    ]
+  },
+  {
+    "nyc_id": "deaths:influenza (flu) and pneumonia",
+    "cause": "Influenza (Flu) and Pneumonia",
+    "icd10": [
+      "J09-J18"
+    ],
+    "terms": [
+      "Influenza (Flu) and Pneumonia",
+      "influenza",
+      "pneumonia"
+    ]
+  },
+  {
+    "nyc_id": "deaths:insitu or benign / uncertain neoplasms",
+    "cause": "Insitu or Benign / Uncertain Neoplasms",
+    "icd10": [
+      "D00-D48"
+    ],
+    "terms": [
+      "Insitu or Benign / Uncertain Neoplasms",
+      "benign neoplasm",
+      "in situ neoplasm"
+    ]
+  },
+  {
+    "nyc_id": "deaths:mental and behavioral disorders due to accidental poisoning and other psychoactive substance use",
+    "cause": "Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use",
+    "icd10": [
+      "F11-F16",
+      "F18-F19",
+      "X40-X42",
+      "X44"
+    ],
+    "terms": [
+      "Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use",
+      "drug overdose",
+      "substance abuse"
+    ]
+  },
+  {
+    "nyc_id": "deaths:nephritis, nephrotic syndrome and nephrosis",
+    "cause": "Nephritis, Nephrotic Syndrome and Nephrosis",
+    "icd10": [
+      "N00-N07",
+      "N17-N19",
+      "N25-N27"
+    ],
+    "terms": [
+      "Nephritis, Nephrotic Syndrome and Nephrosis",
+      "kidney disease",
+      "nephritis"
+    ]
+  },
+  {
+    "nyc_id": "deaths:parkinson's disease",
+    "cause": "Parkinson's Disease",
+    "icd10": [
+      "G20"
+    ],
+    "terms": [
+      "Parkinson's Disease",
+      "Parkinson's disease"
+    ]
+  },
+  {
+    "nyc_id": "deaths:peptic ulcer",
+    "cause": "Peptic Ulcer",
+    "icd10": [
+      "K25-K28"
+    ],
+    "terms": [
+      "Peptic Ulcer",
+      "peptic ulcer disease"
+    ]
+  },
+  {
+    "nyc_id": "deaths:pregnancy, childbirth and the puerperium",
+    "cause": "Pregnancy, Childbirth and the Puerperium",
+    "icd10": [
+      "O00-O09"
+    ],
+    "terms": [
+      "Pregnancy, Childbirth and the Puerperium",
+      "pregnancy"
+    ]
+  },
+  {
+    "nyc_id": "deaths:septicemia",
+    "cause": "Septicemia",
+    "icd10": [
+      "A40-A41"
+    ],
+    "terms": [
+      "Septicemia",
+      "sepsis"
+    ]
+  },
+  {
+    "nyc_id": "deaths:tuberculosis",
+    "cause": "Tuberculosis",
+    "icd10": [
+      "A16-A19"
+    ],
+    "terms": [
+      "Tuberculosis",
+      "tuberculosis"
+    ]
+  },
+  {
+    "nyc_id": "deaths:viral hepatitis",
+    "cause": "Viral Hepatitis",
+    "icd10": [
+      "B15-B19"
+    ],
+    "terms": [
+      "Viral Hepatitis",
+      "hepatitis"
+    ]
+  }
+]

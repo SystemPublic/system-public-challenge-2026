@@ -1,0 +1,24 @@
+{
+  "spg_concepts": 473,
+  "spg_domain_rows": 486,
+  "nyc_concept_rows": 545,
+  "nyc_by_collection": {
+    "environment-health": 378,
+    "street-trees": 132,
+    "leading-causes-of-death": 31,
+    "heat-complaints": 4
+  },
+  "death_cause_labels_with_variants": 0,
+  "versions": {
+    "environment-health": "v1.0.0 (ulv3:cd96b9507b2f\u2026)",
+    "leading-causes-of-death": "v1.0.0 (ulv3:0796b85ee943\u2026)",
+    "heat-complaints": "v1.0.0 (ulv3:4ce37f3ea3f5\u2026)",
+    "street-trees": "v1.0.0 (ulv3:7cd6d86ebcfb\u2026)",
+    "geographies": "v1.0.0 (ulv3:5406699a873a\u2026)"
+  },
+  "skipped": {
+    "restaurant-inspections": "violation/cuisine text, Manhattan-only sample; no controlled concept vocabulary that maps to research constructs (food-safety noted qualitatively in the report)",
+    "dog-licenses": "5,000-dog sample + 248 breeds; no research-concept surface",
+    "geographies": "join hub, not concept-bearing"
+  }
+}
