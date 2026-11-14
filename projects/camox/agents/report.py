@@ -1,4 +1,4 @@
-"""Project report: one writer turns the project's goals, stored answers and dashboard into a cited report.
+"""Project report: a planner outlines it, then one writer turns the project's goals, stored answers and dashboard into a cited report.
 The references and the data-provenance appendix are built in code from the stored answers and runs, never by
 the model."""
 import asyncio
@@ -30,6 +30,18 @@ SOURCES = {  # source -> licence
 class ReportSection(BaseModel):
     heading: str
     paragraphs: list[str]
+
+
+class PlannedSection(BaseModel):
+    heading: str
+    key_points: list[str]   # findings and numbers copied from the answers or dashboard
+    sources: list[str]      # DOIs and indicator ids copied from the answers
+
+
+class ReportPlan(BaseModel):
+    decision: str           # the decision this report serves
+    sections: list[PlannedSection]
+    main_gap: str
 
 
 class Report(BaseModel):
@@ -101,6 +113,14 @@ async def build_report(project: dict, profile: dict, answers: list[dict], instru
                  f"Revise it following this instruction: {instruction or 'update it with the latest answers'}")
     elif instruction:
         task += f"\n\nInstruction from the user: {instruction}"
+    await emit({"type": "planning", "agent": "report_planner"})
+    try:  # the outline helps the writer; without it the report is still written
+        plan = await run_agent("report_planner", (HERE / "report_planner.md").read_text(), task, ReportPlan, emit,
+                               tools=[], check=None, effort="low")
+        task += f"\n\nReport outline to follow:\n{plan.model_dump_json()}"
+    except Exception as e:
+        await emit({"type": "agent_failed", "agent": "report_planner", "error": f"{type(e).__name__}: {e}"[:300]})
+
     async def write(extra=""):
         await emit({"type": "agent_started", "agent": "report_writer"})
         report = await run_agent("report_writer", (HERE / "report_writer.md").read_text(), task + extra, Report, emit,

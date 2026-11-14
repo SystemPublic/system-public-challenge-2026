@@ -273,8 +273,8 @@ async def start_report(project_id: int, r: ReportIn):
         raise HTTPException(409, "A report is already being built.")
 
     async def emit(e):
-        if e["type"] in ("agent_started", "retry", "verifying"):
-            await run_in_threadpool(db.set_report_status, project_id, "building: " + {"retry": "checking citations", "verifying": "verifying claims"}.get(e["type"], "writing"))
+        if e["type"] in ("planning", "agent_started", "retry", "verifying"):
+            await run_in_threadpool(db.set_report_status, project_id, "building: " + {"planning": "planning", "retry": "checking citations", "verifying": "verifying claims"}.get(e["type"], "writing"))
 
     async def build():
         try:
