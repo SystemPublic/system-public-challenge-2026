@@ -38,9 +38,14 @@ export function AuthScreen({ onSession }) {
   return html`<div class="auth">
     <section class="auth-hero">
       <a class="brand" href="#">CAMOX</a>
-      <p class="eyebrow">Evidence workspace on the System Public Graph</p>
-      <h1>Ask the published evidence, and see where it runs out.</h1>
-      <p class="lede">Specialist agents read about 2M statistical findings, World Bank indicators and the literature, then answer with verdicts, counts and citations. They report associations, not causes.</p>
+      <p class="eyebrow">An agentic layer over the System Public Graph</p>
+      <h1>Ask the evidence. See where it runs out.</h1>
+      <p class="lede">Specialist agents read about 2M published statistical findings, World Bank indicators and the wider literature, then answer your question with verdicts, counts and the gaps in the evidence. Every claim is checked and cited. They report associations, not causes.</p>
+      <div class="hero-actions">
+        <button type="button" class="primary" onClick=${() => { showDemo(); setTimeout(() => document.querySelector('.demo-list button')?.focus(), 300); }}>Try the demo</button>
+        <button type="button" class="outline" onClick=${() => { setTab('signup'); setErr(''); setTimeout(() => document.getElementById('a-name')?.focus(), 0); }}>Sign up</button>
+        <button type="button" class="ghost-btn" onClick=${() => { setTab('login'); setErr(''); setTimeout(() => document.getElementById('a-email')?.focus(), 0); }}>Log in</button>
+      </div>
       <dl class="stats">
         <div><dt class="num">2M</dt><dd>published findings</dd></div>
         <div><dt class="num">${nAgents ?? '·'}</dt><dd>specialist agents</dd></div>
@@ -71,7 +76,7 @@ export function AuthScreen({ onSession }) {
       <div class="or"><span>or</span></div>
       ${!demo ? html`<button type="button" class="outline wide" onClick=${showDemo}>Try the demo</button>
         <p class="hint center">Example profiles with finished projects, no account needed.</p>`
-      : html`<ul class="demo-list">${demo.map((p) => html`<li key=${p.id}><button type="button" onClick=${() => pick(p)}>
+      : html`<p class="eyebrow">Pick an example profile</p><ul class="demo-list">${demo.map((p) => html`<li key=${p.id}><button type="button" onClick=${() => pick(p)}>
           <span class="avatar">${initials(p.name)}</span>
           <span><strong>${p.name}</strong><span class="small muted">${[p.role, p.organisation].filter(Boolean).join(', ')}</span></span>
           <span class="go" aria-hidden="true">→</span></button></li>`)}</ul>`}

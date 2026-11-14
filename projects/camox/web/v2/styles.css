@@ -95,7 +95,7 @@ label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
   padding: 48px max(16px, env(safe-area-inset-right)) 48px max(16px, env(safe-area-inset-left)); }
 .auth-hero .brand { display: inline-block; margin-bottom: 56px; }
 .auth-hero .eyebrow { margin-bottom: 16px; }
-.auth-hero h1 { font-size: clamp(34px, 5vw, 56px); max-width: 14ch; margin-bottom: 20px; }
+.auth-hero h1 { font-size: clamp(34px, 5vw, 56px); max-width: 18ch; margin-bottom: 20px; }
 .lede { font-size: 17px; color: var(--muted); max-width: 52ch; }
 .stats { display: flex; flex-wrap: wrap; gap: 32px; margin: 36px 0 0; padding-top: 24px; border-top: 1px solid var(--line); }
 .stats dt { font-size: 24px; font-weight: 760; letter-spacing: -.02em; }
@@ -465,3 +465,29 @@ fieldset:disabled input, fieldset:disabled textarea { opacity: .7; }
 }
 .topic-form { display: flex; gap: 8px; margin-bottom: 16px; }
 .topic-form input { flex: 1; min-width: 0; }
+
+/* Polish pass: landing actions, compact demo banner and project header, drawer, tap targets. */
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.hero-actions button { min-height: 44px; padding: 10px 20px; }
+.list-h { font-size: clamp(22px, 3vw, 28px); margin: 6px 0 4px; }
+.demo-banner { flex-wrap: nowrap; margin: -24px auto 16px; padding: 4px 4px 4px 12px; }
+.demo-banner button { flex: none; white-space: nowrap; }
+.demo-banner span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.phead-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; }
+.phead-row h1 { max-width: none; }
+.jump { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -4px; padding: 2px 4px; }
+.jump .chip { flex: none; }
+.side { transition: transform .25s ease, visibility .25s; }
+.summary h3, .summary h4 { margin: 18px 0 6px; }
+.summary p, .summary li { margin-bottom: 10px; }
+@media (max-width: 960px) {
+  .side:not([data-open="true"]) { visibility: hidden; }
+  .demo-banner { margin-top: -8px; }
+}
+@media (max-width: 600px) {
+  .demo-banner { font-size: 12px; padding-left: 10px; }
+  button, .ghost-btn, .chip, button.small, .ghost-btn.small { min-height: 40px; }
+  .threads a, .plain-list a { min-height: 40px; align-items: center; }
+  .auth-hero .brand { margin-bottom: 20px; }
+  .hero-actions button { flex: 1 1 auto; }
+}

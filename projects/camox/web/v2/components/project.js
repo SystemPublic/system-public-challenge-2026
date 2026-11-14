@@ -28,13 +28,14 @@ export function ProjectHome({ project, profile, agents, session, threads, thread
 
   return html`<div class="page">
     <header class="phead">
-      <p class="eyebrow">Project · ${plural(project.runs.length, 'run', 'runs')}</p>
-      <h1>${project.title}</h1>
-      <p class="tailored">Tailored for: <strong>${tailored || profile.name}</strong> <a class="small" href=${`#profile=${profile.id}&view=settings`}>Edit profile</a></p>
+      <div class="phead-row">
+        <h1>${project.title}</h1>
+        <p class="tailored">Tailored for <strong>${tailored || profile.name}</strong>${owner && html` <a class="small" href=${`#profile=${profile.id}&view=settings`}>Edit profile</a>`}</p>
+      </div>
       ${tab === 'overview' && (editGoals ? html`<${GoalsForm} project=${project} reload=${reload} done=${() => setEditGoals(false)} />`
         : html`<div class="goals">
           ${project.goals ? html`<p>${project.goals}</p>` : html`<p class="muted">No goals yet. Say what this work is for, who reads it and its scope; the agents read the goals with every question.</p>`}
-          <button type="button" class="ghost-btn small" onClick=${() => setEditGoals(true)}>${project.goals ? 'Edit goals' : 'Add goals'}</button></div>`)}
+          ${owner && html`<button type="button" class="ghost-btn small" onClick=${() => setEditGoals(true)}>${project.goals ? 'Edit goals' : 'Add goals'}</button>`}</div>`)}
       ${tab === 'overview' && owner && html`<${ProjectTools} project=${project} projects=${projects} reload=${reload} onDeleted=${onDeleted} />`}
       <nav class="jump" aria-label="Project views">
         ${[['questions', `Chat · ${inThread.length}`], ['overview', `Data · ${fp.length + topics.length}`], ['dashboard', 'Dashboard'], ['kg', 'Knowledge graph'], hasReport && ['report', 'Report']]

@@ -67,8 +67,8 @@ export function Workspace({ session, setSession }) {
     <aside class="side" data-open=${navOpen} aria-label="Projects">
       <a class="brand side-brand" href=${`#profile=${profile.id}`}>CAMOX</a>
       <${ProfileMenu} session=${session} setSession=${setSession} profile=${profile} />
-      <div class="side-label"><span class="eyebrow">Projects</span>
-        <a class="ghost-btn small" href=${`#profile=${profile.id}`} aria-current=${!route.project ? 'page' : undefined}>New project</a></div>
+      <div class="side-label"><span class="eyebrow">${session.mode === 'demo' ? 'Example projects' : 'Projects'}</span>
+        ${session.mode !== 'demo' && html`<a class="ghost-btn small" href=${`#profile=${profile.id}`} aria-current=${!route.project ? 'page' : undefined}>New project</a>`}</div>
       ${projects === null ? html`<p class="small muted pad">Loading projects</p>`
         : !projects.length ? html`<p class="small muted pad">No projects yet. Create one to start.</p>`
         : html`<ul class="proj-list">${byFolder(projects).map((x, i, all) => {
@@ -92,7 +92,7 @@ export function Workspace({ session, setSession }) {
         : route.project ? (current ? html`<${ProjectHome} key=${current.id} project=${current} profile=${profile} agents=${agents} session=${session}
             threads=${threads} thread=${thread} reload=${reload} projects=${projects || []}
             owner=${session.mode === 'account'} onDeleted=${() => { go({ profile: profile.id }); loadProjects(); }} />` : !error && html`<p class="muted pad-lg">Opening the project</p>`)
-        : html`<${NewProject} profile=${profile} projects=${projects} />`}
+        : html`<${NewProject} profile=${profile} projects=${projects} demo=${session.mode === 'demo'} />`}
     </main>
   </div>`;
 }
@@ -144,7 +144,8 @@ function ProfileMenu({ session, setSession, profile }) {
       ${others.length > 0 && html`<p class="eyebrow">Switch profile</p>
         <ul class="plain-list">${others.map((p) => html`<li key=${p.id}><a href=${`#profile=${p.id}`}>${p.name}<span class="small muted">${[p.role, p.organisation].filter(Boolean).join(', ')}</span></a></li>`)}</ul>`}
       <a class="ghost-btn small" href=${`#profile=${profile.id}&view=settings`}>Settings</a>
-      ${adding ? html`<${ProfileForm} onSubmit=${add} onCancel=${() => setAdding(false)} msg=${msg} />`
+      <a class="ghost-btn small" href="/index.html">Classic view</a>
+      ${session.mode === 'demo' ? null : adding ? html`<${ProfileForm} onSubmit=${add} onCancel=${() => setAdding(false)} msg=${msg} />`
         : html`<button type="button" class="ghost-btn small" onClick=${() => setAdding(true)}>Add a profile</button>`}
       <button type="button" class="outline small wide" onClick=${out}>${session.mode === 'account' ? 'Log out' : 'Leave demo'}</button>
     </div></details>`;
@@ -178,7 +179,7 @@ function NoProfile({ session, setSession }) {
   </div></div>`;
 }
 
-function NewProject({ profile, projects }) {
+function NewProject({ profile, projects, demo }) {
   const [msg, setMsg] = useState('');
   const [busy, setBusy] = useState(false);
   const create = async (e) => {
@@ -193,10 +194,11 @@ function NewProject({ profile, projects }) {
   return html`<div class="page">
     ${projects?.length > 0 && html`<section class="cards-list">
       <p class="eyebrow">Your projects</p>
+      ${demo && html`<h1 class="list-h">Open an example project and ask it a question</h1>`}
       <ul>${projects.map((x) => { const [tone, text] = projectStatus(x); return html`<li key=${x.id}><a class="proj-card" href=${`#profile=${profile.id}&project=${x.id}`}>
         <strong>${x.title}</strong>${x.goals && html`<span class="small muted">${short(x.goals, 140)}</span>`}
         <span class="st small"><i class=${`dot ${tone}`}></i>${text}</span></a></li>`; })}</ul></section>`}
-    <section class="panel-box">
+    ${demo ? (projects && !projects.length && html`<p class="muted">This example profile has no projects. Switch profile from the menu.</p>`) : html`<section class="panel-box">
       <p class="eyebrow">New project</p>
       <h1>Start from the goals</h1>
       <p class="muted">A project is one piece of work, such as a brief or a programme note. Its goals drive what happens next:</p>
@@ -213,5 +215,5 @@ function NewProject({ profile, projects }) {
         <div class="row-end"><button class="primary" disabled=${busy}>${busy ? 'Creating' : 'Create and start the first pass'}</button></div>
       </form>
       <p class="small muted">Tailored for ${[profile.role, profile.organisation].filter(Boolean).join(', ') || profile.name}.</p>
-    </section></div>`;
+    </section>`}</div>`;
 }
