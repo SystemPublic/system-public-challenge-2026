@@ -10,6 +10,8 @@ const time = (t) => new Date(t).toLocaleTimeString([], { hour: '2-digit', minute
 // The Generate bar, the version list and a revise box under the latest version. Polls every 4 s while building.
 export function bindReport(box, pj, api) {
   box.innerHTML = `<div class="dash-bar"><span class="small muted" role="status"></span><button type="button">Generate report</button></div>
+    <label for="report-purpose" class="small">What is this report for? (optional)</label>
+    <textarea id="report-purpose" rows="2" placeholder="For example: funding case for internet expansion in Kenya, 2 pages, for a World Bank task team"></textarea>
     <ul class="report-versions small"></ul>
     <form class="report-revise" hidden><label for="report-instruction" class="small">Revise the latest version</label>
       <textarea id="report-instruction" rows="2" placeholder="For example: make section 2 shorter and add the regional data"></textarea>
@@ -25,7 +27,7 @@ export function bindReport(box, pj, api) {
     list.innerHTML = reports.map((r) => `<li><a href="report.html?project=${pj.id}&v=${r.version}" target="_blank" rel="noopener">v${r.version} · ${time(r.created_at)}</a>
       <a href="report.html?project=${pj.id}&v=${r.version}&print=1" target="_blank" rel="noopener">Download PDF</a>
       <span class="muted">${esc(verifiedLabel(r.verification))}</span>
-      ${r.instruction ? `<span class="muted">${esc(r.instruction)}</span>` : ''}</li>`).join('');
+      ${r.auto ? '<span class="muted">Automatic first report</span>' : r.instruction ? `<span class="muted">${esc(r.instruction)}</span>` : ''}</li>`).join('');
     form.hidden = !reports.length; form.querySelector('button').disabled = building;
     if (building) setTimeout(poll, 4000);
   };
@@ -39,7 +41,7 @@ export function bindReport(box, pj, api) {
     catch (e) { msg.textContent = `Could not start the report: ${e.message}`; return; }
     show();
   };
-  btn.onclick = () => start(null);
+  btn.onclick = () => start(box.querySelector('#report-purpose').value.trim() || null);
   form.onsubmit = (e) => { e.preventDefault(); const t = form.querySelector('textarea').value.trim(); if (t) start(t); };
   show();
 }

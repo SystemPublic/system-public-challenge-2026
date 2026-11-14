@@ -244,6 +244,12 @@ async def start_dashboard(project_id: int):
             await run_in_threadpool(db.set_dashboard, project_id, "done", d.model_dump())
         except Exception:
             await run_in_threadpool(db.set_dashboard, project_id, "failed")
+            return
+        if not project.get("reports"):  # the first dashboard also writes the first report, from the goals
+            try:
+                await start_report(project_id, ReportIn(auto=True))
+            except Exception:
+                pass
 
     await run_in_threadpool(db.set_dashboard, project_id, "building: planning panels")
     task = asyncio.create_task(build())
@@ -254,6 +260,7 @@ async def start_dashboard(project_id: int):
 
 class ReportIn(BaseModel):
     instruction: str | None = None
+    auto: bool = False
 
 
 @app.post("/api/projects/{project_id}/report")
@@ -273,7 +280,7 @@ async def start_report(project_id: int, r: ReportIn):
     async def build():
         try:
             calls = await run_in_threadpool(db.tool_calls, project_id)
-            version = await report.build_report(project, profile, answers, r.instruction, calls, emit)
+            version = await report.build_report(project, profile, answers, r.instruction, calls, emit) | {"auto": r.auto}
             await run_in_threadpool(db.add_report, project_id, version)
         except Exception:
             await run_in_threadpool(db.set_report_status, project_id, "failed")
