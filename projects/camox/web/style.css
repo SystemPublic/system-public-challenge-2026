@@ -360,7 +360,8 @@ html { overflow-x: clip; }
 }
 @media (max-width: 600px) {
   /* stacked rows: label in column 1 for the whole cell, every piece of content in column 2 */
-  table.stack td::before { grid-row: 1 / span 20; }
-  table.stack td > * { grid-column: 2; justify-self: start; min-width: 0; }
+  table.stack td { row-gap: 0; }
+  table.stack td::before { grid-row: 1 / span 6; }
+  table.stack td > * { grid-column: 2; justify-self: start; min-width: 0; margin-bottom: 4px; }
   .ds { white-space: normal; }
 }
