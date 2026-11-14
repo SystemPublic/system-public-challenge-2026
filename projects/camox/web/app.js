@@ -1,5 +1,5 @@
 // State, API calls, the run event stream and page layout. Section rendering is in sections.js, the graph in graph.js.
-import { esc, plural, renderAnswer, mountCharts, answerConcepts } from './sections.js';
+import { esc, plural, renderAnswer, mountCharts, answerConcepts, downloadCsv } from './sections.js';
 import { drawGraph } from './graph.js';
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -400,6 +400,8 @@ function mountAnswer(el, answer, drawNow) {
 
 // Verdict pills open the findings table of their card.
 document.addEventListener('click', (e) => {
+  const csv = e.target.closest('button[data-csv]');
+  if (csv) return downloadCsv(csv.dataset.csv);
   const v = e.target.closest('button[data-findings]');
   const d = v?.closest('.card')?.querySelector('details.findings');
   if (!d) return;

@@ -17,7 +17,7 @@ def search_worldbank_indicators(text: str, k: int = 10) -> list:
         hits = get_json(f"{D360}/searchv2", post={"search": text, "top": min(k, 25), "select":
                         "series_description/idno, series_description/name, series_description/database_id"})["value"]
         return [{"id": h["series_description"]["idno"], "name": h["series_description"]["name"],
-                 "database": h["series_description"]["database_id"]} for h in hits]
+                 "database": h["series_description"]["database_id"] or "unknown dataset"} for h in hits]
     except RuntimeError:
         rows = get_json(f"{V2}/indicator", {"format": "json", "source": 2, "per_page": 2000}, timeout=30, tries=3)[1]
         return [{"id": r["id"], "name": r["name"], "database": "WB_WDI"}

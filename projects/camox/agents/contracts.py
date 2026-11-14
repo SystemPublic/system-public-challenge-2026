@@ -113,9 +113,50 @@ class ResearchSection(BaseModel):
     sources: list[Source]
 
 
-Section = EvidenceSection | EdaSection | PolicySection | ResearchSection
+class Indicator(BaseModel):
+    indicator_id: str           # exactly as returned by search_worldbank_indicators
+    name: str
+    database: str               # dataset id, e.g. WB_WDI, WB_WBL; "unknown dataset" if the source had none
+
+
+class ConceptMatch(BaseModel):
+    concept_id: str
+    label: str
+    match: Literal["exact", "narrower", "broader", "proxy"]
+    why: str                    # one sentence: how the indicator's definition relates to the concept
+
+
+class IndicatorLink(BaseModel):
+    concept_id: str
+    concept_label: str
+    studies: int                # n_studies from summarise_evidence or neighbours
+    note: str                   # one sentence: direction and population, "associated with" wording
+    indicators: list[Indicator]     # indicators that measure this linked concept; [] means a data gap
+    dois: list[str]
+    cross_dataset: bool         # set in code: an indicator sits in a different dataset from the seed
+    data_gap: bool              # set in code: no indicator measures this concept
+
+
+class IndicatorMapSection(BaseModel):
+    type: Literal["indicator_map"]
+    title: str
+    seed: Indicator
+    matches: list[ConceptMatch]
+    links: list[IndicatorLink]
+    gaps: str
+    concept_ids: list[str]
+
+    def model_post_init(self, _):
+        """Flags and order come from code, not the model: cross-dataset links first, then by studies."""
+        for link in self.links:
+            link.data_gap = not link.indicators
+            link.cross_dataset = any(i.database not in (self.seed.database, "unknown dataset") for i in link.indicators)
+        self.links.sort(key=lambda l: (not l.cross_dataset, -l.studies))
+
+
+Section = EvidenceSection | EdaSection | PolicySection | ResearchSection | IndicatorMapSection
 SECTION_MODELS = {m.model_fields["type"].annotation.__args__[0]: m
-                  for m in (EvidenceSection, EdaSection, PolicySection, ResearchSection)}
+                  for m in (EvidenceSection, EdaSection, PolicySection, ResearchSection, IndicatorMapSection)}
 
 
 # Formatter and final answer ----------------------------------------------------------------------

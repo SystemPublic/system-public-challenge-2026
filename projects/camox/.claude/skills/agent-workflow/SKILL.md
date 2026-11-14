@@ -84,7 +84,7 @@ Keep in prompts only what needs judgement:
 
 Standing questions:
 1. "Validate: girls under 12 are more vulnerable to malaria because of sexism in malaria-endemic countries." Expected: sexism sub-claim = no evidence; girls-more-affected = mixed or thin.
-2. The two demo questions for the chosen challenge, once picked. Write their expected verdicts here.
+2. The three B2 demo queries and what each must show: `.claude/build/b2-demo.md`, section "Demo path".
 3. One question from a different challenge, to prove the layer stays general.
 
 For each run, write to `.claude/scratch/runs.md` (gitignored): the date, the question, which agents ran, verdicts, time, tool calls, retries, and anything that broke. A change is done when the expected verdicts still hold and time and retries didn't grow without a reason.

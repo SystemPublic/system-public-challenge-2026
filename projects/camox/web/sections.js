@@ -87,13 +87,53 @@ function source(s) {
   return `<li>${title}${meta ? `<div class="small muted">${meta}</div>` : ''}<div class="small">${esc(s.why_relevant)}</div></li>`;
 }
 
+const MATCH = { exact: 'Exact', narrower: 'Narrower', broader: 'Broader', proxy: 'Proxy' };
+const dataset = (d) => `<span class="ds">${esc(String(d).replace(/^WB_/, ''))}</span>`;
+const indicator = (i) => `<li>${esc(i.name)} <span class="num small muted">${esc(i.indicator_id)}</span> ${dataset(i.database)}</li>`;
+const csvs = new Map();
+let nextCsv = 0;
+
+function indicatorCsv(s) {
+  const q = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
+  const head = ['seed_indicator_id', 'seed_dataset', 'linked_concept', 'concept_id', 'studies', 'indicator_id', 'indicator_name', 'dataset', 'different_dataset', 'data_gap', 'dois'];
+  const rows = s.links.flatMap((l) => (l.indicators.length ? l.indicators : [{}]).map((i) => [s.seed.indicator_id, s.seed.database,
+    l.concept_label, l.concept_id, l.studies, i.indicator_id, i.name, i.database, l.cross_dataset, l.data_gap, (l.dois || []).join(' ')]));
+  return [head, ...rows].map((r) => r.map(q).join(',')).join('\n');
+}
+
+function indicatorMap(s) {
+  const id = `csv-${nextCsv++}`;
+  csvs.set(id, { name: `${slug(s.seed.indicator_id || 'indicators')}-linked-indicators.csv`, text: indicatorCsv(s) });
+  const rows = s.links.map((l) => `<tr>
+      <td><strong>${esc(l.concept_label)}</strong>
+        ${l.cross_dataset ? '<span class="pill s-backed">Different dataset</span>' : ''}${l.data_gap ? '<span class="pill s-partial">Data gap</span>' : ''}
+        <div class="small muted">${esc(l.note)}</div>${l.dois?.length ? `<p class="dois">${l.dois.map(doiLink).join('')}</p>` : ''}</td>
+      <td class="r num">${plural(l.studies, 'study', 'studies')}</td>
+      <td>${l.indicators.length ? `<ul class="plain">${l.indicators.map(indicator).join('')}</ul>` : '<span class="small muted">No World Bank indicator measures this</span>'}</td>
+    </tr>`).join('');
+  return `<p><strong>Starting indicator:</strong> ${esc(s.seed.name)} <span class="num small muted">${esc(s.seed.indicator_id)}</span> ${dataset(s.seed.database)}</p>
+    <ul class="plain small">${s.matches.map((m) => `<li>Graph concept <strong>${esc(m.label)}</strong>: ${esc(MATCH[m.match] || m.match)} match. ${esc(m.why)}</li>`).join('')}</ul>
+    <div class="scroll-x"><table><thead><tr><th>Linked to</th><th class="r">Evidence</th><th>World Bank indicators</th></tr></thead><tbody>${rows}</tbody></table></div>
+    ${facts([['Gaps', s.gaps]])}
+    <p><button type="button" class="download" data-csv="${id}">Download indicators (CSV)</button></p>`;
+}
+
+export function downloadCsv(id) {
+  const f = csvs.get(id);
+  if (!f) return;
+  const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([f.text], { type: 'text/csv' })), download: f.name });
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
 const RENDERERS = {
+  indicator_map: indicatorMap,
   evidence: (s) => `<div class="cards">${s.cards.map(card).join('')}</div>`,
   eda: (s) => `<p>${esc(s.summary)}</p>${s.tables.map(table).join('')}${s.charts.map(chart).join('')}`,
   policy: (s) => `<p><strong>Policy:</strong> ${esc(s.policy)}</p><ol class="chain">${s.links.map((l) => chainLink(l, weakest(s.links))).join('')}</ol>${facts([['Gaps', s.gaps]])}`,
   research: (s) => `<p>${esc(s.summary)}</p><ol class="sources">${s.sources.map(source).join('')}</ol>`,
 };
-const KIND = { evidence: 'Evidence', eda: 'Data', policy: 'Theory of change', research: 'Sources' };
+const KIND = { evidence: 'Evidence', eda: 'Data', policy: 'Theory of change', research: 'Sources', indicator_map: 'Indicators' };
 
 const fallback = (s) => `<p class="small muted">No view for "${esc(s.type)}" sections yet, so here is its data.</p><pre class="json">${esc(JSON.stringify(s, null, 2))}</pre>`;
 

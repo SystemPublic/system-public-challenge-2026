@@ -220,3 +220,7 @@ dialog::backdrop { background: rgb(0 0 0 / .4); }
   .task-row button { grid-row: 1; grid-column: 2; }
   .q { flex-direction: column; gap: var(--s1); }
 }
+
+/* Indicator map */
+.ds { display: inline-block; font-size: var(--fs-s); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; margin-left: 4px; white-space: nowrap; }
+.sec td .pill { margin-left: 6px; vertical-align: middle; }

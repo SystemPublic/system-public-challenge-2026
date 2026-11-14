@@ -44,6 +44,9 @@ def check_provenance(out: BaseModel, trace: str, calls: list[str]) -> None:
         for row in f if isinstance(f, list) else []:
             problems += [f"{k} {row[k]}" for k in ("value", "ci_lower", "ci_upper")
                          if row.get(k) is not None and not _num_in(row[k], trace)]
+    problems += [f"indicator id {i}" for i in _walk(data, "indicator_id") if i.lower() not in trace]
+    problems += [f"studies={n} for {l['concept_label']}" for links in _walk(data, "links") for l in links
+                 if "studies" in l and f'"n_studies": {l["studies"]}' not in trace]
     for m in _walk(data, "meter"):
         if m:
             problems += [f"meter {k}={m[k]}" for k, key in METER_KEYS.items() if f'"{key}": {m[k]}' not in trace]
