@@ -28,7 +28,7 @@ GRAPH_FILE = Path(__file__).resolve().parents[1] / os.environ.get("GRAPH_DB", "d
 
 @functools.cache
 def _db():
-    return duckdb.connect(str(GRAPH_FILE), read_only=True, config={"memory_limit": os.environ.get("DUCKDB_MEMORY", "75%")})
+    return duckdb.connect(str(GRAPH_FILE), read_only=True, config={"memory_limit": os.environ.get("DUCKDB_MEMORY", "75%"), "threads": 1})
 
 
 def _rows(sql, params=()):
