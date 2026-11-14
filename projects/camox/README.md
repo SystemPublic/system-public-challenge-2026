@@ -4,7 +4,7 @@
 **Members:** Daniel Mora (daMS2005), catxu632, vishnuskulkarni, yilalalalala
 **Challenge:** Build Challenge 2 (World Bank): Can the System Public Graph improve discovery across World Bank data and research, with an initial focus on the jobs agenda?
 **Pitch slides:** TODO
-**Live demo:** [jobs evidence map](https://camox.onrender.com/#profile=1&project=10) and [malaria and gender](https://camox.onrender.com/#profile=2&project=11) (free hosting: the first load takes about a minute)
+**Live demo:** [jobs evidence map](https://camox.onrender.com/#profile=1&project=10) and [malaria and gender](https://camox.onrender.com/#profile=2&project=11) (free hosting: the first load takes about a minute). Full app with accounts: [camox.onrender.com/v2](https://camox.onrender.com/v2/) ("Try the demo" opens it read-only)
 
 ## What it does
 
@@ -18,7 +18,15 @@ A research assistant that makes the System Public Graph usable for any question.
 
 Each project has goals that every agent reads, and follow-up questions see the earlier answers. A new project with goals gets an automatic first pass: what data exists for each concept in the graph, OpenAlex and the World Bank, and where those sources disagree or run out. A project dashboard is then built from it. You can review and edit the plan before agents start, and each answer ends with suggested follow-ups.
 
-Answers cite DOIs inline, with a numbered reference list (titles from OpenAlex). A verifier agent re-checks each answer's claims against the tool results before it is shown ("Verified · N claims checked"). Every section names the source it came from, web results are marked unverified, and every World Bank indicator id links to its Data360 page.
+Answers cite DOIs inline, with a numbered reference list (titles from OpenAlex). A verifier agent re-checks each answer's claims against the tool results ("Verified · N claims checked"). An answer with major issues gets one fix pass and a report one revision pass; anything still unverified is labelled "Not verified". Every section names the source it came from, web results are marked unverified, and every World Bank indicator id links to its Data360 page.
+
+The full app (`/v2`) adds:
+
+- **Accounts:** sign up with your role, organisation and what you work on, which shape every agent's plan. Settings hold your profile, password, own API keys and default agents. Projects sit in folders, and a chat can move between projects.
+- **Chat-first project tabs:** Chat, Data, Dashboard, Knowledge graph and Report. Select any part of an answer and reply to it to use it as context.
+- **Data runs:** "Data: <topic>" splits a topic into sub-topics and pulls graph coverage, World Bank indicators and outside studies for each; every chat in the project builds on them.
+- **Project knowledge graph:** the topics, concepts, indicators, places, populations and papers a project has touched, with facts carrying their effect, CI, study count, verdict, DOI and run. Concepts with two studies or fewer are linked to OpenAlex works and World Bank indicators, and every node and edge names its source. Agents can query it through the `project_graph` tool (graph RAG).
+- **Dashboard and reports:** every dashboard has a "Where the data runs out" table and a personal indicator list with CSV. Reports ask what they are for, lead with impact and download as PDF, one per version.
 
 ## How we used the System Public Graph
 
@@ -55,7 +63,7 @@ The coverage run adds that job-focused interventions and job quality are thin ev
 
 ## How it is built
 
-`agents/` (planner, specialists, formatter, shared harness, Pydantic contracts), `agents/roles/` (one file per specialist; drop a file in to add an agent), `tools/` (every function is a tool, served over MCP), `server/` (FastAPI, Postgres), `web/` (plain HTML/JS). Our agents call tools only through our own MCP server, which any MCP client can use too. Diagram: `docs/architecture.html`.
+`agents/` (planner, specialists, formatter, shared harness, Pydantic contracts), `agents/roles/` (one file per specialist; drop a file in to add an agent), `tools/` (every function is a tool, served over MCP), `server/` (FastAPI, Postgres), `web/` (plain HTML/JS; `web/v2/` is the full app in React, loaded without a build step). Our agents call tools only through our own MCP server, which any MCP client can use too. Diagram: `docs/architecture.html`.
 
 ## How to run it
 
@@ -105,7 +113,7 @@ The MCP server is at `http://localhost:8000/mcp/` (header `Authorization: Bearer
 
 ## Next steps
 
-- A per-project knowledge graph of the entities in papers (countries, populations, drugs) for graph RAG and for finding links that point opposite ways in different settings.
+- Use the project knowledge graph to flag links that point opposite ways in different countries or populations.
 - Regional and country data, and ILOSTAT and the Global Labor Database for the jobs agenda.
 - A Sources view listing every source a project used, and a pass that checks every link and label in an answer.
 - A workspace where a project's papers, notes and answers sit together, in the style of NotebookLM.
