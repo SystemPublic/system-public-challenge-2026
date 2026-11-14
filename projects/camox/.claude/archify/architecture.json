@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "CAMOX: an agent layer over the System Public Graph",
+    "locale": "en",
+    "output": "docs/architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "user",
+      "type": "external",
+      "label": "Researcher",
+      "sublabel": "e.g. World Bank analyst",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "dashboard",
+      "type": "frontend",
+      "label": "Web dashboard",
+      "sublabel": "profile picker, graph view",
+      "pos": [
+        290,
+        40
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "backend",
+      "type": "backend",
+      "label": "FastAPI backend",
+      "sublabel": "deploys the agent loop",
+      "pos": [
+        540,
+        40
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "planner",
+      "type": "backend",
+      "label": "Planner",
+      "sublabel": "query to tasks",
+      "pos": [
+        540,
+        200
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "specialists",
+      "type": "backend",
+      "label": "Specialist agents",
+      "sublabel": "4 roles, in parallel",
+      "pos": [
+        790,
+        200
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "formatter",
+      "type": "backend",
+      "label": "Formatter",
+      "sublabel": "Pydantic contract, retry",
+      "pos": [
+        1040,
+        200
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "openai",
+      "type": "cloud",
+      "label": "OpenAI",
+      "sublabel": "gpt-6-luna, web search",
+      "pos": [
+        540,
+        360
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "MCP server",
+      "sublabel": "one tool surface",
+      "pos": [
+        790,
+        360
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "sga",
+      "type": "cloud",
+      "label": "System Graph API",
+      "sublabel": "live, key pending",
+      "pos": [
+        290,
+        520
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "graph",
+      "type": "backend",
+      "label": "Graph client",
+      "sublabel": "live or local, same tools",
+      "pos": [
+        540,
+        520
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "lit",
+      "type": "external",
+      "label": "Literature search",
+      "sublabel": "OpenAlex, PubMed",
+      "pos": [
+        790,
+        520
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "apis",
+      "type": "external",
+      "label": "Outside data APIs",
+      "sublabel": "user's own keys, per profile",
+      "pos": [
+        1040,
+        520
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "duckdb",
+      "type": "database",
+      "label": "Local graph copy",
+      "sublabel": "DuckDB, 2M findings",
+      "pos": [
+        540,
+        680
+      ],
+      "size": [
+        150,
+        60
+      ]
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "Product database",
+      "sublabel": "runs, context, projects",
+      "pos": [
+        1040,
+        360
+      ],
+      "size": [
+        150,
+        60
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Agent loop",
+      "wraps": [
+        "planner",
+        "specialists",
+        "formatter"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "ask",
+      "from": "user",
+      "to": "dashboard",
+      "label": "query",
+      "variant": "emphasis"
+    },
+    {
+      "id": "api",
+      "from": "dashboard",
+      "to": "backend",
+      "label": "API + SSE",
+      "variant": "emphasis"
+    },
+    {
+      "id": "run",
+      "from": "backend",
+      "to": "planner",
+      "label": "query + profile",
+      "variant": "emphasis"
+    },
+    {
+      "id": "tasks",
+      "from": "planner",
+      "to": "specialists",
+      "label": "tasks",
+      "variant": "emphasis"
+    },
+    {
+      "id": "findings",
+      "from": "specialists",
+      "to": "formatter",
+      "label": "findings",
+      "variant": "emphasis"
+    },
+    {
+      "id": "answer",
+      "from": "formatter",
+      "to": "backend",
+      "label": "validated answer",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "right"
+    },
+    {
+      "id": "llm",
+      "from": "planner",
+      "to": "openai",
+      "label": "LLM calls"
+    },
+    {
+      "id": "tool-calls",
+      "from": "specialists",
+      "to": "mcp",
+      "label": "tool calls"
+    },
+    {
+      "id": "graph-tools",
+      "from": "mcp",
+      "to": "graph",
+      "label": "graph tools"
+    },
+    {
+      "id": "search",
+      "from": "mcp",
+      "to": "lit",
+      "label": "search"
+    },
+    {
+      "id": "connectors",
+      "from": "mcp",
+      "to": "apis",
+      "label": "connectors"
+    },
+    {
+      "id": "live",
+      "from": "graph",
+      "to": "sga",
+      "label": "live",
+      "variant": "dashed"
+    },
+    {
+      "id": "fallback",
+      "from": "graph",
+      "to": "duckdb",
+      "label": "fallback"
+    },
+    {
+      "id": "save",
+      "from": "formatter",
+      "to": "db",
+      "label": "save run"
+    },
+    {
+      "id": "context",
+      "from": "mcp",
+      "to": "db",
+      "label": "project context"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Specialist agents",
+      "items": [
+        "Graph evidence: findings, verdicts, DOIs",
+        "Research: OpenAlex, PubMed, web search",
+        "EDA: coverage, distributions, gaps",
+        "Policy: theory-of-change chains from graph paths"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Shared harness",
+      "items": [
+        "Pydantic contracts in and out of every agent",
+        "Retry with the validation errors",
+        "Context compaction on long runs",
+        "Tools only through the MCP server"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "Stretch and later",
+      "items": [
+        "Project knowledge graph for graph RAG",
+        "More connectors as users add keys",
+        "Neo4j if we need graph algorithms"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+data
+*.duckdb
+# override global ignores so docs, agent config and skills get committed
+!*.md
+!.gitignore
+!.claude/
+.claude/settings.local.json
+# archify render receipts and screenshots
+docs/*.delivery.json
+.claude/archify/*/
+.claude/scratch/
