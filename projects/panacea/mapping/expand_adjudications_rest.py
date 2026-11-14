@@ -1,0 +1,161 @@
+#!/usr/bin/env python3
+"""Expand batch-2 (deaths / complaints / trees) LLM adjudications to JSONL.
+
+Deaths are matched with verified ids from the full SPG concept set; tier-0
+anchors are accepted as-is where they name true subtypes/equals, and noisy
+ones are rejected explicitly (action=reject_anchor). Tree species get no
+matches (implicit no-match; species-level constructs don't exist in SPG).
+Run: python3 -I mapping/expand_adjudications_rest.py
+"""
+import json
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent.parent / "mapping" / "out"
+
+# (nyc_id, spg_system_id, match_type, confidence, rationale)
+MATCHES = [
+    # ---- deaths ----
+    ("deaths:accidents except drug poisoning", "v-mj7HcE0V", "related-component", "medium",
+     "falls are the largest accident subset (ICD V01-X39 excludes drug poisoning; 'falling' covers part of the range)"),
+    ("deaths:alzheimer's disease", "bSqtTxWXSy", "equivalent", "high",
+     "'Alzheimer's disease' is the exact disease (ICD G30)"),
+    ("deaths:anemias", "bEBUbgyqYw", "broader-narrower", "low",
+     "'deficiency anemia' is one subtype of the D50-D64 anemia category; no generic anemia concept surfaced"),
+    ("deaths:assault", "1pnN2AtyJB", "equivalent", "high",
+     "'assault' is the exact construct (homicide ICD range)"),
+    ("deaths:atherosclerosis", "h3-fHeDiWK", "related-component", "medium",
+     "'aortic atherosclerosis' is a major I70 manifestation"),
+    ("deaths:cerebrovascular disease", "gJXeuNMolq", "equivalent", "high",
+     "'cerebrovascular disease' is the exact construct (ICD I60-I69)"),
+    ("deaths:cerebrovascular disease", "XW9F7OPopQ", "broader-narrower", "high",
+     "'stroke' (cerebrovascular accident) is the dominant I60-I69 outcome"),
+    ("deaths:cholelithiasis and disorders of gallbladder", "3odupadx9z", "equivalent", "high",
+     "'cholelithiasis' is the lead construct of K80-K82"),
+    ("deaths:cholelithiasis and disorders of gallbladder", "RV1SwogTnT", "broader-narrower", "high",
+     "'gallbladder disease' covers K80-K82 including cholecystitis"),
+    ("deaths:chronic liver disease and cirrhosis", "Z6KX9_jgVH", "broader-narrower", "high",
+     "'liver cirrhosis' (K70-K74 range component)"),
+    ("deaths:chronic lower respiratory diseases", "IPV_lvgw9H", "broader-narrower", "high",
+     "'chronic obstructive pulmonary disease' (J44) is the dominant J40-J47 disease"),
+    ("deaths:chronic lower respiratory diseases", "xh-q4BGKbZ", "broader-narrower", "high",
+     "'obstructive lung disease' covers the chronic airway obstruction category"),
+    ("deaths:complications of medical and surgical care", "ldqXXnek67", "related-component", "low",
+     "'intraoperative complications' is one slice of the Y40-Y84 category"),
+    ("deaths:congenital malformations, deformations, and chromosomal abnormalities", "NBs6kemntc",
+     "equivalent", "high", "'congenital abnormality' matches the Q00-Q99 category"),
+    ("deaths:diabetes mellitus", "DQbECFISI6", "equivalent", "high",
+     "'diabetes' is the exact disease (ICD E10-E14)"),
+    ("deaths:diseases of heart", "OYMdBV8G8r", "equivalent", "high",
+     "'heart disease' is the exact construct for the ICD heart-disease range"),
+    ("deaths:diseases of heart", "0GgadM9ouC", "broader-narrower", "medium",
+     "'cardiovascular disease' is the parent construct"),
+    ("deaths:essential hypertension and renal diseases", "FUinUSBBJq", "equivalent", "high",
+     "'essential hypertension' is exactly the I10 component"),
+    ("deaths:essential hypertension and renal diseases", "fo-h4u_aJp", "broader-narrower", "high",
+     "'arterial hypertension' is the parent construct of I10 (re-typed from anchor)"),
+    ("deaths:aortic aneurysm and dissection", "wDob2uJcSH", "broader-narrower", "high",
+     "'aortic dissection' is the I71.0 subtype (re-typed from anchor)"),
+    ("deaths:aortic aneurysm and dissection", "Y6UToUjmfn", "broader-narrower", "high",
+     "'abdominal aortic aneurysm' is the I71.4 subtype"),
+    ("deaths:aortic aneurysm and dissection", "5IuCUlfrAW", "broader-narrower", "high",
+     "'thoracic aortic aneurysm' is the I71.1-I71.2 subtype"),
+    ("deaths:chronic liver disease and cirrhosis", "Eem_xaD3Yw", "broader-narrower", "high",
+     "'alcoholic liver disease' (K70) is one component of the K70-K74 category"),
+    ("deaths:human immunodeficiency virus disease", "2J5_gYjK1G", "broader-narrower", "high",
+     "'HIV' is the agent/disease construct for B20-B24"),
+    ("deaths:human immunodeficiency virus disease", "RfXieAJsPx", "related-component", "medium",
+     "'AIDS related disease' is the advanced-stage outcome"),
+    ("deaths:influenza (flu) and pneumonia", "upz2Mxe7DH", "broader-narrower", "high",
+     "'influenza' (J09-J11) is one cause of the J09-J18 category"),
+    ("deaths:influenza (flu) and pneumonia", "QRSeEA8n9Q", "broader-narrower", "high",
+     "'pneumonia' (J12-J18) is the other major cause"),
+    ("deaths:intentional self-harm", "TLeQZQ_leT", "broader-narrower", "high",
+     "self-harm deaths are 'suicide' (ICD X60-X84)"),
+    ("deaths:meningitis", "qVCzuMt4N3", "broader-narrower", "high",
+     "'haemophilus meningitis' is a G00 subtype (re-emitted from anchor with correct type)"),
+    ("deaths:meningitis", "FTcyQmGKu1", "broader-narrower", "high",
+     "'pneumococcal meningitis' is a G00 subtype"),
+    ("deaths:meningitis", "13WuEFs-4F", "broader-narrower", "high",
+     "'aseptic meningitis' is the G03 component"),
+    ("deaths:mental and behavioral disorders due to accidental poisoning and other psychoactive substance use",
+     "sjrVorFbbs", "related-component", "high",
+     "'drug overdose' is the X40-X42/X44 accident-poisoning component"),
+    ("deaths:mental and behavioral disorders due to accidental poisoning and other psychoactive substance use",
+     "-ru3UMMkVB", "broader-narrower", "medium",
+     "'substance-related disorder' covers the F11-F16/F18-F19 mental-disorder component"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "5YdA2e1cqX", "broader-narrower", "medium",
+     "'alcohol abuse' is the F10 behavioral component"),
+    ("deaths:nephritis, nephrotic syndrome and nephrosis", "RmMYHSQUGe", "broader-narrower", "high",
+     "'nephritis' is the N00-N07/N17 component"),
+    ("deaths:nephritis, nephrotic syndrome and nephrosis", "7sGWfVGKdD", "broader-narrower", "medium",
+     "'nephrotic syndrome' is the N04 component"),
+    ("deaths:parkinson's disease", "Gtjl-ppl-t", "broader-narrower", "medium",
+     "only 'parkinsonian syndrome' exists in SPG, not Parkinson's disease itself"),
+    ("deaths:peptic ulcer", "VhcFX-yBEO", "equivalent", "high",
+     "'peptic ulcer disease' is the exact construct (K25-K28)"),
+    ("deaths:pregnancy, childbirth and the puerperium", "0c1cfXSPiT", "broader-narrower", "high",
+     "'complications of pregnancy' covers O00-O09"),
+    ("deaths:septicemia", "qT0fZmGlX4", "equivalent", "high",
+     "'sepsis' is the modern term for septicemia (A40-A41)"),
+    ("deaths:tuberculosis", "EPkRQaRIuw", "equivalent", "high",
+     "'tuberculosis' is the exact disease (A16-A19)"),
+    ("deaths:tuberculosis", "epn8cUn0y3", "broader-narrower", "medium",
+     "'pulmonary tuberculosis' is the dominant form"),
+    ("deaths:viral hepatitis", "c-etid2dOC", "broader-narrower", "high",
+     "'hepatitis' covers the B15-B19 viral hepatitides"),
+    ("deaths:viral hepatitis", "tpYBq3golh", "broader-narrower", "medium",
+     "'hepatitis B' is a major B15-B19 component"),
+    # ---- heat complaints ----
+    ("complaints:NO HEAT", "Ah-wdkRcqy", "broader-narrower", "high",
+     "lack of heat = failed/inadequate 'heating equipment' service in winter"),
+    ("complaints:NO HEAT", "VbhaEHYy0f", "related-component", "medium",
+     "no-heat homes imply indoor 'cold weather' exposure risk"),
+    ("complaints:NO HEAT AND NO HOT WATER", "Ah-wdkRcqy", "broader-narrower", "high",
+     "heating failure complaint; 'heating equipment' construct"),
+    ("complaints:NO HEAT AND NO HOT WATER", "VbhaEHYy0f", "related-component", "medium",
+     "implies indoor cold exposure"),
+    ("complaints:NO HOT WATER", "Ah-wdkRcqy", "related-component", "medium",
+     "domestic hot water is adjacent to 'heating equipment' service"),
+    ("complaints:HEAT ON IN SUMMER", "wpUeTjUbAc", "related-component", "medium",
+     "unwanted heat in summer relates to indoor 'extreme heat' exposure"),
+]
+
+# noisy tier-0 anchors to drop
+REJECTS = [
+    ("deaths:atherosclerosis", "Pfu5fwIyZx", "gangrene is a consequence (I70.2 subcode), not atherosclerosis itself"),
+    ("deaths:atherosclerosis", "xsZCyIIBRG", "Monckeberg arteriosclerosis is a specific variant, not the I70 cause"),
+    ("deaths:chronic liver disease and cirrhosis", "f3q5XkLWzh", "alcoholic fatty liver (K70.0) too specific for the K70-K74 category anchor"),
+    ("deaths:chronic liver disease and cirrhosis", "BGOKSHZlNJ", "alcoholic hepatitis (K70.1) too specific"),
+    ("deaths:chronic liver disease and cirrhosis", "Eem_xaD3Yw", "re-typed as broader-narrower (K70 is a component)"),
+    ("deaths:essential hypertension and renal diseases", "fo-h4u_aJp", "re-typed as broader-narrower (parent construct)"),
+    ("deaths:aortic aneurysm and dissection", "wDob2uJcSH", "re-typed as broader-narrower subtype"),
+    ("deaths:aortic aneurysm and dissection", "Y6UToUjmfn", "re-typed as broader-narrower subtype"),
+    ("deaths:aortic aneurysm and dissection", "5IuCUlfrAW", "re-typed as broader-narrower subtype"),
+    ("deaths:meningitis", "RM0YyFpVVp", "'nervous system disease' (G00-G99 parent) is not meningitis"),
+    ("deaths:meningitis", "qVCzuMt4N3", "re-emitted as broader-narrower subtype"),
+    ("deaths:meningitis", "FTcyQmGKu1", "re-emitted as broader-narrower subtype"),
+    ("deaths:meningitis", "13WuEFs-4F", "re-emitted as broader-narrower subtype"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "-ru3UMMkVB", "parent class, not equivalent to F10"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "xsZfbnK87R", "parent class, not equivalent"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "NM65CTyP3z", "drug withdrawal is not alcohol-use disorder"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "DU5dF5vxkA", "binge drinking is a behavior, not the F10 category"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "2Cbi75x4kC", "substance abuse parent class, not equivalent"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "W7eIQCjzy2", "'alcohol and health' is not a disorder"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "Qqx0E1tYR6", "F10.5 subtype too specific"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "uXHBnqFIrn", "F10.2 subtype too specific"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "-svrJVV3ld", "F10.0 subtype too specific"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "ueT9zFXSHW", "F10.4 subtype too specific"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "RCRhUqec__", "substance-induced psychosis too specific"),
+    ("deaths:mental and behavioral disorders due to use of alcohol", "9wRzMt2S_X", "F10.3 subtype too specific"),
+]
+
+with (OUT / "adjudications_rest.jsonl").open("w") as fh:
+    for nyc_id, sid, mt, conf, why in MATCHES:
+        fh.write(json.dumps({"nyc_id": nyc_id, "spg_system_id": sid,
+                             "match_type": mt, "confidence": conf,
+                             "rationale": why}) + "\n")
+    for nyc_id, sid, why in REJECTS:
+        fh.write(json.dumps({"action": "reject_anchor", "nyc_id": nyc_id,
+                             "spg_system_id": sid, "reason": why}) + "\n")
+
+print(f"{len(MATCHES)} match rows, {len(REJECTS)} anchor rejections -> adjudications_rest.jsonl")

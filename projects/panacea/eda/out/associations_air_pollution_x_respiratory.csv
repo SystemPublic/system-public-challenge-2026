@@ -1,0 +1,479 @@
+pubmed_id,study_id,statistic_type,system_statistic_type,statistic_value,ci_lower,ci_upper,p_value,variable_1_concept_id,variable_2_concept_id,variable_1_name,variable_2_name,statistic_type_norm,system_statistic_type_norm
+29323928,vpRwoCYrIY,adjusted odds ratio,adjusted_odds_ratio,1.21,0.92,1.58,,P6IzhScRdx,IPV_lvgw9H,Household air pollution exposure,chronic obstructive pulmonary disease,adjusted odds ratio,adjusted_odds_ratio
+32299858,x6-P-OWQLI,odds ratio,odds_ratio,1.2,1.1,1.32,0.01,P6IzhScRdx,EAshH_Ko3h,exposure to air pollution,asthma development,odds ratio,odds_ratio
+35367429,Ed6FTzMhpM,hazard ratio,hazard_ratio,1.909,1.839,1.982,,Cv_Ldh0HRR,epn8cUn0y3,SO2 exposure (short-term),pulmonary tuberculosis,hazard ratio,hazard_ratio
+37886487,XvJxpmNMzR,odds ratio,odds_ratio,4.64,1.1,20.7,0.05,CCVZABeZcW,epn8cUn0y3,time-weighted average 24-hour personal carbon monoxide exposure,pulmonary tuberculosis (positive sputum smear or Xpert MTB/RIF),odds ratio,odds_ratio
+33396261,YWLf1Iruei,odds ratio,odds_ratio,2.01,1.12,3.62,,P6IzhScRdx,EAshH_Ko3h,neighborhood traffic-related air pollution,prevalence of asthma/asthma-like symptoms,odds ratio,odds_ratio
+21447960,cEOS86edx4,RR,relative_risk_ratio,1.22,1.05,1.4,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide levels,asthma hospitalization,RR,relative_risk_ratio
+30965018,XewdHZjz8W,odds ratio,odds_ratio,5.01,2.54,9.87,0.001,ak7lpHYuXE,EAshH_Ko3h,house dust endotoxin and ambient air pollutants,asthma outcomes,odds ratio,odds_ratio
+31743966,RftnOs46mq,adjusted odds ratio (aOR),adjusted_odds_ratio,1.76,,,,P6IzhScRdx,EAshH_Ko3h,no usage of an air purifier in exposure to high levels of outdoor air pollution,moderate/severe persistent asthma,adjusted odds ratio (aOR),adjusted_odds_ratio
+27756407,bTUz-EJMtc,odds ratio (OR),odds_ratio,2.45,1.75,3.45,,Cv_Ldh0HRR,IPV_lvgw9H,short-term exposures to sulfur dioxide,chronic obstructive pulmonary disease exacerbation risk,odds ratio (OR),odds_ratio
+32613014,jzCU3i_UAg,r,pearson_r,0.665,,,0.05,EAshH_Ko3h,ak7lpHYuXE,annual changes of the prevalence of bronchial asthma,concentrations of air pollutants,r,pearson_r
+21890258,oQhaa9es1a,relative risk (RR),relative_risk_ratio,0.026,,,,DC_F0GO0WQ,EAshH_Ko3h,mean levels of nitrogen dioxide (NO2),asthma and chronic obstructive pulmonary disease hospital emergency room visits,relative risk (RR),relative_risk_ratio
+28434561,u7MbqVL4Qu,relative risk,relative_risk_ratio,1.002,0.981,1.023,,JMeOsYIcbL,EAshH_Ko3h,average daily 8-hour maximum ozone concentrations,asthma hospital admissions,relative risk,relative_risk_ratio
+40520482,wUi1Fbshjf,hazard ratio,hazard_ratio,1.11,1.01,1.22,,JMeOsYIcbL,EAshH_Ko3h,ground ozone,incident asthma by age 10 years,hazard ratio,hazard_ratio
+8484360,ND60JLBB8X,odds ratio,odds_ratio,1.32,1.14,1.52,,JMeOsYIcbL,JmZ-RoSC5o,7-hour average ozone levels,incidence of lower respiratory tract symptoms,odds ratio,odds_ratio
+29419440,zwzt1YN_C6,Hazard Ratio (HR),hazard_ratio,1.07,1.06,1.09,,P6IzhScRdx,EAshH_Ko3h,Prenatal exposure to air pollution,childhood asthma incidence,Hazard Ratio (HR),hazard_ratio
+24945941,j_yhX3YEAq,mean_difference_unstandardized,mean_difference_unstandardized,0.84,,,0.001,EAshH_Ko3h,CCVZABeZcW,Acute Exacerbation of Asthma [vs Clinically Controlled Stage],Exhaled Carbon Monoxide levels,mean_difference_unstandardized,mean_difference_unstandardized
+8553276,rAJoiTlUUp,relative risk,relative_risk_ratio,1.22,,,,P6IzhScRdx,JmZ-RoSC5o,air pollution episode,all respiratory diseases mortality,relative risk,relative_risk_ratio
+16966302,Qn1UZ231QZ,OR,odds_ratio,1.28,1.02,1.61,,P6IzhScRdx,s_mlNM8W5q,levels of the air pollution exposure index,lung cancer risk,OR,odds_ratio
+7886654,mFS7IiVKdK,adjusted odds ratio,adjusted_odds_ratio,2.5,2.0,6.4,,P6IzhScRdx,EAshH_Ko3h,air pollution in the home,asthma,adjusted odds ratio,adjusted_odds_ratio
+19965811,r5WBrCoSNR,odds ratio,odds_ratio,1.15,1.02,1.28,,DC_F0GO0WQ,EAshH_Ko3h,exposure to nitrogen dioxide (NO2),prevalence of asthma symptoms,odds ratio,odds_ratio
+20299625,lzAVyNx_vp,odds ratio (OR),odds_ratio,1.32,1.06,1.63,0.05,JMeOsYIcbL,EAshH_Ko3h,ozone (O(3)),prevalence of phlegm with no asthma,odds ratio (OR),odds_ratio
+34442463,cvNlMTbZGG,OR,odds_ratio,1.77,1.36,2.3,,Cv_Ldh0HRR,A71KVJn6T6,sulfur dioxide,restrictive and mixed lung diseases,OR,odds_ratio
+30364347,ol5n64uGbl,difference,mean_difference_unstandardized,-10.0,,,0.02,CCVZABeZcW,zDwqMsbSzn,carbon monoxide exposure,PEF,difference,mean_difference_unstandardized
+23076649,JMkW4_z6PY,odds ratio (OR),odds_ratio,1.15,1.02,1.3,0.05,DC_F0GO0WQ,JmZ-RoSC5o,daily ambient levels of nitrogen dioxide (NO(2)),respiratory symptom-related doctor visits in adults with different patterns of underlying chronic respiratory disease,odds ratio (OR),odds_ratio
+15589240,nG-4cqSF-L,relative risk,relative_risk_ratio,1.05,1.01,1.1,,JMeOsYIcbL,EAshH_Ko3h,elevated levels of ozone (O3),asthma emergency room (ER) visits,relative risk,relative_risk_ratio
+24858282,VRj3s1Bfz0,RR,relative_risk_ratio,1.05,1.04,1.06,,JMeOsYIcbL,EAshH_Ko3h,ozone,pediatric emergency department asthma visits,RR,relative_risk_ratio
+37080133,kD4HanNkUw,hazard ratio,hazard_ratio,1.04,1.0,1.08,,DC_F0GO0WQ,EAshH_Ko3h,annual concentrations of NO2,risk of adult-onset asthma,hazard ratio,hazard_ratio
+40848840,Kk39bngKTg,relative risk,relative_risk_ratio,1.12,,,,ak7lpHYuXE,EAshH_Ko3h,interactions between pollutants (O3 and PM2.5 or PM2.5 and pollen),asthma exacerbations,relative risk,relative_risk_ratio
+28083692,mBW5yWEkyG,r,pearson_r,-0.34,,,0.0001,VsO_M8PMFZ,CCVZABeZcW,interstitial lung disease score,diffusing capacity to carbon monoxide (DLCO),r,pearson_r
+36126064,y130sclbF3,RR,relative_risk_ratio,1.83,1.35,2.49,,Cv_Ldh0HRR,JmZ-RoSC5o,cumulative concentration of lag0-6 of SO2,hospital visits due to respiratory diseases,RR,relative_risk_ratio
+20123607,KbvNimh3RN,odds ratio,odds_ratio,1.08,1.04,1.12,0.001,P6IzhScRdx,EAshH_Ko3h,exposure to ambient air pollution in utero and during the first year of life,risk of subsequent asthma diagnosis,odds ratio,odds_ratio
+1851072,K_uey9FVFU,r,pearson_r,0.7,,,0.001,suGihS8vGs,CCVZABeZcW,measurements of elastic recoil pressure at 90% of total lung capacity,transfer factor for carbon monoxide,r,pearson_r
+33372076,ef4XUUB4JG,adjusted ORs (aORs),adjusted_odds_ratio,0.51,0.33,0.79,,JMeOsYIcbL,VsO_M8PMFZ,Ozone (O) exposure,interstitial lung disease in patients with connective tissue diseases (CTDs),adjusted ORs (aORs),adjusted_odds_ratio
+24945941,j_yhX3YEAq,mean_difference_unstandardized,mean_difference_unstandardized,0.53,,,0.001,EAshH_Ko3h,CCVZABeZcW,Asthmatics [vs Controls],Exhaled Carbon Monoxide levels,mean_difference_unstandardized,mean_difference_unstandardized
+34023726,peuz0sI_iV,Odds Ratios,odds_ratio,0.697,,,,P6IzhScRdx,EAshH_Ko3h,air pollution indices,asthma prevalence,Odds Ratios,odds_ratio
+29427878,a-rKMWJZKk,odds ratio,odds_ratio,5.21,1.54,17.6,0.001,P6IzhScRdx,EAshH_Ko3h,Traffic Related Air Pollution (TRAP) exposure,persistent asthma,odds ratio,odds_ratio
+31217483,3RqIPOEPX4,path coefficient,coefficient,0.12,-0.03,0.27,,P6IzhScRdx,EAshH_Ko3h,air pollution,risk of adult-onset asthma (allergic asthma),path coefficient,coefficient
+16201673,h-V_8wxr44,odds ratio,odds_ratio,1.9,,,0.01,Cv_Ldh0HRR,EAshH_Ko3h,ambient sulfur dioxide (SO2) concentrations,asthma hospitalizations,odds ratio,odds_ratio
+31285306,RjhGBjbonx,OR,odds_ratio,1.12,1.1,1.14,0.05,DC_F0GO0WQ,IPV_lvgw9H,NO2 concentration,chronic obstructive pulmonary disease prevalence,OR,odds_ratio
+37852778,mAdpSBnQ5U,OR,odds_ratio,1.68,1.18,2.46,,P6IzhScRdx,IPV_lvgw9H,Exposure to household air pollution,chronic obstructive pulmonary disease,OR,odds_ratio
+38183649,CN9eNboUVs,aOR,adjusted_odds_ratio,2.4,1.34,4.29,,P6IzhScRdx,EAshH_Ko3h,proximity from an air-polluting facility,asthma persistence,aOR,adjusted_odds_ratio
+9163648,kz7q71rIpm,relative risk,relative_risk_ratio,1.02,1.0,1.05,,DC_F0GO0WQ,IPV_lvgw9H,daily mean level of nitrogen dioxide,hospital admissions for chronic obstructive pulmonary disease,relative risk,relative_risk_ratio
+29529393,b0qL7M6fKv,OR,odds_ratio,1.16,1.02,1.33,,DC_F0GO0WQ,EAshH_Ko3h,NO2 (Nitrogen Dioxide concentration),doctors' diagnosed asthma,OR,odds_ratio
+26453943,3a8u_4smwf,odds ratio (OR),odds_ratio,1.62,1.01,2.6,0.05,P6IzhScRdx,EAshH_Ko3h,early-life exposure to ambient air pollution,doctor-diagnosed asthma in preschool children,odds ratio (OR),odds_ratio
+25415831,f1zpQIGMGG,OR,odds_ratio,1.56,1.09,2.24,,oJFe31eltz,IPV_lvgw9H,occupational organic dust exposure,prevalence of chronic obstructive pulmonary disease,OR,odds_ratio
+31590000,jGdgk1BiMR,hazard ratio,hazard_ratio,1.019,1.004,1.034,0.001,Cv_Ldh0HRR,IPV_lvgw9H,sulfur dioxide exposure,incident chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+16201673,h-V_8wxr44,odds ratio,odds_ratio,2.05,,,0.01,Cv_Ldh0HRR,EAshH_Ko3h,ambient sulfur dioxide (SO2) concentrations,asthma hospitalizations,odds ratio,odds_ratio
+11034970,r-uilRtmNB,odds ratio,odds_ratio,0.87,0.51,1.43,,DC_F0GO0WQ,EAshH_Ko3h,indoor Nitrogen dioxide (NO(2)) concentration,incidence of wheeze and asthma,odds ratio,odds_ratio
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.2,,,0.0001,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+28980116,3GSSPnCWeW,relative risk,relative_risk_ratio,1.0612,1.0607,1.0616,0.001,JMeOsYIcbL,IPV_lvgw9H,Exposure to Ozone,Chronic obstructive pulmonary disease (COPD),relative risk,relative_risk_ratio
+1428471,0-Ffm5N8mz,odds ratio (OR),odds_ratio,1.01,0.53,1.91,,P6IzhScRdx,s_mlNM8W5q,Emission Index for Sulphur Dioxide (Air Pollution),lung cancer risk,odds ratio (OR),odds_ratio
+8484360,ND60JLBB8X,odds ratio,odds_ratio,1.22,1.11,1.34,,JMeOsYIcbL,JmZ-RoSC5o,1-hour daily maximum ozone levels,incidence of lower respiratory tract symptoms,odds ratio,odds_ratio
+27842286,z5r7w5T4WY,relative risk (RR),relative_risk_ratio,0.041,0.025,0.061,,JMeOsYIcbL,IPV_lvgw9H,ground-level ozone (O) concentrations,hospital admissions for chronic obstructive pulmonary disease (HA-COPD),relative risk (RR),relative_risk_ratio
+24176998,Xdm9ZJ6o_D,HR,hazard_ratio,1.51,1.17,1.94,,P6IzhScRdx,0qX3yizFGr,air pollution exposure,acute exacerbation of idiopathic pulmonary fibrosis,HR,hazard_ratio
+28788106,9T3-a8D7HC,IRR,incident_rate_ratio,1.94,,,,DC_F0GO0WQ,s_mlNM8W5q,residential exposure to nitrogen dioxide (NO2),incidence rate ratios of lung and bladder cancers,IRR,incident_rate_ratio
+24657516,241_BXk5IN,odds ratio,odds_ratio,1.07,1.03,1.11,,DC_F0GO0WQ,EAshH_Ko3h,short-term changes in nitrogen dioxide (NO2) concentrations,timing of new-onset asthma,odds ratio,odds_ratio
+33252712,qC0QJQzUrm,r,pearson_r,-0.382,,,0.026,V4aKFMKpdE,CCVZABeZcW,mean lung attenuation,single-breath diffusing lung capacity for carbon monoxide,r,pearson_r
+25029228,rwwUAQ4i-q,prevalence odds ratio (POR),odds_ratio,3.56,,,,sMnMz5Z-X0,oJFe31eltz,adults ever told by a health professional that asthma is probably work-related,"frequent workplace exposure to vapors, gas, dust or fumes",prevalence odds ratio (POR),odds_ratio
+35618005,gnIxa1ywpy,odds ratio,odds_ratio,1.17,1.003,1.365,0.001,ak7lpHYuXE,EAshH_Ko3h,"exposure to air pollutants (particles with diameter ≤10 μm (PM), particles with diameter ≤2.5 μm (PM), ozone (O), and nitrogen dioxide )",risk of emergency department visits for asthma in children,odds ratio,odds_ratio
+22115496,LxAd_yBIGO,mean_difference_unstandardized,mean_difference_unstandardized,2.2,,,0.05,EAshH_Ko3h,CCVZABeZcW,"preschool children with asthma attacks [vs subjects with asymptomatic asthma, upper respiratory infection, and healthy children]",exhaled carbon monoxide levels,mean_difference_unstandardized,mean_difference_unstandardized
+26859438,fwmfarWZTn,odds ratio,odds_ratio,1.19,0.74,1.92,,CCVZABeZcW,epn8cUn0y3,carbon monoxide,pulmonary tuberculosis odds ratios,odds ratio,odds_ratio
+36075322,D5E93_cRxe,odds ratio,odds_ratio,1.8,1.18,2.76,,P6IzhScRdx,EAshH_Ko3h,prenatal exposure to ambient air pollution,asthma,odds ratio,odds_ratio
+24569869,QhwRf_JD9T,odds ratio (OR),odds_ratio,1.02,0.997,1.044,,JMeOsYIcbL,EAshH_Ko3h,short-term ozone (O3) exposures,asthma emergency department visits,odds ratio (OR),odds_ratio
+38963443,vEIypjnQrV,relative risk,relative_risk_ratio,1.066,1.009,1.127,,ak7lpHYuXE,JmZ-RoSC5o,PM2.5 concentrations,respiratory diseases,relative risk,relative_risk_ratio
+24176998,Xdm9ZJ6o_D,HR,hazard_ratio,1.42,1.11,1.82,,P6IzhScRdx,0qX3yizFGr,air pollution exposure,acute exacerbation of idiopathic pulmonary fibrosis,HR,hazard_ratio
+12550084,6tWb-fuGH7,Poisson regression,coefficient,0.12,0.01,0.23,,Cv_Ldh0HRR,EAshH_Ko3h,sulfur dioxide (SO(2)),asthma emergency department visits,Poisson regression,coefficient
+35367429,Ed6FTzMhpM,hazard ratio,hazard_ratio,1.153,1.145,1.161,,rqFj5Lvvwf,epn8cUn0y3,"Ozone Exposure Level (O3), 8th day",pulmonary tuberculosis,hazard ratio,hazard_ratio
+22683007,DRxmqadTog,odds ratio,odds_ratio,1.05,1.0,1.11,,DC_F0GO0WQ,PQ1nPOBjAX,exposure to nitrogen dioxide,childhood asthma,odds ratio,odds_ratio
+23590261,TJC9XRI3gk,hazard ratio,hazard_ratio,1.06,,,,P6IzhScRdx,QJ7xqA4q7F,long-term exposure to outdoor particulate air pollution,lung cancer,hazard ratio,hazard_ratio
+33233547,jySXys0lNU,OR,odds_ratio,1.22,1.0,1.49,,CCVZABeZcW,EAshH_Ko3h,carbon monoxide,asthma-related emergency department visits in adults,OR,odds_ratio
+10489840,_s9xNCirZm,correlation coefficient,pearson_r,0.45,,,0.01,Cv_Ldh0HRR,EAshH_Ko3h,annual mean level of SO2,prevalence of asthma,correlation coefficient,pearson_r
+26859438,fwmfarWZTn,odds ratio,odds_ratio,0.66,0.43,1.02,,JMeOsYIcbL,epn8cUn0y3,ozone (O3),pulmonary tuberculosis odds ratios,odds ratio,odds_ratio
+35985487,_5NYdb1uow,relative risk (RR),relative_risk_ratio,1.08,1.02,1.1,,ak7lpHYuXE,epn8cUn0y3,"long-term exposure to ambient air pollutants (particulate matter p.m., and O)",monthly PTB or smear-positive pulmonary tuberculosis (SPPTB) incidence,relative risk (RR),relative_risk_ratio
+14504955,ijAcbTtEVF,odds ratio,odds_ratio,1.7,1.0,2.7,,P6IzhScRdx,EAshH_Ko3h,occupational exposure to non-sensitising air pollution at workplaces,risk of adult onset asthma,odds ratio,odds_ratio
+29551329,6Su6c7sNas,prevalence ratio,prevalence_ratio,1.13,1.01,1.27,,EAshH_Ko3h,P6IzhScRdx,Asthma,always/usually avoiding busy roads to reduce air pollution exposure,prevalence ratio,prevalence_ratio
+21663946,9fYp9Rz6q1,r,pearson_r,0.0,,,,P6IzhScRdx,EAshH_Ko3h,traffic-related air pollution (PM10),asthma admission rates,r,pearson_r
+21663946,9fYp9Rz6q1,r,pearson_r,0.0,,,,P6IzhScRdx,EAshH_Ko3h,traffic-related air pollution (CO),asthma admission rates,r,pearson_r
+18008001,s8E_iN6JMy,mean_difference_unstandardized,mean_difference_unstandardized,0.7,,,0.05,EAshH_Ko3h,DC_F0GO0WQ,children with asthma [vs children without asthma],Nitrogen Dioxide (NO2),mean_difference_unstandardized,mean_difference_unstandardized
+33233547,jySXys0lNU,OR,odds_ratio,1.13,1.0,1.28,,CCVZABeZcW,EAshH_Ko3h,carbon monoxide,asthma-related emergency department visits,OR,odds_ratio
+35780885,PJiqfG637F,cumulative relative risks (CRR),relative_risk_ratio,0.84,0.81,0.86,,DC_F0GO0WQ,EAshH_Ko3h,Nitrogen dioxide (NO),daily asthma emergency department visits,cumulative relative risks (CRR),relative_risk_ratio
+27756407,bTUz-EJMtc,odds ratio,odds_ratio,2.45,1.75,3.45,,Cv_Ldh0HRR,IPV_lvgw9H,short-term exposures to sulfur dioxide,chronic obstructive pulmonary disease exacerbation,odds ratio,odds_ratio
+9452149,G4qaYhyC4e,r,pearson_r,0.54,,,0.0005,CCVZABeZcW,-5WDLc2uKT,pulmonary carbon monoxide diffusing capacity (DLCO),pulmonary capillary wedge pressure,r,pearson_r
+38057083,bibW8uuoPJ,HR,hazard_ratio,1.37,1.19,1.58,0.001,P6IzhScRdx,IPV_lvgw9H,Air pollution score (APS),incident chronic obstructive pulmonary disease risk,HR,hazard_ratio
+38269380,seaHgBbyWX,OR,odds_ratio,1.63,1.01,2.63,,CCVZABeZcW,V4aKFMKpdE,carbon monoxide levels,lung function decline,OR,odds_ratio
+35780885,PJiqfG637F,cumulative relative risks (CRR),relative_risk_ratio,1.13,1.11,1.16,,CCVZABeZcW,EAshH_Ko3h,Carbon monoxide (CO),daily asthma emergency department visits,cumulative relative risks (CRR),relative_risk_ratio
+19965811,r5WBrCoSNR,odds ratio,odds_ratio,1.26,1.04,1.51,,DC_F0GO0WQ,EAshH_Ko3h,exposure to nitrogen dioxide (NO2),prevalence of asthma,odds ratio,odds_ratio
+33183823,tituYsjNQk,odds ratio,odds_ratio,1.74,,,,DC_F0GO0WQ,BC6mefIVa1,nitrogen dioxide,pulmonary valve stenosis,odds ratio,odds_ratio
+35980887,Sqms5UAGvQ,relative risk,relative_risk_ratio,1.123,1.118,1.129,,JMeOsYIcbL,JmZ-RoSC5o,Ozone (O3),visits due to upper respiratory tract diseases,relative risk,relative_risk_ratio
+32299858,x6-P-OWQLI,odds ratio,odds_ratio,1.09,1.01,1.18,0.01,P6IzhScRdx,EAshH_Ko3h,exposure to air pollution,asthma development,odds ratio,odds_ratio
+34023726,peuz0sI_iV,Odds Ratios,odds_ratio,0.135,,,,P6IzhScRdx,EAshH_Ko3h,air pollution indices,asthma prevalence,Odds Ratios,odds_ratio
+38219238,MqVbC20QoE,beta,coefficient,-0.37,-0.64,-0.1,0.009,ak7lpHYuXE,V4aKFMKpdE,PM2.5 exposure,lung function,beta,coefficient
+17100666,__fkofqrd1,odds ratio,odds_ratio,1.51,,,0.01,DC_F0GO0WQ,EAshH_Ko3h,indoor NO2,current asthma,odds ratio,odds_ratio
+32729038,kMCSnsXkHv,relative risk,relative_risk_ratio,1.31,1.069,1.606,,P6IzhScRdx,EAshH_Ko3h,air pollution,risk of pediatric asthma ERV,relative risk,relative_risk_ratio
+21663946,9fYp9Rz6q1,r,pearson_r,0.73,,,0.05,P6IzhScRdx,EAshH_Ko3h,traffic-related air pollution (SO2),asthma admission rates,r,pearson_r
+28434561,u7MbqVL4Qu,relative risk,relative_risk_ratio,1.018,1.005,1.032,,JMeOsYIcbL,EAshH_Ko3h,daily 8-hour maximum ozone concentrations,asthma hospital admissions,relative risk,relative_risk_ratio
+36137588,7-t_pVBwHU,hazard ratio,hazard_ratio,3.94,2.77,5.6,0.05,DC_F0GO0WQ,0qX3yizFGr,Nitrogen dioxide (NO2),idiopathic pulmonary fibrosis risk,hazard ratio,hazard_ratio
+22156960,Ny6JQ6xdnI,OR,odds_ratio,1.11,1.05,1.17,0.001,P6IzhScRdx,EAshH_Ko3h,short-term exposure to air pollution,hospital admissions for asthma in children,OR,odds_ratio
+36137588,7-t_pVBwHU,hazard ratio,hazard_ratio,1.11,1.03,1.19,,DC_F0GO0WQ,0qX3yizFGr,Nitrogen dioxide (NO2),idiopathic pulmonary fibrosis risk,hazard ratio,hazard_ratio
+23337243,r6JryHE-ht,odds ratio,odds_ratio,1.37,1.01,1.89,,DC_F0GO0WQ,EAshH_Ko3h,indoor nitrogen dioxide (NO2) exposure,asthma severity,odds ratio,odds_ratio
+33254941,ekuyFh08fs,odds ratio (OR),odds_ratio,1.75,1.417,2.16,0.001,DC_F0GO0WQ,EAshH_Ko3h,Nitrogen dioxide (NO) exposure,asthma emergency department visits among Whites,odds ratio (OR),odds_ratio
+28434561,u7MbqVL4Qu,relative risk,relative_risk_ratio,1.047,1.025,1.069,,JMeOsYIcbL,EAshH_Ko3h,average daily 8-hour maximum ozone concentrations,asthma hospital admissions,relative risk,relative_risk_ratio
+33932714,CIvIW7qtGg,RR,relative_risk_ratio,1.32,1.07,1.64,,DC_F0GO0WQ,IPV_lvgw9H,Nitrogen dioxide,hospitalization risk for chronic obstructive pulmonary disease (COPD),RR,relative_risk_ratio
+30366659,KHqfUlIO_j,hazard ratio,hazard_ratio,1.06,1.04,1.08,,DC_F0GO0WQ,s_mlNM8W5q,nitrogen dioxide (NO),all cancers (but lung),hazard ratio,hazard_ratio
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.13,,,0.0001,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+31151302,-kZ6UupqYJ,adjusted odds ratio,adjusted_odds_ratio,2.15,1.83,2.53,,P6IzhScRdx,EAshH_Ko3h,air pollution/irritants,very poorly-controlled asthma,adjusted odds ratio,adjusted_odds_ratio
+31590000,jGdgk1BiMR,hazard ratio,hazard_ratio,1.021,1.001,1.047,0.001,Cv_Ldh0HRR,IPV_lvgw9H,sulfur dioxide exposure,incident chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+8287840,4TeCeybTx8,relative risk,relative_risk_ratio,1.25,,,0.0001,P6IzhScRdx,IPV_lvgw9H,air pollution,COPD,relative risk,relative_risk_ratio
+35973040,hx8sGxpcx-,relative risk,relative_risk_ratio,1.024,1.013,1.034,,DC_F0GO0WQ,JmZ-RoSC5o,NO2 (nitrogen dioxide),respiratory diseases,relative risk,relative_risk_ratio
+26440676,02JdHW7hMU,OR,odds_ratio,1.85,1.03,3.33,,oJFe31eltz,IPV_lvgw9H,"occupational exposure to gas, dust or fumes",COPD,OR,odds_ratio
+35780885,PJiqfG637F,cumulative relative risks (CRR),relative_risk_ratio,0.99,0.93,1.05,,Cv_Ldh0HRR,EAshH_Ko3h,Sulfur dioxide (SO),daily asthma emergency department visits,cumulative relative risks (CRR),relative_risk_ratio
+40175422,SmoBeefYdp,odds ratio,odds_ratio,1.023,1.011,1.035,,ak7lpHYuXE,EAshH_Ko3h,"ambient air pollutants (PM2.5, PM10, NO2, NOx)",asthma prevalence,odds ratio,odds_ratio
+8172170,2ImyYBJr8S,relative risk (RR),relative_risk_ratio,1.17,0.86,1.6,,JMeOsYIcbL,IPV_lvgw9H,ozone,admissions for chronic obstructive pulmonary disease,relative risk (RR),relative_risk_ratio
+29217611,08-XzsNm3h,odds ratio,odds_ratio,1.77,1.06,2.95,0.03,P6IzhScRdx,VsO_M8PMFZ,ambient air pollution,interstitial lung abnormalities,odds ratio,odds_ratio
+2010368,-EG7_SyERy,r,pearson_r,0.963,,,,CCVZABeZcW,BrOMMZDIIY,carbon monoxide diffusing capacity (DL),pulmonary blood flow (Qc),r,pearson_r
+35367429,Ed6FTzMhpM,hazard ratio,hazard_ratio,1.312,1.259,1.367,,ak7lpHYuXE,epn8cUn0y3,NO exposure within 30 days (air pollutants),pulmonary tuberculosis,hazard ratio,hazard_ratio
+29144419,RfXgx3oQy2,odds ratio,odds_ratio,1.05,1.02,1.09,,P6IzhScRdx,EAshH_Ko3h,air pollution exposure,asthma,odds ratio,odds_ratio
+31590000,jGdgk1BiMR,hazard ratio,hazard_ratio,1.038,1.01,1.067,0.001,ak7lpHYuXE,IPV_lvgw9H,exposure to environmental air pollutants,incident chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+9387953,aqzoxD9vmh,prevalence odds ratios (PORs),odds_ratio,1.28,0.2,7.98,,DC_F0GO0WQ,EAshH_Ko3h,outdoor nitrogen dioxide (NO2),prevalence of asthma,prevalence odds ratios (PORs),odds_ratio
+16201673,h-V_8wxr44,odds ratio,odds_ratio,2.21,,,0.01,Cv_Ldh0HRR,EAshH_Ko3h,ambient sulfur dioxide (SO2) concentrations,asthma hospitalizations,odds ratio,odds_ratio
+17308332,XuPeIW8QYJ,odds ratio,odds_ratio,1.23,,,0.05,P6IzhScRdx,EAshH_Ko3h,proximity to air pollution point sources,risk of asthma attacks,odds ratio,odds_ratio
+30479352,vsrh68_RBO,RR,relative_risk_ratio,1.169,1.028,1.329,0.001,ak7lpHYuXE,epn8cUn0y3,"ambient air pollutants (particulate matter with aerodynamic diameter <2.5 μm (PM), sulfur dioxide (SO),nitrogen dioxide (NO), ozone (O), and carbon monoxide )",risk of pulmonary tuberculosis,RR,relative_risk_ratio
+26404109,Co3AWVp_AP,OR,odds_ratio,0.68,0.51,0.92,,JMeOsYIcbL,EAshH_Ko3h,O3,risk of asthma,OR,odds_ratio
+37545814,DTNP8hp0Eu,relative risks,relative_risk_ratio,0.7,,,,JMeOsYIcbL,EAshH_Ko3h,daily levels of ozone,purchases of asthma medications,relative risks,relative_risk_ratio
+35780885,PJiqfG637F,cumulative relative risks (CRR),relative_risk_ratio,1.21,1.18,1.24,,DC_F0GO0WQ,EAshH_Ko3h,Nitrogen dioxide (NO),daily asthma emergency department visits,cumulative relative risks (CRR),relative_risk_ratio
+24200465,JUIFaPDIfV,difference in means,mean_difference_unstandardized,-30.6,-60.9,-0.2,,DC_F0GO0WQ,V4aKFMKpdE,exposure to nitrogen dioxide (NO2),lung function (FEV1),difference in means,mean_difference_unstandardized
+27756407,bTUz-EJMtc,odds ratio,odds_ratio,1.17,1.05,1.3,,DC_F0GO0WQ,IPV_lvgw9H,short-term exposures to nitrogen dioxide (NO),chronic obstructive pulmonary disease exacerbation,odds ratio,odds_ratio
+26211997,r6UixSfRdF,OR,odds_ratio,1.1,1.06,1.14,,JMeOsYIcbL,EAshH_Ko3h,Ozone,pediatric emergency department visits with a primary diagnosis of asthma,OR,odds_ratio
+34442463,cvNlMTbZGG,OR,odds_ratio,1.77,1.36,2.3,0.01,Cv_Ldh0HRR,A71KVJn6T6,sulfur dioxide,restrictive and mixed lung diseases,OR,odds_ratio
+26859438,fwmfarWZTn,odds ratio,odds_ratio,1.68,1.26,2.24,0.05,CCVZABeZcW,epn8cUn0y3,carbon monoxide,pulmonary tuberculosis odds ratios,odds ratio,odds_ratio
+33233547,jySXys0lNU,OR,odds_ratio,1.04,1.0,1.07,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide (NO),asthma-related emergency department visits,OR,odds_ratio
+11713353,PN5cKpEVsc,hazard ratio,hazard_ratio,1.0416666666666667,1.0141987829614605,1.06951871657754,0.003,CCVZABeZcW,0qX3yizFGr,"% predicted TLC, carbon monoxide transfer factor",survival in patients with usual interstitial pneumonia pattern IPF,hazard ratio,hazard_ratio
+35389691,9hxiItioZf,mean_difference_unstandardized,mean_difference_unstandardized,-4.0,,,0.01,CCVZABeZcW,jsQHrk3xJU,carbon monoxide ≥ 4 ppm smokers [vs Non-carbon monoxide ≥ 4 ppm smokers],Number of cardiac rehabilitation Sessions Completed,mean_difference_unstandardized,mean_difference_unstandardized
+29238185,g3FeHnIrkl,odds ratio,odds_ratio,2.7,1.4,5.1,,oJFe31eltz,IPV_lvgw9H,"occupational exposure to vapor, gas, dust, or fumes",COPD,odds ratio,odds_ratio
+24569869,QhwRf_JD9T,odds ratio (OR),odds_ratio,1.019,0.998,1.04,,JMeOsYIcbL,EAshH_Ko3h,short-term ozone (O3) exposures,asthma emergency department visits,odds ratio (OR),odds_ratio
+22536578,-Phl2lc_h-,prevalence ratio,prevalence_ratio,1.14,0.94,1.39,,Cv_Ldh0HRR,EAshH_Ko3h,exposure to stack emissions of sulphur dioxide (SO2) from petroleum refineries,prevalence of active asthma,prevalence ratio,prevalence_ratio
+35985487,_5NYdb1uow,relative risk (RR),relative_risk_ratio,1.12,1.03,1.22,,ak7lpHYuXE,epn8cUn0y3,"long-term exposure to ambient air pollutants (particulate matter p.m., and O)",monthly PTB or smear-positive pulmonary tuberculosis (SPPTB) incidence,relative risk (RR),relative_risk_ratio
+30965018,XewdHZjz8W,odds ratio,odds_ratio,3.45,1.65,7.18,0.001,ak7lpHYuXE,EAshH_Ko3h,house dust endotoxin and ambient air pollutants,asthma outcomes,odds ratio,odds_ratio
+14582813,OFaqV2cocJ,odds ratio,odds_ratio,1.2,1.05,1.37,,ak7lpHYuXE,EAshH_Ko3h,exposure to air pollutants,more serious asthma attack,odds ratio,odds_ratio
+22366988,PsWRf4S6bC,relative risk,relative_risk_ratio,1.08,1.031,1.132,,JMeOsYIcbL,JmZ-RoSC5o,Ozone (O3) levels,mortality from respiratory diseases,relative risk,relative_risk_ratio
+29144419,RfXgx3oQy2,odds ratio,odds_ratio,1.04,1.01,1.07,,P6IzhScRdx,EAshH_Ko3h,air pollution exposure,asthma,odds ratio,odds_ratio
+38905932,ZQSCYj5QTp,odds ratio,odds_ratio,1.04,1.02,1.05,0.001,ak7lpHYuXE,EAshH_Ko3h,ground-level air pollutants,childhood persistent asthma,odds ratio,odds_ratio
+31805225,XKs8Yb6Fo8,odds ratio,odds_ratio,1.42,1.05,1.91,,Cv_Ldh0HRR,EAshH_Ko3h,Annual sulfur dioxide exposure,Asthma,odds ratio,odds_ratio
+21663946,9fYp9Rz6q1,r,pearson_r,0.0,,,,P6IzhScRdx,EAshH_Ko3h,traffic-related air pollution (NO2),asthma admission rates,r,pearson_r
+35980887,Sqms5UAGvQ,relative risk,relative_risk_ratio,1.11,1.102,1.119,,DC_F0GO0WQ,JmZ-RoSC5o,Nitrogen dioxide (NO2),visits due to upper respiratory tract diseases,relative risk,relative_risk_ratio
+24200465,JUIFaPDIfV,difference in means,mean_difference_unstandardized,-55.7,-100.7,-10.8,,JMeOsYIcbL,V4aKFMKpdE,exposure to ozone (O3),lung function (FEV1),difference in means,mean_difference_unstandardized
+11153587,9WPMA9gITb,odds ratio,odds_ratio,1.16,1.03,1.3,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide (NO2) exposure,night asthma attacks,odds ratio,odds_ratio
+25146191,sqllbZbQp4,hazard ratio,hazard_ratio,1.07,1.03,1.11,,Cv_Ldh0HRR,IPV_lvgw9H,Sulfur dioxide (SO2),chronic obstructive pulmonary disease diagnosis from general practitioner,hazard ratio,hazard_ratio
+34993759,AWVjkOlHE-,mean_difference_unstandardized,mean_difference_unstandardized,-3.59,,,0.04,zmOHHFSXfv,CCVZABeZcW,Patients with pulmonary hypertension [vs Patients without pulmonary hypertension],Total diffusion capacity for carbon monoxide (DLCO),mean_difference_unstandardized,mean_difference_unstandardized
+34228742,_03CKuPExD,relative risk,relative_risk_ratio,1.21,1.05,1.39,,JMeOsYIcbL,EAshH_Ko3h,ozone,ERVs of asthma for females aged 40-64 years,relative risk,relative_risk_ratio
+24176998,Xdm9ZJ6o_D,HR,hazard_ratio,1.2,1.1,1.31,,P6IzhScRdx,0qX3yizFGr,air pollution exposure,acute exacerbation of idiopathic pulmonary fibrosis,HR,hazard_ratio
+20371422,-3h2VaLkoA,hazard ratio,hazard_ratio,2.18,1.18,4.01,0.001,DC_F0GO0WQ,EAshH_Ko3h,ambient nitrogen dioxide (NO2),new-onset asthma,hazard ratio,hazard_ratio
+31151302,-kZ6UupqYJ,adjusted odds ratio (AOR),adjusted_odds_ratio,1.7,1.45,1.99,,P6IzhScRdx,EAshH_Ko3h,Air pollution/irritants,poorly-controlled asthma,adjusted odds ratio (AOR),adjusted_odds_ratio
+27756407,bTUz-EJMtc,odds ratio (OR),odds_ratio,1.17,1.05,1.3,,DC_F0GO0WQ,IPV_lvgw9H,short-term exposures to nitrogen dioxide (NO),chronic obstructive pulmonary disease exacerbation risk,odds ratio (OR),odds_ratio
+16201673,h-V_8wxr44,odds ratio,odds_ratio,1.66,,,0.01,Cv_Ldh0HRR,EAshH_Ko3h,ambient sulfur dioxide (SO2) concentrations,asthma hospitalizations,odds ratio,odds_ratio
+16984840,gVXlGfX5J-,r,pearson_r,0.65,,,,CCVZABeZcW,EAshH_Ko3h,carbon monoxide,ED visits for asthma,r,pearson_r
+27338430,5IMeQcfjMt,relative risk,relative_risk_ratio,1.298,1.158,1.454,,P6IzhScRdx,JmZ-RoSC5o,outdoor air pollution concentrations,respiratory diseases,relative risk,relative_risk_ratio
+36530697,3HVKX-DpjX,adjusted odds ratio (adjOR),adjusted_odds_ratio,1.26,1.15,1.38,0.001,DC_F0GO0WQ,EAshH_Ko3h,annual modeled nitrogen dioxide (NO2) concentrations,"respiratory patterns (COPD, asthma)",adjusted odds ratio (adjOR),adjusted_odds_ratio
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.19,,,0.0002,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+35165108,2vihQgwhbr,adjusted ORs (adjORs),adjusted_odds_ratio,1.009,1.001,1.016,0.001,JMeOsYIcbL,EAshH_Ko3h,"exposure to air pollution, particularly ozone (O)",exacerbation requiring admission in patients with asthma,adjusted ORs (adjORs),adjusted_odds_ratio
+11034970,r-uilRtmNB,odds ratio,odds_ratio,2.1,1.1,4.75,,DC_F0GO0WQ,EAshH_Ko3h,outdoor Nitrogen dioxide (NO(2)) concentration,incidence of asthma,odds ratio,odds_ratio
+19230465,Io8SnIE4D8,hazard ratio,hazard_ratio,1.07,1.01,1.14,,P6IzhScRdx,EAshH_Ko3h,local traffic-generated air pollution,repeated hospital encounters for asthma in children,hazard ratio,hazard_ratio
+18467319,FOMzBk8qFK,odds ratio,odds_ratio,0.998,0.965,1.032,,JMeOsYIcbL,EAshH_Ko3h,ozone,asthma attacks,odds ratio,odds_ratio
+32640508,o3h4xQDa42,OR,odds_ratio,1.023,1.001,1.045,0.042,ak7lpHYuXE,EAshH_Ko3h,ambient air pollutants,hospital readmissions for pediatric asthma,OR,odds_ratio
+25365267,FRkPw4A351,Odds ratio (OR),odds_ratio,1.17,1.09,1.26,,P6IzhScRdx,EAshH_Ko3h,Ambient air pollution quality,Emergency department visits for asthma,Odds ratio (OR),odds_ratio
+11359423,Ki7asSBwRa,relative risk,relative_risk_ratio,1.08,,,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide levels,number of childhood admissions for asthma,relative risk,relative_risk_ratio
+17297248,-xCuNVQRVn,rho,spearman_correlation,0.303,,,0.001,JMeOsYIcbL,EAshH_Ko3h,ozone concentration,degree of asthma symptoms,rho,spearman_correlation
+17251230,KE4wy5OHIf,odds ratio,odds_ratio,1.3,1.0,1.7,,ak7lpHYuXE,EAshH_Ko3h,"Outdoor concentrations of traffic-related air pollutants (nitrogen dioxide PM(2.5), particles with a 50% cut-off aerodynamic diameter of 2.5 mum and soot)",doctor-diagnosed asthma,odds ratio,odds_ratio
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.17,,,0.002,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+21890258,oQhaa9es1a,relative risk (RR),relative_risk_ratio,0.033,,,,DC_F0GO0WQ,IPV_lvgw9H,mean levels of nitrogen dioxide (NO2),chronic obstructive pulmonary disease hospital emergency room visits,relative risk (RR),relative_risk_ratio
+20056967,7Ayua45r5R,OR,odds_ratio,1.49,1.05,2.11,,JMeOsYIcbL,EAshH_Ko3h,ozone,asthma-related emergency department visits or hospitalisations,OR,odds_ratio
+37414299,fQj08ylDsb,hazard ratio,hazard_ratio,1.67,1.58,1.76,0.001,Cv_Ldh0HRR,0qX3yizFGr,ambient sulfur dioxide (SO2),incident idiopathic pulmonary fibrosis,hazard ratio,hazard_ratio
+19017701,UwMXOuded5,odds ratio,odds_ratio,2.22,1.61,3.07,0.001,P6IzhScRdx,EAshH_Ko3h,exposure to air pollution,asthma severity,odds ratio,odds_ratio
+38219238,MqVbC20QoE,beta,coefficient,-0.4,-0.72,-0.08,0.014,ak7lpHYuXE,V4aKFMKpdE,PM2.5 exposure,lung function,beta,coefficient
+19017701,UwMXOuded5,odds ratio,odds_ratio,2.22,1.61,3.07,0.001,JMeOsYIcbL,EAshH_Ko3h,number of days (O(3)-days) with 8-hour ozone averages above 110 microg.m(-3),asthma severity,odds ratio,odds_ratio
+9849541,7BnkQjGeEG,relative risk (RR),relative_risk_ratio,1.063,1.014,1.114,,JMeOsYIcbL,EAshH_Ko3h,concentrations of ozone (O3),emergency room visits for asthma,relative risk (RR),relative_risk_ratio
+38319942,VWmUHIyuf9,correlation,pearson_r,0.21,,,0.02,VsO_M8PMFZ,CCVZABeZcW,Interstitial lung disease patients,diffusion capacity for carbon monoxide,correlation,pearson_r
+22115496,LxAd_yBIGO,mean_difference_unstandardized,mean_difference_unstandardized,2.3,,,0.0001,CCVZABeZcW,EAshH_Ko3h,exhaled carbon monoxide levels before therapy [vs exhaled carbon monoxide levels after therapy],asthmatic children,mean_difference_unstandardized,mean_difference_unstandardized
+22536578,-Phl2lc_h-,prevalence ratio,prevalence_ratio,1.39,1.0,1.94,,Cv_Ldh0HRR,EAshH_Ko3h,exposure to stack emissions of sulphur dioxide (SO2) from petroleum refineries,prevalence of poor asthma control,prevalence ratio,prevalence_ratio
+31828393,oNUf5OQbBf,odds ratio (OR),odds_ratio,0.934,0.896,0.974,0.001,CCVZABeZcW,lUEv_RFu_j,carbon monoxide diffusing capacity (DLCO%),severe acute radiation pneumonitis (SARP),odds ratio (OR),odds_ratio
+36928568,b0_NhK3GBO,Pearson's r,pearson_r,0.52,,,0.001,Jy2y-3RDdo,CCVZABeZcW,Normal lung volume proportion,Diffusion capacity of carbon monoxide,Pearson's r,pearson_r
+22156960,Ny6JQ6xdnI,OR,odds_ratio,1.09,1.04,1.13,0.001,P6IzhScRdx,EAshH_Ko3h,short-term exposure to air pollution,hospital admissions for asthma in children,OR,odds_ratio
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.15,,,0.003,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.1,,,0.006,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+26576757,tGDPlsciyh,mean_difference_unstandardized,mean_difference_unstandardized,-0.09,,,0.959,9J7QjcbE7R,CCVZABeZcW,pulmonary embolism group [vs No pulmonary embolism group],"Transfer Factor of the Lungs for Nitric Oxide/Transfer Factor of the Lungs for Carbon Monoxide (TL,NO/TL,CO) ratio",mean_difference_unstandardized,mean_difference_unstandardized
+31759754,EAxPIIh-U8,odds ratio,odds_ratio,22.0,5.33,90.75,0.001,ET5-8-2eBO,9J7QjcbE7R,carbon monoxide poisoning,risk of pulmonary embolism,odds ratio,odds_ratio
+21764049,cgHpIl28Pc,risk ratio,relative_risk_ratio,1.03,1.001,1.061,,ak7lpHYuXE,EAshH_Ko3h,"concentrations of pollutants fine particles (PM2.5), CO, NO2 and SO2",asthma morbidity,risk ratio,relative_risk_ratio
+35417845,Ls3lP3ugsq,hazard ratio,hazard_ratio,1.05,1.03,1.06,,P6IzhScRdx,IPV_lvgw9H,"annual concentrations of air pollutions, including particle matter (PM, PM), nitrogen oxides , and nitrogen dioxide",risk of chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+27653737,trs6gvUGV7,hazard ratio,hazard_ratio,1.23,1.04,1.47,0.001,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide,incident asthma,hazard ratio,hazard_ratio
+20056967,7Ayua45r5R,OR,odds_ratio,1.23,0.94,1.6,,JMeOsYIcbL,EAshH_Ko3h,ozone,daily or weekly asthma symptoms,OR,odds_ratio
+19230465,Io8SnIE4D8,hazard ratio,hazard_ratio,1.1,1.03,1.16,,P6IzhScRdx,EAshH_Ko3h,local traffic-generated air pollution,repeated hospital encounters for asthma in children,hazard ratio,hazard_ratio
+25112820,wI2TQWuJWR,odds ratio,odds_ratio,1.25,1.16,1.36,,DC_F0GO0WQ,EAshH_Ko3h,NO2,diagnosed-asthma,odds ratio,odds_ratio
+1792631,Z-P9L87p8F,odds ratio,odds_ratio,3.6,1.3,9.9,,oJFe31eltz,xh-q4BGKbZ,having a job with a high degree of airborne exposure,obstructive lung disease (asthma and chronic obstructive lung disease),odds ratio,odds_ratio
+24176998,Xdm9ZJ6o_D,HR,hazard_ratio,1.27,1.01,1.59,,P6IzhScRdx,0qX3yizFGr,air pollution exposure,acute exacerbation of idiopathic pulmonary fibrosis,HR,hazard_ratio
+25407437,w6JYUnqtNh,odds ratio,odds_ratio,1.8,1.0,3.4,,P6IzhScRdx,EAshH_Ko3h,Exposure to traffic-related air pollution (TRAP),"objective, physician-diagnosed asthma",odds ratio,odds_ratio
+26859438,fwmfarWZTn,odds ratio,odds_ratio,0.65,0.52,0.81,0.05,JMeOsYIcbL,epn8cUn0y3,ozone (O3),pulmonary tuberculosis odds ratios,odds ratio,odds_ratio
+25431630,Eg_4kskm8L,odds ratio,odds_ratio,1.06,1.0,1.11,,DC_F0GO0WQ,EAshH_Ko3h,Concentrations of nitrogen dioxide,12 month period prevalence of asthma symptoms in children,odds ratio,odds_ratio
+24176998,Xdm9ZJ6o_D,HR,hazard_ratio,1.41,1.04,1.91,,P6IzhScRdx,0qX3yizFGr,air pollution exposure,acute exacerbation of idiopathic pulmonary fibrosis,HR,hazard_ratio
+33986028,2KOmX5dcKQ,hazard ratio,hazard_ratio,1.19,1.01,1.41,,P6IzhScRdx,IPV_lvgw9H,long-term exposure to air pollution,chronic obstructive pulmonary disease incidence,hazard ratio,hazard_ratio
+38905932,ZQSCYj5QTp,odds ratio,odds_ratio,1.03,1.01,1.04,0.001,ak7lpHYuXE,EAshH_Ko3h,ground-level air pollutants,childhood persistent asthma,odds ratio,odds_ratio
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.1,,,0.001,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+20084840,IWxOy44k8r,relative risk,relative_risk_ratio,1.08,1.02,1.14,,JMeOsYIcbL,EAshH_Ko3h,Ozone exposure,asthma visits to emergency departments in adults,relative risk,relative_risk_ratio
+20123607,KbvNimh3RN,odds ratio,odds_ratio,1.12,1.07,1.17,0.001,P6IzhScRdx,EAshH_Ko3h,exposure to ambient air pollution in utero and during the first year of life,risk of subsequent asthma diagnosis,odds ratio,odds_ratio
+21890258,oQhaa9es1a,relative risk (RR),relative_risk_ratio,0.05,,,,DC_F0GO0WQ,EAshH_Ko3h,mean levels of sulphur and nitrogen dioxides (SO2 and NO2),asthma and chronic obstructive pulmonary disease hospital emergency room visits,relative risk (RR),relative_risk_ratio
+30366659,KHqfUlIO_j,hazard ratio,hazard_ratio,1.2,1.12,1.28,,DC_F0GO0WQ,QJ7xqA4q7F,nitrogen dioxide (NO),lung cancer,hazard ratio,hazard_ratio
+36684992,4riETPI2HG,odds ratio,odds_ratio,1.017,1.006,1.028,0.028,JMeOsYIcbL,EAshH_Ko3h,short-term ozone exposure,asthma exacerbations defined by diurnal peak expiratory flow variation over 20%,odds ratio,odds_ratio
+24657516,241_BXk5IN,odds ratio,odds_ratio,1.07,1.03,1.11,,DC_F0GO0WQ,EAshH_Ko3h,increased short-term nitrogen dioxide concentrations,timing of new-onset asthma,odds ratio,odds_ratio
+27338430,5IMeQcfjMt,relative risk,relative_risk_ratio,1.14,1.071,1.214,,P6IzhScRdx,JmZ-RoSC5o,outdoor air pollution concentrations,respiratory diseases,relative risk,relative_risk_ratio
+31850293,svVi_25mPl,aOR,adjusted_odds_ratio,1.252,,,,Cv_Ldh0HRR,EAshH_Ko3h,SO2 (sulfur dioxide),uncontrolled-asthma rate,aOR,adjusted_odds_ratio
+22156960,Ny6JQ6xdnI,OR,odds_ratio,1.1,1.04,1.16,0.001,P6IzhScRdx,EAshH_Ko3h,short-term exposure to air pollution,hospital admissions for asthma in children,OR,odds_ratio
+25172226,uCI3f0NaZg,odds ratio,odds_ratio,1.2,0.99,1.46,0.063,P6IzhScRdx,EAshH_Ko3h,"ambient air pollution exposures (PM2.5 and nitrogen dioxide, NO2)",asthma and incident respiratory symptoms,odds ratio,odds_ratio
+22683007,DRxmqadTog,odds ratio,odds_ratio,1.14,1.06,1.24,,DC_F0GO0WQ,EAshH_Ko3h,exposure to nitrogen dioxide,incidence of childhood asthma,odds ratio,odds_ratio
+8553276,rAJoiTlUUp,relative risk,relative_risk_ratio,1.23,,,,P6IzhScRdx,xh-q4BGKbZ,air pollution episode,obstructive lung diseases mortality,relative risk,relative_risk_ratio
+37940200,gywDTEVTrb,relative risk,relative_risk_ratio,0.98,0.96,0.99,0.01,DC_F0GO0WQ,EAshH_Ko3h,NO2,emergency hospital admissions for asthma,relative risk,relative_risk_ratio
+25172226,uCI3f0NaZg,odds ratio,odds_ratio,1.2,0.99,1.46,0.063,P6IzhScRdx,EAshH_Ko3h,"ambient air pollution exposures (PM2.5 and nitrogen dioxide, NO2)",incident doctor-diagnosed asthma,odds ratio,odds_ratio
+23590261,TJC9XRI3gk,hazard ratio,hazard_ratio,1.02,,,,P6IzhScRdx,QJ7xqA4q7F,long-term exposure to outdoor particulate air pollution,lung cancer,hazard ratio,hazard_ratio
+25146191,sqllbZbQp4,hazard ratio,hazard_ratio,1.06,0.98,1.15,,DC_F0GO0WQ,IPV_lvgw9H,Nitrogen dioxide (NO2),chronic obstructive pulmonary disease diagnosis from general practitioner,hazard ratio,hazard_ratio
+38052354,9ltOVdOlSL,rate ratio,relative_risk_ratio,1.063,1.045,1.09,,DC_F0GO0WQ,EAshH_Ko3h,total industrial NO2,childhood asthma onset,rate ratio,relative_risk_ratio
+24176998,Xdm9ZJ6o_D,HR,hazard_ratio,1.57,1.09,2.24,,P6IzhScRdx,0qX3yizFGr,air pollution exposure,acute exacerbation of idiopathic pulmonary fibrosis,HR,hazard_ratio
+26211997,r6UixSfRdF,RR,relative_risk_ratio,1.08,1.04,1.12,,JMeOsYIcbL,EAshH_Ko3h,Ozone,pediatric emergency department visits with a primary diagnosis of asthma,RR,relative_risk_ratio
+23429406,bt27Gxnwr_,odds ratio,odds_ratio,1.17,1.05,1.32,0.001,P6IzhScRdx,EAshH_Ko3h,air pollution,doctor-diagnosed asthma,odds ratio,odds_ratio
+31122089,TLPSGIiZUf,OR,odds_ratio,1.007,1.003,1.011,0.05,DC_F0GO0WQ,EAshH_Ko3h,NO2 levels,overall asthma exacerbation,OR,odds_ratio
+38861673,CP9hQ7osZ8,adjusted odds ratio,adjusted_odds_ratio,3.98,1.53,10.31,,ak7lpHYuXE,JmZ-RoSC5o,PM2.5 concentrations,respiratory diseases,adjusted odds ratio,adjusted_odds_ratio
+27606967,_ET34Fosln,weighted risk ratio,relative_risk_ratio,1.5,1.2,1.9,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide exposure,membership in the early and late-onset chronic asthma trajectories,weighted risk ratio,relative_risk_ratio
+16506437,spa1xNZvtG,RR,relative_risk_ratio,1.05,1.01,1.09,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide,asthma hospital admissions,RR,relative_risk_ratio
+2337532,KLUjuX6E9P,r,pearson_r,-0.574,,,0.02,suGihS8vGs,CCVZABeZcW,total lung capacity,transfer factor for carbon monoxide (T1CO),r,pearson_r
+35780885,PJiqfG637F,cumulative relative risks (CRR),relative_risk_ratio,1.1,1.08,1.12,,Cv_Ldh0HRR,EAshH_Ko3h,Sulfur dioxide (SO),daily asthma emergency department visits,cumulative relative risks (CRR),relative_risk_ratio
+16053934,3NT923yuwL,relative risk,relative_risk_ratio,1.08,1.02,1.13,,CCVZABeZcW,IPV_lvgw9H,Carbon monoxide,hospitalization for chronic obstructive pulmonary diseases,relative risk,relative_risk_ratio
+2010368,-EG7_SyERy,r,pearson_r,0.958,,,,CCVZABeZcW,BrOMMZDIIY,carbon monoxide diffusing capacity (DL),pulmonary blood flow (Qc),r,pearson_r
+32613014,jzCU3i_UAg,r,pearson_r,0.708,,,0.05,EAshH_Ko3h,ak7lpHYuXE,annual changes of the prevalence of bronchial asthma,concentrations of air pollutants,r,pearson_r
+16984840,gVXlGfX5J-,r,pearson_r,0.72,,,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide,ED visits for asthma,r,pearson_r
+32213400,bwCBwgfRkT,RR,relative_risk_ratio,1.01,1.001,1.02,,P6IzhScRdx,EAshH_Ko3h,Daily air quality index (AQI) forecast,childhood asthma hospitalizations,RR,relative_risk_ratio
+26453943,3a8u_4smwf,odds ratio (OR),odds_ratio,1.9,1.2,3.0,0.05,P6IzhScRdx,EAshH_Ko3h,early-life exposure to ambient air pollution,doctor-diagnosed asthma in preschool children,odds ratio (OR),odds_ratio
+35980887,Sqms5UAGvQ,relative risk,relative_risk_ratio,1.046,1.04,1.051,,DC_F0GO0WQ,JmZ-RoSC5o,Nitrogen dioxide (NO2),visits due to lower respiratory tract diseases,relative risk,relative_risk_ratio
+26404109,Co3AWVp_AP,OR,odds_ratio,1.36,1.01,1.83,,CCVZABeZcW,EAshH_Ko3h,Exposure to CO (carbon monoxide) levels,risk of asthma,OR,odds_ratio
+33147059,mKVbm-W9N8,hazard ratio,hazard_ratio,1.04,1.02,1.05,0.001,DC_F0GO0WQ,IPV_lvgw9H,exposure to nitrogen dioxide (NO),incident chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+31665023,T2bEjg9Zoi,odds ratio,odds_ratio,1.78,0.73,4.37,,JMeOsYIcbL,EAshH_Ko3h,Exposures to ozone (O),risk of persistent asthma,odds ratio,odds_ratio
+35649154,7JnEApv9iY,hazard ratio,hazard_ratio,1.29,0.99,1.67,,CCVZABeZcW,s_mlNM8W5q,carbon monoxide,lung cancer risk,hazard ratio,hazard_ratio
+35417845,Ls3lP3ugsq,hazard ratio,hazard_ratio,1.13,1.11,1.14,,DC_F0GO0WQ,IPV_lvgw9H,annual concentrations of nitrogen oxides (nitrogen dioxide),risk of chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+33254941,ekuyFh08fs,odds ratio (OR),odds_ratio,1.568,1.348,1.825,0.001,DC_F0GO0WQ,EAshH_Ko3h,Nitrogen dioxide (NO) exposure,asthma emergency department visits among age group 6-18,odds ratio (OR),odds_ratio
+21325732,Ncn2dAwdxX,hazard ratio,hazard_ratio,1.26,1.07,1.48,0.001,P6IzhScRdx,QJ7xqA4q7F,long-term exposure to air pollution,lung cancer,hazard ratio,hazard_ratio
+27556031,vu3MIYKeZW,multiple regression analysis,coefficient,-19.572,,,0.05,Cv_Ldh0HRR,EAshH_Ko3h,SO2,situation of childhood asthma,multiple regression analysis,coefficient
+34116015,chYT51dPCa,adjusted odds ratio,adjusted_odds_ratio,1.26,1.03,1.55,,P6IzhScRdx,EAshH_Ko3h,early postnatal traffic-related air pollution exposure,persistent asthma at 13 years old,adjusted odds ratio,adjusted_odds_ratio
+12696653,GY7hvXzLLy,odds ratio,odds_ratio,1.26,0.9,1.77,,JMeOsYIcbL,IPV_lvgw9H,Ozone (O3),exacerbation of chronic obstructive pulmonary disease,odds ratio,odds_ratio
+38176851,Kt6tc7RmyW,OR,odds_ratio,1.22,1.03,1.44,,oJFe31eltz,IPV_lvgw9H,"occupational exposure to vapors, gases, dust or fumes",chronic obstructive pulmonary disease,OR,odds_ratio
+32094459,6jX4zW2JYY,odds ratio,odds_ratio,1.05,1.02,1.09,,JMeOsYIcbL,EAshH_Ko3h,ambient PM and ozone concentrations,"acute asthma visits (office, urgent, emergency, and hospitalization)",odds ratio,odds_ratio
+23750510,Kh5vp_RhqM,odds ratio,odds_ratio,1.17,1.04,1.31,,ak7lpHYuXE,EAshH_Ko3h,early-life exposure to air pollutants,subsequent asthma diagnosis,odds ratio,odds_ratio
+30125857,YTQNWdMaZR,odds ratio,odds_ratio,1.24,1.08,1.43,,DC_F0GO0WQ,EAshH_Ko3h,outdoor nitrogen dioxide,current asthma,odds ratio,odds_ratio
+21663946,9fYp9Rz6q1,r,pearson_r,0.0,,,,P6IzhScRdx,EAshH_Ko3h,traffic-related air pollution (O3),asthma admission rates,r,pearson_r
+2493689,Ca1dvMGcB_,R,pearson_r,0.7,,,0.01,DC_F0GO0WQ,V4aKFMKpdE,nitrogen dioxide (NO2) exposure,lung water,R,pearson_r
+35417845,Ls3lP3ugsq,hazard ratio,hazard_ratio,1.19,1.16,1.21,,DC_F0GO0WQ,IPV_lvgw9H,annual concentrations of nitrogen dioxide,risk of chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+35417845,Ls3lP3ugsq,hazard ratio,hazard_ratio,1.19,1.16,1.21,,P6IzhScRdx,IPV_lvgw9H,"annual concentrations of air pollutions, including particle matter (PM, PM), nitrogen oxides , and nitrogen dioxide",risk of chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+32890216,SQgh15318d,OR,odds_ratio,15.0,,,0.01,ak7lpHYuXE,EAshH_Ko3h,PM2.5 concentrations,asthma and upper respiratory infection admissions,OR,odds_ratio
+35782232,DhruHc6Tfa,correlation coefficient (r),pearson_r,0.41,,,0.001,JFtWgkkJ4M,CCVZABeZcW,Pulmonary artery volume (PAV),Diffusion capacity for carbon monoxide (DLco),correlation coefficient (r),pearson_r
+20939259,XWGh2ow3md,relative risk,relative_risk_ratio,2.1,,,,P6IzhScRdx,IPV_lvgw9H,work-place air pollution,chronic obstructive pulmonary disease,relative risk,relative_risk_ratio
+17582483,ISnnY-LNp7,relative risk,relative_risk_ratio,1.75,1.1,2.78,,DC_F0GO0WQ,EAshH_Ko3h,Nitrogen dioxide (NO(2)) exposure,asthma symptoms,relative risk,relative_risk_ratio
+27653737,trs6gvUGV7,hazard ratio,hazard_ratio,1.15,1.03,1.27,0.001,DC_F0GO0WQ,IPV_lvgw9H,nitrogen dioxide,incident chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+25146191,sqllbZbQp4,hazard ratio,hazard_ratio,1.06,0.98,1.15,,DC_F0GO0WQ,IPV_lvgw9H,Nitrogen dioxide (NO2),admission to hospital for chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+25407437,w6JYUnqtNh,odds ratio,odds_ratio,0.7,0.4,2.7,,P6IzhScRdx,EAshH_Ko3h,Exposure to traffic-related air pollution (TRAP),"objective, physician-diagnosed asthma",odds ratio,odds_ratio
+19251785,5AiLfSjs0H,odds ratio (OR),odds_ratio,1.54,1.0,2.36,,DC_F0GO0WQ,EAshH_Ko3h,levels of nitrogen dioxide (NO2),incident cases of asthma,odds ratio (OR),odds_ratio
+20088925,iTH6dvpFzg,relative risk (RR),relative_risk_ratio,1.1,1.07,1.13,0.001,P6IzhScRdx,9J7QjcbE7R,daily air pollution,pulmonary embolism,relative risk (RR),relative_risk_ratio
+35131328,uUrtRB9xbA,OR,odds_ratio,0.91,0.86,0.97,,Cv_Ldh0HRR,JmZ-RoSC5o,exposure to sulphur dioxide (SO),respiratory diseases,OR,odds_ratio
+21034384,Flc6F87Rsi,odds ratio,odds_ratio,1.7,1.08,2.69,,DC_F0GO0WQ,EAshH_Ko3h,24-hour average background nitrogen dioxide (NO2),hospital emergency department presentations for asthma among children,odds ratio,odds_ratio
+12507172,ruU45Gqpw8,r,pearson_r,0.63,,,,DC_F0GO0WQ,EAshH_Ko3h,NO2 concentrations,prevalence rates of asthma,r,pearson_r
+21470798,hN4Ld8PGUX,mean_difference_unstandardized,mean_difference_unstandardized,1.0,,,0.8,IPV_lvgw9H,CCVZABeZcW,chronic obstructive pulmonary disease group after stereotactic body radiotherapy treatment [vs chronic obstructive pulmonary disease group before stereotactic body radiotherapy treatment],Diffusing capacity of the lungs for carbon monoxide (DL(CO)),mean_difference_unstandardized,mean_difference_unstandardized
+6605060,NZ9mQoQo5z,r,pearson_r,0.46,,,0.001,BrOMMZDIIY,CCVZABeZcW,diameter of the midzonal pulmonary vessels on the plain chest radiographs,transfer factor (diffusing capacity for carbon monoxide),r,pearson_r
+8162885,wQgUrd4sGz,RR,relative_risk_ratio,1.37,1.02,1.73,,JMeOsYIcbL,EAshH_Ko3h,exposure to ozone,emergency visits to a hospital for childhood asthma,RR,relative_risk_ratio
+31487206,Xw-THGWr8g,odds ratio,odds_ratio,2.06,1.19,3.49,,DC_F0GO0WQ,QJ7xqA4q7F,nitrogen dioxide,lung cancer,odds ratio,odds_ratio
+21764049,cgHpIl28Pc,risk ratio,relative_risk_ratio,1.066,1.031,1.102,,ak7lpHYuXE,EAshH_Ko3h,"concentrations of pollutants fine particles (PM2.5), CO, NO2 and SO2",asthma morbidity,risk ratio,relative_risk_ratio
+28850858,lJxVC1TH2t,hazard ratio,hazard_ratio,1.24,1.11,1.39,,P6IzhScRdx,IPV_lvgw9H,long-term exposure to fine particulate matter air pollution,chronic obstructive pulmonary disease (COPD) mortality,hazard ratio,hazard_ratio
+8553276,rAJoiTlUUp,relative risk,relative_risk_ratio,1.43,,,,P6IzhScRdx,xh-q4BGKbZ,air pollution episode,obstructive lung diseases hospital admissions (elderly),relative risk,relative_risk_ratio
+11322091,N4Gvz0fJXo,odds ratio,odds_ratio,1.98,,,,P6IzhScRdx,EAshH_Ko3h,long-term exposure to air pollution,doctor-diagnosed asthma,odds ratio,odds_ratio
+33033020,Y5fkCn2Fsj,RR,relative_risk_ratio,1.26,1.02,1.55,,CCVZABeZcW,EAshH_Ko3h,carbon monoxide,asthma hospitalisation rate,RR,relative_risk_ratio
+34116015,chYT51dPCa,adjusted odds ratio,adjusted_odds_ratio,1.21,1.02,1.43,,P6IzhScRdx,EAshH_Ko3h,early postnatal traffic-related air pollution exposure,current asthma,adjusted odds ratio,adjusted_odds_ratio
+35780885,PJiqfG637F,cumulative relative risks (CRR),relative_risk_ratio,0.91,0.89,0.94,,CCVZABeZcW,EAshH_Ko3h,Carbon monoxide (CO),daily asthma emergency department visits,cumulative relative risks (CRR),relative_risk_ratio
+35417845,Ls3lP3ugsq,hazard ratio,hazard_ratio,1.13,1.11,1.14,,P6IzhScRdx,IPV_lvgw9H,"annual concentrations of air pollutions, including particle matter (PM, PM), nitrogen oxides , and nitrogen dioxide",risk of chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+28788106,9T3-a8D7HC,incidence rate ratio,incident_rate_ratio,1.71,,,,Cv_Ldh0HRR,QJ7xqA4q7F,residential exposure to sulfur dioxide (SO2),lung cancer,incidence rate ratio,incident_rate_ratio
+36437665,gxXEPXi6gX,pooled relative risks,relative_risk_ratio,1.016,1.012,1.021,,Cv_Ldh0HRR,IPV_lvgw9H,SO2 exposure (per 10 μg/m3),chronic obstructive pulmonary diseases (carbon monoxidePD),pooled relative risks,relative_risk_ratio
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.1,,,0.013,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+28434561,u7MbqVL4Qu,relative risk,relative_risk_ratio,1.047,1.025,1.069,,JMeOsYIcbL,EAshH_Ko3h,daily 8-hour maximum ozone concentrations,asthma hospital admissions,relative risk,relative_risk_ratio
+34202026,erc0fxmtwY,rate ratio,relative_risk_ratio,1.84,1.05,3.22,0.032,P6IzhScRdx,EAshH_Ko3h,industrial incident and resultant outdoor air pollution exceedances,emergency department visits for asthma exacerbations,rate ratio,relative_risk_ratio
+35603254,873Qk_GjSQ,Pearson coefficient,coefficient,0.63,,,0.05,DC_F0GO0WQ,EAshH_Ko3h,concentrations of nitrogen dioxide,children's asthma incidence rate,Pearson coefficient,coefficient
+35649154,7JnEApv9iY,hazard ratio,hazard_ratio,1.12,0.95,1.32,,DC_F0GO0WQ,s_mlNM8W5q,nitrogen dioxide,lung cancer risk,hazard ratio,hazard_ratio
+40279132,-z9weNkl16,relative risk,relative_risk_ratio,1.85,1.17,2.92,0.05,Cv_Ldh0HRR,EAshH_Ko3h,SO2 exposure levels (≥75 ppb),absenteeism in students with asthma,relative risk,relative_risk_ratio
+32890216,SQgh15318d,OR,odds_ratio,17.3,,,0.01,ak7lpHYuXE,EAshH_Ko3h,PM2.5 concentrations,asthma and upper respiratory infection,OR,odds_ratio
+20084840,IWxOy44k8r,relative risk,relative_risk_ratio,1.08,1.0,1.18,,JMeOsYIcbL,EAshH_Ko3h,Ozone exposure,asthma visits to emergency departments in children,relative risk,relative_risk_ratio
+29323928,vpRwoCYrIY,adjusted odds ratio,adjusted_odds_ratio,1.7,1.24,2.32,,P6IzhScRdx,IPV_lvgw9H,Household air pollution exposure,chronic obstructive pulmonary disease,adjusted odds ratio,adjusted_odds_ratio
+33254941,ekuyFh08fs,odds ratio (OR),odds_ratio,1.56,1.428,1.703,0.001,DC_F0GO0WQ,EAshH_Ko3h,Nitrogen dioxide (NO) exposure,asthma emergency department visits,odds ratio (OR),odds_ratio
+34442463,cvNlMTbZGG,OR,odds_ratio,1.29,1.01,1.65,0.01,Cv_Ldh0HRR,A71KVJn6T6,sulfur dioxide,restrictive and mixed lung diseases,OR,odds_ratio
+30479352,vsrh68_RBO,RR,relative_risk_ratio,1.228,1.091,1.381,0.001,ak7lpHYuXE,epn8cUn0y3,"ambient air pollutants (particulate matter with aerodynamic diameter <2.5 μm (PM), sulfur dioxide (SO),nitrogen dioxide (NO), ozone (O), and carbon monoxide )",risk of pulmonary tuberculosis,RR,relative_risk_ratio
+24657516,241_BXk5IN,odds ratio (OR),odds_ratio,1.05,1.02,1.08,0.001,JMeOsYIcbL,EAshH_Ko3h,ambient ozone (O3),timing of new-onset asthma,odds ratio (OR),odds_ratio
+29419440,zwzt1YN_C6,Hazard Ratio (HR),hazard_ratio,1.06,1.03,1.08,,P6IzhScRdx,EAshH_Ko3h,Prenatal exposure to air pollution,childhood asthma incidence,Hazard Ratio (HR),hazard_ratio
+35417845,Ls3lP3ugsq,hazard ratio,hazard_ratio,1.17,1.15,1.19,,P6IzhScRdx,IPV_lvgw9H,"annual concentrations of air pollutions, including particle matter (PM, PM), nitrogen oxides , and nitrogen dioxide",risk of chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+35618005,gnIxa1ywpy,odds ratio,odds_ratio,3.607,1.552,8.385,0.001,DC_F0GO0WQ,EAshH_Ko3h,exposure to nitrogen dioxide,risk of emergency department visits for asthma in school-age children,odds ratio,odds_ratio
+35622660,DN2Mtxg-Y0,OR,odds_ratio,1.259,1.212,1.308,,JMeOsYIcbL,JmZ-RoSC5o,O3,ED visits for pediatric respiratory diseases,OR,odds_ratio
+29558916,hVIzWINVbl,Relative Risk,relative_risk_ratio,1.03,1.01,1.05,,rqFj5Lvvwf,JmZ-RoSC5o,O3 (Ozone) exposure on lag 2,mortality from respiratory diseases,Relative Risk,relative_risk_ratio
+34621758,IGRs66JL2P,odds ratio,odds_ratio,1.798,,,0.05,rqFj5Lvvwf,1w7NpJrycz,ozone (O) level of exposure,panlobular emphysema,odds ratio,odds_ratio
+25262954,0WuI4UCX9e,Spearman rank correlation,spearman_correlation,-0.34,,,0.025,FCBqAD2YzH,CCVZABeZcW,quantitative lung fibrosis score,carbon monoxide diffusion capacity (DLCO),Spearman rank correlation,spearman_correlation
+24804336,kJXEvzhuHu,OR,odds_ratio,0.51,0.18,1.46,0.21,P6IzhScRdx,IPV_lvgw9H,residence in areas with high air pollution (Eordea vs Grevena),development of chronic obstructive pulmonary disease,OR,odds_ratio
+19440507,6tYYCONaEz,odds ratio,odds_ratio,1.1,1.0,1.22,,Cv_Ldh0HRR,EAshH_Ko3h,short-term variations in sulfur dioxide levels,risk of asthma episodes,odds ratio,odds_ratio
+19251785,5AiLfSjs0H,odds ratio (OR),odds_ratio,1.46,1.07,1.99,0.05,DC_F0GO0WQ,EAshH_Ko3h,levels of nitrogen dioxide (NO2),onset cases of asthma,odds ratio (OR),odds_ratio
+32371276,G0vc4AmUCO,odds ratio,odds_ratio,1.63,1.01,2.6,0.05,DC_F0GO0WQ,EAshH_Ko3h,long-term ambient nitrogen dioxide exposure,new cases of asthma-associated outcomes,odds ratio,odds_ratio
+21106102,zWrJoevi9R,OR,odds_ratio,1.95,1.0,3.7,,P6IzhScRdx,z0FmiQio14,exposure to air pollution,frequency of pulmonary function alterations,OR,odds_ratio
+34442463,cvNlMTbZGG,OR,odds_ratio,1.29,1.01,1.65,,Cv_Ldh0HRR,A71KVJn6T6,sulfur dioxide,restrictive and mixed lung diseases,OR,odds_ratio
+33932714,CIvIW7qtGg,RR,relative_risk_ratio,1.21,0.94,1.55,,DC_F0GO0WQ,IPV_lvgw9H,Nitrogen dioxide,hospitalization risk for chronic obstructive pulmonary disease (COPD),RR,relative_risk_ratio
+32094459,6jX4zW2JYY,odds ratio,odds_ratio,1.08,1.02,1.14,,JMeOsYIcbL,EAshH_Ko3h,ambient PM and ozone concentrations,"acute asthma visits (office, urgent, emergency, and hospitalization)",odds ratio,odds_ratio
+25112820,wI2TQWuJWR,odds ratio,odds_ratio,1.31,1.21,1.41,,JMeOsYIcbL,EAshH_Ko3h,O3,diagnosed-asthma,odds ratio,odds_ratio
+37852778,mAdpSBnQ5U,OR,odds_ratio,3.28,2.35,4.69,,P6IzhScRdx,IPV_lvgw9H,Exposure to ambient O3 and household air pollution,chronic obstructive pulmonary disease,OR,odds_ratio
+31151302,-kZ6UupqYJ,adjusted odds ratio,adjusted_odds_ratio,1.7,1.45,1.99,,P6IzhScRdx,EAshH_Ko3h,air pollution/irritants,poorly-controlled asthma,adjusted odds ratio,adjusted_odds_ratio
+40845646,LaR7wDfmQ0,odds ratio,odds_ratio,1.9,1.04,3.48,,Nw53jOQJ-3,s_mlNM8W5q,Indoor Time Duration (Proxy of Cumulative Exposure to Indoor Air Pollution),lung cancer risk,odds ratio,odds_ratio
+36850970,tjDMJ8zud6,relative risk,relative_risk_ratio,1.166,1.051,1.294,,ak7lpHYuXE,EAshH_Ko3h,PM2.5 exposure,asthma emergency room visits,relative risk,relative_risk_ratio
+29323928,vpRwoCYrIY,adjusted odds ratio,adjusted_odds_ratio,1.41,1.18,1.68,0.001,P6IzhScRdx,IPV_lvgw9H,Household air pollution exposure,chronic obstructive pulmonary disease outcomes,adjusted odds ratio,adjusted_odds_ratio
+31850293,svVi_25mPl,aOR,adjusted_odds_ratio,1.281,,,,DC_F0GO0WQ,EAshH_Ko3h,NO2 (nitrogen dioxide) levels,uncontrolled-asthma rate,aOR,adjusted_odds_ratio
+31063895,EqkVapzpZR,odds ratio,odds_ratio,1.841,1.117,3.036,0.05,DC_F0GO0WQ,IPV_lvgw9H,NO2,pneumonia in chronic obstructive pulmonary disease patients,odds ratio,odds_ratio
+35973040,hx8sGxpcx-,relative risk,relative_risk_ratio,1.028,1.022,1.035,,Cv_Ldh0HRR,JmZ-RoSC5o,SO2 (sulfur dioxide),respiratory diseases,relative risk,relative_risk_ratio
+21720882,v2ESXOaLIO,OR,odds_ratio,2.3,1.2,4.2,,P6IzhScRdx,EAshH_Ko3h,"occupational exposure to air pollution from dust, smoke, fumes or vapours",asthma,OR,odds_ratio
+31239087,zaJqIAmFN3,RR,relative_risk_ratio,1.3,1.29,1.32,,DC_F0GO0WQ,EAshH_Ko3h,24-hour nitrogen dioxide,asthma attacks,RR,relative_risk_ratio
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.12,,,0.003,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+38905932,ZQSCYj5QTp,odds ratio,odds_ratio,1.02,1.01,1.03,0.001,ak7lpHYuXE,EAshH_Ko3h,ground-level air pollutants,childhood persistent asthma,odds ratio,odds_ratio
+35619017,5Qzckoczgn,OR,odds_ratio,2.63,0.86,7.96,,JMeOsYIcbL,EAshH_Ko3h,presence of O3 (ozone exposure),self-reported asthma symptoms,OR,odds_ratio
+33233547,jySXys0lNU,OR,odds_ratio,1.04,1.0,1.07,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide (NO),asthma-related emergency department visits in adults,OR,odds_ratio
+20707667,JTccbD0Iop,OR,odds_ratio,7.2,3.6,14.3,,P6IzhScRdx,EAshH_Ko3h,industrial air pollution exposure during the first years of life,presence of asthmatic symptoms in children at school age,OR,odds_ratio
+32213400,bwCBwgfRkT,RR,relative_risk_ratio,1.011,1.0,1.023,,P6IzhScRdx,EAshH_Ko3h,Daily air quality index (AQI) forecast,childhood asthma hospitalizations,RR,relative_risk_ratio
+9247526,7xd5nLlAbM,mean_difference_unstandardized,mean_difference_unstandardized,1.5,,,0.48,IPV_lvgw9H,CCVZABeZcW,Amiodarone Group with chronic obstructive pulmonary disease at 2 Years [vs Placebo Group with chronic obstructive pulmonary disease at 2 Years],Diffuse Capacity of Carbon Monoxide (DLCO),mean_difference_unstandardized,mean_difference_unstandardized
+17308332,XuPeIW8QYJ,odds ratio,odds_ratio,1.28,,,0.05,P6IzhScRdx,EAshH_Ko3h,proximity to air pollution point sources,risk of asthma attacks,odds ratio,odds_ratio
+26531803,7MOjQ5seSK,relative risk,relative_risk_ratio,1.21,1.03,1.41,,ak7lpHYuXE,JmZ-RoSC5o,daily concentrations of PM2.5,emergency room visits for respiratory diseases,relative risk,relative_risk_ratio
+8553276,rAJoiTlUUp,relative risk,relative_risk_ratio,1.0,,,,P6IzhScRdx,EAshH_Ko3h,air pollution episode,asthma hospital admissions (children),relative risk,relative_risk_ratio
+27338430,5IMeQcfjMt,relative risk,relative_risk_ratio,1.08,0.967,1.205,,P6IzhScRdx,JmZ-RoSC5o,outdoor air pollution concentrations,respiratory diseases,relative risk,relative_risk_ratio
+33233547,jySXys0lNU,OR,odds_ratio,1.13,1.0,1.28,,CCVZABeZcW,EAshH_Ko3h,carbon monoxide,asthma-related emergency department visits in adults,OR,odds_ratio
+14582813,OFaqV2cocJ,odds ratio,odds_ratio,1.12,1.04,1.22,,ak7lpHYuXE,EAshH_Ko3h,exposure to air pollutants,more serious asthma attack,odds ratio,odds_ratio
+34251275,3YyKzEcb0E,odds ratio,odds_ratio,2.45,1.39,4.56,0.001,CCVZABeZcW,0qX3yizFGr,carbon monoxide exposure,idiopathic pulmonary fibrosis mortality,odds ratio,odds_ratio
+26453943,3a8u_4smwf,odds ratio (OR),odds_ratio,1.85,1.22,2.79,0.05,P6IzhScRdx,EAshH_Ko3h,early-life exposure to ambient air pollution,doctor-diagnosed asthma in preschool children,odds ratio (OR),odds_ratio
+31217483,3RqIPOEPX4,path coefficient,coefficient,0.09,-0.02,0.2,,P6IzhScRdx,EAshH_Ko3h,air pollution,risk of adult-onset asthma,path coefficient,coefficient
+33209473,2JcINW7AO3,OR,odds_ratio,2.71,1.16,6.34,,Nw53jOQJ-3,V4aKFMKpdE,composite cumulative risk of indoor pollution index,lung function,OR,odds_ratio
+11153587,9WPMA9gITb,odds ratio,odds_ratio,1.13,1.02,1.26,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide (NO2) exposure,daytime asthma attacks,odds ratio,odds_ratio
+20084840,IWxOy44k8r,relative risk,relative_risk_ratio,1.06,1.01,1.12,,JMeOsYIcbL,EAshH_Ko3h,Ozone exposure,asthma visits to emergency departments in adults,relative risk,relative_risk_ratio
+18467319,FOMzBk8qFK,odds ratio,odds_ratio,1.056,0.979,1.139,,Cv_Ldh0HRR,EAshH_Ko3h,sulfur dioxide,asthma attacks,odds ratio,odds_ratio
+9163648,kz7q71rIpm,relative risk,relative_risk_ratio,1.04,1.02,1.07,,rqFj5Lvvwf,IPV_lvgw9H,daily mean level of ozone (8 h),hospital admissions for chronic obstructive pulmonary disease,relative risk,relative_risk_ratio
+40520482,wUi1Fbshjf,hazard ratio,hazard_ratio,1.19,1.05,1.34,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide,incident asthma by age 10 years,hazard ratio,hazard_ratio
+38075553,KVbR1SfR51,OR,odds_ratio,2.1,1.0,4.1,,Nw53jOQJ-3,EAshH_Ko3h,indoor living conditions,asthma,OR,odds_ratio
+16506437,spa1xNZvtG,RR,relative_risk_ratio,1.06,1.01,1.11,,DC_F0GO0WQ,IPV_lvgw9H,nitrogen dioxide,Chronic Obstructive Pulmonary Disease hospital admissions,RR,relative_risk_ratio
+29144419,RfXgx3oQy2,odds ratio,odds_ratio,1.02,1.01,1.03,,P6IzhScRdx,EAshH_Ko3h,air pollution exposure,asthma,odds ratio,odds_ratio
+18956125,rymAmI1urs,relative risk,relative_risk_ratio,1.0,,,,oJFe31eltz,EAshH_Ko3h,"occupational exposure to dust, gases, and fumes","respiratory symptoms, obstructive lung diseases, or the use of asthma medication",relative risk,relative_risk_ratio
+30680626,rWwY98S0sy,RR,relative_risk_ratio,1.057,1.01,1.107,0.001,ak7lpHYuXE,EAshH_Ko3h,particulate air pollutants,hospitalizations for asthma,RR,relative_risk_ratio
+31217483,3RqIPOEPX4,path coefficient,coefficient,0.19,-0.004,0.38,,P6IzhScRdx,EAshH_Ko3h,air pollution,risk of adult-onset asthma (overweight subjects),path coefficient,coefficient
+37042935,SUY_pxWUes,relative risk,relative_risk_ratio,1.3,1.0,1.7,,JMeOsYIcbL,EAshH_Ko3h,ozone (O3),child asthma and wheeze at age 4-6 years,relative risk,relative_risk_ratio
+20088925,iTH6dvpFzg,relative risk (RR),relative_risk_ratio,1.05,1.02,1.08,0.001,P6IzhScRdx,9J7QjcbE7R,daily air pollution,pulmonary embolism,relative risk (RR),relative_risk_ratio
+9927346,caFmfXGfaG,relative risk (RR),relative_risk_ratio,4.19,1.81,9.69,,JMeOsYIcbL,s_mlNM8W5q,Ozone,lung cancer mortality for males,relative risk (RR),relative_risk_ratio
+36397327,iF9ciWpGde,r,pearson_r,-0.281,-0.331,-0.228,,JMeOsYIcbL,EAshH_Ko3h,ozone levels,outpatient visits of asthma patients,r,pearson_r
+32371276,G0vc4AmUCO,odds ratio,odds_ratio,1.71,1.02,2.86,0.05,DC_F0GO0WQ,EAshH_Ko3h,long-term ambient nitrogen dioxide exposure,more than two or more asthma symptom score,odds ratio,odds_ratio
+23076649,JMkW4_z6PY,odds ratio (OR),odds_ratio,1.17,1.02,1.35,0.05,DC_F0GO0WQ,JmZ-RoSC5o,daily ambient levels of nitrogen dioxide (NO(2)),respiratory symptom-related doctor visits in adults with different patterns of underlying chronic respiratory disease,odds ratio (OR),odds_ratio
+35307034,mndyHFLlQq,risk ratio,relative_risk_ratio,1.101,1.013,1.195,0.001,DC_F0GO0WQ,IPV_lvgw9H,exposure to nitrogen dioxide,hospital admissions of chronic obstructive pulmonary disease and asthma patients,risk ratio,relative_risk_ratio
+35618005,gnIxa1ywpy,odds ratio,odds_ratio,1.359,1.049,1.76,0.001,ak7lpHYuXE,EAshH_Ko3h,"exposure to air pollutants (particles with diameter ≤10 μm (PM), particles with diameter ≤2.5 μm (PM), ozone (O), and nitrogen dioxide )",risk of emergency department visits for asthma in children,odds ratio,odds_ratio
+26859438,fwmfarWZTn,odds ratio,odds_ratio,1.42,1.1,1.84,0.05,DC_F0GO0WQ,epn8cUn0y3,nitrogen dioxide (NO2),pulmonary tuberculosis odds ratios,odds ratio,odds_ratio
+18923331,9eNvG_nNPV,odds ratio,odds_ratio,1.43,1.02,2.01,,P6IzhScRdx,EAshH_Ko3h,modeled background levels of traffic-related air pollution at the subjects' home addresses,self-reported asthma incidence,odds ratio,odds_ratio
+19965811,r5WBrCoSNR,odds ratio,odds_ratio,1.28,1.1,1.49,,DC_F0GO0WQ,EAshH_Ko3h,exposure to nitrogen dioxide (NO2),incidence of asthma,odds ratio,odds_ratio
+11843324,ZTxvqvFEk4,r,pearson_r,0.75,,,0.0001,V4aKFMKpdE,CCVZABeZcW,time to half clearance of pertechnegas of the lung,"carbon monoxide diffusing capacity of the lung (DL,CO)",r,pearson_r
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.1,,,0.015,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+34088754,ACc_NQetYr,hazard ratio,hazard_ratio,1.17,1.1,1.25,0.001,DC_F0GO0WQ,EAshH_Ko3h,long-term exposure to nitrogen dioxide (NO2),asthma incidence in adults,hazard ratio,hazard_ratio
+17308332,XuPeIW8QYJ,odds ratio,odds_ratio,1.35,,,0.05,P6IzhScRdx,EAshH_Ko3h,proximity to air pollution point sources,risk of asthma attacks,odds ratio,odds_ratio
+35618005,gnIxa1ywpy,odds ratio,odds_ratio,1.376,1.044,1.813,0.001,DC_F0GO0WQ,EAshH_Ko3h,exposure to nitrogen dioxide,risk of emergency department visits for asthma in school-age children,odds ratio,odds_ratio
+19017701,UwMXOuded5,odds ratio,odds_ratio,2.22,1.61,3.07,0.001,JMeOsYIcbL,EAshH_Ko3h,8-hour average of ozone during April-September (O(3)-8 h),asthma severity,odds ratio,odds_ratio
+29848979,eAhTAm96KR,OR,odds_ratio,1.25,1.1,1.41,,DC_F0GO0WQ,EAshH_Ko3h,exposures to nitrogen dioxide (NO2),subsequent childhood asthma diagnosis,OR,odds_ratio
+21720882,v2ESXOaLIO,OR,odds_ratio,2.8,1.07,7.4,,P6IzhScRdx,EAshH_Ko3h,"occupational exposure to air pollution from dust, smoke, fumes or vapours",asthma,OR,odds_ratio
+29227938,PxhEg7UidE,RR,relative_risk_ratio,1.07,,,,DC_F0GO0WQ,IPV_lvgw9H,increment in nitrogen dioxide,relative risks for acute exacerbation of chronic obstructive pulmonary disease,RR,relative_risk_ratio
+21447960,cEOS86edx4,RR,relative_risk_ratio,1.25,1.01,1.55,,CCVZABeZcW,EAshH_Ko3h,carbon monoxide levels,asthma hospitalization,RR,relative_risk_ratio
+26859438,fwmfarWZTn,odds ratio,odds_ratio,1.29,0.97,1.71,,DC_F0GO0WQ,epn8cUn0y3,nitrogen dioxide (NO2),pulmonary tuberculosis odds ratios,odds ratio,odds_ratio
+22524651,Oyqo3ZSexE,odds ratio (OR),odds_ratio,1.025,,,0.05,rqFj5Lvvwf,EAshH_Ko3h,1-hour maximum ozone level,asthma emergency department visits,odds ratio (OR),odds_ratio
+28477578,h31R0Bi9Yc,relative risk (RR),relative_risk_ratio,2.0,,,,Cv_Ldh0HRR,IPV_lvgw9H,short-term exposure to air sulfur dioxide,hospital admissions due to chronic obstructive pulmonary disease (COPD),relative risk (RR),relative_risk_ratio
+16547965,AMnAGwmU7c,mean_difference_unstandardized,mean_difference_unstandardized,0.1,,,0.68,EAshH_Ko3h,CCVZABeZcW,infrequent episodic asthmatic children [vs healthy schoolchildren],exhaled Carbon monoxide levels,mean_difference_unstandardized,mean_difference_unstandardized
+23429406,bt27Gxnwr_,odds ratio,odds_ratio,1.4,1.19,1.64,0.001,P6IzhScRdx,EAshH_Ko3h,air pollution,respiratory symptoms and asthma in children,odds ratio,odds_ratio
+32905892,pRddqtUfMu,odds ratio,odds_ratio,1.2,1.02,1.42,,DC_F0GO0WQ,EAshH_Ko3h,exposure to higher ambient nitrogen dioxide,prevalence of incident asthma cases,odds ratio,odds_ratio
+26859438,fwmfarWZTn,odds ratio,odds_ratio,1.5,1.15,1.95,0.05,CCVZABeZcW,epn8cUn0y3,carbon monoxide,pulmonary tuberculosis odds ratios,odds ratio,odds_ratio
+10862161,uxvCdBwgqj,relative risk,relative_risk_ratio,1.52,1.06,2.19,,JMeOsYIcbL,EAshH_Ko3h,daily variations of ozone levels,daily asthma visits,relative risk,relative_risk_ratio
+37403464,IXfn7T-HtR,hazards ratio,hazard_ratio,1.25,1.1,1.41,0.05,P6IzhScRdx,QJ7xqA4q7F,Household air pollution patterns,lung cancer,hazards ratio,hazard_ratio
+9163648,kz7q71rIpm,relative risk,relative_risk_ratio,1.02,0.98,1.06,,Cv_Ldh0HRR,IPV_lvgw9H,daily mean level of sulphur dioxide,hospital admissions for chronic obstructive pulmonary disease,relative risk,relative_risk_ratio
+32640508,o3h4xQDa42,OR,odds_ratio,1.082,1.008,1.162,0.03,ak7lpHYuXE,EAshH_Ko3h,ambient air pollutants,hospital readmissions for pediatric asthma,OR,odds_ratio
+35544998,cLP4UeCUFN,hazard ratio,hazard_ratio,1.13,0.94,1.36,,P6IzhScRdx,EAshH_Ko3h,long-term exposure to air pollution,mortality from asthma,hazard ratio,hazard_ratio
+25112820,wI2TQWuJWR,odds ratio,odds_ratio,1.23,1.14,1.32,,Cv_Ldh0HRR,EAshH_Ko3h,SO2,diagnosed-asthma,odds ratio,odds_ratio
+29551329,6Su6c7sNas,prevalence ratio,prevalence_ratio,4.88,3.74,6.37,,EAshH_Ko3h,P6IzhScRdx,Asthma,discussing with a health professional strategies to reduce air pollution exposure,prevalence ratio,prevalence_ratio
+28434561,u7MbqVL4Qu,relative risk,relative_risk_ratio,1.018,1.005,1.032,,JMeOsYIcbL,EAshH_Ko3h,average daily 8-hour maximum ozone concentrations,asthma hospital admissions,relative risk,relative_risk_ratio
+38263452,GnypIFky-g,OR,odds_ratio,1.595,,,0.05,ak7lpHYuXE,EAshH_Ko3h,PM2.5 exposure,physician-diagnosed asthma,OR,odds_ratio
+39919593,AjeiA38E8V,hazard ratio,hazard_ratio,1.13,1.05,1.22,0.001,ak7lpHYuXE,EAshH_Ko3h,PM2.5 exposure,incident asthma,hazard ratio,hazard_ratio
+32094459,6jX4zW2JYY,odds ratio,odds_ratio,1.1,1.07,1.13,,JMeOsYIcbL,EAshH_Ko3h,ambient PM and ozone concentrations,"acute asthma visits (office, urgent, emergency, and hospitalization)",odds ratio,odds_ratio
+30479352,vsrh68_RBO,RR,relative_risk_ratio,1.442,1.028,2.024,0.001,ak7lpHYuXE,epn8cUn0y3,"ambient air pollutants (particulate matter with aerodynamic diameter <2.5 μm (PM), sulfur dioxide (SO),nitrogen dioxide (NO), ozone (O), and carbon monoxide )",risk of pulmonary tuberculosis,RR,relative_risk_ratio
+21325732,Ncn2dAwdxX,hazard ratio,hazard_ratio,1.17,1.1,1.26,0.001,P6IzhScRdx,QJ7xqA4q7F,long-term exposure to air pollution,lung cancer,hazard ratio,hazard_ratio
+37403464,IXfn7T-HtR,hazards ratio,hazard_ratio,1.25,1.08,1.46,0.05,P6IzhScRdx,QJ7xqA4q7F,exposure to four Household air pollution sources (solid fuels for cooking/heating/stove and environmental tobacco smoke exposure),lung cancer,hazards ratio,hazard_ratio
+18467319,FOMzBk8qFK,odds ratio,odds_ratio,1.025,0.99,1.062,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide,asthma attacks,odds ratio,odds_ratio
+36029546,bd9YEqy6qX,r,pearson_r,0.132,,,0.001,DC_F0GO0WQ,EAshH_Ko3h,Nitrogen dioxide (NO) concentration levels,asthma-related hospital admissions,r,pearson_r
+41405000,fJR_EO6UzO3R,relative risk,relative_risk_ratio,1.14,1.03,1.25,,ak7lpHYuXE,EAshH_Ko3h,PM2.5 exposure,asthma risk,relative risk,relative_risk_ratio
+32640508,o3h4xQDa42,OR,odds_ratio,1.08,1.005,1.161,0.036,ak7lpHYuXE,EAshH_Ko3h,ambient air pollutants,hospital readmissions for pediatric asthma,OR,odds_ratio
+23590261,TJC9XRI3gk,hazard ratio,hazard_ratio,1.05,,,,P6IzhScRdx,QJ7xqA4q7F,long-term exposure to outdoor particulate air pollution,lung cancer,hazard ratio,hazard_ratio
+25365267,FRkPw4A351,Odds ratio (OR),odds_ratio,1.11,1.01,1.21,,P6IzhScRdx,EAshH_Ko3h,Ambient air pollution quality,Emergency department visits for asthma,Odds ratio (OR),odds_ratio
+22156960,Ny6JQ6xdnI,OR,odds_ratio,1.07,1.03,1.12,0.001,P6IzhScRdx,EAshH_Ko3h,short-term exposure to air pollution,hospital admissions for asthma in children,OR,odds_ratio
+9387953,aqzoxD9vmh,prevalence odds ratios (PORs),odds_ratio,5.81,1.27,26.5,0.002,DC_F0GO0WQ,EAshH_Ko3h,outdoor nitrogen dioxide (NO2),prevalence of asthma,prevalence odds ratios (PORs),odds_ratio
+16053934,3NT923yuwL,relative risk,relative_risk_ratio,1.11,1.04,1.2,,DC_F0GO0WQ,IPV_lvgw9H,Nitrogen dioxide,hospitalization for chronic obstructive pulmonary diseases,relative risk,relative_risk_ratio
+27094099,gjeyxDnM2c,OR,odds_ratio,1.74,1.13,2.7,,P6IzhScRdx,EAshH_Ko3h,exposure to ambient air pollution,asthma severity scores,OR,odds_ratio
+26453943,3a8u_4smwf,odds ratio (OR),odds_ratio,1.76,1.18,2.64,0.05,P6IzhScRdx,EAshH_Ko3h,early-life exposure to ambient air pollution,doctor-diagnosed asthma in preschool children,odds ratio (OR),odds_ratio
+31590000,jGdgk1BiMR,hazard ratio,hazard_ratio,1.025,1.004,1.047,0.001,Cv_Ldh0HRR,IPV_lvgw9H,sulfur dioxide exposure,incident chronic obstructive pulmonary disease,hazard ratio,hazard_ratio
+19440507,6tYYCONaEz,odds ratio,odds_ratio,1.42,1.1,1.82,,Cv_Ldh0HRR,EAshH_Ko3h,short-term variations in sulfur dioxide levels,risk of asthma episodes,odds ratio,odds_ratio
+15589240,nG-4cqSF-L,relative risk,relative_risk_ratio,1.06,1.01,1.12,,Cv_Ldh0HRR,EAshH_Ko3h,elevated levels of sulfur dioxide (SO2),asthma emergency room (ER) visits,relative risk,relative_risk_ratio
+37852778,mAdpSBnQ5U,OR,odds_ratio,1.82,1.41,2.37,,P6IzhScRdx,IPV_lvgw9H,Exposure to household air pollution,chronic obstructive pulmonary disease in young patients,OR,odds_ratio
+28788106,9T3-a8D7HC,incidence rate ratio,incident_rate_ratio,1.72,,,,DC_F0GO0WQ,QJ7xqA4q7F,residential exposure to nitrogen dioxide (NO2),lung cancer,incidence rate ratio,incident_rate_ratio
+9387953,aqzoxD9vmh,prevalence odds ratios (PORs),odds_ratio,2.14,0.4,11.3,,DC_F0GO0WQ,EAshH_Ko3h,outdoor nitrogen dioxide (NO2),prevalence of asthma,prevalence odds ratios (PORs),odds_ratio
+11480499,yf6gMZbE0_,relative risk,relative_risk_ratio,1.07,,,,CCVZABeZcW,EAshH_Ko3h,carbon monoxide,acute asthma admissions,relative risk,relative_risk_ratio
+36850970,tjDMJ8zud6,relative risk,relative_risk_ratio,1.179,1.034,1.345,,JMeOsYIcbL,EAshH_Ko3h,ozone,asthma emergency room visits,relative risk,relative_risk_ratio
+20088925,iTH6dvpFzg,relative risk (RR),relative_risk_ratio,1.05,1.03,1.06,0.001,P6IzhScRdx,9J7QjcbE7R,daily air pollution,pulmonary embolism,relative risk (RR),relative_risk_ratio
+20088925,iTH6dvpFzg,relative risk (RR),relative_risk_ratio,1.07,1.04,1.09,0.001,P6IzhScRdx,9J7QjcbE7R,daily air pollution,pulmonary embolism,relative risk (RR),relative_risk_ratio
+31151302,-kZ6UupqYJ,adjusted odds ratio (AOR),adjusted_odds_ratio,2.15,1.83,2.53,,P6IzhScRdx,EAshH_Ko3h,Air pollution/irritants,very poorly-controlled asthma,adjusted odds ratio (AOR),adjusted_odds_ratio
+32613014,jzCU3i_UAg,r,pearson_r,0.803,,,0.05,EAshH_Ko3h,ak7lpHYuXE,annual changes of the prevalence of bronchial asthma,concentrations of air pollutants,r,pearson_r
+28434561,u7MbqVL4Qu,relative risk,relative_risk_ratio,1.002,0.981,1.023,,JMeOsYIcbL,EAshH_Ko3h,daily 8-hour maximum ozone concentrations,asthma hospital admissions,relative risk,relative_risk_ratio
+17162207,QklWjE3Xlz,relative risk,relative_risk_ratio,7.0,,,,CCVZABeZcW,z0FmiQio14,pretransplantation diffusion capacity for carbon monoxide or forced expiratory volume in the first second <80% predicted,late decrease in pulmonary function from baseline,relative risk,relative_risk_ratio
+26453943,3a8u_4smwf,odds ratio (OR),odds_ratio,1.45,1.02,2.07,0.05,P6IzhScRdx,EAshH_Ko3h,early-life exposure to ambient air pollution,doctor-diagnosed asthma in preschool children,odds ratio (OR),odds_ratio
+28788106,9T3-a8D7HC,IRR,incident_rate_ratio,1.72,,,,DC_F0GO0WQ,s_mlNM8W5q,residential exposure to nitrogen dioxide (NO2),incidence rate ratios of lung and bladder cancers,IRR,incident_rate_ratio
+26859438,fwmfarWZTn,odds ratio,odds_ratio,1.81,1.13,2.91,0.05,DC_F0GO0WQ,epn8cUn0y3,nitrogen dioxide (NO2),pulmonary tuberculosis odds ratios,odds ratio,odds_ratio
+20084840,IWxOy44k8r,relative risk,relative_risk_ratio,1.06,1.01,1.11,,JMeOsYIcbL,EAshH_Ko3h,Ozone exposure,asthma visits to emergency departments in adults,relative risk,relative_risk_ratio
+30680626,rWwY98S0sy,RR,relative_risk_ratio,1.031,1.002,1.06,0.001,ak7lpHYuXE,IPV_lvgw9H,particulate air pollutants,hospitalizations for chronic obstructive pulmonary disease,RR,relative_risk_ratio
+31303647,hDUQUbQOcG,OR,odds_ratio,2.16,1.12,4.15,,P6IzhScRdx,EAshH_Ko3h,self-reported exposure to traffic-related air pollution,prevalence of asthma,OR,odds_ratio
+25146191,sqllbZbQp4,hazard ratio,hazard_ratio,0.94,0.89,1.0,,JMeOsYIcbL,IPV_lvgw9H,Ozone,chronic obstructive pulmonary disease diagnosis from general practitioner,hazard ratio,hazard_ratio
+11359423,Ki7asSBwRa,relative risk,relative_risk_ratio,1.06,,,,Cv_Ldh0HRR,EAshH_Ko3h,sulphur dioxide levels,number of childhood admissions for asthma,relative risk,relative_risk_ratio
+23591930,L-VAsvPMHl,odds ratio (OR),odds_ratio,1.11,1.03,1.19,,JMeOsYIcbL,V4aKFMKpdE,ambient ozone concentrations,impaired lung function,odds ratio (OR),odds_ratio
+33233547,jySXys0lNU,OR,odds_ratio,1.22,1.0,1.49,,CCVZABeZcW,EAshH_Ko3h,carbon monoxide,asthma-related emergency department visits,OR,odds_ratio
+37291562,d2Fi-tt_aL,adjusted OR,adjusted_odds_ratio,1.12,1.05,1.21,0.002,ak7lpHYuXE,VsO_M8PMFZ,"exposure to air pollutants particulate matter of up to 10 and 2.5 μm in diameter (PM10, PM2.5), nitrogen dioxide (NO2), and ozone (O3)",severity of interstitial lung disease at diagnosis,adjusted OR,adjusted_odds_ratio
+31350951,npGqTj6FqN,hazard ratio,hazard_ratio,3.89,2.12,4.56,0.02,oJFe31eltz,PTOzpG3Tlu,"High-Risk Cluster (Occupation risk, Mode of transportation, PM2.5 exposure)",lung adenocarcinoma mortality at 1 year,hazard ratio,hazard_ratio
+29227938,PxhEg7UidE,r,pearson_r,0.763,,,0.05,DC_F0GO0WQ,IPV_lvgw9H,concentrations of nitrogen dioxide,episodes of acute exacerbation of chronic obstructive pulmonary disease,r,pearson_r
+24657516,241_BXk5IN,odds ratio,odds_ratio,1.05,1.02,1.08,,rqFj5Lvvwf,EAshH_Ko3h,short-term changes in ambient ozone (O3),timing of new-onset asthma,odds ratio,odds_ratio
+12696653,GY7hvXzLLy,odds ratio,odds_ratio,1.83,1.36,2.47,,JMeOsYIcbL,IPV_lvgw9H,Ozone (O3),exacerbation of chronic obstructive pulmonary disease,odds ratio,odds_ratio
+21764049,cgHpIl28Pc,risk ratio,relative_risk_ratio,1.054,1.023,1.086,,ak7lpHYuXE,EAshH_Ko3h,"concentrations of pollutants fine particles (PM2.5), CO, NO2 and SO2",asthma morbidity,risk ratio,relative_risk_ratio
+22233623,emitSd5C7p,mean_difference_unstandardized,mean_difference_unstandardized,1.8,,,0.001,FCBqAD2YzH,CCVZABeZcW,Patients with pulmonary fibrosis [vs Controls],Exhaled Carbon Monoxide,mean_difference_unstandardized,mean_difference_unstandardized
+30151641,mgowpkETj7,r,pearson_r,-0.16,,,0.001,CCVZABeZcW,Jy2y-3RDdo,transfer factor for carbon monoxide,MRI-based lung volume,r,pearson_r
+29427878,a-rKMWJZKk,odds ratio,odds_ratio,5.2,1.07,25.4,0.001,P6IzhScRdx,EAshH_Ko3h,Traffic Related Air Pollution (TRAP) exposure,asthma,odds ratio,odds_ratio
+35980887,Sqms5UAGvQ,relative risk,relative_risk_ratio,1.073,1.07,1.076,,JMeOsYIcbL,JmZ-RoSC5o,Ozone (O3),visits due to lower respiratory tract diseases,relative risk,relative_risk_ratio
+32184587,JCKTaW8o_Q,RR,relative_risk_ratio,1.069,1.017,1.124,0.001,Cv_Ldh0HRR,EAshH_Ko3h,Short-term exposure to SO2 (sulfur dioxide),risk of hospital admissions of asthma,RR,relative_risk_ratio
+24657516,241_BXk5IN,odds ratio,odds_ratio,1.05,1.02,1.08,,JMeOsYIcbL,EAshH_Ko3h,increased short-term ozone concentrations,timing of new-onset asthma,odds ratio,odds_ratio
+26453943,3a8u_4smwf,odds ratio (OR),odds_ratio,1.74,1.15,2.62,0.05,P6IzhScRdx,EAshH_Ko3h,early-life exposure to ambient air pollution,doctor-diagnosed asthma in preschool children,odds ratio (OR),odds_ratio
+15703529,FdNcysHoSa,relative risk,relative_risk_ratio,1.011,,,,P6IzhScRdx,IPV_lvgw9H,ambient particulate air pollution,hospital admissions for chronic obstructive lung disease (COPD),relative risk,relative_risk_ratio
+35513692,x7EdJqerns,Spearman test,spearman_correlation,-0.265,,,0.001,CCVZABeZcW,Jy2y-3RDdo,carbon monoxide diffusion capacity (DL),relative lung volume changes,Spearman test,spearman_correlation
+38784975,tX8VzJ3O2H,beta coefficient,coefficient,-0.02,-0.029,-0.011,,ak7lpHYuXE,W77fjbFKqg,mixture of air pollutants,pulmonary function,beta coefficient,coefficient
+9849541,7BnkQjGeEG,relative risk (RR),relative_risk_ratio,1.037,1.008,1.066,,DC_F0GO0WQ,EAshH_Ko3h,concentrations of nitrogen dioxide (NO2),emergency room visits for asthma,relative risk (RR),relative_risk_ratio
+38176851,Kt6tc7RmyW,OR,odds_ratio,4.69,3.82,5.77,,oJFe31eltz,sMnMz5Z-X0,"occupational exposure to vapors, gases, dust or fumes",respiratory symptoms at work,OR,odds_ratio
+22683007,DRxmqadTog,odds ratio,odds_ratio,1.06,1.01,1.12,,CCVZABeZcW,PQ1nPOBjAX,exposure to carbon monoxide,childhood asthma,odds ratio,odds_ratio
+37940200,gywDTEVTrb,relative risk,relative_risk_ratio,0.97,0.96,0.99,0.01,DC_F0GO0WQ,EAshH_Ko3h,NO2,emergency hospital admissions for asthma,relative risk,relative_risk_ratio
+21764049,cgHpIl28Pc,risk ratio,relative_risk_ratio,1.039,1.013,1.066,,ak7lpHYuXE,EAshH_Ko3h,"concentrations of pollutants fine particles (PM2.5), CO, NO2 and SO2",asthma morbidity,risk ratio,relative_risk_ratio
+18008001,s8E_iN6JMy,mean_difference_unstandardized,mean_difference_unstandardized,-0.4,,,0.05,EAshH_Ko3h,JMeOsYIcbL,children with asthma [vs children without asthma],Ozone (O3),mean_difference_unstandardized,mean_difference_unstandardized
+30125857,YTQNWdMaZR,odds ratio,odds_ratio,1.54,1.26,1.87,,DC_F0GO0WQ,EAshH_Ko3h,outdoor nitrogen dioxide,current asthma,odds ratio,odds_ratio
+16222162,rNI9W_2wGh,odds ratio (OR),odds_ratio,1.83,1.04,3.22,,DC_F0GO0WQ,EAshH_Ko3h,Outdoor nitrogen dioxide (NO2),Lifetime history of doctor-diagnosed asthma,odds ratio (OR),odds_ratio
+32410699,mre0estqPa,relative risk (RR),relative_risk_ratio,1.046,1.038,1.054,,ak7lpHYuXE,epn8cUn0y3,"ambient air pollutants (PM, SO and NO)",pulmonary TB incidence,relative risk (RR),relative_risk_ratio
+32094459,6jX4zW2JYY,odds ratio,odds_ratio,1.0,0.95,1.05,,JMeOsYIcbL,EAshH_Ko3h,ambient PM and ozone concentrations,"acute asthma visits (office, urgent, emergency, and hospitalization)",odds ratio,odds_ratio
+15744241,4JoAgy6bvy,relative risk,relative_risk_ratio,5.7,,,,CCVZABeZcW,5jSeW0wT3c,diffusion capacity for carbon monoxide,pulmonary transplant-related mortality,relative risk,relative_risk_ratio
+11480499,yf6gMZbE0_,relative risk,relative_risk_ratio,1.09,,,,Cv_Ldh0HRR,EAshH_Ko3h,sulfur dioxide,acute asthma admissions,relative risk,relative_risk_ratio
+21410536,rJzxQy4NwE,adjusted OR,adjusted_odds_ratio,1.26,1.13,1.41,,Nw53jOQJ-3,EAshH_Ko3h,poor ventilation (indoor air quality),asthma,adjusted OR,adjusted_odds_ratio
+34442463,cvNlMTbZGG,adjusted OR,adjusted_odds_ratio,1.77,1.36,2.3,,Cv_Ldh0HRR,A71KVJn6T6,sulfur dioxide,mixed lung diseases,adjusted OR,adjusted_odds_ratio
+21325732,Ncn2dAwdxX,hazard ratio,hazard_ratio,1.24,1.12,1.37,0.001,P6IzhScRdx,QJ7xqA4q7F,long-term exposure to air pollution,lung cancer,hazard ratio,hazard_ratio
+16424447,d6rz3rUgPZ,rate ratio,relative_risk_ratio,1.27,0.96,1.69,,P6IzhScRdx,QJ7xqA4q7F,fine particulate air pollution (PM2.5),lung cancer,rate ratio,relative_risk_ratio
+30514057,POBzPYqfvn,OR,odds_ratio,1.13,1.12,1.15,,P6IzhScRdx,EAshH_Ko3h,number of days on which the daily air quality guidance level was exceeded (Seoul districts),asthma prevalence risk,OR,odds_ratio
+27964802,tPj0YRi9G8,odds ratio,odds_ratio,1.14,,,,JMeOsYIcbL,EAshH_Ko3h,exposure to ozone on the previous day of the reported asthma attack,risk of asthma in pediatric subjects,odds ratio,odds_ratio
+11480499,yf6gMZbE0_,relative risk,relative_risk_ratio,1.11,,,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide,acute asthma admissions,relative risk,relative_risk_ratio
+36360942,t3ywZ-aH4N,OR,odds_ratio,2.42,1.11,5.48,,P6IzhScRdx,EAshH_Ko3h,exposure to air pollution,maternal-reported allergic asthma,OR,odds_ratio
+35603254,873Qk_GjSQ,Pearson coefficient,coefficient,0.8,,,0.05,DC_F0GO0WQ,EAshH_Ko3h,concentrations of nitrogen dioxide,children's asthma incidence rate,Pearson coefficient,coefficient
+17308332,XuPeIW8QYJ,odds ratio,odds_ratio,1.44,,,0.05,P6IzhScRdx,EAshH_Ko3h,proximity to air pollution point sources,risk of asthma attacks,odds ratio,odds_ratio
+21034384,Flc6F87Rsi,odds ratio,odds_ratio,1.4,1.06,1.84,,CCVZABeZcW,EAshH_Ko3h,24-hour average background carbon monoxide (CO),hospital emergency department presentations for asthma among children,odds ratio,odds_ratio
+29144419,RfXgx3oQy2,odds ratio,odds_ratio,1.09,1.07,1.12,,P6IzhScRdx,EAshH_Ko3h,air pollution exposure,asthma,odds ratio,odds_ratio
+33254941,ekuyFh08fs,odds ratio (OR),odds_ratio,1.699,1.399,2.062,0.001,DC_F0GO0WQ,EAshH_Ko3h,Nitrogen dioxide (NO) exposure,asthma emergency department visits among age group 2-5,odds ratio (OR),odds_ratio
+35622660,DN2Mtxg-Y0,OR,odds_ratio,1.186,1.138,1.236,,DC_F0GO0WQ,JmZ-RoSC5o,NO2,ED visits for pediatric respiratory diseases,OR,odds_ratio
+32890216,SQgh15318d,OR,odds_ratio,4.45,,,0.01,ak7lpHYuXE,EAshH_Ko3h,PM2.5 concentrations,asthma admissions,OR,odds_ratio
+31239087,zaJqIAmFN3,RR,relative_risk_ratio,1.15,1.14,1.16,,JMeOsYIcbL,EAshH_Ko3h,8-hour maximum ozone,asthma attacks,RR,relative_risk_ratio
+17297248,-xCuNVQRVn,correlation,pearson_r,0.303,,,0.001,JMeOsYIcbL,EAshH_Ko3h,Ozone concentration,Asthma symptoms,correlation,pearson_r
+20123607,KbvNimh3RN,odds ratio,odds_ratio,1.1,1.06,1.13,0.001,P6IzhScRdx,EAshH_Ko3h,exposure to ambient air pollution in utero and during the first year of life,risk of subsequent asthma diagnosis,odds ratio,odds_ratio
+24287467,fNZrFPxGdv,odds ratio,odds_ratio,1.59,1.19,2.12,,DC_F0GO0WQ,QJ7xqA4q7F,time-weighted average nitrogen dioxide concentration (4.8 ppb),lung cancer,odds ratio,odds_ratio
+12696653,GY7hvXzLLy,odds ratio,odds_ratio,1.44,1.14,1.82,,JMeOsYIcbL,IPV_lvgw9H,Ozone (O3),exacerbation of chronic obstructive pulmonary disease,odds ratio,odds_ratio
+27606967,_ET34Fosln,weighted risk ratio,relative_risk_ratio,1.2,1.0,1.4,,DC_F0GO0WQ,EAshH_Ko3h,nitrogen dioxide exposure,membership in the early and late-onset chronic asthma trajectories,weighted risk ratio,relative_risk_ratio
+11777028,_hLnjSIYMi,relative risk,relative_risk_ratio,4.11,2.96,5.7,,P6IzhScRdx,JmZ-RoSC5o,residential exposure to air pollution from an aluminum plant,hospital admissions for selected respiratory diseases,relative risk,relative_risk_ratio
+34442463,cvNlMTbZGG,adjusted OR,adjusted_odds_ratio,5.35,2.88,9.94,,CCVZABeZcW,A71KVJn6T6,carbon monoxide,mixed lung diseases,adjusted OR,adjusted_odds_ratio
+17521030,JTp7TDba8v,odds ratio (OR),odds_ratio,1.7,0.91,3.18,,JMeOsYIcbL,EAshH_Ko3h,ozone exposures,poorly controlled asthma,odds ratio (OR),odds_ratio
+24789041,xf56KHshx7,relative risk,relative_risk_ratio,1.13,,,0.078,P6IzhScRdx,EAshH_Ko3h,air pollution,health care services for asthma,relative risk,relative_risk_ratio
+17100666,__fkofqrd1,odds ratio,odds_ratio,1.45,,,0.01,DC_F0GO0WQ,EAshH_Ko3h,indoor NO2,asthma medication,odds ratio,odds_ratio
+37811341,4ZLI-1gBl8,r,pearson_r,0.62,,,0.05,ak7lpHYuXE,IPV_lvgw9H,Atmospheric-Pollutant Interaction (API),Chronic Obstructive Pulmonary Disease (COPD),r,pearson_r
+35307034,mndyHFLlQq,risk ratio,relative_risk_ratio,1.123,1.081,1.168,0.001,DC_F0GO0WQ,IPV_lvgw9H,exposure to nitrogen dioxide,hospital admissions of chronic obstructive pulmonary disease patients,risk ratio,relative_risk_ratio
+23429406,bt27Gxnwr_,odds ratio,odds_ratio,1.25,1.07,1.46,0.001,P6IzhScRdx,EAshH_Ko3h,air pollution,doctor-diagnosed asthma,odds ratio,odds_ratio

@@ -1,0 +1,71 @@
+pubmed_id,study_id,statistic_type,system_statistic_type,statistic_value,ci_lower,ci_upper,p_value,variable_1_concept_id,variable_2_concept_id,variable_1_name,variable_2_name,statistic_type_norm,system_statistic_type_norm
+26044283,1PBGRs6peO,adjusted OR,adjusted_odds_ratio,1.29,0.52,3.21,,CPu3fKZt34,Gl-I4wBZ5r,body temperature,hospitalization (among LTCF residents with episodes of transfer),adjusted OR,adjusted_odds_ratio
+33932207,CFtSp4qycX,relative risk (RR),relative_risk_ratio,1.415,1.295,1.546,,4FaXcuNJRt,nS9fqJ01TW,Extremely low temperature,respiratory emergency room visits,relative risk (RR),relative_risk_ratio
+20730050,aO7vZ7QzgS,odds ratio,odds_ratio,1.03,,,,rYCo7LTyzN,nS9fqJ01TW,heatwaves,"emergency hospital admissions (in Brisbane, Australia)",odds ratio,odds_ratio
+38571664,RL4eYWpNuY,risk ratio,relative_risk_ratio,1.36,0.95,1.95,,PCdVJWVRyS,Gl-I4wBZ5r,temperature changes,risk of hospitalization (of cardiovascular and respiratory patients),risk ratio,relative_risk_ratio
+8247930,HHw6XWW9pJ,mean_difference_unstandardized,mean_difference_unstandardized,0.8,,,0.01,Gl-I4wBZ5r,4FaXcuNJRt,Patients admitted to the hospital (vs Patients discharged from the hospital) vs. Patients admitted to the hospital (vs Patients discharged from the hospital),Mean temperature (among HIV-positive children in the Children's Hospital AIDS Program),mean_difference_unstandardized,mean_difference_unstandardized
+20730050,aO7vZ7QzgS,odds ratio,odds_ratio,1.18,,,,rYCo7LTyzN,nS9fqJ01TW,heatwaves,"emergency hospital admissions (among the population studied in Brisbane, Australia)",odds ratio,odds_ratio
+23567472,DVr0AVcqJn,OR,odds_ratio,2.66,1.26,5.61,0.011,FDJ4Gulj_Q,Gl-I4wBZ5r,presence of rebound hyperthermia,any cause of death during the initial hospitalization (among cardiac arrest patients who underwent therapeutic hypothermia),OR,odds_ratio
+16336172,VSN8jZdhJ6,r,pearson_r,0.15,,,0.01,4FaXcuNJRt,nS9fqJ01TW,Temperature (measured in degrees Celsius),admissions from the emergency department,r,pearson_r
+32023618,ZPC-uwoTWh,odds ratio,odds_ratio,0.58,,,0.09,PCdVJWVRyS,kZIzSorHA_,temperature change,ambulance transportation due to stroke,odds ratio,odds_ratio
+35227362,AJdkItIGwq,odds ratio,odds_ratio,2.03,1.56,2.64,,CPu3fKZt34,Gl-I4wBZ5r,body temperature ≥39oC,FS hospitalisation,odds ratio,odds_ratio
+22171908,CTE6a08HqS,odds ratio,odds_ratio,2.08,1.19,3.64,0.01,rYCo7LTyzN,Gl-I4wBZ5r,heat stroke,recommendation for emergency hospitalization,odds ratio,odds_ratio
+27454572,0aMSLl4Geb,relative risk,relative_risk_ratio,1.03,,,,wpUeTjUbAc,kZIzSorHA_,extreme heat and heatwaves,emergency ambulance dispatches,relative risk,relative_risk_ratio
+35378653,i_E_49g7Vd,RR,relative_risk_ratio,1.14,1.01,1.3,0.001,rYCo7LTyzN,Gl-I4wBZ5r,Heatwaves,hospitalizations due to mental and behavioral disorders,RR,relative_risk_ratio
+24932702,TTZf_vfsiy,relative risk (RR),relative_risk_ratio,1.56,1.23,1.97,,4FaXcuNJRt,nS9fqJ01TW,Low temperature (14°C) exposure,emergency room visits for cerebrovascular diseases,relative risk (RR),relative_risk_ratio
+27117324,UNidF03iNT,Odds Ratio,odds_ratio,1.23,1.15,1.33,,wpUeTjUbAc,Gl-I4wBZ5r,extreme heat events that occur during summer months,hospitalization for asthma,Odds Ratio,odds_ratio
+8179729,Hvtf9DtdCu,odds ratio,odds_ratio,6.12,,,,Gl-I4wBZ5r,PCdVJWVRyS,Hospitalization (patients admitted to the hospital for treatment),temperature,odds ratio,odds_ratio
+41293543,cC4InudkJVrk,odds ratio,odds_ratio,1.016,1.001,1.032,,wpUeTjUbAc,Gl-I4wBZ5r,extreme heat days,hospitalization,odds ratio,odds_ratio
+30256842,y9XjPkBT8G,relative risk (RR),relative_risk_ratio,1.74,1.06,2.84,,4FaXcuNJRt,nS9fqJ01TW,average temperature (mean temperature of 14°C),emergency room visit for out-of-hospital cardiac arrest (OHCA) for patients younger than 65 years old,relative risk (RR),relative_risk_ratio
+30506386,C5vupSNpZH,relative risk,relative_risk_ratio,1.36,0.96,1.92,,wpUeTjUbAc,nS9fqJ01TW,Extreme high temperature (lag 0-27),hospital emergency room visits for respiratory diseases,relative risk,relative_risk_ratio
+30419000,EotIbuQWHs,relative risk,relative_risk_ratio,1.23,1.1,1.38,,4FaXcuNJRt,kZIzSorHA_,Daily mean temperature (compared to the optimal temperature),ambulance emergency call-outs,relative risk,relative_risk_ratio
+15241093,2b_q3Mj15z,difference,mean_difference_unstandardized,4.3,,,,CPu3fKZt34,YdX9m4rnXQ,elevated body temperature,hospital length of stay (among neurologic ICU patients),difference,mean_difference_unstandardized
+35031377,R3PiAAh3qP,RR,relative_risk_ratio,1.03,1.01,1.04,,PCdVJWVRyS,kZIzSorHA_,diurnal temperature range,emergency ambulance dispatches due to stroke,RR,relative_risk_ratio
+35378653,i_E_49g7Vd,RR,relative_risk_ratio,1.5,1.2,1.86,0.001,rYCo7LTyzN,Gl-I4wBZ5r,Heatwaves,hospitalizations due to mental and behavioral disorders,RR,relative_risk_ratio
+32092626,-ifb5F-PN1,relative risk,relative_risk_ratio,1.72,1.3,2.28,,4FaXcuNJRt,kZIzSorHA_,Temperature above the 75th percentile for 3 or more consecutive days (Heatwaves),emergency ambulance dispatches (EADs),relative risk,relative_risk_ratio
+34364750,_zDX5lnMmj,mean_difference_unstandardized,mean_difference_unstandardized,1.3,,,0.03,4FaXcuNJRt,YdX9m4rnXQ,Mean 3-d temperatures ≥30°C [vs Mean 3-d temperatures <30°C],Median length of stay (among patients in emergency departments),mean_difference_unstandardized,mean_difference_unstandardized
+24484632,uBeLqS8wWb,relative risk,relative_risk_ratio,1.17,1.02,1.44,,4FaXcuNJRt,nS9fqJ01TW,extreme ambient temperatures,respiratory disease emergency room visits,relative risk,relative_risk_ratio
+35868079,WEofV52wIZ,relative risk,relative_risk_ratio,1.64,1.38,1.93,,wpUeTjUbAc,Gl-I4wBZ5r,extreme heat exposure,hospitalization for hyperglycemic emergencies,relative risk,relative_risk_ratio
+29471745,mU__iwnFbZ,relative risk,relative_risk_ratio,1.12,1.08,1.16,,4FaXcuNJRt,kZIzSorHA_,Temperature at the 95th percentile (highest temperature),ambulance dispatches due to acute illnesses,relative risk,relative_risk_ratio
+35149948,pOKd93wjGp,RR,relative_risk_ratio,1.041,1.002,1.081,,4FaXcuNJRt,Gl-I4wBZ5r,Mean Temperature (MT),hospital admissions for uveitis,RR,relative_risk_ratio
+17328800,kMmqmNDTHw,rs,spearman_correlation,0.424,,,,Gl-I4wBZ5r,CPu3fKZt34,hospitalisation length (days),body temperature,rs,spearman_correlation
+26245846,NyW9aXzOvU,Poisson regression,coefficient,1.004,1.0005,1.007,0.024,PtQBvGm5CM,nS9fqJ01TW,Heat stress index,daily emergency rooms visits,Poisson regression,coefficient
+38613874,fkYLJ84Hqc,hazard ratio,hazard_ratio,1.04,1.01,1.06,,4FaXcuNJRt,Gl-I4wBZ5r,daily mean temperature at the 95th percentile during summer (June through September),all-cause acute hospitalization,hazard ratio,hazard_ratio
+37356885,AOOD-FHod1,odds ratio,odds_ratio,3.2,1.06,11.49,0.03,kZIzSorHA_,CPu3fKZt34,transportation by ground ambulance,negative change in body temperature,odds ratio,odds_ratio
+27117324,UNidF03iNT,Odds Ratio,odds_ratio,1.23,1.15,1.33,,wpUeTjUbAc,Gl-I4wBZ5r,extreme heat event during the summer months,hospitalization for asthma,Odds Ratio,odds_ratio
+35378653,i_E_49g7Vd,RR,relative_risk_ratio,2.21,1.55,3.15,0.001,rYCo7LTyzN,Gl-I4wBZ5r,Heatwaves,hospitalizations due to mental and behavioral disorders,RR,relative_risk_ratio
+15241093,2b_q3Mj15z,beta,coefficient,0.143,,,,CPu3fKZt34,YdX9m4rnXQ,elevated body temperature,hospital length of stay (among neurologic ICU patients),beta,coefficient
+27454572,0aMSLl4Geb,relative risk,relative_risk_ratio,1.03,1.01,1.05,,wpUeTjUbAc,kZIzSorHA_,extreme heat and heatwaves,emergency ambulance dispatches,relative risk,relative_risk_ratio
+27454572,0aMSLl4Geb,relative risk,relative_risk_ratio,1.05,,,,wpUeTjUbAc,kZIzSorHA_,extreme heat and heatwaves,emergency ambulance dispatches,relative risk,relative_risk_ratio
+36071609,5acWZTsvkO,odds ratio,odds_ratio,1.64,1.17,2.31,,PtQBvGm5CM,Gl-I4wBZ5r,Heat Vulnerability Index (HVI),odds of >4 hospitalizations (among individuals with rheumatic conditions),odds ratio,odds_ratio
+35499723,rsUuD3MRyv,relative risk,relative_risk_ratio,1.152,1.081,1.228,,4FaXcuNJRt,kZIzSorHA_,Daily Mean Temperature (in the study of ambulance dispatch),ambulance dispatch (of patients),relative risk,relative_risk_ratio
+33932207,CFtSp4qycX,relative risk (RR),relative_risk_ratio,1.091,1.069,1.114,,4FaXcuNJRt,nS9fqJ01TW,Extremely high temperature,respiratory emergency room visits,relative risk (RR),relative_risk_ratio
+24484632,uBeLqS8wWb,relative risk,relative_risk_ratio,1.47,1.06,2.23,,4FaXcuNJRt,nS9fqJ01TW,extreme ambient temperatures,cardiovascular disease emergency room visits,relative risk,relative_risk_ratio
+39621253,CS8hSmrErh,relative risk,relative_risk_ratio,1.292,1.051,1.589,,4FaXcuNJRt,Gl-I4wBZ5r,Temperature (measured in degrees Celsius),hospitalization for cardiovascular diseases,relative risk,relative_risk_ratio
+27454572,0aMSLl4Geb,relative risk,relative_risk_ratio,1.07,1.05,1.1,,wpUeTjUbAc,kZIzSorHA_,extreme heat and heatwaves,emergency ambulance dispatches,relative risk,relative_risk_ratio
+38285493,19dL5FnydK,RRR,relative_risk_ratio,0.63,0.33,0.8,0.002,4FaXcuNJRt,Gl-I4wBZ5r,continuous remote temperature monitoring,hospitalizations (among high-risk patients),RRR,relative_risk_ratio
+35031377,R3PiAAh3qP,RR,relative_risk_ratio,1.01,0.9,1.13,,PCdVJWVRyS,kZIzSorHA_,diurnal temperature range,emergency ambulance dispatches due to stroke,RR,relative_risk_ratio
+27117324,UNidF03iNT,Odds Ratio (OR),odds_ratio,1.23,1.15,1.33,,wpUeTjUbAc,Gl-I4wBZ5r,exposure to extreme heat events,hospitalization for asthma,Odds Ratio (OR),odds_ratio
+24484632,uBeLqS8wWb,relative risk,relative_risk_ratio,1.2,1.02,1.49,,4FaXcuNJRt,nS9fqJ01TW,extreme ambient temperatures,respiratory disease emergency room visits,relative risk,relative_risk_ratio
+21611887,hvMlwS6rfi,correlation coefficient,coefficient,0.799,,,0.0001,4FaXcuNJRt,kZIzSorHA_,air temperature parameters,ambulance transports stratified by heat stroke,correlation coefficient,coefficient
+27796569,EdMGh0czfX,odds ratio,odds_ratio,1.0,0.81,1.25,,wpUeTjUbAc,Gl-I4wBZ5r,Extreme heat events,hospitalizations for cardiovascular diseases,odds ratio,odds_ratio
+36342929,T6M3pN0Mav,r,pearson_r,0.74,,,0.05,4FaXcuNJRt,kZIzSorHA_,Wet bulb globe temperature,number of ambulance dispatches related to heat illness,r,pearson_r
+24484632,uBeLqS8wWb,relative risk,relative_risk_ratio,1.12,1.01,1.27,,4FaXcuNJRt,nS9fqJ01TW,extreme ambient temperatures,cardiovascular disease emergency room visits,relative risk,relative_risk_ratio
+24932702,TTZf_vfsiy,relative risk (RR),relative_risk_ratio,1.78,1.37,2.34,,4FaXcuNJRt,nS9fqJ01TW,Increase in ambient temperature by 14 degrees (from 18°C to 32°C),emergency room visits for hypertensive diseases,relative risk (RR),relative_risk_ratio
+32071336,SK9aSntXb3,relative risk (RR),relative_risk_ratio,1.61,1.47,1.77,,4FaXcuNJRt,kZIzSorHA_,ambient temperature (exposure to temperatures in the 5th percentile),risk of events requiring ambulance services,relative risk (RR),relative_risk_ratio
+24144911,TnCQfDTt1B,r,pearson_r,0.3,,,0.001,1jX8o65OKT,YdX9m4rnXQ,HSP70,length-of-stay (among critically ill children),r,pearson_r
+32979249,V8oqmhbudO,OR,odds_ratio,3.238,1.679,6.244,0.001,CPu3fKZt34,Gl-I4wBZ5r,initial body temperature,duration of hospitalization (of patients with COVID-19),OR,odds_ratio
+35407394,oeMUmZYWok,beta,coefficient,1.18,0.222,2.138,,4ixfP1w8VB,YdX9m4rnXQ,shift of a targeted temperature management strategy from 33 °C to 36 °C,ICU length of stay,beta,coefficient
+39709856,rcmGIRXRlK,cumulative lagged risk ratio,relative_risk_ratio,0.752,0.611,0.926,,wpUeTjUbAc,kZIzSorHA_,extreme high-temperature conditions,total cardiovascular emergency ambulance dispatchs,cumulative lagged risk ratio,relative_risk_ratio
+31486940,dXEJNYHelM,r,pearson_r,-0.62,,,0.003,YdX9m4rnXQ,4FaXcuNJRt,duration of ICU and hospital stay,temperature amplitude,r,pearson_r
+34201085,16kOreGQKy,relative rate ratios (RR),relative_risk_ratio,0.34,0.14,0.82,,4FaXcuNJRt,Gl-I4wBZ5r,Higher mean daily temperature (30 °C) relative to 21 °C,rate of hospital admissions (among pneumonia patients),relative rate ratios (RR),relative_risk_ratio
+26393633,LwgRt4NiYL,odds ratio,odds_ratio,1.97,1.14,3.41,,CPu3fKZt34,Gl-I4wBZ5r,body temperature,hospitalization (among patients with mild to moderate heat illness),odds ratio,odds_ratio
+24484632,uBeLqS8wWb,relative risk,relative_risk_ratio,2.43,1.59,8.83,,4FaXcuNJRt,nS9fqJ01TW,extreme ambient temperatures,cardiovascular disease emergency room visits,relative risk,relative_risk_ratio
+39709856,rcmGIRXRlK,cumulative lagged risk ratio,relative_risk_ratio,1.732,1.157,2.593,,4FaXcuNJRt,kZIzSorHA_,extreme low-temperature conditions,total cardiovascular emergency ambulance dispatchs,cumulative lagged risk ratio,relative_risk_ratio
+34894473,4muZYp-mFY,OR,odds_ratio,0.703,,,0.001,CPu3fKZt34,Gl-I4wBZ5r,maximal body temperature,hospital admission among febrile patients admitted to the hospital,OR,odds_ratio
+22273155,Udl-LWZGCA,RR,relative_risk_ratio,1.14,1.11,1.16,,rYCo7LTyzN,kZIzSorHA_,"Temperature (during the January 30-February 6, 2011 heat wave)",ambulance calls (among the population),RR,relative_risk_ratio
+32092626,-ifb5F-PN1,relative risk,relative_risk_ratio,4.53,1.23,16.68,,wpUeTjUbAc,kZIzSorHA_,Heatwaves (3 or more days with temperatures above the 75th percentile),emergency ambulance dispatches (EADs),relative risk,relative_risk_ratio
+30419000,EotIbuQWHs,relative risk,relative_risk_ratio,1.21,1.16,1.26,,4FaXcuNJRt,kZIzSorHA_,Ambient temperature (daily mean temperature),ambulance emergency call-outs,relative risk,relative_risk_ratio
+30702597,WKByapcMRc,odds ratio (OR),odds_ratio,1.05,,,0.01,CPu3fKZt34,YdX9m4rnXQ,temperature (body temperature upon arrival to the emergency department),length of hospital stay (among adult patients),odds ratio (OR),odds_ratio
+34315978,8J4Dw7Vhyv,relative risk (RR),relative_risk_ratio,1.44,1.159,1.79,,4FaXcuNJRt,Gl-I4wBZ5r,"Low Apparent Temperature (-11°C, 2.5th percentile)",hospital admissions for acute cardiac events,relative risk (RR),relative_risk_ratio
+31170565,i_gYdxi0sw,rate ratio,relative_risk_ratio,1.017,1.012,1.023,,rYCo7LTyzN,kZIzSorHA_,heatwaves,ambulance callouts (among the population),rate ratio,relative_risk_ratio

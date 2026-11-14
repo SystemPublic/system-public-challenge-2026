@@ -1,0 +1,4 @@
+pubmed_id,study_id,statistic_type,system_statistic_type,statistic_value,ci_lower,ci_upper,p_value,variable_1_concept_id,variable_2_concept_id,variable_1_name,variable_2_name,statistic_type_norm,system_statistic_type_norm
+37423294,cVOpILTf8p,mean_difference_unstandardized,mean_difference_unstandardized,-0.1868,,,0.007,epn8cUn0y3,I2CN3brExA,Pulmonary TB with pleural effusion [vs Pulmonary TB without effusion],Frequency of tree-in-buds,mean_difference_unstandardized,mean_difference_unstandardized
+23322788,WhVL3vGBcS,risk ratio,relative_risk_ratio,1.17,1.02,1.33,,I2CN3brExA,EAshH_Ko3h,Tree canopy coverage,Asthma,risk ratio,relative_risk_ratio
+36270759,fv6ABFfamk,OR,odds_ratio,0.897,0.605,1.331,,EsbQIzj8CX,IPV_lvgw9H,forest cover per gmina,risk of chronic obstructive pulmonary disease exacerbations,OR,odds_ratio

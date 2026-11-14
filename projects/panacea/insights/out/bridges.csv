@@ -1,0 +1,922 @@
+measure1,label1,concepts1,measure2,label2,concepts2,city_spearman_uhf42,n_districts,years1,years2,vintages_overlap,modeled1,modeled2
+measure:661,"Ozone asthma hospitalizations, Estimated annual rate (age 18+)",ozone; hospitalization; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.942,42,2005-2017,2014-2020,True,True,False
+measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.902,42,2005-2017,2014-2020,True,True,False
+measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,measure:1230,"Death before 65, Number","Mortality, Premature",0.901,42,2005-2017,2014-2020,True,True,False
+measure:1182,"Ozone asthma hospitalizations, Estimated annual number (age 18+)",ozone; hospitalization; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.898,42,2005-2017,2014-2020,True,True,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:673,"Walkability, Score",physical activity,0.895,42,2009-2025,2011-2011,True,False,False
+measure:1177,"PM2.5 health burden (heart), Estimated annual number",cardiovascular disease; hospitalization; PM 2.5,measure:1230,"Death before 65, Number","Mortality, Premature",0.89,42,2005-2017,2014-2020,True,True,False
+measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,measure:1459,"Difficulty walking, Number",mobility disability,0.889,42,2005-2017,2008-2019,True,True,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:1459,"Difficulty walking, Number",mobility disability,0.887,42,2014-2020,2008-2019,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:673,"Walkability, Score",physical activity,0.886,42,2009-2025,2011-2011,True,False,False
+measure:29,"Owner-occupied homes, Percent",housing,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,-0.88,42,2007-2019,2004-2020,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:233,"Poverty, Number",poverty,0.875,42,2014-2020,2007-2019,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:673,"Walkability, Score",physical activity,0.874,42,2009-2025,2011-2011,True,False,False
+measure:1181,"Ozone asthma hospitalizations, Estimated annual number (under age 18)",ozone; hospitalization; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.874,42,2005-2017,2014-2020,True,True,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:233,"Poverty, Number",poverty,0.874,42,1998-2011,2007-2019,True,False,False
+measure:755,"Child poverty, Percent",child poverty,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.866,42,2007-2017,2014-2023,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.864,42,2014-2023,2014-2023,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1179,"Ozone asthma ED visits, Estimated annual number (under age 18)",emergency department; ozone; asthma,0.861,42,1998-2020,2005-2017,True,False,True
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1174,"PM2.5 asthma ED visits, Estimated annual number (under age 18)",PM 2.5; emergency department; asthma,0.859,42,1998-2020,2005-2017,True,False,True
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:154,"Asthma hospitalizations (age 4 and under), Number",hospitalization; childhood asthma; asthma,0.857,42,1998-2020,1998-2023,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:459,"Asthma ED visits (age 4 and under), Number",emergency department; childhood asthma; asthma,0.857,42,1998-2020,2005-2023,True,False,False
+measure:221,"Poverty, Percent",poverty,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.856,42,2007-2019,2014-2023,True,False,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.856,42,2009-2016,1999-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1181,"Ozone asthma hospitalizations, Estimated annual number (under age 18)",ozone; hospitalization; asthma,0.853,42,1998-2020,2005-2017,True,False,True
+measure:1202,"Asthma hospitalizations (adults), Number",hospitalization; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.85,42,2005-2023,2014-2020,True,False,False
+measure:1200,"Asthma hospitalizations (age 5 to 17), Number",hospitalization; childhood asthma; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.844,42,2005-2023,2014-2020,True,False,False
+measure:1203,"Asthma hospitalizations (adults), Estimated annual rate",hospitalization; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.843,42,2005-2023,2014-2020,True,True,False
+measure:208,"Commercial use of rodenticides, Solid products",rodenticide,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.842,42,1999-2022,2004-2020,True,False,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:1176,"Deaths from PM2.5, Estimated annual number (age 30+)",all-cause mortality; air pollution; PM 2.5,0.842,42,2007-2017,2005-2017,True,False,True
+measure:755,"Child poverty, Percent",child poverty,measure:88,"Neighborhood building quality, Percent",housing quality,-0.842,42,2007-2017,1999-2017,True,False,False
+measure:754,"Child poverty, Number",child poverty,measure:9,"Death (infants), Number",infant mortality; infant death,0.841,42,2007-2017,1998-2020,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1202,"Asthma hospitalizations (adults), Number",hospitalization; asthma,0.84,42,1998-2020,2005-2023,True,False,False
+measure:1179,"Ozone asthma ED visits, Estimated annual number (under age 18)",emergency department; ozone; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.837,42,2005-2017,2014-2020,True,True,False
+measure:1176,"Deaths from PM2.5, Estimated annual number (age 30+)",all-cause mortality; air pollution; PM 2.5,measure:1459,"Difficulty walking, Number",mobility disability,0.837,42,2005-2017,2008-2019,True,True,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:88,"Neighborhood building quality, Percent",housing quality,0.837,42,2014-2023,1999-2017,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:233,"Poverty, Number",poverty,0.834,42,1998-2020,2007-2019,True,False,False
+measure:1174,"PM2.5 asthma ED visits, Estimated annual number (under age 18)",PM 2.5; emergency department; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.833,42,2005-2017,2014-2020,True,True,False
+measure:659,"Ozone asthma ED visits, Estimated annual rate (age 18+)",emergency department; ozone; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.833,42,2005-2017,2014-2020,True,True,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:754,"Child poverty, Number",child poverty,0.832,42,1998-2011,2007-2017,True,False,False
+measure:1195,"Asthma ED visits (age 5 to 17), Number",emergency department; childhood asthma; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.829,42,2005-2023,2014-2020,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:154,"Asthma hospitalizations (age 4 and under), Number",hospitalization; childhood asthma; asthma,0.828,42,2014-2020,1998-2023,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1182,"Ozone asthma hospitalizations, Estimated annual number (age 18+)",ozone; hospitalization; asthma,0.826,42,1998-2020,2005-2017,True,False,True
+measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.826,42,2005-2017,2014-2023,True,True,False
+measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:9,"Death (infants), Number",infant mortality; infant death,0.824,42,2000-2022,1998-2020,True,True,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:459,"Asthma ED visits (age 4 and under), Number",emergency department; childhood asthma; asthma,0.824,42,2014-2020,2005-2023,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:673,"Walkability, Score",physical activity,0.822,42,2009-2025,2011-2011,True,False,False
+measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,measure:755,"Child poverty, Percent",child poverty,0.821,42,2005-2017,2007-2017,True,True,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1180,"Ozone asthma ED visits, Estimated annual number (age 18+)",emergency department; ozone; asthma,0.821,42,1998-2020,2005-2017,True,False,True
+measure:15,"Death (postneonatal), Number",infant mortality,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.821,42,1998-2020,2015-2015,True,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,0.82,42,2004-2020,2004-2016,True,False,True
+measure:869,"Child poverty, Rank",child poverty,measure:88,"Neighborhood building quality, Percent",housing quality,-0.82,42,2009-2009,1999-2017,True,False,False
+measure:754,"Child poverty, Number",child poverty,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.819,42,2007-2017,2014-2023,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1195,"Asthma ED visits (age 5 to 17), Number",emergency department; childhood asthma; asthma,0.819,42,1998-2020,2005-2023,True,False,False
+measure:657,"PM2.5 asthma ED visits, Estimated annual rate (age 18+)",PM 2.5; emergency department; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.819,42,2005-2017,2014-2020,True,True,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.818,42,2009-2025,2004-2020,True,False,False
+measure:1180,"Ozone asthma ED visits, Estimated annual number (age 18+)",emergency department; ozone; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.818,42,2005-2017,2014-2020,True,True,False
+measure:1198,"Asthma ED visits (adults), Estimated annual rate",emergency department; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.817,42,2005-2023,2014-2020,True,True,False
+measure:1199,"Asthma ED visits (adults), Age-adjusted rate",emergency department; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.817,42,2005-2023,2014-2020,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1200,"Asthma hospitalizations (age 5 to 17), Number",hospitalization; childhood asthma; asthma,0.817,42,1998-2020,2005-2023,True,False,False
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.816,42,2009-2025,2004-2020,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1175,"PM2.5 asthma ED visits, Estimated annual number (age 18+)",PM 2.5; emergency department; asthma,0.816,42,1998-2020,2005-2017,True,False,True
+measure:29,"Owner-occupied homes, Percent",housing,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,-0.815,42,2007-2019,2004-2016,True,False,True
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:754,"Child poverty, Number",child poverty,0.815,42,2014-2020,2007-2017,True,False,False
+measure:1204,"Asthma hospitalizations (adults), Age-adjusted rate",hospitalization; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.815,42,2005-2023,2014-2020,True,False,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:9,"Death (infants), Number",infant mortality; infant death,0.811,36,2005-2022,1998-2020,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1197,"Asthma ED visits (adults), Number",emergency department; asthma,0.81,42,1998-2020,2005-2023,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.81,42,2009-2025,2004-2020,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,0.808,42,1998-2020,2000-2022,True,False,True
+measure:1197,"Asthma ED visits (adults), Number",emergency department; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.808,42,2005-2023,2014-2020,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.807,42,2009-2025,2004-2020,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,0.807,42,2017-2023,2004-2016,False,False,True
+measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,0.807,42,2005-2017,1998-2011,True,True,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.805,42,2009-2025,1999-2022,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.804,42,2017-2023,2004-2020,True,False,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:870,"Poverty, Rank",poverty,-0.804,42,2014-2023,2009-2011,False,False,False
+measure:755,"Child poverty, Percent",child poverty,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.803,42,2007-2017,2014-2020,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.801,42,2009-2025,2004-2020,True,False,False
+measure:1460,"Difficulty walking, Percent",mobility disability,measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,0.801,42,2008-2019,2005-2017,True,False,True
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",-0.8,42,2014-2023,2014-2020,True,False,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.799,42,2009-2025,1999-2022,True,False,False
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:693,"Older adults living alone (65+), Percent",social isolation,0.799,42,2009-2025,2007-2017,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:754,"Child poverty, Number",child poverty,0.798,42,1998-2020,2007-2017,True,False,False
+measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.796,42,2005-2017,2014-2020,True,True,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.795,42,2009-2025,1999-2022,True,False,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.795,42,2009-2025,2004-2020,True,False,False
+measure:1177,"PM2.5 health burden (heart), Estimated annual number",cardiovascular disease; hospitalization; PM 2.5,measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,0.795,42,2005-2017,1998-2011,True,True,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.795,42,2009-2025,2004-2020,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:693,"Older adults living alone (65+), Percent",social isolation,0.794,42,2009-2025,2007-2017,True,False,False
+measure:1175,"PM2.5 asthma ED visits, Estimated annual number (age 18+)",PM 2.5; emergency department; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.793,42,2005-2017,2014-2020,True,True,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.792,42,2009-2025,2004-2020,True,False,False
+measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,measure:9,"Death (infants), Number",infant mortality; infant death,0.792,42,2005-2017,1998-2020,True,True,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:869,"Child poverty, Rank",child poverty,-0.79,42,2014-2023,2009-2009,False,False,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.79,42,2009-2016,2004-2020,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.788,36,1998-2020,2005-2022,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.785,42,2009-2025,1999-2022,True,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.784,42,2009-2025,1999-2022,True,False,False
+measure:9,"Death (infants), Number",infant mortality; infant death,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.784,42,1998-2020,2015-2015,True,False,False
+measure:754,"Child poverty, Number",child poverty,measure:88,"Neighborhood building quality, Percent",housing quality,-0.782,42,2007-2017,1999-2017,True,False,False
+measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,measure:754,"Child poverty, Number",child poverty,0.782,42,2005-2017,2007-2017,True,True,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,0.781,42,1998-2020,2005-2017,True,False,True
+measure:1428,"Black carbon, Annual mean",black carbon,measure:693,"Older adults living alone (65+), Percent",social isolation,0.781,42,2009-2025,2007-2017,True,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:673,"Walkability, Score",physical activity,0.78,42,2009-2025,2011-2011,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:693,"Older adults living alone (65+), Percent",social isolation,0.779,42,2009-2025,2007-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,0.778,42,1998-2020,2000-2022,True,False,True
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.777,42,2009-2025,1999-2022,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:754,"Child poverty, Number",child poverty,0.775,42,1998-2020,2007-2017,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:693,"Older adults living alone (65+), Percent",social isolation,0.775,42,2009-2025,2007-2017,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.775,42,2009-2025,2004-2020,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,0.775,42,2014-2020,2000-2022,True,False,True
+measure:72,"Carbon monoxide incidents, Number",carbon monoxide,measure:9,"Death (infants), Number",infant mortality; infant death,0.775,42,2004-2016,1998-2020,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.774,42,2009-2025,1999-2022,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:29,"Owner-occupied homes, Percent",housing,-0.773,42,2017-2023,2007-2019,True,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:76,"Cracks, Percent",housing quality,0.772,42,2004-2020,1999-2023,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:1459,"Difficulty walking, Number",mobility disability,0.772,42,1998-2011,2008-2019,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.771,41,1998-2020,2012-2012,True,False,False
+measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,measure:754,"Child poverty, Number",child poverty,0.771,42,2007-2022,2007-2017,True,False,False
+measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,measure:9,"Death (infants), Number",infant mortality; infant death,0.77,41,2012-2012,1998-2020,True,False,False
+measure:88,"Neighborhood building quality, Percent",housing quality,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",-0.769,42,1999-2017,2014-2020,True,False,False
+measure:1427,"PM2.5 (Fine particles), Winter mean",PM 2.5; air pollution; particulates,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.768,42,2009-2025,2004-2020,True,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.767,42,2009-2025,2004-2020,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.766,36,2014-2020,2005-2022,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,0.765,42,2017-2023,2009-2025,True,False,False
+measure:1177,"PM2.5 health burden (heart), Estimated annual number",cardiovascular disease; hospitalization; PM 2.5,measure:9,"Death (infants), Number",infant mortality; infant death,0.765,42,2005-2017,1998-2020,True,True,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,-0.765,42,2014-2023,1999-2017,True,False,False
+measure:221,"Poverty, Percent",poverty,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.765,42,2007-2019,2014-2020,True,False,False
+measure:44,"Mice or rats (outside), Number",rodent control; Murinae,measure:673,"Walkability, Score",physical activity,0.765,42,2004-2020,2011-2011,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:992,"Race/ethnicity, Total population",racial group; ethnicity,0.764,42,2014-2020,2007-2017,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,0.764,42,2017-2023,2009-2025,True,False,False
+measure:506,"Obesity, Percent",body mass index; obesity,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.763,42,2003-2022,2014-2023,True,False,False
+measure:1028,"Rent burden, Number",housing instability,measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,0.763,42,2007-2017,1998-2011,True,False,False
+measure:1182,"Ozone asthma hospitalizations, Estimated annual number (age 18+)",ozone; hospitalization; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.762,42,2005-2017,2014-2020,True,True,False
+measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.762,41,2000-2022,2012-2012,True,True,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.761,42,1998-2020,2004-2016,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:716,"Carbon monoxide, Average annual rate",carbon monoxide,0.76,42,2017-2023,2011-2014,False,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:673,"Walkability, Score",physical activity,0.76,42,2004-2020,2011-2011,True,False,False
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.758,42,2009-2025,2004-2020,True,False,False
+measure:1460,"Difficulty walking, Percent",mobility disability,measure:639,"Deaths from PM2.5, Estimated annual rate (age 30+)",all-cause mortality; air pollution; PM 2.5,0.757,42,2008-2019,2005-2017,True,False,True
+measure:1028,"Rent burden, Number",housing instability,measure:1176,"Deaths from PM2.5, Estimated annual number (age 30+)",all-cause mortality; air pollution; PM 2.5,0.757,42,2007-2017,2005-2017,True,False,True
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:26,"Very old homes, Number",lead poisoning; housing quality,0.756,42,2007-2017,2000-2019,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1177,"PM2.5 health burden (heart), Estimated annual number",cardiovascular disease; hospitalization; PM 2.5,0.755,42,1998-2020,2005-2017,True,False,True
+measure:208,"Commercial use of rodenticides, Solid products",rodenticide,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.754,42,1999-2022,2004-2020,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.753,36,1998-2020,2005-2022,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,0.752,42,1998-2020,2000-2022,True,True,True
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.752,42,2009-2016,2004-2020,True,False,False
+measure:869,"Child poverty, Rank",child poverty,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.751,42,2009-2009,1999-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.75,42,1998-2020,2014-2023,True,False,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:990,"Race/ethnicity, White alone (percent)",racial group; ethnicity,0.75,42,2007-2022,2007-2017,True,False,False
+measure:1192,"Race/ethnicity, Non-white (percent)",racial group; ethnicity,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.75,42,2007-2017,2007-2022,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,0.749,42,1998-2020,2005-2022,True,True,True
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,0.748,42,1998-2020,2005-2022,True,True,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:992,"Race/ethnicity, Total population",racial group; ethnicity,0.747,42,2007-2017,2007-2017,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:755,"Child poverty, Percent",child poverty,0.746,42,2014-2023,2007-2017,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:754,"Child poverty, Number",child poverty,0.745,42,2014-2023,2007-2017,True,False,False
+measure:1028,"Rent burden, Number",housing instability,measure:1230,"Death before 65, Number","Mortality, Premature",0.745,42,2007-2017,2014-2020,True,False,False
+measure:1435,"Ozone, Summer mean",ozone,measure:693,"Older adults living alone (65+), Percent",social isolation,-0.744,42,2009-2025,2007-2017,True,False,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:693,"Older adults living alone (65+), Percent",social isolation,0.744,42,2009-2025,2007-2017,True,False,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:942,"Personal pesticide use, Percent (any use)",pesticide,-0.744,42,2014-2023,2015-2015,True,False,False
+measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,measure:754,"Child poverty, Number",child poverty,0.743,42,2005-2017,2007-2017,True,True,False
+measure:501,"Overweight, Number",overweight; body mass index,measure:671,"Health insurance (adults), Number",private health insurance,0.742,42,2003-2022,2012-2022,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.741,42,1998-2020,2015-2015,True,True,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:155,"Asthma hospitalizations (age 4 and under), Estimated annual rate",hospitalization; childhood asthma; asthma,0.739,42,1998-2020,1998-2023,True,True,True
+measure:1192,"Race/ethnicity, Non-white (percent)",racial group; ethnicity,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.739,42,2007-2017,2014-2023,True,False,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:990,"Race/ethnicity, White alone (percent)",racial group; ethnicity,0.739,42,2014-2023,2007-2017,True,False,False
+measure:693,"Older adults living alone (65+), Percent",social isolation,measure:716,"Carbon monoxide, Average annual rate",carbon monoxide,0.738,42,2007-2017,2011-2014,True,False,False
+measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,measure:9,"Death (infants), Number",infant mortality; infant death,-0.738,42,2002-2023,1998-2020,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:9,"Death (infants), Number",infant mortality; infant death,0.738,42,2014-2023,1998-2020,True,False,False
+measure:754,"Child poverty, Number",child poverty,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.737,42,2007-2017,1999-2017,True,False,False
+measure:1459,"Difficulty walking, Number",mobility disability,measure:9,"Death (infants), Number",infant mortality; infant death,0.737,42,2008-2019,1998-2020,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.736,42,1998-2011,2004-2016,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.736,42,1998-2020,2015-2015,True,True,False
+measure:460,"Asthma ED visits (age 4 and under), Estimated annual rate",emergency department; childhood asthma; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.735,42,2005-2023,2014-2020,True,True,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.734,42,1998-2020,2014-2023,True,True,False
+measure:502,"Overweight, Percent",overweight; body mass index,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.734,42,2003-2022,2014-2023,True,False,False
+measure:755,"Child poverty, Percent",child poverty,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.732,42,2007-2017,1999-2017,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:990,"Race/ethnicity, White alone (percent)",racial group; ethnicity,-0.731,42,2005-2022,2007-2017,True,False,False
+measure:1192,"Race/ethnicity, Non-white (percent)",racial group; ethnicity,measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,0.731,42,2007-2017,2005-2022,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:29,"Owner-occupied homes, Percent",housing,-0.731,42,2009-2025,2007-2019,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,0.73,42,2017-2023,2009-2025,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1459,"Difficulty walking, Number",mobility disability,0.73,42,1998-2020,2008-2019,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:459,"Asthma ED visits (age 4 and under), Number",emergency department; childhood asthma; asthma,0.73,42,1998-2020,2005-2023,True,True,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:88,"Neighborhood building quality, Percent",housing quality,0.729,42,2007-2022,1999-2017,True,False,False
+measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,measure:755,"Child poverty, Percent",child poverty,0.728,42,2005-2017,2007-2017,True,True,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:693,"Older adults living alone (65+), Percent",social isolation,0.728,42,2009-2025,2007-2017,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.728,42,1998-2020,2004-2016,True,False,False
+measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.728,42,2007-2022,2014-2023,True,False,False
+measure:1427,"PM2.5 (Fine particles), Winter mean",PM 2.5; air pollution; particulates,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.728,42,2009-2025,1999-2022,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:460,"Asthma ED visits (age 4 and under), Estimated annual rate",emergency department; childhood asthma; asthma,0.727,42,1998-2020,2005-2023,True,True,True
+measure:754,"Child poverty, Number",child poverty,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.726,42,2007-2017,2015-2015,True,False,False
+measure:653,"Ozone asthma ED visits, Estimated annual rate (under age 18)",emergency department; ozone; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.726,42,2005-2017,2014-2020,True,True,False
+measure:1176,"Deaths from PM2.5, Estimated annual number (age 30+)",all-cause mortality; air pollution; PM 2.5,measure:26,"Very old homes, Number",lead poisoning; housing quality,0.726,42,2005-2017,2000-2019,True,True,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.726,41,1998-2011,2012-2012,False,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:869,"Child poverty, Rank",child poverty,0.725,42,2014-2023,2009-2009,False,False,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:673,"Walkability, Score",physical activity,0.725,42,2009-2025,2011-2011,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.725,42,1998-2020,2015-2015,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:1429,"Black carbon, Summer mean",black carbon,0.724,42,2017-2023,2009-2025,True,False,False
+measure:1460,"Difficulty walking, Percent",mobility disability,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.724,42,2008-2019,2014-2020,True,False,False
+measure:655,"Ozone asthma hospitalizations, Estimated annual rate (under age 18)",ozone; hospitalization; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.724,42,2005-2017,2014-2020,True,True,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:29,"Owner-occupied homes, Percent",housing,-0.724,42,2009-2025,2007-2019,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.724,42,1998-2020,1999-2017,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:1430,"Black carbon, Winter mean",black carbon,0.723,42,2017-2023,2009-2025,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.723,42,1998-2020,2015-2015,True,False,False
+measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,measure:869,"Child poverty, Rank",child poverty,0.723,42,2005-2017,2009-2009,True,True,False
+measure:1435,"Ozone, Summer mean",ozone,measure:673,"Walkability, Score",physical activity,-0.723,42,2009-2025,2011-2011,True,False,False
+measure:214,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Liquid products",insecticide,measure:26,"Very old homes, Number",lead poisoning; housing quality,0.722,42,1999-2022,2000-2019,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.721,42,2005-2022,2014-2020,True,False,False
+measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,measure:755,"Child poverty, Percent",child poverty,0.721,42,2007-2022,2007-2017,True,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.72,42,2004-2020,1999-2021,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:1428,"Black carbon, Annual mean",black carbon,0.719,42,2017-2023,2009-2025,True,False,False
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:29,"Owner-occupied homes, Percent",housing,-0.719,42,2009-2025,2007-2019,True,False,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:9,"Death (infants), Number",infant mortality; infant death,-0.718,42,2014-2023,1998-2020,True,False,False
+measure:502,"Overweight, Percent",overweight; body mass index,measure:960,"Commercial insecticide use, Pyrethroid/pyrethrin solids",insecticide,-0.718,42,2003-2022,1999-2022,True,False,False
+measure:215,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Solid products",insecticide,measure:502,"Overweight, Percent",overweight; body mass index,-0.718,42,1999-2022,2003-2022,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:15,"Death (postneonatal), Number",infant mortality,0.718,42,2014-2023,1998-2020,True,False,False
+measure:869,"Child poverty, Rank",child poverty,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.717,42,2009-2009,2014-2020,False,False,False
+measure:1179,"Ozone asthma ED visits, Estimated annual number (under age 18)",emergency department; ozone; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.717,42,2005-2017,1998-2020,True,True,True
+measure:29,"Owner-occupied homes, Percent",housing,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,-0.716,42,2007-2019,2004-2020,True,False,False
+measure:1181,"Ozone asthma hospitalizations, Estimated annual number (under age 18)",ozone; hospitalization; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.716,42,2005-2017,1998-2020,True,True,True
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.715,42,1998-2020,2002-2023,True,True,False
+measure:233,"Poverty, Number",poverty,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.715,42,2007-2019,2014-2023,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.715,42,2009-2025,2004-2020,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:869,"Child poverty, Rank",child poverty,0.715,42,2008-2023,2009-2009,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:754,"Child poverty, Number",child poverty,0.715,42,2008-2023,2007-2017,True,False,False
+measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,measure:9,"Death (infants), Number",infant mortality; infant death,0.714,42,2007-2022,1998-2020,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:154,"Asthma hospitalizations (age 4 and under), Number",hospitalization; childhood asthma; asthma,0.714,42,1998-2020,1998-2023,True,True,False
+measure:673,"Walkability, Score",physical activity,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,0.714,42,2011-2011,2004-2016,True,False,True
+measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.714,42,2005-2017,2014-2023,True,True,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.714,42,1998-2020,2002-2023,True,False,False
+measure:754,"Child poverty, Number",child poverty,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.713,42,2007-2017,2002-2023,True,False,False
+measure:1180,"Ozone asthma ED visits, Estimated annual number (age 18+)",emergency department; ozone; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.713,42,2005-2017,2014-2020,True,True,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,-0.712,35,2014-2023,2015-2015,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.712,42,2005-2022,2014-2020,True,True,False
+measure:41,"Cockroaches, Percent",cockroach,measure:754,"Child poverty, Number",child poverty,0.711,42,2003-2012,2007-2017,True,False,False
+measure:693,"Older adults living alone (65+), Percent",social isolation,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,0.711,42,2007-2017,2004-2016,True,False,True
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:88,"Neighborhood building quality, Percent",housing quality,-0.711,42,2005-2022,1999-2017,True,False,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.71,42,2009-2025,2004-2020,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.71,42,2014-2020,2004-2016,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.709,42,2008-2023,2014-2023,True,False,False
+measure:1195,"Asthma ED visits (age 5 to 17), Number",emergency department; childhood asthma; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.709,42,2005-2023,2014-2020,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.708,42,1998-2011,2015-2015,False,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.708,42,2009-2025,2004-2020,True,False,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:988,"Race/ethnicity, Black alone (percent)",racial group; ethnicity,-0.707,42,2014-2023,2007-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.707,35,1998-2020,2015-2015,True,False,False
+measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,measure:88,"Neighborhood building quality, Percent",housing quality,-0.706,42,2007-2022,1999-2017,True,False,False
+measure:1174,"PM2.5 asthma ED visits, Estimated annual number (under age 18)",PM 2.5; emergency department; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.706,42,2005-2017,1998-2020,True,True,True
+measure:1224,"Park access, Percent",green space; park,measure:1435,"Ozone, Summer mean",ozone,-0.705,42,2017-2023,2009-2025,True,False,False
+measure:870,"Poverty, Rank",poverty,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.705,42,2009-2011,2014-2020,False,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:29,"Owner-occupied homes, Percent",housing,-0.705,42,2009-2025,2007-2019,True,False,False
+measure:1200,"Asthma hospitalizations (age 5 to 17), Number",hospitalization; childhood asthma; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.703,42,2005-2023,2014-2020,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,0.703,42,1998-2020,2000-2022,True,True,True
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.703,42,1998-2020,2015-2015,True,True,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.703,42,2009-2025,1999-2022,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.703,42,2009-2025,1999-2022,True,False,False
+measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.702,35,2015-2015,2014-2020,True,False,False
+measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,measure:76,"Cracks, Percent",housing quality,0.702,42,2004-2016,1999-2023,True,True,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.702,42,1998-2020,2014-2023,True,True,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:1200,"Asthma hospitalizations (age 5 to 17), Number",hospitalization; childhood asthma; asthma,0.702,42,1998-2020,2005-2023,True,True,False
+measure:1028,"Rent burden, Number",housing instability,measure:1060,"Older adults living alone (65+), Number",social isolation,0.701,42,2007-2017,2007-2017,True,False,False
+measure:1201,"Asthma hospitalizations (age 5 to 17), Estimated annual rate",hospitalization; childhood asthma; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.701,42,2005-2023,2014-2020,True,True,False
+measure:233,"Poverty, Number",poverty,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.701,42,2007-2019,2004-2016,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:655,"Ozone asthma hospitalizations, Estimated annual rate (under age 18)",ozone; hospitalization; asthma,0.701,42,1998-2020,2005-2017,True,True,True
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.701,36,2005-2022,2004-2016,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1248,"Housing problems, Percent",housing quality,0.7,42,1998-2020,2014-2023,True,False,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:29,"Owner-occupied homes, Percent",housing,-0.7,42,2009-2025,2007-2019,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:9,"Death (infants), Number",infant mortality; infant death,0.699,42,2008-2023,1998-2020,True,False,False
+measure:1179,"Ozone asthma ED visits, Estimated annual number (under age 18)",emergency department; ozone; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.699,42,2005-2017,2014-2020,True,True,False
+measure:211,"Commercial use of fungicides, Solid products",fungicide,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,-0.698,42,1999-2022,2004-2016,True,False,True
+measure:221,"Poverty, Percent",poverty,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.698,42,2007-2019,2007-2022,True,False,False
+measure:1427,"PM2.5 (Fine particles), Winter mean",PM 2.5; air pollution; particulates,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.698,42,2009-2025,2004-2020,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:693,"Older adults living alone (65+), Percent",social isolation,0.697,42,2017-2023,2007-2017,True,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:716,"Carbon monoxide, Average annual rate",carbon monoxide,0.697,42,2004-2020,2011-2014,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:1248,"Housing problems, Percent",housing quality,0.696,42,1998-2020,2014-2023,True,True,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.695,42,2009-2025,1999-2022,True,False,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:9,"Death (infants), Number",infant mortality; infant death,-0.695,42,2007-2022,1998-2020,True,False,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.695,42,2009-2025,1999-2022,True,False,False
+measure:1427,"PM2.5 (Fine particles), Winter mean",PM 2.5; air pollution; particulates,measure:693,"Older adults living alone (65+), Percent",social isolation,0.694,42,2009-2025,2007-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.694,42,1998-2020,2002-2023,True,False,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:29,"Owner-occupied homes, Percent",housing,-0.693,42,2009-2016,2007-2019,True,False,False
+measure:1197,"Asthma ED visits (adults), Number",emergency department; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.692,42,2005-2023,2014-2020,True,False,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:960,"Commercial insecticide use, Pyrethroid/pyrethrin solids",insecticide,0.692,42,2007-2017,1999-2022,True,False,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:215,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Solid products",insecticide,0.692,42,2007-2017,1999-2022,True,False,False
+measure:88,"Neighborhood building quality, Percent",housing quality,measure:9,"Death (infants), Number",infant mortality; infant death,-0.692,42,1999-2017,1998-2020,True,False,False
+measure:9,"Death (infants), Number",infant mortality; infant death,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.691,35,1998-2020,2015-2015,True,False,False
+measure:502,"Overweight, Percent",overweight; body mass index,measure:956,"Commercial insecticide use, Carbamate solids",insecticide,-0.691,42,2003-2022,1999-2022,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.691,42,2014-2023,2014-2020,True,False,False
+measure:1028,"Rent burden, Number",housing instability,measure:9,"Death (infants), Number",infant mortality; infant death,0.691,42,2007-2017,1998-2020,True,False,False
+measure:1196,"Asthma ED visits (age 5 to 17), Estimated annual rate",emergency department; childhood asthma; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.691,42,2005-2023,2014-2020,True,True,False
+measure:1195,"Asthma ED visits (age 5 to 17), Number",emergency department; childhood asthma; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.691,42,2005-2023,1998-2020,True,False,True
+measure:9,"Death (infants), Number",infant mortality; infant death,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.69,42,1998-2020,2015-2015,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:88,"Neighborhood building quality, Percent",housing quality,-0.689,42,1998-2020,1999-2017,True,False,False
+measure:9,"Death (infants), Number",infant mortality; infant death,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.689,42,1998-2020,1999-2017,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,0.689,42,1998-2020,2007-2022,True,True,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:29,"Owner-occupied homes, Percent",housing,-0.688,42,2009-2025,2007-2019,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.688,42,2009-2025,1999-2022,True,False,False
+measure:1174,"PM2.5 asthma ED visits, Estimated annual number (under age 18)",PM 2.5; emergency department; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.688,42,2005-2017,2014-2020,True,True,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.688,42,2009-2025,1999-2022,True,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:29,"Owner-occupied homes, Percent",housing,-0.687,42,2009-2025,2007-2019,True,False,False
+measure:648,"PM2.5 asthma ED visits, Estimated annual rate (under age 18)",PM 2.5; emergency department; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.687,42,2005-2017,2014-2020,True,True,False
+measure:1426,"PM2.5 (Fine particles), Summer mean",PM 2.5; air pollution; particulates,measure:693,"Older adults living alone (65+), Percent",social isolation,0.686,42,2009-2025,2007-2017,True,False,False
+measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.686,42,1999-2022,2004-2020,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:990,"Race/ethnicity, White alone (percent)",racial group; ethnicity,-0.686,42,2005-2022,2007-2017,True,True,False
+measure:672,"Health insurance (adults), Percent",private health insurance,measure:989,"Race/ethnicity, Hispanic alone (percent)",racial group; ethnicity,-0.686,42,2012-2022,2007-2017,True,False,False
+measure:1192,"Race/ethnicity, Non-white (percent)",racial group; ethnicity,measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,0.686,42,2007-2017,2005-2022,True,False,True
+measure:44,"Mice or rats (outside), Number",rodent control; Murinae,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.686,42,2004-2020,1999-2022,True,False,False
+measure:44,"Mice or rats (outside), Number",rodent control; Murinae,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,0.685,42,2004-2020,2004-2016,True,False,True
+measure:1028,"Rent burden, Number",housing instability,measure:11,"Death (neonatal), Number",neonatal mortality,0.684,42,2007-2017,1998-2020,True,False,False
+measure:1175,"PM2.5 asthma ED visits, Estimated annual number (age 18+)",PM 2.5; emergency department; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.684,42,2005-2017,2014-2020,True,True,False
+measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.684,41,2012-2012,2014-2023,False,False,False
+measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:754,"Child poverty, Number",child poverty,0.684,42,2000-2022,2007-2017,True,True,False
+measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,measure:15,"Death (postneonatal), Number",infant mortality,0.684,42,2005-2017,1998-2020,True,True,False
+measure:245,"Cockroaches, Percent",cockroach,measure:755,"Child poverty, Percent",child poverty,0.684,42,2008-2023,2007-2017,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,0.683,42,2014-2023,2005-2022,True,False,False
+measure:506,"Obesity, Percent",body mass index; obesity,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.683,42,2003-2022,2015-2015,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.682,42,1998-2011,2002-2023,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.682,42,2017-2023,2004-2020,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.682,42,1998-2020,2015-2015,True,True,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.681,41,2014-2020,2012-2012,False,False,False
+measure:1181,"Ozone asthma hospitalizations, Estimated annual number (under age 18)",ozone; hospitalization; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.681,42,2005-2017,2014-2020,True,True,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.68,42,2005-2022,1999-2017,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,0.68,42,2017-2023,2009-2016,False,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.68,35,2005-2022,2015-2015,True,True,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.679,35,2005-2022,2015-2015,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:1201,"Asthma hospitalizations (age 5 to 17), Estimated annual rate",hospitalization; childhood asthma; asthma,0.679,42,1998-2020,2005-2023,True,True,True
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:754,"Child poverty, Number",child poverty,-0.678,42,2007-2022,2007-2017,True,False,False
+measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,measure:754,"Child poverty, Number",child poverty,0.678,41,2012-2012,2007-2017,True,False,False
+measure:47,"Secondhand smoke, Percent",tobacco smoke; tobacco smoke pollution,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.678,42,2004-2012,2014-2020,False,False,False
+measure:755,"Child poverty, Percent",child poverty,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.678,42,2007-2017,2002-2023,True,False,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:959,"Commercial insecticide use, Pyrethroid/pyrethrin liquids",insecticide,0.677,42,2007-2017,1999-2022,True,False,False
+measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.677,42,1999-2017,2014-2020,True,False,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:214,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Liquid products",insecticide,0.677,42,2007-2017,1999-2022,True,False,False
+measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.676,42,2004-2016,1999-2021,True,True,False
+measure:41,"Cockroaches, Percent",cockroach,measure:869,"Child poverty, Rank",child poverty,0.675,42,2003-2012,2009-2009,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.675,42,2014-2020,2015-2015,True,False,False
+measure:956,"Commercial insecticide use, Carbamate solids",insecticide,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",-0.675,42,1999-2022,2014-2020,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,0.674,42,1998-2020,2005-2022,True,True,True
+measure:15,"Death (postneonatal), Number",infant mortality,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.674,42,1998-2020,2005-2017,True,False,True
+measure:1224,"Park access, Percent",green space; park,measure:31,"Asthma (adults), Age-adjusted percent",asthma,0.674,42,2017-2023,2003-2022,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.672,42,1998-2020,2015-2015,True,True,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.672,41,1998-2020,2012-2012,True,False,False
+measure:211,"Commercial use of fungicides, Solid products",fungicide,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,-0.671,42,1999-2022,2004-2020,True,False,False
+measure:208,"Commercial use of rodenticides, Solid products",rodenticide,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,0.671,42,1999-2022,2004-2016,True,False,True
+measure:15,"Death (postneonatal), Number",infant mortality,measure:245,"Cockroaches, Percent",cockroach,0.67,42,1998-2020,2008-2023,True,False,False
+measure:41,"Cockroaches, Percent",cockroach,measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,0.67,42,2003-2012,2000-2022,True,False,True
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.67,42,1998-2020,2015-2015,True,True,False
+measure:1459,"Difficulty walking, Number",mobility disability,measure:754,"Child poverty, Number",child poverty,0.669,42,2008-2019,2007-2017,True,False,False
+measure:1180,"Ozone asthma ED visits, Estimated annual number (age 18+)",emergency department; ozone; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.669,42,2005-2017,1998-2020,True,True,True
+measure:215,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Solid products",insecticide,measure:506,"Obesity, Percent",body mass index; obesity,-0.668,42,1999-2022,2003-2022,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:88,"Neighborhood building quality, Percent",housing quality,-0.668,42,1998-2020,1999-2017,True,True,False
+measure:755,"Child poverty, Percent",child poverty,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.668,42,2007-2017,2015-2015,True,False,False
+measure:506,"Obesity, Percent",body mass index; obesity,measure:960,"Commercial insecticide use, Pyrethroid/pyrethrin solids",insecticide,-0.668,42,2003-2022,1999-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.667,42,1998-2020,2007-2022,True,False,False
+measure:1175,"PM2.5 asthma ED visits, Estimated annual number (age 18+)",PM 2.5; emergency department; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.667,42,2005-2017,1998-2020,True,True,True
+measure:1224,"Park access, Percent",green space; park,measure:363,"Asthma (adults), Percent",asthma,0.667,42,2017-2023,2003-2022,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:88,"Neighborhood building quality, Percent",housing quality,-0.666,42,2005-2022,1999-2017,True,True,False
+measure:1192,"Race/ethnicity, Non-white (percent)",racial group; ethnicity,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.665,42,2007-2017,2014-2020,True,False,False
+measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",measure:990,"Race/ethnicity, White alone (percent)",racial group; ethnicity,-0.665,42,2014-2020,2007-2017,True,False,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:1459,"Difficulty walking, Number",mobility disability,0.665,42,2007-2017,2008-2019,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,0.665,42,2014-2023,2005-2022,True,False,True
+measure:44,"Mice or rats (outside), Number",rodent control; Murinae,measure:690,"Grass and tree cover, Percent",tree; green space; vegetation cover,-0.664,42,2004-2020,2010-2017,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,0.664,42,1998-2020,2005-2022,True,True,True
+measure:942,"Personal pesticide use, Percent (any use)",pesticide,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.663,42,2015-2015,2014-2020,True,False,False
+measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,measure:9,"Death (infants), Number",infant mortality; infant death,0.663,42,2005-2017,1998-2020,True,True,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,0.663,42,1998-2020,2005-2022,True,True,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,-0.663,42,2014-2023,2015-2015,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:211,"Commercial use of fungicides, Solid products",fungicide,-0.663,42,2009-2025,1999-2022,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.663,42,1998-2020,2002-2023,True,True,False
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:211,"Commercial use of fungicides, Solid products",fungicide,-0.662,42,2009-2025,1999-2022,True,False,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:693,"Older adults living alone (65+), Percent",social isolation,0.662,42,2009-2016,2007-2017,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.662,42,1998-2020,2007-2022,True,True,False
+measure:47,"Secondhand smoke, Percent",tobacco smoke; tobacco smoke pollution,measure:719,"Diabetes (adults), Percent",diabetes,0.662,42,2004-2012,2007-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:245,"Cockroaches, Percent",cockroach,0.662,42,1998-2020,2008-2023,True,False,False
+measure:1202,"Asthma hospitalizations (adults), Number",hospitalization; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.661,42,2005-2023,2014-2020,True,False,False
+measure:47,"Secondhand smoke, Percent",tobacco smoke; tobacco smoke pollution,measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,0.661,42,2004-2012,2007-2022,True,False,False
+measure:1177,"PM2.5 health burden (heart), Estimated annual number",cardiovascular disease; hospitalization; PM 2.5,measure:754,"Child poverty, Number",child poverty,0.66,42,2005-2017,2007-2017,True,True,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:990,"Race/ethnicity, White alone (percent)",racial group; ethnicity,-0.66,42,2014-2020,2007-2017,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,0.66,42,1998-2020,2005-2022,True,True,False
+measure:1192,"Race/ethnicity, Non-white (percent)",racial group; ethnicity,measure:1230,"Death before 65, Number","Mortality, Premature",0.66,42,2007-2017,2014-2020,True,False,False
+measure:44,"Mice or rats (outside), Number",rodent control; Murinae,measure:693,"Older adults living alone (65+), Percent",social isolation,0.66,42,2004-2020,2007-2017,True,False,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.659,42,2009-2016,1999-2022,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,0.659,42,1998-2020,2007-2022,True,False,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.659,42,2009-2016,1999-2022,True,False,False
+measure:459,"Asthma ED visits (age 4 and under), Number",emergency department; childhood asthma; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.658,42,2005-2023,2014-2020,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.658,42,1998-2020,2014-2023,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,0.658,42,2014-2023,1998-2011,False,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,0.657,42,2008-2023,2000-2022,True,False,True
+measure:1028,"Rent burden, Number",housing instability,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.657,42,2007-2017,2004-2020,True,False,False
+measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.657,42,1998-2011,2015-2015,False,True,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:1203,"Asthma hospitalizations (adults), Estimated annual rate",hospitalization; asthma,0.657,42,1998-2020,2005-2023,True,True,True
+measure:1224,"Park access, Percent",green space; park,measure:211,"Commercial use of fungicides, Solid products",fungicide,-0.656,42,2017-2023,1999-2022,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:988,"Race/ethnicity, Black alone (percent)",racial group; ethnicity,0.656,42,2005-2022,2007-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.656,42,1998-2020,2007-2022,True,False,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:755,"Child poverty, Percent",child poverty,-0.655,42,2007-2022,2007-2017,True,False,False
+measure:41,"Cockroaches, Percent",cockroach,measure:9,"Death (infants), Number",infant mortality; infant death,0.655,42,2003-2012,1998-2020,True,False,False
+measure:1026,"Limited English, Number",limited English proficiency,measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,0.655,42,2007-2017,2005-2017,True,False,True
+measure:72,"Carbon monoxide incidents, Number",carbon monoxide,measure:754,"Child poverty, Number",child poverty,0.654,42,2004-2016,2007-2017,True,False,False
+measure:1197,"Asthma ED visits (adults), Number",emergency department; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.654,42,2005-2023,1998-2020,True,False,True
+measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",measure:988,"Race/ethnicity, Black alone (percent)",racial group; ethnicity,0.654,42,2014-2020,2007-2017,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.654,42,2005-2022,2002-2023,True,False,False
+measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.654,41,2012-2012,2007-2022,True,False,False
+measure:76,"Cracks, Percent",housing quality,measure:869,"Child poverty, Rank",child poverty,0.654,42,1999-2023,2009-2009,True,False,False
+measure:1029,"Rent burden, Percent",housing instability,measure:672,"Health insurance (adults), Percent",private health insurance,-0.653,42,2007-2017,2012-2022,True,False,False
+measure:754,"Child poverty, Number",child poverty,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.652,35,2007-2017,2015-2015,True,False,False
+measure:232,"Owner-occupied homes, Number",housing,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,-0.652,42,2007-2019,2004-2016,True,False,True
+measure:719,"Diabetes (adults), Percent",diabetes,measure:754,"Child poverty, Number",child poverty,0.652,42,2007-2022,2007-2017,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.651,42,2009-2025,1999-2022,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.651,42,2014-2023,2007-2022,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.651,42,2009-2025,1999-2022,True,False,False
+measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.651,42,2000-2022,1999-2017,True,True,False
+measure:1026,"Limited English, Number",limited English proficiency,measure:754,"Child poverty, Number",child poverty,0.65,42,2007-2017,2007-2017,True,False,False
+measure:155,"Asthma hospitalizations (age 4 and under), Estimated annual rate",hospitalization; childhood asthma; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.65,42,1998-2023,2014-2020,True,True,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.65,42,2014-2020,1999-2017,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:88,"Neighborhood building quality, Percent",housing quality,-0.65,42,1998-2020,1999-2017,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.649,42,1998-2011,2014-2023,False,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:653,"Ozone asthma ED visits, Estimated annual rate (under age 18)",emergency department; ozone; asthma,0.649,42,1998-2020,2005-2017,True,True,True
+measure:1435,"Ozone, Summer mean",ozone,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,-0.648,42,2009-2025,1999-2022,True,False,False
+measure:506,"Obesity, Percent",body mass index; obesity,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.648,42,2003-2022,2015-2015,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.648,42,1998-2020,2005-2017,True,True,True
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.647,42,2005-2022,2015-2015,True,True,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.647,42,1998-2011,2007-2022,True,False,False
+measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",measure:987,"Race/ethnicity, Asian alone (percent)",racial group; ethnicity,-0.647,42,2014-2020,2007-2017,True,False,False
+measure:1426,"PM2.5 (Fine particles), Summer mean",PM 2.5; air pollution; particulates,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.647,42,2009-2025,1999-2022,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:659,"Ozone asthma ED visits, Estimated annual rate (age 18+)",emergency department; ozone; asthma,0.647,42,1998-2020,2005-2017,True,True,True
+measure:1426,"PM2.5 (Fine particles), Summer mean",PM 2.5; air pollution; particulates,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.647,42,2009-2025,1999-2022,True,False,False
+measure:41,"Cockroaches, Percent",cockroach,measure:755,"Child poverty, Percent",child poverty,0.647,42,2003-2012,2007-2017,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.646,35,1998-2020,2015-2015,True,False,False
+measure:1459,"Difficulty walking, Number",mobility disability,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.646,42,2008-2019,2004-2016,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:245,"Cockroaches, Percent",cockroach,0.646,42,1998-2011,2008-2023,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.646,41,1998-2020,2012-2012,True,True,False
+measure:1459,"Difficulty walking, Number",mobility disability,measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.646,36,2008-2019,2005-2022,True,False,False
+measure:44,"Mice or rats (outside), Number",rodent control; Murinae,measure:671,"Health insurance (adults), Number",private health insurance,0.645,42,2004-2020,2012-2022,True,False,False
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.645,42,2009-2025,1999-2022,True,False,False
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.645,42,2009-2025,1999-2022,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.644,35,2014-2020,2015-2015,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.644,42,2005-2022,1999-2017,True,True,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:245,"Cockroaches, Percent",cockroach,0.643,42,2014-2020,2008-2023,True,False,False
+measure:86,"Homes with 3+ housing problems, Percent",housing quality,measure:869,"Child poverty, Rank",child poverty,0.642,42,1999-2021,2009-2009,True,False,False
+measure:233,"Poverty, Number",poverty,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.642,42,2007-2019,2007-2022,True,False,False
+measure:208,"Commercial use of rodenticides, Solid products",rodenticide,measure:690,"Grass and tree cover, Percent",tree; green space; vegetation cover,-0.642,42,1999-2022,2010-2017,True,False,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:987,"Race/ethnicity, Asian alone (percent)",racial group; ethnicity,0.642,42,2014-2023,2007-2017,True,False,False
+measure:1182,"Ozone asthma hospitalizations, Estimated annual number (age 18+)",ozone; hospitalization; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.642,42,2005-2017,1998-2020,True,True,True
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:460,"Asthma ED visits (age 4 and under), Estimated annual rate",emergency department; childhood asthma; asthma,0.642,42,1998-2020,2005-2023,True,False,True
+measure:754,"Child poverty, Number",child poverty,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.641,42,2007-2017,2014-2020,True,False,False
+measure:755,"Child poverty, Percent",child poverty,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.641,35,2007-2017,2015-2015,True,False,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.641,36,2005-2022,2002-2023,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.641,42,2005-2022,2015-2015,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:1202,"Asthma hospitalizations (adults), Number",hospitalization; asthma,0.641,42,1998-2020,2005-2023,True,True,False
+measure:1427,"PM2.5 (Fine particles), Winter mean",PM 2.5; air pollution; particulates,measure:29,"Owner-occupied homes, Percent",housing,-0.64,42,2009-2025,2007-2019,True,False,False
+measure:29,"Owner-occupied homes, Percent",housing,measure:869,"Child poverty, Rank",child poverty,-0.64,42,2007-2019,2009-2009,True,False,False
+measure:208,"Commercial use of rodenticides, Solid products",rodenticide,measure:652,"Deaths from ozone, Estimated annual rate",cardiovascular disease; respiratory disease; ozone,-0.64,42,1999-2022,2005-2017,True,False,True
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.64,42,1998-2020,2015-2015,True,False,False
+measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.639,35,2000-2022,2015-2015,True,True,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:988,"Race/ethnicity, Black alone (percent)",racial group; ethnicity,0.639,42,2005-2022,2007-2017,True,True,False
+measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,measure:869,"Child poverty, Rank",child poverty,-0.639,42,2002-2023,2009-2009,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,0.639,42,1998-2020,2005-2022,True,False,True
+measure:1198,"Asthma ED visits (adults), Estimated annual rate",emergency department; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.637,42,2005-2023,1998-2020,True,True,True
+measure:1199,"Asthma ED visits (adults), Age-adjusted rate",emergency department; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.637,42,2005-2023,1998-2020,True,False,True
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:88,"Neighborhood building quality, Percent",housing quality,-0.637,42,1998-2011,1999-2017,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:1204,"Asthma hospitalizations (adults), Age-adjusted rate",hospitalization; asthma,0.637,42,1998-2020,2005-2023,True,True,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:211,"Commercial use of fungicides, Solid products",fungicide,-0.636,42,2009-2025,1999-2022,True,False,False
+measure:208,"Commercial use of rodenticides, Solid products",rodenticide,measure:693,"Older adults living alone (65+), Percent",social isolation,0.636,42,1999-2022,2007-2017,True,False,False
+measure:1435,"Ozone, Summer mean",ozone,measure:209,"Commercial use of herbicides, Liquid products",herbicide,0.635,42,2009-2025,1999-2022,True,False,False
+measure:869,"Child poverty, Rank",child poverty,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.635,42,2009-2009,2015-2015,False,False,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:76,"Cracks, Percent",housing quality,0.635,42,2009-2016,1999-2023,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:661,"Ozone asthma hospitalizations, Estimated annual rate (age 18+)",ozone; hospitalization; asthma,0.635,42,1998-2020,2005-2017,True,True,True
+measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,measure:869,"Child poverty, Rank",child poverty,0.635,42,2005-2017,2009-2009,True,True,False
+measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.634,42,2015-2015,2014-2020,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:41,"Cockroaches, Percent",cockroach,0.634,42,1998-2011,2003-2012,True,False,False
+measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.634,42,2005-2017,1999-2017,True,True,False
+measure:1426,"PM2.5 (Fine particles), Summer mean",PM 2.5; air pollution; particulates,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.634,42,2009-2025,1999-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:41,"Cockroaches, Percent",cockroach,0.633,42,1998-2020,2003-2012,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:1248,"Housing problems, Percent",housing quality,0.633,42,2014-2020,2014-2023,True,False,False
+measure:80,"Leaks, Percent",housing quality,measure:869,"Child poverty, Rank",child poverty,0.632,42,1999-2023,2009-2009,True,False,False
+measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.632,42,2000-2022,2015-2015,True,True,False
+measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.631,42,1998-2011,2015-2015,False,True,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:1248,"Housing problems, Percent",housing quality,0.631,42,1998-2020,2014-2023,True,True,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.631,42,1998-2011,1999-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,0.63,42,1998-2020,2005-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.63,42,1998-2020,1999-2017,True,False,False
+measure:869,"Child poverty, Rank",child poverty,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.63,35,2009-2009,2015-2015,False,False,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:673,"Walkability, Score",physical activity,0.63,42,2009-2016,2011-2011,True,False,False
+measure:72,"Carbon monoxide incidents, Number",carbon monoxide,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.629,42,2004-2016,2015-2015,True,False,False
+measure:1177,"PM2.5 health burden (heart), Estimated annual number",cardiovascular disease; hospitalization; PM 2.5,measure:15,"Death (postneonatal), Number",infant mortality,0.629,42,2005-2017,1998-2020,True,True,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.629,42,2007-2017,1999-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:155,"Asthma hospitalizations (age 4 and under), Estimated annual rate",hospitalization; childhood asthma; asthma,0.629,42,1998-2020,1998-2023,True,False,True
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.629,42,2007-2017,1999-2022,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.629,36,2014-2023,2005-2022,True,False,False
+measure:1426,"PM2.5 (Fine particles), Summer mean",PM 2.5; air pollution; particulates,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,0.628,42,2009-2025,2004-2020,True,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:693,"Older adults living alone (65+), Percent",social isolation,0.628,42,2004-2020,2007-2017,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:657,"PM2.5 asthma ED visits, Estimated annual rate (age 18+)",PM 2.5; emergency department; asthma,0.628,42,1998-2020,2005-2017,True,True,True
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:88,"Neighborhood building quality, Percent",housing quality,-0.627,42,2014-2020,1999-2017,True,False,False
+measure:1028,"Rent burden, Number",housing instability,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.627,42,2007-2017,2004-2016,True,False,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:942,"Personal pesticide use, Percent (any use)",pesticide,0.626,36,2005-2022,2015-2015,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.626,42,2014-2020,2002-2023,True,False,False
+measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.626,42,2004-2016,1999-2017,True,True,False
+measure:1192,"Race/ethnicity, Non-white (percent)",racial group; ethnicity,measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.626,36,2007-2017,2005-2022,True,False,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:988,"Race/ethnicity, Black alone (percent)",racial group; ethnicity,-0.626,42,2007-2022,2007-2017,True,False,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:990,"Race/ethnicity, White alone (percent)",racial group; ethnicity,-0.626,36,2005-2022,2007-2017,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:9,"Death (infants), Number",infant mortality; infant death,0.625,42,2005-2022,1998-2020,True,True,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.625,42,1998-2020,2014-2023,True,True,False
+measure:1026,"Limited English, Number",limited English proficiency,measure:1230,"Death before 65, Number","Mortality, Premature",0.625,42,2007-2017,2014-2020,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:989,"Race/ethnicity, Hispanic alone (percent)",racial group; ethnicity,0.625,42,2005-2022,2007-2017,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:26,"Very old homes, Number",lead poisoning; housing quality,0.624,42,1998-2011,2000-2019,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:648,"PM2.5 asthma ED visits, Estimated annual rate (under age 18)",PM 2.5; emergency department; asthma,0.624,42,1998-2020,2005-2017,True,True,True
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,0.624,42,1998-2020,2005-2017,True,True,True
+measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.623,42,1998-2011,2014-2023,False,True,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.623,41,1998-2020,2012-2012,True,True,False
+measure:1224,"Park access, Percent",green space; park,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.622,42,2017-2023,1999-2022,True,False,False
+measure:44,"Mice or rats (outside), Number",rodent control; Murinae,measure:635,"Adults with air conditioners, Number",air conditioning,0.622,42,2004-2020,2007-2022,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.621,42,1998-2020,2005-2017,True,True,True
+measure:41,"Cockroaches, Percent",cockroach,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.621,42,2003-2012,2014-2023,False,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:755,"Child poverty, Percent",child poverty,0.621,42,2005-2022,2007-2017,True,False,False
+measure:29,"Owner-occupied homes, Percent",housing,measure:693,"Older adults living alone (65+), Percent",social isolation,-0.62,42,2007-2019,2007-2017,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:9,"Death (infants), Number",infant mortality; infant death,0.62,42,2005-2022,1998-2020,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,0.62,42,2014-2023,1998-2020,True,False,True
+measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,measure:1460,"Difficulty walking, Percent",mobility disability,0.619,42,2005-2017,2008-2019,True,True,False
+measure:232,"Owner-occupied homes, Number",housing,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,-0.618,42,2007-2019,2004-2020,True,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.618,42,2004-2020,2002-2023,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.617,41,2005-2022,2012-2012,True,False,False
+measure:540,"Heat hospitalizations, Age-adjusted rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:9,"Death (infants), Number",infant mortality; infant death,0.617,42,2000-2022,1998-2020,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,0.617,42,1998-2020,2000-2022,True,True,True
+measure:78,"Peeling paint, Percent",lead poisoning; housing quality,measure:869,"Child poverty, Rank",child poverty,0.616,42,2011-2017,2009-2009,False,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:540,"Heat hospitalizations, Age-adjusted rate",hyperthermia; heat stroke; hospitalization; heat illness,0.615,42,2014-2020,2000-2022,True,False,False
+measure:211,"Commercial use of fungicides, Solid products",fungicide,measure:693,"Older adults living alone (65+), Percent",social isolation,-0.615,42,1999-2022,2007-2017,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,0.614,42,1998-2020,2005-2022,True,False,True
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:540,"Heat hospitalizations, Age-adjusted rate",hyperthermia; heat stroke; hospitalization; heat illness,0.614,42,1998-2020,2000-2022,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.613,42,2005-2022,2002-2023,True,True,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.613,42,1998-2011,2005-2017,True,False,True
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.613,35,2005-2022,2012-2012,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.612,42,2014-2020,2005-2017,True,False,True
+measure:15,"Death (postneonatal), Number",infant mortality,measure:755,"Child poverty, Percent",child poverty,0.612,42,1998-2020,2007-2017,True,False,False
+measure:686,"Commercial use of fungicides, Liquid products",fungicide,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,-0.612,42,1999-2022,2004-2016,True,False,True
+measure:1459,"Difficulty walking, Number",mobility disability,measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,0.611,42,2008-2019,2000-2022,True,False,True
+measure:1248,"Housing problems, Percent",housing quality,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.61,42,2014-2023,2004-2016,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.61,42,2005-2022,2015-2015,True,True,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:869,"Child poverty, Rank",child poverty,-0.609,42,2007-2022,2009-2009,True,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.609,42,2009-2025,1999-2022,True,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.609,42,2009-2025,1999-2022,True,False,False
+measure:154,"Asthma hospitalizations (age 4 and under), Number",hospitalization; childhood asthma; asthma,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.608,42,1998-2023,2014-2020,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.608,42,1998-2020,2005-2017,True,False,True
+measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.608,42,2000-2022,2014-2020,True,True,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.608,36,2005-2022,1999-2017,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:211,"Commercial use of fungicides, Solid products",fungicide,-0.608,42,2009-2025,1999-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,0.607,42,1998-2020,2005-2022,True,False,False
+measure:1196,"Asthma ED visits (age 5 to 17), Estimated annual rate",emergency department; childhood asthma; asthma,measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,0.607,42,2005-2023,1998-2020,True,True,True
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:41,"Cockroaches, Percent",cockroach,0.607,42,2014-2020,2003-2012,False,False,False
+measure:754,"Child poverty, Number",child poverty,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.606,42,2007-2017,2015-2015,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:88,"Neighborhood building quality, Percent",housing quality,-0.606,42,1998-2020,1999-2017,True,True,False
+measure:1029,"Rent burden, Percent",housing instability,measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,0.606,42,2007-2017,2007-2022,True,False,False
+measure:1029,"Rent burden, Percent",housing instability,measure:1230,"Death before 65, Number","Mortality, Premature",0.605,42,2007-2017,2014-2020,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.605,42,2005-2022,2015-2015,True,False,False
+measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.605,42,2007-2022,2002-2023,True,False,False
+measure:1029,"Rent burden, Percent",housing instability,measure:506,"Obesity, Percent",body mass index; obesity,0.605,42,2007-2017,2003-2022,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:232,"Owner-occupied homes, Number",housing,-0.604,42,2017-2023,2007-2019,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1204,"Asthma hospitalizations (adults), Age-adjusted rate",hospitalization; asthma,0.604,42,1998-2020,2005-2023,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.603,42,2008-2023,2005-2017,True,False,True
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.602,42,2014-2020,2014-2023,True,False,False
+measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.602,42,2004-2016,2011-2017,True,True,False
+measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",-0.602,42,2002-2023,2014-2020,True,False,False
+measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,measure:869,"Child poverty, Rank",child poverty,0.601,42,2007-2022,2009-2009,True,False,False
+measure:1029,"Rent burden, Percent",housing instability,measure:505,"Obesity, Number",body mass index; obesity,0.601,42,2007-2017,2003-2022,True,False,False
+measure:232,"Owner-occupied homes, Number",housing,measure:869,"Child poverty, Rank",child poverty,-0.601,42,2007-2019,2009-2009,True,False,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:870,"Poverty, Rank",poverty,-0.601,42,2007-2022,2009-2011,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:211,"Commercial use of fungicides, Solid products",fungicide,-0.601,42,2009-2025,1999-2022,True,False,False
+measure:72,"Carbon monoxide incidents, Number",carbon monoxide,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.601,42,2004-2016,1999-2017,True,False,False
+measure:1176,"Deaths from PM2.5, Estimated annual number (age 30+)",all-cause mortality; air pollution; PM 2.5,measure:233,"Poverty, Number",poverty,0.6,42,2005-2017,2007-2019,True,True,False
+measure:755,"Child poverty, Percent",child poverty,measure:9,"Death (infants), Number",infant mortality; infant death,0.6,42,2007-2017,1998-2020,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1203,"Asthma hospitalizations (adults), Estimated annual rate",hospitalization; asthma,0.6,42,1998-2020,2005-2023,True,False,True
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:754,"Child poverty, Number",child poverty,0.6,36,2005-2022,2007-2017,True,False,False
+measure:1459,"Difficulty walking, Number",mobility disability,measure:15,"Death (postneonatal), Number",infant mortality,0.599,42,2008-2019,1998-2020,True,False,False
+measure:78,"Peeling paint, Percent",lead poisoning; housing quality,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.599,42,2011-2017,2014-2023,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.599,42,1998-2011,2015-2015,False,False,False
+measure:693,"Older adults living alone (65+), Percent",social isolation,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.598,42,2007-2017,1999-2022,True,False,False
+measure:754,"Child poverty, Number",child poverty,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.598,42,2007-2017,1999-2021,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.598,35,1998-2020,2015-2015,True,True,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:211,"Commercial use of fungicides, Solid products",fungicide,-0.598,42,2009-2025,1999-2022,True,False,False
+measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,measure:693,"Older adults living alone (65+), Percent",social isolation,0.598,42,1999-2022,2007-2017,True,False,False
+measure:76,"Cracks, Percent",housing quality,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.597,42,1999-2023,2014-2023,True,False,False
+measure:690,"Grass and tree cover, Percent",tree; green space; vegetation cover,measure:966,"Commercial insecticide use, Best practice products",insecticide,-0.597,42,2010-2017,1999-2022,True,False,False
+measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.597,42,2004-2016,2002-2023,True,True,False
+measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,measure:690,"Grass and tree cover, Percent",tree; green space; vegetation cover,-0.597,42,1999-2022,2010-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:540,"Heat hospitalizations, Age-adjusted rate",hyperthermia; heat stroke; hospitalization; heat illness,0.596,42,1998-2020,2000-2022,True,False,False
+measure:755,"Child poverty, Percent",child poverty,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.596,42,2007-2017,2015-2015,True,False,False
+measure:719,"Diabetes (adults), Percent",diabetes,measure:9,"Death (infants), Number",infant mortality; infant death,0.596,42,2007-2022,1998-2020,True,False,False
+measure:1029,"Rent burden, Percent",housing instability,measure:719,"Diabetes (adults), Percent",diabetes,0.595,42,2007-2017,2007-2022,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:989,"Race/ethnicity, Hispanic alone (percent)",racial group; ethnicity,0.595,42,2005-2022,2007-2017,True,True,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.595,42,1998-2020,1999-2017,True,True,False
+measure:214,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Liquid products",insecticide,measure:992,"Race/ethnicity, Total population",racial group; ethnicity,0.594,42,1999-2022,2007-2017,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.594,36,2008-2023,2005-2022,True,False,False
+measure:755,"Child poverty, Percent",child poverty,measure:80,"Leaks, Percent",housing quality,0.594,42,2007-2017,1999-2023,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:719,"Diabetes (adults), Percent",diabetes,0.593,42,1998-2020,2007-2022,True,True,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.593,42,2009-2025,1999-2022,True,False,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.593,42,2009-2025,1999-2022,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:460,"Asthma ED visits (age 4 and under), Estimated annual rate",emergency department; childhood asthma; asthma,0.593,42,2014-2020,2005-2023,True,False,True
+measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.592,42,2007-2022,1999-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:41,"Cockroaches, Percent",cockroach,0.592,42,1998-2020,2003-2012,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:221,"Poverty, Percent",poverty,0.592,42,1998-2011,2007-2019,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:209,"Commercial use of herbicides, Liquid products",herbicide,-0.592,42,2009-2025,1999-2022,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.591,42,1998-2020,2007-2022,True,True,False
+measure:78,"Peeling paint, Percent",lead poisoning; housing quality,measure:9,"Death (infants), Number",infant mortality; infant death,0.59,42,2011-2017,1998-2020,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.589,42,2008-2023,2014-2020,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,0.589,42,2008-2023,2005-2022,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:540,"Heat hospitalizations, Age-adjusted rate",hyperthermia; heat stroke; hospitalization; heat illness,0.588,42,1998-2020,2000-2022,True,True,False
+measure:1435,"Ozone, Summer mean",ozone,measure:211,"Commercial use of fungicides, Solid products",fungicide,0.588,42,2009-2025,1999-2022,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,0.588,42,2008-2023,2004-2016,True,False,True
+measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.587,42,1998-2011,2007-2022,True,True,False
+measure:1029,"Rent burden, Percent",housing instability,measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,0.586,42,2007-2017,1998-2011,True,False,False
+measure:1460,"Difficulty walking, Percent",mobility disability,measure:755,"Child poverty, Percent",child poverty,0.586,42,2008-2019,2007-2017,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:648,"PM2.5 asthma ED visits, Estimated annual rate (under age 18)",PM 2.5; emergency department; asthma,0.586,42,1998-2020,2005-2017,True,False,True
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:755,"Child poverty, Percent",child poverty,0.585,42,2005-2022,2007-2017,True,True,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.585,35,1998-2011,2015-2015,False,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:88,"Neighborhood building quality, Percent",housing quality,-0.585,42,1998-2020,1999-2017,True,True,False
+measure:719,"Diabetes (adults), Percent",diabetes,measure:755,"Child poverty, Percent",child poverty,0.585,42,2007-2022,2007-2017,True,False,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:942,"Personal pesticide use, Percent (any use)",pesticide,-0.583,42,2007-2022,2015-2015,True,False,False
+measure:1435,"Ozone, Summer mean",ozone,measure:29,"Owner-occupied homes, Percent",housing,0.583,42,2009-2025,2007-2019,True,False,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:80,"Leaks, Percent",housing quality,-0.583,42,2014-2023,1999-2023,True,False,False
+measure:754,"Child poverty, Number",child poverty,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.583,42,2007-2017,2011-2017,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.583,42,1998-2020,2002-2023,True,True,False
+measure:1248,"Housing problems, Percent",housing quality,measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,0.582,42,2014-2023,2007-2022,True,False,False
+measure:672,"Health insurance (adults), Percent",private health insurance,measure:755,"Child poverty, Percent",child poverty,-0.582,42,2012-2022,2007-2017,True,False,False
+measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,0.581,41,2012-2012,2007-2022,True,False,False
+measure:1029,"Rent burden, Percent",housing instability,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.581,42,2007-2017,2014-2023,True,False,False
+measure:1026,"Limited English, Number",limited English proficiency,measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,0.58,42,2007-2017,1998-2011,True,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.58,42,2004-2020,2011-2017,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.579,36,1998-2020,2005-2022,True,True,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.579,42,1998-2020,1999-2021,True,False,False
+measure:754,"Child poverty, Number",child poverty,measure:80,"Leaks, Percent",housing quality,0.579,42,2007-2017,1999-2023,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:245,"Cockroaches, Percent",cockroach,0.578,42,1998-2020,2008-2023,True,True,False
+measure:719,"Diabetes (adults), Percent",diabetes,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.577,42,2007-2022,2014-2023,True,False,False
+measure:755,"Child poverty, Percent",child poverty,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.577,42,2007-2017,1999-2021,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.577,36,1998-2020,2005-2022,True,True,False
+measure:1426,"PM2.5 (Fine particles), Summer mean",PM 2.5; air pollution; particulates,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.577,42,2009-2025,2004-2020,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:661,"Ozone asthma hospitalizations, Estimated annual rate (age 18+)",ozone; hospitalization; asthma,0.576,42,2014-2020,2005-2017,True,False,True
+measure:1029,"Rent burden, Percent",housing instability,measure:502,"Overweight, Percent",overweight; body mass index,0.576,42,2007-2017,2003-2022,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:987,"Race/ethnicity, Asian alone (percent)",racial group; ethnicity,-0.575,42,2005-2022,2007-2017,True,False,False
+measure:41,"Cockroaches, Percent",cockroach,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.575,42,2003-2012,2007-2022,True,False,False
+measure:502,"Overweight, Percent",overweight; body mass index,measure:88,"Neighborhood building quality, Percent",housing quality,-0.573,42,2003-2022,1999-2017,True,False,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.573,32,2005-2022,2015-2015,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:754,"Child poverty, Number",child poverty,0.573,42,2005-2022,2007-2017,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:686,"Commercial use of fungicides, Liquid products",fungicide,-0.573,42,2009-2025,1999-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:221,"Poverty, Percent",poverty,0.573,42,1998-2020,2007-2019,True,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:686,"Commercial use of fungicides, Liquid products",fungicide,-0.573,42,2004-2020,1999-2022,True,False,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:76,"Cracks, Percent",housing quality,0.572,42,2009-2025,1999-2023,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:755,"Child poverty, Percent",child poverty,0.572,42,1998-2011,2007-2017,True,False,False
+measure:41,"Cockroaches, Percent",cockroach,measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.572,36,2003-2012,2005-2022,True,False,False
+measure:1203,"Asthma hospitalizations (adults), Estimated annual rate",hospitalization; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.572,42,2005-2023,2014-2020,True,True,False
+measure:292,"Smoke-free homes, Percent",smoking ban; tobacco smoke pollution,measure:693,"Older adults living alone (65+), Percent",social isolation,0.571,42,2002-2013,2007-2017,True,False,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.571,36,2005-2022,1999-2021,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,0.571,42,1998-2020,1999-2017,True,True,False
+measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,measure:755,"Child poverty, Percent",child poverty,0.571,41,2012-2012,2007-2017,True,False,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:211,"Commercial use of fungicides, Solid products",fungicide,-0.571,42,2009-2025,1999-2022,True,False,False
+measure:26,"Very old homes, Number",lead poisoning; housing quality,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.571,42,2000-2019,2004-2016,True,False,False
+measure:29,"Owner-occupied homes, Percent",housing,measure:755,"Child poverty, Percent",child poverty,-0.57,42,2007-2019,2007-2017,True,False,False
+measure:1427,"PM2.5 (Fine particles), Winter mean",PM 2.5; air pollution; particulates,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.57,42,2009-2025,1999-2022,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.57,42,2005-2022,2011-2017,True,True,False
+measure:44,"Mice or rats (outside), Number",rodent control; Murinae,measure:76,"Cracks, Percent",housing quality,0.57,42,2004-2020,1999-2023,True,False,False
+measure:1427,"PM2.5 (Fine particles), Winter mean",PM 2.5; air pollution; particulates,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.57,42,2009-2025,1999-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.569,42,1998-2020,2011-2017,True,False,False
+measure:29,"Owner-occupied homes, Percent",housing,measure:690,"Grass and tree cover, Percent",tree; green space; vegetation cover,0.569,42,2007-2019,2010-2017,True,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:209,"Commercial use of herbicides, Liquid products",herbicide,-0.569,42,2009-2025,1999-2022,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.569,42,2005-2022,1999-2021,True,False,False
+measure:1427,"PM2.5 (Fine particles), Winter mean",PM 2.5; air pollution; particulates,measure:76,"Cracks, Percent",housing quality,0.568,42,2009-2025,1999-2023,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:655,"Ozone asthma hospitalizations, Estimated annual rate (under age 18)",ozone; hospitalization; asthma,0.567,42,1998-2020,2005-2017,True,False,True
+measure:540,"Heat hospitalizations, Age-adjusted rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.567,41,2000-2022,2012-2012,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:76,"Cracks, Percent",housing quality,0.567,42,2009-2025,1999-2023,True,False,False
+measure:1026,"Limited English, Number",limited English proficiency,measure:11,"Death (neonatal), Number",neonatal mortality,0.567,42,2007-2017,1998-2020,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.567,35,1998-2020,2015-2015,True,True,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.567,42,2009-2016,1999-2021,True,False,False
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:686,"Commercial use of fungicides, Liquid products",fungicide,-0.567,42,2009-2025,1999-2022,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:869,"Child poverty, Rank",child poverty,0.567,42,2005-2022,2009-2009,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,0.567,42,1998-2020,2005-2017,True,True,True
+measure:209,"Commercial use of herbicides, Liquid products",herbicide,measure:693,"Older adults living alone (65+), Percent",social isolation,-0.567,42,1999-2022,2007-2017,True,False,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:989,"Race/ethnicity, Hispanic alone (percent)",racial group; ethnicity,-0.566,42,2014-2023,2007-2017,True,False,False
+measure:755,"Child poverty, Percent",child poverty,measure:76,"Cracks, Percent",housing quality,0.566,42,2007-2017,1999-2023,True,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:686,"Commercial use of fungicides, Liquid products",fungicide,-0.565,42,2009-2025,1999-2022,True,False,False
+measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.565,42,1998-2011,2002-2023,True,True,False
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:76,"Cracks, Percent",housing quality,0.565,42,2009-2025,1999-2023,True,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:88,"Neighborhood building quality, Percent",housing quality,-0.565,42,2004-2020,1999-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:869,"Child poverty, Rank",child poverty,0.565,42,1998-2020,2009-2009,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1198,"Asthma ED visits (adults), Estimated annual rate",emergency department; asthma,0.565,42,1998-2020,2005-2023,True,False,True
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:76,"Cracks, Percent",housing quality,0.565,42,2009-2025,1999-2023,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:653,"Ozone asthma ED visits, Estimated annual rate (under age 18)",emergency department; ozone; asthma,0.564,42,1998-2020,2005-2017,True,False,True
+measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,measure:88,"Neighborhood building quality, Percent",housing quality,-0.564,42,1998-2011,1999-2017,True,True,False
+measure:245,"Cockroaches, Percent",cockroach,measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,0.564,42,2008-2023,2005-2022,True,False,True
+measure:44,"Mice or rats (outside), Number",rodent control; Murinae,measure:716,"Carbon monoxide, Average annual rate",carbon monoxide,0.563,42,2004-2020,2011-2014,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:76,"Cracks, Percent",housing quality,0.563,42,2017-2023,1999-2023,True,False,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:94,"Mice or rats (in the building), Percent",rodent control; Murinae,-0.563,42,2007-2022,1999-2017,True,False,False
+measure:1028,"Rent burden, Number",housing instability,measure:15,"Death (postneonatal), Number",infant mortality,0.563,42,2007-2017,1998-2020,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:754,"Child poverty, Number",child poverty,0.561,42,1998-2020,2007-2017,True,True,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:540,"Heat hospitalizations, Age-adjusted rate",hyperthermia; heat stroke; hospitalization; heat illness,0.561,42,1998-2020,2000-2022,True,True,False
+measure:1248,"Housing problems, Percent",housing quality,measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,0.56,42,2014-2023,1998-2011,False,False,True
+measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,measure:956,"Commercial insecticide use, Carbamate solids",insecticide,-0.56,42,2005-2017,1999-2022,True,True,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:870,"Poverty, Rank",poverty,0.56,42,1998-2011,2009-2011,True,False,False
+measure:652,"Deaths from ozone, Estimated annual rate",cardiovascular disease; respiratory disease; ozone,measure:76,"Cracks, Percent",housing quality,-0.56,42,2005-2017,1999-2023,True,True,False
+measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,measure:754,"Child poverty, Number",child poverty,0.56,42,2005-2017,2007-2017,True,True,False
+measure:1248,"Housing problems, Percent",housing quality,measure:506,"Obesity, Percent",body mass index; obesity,0.559,42,2014-2023,2003-2022,True,False,False
+measure:72,"Carbon monoxide incidents, Number",carbon monoxide,measure:759,"Renter-occupied homes with no housing problems, Percent",housing quality,-0.559,42,2004-2016,2002-2023,True,False,False
+measure:1028,"Rent burden, Number",housing instability,measure:214,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Liquid products",insecticide,0.559,42,2007-2017,1999-2022,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:80,"Leaks, Percent",housing quality,0.559,42,2005-2022,1999-2023,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1199,"Asthma ED visits (adults), Age-adjusted rate",emergency department; asthma,0.559,42,1998-2020,2005-2023,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:292,"Smoke-free homes, Percent",smoking ban; tobacco smoke pollution,0.559,42,2017-2023,2002-2013,False,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:690,"Grass and tree cover, Percent",tree; green space; vegetation cover,-0.559,42,2004-2020,2010-2017,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.558,42,1998-2020,2005-2017,True,True,True
+measure:506,"Obesity, Percent",body mass index; obesity,measure:88,"Neighborhood building quality, Percent",housing quality,-0.558,42,2003-2022,1999-2017,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:755,"Child poverty, Percent",child poverty,0.557,42,1998-2020,2007-2017,True,True,False
+measure:754,"Child poverty, Number",child poverty,measure:76,"Cracks, Percent",housing quality,0.557,42,2007-2017,1999-2023,True,False,False
+measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:755,"Child poverty, Percent",child poverty,0.557,42,2000-2022,2007-2017,True,True,False
+measure:1224,"Park access, Percent",green space; park,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,0.556,42,2017-2023,1999-2022,True,False,False
+measure:1204,"Asthma hospitalizations (adults), Age-adjusted rate",hospitalization; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.556,42,2005-2023,2014-2020,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.556,42,2017-2023,1999-2022,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.555,42,2005-2022,2011-2017,True,False,False
+measure:755,"Child poverty, Percent",child poverty,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.555,42,2007-2017,2011-2017,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.555,41,2005-2022,2012-2012,True,True,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,0.555,42,1998-2020,2005-2017,True,True,True
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,0.554,42,2014-2020,2005-2022,True,False,True
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:1460,"Difficulty walking, Percent",mobility disability,0.554,42,2014-2020,2008-2019,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.554,42,2008-2023,2004-2016,True,False,False
+measure:672,"Health insurance (adults), Percent",private health insurance,measure:88,"Neighborhood building quality, Percent",housing quality,0.554,42,2012-2022,1999-2017,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:754,"Child poverty, Number",child poverty,0.553,42,2005-2022,2007-2017,True,True,False
+measure:41,"Cockroaches, Percent",cockroach,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.553,42,2003-2012,2005-2017,True,False,True
+measure:47,"Secondhand smoke, Percent",tobacco smoke; tobacco smoke pollution,measure:639,"Deaths from PM2.5, Estimated annual rate (age 30+)",all-cause mortality; air pollution; PM 2.5,0.553,42,2004-2012,2005-2017,True,False,True
+measure:755,"Child poverty, Percent",child poverty,measure:956,"Commercial insecticide use, Carbamate solids",insecticide,-0.552,42,2007-2017,1999-2022,True,False,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:88,"Neighborhood building quality, Percent",housing quality,-0.552,36,2005-2022,1999-2017,True,False,False
+measure:1028,"Rent burden, Number",housing instability,measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,0.552,42,2007-2017,2009-2016,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.552,35,1998-2020,2015-2015,True,True,False
+measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",measure:989,"Race/ethnicity, Hispanic alone (percent)",racial group; ethnicity,0.552,42,2014-2020,2007-2017,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:26,"Very old homes, Number",lead poisoning; housing quality,0.551,42,1998-2020,2000-2019,True,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:76,"Cracks, Percent",housing quality,0.551,42,2009-2025,1999-2023,True,False,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",-0.551,42,2007-2022,2014-2020,True,False,False
+measure:672,"Health insurance (adults), Percent",private health insurance,measure:990,"Race/ethnicity, White alone (percent)",racial group; ethnicity,0.551,42,2012-2022,2007-2017,True,False,False
+measure:1192,"Race/ethnicity, Non-white (percent)",racial group; ethnicity,measure:672,"Health insurance (adults), Percent",private health insurance,-0.551,42,2007-2017,2012-2022,True,False,False
+measure:505,"Obesity, Number",body mass index; obesity,measure:671,"Health insurance (adults), Number",private health insurance,0.551,42,2003-2022,2012-2022,True,False,False
+measure:221,"Poverty, Percent",poverty,measure:672,"Health insurance (adults), Percent",private health insurance,-0.551,42,2007-2019,2012-2022,True,False,False
+measure:1026,"Limited English, Number",limited English proficiency,measure:1176,"Deaths from PM2.5, Estimated annual number (age 30+)",all-cause mortality; air pollution; PM 2.5,0.551,42,2007-2017,2005-2017,True,False,True
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.551,42,2014-2020,2015-2015,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:221,"Poverty, Percent",poverty,0.551,42,2014-2020,2007-2019,True,False,False
+measure:72,"Carbon monoxide incidents, Number",carbon monoxide,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.55,42,2004-2016,2014-2023,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.55,42,1998-2020,2004-2016,True,True,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:755,"Child poverty, Percent",child poverty,0.55,42,1998-2020,2007-2017,True,False,False
+measure:502,"Overweight, Percent",overweight; body mass index,measure:966,"Commercial insecticide use, Best practice products",insecticide,-0.55,42,2003-2022,1999-2022,True,False,False
+measure:211,"Commercial use of fungicides, Solid products",fungicide,measure:44,"Mice or rats (outside), Number",rodent control; Murinae,-0.549,42,1999-2022,2004-2020,True,False,False
+measure:44,"Mice or rats (outside), Number",rodent control; Murinae,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.549,42,2004-2020,1999-2021,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:80,"Leaks, Percent",housing quality,0.548,42,2005-2022,1999-2023,True,True,False
+measure:232,"Owner-occupied homes, Number",housing,measure:755,"Child poverty, Percent",child poverty,-0.548,42,2007-2019,2007-2017,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:869,"Child poverty, Rank",child poverty,0.547,42,2005-2022,2009-2009,True,True,False
+measure:1435,"Ozone, Summer mean",ozone,measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,-0.547,42,2009-2025,1999-2022,True,False,False
+measure:1435,"Ozone, Summer mean",ozone,measure:966,"Commercial insecticide use, Best practice products",insecticide,-0.547,42,2009-2025,1999-2022,True,False,False
+measure:1026,"Limited English, Number",limited English proficiency,measure:9,"Death (infants), Number",infant mortality; infant death,0.546,42,2007-2017,1998-2020,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.546,42,1998-2020,2007-2022,True,True,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:657,"PM2.5 asthma ED visits, Estimated annual rate (age 18+)",PM 2.5; emergency department; asthma,0.546,42,1998-2020,2005-2017,True,False,True
+measure:86,"Homes with 3+ housing problems, Percent",housing quality,measure:9,"Death (infants), Number",infant mortality; infant death,0.545,42,1999-2021,1998-2020,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:988,"Race/ethnicity, Black alone (percent)",racial group; ethnicity,0.545,42,2014-2020,2007-2017,True,False,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:209,"Commercial use of herbicides, Liquid products",herbicide,-0.544,42,2009-2025,1999-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:661,"Ozone asthma hospitalizations, Estimated annual rate (age 18+)",ozone; hospitalization; asthma,0.544,42,1998-2020,2005-2017,True,False,True
+measure:869,"Child poverty, Rank",child poverty,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.544,42,2009-2009,2015-2015,False,False,False
+measure:26,"Very old homes, Number",lead poisoning; housing quality,measure:9,"Death (infants), Number",infant mortality; infant death,0.543,42,2000-2019,1998-2020,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:987,"Race/ethnicity, Asian alone (percent)",racial group; ethnicity,-0.542,42,2005-2022,2007-2017,True,True,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:155,"Asthma hospitalizations (age 4 and under), Estimated annual rate",hospitalization; childhood asthma; asthma,0.541,42,2014-2020,1998-2023,True,False,True
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.541,36,2005-2022,2011-2017,True,False,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:76,"Cracks, Percent",housing quality,0.541,42,2009-2025,1999-2023,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1201,"Asthma hospitalizations (age 5 to 17), Estimated annual rate",hospitalization; childhood asthma; asthma,0.541,42,1998-2020,2005-2023,True,False,True
+measure:690,"Grass and tree cover, Percent",tree; green space; vegetation cover,measure:959,"Commercial insecticide use, Pyrethroid/pyrethrin liquids",insecticide,-0.54,42,2010-2017,1999-2022,True,False,False
+measure:672,"Health insurance (adults), Percent",private health insurance,measure:754,"Child poverty, Number",child poverty,-0.54,42,2012-2022,2007-2017,True,False,False
+measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.54,42,1998-2011,2005-2017,True,True,True
+measure:214,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Liquid products",insecticide,measure:690,"Grass and tree cover, Percent",tree; green space; vegetation cover,-0.54,42,1999-2022,2010-2017,True,False,False
+measure:869,"Child poverty, Rank",child poverty,measure:9,"Death (infants), Number",infant mortality; infant death,0.54,42,2009-2009,1998-2020,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:1196,"Asthma ED visits (age 5 to 17), Estimated annual rate",emergency department; childhood asthma; asthma,0.54,42,1998-2020,2005-2023,True,False,True
+measure:1430,"Black carbon, Winter mean",black carbon,measure:686,"Commercial use of fungicides, Liquid products",fungicide,-0.539,42,2009-2025,1999-2022,True,False,False
+measure:719,"Diabetes (adults), Percent",diabetes,measure:88,"Neighborhood building quality, Percent",housing quality,-0.539,42,2007-2022,1999-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.539,42,1998-2020,2011-2017,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,0.539,42,2014-2020,2005-2022,True,False,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:232,"Owner-occupied homes, Number",housing,0.539,42,2007-2017,2007-2019,True,False,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:76,"Cracks, Percent",housing quality,0.539,42,2009-2025,1999-2023,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:209,"Commercial use of herbicides, Liquid products",herbicide,-0.538,42,2009-2025,1999-2022,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:659,"Ozone asthma ED visits, Estimated annual rate (age 18+)",emergency department; ozone; asthma,0.538,42,1998-2020,2005-2017,True,False,True
+measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.538,42,2000-2022,2015-2015,True,True,False
+measure:1028,"Rent burden, Number",housing instability,measure:501,"Overweight, Number",overweight; body mass index,0.538,42,2007-2017,2003-2022,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:209,"Commercial use of herbicides, Liquid products",herbicide,-0.537,42,2009-2025,1999-2022,True,False,False
+measure:1029,"Rent burden, Percent",housing instability,measure:11,"Death (neonatal), Number",neonatal mortality,0.536,42,2007-2017,1998-2020,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.535,42,1998-2011,2011-2017,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:210,"Commercial use of herbicides, Solid products",herbicide,-0.534,42,2009-2025,1999-2022,True,False,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:955,"Commercial insecticide use, Carbamate liquids",insecticide,0.533,42,2007-2017,1999-2022,True,False,False
+measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.533,42,2005-2017,2014-2023,True,True,False
+measure:1029,"Rent burden, Percent",housing instability,measure:9,"Death (infants), Number",infant mortality; infant death,0.533,42,2007-2017,1998-2020,True,False,False
+measure:960,"Commercial insecticide use, Pyrethroid/pyrethrin solids",insecticide,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",-0.533,42,1999-2022,2014-2020,True,False,False
+measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:76,"Cracks, Percent",housing quality,0.533,42,2005-2022,1999-2023,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:755,"Child poverty, Percent",child poverty,0.533,42,2014-2020,2007-2017,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:245,"Cockroaches, Percent",cockroach,0.533,42,1998-2020,2008-2023,True,True,False
+measure:1248,"Housing problems, Percent",housing quality,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.533,42,2014-2023,2004-2020,True,False,False
+measure:215,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Solid products",insecticide,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",-0.533,42,1999-2022,2014-2020,True,False,False
+measure:1248,"Housing problems, Percent",housing quality,measure:502,"Overweight, Percent",overweight; body mass index,0.533,42,2014-2023,2003-2022,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:717,"Diabetes (adults), Age-adjusted percent",diabetes,0.533,42,1998-2020,2007-2022,True,True,False
+measure:1248,"Housing problems, Percent",housing quality,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,0.532,42,2014-2023,2004-2016,True,False,True
+measure:1426,"PM2.5 (Fine particles), Summer mean",PM 2.5; air pollution; particulates,measure:29,"Owner-occupied homes, Percent",housing,-0.532,42,2009-2025,2007-2019,True,False,False
+measure:10,"Death (infants), Estimated annual rate",infant mortality; infant death,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.531,42,1998-2020,2011-2017,True,True,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,-0.531,35,2007-2022,2015-2015,True,False,False
+measure:505,"Obesity, Number",body mass index; obesity,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.531,41,2003-2022,2012-2012,True,False,False
+measure:72,"Carbon monoxide incidents, Number",carbon monoxide,measure:936,"Personal pesticide use, Percent (Spray/Bomb only)",pesticide,0.529,42,2004-2016,2015-2015,True,False,False
+measure:72,"Carbon monoxide incidents, Number",carbon monoxide,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.529,42,2004-2016,2011-2017,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:26,"Very old homes, Number",lead poisoning; housing quality,0.529,42,2014-2020,2000-2019,True,False,False
+measure:1459,"Difficulty walking, Number",mobility disability,measure:540,"Heat hospitalizations, Age-adjusted rate",hyperthermia; heat stroke; hospitalization; heat illness,0.529,42,2008-2019,2000-2022,True,False,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:208,"Commercial use of rodenticides, Solid products",rodenticide,0.529,42,2007-2017,1999-2022,True,False,False
+measure:672,"Health insurance (adults), Percent",private health insurance,measure:869,"Child poverty, Rank",child poverty,-0.528,42,2012-2022,2009-2009,False,False,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:992,"Race/ethnicity, Total population",racial group; ethnicity,0.528,36,2005-2022,2007-2017,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.527,42,2005-2022,1999-2021,True,True,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:870,"Poverty, Rank",poverty,0.527,42,2014-2020,2009-2011,False,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.527,42,1998-2020,2004-2016,True,True,False
+measure:232,"Owner-occupied homes, Number",housing,measure:693,"Older adults living alone (65+), Percent",social isolation,-0.527,42,2007-2019,2007-2017,True,False,False
+measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.527,41,2012-2012,2014-2020,False,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:636,"Adults with air conditioners, Percent",air conditioning,-0.526,42,2014-2020,2007-2022,True,False,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:215,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Solid products",insecticide,0.526,42,2009-2025,1999-2022,True,False,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:960,"Commercial insecticide use, Pyrethroid/pyrethrin solids",insecticide,0.526,42,2009-2025,1999-2022,True,False,False
+measure:506,"Obesity, Percent",body mass index; obesity,measure:934,"Personal pesticide use, Percent (Tempo or Chinese Chalk)",pesticide,0.526,35,2003-2022,2015-2015,True,False,False
+measure:233,"Poverty, Number",poverty,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.526,42,2007-2019,2014-2020,True,False,False
+measure:1425,"PM2.5 (Fine particles), Annual mean",PM 2.5; air pollution; particulates,measure:232,"Owner-occupied homes, Number",housing,-0.525,42,2009-2025,2007-2019,True,False,False
+measure:245,"Cockroaches, Percent",cockroach,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.525,42,2008-2023,2007-2022,True,False,False
+measure:215,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Solid products",insecticide,measure:26,"Very old homes, Number",lead poisoning; housing quality,0.525,42,1999-2022,2000-2019,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:686,"Commercial use of fungicides, Liquid products",fungicide,-0.525,42,2009-2025,1999-2022,True,False,False
+measure:41,"Cockroaches, Percent",cockroach,measure:537,"Heat ED visits, Age-adjusted rate",emergency department; heat stroke; heat illness; heat exhaustion,0.525,42,2003-2012,2005-2022,True,False,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:245,"Cockroaches, Percent",cockroach,0.525,42,2009-2016,2008-2023,True,False,False
+measure:13,"Death (perinatal), Number",perinatal mortality; perinatal death,measure:869,"Child poverty, Rank",child poverty,0.525,42,1998-2011,2009-2009,True,False,False
+measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.525,41,1998-2011,2012-2012,False,True,False
+measure:1127,"Evictions, Number",housing instability,measure:1183,"Deaths from ozone, Estimated annual number",cardiovascular disease; respiratory disease; ozone,0.524,42,2017-2022,2005-2017,True,False,True
+measure:1029,"Rent burden, Percent",housing instability,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.524,42,2007-2017,2014-2020,True,False,False
+measure:1176,"Deaths from PM2.5, Estimated annual number (age 30+)",all-cause mortality; air pollution; PM 2.5,measure:232,"Owner-occupied homes, Number",housing,0.524,42,2005-2017,2007-2019,True,True,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:755,"Child poverty, Percent",child poverty,0.524,42,1998-2020,2007-2017,True,True,False
+measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.524,42,2005-2017,2014-2020,True,True,False
+measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,measure:869,"Child poverty, Rank",child poverty,0.523,41,2012-2012,2009-2009,False,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:76,"Cracks, Percent",housing quality,0.523,42,1998-2020,1999-2023,True,False,False
+measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.523,42,2005-2022,2004-2016,True,True,False
+measure:1426,"PM2.5 (Fine particles), Summer mean",PM 2.5; air pollution; particulates,measure:211,"Commercial use of fungicides, Solid products",fungicide,-0.523,42,2009-2025,1999-2022,True,False,False
+measure:29,"Owner-occupied homes, Percent",housing,measure:781,"Households with AC, Percent (with AC)",air conditioning,0.522,42,2007-2019,2014-2023,True,False,False
+measure:1198,"Asthma ED visits (adults), Estimated annual rate",emergency department; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.521,42,2005-2023,2014-2020,True,True,False
+measure:502,"Overweight, Percent",overweight; body mass index,measure:953,"Commercial insecticide use, All liquids",insecticide,-0.521,42,2003-2022,1999-2022,True,False,False
+measure:206,"Commercial use of insecticides, Liquid products",insecticide,measure:502,"Overweight, Percent",overweight; body mass index,-0.521,42,1999-2022,2003-2022,True,False,False
+measure:1428,"Black carbon, Annual mean",black carbon,measure:232,"Owner-occupied homes, Number",housing,-0.521,42,2009-2025,2007-2019,True,False,False
+measure:11,"Death (neonatal), Number",neonatal mortality,measure:870,"Poverty, Rank",poverty,0.521,42,1998-2020,2009-2011,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:719,"Diabetes (adults), Percent",diabetes,0.52,42,1998-2020,2007-2022,True,False,False
+measure:213,"Commercial use of insecticides (Organophosphate), Solid products",insecticide,measure:781,"Households with AC, Percent (with AC)",air conditioning,0.52,42,1999-2022,2014-2023,True,False,False
+measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,0.52,42,1998-2011,2005-2017,True,True,True
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:648,"PM2.5 asthma ED visits, Estimated annual rate (under age 18)",PM 2.5; emergency department; asthma,0.52,42,2014-2020,2005-2017,True,False,True
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:958,"Commercial insecticide use, Organophosphate solids",insecticide,0.52,42,2014-2023,1999-2022,True,False,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:210,"Commercial use of herbicides, Solid products",herbicide,-0.519,42,2009-2025,1999-2022,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:686,"Commercial use of fungicides, Liquid products",fungicide,-0.519,42,2009-2025,1999-2022,True,False,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:76,"Cracks, Percent",housing quality,0.519,36,2005-2022,1999-2023,True,False,False
+measure:1196,"Asthma ED visits (age 5 to 17), Estimated annual rate",emergency department; childhood asthma; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.517,42,2005-2023,2014-2020,True,True,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:215,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Solid products",insecticide,0.517,42,2009-2016,1999-2022,True,False,False
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:960,"Commercial insecticide use, Pyrethroid/pyrethrin solids",insecticide,0.517,42,2009-2016,1999-2022,True,False,False
+measure:1176,"Deaths from PM2.5, Estimated annual number (age 30+)",all-cause mortality; air pollution; PM 2.5,measure:214,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Liquid products",insecticide,0.517,42,2005-2017,1999-2022,True,True,False
+measure:1176,"Deaths from PM2.5, Estimated annual number (age 30+)",all-cause mortality; air pollution; PM 2.5,measure:959,"Commercial insecticide use, Pyrethroid/pyrethrin liquids",insecticide,0.517,42,2005-2017,1999-2022,True,True,False
+measure:213,"Commercial use of insecticides (Organophosphate), Solid products",insecticide,measure:869,"Child poverty, Rank",child poverty,-0.516,42,1999-2022,2009-2009,True,False,False
+measure:869,"Child poverty, Rank",child poverty,measure:958,"Commercial insecticide use, Organophosphate solids",insecticide,-0.516,42,2009-2009,1999-2022,True,False,False
+measure:41,"Cockroaches, Percent",cockroach,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,0.515,42,2003-2012,2004-2016,True,False,True
+measure:1434,"Sulfur dioxide, Winter mean",sulfur dioxide,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.514,42,2009-2016,2011-2017,True,False,False
+measure:1433,"Nitrogen dioxide, Winter mean",nitrogen dioxide,measure:686,"Commercial use of fungicides, Liquid products",fungicide,-0.514,42,2009-2025,1999-2022,True,False,False
+measure:1224,"Park access, Percent",green space; park,measure:652,"Deaths from ozone, Estimated annual rate",cardiovascular disease; respiratory disease; ozone,-0.514,42,2017-2023,2005-2017,True,False,True
+measure:1429,"Black carbon, Summer mean",black carbon,measure:210,"Commercial use of herbicides, Solid products",herbicide,-0.514,42,2009-2025,1999-2022,True,False,False
+measure:686,"Commercial use of fungicides, Liquid products",fungicide,measure:693,"Older adults living alone (65+), Percent",social isolation,-0.514,42,1999-2022,2007-2017,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:655,"Ozone asthma hospitalizations, Estimated annual rate (under age 18)",ozone; hospitalization; asthma,0.514,42,2014-2020,2005-2017,True,False,True
+measure:1460,"Difficulty walking, Percent",mobility disability,measure:754,"Child poverty, Number",child poverty,0.514,42,2008-2019,2007-2017,True,False,False
+measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.514,41,2012-2012,2004-2016,True,False,False
+measure:47,"Secondhand smoke, Percent",tobacco smoke; tobacco smoke pollution,measure:755,"Child poverty, Percent",child poverty,0.514,42,2004-2012,2007-2017,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:754,"Child poverty, Number",child poverty,0.513,42,1998-2020,2007-2017,True,True,False
+measure:1430,"Black carbon, Winter mean",black carbon,measure:232,"Owner-occupied homes, Number",housing,-0.513,42,2009-2025,2007-2019,True,False,False
+measure:1435,"Ozone, Summer mean",ozone,measure:232,"Owner-occupied homes, Number",housing,0.513,42,2009-2025,2007-2019,True,False,False
+measure:1178,"PM2.5 health burden (lungs), Estimated annual number",hospitalization; respiratory disease; PM 2.5,measure:755,"Child poverty, Percent",child poverty,0.512,42,2005-2017,2007-2017,True,True,False
+measure:1060,"Older adults living alone (65+), Number",social isolation,measure:956,"Commercial insecticide use, Carbamate solids",insecticide,0.512,42,2007-2017,1999-2022,True,False,False
+measure:506,"Obesity, Percent",body mass index; obesity,measure:956,"Commercial insecticide use, Carbamate solids",insecticide,-0.512,42,2003-2022,1999-2022,True,False,False
+measure:1176,"Deaths from PM2.5, Estimated annual number (age 30+)",all-cause mortality; air pollution; PM 2.5,measure:955,"Commercial insecticide use, Carbamate liquids",insecticide,0.512,42,2005-2017,1999-2022,True,True,False
+measure:502,"Overweight, Percent",overweight; body mass index,measure:954,"Commercial insecticide use, All solids",insecticide,-0.512,42,2003-2022,1999-2022,True,False,False
+measure:207,"Commercial use of insecticides, Solid products",insecticide,measure:502,"Overweight, Percent",overweight; body mass index,-0.512,42,1999-2022,2003-2022,True,False,False
+measure:1460,"Difficulty walking, Percent",mobility disability,measure:539,"Heat hospitalizations, Estimated annual rate",hyperthermia; heat stroke; hospitalization; heat illness,0.511,42,2008-2019,2000-2022,True,False,True
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:988,"Race/ethnicity, Black alone (percent)",racial group; ethnicity,0.511,36,2005-2022,2007-2017,True,False,False
+measure:15,"Death (postneonatal), Number",infant mortality,measure:650,"PM2.5 health burden (lungs), Estimated annual rate",hospitalization; respiratory disease; PM 2.5,0.511,42,1998-2020,2005-2017,True,False,True
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:754,"Child poverty, Number",child poverty,0.51,42,1998-2020,2007-2017,True,True,False
+measure:210,"Commercial use of herbicides, Solid products",herbicide,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,-0.51,42,1999-2022,2004-2020,True,False,False
+measure:636,"Adults with air conditioners, Percent",air conditioning,measure:989,"Race/ethnicity, Hispanic alone (percent)",racial group; ethnicity,-0.51,42,2007-2022,2007-2017,True,False,False
+measure:29,"Owner-occupied homes, Percent",housing,measure:636,"Adults with air conditioners, Percent",air conditioning,0.51,42,2007-2019,2007-2022,True,False,False
+measure:76,"Cracks, Percent",housing quality,measure:9,"Death (infants), Number",infant mortality; infant death,0.51,42,1999-2023,1998-2020,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:78,"Peeling paint, Percent",lead poisoning; housing quality,0.51,42,1998-2020,2011-2017,True,True,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:210,"Commercial use of herbicides, Solid products",herbicide,-0.51,42,2009-2025,1999-2022,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:215,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Solid products",insecticide,0.509,42,2009-2025,1999-2022,True,False,False
+measure:1432,"Nitrogen dioxide, Summer mean",nitrogen dioxide,measure:960,"Commercial insecticide use, Pyrethroid/pyrethrin solids",insecticide,0.509,42,2009-2025,1999-2022,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.509,42,1998-2020,2004-2016,True,True,False
+measure:1429,"Black carbon, Summer mean",black carbon,measure:232,"Owner-occupied homes, Number",housing,-0.509,42,2009-2025,2007-2019,True,False,False
+measure:718,"Diabetes (adults), Number",diabetes,measure:9,"Death (infants), Number",infant mortality; infant death,0.509,42,2007-2022,1998-2020,True,False,False
+measure:1460,"Difficulty walking, Percent",mobility disability,measure:781,"Households with AC, Percent (with AC)",air conditioning,-0.509,42,2008-2019,2014-2023,True,False,False
+measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,measure:80,"Leaks, Percent",housing quality,0.509,36,2005-2022,1999-2023,True,False,False
+measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,0.508,41,2012-2012,2005-2017,True,False,True
+measure:14,"Death (perinatal), Estimated annual rate",perinatal mortality; perinatal death,measure:72,"Carbon monoxide incidents, Number",carbon monoxide,0.508,42,1998-2011,2004-2016,True,True,False
+measure:1028,"Rent burden, Number",housing instability,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.508,42,2007-2017,2004-2020,True,False,False
+measure:86,"Homes with 3+ housing problems, Percent",housing quality,measure:983,"Death before 65, Age-adjusted rate","Mortality, Premature",0.507,42,1999-2021,2014-2020,True,False,False
+measure:1199,"Asthma ED visits (adults), Age-adjusted rate",emergency department; asthma,measure:1230,"Death before 65, Number","Mortality, Premature",0.507,42,2005-2023,2014-2020,True,False,False
+measure:672,"Health insurance (adults), Percent",private health insurance,measure:870,"Poverty, Rank",poverty,-0.507,42,2012-2022,2009-2011,False,False,False
+measure:1427,"PM2.5 (Fine particles), Winter mean",PM 2.5; air pollution; particulates,measure:211,"Commercial use of fungicides, Solid products",fungicide,-0.506,42,2009-2025,1999-2022,True,False,False
+measure:47,"Secondhand smoke, Percent",tobacco smoke; tobacco smoke pollution,measure:536,"Heat ED visits, Estimated annual rate",emergency department; heat stroke; heat illness; heat exhaustion,0.506,42,2004-2012,2005-2022,True,False,True
+measure:1029,"Rent burden, Percent",housing instability,measure:636,"Adults with air conditioners, Percent",air conditioning,-0.506,42,2007-2017,2007-2022,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:215,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Solid products",insecticide,0.506,42,2009-2025,1999-2022,True,False,False
+measure:1431,"Nitrogen dioxide, Annual mean",nitrogen dioxide,measure:960,"Commercial insecticide use, Pyrethroid/pyrethrin solids",insecticide,0.506,42,2009-2025,1999-2022,True,False,False
+measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,measure:954,"Commercial insecticide use, All solids",insecticide,-0.506,42,2005-2017,1999-2022,True,True,False
+measure:221,"Poverty, Percent",poverty,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.506,42,2007-2019,2004-2020,True,False,False
+measure:16,"Death (postneonatal), Estimated annual rate",infant mortality,measure:245,"Cockroaches, Percent",cockroach,0.506,42,1998-2020,2008-2023,True,True,False
+measure:207,"Commercial use of insecticides, Solid products",insecticide,measure:651,"PM2.5 health burden (heart), Estimated annual rate",cardiovascular disease; hospitalization; PM 2.5,-0.506,42,1999-2022,2005-2017,True,False,True
+measure:1028,"Rent burden, Number",housing instability,measure:505,"Obesity, Number",body mass index; obesity,0.505,42,2007-2017,2003-2022,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:1460,"Difficulty walking, Percent",mobility disability,0.503,42,1998-2020,2008-2019,True,True,False
+measure:652,"Deaths from ozone, Estimated annual rate",cardiovascular disease; respiratory disease; ozone,measure:86,"Homes with 3+ housing problems, Percent",housing quality,-0.503,42,2005-2017,1999-2021,True,True,False
+measure:1224,"Park access, Percent",green space; park,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.503,42,2017-2023,1999-2021,True,False,False
+measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,0.503,42,1999-2022,2004-2020,True,False,False
+measure:45,"Mice or rats (outside), Percent",rodent control; Murinae,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.503,42,2004-2020,1999-2022,True,False,False
+measure:506,"Obesity, Percent",body mass index; obesity,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.502,41,2003-2022,2012-2012,True,False,False
+measure:1230,"Death before 65, Number","Mortality, Premature",measure:653,"Ozone asthma ED visits, Estimated annual rate (under age 18)",emergency department; ozone; asthma,0.502,42,2014-2020,2005-2017,True,False,True
+measure:15,"Death (postneonatal), Number",infant mortality,measure:80,"Leaks, Percent",housing quality,0.502,42,1998-2020,1999-2023,True,False,False
+measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,0.501,42,1999-2022,2004-2016,True,False,True
+measure:218,"Commercial use of ""Best Practice"" products, Solid products",pesticide,measure:506,"Obesity, Percent",body mass index; obesity,-0.501,42,1999-2022,2003-2022,True,False,False
+measure:12,"Death (neonatal), Estimated annual rate",neonatal mortality,measure:535,"Heat ED visits, Number",emergency department; heat stroke; heat illness; heat exhaustion,0.501,36,1998-2020,2005-2022,True,True,False
+measure:215,"Commercial use of insecticides (Pyrethroid/Pyrethrin), Solid products",insecticide,measure:755,"Child poverty, Percent",child poverty,-0.501,42,1999-2022,2007-2017,True,False,False
+measure:781,"Households with AC, Percent (with AC)",air conditioning,measure:956,"Commercial insecticide use, Carbamate solids",insecticide,0.501,42,2014-2023,1999-2022,True,False,False
+measure:506,"Obesity, Percent",body mass index; obesity,measure:966,"Commercial insecticide use, Best practice products",insecticide,-0.501,42,2003-2022,1999-2022,True,False,False
+measure:73,"Carbon monoxide incidents, Estimated annual rate",carbon monoxide,measure:966,"Commercial insecticide use, Best practice products",insecticide,0.501,42,2004-2016,1999-2022,True,True,False
+measure:755,"Child poverty, Percent",child poverty,measure:960,"Commercial insecticide use, Pyrethroid/pyrethrin solids",insecticide,-0.501,42,2007-2017,1999-2022,True,False,False
+measure:1177,"PM2.5 health burden (heart), Estimated annual number",cardiovascular disease; hospitalization; PM 2.5,measure:634,"Mice or rats (inside), Percent",rodent control; Murinae,0.501,41,2005-2017,2012-2012,True,True,False
+measure:72,"Carbon monoxide incidents, Number",carbon monoxide,measure:86,"Homes with 3+ housing problems, Percent",housing quality,0.5,42,2004-2016,1999-2021,True,False,False
+measure:29,"Owner-occupied homes, Percent",housing,measure:754,"Child poverty, Number",child poverty,-0.5,42,2007-2019,2007-2017,True,False,False
+measure:1460,"Difficulty walking, Percent",mobility disability,measure:869,"Child poverty, Rank",child poverty,0.5,42,2008-2019,2009-2009,True,False,False

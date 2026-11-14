@@ -1,0 +1,90 @@
+source_domain,target_domain,0
+Cardiovascular,Mortality,324
+Respiratory,Cardiovascular,253
+Cardiovascular,Respiratory,218
+Respiratory,Mortality,170
+Socioeconomic,Cardiovascular,152
+Socioeconomic,Mortality,113
+Socioeconomic,Mental health,86
+Mental health,Cardiovascular,86
+Cardiovascular,Emergency care,84
+Air pollution,Cardiovascular,77
+Air pollution,Respiratory,71
+Cardiovascular,Mental health,70
+Heat & temperature,Cardiovascular,64
+Respiratory,Emergency care,61
+Socioeconomic,Respiratory,61
+Mental health,Mortality,59
+Mortality,Cardiovascular,46
+Heat & temperature,Mortality,37
+Socioeconomic,Emergency care,36
+Respiratory,Mental health,36
+Air pollution,Mortality,35
+Mental health,Respiratory,32
+Mental health,Emergency care,30
+Emergency care,Cardiovascular,28
+Heat & temperature,Respiratory,28
+Emergency care,Mortality,22
+Heat & temperature,Emergency care,19
+Housing & energy,Respiratory,19
+Mortality,Mental health,17
+Cardiovascular,Heat & temperature,16
+Housing & energy,Mortality,16
+Respiratory,Air pollution,16
+Cardiovascular,Socioeconomic,16
+Emergency care,Respiratory,16
+Air pollution,Mental health,16
+Housing & energy,Mental health,15
+Mortality,Respiratory,14
+Air pollution,Emergency care,14
+Housing & energy,Cardiovascular,14
+Housing & energy,Emergency care,13
+Mental health,Socioeconomic,11
+Heat & temperature,Air pollution,10
+Emergency care,Mental health,10
+Socioeconomic,Housing & energy,10
+Heat & temperature,Mental health,10
+Respiratory,Heat & temperature,9
+Mortality,Emergency care,9
+Heat & temperature,Flooding & storms,9
+Green space,Cardiovascular,9
+Mental health,Housing & energy,7
+Housing & energy,Heat & temperature,6
+Socioeconomic,Heat & temperature,6
+Respiratory,Socioeconomic,5
+Air pollution,Heat & temperature,5
+Mortality,Socioeconomic,5
+Emergency care,Heat & temperature,5
+Flooding & storms,Mental health,5
+Flooding & storms,Mortality,5
+Socioeconomic,Air pollution,4
+Flooding & storms,Cardiovascular,4
+Mortality,Heat & temperature,4
+Flooding & storms,Respiratory,4
+Green space,Heat & temperature,3
+Socioeconomic,Flooding & storms,3
+Flooding & storms,Green space,3
+Cardiovascular,Air pollution,3
+Socioeconomic,Green space,3
+Heat & temperature,Housing & energy,3
+Heat & temperature,Green space,3
+Green space,Mental health,3
+Emergency care,Socioeconomic,2
+Air pollution,Socioeconomic,2
+Mental health,Heat & temperature,2
+Mortality,Air pollution,2
+Flooding & storms,Emergency care,2
+Flooding & storms,Heat & temperature,2
+Housing & energy,Socioeconomic,2
+Green space,Respiratory,2
+Green space,Mortality,2
+Respiratory,Flooding & storms,1
+Respiratory,Green space,1
+Flooding & storms,Air pollution,1
+Green space,Air pollution,1
+Mental health,Flooding & storms,1
+Mental health,Air pollution,1
+Heat & temperature,Socioeconomic,1
+Green space,Socioeconomic,1
+Green space,Flooding & storms,1
+Flooding & storms,Socioeconomic,1

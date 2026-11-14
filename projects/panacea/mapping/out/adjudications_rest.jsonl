@@ -1,0 +1,75 @@
+{"nyc_id": "deaths:accidents except drug poisoning", "spg_system_id": "v-mj7HcE0V", "match_type": "related-component", "confidence": "medium", "rationale": "falls are the largest accident subset (ICD V01-X39 excludes drug poisoning; 'falling' covers part of the range)"}
+{"nyc_id": "deaths:alzheimer's disease", "spg_system_id": "bSqtTxWXSy", "match_type": "equivalent", "confidence": "high", "rationale": "'Alzheimer's disease' is the exact disease (ICD G30)"}
+{"nyc_id": "deaths:anemias", "spg_system_id": "bEBUbgyqYw", "match_type": "broader-narrower", "confidence": "low", "rationale": "'deficiency anemia' is one subtype of the D50-D64 anemia category; no generic anemia concept surfaced"}
+{"nyc_id": "deaths:assault", "spg_system_id": "1pnN2AtyJB", "match_type": "equivalent", "confidence": "high", "rationale": "'assault' is the exact construct (homicide ICD range)"}
+{"nyc_id": "deaths:atherosclerosis", "spg_system_id": "h3-fHeDiWK", "match_type": "related-component", "confidence": "medium", "rationale": "'aortic atherosclerosis' is a major I70 manifestation"}
+{"nyc_id": "deaths:cerebrovascular disease", "spg_system_id": "gJXeuNMolq", "match_type": "equivalent", "confidence": "high", "rationale": "'cerebrovascular disease' is the exact construct (ICD I60-I69)"}
+{"nyc_id": "deaths:cerebrovascular disease", "spg_system_id": "XW9F7OPopQ", "match_type": "broader-narrower", "confidence": "high", "rationale": "'stroke' (cerebrovascular accident) is the dominant I60-I69 outcome"}
+{"nyc_id": "deaths:cholelithiasis and disorders of gallbladder", "spg_system_id": "3odupadx9z", "match_type": "equivalent", "confidence": "high", "rationale": "'cholelithiasis' is the lead construct of K80-K82"}
+{"nyc_id": "deaths:cholelithiasis and disorders of gallbladder", "spg_system_id": "RV1SwogTnT", "match_type": "broader-narrower", "confidence": "high", "rationale": "'gallbladder disease' covers K80-K82 including cholecystitis"}
+{"nyc_id": "deaths:chronic liver disease and cirrhosis", "spg_system_id": "Z6KX9_jgVH", "match_type": "broader-narrower", "confidence": "high", "rationale": "'liver cirrhosis' (K70-K74 range component)"}
+{"nyc_id": "deaths:chronic lower respiratory diseases", "spg_system_id": "IPV_lvgw9H", "match_type": "broader-narrower", "confidence": "high", "rationale": "'chronic obstructive pulmonary disease' (J44) is the dominant J40-J47 disease"}
+{"nyc_id": "deaths:chronic lower respiratory diseases", "spg_system_id": "xh-q4BGKbZ", "match_type": "broader-narrower", "confidence": "high", "rationale": "'obstructive lung disease' covers the chronic airway obstruction category"}
+{"nyc_id": "deaths:complications of medical and surgical care", "spg_system_id": "ldqXXnek67", "match_type": "related-component", "confidence": "low", "rationale": "'intraoperative complications' is one slice of the Y40-Y84 category"}
+{"nyc_id": "deaths:congenital malformations, deformations, and chromosomal abnormalities", "spg_system_id": "NBs6kemntc", "match_type": "equivalent", "confidence": "high", "rationale": "'congenital abnormality' matches the Q00-Q99 category"}
+{"nyc_id": "deaths:diabetes mellitus", "spg_system_id": "DQbECFISI6", "match_type": "equivalent", "confidence": "high", "rationale": "'diabetes' is the exact disease (ICD E10-E14)"}
+{"nyc_id": "deaths:diseases of heart", "spg_system_id": "OYMdBV8G8r", "match_type": "equivalent", "confidence": "high", "rationale": "'heart disease' is the exact construct for the ICD heart-disease range"}
+{"nyc_id": "deaths:diseases of heart", "spg_system_id": "0GgadM9ouC", "match_type": "broader-narrower", "confidence": "medium", "rationale": "'cardiovascular disease' is the parent construct"}
+{"nyc_id": "deaths:essential hypertension and renal diseases", "spg_system_id": "FUinUSBBJq", "match_type": "equivalent", "confidence": "high", "rationale": "'essential hypertension' is exactly the I10 component"}
+{"nyc_id": "deaths:essential hypertension and renal diseases", "spg_system_id": "fo-h4u_aJp", "match_type": "broader-narrower", "confidence": "high", "rationale": "'arterial hypertension' is the parent construct of I10 (re-typed from anchor)"}
+{"nyc_id": "deaths:aortic aneurysm and dissection", "spg_system_id": "wDob2uJcSH", "match_type": "broader-narrower", "confidence": "high", "rationale": "'aortic dissection' is the I71.0 subtype (re-typed from anchor)"}
+{"nyc_id": "deaths:aortic aneurysm and dissection", "spg_system_id": "Y6UToUjmfn", "match_type": "broader-narrower", "confidence": "high", "rationale": "'abdominal aortic aneurysm' is the I71.4 subtype"}
+{"nyc_id": "deaths:aortic aneurysm and dissection", "spg_system_id": "5IuCUlfrAW", "match_type": "broader-narrower", "confidence": "high", "rationale": "'thoracic aortic aneurysm' is the I71.1-I71.2 subtype"}
+{"nyc_id": "deaths:chronic liver disease and cirrhosis", "spg_system_id": "Eem_xaD3Yw", "match_type": "broader-narrower", "confidence": "high", "rationale": "'alcoholic liver disease' (K70) is one component of the K70-K74 category"}
+{"nyc_id": "deaths:human immunodeficiency virus disease", "spg_system_id": "2J5_gYjK1G", "match_type": "broader-narrower", "confidence": "high", "rationale": "'HIV' is the agent/disease construct for B20-B24"}
+{"nyc_id": "deaths:human immunodeficiency virus disease", "spg_system_id": "RfXieAJsPx", "match_type": "related-component", "confidence": "medium", "rationale": "'AIDS related disease' is the advanced-stage outcome"}
+{"nyc_id": "deaths:influenza (flu) and pneumonia", "spg_system_id": "upz2Mxe7DH", "match_type": "broader-narrower", "confidence": "high", "rationale": "'influenza' (J09-J11) is one cause of the J09-J18 category"}
+{"nyc_id": "deaths:influenza (flu) and pneumonia", "spg_system_id": "QRSeEA8n9Q", "match_type": "broader-narrower", "confidence": "high", "rationale": "'pneumonia' (J12-J18) is the other major cause"}
+{"nyc_id": "deaths:intentional self-harm", "spg_system_id": "TLeQZQ_leT", "match_type": "broader-narrower", "confidence": "high", "rationale": "self-harm deaths are 'suicide' (ICD X60-X84)"}
+{"nyc_id": "deaths:meningitis", "spg_system_id": "qVCzuMt4N3", "match_type": "broader-narrower", "confidence": "high", "rationale": "'haemophilus meningitis' is a G00 subtype (re-emitted from anchor with correct type)"}
+{"nyc_id": "deaths:meningitis", "spg_system_id": "FTcyQmGKu1", "match_type": "broader-narrower", "confidence": "high", "rationale": "'pneumococcal meningitis' is a G00 subtype"}
+{"nyc_id": "deaths:meningitis", "spg_system_id": "13WuEFs-4F", "match_type": "broader-narrower", "confidence": "high", "rationale": "'aseptic meningitis' is the G03 component"}
+{"nyc_id": "deaths:mental and behavioral disorders due to accidental poisoning and other psychoactive substance use", "spg_system_id": "sjrVorFbbs", "match_type": "related-component", "confidence": "high", "rationale": "'drug overdose' is the X40-X42/X44 accident-poisoning component"}
+{"nyc_id": "deaths:mental and behavioral disorders due to accidental poisoning and other psychoactive substance use", "spg_system_id": "-ru3UMMkVB", "match_type": "broader-narrower", "confidence": "medium", "rationale": "'substance-related disorder' covers the F11-F16/F18-F19 mental-disorder component"}
+{"nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "5YdA2e1cqX", "match_type": "broader-narrower", "confidence": "medium", "rationale": "'alcohol abuse' is the F10 behavioral component"}
+{"nyc_id": "deaths:nephritis, nephrotic syndrome and nephrosis", "spg_system_id": "RmMYHSQUGe", "match_type": "broader-narrower", "confidence": "high", "rationale": "'nephritis' is the N00-N07/N17 component"}
+{"nyc_id": "deaths:nephritis, nephrotic syndrome and nephrosis", "spg_system_id": "7sGWfVGKdD", "match_type": "broader-narrower", "confidence": "medium", "rationale": "'nephrotic syndrome' is the N04 component"}
+{"nyc_id": "deaths:parkinson's disease", "spg_system_id": "Gtjl-ppl-t", "match_type": "broader-narrower", "confidence": "medium", "rationale": "only 'parkinsonian syndrome' exists in SPG, not Parkinson's disease itself"}
+{"nyc_id": "deaths:peptic ulcer", "spg_system_id": "VhcFX-yBEO", "match_type": "equivalent", "confidence": "high", "rationale": "'peptic ulcer disease' is the exact construct (K25-K28)"}
+{"nyc_id": "deaths:pregnancy, childbirth and the puerperium", "spg_system_id": "0c1cfXSPiT", "match_type": "broader-narrower", "confidence": "high", "rationale": "'complications of pregnancy' covers O00-O09"}
+{"nyc_id": "deaths:septicemia", "spg_system_id": "qT0fZmGlX4", "match_type": "equivalent", "confidence": "high", "rationale": "'sepsis' is the modern term for septicemia (A40-A41)"}
+{"nyc_id": "deaths:tuberculosis", "spg_system_id": "EPkRQaRIuw", "match_type": "equivalent", "confidence": "high", "rationale": "'tuberculosis' is the exact disease (A16-A19)"}
+{"nyc_id": "deaths:tuberculosis", "spg_system_id": "epn8cUn0y3", "match_type": "broader-narrower", "confidence": "medium", "rationale": "'pulmonary tuberculosis' is the dominant form"}
+{"nyc_id": "deaths:viral hepatitis", "spg_system_id": "c-etid2dOC", "match_type": "broader-narrower", "confidence": "high", "rationale": "'hepatitis' covers the B15-B19 viral hepatitides"}
+{"nyc_id": "deaths:viral hepatitis", "spg_system_id": "tpYBq3golh", "match_type": "broader-narrower", "confidence": "medium", "rationale": "'hepatitis B' is a major B15-B19 component"}
+{"nyc_id": "complaints:NO HEAT", "spg_system_id": "Ah-wdkRcqy", "match_type": "broader-narrower", "confidence": "high", "rationale": "lack of heat = failed/inadequate 'heating equipment' service in winter"}
+{"nyc_id": "complaints:NO HEAT", "spg_system_id": "VbhaEHYy0f", "match_type": "related-component", "confidence": "medium", "rationale": "no-heat homes imply indoor 'cold weather' exposure risk"}
+{"nyc_id": "complaints:NO HEAT AND NO HOT WATER", "spg_system_id": "Ah-wdkRcqy", "match_type": "broader-narrower", "confidence": "high", "rationale": "heating failure complaint; 'heating equipment' construct"}
+{"nyc_id": "complaints:NO HEAT AND NO HOT WATER", "spg_system_id": "VbhaEHYy0f", "match_type": "related-component", "confidence": "medium", "rationale": "implies indoor cold exposure"}
+{"nyc_id": "complaints:NO HOT WATER", "spg_system_id": "Ah-wdkRcqy", "match_type": "related-component", "confidence": "medium", "rationale": "domestic hot water is adjacent to 'heating equipment' service"}
+{"nyc_id": "complaints:HEAT ON IN SUMMER", "spg_system_id": "wpUeTjUbAc", "match_type": "related-component", "confidence": "medium", "rationale": "unwanted heat in summer relates to indoor 'extreme heat' exposure"}
+{"action": "reject_anchor", "nyc_id": "deaths:atherosclerosis", "spg_system_id": "Pfu5fwIyZx", "reason": "gangrene is a consequence (I70.2 subcode), not atherosclerosis itself"}
+{"action": "reject_anchor", "nyc_id": "deaths:atherosclerosis", "spg_system_id": "xsZCyIIBRG", "reason": "Monckeberg arteriosclerosis is a specific variant, not the I70 cause"}
+{"action": "reject_anchor", "nyc_id": "deaths:chronic liver disease and cirrhosis", "spg_system_id": "f3q5XkLWzh", "reason": "alcoholic fatty liver (K70.0) too specific for the K70-K74 category anchor"}
+{"action": "reject_anchor", "nyc_id": "deaths:chronic liver disease and cirrhosis", "spg_system_id": "BGOKSHZlNJ", "reason": "alcoholic hepatitis (K70.1) too specific"}
+{"action": "reject_anchor", "nyc_id": "deaths:chronic liver disease and cirrhosis", "spg_system_id": "Eem_xaD3Yw", "reason": "re-typed as broader-narrower (K70 is a component)"}
+{"action": "reject_anchor", "nyc_id": "deaths:essential hypertension and renal diseases", "spg_system_id": "fo-h4u_aJp", "reason": "re-typed as broader-narrower (parent construct)"}
+{"action": "reject_anchor", "nyc_id": "deaths:aortic aneurysm and dissection", "spg_system_id": "wDob2uJcSH", "reason": "re-typed as broader-narrower subtype"}
+{"action": "reject_anchor", "nyc_id": "deaths:aortic aneurysm and dissection", "spg_system_id": "Y6UToUjmfn", "reason": "re-typed as broader-narrower subtype"}
+{"action": "reject_anchor", "nyc_id": "deaths:aortic aneurysm and dissection", "spg_system_id": "5IuCUlfrAW", "reason": "re-typed as broader-narrower subtype"}
+{"action": "reject_anchor", "nyc_id": "deaths:meningitis", "spg_system_id": "RM0YyFpVVp", "reason": "'nervous system disease' (G00-G99 parent) is not meningitis"}
+{"action": "reject_anchor", "nyc_id": "deaths:meningitis", "spg_system_id": "qVCzuMt4N3", "reason": "re-emitted as broader-narrower subtype"}
+{"action": "reject_anchor", "nyc_id": "deaths:meningitis", "spg_system_id": "FTcyQmGKu1", "reason": "re-emitted as broader-narrower subtype"}
+{"action": "reject_anchor", "nyc_id": "deaths:meningitis", "spg_system_id": "13WuEFs-4F", "reason": "re-emitted as broader-narrower subtype"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "-ru3UMMkVB", "reason": "parent class, not equivalent to F10"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "xsZfbnK87R", "reason": "parent class, not equivalent"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "NM65CTyP3z", "reason": "drug withdrawal is not alcohol-use disorder"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "DU5dF5vxkA", "reason": "binge drinking is a behavior, not the F10 category"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "2Cbi75x4kC", "reason": "substance abuse parent class, not equivalent"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "W7eIQCjzy2", "reason": "'alcohol and health' is not a disorder"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "Qqx0E1tYR6", "reason": "F10.5 subtype too specific"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "uXHBnqFIrn", "reason": "F10.2 subtype too specific"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "-svrJVV3ld", "reason": "F10.0 subtype too specific"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "ueT9zFXSHW", "reason": "F10.4 subtype too specific"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "RCRhUqec__", "reason": "substance-induced psychosis too specific"}
+{"action": "reject_anchor", "nyc_id": "deaths:mental and behavioral disorders due to use of alcohol", "spg_system_id": "9wRzMt2S_X", "reason": "F10.3 subtype too specific"}

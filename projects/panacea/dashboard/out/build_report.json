@@ -1,0 +1,32 @@
+{
+  "assertions": {
+    "bridge_direct_relationships": 0,
+    "bridge_direct_associations": 0
+  },
+  "counts": {
+    "confirmed_pairs": 1047,
+    "self_pairs_excluded": 85,
+    "rho_pairs": 311,
+    "rho_modeled": 123,
+    "endpoint_concepts": 116,
+    "bridge_rows": 12,
+    "bridge_keys": 10,
+    "bridge_endpoints": 18,
+    "both_direction_pairs_seen": 3147,
+    "both_direction_disagreeing": 2464,
+    "confirmed_pairs_without_relationship_edge": 0,
+    "candidate_nodes": 526,
+    "subgraph_edges": 33436,
+    "assembled_pairs_no_direct_edge": 2084,
+    "mixed_chains_found": 2084,
+    "mediated_shipped": 30,
+    "bridge_direct_associations": 0,
+    "agree_same": 115,
+    "agree_opposite": 26,
+    "agree_flat": 3,
+    "agree_ambiguous": 167,
+    "bundle_concepts": 1663,
+    "bundle_measures": 364,
+    "mediated_shipped_final": 31
+  }
+}

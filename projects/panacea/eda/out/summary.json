@@ -1,0 +1,208 @@
+{
+  "rows_actual": {
+    "concepts": 45721,
+    "relationships": 839872,
+    "associations": 1999877,
+    "studies": 844435,
+    "variables": 1774551
+  },
+  "rows_manifest": {
+    "system-public-graph-v1-associations.csv": 1999877,
+    "system-public-graph-v1-concepts.csv": 45721,
+    "system-public-graph-v1-relationships.csv": 839872,
+    "system-public-graph-v1-studies.csv": 844435,
+    "system-public-graph-v1-variables.csv": 1774551
+  },
+  "concepts": {
+    "total": 45721,
+    "distinct_wikidata_ids": 45721,
+    "dup_wikidata_ids": 0,
+    "pct_with_description": 97.1,
+    "pct_with_aliases": 83.4,
+    "avg_aliases_when_present": 3.28
+  },
+  "relationships": {
+    "total": 839872,
+    "pct_single_finding": 65.9,
+    "pct_ge5_findings": 8.2,
+    "max_findings": 1542,
+    "pct_with_published_date": 97.3
+  },
+  "degree": {
+    "nodes_with_edges": 45721,
+    "max_degree": 7097,
+    "median_degree": 5.0,
+    "top20": [
+      {
+        "system_id": "YtQ5lW8obL",
+        "label": "body mass index",
+        "degree": 7097
+      },
+      {
+        "system_id": "3vK952W1Jo",
+        "label": "human height",
+        "degree": 6799
+      },
+      {
+        "system_id": "QPxlNKv3zV",
+        "label": "mortality rate",
+        "degree": 6667
+      },
+      {
+        "system_id": "bxy3dykVii",
+        "label": "survival rate",
+        "degree": 4807
+      },
+      {
+        "system_id": "3bsZWIMWFp",
+        "label": "educational stage",
+        "degree": 4103
+      },
+      {
+        "system_id": "uWNNlnauQq",
+        "label": "blood pressure",
+        "degree": 4096
+      },
+      {
+        "system_id": "NI8J66klok",
+        "label": "smoking",
+        "degree": 3905
+      },
+      {
+        "system_id": "PfzPevl_MY",
+        "label": "mental depression",
+        "degree": 3759
+      },
+      {
+        "system_id": "esiPwRl8Y5",
+        "label": "complications of diabetes mellitus",
+        "degree": 3588
+      },
+      {
+        "system_id": "XW9F7OPopQ",
+        "label": "stroke",
+        "degree": 3258
+      },
+      {
+        "system_id": "vUwiaNEBVo",
+        "label": "survival skill",
+        "degree": 3179
+      },
+      {
+        "system_id": "5dL8p_2DYe",
+        "label": "C-reactive protein",
+        "degree": 3134
+      },
+      {
+        "system_id": "YdX9m4rnXQ",
+        "label": "length of stay",
+        "degree": 3075
+      },
+      {
+        "system_id": "qOlywFxfHx",
+        "label": "bone density",
+        "degree": 3000
+      },
+      {
+        "system_id": "6ZeNvKWBJ9",
+        "label": "triglyceride",
+        "degree": 2967
+      },
+      {
+        "system_id": "-8dpOP3337",
+        "label": "death",
+        "degree": 2912
+      },
+      {
+        "system_id": "EAshH_Ko3h",
+        "label": "asthma",
+        "degree": 2901
+      },
+      {
+        "system_id": "xovbE_yg2L",
+        "label": "female organism",
+        "degree": 2895
+      },
+      {
+        "system_id": "m70jNJv_Hw",
+        "label": "hemoglobin",
+        "degree": 2800
+      },
+      {
+        "system_id": "Gl-I4wBZ5r",
+        "label": "hospitalization",
+        "degree": 2781
+      }
+    ]
+  },
+  "associations": {
+    "total": 1999877,
+    "pct_with_statistic_value": 100.0,
+    "pct_with_ci": 47.8,
+    "pct_with_pvalue": 68.6,
+    "pct_with_study": 100.0,
+    "n_system_stat_types": 17,
+    "top_system_stat_types": {
+      "odds_ratio": 577611,
+      "mean_difference_unstandardized": 444825,
+      "coefficient": 281686,
+      "hazard_ratio": 235030,
+      "pearson_r": 193449,
+      "relative_risk_ratio": 104104,
+      "adjusted_odds_ratio": 83322,
+      "adjusted_hazard_ratio": 19193,
+      "incident_rate_ratio": 17748,
+      "spearman_correlation": 15671,
+      "mean_difference_standardized": 11156,
+      "prevalence_ratio": 9930,
+      "risk_difference": 4488,
+      "coefficient_of_determination": 819,
+      "elasticity": 530
+    }
+  },
+  "studies": {
+    "total": 844435,
+    "pct_with_doi": 100.0,
+    "pct_with_pubmed": 99.6,
+    "pct_with_population": 96.6,
+    "study_type_counts": {
+      "null": 754707,
+      "Experimental Trial": 89728
+    },
+    "n_population_mentions_new_york": 3115,
+    "n_associations_from_ny_studies": 7186
+  },
+  "integrity": {
+    "rel_source_in_concepts_pct": 100.0,
+    "rel_target_in_concepts_pct": 100.0,
+    "assoc_var1_concept_in_concepts_pct": 100.0,
+    "assoc_var2_concept_in_concepts_pct": 100.0,
+    "assoc_study_in_studies_pct": 100.0,
+    "variables_concept_in_concepts_pct": 100.0
+  },
+  "domain_concept_counts": {
+    "Heat & temperature": 34,
+    "Air pollution": 15,
+    "Green space": 8,
+    "Emergency care": 6,
+    "Respiratory": 121,
+    "Cardiovascular": 148,
+    "Mortality": 38,
+    "Mental health": 64,
+    "Flooding & storms": 9,
+    "Housing & energy": 9,
+    "Socioeconomic": 34
+  },
+  "cross_domain_relationships": 2704,
+  "bridge_pairs": {
+    "Heat & temperature x Emergency care": 70,
+    "Green space x Heat & temperature": 12,
+    "Green space x Emergency care": 0,
+    "Green space x Respiratory": 3,
+    "Air pollution x Emergency care": 56,
+    "Air pollution x Respiratory": 478,
+    "Air pollution x Cardiovascular": 315,
+    "Heat & temperature x Cardiovascular": 253,
+    "Heat & temperature x Mortality": 305
+  }
+}
