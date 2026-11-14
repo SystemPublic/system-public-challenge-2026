@@ -365,3 +365,9 @@ html { overflow-x: clip; }
   table.stack td > * { grid-column: 2; justify-self: start; min-width: 0; margin-bottom: 4px; }
   .ds { white-space: normal; }
 }
+nav.projects ul.threads { margin: 2px 0 6px var(--s3); }
+nav.projects ul.threads a { padding: 3px var(--s2); font-size: var(--fs-s); }
+nav.projects ul.threads a[aria-current] { color: var(--accent); }
+.thread-head { display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s2); }
+.thread-head input { flex: 1; font-weight: 600; }
+@media (max-width: 760px) { nav.projects { flex-wrap: wrap; } nav.projects select { flex: 1; min-width: 40%; } }

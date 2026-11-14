@@ -19,7 +19,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 import mcp_server
-from agents import dashboard, orchestrator
+from agents import dashboard, orchestrator, report
 from server import db
 from tools import graph, literature  # importing tools loads .env
 
@@ -62,6 +62,11 @@ class RunIn(BaseModel):
     query: str
     agents: list[str] | None = None
     plan: dict | None = None
+    thread_id: int | None = None
+
+
+class ThreadIn(BaseModel):
+    title: str
 
 
 def found(row):
@@ -160,11 +165,27 @@ def get_project(project_id: int):
     return found(db.get_project(project_id))
 
 
-def context(project_id):
-    """(project, profile, history) for a query in this project."""
+def context(project_id, thread_id=None):
+    """(project, profile, history) for a query in this project; history comes from the given thread (None = Main)."""
     project = found(db.get_project(project_id))
     profile = {**db.get_profile(project["profile_id"]), "project": {"title": project["title"], "goals": project["goals"]}}
-    return project, profile, db.history(project_id)
+    return project, profile, db.history(project_id, thread_id)
+
+
+@app.get("/api/projects/{project_id}/threads")
+def list_threads(project_id: int):
+    return db.list_threads(project_id)
+
+
+@app.post("/api/projects/{project_id}/threads")
+def create_thread(project_id: int, t: ThreadIn):
+    found(db.get_project(project_id))
+    return db.create_thread(project_id, t.title.strip() or "New thread")
+
+
+@app.put("/api/threads/{thread_id}")
+def rename_thread(thread_id: int, t: ThreadIn):
+    return found(db.rename_thread(thread_id, t.title.strip() or "New thread"))
 
 
 @app.post("/api/projects/{project_id}/dashboard")
@@ -193,19 +214,52 @@ async def start_dashboard(project_id: int):
     return {"dashboard_status": "building: planning panels"}
 
 
+class ReportIn(BaseModel):
+    instruction: str | None = None
+
+
+@app.post("/api/projects/{project_id}/report")
+async def start_report(project_id: int, r: ReportIn):
+    """Builds a new report version in the background; poll GET /api/projects/{id} for report_status."""
+    project, profile, _ = await run_in_threadpool(context, project_id)
+    answers = [{"query": x["query"], **x["answer"]} for x in project["runs"] if x["status"] == "done" and x["answer"]]
+    if not answers:
+        raise HTTPException(400, "Ask at least one question in this project first; the report is built from the answers.")
+    if (project["report_status"] or "").startswith("building"):
+        raise HTTPException(409, "A report is already being built.")
+
+    async def emit(e):
+        if e["type"] in ("agent_started", "retry"):
+            await run_in_threadpool(db.set_report_status, project_id, "building: " + ("checking citations" if e["type"] == "retry" else "writing"))
+
+    async def build():
+        try:
+            calls = await run_in_threadpool(db.tool_calls, project_id)
+            version = await report.build_report(project, profile, answers, r.instruction, calls, emit)
+            await run_in_threadpool(db.add_report, project_id, version)
+        except Exception:
+            await run_in_threadpool(db.set_report_status, project_id, "failed")
+
+    await run_in_threadpool(db.set_report_status, project_id, "building: reading the answers")
+    task = asyncio.create_task(build())
+    tasks.add(task)
+    task.add_done_callback(tasks.discard)
+    return {"report_status": "building: reading the answers"}
+
+
 @app.post("/api/projects/{project_id}/plan")
 async def make_plan(project_id: int, r: RunIn):
-    _, profile, history = await run_in_threadpool(context, project_id)
+    _, profile, history = await run_in_threadpool(context, project_id, r.thread_id)
     return (await orchestrator.make_plan(r.query, profile, history, r.agents)).model_dump()
 
 
 @app.post("/api/projects/{project_id}/runs")
 async def start_run(project_id: int, r: RunIn):
-    _, profile, history = await run_in_threadpool(context, project_id)
+    _, profile, history = await run_in_threadpool(context, project_id, r.thread_id)
     mine, total = await run_in_threadpool(db.runs_last_hour, profile["id"])
     if mine >= RUNS_PER_PROFILE or total >= RUNS_TOTAL:
         return PlainTextResponse("Run limit reached: please try again in an hour.", 429)
-    run_id = await run_in_threadpool(db.create_run, project_id, r.query, r.agents)
+    run_id = await run_in_threadpool(db.create_run, project_id, r.query, r.agents, r.thread_id)
     subscribers[run_id], events_sent[run_id] = [], 0
     task = asyncio.create_task(execute(run_id, r.query, profile, history, r.agents, r.plan))
     tasks.add(task)

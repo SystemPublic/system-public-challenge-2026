@@ -2,6 +2,7 @@
 import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv } from './sections.js';
 import { drawGraph } from './graph.js';
 import { bindDashboard } from './dashboard.js';
+import { bindReport } from './report.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 const app = $('#app');
@@ -84,8 +85,9 @@ async function load() {
     const project = r.project ? await api(`/api/projects/${r.project}`).catch((e) => {
       notice(`Could not open that project: ${e.message}.`, 'Pick one from the list.'); return null;
     }) : null;
+    const threads = project ? await api(`/api/projects/${project.id}/threads`).catch(() => [{ id: null, title: 'Main' }]) : [];
     if (stale()) return;
-    Object.assign(state, { projects, project });
+    Object.assign(state, { projects, project, threads, thread: r.thread ? Number(r.thread) : null });
     renderWorkspace();
   } catch (e) {
     if (!stale()) notice(`Could not load your workspace: ${e.message}.`, 'Check that the server is running, then reload the page.');
@@ -168,14 +170,18 @@ function renderWorkspace() {
       <h2>Projects</h2>
       <ul>${state.projects.map((x) => `<li><a href="#profile=${p.id}&project=${x.id}" ${pj?.id === x.id ? 'aria-current="page"' : ''}>
         <span class="t">${esc(x.title)}</span>${x.goals ? `<div class="small muted g">${esc(short(x.goals.split('\n')[0], 70))}</div>` : ''}
-        <div class="small muted num">${projectStatus(pj?.id === x.id ? { ...x, first_pass_status: fpStatus(pj) ?? x.first_pass_status } : x)}</div></a></li>`).join('')}</ul>
+        <div class="small muted num">${projectStatus(pj?.id === x.id ? { ...x, first_pass_status: fpStatus(pj) ?? x.first_pass_status } : x)}</div></a>
+        ${pj?.id === x.id ? threadList(p, pj) : ''}</li>`).join('')}</ul>
       <select aria-label="Project"><option value="">${state.projects.length ? 'Choose a project' : 'No projects yet'}</option>
         ${state.projects.map((x) => `<option value="${x.id}" ${pj?.id === x.id ? 'selected' : ''}>${esc(x.title)}</option>`).join('')}</select>
+      ${pj ? `<select aria-label="Thread" id="thread-select">${state.threads.map((t) => `<option value="${t.id ?? ''}" ${t.id === state.thread ? 'selected' : ''}>${esc(t.title)}</option>`).join('')}
+        <option value="new">New thread</option></select>` : ''}
       <a class="button new-btn" href="#profile=${p.id}" ${pj ? '' : 'aria-current="page"'}>New project</a>
     </nav>
     <main>${pj ? projectView(pj) : newProjectView()}</main>`;
 
   $('nav select').onchange = (e) => e.target.value && go({ profile: p.id, project: e.target.value });
+  if (pj) bindThreads(p, pj);
   if (!pj) {
     $('#new-project').onsubmit = async (e) => {
       e.preventDefault();
@@ -193,9 +199,10 @@ function renderWorkspace() {
   }
   bindGoals();
   state.pollDashboard = bindDashboard($('#dashboard'), pj, api);
+  bindReport($('#report'), pj, api);
   const runs = [...pj.runs].sort((a, b) => a.id - b.id);
   const fps = runs.filter(isFirstPass); const fpDone = fps.filter((r) => r.answer).at(-1);
-  const asked = runs.filter((r) => !isFirstPass(r));
+  const asked = runs.filter(inThread);
   const lastDone = asked.filter((r) => r.answer).at(-1);
   if (fps.length) $('#first-pass').innerHTML = '';
   fps.forEach((r) => mountTurn(r, r === fpDone, $('#first-pass')));
@@ -203,6 +210,38 @@ function renderWorkspace() {
   bindFirstPass();
   bindComposer();
 }
+
+// Threads: runs without a thread_id are the project's Main thread. Goals, first pass and dashboard stay project-wide.
+const inThread = (r) => !isFirstPass(r) && (r.thread_id ?? null) === state.thread;
+const threadHref = (p, pj, t) => `#profile=${p.id}&project=${pj.id}${t.id ? `&thread=${t.id}` : ''}`;
+const threadList = (p, pj) => `<ul class="threads" aria-label="Threads">${state.threads.map((t) => `<li><a href="${threadHref(p, pj, t)}" ${t.id === state.thread ? 'aria-current="true"' : ''}>${esc(t.title)}</a></li>`).join('')}
+  <li><button type="button" class="ghost small" data-new-thread>New thread</button></li></ul>`;
+
+function bindThreads(p, pj) {
+  const newThread = async () => {
+    try {
+      const t = await api(`/api/projects/${pj.id}/threads`, { method: 'POST', body: { title: 'New thread' } });
+      state.editThread = true;
+      go({ profile: p.id, project: pj.id, thread: t.id });
+    } catch (e) { notice(`Could not create the thread: ${e.message}.`, 'Try again in a moment.'); }
+  };
+  $('[data-new-thread]').onclick = newThread;
+  $('#thread-select').onchange = (e) => (e.target.value === 'new' ? newThread() : go({ profile: p.id, project: pj.id, thread: e.target.value || null }));
+  const title = $('#thread-title');
+  if (!title) return;
+  if (state.editThread) { state.editThread = false; title.focus(); title.select(); }
+  title.onchange = async () => {
+    try {
+      const t = await api(`/api/threads/${state.thread}`, { method: 'PUT', body: { title: title.value.trim() } });
+      Object.assign(state.threads.find((x) => x.id === t.id), { title: t.title });
+      title.value = t.title;
+      $('nav .threads a[aria-current]').textContent = t.title;
+      $(`#thread-select option[value="${t.id}"]`).textContent = t.title;
+    } catch (e) { notice(`Could not rename the thread: ${e.message}.`, 'Try again.'); }
+  };
+}
+const threadHead = () => (state.thread ? `<div class="thread-head"><label for="thread-title" class="small muted">Thread</label>
+  <input id="thread-title" value="${esc(state.threads.find((t) => t.id === state.thread)?.title ?? 'Thread')}"></div>` : '');
 
 // The first pass is the run the server starts when a project gets goals: it maps what data exists for them.
 const FIRST_PASS = 'First pass: what data is available for this project, and where do sources disagree or run out?';
@@ -304,13 +343,14 @@ const projectView = (pj) => `<header class="project-head"><h1>${esc(pj.title)}</
   <nav class="jump small" aria-label="On this page"><span class="muted">On this page</span>
     <button type="button" class="ghost small link" data-jump="fp-h">Data availability</button>
     <button type="button" class="ghost small link" data-jump="db-h">Dashboard</button>
-    <button type="button" class="ghost small link" data-jump="qs-h">Questions (${pj.runs.filter((r) => !isFirstPass(r)).length})</button></nav></header>
+    <button type="button" class="ghost small link" data-jump="qs-h">Questions (${pj.runs.filter(inThread).length})</button></nav></header>
   ${block('fp', 'Data availability and gaps', 'What exists for this project, and where sources disagree. Runs once, from the goals.',
     `<div id="first-pass">${firstPassEmpty(pj)}</div>`)}
   ${block('db', 'Dashboard', 'Key numbers, World Bank data and charts built from the answers in this project.', '<div id="dashboard" class="dashboard"></div>')}
-  ${block('qs', 'Questions', 'Ask about this project. Every answer reads the goals and the earlier answers. Older answers fold away; reply under the latest.', `
+  ${block('rp', 'Report', 'A cited report of this project, with references and data provenance, to print or save as PDF.', '<div id="report"></div>')}
+  ${block('qs', 'Questions', 'Ask about this project. Every answer reads the goals and the earlier answers. Older answers fold away; reply under the latest.', `${threadHead()}
   <form id="composer" class="composer">
-    <label for="q">${pj.runs.some((r) => !isFirstPass(r)) ? 'Ask a new question' : 'Ask a question'}</label>
+    <label for="q">${pj.runs.some(inThread) ? 'Ask a new question' : 'Ask a question'}</label>
     <textarea id="q" rows="3" placeholder="${esc(examples(state.profile)[0])}"></textarea>
     <p class="small muted scope">Answers from about 2M published findings in the System Graph. Shows associations, not causes, and says where the evidence runs out.</p>
     <div class="examples">${examples(state.profile).map((q) => `<button type="button" class="ghost small" data-example>${esc(q)}</button>`).join('')}</div>
@@ -322,7 +362,7 @@ const projectView = (pj) => `<header class="project-head"><h1>${esc(pj.title)}</
     <p class="form-msg" role="status"></p>
     <div id="plan-editor" class="plan-editor" hidden></div>
   </form>
-  <div id="thread">${pj.runs.some((r) => !isFirstPass(r)) ? '' : '<p class="empty-line small muted">No questions yet. Ask one above or pick an example.</p>'}</div>`)}`;
+  <div id="thread">${pj.runs.some(inThread) ? '' : '<p class="empty-line small muted">No questions yet. Ask one above or pick an example.</p>'}</div>`)}`;
 
 // Composer and editable plan -----------------------------------------------------------------------
 function bindComposer() {
@@ -356,7 +396,7 @@ function bindComposer() {
     if (!query()) return say('Write a question first.', true);
     say('The planner is choosing agents for this question');
     try {
-      const plan = await api(`/api/projects/${state.project.id}/plan`, { method: 'POST', body: { query: query(), agents: agents() } });
+      const plan = await api(`/api/projects/${state.project.id}/plan`, { method: 'POST', body: { query: query(), agents: agents(), thread_id: state.thread } });
       say(''); renderPlanEditor(plan);
     } catch (e) { say(`Could not get a plan: ${e.message}. Use Run to let the planner choose during the run.`, true); }
   };
@@ -439,7 +479,7 @@ document.addEventListener('click', (e) => {
 
 // Starts a question in this project's thread; the new turn streams at the end of the thread.
 async function startRun(query, plan = null) {
-  const { run_id: id } = await api(`/api/projects/${state.project.id}/runs`, { method: 'POST', body: { query, agents: state.pinned.size ? [...state.pinned] : null, plan } });
+  const { run_id: id } = await api(`/api/projects/${state.project.id}/runs`, { method: 'POST', body: { query, agents: state.pinned.size ? [...state.pinned] : null, plan, thread_id: state.thread } });
   $('#thread .empty-line')?.remove();
   const el = mountTurn({ id, query, status: 'running', created_at: new Date().toISOString(), answer: null }, true);
   el.scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -17,9 +17,15 @@ alter table projects add column if not exists goals text not null default '';
 alter table projects add column if not exists dashboard jsonb;
 alter table projects add column if not exists dashboard_status text;
 update projects set dashboard_status = 'failed' where dashboard_status like 'building%';  -- a restart ends builds
+alter table projects add column if not exists reports jsonb not null default '[]';
+alter table projects add column if not exists report_status text;
+update projects set report_status = 'failed' where report_status like 'building%';
 create table if not exists runs(id serial primary key, project_id int references projects on delete cascade,
     query text not null, agents text[], status text not null default 'running', answer jsonb,
     events jsonb not null default '[]', created_at timestamptz default now(), finished_at timestamptz);
+create table if not exists threads(id serial primary key, project_id int references projects on delete cascade,
+    title text not null, created_at timestamptz default now());
+alter table runs add column if not exists thread_id int references threads on delete cascade;
 """
 EXAMPLES = [
     ("Amara Okafor", "Jobs analyst", "World Bank",
@@ -117,9 +123,9 @@ def update_project(project_id, title, goals):
 
 
 def get_project(project_id):
-    project = q("select id, title, goals, profile_id, dashboard, dashboard_status from projects where id = %s", (project_id,), one=True)
+    project = q("select id, title, goals, profile_id, dashboard, dashboard_status, reports, report_status from projects where id = %s", (project_id,), one=True)
     if project:
-        project["runs"] = q("select id, query, status, created_at, answer from runs where project_id = %s "
+        project["runs"] = q("select id, query, status, created_at, answer, thread_id from runs where project_id = %s "
                             "order by id", (project_id,))
     return project
 
@@ -130,10 +136,44 @@ def set_dashboard(project_id, status, dashboard=None):
       (status, Jsonb(dashboard) if dashboard else None, project_id))
 
 
-def history(project_id):
-    """Earlier done runs of a project, oldest first, as the orchestrator expects them."""
+def set_report_status(project_id, status):
+    q("update projects set report_status = %s where id = %s", (status, project_id))
+
+
+def add_report(project_id, version):
+    """Appends a report version (numbered here, never overwritten) and marks the build done."""
+    q("update projects set report_status = 'done', reports = reports || jsonb_build_array(%s || jsonb_build_object("
+      "'version', jsonb_array_length(reports) + 1, 'created_at', now())) where id = %s", (Jsonb(version), project_id))
+
+
+def tool_calls(project_id):
+    """Every tool_call event of the project's done runs, for the report's data-provenance appendix."""
+    return [r["e"] for r in q("select e from runs r, jsonb_array_elements(r.events) e where r.project_id = %s "
+                              "and r.status = 'done' and e->>'type' = 'tool_call'", (project_id,))]
+
+
+def history(project_id, thread_id=None):
+    """Earlier done runs of one thread of a project (None = Main, the runs without a thread), oldest first."""
     return q("select query, answer->>'summary' as summary from runs where project_id = %s and status = 'done' "
-             "order by id", (project_id,))
+             "and thread_id is not distinct from %s order by id", (project_id, thread_id))
+
+
+# Threads: runs without a thread are the project's Main thread
+def list_threads(project_id):
+    """Main first (synthetic, id None; the first pass is project-level, not a question), then the real threads."""
+    main = q("select count(*)::int as n_runs from runs where project_id = %s and thread_id is null and query not ilike 'first pass%%'",
+             (project_id,), one=True)
+    return [{"id": None, "title": "Main", **main}] + q("select t.id, t.title, t.created_at, count(r.id)::int as n_runs from threads t left join runs r on r.thread_id = t.id "
+             "where t.project_id = %s group by t.id order by t.id", (project_id,))
+
+
+def create_thread(project_id, title):
+    return q("insert into threads(project_id, title) values (%s, %s) returning id, project_id, title, created_at",
+             (project_id, title), one=True)
+
+
+def rename_thread(thread_id, title):
+    return q("update threads set title = %s where id = %s returning id, project_id, title", (title, thread_id), one=True)
 
 
 # Runs
@@ -154,9 +194,9 @@ def fail_stale_runs():
            and created_at < now() - interval '10 minutes'""")
 
 
-def create_run(project_id, query, agents):
-    return q("insert into runs(project_id, query, agents) values (%s, %s, %s) returning id",
-             (project_id, query, agents), one=True)["id"]
+def create_run(project_id, query, agents, thread_id=None):
+    return q("insert into runs(project_id, query, agents, thread_id) values (%s, %s, %s, %s) returning id",
+             (project_id, query, agents, thread_id), one=True)["id"]
 
 
 def append_event(run_id, event):
