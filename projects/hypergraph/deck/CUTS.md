@@ -36,10 +36,10 @@ On 14 November `striprivals` replaced `heatdrugs` as slide 5; `heatdrugs` and `s
 
 ## The deck of 14 November (`deck2/`), ten slides, five minutes
 
-This deck opens with one example, the full moon, and then shows the procedure. It is a separate artifact, and the deck above is kept. Travis Rich's advice was to lead with one example as a hook and then the process.
+This deck opens on the moon strip, before the title slide, and then shows the procedure. It is a separate artifact, and the deck above is kept. Travis Rich's advice was to lead with one example as a hook and then the process.
 
-1. `cover`: "A graph of findings is never finished; we built a procedure and a drawing for what happens when new evidence arrives."
-2. `stripmoon`: "Does a full moon fill the emergency room? The graph holds 60 findings that disagree; we registered a prediction of nothing and found it in New York's shootings, ambulance calls and crashes; then a referee found a dip four days before the full moon that nobody predicted, which is how beliefs start."
+1. `stripmoon`: "On a busy night in the emergency room, someone says it must be a full moon. We checked New York's records for the days around every full moon, and nothing changes. Then we made up a moon that is full every 23 days, and it gives the same numbers as the real one."
+2. `cover`: "The made-up moon is a placebo. We wrote the prediction down before we looked, and a referee checked it. That procedure, and a drawing of what it finds, is what we built."
 3. `edgefield`: "That was one link. Each link in the System graph is a running meta-analysis; here are 69, with New York's own estimate on 25."
 4. `stripheat`: "A link that matters: the graph says 7% more homicide per 5 °C, two cities' shootings say 15% and 13%, and people outdoors carries 44% of the slope."
 5. `striprivals`: "The literature gives five reasons; some disagree about shootings indoors, so this morning we registered that test in New York: 17% outside, 1% inside."

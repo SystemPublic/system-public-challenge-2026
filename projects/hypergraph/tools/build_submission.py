@@ -71,6 +71,7 @@ DECK_BLOBS = {
     "576181bdf4afbf11f78c4623d9b01c60": "figures/hypergraph/slide_edge_panel.png",
     "17d9b5aa575d5359b04d90a22076ed09": "figures/hypergraph/slide_edges_about_edges.png",
     "5115c7adc20b0f486260a73573902434": "figures/heat_drugs/slide_heat_drugs.png",
+    "ae43c859dfa2150c5c4f9cae94c9cce8": "figures/comics/strip_moon.png",
     "44a9fd56ec4c8312eacf5535cb00be61": "figures/comics/strip_moon.png",
     "042ce2e2ca1d3801ce9047e4ab0e040c": "figures/comics/strip_generated_chicago.png",
     "b62085aa8b8a368d27d993ffb0034e1c": "figures/comics/strip_generated_heat.png",

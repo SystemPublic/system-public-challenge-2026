@@ -73,7 +73,7 @@ All numbers come from registered claims in this repository or from abstracts rea
 
 ![The full moon](../figures/comics/strip_moon.png)
 
-**The full moon.** The first frame draws a common belief as three dotted arrows. The second shows what the graph holds: more crash transports in Japan, fewer homicides in Finland, no change in cardiac arrests. The third is a registered null for New York's shootings, ambulance incidents and injury crashes, drawn as thick arrows with struck circles: the estimate is precise and it is no effect.
+**The full moon and a moon we made up.** Three frames with short captions, made to open the talk. The first draws the belief as dotted arrows. The second gives New York's record for the days around every full moon: no change in shootings, ambulance calls or crashes. The third replaces the moon with one we made up, full every 23 days, which gives the same numbers. The made-up moon is the claim's registered placebo. An earlier version had a frame on what the graph holds and one on an unexplained dip the referee found; both were removed because they distracted from the comparison.
 
 ## Colour and lettering variants
 

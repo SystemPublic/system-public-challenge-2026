@@ -216,37 +216,30 @@ const COMICS = {
                   { from: "M", onto: "ts", t: 0.6, ev: "conj", w: 1, state: "gone", mark: "x", markT: 0.5 } ],
           cap: "We withdraw the dotted arrow. It was a conjecture, and the evidence we could gather counts against it. <b>The risk of death in heat stays</b>, and a city can act on that." }
       ] },
-    { id: "moon", title: "The full moon: a belief, the graph, a null and a new belief",
-      lede: "A graph of findings can also be used to test a common belief. The graph holds studies on both sides, and the city's record gives a narrow interval around no effect.",
+    { id: "moon", title: "The full moon and a moon we made up",
+      lede: "A common belief, tested on the city's records, with a made-up moon as the comparison. The made-up moon is a placebo: the same test run where no effect can exist.",
       sources: [
-        { text: "Rotton and Kelly 1985, Psychol Bull, PMID 3885282. Meta-analysis of 37 studies: the moon's phase explains at most 1% of the variance in the behaviours studied (figure from secondary sources).", href: "https://doi.org/10.1037/0033-2909.97.2.286", link: "doi" },
-        { text: "Onozuka et al. 2018, Sci Total Environ, PMID 29990928. Japan, 842,554 ambulance transports: 1.042 (1.021 to 1.063) for road crashes at full moon. In the graph.", href: "https://doi.org/10.1016/j.scitotenv.2018.07.053", link: "doi" },
-        { text: "Graph record for PMID 30647032, homicides in Finland: 0.85 (0.77 to 0.94) at full moon. The abstract was not read.", href: "https://pubmed.ncbi.nlm.nih.gov/30647032/", link: "PubMed" },
-        { text: "Graph record for PMID 33693140, out-of-hospital cardiac arrest: 1.007 (0.993 to 1.021). The abstract was not read.", href: "https://pubmed.ncbi.nlm.nih.gov/33693140/", link: "PubMed" },
-        { text: "Claim moon-full-emergencies, registered on 14 November 2026 before the test was run. Three-day window around each full moon: shootings 1.007 (0.966 to 1.049), 2006 to 2025; ambulance incidents 0.997 (0.991 to 1.004), 2017 to 2026; injury crashes 1.002 (0.987 to 1.018), 2014 to 2025. A 23-day placebo cycle gave 1.008, 0.998 and 1.002.", href: "evidence.html#moon-full-emergencies", link: "test card" },
-        { text: "Referee report of 14 November 2026: a 3-day window centred four days before the full moon gives 0.914 for shootings (z = -3.9), found by moving the window to every position in the cycle. Exploratory; it decides nothing.", href: "../critique/referee_2026-11-14_moon_inside.md", link: "report" }
+        { text: "Claim moon-full-emergencies, registered on 14 November 2026 before the test was run. Three-day window around each full moon: shootings 1.007 (0.966 to 1.049), 2006 to 2025; ambulance incidents 0.997 (0.991 to 1.004), 2017 to 2026; injury crashes 1.002 (0.987 to 1.018), 2014 to 2025. Refereed.", href: "evidence.html#moon-full-emergencies", link: "test card" },
+        { text: "The same claim's registered placebo, a three-day window that recurs every 23 days: shootings 1.008 (0.969 to 1.048), ambulance incidents 0.998 (0.993 to 1.003), injury crashes 1.002 (0.988 to 1.016).", href: "evidence.html#moon-full-emergencies", link: "test card" },
+        { text: "The System graph holds 60 findings on lunar variables from 36 studies, which disagree: 1.042 for crash transports in Japan (PMID 29990928), 0.85 for homicides in Finland (PMID 30647032), 1.007 for cardiac arrest (PMID 33693140). Rotton and Kelly 1985 reviewed 37 studies and found almost no effect (PMID 3885282).", href: "../docs/conjectures.md", link: "note" }
       ],
       frames: [
         { head: "The belief",
-          nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "crime", x: 320, y: 58 }, { id: "E", label: "emergency\nvisits", x: 320, y: 150 }, { id: "A", label: "accidents", x: 320, y: 242 } ],
+          nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "crashes", x: 320, y: 242 } ],
           edges: [ { a: "M", b: "C", ev: "conj", w: 1, mark: "?", markT: 0.5 }, { a: "M", b: "E", ev: "conj", w: 1, mark: "?", markT: 0.5 }, { a: "M", b: "A", ev: "conj", w: 1, mark: "?", markT: 0.5 } ],
-          cap: "Ask a nurse or a police officer on a busy night and you will hear it: must be a full moon. A 1985 review of 37 studies found almost nothing. <b>The belief survived.</b>" },
-        { head: "What the graph holds",
-          nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "homicide", x: 320, y: 58, state: "new" }, { id: "E", label: "cardiac\narrest", x: 320, y: 150, state: "new" }, { id: "A", label: "crash\ntransports", x: 320, y: 242, state: "new" } ],
-          edges: [ { a: "M", b: "C", ev: "obs", w: 1, state: "new", label: "×0.85", refs: [3], lo: -14 }, { a: "M", b: "E", ev: "obs", w: 2, state: "new", mark: "0", markT: 0.68, label: "×1.01", refs: [4], lo: -13, labelT: 0.36 },
-                   { a: "M", b: "A", ev: "obs", w: 2, state: "new", label: "×1.04", refs: [2], lo: 15 } ],
-          cap: "The graph has 60 findings about the moon from 36 studies. Japan's ambulances carry 4% more crash victims. Finland has fewer homicides. Cardiac arrests do not change. <b>The moon cannot seem to decide.</b>" },
-        { head: "New York's record",
-          nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "injury\ncrashes", x: 320, y: 242 } ],
-          edges: [ { a: "M", b: "C", ev: "obs", w: 2, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.01", refs: [5], lo: -14, labelT: 0.36 },
-                   { a: "M", b: "E", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [5], lo: -13, labelT: 0.36 },
-                   { a: "M", b: "A", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [5], lo: 15, labelT: 0.36 } ],
-          cap: "We registered a prediction of nothing, and then found it. Around a full moon, New York's shootings, ambulance calls and injury crashes <b>do not change</b>. A made-up 23-day moon does just as well." },
-        { head: "The referee looks harder",
-          nodes: [ { id: "M", label: "four days\nbefore", x: 70, y: 150, state: "new" }, { id: "C", label: "shootings", x: 320, y: 150 } ],
-          edges: [ { a: "M", b: "C", ev: "obs", w: 1, state: "new", mark: "?", markT: 0.68, label: "×0.91", refs: [6], lo: -14, labelT: 0.36 } ],
-          texts: [ { text: "found by trying\nevery day of the cycle", x: 196, y: 214, state: "new", size: 12.5 } ],
-          cap: "A referee tried every day of the cycle. Four days before the full moon, shootings are 9% lower. Nobody predicted it, so <b>it counts for nothing</b>. This is how beliefs start." }
+          cap: "On a busy night in the emergency room, someone says it must be a full moon." },
+        { head: "The real moon",
+          nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "crashes", x: 320, y: 242 } ],
+          edges: [ { a: "M", b: "C", ev: "obs", w: 2, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.01", refs: [1], lo: -14, labelT: 0.36 },
+                   { a: "M", b: "E", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [1], lo: -13, labelT: 0.36 },
+                   { a: "M", b: "A", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [1], lo: 15, labelT: 0.36 } ],
+          cap: "We checked New York's records for the days around every full moon. <b>Nothing changes.</b>" },
+        { head: "A moon we made up",
+          nodes: [ { id: "M", label: "made-up moon,\nfull every\n23 days", x: 74, y: 150, state: "new" }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "crashes", x: 320, y: 242 } ],
+          edges: [ { a: "M", b: "C", ev: "obs", w: 2, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.01", refs: [2], lo: -14, labelT: 0.36 },
+                   { a: "M", b: "E", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [2], lo: -13, labelT: 0.36 },
+                   { a: "M", b: "A", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [2], lo: 15, labelT: 0.36 } ],
+          cap: "Then we made up a moon that is full every 23 days. <b>It gives the same numbers as the real one.</b>" }
       ] }
   ]
 };
