@@ -135,7 +135,7 @@ function renderProfileDialog() {
     <p><strong>${esc(p.name)}</strong><br><span class="small muted">${esc([p.role, p.organisation].filter(Boolean).join(', '))}</span></p>
     ${p.about ? `<p class="small">${esc(p.about)}</p>` : ''}
     <h2>API keys</h2>
-    <p class="small muted">Optional. A key switches on the tools that need it. Keys are stored encrypted and only their names are shown again.</p>
+    <p class="small muted">Optional. Store your own API keys (for example OpenAlex) for keyed tools as we add them. Keys are stored encrypted and only their names are shown again.</p>
     ${p.key_names?.length ? `<ul class="list">${p.key_names.map((k) => `<li><div><code>${esc(k)}</code></div>
         <button type="button" data-remove-key="${esc(k)}">Remove</button></li>`).join('')}</ul>` : '<p class="small">No keys saved.</p>'}
     <form id="key-form">
