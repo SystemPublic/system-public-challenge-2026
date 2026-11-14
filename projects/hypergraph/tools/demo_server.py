@@ -134,6 +134,27 @@ class Handler(SimpleHTTPRequestHandler):
                 for side, (o, sl) in (("june", ("nyc", "restaurant-inspections")), ("november", ("system-community", "nyc-restaurant-inspections-2026-11"))):
                     r = cv.record(o, sl, "v1.0.0", "Inspection", rid)
                     out[side] = {"record": r, "url": f"https://www.underlay.org/api/collections/{o}/{sl}/versions/v1.0.0/records/Inspection/{rid}", "collection": f"{o}/{sl} v1.0.0"}
+                from concurrent.futures import ThreadPoolExecutor
+
+                import requests
+                codes = [c["code"] for c in json.loads((ROOT / "viz/data/inspections_codes.json").read_text())]
+                camis, day, kind = rid.split("-")[0], "-".join(rid.split("-")[1:4]), "-".join(rid.split("-")[4:])
+                slug = lambda x: re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (x or "").lower())).strip("-")  # noqa: E731
+                # today: the city's table, queried now, gives the complete current list for this inspection
+                live = requests.get("https://data.cityofnewyork.us/resource/43nn-pn8j.json", timeout=40, params={
+                    "$select": "inspection_type,violation_code,violation_description,critical_flag,score",
+                    "$where": f"camis='{camis}' AND inspection_date='{day}T00:00:00'", "$limit": "200"})
+                now = {x["violation_code"]: x for x in (live.json() if live.status_code == 200 else []) if x.get("violation_code") and slug(x.get("inspection_type")) == kind}
+                # June: the Underlay holds one Violation record per code, so each known code is tried
+                def viol(code):
+                    v = cv.record("nyc", "restaurant-inspections", "v1.0.0", "Violation", f"{rid}-{code}")
+                    return (code, v["data"]) if v else None
+                with ThreadPoolExecutor(max_workers=32) as ex:
+                    june = dict(x for x in ex.map(viol, codes) if x)
+                out["violations"] = [{"code": c, "description": (june.get(c) or {}).get("violationDescription") or (now.get(c) or {}).get("violation_description", ""),
+                                      "june": c in june, "today": c in now} for c in sorted(set(june) | set(now))]
+                out["codes_tried"] = len(codes)
+                out["today_source"] = "NYC Open Data 43nn-pn8j, queried now"
                 rest = cv.record("system-community", "nyc-restaurant-inspections-2026-11", "v1.0.0", "Restaurant", rid.split("-")[0])
                 out["restaurant"] = (rest or {}).get("data")
                 return self._json(200, out)

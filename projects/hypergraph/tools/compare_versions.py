@@ -30,6 +30,7 @@ GRAPH = ("system", "public-graph")
 NODES = json.loads((ROOT / "viz" / "data" / "strip_nodes.json").read_text())
 _cache: dict[str, object] = {}
 _session = requests.Session()
+_session.mount("https://", requests.adapters.HTTPAdapter(pool_connections=4, pool_maxsize=40))
 # Anonymous callers get 60 units a minute and a difference costs 5, so requests are signed when a key is present.
 # The key is read from the user's config folder, is sent only to underlay.org and is never printed or returned.
 _TOKEN = Path.home() / ".config" / "underlay" / "token"

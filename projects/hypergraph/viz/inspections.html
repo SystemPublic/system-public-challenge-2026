@@ -85,6 +85,9 @@
   .card.nov .s { color: #ffd60a; }
   .card p { margin: 6px 0 0; font-size: 13.5px; line-height: 1.4; color: #ddd; }
   .card a { color: #9cc2ff; }
+  table.viol { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  table.viol th { text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: #bbb; padding: 4px 8px 4px 0; border-bottom: 1px solid #fff; background: none; }
+  table.viol td { padding: 5px 8px 5px 0; border-bottom: 1px solid #333; background: none !important; color: #fff; }
   .detail .cap { font-family: var(--letter); text-transform: uppercase; font-size: 15px; margin: 12px 0 0; letter-spacing: .02em; }
   #research { margin-top: 30px; }
   .live { margin: 26px 0 30px; padding: 4px 0 18px; border-bottom: 2px solid #000; max-width: 1100px; }
@@ -142,11 +145,11 @@
   <div id="list" hidden>
     <div class="live">
       <h2 class="strip-title">Look up any Manhattan restaurant, live</h2>
-      <p class="strip-lede">Type a name. The page asks the city's data portal for that restaurant's inspections as they stand today, fetches the same inspections from the June version on the Underlay, and compares them.</p>
+      <p class="strip-lede">Type a name. The page asks the city's data portal for that restaurant's inspections as they stand today, fetches the same inspections from the June version on the Underlay, and compares them. Click any row to see its violations in both versions.</p>
       <div class="listbar"><input id="lq" placeholder="A restaurant's name, for example JOE'S PIZZA"><button class="big" id="lgo" style="font-size:16px; padding:9px 18px;">Look it up</button><span id="lstatus"></span></div>
       <table class="rows" id="ltable" hidden><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>Points in June</th><th>Points today</th></tr></thead><tbody id="lrows"></tbody></table>
     </div>
-    <div class="listbar"><b>One restaurant at a time: the 485 inspections whose score changed.</b> Click one to fetch both records from the Underlay. <input id="q" placeholder="Search a restaurant or street"></div>
+    <div class="listbar"><b>One restaurant at a time: the 485 inspections whose score changed.</b> Click one to fetch its records and violations from both versions on the Underlay. <input id="q" placeholder="Search a restaurant or street"></div>
     <table class="rows"><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>Points in June</th><th>Points in November</th></tr></thead><tbody id="rows"></tbody></table>
     <p><button class="plain" id="morerows">Show more</button></p>
     <div id="more2" style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
@@ -342,8 +345,11 @@ async function drill(tr) {
     const card = (side, cls) => { const x = (r[side].record || {}).data || {}; return `<div class="card ${cls}"><h4>${side === "june" ? "June copy" : "November copy"}</h4><div class="s">${x.score ?? "no score"}</div>`
       + `<p>${esc(x.action || "")}</p><p>Grade: ${esc(x.grade || "none recorded")} · ${esc(r[side].collection)} · <a href="${r[side].url}" target="_blank" rel="noopener">record</a></p></div>`; };
     const a = ((r.june.record || {}).data || {}).score, b = ((r.november.record || {}).data || {}).score, name = (r.restaurant || {}).name || tr.querySelector("b").textContent;
-    d.firstChild.innerHTML = `<div class="cards">${card("june", "")}${card("november", "nov")}</div>`
-      + `<p class="cap">Same restaurant, same inspection, same day. The record for ${esc(name)} showed ${a} violation points in June and shows ${b} now. Fewer points is better.</p>`;
+    const vs = r.violations || [], gone = vs.filter(v => v.june && !v.today);
+    const vrow = v => `<tr><td><b>${esc(v.code)}</b></td><td>${esc(v.description)}</td><td>${v.june ? "cited" : "not in the June copy"}</td><td>${v.today ? "on the record" : '<span style="color:#ffd60a;font-weight:700">removed</span>'}</td></tr>`;
+    const vtable = vs.length ? `<table class="viol"><thead><tr><th>Code</th><th>Violation</th><th>June version</th><th>City table today</th></tr></thead><tbody>${vs.map(vrow).join("")}</tbody></table>` : `<p class="cap">No violation records found for this inspection among the ${r.codes_tried} common codes.</p>`;
+    d.firstChild.innerHTML = `<div class="cards">${card("june", "")}${card("november", "nov")}</div>` + vtable
+      + `<p class="cap">Same restaurant, same inspection, same day. ${a === b ? `The record for ${esc(name)} shows ${a} violation points in both copies.` : `The record for ${esc(name)} showed ${a} violation points in June and shows ${b} now. ${gone.length} violation${gone.length === 1 ? " was" : "s were"} removed.`}</p>`;
   } catch (e) { d.firstChild.textContent = String(e.message || e); }
 }
 $("go").addEventListener("click", compare);
@@ -353,7 +359,7 @@ async function lookupLive() {
   try {
     const r = await fetch("/api/inspections/lookup?q=" + encodeURIComponent(term)).then(r => r.json());
     if (r.error) throw new Error(r.error);
-    $("lrows").innerHTML = r.rows.map(x => `<tr${x.changed ? ' style="background:#fff3b0"' : ""}><td><b>${esc(x.name)}</b></td><td>${esc(x.address)}</td><td>${esc(x.date)}</td>`
+    $("lrows").innerHTML = r.rows.map(x => `<tr class="row" data-id="${esc(x.id)}"${x.changed ? ' style="background:#fff3b0"' : ""}><td><b>${esc(x.name)}</b></td><td>${esc(x.address)}</td><td>${esc(x.date)}</td>`
       + `<td class="sc">${x.in_june_copy ? (x.june ?? "no score") : "not in the June copy"}</td><td class="sc">${x.changed ? `<span class="to">${x.now}</span> changed` : (x.now ?? "no score")}</td></tr>`).join("")
       || `<tr><td colspan="5">No Manhattan restaurant with that name has an inspection from 2024 to June 2026.</td></tr>`;
     $("ltable").hidden = false;
@@ -362,6 +368,7 @@ async function lookupLive() {
   $("lgo").disabled = false;
 }
 $("lgo").addEventListener("click", lookupLive);
+$("lrows").addEventListener("click", e => { const tr = e.target.closest("tr.row"); if (tr) drill(tr); });
 $("lq").addEventListener("keydown", e => { if (e.key === "Enter") lookupLive(); });
 
 $("rows").addEventListener("click", e => { const tr = e.target.closest("tr.row"); if (tr) drill(tr); });
