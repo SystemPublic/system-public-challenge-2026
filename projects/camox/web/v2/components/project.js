@@ -164,7 +164,7 @@ function FirstPass({ project, runs, reload, addGoals }) {
 const sourceLink = (s) => {
   const doi = String(s).match(/10\.\d{4,9}\/\S+/);
   if (doi) return `<a href="https://doi.org/${esc(doi[0])}" target="_blank" rel="noopener">paper ${esc(doi[0])}</a>`;
-  if (/^WB_[A-Z0-9]+_\S+$/.test(s)) return `<a href="${esc(wbUrl(s))}" target="_blank" rel="noopener">${esc(s)}</a>`;
+  if (/^WB_[A-Z0-9]+_\S+$/.test(s)) return `<a class="ind-id small muted" href="${esc(wbUrl(s))}" target="_blank" rel="noopener">${esc(s)}</a>`;
   return linked(s);
 };
 const kpis = (p) => `<div class="kpis">${p.kpis.map((k) => `<div class="kpi"><div class="kpi-value num">${esc(k.value)} <span class="kpi-unit">${esc(k.unit)}</span></div>

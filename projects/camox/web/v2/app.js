@@ -7,8 +7,9 @@ import { installAnswerClicks } from './components/answer.js';
 
 function App() {
   const [session, setSession] = useState(undefined);
-  useEffect(() => { boot().then(setSession); }, []);
-  if (session === undefined) return html`<div class="boot"><span class="brand">CAMOX</span><p class="muted small">Opening your workspace</p></div>`;
+  const [slow, setSlow] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setSlow(true), 5000); boot().then(setSession).finally(() => clearTimeout(t)); }, []);
+  if (session === undefined) return html`<div class="boot"><span class="brand">CAMOX</span><p class="muted small">${slow ? 'Waking the server, about a minute' : 'Loading projects…'}</p></div>`;
   if (!session) return html`<${AuthScreen} onSession=${setSession} />`;
   return html`<${Workspace} key=${session.user?.id ?? 'demo'} session=${session} setSession=${setSession} />`;
 }

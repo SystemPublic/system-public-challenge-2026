@@ -143,11 +143,12 @@ function source(s) {
 
 const MATCH = { exact: 'Exact', narrower: 'Narrower', broader: 'Broader', proxy: 'Proxy' };
 const dataset = (d) => (d ? `<span class="ds" title="${esc(d)}">${esc(datasetName(d))}</span>` : '');
-const indId = (id) => (id ? `<a class="ind-id num small" href="${esc(wbUrl(id))}" target="_blank" rel="noopener">${esc(id)}</a>` : '');
+// Indicator: its name links to Data360; the id follows as small muted text.
+const indLink = (name, id) => (id ? `<a href="${esc(wbUrl(id))}" target="_blank" rel="noopener">${esc(name || id)}</a> <span class="ind-id small muted">${esc(id)}</span>` : esc(name));
 const tier = (n) => (n >= 10 ? 'strong' : n >= 3 ? 'moderate' : 'thin');
 const pick = (i, l) => esc(JSON.stringify({ id: i.indicator_id, name: i.name, dataset: datasetName(i.database), url: wbUrl(i.indicator_id),
   concept: l.concept_label, tier: tier(l.studies), studies: l.studies, dois: (l.dois || []).join(' ') }));
-const indicator = (i, l) => `<li>${esc(i.name)} ${indId(i.indicator_id)} ${dataset(i.database)}
+const indicator = (i, l) => `<li>${indLink(i.name, i.indicator_id)} ${dataset(i.database)}
   <button type="button" class="chip" data-pick="${pick(i, l)}">Add to my list</button></li>`;
 
 // "My list": indicators the user picks across answers, kept per project in localStorage (in memory if storage is blocked).
@@ -164,7 +165,7 @@ const saveList = (l) => {
 };
 export function renderMyList(el) {
   const l = myList();
-  el.innerHTML = l.length ? `<ul class="plain">${l.map((x) => `<li>${esc(x.name)} ${indId(x.id)} <span class="ds">${esc(x.dataset)}</span>
+  el.innerHTML = l.length ? `<ul class="plain">${l.map((x) => `<li>${indLink(x.name, x.id)} <span class="ds">${esc(x.dataset)}</span>
       <span class="small muted">${esc(x.concept)}, ${plural(x.studies, 'study', 'studies')}</span>
       <button type="button" class="chip" data-unpick="${esc(x.id)}">Remove</button></li>`).join('')}</ul>
     <p><button type="button" class="download" data-mylist>Download my list (CSV)</button></p>`
@@ -203,7 +204,7 @@ function indicatorMap(s) {
       <td class="r num" data-label="Evidence">${plural(l.studies, 'study', 'studies')}</td>
       <td data-label="World Bank indicators">${l.indicators.length ? `<ul class="plain">${l.indicators.map((i) => indicator(i, l)).join('')}</ul>` : '<span class="small muted">No World Bank indicator measures this</span>'}</td>
     </tr>`).join('');
-  return `<p><strong>Starting indicator:</strong> ${esc(s.seed.name)} ${indId(s.seed.indicator_id)} ${dataset(s.seed.database)}</p>
+  return `<p><strong>Starting indicator:</strong> ${indLink(s.seed.name, s.seed.indicator_id)} ${dataset(s.seed.database)}</p>
     <ul class="plain small">${s.matches.map((m) => `<li>Graph concept <strong>${esc(m.label)}</strong>: ${esc(MATCH[m.match] || m.match)} match. ${linked(m.why)}</li>`).join('')}</ul>
     <div class="filter" role="group" aria-label="Show links"><button type="button" class="chip" data-show="" aria-pressed="true">All ${s.links.length}</button>
       <button type="button" class="chip" data-show="other" aria-pressed="false">Other datasets ${s.links.filter((l) => l.cross_dataset).length}</button>

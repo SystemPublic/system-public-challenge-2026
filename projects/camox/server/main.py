@@ -139,23 +139,18 @@ async def update_project(project_id: int, p: ProjectIn):
 FIRST_PASS = "First pass: what data is available for this project, and where do sources disagree or run out?"
 
 
-def data_plan(question, scope):
-    """The fixed data plan behind the first pass and every "Data: topic" run: availability, indicators, outside sources."""
-    plan = [("availability", "Map data availability and mismatches for the key concepts in"),
-            ("indicator-map", "Start from the main World Bank indicator for this and map the evidence and indicators around it"),
-            ("research", "Find recent studies, reports and datasets the graph lacks, above all where its coverage is thin, for")]
-    return {"question": question, "tasks": [{"agent": a, "instruction": f"{i}: {scope}"} for a, i in plan]}
+# Data runs (the first pass and "Data: topic") plan their own research with these agents.
+DATA_AGENTS = ["availability", "indicator-map", "research", "evidence"]
 
 
 async def start_first_pass(project_id):
     """A fixed-plan run started when a project gets goals; the project dashboard is built when it succeeds."""
     _, profile, history = await run_in_threadpool(context, project_id)
-    plan = data_plan(FIRST_PASS, profile["project"]["goals"])
     run_id = await run_in_threadpool(db.create_run, project_id, FIRST_PASS, None)
     subscribers[run_id], events_sent[run_id] = [], 0
 
     async def then_dashboard():
-        await execute(run_id, FIRST_PASS, profile, history, None, plan, kind="first_pass")
+        await execute(run_id, FIRST_PASS, profile, history, DATA_AGENTS, None, kind="first_pass")
         if (await run_in_threadpool(db.get_run, run_id))["status"] == "done":
             await start_dashboard(project_id)
     task = asyncio.create_task(then_dashboard())
@@ -306,10 +301,10 @@ async def start_run(project_id: int, r: RunIn):
     mine, total = await run_in_threadpool(db.runs_last_hour, profile["id"])
     if mine >= RUNS_PER_PROFILE or total >= RUNS_TOTAL:
         return PlainTextResponse("Run limit reached: please try again in an hour.", 429)
-    plan = r.plan or (data_plan(r.query, r.query[5:].strip()) if r.query.lower().startswith("data:") else None)
+    agents = DATA_AGENTS if r.query.lower().startswith("data:") and not r.plan else r.agents
     run_id = await run_in_threadpool(db.create_run, project_id, r.query, r.agents, r.thread_id)
     subscribers[run_id], events_sent[run_id] = [], 0
-    task = asyncio.create_task(execute(run_id, r.query, profile, history, r.agents, plan))
+    task = asyncio.create_task(execute(run_id, r.query, profile, history, agents, r.plan))
     tasks.add(task)
     task.add_done_callback(tasks.discard)
     return {"run_id": run_id}

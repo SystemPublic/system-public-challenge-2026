@@ -701,4 +701,5 @@ document.addEventListener('click', (e) => {
   v.setAttribute('aria-expanded', d.open);
 });
 
+setTimeout(() => { const b = $('#boot'); if (b) b.textContent = 'Waking the server, about a minute'; }, 5000);
 load();

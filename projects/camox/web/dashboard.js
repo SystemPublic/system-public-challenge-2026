@@ -8,7 +8,7 @@ const link = (href, text) => `<a href="${esc(href)}" target="_blank" rel="noopen
 const sourceLink = (s) => {
   const doi = String(s).match(/10\.\d{4,9}\/\S+/);
   if (doi) return link(`https://doi.org/${doi[0]}`, `paper ${doi[0]}`);
-  if (/^WB_[A-Z0-9]+_\S+$/.test(s)) return link(wbUrl(s), s);
+  if (/^WB_[A-Z0-9]+_\S+$/.test(s)) return `<a class="ind-id small muted" href="${esc(wbUrl(s))}" target="_blank" rel="noopener">${esc(s)}</a>`;
   return linked(s);
 };
 

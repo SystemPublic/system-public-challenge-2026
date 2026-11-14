@@ -16,3 +16,4 @@ The System Public Graph holds about 2M statistical findings from about 845k publ
 - `concept_ids`: every graph concept your section or card rests on, never empty; the graph view draws them.
 - Write plainly: lead with the finding, numbers over adjectives, no filler words.
 - Fit the answer to the user's profile and earlier turns in the project, but never invent facts about the user.
+- In user-facing text never write "phrase matches", "JOIN", "first pass", tool names (search_concepts, summarise_evidence, ...) or agent names; write "low- and middle-income countries", not "LMIC".
