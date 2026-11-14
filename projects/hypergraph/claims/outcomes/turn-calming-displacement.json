@@ -1,0 +1,128 @@
+{
+ "id": "turn-calming-displacement",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Pedestrians injured or killed 50-200 m from the site (excluding crashes within 40 m of any calming site), treated vs later-treated",
+  "estimate": 0.9234,
+  "lo": 0.876,
+  "hi": 0.9734,
+  "scale": "ratio of ratios",
+  "null": 1,
+  "n": 746
+ },
+ "prediction_scored": "miss: ratio 0.923 (0.876-0.973) is below the predicted 0.93-1.07, and the interval's lower bound 0.876 falls 0.004 outside the 0.88-1.12 required by support_if; refute_if (lower bound above 1.00, displacement) is not met. No displacement was found; the ring declined too.",
+ "notes": "Exploratory, written after the registered result was seen (analyses/turn_restrictions/did_explore.py): a placebo installation 12 months early gives a ratio of 0.9346 (0.8768-0.9963), so treated sites were already declining relative to later-treated sites before installation. Extending that pre-installation trend gives a trend-adjusted ratio of 1.0631 (0.9213-1.2268). The likely cause is the comparison group: DOT chooses sites after crash clusters, so treated sites are past their peak while later-treated sites in the same calendar months are still approaching theirs. The registered ratio therefore mixes any treatment effect with regression to the mean in opposite directions in the two groups. Checks fixed in did.py: 30 m radius n/a; cohorts avoiding March-June 2020 0.9637 (0.8928-1.0402). Secondary: left-turn crashes in the ring 0.9449 (0.8985-0.9937). The ring falls with the site, which fits either a spillover benefit along calmed corridors or the same selection artefact at area level; the placebo for the ring (0.935) favours the artefact.",
+ "graph_effect": {
+  "label": "No graph evaluation of turn calming or turn bans. Nearest: traffic-calming measures on local-road intersections, Montreal, collisions IRR 0.31 (0.12-0.86), weak evidence overall (PMID 37288501). Literature outside the graph: NYC DOT uncontrolled before-after, pedestrian injuries -18% (turn calming), left-turn pedestrian and bicyclist injuries -41% (51 left-turn restrictions, 2016 study).",
+  "estimate": 0.82,
+  "lo": null,
+  "hi": null,
+  "scale": "ratio, DOT turn-calming page (-18%)",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "sm2x-35i7",
+   "name": "VZV Turn Traffic Calming",
+   "url": "https://data.cityofnewyork.us/d/sm2x-35i7",
+   "rows_updated_at": "2026-11-01T11:46:54Z",
+   "query": {
+    "$limit": 50000
+   },
+   "fetched": "2026-11-13T13:06:40-0500",
+   "n_rows": 1601
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$select": "collision_id, crash_date, latitude, longitude, number_of_pedestrians_injured, number_of_pedestrians_killed, number_of_persons_injured, number_of_persons_killed",
+    "$where": "crash_date >= '2014-01-01T00:00:00' and latitude > 40.4 and latitude < 41.0 (paged by collision_id)",
+    "format": "csv"
+   },
+   "fetched": "2026-11-13T13:53:46-0500",
+   "local_file": "~/opt/nyc-concordance/turn_restrictions/crashes.csv",
+   "n_rows": 1798550
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "bm4k-52h4",
+   "name": "Motor Vehicle Collisions - Vehicles",
+   "url": "https://data.cityofnewyork.us/d/bm4k-52h4",
+   "rows_updated_at": "2026-11-13T15:33:26Z",
+   "query": {
+    "$select": "collision_id, crash_date, pre_crash",
+    "$where": "pre_crash = 'Making Left Turn' (paged by $offset on :id)",
+    "format": "csv"
+   },
+   "fetched": "2026-11-13T14:01:50-0500",
+   "local_file": "~/opt/nyc-concordance/turn_restrictions/left_vehicles.csv",
+   "n_rows": 227926
+  }
+ ],
+ "settle": "A design that separates the treatment from regression to the mean: empirical Bayes before-after with a safety performance function, or a comparison group of untreated signalized intersections matched on the crash history DOT used for selection, registered before the data are read. DOT's site-selection lists (which crash years it used) would let the selection window be excluded.",
+ "research_needed": [
+  {
+   "question": "Does turn calming reduce pedestrian injuries once the pre-installation decline at selected sites is accounted for?",
+   "data": "sm2x-35i7 install dates; h9gi-nx95; DOT's site-selection crash windows",
+   "design": "Register a model with site-specific pre-trends or an empirical Bayes before-after with a safety performance function fitted on untreated signalized intersections (FHWA method), so that regression to the mean is modelled rather than assumed away",
+   "priority": "high"
+  },
+  {
+   "question": "Do left-turn bans (not calming) reduce pedestrian injuries, and where do the turns go?",
+   "data": "A dated list of left-turn prohibitions (DOT sign orders or the CSCL/LION turn-restriction layer by date), which is not on NYC Open Data",
+   "design": "Staggered DiD as here, with a displacement ring along the detour route",
+   "priority": "high"
+  },
+  {
+   "question": "What does a turn ban or calming do to vehicle throughput at the intersection?",
+   "data": "Signal-timing and turning-movement counts at treated intersections (DOT ATR or video counts); i4gi-tjb9 covers highways only",
+   "design": "Before-after counts at treated and comparison intersections",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/turn_restrictions/event_time.png",
+  "figures/turn_restrictions/forest.png",
+  "figures/turn_restrictions/sites_map.png"
+ ],
+ "registration_sha256": "23f15f06067ea1e3be4bfba5222b969e0251810ddd256882dbe7d04304618092",
+ "decided_at": "2026-11-13T14:04:20-0500",
+ "stance": {
+  "value": 0.244,
+  "lo": 0.044,
+  "hi": 0.444
+ },
+ "notes_referee": "Referee 0.926 (0.878 to 0.976); lower bound missed 0.88 by 0.002-0.004. Unsettled stands.",
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Pedestrians injured or killed 50-200 m from the site (excluding crashes within 40 m of any calming site), treated vs later-treated",
+    "estimate": 0.9234,
+    "lo": 0.876,
+    "hi": 0.9734,
+    "scale": "ratio of ratios",
+    "null": 1,
+    "n": 746
+   },
+   "stance": {
+    "value": 0.244,
+    "lo": 0.044,
+    "hi": 0.444
+   },
+   "decided_at": "2026-11-13T14:04:20-0500",
+   "prediction_scored": "miss: ratio 0.923 (0.876-0.973) is below the predicted 0.93-1.07, and the interval's lower bound 0.876 falls 0.004 outside the 0.88-1.12 required by support_if; refute_if (lower bound above 1.00, displacement) is not met. No displacement was found; the ring declined too."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee: verdict kept, reading narrowed",
+  "critique": "critique/turn-calming-displacement.md",
+  "revised_at": "2026-11-13T14:18:50-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

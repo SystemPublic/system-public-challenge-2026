@@ -1,0 +1,85 @@
+{
+ "id": "heat-surftemp-ed",
+ "kind": "bridge",
+ "statement": "Across New York City community districts, hotter daytime surface temperature goes with a higher rate of heat-stress emergency department visits, and this survives adjustment for poverty, percent Black residents and household air conditioning.",
+ "graph_evidence": [
+  {
+   "relationship_id": "wpUeTjUbAc|PtQBvGm5CM",
+   "concepts": [
+    "extreme heat",
+    "heat illness"
+   ],
+   "n_findings": 2,
+   "n_studies": 2,
+   "direction": "+",
+   "summary": "Sun et al. 2021 (BMJ, 74 million insured US adults, 2010-2019): days at the local 95th percentile of warm-season temperature had 66.3% (60.2 to 72.7) excess risk of ED visits for heat-related illness, with stronger effects in the Northeast. Stowell et al. 2023 (US children): OR 1.34 (1.16 to 1.56), ages 6-12.",
+   "pubmed_ids": [
+    34819309,
+    36337257
+   ]
+  },
+  {
+   "association_id": "variable FWrHgors91 (personal heat exposure)",
+   "concepts": [
+    "income",
+    "personal heat exposure"
+   ],
+   "n_findings": 5,
+   "n_studies": 1,
+   "direction": "-",
+   "summary": "Bernhard et al. 2015 (Alabama): income above $20K associated with lower personal heat exposure, beta -1.05 C (-1.79 to -0.30), through the home thermal environment.",
+   "pubmed_ids": [
+    25617601
+   ]
+  },
+  {
+   "relationship_id": "(concepts I2CN3brExA tree, lHLIKbfnYp green space, RF7tCwCaa5 vegetation cover)",
+   "concepts": [
+    "tree",
+    "green space",
+    "heat"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "The tree concept has no relationships. Green space has 14, none with temperature, heat illness or emergency care. Surface temperature links only to air temperature (r about 0.9, 2 studies), population density (r 0.82) and deforestation (r 0.89). No finding connects trees or green space to heat-related ED visits.",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Madrigano J, Ito K, Johnson S, Kinney PL, Matte T. A case-only study of vulnerability to heat wave-related mortality in New York City (2000-2011). Environ Health Perspect 2015;123:672-678.",
+   "doi": "10.1289/ehp.1408178",
+   "finding": "Heat-wave deaths in NYC were more likely among Black residents and in areas with less green space and higher surface temperature (case-only design)."
+  },
+  {
+   "citation": "NYC DOHMH Environment and Health Data Portal, Heat Vulnerability Index (NTA); and EHDP-data repository, key-topics/heat-vulnerability-index.",
+   "doi": null,
+   "finding": "The HVI is built from surface temperature, green space, household air conditioning, poverty or median income and percent Black residents, chosen because they predicted heat-related deaths. Using the HVI as an outcome of trees would be circular."
+  },
+  {
+   "citation": "Sun S et al. Ambient heat and risks of emergency department visits among adults in the United States. BMJ 2021;375:e065653.",
+   "doi": "10.1136/bmj-2021-065653",
+   "finding": "95th vs median warm-season temperature (34.4 C vs 14.9 C national average): heat-related illness ED visits +66.3% (60.2 to 72.7)."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Unadjusted: +3% to +15% in the age-adjusted heat ED rate per 1 F of surface temperature. Adjusted for poverty, percent Black and AC: attenuated by at least a third, +0% to +8% per 1 F, with an interval that may include zero.",
+  "support_if": "adjusted slope positive with lower 95% limit above 0 (confirmed link)",
+  "refute_if": "adjusted slope negative with upper limit below 0"
+ },
+ "plan": "Unit: 59 community districts. Outcome: EHDP indicator 2443 (heat stress, 5-year ED visits, average annual age-adjusted rate per 100,000, measure 1405, CD), log scale; secondary outcome EHDP 2410 (10-year heat hospitalizations, age-adjusted, measure 1283). Exposure: EHDP 2141 surface temperature (F). Covariates from hvi-nta.csv averaged to CD: POV_PCT, PCT_BLACK_POP, PCT_HOUSEHOLDS_AC. Model: OLS of log rate on surface temperature, unadjusted and adjusted, HC3 SE; report percent change per 1 F. Secondary unit: NTA2010, HRI_HOSP_RATE from hvi-nta.csv on SURFACETEMP with the same covariates.",
+ "alternatives": [
+  "Poverty and race drive both residence in hot, treeless districts and ED use (insurance, ED as usual source of care, outdoor work)",
+  "Residents are exposed where they work and travel, not only where they live",
+  "ED rates count residents by home address; small counts in some CDs are unstable"
+ ],
+ "prior": 0.35,
+ "registrant": "Claude (heat agent), for Jeff Vernon",
+ "chain": [
+  "heat-surftemp-ed"
+ ],
+ "registered_at": "2026-11-12T15:19:38-0500",
+ "sha256": "5a038bcc91f7674e377aa29597cffa388b4f5b516779b75b86967174cc56fbd7"
+}

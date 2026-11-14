@@ -1,0 +1,322 @@
+{
+ "id": "heat-trees-canopy-within-nta",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Sensor afternoon (12-18 h) air temperature on vegetation share (NAIP 2022, NDVI > 0.2) within 50 m; NTA by flight date by day fixed effects, light-pole indicator, SE clustered by sensor",
+  "estimate": -0.20062094142942738,
+  "lo": -0.24675987851450454,
+  "hi": -0.15448200434435022,
+  "scale": "C per 10 percentage points of vegetation share",
+  "null": 0,
+  "n": 86451,
+  "sensors": 420
+ },
+ "graph_effect": {
+  "label": "No graph finding on vegetation and air temperature. Literature (Ziter et al. 2019, not in the graph): more than 1.5 C from none to full canopy within 60-90 m, about 0.15 C per 10 points on average and 0.25 C per 10 points above 40% canopy",
+  "estimate": -0.15,
+  "lo": -0.25,
+  "hi": -0.02,
+  "scale": "C per 10 percentage points (registered range, not an interval)",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qdq3-9eqn",
+   "name": "Hyperlocal Temperature Monitoring",
+   "url": "https://data.cityofnewyork.us/d/qdq3-9eqn",
+   "rows_updated_at": "2021-08-20T19:36:17Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "sensor_id, day, avg(airtemp) as t, count(*) as nh",
+    "$where": "hour >= 12 AND hour <= 18",
+    "$group": "sensor_id, day",
+    "$order": "sensor_id, day"
+   },
+   "fetched": "2026-11-12T15:31:00-0500",
+   "n_rows": 87500,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qdq3-9eqn",
+   "name": "Hyperlocal Temperature Monitoring",
+   "url": "https://data.cityofnewyork.us/d/qdq3-9eqn",
+   "rows_updated_at": "2021-08-20T19:36:17Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "sensor_id, day, avg(airtemp) as t, count(*) as nh",
+    "$where": "hour >= 0 AND hour <= 5",
+    "$group": "sensor_id, day",
+    "$order": "sensor_id, day"
+   },
+   "fetched": "2026-11-12T20:23:39-0500",
+   "n_rows": 87500,
+   "data_access": "open"
+  },
+  {
+   "kind": "naip",
+   "collection": "naip",
+   "stac_url": "https://planetarycomputer.microsoft.com/api/stac/v1",
+   "year": 2022,
+   "states": [
+    "ny"
+   ],
+   "items": [
+    "ny_m_4007302_sw_18_060_20220915",
+    "ny_m_4007309_ne_18_060_20220719",
+    "ny_m_4007309_nw_18_060_20220719",
+    "ny_m_4007309_se_18_060_20220719",
+    "ny_m_4007309_sw_18_060_20220719",
+    "ny_m_4007310_nw_18_060_20220915",
+    "ny_m_4007317_ne_18_060_20220719",
+    "ny_m_4007317_nw_18_060_20220719",
+    "ny_m_4007317_se_18_060_20220719",
+    "ny_m_4007317_sw_18_060_20220719",
+    "ny_m_4007318_ne_18_060_20220915",
+    "ny_m_4007319_nw_18_060_20220915",
+    "ny_m_4007424_ne_18_060_20220719",
+    "ny_m_4007424_se_18_060_20220719"
+   ],
+   "acquisition_dates": [
+    "2022-07-19",
+    "2022-09-15"
+   ],
+   "gsd": [
+    0.6
+   ],
+   "resolution_m": 0.6,
+   "threshold": 0.2,
+   "license": "public domain (USDA)",
+   "credit": "Aerial imagery: USDA Farm Service Agency, National Agriculture Imagery Program (NAIP), 2022.",
+   "data_access": "open",
+   "fetched": "2026-11-12T20:23:20-0500",
+   "file": "data/derived/heat/canopy_naip_sensors.csv"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T15:06:44-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ",
+   "data_access": "open"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "System Public Graph v1.0",
+   "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "file": "data/derived/heat/graph_evidence.json",
+   "note": "cached evidence of 12 Nov 2026; live lookup pending (no API key on this machine)",
+   "data_access": "open"
+  },
+  {
+   "kind": "derived",
+   "file": "data/derived/heat/hyperlocal_sensors.csv",
+   "note": "street-tree counts within 50 m from claim heat-trees-airtemp-hyperlocal (2015 Street Tree Census uvpi-gqnh), used in S7 only",
+   "data_access": "open"
+  }
+ ],
+ "prediction_scored": "hit: -0.20 (-0.25 to -0.15) C per 10 percentage points within 50 m, inside the registered range of -0.02 to -0.25. The three support conditions hold: the upper limit is below 0; the 19 July tiles alone give -0.21 (-0.26 to -0.16); with the ring share in the model the 50 m slope is -0.17 (-0.22 to -0.13). The secondary prediction is a partial hit: the night slope is negative and smaller than the afternoon slope, -0.07 (-0.09 to -0.05), but slightly larger in size than the registered 0 to -0.06.",
+ "placebo": {
+  "label": "vegetation share of the ring 200-300 m from the sensor",
+  "alone": {
+   "estimate": -0.35187844759988873,
+   "lo": -0.45443615744111476,
+   "hi": -0.24932073775866267
+  },
+  "joint_ring": {
+   "estimate": -0.24212096799998914,
+   "lo": -0.33858431822096935,
+   "hi": -0.14565761777900896
+  },
+  "joint_local": {
+   "estimate": -0.1719956915025518,
+   "lo": -0.21715717462213446,
+   "hi": -0.12683420838296916
+  },
+  "result": "not null: the ring coefficient is as large as the local one"
+ },
+ "sensitivity": {
+  "s1_veg100": {
+   "v100": {
+    "estimate": -0.2844801825339015,
+    "lo": -0.3473583840057842,
+    "hi": -0.22160198106201875
+   },
+   "n": 86451,
+   "sensors": 420
+  },
+  "s2_ndvi50": {
+   "n50": {
+    "estimate": -0.4224056827060462,
+    "lo": -0.522699869770735,
+    "hi": -0.32211149564135744
+   },
+   "n": 86451,
+   "sensors": 420
+  },
+  "s2_ndvi100": {
+   "n100": {
+    "estimate": -0.5798299569588458,
+    "lo": -0.7162808980216302,
+    "hi": -0.4433790158960614
+   },
+   "n": 86451,
+   "sensors": 420
+  },
+  "s3_july19_only": {
+   "v50": {
+    "estimate": -0.20855377173286327,
+    "lo": -0.2582171860529809,
+    "hi": -0.15889035741274565
+   },
+   "n": 76195,
+   "sensors": 351
+  },
+  "s3_sept15_only": {
+   "v50": {
+    "estimate": -0.14509940808352229,
+    "lo": -0.24703313866327142,
+    "hi": -0.043165677503773134
+   },
+   "n": 10256,
+   "sensors": 69
+  },
+  "s4_clean_sensors": {
+   "v50": {
+    "estimate": -0.20062094142942738,
+    "lo": -0.24675987851450454,
+    "hi": -0.15448200434435022
+   },
+   "n": 86451,
+   "sensors": 420
+  },
+  "s5_street_tree_mounts": {
+   "v50": {
+    "estimate": -0.2076328328950059,
+    "lo": -0.24869819738096838,
+    "hi": -0.1665674684090434
+   },
+   "n": 61188,
+   "sensors": 305
+  },
+  "s5_light_pole_mounts": {
+   "v50": {
+    "estimate": -0.20600964082933232,
+    "lo": -0.35528931756028215,
+    "hi": -0.05672996409838246
+   },
+   "n": 24364,
+   "sensors": 112
+  },
+  "s6_hot_days_tmax30": {
+   "v50": {
+    "estimate": -0.23565139799662174,
+    "lo": -0.2924730681770195,
+    "hi": -0.178829727816224
+   },
+   "n": 26348,
+   "sensors": 420
+  },
+  "s7_with_tree_count": {
+   "v50": {
+    "estimate": -0.20011061702659133,
+    "lo": -0.2460445520920202,
+    "hi": -0.15417668196116247
+   },
+   "tr50": {
+    "estimate": -0.028405298842423387,
+    "lo": -0.1296018922938142,
+    "hi": 0.07279129460896742
+   },
+   "n": 86451,
+   "sensors": 420
+  },
+  "secondary_night_veg50": {
+   "v50": {
+    "estimate": -0.07108750527452108,
+    "lo": -0.09234135136893651,
+    "hi": -0.04983365918010565
+   },
+   "n": 86442,
+   "sensors": 420
+  },
+  "secondary_night_veg100": {
+   "v100": {
+    "estimate": -0.11184306528589136,
+    "lo": -0.139188399469348,
+    "hi": -0.0844977311024347
+   },
+   "n": 86442,
+   "sensors": 420
+  }
+ },
+ "settle": "The verdict follows the registered conditions, but the placebo was not null. The vegetation share 200 to 300 m away predicts sensor temperature as strongly as the share within 50 m, so the data show that greener parts of a neighbourhood are cooler in the afternoon and do not show that the vegetation within 50 m is the cause. Three things would separate these: canopy and impervious cover from the city's 2017 LiDAR land cover (canopy apart from grass, close in time to the sensors), with building height and street width held fixed; a distance-decay analysis of the NDVI already cached, by rings from 0 to 500 m; and a change design, in which sensors (or the 2022 and later heat-mapping traverses) are compared before and after planting or removal recorded in Forestry Tree Points (hn5i-inap).",
+ "research_needed": [
+  {
+   "question": "At what distance does vegetation stop predicting street-level afternoon air temperature in NYC, and is the 50 m association causal?",
+   "data": "2017 LiDAR land cover (6 in), building footprints and heights, the cached NAIP NDVI rings, Hyperlocal Temperature Monitoring",
+   "design": "Ring-by-ring model within NTA and day with building height and impervious cover as covariates; pre-register the ring widths",
+   "priority": "high"
+  },
+  {
+   "question": "Does the count of street trees measure canopy? Here the count within 50 m and the NAIP vegetation share within 50 m have a correlation of -0.10 across sensors.",
+   "data": "2015 Street Tree Census with trunk diameter; LiDAR canopy",
+   "design": "Compare tree count, summed basal area and canopy share around the same points",
+   "priority": "medium"
+  },
+  {
+   "question": "The System graph has no finding on urban vegetation and air temperature.",
+   "data": "Ziter et al. 2019; Alonzo et al. 2021; Shiflett et al. 2017",
+   "design": "Add the urban microclimate literature to the graph",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/heat/heat_canopy_naip.png"
+ ],
+ "notes": "423 sensors with imagery (all had 100% of the 50 m disc), 420 sensors and 86451 sensor-days in 5043 NTA-by-day cells with at least two sensors; 354 sensors lie under 19 July 2022 tiles and 69 under 15 September tiles; no disc mixes dates. The 50 m vegetation share has mean 22.5%, SD 14.9 points (12.7 within NTA and flight date), and 12% of sensors are at 40% or more. Street-tree mounts average 24.7% and light-pole mounts 16.7%. Sensitivity: 100 m share -0.28 (-0.35 to -0.22); mean NDVI within 50 m -0.42 (-0.52 to -0.32) C per 0.1; 15 September tiles only -0.15 (-0.25 to -0.04); street-tree mounts -0.21 (-0.25 to -0.17); light-pole mounts -0.21 (-0.36 to -0.06); days with Central Park maximum at or above 30 C -0.24 (-0.29 to -0.18); with the street-tree count in the model -0.20 (-0.25 to -0.15), and the count itself -0.03 (-0.13 to 0.07) C per 10 trees. Placebo: ring share alone -0.35 (-0.45 to -0.25); jointly, ring -0.24 (-0.34 to -0.15) and 50 m share -0.17 (-0.22 to -0.13). Descriptive bins against under 10%: 10-20% -0.08 (-0.26 to 0.10), 20-30% -0.22 (-0.43 to -0.00), 30-40% -0.36 (-0.60 to -0.12), 40% and over -0.82 (-1.10 to -0.54) C. Unregistered check of georeferencing: within 5 m of the sensor the vegetation share is 0.59 at street-tree mounts and 0.11 at light-pole mounts. Limits stated in the registration apply: imagery three to four years after the temperatures, uncalibrated NDVI, grass counted with canopy, sensors sited in 23 high-vulnerability NTAs. The afternoon temperatures had been used by the earlier claim before this registration; the vegetation values had not been seen.\n\nAfter the referee (13 Nov 2026): what is confirmed is the association and not the causal edge. The vegetation share 200 to 300 m away stays as large as the local share in every model, as the settle field already says. The referee reproduced the estimate and it survives clustering by NTA (-0.261 to -0.141), other NDVI thresholds and leaving out one NTA. A model with all rings together gives -0.165 (-0.214 to -0.115) for 0 to 25 m, nothing from 25 to 200 m and -0.212 (-0.332 to -0.093) for 200 to 300 m; the ring widths were chosen after the data. An alternative not addressed is shade on the sensor housing as distinct from cooler air: all of the local association lies within 25 m, which fits shading of the instrument at least as well as cooling. The slope differs by year (-0.14 in 2018, -0.24 in 2019) with largely different sensors. The published temperature file is a balanced panel (every sensor-day has 7 of 7 afternoon hours), so it was gap-filled or cleaned before publication and the registered 5-of-7 filter removed nothing. On like-for-like radius the city slope is larger than Ziter's. The graph row for PMID 35060045 stores r = -1.0, which is not a published number; it was used for direction only.",
+ "registration_sha256": "d917a9c71cdd59cea7ee87c312caf112307ca8b75f6d935ebfed166de124f558",
+ "decided_at": "2026-11-12T20:25:18-0500",
+ "stance": {
+  "value": 1.0,
+  "lo": 0.997,
+  "hi": 1.0,
+  "z": 8.52
+ },
+ "verdict_note": "The association is confirmed. Vegetation 200 to 300 m away predicts temperature as strongly as vegetation within 50 m, so the local causal reading is not supported.",
+ "critique": {
+  "report": "critique/heat-trees-canopy-within-nta.md",
+  "answer": "accepted; verdict kept"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Sensor afternoon (12-18 h) air temperature on vegetation share (NAIP 2022, NDVI > 0.2) within 50 m; NTA by flight date by day fixed effects, light-pole indicator, SE clustered by sensor",
+    "estimate": -0.20062094142942738,
+    "lo": -0.24675987851450454,
+    "hi": -0.15448200434435022,
+    "scale": "C per 10 percentage points of vegetation share",
+    "null": 0,
+    "n": 86451,
+    "sensors": 420
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 0.997,
+    "hi": 1.0,
+    "z": 8.52
+   },
+   "decided_at": "2026-11-12T20:25:18-0500",
+   "prediction_scored": "hit: -0.20 (-0.25 to -0.15) C per 10 percentage points within 50 m, inside the registered range of -0.02 to -0.25. The three support conditions hold: the upper limit is below 0; the 19 July tiles alone give -0.21 (-0.26 to -0.16); with the ring share in the model the 50 m slope is -0.17 (-0.22 to -0.13). The secondary prediction is a partial hit: the night slope is negative and smaller than the afternoon slope, -0.07 (-0.09 to -0.05), but slightly larger in size than the registered 0 to -0.06."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed; label says the confirmed claim is the association; ring model, instrument shading and the difference between years recorded.",
+  "critique": "critique/heat-trees-canopy-within-nta.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

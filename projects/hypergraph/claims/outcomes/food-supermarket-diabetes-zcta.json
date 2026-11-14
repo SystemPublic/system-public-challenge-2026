@@ -1,0 +1,143 @@
+{
+ "id": "food-supermarket-diabetes-zcta",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Diabetes admissions (SPARCS PQI 01, 03, 14, 16, observed/expected, 2021-2023) per doubling of supermarkets >= 6,000 sq ft per 10,000 residents, adjusted for log residential density, poverty, log income and median age; 168 NYC ZCTAs, WLS by population, HC3",
+  "estimate": 0.995099767922046,
+  "lo": 0.9463921955555745,
+  "hi": 1.0463141525984418,
+  "scale": "ratio per doubling",
+  "null": 1,
+  "n": 168
+ },
+ "graph_effect": {
+  "label": "Graph cross-sectional findings: distance to nearest supermarket and diabetes incidence OR 1.27 to 1.38 (PMID 36058428); read as a ratio per doubling of supply of about 0.85 to 0.92 (registration)",
+  "estimate": 0.89,
+  "lo": 0.85,
+  "hi": 0.92,
+  "scale": "ratio per doubling (approximate translation)",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_county20_natl.txt"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_zcta_national.zip"
+  },
+  {
+   "kind": "census-acs",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/5YRData/acsdt5y2023-<table>.dat",
+   "tables": [
+    "B01003",
+    "B19013",
+    "B17001",
+    "B01002",
+    "B03002",
+    "B08201",
+    "B09021"
+   ],
+   "vintage": "ACS 2019-2023 5-year, table-based summary file"
+  },
+  {
+   "kind": "data.ny.gov",
+   "dataset": "9a8c-vfzj",
+   "name": "Retail Food Stores",
+   "url": "https://data.ny.gov/d/9a8c-vfzj",
+   "rows_updated_at": "2026-10-14T19:08:34Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "zip_code, estab_type, square_footage",
+    "$where": "upper(county) in ('BRONX','KINGS','NEW YORK','QUEENS','RICHMOND')",
+    "$order": "license_number"
+   },
+   "fetched": "2026-11-13T12:03:18-0500",
+   "n_rows": 11159
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5q8c-d6xq",
+   "name": "Hospital Inpatient Discharges (SPARCS De-Identified): Adult Prevention Quality Indicators (PQI) by Zip Code: Beginning 2009",
+   "url": "https://health.data.ny.gov/d/5q8c-d6xq",
+   "rows_updated_at": "2026-01-13T20:37:43Z",
+   "query": {
+    "$select": "max(year) as y",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-13T12:03:41-0500",
+   "n_rows": 1
+  },
+  {
+   "kind": "health.data.ny.gov",
+   "dataset": "5q8c-d6xq",
+   "name": "Hospital Inpatient Discharges (SPARCS De-Identified): Adult Prevention Quality Indicators (PQI) by Zip Code: Beginning 2009",
+   "url": "https://health.data.ny.gov/d/5q8c-d6xq",
+   "rows_updated_at": "2026-01-13T20:37:43Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "patient_zipcode, year, pqi_number, observed_rate_per_100_000_people, expected_rate_per_100_000_people",
+    "$where": "year in ('2021','2022','2023') and pqi_number in ('PQI_01','PQI_03','PQI_14','PQI_16','PQI 01','PQI 03','PQI 14','PQI 16')",
+    "$order": "patient_zipcode, year, pqi_number"
+   },
+   "fetched": "2026-11-13T12:03:46-0500",
+   "n_rows": 18480
+  }
+ ],
+ "prediction_scored": "hit: the registered support condition (95% interval inside 0.90 to 1.10, estimate at or above 0.95) is met with the interval 0.946 to 1.046 and estimate 0.995. The lower bound clears 0.90 by 0.046, about 1.8 standard errors on the log scale, so the condition is not met only within sampling error.",
+ "settle": "A longitudinal design: diabetes admissions or HbA1c (the city's A1C Registry) in ZIPs where a FRESH-certified store opened, against matched ZIPs, before and after the opening. This needs the list and opening dates of FRESH stores, which the city does not publish as open data.",
+ "research_needed": [
+  {
+   "question": "Did FRESH-certified supermarket openings change diabetes outcomes in their surrounding areas?",
+   "data": "FRESH store list with opening dates (NYC EDC/DCP), A1C Registry or SPARCS by ZIP and year",
+   "design": "staggered difference in differences on opening dates",
+   "priority": "high"
+  },
+  {
+   "question": "Does the crude association between supermarket supply and diabetes vanish on adjustment in other cities' administrative data?",
+   "data": "state discharge PQIs by ZIP, state retail store lists",
+   "design": "the same registered model in another state",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/health_gaps/food_supermarket_diabetes.png"
+ ],
+ "notes": "Unadjusted, a doubling of supermarkets per resident goes with 0.895 (0.822 to 0.974) times the diabetes admission ratio, close to the graph's cross-sectional findings. Adjusted for residential density, poverty, income and median age the ratio is 0.995 (0.946 to 1.046). Secondary models: adding percent Black and percent Hispanic 0.993 (0.943 to 1.046); adding households without a car 0.987 (0.931 to 1.047); stores of 10,000 sq ft or more 0.978 (0.940 to 1.017); all retail food stores 0.994 (0.923 to 1.070). Chicken-and-egg check: supermarkets per km2 alone give 0.951 (0.905 to 0.999); adding log residential density gives 0.895 (0.822 to 0.975), which is algebraically the per-resident unadjusted estimate, so density explains the per-area pattern and per-resident supply then carries the crude association; that association disappears when poverty and income are added. In the primary model a 10-point rise in poverty goes with 1.22 (1.09 to 1.35) times the admission ratio; R2 0.67. Deviation from the committed script, before any outcome was read: the Census API now requires a key, so the same ACS 2019-2023 variables were read from the Census table-based summary files; the county filter for the store list was corrected to upper case after the first query returned no rows. Stores are counted by their address ZIP from the current list (October 2026), so openings and closings after 2023 add noise; two ZCTAs have no supermarket. Admissions measure access to primary care as well as disease. The cross-section cannot show what a new store would do; it shows that in New York the places with fewer supermarkets per resident do not have more diabetes admissions than their income and density predict.",
+ "registration_sha256": "7af9b8f8298e72630678ce3e796d6338e4a27db4a3fd984b8af08f9a605c8d36",
+ "decided_at": "2026-11-13T12:08:35-0500",
+ "stance": {
+  "value": 0.951,
+  "lo": 0.751,
+  "hi": 1
+ },
+ "notes_referee": "Referee reproduced 0.995 (0.946 to 1.046); clustered and spatial-error models still meet support_if; Moran's I 0.35; lower bound 0.88 unweighted or with 2.5 km supply. Outcome tracks poverty and access to care: pneumonia and UTI admissions show the same crude gradient (0.885).",
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Diabetes admissions (SPARCS PQI 01, 03, 14, 16, observed/expected, 2021-2023) per doubling of supermarkets >= 6,000 sq ft per 10,000 residents, adjusted for log residential density, poverty, log income and median age; 168 NYC ZCTAs, WLS by population, HC3",
+    "estimate": 0.995099767922046,
+    "lo": 0.9463921955555745,
+    "hi": 1.0463141525984418,
+    "scale": "ratio per doubling",
+    "null": 1,
+    "n": 168
+   },
+   "stance": {
+    "value": 0.951,
+    "lo": 0.751,
+    "hi": 1
+   },
+   "decided_at": "2026-11-13T12:08:35-0500",
+   "prediction_scored": "hit: the registered support condition (95% interval inside 0.90 to 1.10, estimate at or above 0.95) is met with the interval 0.946 to 1.046 and estimate 0.995. The lower bound clears 0.90 by 0.046, about 1.8 standard errors on the log scale, so the condition is not met only within sampling error."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee: verdict kept, reading narrowed",
+  "critique": "critique/food-supermarket-diabetes-zcta.md",
+  "revised_at": "2026-11-13T12:45:07-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

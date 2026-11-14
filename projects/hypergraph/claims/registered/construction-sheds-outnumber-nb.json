@@ -1,0 +1,73 @@
+{
+ "id": "construction-sheds-outnumber-nb",
+ "kind": "confirmation",
+ "statement": "On a given day, the construction a person sees on NYC streets is mostly not new buildings: active sidewalk-shed permits outnumber active new-building jobs, and most sheds stand on lots without an active new-building job.",
+ "graph_evidence": [
+  {
+   "relationship_id": "B0QiEej1E1|COEFxSZVXO",
+   "concepts": [
+    "population growth",
+    "construction"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Population growth rate and expansion rate of construction land, Chongqing over 20 years (coefficient 1.82; doi:10.1117/12.815931). The only construction-supply finding found in the graph.",
+   "pubmed_ids": []
+  },
+  {
+   "association_id": "aFGrNWb1i5",
+   "concepts": [
+    "housing (vacant housing demolitions)",
+    "crime"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "-",
+   "summary": "Vacant housing demolitions and change in crime, mean difference -0.068 (CI -0.119 to -0.018), PMID 36228876. Shows the graph treats land and buildings as exposures for health and crime, not as supply outcomes.",
+   "pubmed_ids": [
+    36228876
+   ]
+  },
+  {
+   "association_id": "(search)",
+   "concepts": [
+    "construction",
+    "permit",
+    "completion",
+    "vacant",
+    "demolition",
+    "renovation"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "Variable and concept searches (13 terms, data/derived/construction/graph_search.json) found no finding on building permits, permit-to-completion ratios, lags or permit lapse. The construction concept (COEFxSZVXO) has 3 relationships in all (wage, population growth, natural disasters).",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "NYC Department of Buildings, 'Get Sheds Down' plan (July 2023) and press coverage",
+   "doi": null,
+   "url": "https://www.nyc.gov/site/buildings/dob/get-sheds-down.page",
+   "finding": "About 9,000 sidewalk sheds, roughly 400 miles, stood in the city in 2023; many stand for years, often for facade work under Local Law 11 (FISP)."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Reference date 2026-11-01. Active sidewalk-shed permits (DOB NOW Build approved permits with work type Sidewalk Shed, issued on or before the date and expiring after it, counted by distinct job filing): 6,000 to 11,000. Active NB jobs (an NB work permit issued and unexpired on the date, in either system): 1,500 to 5,000. Ratio sheds/NB between 1.5 and 6. Share of active sheds on a BBL with an active NB job: 5% to 25%.",
+  "support_if": "ratio of active shed jobs to active NB jobs > 1.2 AND share of sheds on NB lots < 0.35",
+  "refute_if": "ratio < 0.8 or share of sheds on NB lots > 0.5"
+ },
+ "plan": "SoQL on rbx6-tga4 (work_type for sidewalk sheds; NB work permits via job_filing_number joined to w9ak-ipjd job_type 'New Building') and on ipu4-2q9a (legacy NB permits still active, expiration_date after the date). Count distinct jobs active on 2026-11-01, plus a monthly series of active shed and NB jobs 2022-2026 if queries allow. Join on BBL for the overlap share. Also count active alteration and facade (FISP, xubg-57si) work for context. Figure: bar chart of active jobs by kind on the date.",
+ "alternatives": [
+  "Permit 'active' status overstates sheds actually standing (sheds removed before the permit expires) or understates them (sheds standing on expired permits)",
+  "Sheds per job differ (one job may carry several shed permits along a frontage)",
+  "Perception is driven by cranes and tall towers, not by count of sites"
+ ],
+ "prior": 0.6,
+ "registrant": "Claude (construction agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T15:14:19-0500",
+ "sha256": "68c5ba696bdd755dd9de33aa5fc2cb00428b1c7187e3bb6c3327d843053f0a58"
+}

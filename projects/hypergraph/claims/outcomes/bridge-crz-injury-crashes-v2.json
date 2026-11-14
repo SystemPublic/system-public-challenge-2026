@@ -1,0 +1,260 @@
+{
+ "id": "bridge-crz-injury-crashes-v2",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Endpoint: NYPD injury crashes in the CBD geofence vs Manhattan north of 60th St, 2025 vs 2022-24 (OLS log monthly count, HAC 3)",
+  "estimate": 4.4886771973749795,
+  "lo": -2.7002880956366604,
+  "hi": 12.208797423660457,
+  "scale": "percent change",
+  "null": 0,
+  "n": 96
+ },
+ "graph_effect": {
+  "label": "Composed prediction, v2 (speed link CBD vs CBD Adjacent; Monte Carlo, 200,000 draws)",
+  "estimate": -2.1903554906650746,
+  "lo": -9.203598490136212,
+  "hi": 5.518113787172418,
+  "scale": "percent change",
+  "null": 0
+ },
+ "endpoint_test": {
+  "z_chain": 1.2524176458927316,
+  "z_null": 1.2073158237200312,
+  "D": -0.11093846153871434,
+  "se_log": 0.0363687168720529,
+  "composed_mean_log": -0.021949804612211847,
+  "composed_sd_log": 0.03798018516755841,
+  "placebo_2024_pct": [
+   15.197100618572822,
+   4.842105453040202,
+   26.574833017537202
+  ],
+  "bias_bounds": {
+   "B0": {
+    "pct": 4.4886771973749795,
+    "lo": -2.7002880956366604,
+    "hi": 12.208797423660457,
+    "z_chain": 1.2524176458927316,
+    "z_null": 1.2073158237200312,
+    "D": -0.11093846153871434,
+    "condition": "unsettled"
+   },
+   "B1": {
+    "pct": 0.2739566753286571,
+    "lo": -6.625030025117407,
+    "hi": 7.682673312027788,
+    "z_chain": 0.4694426986212438,
+    "z_null": 0.07522456702421662,
+    "D": -0.2147177118048151,
+    "condition": "unsettled"
+   },
+   "B2": {
+    "pct": 8.737973707747514,
+    "lo": 1.2566509464230213,
+    "hi": 16.772052162016315,
+    "z_chain": 2.0104740141131896,
+    "z_null": 2.3033776958598513,
+    "D": 1.2635430483602361,
+    "condition": "contested_above"
+   },
+   "B3": {
+    "pct": 7.236811183703007,
+    "lo": -0.1412295228191085,
+    "hi": 15.159976613942195,
+    "z_chain": 1.7461113594190985,
+    "z_null": 1.9211398592355557,
+    "D": 0.6418734792511991,
+    "condition": "unsettled"
+   },
+   "B4": {
+    "pct": 2.0739127176722327,
+    "lo": -4.948913444277503,
+    "hi": 9.615618664042437,
+    "z_chain": 0.8077747680406318,
+    "z_null": 0.5644136259899586,
+    "D": -0.33393733467996356,
+    "condition": "unsettled"
+   },
+   "extreme_all_in_zone": {
+    "pct": -8.053430821923268,
+    "lo": -14.379481762199632,
+    "hi": -1.2599811631782365,
+    "z_chain": -1.1792866759731218,
+    "z_null": -2.3086475046688357,
+    "D": 3.939136236685907,
+    "condition": "unsettled"
+   },
+   "extreme_all_in_north": {
+    "pct": 17.342010661365272,
+    "lo": 9.268718275212361,
+    "hi": 26.011796270657772,
+    "z_chain": 3.458640205428396,
+    "z_null": 4.397258590955668,
+    "D": 7.373691045127654,
+    "condition": "contested_above"
+   },
+   "B_up": {
+    "pct": 11.597867517927863,
+    "lo": 3.919780112868354,
+    "hi": 19.84324852325967,
+    "z_chain": 2.5041677276395573,
+    "z_null": 3.017201731375376,
+    "D": 2.8326502796631026,
+    "condition": "contested_above"
+   },
+   "B_down": {
+    "pct": -2.043404356637024,
+    "lo": -8.782953417742402,
+    "hi": 5.194094629936363,
+    "z_chain": 0.024799820769144117,
+    "z_null": -0.567677630705856,
+    "D": 0.3216428612936325,
+    "condition": "unsettled"
+   }
+  },
+  "conditions_deciding": {
+   "B0": "unsettled",
+   "B_up": "contested_above",
+   "B_down": "unsettled"
+  }
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "srxy-5nxn",
+   "name": "MTA Central Business District Geofence: Beginning June 2024",
+   "url": "https://data.ny.gov/d/srxy-5nxn",
+   "rows_updated_at": "2025-01-10T15:22:02Z",
+   "query": {
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T16:01:23-0500",
+   "n_rows": 7
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$limit": 50000,
+    "$order": "collision_id",
+    "$select": "collision_id, crash_date, latitude, longitude, borough, on_street_name, cross_street_name, off_street_name, number_of_persons_injured, number_of_persons_killed",
+    "$where": "crash_date between '2022-01-01' and '2026-08-31T23:59:59' and (number_of_persons_injured > 0 or number_of_persons_killed > 0) and latitude between 40.68 and 40.89 and longitude between -74.03 and -73.90"
+   },
+   "fetched": "2026-11-12T19:35:11-0500",
+   "n_rows": 60416
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$select": "date_extract_y(crash_date) as y, case(on_street_name is not null and cross_street_name is not null, 'intersection', off_street_name is not null, 'address', true, 'other') as cls, count(*) as n, sum(case(latitude is null or latitude = 0, 1, true, 0)) as nocoord",
+    "$where": "crash_date between '2022-01-01' and '2025-12-31T23:59:59' and (number_of_persons_injured > 0 or number_of_persons_killed > 0)",
+    "$group": "y, cls",
+    "$order": "y, cls",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:35:36-0500",
+   "n_rows": 12
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$select": "date_trunc_ym(crash_date) as m, count(*) as n, sum(case(latitude is null or latitude = 0, 1, true, 0)) as nocoord",
+    "$where": "crash_date between '2022-01-01' and '2025-12-31T23:59:59' and (number_of_persons_injured > 0 or number_of_persons_killed > 0)",
+    "$group": "m",
+    "$order": "m",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:35:40-0500",
+   "n_rows": 48
+  }
+ ],
+ "prediction_scored": "uninformative. The registered test cannot decide: the 2024 placebo, +15.2% (+4.8 to +26.6), excludes zero, so the zone and Manhattan north of 60th St were already moving apart before pricing, and under the registered rule the verdict is unsettled whatever the 2025 estimate. The 2025 estimate, +4.5% (-2.7 to +12.2), lies about as far from the composed -2.2% (z_chain 1.25) as from no effect (z_null 1.21); D = -0.11, far below the 4 that rule 8 requires. At the upward bias bound it is +11.6% (+3.9 to +19.8), incompatible with the chain (z_chain 2.50); at the downward bound it is -2.0% (-8.8 to +5.2). The registrant expected an unsettled verdict; the reason is the pre-trend more than the lack of discrimination.",
+ "settle": "Two things would settle it. First, the crash records without coordinates in 2022-2024 (about 3,000 injury crashes a year with no borough and no coordinates) would need to be geocoded from their street names, so that the zone, the rest of Manhattan and the rest of the city are counted the same way in every year; this removes the bias bounds. Second, the 2024 divergence between the zone and upper Manhattan needs an explanation (a fall in injury crashes north of 60th St in 2024, from 3,181 to 2,795, while the zone rose slightly) before any comparison area can be trusted. Even then, a composed prediction of about -2% cannot be told from zero with monthly area counts; segment-level speeds, volumes and crashes inside the zone would test the two link terms separately.",
+ "research_needed": [
+  {
+   "question": "Why did injury crashes in Manhattan north of 60th St fall in 2024 relative to the zone (placebo +15%)?",
+   "data": "NYPD crashes by precinct and street; DOT street projects and enforcement 2023-2025",
+   "design": "Precinct-level series; check of 2024 reporting changes in upper Manhattan precincts",
+   "priority": "high"
+  },
+  {
+   "question": "Where do the 2022-2024 crash records without coordinates or borough fall?",
+   "data": "h9gi-nx95 street-name fields for records without coordinates",
+   "design": "Geocode on_street_name, cross_street_name and off_street_name with the city's Geosupport; recount by area and year",
+   "priority": "high"
+  },
+  {
+   "question": "Do the speed and volume effects on crashes cancel, or are both near zero at 8 to 9 mph?",
+   "data": "MTA or DOT segment speeds and counts inside the zone; geocoded crashes",
+   "design": "Segment panel, 2023-2026",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/bridges/bridge_crz_injury_crashes_v2.png"
+ ],
+ "notes": "Annual geocoded injury crashes (zone / Manhattan north of 60th St): 2022 2,581 / 2,955, 2023 2,710 / 3,181, 2024 2,763 / 2,795, 2025 2,726 / 2,891; January-August 2026 1,837 / 1,920. Bias bound inputs: the zone's share of geocoded injury crashes in the two areas, 2022-2024, w = 0.474; citywide share of injury crashes without coordinates 9.07% (2022-24) and 2.60% (2025), a fall of 6.47 points; rise among Manhattan-coded injury crashes 1.22 points. Estimates by assumption: B0: +4.5%, z_chain +1.25, z_null +1.21, D -0.11 (unsettled). B1: +0.3%, z_chain +0.47, z_null +0.08, D -0.21 (unsettled). B2: +8.7%, z_chain +2.01, z_null +2.30, D 1.26 (contested_above). B3: +7.2%, z_chain +1.75, z_null +1.92, D 0.64 (unsettled). B4: +2.1%, z_chain +0.81, z_null +0.56, D -0.33 (unsettled). B_up: +11.6%, z_chain +2.50, z_null +3.02, D 2.83 (contested_above). B_down: -2.0%, z_chain +0.02, z_null -0.57, D 0.32 (unsettled). Reported, not deciding: if every newly geocoded Manhattan record fell in the zone the estimate would be -8.1%, and if every one fell north of 60th St it would be +17.3%. Secondary results (registered, not deciding): zone against the 60th-96th St band +5.0% (-2.5 to +13.1), with its own 2024 placebo +14.8% (+4.1 to +26.5); Poisson GLM with area-by-month terms +4.6% (-3.6 to +13.4); with January-August 2026 added +5.3% (-0.9 to +11.9) (z_chain 1.50, z_null 1.66); against the correlated composition z_chain 1.34; against the v1 composition (-0.4%) z_chain 0.84. Stable-coverage restrictions: not run: no class has coverage varying by less than 2 points across 2022-2025. Coverage of injury crashes by record class, 2022 to 2025: intersection records 90.1% / 93.3% / 95.0% / 98.9%, address records 93.4% / 95.7% / 95.3% / 91.5%, other records 85.2% / 86.7% / 77.4% / 99.0%. Month restriction: not run: 2 pre-period months within 2 points of the 2025 mean coverage (12 needed) (2025 mean coverage 97.4%; the months within 2 points are 2024-11-01, 2024-12-01). Monthly coverage (share of injury crashes with coordinates, citywide) was 82 to 95 percent from January 2022 to October 2024, with a dip to 82-89 percent from July to October 2024, and 96.5 to 98.0 percent in every month from November 2024 on. The change in geocoding came in November 2024, two months before pricing. Exploratory, not registered: the July-October 2024 dip falls inside the placebo's post period, and if it removed more records north of 60th St than in the zone it would produce part of the placebo difference. The MTA does not publish the boundary of its CBD Adjacent area, so the speed link of the composition (CBD vs CBD Adjacent, +4.2%) is only a stand-in for the contrast with Manhattan north of 60th St. Data seen before registration are listed in the registration (data_seen_before_registration). The registration was committed in ce3586a and pushed to GitHub at about 00:32 UTC on 13 November 2026; the crash queries for v2 were made from 00:35 UTC.\n\nAfter the referee (13 Nov 2026): the referee reproduced the deciding numbers and every variant leaves the verdict unsettled. The two areas are not the same kind of road network: the north area includes limited-access highways that hold 12% to 14% of its injury crashes, against almost none in the zone; without them the estimate is +6.1% (-0.8 to +13.5) and the placebo +16.4%. The way crash locations are recorded changed, and differently in the two areas: records with an on-street name only (about 750 a year in the north area in 2022 and 2023) are gone by 2025, and the 2024 placebo difference sits in that class. The registration treated geocoding as a matter of coverage only. The estimate depends on the pre-period: -4.9% against 2024 alone, +9.5% against 2022-2023 alone. Recovering records without coordinates by matching street names gives +4.1% (-3.2 to +12.0), so missing coordinates do not explain the 2024 divergence. The verdict 'bridged' could not have been reached: the rule required it at three bias points that are 0.13 apart on the log scale, and the window in which it holds at one point is 0.04 wide. The registration attributes PMID 23411678 to Teschke et al. 2012; it is Harris et al., Injury Prevention 2013, and its odds ratio applies to intersections only. There is no prereg branch for this claim, so the evidence that it was public before the query is weaker than for claims that have one.",
+ "critique": {
+  "report": "critique/bridge-crz-injury-crashes-v2.md",
+  "answer": "accepted; verdict kept",
+  "earlier": {
+   "report": "critique/bridge-crz-injury-crashes.md",
+   "answer": "This claim is the re-analysis the referee asked for."
+  }
+ },
+ "registration_sha256": "9266a132f4f01ea51d70bfde147523bd150ac7718f7322c640fda00668b8b71c",
+ "decided_at": "2026-11-12T19:37:23-0500",
+ "stance": {
+  "lo": null,
+  "hi": null,
+  "z": 1.25,
+  "rule": "7+8",
+  "D": -0.11,
+  "discriminates": false,
+  "value": 0.0
+ },
+ "stance_note": "Rules 7 and 8, named in the registration before the data: endpoint_stance(z_chain, z_null) at the primary estimate. D < 0, so the stance is 0.",
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Endpoint: NYPD injury crashes in the CBD geofence vs Manhattan north of 60th St, 2025 vs 2022-24 (OLS log monthly count, HAC 3)",
+    "estimate": 4.4886771973749795,
+    "lo": -2.7002880956366604,
+    "hi": 12.208797423660457,
+    "scale": "percent change",
+    "null": 0,
+    "n": 96
+   },
+   "stance": {
+    "lo": null,
+    "hi": null,
+    "z": 1.25,
+    "rule": "7+8",
+    "D": -0.11,
+    "discriminates": false,
+    "value": 0.0
+   },
+   "decided_at": "2026-11-12T19:37:23-0500",
+   "prediction_scored": "uninformative. The registered test cannot decide: the 2024 placebo, +15.2% (+4.8 to +26.6), excludes zero, so the zone and Manhattan north of 60th St were already moving apart before pricing, and under the registered rule the verdict is unsettled whatever the 2025 estimate. The 2025 estimate, +4.5% (-2.7 to +12.2), lies about as far from the composed -2.2% (z_chain 1.25) as from no effect (z_null 1.21); D = -0.11, far below the 4 that rule 8 requires. At the upward bias bound it is +11.6% (+3.9 to +19.8), incompatible with the chain (z_chain 2.50); at the downward bound it is -2.0% (-8.8 to +5.2). The registrant expected an unsettled verdict; the reason is the pre-trend more than the lack of discrimination."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; highway asymmetry, the change of record format, the unreachable 'bridged' outcome and the wrong attribution of PMID 23411678 recorded.",
+  "critique": "critique/bridge-crz-injury-crashes-v2.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

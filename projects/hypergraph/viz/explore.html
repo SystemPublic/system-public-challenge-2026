@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neighbourhood Explorer</title>
+<style>
+:root {
+  --bg: #fcfcfb; --panel: #ffffff; --ink: #1d1d1b; --ink-2: #4a4a46; --muted: #74746e; --rule: #dcdcd6;
+  --accent: #0b5cad; --none: #ecebe6; --sel: #eb6834; --bar: #2a78d6; --bar-bg: #ecebe6;
+  --s1: #cde2fb; --s2: #9ec5f4; --s3: #6da7ec; --s4: #3987e5; --s5: #1c5cab; --s6: #0d366b;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413; --panel: #1c1c1a; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #8f8e86; --rule: #34342f;
+    --accent: #7fb2ee; --none: #2a2a27; --sel: #f08a5d; --bar: #5598e7; --bar-bg: #2a2a27;
+    --s1: #0d366b; --s2: #184f95; --s3: #256abf; --s4: #3987e5; --s5: #86b6ef; --s6: #cde2fb;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 var(--font); }
+header { padding: 18px 16px 6px; max-width: 1240px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 4px; font-weight: 650; }
+header p { margin: 0; color: var(--ink-2); max-width: 78ch; }
+nav a { color: var(--accent); margin-right: 14px; font-size: 13px; }
+main { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 18px; max-width: 1240px; margin: 0 auto; padding: 10px 16px 40px; }
+@media (max-width: 860px) { main { grid-template-columns: 1fr; } }
+.card { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: end; margin-bottom: 8px; }
+label { font-size: 12px; color: var(--muted); display: block; }
+select { font: inherit; font-size: 14px; padding: 5px 6px; max-width: 100%; background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 6px; }
+svg#map { width: 100%; height: auto; display: block; }
+svg#map path { stroke: var(--bg); stroke-width: 0.5; cursor: pointer; }
+svg#map path:hover { stroke: var(--ink); stroke-width: 1.2; }
+svg#map path.sel { stroke: var(--sel); stroke-width: 2.4; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12px; color: var(--ink-2); margin-top: 6px; }
+.legend span i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+#tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 12px; padding: 4px 7px; border-radius: 4px; display: none; z-index: 5; max-width: 260px; }
+h2 { font-size: 19px; margin: 0; }
+.sub { color: var(--muted); font-size: 13px; margin: 2px 0 10px; }
+h3 { font-size: 13px; text-transform: none; color: var(--ink-2); margin: 16px 0 6px; font-weight: 650; border-top: 1px solid var(--rule); padding-top: 10px; }
+ul.unusual { margin: 0; padding-left: 18px; }
+ul.unusual li { margin: 3px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+td { padding: 4px 4px; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+td.v { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; }
+td.r { width: 96px; }
+.rank { position: relative; height: 8px; background: var(--bar-bg); border-radius: 4px; }
+.rank b { position: absolute; left: 0; top: 0; bottom: 0; background: var(--bar); border-radius: 4px; }
+.rank u { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--muted); }
+.spark rect { fill: var(--bar); }
+.spark text { fill: var(--muted); font-size: 9px; }
+.small { font-size: 12.5px; color: var(--ink-2); }
+.small a { color: var(--accent); }
+ol.blocks { margin: 4px 0 0; padding-left: 20px; font-size: 13.5px; }
+footer { max-width: 1240px; margin: 0 auto; padding: 0 16px 30px; color: var(--muted); font-size: 12.5px; }
+footer p { max-width: 95ch; }
+</style>
+</head>
+<body>
+<header>
+  <nav class="pages"><a href="hypergraph.html">Edges as objects</a><a href="heat_drugs.html">Heat and medicines</a><a href="comics.html">Strips</a><a href="index.html">Evidence dashboard</a><a href="evidence.html">Test cards and provenance</a><a href="explorer.html">Graph explorer</a><a href="explore.html" aria-current="page">Neighbourhood explorer</a><a href="levers.html">City levers</a><a href="simulate.html">Toll simulator</a></nav>
+  <p class="writeup"><a href="../docs/explore.md">Write-up</a></p>
+  <h1>Neighbourhood explorer</h1>
+  <p>Pick a neighbourhood on the map or from the list. The profile shows film shoots, vacant lots, new restaurants, coffee shops, galleries and arts workers, and how the place ranks among the city's residential neighbourhoods. All numbers are descriptive counts from open data; none is a tested claim.</p>
+</header>
+<main>
+  <section class="card">
+    <div class="controls">
+      <div><label for="measure">Colour the map by</label><select id="measure"></select></div>
+      <div><label for="pick">Neighbourhood</label><select id="pick"></select></div>
+    </div>
+    <svg id="map" role="img" aria-label="Map of New York City neighbourhood tabulation areas"></svg>
+    <div class="legend" id="legend"></div>
+  </section>
+  <section class="card" id="profile"></section>
+</main>
+<footer>
+  <p>Areas are the 262 Neighborhood Tabulation Areas (NTAs) that the Department of City Planning drew for the 2020 census; ranks use the residential NTAs with at least 5,000 residents. Sources: Mayor's Office of Media and Entertainment film permits (current table and two archived copies; July to December 2022 are missing), PLUTO 26v2 and 10v1, DOHMH restaurant inspections, Dining Out NYC licences, OpenStreetMap, and the American Community Survey 2008-2012 and 2018-2022. Film shoots are counted where a permit's street segment could be located (83% of segments). A "new" restaurant has a permit number issued since about September 2024 and at least one inspection. Methods and limits are in <a href="../docs/explore.md">docs/explore.md</a>; the scripts are in <code>analyses/explore/</code>.</p>
+</footer>
+<div id="tip"></div>
+<script src="data/explore_data.js"></script>
+<script>
+(function () {
+  var E = window.EXPLORE;
+  var profile = document.getElementById('profile');
+  if (!E) { profile.textContent = 'The data file data/explore_data.js did not load. Run analyses/explore/build_explorer.py.'; return; }
+  var NS = 'http://www.w3.org/2000/svg';
+  var map = document.getElementById('map'), tip = document.getElementById('tip');
+  var selM = document.getElementById('measure'), selP = document.getElementById('pick');
+  var M = {}; E.measures.forEach(function (m) { M[m[0]] = { label: m[1], unit: m[2], dec: m[3] }; });
+  var byId = {}; E.ntas.forEach(function (n) { byId[n.id] = n; });
+  var current = null, measure = 'film_recent';
+  var ramp = ['--s1', '--s2', '--s3', '--s4', '--s5', '--s6'];
+
+  function fmt(k, v) {
+    if (v === null || v === undefined) return 'no data';
+    var m = M[k], s = Number(v).toLocaleString('en-US', { maximumFractionDigits: m.dec, minimumFractionDigits: 0 });
+    if (m.unit === '%') return s + '%';
+    if (m.unit.charAt(0) === '$') return '$' + s;
+    if (k.indexOf('change') >= 0 && v > 0) s = '+' + s;
+    return s;
+  }
+  function saveState() { try { localStorage.setItem('explore.sel', JSON.stringify({ n: current, m: measure })); } catch (e) {} }
+  function loadState() { try { return JSON.parse(localStorage.getItem('explore.sel') || 'null'); } catch (e) { return null; } }
+
+  E.measures.forEach(function (m) { var o = document.createElement('option'); o.value = m[0]; o.textContent = m[1]; selM.appendChild(o); });
+  var boros = ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island'];
+  boros.forEach(function (b) {
+    var g = document.createElement('optgroup'); g.label = b;
+    E.ntas.filter(function (n) { return n.boro === b && n.res; }).sort(function (a, c) { return a.name.localeCompare(c.name); })
+      .forEach(function (n) { var o = document.createElement('option'); o.value = n.id; o.textContent = n.name; g.appendChild(o); });
+    selP.appendChild(g);
+  });
+
+  map.setAttribute('viewBox', '0 0 ' + E.w + ' ' + E.h);
+  var paths = {};
+  E.ntas.forEach(function (n) {
+    if (!n.d) return;
+    var p = document.createElementNS(NS, 'path');
+    p.setAttribute('d', n.d);
+    p.addEventListener('click', function () { select(n.id); });
+    p.addEventListener('mousemove', function (ev) {
+      tip.style.display = 'block'; tip.style.left = (ev.clientX + 12) + 'px'; tip.style.top = (ev.clientY + 12) + 'px';
+      tip.textContent = n.name + ': ' + fmt(measure, n.m[measure]) + (n.m[measure] === null ? '' : ' ' + (M[measure].unit === '%' || M[measure].unit.charAt(0) === '$' ? '' : M[measure].unit));
+    });
+    p.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+    map.appendChild(p); paths[n.id] = p;
+  });
+
+  function paint() {
+    var vals = E.ntas.filter(function (n) { return n.res && n.m[measure] !== null; }).map(function (n) { return n.m[measure]; }).sort(function (a, b) { return a - b; });
+    var q = [1, 2, 3, 4, 5].map(function (i) { return vals[Math.min(vals.length - 1, Math.floor(i * vals.length / 6))]; });
+    var cuts = q.filter(function (v, i) { return i === 0 || v > q[i - 1]; });
+    function cls(v) { var c = 0; while (c < cuts.length && v >= cuts[c]) c++; return c; }
+    var top = cuts.length;
+    E.ntas.forEach(function (n) {
+      var p = paths[n.id]; if (!p) return;
+      var v = n.m[measure];
+      if (v === null || v === undefined) { p.style.fill = 'var(--none)'; return; }
+      var c = cls(v); var idx = top === 0 ? 3 : Math.round(c * 5 / top);
+      p.style.fill = 'var(' + ramp[idx] + ')';
+    });
+    var L = document.getElementById('legend'); L.innerHTML = '';
+    var edges = [vals[0]].concat(cuts).concat([vals[vals.length - 1]]);
+    for (var c = 0; c <= top; c++) {
+      var idx = top === 0 ? 3 : Math.round(c * 5 / top);
+      var s = document.createElement('span');
+      s.innerHTML = '<i style="background:var(' + ramp[idx] + ')"></i>' + fmt(measure, edges[c]) + ' to ' + fmt(measure, edges[c + 1]);
+      L.appendChild(s);
+    }
+    var s2 = document.createElement('span'); s2.innerHTML = '<i style="background:var(--none)"></i>no data, or parks, airports and cemeteries'; L.appendChild(s2);
+  }
+
+  function ord(p) { return p >= 50 ? 'higher than ' + p + '%' : 'lower than ' + (100 - p) + '%'; }
+
+  function select(id) {
+    var n = byId[id]; if (!n) return;
+    if (current && paths[current]) paths[current].classList.remove('sel');
+    current = id; if (paths[id]) { paths[id].classList.add('sel'); map.appendChild(paths[id]); }
+    if (n.res) selP.value = id;
+    var h = '<h2>' + n.name + '</h2><div class="sub">' + n.boro + (n.pop ? ' · ' + n.pop.toLocaleString('en-US') + ' residents' : '') + '</div>';
+    if (!n.res) {
+      h += '<p class="small">This area has fewer than 5,000 residents (a park, airport, cemetery or similar), so it is not ranked.</p>';
+    } else {
+      var u = E.unusual.filter(function (k) { return n.p[k] !== undefined && n.m[k] !== null; })
+        .map(function (k) { return { k: k, d: Math.abs(n.p[k] - 50) }; }).sort(function (a, b) { return b.d - a.d; }).slice(0, 3);
+      h += '<h3 style="border-top:0;padding-top:0;margin-top:0">Most unusual here</h3><ul class="unusual">';
+      u.forEach(function (x) {
+        h += '<li>' + M[x.k].label + ': <strong>' + fmt(x.k, n.m[x.k]) + '</strong>, ' + ord(n.p[x.k]) + ' of neighbourhoods (city median ' + fmt(x.k, E.median[x.k]) + ').</li>';
+      });
+      h += '</ul>';
+    }
+    h += '<h3>Profile</h3><table>';
+    E.measures.forEach(function (m) {
+      var k = m[0], v = n.m[k]; if (v === null || v === undefined) return;
+      var p = n.p[k];
+      h += '<tr><td>' + m[1] + '</td><td class="v">' + fmt(k, v) + '</td><td class="r">' +
+        (p === undefined ? '' : '<div class="rank" title="Higher than ' + p + '% of residential neighbourhoods"><b style="width:' + p + '%"></b><u></u></div>') + '</td></tr>';
+    });
+    h += '</table><div class="small" style="margin-top:4px">The bar shows the rank among ' + E.n_res + ' residential neighbourhoods; the tick marks the median.</div>';
+    if (n.film_years && n.film_years.length) {
+      var mx = Math.max.apply(null, n.film_years.map(function (d) { return d[1]; }).concat([1]));
+      var bw = 22, hh = 54, s = '<svg class="spark" width="' + (n.film_years.length * bw + 4) + '" height="' + (hh + 26) + '" role="img" aria-label="Film permits by year">';
+      n.film_years.forEach(function (d, i) {
+        var bh = Math.round(hh * d[1] / mx);
+        s += '<rect x="' + (i * bw + 2) + '" y="' + (12 + hh - bh) + '" width="' + (bw - 4) + '" height="' + Math.max(bh, 1) + '" rx="2"><title>' + d[0] + ': ' + d[1] + ' permits</title></rect>';
+        s += '<text x="' + (i * bw + bw / 2) + '" y="' + (hh + 23) + '" text-anchor="middle">' + String(d[0]).slice(2) + '</text>';
+      });
+      s += '<text x="2" y="9">most in a year: ' + mx + '</text></svg>';
+      h += '<h3>Film and television permits by year</h3>' + s + '<div class="small">Full years only: 2020 was cut by the pandemic, 2022 and 2026 are incomplete, and all three are left out.</div>';
+    }
+    if (n.blocks && n.blocks.length) {
+      h += '<h3>Blocks named most often on shooting permits, 2012 to 2026</h3><ol class="blocks">';
+      n.blocks.forEach(function (b) { h += '<li>' + b[0] + ' (' + b[1].toLocaleString('en-US') + ')</li>'; });
+      h += '</ol>';
+    }
+    if (n.cluster) {
+      h += '<h3>Largest cluster of vacant lots</h3><div class="small">' + n.cluster.lots + ' adjoining vacant lots around ' + n.cluster.streets.replace(/ \(\d+\)/g, '') +
+        ' (near ' + n.cluster.lat + ', ' + n.cluster.lon + '). ' + n.cluster.since2010 + '% of them were already vacant in 2010.</div>';
+    }
+    profile.innerHTML = h;
+    saveState();
+  }
+
+  selM.addEventListener('change', function () { measure = selM.value; paint(); saveState(); });
+  selP.addEventListener('change', function () { select(selP.value); });
+  var st = loadState();
+  if (st && M[st.m]) measure = st.m;
+  selM.value = measure; paint();
+  select(st && byId[st.n] ? st.n : 'BK0101');
+})();
+</script>
+</body>
+</html>

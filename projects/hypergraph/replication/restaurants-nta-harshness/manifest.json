@@ -1,0 +1,564 @@
+{
+ "package": {
+  "claim": "restaurants-nta-harshness",
+  "built_at": "2026-11-13T23:35:50-0500",
+  "tool": "tools/replicate.py",
+  "tool_blob": "1f726a6eae93bd4d0ab81abcf0022214762758e3",
+  "paths": "relative to the repository (inputs keep their repo paths under inputs/) or to ~/opt/nyc-concordance"
+ },
+ "claim": {
+  "id": "restaurants-nta-harshness",
+  "registration": {
+   "id": "restaurants-nta-harshness",
+   "kind": "confirmation",
+   "statement": "Critical violations detected per routine initial inspection are not even across Manhattan's 2020 NTAs: after cuisine, chain status, quarter, day of week, daily inspection workload, new-restaurant status and the NTA's restaurant count, the between-NTA variation exceeds a permutation null, with a between-NTA standard deviation of 5 to 20 percent.",
+   "graph_evidence": [
+    {
+     "association_id": "CCatfE2F4k (variable) chain restaurants -- violations per inspection",
+     "pubmed_ids": [
+      "28060568"
+     ],
+     "direction": "-",
+     "n_findings": 1,
+     "n_studies": 1,
+     "summary": "Philadelphia 2013-2014 (Leinwand 2017): chains 6.5 against 9.6 violations per inspection; used here as a covariate."
+    }
+   ],
+   "literature": [
+    {
+     "citation": "Jones TF et al. Emerg Infect Dis 2004;10:688-692 (PMID 15200861)",
+     "doi": "10.3201/eid1004.030343",
+     "finding": "Tennessee: mean scores of individual inspectors ranged from 69 to 92 on a 100-point scale, so who inspects changes the result."
+    },
+    {
+     "citation": "Leinwand SE et al. Public Health Rep 2017;132:180-187 (PMID 28060568)",
+     "doi": "10.1177/0033354916687741",
+     "finding": "Philadelphia: violations per inspection differ by chain status (6.5 against 9.6) and by block-group racial composition (0.6 fewer risk-factor and 1.0 more retail-practice violations), and fall with inspection frequency in non-chains."
+    },
+    {
+     "citation": "Wong MR et al. Am J Public Health 2015;105:e81-e87 (PMID 25602861)",
+     "doi": "10.2105/AJPH.2014.302404",
+     "finding": "NYC models of inspection outcomes adjust for season and chain status; grading changed scores citywide."
+    }
+   ],
+   "prediction": {
+    "direction": "+",
+    "magnitude": "Between-NTA SD of the adjusted log rate ratio (tau) 0.05 to 0.20; permutation p <= 0.01.",
+    "support_if": "Permutation p <= 0.01 (10,000 draws, seed 20261113) AND tau >= 0.05.",
+    "refute_if": "Permutation p > 0.10 (the NTAs are as even as random assignment of restaurants to NTAs).",
+    "other": "p <= 0.01 with tau < 0.05 means statistically detectable but practically even and is unsettled under rule 2. Per rule 9 the p condition is re-checked with 100,000 draws and other seeds; if it is met under some and not others, it is neither met nor unmet."
+   },
+   "plan": "Script analyses/restaurants/evenness_test.py at commit 48147d6. Fixed source: Underlay nyc/restaurant-inspections v1.0.0 (hash ulv2:07a7f08a0d5c85649920f8adc6946d27c17f5e2d75e9ee07c0ad4ae0fcc6739c), Manhattan inspections 2024-01-02 to 2026-06-09, chosen because the live table drops closed restaurants and revises recent violations downward (docs/underlay_drift.md). NTA by point in polygon (9nt8-h7nd); NTAs with < 20 restaurants dropped. Unit: Cycle Inspection / Initial Inspection; outcome: critical violation records. Null Poisson GLM as in the script docstring; statistic S = sum over NTAs of (sum(y - mu))^2 / sum(mu); null by permuting NTA labels across restaurants. tau from an NTA fixed-effects model, SE clustered by restaurant, method of moments. A companion frequency test (cycle initial inspections per restaurant-year) is computed by the same script; its result was seen by accident during a synthetic-outcome check of the script before this registration, so it is reported as exploratory and is not registered.",
+   "alternatives": [
+    "Inspector assignment: inspectors work in geographic teams, so an NTA's rate reflects its inspectors' stringency rather than its restaurants.",
+    "Unmeasured restaurant mix: size, menu complexity, age of premises and owner experience vary by NTA and are not in the data; cuisine is a weak proxy.",
+    "Building stock: older buildings have more pests (the most common critical violations are vermin), which is real hygiene, not harshness.",
+    "Clientele and complaints: complaint-driven attention may differ by NTA.",
+    "Adjudication: the snapshot holds violations before some hearings; dismissal rates may differ by NTA."
+   ],
+   "prior": 0.55,
+   "registrant": "claude (restaurants agent, 13 November 2026)",
+   "script_commit": "48147d6",
+   "registered_at": "2026-11-13T14:18:37-0500",
+   "sha256": "6f6e2eac57f3253c217e8cf0115e3b40ee9999caf31641c9e2e48a3ecaa53bc7"
+  },
+  "registration_path": "claims/registered/restaurants-nta-harshness.json",
+  "registration_sha256": "6f6e2eac57f3253c217e8cf0115e3b40ee9999caf31641c9e2e48a3ecaa53bc7",
+  "registration_hash_ok": true,
+  "registration_file_sha256": "f4f49ad439361d489415c0d23533a8104f91803418d3744de4bb19e27ea935e5",
+  "registration_commit": {
+   "commit": "55dabf10dd2516710e6509521f4cfef641e0039f",
+   "committed_at": "2026-11-13T14:18:37-05:00",
+   "subject": "register restaurants-nta-harshness (before NTA-level violation data; script 48147d6)"
+  },
+  "prereg_branch": {
+   "name": "prereg/restaurants-nta-harshness",
+   "sha": "55dabf10dd2516710e6509521f4cfef641e0039f",
+   "reachable": true,
+   "contains_registration_commit": true
+  },
+  "outcome": {
+   "id": "restaurants-nta-harshness",
+   "verdict": "contested",
+   "city_effect": {
+    "label": "Between-NTA SD of the adjusted log rate ratio of critical violations per routine initial inspection (tau, method of moments)",
+    "estimate": 0.0,
+    "lo": null,
+    "hi": null,
+    "scale": "SD of log rate ratio",
+    "null": 0,
+    "n": 12228,
+    "permutation_p": 0.3067,
+    "S_over_null_mean": 1.109,
+    "n_ntas": 31,
+    "n_restaurants": 8157
+   },
+   "graph_effect": {
+    "label": "Leinwand 2017 (Philadelphia): chain against non-chain violations per inspection",
+    "estimate": -3.1,
+    "lo": null,
+    "hi": null,
+    "scale": "violations per inspection",
+    "null": 0
+   },
+   "sources": [
+    {
+     "kind": "underlay",
+     "collection": "nyc/restaurant-inspections",
+     "version": "v1.0.0",
+     "hash": "ulv2:07a7f08a0d5c85649920f8adc6946d27c17f5e2d75e9ee07c0ad4ae0fcc6739c",
+     "url": "https://www.underlay.org/api/collections/nyc/restaurant-inspections",
+     "dates": "2024-01-02 to 2026-06-09"
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "9nt8-h7nd",
+     "name": "2020 Neighborhood Tabulation Areas (NTAs)",
+     "url": "https://data.cityofnewyork.us/d/9nt8-h7nd",
+     "file": "data/derived/restaurants/nta2020.geojson"
+    }
+   ],
+   "prediction_scored": "miss. refute_if (permutation p > 0.10) is met: p = 0.307 with 10,000 draws; with 100,000 draws and four other seeds p lies in 0.305 to 0.313, far from the 0.10 threshold, so rule 9 does not apply. tau = 0.000, below the 0.05 floor of the predicted band. After adjustment the 31 NTAs are as even as a random assignment of restaurants.",
+   "settle": "Inspector identifiers (not published) would separate inspector stringency from place; the NTA effect would then be decomposed into inspector and restaurant parts. Restaurant size, seats and age of premises would test whether the raw differences are restaurant mix.",
+   "research_needed": [
+    {
+     "question": "Do individual NYC inspectors differ in stringency, as Jones 2004 found in Tennessee?",
+     "data": "DOHMH inspection records with inspector id (FOIL)",
+     "design": "inspector fixed effects with rotation as quasi-random assignment",
+     "priority": "medium"
+    },
+    {
+     "question": "Do hearings dismiss violations at different rates by neighbourhood?",
+     "data": "OATH hearings (jz4z-kudi) joined to inspections",
+     "design": "dismissal share by NTA, adjusted",
+     "priority": "medium"
+    }
+   ],
+   "figures": [
+    "figures/restaurants/evenness_map.png"
+   ],
+   "notes": "Raw critical violations per initial inspection range from 1.65 (Midtown-Times Square) to 2.37 (Chinatown-Two Bridges); unadjusted, the permutation statistic is 4.2 times its null mean (p < 0.001). Restaurant count alone brings it to 2.6, cuisine alone to 2.4, and the registered set to 1.11. The registered adjustment set accounts for the raw differences; the share due to each covariate was not separated further. Exploratory, not registered (its result was seen during a synthetic-outcome check of the script): routine initial inspections per restaurant-year, adjusted for first score band, cuisine, chain, restaurant count and new status, give p = 0.015 and tau = 0.016, detectable but small (adjusted rate ratios 0.95 to 1.08). Also exploratory: all cycle inspections with stage as covariate, p = 0.026. Fixed source is the Underlay snapshot because the live table drops closed restaurants and revises recent violations (docs/underlay_drift.md).",
+   "registration_sha256": "6f6e2eac57f3253c217e8cf0115e3b40ee9999caf31641c9e2e48a3ecaa53bc7",
+   "decided_at": "2026-11-13T14:26:29-0500",
+   "stance": {
+    "value": 0.0,
+    "lo": null,
+    "hi": null
+   },
+   "notes_referee": "Referee p 0.323. Contested stands under rule 1, but refutes only place effects of ~5%+ (SD ~0.05 at 80% power); centred SD 0.024. Restaurant-count covariate alone moves p 0.008 -> 0.32, absorbing a density gradient (~3.5%, r = -0.51).",
+   "history": [
+    {
+     "verdict": "contested",
+     "city_effect": {
+      "label": "Between-NTA SD of the adjusted log rate ratio of critical violations per routine initial inspection (tau, method of moments)",
+      "estimate": 0.0,
+      "lo": null,
+      "hi": null,
+      "scale": "SD of log rate ratio",
+      "null": 0,
+      "n": 12228,
+      "permutation_p": 0.3067,
+      "S_over_null_mean": 1.109,
+      "n_ntas": 31,
+      "n_restaurants": 8157
+     },
+     "stance": {
+      "value": 0.0,
+      "lo": null,
+      "hi": null
+     },
+     "decided_at": "2026-11-13T14:26:29-0500",
+     "prediction_scored": "miss. refute_if (permutation p > 0.10) is met: p = 0.307 with 10,000 draws; with 100,000 draws and four other seeds p lies in 0.305 to 0.313, far from the 0.10 threshold, so rule 9 does not apply. tau = 0.000, below the 0.05 floor of the predicted band. After adjustment the 31 NTAs are as even as a random assignment of restaurants."
+    }
+   ],
+   "revision": {
+    "reason": "Round 7 referee: verdict kept, scope of refutation stated",
+    "critique": "critique/restaurants-nta-harshness.md",
+    "revised_at": "2026-11-13T14:49:22-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   }
+  },
+  "outcome_path": "claims/outcomes/restaurants-nta-harshness.json",
+  "outcome_file_sha256": "a9bac8578b59becaa7bb0d7533f233bb54d4f548d4ffbfcff6c3eb2e1c43b741",
+  "revision_history": {
+   "in_file": [
+    {
+     "verdict": "contested",
+     "city_effect": {
+      "label": "Between-NTA SD of the adjusted log rate ratio of critical violations per routine initial inspection (tau, method of moments)",
+      "estimate": 0.0,
+      "lo": null,
+      "hi": null,
+      "scale": "SD of log rate ratio",
+      "null": 0,
+      "n": 12228,
+      "permutation_p": 0.3067,
+      "S_over_null_mean": 1.109,
+      "n_ntas": 31,
+      "n_restaurants": 8157
+     },
+     "stance": {
+      "value": 0.0,
+      "lo": null,
+      "hi": null
+     },
+     "decided_at": "2026-11-13T14:26:29-0500",
+     "prediction_scored": "miss. refute_if (permutation p > 0.10) is met: p = 0.307 with 10,000 draws; with 100,000 draws and four other seeds p lies in 0.305 to 0.313, far from the 0.10 threshold, so rule 9 does not apply. tau = 0.000, below the 0.05 floor of the predicted band. After adjustment the 31 NTAs are as even as a random assignment of restaurants."
+    }
+   ],
+   "last_revision": {
+    "reason": "Round 7 referee: verdict kept, scope of refutation stated",
+    "critique": "critique/restaurants-nta-harshness.md",
+    "revised_at": "2026-11-13T14:49:22-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   },
+   "outcome_commits": [
+    {
+     "commit": "b920e77f04e507aa16e6368e65284d92a2a11a4e",
+     "committed_at": "2026-11-13T14:49:23-05:00",
+     "subject": "Restaurants: apply round 7 referee notes"
+    },
+    {
+     "commit": "b5c103bc289f3a8ee124ec3b5dc3d549b06a8138",
+     "committed_at": "2026-11-13T14:26:30-05:00",
+     "subject": "outcome restaurants-nta-harshness (contested: permutation p 0.31, tau 0.00 across 31 Manhattan NTAs, Underlay v1.0.0); seed check, exploratory checks, map"
+    }
+   ]
+  },
+  "referee_reports": [
+   {
+    "path": "critique/restaurants-nta-harshness.md",
+    "role": "referee report for this claim",
+    "sha256": "fff5d89e6ecdce45d68310b020aa58b968717f9c130b0013d37e6f446905f749"
+   },
+   {
+    "path": "critique/restaurants-score-complaints.md",
+    "role": "mentions the claim id",
+    "sha256": "7c7bca7eef1e3217a455ab30e16491f3098fcab8ef24bcf5f98f2c142e30435d"
+   }
+  ]
+ },
+ "code": {
+  "repo_commit": "f9660de2d17f167d26e9def67a195ab42a954d21",
+  "repo_dirty_paths": 16,
+  "scripts": [
+   {
+    "path": "concord/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "concord/socrata.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "blob_at_HEAD": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "3cc8d26ec235c6633cae66a5ddcdf5173ea8252f72c722d28a52ff48f4d61f4b"
+   },
+   {
+    "path": "analyses/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "first_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/restaurants/common.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "970e8de26350c9a70dda0a074639e53d632aec9b",
+    "blob_at_HEAD": "970e8de26350c9a70dda0a074639e53d632aec9b",
+    "clean": true,
+    "last_commit": "0c147b31b617d78a5048c31f639f958b1eef25f4",
+    "first_commit": "0c147b31b617d78a5048c31f639f958b1eef25f4",
+    "sha256": "2a38f4b154ee0cca3d3e058073dc2c930435a5d482c7311861c35a09dfe15a1d"
+   },
+   {
+    "path": "analyses/restaurants/evenness_test.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "4bf9b944705cb9ac8947e7b9d7221b8647444ff7",
+    "blob_at_HEAD": "4bf9b944705cb9ac8947e7b9d7221b8647444ff7",
+    "clean": true,
+    "last_commit": "48147d6fcd6b6267493f2fc628899ed048f49d26",
+    "first_commit": "48147d6fcd6b6267493f2fc628899ed048f49d26",
+    "sha256": "6e23dd863b6d1081140aa6025e1b027d25a5f884963cafb8b90d0ec6324a1916"
+   },
+   {
+    "path": "analyses/restaurants/evenness_explore.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "affaecb08480bc43b044805cca3c54d80528ebbb",
+    "blob_at_HEAD": "affaecb08480bc43b044805cca3c54d80528ebbb",
+    "clean": true,
+    "last_commit": "b5c103bc289f3a8ee124ec3b5dc3d549b06a8138",
+    "first_commit": "b5c103bc289f3a8ee124ec3b5dc3d549b06a8138",
+    "sha256": "a2fe949bff2d4bb824f32f988b1fd80d2373346b4d2554fd377c5abf76ef42f3"
+   },
+   {
+    "path": "analyses/restaurants/evenness_seedcheck.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "77afd59d96aea55ff6f6819188b96a982a11d4b2",
+    "blob_at_HEAD": "77afd59d96aea55ff6f6819188b96a982a11d4b2",
+    "clean": true,
+    "last_commit": "b5c103bc289f3a8ee124ec3b5dc3d549b06a8138",
+    "first_commit": "b5c103bc289f3a8ee124ec3b5dc3d549b06a8138",
+    "sha256": "7b7a29df3b4072c1c4c0fb917ff4fd46537c33e52a05e31a80e4f6ae202bb2e8"
+   },
+   {
+    "path": "analyses/restaurants/outcomes.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "e2889364bf804db45485f19dbe6db48898f9454a",
+    "blob_at_HEAD": "e2889364bf804db45485f19dbe6db48898f9454a",
+    "clean": true,
+    "last_commit": "b5c103bc289f3a8ee124ec3b5dc3d549b06a8138",
+    "first_commit": "b5c103bc289f3a8ee124ec3b5dc3d549b06a8138",
+    "sha256": "3f266bed4a2e7a7c418cb18c49210e2e27e25319060f48aec33b379b29817107"
+   },
+   {
+    "path": "analyses/restaurants/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "699e75ea58d2058660582baf1489a685c899730c",
+    "blob_at_HEAD": "699e75ea58d2058660582baf1489a685c899730c",
+    "clean": true,
+    "last_commit": "55dabf10dd2516710e6509521f4cfef641e0039f",
+    "first_commit": "a70335a4283e34f0e80c3048f3bcdee40cf7e81e",
+    "sha256": "36e97020d0d1d5003bd7cc4d3449383b98020d21530e97a71ee393687a160efc"
+   }
+  ],
+  "seeds": [
+   "20261113"
+  ],
+  "draw_counts": [
+   "10,000 draws",
+   "100,000 draws"
+  ],
+  "commits_named_in_registration": [
+   "48147d6"
+  ],
+  "procedure_note": "Seeds and draw counts above are quoted from the registration text."
+ },
+ "data": [
+  {
+   "kind": "underlay",
+   "record": {
+    "kind": "underlay",
+    "collection": "nyc/restaurant-inspections",
+    "version": "v1.0.0",
+    "hash": "ulv2:07a7f08a0d5c85649920f8adc6946d27c17f5e2d75e9ee07c0ad4ae0fcc6739c",
+    "url": "https://www.underlay.org/api/collections/nyc/restaurant-inspections",
+    "dates": "2024-01-02 to 2026-06-09"
+   },
+   "type": "underlay",
+   "collection": "nyc/restaurant-inspections",
+   "version": "v1.0.0",
+   "hash": "ulv2:07a7f08a0d5c85649920f8adc6946d27c17f5e2d75e9ee07c0ad4ae0fcc6739c",
+   "ark": "https://underlay.org/ark:12345/ulv0d6pnk46zsgs.v1.0.0"
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "9nt8-h7nd",
+    "name": "2020 Neighborhood Tabulation Areas (NTAs)",
+    "url": "https://data.cityofnewyork.us/d/9nt8-h7nd",
+    "file": "data/derived/restaurants/nta2020.geojson"
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "9nt8-h7nd",
+   "rows_updated_at": null,
+   "soql": null,
+   "fetched": null,
+   "n_rows": null,
+   "cache_files": [],
+   "cache_files_note": "no cached response found in data/cache/socrata/ for this query"
+  },
+  {
+   "type": "big-file",
+   "role": "Underlay snapshot nyc/restaurant-inspections v1.0.0, read by evenness_test.py",
+   "path": "~/opt/nyc-concordance/underlay/records_v1.0.0.ndjson",
+   "bytes": 50928724,
+   "sha256": "ec6513d950a2c744728a961988e309ebb9fc8442fb7a5b8c4512814c1d9996aa"
+  }
+ ],
+ "environment": {
+  "python": "3.12.10 (main, Apr  9 2025, 03:49:38) [Clang 20.1.0 ]",
+  "venv": "~/.venvs/nyc-concordance",
+  "uv_pip_freeze": [
+   "affine==3.0.1",
+   "annotated-types==0.8.0",
+   "attrs==26.1.0",
+   "certifi==2026.10.23",
+   "charset-normalizer==3.5.2",
+   "click==8.5.1",
+   "contourpy==1.4.0",
+   "cycler==0.12.1",
+   "duckdb==2.0.0",
+   "fonttools==4.68.0",
+   "formulaic==1.2.2",
+   "geopandas==1.2.0",
+   "idna==3.20",
+   "interface-meta==2.0.1",
+   "jsonschema==4.26.0",
+   "jsonschema-specifications==2025.9.1",
+   "kiwisolver==1.5.1",
+   "matplotlib==3.11.2",
+   "mercantile==1.2.1",
+   "narwhals==2.28.0",
+   "numpy==2.5.4",
+   "packaging==26.3",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pillow==13.0.0",
+   "planetary-computer==1.0.0",
+   "pyarrow==26.0.1",
+   "pydantic==2.14.3",
+   "pydantic-core==2.50.4",
+   "pyogrio==0.13.0",
+   "pyparsing==3.3.3",
+   "pyproj==3.8.0",
+   "pystac==1.16.0",
+   "pystac-client==0.9.1",
+   "pystac-core==1.16.0",
+   "pystac-ext-classification==2.0.2",
+   "pystac-ext-datacube==2.2.2",
+   "pystac-ext-eo==1.1.2",
+   "pystac-ext-file==2.1.2",
+   "pystac-ext-grid==1.1.2",
+   "pystac-ext-item-assets==1.0.2",
+   "pystac-ext-label==1.0.3",
+   "pystac-ext-mgrs==1.0.2",
+   "pystac-ext-mlm==1.4.2",
+   "pystac-ext-pointcloud==1.0.2",
+   "pystac-ext-projection==2.0.2",
+   "pystac-ext-raster==1.1.2",
+   "pystac-ext-render==2.0.1",
+   "pystac-ext-sar==1.0.2",
+   "pystac-ext-sat==1.0.2",
+   "pystac-ext-scientific==1.0.2",
+   "pystac-ext-storage==2.0.2",
+   "pystac-ext-table==1.2.2",
+   "pystac-ext-timestamps==1.1.2",
+   "pystac-ext-version==1.2.2",
+   "pystac-ext-view==1.0.2",
+   "pystac-ext-xarray-assets==1.0.2",
+   "python-dateutil==4.0.0",
+   "python-dotenv==1.2.4",
+   "pytz==2026.6",
+   "rasterio==1.5.2",
+   "referencing==0.37.0",
+   "requests==2.34.2",
+   "rpds-py==2026.9.1",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0",
+   "typing-extensions==4.16.0",
+   "typing-inspection==0.4.5",
+   "tzdata==2026.6",
+   "urllib3==2.8.0",
+   "wrapt==2.5.2"
+  ],
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "os": "Darwin 27.2.0",
+  "mac_ver": "27.2.1",
+  "requirements": [
+   "geopandas==1.2.0",
+   "numpy==2.5.4",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pyogrio==0.13.0",
+   "pyproj==3.8.0",
+   "requests==2.34.2",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0"
+  ]
+ },
+ "inputs": {
+  "cap_bytes": 15728640,
+  "copied_bytes": 5844647,
+  "files": [
+   {
+    "path": "prepared/underlay/records_v1.0.0_min.ndjson.gzip",
+    "bytes": 1258563,
+    "sha256": "5b33405829582286a64807d1346626fd3b8989a66ed49f3ce67ddae17c13f82e",
+    "role": "prepared input, read by the rerun",
+    "copied": true,
+    "required_for_rerun": true,
+    "prepared_from": [
+     {
+      "source": "~/opt/nyc-concordance/underlay/records_v1.0.0.ndjson",
+      "bytes": 50928724,
+      "sha256": "ec6513d950a2c744728a961988e309ebb9fc8442fb7a5b8c4512814c1d9996aa"
+     }
+    ],
+    "prepared_by": "code/prepare.py",
+    "what": "every record of the Underlay snapshot nyc/restaurant-inspections v1.0.0 (hash ulv2:07a7f08a0d5c85649920f8adc6946d27c17f5e2d75e9ee07c0ad4ae0fcc6739c) with only the fields evenness_test.load_snapshot() reads, gzipped"
+   },
+   {
+    "path": "data/derived/restaurants/nta2020.geojson",
+    "bytes": 4586084,
+    "sha256": "6d8f5ee8654ad1ffd6ea3975d50287102b2e98375c641bcd9dc23705a82edfc8",
+    "role": "derived table read by the rerun",
+    "copied": true,
+    "required_for_rerun": true
+   }
+  ],
+  "traced": true
+ },
+ "deciding": {
+  "available": true,
+  "what": "city_effect: between-NTA SD (tau) of the adjusted log rate ratio of critical violations per routine initial inspection, with the permutation p of the NTA score statistic (10,000 draws, seed 20261113)",
+  "recorded": {
+   "estimate": 0.0,
+   "n": 12228,
+   "permutation_p": 0.3067,
+   "n_ntas": 31,
+   "n_restaurants": 8157
+  },
+  "tolerance": {
+   "estimate": 0.0001,
+   "n": 0,
+   "permutation_p": 0.0001,
+   "n_ntas": 0,
+   "n_restaurants": 0
+  },
+  "decides": "support_if: permutation p <= 0.01 and tau >= 0.05; refute_if: permutation p > 0.10",
+  "recorded_from": {
+   "city_effect": "claims/outcomes/restaurants-nta-harshness.json"
+  },
+  "wrapper": "code/rerun.py",
+  "wrapper_note": "Smallest wrapper: evenness_test.py reads the 51 MB Underlay snapshot from ~/opt, runs two tests and writes into the repository. code/prepare.py keeps only the fields load_snapshot() reads, and code/rerun.py calls load_snapshot(), assign_nta(), design(), permutation() and nta_effects() unchanged for the harshness test, with the registered 10,000 draws and seed 20261113. The rerun takes about a minute. The claim has no placebo; the permutation null is part of the deciding test.",
+  "refetch_rerun": false,
+  "trace_run_in_repository": {
+   "printed": {
+    "estimate": 0.0,
+    "n": 12228,
+    "permutation_p": 0.3066693330666933,
+    "n_ntas": 31,
+    "n_restaurants": 8157,
+    "S_over_null_mean": 1.1093346824718338
+   },
+   "files_read": 0
+  }
+ },
+ "not_rebuilt": []
+}

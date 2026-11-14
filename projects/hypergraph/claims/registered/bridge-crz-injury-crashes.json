@@ -1,0 +1,121 @@
+{
+ "id": "bridge-crz-injury-crashes",
+ "kind": "bridge",
+ "statement": "Composed from faster speeds (mob-crz-traffic) and fewer vehicles in the Congestion Relief Zone, with the research link between speed, volume and crashes (bridge-crz-crash-link), the predicted change in injury crashes in the zone relative to the rest of the city in 2025 against 2022-2024 is the endpoint observed in the NYPD crash records.",
+ "graph_evidence": [
+  {
+   "association_id": "(PMID 26759927)",
+   "concepts": [
+    "speed",
+    "pedestrian collision"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Rothman et al. 2016 (Toronto, child pedestrian-motor vehicle collisions): higher speed roads IRR 1.27 (1.13 to 1.44). Abstract read.",
+   "pubmed_ids": [
+    26759927
+   ]
+  },
+  {
+   "association_id": "(PMID 21399547)",
+   "concepts": [
+    "speed",
+    "injury severity"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Moped and scooter crashes: driving speeds above 20 mph OR 2.02 (1.73 to 2.36) for severe or lethal injury. Abstract read.",
+   "pubmed_ids": [
+    21399547
+   ]
+  },
+  {
+   "association_id": "(PMID 23411678)",
+   "concepts": [
+    "motor vehicle speed",
+    "cyclist injury"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Teschke et al. 2012 (Toronto and Vancouver cyclists, case-crossover): motor vehicle speeds below 30 km/h adjusted OR 0.52 (0.29 to 0.92) for injury. Abstract read.",
+   "pubmed_ids": [
+    23411678
+   ]
+  },
+  {
+   "association_id": "(search)",
+   "concepts": [
+    "traffic volume",
+    "crash"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "No finding in the graph links traffic volume, vehicle-miles or congestion to crashes or injuries. The graph holds no power-model (Nilsson, Elvik) findings and no road-pricing findings (see docs/mobility.md).",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Elvik R (2009). The Power Model of the relationship between speed and road safety: update and new analyses. TOI Report 1034/2009, Oslo.",
+   "doi": null,
+   "finding": "Exponents for urban and residential roads: 1.2 for injury accidents, 1.4 for injured persons, 2.6 for fatal accidents, 3.0 for persons killed (rural: 1.6, 2.2, 4.1, 4.6). The urban estimates rest on few studies (summary by ONISR, 14 May 2014)."
+  },
+  {
+   "citation": "Nilsson G (2004). Traffic safety dimensions and the Power Model to describe the effect of speed on safety. Lund Bulletin 221.",
+   "doi": null,
+   "finding": "Exponent 2 for injury accidents, 3 for fatal and serious, 4 for fatal accidents."
+  },
+  {
+   "citation": "Elvik R (2013). A re-parameterisation of the Power Model of the relationship between the speed of traffic and the number of accidents and accident victims. Accident Analysis and Prevention 50:854-860.",
+   "doi": "10.1016/j.aap.2012.07.012",
+   "finding": "Exponential form; the effective exponent depends on the initial speed and is lower at low speeds."
+  },
+  {
+   "citation": "Green CP, Heywood JS, Navarro M (2016). Traffic accidents and the London congestion charge. Journal of Public Economics 133:11-22.",
+   "doi": "10.1016/j.jpubeco.2015.10.005",
+   "finding": "London's charge (2003), with network speeds of 8.6 mph before it and vehicle-km in the zone down about 12 to 34 percent, reduced accidents in the zone by roughly 38 to 40 percent and serious-and-fatal accidents by 46 a year, against 20 British cities. The authors note that higher speeds could raise severity in theory; they found declines in serious and fatal accidents."
+  }
+ ],
+ "chain": [
+  "mob-crz-traffic",
+  "bridge-crz-crash-link"
+ ],
+ "composed_prediction": {
+  "scale": "percent change in monthly injury crashes, zone vs rest of city, 2025 vs 2022-2024",
+  "median": -0.45,
+  "lo": -8.21,
+  "hi": 8.72,
+  "mean_log": -0.0035078362065451836,
+  "sd_log": 0.04292616968025182,
+  "fatal_crashes_median": 7.29,
+  "fatal_lo": -4.09,
+  "fatal_hi": 23.46,
+  "file": "data/derived/bridges/composed_predictions.json",
+  "speed_term_pct": "+6.7 (+1.4 to +15.0)",
+  "volume_term_pct": "-6.7 (-12.4 to -2.3)"
+ },
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Composed: -0.4% (-8.2 to +8.7). The speed term (+6.7%) and the volume term (-6.7%) nearly cancel. The registrant's directional bet is negative, between -2% and -15%. Reasons: (1) the power model was fitted to speed changes on roads that are not congested, and Elvik (2013) finds lower effective exponents at low initial speeds, so the speed term is probably overstated at 8 to 9 mph; (2) London's charge, with the same pre-charge network speed (8.6 mph), reduced accidents far more than its volume change alone predicts; (3) the registrant recalls, without having checked them, statements by the MTA and the city in 2025 that traffic injuries in the zone fell. Persons killed: composed +7% (-4 to +23), too few deaths in the zone to test.",
+  "support_if": "Endpoint compatible with the chain: with D = log(observed ratio) - mean_log(composed) and SE = sqrt(se_observed^2 + sd_log(composed)^2), |D| < 1.96 SE, and the 2024 placebo interval includes zero. Verdict confirmed.",
+  "refute_if": "|D| >= 1.96 SE with the 2024 placebo interval including zero: the endpoint is incompatible with the composed chain. Verdict contested.",
+  "unsettled_if": "The 2024 placebo (false start January 2024, data 2022-2024) has an interval that excludes zero, so the zone had a pre-existing differential trend that the design cannot separate.",
+  "directional_bet": "Scored separately in prediction_scored: hit if the observed interval lies below zero, miss if above zero, partial otherwise."
+ },
+ "plan": "Endpoint: NYPD Motor Vehicle Collisions - Crashes (h9gi-nx95), crash_date 2022-01-01 to 2025-12-31. Zone: the largest polygon of the MTA CBD geofence (data.ny.gov srxy-5nxn), which is the tolled zone without the FDR Drive and West Side Highway strips (the other six polygons). Crash rows with coordinates inside the bounding box lat 40.69-40.78, lon -74.03 to -73.95 are fetched and assigned by point in polygon; citywide monthly totals are fetched for crashes with valid coordinates (lat 40.45-40.95, lon -74.30 to -73.65); rest of city = city minus zone. Injury crash = persons injured > 0 or persons killed > 0. Model as in mob-crz-traffic: OLS of log monthly count on area, calendar month, year and zone x post (post from January 2025), HAC standard errors with 3 lags, 96 area-months. Placebo: false start January 2024 on 2022-2024. Secondary, reported but not deciding: Poisson GLM of the same; persons injured; pedestrians plus cyclists injured; all crashes; persons killed (Poisson, zone vs rest); zone including the excluded highway polygons; January-August 2026 added as a second post year.",
+ "alternatives": [
+  "Pre-existing differential trend in the zone (tested by the 2024 placebo).",
+  "Changes in crash reporting or geocoding that differ between Manhattan and the rest of the city (share of crashes without coordinates is reported by year).",
+  "Changes in pedestrian and cyclist volumes in the zone after pricing (more walking and cycling would raise exposure).",
+  "Spillover of traffic to streets just outside the zone, which would bias the rest-of-city comparison only slightly because the rest of the city is large.",
+  "Other 2025 changes specific to Manhattan below 60th Street (enforcement, street redesigns, the 2025 citywide speed-limit and daylighting work)."
+ ],
+ "prior": 0.45,
+ "registrant": "Claude (bridges agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T16:04:50-0500",
+ "sha256": "00214aa37b7048fd67592e270a507ea967e22918bb76602f42ab8388507b0221"
+}

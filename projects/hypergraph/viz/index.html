@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NYC Concordance Evidence</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="data/claims.js"></script>
+<script src="data/claims.fixture.js"></script>
+<script src="data/evidence.js"></script>
+</head>
+<body>
+<header class="site">
+  <h1>What research and New York City's data confirm, contest and connect</h1>
+  <p>Each claim was registered with its prediction before the city data were queried. Its outcome was then scored against that prediction.</p>
+  <nav class="pages"><a href="hypergraph.html">Edges as objects</a><a href="heat_drugs.html">Heat and medicines</a><a href="comics.html">Strips</a><a href="index.html" aria-current="page">Evidence dashboard</a><a href="evidence.html">Test cards and provenance</a><a href="explorer.html">Graph explorer</a><a href="explore.html">Neighbourhood explorer</a><a href="levers.html">City levers</a><a href="simulate.html">Toll simulator</a></nav>
+  <div class="controls">
+    <span id="source-label" style="display:none">Claims shown:</span>
+    <span class="seg" id="source-switch" style="display:none">
+      <button data-src="register" aria-pressed="true">Register</button>
+      <button data-src="fixture" aria-pressed="false">Fixture (invented)</button>
+    </span>
+    <span id="counts" class="muted small"></span>
+    <button class="plain" id="theme" title="Switch light and dark">Light / dark</button>
+  </div>
+  <div id="banner"></div>
+</header>
+
+<main>
+<section id="strip-section">
+  <h2>Concordance strip</h2>
+  <p class="how">Each row is one claim. The horizontal axis runs from &minus;1, where the city data contradict the direction the research reports, through 0, where they cannot tell, to +1, where they agree. The coloured bar is the outcome's interval on this scale and the mark is its central value. A bar that crosses the centre line is a claim the city data have not settled, whatever its verdict word. The shaded band shows the side on which the registrant bet before seeing the data, and the column at the right gives the registrant's prior probability that the claim would be confirmed. Rows without a bar are registered but not yet decided, or could not be tested. Select a row to see its detail below.</p>
+  <div class="controls" style="margin-top:0">
+    <span>Order:</span>
+    <span class="seg" id="sort-switch">
+      <button data-sort="stance" aria-pressed="true">By agreement</button>
+      <button data-sort="kind" aria-pressed="false">By kind</button>
+      <button data-sort="time" aria-pressed="false">By registration time</button>
+    </span>
+  </div>
+  <div class="legend" id="strip-legend"></div>
+  <div class="figure" id="strip"></div>
+</section>
+
+<section id="detail-section">
+  <h2>One claim</h2>
+  <div class="controls" style="margin-top:0"><label for="claim-select">Claim:</label> <select id="claim-select"></select></div>
+  <div id="claim-head"></div>
+
+  <h3>Research estimate beside the city estimate</h3>
+  <p class="how">The upper row is the research side: the outcome's summary of the graph evidence, or, where there is no summary, the graph findings it cites. The lower row is the estimate from New York City's data. Each line is a 95% interval and the dashed line is no effect. When both rows use the same unit they share one axis. When the units differ, each row has its own axis, and only the direction and whether each interval crosses no effect can be compared.</p>
+  <div class="panel"><div class="figure" id="paired"></div></div>
+
+  <div id="bridge-wrap">
+  <h3>Bridge path</h3>
+  <p class="how">A bridge is a link that no single dataset holds. It is built from a chain of link claims, each tested on its own. The path runs from top to bottom through the concepts each link connects. Each link is coloured by its verdict and carries a small strip with its interval on the agreement scale, so the weakest link is the one whose interval reaches furthest to the left. A dashed connector marks two neighbouring links that use different concepts at the joint, where the bridge assumes they are the same thing.</p>
+  <div class="panel"><div class="figure" id="bridge"></div></div>
+  </div>
+
+  <h3>Provenance</h3>
+  <p class="how">The time line shows the order of events: the registration, with the hash that fixes its text, then the fetch of each dataset, then the outcome. A dataset fetched before the registration is marked, because the bet may then have seen the data. Below it are every dataset with its version and exact query, and every graph finding the claim rests on, with links to PubMed.</p>
+  <div id="prov"></div>
+</section>
+
+<section id="research-section">
+  <h2>Research needed</h2>
+  <p class="how">This map collects every "research needed" entry and every "what would settle it" statement across the claims, and sorts them by the kind of data or study design they call for. Rows are claims and columns are kinds of research. A filled cell is a research-needed entry, darker for higher priority, and the number counts the entries. An outlined cell is a settle statement only. The kinds are assigned from the words of each entry, so one entry can fall in more than one column. The list under the map gives the entries in full.</p>
+  <div class="scroll-x"><table class="matrix" id="matrix"></table></div>
+  <div id="research-list"></div>
+</section>
+
+<section id="table-section">
+  <h2>All claims as a table</h2>
+  <p class="how">The same claims as the strip, with their numbers. The verdict note says what a verdict label does and does not mean. The revision column gives the reason recorded when an outcome was revised after a referee's report.</p>
+  <div class="scroll-x"><table class="data" id="claims-table"></table></div>
+</section>
+</main>
+
+<footer id="foot"></footer>
+<div class="tip" id="tip"></div>
+
+<script>
+(function () {
+"use strict";
+if (!window.d3) { document.body.insertAdjacentHTML("afterbegin", "<p class='banner'>The D3 library did not load from cdnjs.cloudflare.com. The page needs a network connection.</p>"); return; }
+
+// ------------------------------------------------------------------ data and state
+const REGISTER = window.CONCORD_CLAIMS || { claims: [] };
+const FIXTURE = window.CONCORD_FIXTURE || { claims: [] };
+const VERDICTS = ["confirmed", "bridged", "unsettled", "contested", "no_test"];
+const VLABEL = { confirmed: "confirmed", contested: "contested", unsettled: "unsettled", bridged: "bridged", no_test: "no test", open: "awaiting outcome" };
+const SHAPE = { confirmed: d3.symbolCircle, bridged: d3.symbolTriangle, unsettled: d3.symbolDiamond, contested: d3.symbolSquare, no_test: d3.symbolCircle, open: d3.symbolCircle };
+const vcol = v => `var(--c-${v})`;
+const params = new URLSearchParams(location.search);
+const state = {
+  src: params.get("fixture") === "1" || !REGISTER.claims.length ? "fixture" : "register",
+  sort: "stance",
+  sel: params.get("claim") || null,
+};
+let DATA = null, BYID = {};
+
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function fmt(x, d = 2) { if (x == null || isNaN(x)) return "–"; const a = Math.abs(x); return (a >= 100 ? d3.format(",.0f") : a >= 10 ? d3.format(".1f") : d3.format(`.${d}f`))(x).replace("-", "−"); }
+function ts(s) { if (!s) return null; const t = Date.parse(String(s).replace(/([+-]\d\d)(\d\d)$/, "$1:$2")); return isNaN(t) ? null : t; }
+function when(s) { const t = ts(s); return t == null ? (s || "–") : new Date(t).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }); }
+
+const tip = document.getElementById("tip");
+function showTip(ev, html) {
+  tip.innerHTML = html; tip.style.opacity = 1;
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = ev.clientX + 14, y = ev.clientY + 14;
+  if (x + w > innerWidth - 8) x = ev.clientX - w - 14;
+  if (y + h > innerHeight - 8) y = ev.clientY - h - 14;
+  tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
+}
+function hideTip() { tip.style.opacity = 0; }
+
+// Effect on the transformed scale (log for ratios), relative to the null.
+function rel(eff, key) {
+  if (!eff || eff[key] == null) return null;
+  const n = eff.null == null ? 0 : eff.null;
+  return n === 1 ? (eff[key] > 0 ? Math.log(eff[key]) : null) : eff[key] - n;
+}
+function sgn(x) { return x == null ? 0 : x > 0 ? 1 : x < 0 ? -1 : 0; }
+
+// Direction the research reports: from graph_effect, else from graph_evidence directions, else the prediction.
+function researchSign(c) {
+  const o = c.outcome || {};
+  const g = sgn(rel(o.graph_effect, "estimate"));
+  if (g) return g;
+  let s = 0;
+  (c.graph_evidence || []).forEach(e => { s += e.direction === "+" ? 1 : e.direction === "-" ? -1 : 0; });
+  if (s) return sgn(s);
+  return predSign(c);
+}
+function predSign(c) { const d = String((c.prediction || {}).direction || "+"); return d === "+" ? 1 : d === "-" ? -1 : 0; }
+
+function prep(c) {
+  const o = c.outcome;
+  const p = predSign(c), r = researchSign(c);
+  // stance is computed against the predicted sign; flip it when the prediction opposes the research.
+  // Only conflict-kind claims are registered against the research; for the others the
+  // sign of graph_effect is often in different units, so inferring a flip from it misleads.
+  const flip = c.kind === "conflict" && p !== 0 && r !== 0 ? p * r : 1;
+  const st = o && o.stance ? o.stance : null;
+  let disp = null;
+  if (st && st.value != null) {
+    const lo = st.lo == null ? null : flip * st.lo, hi = st.hi == null ? null : flip * st.hi;
+    disp = { value: flip * st.value, lo: lo == null ? null : Math.min(lo, hi), hi: hi == null ? null : Math.max(lo, hi) };
+  }
+  const verdict = o ? o.verdict : "open";
+  return Object.assign({}, c, { _p: p, _r: r, _flip: flip, _disp: disp, _verdict: verdict,
+    _betSide: p === 0 ? 0 : flip });
+}
+
+function load() {
+  const raw = state.src === "fixture" ? FIXTURE : REGISTER;
+  DATA = (raw.claims || []).map(prep);
+  BYID = Object.fromEntries(DATA.map(c => [c.id, c]));
+  if (!state.sel || !BYID[state.sel]) {
+    const decided = DATA.filter(c => c.outcome);
+    const br = decided.find(c => c.kind === "bridge");
+    state.sel = (br || decided[0] || DATA[0] || {}).id || null;
+  }
+  d3.selectAll("#source-switch button").attr("aria-pressed", function () { return this.dataset.src === state.src; });
+  const nf = FIXTURE.claims.length, nr = REGISTER.claims.length;
+  const nOut = DATA.filter(c => c.outcome).length;
+  const byV = d3.rollup(DATA, v => v.length, c => c._verdict);
+  document.getElementById("counts").textContent =
+    `${DATA.length} claims, ${nOut} with outcomes` + (DATA.length ? ": " + [...VERDICTS, "open"].filter(v => byV.get(v)).map(v => `${byV.get(v)} ${VLABEL[v]}`).join(", ") : "");
+  const b = document.getElementById("banner");
+  if (state.src === "fixture") {
+    b.innerHTML = `<div class="banner"><strong>Fixture.</strong> These ${nf} claims are invented to test the display. They are not findings and must not be cited. ` +
+      (nr ? `Switch to "Register" to see the ${nr} real claims.` : `No real claims have been registered yet.`) + `</div>`;
+  } else if (!nOut) {
+    b.innerHTML = `<div class="banner"><strong>No outcomes yet.</strong> The ${nr} registered claims below show their bets only. Their verdicts and intervals appear when outcomes are written and the site is rebuilt.</div>`;
+  } else b.innerHTML = "";
+  const gen = state.src === "fixture" ? "fixture" : when(REGISTER.generated);
+  document.getElementById("foot").innerHTML =
+    `Claims exported ${esc(gen)} from <code>claims/registered</code> and <code>claims/outcomes</code>. Rebuild with <code>python tools/build_site.py</code>. ` +
+    `Verdict scale and stance: <code>concord/claims.py</code>. Encoding: <code>docs/visual_language.md</code>. Graph data: System Public Graph API v1.0, Dataverse v2.1 (doi:10.7910/DVN/7V6JDO).`;
+}
+
+// ------------------------------------------------------------------ marks
+function marker(sel, v, x, y, size = 64) {
+  const hollow = v === "no_test" || v === "open";
+  sel.append("path").attr("d", d3.symbol(SHAPE[v] || d3.symbolCircle, size)())
+    .attr("transform", `translate(${x},${y})`)
+    .attr("fill", hollow ? "var(--panel)" : vcol(v))
+    .attr("stroke", v === "unsettled" ? "var(--c-unsettled-edge)" : hollow ? vcol(v) : "var(--panel)")
+    .attr("stroke-width", hollow ? 1.5 : 1.5);
+}
+function verdictTag(v) {
+  return `<span class="verdict"><svg width="12" height="12" viewBox="-6 -6 12 12"><path d="${d3.symbol(SHAPE[v] || d3.symbolCircle, 60)()}" fill="${v === "no_test" || v === "open" ? "none" : vcol(v)}" stroke="${v === "unsettled" ? "var(--c-unsettled-edge)" : vcol(v)}" stroke-width="1.3"/></svg>${esc(VLABEL[v] || v)}</span>`;
+}
+
+function legend() {
+  const el = document.getElementById("strip-legend");
+  el.innerHTML = [...VERDICTS, "open"].map(v => `<span class="key">${verdictTag(v)}</span>`).join("") +
+    `<span class="key"><svg width="26" height="12"><rect x="0" y="1" width="26" height="10" fill="var(--band)" stroke="var(--band-line)" stroke-dasharray="2 2"/></svg>side bet on at registration</span>` +
+    `<span class="key"><svg width="26" height="12"><rect x="0" y="3" width="26" height="6" rx="3" fill="var(--muted)"/></svg>interval</span>`;
+}
+
+// ------------------------------------------------------------------ concordance strip
+// Plain titles from viz/data/titles.json (bundled in evidence.js); the id stays in the tooltip.
+const TITLES = (window.CONCORD_EVIDENCE || {}).titles || {};
+function shortLabel(c) { return TITLES[c.id] || c.id; }
+function fitLabel(sel, w) {
+  const n = sel.node(); let t = sel.text();
+  while (t.length > 4 && n.getComputedTextLength() > w) { t = t.slice(0, -2); sel.text(t.trimEnd() + "…"); }
+}
+
+function drawStrip() {
+  const host = document.getElementById("strip");
+  host.innerHTML = "";
+  if (!DATA.length) { host.innerHTML = `<p class="muted">No claims.</p>`; return; }
+  const W = host.clientWidth || 800;
+  const narrow = W < 640;
+  const labW = narrow ? 0 : Math.min(300, Math.round(W * 0.32));
+  const rightW = narrow ? 0 : 150;
+  const rowH = narrow ? 54 : 34;
+  const top = 34, bottom = 26;
+  const x0 = labW + 8, x1 = W - rightW - 10;
+
+  const order = DATA.slice();
+  const vrank = c => c._disp ? 0 : c._verdict === "no_test" ? 1 : 2;
+  if (state.sort === "stance") order.sort((a, b) => vrank(a) - vrank(b) || ((b._disp || {}).value || 0) - ((a._disp || {}).value || 0));
+  if (state.sort === "kind") order.sort((a, b) => d3.ascending(a.kind, b.kind) || ((b._disp || {}).value || 0) - ((a._disp || {}).value || 0));
+  if (state.sort === "time") order.sort((a, b) => (ts(a.registered_at) || 0) - (ts(b.registered_at) || 0));
+
+  const H = top + order.length * rowH + bottom;
+  const x = d3.scaleLinear().domain([-1, 1]).range([x0, x1]);
+  const svg = d3.select(host).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("width", W).attr("height", H)
+    .attr("role", "img").attr("aria-label", "Concordance strip: one row per claim, agreement from -1 to +1");
+
+  // grid and axis
+  const g = svg.append("g").attr("class", "grid");
+  [-1, -0.5, 0.5, 1].forEach(t => g.append("line").attr("x1", x(t)).attr("x2", x(t)).attr("y1", top - 6).attr("y2", H - bottom));
+  svg.append("line").attr("class", "zero").attr("x1", x(0)).attr("x2", x(0)).attr("y1", top - 6).attr("y2", H - bottom);
+  const ax = svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - bottom})`)
+    .call(d3.axisBottom(x).tickValues([-1, -0.5, 0, 0.5, 1]).tickFormat(d => d === 0 ? "0" : d3.format("+.1~f")(d).replace("-", "−")).tickSize(4));
+  ax.select(".domain").remove();
+  svg.append("text").attr("x", x(-1)).attr("y", 14).attr("font-size", 12).attr("fill", "var(--ink-2)").text(narrow ? "← contradict" : "← city data contradict the research");
+  svg.append("text").attr("x", x(1)).attr("y", 14).attr("text-anchor", "end").attr("font-size", 12).attr("fill", "var(--ink-2)").text(narrow ? "agree →" : "city data agree →");
+  svg.append("text").attr("x", x(0)).attr("y", 28).attr("text-anchor", "middle").attr("font-size", 11).attr("fill", "var(--muted)").text("cannot tell");
+  if (!narrow) {
+    svg.append("text").attr("x", x1 + 18).attr("y", 28).attr("font-size", 11).attr("fill", "var(--muted)").text("prior P(confirmed)");
+  }
+
+  order.forEach((c, i) => {
+    const y0 = top + i * rowH;
+    const yc = narrow ? y0 + 36 : y0 + rowH / 2;
+    const row = svg.append("g").attr("class", "row");
+    const hit = row.append("rect").attr("class", "row-hit" + (c.id === state.sel ? " sel" : ""))
+      .attr("x", 0).attr("y", y0).attr("width", W).attr("height", rowH).attr("rx", 3);
+    // bet band
+    const bandY = yc - 9, bandH = 18;
+    if (c._betSide !== 0) {
+      const a = c._betSide > 0 ? x(0) : x(-1), b = c._betSide > 0 ? x(1) : x(0);
+      row.append("rect").attr("x", a).attr("y", bandY).attr("width", b - a).attr("height", bandH)
+        .attr("fill", "var(--band)").attr("stroke", "var(--band-line)").attr("stroke-dasharray", "2 2").attr("pointer-events", "none");
+    } else {
+      row.append("rect").attr("x", x(-0.25)).attr("y", bandY).attr("width", x(0.25) - x(-0.25)).attr("height", bandH)
+        .attr("fill", "var(--band)").attr("stroke", "var(--band-line)").attr("stroke-dasharray", "2 2").attr("pointer-events", "none");
+    }
+    // label
+    const lab = row.append("text").attr("pointer-events", "none").attr("font-size", 13);
+    if (narrow) {
+      lab.attr("x", 4).attr("y", y0 + 15).text(shortLabel(c));
+      const pr = c.prior != null ? `  prior ${fmt(c.prior, 2)}` : "";
+      row.append("text").attr("x", W - 4).attr("y", y0 + 15).attr("text-anchor", "end").attr("font-size", 11.5)
+        .attr("fill", "var(--muted)").attr("pointer-events", "none").text(`${VLABEL[c._verdict]}${pr}`);
+    } else {
+      lab.attr("x", labW).attr("y", yc + 4).attr("text-anchor", "end").text(shortLabel(c));
+      fitLabel(lab, labW - 6);
+      const kindTxt = row.append("text").attr("x", labW).attr("y", yc + 4).attr("text-anchor", "end").attr("pointer-events", "none");
+      kindTxt.remove();
+    }
+    // interval and mark
+    const d = c._disp;
+    if (d) {
+      if (d.lo != null && d.hi != null) {
+        row.append("rect").attr("x", x(d.lo)).attr("y", yc - 3.5).attr("width", Math.max(2, x(d.hi) - x(d.lo))).attr("height", 7).attr("rx", 3.5)
+          .attr("fill", vcol(c._verdict)).attr("fill-opacity", c._verdict === "unsettled" ? 1 : 0.55)
+          .attr("stroke", c._verdict === "unsettled" ? "var(--c-unsettled-edge)" : "none").attr("stroke-width", 0.6).attr("pointer-events", "none");
+      } else {
+        row.append("text").attr("x", x(d.value) + 9).attr("y", yc + 4).attr("font-size", 11).attr("fill", "var(--muted)").text("no interval");
+      }
+      marker(row.append("g").attr("pointer-events", "none"), c._verdict, x(d.value), yc, narrow ? 56 : 70);
+    } else {
+      const msg = c._verdict === "no_test" ? "no test: the data could not address the question" : c.outcome ? `${VLABEL[c._verdict] || c._verdict}: a descriptive measure with no agreement scale` : "registered, awaiting outcome";
+      row.append("text").attr("x", x(0)).attr("y", yc + 4).attr("text-anchor", "middle").attr("font-size", 11.5)
+        .attr("fill", "var(--muted)").attr("pointer-events", "none").attr("paint-order", "stroke")
+        .attr("stroke", "var(--bg)").attr("stroke-width", 3).text(msg);
+    }
+    // prior column and verdict
+    if (!narrow) {
+      const px0 = x1 + 18, pw = 50;
+      row.append("line").attr("x1", px0).attr("x2", px0 + pw).attr("y1", yc).attr("y2", yc).attr("stroke", "var(--rule)").attr("stroke-width", 3).attr("stroke-linecap", "round");
+      if (c.prior != null && Number.isFinite(+c.prior)) {
+        row.append("circle").attr("cx", px0 + pw * c.prior).attr("cy", yc).attr("r", 3.5).attr("fill", "var(--ink-2)");
+        row.append("text").attr("x", px0 + pw + 8).attr("y", yc + 4).attr("font-size", 11.5).attr("fill", "var(--ink-2)").text(fmt(c.prior, 2));
+      }
+      const sc = scoreWord(c);
+      if (sc) row.append("text").attr("x", px0 + pw + 40).attr("y", yc + 4).attr("font-size", 11.5).attr("fill", "var(--muted)").text(sc);
+    }
+    hit.on("mousemove", ev => showTip(ev, stripTip(c))).on("mouseleave", hideTip)
+      .on("click", () => { state.sel = c.id; hideTip(); render(); document.getElementById("detail-section").scrollIntoView({ behavior: "smooth" }); });
+  });
+}
+
+function scoreWord(c) {
+  const s = (c.outcome || {}).prediction_scored;
+  if (!s) return "";
+  const m = String(s).match(/^\s*(hit|miss|partial)/i);
+  return m ? m[1].toLowerCase() : "";
+}
+
+function effText(e) {
+  if (!e || e.estimate == null) return "–";
+  const ci = e.lo != null && e.hi != null ? ` (${fmt(e.lo)} to ${fmt(e.hi)})` : "";
+  return `${fmt(e.estimate)}${ci} ${esc(e.scale || "")}`;
+}
+// The reason recorded when an outcome was revised after a referee's report, with the
+// earlier verdict when the revision changed it.
+function revText(o) {
+  const r = o && o.revision;
+  if (!r) return "";
+  const reason = typeof r === "string" ? r : (r.reason || "");
+  if (!reason) return "";
+  const h = Array.isArray(o.history) && o.history.length ? o.history[o.history.length - 1] : null;
+  const was = h && h.verdict && h.verdict !== o.verdict ? ` Verdict before the revision: ${VLABEL[h.verdict] || h.verdict}.` : "";
+  const at = typeof r === "object" && r.revised_at ? ` (${when(r.revised_at)})` : "";
+  return `${reason}${was}${at}`;
+}
+function stripTip(c) {
+  const o = c.outcome || {};
+  const d = c._disp;
+  return `<b>${esc(c.id)}</b> · ${esc(c.kind)}<br>${esc(c.statement)}<br><br>` +
+    `Verdict: ${verdictTag(c._verdict)}<br>` +
+    (d ? `Agreement: ${fmt(d.value)}${d.lo != null ? ` (${fmt(d.lo)} to ${fmt(d.hi)})` : ""}<br>` : "") +
+    (o.city_effect ? `City: ${effText(o.city_effect)}<br>` : "") +
+    `Bet: ${esc((c.prediction || {}).direction)} ${esc((c.prediction || {}).magnitude || "")}<br>` +
+    `Prior: ${c.prior != null ? fmt(c.prior, 2) : "–"}` + (o.prediction_scored ? `<br>Scored: ${esc(o.prediction_scored)}` : "") +
+    (o.verdict_note ? `<br>Verdict note: ${esc(o.verdict_note)}` : "") +
+    (revText(o) ? `<br><span class="muted">Revised: ${esc(revText(o))}</span>` : "") +
+    (c._flip < 0 ? `<br><span class="muted">The registered direction opposes the research, so the agreement value is shown against the research direction.</span>` : "");
+}
+
+// ------------------------------------------------------------------ claim head
+function drawHead() {
+  const sel = document.getElementById("claim-select");
+  sel.innerHTML = DATA.map(c => `<option value="${esc(c.id)}"${c.id === state.sel ? " selected" : ""}>${esc(c.id)} (${esc(VLABEL[c._verdict])})</option>`).join("");
+  const c = BYID[state.sel];
+  const el = document.getElementById("claim-head");
+  if (!c) { el.innerHTML = ""; return; }
+  const p = c.prediction || {}, o = c.outcome || {};
+  el.innerHTML = `<div class="panel">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;justify-content:space-between">
+      <div><b>${esc(c.id)}</b> <span class="muted">${esc(c.kind)}${c.fixture ? " · fixture, invented" : ""}${c.supersedes ? " · supersedes " + esc(c.supersedes) : ""}</span></div>
+      <div>${verdictTag(c._verdict)}</div></div>
+    <p style="margin:6px 0 10px">${esc(c.statement)}</p>
+    ${o.verdict_note ? `<p class="small" style="margin:0 0 10px"><span class="muted">What the verdict means:</span> ${esc(o.verdict_note)}</p>` : ""}
+    <div class="grid2">
+      <dl class="kv">
+        <dt>Bet</dt><dd>direction ${esc(p.direction)}, ${esc(p.magnitude || "")}</dd>
+        <dt>Support if</dt><dd>${esc(p.support_if || "–")}</dd>
+        <dt>Refute if</dt><dd>${esc(p.refute_if || "–")}</dd>
+        <dt>Prior</dt><dd>${c.prior != null ? fmt(c.prior, 2) : "–"} that the outcome is "confirmed"</dd>
+        <dt>Alternatives</dt><dd>${esc([].concat(c.alternatives || []).map(a => typeof a === "string" ? a : (a.name || JSON.stringify(a))).join("; ") || "–")}</dd>
+      </dl>
+      <dl class="kv">
+        <dt>Scored</dt><dd>${esc(o.prediction_scored || "not yet")}</dd>
+        <dt>Settle</dt><dd>${esc(o.settle || "–")}</dd>
+        ${revText(o) ? `<dt>Revision</dt><dd>${esc(revText(o))}</dd>` : ""}
+        <dt>Notes</dt><dd>${esc(o.notes || "–")}</dd>
+        ${o.critique ? `<dt>Critique</dt><dd>${esc(typeof o.critique === "string" ? o.critique : JSON.stringify(o.critique))}</dd>` : ""}
+        ${(o.figures || []).length ? `<dt>Figures</dt><dd>${o.figures.map(f => `<a href="../${esc(f)}">${esc(f)}</a>`).join("<br>")}</dd>` : ""}
+      </dl>
+    </div></div>`;
+}
+
+// ------------------------------------------------------------------ paired estimates
+function drawPaired() {
+  const host = document.getElementById("paired");
+  host.innerHTML = "";
+  const c = BYID[state.sel];
+  if (!c) return;
+  const o = c.outcome || {};
+  const ge = o.graph_effect, ce = o.city_effect;
+  const W = host.clientWidth || 700;
+  const narrow = W < 560;
+  const labW = narrow ? 0 : 170;
+  const rows = [
+    { key: "research", name: "Research (System graph)", e: ge },
+    { key: "city", name: "New York City data", e: ce },
+  ];
+  const ok = e => e && e.estimate != null && Number.isFinite(+e.estimate) && !((e.null || 0) === 1 && +e.estimate <= 0);
+  const same = ok(ge) && ok(ce) && (ge.scale || "") === (ce.scale || "") && (ge.null || 0) === (ce.null || 0);
+  const rowH = narrow ? 76 : 58;
+  const H = rows.length * rowH + 10;
+  const svg = d3.select(host).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("width", W).attr("height", H);
+  const x0 = labW + 10, x1 = W - 16;
+
+  function scaleFor(es) {
+    const isRatio = (es[0].null || 0) === 1;
+    const vals = es.flatMap(e => [e.estimate, e.lo, e.hi]).filter(v => v != null && (!isRatio || v > 0));
+    vals.push(isRatio ? 1 : 0);
+    let [a, b] = d3.extent(vals);
+    if (isRatio) { const pad = Math.pow(b / a, 0.08) || 1.05; a /= pad; b *= pad; if (a === b) { a *= 0.9; b *= 1.1; }
+      return d3.scaleLog().domain([a, b]).range([x0, x1]); }
+    const pad = (b - a) * 0.08 || 0.1; return d3.scaleLinear().domain([a - pad, b + pad]).range([x0, x1]);
+  }
+  const shared = same ? scaleFor([ge, ce]) : null;
+
+  rows.forEach((r, i) => {
+    const y0 = i * rowH + 4;
+    const yc = narrow ? y0 + 36 : y0 + 24;
+    const g = svg.append("g");
+    g.append("text").attr("x", narrow ? 0 : labW).attr("y", narrow ? y0 + 12 : yc + 4).attr("text-anchor", narrow ? "start" : "end")
+      .attr("font-size", 13).attr("font-weight", 600).text(r.name);
+    if (!ok(r.e)) {
+      let msg = r.key === "city" ? (c.outcome ? "No city estimate (see verdict and notes)." : "No outcome yet.") : "";
+      if (r.key === "research") {
+        const ev = (c.graph_evidence || []);
+        const nf = d3.sum(ev, e => +e.n_findings || 0);
+        const dirs = d3.rollup(ev.filter(e => e.direction), v => v.length, e => e.direction);
+        msg = ev.length ? `No pooled estimate. Cited graph evidence: ${ev.length} item(s), ${nf} finding(s); directions ${[...dirs].map(([k, v]) => `${k} ×${v}`).join(", ") || "none"}. See provenance.`
+                        : (c.kind === "bridge" ? "A bridge has no single research estimate; see its links in the bridge path." : "No graph estimate.");
+      }
+      const t = g.append("text").attr("x", x0).attr("y", yc + 4).attr("font-size", 12.5).attr("fill", "var(--muted)");
+      wrapText(t, msg, x1 - x0, 15);
+      return;
+    }
+    const sc = shared || scaleFor([r.e]);
+    const nul = (r.e.null || 0) === 1 ? 1 : 0;
+    const [da, db] = sc.domain();
+    const tv = d3.ticks(da, db, narrow ? 4 : 6).filter(v => !sc.base || v > 0);
+    const ax = g.append("g").attr("class", "axis").attr("transform", `translate(0,${yc + 12})`)
+      .call(d3.axisBottom(sc).tickValues(tv).tickFormat(d3.format("~g")).tickSize(3));
+    ax.select(".domain").attr("stroke", "var(--rule)");
+    if (!shared || i === 1) {
+      g.append("text").attr("x", x1).attr("y", yc + 38).attr("text-anchor", "end").attr("font-size", 11).attr("fill", "var(--muted)").text(r.e.scale || "");
+    }
+    g.append("line").attr("x1", sc(nul)).attr("x2", sc(nul)).attr("y1", yc - 14).attr("y2", yc + 12)
+      .attr("stroke", "var(--muted)").attr("stroke-dasharray", "3 3");
+    const col = r.key === "city" ? vcol(c._verdict === "open" ? "open" : c._verdict) : "var(--ink-2)";
+    if (r.e.lo != null && r.e.hi != null) {
+      g.append("line").attr("x1", sc(r.e.lo)).attr("x2", sc(r.e.hi)).attr("y1", yc).attr("y2", yc)
+        .attr("stroke", col).attr("stroke-width", 2.5).attr("stroke-linecap", "round");
+    }
+    g.append("circle").attr("cx", sc(r.e.estimate)).attr("cy", yc).attr("r", 5).attr("fill", col).attr("stroke", "var(--panel)").attr("stroke-width", 1.5);
+    const lt = g.append("text").attr("y", yc - 9).attr("font-size", 11.5).attr("fill", "var(--ink-2)").text(`${r.e.label ? r.e.label + ": " : ""}${effText(r.e).replace(/&amp;/g, "&")}`);
+    const tx = sc(r.e.estimate);
+    lt.attr("x", tx).attr("text-anchor", tx > (x0 + x1) / 2 ? "end" : "start");
+  });
+  if (ok(ge) && ok(ce) && !same) {
+    d3.select(host).append("p").attr("class", "muted small").style("margin", "4px 0 0")
+      .text(`The two estimates are in different units (${ge.scale || "unstated"} and ${ce.scale || "unstated"}), so each row has its own axis. Compare their directions and whether each interval crosses the dashed line of no effect.`);
+  }
+}
+
+function wrapText(t, s, width, lh) {
+  const words = String(s).split(/\s+/); let line = [], n = 0;
+  const x = t.attr("x"), y = +t.attr("y");
+  let ts_ = t.text(null).append("tspan").attr("x", x).attr("y", y);
+  words.forEach(w => {
+    line.push(w); ts_.text(line.join(" "));
+    if (ts_.node().getComputedTextLength() > width && line.length > 1) {
+      line.pop(); ts_.text(line.join(" ")); line = [w]; n++;
+      ts_ = t.append("tspan").attr("x", x).attr("y", y + n * lh).text(w);
+    }
+  });
+}
+
+// ------------------------------------------------------------------ bridge path
+function bridgeFor(c) {
+  if (!c) return null;
+  if (c.kind === "bridge" || (c.chain && c.chain.length)) return c;
+  return DATA.find(b => (b.chain || []).includes(c.id)) || null;
+}
+function ends(link) {
+  const ev = (link && link.graph_evidence || []).find(e => Array.isArray(e.concepts) && e.concepts.length >= 2);
+  if (ev) return [ev.concepts[0], ev.concepts[ev.concepts.length - 1]];
+  return [null, null];
+}
+function srcName(s) {
+  if (s.kind === "nyc-open-data") return s.name || s.dataset;
+  if (s.kind === "noaa-ghcnd") return `NOAA GHCN-Daily ${s.station || ""}`.trim();
+  if (s.kind === "sysgraph") return "System graph";
+  return s.name || s.dataset || s.kind || "source";
+}
+
+function drawBridge() {
+  const wrap = document.getElementById("bridge-wrap");
+  const host = document.getElementById("bridge");
+  host.innerHTML = "";
+  const b = bridgeFor(BYID[state.sel]);
+  wrap.style.display = b ? "" : "none";
+  if (!b) return;
+  const links = (b.chain || []).map(id => BYID[id] ? BYID[id] : { id, _missing: true, _verdict: "open" });
+  const W = host.clientWidth || 700;
+  const narrow = W < 560;
+  const nodeX = 14, nodeW = narrow ? W - 28 : Math.min(260, W * 0.36);
+  const linkX = narrow ? 30 : nodeX + nodeW + 24;
+  const nodeH = 30, linkH = narrow ? 104 : 84, seamH = 34;
+
+  // Build sequence of nodes and links, with seams where concepts differ.
+  const seq = [];
+  links.forEach((l, i) => {
+    const [a, z] = l._missing ? [null, null] : ends(l);
+    if (i === 0) seq.push({ t: "node", label: a || "(start of " + l.id + ")" });
+    else {
+      const prev = seq[seq.length - 1];
+      if (a && prev.label && a.toLowerCase() !== prev.label.toLowerCase()) {
+        seq.push({ t: "seam" }); seq.push({ t: "node", label: a });
+      }
+    }
+    seq.push({ t: "link", l });
+    seq.push({ t: "node", label: z || "(end of " + l.id + ")" });
+  });
+  let H = 8;
+  seq.forEach(s => { s.y = H; H += s.t === "node" ? nodeH : s.t === "link" ? linkH : seamH; });
+  H += 8;
+
+  // weakest link: lowest interval lower bound among decided links
+  const decided = links.filter(l => l._disp);
+  const weakest = decided.length ? decided.reduce((m, l) => ((l._disp.lo ?? l._disp.value) < (m._disp.lo ?? m._disp.value) ? l : m)) : null;
+
+  const svg = d3.select(host).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("width", W).attr("height", H);
+  const cx = nodeX + 16;
+  seq.forEach(s => {
+    if (s.t === "node") {
+      svg.append("rect").attr("x", nodeX).attr("y", s.y).attr("width", nodeW).attr("height", nodeH - 4).attr("rx", 13)
+        .attr("fill", "var(--panel)").attr("stroke", "var(--ink-2)").attr("stroke-width", 1);
+      const t = svg.append("text").attr("x", nodeX + 14).attr("y", s.y + 17).attr("font-size", 13).text(s.label);
+      clip(t, nodeW - 24);
+    } else if (s.t === "seam") {
+      svg.append("line").attr("x1", cx).attr("x2", cx).attr("y1", s.y - 4).attr("y2", s.y + seamH)
+        .attr("stroke", "var(--muted)").attr("stroke-width", 1.5).attr("stroke-dasharray", "3 4");
+      svg.append("text").attr("x", cx + 12).attr("y", s.y + 20).attr("font-size", 11.5).attr("fill", "var(--muted)")
+        .text("assumed to be the same concept");
+    } else {
+      const l = s.l, v = l._verdict;
+      const y1 = s.y - 4, y2 = s.y + linkH;
+      svg.append("line").attr("x1", cx).attr("x2", cx).attr("y1", y1).attr("y2", y2)
+        .attr("stroke", vcol(v)).attr("stroke-width", v === "open" || v === "no_test" ? 2 : 5)
+        .attr("stroke-dasharray", v === "open" || v === "no_test" ? "5 4" : null);
+      marker(svg.append("g"), v, cx, (y1 + y2) / 2, 80);
+      const tx = narrow ? cx + 18 : linkX;
+      const g = svg.append("g").attr("transform", `translate(${tx},${s.y + 8})`);
+      g.append("text").attr("y", 6).attr("font-size", 13).attr("font-weight", 600).text(l.id + (l === weakest ? "  (weakest link)" : ""))
+        .style("cursor", l._missing ? null : "pointer").on("click", () => { if (!l._missing) { state.sel = l.id; render(); } });
+      g.append("text").attr("y", 23).attr("font-size", 12).attr("fill", "var(--ink-2)")
+        .text(l._missing ? "link claim not registered" : `${VLABEL[v]}` + (l.outcome && l.outcome.city_effect ? ` · ${effText(l.outcome.city_effect).replace(/&amp;/g, "&")}` : ""));
+      const srcs = l.outcome ? [...new Set((l.outcome.sources || []).map(srcName))].join("; ") : "";
+      const st = g.append("text").attr("y", 39).attr("font-size", 11.5).attr("fill", "var(--muted)").text(srcs ? "from " + srcs : (l._missing ? "" : "no outcome yet"));
+      const avail = W - tx - 12;
+      clip(st, avail);
+      // mini strip
+      const mw = Math.min(180, avail), my = 56;
+      const mx = d3.scaleLinear().domain([-1, 1]).range([0, mw]);
+      g.append("line").attr("x1", 0).attr("x2", mw).attr("y1", my).attr("y2", my).attr("stroke", "var(--rule)");
+      g.append("line").attr("x1", mx(0)).attr("x2", mx(0)).attr("y1", my - 6).attr("y2", my + 6).attr("stroke", "var(--muted)");
+      g.append("text").attr("x", 0).attr("y", my + 16).attr("font-size", 10).attr("fill", "var(--muted)").text("−1");
+      g.append("text").attr("x", mw).attr("y", my + 16).attr("font-size", 10).attr("text-anchor", "end").attr("fill", "var(--muted)").text("+1");
+      if (l._disp) {
+        if (l._disp.lo != null) g.append("rect").attr("x", mx(l._disp.lo)).attr("y", my - 3).attr("width", Math.max(2, mx(l._disp.hi) - mx(l._disp.lo)))
+          .attr("height", 6).attr("rx", 3).attr("fill", vcol(v)).attr("fill-opacity", v === "unsettled" ? 1 : 0.55)
+          .attr("stroke", v === "unsettled" ? "var(--c-unsettled-edge)" : "none").attr("stroke-width", 0.6);
+        marker(g, v, mx(l._disp.value), my, 40);
+      }
+    }
+  });
+  const bo = b.outcome || {};
+  d3.select(host).append("p").attr("class", "small").style("margin", "6px 0 0").html(
+    `<b>${esc(b.id)}</b>: ${verdictTag(b._verdict)}` + (bo.city_effect ? ` · composed ${effText(bo.city_effect)}` : "") +
+    (bo.settle ? `<br><span class="muted">${esc(bo.settle)}</span>` : ""));
+}
+function clip(t, w) {
+  let s = t.text();
+  while (s.length > 4 && t.node().getComputedTextLength() > w) { s = s.slice(0, -2); t.text(s + "…"); }
+}
+
+// ------------------------------------------------------------------ provenance
+function version(s) {
+  const bits = [];
+  if (s.rows_updated_at) bits.push(`rows updated ${s.rows_updated_at}`);
+  if (s.last_modified) bits.push(`Last-Modified ${s.last_modified}`);
+  if (s.dataset_version) bits.push(s.dataset_version);
+  if (s.version) bits.push(`version ${s.version}`);
+  if (s.api && s.kind === "sysgraph") bits.push(s.api);
+  return bits.join("; ") || "version not recorded";
+}
+function pubmed(id) { return `<a href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(id)}/">PMID ${esc(id)}</a>`; }
+
+function drawProv() {
+  const el = document.getElementById("prov");
+  const c = BYID[state.sel];
+  if (!c) { el.innerHTML = ""; return; }
+  const o = c.outcome || {};
+  const srcs = o.sources || [];
+  // time line
+  const ev = [{ t: ts(c.registered_at), label: "registered", cls: "reg" }];
+  srcs.forEach(s => { if (s.fetched) ev.push({ t: ts(s.fetched), label: "fetched " + srcName(s), cls: "fetch" }); });
+  if (o.decided_at) ev.push({ t: ts(o.decided_at), label: "outcome written", cls: "out" });
+  const early = srcs.filter(s => s.fetched && ts(s.fetched) != null && ts(c.registered_at) != null && ts(s.fetched) < ts(c.registered_at) && s.kind !== "sysgraph");
+  const hashMatch = o.registration_sha256 ? o.registration_sha256 === c.sha256 : null;
+
+  let html = `<div class="panel"><div class="figure" id="timeline"></div>
+    <dl class="kv small" style="margin-top:8px">
+      <dt>Registered</dt><dd>${esc(when(c.registered_at))} by ${esc(c.registrant || "–")}</dd>
+      <dt>Hash</dt><dd><span class="mono">${esc((c.sha256 || "").slice(0, 16))}…</span> ${c.hash_ok === false ? `<b style="color:var(--warn)">registration edited after hashing</b>` : "registration unchanged since hashing"}${hashMatch === false ? ` · <b style="color:var(--warn)">outcome cites a different hash</b>` : hashMatch ? " · outcome cites the same hash" : ""}</dd>
+      <dt>Outcome</dt><dd>${o.decided_at ? esc(when(o.decided_at)) : "not yet written"}</dd>
+      ${early.length ? `<dt>Order</dt><dd><b style="color:var(--warn)">${early.length} city dataset(s) were fetched before the registration.</b> The fetch time is the cache time, so this may be an exploratory look; read the notes.</dd>` : ""}
+    </dl></div>`;
+
+  html += `<h3>Datasets and queries</h3>`;
+  if (!srcs.length) html += `<p class="muted small">No sources recorded${c.outcome ? "" : " (no outcome yet)"}.</p>`;
+  else html += `<div class="scroll-x"><table class="data"><thead><tr><th>Source</th><th>Version</th><th>Query</th></tr></thead><tbody>` +
+    srcs.map(s => `<tr><td>${s.url ? `<a href="${esc(s.url)}">${esc(srcName(s))}</a>` : esc(srcName(s))}<br><span class="muted">${esc(s.kind || "")}${s.dataset && s.kind === "nyc-open-data" ? " · " + esc(s.dataset) : ""}${s.relationship_id ? " · " + esc(s.relationship_id) : ""}</span></td>
+      <td>${esc(version(s))}${s.fetched ? `<br><span class="muted">fetched ${esc(when(s.fetched))}</span>` : ""}</td>
+      <td>${s.query ? `<pre>${esc(typeof s.query === "string" ? s.query : JSON.stringify(s.query, null, 1))}</pre>` : `<span class="muted">${esc(s.url ? "whole file" : "–")}</span>`}</td></tr>`).join("") +
+    `</tbody></table></div>`;
+
+  html += `<h3>Graph findings cited at registration</h3>`;
+  const ge = c.graph_evidence || [];
+  if (!ge.length) html += `<p class="muted small">None cited${c.kind === "bridge" ? "; a bridge rests on its links" : ""}.</p>`;
+  else html += `<ul class="plain small">` + ge.map(e => {
+    const id = e.relationship_id || e.association_id;
+    const head = [id ? `<span class="mono">${esc(id)}</span>` : "", Array.isArray(e.concepts) ? esc(e.concepts.join(" — ")) : "",
+      e.n_findings != null ? `${esc(e.n_findings)} findings` : "", e.n_studies != null ? `${esc(e.n_studies)} studies` : "",
+      e.direction ? `direction ${esc(e.direction)}` : ""].filter(Boolean).join(" · ");
+    const pm = (e.pubmed_ids || []).map(pubmed).join(", ");
+    const text = e.summary || e.note || "";
+    const extra = e.findings ? `<br><span class="muted">${esc(Array.isArray(e.findings) ? e.findings.length + " findings listed" : String(e.findings))}</span>` : "";
+    return `<li>${head}${text ? `<br>${esc(text)}` : ""}${pm ? `<br>${pm}` : ""}${extra}</li>`;
+  }).join("") + `</ul>`;
+
+  const lit = c.literature || [];
+  if (lit.length) {
+    html += `<h3>Literature beyond the graph</h3><ul class="plain small">` + lit.map(l =>
+      `<li>${esc(l.citation || "")}${l.doi ? ` <a href="https://doi.org/${esc(l.doi)}">doi:${esc(l.doi)}</a>` : ""}${l.url ? ` <a href="${esc(l.url)}">link</a>` : ""}${l.finding ? `<br><span class="muted">${esc(l.finding)}</span>` : ""}</li>`).join("") + `</ul>`;
+  }
+  html += `<h3>Plan as registered</h3><p class="small" style="max-width:80ch">${esc(typeof c.plan === "string" ? c.plan : JSON.stringify(c.plan))}</p>`;
+  el.innerHTML = html;
+
+  // draw timeline
+  const host = document.getElementById("timeline");
+  const pts = ev.filter(e => e.t != null).sort((a, b) => a.t - b.t);
+  if (!pts.length) return;
+  const W = host.clientWidth || 600, H = 30 + pts.length * 16;
+  const x = d3.scaleTime().domain(d3.extent(pts, e => e.t)).range([20, W - 20]);
+  if (pts.length === 1 || pts[0].t === pts[pts.length - 1].t) x.domain([pts[0].t - 36e5, pts[0].t + 36e5]);
+  const svg = d3.select(host).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("width", W).attr("height", H);
+  svg.append("line").attr("x1", 20).attr("x2", W - 20).attr("y1", 12).attr("y2", 12).attr("stroke", "var(--rule)");
+  pts.forEach((e, i) => {
+    const xx = x(e.t), col = e.cls === "reg" ? "var(--ink)" : e.cls === "out" ? vcol(c._verdict) : "var(--muted)";
+    svg.append("circle").attr("cx", xx).attr("cy", 12).attr("r", e.cls === "fetch" ? 3.5 : 5.5).attr("fill", col);
+    svg.append("line").attr("x1", xx).attr("x2", xx).attr("y1", 16).attr("y2", 22 + i * 16).attr("stroke", "var(--grid)");
+    svg.append("text").attr("x", xx).attr("y", 26 + i * 16).attr("font-size", 11.5).attr("fill", e.cls === "fetch" ? "var(--muted)" : "var(--ink)")
+      .attr("text-anchor", xx > W * 0.6 ? "end" : "start").attr("dx", xx > W * 0.6 ? -3 : 3)
+      .text(`${e.label}, ${new Date(e.t).toLocaleString(undefined, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}`);
+  });
+}
+
+// ------------------------------------------------------------------ research-needed map
+const RKINDS = [
+  ["Individual-level data", /individual|patient|person-level|household|health record|cohort|home address|survey/i],
+  ["Sensor or monitoring data", /sensor|monitor|station|measur|meter|lidar|thermal/i],
+  ["Imagery", /aerial|satellite|imag|photograph|naip|landsat/i],
+  ["Instrument or natural experiment", /instrument|natural experiment|discontinuit|lottery|policy change|difference-in-diff|synthetic control|random/i],
+  ["Longitudinal design", /longitudinal|panel|time series|over time|years|repeated|season|follow/i],
+  ["Within-unit design", /case-crossover|within|fixed effect|self-controlled/i],
+  ["Finer resolution", /block|street|hourly|resolution|zip|segment|daily|location|species|tract/i],
+  ["Linking datasets", /join|link|match|merge|crosswalk/i],
+];
+function kindsOf(text) {
+  const k = RKINDS.filter(([, re]) => re.test(text)).map(([n]) => n);
+  return k.length ? k : ["Other"];
+}
+const PRI = { high: 3, medium: 2, low: 1 };
+
+function drawResearch() {
+  const entries = [];
+  DATA.forEach(c => {
+    const o = c.outcome || {};
+    (o.research_needed || []).forEach(r => {
+      const rr = typeof r === "string" ? { question: r } : r;
+      const text = [rr.question, rr.data, rr.design].filter(Boolean).join(" ");
+      (rr.kind ? [].concat(rr.kind) : kindsOf(text)).forEach(k => entries.push({ claim: c, kind: k, type: "need", r: rr }));
+    });
+    if (o.settle) kindsOf(o.settle).forEach(k => entries.push({ claim: c, kind: k, type: "settle", r: { question: o.settle } }));
+  });
+  const known = [...RKINDS.map(d => d[0]), "Other"];
+  const kinds = [...known, ...new Set(entries.map(e => e.kind).filter(k => !known.includes(k)))].filter(k => entries.some(e => e.kind === k));
+  const claims = DATA.filter(c => entries.some(e => e.claim === c));
+  const m = document.getElementById("matrix");
+  const list = document.getElementById("research-list");
+  if (!entries.length) { m.innerHTML = ""; list.innerHTML = `<p class="muted">No research-needed entries yet. They come from outcomes.</p>`; return; }
+  m.innerHTML = `<thead><tr><th></th>${kinds.map(k => `<th scope="col">${esc(k)}</th>`).join("")}</tr></thead><tbody>` +
+    claims.map(c => `<tr><th scope="row" title="${esc(c.statement)}">${esc(c.id)}</th>` + kinds.map(k => {
+      const es = entries.filter(e => e.claim === c && e.kind === k);
+      if (!es.length) return `<td></td>`;
+      const needs = es.filter(e => e.type === "need");
+      if (!needs.length) return `<td class="settle-only" data-c="${esc(c.id)}" data-k="${esc(k)}">s</td>`;
+      const p = d3.max(needs, e => PRI[String(e.r.priority || "").toLowerCase()] || 1);
+      return `<td class="p-${p === 3 ? "high" : p === 2 ? "medium" : "low"}" data-c="${esc(c.id)}" data-k="${esc(k)}">${needs.length}</td>`;
+    }).join("") + `</tr>`).join("") + `</tbody>`;
+  m.querySelectorAll("td[data-c]").forEach(td => {
+    td.addEventListener("mousemove", ev => {
+      const es = entries.filter(e => e.claim.id === td.dataset.c && e.kind === td.dataset.k);
+      showTip(ev, `<b>${esc(td.dataset.c)}</b> · ${esc(td.dataset.k)}<br>` + es.map(e =>
+        `${e.type === "settle" ? "Settle: " : ""}${esc(e.r.question || "")}${e.r.data ? `<br><span class="muted">data: ${esc(e.r.data)}</span>` : ""}${e.r.design ? `<br><span class="muted">design: ${esc(e.r.design)}</span>` : ""}${e.r.priority ? `<br><span class="muted">priority: ${esc(e.r.priority)}</span>` : ""}`).join("<br><br>"));
+    });
+    td.addEventListener("mouseleave", hideTip);
+  });
+  list.innerHTML = `<p class="small muted" style="margin:8px 0 0">Cell shading: <span style="display:inline-block;width:12px;height:12px;background:var(--ink);border-radius:2px;vertical-align:-2px"></span> high priority, <span style="display:inline-block;width:12px;height:12px;background:var(--muted);border-radius:2px;vertical-align:-2px"></span> medium, <span style="display:inline-block;width:12px;height:12px;background:var(--rule);border-radius:2px;vertical-align:-2px"></span> low or unstated, outlined: settle statement only.</p>` +
+    kinds.map(k => {
+      const es = entries.filter(e => e.kind === k);
+      return `<h3>${esc(k)}</h3><ul class="plain small">` + es.map(e =>
+        `<li>${e.type === "settle" ? "<span class='muted'>Settle:</span> " : ""}${esc(e.r.question || "")}` +
+        `${e.r.data ? ` <span class="muted">Data:</span> ${esc(e.r.data)}.` : ""}${e.r.design ? ` <span class="muted">Design:</span> ${esc(e.r.design)}.` : ""}` +
+        ` <span class="muted">(${esc(e.claim.id)}${e.r.priority ? ", " + esc(e.r.priority) : ""})</span></li>`).join("") + `</ul>`;
+    }).join("");
+}
+
+// ------------------------------------------------------------------ table
+function drawTable() {
+  const t = document.getElementById("claims-table");
+  t.innerHTML = `<thead><tr><th>Claim</th><th>Kind</th><th>Verdict</th><th>Agreement (interval)</th><th>City estimate</th><th>Prior</th><th>Scored</th><th>Registered</th><th>Decided</th><th>Verdict note</th><th>Revision</th></tr></thead><tbody>` +
+    DATA.map(c => {
+      const d = c._disp, o = c.outcome || {};
+      return `<tr><td><a href="#detail-section" data-id="${esc(c.id)}">${esc(c.id)}</a></td><td>${esc(c.kind)}</td><td>${verdictTag(c._verdict)}</td>` +
+        `<td class="num">${d ? `${fmt(d.value)}${d.lo != null ? ` (${fmt(d.lo)} to ${fmt(d.hi)})` : ""}` : "–"}</td>` +
+        `<td>${o.city_effect ? effText(o.city_effect) : "–"}</td><td class="num">${c.prior != null ? fmt(c.prior, 2) : "–"}</td>` +
+        `<td>${esc(scoreWord(c) || "–")}</td><td class="num">${esc(when(c.registered_at))}</td><td class="num">${o.decided_at ? esc(when(o.decided_at)) : "–"}</td>` +
+        `<td class="small">${esc(o.verdict_note || "–")}</td><td class="small">${esc(revText(o) || "–")}</td></tr>`;
+    }).join("") + `</tbody>`;
+  t.querySelectorAll("a[data-id]").forEach(a => a.addEventListener("click", () => { state.sel = a.dataset.id; render(); }));
+}
+
+// ------------------------------------------------------------------ wiring
+function render() {
+  drawStrip(); drawHead(); drawPaired(); drawBridge(); drawProv();
+}
+function renderAll() { load(); legend(); render(); drawResearch(); drawTable(); }
+
+// The invented fixture is a display test. Its switch is shown only when the URL has ?fixture.
+if (params.has("fixture")) { document.getElementById("source-label").style.display = ""; document.getElementById("source-switch").style.display = ""; }
+document.querySelectorAll("#source-switch button").forEach(b => b.addEventListener("click", () => { state.src = b.dataset.src; state.sel = null; renderAll(); }));
+document.querySelectorAll("#sort-switch button").forEach(b => b.addEventListener("click", () => {
+  state.sort = b.dataset.sort; d3.selectAll("#sort-switch button").attr("aria-pressed", function () { return this.dataset.sort === state.sort; }); drawStrip();
+}));
+document.getElementById("claim-select").addEventListener("change", e => { state.sel = e.target.value; render(); });
+document.getElementById("theme").addEventListener("click", () => {
+  const r = document.documentElement, dark = matchMedia("(prefers-color-scheme: dark)").matches;
+  const cur = r.dataset.theme || (dark ? "dark" : "light");
+  r.dataset.theme = cur === "dark" ? "light" : "dark";
+  try { localStorage.setItem("concord-theme", r.dataset.theme); } catch (e) {}
+});
+try { const t = localStorage.getItem("concord-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(render, 150); });
+renderAll();
+})();
+</script>
+</body>
+</html>

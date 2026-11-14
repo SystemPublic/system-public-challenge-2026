@@ -1,0 +1,54 @@
+{
+ "id": "stalled-flood-zone-starts",
+ "kind": "confirmation",
+ "statement": "New-building jobs on lots in the 2015 preliminary 1%-annual-chance floodplain fail to reach a certificate of occupancy within 36 months of their first foundation permit more often than jobs elsewhere in the same borough.",
+ "graph_evidence": [
+  {
+   "concepts": [
+    "vacant lots"
+   ],
+   "n_findings": null,
+   "n_studies": null,
+   "direction": "n/a",
+   "summary": "The graph has no finding on flood rules and construction duration. Its vacant-land findings (PMIDs 23814668, 36716893) concern the consequence of land left vacant. The repo's tidal-flooding claims (further-tidal-flooding-*) concern flooding, not building.",
+   "pubmed_ids": [
+    "23814668",
+    "36716893"
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "NYC Building Code Appendix G (flood-resistant construction), amended 2013 after Hurricane Sandy",
+   "doi": null,
+   "finding": "Buildings in the 1% floodplain must elevate or flood-proof to the design flood elevation plus freeboard, adding design review and cost."
+  },
+  {
+   "citation": "NYC DCP, Zoning for Coastal Flood Resiliency (2021)",
+   "doi": null,
+   "finding": "Text amendment allowing height to be measured from the flood elevation; framed as removing a zoning obstacle to building in the floodplain."
+  },
+  {
+   "citation": "FEMA preliminary FIRM 2015 for NYC (used for building code since 2015)",
+   "doi": null,
+   "finding": "The 2015 preliminary maps enlarged the 1% floodplain; Red Hook lies wholly within it."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Mantel-Haenszel borough-stratified risk difference, flood minus non-flood, of the 36-month no-CO rate: +0.04 to +0.15.",
+  "support_if": "lower 95% bootstrap bound of the stratified risk difference > 0",
+  "refute_if": "upper 95% bootstrap bound of the stratified risk difference < 0"
+ },
+ "plan": "Script analyses/stalled/flood_predictor.py, mode 'run', committed with this registration. 3,410 foundation starts in the windows 15 Dec-14 Jun of 2017-2023 (from vesting_cohorts.py); 3,276 match current PLUTO, 401 of them in the 2015 preliminary floodplain (BK 121, BX 19, MN 30, QN 198, SI 33). Outcome stalled_1096 from vesting_exploratory.py (no CO by job number or BBL within 1,096 days). Bootstrap 2,000 draws, seed 20261113, within borough x flood strata. Power check (rule 8): with a rate near 0.38 the standard error is about 0.026, so a true difference of 0.10 gives z_null about 3.9 (D = 15); the test discriminates for differences above about 0.055.",
+ "alternatives": [
+  "Neighbourhood market: floodplain lots in Queens and Brooklyn are in Rockaway, Coney Island, Red Hook and Gowanus, where demand differs (borough stratification only partly removes it)",
+  "Project size: large waterfront projects take longer than 36 months whether or not flood rules slow them",
+  "The current PLUTO flag describes the lot today; lot changes after the permit can misplace a job",
+  "Selection: the flood rules may deter weak projects before foundation, leaving stronger ones (biases toward no difference)"
+ ],
+ "prior": 0.35,
+ "registrant": "claude-opus (stalled-construction agent), 13 Nov 2026",
+ "registered_at": "2026-11-13T11:59:11-0500",
+ "sha256": "2904af8de8b282f1b3508d91dcd41b6ea9282ca7792838dc3e718b16b9de0f44"
+}

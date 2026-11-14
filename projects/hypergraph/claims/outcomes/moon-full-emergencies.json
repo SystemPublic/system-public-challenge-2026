@@ -1,0 +1,225 @@
+{
+ "id": "moon-full-emergencies",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "rate ratio of injury crashes in the 3-day full-moon window, New York City 2014-2025",
+  "estimate": 1.0022125191777629,
+  "lo": 0.9866413936437485,
+  "hi": 1.018029387442579,
+  "scale": "rate ratio",
+  "null": 1,
+  "n": 4383
+ },
+ "graph_effect": {
+  "label": "relative risk of emergency transport for road traffic crashes on full-moon nights (PMID 29990928)",
+  "estimate": 1.042,
+  "lo": 1.021,
+  "hi": 1.063,
+  "scale": "relative risk",
+  "null": 1
+ },
+ "all_effects": {
+  "shootings": {
+   "full_moon": {
+    "x": "F",
+    "n_days": 7305,
+    "n_exposed_days": 741,
+    "events": 23988.0,
+    "rr": 1.006595212225992,
+    "lo": 0.9659753644932794,
+    "hi": 1.048923149098943,
+    "lo983": 0.9572192622434904,
+    "hi983": 1.0585181068144351,
+    "se_log": 0.02101595079378678
+   },
+   "placebo_23_day": {
+    "x": "P",
+    "n_days": 7305,
+    "n_exposed_days": 954,
+    "events": 23988.0,
+    "rr": 1.0076607578276058,
+    "lo": 0.9688842861250712,
+    "hi": 1.0479891328680622,
+    "lo983": 0.9605155425312111,
+    "hi983": 1.0571200130608098,
+    "se_log": 0.020021619542259776
+   },
+   "full_moon_day_only": {
+    "x": "F0",
+    "n_days": 7305,
+    "n_exposed_days": 247,
+    "events": 23988.0,
+    "rr": 1.0326535470951104,
+    "lo": 0.9574606148754817,
+    "hi": 1.1137516590870904,
+    "lo983": 0.941591378938289,
+    "hi983": 1.1325224212763343,
+    "se_log": 0.03857338264825008
+   },
+   "bounds": [
+    0.93,
+    1.07
+   ],
+   "first": "2006-01-01",
+   "last": "2025-12-31"
+  },
+  "ems": {
+   "full_moon": {
+    "x": "F",
+    "n_days": 3530,
+    "n_exposed_days": 360,
+    "events": 14947095.0,
+    "rr": 0.9970796231817651,
+    "lo": 0.990689296723351,
+    "hi": 1.003511169700172,
+    "lo983": 0.9892821449294037,
+    "hi983": 1.0049385608139483,
+    "se_log": 0.0032805038381743356
+   },
+   "placebo_23_day": {
+    "x": "P",
+    "n_days": 3530,
+    "n_exposed_days": 459,
+    "events": 14947095.0,
+    "rr": 0.9977510660550547,
+    "lo": 0.9924636838739391,
+    "hi": 1.0030666169347167,
+    "lo983": 0.9912986063751553,
+    "hi983": 1.004245525426725,
+    "se_log": 0.0027109636159652964
+   },
+   "full_moon_day_only": {
+    "x": "F0",
+    "n_days": 3530,
+    "n_exposed_days": 120,
+    "events": 14947095.0,
+    "rr": 0.9972659179247344,
+    "lo": 0.9897455012489559,
+    "hi": 1.0048434772365804,
+    "lo983": 0.988090656427151,
+    "hi983": 1.00652637952314,
+    "se_log": 0.003862117825863971
+   },
+   "bounds": [
+    0.98,
+    1.02
+   ],
+   "first": "2017-01-01",
+   "last": "2026-08-31"
+  },
+  "injury_crashes": {
+   "full_moon": {
+    "x": "F",
+    "n_days": 4383,
+    "n_exposed_days": 444,
+    "events": 437376.0,
+    "rr": 1.0022125191777629,
+    "lo": 0.9866413936437485,
+    "hi": 1.018029387442579,
+    "lo983": 0.983231920225586,
+    "hi983": 1.0215595252096659,
+    "se_log": 0.007989284749855599
+   },
+   "placebo_23_day": {
+    "x": "P",
+    "n_days": 4383,
+    "n_exposed_days": 573,
+    "events": 437376.0,
+    "rr": 1.0016751695976942,
+    "lo": 0.9875828503916154,
+    "hi": 1.01596857923434,
+    "lo983": 0.9844943644429532,
+    "hi983": 1.019155803859057,
+    "se_log": 0.007229038274832344
+   },
+   "full_moon_day_only": {
+    "x": "F0",
+    "n_days": 4383,
+    "n_exposed_days": 148,
+    "events": 437376.0,
+    "rr": 0.9796919470022337,
+    "lo": 0.9568204501462269,
+    "hi": 1.0031101560113456,
+    "lo983": 0.9518368301704856,
+    "hi983": 1.0083622324733077,
+    "se_log": 0.012052479634143604
+   },
+   "bounds": [
+    0.97,
+    1.03
+   ],
+   "first": "2014-01-01",
+   "last": "2025-12-31"
+  }
+ },
+ "sources": [
+  {
+   "kind": "derived",
+   "path": "data/derived/heat/shootings_daily.csv",
+   "note": "NYPD shooting incidents by day with NOAA Central Park weather, built for heat-shootings"
+  },
+  {
+   "kind": "derived",
+   "path": "data/derived/health_gaps/ems_daily.csv",
+   "note": "EMS Incident Dispatch Data (76xm-jjuj) by day; source records in data/derived/health_gaps/ems_daily_sources.json"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "note": "copy fetched for the turn-restriction claims, crashes to 10 November 2026; held outside the repository"
+  },
+  {
+   "kind": "other",
+   "name": "PyEphem full-moon instants",
+   "note": "ephem.next_full_moon, converted to New York dates"
+  }
+ ],
+ "prediction_scored": "hit: shootings 1.007 (0.966 to 1.049), ambulance incidents 0.997 (0.991 to 1.004), injury crashes 1.002 (0.987 to 1.018); each 95% interval is inside its registered bound and inside the predicted range except at the edges of the interval.",
+ "settle": "Hour-of-day data would test the one remaining path, moonlight at night: night-time crashes and shootings on clear full-moon nights against cloudy ones.",
+ "research_needed": [
+  {
+   "question": "Do night-time crashes rise on clear full-moon nights?",
+   "data": "crash times (h9gi-nx95) and hourly cloud cover",
+   "design": "full moon by cloud cover interaction, night hours only",
+   "priority": "low"
+  }
+ ],
+ "figures": [],
+ "notes": "The 23-day placebo gave shootings 1.008 (0.969 to 1.048), ambulance incidents 0.998 (0.992 to 1.003) and injury crashes 1.002 (0.988 to 1.016), so the full-moon estimates are no different from a window with no meaning. The graph's 1.042 for crash transports in Japan (PMID 29990928) is for full-moon nights. Spread over three whole days it would be about 1.004, which the injury-crash interval does not exclude, so the two do not conflict. The graph's homicide finding for Finland (0.85, PMID 30647032) is outside the shooting interval. Secondary, deciding nothing: the full-moon day alone gave shootings 1.033 (0.957 to 1.114) and injury crashes 0.980 (0.957 to 1.003). Referee, 14 November: the numbers reproduce and stay inside the bounds under quasi-Poisson and negative-binomial errors and 5- and 7-day windows. Rule 11 read literally would give unsettled, since the placebo also meets support_if; rule 13 records how rule 11 applies to a prediction of no effect. Exploratory and unexplained: a 3-day window centred 4 days before the full moon gives 0.914 for shootings (z = -3.9), in both decades; it is outside the registered window and decides nothing.",
+ "registration_sha256": "e9097b4a39e764212a31c6646953e0cf2d31fdeae07451bebe7dea84a2c598bb",
+ "decided_at": "2026-11-14T07:12:57-0500",
+ "stance": {
+  "value": 0.929,
+  "lo": 0.729,
+  "hi": 1
+ },
+ "critique": "critique/referee_2026-11-14_moon_inside.md",
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "rate ratio of injury crashes in the 3-day full-moon window, New York City 2014-2025",
+    "estimate": 1.0022125191777629,
+    "lo": 0.9866413936437485,
+    "hi": 1.018029387442579,
+    "scale": "rate ratio",
+    "null": 1,
+    "n": 4383
+   },
+   "stance": {
+    "value": 0.929,
+    "lo": 0.729,
+    "hi": 1
+   },
+   "decided_at": "2026-11-14T07:12:57-0500",
+   "prediction_scored": "hit: shootings 1.007 (0.966 to 1.049), ambulance incidents 0.997 (0.991 to 1.004), injury crashes 1.002 (0.987 to 1.018); each 95% interval is inside its registered bound and inside the predicted range except at the edges of the interval."
+  }
+ ],
+ "revision": {
+  "reason": "Referee corrected the comparison with the Japanese crash finding and raised rule 11; verdict unchanged.",
+  "critique": "critique/referee_2026-11-14_moon_inside.md",
+  "revised_at": "2026-11-14T07:21:15-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

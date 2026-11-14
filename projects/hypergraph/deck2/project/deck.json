@@ -1,0 +1,58 @@
+{
+ "v": 5,
+ "lists": "css",
+ "format": {
+  "v": 1,
+  "shared": [
+   "project/deck.css"
+  ]
+ },
+ "faces": {
+  "source-serif-4": {
+   "family": "Source Serif 4",
+   "href": "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400..700&family=IBM+Plex+Sans:wght@400;600&display=swap"
+  },
+  "ibm-plex-sans": {
+   "family": "IBM Plex Sans",
+   "href": "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400..700&family=IBM+Plex+Sans:wght@400;600&display=swap"
+  }
+ },
+ "designSystems": [],
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-14T13:00:00Z"
+ },
+ "title": "NYC Concordance: evidence that changes",
+ "cover": "stripmoon",
+ "order": [
+  "stripmoon",
+  "cover",
+  "edgefield",
+  "stripheat",
+  "striprivals",
+  "stripgenerated",
+  "stripcameras",
+  "record",
+  "use",
+  "requests",
+  "close",
+  "stripmedicine",
+  "stripair",
+  "grammar",
+  "striprestaurants",
+  "edgepanel",
+  "review",
+  "method",
+  "drift"
+ ],
+ "sections": {
+  "s1": {
+   "description": "The five-minute talk: the full moon and a made-up moon as the example, then the procedure on heat and shootings, a strip generated from the Underlay, and the record",
+   "start": "stripmoon"
+  },
+  "s2": {
+   "description": "Backup: a conjecture set aside, a new study, the drawing rules, the restaurant strip, one edge in detail, and the method's record",
+   "start": "stripmedicine"
+  }
+ }
+}

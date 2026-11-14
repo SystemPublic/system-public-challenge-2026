@@ -1,0 +1,190 @@
+{
+ "id": "construction-aerial-triangulation",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "share of 48 sampled NB jobs (first permit 2018-2020) with visible change of the lot, NAIP 2017 to 2022",
+  "estimate": 0.688,
+  "lo": 0.55,
+  "hi": 0.8,
+  "scale": "proportion (Wilson 95% interval, n=48)",
+  "null": 0,
+  "n": 48
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "i38t-6if2",
+   "name": "TAX_LOT_POLYGON",
+   "url": "https://data.cityofnewyork.us/d/i38t-6if2",
+   "rows_updated_at": "2026-11-01T20:19:52Z",
+   "query": {
+    "$select": "bbl,the_geom",
+    "$where": "bbl in ('1006937505','1013020025','1017260036','3004070052','3013610032','3014817501','3019910001','3032700031','3034300050','3041420032','3041530025','3052150070','3065150020','3074550101','3087620042','4004750019','4008020027','4013190021','4017050001','4033217507','4037710004','4038040164','4039420004','4039670032','4045090080','4046010058','4047980023','4050147502','4051810126','4054090014','4058720098','4090210011','4096230033','4098820028','4107300054','4126740010','4140050119','5008010226','5008360012','5011330117','5017600035','5031680031','5040930012','5041970010','5054030040','5067880075','5069930187','5077100498')",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:33:04-0500",
+   "n_rows": 44
+  },
+  {
+   "kind": "other",
+   "name": "USDA NAIP via Microsoft Planetary Computer STAC (collection 'naip')",
+   "url": "https://planetarycomputer.microsoft.com/dataset/naip",
+   "years": [
+    2017,
+    2022
+   ],
+   "items": [
+    "ny_m_4007309_se_18_060_20220719",
+    "ny_m_4007309_se_18_1_20170809_20171207",
+    "ny_m_4007309_sw_18_060_20220719",
+    "ny_m_4007309_sw_18_1_20170910_20171207",
+    "ny_m_4007310_se_18_060_20220915",
+    "ny_m_4007310_se_18_1_20170809_20171207",
+    "ny_m_4007310_sw_18_060_20220915",
+    "ny_m_4007310_sw_18_1_20170809_20171207",
+    "ny_m_4007317_ne_18_060_20220719",
+    "ny_m_4007317_ne_18_1_20170809_20171207",
+    "ny_m_4007317_se_18_060_20220719",
+    "ny_m_4007317_se_18_1_20170809_20171207",
+    "ny_m_4007317_sw_18_060_20220719",
+    "ny_m_4007317_sw_18_1_20170809_20171207",
+    "ny_m_4007318_ne_18_060_20220915",
+    "ny_m_4007318_ne_18_1_20170809_20171207",
+    "ny_m_4007318_nw_18_060_20220915",
+    "ny_m_4007318_nw_18_1_20170809_20171207",
+    "ny_m_4007318_se_18_060_20220915",
+    "ny_m_4007318_se_18_1_20170809_20171207",
+    "ny_m_4007318_sw_18_060_20220915",
+    "ny_m_4007318_sw_18_1_20170809_20171207",
+    "ny_m_4007319_nw_18_060_20220915",
+    "ny_m_4007319_nw_18_1_20170809_20171207",
+    "ny_m_4007325_nw_18_060_20220719",
+    "ny_m_4007325_nw_18_1_20170809_20171207",
+    "ny_m_4007423_se_18_060_20220915",
+    "ny_m_4007423_se_18_1_20170826_20171207",
+    "ny_m_4007424_ne_18_060_20220719",
+    "ny_m_4007424_ne_18_1_20170826_20171207",
+    "ny_m_4007431_nw_18_060_20221007",
+    "ny_m_4007431_nw_18_1_20170826_20171207",
+    "ny_m_4007431_se_18_060_20220915",
+    "ny_m_4007431_se_18_1_20170826_20171207",
+    "ny_m_4007431_sw_18_060_20221007",
+    "ny_m_4007431_sw_18_1_20170826_20171207",
+    "ny_m_4007432_nw_18_060_20220915",
+    "ny_m_4007432_nw_18_1_20170826_20171207",
+    "ny_m_4007432_sw_18_060_20220915",
+    "ny_m_4007432_sw_18_1_20170826_20171207"
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ipu4-2q9a",
+   "name": "DOB Permit Issuance",
+   "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+   "rows_updated_at": "2026-11-12T00:36:38Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job__,job_doc___,permit_type,filing_status,permit_status,issuance_date,expiration_date,bbl,borough,residential,gis_latitude,gis_longitude",
+    "$where": "job_type='NB'"
+   },
+   "fetched": "2026-11-12T15:26:51-0500",
+   "n_rows": 572035
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "bs8b-p36w",
+   "name": "DOB Certificate Of Occupancy",
+   "url": "https://data.cityofnewyork.us/d/bs8b-p36w",
+   "rows_updated_at": "2026-11-11T21:35:47Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_number,job_type,c_o_issue_date,issue_type,bbl,pr_dwelling_unit,ex_dwelling_unit",
+    "$where": "job_type='NB'"
+   },
+   "fetched": "2026-11-12T15:20:43-0500",
+   "n_rows": 53531
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "pkdm-hqz6",
+   "name": "DOB NOW: Certificate of Occupancy",
+   "url": "https://data.cityofnewyork.us/d/pkdm-hqz6",
+   "rows_updated_at": "2026-11-11T21:01:41Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_filing_name,job_type,c_of_o_issuance_date,c_of_o_filing_type,c_of_o_status,number_of_dwelling_units,bbl"
+   },
+   "fetched": "2026-11-12T15:21:05-0500",
+   "n_rows": 84095
+  },
+  {
+   "kind": "sysgraph",
+   "api_version": "v1.0",
+   "dataset_version": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "queries": "variable and concept search for 13 terms; relationships of concepts COEFxSZVXO (construction), jCrN64TC75 (building), IFcQ3j86qe (housing); associations of 8 variables",
+   "derived": "data/derived/construction/graph_search.json",
+   "fetched": "2026-11-12"
+  }
+ ],
+ "prediction_scored": "partial. Visible change in 33 of 48 jobs (0.69; predicted 0.65-0.90) and in 33 of 34 pairs that could be judged. Jobs changed on the aerial without a CO by the image date: 11 of 48 (0.23; predicted 0.10-0.35). No job with a CO was judged unchanged (0.00; predicted under 0.10), but 11 jobs with a CO were 'unclear', so the share 'CO but not visibly changed' is 0.23 when unclear counts as not changed, above the 0.15 support bound and below the 0.25 refute bound. Cohen's kappa between change and CO by image date was -0.07 (decided pairs only: 0.11), below the predicted 0.2-0.7. Kappa is low because nearly every readable lot changed, so the design has almost no unchanged cases to agree on; it cannot test agreement. The pixel-difference score did not separate changed from other pairs (AUC 0.45 against the visual judgement), because the 2017 New York flight is 1.0 m and blurred, so only the visual judgement is reported as a measure.",
+ "settle": "A sample that includes many jobs without a CO (stratify on CO status), and a later flight (2024 or 2025 at 0.3-0.6 m when it covers New York), would test agreement. The three sampled jobs with no CO in November 2026 that show a new building in 2022 (#17, #20, #35) need a street check: built and occupied without a CO, or unfinished.",
+ "research_needed": [
+  {
+   "question": "Among NB jobs with no CO after five years, what share show a finished building on recent aerials?",
+   "data": "NAIP 2022/2024, NYC orthoimagery (2018, 2022, 2024 at 0.15 m from NYC OTI), nb_jobs.csv.gz",
+   "design": "stratified random sample of no-CO jobs, blind visual judgement by two raters",
+   "priority": "high"
+  },
+  {
+   "question": "Can building-footprint change (5zhs-2jue construction_year, last_edited_date) replace aerial judgement at scale?",
+   "data": "NYC building footprints and their history",
+   "design": "compare footprint edits with CO dates for all NB jobs",
+   "priority": "medium"
+  },
+  {
+   "question": "Should the graph hold findings on housing supply (permits, starts, completions, lapse)? It now holds none.",
+   "data": "Census New Residential Construction; NYC DCP Housing Database; Furman Center CoreData",
+   "design": "extraction of urban-economics and planning literature into the graph",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/construction/aerial_grid.png"
+ ],
+ "notes": "Method: 48 NB jobs drawn at random (seed 20261112) from jobs with a first NB permit in 2018-2020 (all in the legacy system, since DOB NOW NB filings begin in 2021). Lot outlines came from the DOF tax-lot polygons (i38t-6if2), because PLUTO's geom column is empty on Open Data; four lots without a polygon used a 24 m box at the permit's coordinates, and three of these fell on a street, so they were unreadable. NAIP New York flights of Aug-Sep 2017 (1.0 m) and Jul-Oct 2022 (0.6 m) were resampled to 0.5 m. I judged each pair on sheets that showed only an index number, and committed the judgements (commit 7755daf) before joining CO status. Of the 5 sampled jobs with no CO in November 2026, three show a new building by 2022, one is unclear and one unchanged. Aerial imagery: USDA Farm Service Agency, National Agriculture Imagery Program (NAIP), 2017 and 2022. Graph evidence check (12 Nov 2026, after the coordinator's audit): association aFGrNWb1i5 (vacant housing demolitions and 'change in crime', PMID 36228876), cited in the registration, is NOT in the Dataverse v2.1 CSV. The abstract (Kvik et al., Prev Med 2022) shows it is mis-extracted: the -0.068 (95% CI -0.119 to -0.018) is the change in total emergency-department visits per 1,000 people, and demolitions showed no significant change in crime. It should be dropped; it bore on context only, not on any test here. Of the other graph rows cited, UXzKbLS899 (population growth and construction land, Chongqing) is in the CSV. The vacant-lot and renovation rows looked at during the search (3rfxckzPtm, R0ctB4TYK1, CVCABCQUUe, 168lUaKwYN, 20AOg9kwfR, IfVJnDqqH0) are not in the CSV. The graph holds no finding on permits, permit-to-completion ratios, lags or permit lapse, so the research side of every construction claim comes from the literature.",
+ "registration_sha256": "b42be119e44d67ed12a7a931fdb8041c865bbcf97b3332de4bb3df303a9738e6",
+ "decided_at": "2026-11-12T15:44:27-0500",
+ "stance": null,
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "share of 48 sampled NB jobs (first permit 2018-2020) with visible change of the lot, NAIP 2017 to 2022",
+    "estimate": 0.688,
+    "lo": 0.55,
+    "hi": 0.8,
+    "scale": "proportion (Wilson 95% interval, n=48)",
+    "null": 0,
+    "n": 48
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 10.79
+   },
+   "decided_at": "2026-11-12T15:44:27-0500",
+   "prediction_scored": "partial. Visible change in 33 of 48 jobs (0.69; predicted 0.65-0.90) and in 33 of 34 pairs that could be judged. Jobs changed on the aerial without a CO by the image date: 11 of 48 (0.23; predicted 0.10-0.35). No job with a CO was judged unchanged (0.00; predicted under 0.10), but 11 jobs with a CO were 'unclear', so the share 'CO but not visibly changed' is 0.23 when unclear counts as not changed, above the 0.15 support bound and below the 0.25 refute bound. Cohen's kappa between change and CO by image date was -0.07 (decided pairs only: 0.11), below the predicted 0.2-0.7. Kappa is low because nearly every readable lot changed, so the design has almost no unchanged cases to agree on; it cannot test agreement. The pixel-difference score did not separate changed from other pairs (AUC 0.45 against the visual judgement), because the 2017 New York flight is 1.0 m and blurred, so only the visual judgement is reported as a measure."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: stance computed against null 0 for a proportion is meaningless.",
+  "critique": "critique/construction-aerial-triangulation.md",
+  "revised_at": "2026-11-12T15:55:02-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

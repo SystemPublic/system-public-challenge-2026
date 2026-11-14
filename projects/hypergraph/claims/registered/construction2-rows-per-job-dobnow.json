@@ -1,0 +1,46 @@
+{
+ "id": "construction2-rows-per-job-dobnow",
+ "kind": "confirmation",
+ "supersedes": null,
+ "replicates": "construction-permit-funnel (exploratory lifetime rows per job by cohort, 7.0-10.3 for 2010-2019)",
+ "statement": "In DOB NOW, each new-building job first permitted in 2021-2022 carries several work-permit rows by November 2026, so counts of permit rows overstate jobs in the current system as in the legacy one.",
+ "graph_evidence": [
+  {
+   "association_id": "(search)",
+   "concepts": [
+    "construction",
+    "permit",
+    "completion"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "The graph holds no finding on building permits or permit rows (data/derived/construction/graph_search.json). The claim is about the city record.",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "U.S. Census Bureau, New Residential Construction methodology",
+   "doi": null,
+   "url": "https://www.census.gov/construction/nrc/pdf/summeas_nrc.pdf",
+   "finding": "Census counts permitted housing units, one count per authorisation, not permit rows."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Mean rows per job between 4 and 12; median at least 3.",
+  "support_if": "pooled mean rows per job, DOB NOW NB cohorts 2021-2022, >= 3.0 with the lower bound of its bootstrap 95% interval >= 2.5",
+  "refute_if": "pooled mean rows per job < 2.0"
+ },
+ "plan": "Data: DOB NOW: Build Job Application Filings (w9ak-ipjd), job_type='New Building', as fetched on 12 Nov 2026 (data/big/construction/jobs_nb_dobnow.parquet); and a new SoQL aggregation of DOB NOW: Build Approved Permits (rbx6-tga4): select job_filing_number, count(*) where issued_date >= '2020-01-01' group by job_filing_number. Unit: job, the filing number before '-'. Cohort: the earliest first_permit_date among the job's filings falls in 2021 or 2022. Measure: rows in rbx6-tga4 for all filings of the job, all work types and filing reasons, issued by the table version fetched; jobs with no rows count as 0 and are reported. Pooled mean with a bootstrap 95% interval (2,000 resamples of jobs, seed 20261113), and by cohort year. The window is incomplete (jobs still renewing), which biases the count down, against the prediction. Secondary: rows by work type and filing reason. Seen by the first round (12-13 Nov 2026): legacy ipu4-2q9a lifetime rows per job by first-permit cohort for 2010-2026 (funnel_by_year.csv: 7.0 to 10.3 for 2010-2019, 8.13 for the 699 legacy jobs of 2022), rows per job within each calendar year 2010-2019 (2.55 to 3.28), the all-time figure of 5.97 rows per job over 95,784 jobs, and 6.87 rows per job for rows issued 2010-2019. From these seen aggregates one can derive that jobs first permitted before 2010 (about 72,900 jobs, back to the table's start) average about 5.1 rows each; this registrant derived that number from the published tables before registering. Not seen: any per-cohort value for cohorts before 2010. For DOB NOW, the first round counted jobs holding active permits by work type on given dates (sheds.py) and did not count permit rows per NB job.",
+ "alternatives": [
+  "DOB NOW records renewals by updating a permit row rather than adding one, lowering the count",
+  "DOB NOW may issue one permit covering several work types, lowering the count",
+  "Right-censoring: cohorts 2021-2022 are still renewing"
+ ],
+ "prior": 0.7,
+ "registrant": "Claude (construction replication agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T15:59:34-0500",
+ "sha256": "9216924adaba1c88a903dc6aa76df0af4f2114c3c92cb5d88cca7ff720cfdc78"
+}

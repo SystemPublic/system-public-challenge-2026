@@ -1,0 +1,44 @@
+{
+ "id": "ems-hospital-turnaround-wait",
+ "kind": "confirmation",
+ "statement": "In New York City, on days when ambulances spend longer at hospitals after transporting a patient, callers wait longer for an ambulance to be assigned, holding the day's call volume, the day of week and the month fixed.",
+ "graph_evidence": [
+  {
+   "note": "The graph has findings on what slower response costs (docs/congestion_tradeoffs.md: five odds ratios for cardiac-arrest survival per minute of shorter response, 1.02, 1.08, 1.12, 1.22, 1.24, read on PubMed). A variable search for 'offload' and 'ambulance' (13 Nov 2026) returned no finding on ambulance offload or hospital turnaround and ambulance availability; the cause side of the chain is absent from the graph."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Lane DJ et al. (2023). The association between paramedic service system hospital offload time and response time. CJEM.",
+   "doi": "PMID 37208561",
+   "finding": "Hourly time series (Ontario): longer offload times go with longer response times, adjusting for call volume; larger effect at high volume in winter."
+  },
+  {
+   "citation": "Patterns in California Ambulance Patient Offload Times by Local EMS Agency (2024). JAMA Netw Open (PMC11650417).",
+   "doi": "",
+   "finding": "About half of California agencies consistently exceed the 30-minute offload standard."
+  },
+  {
+   "citation": "NYC Mayor's Management Report, FDNY chapter, FY2026 (read 13 Nov 2026, before this registration).",
+   "doi": "",
+   "finding": "Average ambulance turnaround at hospitals 36:17 (FY22), 38:10, 40:50, 40:40, 40:25 (FY26); end-to-end ambulance response to life-threatening emergencies 10:17 (FY22) to 11:21 (FY25) and 13:09 (FY26, with a definition change for upgraded calls); ambulance in-service hours per day 8,891 to 8,109. The annual figures were seen before registration; the daily incident data were not."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Elasticity of daily mean dispatch wait to daily mean hospital turnaround between 0.5 and 3 (hospital time is roughly 40% of an ambulance's time per job, and wait rises steeply with utilisation); attenuated by measurement noise in daily means, so 0.2 to 0.5 is also plausible.",
+  "support_if": "Lower 95% bound of the turnaround elasticity in the primary model above 0.2.",
+  "refute_if": "Upper 95% bound of the turnaround elasticity in the primary model below 0.2 (a negligible or negative association)."
+ },
+ "plan": "Script analyses/health_gaps/ems_model.py and fetch analyses/health_gaps/ems_fetch.py, committed in 6278c85 before this registration and before the daily data are fetched. Data: NYC Open Data 76xm-jjuj, daily citywide aggregates 2017-01-01 to the last complete month, excluding 2020-03-01 to 2020-06-30. Outcome: log daily mean dispatch_response_seconds_qy (incident creation to first unit assigned) among incidents with valid dispatch time. Exposure: log daily mean of incident_close_datetime minus first_hosp_arrival_datetime among transported incidents (disposition 82), trimmed to 0-4 h and to close and arrival in the same calendar month. Controls: log daily incident count, day-of-week dummies, year-month fixed effects (which absorb staffing, fleet and definition changes that move slowly). OLS, Newey-West standard errors with 7 lags. No resampling and no seed. Secondary, not deciding: severity 1-3 and 4-8 separately; previous-day turnaround; annual means; attribution of the 2019-2025 change. A technical test of the SoQL date arithmetic was run on one hour of 3 January 2017 (counts of 98 rows and three histogram bins) before registration.",
+ "alternatives": [
+  "Common daily shock: heat, flu or other surges crowd emergency departments and raise ambulance demand together, beyond what the call count captures; the previous-day model and the severity split partly separate this.",
+  "Reverse direction: when the system is busy crews may shorten time at hospital, which would bias the elasticity down.",
+  "Staffing: fewer ambulance tours lengthen waits; year-month effects absorb slow change but not day-to-day staffing gaps.",
+  "Data artefact: incident close may be recorded late on busy days, inflating measured turnaround when waits are long."
+ ],
+ "prior": 0.6,
+ "registrant": "health-gaps agent (Claude), 13 Nov 2026",
+ "registered_at": "2026-11-13T11:54:58-0500",
+ "sha256": "8441e4128a55fa566516f03ec6b2992030e717cba3c8197f4682524cfc46e173"
+}

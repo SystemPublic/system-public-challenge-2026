@@ -1,0 +1,101 @@
+{
+ "id": "nbhd-vacant-shootings",
+ "kind": "confirmation",
+ "statement": "Across New York City census tracts, a larger share of lot area in vacant land (MapPLUTO land use 11) is associated with more NYPD-recorded shootings per resident, after adjustment for poverty, population density and borough, but the association is weaker than the Philadelphia estimates.",
+ "graph_evidence": [
+  {
+   "association_id": "3rfxckzPtm",
+   "study_id": "VViyzL1JcL",
+   "concepts": [
+    "vacant properties",
+    "assaultive violence"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Philadelphia, 1,816 block groups 2002-2006, mixed negative binomial: IRR 1.18 (95% CI 1.12-1.25) for aggravated assault per category shift of vacant properties, between block groups (Branas, Rubin, Guo 2013).",
+   "pubmed_ids": [
+    23814668
+   ]
+  },
+  {
+   "association_id": "Q5b4AdFgrV",
+   "study_id": "cuHN_rYwtF",
+   "concepts": [
+    "maintained vacant lots",
+    "adolescent homicide"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "-",
+   "summary": "Philadelphia case-control (143 cases): maintained vacant lots at the location OR 0.17 (0.03-0.81) for adolescent homicide (Culyba et al. 2016).",
+   "pubmed_ids": [
+    26954939
+   ]
+  },
+  {
+   "association_id": "G6ohTa-WnC",
+   "study_id": "TBKYMeK3EY",
+   "concepts": [
+    "abandoned housing remediation",
+    "shootings"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "-",
+   "summary": "Philadelphia cluster RCT of abandoned-house remediation: shootings -6.96% (95% CI -15.32% to +3.03%), gun assaults -13.1% (South et al. 2023).",
+   "pubmed_ids": [
+    36469329
+   ]
+  },
+  {
+   "variable": "Demolishing abandoned buildings",
+   "concepts": [
+    "demolition",
+    "firearm violence"
+   ],
+   "direction": "-",
+   "summary": "Rochester NY grid cells: one demolition IRR 0.86 (0.83-0.90) for shootings the next year (Jay et al. 2022).",
+   "pubmed_ids": [
+    34876475
+   ]
+  },
+  {
+   "variable": "abandoned property count",
+   "concepts": [
+    "abandoned property",
+    "aggravated assault"
+   ],
+   "direction": "+",
+   "summary": "Northeastern US city: abandoned property count IRR 1.28 (1.01-2.01) for aggravated assault (Lardier et al. 2021).",
+   "pubmed_ids": [
+    34210249
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Branas CC, South E, Kondo MC, et al. Citywide cluster randomized trial to restore blighted vacant land and its effects on violence, crime, and fear. PNAS 2018;115(12):2946-51.",
+   "doi": "10.1073/pnas.1718503115",
+   "finding": "541 Philadelphia vacant lots randomised; greening reduced gun violence by 29.1% (P<0.001) in neighbourhoods below the poverty line. Not found as a variable in the System graph. (The task brief cites this trial as JAMA Netw Open 2018; that journal carried the related mental-health trial, South et al. 2018.)"
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Adjusted IRR per quintile step of tract vacant-land share between 1.00 and 1.10 (Philadelphia between-unit estimate 1.18 per category). Unadjusted IRR larger, 1.10-1.30.",
+  "support_if": "Adjusted IRR per quintile step has a 95% CI with lower bound above 1.00.",
+  "refute_if": "Adjusted IRR per quintile step has a 95% CI with upper bound below 1.00 (contested). A CI spanning 1.00 is unsettled."
+ },
+ "plan": "Unit: 2020 census tracts (DCP 63ge-mke6 geometry) with at least 500 residents. Exposure: share of tax-lot area with landuse '11' in MapPLUTO (64uk-42ks, aggregated by bct2020 with SoQL; version recorded), entered as quintiles (per-step IRR) and, secondarily, per SD. Secondary exposures: vacant lots per 1,000 lots; vacant land owned by the City (ownertype 'C') versus private. Outcome: shooting incidents 2019-2024 from Shootings (2006-Present) 5ucz-vwe8, located by latitude/longitude into tracts; 833y-fsy8 (historic archive) used as a cross-check of counts for overlapping years. Covariates: ACS 2018-2022 5-year total population (offset), percent below poverty, log population density, borough fixed effects. Model: negative binomial GLM (statsmodels), robust SE. Report unadjusted and adjusted IRR. Figure: binned scatter of shootings per 10,000 by vacant-share quintile within poverty terciles, with the Philadelphia IRR drawn beside the NYC estimate.",
+ "alternatives": [
+  "Poverty and disinvestment cause both vacancy and violence (confounding); adjustment is coarse.",
+  "NYC vacant lots are often staged for construction in rising-rent areas, which have falling violence; this dilutes or reverses the association.",
+  "Large undeveloped natural or industrial lots (Staten Island, waterfront) add vacant area with few residents and few shootings.",
+  "Reverse causation: violence depresses land values and delays building.",
+  "Ecological inference: a tract association says nothing about risk next to a lot; the RCT evidence is place-level and causal."
+ ],
+ "prior": 0.4,
+ "registrant": "claude-code agent (neighbourhood), for Jeff Vernon",
+ "registered_at": "2026-11-12T15:24:16-0500",
+ "sha256": "a65620b20ad5d385bf13bbcffcf3f26465e2fd39695e022376bfc2031db70a80"
+}

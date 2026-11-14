@@ -1,0 +1,66 @@
+{
+ "id": "bridge-crz-crash-link",
+ "verdict": "no_test",
+ "city_effect": null,
+ "graph_effect": {
+  "label": "Power-model exponent for injury crashes on urban roads (Elvik 2009); volume elasticity assumed 0.9",
+  "estimate": 1.2,
+  "lo": null,
+  "hi": null,
+  "scale": "exponent on relative speed",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "literature",
+   "citation": "Elvik R (2009), TOI Report 1034/2009"
+  },
+  {
+   "kind": "literature",
+   "citation": "Nilsson G (2004), Lund Bulletin 221"
+  },
+  {
+   "kind": "sysgraph",
+   "file": "data/derived/bridges/abstracts_graph.txt",
+   "note": "speed findings in the graph; no volume or power-model findings"
+  }
+ ],
+ "prediction_scored": "not scored: a research link with no city test of its own. The volume elasticity of 0.9 is an assumption, not an estimate.",
+ "settle": "A test of the speed exponent at low urban speeds would need crashes and speeds on the same street segments over time, for example NYC DOT segment speeds from the Traffic Speeds feed (i4gi-tjb9) joined to geocoded crashes on streets outside the zone.",
+ "research_needed": [
+  {
+   "question": "Does the power model hold at network speeds below 15 mph?",
+   "data": "Segment-level speeds and crashes in a dense city",
+   "design": "Panel of street segments with speed changes from signal timing or speed limits",
+   "priority": "medium"
+  },
+  {
+   "question": "Add the speed-crash literature (Nilsson, Elvik, Cameron and Elvik 2010) and the London congestion charge accident study to the System graph",
+   "data": "Papers",
+   "design": "Extraction",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/bridges/bridge_crz_injury_crashes.png"
+ ],
+ "notes": "A research link, registered so that the bridge's chain names every link. The System graph holds a few speed-severity findings (child pedestrians, moped riders, cyclists) but no power-model or volume-crash findings, so the exponents come from Elvik (2009) and the volume elasticity is an assumed range.",
+ "registration_sha256": "6e399c611dee95ac83ebd0e067fc83ffb98e77fa42a44c39cba646e344bab30b",
+ "decided_at": "2026-11-12T16:10:34-0500",
+ "stance": null,
+ "history": [
+  {
+   "verdict": "no_test",
+   "city_effect": null,
+   "stance": null,
+   "decided_at": "2026-11-12T16:10:34-0500",
+   "prediction_scored": "partial: the link has no city test of its own. It was tested only jointly, through the endpoint of bridge-crz-injury-crashes, which was compatible with it."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep no_test; not scored; elasticity is an assumption.",
+  "critique": "critique/bridge-crz-crash-link.md",
+  "revised_at": "2026-11-12T16:18:01-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

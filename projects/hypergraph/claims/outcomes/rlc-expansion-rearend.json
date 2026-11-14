@@ -1,0 +1,166 @@
+{
+ "id": "rlc-expansion-rearend",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Rear-end proxy crashes within 50 m, camera intersections vs matched controls, post vs same months of 2024-25 (ratio of ratios)",
+  "estimate": 1.3266,
+  "lo": 1.061,
+  "hi": 1.6499,
+  "scale": "ratio of ratios",
+  "null": 1,
+  "n": 283
+ },
+ "graph_effect": {
+  "label": "Not in the graph. Meta-analyses: rear-end crashes +40% (Erke 2009, n.s.), +39% (Hoye 2013); NYC DOT reports rear-end injury crashes -60% at old sites",
+  "estimate": 1.39,
+  "lo": null,
+  "hi": null,
+  "scale": "ratio",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "collision_id, crash_date, latitude, longitude, number_of_persons_injured, number_of_persons_killed, number_of_pedestrians_injured, number_of_pedestrians_killed, contributing_factor_vehicle_1, contributing_factor_vehicle_2, contributing_factor_vehicle_3, contributing_factor_vehicle_4, contributing_factor_vehicle_5",
+    "$where": "crash_date >= '2023-01-01T00:00:00' and crash_date < '2026-11-01T00:00:00' and latitude > 40.4 and longitude < -73.6",
+    "$order": "collision_id"
+   },
+   "fetched": "2026-11-13T12:50:58-0500",
+   "n_rows": 323685
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "bm4k-52h4",
+   "name": "Motor Vehicle Collisions - Vehicles",
+   "url": "https://data.cityofnewyork.us/d/bm4k-52h4",
+   "rows_updated_at": "2026-11-13T15:33:26Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "collision_id",
+    "$where": "crash_date >= '2023-01-01T00:00:00' and crash_date < '2026-11-01T00:00:00' and point_of_impact = 'Center Back End' and pre_crash in ('Going Straight Ahead', 'Stopped in Traffic', 'Slowing or Stopping', 'Starting in Traffic')",
+    "$order": "collision_id"
+   },
+   "fetched": "2026-11-13T12:51:14-0500",
+   "n_rows": 42673
+  },
+  {
+   "kind": "nyc-open-data",
+   "datasets": [
+    "8zf9-spf8",
+    "9mwx-gamw",
+    "m5vz-tzqv",
+    "pvqr-7yc4"
+   ],
+   "name": "Parking Violations Issued FY2024-FY2027, violation code 7",
+   "n_queries": 50,
+   "rows_updated_at": [
+    "2026-03-12T16:35:39Z",
+    "2026-03-12T22:48:17Z",
+    "2026-08-18T22:28:35Z",
+    "2026-10-15T14:03:32Z"
+   ],
+   "query_example": {
+    "$select": "street_name, intersecting_street, violation_county",
+    "$where": "violation_code='7' and issue_date = '2026-08-15T00:00:00'",
+    "$limit": 50000
+   },
+   "note": "full list of source records in data/derived/street_safety/rlc_sites.json"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "xc4v-ntf4",
+   "name": "VZV Leading Pedestrian Interval Signals (control pool)"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "shr7-eqdc",
+   "name": "VZV Street Improvement Projects (SIP) Intersections"
+  },
+  {
+   "kind": "other",
+   "name": "OpenStreetMap intersections via Overpass API, OSM base 2026-07-24",
+   "licence": "ODbL 1.0"
+  },
+  {
+   "kind": "sysgraph",
+   "file": "data/derived/street_safety/graph_check.json"
+  }
+ ],
+ "prediction_scored": "hit on the registered condition, weak as evidence of a camera effect. Ratio of ratios 1.327 (1.061-1.650); lower bound above 1.00 under the registered seed and under seeds 1-10 with 20,000 draws (lower bounds 1.067-1.073); rule 8 D = 6.45 (>= 4). Under rule 1 the verdict is confirmed. But the registered placebo year gives 1.250 (1.052-1.488), almost the same, so the design cannot separate a camera effect from the bias it shows without cameras (named alternative: regression to the mean). The estimate contradicts NYC DOT's report of fewer rear-end crashes; it does not show that the cameras caused an increase.",
+ "settle": "A comparison that does not select controls on pre-period counts (not-yet-treated camera sites, or empirical Bayes expected counts), exact activation dates, and a longer post period.",
+ "research_needed": [
+  {
+   "question": "Publish NYC red-light camera locations with coordinates, approach and activation (and warning-period) dates as open data.",
+   "data": "NYC DOT camera inventory",
+   "design": "site-level before-after with exact dates; removes ticket-based geocoding (117 of 585 approach names could not be located)",
+   "priority": "high"
+  },
+  {
+   "question": "Repeat the test in late 2027 with 18-21 months of post data and a comparison group that is not selected on pre-period counts (for example, later-activated cameras as not-yet-treated controls, or empirical Bayes expected counts).",
+   "data": "h9gi-nx95, bm4k-52h4, ticket data through 2027",
+   "design": "staggered difference in differences or empirical Bayes before-after (Hauer)",
+   "priority": "high"
+  },
+  {
+   "question": "Which intersections did DOT choose for the 2026 expansion and on what criteria (crash history, violation counts, equity)?",
+   "data": "DOT siting memo",
+   "design": "model the selection to correct for it",
+   "priority": "medium"
+  },
+  {
+   "question": "The graph has no association between red-light cameras and rear-end or right-angle crashes; add Erke 2009, Hoye 2013 and the Cochrane review. Three of its LPI and traffic-calming records turn percentage reductions into odds ratios or reverse the exposure.",
+   "data": "System Public Graph",
+   "design": "curation",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/street_safety/rlc_ratio_of_ratios.png",
+  "figures/street_safety/rlc_feb_cohort_quarterly.png",
+  "figures/street_safety/rlc_sites_map.png"
+ ],
+ "notes": "Design: 283 intersections first ticketed January-August 2026, 3 matched LPI intersections each (pool 4590), 323683 geolocated crashes January 2023-October 2026. All outcomes, ratio of ratios (95% interval): rear-end proxy 1.327 (1.061-1.650); persons injured or killed 1.038 (0.907-1.192); pedestrians injured or killed 1.289 (1.029-1.637); 'Traffic Control Disregarded' crashes 1.111 (0.722-1.734); all crashes 1.181 (1.081-1.289). Registered placebo (same sites and windows one year earlier, before any camera): rear-end 1.250 (1.052-1.488); injured 1.263 (1.100-1.445); pedestrians 1.357 (1.031-1.749); red-running 0.866 (0.582-1.280); all crashes 1.296 (1.183-1.418). The placebo shows the design producing ratios of 1.25-1.36 where no camera existed. The likely reason is that controls were matched on their pre-window crash counts, so controls with unusually high counts were chosen and then fell (regression to the mean in the controls), while the camera sites, chosen by DOT on other grounds, did not fall in the same way. The design therefore carries a bias of roughly +25% in every outcome, and the registered estimates must be read against the placebo. Excluding the 3 sites near a 2024-26 street improvement project changes little: rear-end 1.301 (1.057-1.616), injured 1.027 (0.904-1.166). EXPLORATORY, not a test (rule 4): the ratio of the 2026 estimate to the placebo estimate, with a joint bootstrap, is rear-end 1.062 (0.797-1.395), persons injured 0.821 (0.672-0.993), pedestrians 0.95 (0.661-1.348), all crashes 0.911 (0.805-1.039). Read this way, the cameras show no clear rise in rear-end crashes and a fall of about 18% in persons injured, but the adjustment was chosen after the data were seen.",
+ "registration_sha256": "a0d11a850d2da5029a3ae583a3ce37a4ff36a4b4846df639fa569276879ace9e",
+ "decided_at": "2026-11-13T13:11:25-0500",
+ "stance": {
+  "value": 0.85,
+  "lo": 0.257,
+  "hi": 0.977,
+  "z": 2.51
+ },
+ "notes_referee": "Referee reproduced 1.327 (1.061 to 1.650). The placebo year gives 1.250 and itself meets support_if (lower bound 1.052); against the placebo D = -2.3. Controls matched on pre-window counts regress to the mean (0.78 of pre level vs 0.99 for the pool). Unmatched comparisons, chosen after the data, give 1.03 and 1.05. Rule 11 makes the verdict unsettled.",
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Rear-end proxy crashes within 50 m, camera intersections vs matched controls, post vs same months of 2024-25 (ratio of ratios)",
+    "estimate": 1.3266,
+    "lo": 1.061,
+    "hi": 1.6499,
+    "scale": "ratio of ratios",
+    "null": 1,
+    "n": 283
+   },
+   "stance": {
+    "value": 0.85,
+    "lo": 0.257,
+    "hi": 0.977,
+    "z": 2.51
+   },
+   "decided_at": "2026-11-13T13:11:25-0500",
+   "prediction_scored": "hit on the registered condition, weak as evidence of a camera effect. Ratio of ratios 1.327 (1.061-1.650); lower bound above 1.00 under the registered seed and under seeds 1-10 with 20,000 draws (lower bounds 1.067-1.073); rule 8 D = 6.45 (>= 4). Under rule 1 the verdict is confirmed. But the registered placebo year gives 1.250 (1.052-1.488), almost the same, so the design cannot separate a camera effect from the bias it shows without cameras (named alternative: regression to the mean). The estimate contradicts NYC DOT's report of fewer rear-end crashes; it does not show that the cameras caused an increase."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee; rule 11 (placebo meets support_if)",
+  "critique": "critique/rlc-expansion-rearend.md",
+  "revised_at": "2026-11-13T13:28:23-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

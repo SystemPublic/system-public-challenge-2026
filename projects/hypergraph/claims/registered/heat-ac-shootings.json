@@ -1,0 +1,83 @@
+{
+ "id": "heat-ac-shootings",
+ "kind": "confirmation",
+ "statement": "The rise of shootings with daily maximum temperature is steeper in the New York community districts where fewer households have air conditioning than in the districts where more have it.",
+ "graph_evidence": [
+  {
+   "association_id": "variables searched by name: air conditioning, air conditioner",
+   "concepts": [
+    "air conditioning (variable names)",
+    "violence, crime, aggression, injury"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "86 and 27 variables match; none of their associations has a violence, crime, aggression or shooting variable on the other side. The graph holds nothing on air conditioning and violence.",
+   "pubmed_ids": []
+  },
+  {
+   "association_id": "variables searched by name: air conditioner",
+   "concepts": [
+    "working air conditioner at home",
+    "heat-related death or hospital admission"
+   ],
+   "n_findings": 5,
+   "n_studies": 4,
+   "direction": "-",
+   "summary": "Case-control studies of heat waves: odds of heat-related death with a working air conditioner 0.2 (0.1 to 0.7) in Chicago 1999 (Naughton 2002), 0.3 in Chicago 1995 (Semenza 1996), 0.03 (0 to 0.2) in Cincinnati 1999 (Kaiser 2001); odds of heat-related hospital admission with an air conditioner in the bedroom 0.12 (0.02 to 0.74) in Adelaide 2009 (Zhang 2016). The four abstracts were read in PubMed and match. A fifth record (Saito 2019, 'no air conditioner', HR 1.71) is wrong: the abstract gives 1.71 for a deprivation index, not for air conditioning.",
+   "pubmed_ids": [
+    11988377,
+    8649494,
+    11563746,
+    27256088,
+    30634562
+   ]
+  }
+ ],
+ "graph_evidence_note": "Collected on 13 November 2026 by analyses/heat_solutions/graph.py (variable-name search, API only); data/derived/heat_solutions/graph.json.",
+ "literature": [
+  {
+   "citation": "Heilmann K, Kahn ME, Tang CK. The urban crime and heat gradient in high and low poverty areas. J Public Econ 2021;197:104408.",
+   "doi": "10.1016/j.jpubeco.2021.104408",
+   "finding": "Los Angeles: heat raises violent crime more in poorer neighbourhoods and in older housing; cited from memory, not re-read."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Difference between the log rate ratios per 5 C of the low-AC half and the high-AC half of districts: between -0.02 and +0.05, best guess +0.01. The citywide log rate ratio is 0.136 (1.146 per 5 C). If households without air conditioning carried half of it, the difference would be 0.042; if all of it, 0.083.",
+  "support_if": "The 95% lower limit of the difference is above 0. This alone decides 'confirmed'.",
+  "refute_if": "The 95% upper limit is below 0.042 and the lower limit is at or below 0. 0.042 is the difference expected if households without air conditioning carried half of the citywide slope: slope of a group = 0.136 x (0.5 + 0.5 x u_g / u), with u_g the share of households without air conditioning (14.626% in the low half, 6.601% in the high half, 13.152% overall, weighted by shootings).",
+  "otherwise": "Unsettled.",
+  "secondary_registered": "Reported, not deciding: the two halves' own rate ratios; bottom against top third of districts; the same contrast within the low-income half and within the high-income half of districts (income is the rival); shootings between 00:00 and 05:59; days with TMAX of 27 C or more; May to September; 2006 to 2019 and 2020 to 2026; a weighted regression of each district's own heat slope (districts with 150 or more incidents) on its air-conditioning share, alone and with log median income; incidents under Housing Bureau jurisdiction (public housing) against all others, citywide and within the low-AC half; incidents at public-housing buildings against those at other apartment buildings (location_desc)."
+ },
+ "plan": "Script: analyses/heat_solutions/run.py (sha256 ff13670222b73baa) with analyses/heat_solutions/common.py (sha256 c271c2fae50f98b5), committed with this registration and run unchanged. No resampling and no random numbers; all intervals are Wald intervals from HC0 standard errors (rule 9). The script was exercised before registration on simulated records only (--simulate, seed 1). Air conditioning: percent of households with air conditioning by community district, from the Health Department's Heat Vulnerability Index file (EHDP-data hvi-nta-2020.csv, from the Housing and Vacancy Survey; the value is constant or nearly constant within a district). The 59 districts are split at the median (91.711%): the low half averages 86.063% and the high half 94.292%. Outcome: NYPD shooting incidents 5ucz-vwe8, one row per incident_key, 2006-01-01 to 2026-08-31, assigned to a community district from their coordinates (the file holds latitude and longitude in swapped columns for most rows; common.fix_latlon restores them). Temperature: Central Park GHCN-Daily TMAX. Model: binomial GLM, logit link, of the day's incidents in the low-AC half out of the day's incidents in all districts, on TMAX/5 and the calendar terms of heat-shootings (C(dow) + C(month) + C(year) + hol + wet). Each district is compared with itself across days, so the level of violence in a district does not enter; the coefficient of TMAX/5 is the difference between the two halves' log rate ratios per 5 C.",
+ "can_it_fail": {
+  "source": "data/derived/heat_solutions/prereg_design.json (analyses/heat_solutions/design.py)",
+  "expected_se": 0.01736574890282357,
+  "smallest_detectable_difference_80pct": 0.048624096927905994,
+  "yardstick_half": 0.041573164168280455,
+  "D_half": 5.731115043003099,
+  "p_refute_if_no_difference": 0.6678466069127318,
+  "p_support_if_half": 0.6678466069127318,
+  "low_income_half_only": {
+   "events": 17355,
+   "share_in_low_ac": 0.9373091328147508,
+   "se_diff_log_rr_per_5c": 0.0329008128151739,
+   "D_half": 1.4104449766921237
+  },
+  "reading": "Expected standard error 0.017; D for the half-carry difference is 5.731 (rule 8 needs 4). With no true difference the refutation rule is met with probability 0.668 and the support rule with 0.025. The contrast within low-income districts has D of 1.41 and cannot decide anything; it is reported only."
+ },
+ "already_seen": "The citywide slope (1.146 per 5 C), its shape, its hours and the night-minimum results. design.py read the coordinates and jurisdiction code of shooting incidents without their dates and the count of EMS HEAT incidents by district and by year, to count events per district; it read no dated record at district level. No model, table or query of shootings or EMS calls by district and date exists in the repository. From the undated coordinates I know that 0.816 of mapped incidents fall in the low-AC half and that 3971 incidents are under Housing Bureau jurisdiction.",
+ "alternatives": [
+  "Income: air conditioning and median income have a Spearman correlation of 0.699 across districts, and 23 of the 29 low-AC districts are in the low-income half. A steeper slope in low-AC districts may be a steeper slope in poor districts for any reason (street life, housing density, policing).",
+  "Place of occurrence is not place of residence; a shooting is assigned to where it happened.",
+  "The survey measures whether a household has an air conditioner, not whether it runs it; households that cannot pay for electricity are counted as having one.",
+  "A district is large (about 140,000 residents) and the contrast between halves is 8 percentage points of households, so an effect confined to households without air conditioning must be large to appear.",
+  "Temperature is measured at one station; low-AC districts are also hotter at street level, which would steepen their slope without any role for air conditioning."
+ ],
+ "prior": 0.2,
+ "prior_note": "Probability of 'confirmed'. About 0.45 for refuted and 0.35 for unsettled.",
+ "registrant": "Claude (heat solutions agent)",
+ "registered_at": "2026-11-13T07:52:12-0500",
+ "sha256": "567404dcc31818d12b262b40803c7974152ab3870c86eefc55255e2eb9f994a4"
+}

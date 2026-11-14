@@ -1,0 +1,10 @@
+{
+ "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/MAPPLUTO/FeatureServer/0/query",
+ "where": "LandUse='11'",
+ "n": 24240,
+ "versions": [
+  "26v2"
+ ],
+ "fetched": "2026-11-13T13:45:59-0500",
+ "path": "~/opt/nyc-concordance/levers/lu11_polygons.geojson"
+}

@@ -1,0 +1,177 @@
+{
+ "id": "retimed-taxi-fhv-pickups",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Slope of the change in Monday-and-Friday relative pickups on the change in Monday-and-Friday relative subway entries, across taxi zones, Feb-Mar 2019 to Feb-Mar 2026",
+  "estimate": 0.5038518123089808,
+  "lo": 0.1286261710448805,
+  "hi": 0.8082960475535326,
+  "scale": "elasticity (log-log slope)",
+  "null": 0,
+  "n": 147
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "tlc-trip-records",
+   "name": "yellow trip records 2019-02",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-02.parquet",
+   "read": "local copy of the file at the URL",
+   "query": "select cast(tpep_pickup_datetime as date) as date, cast(PULocationID as integer) as unit, count(*) as n from parquet_scan('<file>') where hour(tpep_pickup_datetime) between 6 and 19 and year(tpep_pickup_datetime)=2019 and month(tpep_pickup_datetime)=2 group by 1,2 order by 1,2",
+   "n_trips": 4989482,
+   "fetched": "2026-11-12T23:49:46-0500",
+   "headers_file": "HTTP/2 200 \ncontent-type: application/x-www-form-urlencoded; charset=utf-8\ncontent-length: 103356025\nserver: AmazonS3\ndate: Thu, 12 Nov 2026 22:11:40 GMT\nlast-modified: Thu, 30 Jun 2022 03:16:20 GMT\netag: \"c65117f8ff7dddc8e4351274a6490480-7\"\naccept-ranges: bytes\nx-cache: Hit from cloudfront\nvia: 1.1 6998afa1e9fd454998d6924fb8265f56.cloudfront.net (CloudFront)\nx-amz-cf-pop: JFK50-P12\nx-amz-cf-id: dWT0Ud9gzOrlCgEcxrf60EDMIH78M1FNjacSxe1xYFQnMVxJKvVzBQ==\nage: 11449\n\n"
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "yellow trip records 2019-03",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-03.parquet",
+   "read": "local copy of the file at the URL",
+   "query": "select cast(tpep_pickup_datetime as date) as date, cast(PULocationID as integer) as unit, count(*) as n from parquet_scan('<file>') where hour(tpep_pickup_datetime) between 6 and 19 and year(tpep_pickup_datetime)=2019 and month(tpep_pickup_datetime)=3 group by 1,2 order by 1,2",
+   "n_trips": 5461488,
+   "fetched": "2026-11-12T23:49:46-0500",
+   "headers_file": "HTTP/2 200 \ncontent-type: application/x-www-form-urlencoded; charset=utf-8\ncontent-length: 116017372\nserver: AmazonS3\ndate: Thu, 12 Nov 2026 22:11:43 GMT\nlast-modified: Thu, 30 Jun 2022 03:16:20 GMT\netag: \"b4714cd8186dff3157e3cb14f2ac578d-7\"\naccept-ranges: bytes\nx-cache: Hit from cloudfront\nvia: 1.1 b71973b66fc4b6e1cc46fb40525098d2.cloudfront.net (CloudFront)\nx-amz-cf-pop: JFK50-P12\nx-amz-cf-id: wKAJuAFlmy_1jAnpO6J7IsNGHA3_u2mXwvRzo7gV8Qjor5OoCchd6Q==\nage: 11450\n\n"
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "fhvhv trip records 2019-02",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2019-02.parquet",
+   "read": "local copy of the file at the URL",
+   "query": "select cast(pickup_datetime as date) as date, cast(PULocationID as integer) as unit, count(*) as n from parquet_scan('<file>') where hour(pickup_datetime) between 6 and 19 and year(pickup_datetime)=2019 and month(pickup_datetime)=2 group by 1,2 order by 1,2",
+   "n_trips": 13113778,
+   "fetched": "2026-11-12T23:49:47-0500",
+   "headers_file": "HTTP/2 200 \ncontent-type: application/x-www-form-urlencoded; charset=utf-8\ncontent-length: 513054623\nserver: AmazonS3\ndate: Fri, 13 Nov 2026 01:21:36 GMT\nlast-modified: Thu, 30 Jun 2022 03:16:23 GMT\netag: \"7fc499ad1836d696dc00cdb2529a22b0-31\"\naccept-ranges: bytes\nx-cache: Miss from cloudfront\nvia: 1.1 be98c90946453cc366689b693614d960.cloudfront.net (CloudFront)\nx-amz-cf-pop: JFK50-P12\nx-amz-cf-id: 1v5sUy0951lgwmFio1ADh9iVVoeG7ByxFDPTC_3RSxfktRn2Ht1WWw==\n\n"
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "fhvhv trip records 2019-03",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2019-03.parquet",
+   "read": "local copy of the file at the URL",
+   "query": "select cast(pickup_datetime as date) as date, cast(PULocationID as integer) as unit, count(*) as n from parquet_scan('<file>') where hour(pickup_datetime) between 6 and 19 and year(pickup_datetime)=2019 and month(pickup_datetime)=3 group by 1,2 order by 1,2",
+   "n_trips": 15482943,
+   "fetched": "2026-11-12T23:49:47-0500",
+   "headers_file": "HTTP/2 200 \ncontent-type: application/x-www-form-urlencoded; charset=utf-8\ncontent-length: 610854382\naccept-ranges: bytes\ndate: Fri, 13 Nov 2026 01:21:52 GMT\nserver: AmazonS3\nlast-modified: Thu, 30 Jun 2022 03:16:23 GMT\netag: \"9d5232bb815de3116da3b9947c3aa74f-37\"\nx-cache: Miss from cloudfront\nvia: 1.1 6bdbd1b405b41ff98cdd6072470496f8.cloudfront.net (CloudFront)\nx-amz-cf-pop: JFK50-P12\nx-amz-cf-id: CAHdbNbbbpjFCEvWutfh5bOmNbg-sDVPufwjzCuLLNBDjVnCZG4-1Q==\n\n"
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "yellow trip records 2026-02",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-02.parquet",
+   "read": "local copy of the file at the URL",
+   "query": "select cast(tpep_pickup_datetime as date) as date, cast(PULocationID as integer) as unit, count(*) as n from parquet_scan('<file>') where hour(tpep_pickup_datetime) between 6 and 19 and year(tpep_pickup_datetime)=2026 and month(tpep_pickup_datetime)=2 group by 1,2 order by 1,2",
+   "n_trips": 2356830,
+   "fetched": "2026-11-12T23:49:47-0500",
+   "headers_file": "HTTP/2 200 \ncontent-type: binary/octet-stream\ncontent-length: 58683353\nserver: AmazonS3\ndate: Fri, 13 Nov 2026 00:57:38 GMT\nlast-modified: Wed, 25 Mar 2026 15:46:31 GMT\netag: \"41497120d17df99f437634b60f5b9d75-12\"\nx-amz-server-side-encryption: AES256\naccept-ranges: bytes\nx-cache: Miss from cloudfront\nvia: 1.1 b6557bb24b6ab322e590af74f3379284.cloudfront.net (CloudFront)\nx-amz-cf-pop: JFK50-P12\nx-amz-cf-id: EJjXSzgLctbVSjdNwlUQ1jvxP-pW6ithK-_aZAisC4dt_rgydoPdhA==\n\n"
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "yellow trip records 2026-03",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-03.parquet",
+   "read": "local copy of the file at the URL",
+   "query": "select cast(tpep_pickup_datetime as date) as date, cast(PULocationID as integer) as unit, count(*) as n from parquet_scan('<file>') where hour(tpep_pickup_datetime) between 6 and 19 and year(tpep_pickup_datetime)=2026 and month(tpep_pickup_datetime)=3 group by 1,2 order by 1,2",
+   "n_trips": 2722770,
+   "fetched": "2026-11-12T23:49:47-0500",
+   "headers_file": "HTTP/2 200 \ncontent-type: binary/octet-stream\ncontent-length: 67891249\naccept-ranges: bytes\ndate: Fri, 13 Nov 2026 00:57:39 GMT\nserver: AmazonS3\nlast-modified: Tue, 28 Apr 2026 18:56:26 GMT\netag: \"7c9bd1bcac249e15858f8b1731c2039c-4\"\nx-amz-server-side-encryption: AES256\nx-cache: Miss from cloudfront\nvia: 1.1 b71973b66fc4b6e1cc46fb40525098d2.cloudfront.net (CloudFront)\nx-amz-cf-pop: JFK50-P12\nx-amz-cf-id: o937fexz2KRpqUfLEbtcFZ0Muw-d3dP3AR76nvlK__KTryMes4H8-Q==\n\n"
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "fhvhv trip records 2026-02",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2026-02.parquet",
+   "read": "remote column scan",
+   "query": "select cast(pickup_datetime as date) as date, cast(PULocationID as integer) as unit, count(*) as n from parquet_scan('<file>') where hour(pickup_datetime) between 6 and 19 and year(pickup_datetime)=2026 and month(pickup_datetime)=2 group by 1,2 order by 1,2",
+   "n_trips": 13473284,
+   "fetched": "2026-11-12T23:49:57-0500"
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "fhvhv trip records 2026-03",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2026-03.parquet",
+   "read": "remote column scan",
+   "query": "select cast(pickup_datetime as date) as date, cast(PULocationID as integer) as unit, count(*) as n from parquet_scan('<file>') where hour(pickup_datetime) between 6 and 19 and year(pickup_datetime)=2026 and month(pickup_datetime)=3 group by 1,2 order by 1,2",
+   "n_trips": 14862698,
+   "fetched": "2026-11-12T23:49:59-0500"
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "yellow trip records 2018-02",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-02.parquet",
+   "read": "local copy of the file at the URL",
+   "query": "select cast(tpep_pickup_datetime as date) as date, cast(PULocationID as integer) as unit, count(*) as n from parquet_scan('<file>') where hour(tpep_pickup_datetime) between 6 and 19 and year(tpep_pickup_datetime)=2018 and month(tpep_pickup_datetime)=2 group by 1,2 order by 1,2",
+   "n_trips": 5960524,
+   "fetched": "2026-11-12T23:44:41-0500",
+   "headers_file": "HTTP/2 200 \ncontent-type: application/x-www-form-urlencoded; charset=utf-8\ncontent-length: 119455285\nserver: AmazonS3\ndate: Fri, 13 Nov 2026 01:22:17 GMT\nlast-modified: Thu, 30 Jun 2022 03:16:20 GMT\netag: \"20bbd0711489f2a1bfed84ecfdc6dccd-8\"\naccept-ranges: bytes\nx-cache: Miss from cloudfront\nvia: 1.1 17f254c2cec3593bb93785a0bdef615c.cloudfront.net (CloudFront)\nx-amz-cf-pop: JFK50-P12\nx-amz-cf-id: gsTwta9iRzjt5cVi0jRAL0_HCkEwzWIM6qDWImc71eJO3_SsjxX-hQ==\n\n"
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "yellow trip records 2018-03",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-03.parquet",
+   "read": "local copy of the file at the URL",
+   "query": "select cast(tpep_pickup_datetime as date) as date, cast(PULocationID as integer) as unit, count(*) as n from parquet_scan('<file>') where hour(tpep_pickup_datetime) between 6 and 19 and year(tpep_pickup_datetime)=2018 and month(tpep_pickup_datetime)=3 group by 1,2 order by 1,2",
+   "n_trips": 6525499,
+   "fetched": "2026-11-12T23:44:42-0500",
+   "headers_file": "HTTP/2 200 \ncontent-type: application/x-www-form-urlencoded; charset=utf-8\ncontent-length: 133552006\naccept-ranges: bytes\ndate: Fri, 13 Nov 2026 01:22:20 GMT\nserver: AmazonS3\nlast-modified: Thu, 30 Jun 2022 03:16:20 GMT\netag: \"5535d826518a242c39fd511b256ede06-8\"\nx-cache: Miss from cloudfront\nvia: 1.1 164b93bce41a8c1c96d0b06d62a09dc0.cloudfront.net (CloudFront)\nx-amz-cf-pop: JFK50-P12\nx-amz-cf-id: cnKHbJg_MqHTlT6fFq7g0r0q4OWW8jJn1HVOGkI7mxysE3GNj2AElA==\n\n"
+  },
+  {
+   "kind": "derived",
+   "path": "data/derived/transit/dose_map_long.csv",
+   "sources": "data/derived/transit/dose_map_sources.json"
+  },
+  {
+   "kind": "sysgraph",
+   "note": "variable searches, API v1.0, 12 Nov 2026; data/derived/round2/retimed_consequences/graph_gap_check.json and graph_leads.json; 20 uncached requests"
+  }
+ ],
+ "prediction_scored": "partial. The slope, 0.50 (0.13 to 0.81), is inside the registered range of 0.3 to 1.0 and its interval is above zero. The second condition is not met: pickups in the most-thinned third of zones against the least-thinned third changed by -1.1% (-3.4 to +1.5), an interval that includes zero. Neither refutation condition is met.",
+ "settle": "Twelve months of trip records in each period, so that zone-level ratios rest on 40 weeks and not 6 or 7, and a registered split of zones into the business district and residential zones, where the exploratory results have opposite signs.",
+ "research_needed": [
+  {
+   "question": "How much taxi and ride-hail demand follows office attendance, and how much moves to the home end on days worked at home?",
+   "data": "TLC trip records by zone, weekday and hour, full years 2019 and 2025-26; office occupancy by building",
+   "design": "Registered difference-in-differences with business-district and residential zones as separate groups",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/round2/retimed_consequences.png"
+ ],
+ "notes": "Yellow taxi and high-volume for-hire pickups, 06:00-19:59, 147 zones, weeks ['2019-02-04', '2019-02-11', '2019-02-25', '2019-03-04', '2019-03-11', '2019-03-18', '2019-03-25'] and ['2026-02-02', '2026-02-09', '2026-03-02', '2026-03-09', '2026-03-16', '2026-03-23'] (the weeks of Presidents' Day and of the 23 February 2026 storm are dropped). Mean weekday pickups in these zones were 525,709 in 2019 and 455,842 in 2026. Weighted by 2019 pickups the slope is 0.67. Yellow only (44 zones): slope 0.86 (0.47 to 1.30), contrast -8.7% (-12.1 to -5.3). For-hire only: slope 0.46 (0.04 to 0.78), contrast -0.5% (-3.0 to +2.2). Zones outside the business district (120): slope -0.33 (-0.84 to 0.10), contrast +3.0% (+1.0 to +5.4), the opposite sign. Placebo, yellow 2018 against 2019: slope -0.30 (-0.63 to 0.01). Exploratory, not registered: pooled over the 27 business-district zones the Monday-and-Friday ratio changed by -4.5% (-8.5 to -0.8); outside it, the half of zones whose stations thinned more changed by +2.4% (+1.1 to +3.9) relative to the other half. The positive slope therefore comes from the difference between the business district and everywhere else; within residential zones the relation runs the other way. The registered thirds mix the two, which is why the contrast is near zero. The standard error of the slope (0.17) is close to the 0.15 expected from the 2018 design check. Green taxis and other for-hire bases are not counted. The 2026 for-hire months were read by a remote column scan of the TLC parquet files; nothing was saved except the zone-day counts.\n\nAfter the referee (13 Nov 2026): the two registered measures disagree and the outcome did not say by how much. A slope of 0.5 implies a contrast of -0.038 between thirds, and the observed contrast (-0.011) is 2.1 standard errors from that prediction and 0.9 from no effect, so on the contrast the data favour no effect. The rank correlation between the two changes across the 147 zones is 0.11 (p = 0.17); the least-squares slope depends on a few zones with large thinning. With a business-district indicator the slope is 0.26 (SE 0.15). A weekend placebo fails: the change in the weekend-to-midweek ratio of pickups has a slope of -0.79 (SE 0.19) on the same exposure, so Mondays and Fridays are not the only days that moved and the registered ratio does not isolate office days. The bootstrap resamples seven and six weeks and its interval is too narrow; the 2018 against 2019 placebo gave a slope of -0.30. Leaving out one week at a time changes neither condition. An alternative that fits the pattern was not tested: trips moved to the home end on days worked at home. The February 2019 congestion surcharge falls in the baseline months. The registration's summary of PMID 32253258 omits that the odds ratio is per 100 additional trips.",
+ "registration_sha256": "a4208ae183234df3c7030abc703801785f69d18c46bc96534778383bc670e6b7",
+ "decided_at": "2026-11-13T00:05:03-0500",
+ "stance": {
+  "value": 0.896,
+  "lo": 0.355,
+  "hi": 0.981,
+  "z": 2.91
+ },
+ "critique": {
+  "report": "critique/retimed-taxi-fhv-pickups.md",
+  "answer": "accepted; verdict kept"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Slope of the change in Monday-and-Friday relative pickups on the change in Monday-and-Friday relative subway entries, across taxi zones, Feb-Mar 2019 to Feb-Mar 2026",
+    "estimate": 0.5038518123089808,
+    "lo": 0.1286261710448805,
+    "hi": 0.8082960475535326,
+    "scale": "elasticity (log-log slope)",
+    "null": 0,
+    "n": 147
+   },
+   "stance": {
+    "value": 0.896,
+    "lo": 0.355,
+    "hi": 0.981,
+    "z": 2.91
+   },
+   "decided_at": "2026-11-13T00:05:03-0500",
+   "prediction_scored": "partial. The slope, 0.50 (0.13 to 0.81), is inside the registered range of 0.3 to 1.0 and its interval is above zero. The second condition is not met: pickups in the most-thinned third of zones against the least-thinned third changed by -1.1% (-3.4 to +1.5), an interval that includes zero. Neither refutation condition is met."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; notes add that the contrast is 2.1 standard errors from its own prediction and that the rank correlation across zones is 0.11.",
+  "critique": "critique/retimed-taxi-fhv-pickups.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

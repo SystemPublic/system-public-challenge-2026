@@ -1,0 +1,50 @@
+{
+ "id": "levers-vacant-lot-trial-match",
+ "kind": "bridge",
+ "statement": "Of New York's tax lots recorded as vacant land (MapPLUTO 26v2 land use 11) in the census tracts with the most shootings, about three in ten resemble the lots of the Philadelphia vacant-lot trial (small, unpaved, not under development, not a garden or buyout parcel), and greening them would prevent on the order of 20 shootings a year.",
+ "graph_evidence": [
+  {
+   "association_id": "all_boats vacant_lot_greening x violence",
+   "pubmed_ids": [
+    "30496003",
+    "29483246"
+   ],
+   "direction": "-",
+   "summary": "Cluster randomised trial, Philadelphia, 541 lots in 110 clusters: greening -6.8% (-10.6 to -2.7), mowing and trash cleanup -9.2% (-13.2 to -4.8) in shootings (kernel density at lot, 500 m bandwidth). Branas 2018: gun violence -29.1% in neighbourhoods below the poverty line."
+  },
+  {
+   "association_id": "nbhd-vacant-shootings (this repo)",
+   "direction": "+",
+   "summary": "NYC tracts: shootings per resident IRR 1.17 (1.12-1.22) per quintile of vacant-land share; cross-sectional."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Moyer R, MacDonald JM, Ridgeway G, Branas CC. Am J Public Health 2019;109:140-144",
+   "doi": "10.2105/AJPH.2018.304752",
+   "finding": "Excluded lots with insufficient blight, area > 510 m2 or paved parking. Greening -6.8%, cleanup -9.2% shootings."
+  },
+  {
+   "citation": "Branas CC et al. PNAS 2018;115:2946-2951",
+   "doi": "10.1073/pnas.1718503115",
+   "finding": "Greening cost about $5 per m2 initially and $0.50 per m2 a year to maintain."
+  }
+ ],
+ "plan": "Universe: MapPLUTO 26v2 (64uk-42ks) lots with landuse 11. High-shooting tracts: the top decile (by count) of the 2,208 analysed 2020 tracts in data/derived/neighbourhood/vacant_shootings_tracts.csv (shootings 2019-2024); a lot is in one by PLUTO bct2020. Each lot is placed in the first type that applies, in this order: (1) garden: BBL in GreenThumb Garden Info (p78i-pat6); (2) buyout: owner name contains HOUSING TRUST FUND, GOSR or STORM RECOVERY, or ownertype O in the 2015 1% floodplain; (3) active development: a DOB permit (ipu4-2q9a or rbx6-tga4) of job type NB or DM, or work type FO/EW/foundation/earthwork/support of excavation/full demolition/new building, issued on the BBL from 2024-11-13 to 2026-11-13, or a NB job filed (BIS ic3t-wcy2 or DOB NOW w9ak-ipjd) in that period; (4) stalled: on the DOB Stalled Construction Sites list (i296-73x5, BIN matched to BBL through DOB permits) or a NB job or foundation permit on the BBL from 2014-01-01 to 2024-11-12 and nothing in the last 24 months; (5) city interim: ownertype C; (6) private idle: the rest. Imagery: NAIP 2022 (New York flight, four bands) from the Planetary Computer; NDVI = (NIR-R)/(NIR+R) over the pixels within a disk at the PLUTO centroid of radius 0.4*sqrt(lot area) capped at 10 m (polygons are used instead if MapPLUTO lot polygons can be fetched for the sampled BBLs); vegetated share = share of pixels with NDVI >= 0.2. Land cover class: vegetated (share >= 0.5), mixed (0.2-0.5), bare or paved (< 0.2). If more than 2,500 lots in high-shooting tracts remain in types 4-6 after the size filter, NAIP is read for a random sample stratified by type and borough and the counts are weighted back. Trial-like (primary): in a high-shooting tract, type 5 or 6, lot area <= 510 m2 (5,490 sq ft), vegetated share >= 0.2. Reported also: the count without the imagery filter, and types 4-6 together. Prevented shootings: shootings (5ucz-vwe8) in 2023-2025, annual mean, within the union of 300 m buffers around the trial-like lots, times 6.8% (2.7 to 10.6) for greening and 9.2% (4.8 to 13.2) for cleanup. The union avoids counting a shooting twice.",
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Land use 11 lots in high-shooting tracts: 2,000 to 3,500. Trial-like share of them: 0.30 (0.18 to 0.45); trial-like number: about 800 (400 to 1,500). Shootings a year within 300 m of trial-like lots: 250 to 450; prevented by greening: about 20 (8 to 40) a year.",
+  "support_if": "The trial-like share lies in 0.18-0.45 and the trial-like number in 400-1,500.",
+  "refute_if": "The trial-like share is below 0.18 or above 0.45. If the share is in range but the number is not, the result is unsettled. The prevented-shootings figure is an estimate and decides nothing."
+ },
+ "alternatives": [
+  "Lots recorded as vacant are held for development and show DOB activity, so few resemble the trial's abandoned lots.",
+  "Small vacant lots in high-shooting tracts are paved for parking or are side yards of adjacent houses, so the imagery filter removes most.",
+  "PLUTO centroids fall on the street or a neighbour's roof for narrow lots, so the NDVI disk misclassifies the lot.",
+  "NDVI cannot see trash or blight; a vegetated lot may be a maintained side lawn, which the trial excluded as insufficiently blighted."
+ ],
+ "prior": 0.45,
+ "registrant": "claude (levers agent, 13 November 2026)",
+ "registered_at": "2026-11-13T13:31:12-0500",
+ "sha256": "31d31f4114ae025178cede169e4da36d9648c5c5dd6438c6eab15c73b7ee90f6"
+}

@@ -1,0 +1,1283 @@
+{
+ "package": {
+  "claim": "heat-shootings",
+  "built_at": "2026-11-13T22:56:48-0500",
+  "tool": "tools/replicate.py",
+  "tool_blob": "227e649fbc524670361a2e3669887ba27f05af5c",
+  "paths": "relative to the repository (inputs keep their repo paths under inputs/) or to ~/opt/nyc-concordance"
+ },
+ "claim": {
+  "id": "heat-shootings",
+  "registration": {
+   "id": "heat-shootings",
+   "kind": "confirmation",
+   "statement": "In New York City, the daily number of shooting incidents rises with the day's maximum temperature at Central Park, within month and year, by about 5 to 20 percent per 5 C.",
+   "graph_evidence": [
+    {
+     "relationship_id": "4FaXcuNJRt|YZku29igbl",
+     "concepts": [
+      "temperature",
+      "homicide"
+     ],
+     "n_findings": 4,
+     "n_studies": 2,
+     "direction": "+",
+     "summary": "Two case-crossover studies. Rahman et al. 2023 (California 2014-2019): homicide odds +4.9% (1.6 to 8.1) per 5 C Tmax lag 0. Xu et al. 2020 (9 US cities 2007-2017): intentional homicide +9.5% (4.3 to 15.0) per 5 C mean temperature in Chicago and +8.8% (1.5 to 16.6) in New York, lag 0-7. The graph stores Xu's estimates as odds ratios 0.095 and 0.088 and Rahman's as odds ratios 4.9 and 6.2; the abstracts give percent changes, so the graph values are mis-extracted (true ORs about 1.095, 1.088, 1.049, 1.062).",
+     "pubmed_ids": [
+      36858215,
+      32738768
+     ]
+    },
+    {
+     "relationship_id": "4FaXcuNJRt|rULjCt1BqH",
+     "concepts": [
+      "temperature",
+      "injury"
+     ],
+     "n_findings": 4,
+     "n_studies": 3,
+     "direction": "+",
+     "summary": "Girma et al. 2023, New York City ED visits 2005-2011 (SPARCS), warm season: intentional injury among 20-25 year olds OR 1.54 (1.28 to 1.85) for daily minimum 77 F vs 48 F, lag 0-5. The only NYC violence-temperature finding in the graph.",
+     "pubmed_ids": [
+      37448837
+     ]
+    },
+    {
+     "relationship_id": "(concept X7hfhwez9f, 34 relationships)",
+     "concepts": [
+      "gun violence",
+      "temperature"
+     ],
+     "n_findings": 0,
+     "n_studies": 0,
+     "direction": "0",
+     "summary": "The gun violence concept has no relationship with temperature, air temperature, heat wave, hot or extreme heat. Violence (2qLKgaxkm_), crime, aggression and violent crime have none either. The graph's heat-violence evidence is homicide and injury only.",
+     "pubmed_ids": []
+    },
+    {
+     "relationship_id": "4FaXcuNJRt|TLeQZQ_leT",
+     "concepts": [
+      "temperature",
+      "suicide"
+     ],
+     "n_findings": 12,
+     "n_studies": 8,
+     "direction": "+",
+     "summary": "Self-directed violence rises with temperature in 8 studies (e.g. RR 1.35, 1.26 to 1.45, PMID 35394808; per 1 C IRR 1.008, PMID 34034696). Context for the violence claim.",
+     "pubmed_ids": [
+      35394808,
+      34034696,
+      36858215
+     ]
+    }
+   ],
+   "literature": [
+    {
+     "citation": "Reeping PM, Hemenway D. The association between weather and the number of daily shootings in Chicago (2012-2016). Inj Epidemiol 2020;7:31.",
+     "doi": "10.1186/s40621-020-00260-3",
+     "finding": "Negative binomial GEE with month and year fixed effects: +34.0% (28.1 to 40.2) shootings per 10 C daily high on weekdays, +41.6% (34.7 to 48.9) on weekends and holidays; per 5 C that is IRR 1.158 and 1.190."
+    },
+    {
+     "citation": "Lyons VH, Gause EL, Spangler KR, Wellenius GA, Jay J. Analysis of daily ambient temperature and firearm violence in 100 US cities. JAMA Netw Open 2022;5(12):e2247207.",
+     "doi": "10.1001/jamanetworkopen.2022.47207",
+     "finding": "Gun Violence Archive 2015-2020, distributed-lag models, lag 0 best: RR 1.17 (1.12 to 1.21) at the 84th percentile of Tmax vs the city median; 6.85% of shootings attributable to days above the median; Northeast attributable fraction 9.54%."
+    },
+    {
+     "citation": "Xu R, Xiong X, Abramson MJ, Li S, Guo Y. Ambient temperature and intentional homicide: a multi-city case-crossover study in the US. Environ Int 2020;143:105992.",
+     "doi": "10.1016/j.envint.2020.105992",
+     "finding": "New York 2007-2017: +8.8% (1.5 to 16.6) intentional homicide per 5 C daily mean temperature, lag 0-7; 7.1% attributable to temperatures above the median."
+    },
+    {
+     "citation": "Rahman MM et al. Ambient temperature and air pollution associations with suicide and homicide mortality in California. Sci Total Environ 2023;874:162462.",
+     "doi": "10.1016/j.scitotenv.2023.162462",
+     "finding": "+4.9% (1.6 to 8.1) homicide per 5 C Tmax lag 0."
+    }
+   ],
+   "prediction": {
+    "direction": "+",
+    "magnitude": "IRR per 5 C of Central Park TMAX (lag 0) between 1.05 and 1.20, with month, year and day-of-week terms. The spline curve rises monotonically from the coldest days to about the 85th-95th percentile; RR at the city's 84th percentile TMAX vs the median between 1.05 and 1.25 (Lyons et al. pooled 1.17).",
+    "support_if": "lower 95% limit of the IRR per 5 C above 1.00 (confirmed); hit if the estimate lies in 1.05-1.20",
+    "refute_if": "upper 95% limit at or below 1.00 (contested); an estimate above 1.00 with a limit below 1.00 is unsettled"
+   },
+   "plan": "Data: NYPD Shooting Incident Data, 5ucz-vwe8 (Shootings 2006-Present) as primary, count of distinct incident_key per occur_date, 2006-01-01 to the last full month; the archived historic file 833y-fsy8 (to 2024) used to check the counts match. Weather: GHCN-Daily USW00094728 (Central Park) TMAX and PRCP via concord/noaa.py. Primary model: negative binomial GLM (log link, dispersion by ML) of daily incidents on linear TMAX/5, factors for day of week, calendar month, year, an indicator for federal holidays plus 4 July and 31 December, and an indicator PRCP >= 1 mm. Report IRR per 5 C with 95% CI (robust HC0 SE). Curve: same model with a natural cubic spline of TMAX (4 df), RR vs the median TMAX; read off the RR at the 84th percentile for comparison with Lyons et al. Sensitivity, pre-specified: (a) TMAX averaged over lags 0-1; (b) TMIN instead of TMAX; (c) warm season May-September only; (d) 2006-2019 vs 2020-present; (e) murders only (statistical_murder_flag, historic file). Comparison: literature estimates converted to IRR per 5 C where possible (Reeping weekday and weekend; Xu NYC homicide; Rahman CA homicide; corrected graph values).",
+   "alternatives": [
+    "Residual seasonality within month (school calendar, summer youth programmes, daylight) correlated with temperature",
+    "Time outdoors and street encounters as the mechanism (the temperature effect is real but works through routine activity, not physiology); the design cannot separate mechanisms",
+    "Police summer deployments (e.g. Summer All Out) that respond to expected violence",
+    "The 2020-2021 rise in shootings coinciding with summers; handled by year terms but not by year-by-month"
+   ],
+   "prior": 0.9,
+   "registrant": "Claude (heat agent), for Jeff Vernon",
+   "registered_at": "2026-11-12T15:19:38-0500",
+   "sha256": "b2a1bd8ecec550da1e1e07d368d2e5f1b7d108b07ce6f51ef658bbb197ebb762"
+  },
+  "registration_path": "claims/registered/heat-shootings.json",
+  "registration_sha256": "b2a1bd8ecec550da1e1e07d368d2e5f1b7d108b07ce6f51ef658bbb197ebb762",
+  "registration_hash_ok": true,
+  "registration_file_sha256": "f3c9ef53efa7dc3d9904edcb9d6d17f300dabf7194a6629cf3bc037b8bebac52",
+  "registration_commit": {
+   "commit": "67507946fe78b52a39097d7882340ebe335aadad",
+   "committed_at": "2026-11-12T15:19:38-05:00",
+   "subject": "register heat-shootings"
+  },
+  "prereg_branch": {
+   "name": "prereg/heat-shootings",
+   "sha": null,
+   "reachable": true,
+   "note": "origin is reachable but has no such branch"
+  },
+  "outcome": {
+   "id": "heat-shootings",
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "NYC shooting incidents per day, Central Park TMAX lag 0, NB GLM with DOW, month, year, holiday, rain",
+    "estimate": 1.1462159704993367,
+    "lo": 1.1297421298925683,
+    "hi": 1.162930031787583,
+    "scale": "IRR per 5 C",
+    "null": 1,
+    "n": 7548
+   },
+   "graph_effect": {
+    "label": "Temperature -> homicide, Xu 2020 NYC (abstract value; graph row 0.088 is mis-extracted and absent from the Dataverse CSV)",
+    "estimate": 1.088,
+    "lo": 1.015,
+    "hi": 1.166,
+    "scale": "OR per 5 C daily mean, lag 0-7",
+    "null": 1
+   },
+   "sources": [
+    {
+     "kind": "nyc-open-data",
+     "dataset": "5ucz-vwe8",
+     "name": "Shootings (2006-Present)",
+     "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+     "rows_updated_at": "2026-11-05T20:59:39Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+      "$group": "d",
+      "$order": "d"
+     },
+     "fetched": "2026-11-12T15:21:22-0500",
+     "n_rows": 6959
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "833y-fsy8",
+     "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+     "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+     "rows_updated_at": "2025-04-15T18:16:42Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n, sum(case(statistical_murder_flag=true, 1, true, 0)) as murders_victims",
+      "$group": "d",
+      "$order": "d"
+     },
+     "fetched": "2026-11-12T15:21:36-0500",
+     "n_rows": 6431
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "833y-fsy8",
+     "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+     "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+     "rows_updated_at": "2025-04-15T18:16:42Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+      "$where": "statistical_murder_flag=true",
+      "$group": "d",
+      "$order": "d"
+     },
+     "fetched": "2026-11-12T15:21:41-0500",
+     "n_rows": 3176
+    },
+    {
+     "kind": "noaa-ghcnd",
+     "station": "USW00094728",
+     "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+     "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+     "fetched": "2026-11-12T15:06:44-0500",
+     "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+    },
+    {
+     "kind": "sysgraph",
+     "api": "System Public Graph v1.0",
+     "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+     "file": "data/derived/heat/graph_evidence.json",
+     "audit": "data/derived/heat/graph_audit_heat.json"
+    }
+   ],
+   "prediction_scored": "partial: the IRR per 5 C (1.146, 1.130 to 1.163) lies in the registered 1.05-1.20 range, but the spline RR at the 84th percentile (1.42, 1.36 to 1.48) exceeds the registered 1.05-1.25, and the curve keeps rising to 35 C rather than peaking at the 85th-95th percentile.",
+   "settle": "The direction is settled. The size of the hot-day excess in NYC relative to the 100-city pooled estimate (1.42 vs 1.17 at the 84th percentile) would be settled by fitting the Lyons et al. distributed-lag model to the NYPD series (same exposure metric and reference), and by the NYC row of their eTable 2. Mechanism (time outdoors vs physiology) needs data on street activity, e.g. hourly pedestrian counts or mobility traces by temperature.",
+   "research_needed": [
+    {
+     "question": "Does the temperature effect on shootings in NYC work through time spent outdoors?",
+     "data": "NYPD shootings by hour and location type (inside/outside), pedestrian counts, cell-phone mobility",
+     "design": "Mediation with daily outdoor activity; compare indoor vs outdoor shootings",
+     "priority": "high"
+    },
+    {
+     "question": "Is the NYC temperature-shooting slope steeper than the US average, and why?",
+     "data": "Gun Violence Archive and NYPD, 100 cities",
+     "design": "Harmonised multi-city DLNM with NYC as a named city",
+     "priority": "medium"
+    },
+    {
+     "question": "Do cooling interventions (open pools, cooling centres, summer programmes) reduce hot-day shootings?",
+     "data": "Parks pool openings, SYEP dates, NYPD by precinct",
+     "design": "Difference-in-differences across precincts by opening dates",
+     "priority": "high"
+    }
+   ],
+   "figures": [
+    "figures/heat/heat_shootings_curve.png"
+   ],
+   "notes": "24429 shooting incidents on 7548 days, 2006-01-01 to 2026-08-31 (5ucz-vwe8, one row per incident). The archived file 833y-fsy8 agrees to within 2 incidents for 2006-2024 ({'sum_5ucz': 23300, 'sum_833y': 23298, 'days_differ': 6}). Sensitivity analyses all lie between 1.11 and 1.17 per 5 C (lag 0-1, TMIN, May-September, 2006-2019, 2020-2026, murder incidents). The graph has no relationship between gun violence and temperature; its temperature-homicide rows contain two mis-extractions: Xu 2020 percent increases stored as odds ratios 0.095 and 0.088 (absent from the Dataverse CSV) and Rahman 2023 percent increases stored as odds ratios 4.9 and 6.2 (present in the CSV). The NYC estimate lies between the homicide estimates (1.05-1.10) and the Chicago shootings estimates (1.16-1.19).\n\nAfter the referee of heat-night-minimum (13 Nov 2026): the registered count is by calendar date, and 35% of New York shooting incidents occur between 00:00 and 05:59, before the maximum of the date they are counted on. The referee of heat-night-minimum raised this. With each shooting assigned to the day whose night it falls in (06:00 on date d to 05:59 on d+1), the registered model gives 1.135 (1.118 to 1.152) per 5 C against 1.146 (1.130 to 1.163) on calendar dates (7,547 days, 24,424 incidents). The registered condition, a lower limit above 1.00, is met either way, and the estimate stays inside the registered 1.05 to 1.20. The average slope therefore does not depend on the assignment. The hot end does: with the piecewise-linear basis of round 2 the ratio 33 against 27 C is 1.051 (0.988 to 1.118) on night-of counts against 1.102 (1.038 to 1.171) on calendar dates, and with the 4-df cubic spline of this claim it is 1.090 (1.041 to 1.141) against 1.122 (1.072 to 1.173). A quarter to a half of the log rise above 27 C on calendar dates therefore comes from the assignment of small-hours shootings to the hot date. Exploratory, run after the outcomes, and deciding nothing under rule 4 (analyses/critique/round5_night_of_check.py; data/derived/round5/heat_night/night_of_check.json).",
+   "registration_sha256": "b2a1bd8ecec550da1e1e07d368d2e5f1b7d108b07ce6f51ef658bbb197ebb762",
+   "decided_at": "2026-11-12T15:39:52-0500",
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 18.48
+   },
+   "critique": {
+    "report": "critique/heat-night-minimum.md",
+    "answer": "accepted; verdict kept, night-of re-estimate added"
+   },
+   "history": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "NYC shooting incidents per day, Central Park TMAX lag 0, NB GLM with DOW, month, year, holiday, rain",
+      "estimate": 1.1462159704993367,
+      "lo": 1.1297421298925683,
+      "hi": 1.162930031787583,
+      "scale": "IRR per 5 C",
+      "null": 1,
+      "n": 7548
+     },
+     "stance": {
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "z": 18.48
+     },
+     "decided_at": "2026-11-12T15:39:52-0500",
+     "prediction_scored": "partial: the IRR per 5 C (1.146, 1.130 to 1.163) lies in the registered 1.05-1.20 range, but the spline RR at the 84th percentile (1.42, 1.36 to 1.48) exceeds the registered 1.05-1.25, and the curve keeps rising to 35 C rather than peaking at the 85th-95th percentile."
+    }
+   ],
+   "revision": {
+    "reason": "Referee of heat-night-minimum: calendar-day counts include small-hours shootings that precede the day's maximum. Night-of re-estimate added to the notes; the registered condition is met either way.",
+    "critique": "critique/heat-night-minimum.md",
+    "revised_at": "2026-11-13T08:02:28-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   }
+  },
+  "outcome_path": "claims/outcomes/heat-shootings.json",
+  "outcome_file_sha256": "28b5d5cfafa3c7903220dbaff4428322f56e75b807486e774b103f4ce95e0c70",
+  "revision_history": {
+   "in_file": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "NYC shooting incidents per day, Central Park TMAX lag 0, NB GLM with DOW, month, year, holiday, rain",
+      "estimate": 1.1462159704993367,
+      "lo": 1.1297421298925683,
+      "hi": 1.162930031787583,
+      "scale": "IRR per 5 C",
+      "null": 1,
+      "n": 7548
+     },
+     "stance": {
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "z": 18.48
+     },
+     "decided_at": "2026-11-12T15:39:52-0500",
+     "prediction_scored": "partial: the IRR per 5 C (1.146, 1.130 to 1.163) lies in the registered 1.05-1.20 range, but the spline RR at the 84th percentile (1.42, 1.36 to 1.48) exceeds the registered 1.05-1.25, and the curve keeps rising to 35 C rather than peaking at the 85th-95th percentile."
+    }
+   ],
+   "last_revision": {
+    "reason": "Referee of heat-night-minimum: calendar-day counts include small-hours shootings that precede the day's maximum. Night-of re-estimate added to the notes; the registered condition is met either way.",
+    "critique": "critique/heat-night-minimum.md",
+    "revised_at": "2026-11-13T08:02:28-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   },
+   "outcome_commits": [
+    {
+     "commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+     "committed_at": "2026-11-13T08:05:56-05:00",
+     "subject": "Round 6: referee answers, DCP 25Q4 rerun, affordability and heat-solutions claims"
+    },
+    {
+     "commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+     "committed_at": "2026-11-12T15:40:05-05:00",
+     "subject": "heat: analyses, derived data, figures, outcomes and docs/heat.md"
+    }
+   ]
+  },
+  "referee_reports": [
+   {
+    "path": "critique/heat-night-minimum.md",
+    "role": "named in the outcome",
+    "answer": "accepted; verdict kept, night-of re-estimate added",
+    "sha256": "e4c9feb4618851fea6f25d0e5e42a6b2cfdf15a0bfd32a1dc5031237e9198b59"
+   },
+   {
+    "path": "critique/heat-shootings.md",
+    "role": "referee report for this claim",
+    "sha256": "5a7836221964eff0d952611f3ff7eb8c9fcb1ea0b0b88eb6e7cc0031450a53ab"
+   },
+   {
+    "path": "critique/ANSWERS.md",
+    "role": "mentions the claim id",
+    "sha256": "8c6da566f9a62ca55580cb07aa1259d787018fc87961922d7fa615a4e450b96d"
+   },
+   {
+    "path": "critique/bridge-heat-shootings-ems.md",
+    "role": "mentions the claim id",
+    "sha256": "3e824eccc8cc6d180eb6c661a645dbf7008cc080be02478a4e98d71dbf9b2340"
+   },
+   {
+    "path": "critique/heat-school-out.md",
+    "role": "mentions the claim id",
+    "sha256": "e30ebc22be88f11fa29b55a1cf87981f090ecad53b6a5c8d236587e4d54c5072"
+   }
+  ]
+ },
+ "code": {
+  "repo_commit": "47e2f54ff97e1795900c0c186583aeba809d3259",
+  "repo_dirty_paths": 40,
+  "scripts": [
+   {
+    "path": "concord/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "concord/socrata.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "blob_at_HEAD": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "3cc8d26ec235c6633cae66a5ddcdf5173ea8252f72c722d28a52ff48f4d61f4b"
+   },
+   {
+    "path": "concord/noaa.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "9c104e53d0057bfd51cc6bd9e30406b3907de5f5",
+    "blob_at_HEAD": "9c104e53d0057bfd51cc6bd9e30406b3907de5f5",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "6b16cdb0ca46d148e92dcb0a718596e2038ab14cf0dff61d488319ac484f707f"
+   },
+   {
+    "path": "analyses/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "first_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/heat/common.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "c0eea33d9e7ec54892225ae7d030573823da0542",
+    "blob_at_HEAD": "c0eea33d9e7ec54892225ae7d030573823da0542",
+    "clean": true,
+    "last_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "first_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "sha256": "7c95a1175d9eb620219658632d0ea3ef05c47ebd9a6d4de347f6ee257c81c94a"
+   },
+   {
+    "path": "analyses/heat/shootings.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "aaac7c4470b26d981f4e64e761a89056a6ab3af5",
+    "blob_at_HEAD": "aaac7c4470b26d981f4e64e761a89056a6ab3af5",
+    "clean": true,
+    "last_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "first_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "sha256": "ca7f906189cb69f768722ead5e4b5533dbe3cb7f3b6947ee7cd67a8ab9199851"
+   },
+   {
+    "path": "analyses/critique/round5_night_of_check.py",
+    "found_by": "named in the registration or outcome",
+    "exists": true,
+    "blob": "c87f1010a2f0d2cd8cb3ebc84c95a5b1b9b30874",
+    "blob_at_HEAD": "c87f1010a2f0d2cd8cb3ebc84c95a5b1b9b30874",
+    "clean": true,
+    "last_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "first_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "sha256": "5a04d9653682dc1cd60f506a6c32ec75b887e9c5119d87e5481eafdfbc7cadc0"
+   },
+   {
+    "path": "analyses/bridges/compose.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "a7b010762c2649cdc92567ff48b452ddc337dc9e",
+    "blob_at_HEAD": "a7b010762c2649cdc92567ff48b452ddc337dc9e",
+    "clean": true,
+    "last_commit": "a4b6f1edd07502a520c239484df1b075d68aa080",
+    "first_commit": "a4b6f1edd07502a520c239484df1b075d68aa080",
+    "sha256": "a081096b60b601f844224ecce5cfb3b6016316b8be52718560dbccf4280557dc"
+   },
+   {
+    "path": "analyses/bridges/ems_shot.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "102ee6873fcf3613986590374a2133acf973aaa4",
+    "blob_at_HEAD": "102ee6873fcf3613986590374a2133acf973aaa4",
+    "clean": true,
+    "last_commit": "f024acbccd91fb73b8dbd6b034c059ac75d9c284",
+    "first_commit": "f024acbccd91fb73b8dbd6b034c059ac75d9c284",
+    "sha256": "cb232da30350e7236ec1f57a9db9461ea840cada5eaa0d4b73f8f73759dea3e8"
+   },
+   {
+    "path": "analyses/bridges/figures.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "cac7b9eb88b5db287fb7ee6c4f2ca678c2ad069d",
+    "blob_at_HEAD": "cac7b9eb88b5db287fb7ee6c4f2ca678c2ad069d",
+    "clean": true,
+    "last_commit": "f024acbccd91fb73b8dbd6b034c059ac75d9c284",
+    "first_commit": "f024acbccd91fb73b8dbd6b034c059ac75d9c284",
+    "sha256": "ba20e79705bbc7ef79d526b57b78bdc7d82d0d82a96bc4467cac4409c179ff2e"
+   },
+   {
+    "path": "analyses/bridges/outcomes.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "56cc9dc66b4ea5915042fc4ce0d25f398b3008b1",
+    "blob_at_HEAD": "56cc9dc66b4ea5915042fc4ce0d25f398b3008b1",
+    "clean": true,
+    "last_commit": "f024acbccd91fb73b8dbd6b034c059ac75d9c284",
+    "first_commit": "f024acbccd91fb73b8dbd6b034c059ac75d9c284",
+    "sha256": "b3c155bd27742b7784ac01085cce9b2017da03ef5cac8af497be77e96c54310a"
+   },
+   {
+    "path": "analyses/bridges/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "b4bfab716c3b2d45910d67c8bbd22e20632b31d1",
+    "blob_at_HEAD": "b4bfab716c3b2d45910d67c8bbd22e20632b31d1",
+    "clean": true,
+    "last_commit": "a4b6f1edd07502a520c239484df1b075d68aa080",
+    "first_commit": "a4b6f1edd07502a520c239484df1b075d68aa080",
+    "sha256": "3ff3f4a68895c40681564ee005aa82642f14881be488c4e2f6390aa660558668"
+   },
+   {
+    "path": "analyses/critique/answer_round5.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "c478c8df472fad0ef08b6d0744275691544477e7",
+    "blob_at_HEAD": "c478c8df472fad0ef08b6d0744275691544477e7",
+    "clean": true,
+    "last_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "first_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "sha256": "b8bf771082870e11764ffa6fc00ffb8388e86c191bd3278729f703ca2e1e0429"
+   },
+   {
+    "path": "analyses/critique/answer_round6_heat.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "be78c418290b9e92a30d76856e3bcd695a5d2b95",
+    "blob_at_HEAD": "be78c418290b9e92a30d76856e3bcd695a5d2b95",
+    "clean": true,
+    "last_commit": "a8f8203e9ab4f02d6849ee535c83dd4980fdf20a",
+    "first_commit": "a8f8203e9ab4f02d6849ee535c83dd4980fdf20a",
+    "sha256": "36980453d7ef409cf911f83fa90416e4a4b5c715268598a00ade8220684fccc8"
+   },
+   {
+    "path": "analyses/graph/heat_mechanisms_outcome.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "5c15ed9e07ca8aff9e1b2d853b91a344f7baefe4",
+    "blob_at_HEAD": "5c15ed9e07ca8aff9e1b2d853b91a344f7baefe4",
+    "clean": true,
+    "last_commit": "9b8f0434cd41778e9afdbe40046e86bd09c718d1",
+    "first_commit": "9b8f0434cd41778e9afdbe40046e86bd09c718d1",
+    "sha256": "baf92f89ae8b3d7e589a706de5b2f270cb6f5b74acd6f4a8aac484471dad3525"
+   },
+   {
+    "path": "analyses/graph/heat_mechanisms_register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "0259e2c1e6c4334864e41aa152afeeeb04081b37",
+    "blob_at_HEAD": "0259e2c1e6c4334864e41aa152afeeeb04081b37",
+    "clean": true,
+    "last_commit": "9b8f0434cd41778e9afdbe40046e86bd09c718d1",
+    "first_commit": "9b8f0434cd41778e9afdbe40046e86bd09c718d1",
+    "sha256": "dd0c53e61aaaf9c1cdf584dc1d5b9feaae6e56562474b8eed4ad1d2462395fbb"
+   },
+   {
+    "path": "analyses/graph_coverage/make_outputs.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "2a20a6a8e93db5020d3fdff5372ffd5de8c350b9",
+    "blob_at_HEAD": "2a20a6a8e93db5020d3fdff5372ffd5de8c350b9",
+    "clean": true,
+    "last_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "first_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "sha256": "63e90fb2899eb7d2a2f3be8910bf3aa2fd1e81a8ebe4b7567d99646447a457ca"
+   },
+   {
+    "path": "analyses/graph_coverage/termmap.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "a3c9b0e44bfcee7948a979b0dd0e338361889947",
+    "blob_at_HEAD": "a3c9b0e44bfcee7948a979b0dd0e338361889947",
+    "clean": true,
+    "last_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "first_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "sha256": "f65d7e481ecab3446e5a8a84fea74e13103bb31e4218b1eb86a80548d94e3191"
+   },
+   {
+    "path": "analyses/heat/outcomes.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "f9aef824aa51f03d127a661e45231c3ef5b1b73f",
+    "blob_at_HEAD": "f9aef824aa51f03d127a661e45231c3ef5b1b73f",
+    "clean": true,
+    "last_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "first_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "sha256": "df3503ccc1920687b54f6ca022a76c71414015788e5fa9c7b60d688e0bdb7dd1"
+   },
+   {
+    "path": "analyses/heat/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "56a6537a8ef0ddebefeb2ac4169ad0b85de8bd23",
+    "blob_at_HEAD": "56a6537a8ef0ddebefeb2ac4169ad0b85de8bd23",
+    "clean": true,
+    "last_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "first_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "sha256": "d633526a8cf849ccbbac5bca2b6e92e639a982a81423869c7363a1b0ae9ded4d"
+   },
+   {
+    "path": "analyses/heat_extremes/model.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "3127fe7e34ffecccb2052f731f08c1118455df5d",
+    "blob_at_HEAD": "3127fe7e34ffecccb2052f731f08c1118455df5d",
+    "clean": true,
+    "last_commit": "479e77abb8faa17835f8f6201f39b0305b64220b",
+    "first_commit": "479e77abb8faa17835f8f6201f39b0305b64220b",
+    "sha256": "3b390585e0e11876cd7fec997337723886c8fa6ced35ddf2eef78eb54152e1ab"
+   },
+   {
+    "path": "analyses/heat_solutions/common.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "704a2219229183e3a069d6463bd110a4892fdb6e",
+    "blob_at_HEAD": "704a2219229183e3a069d6463bd110a4892fdb6e",
+    "clean": true,
+    "last_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "first_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "sha256": "c271c2fae50f98b5eaf28405e615e4f8d14fcd01a009e139b7509e95b2c99833"
+   },
+   {
+    "path": "analyses/heat_solutions/design.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "0df08134ad63931fe8b08cceaa83a7f8e3580b62",
+    "blob_at_HEAD": "0df08134ad63931fe8b08cceaa83a7f8e3580b62",
+    "clean": true,
+    "last_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "first_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "sha256": "d9b3693dc17dfc363f181e3b59ba367ced2f4de7f491c3dd3bf9a362ea11ac7f"
+   },
+   {
+    "path": "analyses/heat_solutions/outcome.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "d909c17ac5d8255412e9547775238863b91b44fa",
+    "blob_at_HEAD": "d909c17ac5d8255412e9547775238863b91b44fa",
+    "clean": true,
+    "last_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "first_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "sha256": "a4114c7bf58a778f4c338f99df3204dffe458d2ae855e398790db66f06d17276"
+   },
+   {
+    "path": "analyses/heat_solutions/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "ff0fbbd7f34ee1527274cc9b59738e780bd8b369",
+    "blob_at_HEAD": "ff0fbbd7f34ee1527274cc9b59738e780bd8b369",
+    "clean": true,
+    "last_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "first_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "sha256": "f47cc9ac10f7714bc61b35d617e8deebba130f5a89814a9a73dd61057dc273cb"
+   },
+   {
+    "path": "analyses/heat_solutions/run.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "2cbc999d724b8a288896a3354ce3f99777ffafcf",
+    "blob_at_HEAD": "2cbc999d724b8a288896a3354ce3f99777ffafcf",
+    "clean": true,
+    "last_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "first_commit": "584e57e3a7c546b2c87aa670be25ecc539ee0e99",
+    "sha256": "123eaa9fe510f9bd82c9a10d63160d43d986d04f5715f7bcc1efcb330a7b203b"
+   },
+   {
+    "path": "analyses/round2/hot_end/model.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "fb12d480f2796a45a94ed51d248dd959c83c355a",
+    "blob_at_HEAD": "fb12d480f2796a45a94ed51d248dd959c83c355a",
+    "clean": true,
+    "last_commit": "1aee7e9306c87841e9ffbb5ff2560002302d42a2",
+    "first_commit": "1aee7e9306c87841e9ffbb5ff2560002302d42a2",
+    "sha256": "5378b788b00b9727e4c3f69e2bddca29bcfad1c487b1bd125eb483d4127a57b4"
+   },
+   {
+    "path": "analyses/round2/hot_end/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "0e3657a00e044bff878322c55973eeb4b5a3746d",
+    "blob_at_HEAD": "0e3657a00e044bff878322c55973eeb4b5a3746d",
+    "clean": true,
+    "last_commit": "1aee7e9306c87841e9ffbb5ff2560002302d42a2",
+    "first_commit": "1aee7e9306c87841e9ffbb5ff2560002302d42a2",
+    "sha256": "6fab05c64c79221c7b7ab97b0d53965f6791689bedcc8d058bcc8c3e0ae1d68f"
+   },
+   {
+    "path": "analyses/round5/heat_night/design.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "7b047b4f2cc12ffa97ee5a9772f14ecee895a32a",
+    "blob_at_HEAD": "7b047b4f2cc12ffa97ee5a9772f14ecee895a32a",
+    "clean": true,
+    "last_commit": "19037d5bd3d8fcc1bc66a05a4377d25492017ce5",
+    "first_commit": "19037d5bd3d8fcc1bc66a05a4377d25492017ce5",
+    "sha256": "8f2664d667d8f4aec1ea9730ceffaac76f022ac5c099790b6c9142190c2b1292"
+   },
+   {
+    "path": "analyses/round5/heat_night/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "f76d54af42c24b6db3e4bf9a521916446c4ba12e",
+    "blob_at_HEAD": "f76d54af42c24b6db3e4bf9a521916446c4ba12e",
+    "clean": true,
+    "last_commit": "19037d5bd3d8fcc1bc66a05a4377d25492017ce5",
+    "first_commit": "19037d5bd3d8fcc1bc66a05a4377d25492017ce5",
+    "sha256": "f940ec9db4d830d17c5b02b8b30d4ed1ae9f5fcb12fea9ef275f4e0dd026a7c4"
+   },
+   {
+    "path": "analyses/simulate/build_parameters.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "7d1ee125088c6bfc65616eb2b44252ed642d3c98",
+    "blob_at_HEAD": "7d1ee125088c6bfc65616eb2b44252ed642d3c98",
+    "clean": true,
+    "last_commit": "a8f8203e9ab4f02d6849ee535c83dd4980fdf20a",
+    "first_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "sha256": "b8ae0b2344a9cf93077b25594e84dd985a5a08af307bbf8cff0913b0222edfd1"
+   },
+   {
+    "path": "analyses/transfer/figure.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "9090a97469002dd1f315bbb97db089190164f1af",
+    "blob_at_HEAD": "9090a97469002dd1f315bbb97db089190164f1af",
+    "clean": true,
+    "last_commit": "56a7a50bf08b14fe900569980d1b937172fcef26",
+    "first_commit": "56a7a50bf08b14fe900569980d1b937172fcef26",
+    "sha256": "bab2931526bc29513c1998dd5b1ca7eb731311ffbc46c9dc9a9c208f46a2ad68"
+   },
+   {
+    "path": "analyses/transfer/outcomes.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "00ef4083e134ba4f9092b14799e88ee23ada4157",
+    "blob_at_HEAD": "00ef4083e134ba4f9092b14799e88ee23ada4157",
+    "clean": true,
+    "last_commit": "56a7a50bf08b14fe900569980d1b937172fcef26",
+    "first_commit": "56a7a50bf08b14fe900569980d1b937172fcef26",
+    "sha256": "460c52724b46e1c1b6777199a3c9a2194a2fdafa4194530c5106a75efed08fac"
+   },
+   {
+    "path": "analyses/transfer/register_transfer.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "e96bb1064469717bd9b112c46542addbca305c11",
+    "blob_at_HEAD": "e96bb1064469717bd9b112c46542addbca305c11",
+    "clean": true,
+    "last_commit": "56a7a50bf08b14fe900569980d1b937172fcef26",
+    "first_commit": "56a7a50bf08b14fe900569980d1b937172fcef26",
+    "sha256": "9c33c3bd9aac8b76ee29e5f9a6d314585829e03717592f210573d4ce124ec079"
+   }
+  ],
+  "seeds": [],
+  "draw_counts": [],
+  "commits_named_in_registration": [],
+  "procedure_note": "The registration names no seed and no resampling draw count; the deciding number is deterministic given the inputs."
+ },
+ "data": [
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "5ucz-vwe8",
+    "name": "Shootings (2006-Present)",
+    "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+    "rows_updated_at": "2026-11-05T20:59:39Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+     "$group": "d",
+     "$order": "d"
+    },
+    "fetched": "2026-11-12T15:21:22-0500",
+    "n_rows": 6959
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:22-0500",
+   "n_rows": 6959,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/5ucz-vwe8-5541bb3d6b984b2b6436cea3.json",
+     "sha256": "195192980a5ace9499b2232317dc839223bfecef4d5f3d530a46931e3dd25cce",
+     "rows_sha256": "3d13db4b70ea2da096cdede46c36d85b5fe2b39b9ca1933490c6b28a8e1561cf",
+     "bytes": 306766,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "833y-fsy8",
+    "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+    "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+    "rows_updated_at": "2025-04-15T18:16:42Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n, sum(case(statistical_murder_flag=true, 1, true, 0)) as murders_victims",
+     "$group": "d",
+     "$order": "d"
+    },
+    "fetched": "2026-11-12T15:21:36-0500",
+    "n_rows": 6431
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n, sum(case(statistical_murder_flag=true, 1, true, 0)) as murders_victims",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 6431,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/833y-fsy8-ee08c9d43c909601c1cb8a8a.json",
+     "sha256": "e564f37a9f0e73edb995bc4210f10552deeaa3db1d7934986d354ce264abb0a0",
+     "rows_sha256": "98186c36d1d14e67b546a275b553a0ea73a0352f1c54c64253f25b4e22776631",
+     "bytes": 437978,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "833y-fsy8",
+    "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+    "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+    "rows_updated_at": "2025-04-15T18:16:42Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+     "$where": "statistical_murder_flag=true",
+     "$group": "d",
+     "$order": "d"
+    },
+    "fetched": "2026-11-12T15:21:41-0500",
+    "n_rows": 3176
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$where": "statistical_murder_flag=true",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:41-0500",
+   "n_rows": 3176,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/833y-fsy8-eb44c699457ddefc6ac54d58.json",
+     "sha256": "e888b68cae33551138e496502e2430f0ddfa12d85ad014f427bead847c62d773",
+     "rows_sha256": "c3f0d51b6ed987ac1cc0468ba31e160e9568a8c6d0a5a96d9e6a342b14f1fd43",
+     "bytes": 140219,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "record": {
+    "kind": "noaa-ghcnd",
+    "station": "USW00094728",
+    "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+    "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+    "fetched": "2026-11-12T15:06:44-0500",
+    "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+   },
+   "type": "noaa",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "station": "USW00094728",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "file": {
+    "path": "data/cache/noaa/USW00094728.csv",
+    "sha256": "d212ab1b033bb1f4f0d8e896319d49614439181d0d86d64ccff9f0f92251fd46",
+    "bytes": 17845904,
+    "copied": true
+   }
+  },
+  {
+   "kind": "sysgraph",
+   "record": {
+    "kind": "sysgraph",
+    "api": "System Public Graph v1.0",
+    "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+    "file": "data/derived/heat/graph_evidence.json",
+    "audit": "data/derived/heat/graph_audit_heat.json"
+   },
+   "type": "sysgraph",
+   "release": "July 1, 2026 release (as named in the challenge brief; the API returns no version id)",
+   "api": "System Public Graph v1.0",
+   "dataset_version": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "key": "not included; supply your own in ~/.config/system/token",
+   "derived_files": [
+    {
+     "path": "data/derived/heat/graph_evidence.json",
+     "sha256": "461e6aaf79039a2ab644ddb07c58b0a2d70c6d564efe3f1de14940412bf4920d",
+     "bytes": 98707,
+     "copied": true
+    },
+    {
+     "path": "data/derived/heat/graph_audit_heat.json",
+     "sha256": "f034e3df5749c39f2a42d9695f7f4edc86bcf47abe36df8400474c417617b846",
+     "bytes": 36453,
+     "copied": true
+    }
+   ],
+   "cached_requests": [
+    {
+     "request": "/v1/relationships/4FaXcuNJRt%7CTLeQZQ_leT",
+     "fetched": "2026-11-12T15:13:02-0500",
+     "path": "data/cache/sysgraph/1c88266f2cadb5a2b0b1a739.json",
+     "sha256": "e30a7e86ec6819fc324f026ee1b203382293dad371e4a8f4d79f2e4ef278ff1d",
+     "response_sha256": "cce03193b37931deb8769222368ad6c2b5176568511e06218e6ce46731f4d727",
+     "copied": true
+    },
+    {
+     "request": "/v1/relationships/4FaXcuNJRt%7CYZku29igbl/associations?limit=100&offset=0",
+     "fetched": "2026-11-12T15:13:02-0500",
+     "path": "data/cache/sysgraph/3a1d0e1d5aeb262e41bb17b6.json",
+     "sha256": "4a7bbe3d7fb5ba27adb297656b9b1c17d002b2591b3b352e519df2e754547323",
+     "response_sha256": "1fa54e4ff1abcf53b2d4102387ecec27dd743da27c02b6e1d8d72f07c269fce3",
+     "copied": true
+    },
+    {
+     "request": "/v1/relationships/4FaXcuNJRt%7CrULjCt1BqH",
+     "fetched": "2026-11-12T15:13:04-0500",
+     "path": "data/cache/sysgraph/49cf12b54834e3ccdb1dbfe4.json",
+     "sha256": "0bbc2ba9cc2a08c132e34d2d392c1a2f35618f202c040def569ba4e291e72f86",
+     "response_sha256": "05f43c961ff82f78dc42b631d7151bd1f26b51588a101e427ea41aa31476525d",
+     "copied": true
+    },
+    {
+     "request": "/v1/relationships/4FaXcuNJRt%7CTLeQZQ_leT/studies?limit=100&offset=0",
+     "fetched": "2026-11-12T22:36:55-0500",
+     "path": "data/cache/sysgraph/53175868c245ecbb58da87d8.json",
+     "sha256": "d9854a95e670952730fda715d42a0ce5dd15c02153a7598c13577151e4cbb6b6",
+     "response_sha256": "e6261bb46d01d7e65d45fb2ed8c6d7c34e07858008aae2e17a4f9de101b4f25d",
+     "copied": true
+    },
+    {
+     "request": "/v1/concepts/X7hfhwez9f",
+     "fetched": "2026-11-12T15:11:16-0500",
+     "path": "data/cache/sysgraph/69f691305c0bed264ebc73c7.json",
+     "sha256": "93021685b885e355b009bee25f39897cedb455646f7a2129e5242686cf140456",
+     "response_sha256": "823a5272dbc09ec0957dd6a2cd6c3eb3af5680616e2484b5ff1b31f895bbb820",
+     "copied": true
+    },
+    {
+     "request": "/v1/relationships/4FaXcuNJRt%7CYZku29igbl",
+     "fetched": "2026-11-12T15:13:01-0500",
+     "path": "data/cache/sysgraph/740504efb833ddabaf6f5563.json",
+     "sha256": "1ee072922411fb2aaba047fa73a633963a2865c176e7edb65a34fe7f665743ea",
+     "response_sha256": "3bf0847389c706969fd32cf11f25c65b486b2ce29d503b15990278cb3f642889",
+     "copied": true
+    },
+    {
+     "request": "/v1/relationships/4FaXcuNJRt%7CrULjCt1BqH/associations?limit=100&offset=0",
+     "fetched": "2026-11-12T15:13:06-0500",
+     "path": "data/cache/sysgraph/7cf31999f3779eb5e7611dd0.json",
+     "sha256": "60cb80d960787fe64ca3b822e5e5a107ffb33da11ecdb436eb6f5a068fc05768",
+     "response_sha256": "e458a9409b2690f5d68b17ac18f0411f26b76e7e153c71db0fa697dee18aac97",
+     "copied": true
+    },
+    {
+     "request": "/v1/relationships/4FaXcuNJRt%7CrULjCt1BqH/studies?limit=100&offset=0",
+     "fetched": "2026-11-12T22:37:00-0500",
+     "path": "data/cache/sysgraph/907b41674108a50c372f23cd.json",
+     "sha256": "4772ffac673117a2c7e40e67867af26c00efedf36724ed1924f8ad01af2819ee",
+     "response_sha256": "eb05db1e927e0518497e810b4e7b689f82928ee733be13e11f66bd8fa2a6f53a",
+     "copied": true
+    },
+    {
+     "request": "/v1/concepts/X7hfhwez9f/relationships?limit=100&offset=0",
+     "fetched": "2026-11-12T15:08:53-0500",
+     "path": "data/cache/sysgraph/962e80947d0ac89f98f8cd9e.json",
+     "sha256": "414da2e5e6c282990da511ae73401f843adc488426b9fa06d23c7df551f86f5c",
+     "response_sha256": "9901fd0bb8e24be73ed998a910b8b2b9c43880813391e513e97773397d59ba4d",
+     "copied": true
+    },
+    {
+     "request": "/v1/relationships/4FaXcuNJRt%7CYZku29igbl/studies?limit=100&offset=0",
+     "fetched": "2026-11-12T22:35:02-0500",
+     "path": "data/cache/sysgraph/b429a200e0561d7e2f3e694d.json",
+     "sha256": "89fa21c07a9b87e23194af70c1b903c183b7d428244eafd6073dc4b9cbbde91c",
+     "response_sha256": "7804e506428f17b0ea5001e73d02c244482e5ea198d5940f65a762039dc65e69",
+     "copied": true
+    },
+    {
+     "request": "/v1/relationships/4FaXcuNJRt%7CTLeQZQ_leT/associations?limit=100&offset=0",
+     "fetched": "2026-11-12T15:13:04-0500",
+     "path": "data/cache/sysgraph/d3d6b11c4b09bf1c3ccc4614.json",
+     "sha256": "8b601fdb7624fd36d58baf193035fcf33ed92f74540e0f17f4a8a4753e748023",
+     "response_sha256": "149d402a77950dbd7fcde545eb2bf7f344c2e212a4b6ecf11e3a64c010550de8",
+     "copied": true
+    },
+    {
+     "request": "/v1/concepts/X7hfhwez9f/relationships?limit=1000&offset=0",
+     "fetched": "2026-11-12T22:34:57-0500",
+     "path": "data/cache/sysgraph/fae0d3fc9bbecfa09ebad247.json",
+     "sha256": "067fdb6911ee19a650b2dc659c97c3162a86bdb00286788a81df633b0a1855f4",
+     "response_sha256": "6fdc5dd65947614478aca4525546cb7317e4380f3a69f4f192c0fd2f68ee274f",
+     "copied": true
+    }
+   ]
+  }
+ ],
+ "environment": {
+  "python": "3.12.10 (main, Apr  9 2025, 03:49:38) [Clang 20.1.0 ]",
+  "venv": "~/.venvs/nyc-concordance",
+  "uv_pip_freeze": [
+   "affine==3.0.1",
+   "annotated-types==0.8.0",
+   "attrs==26.1.0",
+   "certifi==2026.10.23",
+   "charset-normalizer==3.5.2",
+   "click==8.5.1",
+   "contourpy==1.4.0",
+   "cycler==0.12.1",
+   "duckdb==2.0.0",
+   "fonttools==4.68.0",
+   "formulaic==1.2.2",
+   "geopandas==1.2.0",
+   "idna==3.20",
+   "interface-meta==2.0.1",
+   "jsonschema==4.26.0",
+   "jsonschema-specifications==2025.9.1",
+   "kiwisolver==1.5.1",
+   "matplotlib==3.11.2",
+   "mercantile==1.2.1",
+   "narwhals==2.28.0",
+   "numpy==2.5.4",
+   "packaging==26.3",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pillow==13.0.0",
+   "planetary-computer==1.0.0",
+   "pyarrow==26.0.1",
+   "pydantic==2.14.3",
+   "pydantic-core==2.50.4",
+   "pyogrio==0.13.0",
+   "pyparsing==3.3.3",
+   "pyproj==3.8.0",
+   "pystac==1.16.0",
+   "pystac-client==0.9.1",
+   "pystac-core==1.16.0",
+   "pystac-ext-classification==2.0.2",
+   "pystac-ext-datacube==2.2.2",
+   "pystac-ext-eo==1.1.2",
+   "pystac-ext-file==2.1.2",
+   "pystac-ext-grid==1.1.2",
+   "pystac-ext-item-assets==1.0.2",
+   "pystac-ext-label==1.0.3",
+   "pystac-ext-mgrs==1.0.2",
+   "pystac-ext-mlm==1.4.2",
+   "pystac-ext-pointcloud==1.0.2",
+   "pystac-ext-projection==2.0.2",
+   "pystac-ext-raster==1.1.2",
+   "pystac-ext-render==2.0.1",
+   "pystac-ext-sar==1.0.2",
+   "pystac-ext-sat==1.0.2",
+   "pystac-ext-scientific==1.0.2",
+   "pystac-ext-storage==2.0.2",
+   "pystac-ext-table==1.2.2",
+   "pystac-ext-timestamps==1.1.2",
+   "pystac-ext-version==1.2.2",
+   "pystac-ext-view==1.0.2",
+   "pystac-ext-xarray-assets==1.0.2",
+   "python-dateutil==4.0.0",
+   "python-dotenv==1.2.4",
+   "pytz==2026.6",
+   "rasterio==1.5.2",
+   "referencing==0.37.0",
+   "requests==2.34.2",
+   "rpds-py==2026.9.1",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0",
+   "typing-extensions==4.16.0",
+   "typing-inspection==0.4.5",
+   "tzdata==2026.6",
+   "urllib3==2.8.0",
+   "wrapt==2.5.2"
+  ],
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "os": "Darwin 27.2.0",
+  "mac_ver": "27.2.1",
+  "requirements": [
+   "numpy==2.5.4",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "requests==2.34.2",
+   "scipy==1.18.1",
+   "statsmodels==0.15.0"
+  ]
+ },
+ "inputs": {
+  "cap_bytes": 20971520,
+  "copied_bytes": 18935477,
+  "files": [
+   {
+    "path": "data/cache/socrata/5ucz-vwe8-5541bb3d6b984b2b6436cea3.json",
+    "bytes": 306766,
+    "sha256": "195192980a5ace9499b2232317dc839223bfecef4d5f3d530a46931e3dd25cce",
+    "role": "cached Socrata response, 5ucz-vwe8",
+    "rows_sha256": "3d13db4b70ea2da096cdede46c36d85b5fe2b39b9ca1933490c6b28a8e1561cf",
+    "n_rows": 6959,
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/socrata/833y-fsy8-ee08c9d43c909601c1cb8a8a.json",
+    "bytes": 437978,
+    "sha256": "e564f37a9f0e73edb995bc4210f10552deeaa3db1d7934986d354ce264abb0a0",
+    "role": "cached Socrata response, 833y-fsy8",
+    "rows_sha256": "98186c36d1d14e67b546a275b553a0ea73a0352f1c54c64253f25b4e22776631",
+    "n_rows": 6431,
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/socrata/833y-fsy8-eb44c699457ddefc6ac54d58.json",
+    "bytes": 140219,
+    "sha256": "e888b68cae33551138e496502e2430f0ddfa12d85ad014f427bead847c62d773",
+    "role": "cached Socrata response, 833y-fsy8",
+    "rows_sha256": "c3f0d51b6ed987ac1cc0468ba31e160e9568a8c6d0a5a96d9e6a342b14f1fd43",
+    "n_rows": 3176,
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/noaa/USW00094728.csv",
+    "bytes": 17845904,
+    "sha256": "d212ab1b033bb1f4f0d8e896319d49614439181d0d86d64ccff9f0f92251fd46",
+    "role": "NOAA GHCN-Daily station file",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/noaa/USW00094728.meta",
+    "bytes": 54,
+    "sha256": "9e5a6b37f13cecb205e274475a14c003de9fb5d3e2b9c2c416ee080ce2f12616",
+    "role": "NOAA cache metadata (Last-Modified, fetch time)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/heat/graph_evidence.json",
+    "bytes": 98707,
+    "sha256": "461e6aaf79039a2ab644ddb07c58b0a2d70c6d564efe3f1de14940412bf4920d",
+    "role": "graph evidence (file)",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/derived/heat/graph_audit_heat.json",
+    "bytes": 36453,
+    "sha256": "f034e3df5749c39f2a42d9695f7f4edc86bcf47abe36df8400474c417617b846",
+    "role": "graph evidence (audit)",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/1c88266f2cadb5a2b0b1a739.json",
+    "bytes": 833,
+    "sha256": "e30a7e86ec6819fc324f026ee1b203382293dad371e4a8f4d79f2e4ef278ff1d",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/3a1d0e1d5aeb262e41bb17b6.json",
+    "bytes": 2500,
+    "sha256": "4a7bbe3d7fb5ba27adb297656b9b1c17d002b2591b3b352e519df2e754547323",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/49cf12b54834e3ccdb1dbfe4.json",
+    "bytes": 873,
+    "sha256": "0bbc2ba9cc2a08c132e34d2d392c1a2f35618f202c040def569ba4e291e72f86",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/53175868c245ecbb58da87d8.json",
+    "bytes": 1760,
+    "sha256": "d9854a95e670952730fda715d42a0ce5dd15c02153a7598c13577151e4cbb6b6",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/69f691305c0bed264ebc73c7.json",
+    "bytes": 366,
+    "sha256": "93021685b885e355b009bee25f39897cedb455646f7a2129e5242686cf140456",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/740504efb833ddabaf6f5563.json",
+    "bytes": 827,
+    "sha256": "1ee072922411fb2aaba047fa73a633963a2865c176e7edb65a34fe7f665743ea",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/7cf31999f3779eb5e7611dd0.json",
+    "bytes": 2399,
+    "sha256": "60cb80d960787fe64ca3b822e5e5a107ffb33da11ecdb436eb6f5a068fc05768",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/907b41674108a50c372f23cd.json",
+    "bytes": 794,
+    "sha256": "4772ffac673117a2c7e40e67867af26c00efedf36724ed1924f8ad01af2819ee",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/962e80947d0ac89f98f8cd9e.json",
+    "bytes": 25596,
+    "sha256": "414da2e5e6c282990da511ae73401f843adc488426b9fa06d23c7df551f86f5c",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/b429a200e0561d7e2f3e694d.json",
+    "bytes": 586,
+    "sha256": "89fa21c07a9b87e23194af70c1b903c183b7d428244eafd6073dc4b9cbbde91c",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/d3d6b11c4b09bf1c3ccc4614.json",
+    "bytes": 7265,
+    "sha256": "8b601fdb7624fd36d58baf193035fcf33ed92f74540e0f17f4a8a4753e748023",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/fae0d3fc9bbecfa09ebad247.json",
+    "bytes": 25597,
+    "sha256": "067fdb6911ee19a650b2dc659c97c3162a86bdb00286788a81df633b0a1855f4",
+    "role": "cached System graph response",
+    "copied": true,
+    "required_for_rerun": false
+   }
+  ]
+ },
+ "deciding": {
+  "available": true,
+  "what": "city_effect: IRR per 5 C of Central Park TMAX (lag 0), negative binomial GLM, robust HC0 95% CI",
+  "recorded": {
+   "estimate": 1.1462159704993367,
+   "lo": 1.1297421298925683,
+   "hi": 1.162930031787583,
+   "n": 7548
+  },
+  "tolerance": {
+   "estimate": 0.0001,
+   "lo": 0.0001,
+   "hi": 0.0001,
+   "n": 0
+  },
+  "decides": "support_if: lower 95% limit above 1.00",
+  "recorded_from": {
+   "city_effect": "claims/outcomes/heat-shootings.json"
+  },
+  "wrapper": "code/rerun.py",
+  "wrapper_note": "Smallest wrapper: shootings.py main() also runs eight sensitivity models and writes into the repository, so code/rerun.py calls its build() and nb_fit() for the primary model only.",
+  "refetch_rerun": true
+ },
+ "not_rebuilt": []
+}

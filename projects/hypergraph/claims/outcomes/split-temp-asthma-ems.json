@@ -1,0 +1,677 @@
+{
+ "id": "split-temp-asthma-ems",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Asthma EMS dispatches, October to March, per 5 C higher mean temperature over lags 0-3 days",
+  "estimate": 1.0023,
+  "lo": 0.9927,
+  "hi": 1.012,
+  "scale": "incidence rate ratio per +5 C",
+  "null": 1,
+  "n": 3645
+ },
+ "graph_effect": {
+  "label": "Recoded graph findings: 16 of 17 short-term level findings say colder days bring more asthma; relative risks at the 5th temperature percentile against the median run from 1.10 to 2.16 over lags of up to 21 days",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "relative risk, cold against median",
+  "null": 1
+ },
+ "graph_evidence": [
+  {
+   "association_id": "qLlYYVLSmN",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "cold (5th percentile of temperature)",
+    "childhood asthma hospitalization"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 2.16,
+   "ci": [
+    1.38,
+    3.38
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 35817164,
+   "code": "c"
+  },
+  {
+   "association_id": "Wv9qmkN7Sz",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "daily mean temperature (compared with the optimum temperature)",
+    "morbidity for asthma"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.13,
+   "ci": [
+    1.01,
+    1.26
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 31651344,
+   "code": "a"
+  },
+  {
+   "association_id": "XklGF4uvMb",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "temperature change between neighboring days (temperature changes between neighboring days)",
+    "exacerbation of asthma among children"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.98,
+   "ci": [
+    1.42,
+    2.76
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 33230642,
+   "code": "x"
+  },
+  {
+   "association_id": "nB1vF9nB1E",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "AQI and temperature",
+    "childhood asthma hospitalizations"
+   ],
+   "statistic": "incident_rate_ratio",
+   "value": 1.157,
+   "ci": [
+    1.029,
+    1.306
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 32213400,
+   "code": "x"
+  },
+  {
+   "association_id": "nAROqDqWGF",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "cold (5th percentile of temperature)",
+    "childhood asthma hospitalization"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.52,
+   "ci": [
+    0.98,
+    2.36
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 35817164,
+   "code": "c"
+  },
+  {
+   "association_id": "qyaEUK3bKX",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "Low ambient temperature (14°C)",
+    "emergency room visits for asthma"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 2.93,
+   "ci": [
+    1.26,
+    6.79
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 24932702,
+   "code": "c"
+  },
+  {
+   "association_id": "waczFJP-re",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "cold (5th percentile of temperature)",
+    "asthma hospitalization"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.64,
+   "ci": [
+    1.06,
+    2.54
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 35817164,
+   "code": "c"
+  },
+  {
+   "association_id": "eZeYo-_RtT",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "cold (5th percentile of temperature)",
+    "childhood asthma hospitalization"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.87,
+   "ci": [
+    1.2,
+    2.91
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 35817164,
+   "code": "c"
+  },
+  {
+   "association_id": "s9JDgh3MLV",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "temperature variability",
+    "childhood asthma hospitalizations"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.072,
+   "ci": [
+    1.008,
+    1.125
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 34599899,
+   "code": "x"
+  },
+  {
+   "association_id": "30ltLei-DB",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "low temperatures",
+    "asthma hospitalization"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.201,
+   "ci": [
+    1.1464,
+    1.258
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 39251927,
+   "code": "c"
+  },
+  {
+   "association_id": "8SIla-zxHE",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "Temperature (decrease by 5.0 units)",
+    "asthma-related emergency department visits"
+   ],
+   "statistic": "coefficient",
+   "value": -0.337,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": false,
+   "pubmed_id": 30207818,
+   "code": "c"
+  },
+  {
+   "association_id": "dSiwbU3thk",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "median temperature (5th percentile)",
+    "hospitalizations due to asthma in adults"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.1,
+   "ci": [
+    1.05,
+    1.15
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 36240934,
+   "code": "c"
+  },
+  {
+   "association_id": "ev_PmZcM9D",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "Increase of 1 degree Celsius in ambient temperature (per °C)",
+    "doctors' diagnosed asthma"
+   ],
+   "statistic": "odds_ratio",
+   "value": 1.15,
+   "ci": [
+    1.11,
+    1.2
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 29529393,
+   "code": "x"
+  },
+  {
+   "association_id": "2yxSFN8lMy",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "cold (5th percentile of temperature)",
+    "childhood asthma hospitalization"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.64,
+   "ci": [
+    1.06,
+    2.54
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 35817164,
+   "code": "c"
+  },
+  {
+   "association_id": "sZFvuOimLH",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "cold (5th percentile of temperature)",
+    "asthma hospitalization"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.52,
+   "ci": [
+    0.98,
+    2.36
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 35817164,
+   "code": "c"
+  },
+  {
+   "association_id": "S2IFsInBpp",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "temperature change between neighboring days (temperature changes between neighboring days)",
+    "exacerbation of asthma among children"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.31,
+   "ci": [
+    0.21,
+    0.44
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 33230642,
+   "code": "x"
+  },
+  {
+   "association_id": "1mV3Le8clb",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "within-day temperature change during the period from the hospitalization day to 3 days previously (lag3)",
+    "asthma hospitalization"
+   ],
+   "statistic": "odds_ratio",
+   "value": 1.027,
+   "ci": [
+    0.995,
+    1.06
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 21432566,
+   "code": "x"
+  },
+  {
+   "association_id": "_296G91zIZ",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "temperature variability",
+    "childhood asthma hospitalizations"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.051,
+   "ci": [
+    1.021,
+    1.081
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 34599899,
+   "code": "x"
+  },
+  {
+   "association_id": "NfBSEpPcgj",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "ambient temperature (specifically high temperatures in the summer and falls in temperature in the cold season)",
+    "hospital admissions for asthma in Hong Kong"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.1,
+   "ci": [
+    0.96,
+    1.26
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 30641275,
+   "code": "c"
+  },
+  {
+   "association_id": "Nv2UtNn938",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "ambient temperature (summer and winter)",
+    "hospital admissions for asthma in Hong Kong"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.2,
+   "ci": [
+    1.0,
+    1.44
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 30641275,
+   "code": "c"
+  },
+  {
+   "association_id": "sOMCh5e-vM",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "Ambient temperature (during high temperature in the summer)",
+    "hospital admissions for asthma in Hong Kong"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.74,
+   "ci": [
+    0.31,
+    1.77
+   ],
+   "stored_direction": "-",
+   "significant": false,
+   "pubmed_id": 30641275,
+   "code": "c"
+  },
+  {
+   "association_id": "QvoODni-Qu",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "temperature variability (temperature variation)",
+    "childhood asthma (CA)"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.999,
+   "ci": [
+    0.969,
+    1.03
+   ],
+   "stored_direction": "-",
+   "significant": false,
+   "pubmed_id": 36435499,
+   "code": "x"
+  },
+  {
+   "association_id": "hmJZ1goOOY",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "high yearly average outside temperature (above 25 degrees C)",
+    "diagnosis of asthma"
+   ],
+   "statistic": "odds_ratio",
+   "value": 1.8,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 7889426,
+   "code": "x"
+  },
+  {
+   "association_id": "VC5y81WQwG",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "maximum 24-hour temperature change",
+    "asthma-related emergency department visits among children 3-18 years of age in Detroit, Michigan, in 2000-2001"
+   ],
+   "statistic": "odds_ratio",
+   "value": 0.992,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 23035136,
+   "code": "x"
+  },
+  {
+   "association_id": "PwWjJLt8Yz",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "maximum 24-hour temperature change rate",
+    "asthma-related emergency department visits among children 3-18 years of age in Detroit, Michigan, in 2000-2001"
+   ],
+   "statistic": "odds_ratio",
+   "value": 0.972,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 23035136,
+   "code": "x"
+  },
+  {
+   "association_id": "g98SY-eyZp",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "temperature range",
+    "most asthma-like symptoms"
+   ],
+   "statistic": "odds_ratio",
+   "value": 0.95,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": false,
+   "pubmed_id": 14982513,
+   "code": "x"
+  },
+  {
+   "association_id": "ewb7qu1siz",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "average temperature (drop in temperature)",
+    "asthma admissions"
+   ],
+   "statistic": "pearson_r",
+   "value": -0.557,
+   "ci": [
+    -1.052,
+    -0.061
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 20708875,
+   "code": "c"
+  },
+  {
+   "association_id": "utXwgXCQ0U",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "cold (5th percentile of temperature)",
+    "asthma hospitalization"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 2.16,
+   "ci": [
+    1.38,
+    3.38
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 35817164,
+   "code": "c"
+  },
+  {
+   "association_id": "VkKl5chpHY",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "cold (5th percentile of temperature)",
+    "asthma hospitalization"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.87,
+   "ci": [
+    1.2,
+    2.91
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 35817164,
+   "code": "c"
+  },
+  {
+   "association_id": "UJv4XY9Tnd",
+   "relationship_id": "4FaXcuNJRt|EAshH_Ko3h",
+   "variables": [
+    "temperature variability (temperature variation)",
+    "childhood asthma (CA)"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.039,
+   "ci": [
+    1.001,
+    1.077
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 36435499,
+   "code": "x"
+  }
+ ],
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$select": "date_trunc_ymd(incident_datetime) as d, count(*) as n",
+    "$where": "incident_datetime between '2006-01-01' and '2026-08-31T23:59:59' and initial_call_type in ('ASTHMB','ASTHFC')",
+    "$group": "d",
+    "$order": "d",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T22:55:41-0500",
+   "n_rows": 7278
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$select": "date_trunc_ymd(incident_datetime) as d, count(*) as n",
+    "$where": "incident_datetime between '2006-01-01' and '2026-08-31T23:59:59' and final_call_type in ('ASTHMB','ASTHFC')",
+    "$group": "d",
+    "$order": "d",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T22:55:48-0500",
+   "n_rows": 7278
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "system-public-graph",
+   "api": "v1.0",
+   "fetched": "2026-11-12",
+   "note": "API associations by relationship id; cached in data/cache/sysgraph; the API carries no version id"
+  }
+ ],
+ "prediction_scored": "miss. Registered: cool half-year rate ratio 0.95 to 0.99 per +5 C. Found 1.002 (0.993 to 1.012); the interval includes 1 and lies above the whole registered range. Secondary (moderator) prediction: warm-minus-cool difference of log rate ratios positive; found 0.0093 (-0.0118 to 0.0305), right sign, interval includes 0: not met.",
+ "settle": "Asthma emergency visits by day and age group from the Health Department's syndromic system, which is not on NYC Open Data, with a distributed-lag model to 21 days as in the Hong Kong and Hefei studies, and daily pollen and ozone. The EMS series bounds the within-month effect of a cold day within four days at under 1% per 5 C in either direction, and the sign changes under other time controls (see notes); it cannot see a three-week lag through month fixed effects.",
+ "research_needed": [
+  {
+   "question": "Does the cold-day asthma effect found in East Asian cities exist in a centrally heated city at lags beyond four days?",
+   "data": "daily asthma ED visits by age, NYC syndromic surveillance; Central Park temperature",
+   "design": "distributed-lag non-linear model, lags 0-21, by season",
+   "priority": "medium"
+  },
+  {
+   "question": "Is the summer rise of asthma dispatches with temperature (June to August, exploratory) a heat effect or an ozone effect?",
+   "data": "daily ozone and PM2.5 (state monitors), EMS asthma dispatches",
+   "design": "two-exposure daily model within June to August",
+   "priority": "medium"
+  },
+  {
+   "question": "How much of any within-September temperature slope is the return to school?",
+   "data": "DOE school calendar, EMS asthma dispatches",
+   "design": "event study around the first school day, by year",
+   "priority": "low"
+  }
+ ],
+ "figures": [
+  "figures/graph/split_literatures.png"
+ ],
+ "notes": "Deviation from the registration: the asthma call types first appear on 2006-09-28, so the series starts 2006-10-01, not 2006-01-01. 326,660 dispatches on 7,275 days. Warm half-year rate ratio 1.012 (0.993 to 1.032). Sensitivity analyses (final call type, lag 0, lags 0-7, minimum temperature, excluding March 2020 to June 2021) all give cool-season rate ratios between 1.001 and 1.006 with intervals including 1. Exploratory, by calendar month: June 1.064, July 1.132 (1.079 to 1.187), August 1.080, September 0.899 (0.869 to 0.931), February 0.963 (0.937 to 0.990). The September slope is confounded with the date: asthma rises after schools open while days cool, and month fixed effects do not remove a trend inside a month. The half-year split chosen at registration averages a positive summer slope with this negative September one.\n\nAfter the referee (13 Nov 2026): the bound in the outcome applies to variation within a calendar month at lags of up to four days, and not generally. The sign of the cool-season slope depends on how time is controlled: with year effects and four annual harmonics it is 0.985 (0.972 to 0.9985), which would have met the support condition, and with year-month effects and lags 0 to 21 it is 1.027 (1.006 to 1.049). Neither was registered and neither changes the verdict. The named alternative that asthma calls are absorbed by difficulty-breathing codes on cold days was tested by the referee and does not hide a cold effect: those codes rise with temperature in the cool half-year (1.0125, 1.0055 to 1.0196). Asthma dispatches fell from about 24,000 a year in 2014 to about 9,000 in 2024, which may reflect a change in call typing; the slope is the same before and after 2013. On the graph side, PMID 35817164 supplies several rows that are strata of one analysis (2.16 is the relative risk on days with high PM2.5 and 1.64 on days with low PM2.5), so '16 of 17 findings' overstates the number of independent results and '7 studies' is the better count.",
+ "registration_sha256": "75d1a5bf8b737e3e3f6821d4e7524a010ad94f6fe2d39dbedae37ce7d9182fe7",
+ "decided_at": "2026-11-12T23:00:32-0500",
+ "stance": {
+  "value": -0.23,
+  "lo": -0.838,
+  "hi": 0.633,
+  "z": -0.47
+ },
+ "critique": {
+  "report": "critique/split-temp-asthma-ems.md",
+  "answer": "accepted; verdict kept, scope of the bound stated"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Asthma EMS dispatches, October to March, per 5 C higher mean temperature over lags 0-3 days",
+    "estimate": 1.0023,
+    "lo": 0.9927,
+    "hi": 1.012,
+    "scale": "incidence rate ratio per +5 C",
+    "null": 1,
+    "n": 3645
+   },
+   "stance": {
+    "value": -0.23,
+    "lo": -0.838,
+    "hi": 0.633,
+    "z": -0.47
+   },
+   "decided_at": "2026-11-12T23:00:32-0500",
+   "prediction_scored": "miss. Registered: cool half-year rate ratio 0.95 to 0.99 per +5 C. Found 1.002 (0.993 to 1.012); the interval includes 1 and lies above the whole registered range. Secondary (moderator) prediction: warm-minus-cool difference of log rate ratios positive; found 0.0093 (-0.0118 to 0.0305), right sign, interval includes 0: not met."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; settle states that the bound applies to within-month variation at short lags.",
+  "critique": "critique/split-temp-asthma-ems.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

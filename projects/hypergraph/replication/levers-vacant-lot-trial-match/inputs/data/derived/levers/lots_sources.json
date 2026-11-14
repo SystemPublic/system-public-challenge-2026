@@ -1,0 +1,115 @@
+{
+ "sources": {
+  "pluto": {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,borough,block,lot,address,lotarea,ownertype,ownername,latitude,longitude,bct2020,pfirm15_flag,bldgclass",
+    "$where": "landuse='11'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:31:44-0500",
+   "n_rows": 24663
+  },
+  "greenthumb": {
+   "kind": "nyc-open-data",
+   "dataset": "p78i-pat6",
+   "name": "GreenThumb Garden Info",
+   "url": "https://data.cityofnewyork.us/d/p78i-pat6",
+   "rows_updated_at": "2026-11-11T14:02:54Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,gardenname,status",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:31:50-0500",
+   "n_rows": 635
+  },
+  "dob_permits_bis": {
+   "kind": "nyc-open-data",
+   "dataset": "ipu4-2q9a",
+   "name": "DOB Permit Issuance",
+   "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+   "rows_updated_at": "2026-11-12T00:36:38Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,bin__,job_type,work_type,issuance_date",
+    "$where": "(job_type in ('NB','DM') or work_type in ('FO','EW')) and issuance_date >= '01/01/2014'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:40:47-0500",
+   "n_rows": 671298
+  },
+  "dob_permits_now": {
+   "kind": "nyc-open-data",
+   "dataset": "rbx6-tga4",
+   "name": "DOB NOW: Build \u2013 Approved Permits",
+   "url": "https://data.cityofnewyork.us/d/rbx6-tga4",
+   "rows_updated_at": "2026-11-12T19:44:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,bin,work_type,issued_date",
+    "$where": "issued_date >= '2014-01-01' and (work_type in ('New Building','Full Demolition','Foundation','Earth Work','Support of Excavation','Earthwork'))",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:41:23-0500",
+   "n_rows": 55091
+  },
+  "dob_jobs_bis": {
+   "kind": "nyc-open-data",
+   "dataset": "ic3t-wcy2",
+   "name": "DOB Job Application Filings",
+   "url": "https://data.cityofnewyork.us/d/ic3t-wcy2",
+   "rows_updated_at": "2026-11-11T23:14:49Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,bin__,job_type,pre__filing_date",
+    "$where": "job_type='NB'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:45:05-0500",
+   "n_rows": 225409
+  },
+  "dob_jobs_now": {
+   "kind": "nyc-open-data",
+   "dataset": "w9ak-ipjd",
+   "name": "DOB NOW: Build \u2013 Job Application Filings",
+   "url": "https://data.cityofnewyork.us/d/w9ak-ipjd",
+   "rows_updated_at": "2026-11-11T21:29:13Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,bin,job_type,filing_date",
+    "$where": "job_type='New Building'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:45:40-0500",
+   "n_rows": 59107
+  },
+  "stalled_sites": {
+   "kind": "nyc-open-data",
+   "dataset": "i296-73x5",
+   "name": "DOB Stalled Construction Sites",
+   "url": "https://data.cityofnewyork.us/d/i296-73x5",
+   "rows_updated_at": "2026-11-12T21:01:40Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bin,date_complaint_received"
+   },
+   "fetched": "2026-11-13T13:47:54-0500",
+   "n_rows": 50000
+  }
+ },
+ "meta": {
+  "high_shooting_cut_shootings_2019_2024": 10.0,
+  "n_top_tracts": 235,
+  "shootings_in_top_tracts": 3507,
+  "shootings_all_tracts": 6913,
+  "greenthumb_bbls": 620,
+  "stalled_bbls_matched": 65,
+  "stalled_list_rows": 50000
+ }
+}

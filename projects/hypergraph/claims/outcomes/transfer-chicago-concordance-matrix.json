@@ -1,0 +1,764 @@
+{
+ "id": "transfer-chicago-concordance-matrix",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Share of the 15 qualifying pairs of PM2.5, ozone or traffic with a health outcome whose poverty-partialled Spearman correlation across 77 Chicago community areas has the literature's sign (interval: bootstrap of areas); the null is New York's 10 of 27",
+  "estimate": 0.8,
+  "lo": 0.533,
+  "hi": 0.867,
+  "scale": "proportion of pairs",
+  "null": 0.37,
+  "n": 15
+ },
+ "graph_effect": {
+  "label": "Literature sign: majority sign of signed API findings per pair, at least 3 studies and 80% consistency; all 15 air and traffic pairs positive",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "sign",
+  "null": 0
+ },
+ "graph_evidence": [
+  {
+   "relationship_id": "the relationships of graph-concordance-matrix, reused",
+   "n_findings": 8792,
+   "summary": "data/derived/graph/concordance/literature_signs.csv and graph_findings.csv; no new graph request"
+  }
+ ],
+ "sources": [
+  {
+   "indicator": "pm25",
+   "kind": "chicago-health-atlas",
+   "topic": "PMC",
+   "transform": "x",
+   "note": "EPA EJSCREEN annual mean, a regional model surface; New York's is the NYCCAS street-level survey",
+   "tried": [
+    {
+     "period": "2022",
+     "n_areas": 77
+    }
+   ],
+   "period": "2022",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:08-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=PMC&population=&period=2022&layer=neighborhood"
+  },
+  {
+   "indicator": "ozone",
+   "kind": "chicago-health-atlas",
+   "topic": "OOO",
+   "transform": "x",
+   "note": "EPA EJSCREEN, mean of the 10 highest daily 8-hour values; New York's is the NYCCAS summer mean",
+   "tried": [
+    {
+     "period": "2022",
+     "n_areas": 77
+    }
+   ],
+   "period": "2022",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:10-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=OOO&population=&period=2022&layer=neighborhood"
+  },
+  {
+   "indicator": "traffic",
+   "kind": "chicago-health-atlas",
+   "topic": "TRF",
+   "transform": "x",
+   "note": "EPA EJSCREEN traffic proximity (vehicles within 500 m over distance); New York's is vehicle miles in the area",
+   "tried": [
+    {
+     "period": "2020",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:11-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=TRF&population=&period=2020&layer=neighborhood"
+  },
+  {
+   "indicator": "tree_shade",
+   "kind": "chicago-health-atlas",
+   "topic": "UTC",
+   "transform": "x",
+   "note": "tree canopy share of land",
+   "tried": [
+    {
+     "period": "2023",
+     "n_areas": 77
+    }
+   ],
+   "period": "2023",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:12-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=UTC&population=&period=2023&layer=neighborhood"
+  },
+  {
+   "indicator": "pop_density",
+   "kind": "chicago-health-atlas",
+   "topic": "POD",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:14-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=POD&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "crowding",
+   "kind": "chicago-health-atlas",
+   "topic": "HTJ",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:15-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HTJ&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "owner_occupied",
+   "kind": "chicago-health-atlas",
+   "topic": "HUO",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:16-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HUO&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "evictions",
+   "kind": "chicago-health-atlas",
+   "topic": "EVR",
+   "transform": "x",
+   "note": "Eviction Lab rate; latest period is several years old",
+   "tried": [
+    {
+     "period": "2018",
+     "n_areas": 77
+    }
+   ],
+   "period": "2018",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:18-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=EVR&population=&period=2018&layer=neighborhood"
+  },
+  {
+   "indicator": "poverty",
+   "kind": "chicago-health-atlas",
+   "topic": "POV",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:19-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=POV&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "unemployment",
+   "kind": "chicago-health-atlas",
+   "topic": "UMP",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:20-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=UMP&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "high_school",
+   "kind": "chicago-health-atlas",
+   "topic": "EDB",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:21-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=EDB&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "limited_english",
+   "kind": "chicago-health-atlas",
+   "topic": "LEP",
+   "transform": "x",
+   "note": "share of households; New York's is share of residents",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:23-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=LEP&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "foreign_born",
+   "kind": "chicago-health-atlas",
+   "topic": "FOR",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:24-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=FOR&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "insurance",
+   "kind": "chicago-health-atlas",
+   "topic": "UNS",
+   "transform": "100-x",
+   "note": "uninsured residents of all ages, reversed; New York's is insured adults",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:25-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=UNS&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "car_commute",
+   "kind": "chicago-health-atlas",
+   "topic": "CAR",
+   "transform": "x",
+   "note": "drive alone to work",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:26-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=CAR&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "exercise",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSPAP",
+   "transform": "100-x",
+   "note": "physical inactivity, reversed",
+   "tried": [
+    {
+     "period": "2023-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2023-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:28-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HCSPAP&population=&period=2023-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "smoking",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSSMKP",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2023-2024",
+     "n_areas": 71
+    }
+   ],
+   "period": "2023-2024",
+   "n_areas": 71,
+   "fetched": "2026-11-13T01:23:29-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HCSSMKP&population=&period=2023-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "binge_drinking",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSBDP",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2023-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2023-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:30-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HCSBDP&population=&period=2023-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "sugary_drinks",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSSP",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2023-2024",
+     "n_areas": 75
+    }
+   ],
+   "period": "2023-2024",
+   "n_areas": 75,
+   "fetched": "2026-11-13T01:23:31-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HCSSP&population=&period=2023-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "shootings",
+   "kind": "chicago-health-atlas",
+   "topic": "VRFIR",
+   "transform": "x",
+   "note": "firearm homicide deaths per resident; New York's is shooting incidents per resident",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:32-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=VRFIR&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "asthma_adult",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSATHP",
+   "transform": "x",
+   "note": "survey prevalence of current asthma; New York's is emergency visits",
+   "tried": [
+    {
+     "period": "2023-2024",
+     "n_areas": 72
+    }
+   ],
+   "period": "2023-2024",
+   "n_areas": 72,
+   "fetched": "2026-11-13T01:23:34-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HCSATHP&population=&period=2023-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "obesity",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSOBP",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2023-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2023-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:35-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HCSOBP&population=&period=2023-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "diabetes",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSDIAP",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2023-2024",
+     "n_areas": 74
+    }
+   ],
+   "period": "2023-2024",
+   "n_areas": 74,
+   "fetched": "2026-11-13T01:23:36-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HCSDIAP&population=&period=2023-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "depression",
+   "kind": "chicago-health-atlas",
+   "topic": "DPR",
+   "transform": "x",
+   "note": "CDC PLACES model-based estimate",
+   "tried": [
+    {
+     "period": "2023",
+     "n_areas": 77
+    }
+   ],
+   "period": "2023",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:37-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=DPR&population=&period=2023&layer=neighborhood"
+  },
+  {
+   "indicator": "distress",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSSPDP",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2023-2024",
+     "n_areas": 67
+    },
+    {
+     "period": "2022-2023",
+     "n_areas": 62
+    },
+    {
+     "period": "2021-2022",
+     "n_areas": 52
+    },
+    {
+     "period": "2020-2021",
+     "n_areas": 47
+    }
+   ],
+   "dropped": "no period with 70 areas"
+  },
+  {
+   "indicator": "good_health",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSOHSP",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2023-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2023-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:41-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HCSOHSP&population=&period=2023-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "premature_death",
+   "kind": "chicago-health-atlas",
+   "topic": "YPLL",
+   "transform": "x",
+   "note": "years of potential life lost per 100,000; New York's is the death rate before 65",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:42-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=YPLL&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "preterm",
+   "kind": "chicago-health-atlas",
+   "topic": "VRPTP",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:44-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=VRPTP&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "low_birthweight",
+   "kind": "chicago-health-atlas",
+   "topic": "VRBWP",
+   "transform": "x",
+   "note": "all births under 2,500 g; New York's is low birthweight at term",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:45-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=VRBWP&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "infant_death",
+   "kind": "chicago-health-atlas",
+   "topic": "VRIMR",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:46-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=VRIMR&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "pedestrian_injury",
+   "kind": "chicago-health-atlas",
+   "topic": "CHAVTZN",
+   "transform": "x",
+   "note": "traffic deaths of all road users per resident; New York's is pedestrian injuries",
+   "tried": [
+    {
+     "period": "2023",
+     "n_areas": 49
+    },
+    {
+     "period": "2022",
+     "n_areas": 58
+    },
+    {
+     "period": "2021",
+     "n_areas": 59
+    },
+    {
+     "period": "2020",
+     "n_areas": 58
+    },
+    {
+     "period": "2019",
+     "n_areas": 51
+    }
+   ],
+   "dropped": "no period with 70 areas"
+  },
+  {
+   "indicator": "heat_ed",
+   "kind": "chicago-health-atlas",
+   "topic": "CHAJBFH",
+   "transform": "x",
+   "note": "heat-related deaths; New York's is heat emergency visits",
+   "tried": [
+    {
+     "period": "2020-2024",
+     "n_areas": 77
+    }
+   ],
+   "period": "2020-2024",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:51-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=CHAJBFH&population=&period=2020-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "lead",
+   "kind": "chicago-health-atlas",
+   "topic": "LDPP",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2025",
+     "n_areas": 77
+    }
+   ],
+   "period": "2025",
+   "n_areas": 77,
+   "fetched": "2026-11-13T01:23:52-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=LDPP&population=&period=2025&layer=neighborhood"
+  },
+  {
+   "indicator": "walking_difficulty",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSIDQZ",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2022-2024",
+     "n_areas": 76
+    }
+   ],
+   "period": "2022-2024",
+   "n_areas": 76,
+   "fetched": "2026-11-13T01:23:53-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HCSIDQZ&population=&period=2022-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "cognitive_difficulty",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSXWSF",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2022-2024",
+     "n_areas": 76
+    }
+   ],
+   "period": "2022-2024",
+   "n_areas": 76,
+   "fetched": "2026-11-13T01:23:54-0500",
+   "url": "https://chicagohealthatlas.org/api/v1/data/?topic=HCSXWSF&population=&period=2022-2024&layer=neighborhood"
+  },
+  {
+   "indicator": "hearing_difficulty",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSYWEG",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2022-2024",
+     "n_areas": 51
+    },
+    {
+     "period": "2023-2024",
+     "n_areas": 0
+    }
+   ],
+   "dropped": "no period with 70 areas"
+  },
+  {
+   "indicator": "vision_difficulty",
+   "kind": "chicago-health-atlas",
+   "topic": "HCSRACB",
+   "transform": "x",
+   "note": "",
+   "tried": [
+    {
+     "period": "2022-2024",
+     "n_areas": 53
+    },
+    {
+     "period": "2023-2024",
+     "n_areas": 0
+    }
+   ],
+   "dropped": "no period with 70 areas"
+  },
+  {
+   "kind": "sysgraph-api",
+   "api_version": "v1.0",
+   "fetched": "2026-11-12",
+   "uncached_requests": 0,
+   "note": "literature signs reused from graph-concordance-matrix"
+  },
+  {
+   "kind": "project",
+   "file": "data/derived/graph/concordance/city_indicators_uhf42.csv",
+   "note": "New York indicators, as fetched for graph-concordance-matrix"
+  }
+ ],
+ "prediction_scored": "(a) hit: predicted 60% (40 to 80); observed 12 of 15, 80.0% (53.3% to 86.7%). The support condition is met: 15 pairs (at least 12), share at least 60%, lower bootstrap limit 53.3% above New York's 37.0%, and above New York's 6 of 15 on the same pairs (difference 40 points, 13 to 47). The condition holds with 20,000 draws and under five other seeds (rule 9). (b) partial after the referee: predicted +0.35 (0.10 to 0.60); the Spearman correlation of PM2.5 with poverty is +0.29 (+0.03 to +0.50) in Chicago and +0.11 (-0.23 to +0.43) in New York. The registered scoring rule (a bootstrap interval that excludes zero) gives a hit, with a lower limit of 0.03 to 0.05 across seeds. The bootstrap treats areas as independent; with spatial dependence counted the effective number of areas is about 10 and p is 0.43, and the two cities' intervals overlap. The data therefore do not show that Chicago's high-PM2.5 areas are its poor areas. (c) within range: overall agreement 55 of 75, 73.3% (62.7% to 78.7%), predicted 68% (58 to 78); margin over always-positive 4.0 points (1.3 to 4.0), predicted between -3 and +5. After the referee: the hit on (a) is on the registered count. The count is 1.9 standard deviations above the mean of an exposure-shuffle null (p = 0.04 one-sided), and the difference from New York comes from the six PM2.5 pairs.",
+ "settle": "The comparison rests on three exposures measured differently in the two cities, and in Chicago PM2.5 ranges only from 8.6 to 9.3 micrograms per cubic metre and ozone from 66.7 to 69.4 ppb on a regional model surface. A street-level pollution survey of Chicago comparable to NYCCAS, NO2 and noise by community area, and a third and fourth city would show whether agreement follows the sign of the pollution-poverty correlation. Within one city, individual records with pollution at the address would remove sorting directly. After the referee: a test of the sorting explanation needs an exposure measure that is not a regional gradient (with centroid coordinates partialled out, 1 of 6 Chicago PM2.5 pairs agrees), a measure of segregation, and enough cities to relate agreement to the pollution-poverty correlation; two cities give one degree of freedom.",
+ "research_needed": [
+  {
+   "question": "Does agreement of air pollution pairs with the literature's sign rise with the correlation between pollution and deprivation across cities?",
+   "data": "EJSCREEN and CDC PLACES by tract for many US cities, one measurement method throughout",
+   "design": "the same matrix in 20 or more cities, agreement regressed on the pollution-poverty correlation",
+   "priority": "high"
+  },
+  {
+   "question": "Do NO2 and street-level PM2.5 in Chicago rank community areas as the EJSCREEN surface does?",
+   "data": "Chicago sensor networks (Array of Things successors, Microsoft Eclipse 2021), aggregated to community areas",
+   "design": "rank comparison, then rerun of the fifteen pairs",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/round5/chicago_matrix_by_kind.png"
+ ],
+ "notes": "Thirty-three of the 37 registered Chicago indicators had a period with 70 of 77 areas; serious psychological distress, traffic deaths, hearing difficulty and vision difficulty did not and were dropped under the registered rule. 75 pairs qualify (72 with a positive literature sign), and the same 75 are computable in New York. Agreement by kind in Chicago (deciding): {'all': '55 of 75', 'air, traffic or noise with anything': '12 of 15', 'health outcome with health outcome': '18 of 27', 'behaviour with anything else': '16 of 21', 'social or housing condition with anything else': '9 of 12', 'exposure with outcome': '31 of 40', 'outcome with outcome': '18 of 27', 'exposure with exposure': '6 of 8', 'with ozone': '4 of 5', 'with pm25': '5 of 6', 'with traffic': '3 of 4'}. New York on the same pairs: {'all': '50 of 75', 'air, traffic or noise with anything': '6 of 15', 'health outcome with health outcome': '22 of 27', 'behaviour with anything else': '11 of 21', 'social or housing condition with anything else': '11 of 12', 'exposure with outcome': '22 of 40', 'outcome with outcome': '22 of 27', 'exposure with exposure': '6 of 8', 'with ozone': '5 of 5', 'with pm25': '0 of 6', 'with traffic': '1 of 4'}. Exposure with outcome: Chicago 31 of 40 (65.0% to 82.5%), margin over always-positive 7.5 points; New York 22 of 40. Area-shuffle null 95% range 38.7% to 61.3%; sign-shuffle null p = 0.025 (New York 0.14). The margin over always-positive comes from three pairs with a negative literature sign (exercise with diabetes, walking difficulty and cognitive difficulty), all of which agree in Chicago. Limits. Within the fifteen air and traffic pairs every literature sign is positive, so agreement equals the always-positive rate and the result is a difference between cities, not evidence that the graph's signs beat that rule. Four of the twelve agreeing pairs have a correlation below 0.1 in size (asthma with PM2.5 0.07, depression with traffic 0.07, asthma with traffic 0.01, low birthweight with traffic 0.01; the count was given as three before the referee); among pairs with a deciding correlation of at least 0.1 in size Chicago agrees in 8 of 11 and New York in 4 of 13, and among pairs with a deciding correlation of at least 0.2 in size Chicago agrees in 6 of 6 and New York in 4 of 11 (exploratory). PM2.5 pairs changed from 0 of 6 to 5 of 6, ozone from 5 of 5 to 4 of 5, traffic from 1 of 4 to 3 of 4. Chicago's PM2.5 is highest in low-density areas (Spearman with density -0.53) and New York's in the dense core, so the cities differ in more than the pollution-poverty correlation, which is +0.29 against +0.11 with overlapping intervals. Two health outcomes agree less often in Chicago (18 of 27 against 22 of 27) because the CDC PLACES depression estimate is negatively correlated with most adverse outcomes; depression is in 11 of Chicago's 20 disagreeing pairs. Heat deaths are zero in most areas. Rule 9 check runs: [{'file': 'results_check_20000.json', 'draws': 20000, 'seed': 20261113, 'air_ci95': [0.533, 0.867], 'verdict': 'confirmed', 'pm25_poverty_ci95': [0.04, 0.51]}, {'file': 'results_check_seed1.json', 'draws': 2000, 'seed': 1, 'air_ci95': [0.533, 0.867], 'verdict': 'confirmed', 'pm25_poverty_ci95': [0.033, 0.511]}, {'file': 'results_check_seed2.json', 'draws': 2000, 'seed': 2, 'air_ci95': [0.533, 0.867], 'verdict': 'confirmed', 'pm25_poverty_ci95': [0.049, 0.502]}, {'file': 'results_check_seed3.json', 'draws': 2000, 'seed': 3, 'air_ci95': [0.533, 0.867], 'verdict': 'confirmed', 'pm25_poverty_ci95': [0.034, 0.516]}, {'file': 'results_check_seed4.json', 'draws': 2000, 'seed': 4, 'air_ci95': [0.533, 0.867], 'verdict': 'confirmed', 'pm25_poverty_ci95': [0.029, 0.518]}, {'file': 'results_check_seed5.json', 'draws': 2000, 'seed': 5, 'air_ci95': [0.533, 0.867], 'verdict': 'confirmed', 'pm25_poverty_ci95': [0.05, 0.529]}]. No new graph request was made.\n\nAfter the referee (13 Nov 2026): the verdict is kept under rule 1 and its meaning is narrowed. The referee reproduced the counts, the interval (0.533 to 0.867 under another seed) and the correlations with separate code. Every registered support condition is met: 15 pairs, a share of 80%, a lower bootstrap limit of 0.533 against 0.370, and 12 against New York's 6 on the same pairs. verdict() in matrix.py did not check the last of these; it is met. What is confirmed is the count. The clause of the statement about the residential-sorting explanation is not tested by any registered condition, and the referee's results are evidence against reading the count as support for it.\nOne exposure. The difference between the cities is PM2.5: 0 of 6 pairs in New York and 5 of 6 in Chicago. Without the PM2.5 pairs Chicago agrees in 7 of 9 and New York in 6 of 9. Six pairs that share one exposure are close to one observation.\nA regional gradient. Chicago's PM2.5 ranges from 8.63 to 9.33 micrograms per cubic metre (coefficient of variation 1.8%, against 10.7% in New York). A plane in the centroid coordinates explains 85% of its variance across community areas and 58% of ozone's; Moran's I is 0.83 for each. PM2.5 rises toward the southwest, and health is worse there. With the coordinates partialled out together with poverty, 1 of the 6 PM2.5 pairs agrees and Chicago agrees in 9 of 15 (New York 3 of 15). When PM2.5 is replaced by a plane tilted in each compass direction, 38% of directions give at least 5 of 6 positive pairs and 38% give at most 1 of 6. A contrast of 0.7 micrograms would not produce correlations of 0.35 to 0.55 with obesity, diabetes and early death through any causal path, so agreement with the literature's sign in Chicago says no more about the literature than disagreement did in New York.\nDependence. With the Clifford and Richardson correction the effective number of areas is 12 to 31 for five of the six PM2.5 pairs (54 for asthma) and 16 to 45 for the ozone pairs, and at those sizes none of the fifteen correlations has p below 0.05 (smallest 0.08). The bootstrap resamples areas as independent, so its intervals are too narrow. The mean bootstrap share is 0.70, 3% of resamples fall below 60%, and leaving out one area gives 10 to 12 agreeing pairs.\nChance and regression to the mean. When the three exposures are shuffled together across areas, the count has mean 7.5 and standard deviation 2.3; 12 or more occurs with probability 0.04, and a count as far from 7.5 in either direction with probability 0.08. Fisher's test of 12 of 15 against 6 of 15 gives 0.06 and assumes independent pairs. New York's 6 of 15 was known before registration and is low; on the other 60 pairs Chicago agrees in 43 and New York in 44, so a city with nothing particular about its pollution would be expected near 70% on the fifteen pairs and would also have met the condition. The threshold 0.370 was registered as a constant although New York's 10 of 27 has its own sampling error.\nControls. With foreign-born share, high-school completion or unemployment added to poverty, Chicago agrees in 9 of 15, exactly the 60% threshold; with density added, in 12. Agreement is higher after partialling poverty (12) than before (10), so measured poverty does not carry the result. Racial segregation, which the registration named, is not measured in the indicator set.\nThe two cities' PM2.5 measures differ in instrument (street-level survey against regional model) and in geography (highest in the dense core against highest in low-density areas), and with two cities the design cannot separate these from sorting.\nNot accepted. The report says there is no prereg branch for this claim. There is one: the remote holds refs/heads/prereg/transfer-chicago-concordance-matrix at commit 2805fb3, committed at 01:23:04 on 13 November 2026 (git ls-remote, re-checked). It contains the registration and the three scripts, identical to those of commits 499547c and 0ba7f1a, and its commit time is four seconds before the first Chicago Health Atlas cache file (01:23:08). As for every claim, git records the commit time and not the push time, so the order of push and fetch cannot be shown from the repository. The referee's second option, unsettled, is not taken: rule 1 binds the verdict to the registered conditions, which are written on the count and are met under the registered seed, five others and the referee's; the sorting clause is in the statement and in no condition.",
+ "registration_sha256": "7e47ca346696757000081b75e4c48e3e3f60b30dd99c37117791743c80c8e89f",
+ "decided_at": "2026-11-13T01:37:37-0500",
+ "stance": {
+  "value": 0.748,
+  "lo": 0.102,
+  "hi": 0.829,
+  "z": 1.94,
+  "note": "Measured against the referee's exposure-shuffle null (mean 7.5 agreeing pairs of 15, SD 2.3), which keeps the dependence among the fifteen pairs, and not against New York's 0.370 with a bootstrap that treats areas and pairs as independent (the earlier z of 5.05). It is the agreement of the count with the literature's sign, not support for the sorting explanation."
+ },
+ "verdict_note": "Confirmed for the registered count only: 12 of 15 air and traffic pairs agree in Chicago against 6 of the same 15 in New York. The result does not test the residential-sorting explanation. The difference is PM2.5 alone (5 of 6 against 0 of 6; without it 7 of 9 against 6 of 9), Chicago's PM2.5 is 85% a regional plane with a range of 0.7 µg/m³, and with coordinates partialled out 1 of 6 PM2.5 pairs agrees. Effective n is 12 to 31, four agreeing pairs have |rho| below 0.1, and against chance p is about 0.04 to 0.08.",
+ "prereg": {
+  "branch": "prereg/transfer-chicago-concordance-matrix",
+  "commit": "2805fb3",
+  "committed_at": "2026-11-13T01:23:04-0500",
+  "first_outcome_data_file": "2026-11-13T01:23:08-0500",
+  "checked": "git ls-remote on 13 Nov 2026; content identical to commits 499547c and 0ba7f1a; the push time is not recorded by git"
+ },
+ "critique": {
+  "report": "critique/transfer-chicago-concordance-matrix.md",
+  "answer": "mostly accepted; verdict kept under rule 1 for the count only, meaning narrowed, stance reduced; the statement about a missing prereg branch not accepted"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Share of the 15 qualifying pairs of PM2.5, ozone or traffic with a health outcome whose poverty-partialled Spearman correlation across 77 Chicago community areas has the literature's sign (interval: bootstrap of areas); the null is New York's 10 of 27",
+    "estimate": 0.8,
+    "lo": 0.533,
+    "hi": 0.867,
+    "scale": "proportion of pairs",
+    "null": 0.37,
+    "n": 15
+   },
+   "stance": {
+    "value": 0.987,
+    "lo": 0.743,
+    "hi": 0.994,
+    "z": 5.05
+   },
+   "decided_at": "2026-11-13T01:37:37-0500",
+   "prediction_scored": "(a) hit: predicted 60% (40 to 80); observed 12 of 15, 80.0% (53.3% to 86.7%). The support condition is met: 15 pairs (at least 12), share at least 60%, lower bootstrap limit 53.3% above New York's 37.0%, and above New York's 6 of 15 on the same pairs (difference 40 points, 13 to 47). The condition holds with 20,000 draws and under five other seeds (rule 9). (b) hit: predicted +0.35 (0.10 to 0.60); the Spearman correlation of PM2.5 with poverty is +0.29 (+0.03 to +0.50) in Chicago and +0.11 (-0.23 to +0.43) in New York. The lower limit is close to zero (0.03 to 0.05 across seeds). (c) within range: overall agreement 55 of 75, 73.3% (62.7% to 78.7%), predicted 68% (58 to 78); margin over always-positive 4.0 points (1.3 to 4.0), predicted between -3 and +5."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed under rule 1 for the count only. verdict_note added: the difference is PM2.5 alone, which in Chicago is a regional gradient, and the test does not test the sorting explanation; small correlations corrected to four; prediction (b) qualified; stance reduced. The referee's statement that no prereg branch exists is wrong and the note records the branch.",
+  "critique": "critique/transfer-chicago-concordance-matrix.md",
+  "revised_at": "2026-11-13T08:02:01-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

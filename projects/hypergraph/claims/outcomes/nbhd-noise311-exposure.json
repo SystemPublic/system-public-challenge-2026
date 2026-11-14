@@ -1,0 +1,560 @@
+{
+ "id": "nbhd-noise311-exposure",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "2020 tracts: beta(rent change) - beta(modelled transport noise) in OLS of log(1 + residential noise complaints per 1,000 residents per year, 2022-2024), per SD, borough effects; tract bootstrap 95% CI",
+  "estimate": -0.034,
+  "lo": -0.091,
+  "hi": 0.024,
+  "scale": "difference in log units per SD",
+  "null": 0,
+  "n": 2171
+ },
+ "graph_effect": {
+  "label": "Road traffic noise and prevalent hypertension, OR per 10 dB(A) (PMID 24952459; relationship cEPG6i4Yq1|fo-h4u_aJp, 12 findings in 8 studies). Shown for the research exposure scale; the graph holds no finding on noise complaints.",
+  "estimate": 1.11,
+  "lo": 1.0,
+  "hi": 1.23,
+  "scale": "OR per 10 dB(A)",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Commercial' and created_date between '2022-01-01T00:00:00' and '2022-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:44:03-0500",
+   "n_rows": 13237,
+   "n_complaints": 60966,
+   "n_in_tracts": 60932
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Commercial' and created_date between '2023-01-01T00:00:00' and '2023-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:44:05-0500",
+   "n_rows": 13688,
+   "n_complaints": 67559,
+   "n_in_tracts": 67557
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Commercial' and created_date between '2024-01-01T00:00:00' and '2024-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:45:18-0500",
+   "n_rows": 13829,
+   "n_complaints": 68200,
+   "n_in_tracts": 68190
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Helicopter' and created_date between '2022-01-01T00:00:00' and '2022-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:45:05-0500",
+   "n_rows": 5843,
+   "n_complaints": 26216,
+   "n_in_tracts": 26216
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Helicopter' and created_date between '2023-01-01T00:00:00' and '2023-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:45:17-0500",
+   "n_rows": 6518,
+   "n_complaints": 59124,
+   "n_in_tracts": 59124
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Helicopter' and created_date between '2024-01-01T00:00:00' and '2024-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:45:26-0500",
+   "n_rows": 3158,
+   "n_complaints": 28684,
+   "n_in_tracts": 28684
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Residential' and created_date between '2022-01-01T00:00:00' and '2022-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:37:38-0500",
+   "n_rows": 73627,
+   "n_complaints": 376159,
+   "n_in_tracts": 376132
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Residential' and created_date between '2023-01-01T00:00:00' and '2023-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:40:36-0500",
+   "n_rows": 69474,
+   "n_complaints": 297479,
+   "n_in_tracts": 297468
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Residential' and created_date between '2024-01-01T00:00:00' and '2024-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:46:05-0500",
+   "n_rows": 68540,
+   "n_complaints": 378525,
+   "n_in_tracts": 378523
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Street/Sidewalk' and created_date between '2022-01-01T00:00:00' and '2022-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:44:16-0500",
+   "n_rows": 46949,
+   "n_complaints": 151753,
+   "n_in_tracts": 151723
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Street/Sidewalk' and created_date between '2023-01-01T00:00:00' and '2023-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:44:21-0500",
+   "n_rows": 46211,
+   "n_complaints": 145891,
+   "n_in_tracts": 145882
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Street/Sidewalk' and created_date between '2024-01-01T00:00:00' and '2024-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:44:25-0500",
+   "n_rows": 48829,
+   "n_complaints": 161576,
+   "n_in_tracts": 161560
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Vehicle' and created_date between '2022-01-01T00:00:00' and '2022-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:44:02-0500",
+   "n_rows": 25051,
+   "n_complaints": 63939,
+   "n_in_tracts": 63923
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Vehicle' and created_date between '2023-01-01T00:00:00' and '2023-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:45:15-0500",
+   "n_rows": 21455,
+   "n_complaints": 50482,
+   "n_in_tracts": 50472
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise - Vehicle' and created_date between '2024-01-01T00:00:00' and '2024-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:45:29-0500",
+   "n_rows": 20868,
+   "n_complaints": 48195,
+   "n_in_tracts": 48190
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise' and created_date between '2022-01-01T00:00:00' and '2022-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:45:23-0500",
+   "n_rows": 26446,
+   "n_complaints": 47312,
+   "n_in_tracts": 47287
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise' and created_date between '2023-01-01T00:00:00' and '2023-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:46:45-0500",
+   "n_rows": 26737,
+   "n_complaints": 51998,
+   "n_in_tracts": 51995
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Noise' and created_date between '2024-01-01T00:00:00' and '2024-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:47:56-0500",
+   "n_rows": 27848,
+   "n_complaints": 54829,
+   "n_in_tracts": 54828
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Rodent' and created_date between '2022-01-01T00:00:00' and '2022-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:43:15-0500",
+   "n_rows": 24478,
+   "n_complaints": 40791,
+   "n_in_tracts": 40788
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Rodent' and created_date between '2023-01-01T00:00:00' and '2023-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:43:18-0500",
+   "n_rows": 24267,
+   "n_complaints": 41563,
+   "n_in_tracts": 41560
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Rodent' and created_date between '2024-01-01T00:00:00' and '2024-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:43:21-0500",
+   "n_rows": 22160,
+   "n_complaints": 39475,
+   "n_in_tracts": 39473
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "63ge-mke6",
+   "name": "2020 Census Tracts",
+   "url": "https://data.cityofnewyork.us/d/63ge-mke6",
+   "rows_updated_at": "2026-11-02T19:12:37Z",
+   "query": {
+    "$select": "geoid,boroct2020,borocode,boroname,nta2020,ntaname,shape_area,the_geom",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T15:26:00-0500",
+   "n_rows": 2325
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2022/table-based-SF/data/5YRData/acsdt5y2022-b01003.dat",
+   "file": "data/raw/acs/acsdt5y2022-b01003.dat"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2022/table-based-SF/data/5YRData/acsdt5y2022-c17002.dat",
+   "file": "data/raw/acs/acsdt5y2022-c17002.dat"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2022/table-based-SF/data/5YRData/acsdt5y2022-b03002.dat",
+   "file": "data/raw/acs/acsdt5y2022-b03002.dat"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2022/table-based-SF/data/5YRData/acsdt5y2022-b25064.dat",
+   "file": "data/raw/acs/acsdt5y2022-b25064.dat"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/acs2012_5yr/summaryfile/2008-2012_ACSSF_By_State_By_Sequence_Table_Subset/NewYork/Tracts_Block_Groups_Only/g20125ny.csv",
+   "file": "data/raw/acs/g20125ny.csv"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/acs2012_5yr/summaryfile/2008-2012_ACSSF_By_State_By_Sequence_Table_Subset/NewYork/Tracts_Block_Groups_Only/20125ny0003000.zip",
+   "file": "data/raw/acs/20125ny0003000.zip"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/acs2012_5yr/summaryfile/2008-2012_ACSSF_By_State_By_Sequence_Table_Subset/NewYork/Tracts_Block_Groups_Only/20125ny0005000.zip",
+   "file": "data/raw/acs/20125ny0005000.zip"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/acs2012_5yr/summaryfile/2008-2012_ACSSF_By_State_By_Sequence_Table_Subset/NewYork/Tracts_Block_Groups_Only/20125ny0105000.zip",
+   "file": "data/raw/acs/20125ny0105000.zip"
+  },
+  {
+   "kind": "census",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/tract/tab20_tract20_tract10_st36.txt",
+   "file": "data/raw/acs/tab20_tract20_tract10_st36.txt"
+  },
+  {
+   "kind": "map-service",
+   "url": "https://geo.dot.gov/server/rest/services/Hosted/NTAD_Noise_2020_CONUS_Aviation_Road_Rail/MapServer",
+   "layer": "CONUS_rail_road_and_aviation_noise_2020",
+   "zoom": 12,
+   "fetched": "2026-11-12T15:35:45-0500",
+   "citation": "US DOT Bureau of Transportation Statistics, National Transportation Noise Map, 2020 data release (NTAD)."
+  },
+  {
+   "kind": "ny-open-data",
+   "dataset": "9s3h-dpkz",
+   "name": "Current Liquor Authority Active Licenses",
+   "url": "https://data.ny.gov/d/9s3h-dpkz",
+   "rows_updated_at": "2026-11-12T01:36:02Z",
+   "query": {
+    "$select": "licensepermitid, description, georeference",
+    "$where": "premisescounty in ('New York','Kings','Queens','Bronx','Richmond') and description in ('Restaurant','Food & Beverage Business','Club','Cabaret','Night Club','Bottle Club','Restaurant Brewer','Hotel','For-profit Club')",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:48:13-0500",
+   "n_rows": 11834,
+   "n_geocoded": 11702,
+   "n_in_tracts": 11689
+  },
+  {
+   "kind": "sysgraph",
+   "api_version": "v1.0",
+   "dataset_version": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "files": [
+    "data/derived/neighbourhood/graph_noise.json",
+    "data/derived/neighbourhood/graph_noise_relationships.json"
+   ]
+  }
+ ],
+ "prediction_scored": "partial. Two of three parts hit: residential complaint rates were weakly related to modelled transport noise (Spearman rho 0.22; predicted below 0.25), and street and vehicle complaints were positively related to it (rho 0.30; predicted 0.15-0.45). The registered contrast missed: rent change had no association with residential complaints (0.004 per SD), so the contrast was -0.03 (95% CI -0.09 to 0.02) against a predicted +0.05 to +0.30.",
+ "settle": "Neither the registered contrast nor its opposite is supported, and the deeper question, whether complaints measure exposure, cannot be answered with a transport noise model because residential complaints are mostly about neighbours. It would be settled by measured sound levels at a sample of addresses or blocks stratified by complaint rate and by demographic change: SONYC sensor Leq series (if released at block level), a DEP or DOHMH monitoring campaign, or smartphone dosimetry. With measured levels, complaints per resident can be modelled as level times reporting propensity, and propensity estimated from repeated reports of the same incident (the method of the 2025 Annals of Applied Statistics paper on 311 reporting bias).",
+ "research_needed": [
+  {
+   "question": "What is the relation between 311 noise complaints and measured sound levels at the same places and hours?",
+   "data": "SONYC sensor levels (NYU), DEP inspection readings for noise complaints, 311 erm2-nwe9 with timestamps",
+   "design": "matched hourly comparison by sensor site; complaints per resident against Leq and Lnight",
+   "priority": "high"
+  },
+  {
+   "question": "Does demographic change raise reporting propensity for the same noise?",
+   "data": "311 duplicate reports per incident, ACS change 2008-12 to 2018-22, measured levels",
+   "design": "reporting-propensity model (multiple reports of one incident) by tract change",
+   "priority": "high"
+  },
+  {
+   "question": "Can neighbour noise exposure be modelled at all from building data (party walls, building age, density)?",
+   "data": "PLUTO building class and year, DOB complaints, HVS",
+   "design": "exploratory model, then validation against measurements",
+   "priority": "medium"
+  },
+  {
+   "question": "Do health studies in NYC that use 311 complaints as exposure reach different conclusions from those using modelled dB?",
+   "data": "literature search; SPARCS hypertension or sleep outcomes by tract",
+   "design": "systematic comparison",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/neighbourhood/noise311.png"
+ ],
+ "notes": "n = 2171 2020 tracts with at least 500 residents and complete ACS change measures. 311 totals 2022-2024 in tracts: residential 1,052,123, street/sidewalk 459,165, vehicle 162,585, commercial 196,679, DEP 'Noise' 154,110, helicopter 114,024. In the joint model for residential complaints the largest coefficients were poverty share (0.21 per SD) and change in the non-Hispanic white share (0.13); modelled noise was 0.04 (-0.00 to 0.08). A secondary contrast that the registered statement names but the support rule does not use, change in non-Hispanic white share minus modelled noise, was 0.10 (95% CI 0.04 to 0.15). This agrees with Legewie and Schaeffer (2016) that complaints follow ethnoracial change, but it is reported as secondary, not as the test. For street and vehicle complaints, modelled noise (0.13) and liquor licences (0.26) both mattered, and the rent-minus-noise contrast was negative (-0.10, -0.15 to -0.04): street complaints partly track the sources the noise model contains. Commercial complaints followed liquor licences (rho 0.58). Using the energy-mean Leq in place of the class mean gave a modelled-noise coefficient of -0.02. The noise map was read from rendered tiles of the US DOT service by legend colour at zoom 12 (about 29 m pixels; deeper levels are not cached); areas below 45 dB are unpainted and were set to 40 dB. SONYC data were not used: no public block-level sound-level file was located in this session. The ACS change measures come from the Census Bureau summary files because the Census API now requires a key; 2008-2012 values on 2010 tracts were moved to 2020 tracts by land-area weights from the Census relationship file. Rents are nominal.\n\nAfter critique round 1b: Settling this needs street noise (outdoor sensors) separated from neighbour noise (indoor measurement or survey). Housing form and repeat callers are not addressed.",
+ "registration_sha256": "723e5cfcd9ef6a3b82a2fe81579fee25d9595c76bcb788b31f1eb7502bb723fd",
+ "decided_at": "2026-11-12T15:50:27-0500",
+ "stance": {
+  "value": -0.522,
+  "lo": -0.914,
+  "hi": 0.388,
+  "z": -1.16
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "2020 tracts: beta(rent change) - beta(modelled transport noise) in OLS of log(1 + residential noise complaints per 1,000 residents per year, 2022-2024), per SD, borough effects; tract bootstrap 95% CI",
+    "estimate": -0.034,
+    "lo": -0.091,
+    "hi": 0.024,
+    "scale": "difference in log units per SD",
+    "null": 0,
+    "n": 2171
+   },
+   "stance": {
+    "value": -0.522,
+    "lo": -0.914,
+    "hi": 0.388,
+    "z": -1.16
+   },
+   "decided_at": "2026-11-12T15:50:27-0500",
+   "prediction_scored": "partial. Two of three parts hit: residential complaint rates were weakly related to modelled transport noise (Spearman rho 0.22; predicted below 0.25), and street and vehicle complaints were positively related to it (rho 0.30; predicted 0.15-0.45). The registered contrast missed: rent change had no association with residential complaints (0.004 per SD), so the contrast was -0.03 (95% CI -0.09 to 0.02) against a predicted +0.05 to +0.30."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; sharpen the settle condition.",
+  "critique": "critique/nbhd-noise311-exposure.md",
+  "revised_at": "2026-11-12T15:58:59-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

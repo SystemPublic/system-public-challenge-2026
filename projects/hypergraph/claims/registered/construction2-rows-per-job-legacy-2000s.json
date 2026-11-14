@@ -1,0 +1,46 @@
+{
+ "id": "construction2-rows-per-job-legacy-2000s",
+ "kind": "confirmation",
+ "supersedes": null,
+ "replicates": "construction-permit-funnel (exploratory lifetime rows per job by cohort, 7.0-10.3 for 2010-2019)",
+ "statement": "In the legacy DOB permit table, each new-building job first permitted in 2000-2009 carries several permit rows over its life, so counts of NB permit rows overstate jobs, as they did for cohorts 2010-2019.",
+ "graph_evidence": [
+  {
+   "association_id": "(search)",
+   "concepts": [
+    "construction",
+    "permit",
+    "completion"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "The graph holds no finding on building permits or permit rows (data/derived/construction/graph_search.json). The claim is about the city record.",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "U.S. Census Bureau, New Residential Construction methodology",
+   "doi": null,
+   "url": "https://www.census.gov/construction/nrc/pdf/summeas_nrc.pdf",
+   "finding": "Census counts permitted housing units, one count per authorisation, not permit rows."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Mean lifetime rows per job between 5 and 10 in each cohort year 2000-2009; pooled 2000-2009 between 5 and 9.",
+  "support_if": "pooled mean lifetime rows per job, cohorts 2000-2009, >= 5.0 AND the mean is >= 4.0 in every one of the ten cohort years",
+  "refute_if": "pooled mean < 3.0 OR the mean is < 3.0 in three or more of the ten cohort years"
+ },
+ "plan": "Data: DOB Permit Issuance (ipu4-2q9a), job_type='NB', all permit types and filing statuses, as fetched by analyses/construction/fetch.py on 12 Nov 2026 (data/big/construction/permits_nb_legacy.parquet; version in data/derived/construction/sources.json). Unit: job (job__). Cohort: year of the job's first permit of permit_type NB, else its first permit of any type (the definition in analyses/construction/funnel.py). Measure: number of rows for the job over the whole table (lifetime rows), mean by cohort year 2000-2009 and pooled, with a bootstrap 95% interval for the pooled mean (2,000 resamples of jobs, seed 20261113). Secondary, reported but not deciding: median rows per job and renewal share of rows by cohort. Seen by the first round (12-13 Nov 2026): legacy ipu4-2q9a lifetime rows per job by first-permit cohort for 2010-2026 (funnel_by_year.csv: 7.0 to 10.3 for 2010-2019, 8.13 for the 699 legacy jobs of 2022), rows per job within each calendar year 2010-2019 (2.55 to 3.28), the all-time figure of 5.97 rows per job over 95,784 jobs, and 6.87 rows per job for rows issued 2010-2019. From these seen aggregates one can derive that jobs first permitted before 2010 (about 72,900 jobs, back to the table's start) average about 5.1 rows each; this registrant derived that number from the published tables before registering. Not seen: any per-cohort value for cohorts before 2010. For DOB NOW, the first round counted jobs holding active permits by work type on given dates (sheds.py) and did not count permit rows per NB job.",
+ "alternatives": [
+  "Jobs from the 2000s may have had fewer permit types (equipment and plumbing permits were split out differently), lowering rows without any change in buildings per job",
+  "The table may hold incomplete records for the early 2000s (missing renewals), lowering the count",
+  "Long-lived stalled jobs from the 2008 crash renewed for years, raising the count for 2007-2009"
+ ],
+ "prior": 0.6,
+ "registrant": "Claude (construction replication agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T15:59:34-0500",
+ "sha256": "0b0ea50433c04323fb86056154dcb987304443ae4b083594ccc7ed01ce67fc52"
+}

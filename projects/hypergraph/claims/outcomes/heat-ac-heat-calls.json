@@ -1,0 +1,129 @@
+{
+ "id": "heat-ac-heat-calls",
+ "verdict": "contested",
+ "verdict_note": "Contested by the registered refutation rule: the heat slope of ambulance calls coded HEAT does not differ between the halves, -0.032 (-0.088 to 0.024), and the interval excludes the difference expected if all calls came from homes (0.112). Calls are located where the patient was found, so this does not show that air conditioning fails to protect at home: the upper limit excludes household protection of the size the case-control studies report only if more than about 17% of HEAT calls come from homes, and the data do not give that share.",
+ "city_effect": {
+  "label": "Difference between the log rate ratios of EMS HEAT calls per 5 C of TMAX, low-AC half minus high-AC half of community districts, May-September 2006-2026",
+  "estimate": -0.03190254440447328,
+  "lo": -0.08817964814308477,
+  "hi": 0.024374559334138214,
+  "scale": "difference of log rate ratios per 5 C",
+  "null": 0,
+  "n": 1920
+ },
+ "graph_effect": {
+  "label": "Difference expected from the case-control odds of heat death with a working air conditioner (0.23; Naughton 2002, Semenza 1996), if every call came from a home",
+  "estimate": 0.11246530985121782,
+  "lo": null,
+  "hi": null,
+  "scale": "difference of log rate ratios per 5 C",
+  "null": 0
+ },
+ "graph_evidence": [
+  {
+   "association_id": "variables searched by name: air conditioner",
+   "concepts": [
+    "working air conditioner at home",
+    "heat-related death or hospital admission"
+   ],
+   "n_findings": 5,
+   "n_studies": 4,
+   "direction": "-",
+   "summary": "Case-control studies of heat waves: odds of heat-related death with a working air conditioner 0.2 (0.1 to 0.7) in Chicago 1999 (Naughton 2002), 0.3 in Chicago 1995 (Semenza 1996), 0.03 (0 to 0.2) in Cincinnati 1999 (Kaiser 2001); odds of heat-related hospital admission with an air conditioner in the bedroom 0.12 (0.02 to 0.74) in Adelaide 2009 (Zhang 2016). The four abstracts were read in PubMed and match. A fifth record (Saito 2019, 'no air conditioner', HR 1.71) is wrong: the abstract gives 1.71 for a deprivation index, not for air conditioning.",
+   "pubmed_ids": [
+    11988377,
+    8649494,
+    11563746,
+    27256088,
+    30634562
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "incident_datetime as dt, communitydistrict as cd, zipcode",
+    "$where": "final_call_type='HEAT'",
+    "$order": "incident_datetime"
+   },
+   "fetched": "2026-11-13T07:54:17-0500",
+   "n_rows": 17688
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "ehdp",
+   "file": "hvi-nta-2020.csv",
+   "repository": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998"
+  }
+ ],
+ "prediction_scored": "miss. The difference is -0.032 (-0.088 to 0.024); the predicted range was 0 to +0.12. The upper limit is below the yardstick 0.112 and the lower limit is below 0, so the refutation rule is met. Joint reading as registered: this claim is not confirmed, so the answer to whether low-AC districts have steeper slopes for both outcomes is 'the data cannot tell'; for heat calls alone the answer is no.",
+ "settle": "Heat illness by place of residence. The Health Department holds daily syndromic ED visits with the patient's ZIP code; the public file is citywide. EMS records with a location type (home, street, workplace) would separate the calls that household air conditioning can affect.",
+ "research_needed": [
+  {
+   "question": "Is the heat slope of heat-illness ED visits by ZIP code of residence steeper where fewer households have air conditioning?",
+   "data": "DOHMH syndromic surveillance by residence ZIP (not public); Housing and Vacancy Survey",
+   "design": "Daily case-crossover by ZIP with air conditioning and income as effect modifiers",
+   "priority": "high"
+  },
+  {
+   "question": "What share of EMS HEAT calls come from homes?",
+   "data": "FDNY EMS dispatch records with location type",
+   "design": "Tabulation by temperature band",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/heat_solutions/heat_solutions.png"
+ ],
+ "notes": "Two lines of run.py (170 and 224) were changed after registration: each reads the hour of a shooting as the text before the first colon in place of the first two characters. The earlier wording of this note (one line; unpadded times in 'the file'; no model had run) was inaccurate and was corrected after the referee. The incident file 5ucz-vwe8 has no unpadded time, and the two versions of line 170 give the same hour for all 24,429 incidents. The 390 unpadded times (of 29,744) are in the archived victim file 833y-fsy8, which only heat-school-out uses, so the registered script stopped at line 224. That line comes after the air-conditioning models in main(), so in the failed run those models had been fitted in memory; the script prints and writes only at its end, so no result was displayed or saved before the change. The change alters no number of the three claims' deciding models, none of which uses the hour. Neither changed line is used for heat calls. 15754 calls in May to September on 1920 days with at least one call. Registered secondary results. Bottom against top third -0.018 (-0.085 to 0.049). Within the low-income half -0.121 (-0.229 to -0.012); within the high-income half 0.057 (-0.038 to 0.153). Days with TMAX of 27 C or more -0.009 (-0.077 to 0.058). Without the six Manhattan districts below 59th Street -0.078 (-0.143 to -0.013): the slope is flatter in the low-AC half. District slopes on air-conditioning share per 10 points: 0.014 (-0.058 to 0.086) alone, 0.024 (-0.070 to 0.117) with income, 58 districts. The registered negative binomial fit of the high-AC half's own slope returned a degenerate interval (2.335 to 2.335) and is not used; an exploratory Poisson refit gives 6.835 (6.343 to 7.366) for the low-AC half and 7.011 (6.464 to 7.604) for the high-AC half. 97% of HEAT calls fall in May to September.\n\nAfter the referee (13 Nov 2026): the verdict is kept. The referee rebuilt the series with separate code; the daily counts agree on all 3,183 days and the refit gives -0.032 (-0.088 to 0.024) on 1,920 days with at least one call. The refutation condition, an upper limit below 0.112 with a lower limit at or below 0, is met. Every full-sample variant the referee ran has a lower limit below 0 and an upper limit below 0.112: for example HAC errors with 7 lags -0.032 (-0.083 to 0.019), year-by-month terms -0.025 (-0.084 to 0.035), LaGuardia -0.020 (-0.070 to 0.030), JFK -0.012 (-0.065 to 0.041), days of 30 C or more -0.017 (-0.111 to 0.078), the night minimum in place of the maximum -0.063 (-0.129 to 0.002).\nWhat the refutation excludes. The yardstick 0.112 assumes that every call comes from a home, that the odds ratio for death (0.23) applies to ambulance calls, and that the hot-day contrast is spread evenly over 10 C. With a share h of calls from homes the same formula gives 0.114 at h = 1 (the registration's 0.112 used unrounded shares), 0.064 at one half, 0.035 at one quarter and 0.021 at 15% (referee). The upper limit 0.024 equals the yardstick at h = 0.17 (re-checked by solving the formula). The result therefore excludes protection of households by air conditioning only if more than about 17% of HEAT calls come from homes. The data do not give that share, and 62% of calls fall between 12:00 and 17:59, which is consistent with many of them coming from outdoors. The comparison with the case-control studies is not like for like, and the outcome does not test them.\nRecords left out. Of 17,688 HEAT calls, 583 have no community district and 281 carry a code that is not one of the 59 districts (parks and airports), 864 in all. The share without a usable district is 5.8% on days below 30 C and 4.4% on days of 30 C or more, so the loss is not concentrated on hot days. The registered period is May to September 'to the last year in the file'; the calendar in common.py ends on 31 August 2026, so the 23 calls of September 2026 are left out. Neither changes the result.\nThe negative binomial failure. The dispersion estimate for the high-AC half diverges (to a value near 10^224 in the referee's fit), and count_fit in run.py accepts any finite dispersion above 0.0001, so the diverged value was passed to the model and the slope came back as 2.335 with an interval of no width. The low-AC half fits normally (dispersion 0.277, 6.675, 6.223 to 7.160). The deciding model is the binomial one and does not use count_fit. run.py is left as registered (rule 9); later scripts should bound the dispersion from above.\nRivals (referee). Income: within the low-income half -0.121 (-0.229 to -0.012) on 1,065 calls in six high-AC districts, within the high-income half 0.057 (-0.038 to 0.153), pooled -0.020 (-0.091 to 0.052); the strata differ in sign and the low-income result is one of several secondary results. Manhattan has 37% of HEAT calls and eight of its twelve districts are in the high-AC half; without Manhattan the difference is -0.075 (-0.148 to -0.003), and without Brooklyn 0.010 (-0.054 to 0.074). Period: 0.006 (-0.062 to 0.075) for 2006 to 2019 and -0.112 (-0.207 to -0.017) for 2020 to 2026, so the negative estimate comes from the recent years, when calls rose (1,483 in 2026 against 385 in 2020). Not addressed by any variant: residents of poorer districts may go to an emergency department on foot or not call, and dispatch coding of HEAT may differ between areas.\nThe day. 3% of HEAT calls fall between 00:00 and 05:59 (472 of the 15,754 in the model), so the definition of the day matters little here. Calendar date first (re-checked): primary -0.032 (-0.088 to 0.024) on calendar dates and -0.027 (-0.083 to 0.028) on the 06:00 day; bottom against top third -0.018 (-0.085 to 0.049) on calendar dates and -0.008 (-0.076 to 0.059) on the 06:00 day; low-income half -0.121 (-0.229 to -0.012) on calendar dates and -0.112 (-0.219 to -0.005) on the 06:00 day; high-income half 0.057 (-0.038 to 0.153) on calendar dates and 0.051 (-0.046 to 0.147) on the 06:00 day; days of 27 C or more -0.009 (-0.077 to 0.058) on calendar dates and -0.003 (-0.069 to 0.062) on the 06:00 day; without Manhattan below 59th Street -0.078 (-0.143 to -0.013) on calendar dates and -0.079 (-0.143 to -0.014) on the 06:00 day; Poisson rate ratios per 5 C, low half 6.835 (6.343 to 7.366) on calendar dates and 6.908 (6.420 to 7.433) on the 06:00 day and high half 7.011 (6.464 to 7.604) on calendar dates and 7.054 (6.507 to 7.648) on the 06:00 day. The refutation condition is met under both definitions. Exploratory, run after the outcomes, and deciding nothing under rule 4 (analyses/critique/round6_six_am_solutions.py; data/derived/round6_heat/six_am_solutions.json).\nStance. The stance is set to null. The value -0.505 read on the strip as city data disagreeing with the case-control studies, which this outcome does not test.",
+ "registration_sha256": "e00e46b409098aff63a19afb68dd2de55c6d323b588a1ee34bee0c9de7886f02",
+ "decided_at": "2026-11-13T07:58:34-0500",
+ "stance": null,
+ "stance_note": "Null after the referee: the comparison with the case-control odds of heat death depends on the assumed share of calls from homes, and the outcome does not test those studies.",
+ "critique": {
+  "report": "critique/heat-ac-heat-calls.md",
+  "answer": "accepted; verdict kept, yardstick caveat added, stance null"
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "Difference between the log rate ratios of EMS HEAT calls per 5 C of TMAX, low-AC half minus high-AC half of community districts, May-September 2006-2026",
+    "estimate": -0.03190254440447328,
+    "lo": -0.08817964814308477,
+    "hi": 0.024374559334138214,
+    "scale": "difference of log rate ratios per 5 C",
+    "null": 0,
+    "n": 1920
+   },
+   "stance": {
+    "value": -0.505,
+    "lo": -0.911,
+    "hi": 0.401,
+    "z": -1.11
+   },
+   "decided_at": "2026-11-13T07:58:34-0500",
+   "prediction_scored": "miss. The difference is -0.032 (-0.088 to 0.024); the predicted range was 0 to +0.12. The upper limit is below the yardstick 0.112 and the lower limit is below 0, so the refutation rule is met. Joint reading as registered: this claim is not confirmed, so the answer to whether low-AC districts have steeper slopes for both outcomes is 'the data cannot tell'; for heat calls alone the answer is no."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep contested. verdict_note adds that the upper limit excludes the yardstick only if more than about 17% of HEAT calls come from homes; 864 calls without a usable district and 23 calls of September 2026 reported; negative binomial failure explained; note on the changed lines corrected; 06:00-day estimates recorded; stance set to null.",
+  "critique": "critique/heat-ac-heat-calls.md",
+  "revised_at": "2026-11-13T09:19:59-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

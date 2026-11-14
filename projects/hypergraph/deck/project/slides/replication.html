@@ -1,0 +1,17 @@
+<section id="replication" style="gap:24px;">
+<p class="eyebrow">Twelve claims packaged for replication</p>
+<h2 style="font-size:56px;">One folder pins the claim, the data, the code and the environment</h2>
+<div class="steps">
+<div class="step fade" style="--i:1;"><p class="n">Claim</p><p class="t">Registration hash, commit 6750794, 12 Nov 15:19</p></div>
+<div class="step fade" style="--i:2;"><p class="n">Data</p><p class="t">Shootings 5ucz-vwe8, 6,959 rows, hash of rows used</p></div>
+<div class="step fade" style="--i:3;"><p class="n">Code</p><p class="t">Script hashes and a wrapper for the deciding number</p></div>
+<div class="step fade" style="--i:4;"><p class="n">Environment</p><p class="t">Python 3.12.10 and 72 pinned packages</p></div>
+<div class="step fade" style="--i:5;"><p class="n">Number</p><p class="t">IRR 1.1462 per 5 °C (1.1297 to 1.1629)</p></div>
+<div class="step fade" style="--i:6; border-left-color:#B85A1C;"><p class="n" style="color:#B85A1C;">Verify</p><p class="t">MATCH, DRIFT or MISMATCH</p></div>
+</div>
+<div class="cols" style="gap:40px;">
+<div class="card"><h3>Sealed test</h3><p class="body">Each package was run outside the repository in a fresh environment with the network blocked. All twelve packaged claims reproduced their recorded numbers.</p></div>
+<div class="card warm"><h3>One day later</h3><p class="body">Re-fetching the live sources for the first two packages gave DRIFT for both: NOAA rewrote its station file and four building-permit tables changed. A pinned copy can be rerun; a pointer to a live table cannot.</p></div>
+</div>
+<aside>Twelve of the 93 scored claims are packaged; the steps shown are for heat-shootings. python tools/replicate.py CLAIM_ID writes replication/CLAIM_ID/ with manifest.json, inputs/ (copies up to 15 MB, or 20 MB for the first two; larger files by hash), code/, requirements.txt, run.sh and verify.py. The --underlay option writes the inputs and manifest as records ready to push, so each number in the talk can resolve to a fixed Underlay version with an ARK. The registration hash begins b2a1bd8e and the commit time is 15:19:38. The shootings table was updated on 5 November. The tolerance is 0.0001. DRIFT means the data changed; MISMATCH means the code or environment changed. The shootings data were fetched at 15:21:22, 104 seconds after the registration commit.</aside>
+</section>

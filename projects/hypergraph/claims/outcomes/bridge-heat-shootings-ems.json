@@ -1,0 +1,186 @@
+{
+ "id": "bridge-heat-shootings-ems",
+ "verdict": "bridged",
+ "city_effect": {
+  "label": "Endpoint: daily FDNY EMS SHOT dispatches, Central Park TMAX lag 0, NB GLM as heat-shootings, 2006 to Aug 2026",
+  "estimate": 1.1105984346713746,
+  "lo": 1.100129319081887,
+  "hi": 1.1211671770768419,
+  "scale": "IRR per 5 C",
+  "null": 1,
+  "n": 7548
+ },
+ "graph_effect": {
+  "label": "Composed prediction from heat-shootings and bridge-shot-ems-link (Monte Carlo)",
+  "estimate": 1.0989682056407482,
+  "lo": 1.0494462005752834,
+  "hi": 1.1476187650039646,
+  "scale": "IRR per 5 C",
+  "null": 1
+ },
+ "endpoint_test": {
+  "D_log": 0.010624679321047686,
+  "se": 0.025605109672218188,
+  "z": 0.4149437146358164,
+  "compatible": true
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:22-0500",
+   "n_rows": 6959
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n, sum(case(statistical_murder_flag=true, 1, true, 0)) as murders_victims",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 6431
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$where": "statistical_murder_flag=true",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:41-0500",
+   "n_rows": 3176
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T15:06:44-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$order": "d, initial_call_type",
+    "$select": "date_trunc_ymd(incident_datetime) as d, initial_call_type, count(*) as n",
+    "$where": "incident_datetime between '2006-01-01' and '2026-08-31T23:59:59' and initial_call_type in ('SHOT', 'T-SHOT', 'STAB')",
+    "$group": "d, initial_call_type"
+   },
+   "fetched": "2026-11-12T16:08:40-0500",
+   "n_rows": 15361
+  }
+ ],
+ "prediction_scored": "hit: the observed IRR 1.111 (1.100 to 1.121) is inside the composed 1.099 (1.049 to 1.148); z = 0.41.",
+ "settle": "The composed interval is wide because the temperature gradient of SHOT dispatches without a recorded victim was unknown (k between 0 and 1). The endpoint is far more precise than the prediction, so the test mainly rules out the two extremes: that only victim dispatches follow heat (IRR about 1.055) and that all dispatches follow heat as shootings do (1.146). Linked EMS and NYPD records would allow the victim and non-victim gradients to be estimated separately.",
+ "research_needed": [
+  {
+   "question": "Do shots-fired reports without a victim follow temperature as shootings do?",
+   "data": "ShotSpotter activations and 911 shots-fired calls (NYPD calls for service)",
+   "design": "Same daily model",
+   "priority": "medium"
+  },
+  {
+   "question": "Does the gradient carry through to ED visits for assault?",
+   "data": "Daily assault and firearm ED visits (syndromic), which the Health Department holds but does not publish; EHDP publishes only annual counts for 2018-2023",
+   "design": "Same daily model",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/bridges/bridge_heat_shootings_ems.png"
+ ],
+ "notes": "Sensitivity (registered, not deciding): May-September 1.095 (1.077 to 1.114); 2006-2019 1.114 (1.102 to 1.126); SHOT plus T-SHOT 1.110; STAB dispatches, outside the chain, 1.076 (1.068 to 1.084). Exploratory: with a victim share of 0.37 (1.25 dispatches per incident times 974 incidents over 3,164 dispatches in 2023), the observed IRR implies k of about 0.64, so dispatches without a recorded victim rise with heat at about two thirds of the shootings rate. The second bridge first proposed, from heat to assault ED visits in EHDP-data, could not be built: EHDP publishes violence-related and firearm ED visits only as annual counts and rates by area (indicators 2400, 2437; SPARCS 2018-2023), with no daily or monthly series. EMS dispatches were used as the endpoint instead. Stance: rule 5, weakest link (heat-shootings or bridge-shot-ems-link).\n\nAfter the bridge referee: the test discriminates from no effect (z_null 21.7) but is weak in specificity. About 37% of SHOT dispatches are the shooting victims counted in the first link, the test refutes only if the dispatch multiplier lies outside about [-0.08, 1.09], and the stabbing contrast (IRR 1.076) would also have passed. It supports 'heat raises violence-related EMS load' more than this particular chain. Modelling non-victim dispatches directly is listed as exploratory research needed.",
+ "registration_sha256": "bda255d3ebffd6189ea84b6060c0e85675e809fee6bcbdbb17a4a6281ff11099",
+ "decided_at": "2026-11-12T16:10:34-0500",
+ "stance": {
+  "lo": null,
+  "hi": null,
+  "z": 0.41,
+  "rule": "7+8",
+  "D": 471.07,
+  "discriminates": true,
+  "value": 0.839
+ },
+ "endpoint_stance": {
+  "value": 1.0,
+  "lo": 1.0,
+  "hi": 1.0,
+  "z": 21.71
+ },
+ "revision": {
+  "reason": "Rule 8 applied: discriminates from null; kept bridged with weak-specificity note.",
+  "critique": "critique/bridge-heat-shootings-ems.md",
+  "revised_at": "2026-11-12T16:18:01-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Endpoint: daily FDNY EMS SHOT dispatches, Central Park TMAX lag 0, NB GLM as heat-shootings, 2006 to Aug 2026",
+    "estimate": 1.1105984346713746,
+    "lo": 1.100129319081887,
+    "hi": 1.1211671770768419,
+    "scale": "IRR per 5 C",
+    "null": 1,
+    "n": 7548
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 48.45,
+    "from_link": "bridge-shot-ems-link"
+   },
+   "decided_at": "2026-11-12T16:10:34-0500",
+   "prediction_scored": "hit: the observed IRR 1.111 (1.100 to 1.121) is inside the composed 1.099 (1.049 to 1.148); z = 0.41."
+  },
+  {
+   "verdict": "bridged",
+   "city_effect": {
+    "label": "Endpoint: daily FDNY EMS SHOT dispatches, Central Park TMAX lag 0, NB GLM as heat-shootings, 2006 to Aug 2026",
+    "estimate": 1.1105984346713746,
+    "lo": 1.100129319081887,
+    "hi": 1.1211671770768419,
+    "scale": "IRR per 5 C",
+    "null": 1,
+    "n": 7548
+   },
+   "stance": {
+    "value": 0.835,
+    "lo": null,
+    "hi": null,
+    "z": 0.41,
+    "rule": 7
+   },
+   "decided_at": "2026-11-12T16:10:34-0500",
+   "prediction_scored": "hit: the observed IRR 1.111 (1.100 to 1.121) is inside the composed 1.099 (1.049 to 1.148); z = 0.41."
+  }
+ ]
+}

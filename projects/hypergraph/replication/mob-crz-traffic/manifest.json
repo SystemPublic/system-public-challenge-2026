@@ -1,0 +1,1009 @@
+{
+ "package": {
+  "claim": "mob-crz-traffic",
+  "built_at": "2026-11-13T22:57:06-0500",
+  "tool": "tools/replicate.py",
+  "tool_blob": "227e649fbc524670361a2e3669887ba27f05af5c",
+  "paths": "relative to the repository (inputs keep their repo paths under inputs/) or to ~/opt/nyc-concordance"
+ },
+ "claim": {
+  "id": "mob-crz-traffic",
+  "registration": {
+   "id": "mob-crz-traffic",
+   "kind": "confirmation",
+   "statement": "Congestion pricing in Manhattan's Central Business District (from 5 January 2025) raised taxi and for-hire vehicle speeds and reduced TLC trip counts in the CBD relative to the rest of New York City.",
+   "graph_evidence": [
+    {
+     "note": "The System graph holds no findings on road pricing, congestion charging or cordon tolls (variable searches: congestion pricing, road pricing, congestion charging, low emission zone, cordon, toll). This claim rests on the literature below; the gap is itself a research_needed item.",
+     "searches": {
+      "variable_searches": [
+       "congestion pricing",
+       "road pricing",
+       "congestion charging",
+       "low emission zone",
+       "cordon",
+       "toll"
+      ],
+      "relevant_hits": [
+       "toll booth removal",
+       "Reduction in the incidence of casualties after a road traffic crash (from 1996-2001 to 2003-2008)",
+       "average traffic flow reduction (%) during COVID19 lockdown period",
+       "reductions in traffic-related air pollution"
+      ]
+     }
+    }
+   ],
+   "literature": [
+    {
+     "citation": "Eliasson J (2009). A cost-benefit analysis of the Stockholm congestion charging system. Transp Res A 43:468-480.",
+     "doi": "10.1016/j.tra.2008.11.014",
+     "finding": "Traffic across the cordon fell about 20% and stayed lower."
+    },
+    {
+     "citation": "Transport for London (2007). Central London Congestion Charging: Impacts monitoring, fifth annual report.",
+     "doi": null,
+     "finding": "Traffic entering the zone fell about 18-21%; congestion (delay) fell about 30% at first and returned toward baseline by 2006."
+    },
+    {
+     "citation": "Cook C, Kreidieh A, Vasserman S, Allcott H, Arora N, van Sambeek F, Tomkins A, Turkel E (2025). Short-run traffic effects of New York's congestion pricing. NBER working paper.",
+     "doi": null,
+     "finding": "Reported faster travel in the CBD in early 2025 (cited from memory of the working paper; not verified here)."
+    },
+    {
+     "citation": "NYC DOHMH (14 August 2026). Congestion pricing air quality report (Environment and Health Data Portal).",
+     "doi": null,
+     "finding": "States that traffic entering the zone fell about 10% in 2025 (secondary report, 6sqft, 17 Aug 2026)."
+    }
+   ],
+   "prediction": {
+    "direction": "+",
+    "magnitude": "Difference-in-differences of log monthly taxi/FHV speed, CBD minus rest of city, 2025 vs 2024: +5% to +15%. Difference-in-differences of log monthly TLC trips (pickups plus drop-offs) in CBD taxi zones minus non-CBD zones, 2025 vs 2024: -3% to -12%.",
+    "support_if": "Speed DiD > 0 with a 95% interval above 0, and the trip-count DiD below 0.",
+    "refute_if": "Speed DiD <= 0 with an interval that excludes +3%, or CBD trips rise relative to outside."
+   },
+   "plan": "Data: MTA 'CBD Taxi and For-Hire Vehicle Speeds: Beginning October 2019' (data.ny.gov 6p29-6xqn), zones CBD vs rest of city (and adjacent area as a second comparison); TLC 'Pickups and Drop-offs by Taxi Zone and Industry' (data.cityofnewyork.us c5iv-bn4s) with the CBD zone list from MTA yfdc-w5jh; MTA 'Vehicle Miles Traveled in the CBD' (jbxx-kxff) as a descriptive check; MTA CRZ entries (t6yz-b64h) descriptive only because it starts in 2025. Unit: month. Model: OLS of log value on area, calendar month, year and area x post (post = Jan 2025 on), pre-period Jan 2023 - Dec 2024, post Jan - latest 2025/2026 month; HAC (Newey-West, 3 lags) standard errors. Pre-trend check: the same model with a placebo post = Jan 2024 on 2023-2024 only. Figure: monthly CBD and comparison series with the start date marked.",
+   "alternatives": [
+    "Post-pandemic return-to-office trend that differs between the CBD and outer boroughs",
+    "Seasonal and weather shocks (absorbed in part by calendar-month terms; common shocks by the comparison)",
+    "Displacement: traffic avoiding the zone slows the comparison area, which inflates the DiD",
+    "Change in TLC fleet composition or app-company pricing unrelated to the toll (the HVFHV $1.50 and taxi $0.75 per-trip CBD surcharges are part of the policy itself)"
+   ],
+   "prior": 0.8,
+   "registrant": "mobility agent (Claude Opus 5.5), for J. Vernon",
+   "registered_at": "2026-11-12T15:15:19-0500",
+   "sha256": "7e080860acc4dff2c0ecba9b77628be759c0f9681c9daa5a3e815eabdb578b26"
+  },
+  "registration_path": "claims/registered/mob-crz-traffic.json",
+  "registration_sha256": "7e080860acc4dff2c0ecba9b77628be759c0f9681c9daa5a3e815eabdb578b26",
+  "registration_hash_ok": true,
+  "registration_file_sha256": "55d6aa820704cde2718a46c8fbbcc99f72762af67fdf676ec71d58a913c5dcea",
+  "registration_commit": {
+   "commit": "f2d4f724d505e61fea1b78c9d80bdc50799e5722",
+   "committed_at": "2026-11-12T15:15:27-05:00",
+   "subject": "register mob-crz-traffic, mob-crz-air, mob-asthma-pollution, mob-speedcam-247"
+  },
+  "prereg_branch": {
+   "name": "prereg/mob-crz-traffic",
+   "sha": null,
+   "reachable": true,
+   "note": "origin is reachable but has no such branch"
+  },
+  "outcome": {
+   "id": "mob-crz-traffic",
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "CBD vs rest-of-city taxi/FHV speed, 2025 vs 2023-24 (DiD)",
+    "estimate": 5.75,
+    "lo": 2.95,
+    "hi": 8.62,
+    "scale": "percent change in speed",
+    "null": 0,
+    "n": 64
+   },
+   "graph_effect": {
+    "label": "No road-pricing findings in the System graph; literature: Stockholm and London traffic across the cordon -18% to -21%",
+    "estimate": null,
+    "lo": null,
+    "hi": null,
+    "scale": "percent change in traffic",
+    "null": 0
+   },
+   "sources": [
+    {
+     "kind": "nyc-open-data",
+     "dataset": "6p29-6xqn",
+     "name": "MTA Central Business District Taxi and For-Hire Vehicle Speeds: Beginning October 2019",
+     "url": "https://data.ny.gov/d/6p29-6xqn",
+     "rows_updated_at": "2026-10-23T15:07:12Z",
+     "query": {
+      "$select": "month, zone, zonal_speed",
+      "$order": "month",
+      "$limit": 50000
+     },
+     "fetched": "2026-11-12T15:17:57-0500",
+     "n_rows": 213
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "yfdc-w5jh",
+     "name": "MTA Central Business District Taxi Zones",
+     "url": "https://data.ny.gov/d/yfdc-w5jh",
+     "rows_updated_at": "2024-08-16T18:30:05Z",
+     "query": {
+      "$select": "taxi_zone",
+      "$limit": 50000
+     },
+     "fetched": "2026-11-12T15:16:25-0500",
+     "n_rows": 38
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "c5iv-bn4s",
+     "name": "Pickups and Drop-offs by Taxi Zone and Industry",
+     "url": "https://data.cityofnewyork.us/d/c5iv-bn4s",
+     "rows_updated_at": "2026-10-27T13:39:51Z",
+     "query": {
+      "$select": "metric_month, industry, locationid, sum(trip_count) as n",
+      "$where": "metric_month >= '2023-01-01'",
+      "$group": "metric_month, industry, locationid",
+      "$limit": 50000
+     },
+     "fetched": "2026-11-12T15:18:17-0500",
+     "n_rows": 34771
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "jbxx-kxff",
+     "name": "MTA Vehicle Miles Traveled in the Central Business District: Beginning 2024",
+     "url": "https://data.ny.gov/d/jbxx-kxff",
+     "rows_updated_at": "2026-10-23T15:20:22Z",
+     "query": {
+      "$select": "date, area, daily_vmt_agps, daily_vmt_cvd, indexed_average_vmt",
+      "$order": "date",
+      "$limit": 50000
+     },
+     "fetched": "2026-11-12T15:18:21-0500",
+     "n_rows": 60
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "t6yz-b64h",
+     "name": "MTA Congestion Relief Zone Vehicle Entries: Beginning 2025",
+     "url": "https://data.ny.gov/d/t6yz-b64h",
+     "rows_updated_at": "2026-11-12T19:45:51Z",
+     "query": {
+      "$select": "date_trunc_ym(toll_date) as m, sum(crz_entries) as e, sum(excluded_roadway_entries) as x",
+      "$group": "m",
+      "$order": "m",
+      "$limit": 50000
+     },
+     "fetched": "2026-11-12T15:18:36-0500",
+     "n_rows": 23
+    },
+    {
+     "kind": "sysgraph",
+     "file": "data/derived/mobility/graph_evidence.json",
+     "note": "road pricing searches, no findings"
+    }
+   ],
+   "prediction_scored": "hit: the registered range for speed was +5% to +15% and the estimate is +5.7% (+2.9 to +8.6); the registered range for trips was -3% to -12% and the estimate is -9.8% (-12.8 to -6.6). The trip result is weaker than it looks, because the 2024 placebo also shows a CBD decline (-4.5%, -6.3 to -2.7), so about half of it is a pre-existing trend.",
+   "settle": "The speed result is settled in direction. Its size needs a longer post-period (the MTA speed series ends in August 2025) and a comparison that is not affected by diverted traffic, for example speeds on comparable streets in other large US cities. Trip counts need a model with area-specific trends.",
+   "research_needed": [
+    {
+     "question": "Is there a peer-reviewed estimate of the NYC CBD traffic and speed effect with area-specific trends?",
+     "data": "TLC trip records (trip-level times), MTA CRZ entries, DOT traffic speeds",
+     "design": "synthetic control or DiD with trends",
+     "priority": "medium"
+    },
+    {
+     "question": "The System graph holds no road-pricing studies (Stockholm, London, Milan, Singapore, NYC). Add them.",
+     "data": "the transport-economics literature (e.g. Eliasson 2009; TfL monitoring reports; Simeonova et al. 2021)",
+     "design": "graph curation",
+     "priority": "high"
+    },
+    {
+     "question": "Did traffic divert to roads bordering the zone (FDR, West Side Highway, Bronx expressways)?",
+     "data": "MTA excluded-roadway entries (t6yz-b64h), DOT Traffic Speeds (i4gi-tjb9)",
+     "design": "corridor DiD",
+     "priority": "medium"
+    }
+   ],
+   "figures": [
+    "figures/mobility/crz_traffic_before_after.png"
+   ],
+   "notes": "Speeds rose in the CBD relative to Greater NYC by the registered amount, and the 2024 placebo for speed is null (-0.8%). Against the CBD-adjacent area the effect is +4.2%. By industry, high-volume FHV trips in the CBD fell -14.3% relative to outside and yellow taxi trips -4.7%; green cabs, which rarely serve the CBD, show no change. The MTA CBD vehicle-miles series (jbxx-kxff) shows 2025 CRZ daily VMT -3.8% (AGPS measure) and -11.0% (connected-vehicle measure) against the same months of 2024, without a comparison area. TLC trips are exposure to the policy as well as a measure of traffic, because the per-trip CBD surcharge falls on them directly.",
+   "registration_sha256": "7e080860acc4dff2c0ecba9b77628be759c0f9681c9daa5a3e815eabdb578b26",
+   "decided_at": "2026-11-12T15:19:20-0500",
+   "stance": {
+    "value": 0.963,
+    "lo": 0.77,
+    "hi": 0.995,
+    "z": 3.98
+   }
+  },
+  "outcome_path": "claims/outcomes/mob-crz-traffic.json",
+  "outcome_file_sha256": "f4dd00b754650972ae983cbadb8fdd73da8610ab8001b09b0dc7db49c8894b37",
+  "revision_history": {
+   "in_file": [],
+   "last_revision": null,
+   "outcome_commits": [
+    {
+     "commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+     "committed_at": "2026-11-12T15:19:20-05:00",
+     "subject": "mob-crz-traffic: outcome (confirmed), analysis, figure"
+    }
+   ]
+  },
+  "referee_reports": [
+   {
+    "path": "critique/mob-crz-traffic.md",
+    "role": "referee report for this claim",
+    "sha256": "872e663f852c998135919f45ef14fffd746ef54bf08f8ad896c66558f7606ade"
+   },
+   {
+    "path": "critique/ANSWERS.md",
+    "role": "mentions the claim id",
+    "sha256": "8c6da566f9a62ca55580cb07aa1259d787018fc87961922d7fa615a4e450b96d"
+   },
+   {
+    "path": "critique/bridge-crz-injury-crashes.md",
+    "role": "mentions the claim id",
+    "sha256": "f07796883ede3cfea84a234fea779136d607f1e761f7109de503f34ef263b950"
+   },
+   {
+    "path": "critique/repro-mmr-cbd-speed.md",
+    "role": "mentions the claim id",
+    "sha256": "826afffa169595241d8d3409004232341d8153f3726b07f2ad527a87c4b17382"
+   }
+  ]
+ },
+ "code": {
+  "repo_commit": "47e2f54ff97e1795900c0c186583aeba809d3259",
+  "repo_dirty_paths": 26,
+  "scripts": [
+   {
+    "path": "concord/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "concord/socrata.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "blob_at_HEAD": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "3cc8d26ec235c6633cae66a5ddcdf5173ea8252f72c722d28a52ff48f4d61f4b"
+   },
+   {
+    "path": "analyses/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "first_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/mobility/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "first_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/mobility/common.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "7d8050f76df6ba863ef5babec493ef59498dc973",
+    "blob_at_HEAD": "7d8050f76df6ba863ef5babec493ef59498dc973",
+    "clean": true,
+    "last_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "first_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "sha256": "752ad8eb17ddfe69260c66bc7b9d15e216a8413093426a233895f1886ae1697f"
+   },
+   {
+    "path": "analyses/mobility/crz_traffic.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "b8a3ded309cad7c9305a2b8aae66f163ab7ac8c3",
+    "blob_at_HEAD": "b8a3ded309cad7c9305a2b8aae66f163ab7ac8c3",
+    "clean": true,
+    "last_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "first_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "sha256": "f539c6fbda8a70b2648d4ffdca7889db200bd929b1fdea4495fa7030c3eeb691"
+   },
+   {
+    "path": "analyses/bridges/compose.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "a7b010762c2649cdc92567ff48b452ddc337dc9e",
+    "blob_at_HEAD": "a7b010762c2649cdc92567ff48b452ddc337dc9e",
+    "clean": true,
+    "last_commit": "a4b6f1edd07502a520c239484df1b075d68aa080",
+    "first_commit": "a4b6f1edd07502a520c239484df1b075d68aa080",
+    "sha256": "a081096b60b601f844224ecce5cfb3b6016316b8be52718560dbccf4280557dc"
+   },
+   {
+    "path": "analyses/bridges/compose_v2.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "177c212a68f38fe5b8474ba6aca650874359da1c",
+    "blob_at_HEAD": "177c212a68f38fe5b8474ba6aca650874359da1c",
+    "clean": true,
+    "last_commit": "ce3586a3d421f9ea86a1e5f7da48eba9d2ed0b5c",
+    "first_commit": "ce3586a3d421f9ea86a1e5f7da48eba9d2ed0b5c",
+    "sha256": "dd5c0b3f185ffc1ce2afa712340620a77b066a7c3b3cda822fd03c576ff301c8"
+   },
+   {
+    "path": "analyses/bridges/figures.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "cac7b9eb88b5db287fb7ee6c4f2ca678c2ad069d",
+    "blob_at_HEAD": "cac7b9eb88b5db287fb7ee6c4f2ca678c2ad069d",
+    "clean": true,
+    "last_commit": "f024acbccd91fb73b8dbd6b034c059ac75d9c284",
+    "first_commit": "f024acbccd91fb73b8dbd6b034c059ac75d9c284",
+    "sha256": "ba20e79705bbc7ef79d526b57b78bdc7d82d0d82a96bc4467cac4409c179ff2e"
+   },
+   {
+    "path": "analyses/bridges/outcomes.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "56cc9dc66b4ea5915042fc4ce0d25f398b3008b1",
+    "blob_at_HEAD": "56cc9dc66b4ea5915042fc4ce0d25f398b3008b1",
+    "clean": true,
+    "last_commit": "f024acbccd91fb73b8dbd6b034c059ac75d9c284",
+    "first_commit": "f024acbccd91fb73b8dbd6b034c059ac75d9c284",
+    "sha256": "b3c155bd27742b7784ac01085cce9b2017da03ef5cac8af497be77e96c54310a"
+   },
+   {
+    "path": "analyses/bridges/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "b4bfab716c3b2d45910d67c8bbd22e20632b31d1",
+    "blob_at_HEAD": "b4bfab716c3b2d45910d67c8bbd22e20632b31d1",
+    "clean": true,
+    "last_commit": "a4b6f1edd07502a520c239484df1b075d68aa080",
+    "first_commit": "a4b6f1edd07502a520c239484df1b075d68aa080",
+    "sha256": "3ff3f4a68895c40681564ee005aa82642f14881be488c4e2f6390aa660558668"
+   },
+   {
+    "path": "analyses/bridges/register_v2.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "79d5ff1915e8bf6cea41c9faffcef296718cd93a",
+    "blob_at_HEAD": "79d5ff1915e8bf6cea41c9faffcef296718cd93a",
+    "clean": true,
+    "last_commit": "ce3586a3d421f9ea86a1e5f7da48eba9d2ed0b5c",
+    "first_commit": "ce3586a3d421f9ea86a1e5f7da48eba9d2ed0b5c",
+    "sha256": "cb79b5976ab662a268fd484fab7bc1ab2bd37905519c033896dc0121cda0d083"
+   },
+   {
+    "path": "analyses/commuting/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "3f260c685090e66c794856f3daf1f8362d61fbb6",
+    "blob_at_HEAD": "3f260c685090e66c794856f3daf1f8362d61fbb6",
+    "clean": true,
+    "last_commit": "eb1e22f760a9fb9c544932de25c7b0363d66bc8c",
+    "first_commit": "eb1e22f760a9fb9c544932de25c7b0363d66bc8c",
+    "sha256": "93b11f97b7c44c95afa993a40516939e30d05de55a25a28a9153159a1b5c4fbe"
+   },
+   {
+    "path": "analyses/congestion/ems_bridge.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "de4d06e9f2684e42e440fb32ee9c8a8fa6da37f7",
+    "blob_at_HEAD": "de4d06e9f2684e42e440fb32ee9c8a8fa6da37f7",
+    "clean": true,
+    "last_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "first_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "sha256": "bfef3f8bd96981aa72c82078994ec76f5a8c0b865fc39a79aed6834c9a9751fa"
+   },
+   {
+    "path": "analyses/congestion/outcomes.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "78c77ca8d22eccf22c0d6ad36132f45a3c69b684",
+    "blob_at_HEAD": "78c77ca8d22eccf22c0d6ad36132f45a3c69b684",
+    "clean": true,
+    "last_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "first_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "sha256": "9e7d1fc3208f779eb7c5df8362c554ea3ca0002cbef10f32422745df54a8739d"
+   },
+   {
+    "path": "analyses/congestion/parameters.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "8eb64823a1b3fea815deacae02341e32392bc2d1",
+    "blob_at_HEAD": "8eb64823a1b3fea815deacae02341e32392bc2d1",
+    "clean": true,
+    "last_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "first_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "sha256": "fb452d767ff019363c19101bb4ed2dd048830e9fe865fd1f45b0959c27160301"
+   },
+   {
+    "path": "analyses/congestion/register_ems.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "94b067d9f91897dd8186815b7db9d150a576cc7f",
+    "blob_at_HEAD": "94b067d9f91897dd8186815b7db9d150a576cc7f",
+    "clean": true,
+    "last_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "first_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "sha256": "f427cca733c6734939560fae713e0291d449b75aa2a0252ebe9b79e7dcf6be80"
+   },
+   {
+    "path": "analyses/graph_coverage/make_outputs.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "2a20a6a8e93db5020d3fdff5372ffd5de8c350b9",
+    "blob_at_HEAD": "2a20a6a8e93db5020d3fdff5372ffd5de8c350b9",
+    "clean": true,
+    "last_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "first_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "sha256": "63e90fb2899eb7d2a2f3be8910bf3aa2fd1e81a8ebe4b7567d99646447a457ca"
+   },
+   {
+    "path": "analyses/graph_coverage/termmap.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "a3c9b0e44bfcee7948a979b0dd0e338361889947",
+    "blob_at_HEAD": "a3c9b0e44bfcee7948a979b0dd0e338361889947",
+    "clean": true,
+    "last_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "first_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "sha256": "f65d7e481ecab3446e5a8a84fea74e13103bb31e4218b1eb86a80548d94e3191"
+   },
+   {
+    "path": "analyses/mobility/outcome_crz_air.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "824c3b475e2b19839447c1cd0ab78ed97ce6e6ed",
+    "blob_at_HEAD": "824c3b475e2b19839447c1cd0ab78ed97ce6e6ed",
+    "clean": true,
+    "last_commit": "cd1689918afe8bda60bae2a4a965cbb29a75ff20",
+    "first_commit": "cd1689918afe8bda60bae2a4a965cbb29a75ff20",
+    "sha256": "0faffa8144264fb2193c5a4cc5dceb0def82a0554b4c96a0262b14687b678751"
+   },
+   {
+    "path": "analyses/mobility/outcome_crz_traffic.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "ee2f81bf6c60ffab3bad0db434defeefdf4c1cb5",
+    "blob_at_HEAD": "ee2f81bf6c60ffab3bad0db434defeefdf4c1cb5",
+    "clean": true,
+    "last_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "first_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "sha256": "df5210841c1abce78c180082938951c863ed96170b6edf7e9c28eefd88b82228"
+   },
+   {
+    "path": "analyses/mobility/register_1.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "4cae042117be72cd0e39ee14102db63af0f3a0a1",
+    "blob_at_HEAD": "4cae042117be72cd0e39ee14102db63af0f3a0a1",
+    "clean": true,
+    "last_commit": "f2d4f724d505e61fea1b78c9d80bdc50799e5722",
+    "first_commit": "f2d4f724d505e61fea1b78c9d80bdc50799e5722",
+    "sha256": "4119718043181f3077c4cecb75b7a9c4272e885e6fa99e2f79a15fd2311a78f0"
+   },
+   {
+    "path": "analyses/mobility/summary_figure.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "9802df3b20142f4e65912a02a33c2b899f62f7a0",
+    "blob_at_HEAD": "9802df3b20142f4e65912a02a33c2b899f62f7a0",
+    "clean": true,
+    "last_commit": "2a4db5f4c9b7ef46cb492c97aadee6432f9d2400",
+    "first_commit": "2a4db5f4c9b7ef46cb492c97aadee6432f9d2400",
+    "sha256": "297375a5de09893b38229c35539e7930bcf34bcb90585695ad0558e4c06000c5"
+   },
+   {
+    "path": "analyses/reproduction/outcome_mmr_cbd_speed.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "d1b5c63cedb69c5fe142573dafc06a3bf1bf0886",
+    "blob_at_HEAD": "d1b5c63cedb69c5fe142573dafc06a3bf1bf0886",
+    "clean": true,
+    "last_commit": "ab436295c1a15980a5d9b428bedbe82dff010834",
+    "first_commit": "ab436295c1a15980a5d9b428bedbe82dff010834",
+    "sha256": "ca8e280f56be29e1fdbdd8249100fcdd6340988f887206e128c3369fc7062b13"
+   },
+   {
+    "path": "analyses/reproduction/register_mmr_cbd_speed.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "e350d73c8ecb623cb14932c3820c6ee935a1b84a",
+    "blob_at_HEAD": "e350d73c8ecb623cb14932c3820c6ee935a1b84a",
+    "clean": true,
+    "last_commit": "ab436295c1a15980a5d9b428bedbe82dff010834",
+    "first_commit": "ab436295c1a15980a5d9b428bedbe82dff010834",
+    "sha256": "7c17e0c97a14c63668981e13728d3b981e15e1ab996d1642fbd6251829653f61"
+   },
+   {
+    "path": "analyses/simulate/build_parameters.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "7d1ee125088c6bfc65616eb2b44252ed642d3c98",
+    "blob_at_HEAD": "7d1ee125088c6bfc65616eb2b44252ed642d3c98",
+    "clean": true,
+    "last_commit": "a8f8203e9ab4f02d6849ee535c83dd4980fdf20a",
+    "first_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "sha256": "b8ae0b2344a9cf93077b25594e84dd985a5a08af307bbf8cff0913b0222edfd1"
+   },
+   {
+    "path": "analyses/transit/gtrain_register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "822c349a02eeb25cb2b64366df77523ba552fd7b",
+    "blob_at_HEAD": "822c349a02eeb25cb2b64366df77523ba552fd7b",
+    "clean": true,
+    "last_commit": "eb1c2c939b4bc0c48fb2f195d9ea22d3fe9ba8e5",
+    "first_commit": "eb1c2c939b4bc0c48fb2f195d9ea22d3fe9ba8e5",
+    "sha256": "7a1964c3cbe3d8b7b67cd738c96462f5998b9416129fdd81be579fee45ac925a"
+   },
+   {
+    "path": "analyses/transit/register_fhv_price_subway.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "b8c9b368f102e811773bf87e04651fa64ec3a6b0",
+    "blob_at_HEAD": "b8c9b368f102e811773bf87e04651fa64ec3a6b0",
+    "clean": true,
+    "last_commit": "d6870d409db38fb1457768491b6db7bdad42f63c",
+    "first_commit": "d6870d409db38fb1457768491b6db7bdad42f63c",
+    "sha256": "d18cb4a88b5605c2eaa6163a31fc2557711f5f2c44ce4517e5ffe9fabd29e42e"
+   }
+  ],
+  "seeds": [],
+  "draw_counts": [],
+  "commits_named_in_registration": [],
+  "procedure_note": "The registration names no seed and no resampling draw count; the deciding number is deterministic given the inputs."
+ },
+ "data": [
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "6p29-6xqn",
+    "name": "MTA Central Business District Taxi and For-Hire Vehicle Speeds: Beginning October 2019",
+    "url": "https://data.ny.gov/d/6p29-6xqn",
+    "rows_updated_at": "2026-10-23T15:07:12Z",
+    "query": {
+     "$select": "month, zone, zonal_speed",
+     "$order": "month",
+     "$limit": 50000
+    },
+    "fetched": "2026-11-12T15:17:57-0500",
+    "n_rows": 213
+   },
+   "type": "socrata",
+   "domain": "https://data.ny.gov",
+   "dataset": "6p29-6xqn",
+   "rows_updated_at": "2026-10-23T15:07:12Z",
+   "soql": {
+    "$select": "month, zone, zonal_speed",
+    "$order": "month",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:17:57-0500",
+   "n_rows": 213,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/6p29-6xqn-4051c4efd57f40beb66dadad.json",
+     "sha256": "e53ec27848a03d4aa8223056b5a8ee2091b8addce0ef169dfa491a5c56b0deea",
+     "rows_sha256": "38b047d2b4557ea6a91a550b4d6743a51267ed754201870e99cdebae2992e17d",
+     "bytes": 17921,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "yfdc-w5jh",
+    "name": "MTA Central Business District Taxi Zones",
+    "url": "https://data.ny.gov/d/yfdc-w5jh",
+    "rows_updated_at": "2024-08-16T18:30:05Z",
+    "query": {
+     "$select": "taxi_zone",
+     "$limit": 50000
+    },
+    "fetched": "2026-11-12T15:16:25-0500",
+    "n_rows": 38
+   },
+   "type": "socrata",
+   "domain": "https://data.ny.gov",
+   "dataset": "yfdc-w5jh",
+   "rows_updated_at": "2024-08-16T18:30:05Z",
+   "soql": {
+    "$select": "taxi_zone",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:16:25-0500",
+   "n_rows": 38,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/yfdc-w5jh-75c859e34bff8aa47733335e.json",
+     "sha256": "9889dc722b9c52a351c6fe7e457f2d1f6511bb57981faca33dcfeb2ae1017b25",
+     "rows_sha256": "98e43cff3cf81442d54156cf6938abec65ebf4f0e8edeac876b2fb6958df6b6f",
+     "bytes": 1137,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "c5iv-bn4s",
+    "name": "Pickups and Drop-offs by Taxi Zone and Industry",
+    "url": "https://data.cityofnewyork.us/d/c5iv-bn4s",
+    "rows_updated_at": "2026-10-27T13:39:51Z",
+    "query": {
+     "$select": "metric_month, industry, locationid, sum(trip_count) as n",
+     "$where": "metric_month >= '2023-01-01'",
+     "$group": "metric_month, industry, locationid",
+     "$limit": 50000
+    },
+    "fetched": "2026-11-12T15:18:17-0500",
+    "n_rows": 34771
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "c5iv-bn4s",
+   "rows_updated_at": "2026-10-27T13:39:51Z",
+   "soql": {
+    "$select": "metric_month, industry, locationid, sum(trip_count) as n",
+    "$where": "metric_month >= '2023-01-01'",
+    "$group": "metric_month, industry, locationid",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:18:17-0500",
+   "n_rows": 34771,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/c5iv-bn4s-cfe58638cdaa793439811fd2.json",
+     "sha256": "c6c6154d17bd037a1cada47e097cedfc462996e95b6c62fdda0f1f1f6c411696",
+     "rows_sha256": "4b2935eebfb53f9112946f83444285b977cf6465d488d9401d8e547c965530b8",
+     "bytes": 3267268,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "jbxx-kxff",
+    "name": "MTA Vehicle Miles Traveled in the Central Business District: Beginning 2024",
+    "url": "https://data.ny.gov/d/jbxx-kxff",
+    "rows_updated_at": "2026-10-23T15:20:22Z",
+    "query": {
+     "$select": "date, area, daily_vmt_agps, daily_vmt_cvd, indexed_average_vmt",
+     "$order": "date",
+     "$limit": 50000
+    },
+    "fetched": "2026-11-12T15:18:21-0500",
+    "n_rows": 60
+   },
+   "type": "socrata",
+   "domain": "https://data.ny.gov",
+   "dataset": "jbxx-kxff",
+   "rows_updated_at": "2026-10-23T15:20:22Z",
+   "soql": {
+    "$select": "date, area, daily_vmt_agps, daily_vmt_cvd, indexed_average_vmt",
+    "$order": "date",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:18:21-0500",
+   "n_rows": 60,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/jbxx-kxff-9dc74863617ed00a4d026886.json",
+     "sha256": "0cadf9f75a7b0a23fa61dfab74ee4ff54474a83210b698504ac4805acf0d44e8",
+     "rows_sha256": "8b248f5870e1ae6591c7ca998f43eab7580c5bb2a04edc2ab5ecc8b799ceedc7",
+     "bytes": 9789,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "t6yz-b64h",
+    "name": "MTA Congestion Relief Zone Vehicle Entries: Beginning 2025",
+    "url": "https://data.ny.gov/d/t6yz-b64h",
+    "rows_updated_at": "2026-11-12T19:45:51Z",
+    "query": {
+     "$select": "date_trunc_ym(toll_date) as m, sum(crz_entries) as e, sum(excluded_roadway_entries) as x",
+     "$group": "m",
+     "$order": "m",
+     "$limit": 50000
+    },
+    "fetched": "2026-11-12T15:18:36-0500",
+    "n_rows": 23
+   },
+   "type": "socrata",
+   "domain": "https://data.ny.gov",
+   "dataset": "t6yz-b64h",
+   "rows_updated_at": "2026-11-12T19:45:51Z",
+   "soql": {
+    "$select": "date_trunc_ym(toll_date) as m, sum(crz_entries) as e, sum(excluded_roadway_entries) as x",
+    "$group": "m",
+    "$order": "m",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:18:36-0500",
+   "n_rows": 23,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/t6yz-b64h-26c229ba44d1159ff9121d5e.json",
+     "sha256": "284fef14ada4fca0bcc8b7de4fa45e119b5beeab499f6df1960ccf60e33ce5c5",
+     "rows_sha256": "004ee5712870ea50de073feb68883c3fd359e6855271ada96fac3d21e1472668",
+     "bytes": 1979,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "sysgraph",
+   "record": {
+    "kind": "sysgraph",
+    "file": "data/derived/mobility/graph_evidence.json",
+    "note": "road pricing searches, no findings"
+   },
+   "type": "sysgraph",
+   "release": "July 1, 2026 release (as named in the challenge brief; the API returns no version id)",
+   "api": "v1.0",
+   "dataset_version": null,
+   "key": "not included; supply your own in ~/.config/system/token",
+   "derived_files": [
+    {
+     "path": "data/derived/mobility/graph_evidence.json",
+     "sha256": "8bdfe0dbce7a9c1ed566c9095934dcd456f3f42b9bdc8f7e482d6ffb4d79da06",
+     "bytes": 20999,
+     "copied": false
+    }
+   ],
+   "cached_requests": []
+  }
+ ],
+ "environment": {
+  "python": "3.12.10 (main, Apr  9 2025, 03:49:38) [Clang 20.1.0 ]",
+  "venv": "~/.venvs/nyc-concordance",
+  "uv_pip_freeze": [
+   "affine==3.0.1",
+   "annotated-types==0.8.0",
+   "attrs==26.1.0",
+   "certifi==2026.10.23",
+   "charset-normalizer==3.5.2",
+   "click==8.5.1",
+   "contourpy==1.4.0",
+   "cycler==0.12.1",
+   "duckdb==2.0.0",
+   "fonttools==4.68.0",
+   "formulaic==1.2.2",
+   "geopandas==1.2.0",
+   "idna==3.20",
+   "interface-meta==2.0.1",
+   "jsonschema==4.26.0",
+   "jsonschema-specifications==2025.9.1",
+   "kiwisolver==1.5.1",
+   "matplotlib==3.11.2",
+   "mercantile==1.2.1",
+   "narwhals==2.28.0",
+   "numpy==2.5.4",
+   "packaging==26.3",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pillow==13.0.0",
+   "planetary-computer==1.0.0",
+   "pyarrow==26.0.1",
+   "pydantic==2.14.3",
+   "pydantic-core==2.50.4",
+   "pyogrio==0.13.0",
+   "pyparsing==3.3.3",
+   "pyproj==3.8.0",
+   "pystac==1.16.0",
+   "pystac-client==0.9.1",
+   "pystac-core==1.16.0",
+   "pystac-ext-classification==2.0.2",
+   "pystac-ext-datacube==2.2.2",
+   "pystac-ext-eo==1.1.2",
+   "pystac-ext-file==2.1.2",
+   "pystac-ext-grid==1.1.2",
+   "pystac-ext-item-assets==1.0.2",
+   "pystac-ext-label==1.0.3",
+   "pystac-ext-mgrs==1.0.2",
+   "pystac-ext-mlm==1.4.2",
+   "pystac-ext-pointcloud==1.0.2",
+   "pystac-ext-projection==2.0.2",
+   "pystac-ext-raster==1.1.2",
+   "pystac-ext-render==2.0.1",
+   "pystac-ext-sar==1.0.2",
+   "pystac-ext-sat==1.0.2",
+   "pystac-ext-scientific==1.0.2",
+   "pystac-ext-storage==2.0.2",
+   "pystac-ext-table==1.2.2",
+   "pystac-ext-timestamps==1.1.2",
+   "pystac-ext-version==1.2.2",
+   "pystac-ext-view==1.0.2",
+   "pystac-ext-xarray-assets==1.0.2",
+   "python-dateutil==4.0.0",
+   "python-dotenv==1.2.4",
+   "pytz==2026.6",
+   "rasterio==1.5.2",
+   "referencing==0.37.0",
+   "requests==2.34.2",
+   "rpds-py==2026.9.1",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0",
+   "typing-extensions==4.16.0",
+   "typing-inspection==0.4.5",
+   "tzdata==2026.6",
+   "urllib3==2.8.0",
+   "wrapt==2.5.2"
+  ],
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "os": "Darwin 27.2.0",
+  "mac_ver": "27.2.1",
+  "requirements": [
+   "matplotlib==3.11.2",
+   "numpy==2.5.4",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "requests==2.34.2",
+   "scipy==1.18.1",
+   "statsmodels==0.15.0"
+  ]
+ },
+ "inputs": {
+  "cap_bytes": 15728640,
+  "copied_bytes": 3298094,
+  "files": [
+   {
+    "path": "data/cache/socrata/6p29-6xqn-4051c4efd57f40beb66dadad.json",
+    "bytes": 17921,
+    "sha256": "e53ec27848a03d4aa8223056b5a8ee2091b8addce0ef169dfa491a5c56b0deea",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true,
+    "rows_sha256": "38b047d2b4557ea6a91a550b4d6743a51267ed754201870e99cdebae2992e17d",
+    "n_rows": 213
+   },
+   {
+    "path": "data/cache/socrata/c5iv-bn4s-cfe58638cdaa793439811fd2.json",
+    "bytes": 3267268,
+    "sha256": "c6c6154d17bd037a1cada47e097cedfc462996e95b6c62fdda0f1f1f6c411696",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true,
+    "rows_sha256": "4b2935eebfb53f9112946f83444285b977cf6465d488d9401d8e547c965530b8",
+    "n_rows": 34771
+   },
+   {
+    "path": "data/cache/socrata/yfdc-w5jh-75c859e34bff8aa47733335e.json",
+    "bytes": 1137,
+    "sha256": "9889dc722b9c52a351c6fe7e457f2d1f6511bb57981faca33dcfeb2ae1017b25",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true,
+    "rows_sha256": "98e43cff3cf81442d54156cf6938abec65ebf4f0e8edeac876b2fb6958df6b6f",
+    "n_rows": 38
+   },
+   {
+    "path": "data/cache/socrata/jbxx-kxff-9dc74863617ed00a4d026886.json",
+    "bytes": 9789,
+    "sha256": "0cadf9f75a7b0a23fa61dfab74ee4ff54474a83210b698504ac4805acf0d44e8",
+    "role": "cached Socrata response, jbxx-kxff",
+    "rows_sha256": "8b248f5870e1ae6591c7ca998f43eab7580c5bb2a04edc2ab5ecc8b799ceedc7",
+    "n_rows": 60,
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/socrata/t6yz-b64h-26c229ba44d1159ff9121d5e.json",
+    "bytes": 1979,
+    "sha256": "284fef14ada4fca0bcc8b7de4fa45e119b5beeab499f6df1960ccf60e33ce5c5",
+    "role": "cached Socrata response, t6yz-b64h",
+    "rows_sha256": "004ee5712870ea50de073feb68883c3fd359e6855271ada96fac3d21e1472668",
+    "n_rows": 23,
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/mobility/graph_evidence.json",
+    "bytes": 20999,
+    "sha256": "8bdfe0dbce7a9c1ed566c9095934dcd456f3f42b9bdc8f7e482d6ffb4d79da06",
+    "role": "graph evidence (file)",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   }
+  ],
+  "traced": true
+ },
+ "deciding": {
+  "available": true,
+  "what": "city_effect: percent change in CBD taxi and FHV speed relative to Greater NYC, 2025 against 2023-24, OLS difference-in-differences on log monthly speed with area, calendar month and year, HAC (3 lags) 95% CI",
+  "recorded": {
+   "estimate": 5.75,
+   "lo": 2.95,
+   "hi": 8.62,
+   "n": 64,
+   "trips_pct": -9.8,
+   "trips_n": 90,
+   "placebo2024_speed_pct": -0.8,
+   "placebo2024_trips_pct": -4.5
+  },
+  "tolerance": {
+   "estimate": 0.005,
+   "lo": 0.005,
+   "hi": 0.005,
+   "n": 0,
+   "trips_pct": 0.05,
+   "trips_n": 0,
+   "placebo2024_speed_pct": 0.05,
+   "placebo2024_trips_pct": 0.05
+  },
+  "decides": "prediction magnitude: speed +5% to +15% and trips -3% to -12%",
+  "recorded_from": {
+   "city_effect": "claims/outcomes/mob-crz-traffic.json",
+   "trips_pct": "outcome prediction_scored ('the estimate is -9.8%')",
+   "trips_n": "data/derived/mobility/crz_traffic_results.json, trips_CBD_vs_outside.n",
+   "placebo2024_speed_pct": "outcome notes ('the 2024 placebo for speed is null (-0.8%)')",
+   "placebo2024_trips_pct": "outcome prediction_scored ('the 2024 placebo also shows a CBD decline (-4.5%')"
+  },
+  "wrapper": "code/rerun.py",
+  "wrapper_note": "Smallest wrapper: crz_traffic.py main() also fits by-industry models, summarises two descriptive series (VMT, CRZ entries) and writes tables and a figure into the repository, so code/rerun.py repeats the lines of main() that build the speed and trip frames and calls did() and placebo() unchanged. The outcome records the city effect to two decimals, so the tolerance is 0.005 percentage points. The trip estimate is printed and checked too, because the registered prediction covers it.",
+  "refetch_rerun": true,
+  "placebo": {
+   "placebo2024_speed_pct": {
+    "value": -0.8,
+    "tol": 0.05,
+    "from": "outcome notes ('the 2024 placebo for speed is null (-0.8%)')",
+    "what": "registered pre-trend check: the same speed model with post = Jan 2024 on 2023-2024 only"
+   },
+   "placebo2024_trips_pct": {
+    "value": -4.5,
+    "tol": 0.05,
+    "from": "outcome prediction_scored ('the 2024 placebo also shows a CBD decline (-4.5%')",
+    "what": "registered pre-trend check for trips, post = Jan 2024 on 2023-2024 only"
+   }
+  },
+  "trace_run_in_repository": {
+   "printed": {
+    "estimate": 5.74809800166336,
+    "lo": 2.949419814107457,
+    "hi": 8.622858207084395,
+    "n": 64,
+    "trips_pct": -9.753661246012346,
+    "trips_n": 90,
+    "placebo2024_speed_pct": -0.8465543444245993,
+    "placebo2024_trips_pct": -4.540223444490121
+   },
+   "files_read": 3
+  }
+ },
+ "not_rebuilt": []
+}

@@ -1,0 +1,263 @@
+{
+ "id": "transfer-chicago-heat-shootings",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Chicago daily gunshot-injury cases (gumc-mgzr), Midway TMAX lag 0, NB GLM with DOW, month, year, holiday, rain",
+  "estimate": 1.1313639589995585,
+  "lo": 1.1201076921649944,
+  "hi": 1.1427333431209132,
+  "scale": "IRR per 5 C",
+  "null": 1,
+  "n": 6085
+ },
+ "graph_effect": {
+  "label": "Xu et al. 2020 Chicago homicide, per 5 C mean temperature lag 0-7 (graph stores 0.095 as an odds ratio)",
+  "estimate": 1.095,
+  "lo": 1.043,
+  "hi": 1.15,
+  "scale": "OR per 5 C",
+  "null": 1
+ },
+ "graph_evidence": [
+  {
+   "relationship_id": "4FaXcuNJRt|14UOQBVakG",
+   "concepts": [
+    "temperature",
+    "firearm"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Lyons et al. 2022, 100 US cities 2015-2020, RR 1.17 (1.12 to 1.21) for the 84th percentile of daily maximum temperature against the city median; matches the abstract (PMID 36525273, read 12 Nov 2026). The only gun-violence temperature finding in the graph; it covers Chicago and New York but reports no city-specific estimate.",
+   "pubmed_ids": [
+    36525273
+   ],
+   "in_dataverse_csv": null
+  },
+  {
+   "relationship_id": "4FaXcuNJRt|YZku29igbl",
+   "concepts": [
+    "temperature",
+    "homicide"
+   ],
+   "n_findings": 4,
+   "n_studies": 2,
+   "direction": "+",
+   "summary": "Xu et al. 2020 (PMID 32738768) gives intentional homicide +9.5% (4.3 to 15.0) per 5 C in Chicago and +8.8% (1.5 to 16.6) in New York, lag 0-7; the graph stores these as odds ratios 0.095 and 0.088 (the abstract gives percent increases, so the stored values are mis-scaled). Rahman et al. 2023, California, +4.9% (PMID 36858215). This is the graph's one direct two-city comparison, and it shows Chicago and New York within 1 point of each other.",
+   "pubmed_ids": [
+    32738768,
+    36858215
+   ],
+   "in_dataverse_csv": null
+  },
+  {
+   "relationship_id": "ungrounded variable: violent crime counts | daily summer temperature",
+   "concepts": [
+    "violent crime",
+    "temperature"
+   ],
+   "n_findings": 2,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Heo et al. 2024, South Korea, warm months 2016-2020: RR 1.11 (1.09 to 1.15) at the 70th percentile and 1.04 (1.01 to 1.07) at the 90th, against the 10th percentile; matches the abstract (PMID 38331944). Found only by variable-name search; neither variable is grounded to a concept, so the concept-level relationship does not exist.",
+   "pubmed_ids": [
+    38331944
+   ],
+   "in_dataverse_csv": null
+  }
+ ],
+ "sources": [
+  {
+   "kind": "socrata (recorded by concord/socrata.py as nyc-open-data)",
+   "portal": "data.cityofchicago.org",
+   "dataset": "gumc-mgzr",
+   "name": "Violence Reduction - Victims of Homicides and Non-Fatal Shootings",
+   "url": "https://data.cityofchicago.org/d/gumc-mgzr",
+   "rows_updated_at": "2026-11-12T14:37:55Z",
+   "n_queries": 2,
+   "fetched_first": "2026-11-12T22:33:08-0500",
+   "fetched_last": "2026-11-12T22:33:13-0500",
+   "example_query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(date) as d, count(distinct case_number) as n",
+    "$where": "date between '2010-01-01T00:00:00' and '2026-08-31T23:59:59' AND gunshot_injury_i in ('Y','YES')",
+    "$group": "d",
+    "$order": "d"
+   },
+   "data_access": "open"
+  },
+  {
+   "kind": "socrata (recorded by concord/socrata.py as nyc-open-data)",
+   "portal": "data.cityofchicago.org",
+   "dataset": "ijzp-q8t2",
+   "name": "Crimes - 2001 to Present",
+   "url": "https://data.cityofchicago.org/d/ijzp-q8t2",
+   "rows_updated_at": "2026-11-12T12:16:46Z",
+   "n_queries": 2,
+   "fetched_first": "2026-11-12T22:33:24-0500",
+   "fetched_last": "2026-11-12T22:33:28-0500",
+   "example_query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(date) as d, count(*) as n",
+    "$where": "date between '2010-01-01T00:00:00' and '2026-08-31T23:59:59' AND primary_type='HOMICIDE'",
+    "$group": "d",
+    "$order": "d"
+   },
+   "data_access": "open"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00014819",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00014819.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:32:44 GMT",
+   "fetched": "2026-11-12T22:33:29-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ",
+   "data_access": "open"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094846",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094846.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:26 GMT",
+   "fetched": "2026-11-12T22:33:30-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ",
+   "data_access": "open"
+  }
+ ],
+ "prediction_scored": "hit: the registered band was 1.110 to 1.183 with lower limit above 1; the Chicago estimate is 1.131 (1.120 to 1.143), inside the band and overlapping New York's interval (1.130 to 1.163) in the range 1.130 to 1.143. The registered magnitude 1.10 to 1.20 also holds. The estimate is 0.015 below New York's, about 10% of New York's excess.",
+ "components": {
+  "n_cases": 41063,
+  "period": [
+   "2010-01-01",
+   "2026-08-31"
+  ],
+  "station": "USW00014819",
+  "tmax_missing_share": 0.0003285690816494168,
+  "sensitivity": {
+   "S1_lag01": {
+    "estimate": 1.1323907153188895,
+    "lo": 1.1198367839837704,
+    "hi": 1.1450853825132168,
+    "p": 6.358237774694745e-106
+   },
+   "S2_tmin": {
+    "estimate": 1.1330764956232888,
+    "lo": 1.1192113513267574,
+    "hi": 1.1471134057137746,
+    "p": 5.083946594433387e-88
+   },
+   "S3_may_sep": {
+    "estimate": 1.1049066610526248,
+    "lo": 1.0868019872747907,
+    "hi": 1.1233129345850046,
+    "p": 2.5732307217278537e-32
+   },
+   "S4_2010_2019": {
+    "estimate": 1.1422990899761831,
+    "lo": 1.1277219332222563,
+    "hi": 1.1570646739414365,
+    "p": 1.199492308464758e-91
+   },
+   "S4_2020_on": {
+    "estimate": 1.116180021031457,
+    "lo": 1.0989563901700774,
+    "hi": 1.1336735929593815,
+    "p": 1.2227932469115654e-43
+   },
+   "S5_other_airport_USW00094846": {
+    "estimate": 1.1325755133860236,
+    "lo": 1.1212389925288972,
+    "hi": 1.1440266545034157,
+    "p": 5.786178431631411e-130,
+    "n_days": 6087
+   },
+   "S6_2012_2016": {
+    "estimate": 1.146131979852594,
+    "lo": 1.125890085016187,
+    "hi": 1.1667377950325772,
+    "p": 7.056903292116203e-51
+   },
+   "S7_homicide_gunshot_victim_cases": {
+    "estimate": 1.1145701736955242,
+    "lo": 1.0910361003808768,
+    "hi": 1.1386118861309908,
+    "p": 2.235757725901394e-23
+   },
+   "S8_crimes_dataset": {
+    "estimate": 1.1329776404221659,
+    "lo": 1.121626204085523,
+    "hi": 1.144443959155846,
+    "p": 1.903786518911873e-130
+   },
+   "S9_exploratory_weekday": {
+    "estimate": 1.126110421478869,
+    "lo": 1.1141372752189709,
+    "hi": 1.13821223790765,
+    "p": 3.763442746783177e-105
+   },
+   "S9_exploratory_weekend_holiday": {
+    "estimate": 1.140177250240398,
+    "lo": 1.1267522759201574,
+    "hi": 1.1537621798048843
+   }
+  },
+  "reeping_hemenway_per_5C": {
+   "weekday": 1.158,
+   "weekend_holiday": 1.19
+  },
+  "note": "Chicago's weekday (1.126, 1.114 to 1.138) and weekend/holiday (1.140, 1.127 to 1.154) estimates lie below Reeping and Hemenway's 1.158 and 1.190 and their intervals do not include them. In their 2012-2016 window the same model gives 1.146 (1.126 to 1.167), which includes 1.158."
+ },
+ "settle": "The transfer is shown for one outcome definition and one weather station. A hospital-based injury series would test whether the result depends on police recording.",
+ "research_needed": [
+  {
+   "question": "Does the temperature slope differ by neighbourhood heat exposure and air-conditioning use inside each city?",
+   "data": "Shooting locations (both portals give block or coordinates) joined to land surface temperature",
+   "design": "Case-crossover by community area or precinct",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/graph/transfer_chicago.png"
+ ],
+ "notes": "Same negative binomial model as heat-shootings, fitted to 6,085 days and 41,063 cases in Chicago from 2010 (when the portal's non-fatal shooting series begins) to 31 August 2026. Midway TMAX was missing on 0.03% of days. Within-city seasonality is absorbed by month and year terms, so the estimate describes day-to-day deviations from the month's level.\n\nAfter the referee (13 Nov 2026): the referee rebuilt the daily series, obtained the same estimate (1.131, 1.120 to 1.143) and found it inside the transfer band under six further specifications; errors that allow for serial correlation widen the interval by about a tenth (1.119 to 1.144). What transfers is the average slope and not the shape of the dose-response. Fitted separately below and above 20 C, Chicago's slope is 1.148 (1.133 to 1.164) below and 1.104 (1.084 to 1.124) above, and New York's from 2010 is 1.137 (1.112 to 1.164) below and 1.174 (1.139 to 1.210) above. Chicago flattens on hot days and New York steepens, and the average slopes agree in part because Chicago has more cold days. The claim transfer-chicago-hot-end addresses the shape. New York refitted from 2010 gives 1.151 (1.132 to 1.170), so the difference in periods does not matter.",
+ "registration_sha256": "ca1b588f239bd5617756830950b4483a5389fd658758ef4e8eb64ea50f98c3da",
+ "decided_at": "2026-11-12T22:54:41-0500",
+ "stance": {
+  "value": 1.0,
+  "lo": 1.0,
+  "hi": 1.0,
+  "z": 24.19
+ },
+ "critique": {
+  "report": "critique/transfer-chicago-heat-shootings.md",
+  "answer": "accepted; verdict kept"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Chicago daily gunshot-injury cases (gumc-mgzr), Midway TMAX lag 0, NB GLM with DOW, month, year, holiday, rain",
+    "estimate": 1.1313639589995585,
+    "lo": 1.1201076921649944,
+    "hi": 1.1427333431209132,
+    "scale": "IRR per 5 C",
+    "null": 1,
+    "n": 6085
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 24.19
+   },
+   "decided_at": "2026-11-12T22:54:41-0500",
+   "prediction_scored": "hit: the registered band was 1.110 to 1.183 with lower limit above 1; the Chicago estimate is 1.131 (1.120 to 1.143), inside the band and overlapping New York's interval (1.130 to 1.163) in the range 1.130 to 1.143. The registered magnitude 1.10 to 1.20 also holds. The estimate is 0.015 below New York's, about 10% of New York's excess."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed; notes say the average slope transfers and the shape does not.",
+  "critique": "critique/transfer-chicago-heat-shootings.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,172 @@
+{
+ "id": "heat-surftemp-ed",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "Area-level (community district) association, contradicting the registrant's bridge link: Log age-adjusted heat-stress ED rate (EHDP 2443, 5-year) on surface temperature, CD, adjusted for poverty, percent Black, AC",
+  "estimate": -10.333958377626583,
+  "lo": -17.491510249782483,
+  "hi": -2.5554940520044367,
+  "scale": "% per 1 F",
+  "null": 0,
+  "n": 54
+ },
+ "graph_effect": {
+  "label": "No graph finding links area surface temperature to heat ED rates; Madrigano 2015 (literature) links higher surface temperature to heat-wave death in NYC",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "uvpi-gqnh",
+   "name": "2015 Street Tree Census - Tree Data",
+   "url": "https://data.cityofnewyork.us/d/uvpi-gqnh",
+   "rows_updated_at": "2017-10-04T13:41:26Z",
+   "query": {
+    "$select": "cb_num, count(*) as n",
+    "$where": "status='Alive'",
+    "$group": "cb_num",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:27:40-0500",
+   "n_rows": 59
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "uvpi-gqnh",
+   "name": "2015 Street Tree Census - Tree Data",
+   "url": "https://data.cityofnewyork.us/d/uvpi-gqnh",
+   "rows_updated_at": "2017-10-04T13:41:26Z",
+   "query": {
+    "$select": "nta, count(*) as n",
+    "$where": "status='Alive'",
+    "$group": "nta",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:27:46-0500",
+   "n_rows": 188
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2141.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2141.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2143.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2143.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2443.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2443.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2410.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2410.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-vulnerability-index/hvi-nta.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-vulnerability-index/hvi-nta.csv",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "geography/CD.geojson",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/geography/CD.geojson",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "geography/NTA2010.topo.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/geography/NTA2010.topo.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "System Public Graph v1.0",
+   "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "file": "data/derived/heat/graph_evidence.json",
+   "audit": "data/derived/heat/graph_audit_heat.json"
+  }
+ ],
+ "prediction_scored": "miss: the adjusted slope is negative (-10.3% per F, -17.5 to -2.6); unadjusted -6.6% (-13.6 to +1.0). For heat hospitalizations by NTA (HVI file) the adjusted slope is also negative (-3.9%, -7.2 to -0.4).",
+ "settle": "The cross-sectional association of one afternoon's surface temperature with five-year ED rates is not a dose-response. Hot-surface districts are central (Manhattan, northwest Brooklyn), where residents have lower heat ED rates for reasons the covariates do not capture (age structure is age-adjusted; occupation, housing type, ED access and where people spend hot days are not). Individual-level data linking residence, daily exposure at home and ED visits, or daily ED counts by neighbourhood analysed as a case-crossover with neighbourhood heat as an effect modifier, would settle it.",
+ "research_needed": [
+  {
+   "question": "Does neighbourhood surface or air temperature modify the daily heat-ED response?",
+   "data": "Daily heat ED visits by ZCTA (DOHMH), hyperlocal sensors, ECOSTRESS",
+   "design": "Case-crossover with interaction by neighbourhood temperature",
+   "priority": "high"
+  },
+  {
+   "question": "Which residents in central hot districts avoid heat illness, and how?",
+   "data": "NYCHVS AC, occupation (ACS), cooling centre use",
+   "design": "Multilevel model of heat ED by individual and area traits",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/heat/heat_bridge_chain.png"
+ ],
+ "notes": "CDs 101 and 105 have suppressed ED rates; 54 CDs have all covariates. Percent Black is the strongest adjusted predictor of the heat ED rate (+10.9% per 10 points, +1.4 to +21.2). Covariates are unweighted means of NTA values within each CD.",
+ "registration_sha256": "5a038bcc91f7674e377aa29597cffa388b4f5b516779b75b86967174cc56fbd7",
+ "decided_at": "2026-11-12T15:39:52-0500",
+ "stance": {
+  "value": -0.875,
+  "lo": -0.98,
+  "hi": -0.323,
+  "z": -2.71
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "Log age-adjusted heat-stress ED rate (EHDP 2443, 5-year) on surface temperature, CD, adjusted for poverty, percent Black, AC",
+    "estimate": -10.333958377626583,
+    "lo": -17.491510249782483,
+    "hi": -2.5554940520044367,
+    "scale": "% per 1 F",
+    "null": 0,
+    "n": 54
+   },
+   "stance": {
+    "value": -0.875,
+    "lo": -0.98,
+    "hi": -0.323,
+    "z": -2.71
+   },
+   "decided_at": "2026-11-12T15:39:52-0500",
+   "prediction_scored": "miss: the adjusted slope is negative (-10.3% per F, -17.5 to -2.6); unadjusted -6.6% (-13.6 to +1.0). For heat hospitalizations by NTA (HVI file) the adjusted slope is also negative (-3.9%, -7.2 to -0.4)."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep contested, but label it as an area-level association that contradicts the bridge link, not the individual-level research.",
+  "critique": "critique/heat-surftemp-ed.md",
+  "revised_at": "2026-11-12T15:55:02-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

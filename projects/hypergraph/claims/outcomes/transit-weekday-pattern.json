@@ -1,0 +1,262 @@
+{
+ "id": "transit-weekday-pattern",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Change in the Monday/Friday deficit of CBD subway entries, Nov 2025-Oct 2026 minus 2019",
+  "estimate": 8.7,
+  "lo": 6.9,
+  "hi": 10.86,
+  "scale": "percentage points of the Tue-Thu mean",
+  "null": 0,
+  "n": "41 weeks recent, 42 weeks 2019, 65 station complexes"
+ },
+ "graph_effect": null,
+ "components": {
+  "recent_mf_deficit_pct": [
+   13.8,
+   12.3,
+   15.9
+  ],
+  "recent_monday_deficit_pct": [
+   16.4,
+   13.2,
+   20.9
+  ],
+  "recent_friday_deficit_pct": [
+   11.2,
+   10.3,
+   12.1
+  ],
+  "recent_midweek_range_points": [
+   2.77,
+   1.77,
+   4.06
+  ],
+  "y2019_mf_deficit_pct": [
+   5.1,
+   4.3,
+   6.0
+  ],
+  "y2019_midweek_range_points": [
+   2.32,
+   1.29,
+   3.45
+  ],
+  "placebo_2019_minus_2018_points": [
+   0.74,
+   -0.82,
+   2.53
+  ],
+  "trajectory_mf_deficit_pct": {
+   "2018": 4.4,
+   "2019": 5.1,
+   "2022": 10.4,
+   "2023": 14.1,
+   "2024": 13.0,
+   "2025": 12.7,
+   "recent": 13.8
+  },
+  "delta_by_hour_band_points": {
+   "AM peak 06-09": [
+    15.2,
+    13.0,
+    17.8
+   ],
+   "midday 10-15": [
+    5.1,
+    3.1,
+    7.4
+   ],
+   "PM peak 16-19": [
+    12.5,
+    10.5,
+    14.8
+   ],
+   "evening 20-23": [
+    -1.1,
+    -3.0,
+    1.0
+   ]
+  },
+  "outer_borough_am_peak_delta_points": [
+   9.4,
+   7.0,
+   12.1
+  ],
+  "sensitivity_delta_points": {
+   "S1 office core (25 complexes)": 10.6,
+   "S2 median": 7.5,
+   "S3 holidays only": 8.0,
+   "S4 calendar 2025": 7.6,
+   "S5 mean over complexes": 8.0
+  },
+  "sensitivity_recent_midweek_range_points": {
+   "S2 median": 1.64,
+   "S3 holidays only": 2.9,
+   "S4 calendar 2025": 1.86,
+   "S1 office core": 2.55
+  },
+  "ranking": {
+   "spearman_all": 0.9806161790288174,
+   "n_complexes": 424,
+   "top20_overlap": 19,
+   "top20_cbd_2019": 16,
+   "top20_cbd_recent": 17
+  }
+ },
+ "sources": [
+  {
+   "kind": "ny-state-open-data (recorded by concord/socrata.py as nyc-open-data)",
+   "portal": "data.ny.gov",
+   "dataset": "39hk-dx4f",
+   "name": "MTA Subway Stations",
+   "url": "https://data.ny.gov/d/39hk-dx4f",
+   "rows_updated_at": "2026-11-12T19:02:22Z",
+   "data_access": "open",
+   "n_queries": 1,
+   "fetched_first": "2026-11-12T20:13:38-0500",
+   "fetched_last": "2026-11-12T20:13:38-0500",
+   "example_query": {
+    "$select": "complex_id,stop_name,borough,cbd,gtfs_latitude,gtfs_longitude,daytime_routes",
+    "$limit": 5000
+   },
+   "all_queries": "data/derived/transit/weekday_pattern_sources.json"
+  },
+  {
+   "kind": "ny-state-open-data (recorded by concord/socrata.py as nyc-open-data)",
+   "portal": "data.ny.gov",
+   "dataset": "t69i-h2me",
+   "name": "MTA Subway Hourly Ridership: 2017-2019",
+   "url": "https://data.ny.gov/d/t69i-h2me",
+   "rows_updated_at": "2025-11-06T23:49:34Z",
+   "data_access": "open",
+   "n_queries": 48,
+   "fetched_first": "2026-11-12T20:19:01-0500",
+   "fetched_last": "2026-11-12T21:19:21-0500",
+   "example_query": {
+    "$select": "date_trunc_ymd(transit_timestamp) as day, date_extract_hh(transit_timestamp) as hr, sum(ridership) as n",
+    "$where": "transit_mode='subway' AND transit_timestamp between '2018-01-01T00:00:00' and '2018-06-30T23:59:59' AND station_complex_id in ('10','103','107','118','119','13','14','16','162','164','165','167','168','169','17','20','22','224','225','228','231','232','234','276','277','316','318','319','320','321','323','324','325','326','327','328','329','333','403','404','405','407','409','413','414','471','601','602','607','609','610','611','612','613','614','618','619','622','623','624','625','628','635','8','9')",
+    "$group": "day,hr",
+    "$limit": 50000
+   },
+   "all_queries": "data/derived/transit/weekday_pattern_sources.json"
+  },
+  {
+   "kind": "ny-state-open-data (recorded by concord/socrata.py as nyc-open-data)",
+   "portal": "data.ny.gov",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "data_access": "open",
+   "n_queries": 6,
+   "fetched_first": "2026-11-12T20:23:28-0500",
+   "fetched_last": "2026-11-12T20:40:13-0500",
+   "example_query": {
+    "$select": "date_trunc_ymd(transit_timestamp) as day, date_extract_hh(transit_timestamp) as hr, sum(ridership) as n",
+    "$where": "transit_mode='subway' AND transit_timestamp between '2022-01-01T00:00:00' and '2022-06-30T23:59:59' AND station_complex_id in ('10','103','107','118','119','13','14','16','162','164','165','167','168','169','17','20','22','224','225','228','231','232','234','276','277','316','318','319','320','321','323','324','325','326','327','328','329','333','403','404','405','407','409','413','414','471','601','602','607','609','610','611','612','613','614','618','619','622','623','624','625','628','635','8','9')",
+    "$group": "day,hr",
+    "$limit": 50000
+   },
+   "all_queries": "data/derived/transit/weekday_pattern_sources.json"
+  },
+  {
+   "kind": "ny-state-open-data (recorded by concord/socrata.py as nyc-open-data)",
+   "portal": "data.ny.gov",
+   "dataset": "5wq4-mkjj",
+   "name": "MTA Subway Hourly Ridership: Beginning 2025",
+   "url": "https://data.ny.gov/d/5wq4-mkjj",
+   "rows_updated_at": "2026-11-12T20:17:52Z",
+   "data_access": "open",
+   "n_queries": 85,
+   "fetched_first": "2026-11-12T20:49:42-0500",
+   "fetched_last": "2026-11-12T21:21:05-0500",
+   "example_query": {
+    "$select": "date_trunc_ymd(transit_timestamp) as day, date_extract_hh(transit_timestamp) as hr, sum(ridership) as n",
+    "$where": "transit_mode='subway' AND transit_timestamp between '2025-01-01T00:00:00' and '2025-01-31T23:59:59' AND station_complex_id in ('10','103','107','118','119','13','14','16','162','164','165','167','168','169','17','20','22','224','225','228','231','232','234','276','277','316','318','319','320','321','323','324','325','326','327','328','329','333','403','404','405','407','409','413','414','471','601','602','607','609','610','611','612','613','614','618','619','622','623','624','625','628','635','8','9')",
+    "$group": "day,hr",
+    "$limit": 50000
+   },
+   "all_queries": "data/derived/transit/weekday_pattern_sources.json"
+  }
+ ],
+ "prediction_scored": "hit. All three registered conditions are met: (a) the recent Monday/Friday deficit is 13.8% (interval 12.3 to 15.9), Monday 16.4% and Friday 11.2%; (b) the recent midweek range is 2.77 points, under the 3-point limit; (c) the deficit grew by 8.7 points (6.9 to 10.9) from 5.1% in 2019. The placebo (2019 minus 2018) is 0.74 points (-0.82 to 2.53), inside the 1.5-point limit. The magnitudes fall in the registered ranges except Monday, which at 16.4% is above the 7-13% range. Condition (b) is met by a small margin: the interval of the range runs from 1.8 to 4.1 points. The separately scored sub-question is answered no: the gap was not absent before 2020 (5.1%, interval 4.3 to 6.0), as predicted. Secondary predictions: the largest change was in the AM peak (15.2 points), not the PM peak (12.5), a miss; the Friday evening deficit is 0.5% in 2019 and -9.2% recently, a hit; the outer-borough AM-peak change is 9.4 points, smaller than the CBD PM peak as predicted but above the 2-6 range, a partial hit; 19 of the top 20 complexes are the same and the Spearman correlation is 0.98, hits; 17 of the top 20 are CBD complexes against 16 in 2019, a miss.",
+ "settle": "The day-of-week pattern is settled for fare-paid entries. What the design does not settle is the cause. Three kinds of data would: office occupancy by weekday for the same buildings before and after 2020 (Kastle and similar series are proprietary and begin in 2020); origin-destination or exit counts, to separate commuters from visitors (the MTA publishes an estimated origin-destination table, not used here); and scheduled service by weekday, to test whether the MTA's Monday and Friday service reductions from 2023 lowered entries independently of demand.",
+ "research_needed": [
+  {
+   "question": "Does retail and restaurant revenue in the CBD follow the same Monday/Friday deficit as subway entries?",
+   "data": "Card-transaction or sales-tax data by day of week and small area. No open NYC dataset has this: sales-tax data are quarterly and by industry, and card panels (Mastercard, Affinity, Placer) are proprietary.",
+   "design": "The same weekly ratio by block or business district, 2019 against a recent year, set beside station entries.",
+   "priority": "high"
+  },
+  {
+   "question": "How many of the people entering CBD stations are office workers on a given weekday?",
+   "data": "Building access-control counts or employer attendance records by weekday, with a 2019 baseline.",
+   "design": "Regress station-level weekday deficits on nearby office floor area and occupancy by weekday.",
+   "priority": "high"
+  },
+  {
+   "question": "Is there a peer-reviewed measurement of the post-2020 weekday pattern in fare-collection data against a pre-2020 baseline?",
+   "data": "Open hourly ridership from the MTA and comparable agencies (CTA, WMATA, BART, TfL).",
+   "design": "The same within-week ratio across agencies. Our search found agency statements and trade reports but no such paper.",
+   "priority": "medium"
+  },
+  {
+   "question": "Does the System graph hold any finding linking telework to transit use by day of the week?",
+   "data": "System Public Graph API and Dataverse deposit.",
+   "design": "Live lookup of telework, remote work and transit ridership concepts; it was not possible on this machine.",
+   "priority": "medium"
+  },
+  {
+   "question": "Why did CBD morning entries on Fridays fall furthest (31% below midweek, against 13% in 2019)?",
+   "data": "Commuter-rail arrivals at Penn Station and Grand Central by weekday (MTA LIRR and Metro-North ridership), PATH turnstile counts.",
+   "design": "Compare the weekday pattern of rail arrivals with subway entries at the terminal complexes.",
+   "priority": "low"
+  }
+ ],
+ "figures": [
+  "figures/transit/weekday_pattern.png"
+ ],
+ "notes": "Subway entries are fare-paid entries at station complexes, a proxy for people present and not a count of pedestrians. Exits are not recorded. The mean Monday deficit in the recent period includes two Mondays, 26 January and 23 February 2026, on which CBD entries were 38% and 20% of that week's midweek mean. The cause was not checked; the size suggests a system-wide disruption such as a storm. With the median over weeks (S2) the recent Monday deficit is 12.9%, the Monday/Friday deficit 12.0% and the change from 2019 7.5 points (6.7 to 8.3). The verdict is the same under S1 to S5. The deficit was 10.4% in 2022, 14.1% in 2023, 13.0% in 2024 and 12.7% in 2025, so it has been stable for three years. Mean CBD entries per retained weekday were 2.34 million in 2019 and 1.76 million in the recent period. Plan deviations, none of which changes a registered definition: the borough-level hourly queries were run only for 2019, 2025 and 2026 because the half-year queries on the 2020-2024 dataset took several minutes each; the 2025 dataset was queried by month and the complex-by-day totals by week, because longer queries timed out. The graph side is empty: no live lookup was possible and the cache holds nothing on this edge.\n\nAfter the referee (13 Nov 2026): the referee rebuilt every deciding number from the cache and all three conditions hold under four further variants. Two qualifications are added. The size is nearer 7.4 points (6.4 to 8.5) than 8.7 once the weeks of the two disrupted Mondays are dropped by rule, and the Chicago transfer claim took its band from 8.7. Condition (b) passes narrowly: 68% of bootstrap resamples give a midweek range of 3 points or less. What is confirmed is the pattern and not its attribution to hybrid work. The rest of the system also changed by 4.2 points (2.2 to 6.6) and outer-borough AM-peak entries by 9.4, so about half of the CBD change is not specific to the office district; the largest change is in the AM peak (15.2 against 12.5 in the PM), which the office-worker account does not predict for entries inside the CBD; and the MTA's reduction of Monday and Friday service from 2023 is not tested. The two literature entries the registrant marked as unverified (Motte-Baumvol et al. and the SWAA day-of-week shares) should not be quoted as findings.",
+ "registration_sha256": "c6acdb46f40a0c32126b0b3be16c54694f5ad05f272ada7971f15a9dbed3b140",
+ "decided_at": "2026-11-12T21:22:20-0500",
+ "stance": {
+  "value": 1.0,
+  "lo": 0.998,
+  "hi": 1.0,
+  "z": 8.61
+ },
+ "verdict_note": "The weekday pattern is confirmed. Its attribution to hybrid work is not tested: about half of the change also appears outside the business district.",
+ "critique": {
+  "report": "critique/transit-weekday-pattern.md",
+  "answer": "accepted; verdict kept"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Change in the Monday/Friday deficit of CBD subway entries, Nov 2025-Oct 2026 minus 2019",
+    "estimate": 8.7,
+    "lo": 6.9,
+    "hi": 10.86,
+    "scale": "percentage points of the Tue-Thu mean",
+    "null": 0,
+    "n": "41 weeks recent, 42 weeks 2019, 65 station complexes"
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 0.998,
+    "hi": 1.0,
+    "z": 8.61
+   },
+   "decided_at": "2026-11-12T21:22:20-0500",
+   "prediction_scored": "hit. All three registered conditions are met: (a) the recent Monday/Friday deficit is 13.8% (interval 12.3 to 15.9), Monday 16.4% and Friday 11.2%; (b) the recent midweek range is 2.77 points, under the 3-point limit; (c) the deficit grew by 8.7 points (6.9 to 10.9) from 5.1% in 2019. The placebo (2019 minus 2018) is 0.74 points (-0.82 to 2.53), inside the 1.5-point limit. The magnitudes fall in the registered ranges except Monday, which at 16.4% is above the 7-13% range. Condition (b) is met by a small margin: the interval of the range runs from 1.8 to 4.1 points. The separately scored sub-question is answered no: the gap was not absent before 2020 (5.1%, interval 4.3 to 6.0), as predicted. Secondary predictions: the largest change was in the AM peak (15.2 points), not the PM peak (12.5), a miss; the Friday evening deficit is 0.5% in 2019 and -9.2% recently, a hit; the outer-borough AM-peak change is 9.4 points, smaller than the CBD PM peak as predicted but above the 2-6 range, a partial hit; 19 of the top 20 complexes are the same and the Spearman correlation is 0.98, hits; 17 of the top 20 are CBD complexes against 16 in 2019, a miss."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed; notes say the confirmed claim is the pattern, not its cause, and give the size without the two disrupted weeks (7.4).",
+  "critique": "critique/transit-weekday-pattern.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

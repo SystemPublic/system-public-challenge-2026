@@ -1,0 +1,39 @@
+{
+ "note": "Written for an Underlay push; nothing has been pushed. Hashes follow tools/underlay_export.record_hash (RFC 8785).",
+ "collection_suggestion": "nyc-concordance/replication",
+ "counts": {
+  "PackageInput": 4,
+  "PackageCode": 7,
+  "PackageSource": 15,
+  "ReplicationPackage": 1
+ },
+ "records": {
+  "replication/food-supermarket-diabetes-zcta/input/0": "d6384b2fd0facdcd76898e9e259cca4ae972fe6fb1673ecc04856f5626b33a46",
+  "replication/food-supermarket-diabetes-zcta/input/1": "ae91755ef5d58154abe1e4fd5371bbbf9aa8ca90dd725f428c82027a7fc7d11b",
+  "replication/food-supermarket-diabetes-zcta/input/2": "c50daead0b3b199bf2f427f874be4372b2c1f5fd45d4669c499ca17dcd08a78c",
+  "replication/food-supermarket-diabetes-zcta/input/3": "b2f9371725eadd9b94c09e72793d716a6989361138e487ea7af5074c5ff09729",
+  "replication/food-supermarket-diabetes-zcta/code/0": "e5ad32b1d4c508aeeb46a2938b8c8f5397879bae260a491a57218d35c83f3009",
+  "replication/food-supermarket-diabetes-zcta/code/1": "50c6e3064b63de2ab5aa70e132a8d27b0b3b89652a4e30845ea1f2b40d54455b",
+  "replication/food-supermarket-diabetes-zcta/code/2": "92ab83d336131ef5d0dd61cca50b7ad48dd34c5f17fa6e8fc6c24d940e4095a3",
+  "replication/food-supermarket-diabetes-zcta/code/3": "3b3542f139074c07e0af7f2984ea49cab53911d22242b8846ab9729bc9adaf75",
+  "replication/food-supermarket-diabetes-zcta/code/4": "f3c0ff7864a89a8e9f4b8a02650f4785dd2c543395703d5b7c529018c805571a",
+  "replication/food-supermarket-diabetes-zcta/code/5": "431f633bb176683cf14e3ac595c86a874fb30d53f0620e330e086a9d0fa29ef1",
+  "replication/food-supermarket-diabetes-zcta/code/6": "8813e6e8c1917ba50a3e04fe92190f1cf59fe8988d5f409781da4fe779c39294",
+  "replication/food-supermarket-diabetes-zcta/source/0": "3e03a97cc0143a985f48f6fba62585bb617be27266f71201d24c19bb4e368d99",
+  "replication/food-supermarket-diabetes-zcta/source/1": "58d7d9618fc78c47a91e4f06a9101f56f09ec0997a58be9e42bb0b024211bcd6",
+  "replication/food-supermarket-diabetes-zcta/source/2": "5c41b098d1dc94c2f112c5500379312ed061936e4e5444481350e4089b4a9589",
+  "replication/food-supermarket-diabetes-zcta/source/3": "1450299df534e14983116d94e2f216d40ae9b27c35e7e208718978537a7ec20e",
+  "replication/food-supermarket-diabetes-zcta/source/4": "4cb7e06b7ba52b3e98e46d8ae00b866f12edfad44c8a34724e21a47e8349bd45",
+  "replication/food-supermarket-diabetes-zcta/source/5": "95fd668d6b0e6c8146cc3107963a0b79203efb1579fb817242a0dbd31ca91970",
+  "replication/food-supermarket-diabetes-zcta/source/6": "19513396f97690421189a426c80d8a40270709fc55c8ef2360dc93856a8efda5",
+  "replication/food-supermarket-diabetes-zcta/source/7": "e561e0bcea7f02242a8bb8cf751737913d5f6ddd220e7dac1c5f3fed1534d3f0",
+  "replication/food-supermarket-diabetes-zcta/source/8": "076474d049c0852124e4169c84ff63b6367a1ea5b3b3fc234ec19fb82598aaa3",
+  "replication/food-supermarket-diabetes-zcta/source/9": "915f160c3ad3998371a9af9053b7698e766f6d8b7e1f39fdbef887b58d1c0f62",
+  "replication/food-supermarket-diabetes-zcta/source/10": "9a0dcdf08d15e55ca1ca978f29c09017bca54da5b586b7d153234e61397b523f",
+  "replication/food-supermarket-diabetes-zcta/source/11": "0822872789432d793abbb984744ba02d4c4843e891f7e68e380a71625fa6a446",
+  "replication/food-supermarket-diabetes-zcta/source/12": "1bf4984fc3c3695a8a6763bd0b505f6005b55b4fe36dbbe4ce444cdc47273785",
+  "replication/food-supermarket-diabetes-zcta/source/13": "ca103347d13879aaa9a71e9e44cc91c2979c17baf186ea45cb02c7bc09308835",
+  "replication/food-supermarket-diabetes-zcta/source/14": "261aeabc91155b222b9d33e298ffe58838b525ca6b237fb17b6e39e7b436817c",
+  "replication/food-supermarket-diabetes-zcta": "08959463f3dc00698e1df11ee45727841a9208757dbafdca676147f163be0dfb"
+ }
+}

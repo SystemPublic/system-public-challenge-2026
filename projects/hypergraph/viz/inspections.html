@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restaurant inspections: what makes a restaurant unsafe?</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style_guide_tokens.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&text=0123456789.%2C%25%C3%97%2B%E2%88%92&display=swap" rel="stylesheet">
+<script src="data/comics.js"></script>
+<style>
+  /* House style since 14 November: white on black, yellow for what a frame adds, red for a withdrawn edge,
+     Helvetica in the figures and hand lettering in the captions. Earlier styles: ?theme=light, blue (with light), hand. */
+  :root { --paper: #000; --pink: #fff; --new: #ffd60a; --gone: #ff3b30;
+          --letter: "Patrick Hand", "Architects Daughter", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+          --diagram: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body.t-light { --paper: #fbf8f0; --pink: #14120f; --new: #c8371a; --gone: #b9b3a6; }
+  body.t-blue { --new: #1f4fd8; }
+  body.t-hand { --diagram: var(--letter); }
+  .frame svg text { letter-spacing: .01em; }
+  main, header.site, footer { max-width: 1400px; }
+  .lead { font-size: 16px; max-width: 86ch; color: var(--ink); margin: 6px 0 0; }
+  h2.strip-title { margin: 34px 0 2px; font-size: 19px; }
+  p.strip-lede { margin: 0 0 10px; max-width: 96ch; color: var(--ink-2); font-size: 14px; }
+  .strip { display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); gap: 12px; }
+  @media (max-width: 1150px) { .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .strip { grid-template-columns: minmax(0, 1fr); } }
+  .frame { background: var(--paper); border: 2.5px solid var(--pink); display: flex; flex-direction: column; color: var(--pink); }
+  .frame svg { display: block; width: 100%; height: auto; }
+  .frame svg text { font-family: var(--diagram); fill: var(--pink); text-transform: uppercase; }
+  .frame .cap { border-top: 2.5px solid var(--pink); padding: 8px 11px 9px; font-family: var(--letter); text-transform: uppercase;
+                font-size: 13.5px; line-height: 1.34; letter-spacing: .02em; flex: 1; }
+  .frame .cap b { color: var(--new); font-weight: 400; }
+  .sources { font-size: 12.5px; color: var(--ink-2); margin: 8px 0 0; padding-left: 0; list-style: none; columns: 2; column-gap: 28px; max-width: 1400px; }
+  .sources li { break-inside: avoid; margin: 0 0 3px; padding-left: 22px; text-indent: -22px; }
+  .sources li b { display: inline-block; width: 22px; text-indent: 0; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+  @media (max-width: 800px) { .sources { columns: 1; } }
+  .grammar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  @media (max-width: 1000px) { .grammar { grid-template-columns: minmax(0, 1fr); } }
+  .gbox { background: var(--paper); border: 2.5px solid var(--pink); padding: 8px 12px 10px; color: var(--pink); }
+  .gbox h3 { font-family: var(--letter); text-transform: uppercase; font-weight: 400; font-size: 15px; margin: 0 0 4px; letter-spacing: .04em; color: var(--pink); }
+  .grow { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 10px; align-items: center; min-height: 34px; }
+  .grow svg { width: 112px; height: 34px; display: block; overflow: visible; }
+  .grow span { font-family: var(--letter); text-transform: uppercase; font-size: 12.5px; line-height: 1.25; letter-spacing: .02em; }
+  body.export header.site, body.export footer, body.export .noexport { display: none; }
+  body.export { background: var(--paper); }
+  body.export main { max-width: none; padding: 14px 18px; margin: 0; }
+  body.export h2.strip-title, body.export p.strip-lede, body.export .sources { display: none; }
+  body.export .strip { gap: 16px; }
+  body.export .frame .cap { font-size: var(--capsize, 15px); }
+  /* Page styles follow docs/style_guide.md: tokens from style_guide_tokens.css, Spectral for the title and
+     question headings, Work Sans elsewhere, an 8-based space scale and a 1080 px column. */
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 14px; font-variant-numeric: tabular-nums; }
+  main, header.site, footer { max-width: 1080px; }
+  header.site { padding-bottom: 0; }
+  nav.menu { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; font-size: 13px; margin-bottom: var(--s3); }
+  nav.menu .grp { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+  nav.menu .gl { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); }
+  nav.menu a { color: var(--accent); text-decoration: none; }
+  nav.menu a[aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--ink); }
+  .eyebrow { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 var(--s1) !important; }
+  header.site h1, h1 { font-family: var(--serif); font-weight: 600; font-size: 42px; line-height: 1.12; margin: 0 0 var(--s2); color: var(--ink); }
+  .lead { font-size: 17px; line-height: 1.5; max-width: 72ch; color: var(--ink) !important; margin: 0 0 var(--s2) !important; }
+  .label { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--line2); border-radius: 3px; padding: 3px 8px; margin: 0 0 var(--s3) !important; background: var(--card); }
+  .label b { color: var(--ink); font-weight: 600; }
+  h2.q, h2.strip-title { font-family: var(--serif); font-weight: 600; font-size: 34px; line-height: 1.15; margin: 0 0 var(--s1); color: var(--ink); }
+  p.strip-lede, p.say { font-size: 14px; line-height: 1.5; max-width: 72ch; color: var(--muted); margin: 0 0 var(--s2); }
+  section.block { margin-top: var(--s5); }
+  .steps { display: flex; gap: var(--s2); flex-wrap: wrap; margin: 0 0 var(--s2); }
+  button.big, button.plain, button.chip { font-family: var(--sans); cursor: pointer; border-radius: 4px; }
+  button.big { font-size: 17px; font-weight: 600; padding: 12px 22px; border: 2px solid var(--accent); background: var(--accent); color: #fff; }
+  button.big:disabled { opacity: .4; cursor: default; }
+  button.big.small { font-size: 14px; padding: 8px 16px; }
+  button.plain { font-size: 14px; font-weight: 600; padding: 8px 16px; border: 1px solid var(--line2); background: var(--card); color: var(--ink); }
+  button.plain:hover, button.chip:hover { border-color: var(--accent); }
+  button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 4px; }
+  table.story { border-collapse: collapse; width: 100%; background: var(--card); border: 1px solid var(--line); border-radius: 4px; }
+  table.story th { text-align: left; font-size: 12px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding: 12px 16px; border-bottom: 1.2px solid var(--line2); }
+  table.story td { padding: 14px 16px; border-bottom: 1px solid var(--line); font-size: 14px; vertical-align: middle; color: var(--ink); }
+  table.story tr:last-child td { border-bottom: 0; }
+  table.story td.c { font-size: 17px; font-weight: 600; width: 25%; }
+  table.story td.says { width: 37%; color: var(--ink); opacity: 0; transition: opacity .5s; }
+  table.story td.says small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+  table.story td.rec { width: 19%; opacity: 0; transition: opacity .5s; white-space: nowrap; }
+  table.story td.on { opacity: 1; }
+  table.story .bar { display: inline-block; height: 12px; background: var(--ink); border-radius: 3px; vertical-align: middle; margin-right: 8px; }
+  table.story .bar.hl { background: var(--hl); outline: 1px solid var(--ink); }
+  table.story .n { font-size: 28px; font-weight: 600; line-height: 1; }
+  table.story td.none { color: var(--muted); font-style: italic; font-family: var(--serif); font-size: 15px; }
+  body.auto #status-badge { display: none !important; }
+  body.auto table.story td.says, body.auto table.story td.rec, body.auto .num { opacity: 1 !important; transition: none !important; transform: none !important; }
+  p.verdict { display: block; box-sizing: border-box; white-space: normal; width: auto; max-width: 72ch; font-family: var(--sans); font-size: 17px; line-height: 1.45; margin: var(--s2) 0 0 !important; padding: 0 0 0 var(--s2); border-left: 4px solid var(--hl); color: var(--ink) !important; background: none; text-transform: none; letter-spacing: 0; }
+  p.source { font-size: 12px; color: var(--muted) !important; margin: var(--s1) 0 0 !important; max-width: none; }
+  p.source b { color: var(--ink); font-weight: 500; }
+  details.f { display: inline-block; vertical-align: top; }
+  details.f summary { display: inline-block; list-style: none; cursor: pointer; font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--accent); border: 1px solid var(--line2); border-radius: 3px; padding: 0 6px; background: var(--card); }
+  details.f summary::-webkit-details-marker { display: none; }
+  details.f[open] { display: block; margin-top: 6px; }
+  details.f pre { font-size: 11.5px; white-space: pre-wrap; background: var(--card2); border: 1px solid var(--line); padding: 8px 10px; border-radius: 4px; max-width: 100%; color: var(--ink); }
+  details.how { margin: var(--s2) 0 0; max-width: 72ch; }
+  details.how summary { cursor: pointer; font-size: 13px; color: var(--accent); }
+  details.how p { font-size: 14px; line-height: 1.5; color: var(--ink) !important; margin: var(--s1) 0 0 !important; }
+  .nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s2); margin: var(--s3) 0 0; }
+  .num { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: var(--s2); opacity: 0; transform: translateY(6px); transition: opacity .35s, transform .35s; }
+  .num.on { opacity: 1; transform: none; }
+  .num .n { font-size: 28px; font-weight: 600; line-height: 1.1; color: var(--ink); }
+  .num .t { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.35; text-transform: none; letter-spacing: 0; font-family: var(--sans); }
+  #status { font-size: 12px; color: var(--muted); min-height: 1.4em; margin: var(--s1) 0 0; }
+  .listbar { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); align-items: center; margin: 0 0 var(--s2); }
+  .listbar input { font-family: var(--sans); font-size: 14px; padding: 9px 12px; border: 1px solid var(--line2); border-radius: 4px; background: var(--card2); color: var(--ink); width: 36ch; max-width: 100%; }
+  #lstatus { font-size: 12px; color: var(--muted); }
+  table.rows { border-collapse: collapse; width: 100%; font-size: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 4px; }
+  table.rows th { text-align: left; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding: 10px 12px; border-bottom: 1.2px solid var(--line2); }
+  table.rows td { padding: 9px 12px; border-bottom: 1px solid var(--line); color: var(--ink); }
+  table.rows tr.row { cursor: pointer; }
+  table.rows tr.row:hover td { background: var(--card2); }
+  table.rows tr.changed td { background: var(--hl-soft); }
+  td.sc { font-weight: 500; white-space: nowrap; }
+  td.sc .to { font-weight: 700; }
+  td.sc .tag, .removed { background: var(--hl); color: var(--hl-ink); font-weight: 600; font-size: 12px; padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .band { display: inline-block; min-width: 1.5em; text-align: center; font-size: 11px; font-weight: 600; padding: 0 5px; border: 1px solid var(--line2); border-radius: 3px; margin-left: 6px; color: var(--muted); }
+  tr.detail td { background: var(--card2) !important; padding: var(--s2); }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2); }
+  .cards .rcard { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 12px 14px; }
+  .cards .rcard.nov { border-color: var(--ink); }
+  .rcard h4 { margin: 0 0 4px; font-size: 12px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+  .rcard .s { font-size: 28px; font-weight: 600; line-height: 1.1; }
+  .rcard p { margin: 6px 0 0; font-size: 12px; line-height: 1.45; color: var(--muted); }
+  .detail .cap { font-family: var(--serif); font-style: italic; font-size: 15px; margin: 12px 0 0; color: var(--ink); text-transform: none; letter-spacing: 0; max-width: 72ch; }
+  table.viol { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; background: var(--card); border: 1px solid var(--line); }
+  table.viol th { text-align: left; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding: 6px 10px; border-bottom: 1px solid var(--line2); }
+  table.viol td { padding: 6px 10px; border-bottom: 1px solid var(--line); background: var(--card) !important; color: var(--ink); }
+  .chips { display: flex; flex-wrap: wrap; gap: var(--s1); margin: 0 0 var(--s2); }
+  button.chip { font-size: 13px; padding: 5px 10px; border: 1px solid var(--line2); background: var(--card); color: var(--ink); border-radius: 14px; }
+  .qa { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 4px; padding: 12px var(--s2); margin: 0 0 var(--s2); max-width: 72ch; }
+  .qa .q { font-weight: 600; margin: 0 0 4px; font-size: 14px; color: var(--ink) !important; }
+  .qa .a { margin: 0; font-size: 17px; line-height: 1.45; color: var(--ink) !important; }
+  .qa .meta { display: block; font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .err { color: var(--ink); font-weight: 600; }
+  .barf, .barr { display: inline-block; height: 12px; vertical-align: middle; border-radius: 3px; }
+  .barf { background: var(--ink); }
+  .barr { background: var(--hl); outline: 1px solid var(--ink); margin-left: 2px; }
+  td.grp { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding-top: 14px; }
+  .btnrow { display: flex; gap: var(--s2); flex-wrap: wrap; margin: 0 0 var(--s2); }
+  #histout, #codesout { margin-top: var(--s3); }
+  footer p { font-size: 12px; color: var(--muted); max-width: 72ch; line-height: 1.5; }
+  @media (max-width: 720px) {
+    header.site h1, h1 { font-size: 30px; } h2.q, h2.strip-title { font-size: 24px; }
+    .nums { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cards { grid-template-columns: 1fr; }
+    table.story, table.rows { display: block; overflow-x: auto; }
+    table.story td.c { font-size: 15px; } section.block { margin-top: var(--s4); }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <nav class="menu" aria-label="Site">
+    <span class="grp"><a href="index.html">Findings</a><a href="evidence.html">Sources and tests</a></span>
+    <span class="grp"><span class="gl">Case studies</span><a href="inspections.html" aria-current="page">Restaurant inspections</a><a href="heat_drugs.html">Heat and medicines</a><a href="levers.html">City levers</a><a href="simulate.html">Congestion toll simulator</a></span>
+    <span class="grp"><span class="gl">Tools and method</span><a href="explorer.html">Graph explorer</a><a href="explore.html">Neighbourhood explorer</a><a href="hypergraph.html">Links as objects</a><a href="comics.html">How a link changes</a><a href="compare.html">Compare versions</a><a href="architecture.html">How it was built</a></span>
+  </nav>
+  <p class="eyebrow">Case study · Restaurant inspections</p>
+  <h1>What makes a restaurant unsafe?</h1>
+  <p class="lead">Most of us would say mice and roaches. Ask the research, then ask the city's record.</p>
+  <p class="label"><b>Descriptive.</b> What the records show, not tested against a prediction. One tested claim is linked at the end.</p>
+  <div class="steps">
+    <button class="big" id="s1">1 · What do studies say?</button>
+    <button class="big" id="go" disabled>2 · What does the city's record keep?</button>
+  </div>
+  <table class="story" id="story">
+    <thead><tr><th>Condition</th><th>What studies report about outbreaks</th><th>Share of the city's citations</th><th>Removed after a hearing</th></tr></thead>
+    <tbody id="storyrows"></tbody>
+  </table>
+  <p class="source" id="src1" hidden></p>
+  <p class="verdict" id="v1" hidden><b>Our intuition is off.</b> The leading cause is a sick worker. Then come temperature and handling. Pests come last.</p>
+  <p class="verdict" id="v2" hidden></p>
+  <details class="how" id="key" hidden><summary>How to read a score, a hearing and a closure</summary>
+    <p>An inspector adds points for each violation, so a lower score is better. 0 to 13 points earns an A, 14 to 27 a B, and 28 or more a C. A restaurant can contest violations at a hearing. When a violation is dismissed, its points come off. "Closed by DOHMH" means the health department shut the kitchen at that inspection until it was fixed; those restaurants usually reopen. The restaurants counted as gone have left the city's table altogether.</p>
+  </details>
+  <p id="status"></p>
+  <div class="nums" id="nums"></div>
+  <p class="source" id="src2" hidden></p>
+</header>
+<main>
+  <div id="list" hidden>
+    <section class="block" id="askbox">
+      <h2 class="q">What else do the tables say?</h2>
+      <p class="say">Type a question about these data. A language model answers it, given only the tables behind this page, so it can say what the data show and when they cannot answer. An answer takes about ten seconds.</p>
+      <div class="listbar"><input id="aq" placeholder="For example: do re-inspections get reduced more often?" style="width:52ch"><button class="big small" id="ago">Ask</button></div>
+      <div class="chips" id="chips"></div>
+      <div id="alog"></div>
+      <p class="source">Answered from <b>viz/data/ask_context.json</b>, built from the comparisons on this page. <details class="f"><summary>ƒ</summary><pre>Model: Claude Haiku through the Claude command-line tool, with no tools and no other material.
+Material: the eleven-copy history, the April to November 2026 violation counts, the June against November counts, and the six research statements shown above.
+The model's wording is not checked. Read an answer against the tables before repeating it.</pre></details></p>
+    </section>
+    <section class="block">
+      <h2 class="q">What happened at one restaurant?</h2>
+      <p class="say">Type a Manhattan restaurant's name. The page asks the city's data portal for its inspections as they stand today, fetches the same inspections from the June version on the Underlay, and compares them. Click a row to see its violations in both.</p>
+      <div class="listbar"><input id="lq" placeholder="A restaurant's name, for example WINGSTOP"><button class="big small" id="lgo">Look it up</button><span id="lstatus"></span></div>
+      <table class="rows" id="ltable" hidden><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>Points in June</th><th>Points today</th></tr></thead><tbody id="lrows"></tbody></table>
+      <p class="source">Today: <b>NYC Open Data 43nn-pn8j</b>, queried when you press the button. June: <b>Underlay nyc/restaurant-inspections v1.0.0</b>. <details class="f"><summary>ƒ</summary><pre>Publisher: NYC Department of Health and Mental Hygiene, "DOHMH New York City Restaurant Inspection Results".
+Query: Manhattan rows whose name contains the text typed, inspections dated 2024-01-01 to 2026-06-11, grouped by restaurant, date and inspection type.
+June copy: one Inspection record per restaurant, date and type, fetched by id from the Underlay; one Violation record per code.</pre></details></p>
+    </section>
+    <section class="block">
+      <h2 class="q">Which inspections changed between June and November?</h2>
+      <p class="say">The 485 inspections whose score differs between the two versions, largest change first. Click one to fetch its records and violations from the Underlay.</p>
+      <div class="listbar"><input id="q" placeholder="Filter by restaurant or street"></div>
+      <table class="rows"><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>Points in June</th><th>Points in November</th></tr></thead><tbody id="rows"></tbody></table>
+      <p style="margin-top:16px"><button class="plain" id="morerows">Show more</button></p>
+      <p class="source" id="src3"></p>
+    </section>
+    <section class="block">
+      <h2 class="q">Is this new, and which violations come off?</h2>
+      <div class="btnrow">
+        <button class="plain" id="hist">Eleven years of copies</button>
+        <button class="plain" id="codes">Violations removed most and least</button>
+      </div>
+      <div id="histout"></div>
+      <div id="codesout"></div>
+      <p class="source">Ten <b>Internet Archive</b> copies of the city's table, September 2015 to April 2026, and the table of <b>12 November 2026</b>. <details class="f"><summary>ƒ</summary><pre>Built by analyses/underlay_drift/history.py. Each copy is matched with the next on restaurant, inspection date and inspection type.
+Capture times: 20150908, 20161210, 20170426, 20201106, 20210529, 20221130, 20231117, 20241218, 20251115, 20260403, then the live table (rows updated 2026-11-12T23:06:40Z).
+Exploratory: nothing here was registered or refereed. Method and limits: docs/underlay_drift.md.</pre></details></p>
+    </section>
+    <section class="block" id="research">
+      <h2 class="q">What does research say a score predicts?</h2>
+      <p class="say">The one tested claim behind this page: whether a poor score is followed by more food-poisoning complaints. It was registered before the data were read, and its verdict is unsettled.</p>
+      <div class="btnrow"><button class="plain" id="why">Draw the evidence</button><a class="plain" href="evidence.html#restaurants-score-complaints" style="text-decoration:none; display:inline-block; font-size:14px; font-weight:600; padding:8px 16px; border:1px solid var(--line2); border-radius:4px; color:var(--ink); background:var(--card);">Open the claim</a></div>
+      <div id="strips"></div>
+    </section>
+  </div>
+</main>
+<footer><p>Next: <a href="index.html">all findings</a>, or <a href="compare.html">compare two versions of our claims</a>. Served by <code>tools/demo_server.py</code>. The list of changed inspections is <code>viz/data/inspections_changed_scores.json</code>; the method is in <code>docs/underlay_drift.md</code>. Each drill-down reads two records from the Underlay when you click. Scores: 0 to 13 is the A range, 14 to 27 the B range, 28 and over the C range. A lower score is better.</p></footer>
+<script>
+"use strict";
+const NS = "http://www.w3.org/2000/svg";
+const W = 400, H = 292;
+const COL = { new: "var(--new)", gone: "var(--gone)", kept: "var(--pink)" };
+const DASH = { exp: null, obs: "9 5", cor: "0.1 6.5", conj: "0.1 6.5" };
+const WID = { 1: 1.6, 2: 3.2, 3: 5.4 };
+function el(tag, attrs, parent, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs || {}) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+  if (text != null) e.textContent = text;
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function lines(svg, str, x, y, size, attrs) {
+  const parts = String(str).split("\n"), lh = size * 1.16;
+  const t = el("text", Object.assign({ x, y: y - (parts.length - 1) * lh / 2, "text-anchor": "middle", "dominant-baseline": "central", "font-size": size }, attrs || {}), svg);
+  parts.forEach((p, i) => el("tspan", { x, dy: i ? lh : 0 }, t, p));
+  return t;
+}
+// Point where the segment from the centre of box b toward point p leaves the box.
+function clip(b, p, gap) {
+  const dx = p.x - b.x, dy = p.y - b.y;
+  if (b.r) { const d = Math.hypot(dx, dy) || 1; return { x: b.x + dx / d * (b.r + gap), y: b.y + dy / d * (b.r + gap) }; }
+  const hw = b.w / 2 + gap, hh = b.h / 2 + gap;
+  const s = Math.min(dx ? hw / Math.abs(dx) : 1e9, dy ? hh / Math.abs(dy) : 1e9);
+  return { x: b.x + dx * s, y: b.y + dy * s };
+}
+function quad(p0, c, p1, t) { const u = 1 - t; return { x: u * u * p0.x + 2 * u * t * c.x + t * t * p1.x, y: u * u * p0.y + 2 * u * t * c.y + t * t * p1.y }; }
+// Draw one edge between two points (already clipped). Returns the geometry so that labels and modifiers can attach.
+function paintEdge(svg, p0, p1, e) {
+  const col = COL[e.state || "kept"], w = WID[e.w || 2], ev = e.ev || "obs";
+  const dx = p1.x - p0.x, dy = p1.y - p0.y, len = Math.hypot(dx, dy) || 1, nx = -dy / len, ny = dx / len, bend = e.bend || 0;
+  const c = { x: (p0.x + p1.x) / 2 + nx * bend, y: (p0.y + p1.y) / 2 + ny * bend };
+  const dir = e.dir || (ev === "cor" ? "none" : "ab");
+  const hl = 7 + w * 1.7, hw = 3.6 + w * 1.05;
+  function back(p, toward) { const d = Math.hypot(toward.x - p.x, toward.y - p.y) || 1; return { x: p.x + (toward.x - p.x) / d * (hl - 1), y: p.y + (toward.y - p.y) / d * (hl - 1), ux: (p.x - toward.x) / d, uy: (p.y - toward.y) / d }; }
+  let a = p0, b = p1, heads = [];
+  if (dir === "ab" || dir === "both") { const k = back(p1, c); b = k; heads.push([p1, k]); }
+  if (dir === "both") { const k = back(p0, c); a = k; heads.push([p0, k]); }
+  const g = el("g", { opacity: e.state === "gone" ? 0.9 : 1 }, svg);
+  el("path", { d: `M${a.x},${a.y} Q${c.x},${c.y} ${b.x},${b.y}`, fill: "none", stroke: col, "stroke-width": ev === "cor" || ev === "conj" ? Math.max(w, 2.4) : w,
+               "stroke-dasharray": DASH[ev], "stroke-linecap": ev === "cor" || ev === "conj" ? "round" : "butt" }, g);
+  for (const [tip, k] of heads) {
+    const px = -k.uy, py = k.ux;
+    el("polygon", { points: `${tip.x},${tip.y} ${k.x - k.ux + px * hw},${k.y - k.uy + py * hw} ${k.x - k.ux - px * hw},${k.y - k.uy - py * hw}`, fill: col }, g);
+  }
+  const geo = { at: t => quad(p0, c, p1, t), nx, ny, col, g };
+  if (e.mark) {
+    const m = geo.at(e.markT != null ? e.markT : (e.label ? 0.24 : 0.5));
+    if (e.mark === "x") { const s = 7; el("path", { d: `M${m.x - s},${m.y - s} L${m.x + s},${m.y + s} M${m.x - s},${m.y + s} L${m.x + s},${m.y - s}`, stroke: "var(--new)", "stroke-width": 3.2, "stroke-linecap": "round" }, g); }
+    else if (e.mark === "0") { el("circle", { cx: m.x, cy: m.y, r: 7.5, fill: "var(--paper)", stroke: col, "stroke-width": 2 }, g); el("path", { d: `M${m.x - 5.3},${m.y + 5.3} L${m.x + 5.3},${m.y - 5.3}`, stroke: col, "stroke-width": 2 }, g); }
+    else if (e.mark === "?") { el("circle", { cx: m.x, cy: m.y, r: 10, fill: "var(--paper)", stroke: "var(--new)", "stroke-width": 2 }, g); el("text", { x: m.x, y: m.y + 0.5, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 17, style: "fill: var(--new)" }, g, "?"); }
+  }
+  if (e.label) {
+    const m = geo.at(e.labelT != null ? e.labelT : 0.5), off = e.lo || 0;
+    const x = m.x + nx * off + (e.lx || 0), y = m.y + ny * off + (e.ly || 0);
+    const t = lines(g, e.label, x, y, e.size || 14, { style: `fill: ${col}; paint-order: stroke; stroke: var(--paper); stroke-width: 6px; stroke-linejoin: round;` });
+    if (e.refs && e.refs.length) {
+      const last = t.lastChild;
+      el("tspan", { dy: -5, "font-size": 9.5, style: "letter-spacing: .5px" }, last, " " + e.refs.join(","));
+    }
+    if (e.city) {
+      const bb = t.getBBox(), cx = bb.x - 8, cy = bb.y + bb.height / 2, s = 5;
+      el("polygon", { points: `${cx},${cy - s} ${cx + s},${cy} ${cx},${cy + s} ${cx - s},${cy}`, fill: col, stroke: "var(--paper)", "stroke-width": 1 }, g);
+    }
+  }
+  return geo;
+}
+function drawFrame(f, i, parent) {
+  const wrap = document.createElement("div"); wrap.className = "frame"; parent.appendChild(wrap);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${f.h || H}`, role: "img", "aria-label": f.alt || f.cap.replace(/<[^>]+>/g, "") }, null);
+  wrap.appendChild(svg);
+  // number tab and frame kind
+  el("rect", { x: 0, y: 0, width: 27, height: 25, fill: "var(--pink)" }, svg);
+  el("text", { x: 13.5, y: 13.5, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 15, style: "fill: var(--paper)" }, svg, String(i + 1));
+  if (f.head) el("text", { x: 35, y: 14, "dominant-baseline": "central", "font-size": 12.5, style: "letter-spacing: .08em" }, svg, f.head);
+  const gE = el("g", {}, svg), gN = el("g", {}, svg), box = {};
+  for (const n of f.nodes) {
+    const col = COL[n.state || "kept"];
+    if (n.kind === "unknown") {
+      const r = n.r || 19; box[n.id] = { x: n.x, y: n.y, r };
+      el("circle", { cx: n.x, cy: n.y, r, fill: "var(--paper)", stroke: col, "stroke-width": 2.4, "stroke-dasharray": "5 3.5" }, gN);
+      el("text", { x: n.x, y: n.y + 1, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 22, style: `fill: ${col}` }, gN, n.label || "X");
+      if (n.note) lines(gN, n.note, n.x + (n.nx || 0), n.y + (n.ny != null ? n.ny : r + 14), 12.5, { style: `fill: ${col}` });
+      continue;
+    }
+    const t = lines(gN, n.label, n.x, n.y, n.size || 13.5, { style: `fill: ${col}` });
+    const bb = t.getBBox(), w = Math.max(bb.width + 16, 44), h = bb.height + 11;
+    box[n.id] = { x: n.x, y: n.y, w, h };
+    const r = el("rect", { x: n.x - w / 2, y: n.y - h / 2, width: w, height: h, fill: "var(--paper)", stroke: col, "stroke-width": 2.2, "stroke-dasharray": n.kind === "proxy" ? "5 3.5" : null }, null);
+    gN.insertBefore(r, t);
+  }
+  const geo = {};
+  (f.edges || []).forEach((e, k) => {
+    const A = box[e.a], B = box[e.b];
+    const mid = { x: (A.x + B.x) / 2, y: (A.y + B.y) / 2 };
+    let ca = B, cb = A;
+    if (e.bend) { const dx = B.x - A.x, dy = B.y - A.y, l = Math.hypot(dx, dy) || 1; ca = cb = { x: mid.x - dy / l * e.bend, y: mid.y + dx / l * e.bend }; }
+    geo[e.id || k] = paintEdge(gE, clip(A, ca, 3), clip(B, cb, 4), e);
+  });
+  for (const m of f.mods || []) {
+    const A = box[m.from], tgt = geo[m.onto].at(m.t != null ? m.t : 0.5);
+    const p0 = clip(A, tgt, 3), col = COL[m.state || "kept"];
+    const d = Math.hypot(tgt.x - p0.x, tgt.y - p0.y) || 1, p1 = { x: tgt.x - (tgt.x - p0.x) / d * 5, y: tgt.y - (tgt.y - p0.y) / d * 5 };
+    paintEdge(gE, p0, p1, Object.assign({}, m, { dir: "none" }));
+    el("circle", { cx: tgt.x, cy: tgt.y, r: 5.5, fill: col, stroke: "var(--paper)", "stroke-width": 1.5 }, gE);
+  }
+  for (const t of f.texts || []) lines(gN, t.text, t.x, t.y, t.size || 12.5, { style: `fill: ${COL[t.state || "kept"]}`, "text-anchor": t.anchor || "middle" });
+  const cap = document.createElement("div"); cap.className = "cap"; cap.innerHTML = f.cap; wrap.appendChild(cap);
+  return wrap;
+}
+function drawStrip(s, only) {
+  const out = document.createDocumentFragment();
+  const h = document.createElement("h2"); h.className = "strip-title"; h.id = s.id; h.textContent = s.title; out.appendChild(h);
+  const p = document.createElement("p"); p.className = "strip-lede"; p.innerHTML = s.lede; out.appendChild(p);
+  const div = document.createElement("div"); div.className = "strip";
+  const frames = s.frames.map((f, i) => [f, i]).filter(([f, i]) => !only || only.includes(i + 1));
+  div.style.setProperty("--cols", Math.min(frames.length, 4));
+  out.appendChild(div);
+  const ol = document.createElement("ol"); ol.className = "sources";
+  s.sources.forEach((r, i) => { const li = document.createElement("li"); li.innerHTML = `<b>${i + 1}</b>${r.text}` + (r.href ? ` <a href="${r.href}">${r.link || "link"}</a>` : ""); ol.appendChild(li); });
+  out.appendChild(ol);
+  return [out, div, frames];
+}
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+let DATA = null, shownRows = 0, filtered = [];
+function addNum(n, text, red) {
+  const d = document.createElement("div"); d.className = "num";
+  d.innerHTML = `<div class="n">${n}</div><div class="t">${text}</div>`; $("nums").appendChild(d);
+  requestAnimationFrame(() => requestAnimationFrame(() => d.classList.add("on")));
+  setTimeout(() => d.classList.add("on"), 120);
+}
+function rowHtml(r) {
+  return `<tr class="row" data-id="${esc(r.id)}"><td><b>${esc(r.name || "(name not in the June copy)")}</b></td><td>${esc(r.street)}, ${esc(r.zip)}</td><td>${esc(r.date)}</td>`
+    + `<td class="sc">${r.score_june}<span class="band">${r.band_june}</span></td><td class="sc"><span class="to">${r.score_nov}</span><span class="band">${r.band_nov}</span></td></tr>`;
+}
+function renderRows(reset) {
+  if (reset) { $("rows").textContent = ""; shownRows = 0; }
+  const next = filtered.slice(shownRows, shownRows + 12);
+  $("rows").insertAdjacentHTML("beforeend", next.map(rowHtml).join(""));
+  shownRows += next.length;
+  $("morerows").hidden = shownRows >= filtered.length;
+  $("morerows").textContent = `Show more (${filtered.length - shownRows} left)`;
+}
+async function compare() {
+  $("go").disabled = true; $("nums").textContent = ""; $("list").hidden = true; $("key").hidden = true; $("v2").hidden = true; storyKeep(); $("strips").textContent = "";
+  $("status").textContent = "Asking the Underlay for the two versions…";
+  const t0 = performance.now();
+  try {
+    DATA = await fetch("/api/inspections/compare").then(r => r.json());
+    if (DATA.error) throw new Error(DATA.error);
+    const c = DATA.counts, f = n => Number(n).toLocaleString("en-US");
+            $("status").textContent = `Both versions read from the Underlay in ${((performance.now() - t0) / 1000).toFixed(1)} seconds.`;
+    $("src2").innerHTML = `Scores: <b>Underlay nyc/restaurant-inspections v1.0.0</b> (June 2026, ${f(DATA.june.recordCount)} records) against <b>system-community/nyc-restaurant-inspections-2026-11 v1.0.0</b> (November 2026, ${f(DATA.november.recordCount)} records), ${f(c.in_both)} Manhattan inspections in both. <details class="f"><summary>ƒ</summary><pre>June version hash: ${esc(DATA.june.hash || "")}
+November version hash: ${esc(DATA.november.hash || "")}
+Both read from https://www.underlay.org when the button was pressed.
+Matched on restaurant, inspection date and inspection type (analyses/underlay_drift/compare.py; docs/underlay_drift.md).
+The November collection was built from NYC Open Data 43nn-pn8j, rows updated 2026-11-12T23:06:40Z.</pre></details>`;
+    $("src2").hidden = false; $("src3").innerHTML = $("src2").innerHTML;
+    await fillRecord();
+    addNum(f(c.scores_changed), "inspection scores changed after the inspection"); await sleep(450);
+    addNum(f(c.scores_fell) + " / " + f(c.scores_rose), "improved / got worse"); await sleep(450);
+    addNum(f(c.band_changed), "crossed a grade line (A, B or C)"); await sleep(450);
+    addNum(f(c.restaurants_gone), "restaurants gone from the city's table"); await sleep(350);
+    filtered = DATA.rows; renderRows(true); $("list").hidden = false; $("key").hidden = false;
+  } catch (e) { $("status").textContent = String(e.message || e) + " (is tools/demo_server.py running?)"; }
+  $("go").disabled = false;
+}
+async function drill(tr) {
+  const next = tr.nextElementSibling;
+  if (next && next.classList.contains("detail")) { next.remove(); return; }
+  document.querySelectorAll("tr.detail").forEach(x => x.remove());
+  const d = document.createElement("tr"); d.className = "detail"; d.innerHTML = `<td colspan="5">Fetching both records from the Underlay…</td>`; tr.after(d);
+  try {
+    const r = await fetch("/api/inspections/record?id=" + encodeURIComponent(tr.dataset.id)).then(r => r.json());
+    if (r.error) throw new Error(r.error);
+    const card = (side, cls) => { const x = (r[side].record || {}).data || {}; return `<div class="rcard ${cls}"><h4>${side === "june" ? "June copy" : "November copy"}</h4><div class="s">${x.score ?? "no score"}</div>`
+      + `<p>${esc(x.action || "")}</p><p>Grade: ${esc(x.grade || "none recorded")} · ${esc(r[side].collection)} · <a href="${r[side].url}" target="_blank" rel="noopener">record</a></p></div>`; };
+    const a = ((r.june.record || {}).data || {}).score, b = ((r.november.record || {}).data || {}).score, name = (r.restaurant || {}).name || tr.querySelector("b").textContent;
+    const vs = r.violations || [], gone = vs.filter(v => v.june && !v.today);
+    const vrow = v => `<tr><td><b>${esc(v.code)}</b></td><td>${esc(v.description)}</td><td>${v.june ? "cited" : "not in the June copy"}</td><td>${v.today ? "on the record" : '<span class="removed" style="margin-left:0">removed</span>'}</td></tr>`;
+    const vtable = vs.length ? `<table class="viol"><thead><tr><th>Code</th><th>Violation</th><th>June version</th><th>City table today</th></tr></thead><tbody>${vs.map(vrow).join("")}</tbody></table>` : `<p class="cap">No violation records found for this inspection among the ${r.codes_tried} common codes.</p>`;
+    d.firstChild.innerHTML = `<div class="cards">${card("june", "")}${card("november", "nov")}</div>` + vtable + (r.partial ? `<p class="source">${esc(r.partial)}</p>` : "")
+      + `<p class="cap">Same restaurant, same inspection, same day. ${a === b ? `The record for ${esc(name)} shows ${a} violation points in both copies.` : `The record for ${esc(name)} showed ${a} violation points in June and shows ${b} now. ${gone.length} violation${gone.length === 1 ? " was" : "s were"} removed.`}</p>`;
+  } catch (e) { d.firstChild.textContent = String(e.message || e); }
+}
+$("go").addEventListener("click", compare);
+async function lookupLive() {
+  const term = $("lq").value.trim(); if (!term) return;
+  $("lgo").disabled = true; $("lstatus").textContent = "Asking the city's data portal, then the Underlay…"; $("ltable").hidden = true;
+  try {
+    const r = await fetch("/api/inspections/lookup?q=" + encodeURIComponent(term)).then(r => r.json());
+    if (r.error) throw new Error(r.error);
+    $("lrows").innerHTML = r.rows.map(x => `<tr class="row${x.changed ? " changed" : ""}" data-id="${esc(x.id)}"><td><b>${esc(x.name)}</b></td><td>${esc(x.address)}</td><td>${esc(x.date)}</td>`
+      + `<td class="sc">${x.in_june_copy ? (x.june ?? "no score") : "not in the June copy"}</td><td class="sc">${x.changed ? `<span class="to">${x.now}</span><span class="tag">changed</span>` : (x.now ?? "no score")}</td></tr>`).join("")
+      || `<tr><td colspan="5">No Manhattan restaurant with that name has an inspection from 2024 to June 2026.</td></tr>`;
+    $("ltable").hidden = false;
+    $("lstatus").innerHTML = `<b>${r.inspections_today}</b> inspections in the city's table today (${r.seconds_city} s), <b>${r.found_in_june}</b> found in the June version (${r.seconds_underlay} s), <b>${r.changed}</b> with a different score.`;
+  } catch (e) { $("lstatus").textContent = String(e.message || e); }
+  $("lgo").disabled = false;
+}
+const CHIPS = ["Which violations are removed most often, and which least?", "Do re-inspections get reduced more often than first inspections?", "Which borough has the highest share of scores reduced?", "What happened between 2021 and 2022?", "What share of citations are for pests?"];
+$("chips").innerHTML = CHIPS.map(c => `<button class="chip">${esc(c)}</button>`).join("");
+async function askTables(qn) {
+  const question = (qn || $("aq").value).trim(); if (!question) return;
+  $("ago").disabled = true;
+  const item = document.createElement("div"); item.className = "qa";
+  item.innerHTML = `<p class="q">${esc(question)}</p><p class="a">Asking… <span class="tick">0</span> s</p>`; $("alog").prepend(item);
+  const t0 = performance.now(), tick = setInterval(() => { const s = item.querySelector(".tick"); if (s) s.textContent = ((performance.now() - t0) / 1000).toFixed(0); }, 500);
+  try {
+    const r = await fetch("/api/ask?q=" + encodeURIComponent(question)).then(r => r.json());
+    clearInterval(tick);
+    item.querySelector(".a").innerHTML = r.error ? `<span class="err">${esc(r.error)}</span>` : `${esc(r.answer)}<span class="meta">${esc(r.model)} · ${r.seconds} s</span>`;
+  } catch (e) { clearInterval(tick); item.querySelector(".a").textContent = String(e.message || e); }
+  $("ago").disabled = false; $("aq").value = "";
+}
+$("ago").addEventListener("click", () => askTables());
+$("aq").addEventListener("keydown", e => { if (e.key === "Enter") askTables(); });
+$("chips").addEventListener("click", e => { const b = e.target.closest("button.chip"); if (b) askTables(b.textContent); });
+$("lgo").addEventListener("click", lookupLive);
+$("lrows").addEventListener("click", e => { const tr = e.target.closest("tr.row"); if (tr) drill(tr); });
+$("lq").addEventListener("keydown", e => { if (e.key === "Enter") lookupLive(); });
+
+$("rows").addEventListener("click", e => { const tr = e.target.closest("tr.row"); if (tr) drill(tr); });
+$("morerows").addEventListener("click", () => renderRows(false));
+$("q").addEventListener("input", () => { const k = $("q").value.trim().toUpperCase(); filtered = DATA.rows.filter(r => !k || (r.name || "").toUpperCase().includes(k) || (r.street || "").toUpperCase().includes(k)); renderRows(true); });
+// ?auto=1 runs the comparison and opens one row, for screenshots and checks.
+function storyKeep() { for (let i = 0; i < STORY.length; i++) { const s = $("sh" + i), r = $("rm" + i); if (s && s.colSpan === 2) continue; if (s) s.classList.remove("on"); if (r) r.classList.remove("on"); } }
+const STORY = [
+  { k: "(no code)", name: "A sick or infectious food worker", says: "The leading factor: 40% to 59% of restaurant outbreaks with known factors", cite: 'CDC outbreak reports: <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Lipcsei+2019+foodborne+NEARS">Lipcsei 2019</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Moritz+2023+foodborne+illness+outbreaks+retail">Moritz 2023</a>' },
+  { k: "temperature control", name: "Food held at the wrong temperature", says: "About ten times the odds of an outbreak", cite: 'Seattle: <a href="https://pubmed.ncbi.nlm.nih.gov/2705592/">Irwin 1989</a>' },
+  { k: "contamination", name: "Contamination and handling", says: "Odds ratio 4.9 (95% interval 1.6 to 15.4)", cite: 'Minnesota, in System\'s graph: <a href="https://pubmed.ncbi.nlm.nih.gov/31928421/">Firestone 2020</a>' },
+  { k: "pest evidence", name: "Mice, rats, roaches, flies", says: "One study: odds ratio 3.3 (95% interval 1.1 to 13.1). Not a factor in CDC's analyses", cite: 'Miami-Dade, in System\'s graph: <a href="https://pubmed.ncbi.nlm.nih.gov/11344897/">Cruz 2001</a>' } ];
+function storyInit() {
+  $("storyrows").innerHTML = STORY.map((r, i) => `<tr><td class="c">${r.name}</td><td class="says" id="say${i}">${r.says}<small>${r.cite}</small></td><td class="rec" id="sh${i}"></td><td class="rec" id="rm${i}"></td></tr>`).join("");
+}
+async function step1() {
+  $("s1").disabled = true;
+  for (let i = 0; i < STORY.length; i++) { $("say" + i).classList.add("on"); await sleep(550); }
+  $("v1").hidden = false; $("go").disabled = false;
+}
+async function fillRecord() {
+  const L = (await hist()).latest, max = Math.max(...L.groups.map(g => g.share_removed));
+  for (let i = 0; i < STORY.length; i++) {
+    const g = L.groups.find(x => x.group.startsWith(STORY[i].k));
+    if (g) {
+      $("sh" + i).innerHTML = `<span class="n">${(100 * g.share_of_citations).toFixed(0)}%</span>`;
+      $("rm" + i).innerHTML = `<span class="bar${STORY[i].k === "pest evidence" ? " hl" : ""}" style="width:${(72 * g.share_removed / max).toFixed(0)}px"></span><span class="n">${(100 * g.share_removed).toFixed(1)}%</span>`;
+    } else { $("sh" + i).className = "rec none"; $("sh" + i).colSpan = 2; $("rm" + i).remove(); $("sh" + i).textContent = "Not on the record: an inspection rarely sees it."; }
+    $("sh" + i).classList.add("on"); const rm = $("rm" + i); if (rm) rm.classList.add("on");
+    await sleep(550);
+  }
+  const pest = L.groups.find(x => x.group.startsWith("pest evidence")), others = L.groups.filter(x => /^(temperature control|contamination)/.test(x.group));
+  const rate = others.reduce((a, g) => a + g.removed, 0) / others.reduce((a, g) => a + g.cited, 0), times = rate / pest.share_removed;
+  $("v2").innerHTML = `<b>The appeal process does not follow the research.</b> After hearings, ${(100 * (1 - pest.share_removed)).toFixed(1)}% of pest citations stay on the record. Temperature and handling violations come off ${times.toFixed(0)} times as often (${(100 * rate).toFixed(1)}% against ${(100 * pest.share_removed).toFixed(1)}%). The leading cause is not on the record at all.`;
+  $("v2").hidden = false;
+  $("src1").innerHTML = `Citations and removals: the city's table of <b>April 2026</b> against <b>12 November 2026</b>, whole city, ${L.codes_cited.toLocaleString("en-US")} violations on inspections from the year before April. <details class="f"><summary>ƒ</summary><pre>Earlier copy: Internet Archive capture 20260403010027 of data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv.
+Later copy: NYC Open Data 43nn-pn8j, rows updated 2026-11-12T23:06:40Z.
+A violation is "removed" when its code is on an inspection in the earlier copy and absent from the same inspection in the later one.
+Groups: pest evidence 04K, 04L, 04M, 04N; temperature control 02B, 02G, 02H; contamination and handling 04C, 04H, 06C, 06D, 06E, 06F.
+Built by analyses/underlay_drift/history.py. Exploratory, not registered or refereed.</pre></details>`;
+  $("src1").hidden = false;
+}
+let HIST = null;
+async function hist() { if (!HIST) HIST = await fetch("/api/inspections/history").then(r => r.json()); return HIST; }
+const ym = s => s.slice(0, 4) + "-" + s.slice(4, 6);
+$("hist").addEventListener("click", async () => {
+  const d = await hist(), max = Math.max(...d.pairs.map(p => p.fell + p.rose));
+  const tf = d.pairs.reduce((a, p) => a + p.fell, 0), tr = d.pairs.reduce((a, p) => a + p.rose, 0);
+  $("histout").innerHTML = `<h3 style="font-size:17px;margin:0 0 4px">Eleven copies of the table, 2015 to 2026, whole city</h3>`
+    + `<p class="strip-lede">Each row compares one archived copy with the next. Of the scores that changed, <b>${tf.toLocaleString("en-US")} fell and ${tr.toLocaleString("en-US")} rose</b>. The one exception is 2021 to 2022, after inspections had been suspended.</p>`
+    + `<table class="rows hist"><thead><tr><th>Earlier copy</th><th>Later copy</th><th>Scores that fell</th><th>Scores that rose</th><th></th></tr></thead><tbody>`
+    + d.pairs.map(p => `<tr><td>${ym(p.from)}</td><td>${ym(p.to)}</td><td class="sc">${p.fell.toLocaleString("en-US")}</td><td class="sc"><span class="to">${p.rose}</span></td>`
+      + `<td style="width:44%"><span class="barf" style="width:${(100 * p.fell / max).toFixed(1)}%"></span><span class="barr" style="width:${(100 * p.rose / max).toFixed(1)}%"></span></td></tr>`).join("")
+    + `</tbody></table>`;
+  $("histout").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+$("codes").addEventListener("click", async () => {
+  const L = (await hist()).latest, row = c => `<tr><td><b>${esc(c.code)}</b></td><td>${esc(c.description)}</td><td class="sc">${c.cited.toLocaleString("en-US")}</td><td class="sc">${(100 * c.share).toFixed(1)}%</td></tr>`;
+  $("codesout").innerHTML = `<h3 style="font-size:17px;margin:var(--s3) 0 4px">Violations removed most and least often</h3>`
+    + `<p class="strip-lede">April to November 2026, whole city, inspections from the year before April. Of ${L.codes_cited.toLocaleString("en-US")} violations cited, <b>${L.codes_removed.toLocaleString("en-US")} were removed and ${L.codes_added} added</b>. Removals are rare. Practices come off about five times as often as evidence of pests.</p>`
+    + `<table class="rows"><thead><tr><th>Code</th><th>Violation</th><th>Cited</th><th>Removed later</th></tr></thead><tbody>`
+    + `<tr><td colspan="4" class="grp">Removed most often</td></tr>` + L.most_removed.map(row).join("")
+    + `<tr><td colspan="4" class="grp">Removed least often</td></tr>` + L.least_removed.map(row).join("") + `</tbody></table>`;
+  $("codesout").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+$("why").addEventListener("click", () => {
+  const root = $("strips"); root.textContent = "";
+  const s = COMICS.strips.find(x => x.id === "restaurants"); if (!s) return;
+  const [frag, div, frames] = drawStrip(s, null); root.appendChild(frag);
+  for (const [f, i] of frames) drawFrame(f, i, div);
+  root.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+$("s1").addEventListener("click", step1);
+storyInit();
+if (new URLSearchParams(location.search).get("auto")) { document.body.classList.add("auto"); step1().then(compare).then(() => drill(document.querySelectorAll("tr.row")[2])); }
+</script>
+<script src="status.js"></script>
+</body>
+</html>

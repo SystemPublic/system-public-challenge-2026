@@ -1,0 +1,489 @@
+{
+ "id": "heat-extremes-downturn",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "Aggravated assaults, days at 38 C or more against days at 32 to 35 C, pooled over Phoenix, Tucson, Dallas and Austin",
+  "estimate": 1.0351692880590742,
+  "lo": 1.0081742992072855,
+  "hi": 1.0628870977799143,
+  "scale": "rate ratio",
+  "null": 1,
+  "n": "2696 days at 38 C or more and 2277 reference days in four cities"
+ },
+ "graph_effect": {
+  "label": "Lyons et al. 2022, shootings in 100 US cities: almost monotonic rise, local peak at the 84th percentile; no comparable contrast in the graph",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "shape only",
+  "null": 1
+ },
+ "by_city": {
+  "phoenix": {
+   "estimate": 1.038,
+   "lo": 0.994,
+   "hi": 1.084,
+   "se": 0.022,
+   "days": 1132,
+   "alpha": 0.006,
+   "days_ref": 280,
+   "mean_tmax_38p": 41.964,
+   "mean_tmax_32_35": 33.35
+  },
+  "tucson": {
+   "estimate": 1.062,
+   "lo": 0.999,
+   "hi": 1.13,
+   "se": 0.031,
+   "days": 667,
+   "alpha": 0.007,
+   "days_ref": 328,
+   "mean_tmax_38p": 40.428,
+   "mean_tmax_32_35": 33.308
+  },
+  "dallas": {
+   "estimate": 0.977,
+   "lo": 0.906,
+   "hi": 1.052,
+   "se": 0.038,
+   "days": 187,
+   "alpha": 0.017,
+   "days_ref": 481,
+   "mean_tmax_38p": 39.609,
+   "mean_tmax_32_35": 33.393
+  },
+  "austin": {
+   "estimate": 1.04,
+   "lo": 0.994,
+   "hi": 1.087,
+   "se": 0.023,
+   "days": 710,
+   "alpha": 0.01,
+   "days_ref": 1188,
+   "mean_tmax_38p": 39.444,
+   "mean_tmax_32_35": 33.349
+  },
+  "los_angeles": {
+   "estimate": 1.02,
+   "lo": 0.917,
+   "hi": 1.134,
+   "se": 0.054,
+   "days": 18,
+   "alpha": 0.018,
+   "days_ref": 249,
+   "mean_tmax_38p": 39.989,
+   "mean_tmax_32_35": 33.124
+  },
+  "philadelphia": {
+   "estimate": 1.039,
+   "lo": 0.904,
+   "hi": 1.193,
+   "se": 0.071,
+   "days": 9,
+   "alpha": 0.017,
+   "days_ref": 517,
+   "mean_tmax_38p": 38.8,
+   "mean_tmax_32_35": 33.126
+  },
+  "chicago": {
+   "estimate": 0.981,
+   "lo": 0.815,
+   "hi": 1.181,
+   "se": 0.095,
+   "days": 7,
+   "alpha": 0.01,
+   "days_ref": 353,
+   "mean_tmax_38p": 38.629,
+   "mean_tmax_32_35": 33.074
+  }
+ },
+ "heterogeneity": {
+  "I2": 0.021932741317054635,
+  "Q": 3.0672737210728913,
+  "fixed_effect": {
+   "estimate": 1.035,
+   "lo": 1.009,
+   "hi": 1.063
+  }
+ },
+ "sensitivity": {
+  "S1_year_month_strata": {
+   "estimate": 1.031,
+   "lo": 1.003,
+   "hi": 1.061
+  },
+  "S2_may_sep_only": {
+   "estimate": 1.044,
+   "lo": 1.009,
+   "hi": 1.08
+  },
+  "S3_without_2020_2021": {
+   "estimate": 1.027,
+   "lo": 0.997,
+   "hi": 1.057
+  },
+  "S4_35_38_vs_32_35": {
+   "estimate": 1.01,
+   "lo": 0.988,
+   "hi": 1.033
+  },
+  "S5_38_41_vs_32_35": {
+   "estimate": 1.041,
+   "lo": 1.014,
+   "hi": 1.069
+  },
+  "S6_41_plus_vs_32_35": {
+   "estimate": 1.007,
+   "lo": 0.973,
+   "hi": 1.042
+  }
+ },
+ "linear_alternative": {
+  "pooled_prediction": {
+   "estimate": 1.075,
+   "lo": 1.064,
+   "hi": 1.086
+  },
+  "z_observed_below_linear": 2.64,
+  "by_city": {
+   "phoenix": 1.076,
+   "tucson": 1.063,
+   "dallas": 1.083,
+   "austin": 1.073
+  }
+ },
+ "sources": [
+  {
+   "kind": "ckan-csv",
+   "url": "https://www.phoenixopendata.com/dataset/cc08aace-9ca9-467f-b6c1-f0879ab1a358/resource/0ce3411a-2fc6-4302-a33f-167f68608a20/download/crime-data_crime-data_crimestat.csv",
+   "publisher": "City of Phoenix Open Data, Police Department crime data",
+   "file_bytes": 74988551,
+   "fetched": "2026-11-13T07:38:35-0500",
+   "filter": "UCR CRIME CATEGORY = AGGRAVATED ASSAULT; distinct INC NUMBER by date of OCCURRED ON"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00023183",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00023183.csv",
+   "last_modified": "Fri, 13 Nov 2026 01:41:17 GMT",
+   "fetched": "2026-11-13T07:39:56-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "arcgis-featureserver",
+   "url": "https://services3.arcgis.com/9coHY2fvuFjG9HQX/arcgis/rest/services/TPDOpenData_ReportedCrimes_<year>/FeatureServer/0/query",
+   "publisher": "Tucson Police Department open data (gisdata.tucsonaz.gov)",
+   "filter": "UCRSummaryDescription = 'ASSAULT, AGGRAVATED'; distinct IncidentNumber by OccurredDate; layers 2018 to 2026",
+   "fetched": "2026-11-13T07:43:24-0500",
+   "n_rows": 79957
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00023160",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00023160.csv",
+   "last_modified": "Fri, 13 Nov 2026 01:41:13 GMT",
+   "fetched": "2026-11-13T07:41:30-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qv6i-rri7",
+   "name": "Police Incidents",
+   "url": "https://www.dallasopendata.com/d/qv6i-rri7",
+   "rows_updated_at": "2026-11-13T12:08:35Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "incidentnum, date1",
+    "$where": "nibrs_crime like 'AGG ASSAULT%'",
+    "$order": "incidentnum, date1"
+   },
+   "fetched": "2026-11-13T07:43:33-0500",
+   "n_rows": 28238,
+   "domain": "https://www.dallasopendata.com"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00013960",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00013960.csv",
+   "last_modified": "Fri, 13 Nov 2026 01:41:23 GMT",
+   "fetched": "2026-11-13T07:43:33-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "fdj4-gpfu",
+   "name": "Crime Reports",
+   "url": "https://data.austintexas.gov/d/fdj4-gpfu",
+   "rows_updated_at": "2026-11-09T14:38:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occ_date) as d, count(*) as n",
+    "$where": "occ_date between '2003-01-01T00:00:00' and '2026-08-31T23:59:59' AND (category_description='Aggravated Assault')",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-13T07:43:39-0500",
+   "n_rows": 8566,
+   "domain": "https://data.austintexas.gov"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00013958",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00013958.csv",
+   "last_modified": "Fri, 13 Nov 2026 01:41:21 GMT",
+   "fetched": "2026-11-13T07:43:40-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "63jg-8b9z",
+   "name": "Crime Data from 2010 to 2019",
+   "url": "https://data.lacity.org/d/63jg-8b9z",
+   "rows_updated_at": "2025-12-11T14:01:46Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(date_occ) as d, count(*) as n",
+    "$where": "date_occ between '2010-01-01T00:00:00' and '2019-12-31T23:59:59' AND (crm_cd in ('230','231','235','236'))",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-13T07:43:45-0500",
+   "n_rows": 3652,
+   "domain": "https://data.lacity.org"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "2nrs-mtv8",
+   "name": "Crime Data from 2020 to 2024",
+   "url": "https://data.lacity.org/d/2nrs-mtv8",
+   "rows_updated_at": "2026-03-04T17:17:20Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(date_occ) as d, count(*) as n",
+    "$where": "date_occ between '2020-01-01T00:00:00' and '2023-12-31T23:59:59' AND (crm_cd in ('230','231','235','236'))",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-13T07:43:49-0500",
+   "n_rows": 1461,
+   "domain": "https://data.lacity.org"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00093134",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00093134.csv",
+   "last_modified": "Fri, 13 Nov 2026 01:36:07 GMT",
+   "fetched": "2026-11-13T07:43:50-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "carto-sql",
+   "url": "https://phl.carto.com/api/v2/sql",
+   "publisher": "City of Philadelphia (OpenDataPhilly)",
+   "query": "select dispatch_date as d, count(*) as n from incidents_part1_part2 where text_general_code in ('Aggravated Assault Firearm','Aggravated Assault No Firearm') and dispatch_date between '2006-01-01' and '2026-08-31' group by 1 order by 1",
+   "fetched": "2026-11-13T07:43:55-0500",
+   "n_rows": 7547
+  },
+  {
+   "kind": "carto-sql",
+   "url": "https://phl.carto.com/api/v2/sql",
+   "publisher": "City of Philadelphia (OpenDataPhilly)",
+   "query": "select date_::date as d, count(*) as n from shootings where date_ between '2015-01-01' and '2026-08-31' group by 1 order by 1",
+   "fetched": "2026-11-13T07:43:59-0500",
+   "n_rows": 3987
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00013739",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00013739.csv",
+   "last_modified": "Fri, 13 Nov 2026 01:42:00 GMT",
+   "fetched": "2026-11-13T07:44:00-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ijzp-q8t2",
+   "name": "Crimes - 2001 to Present",
+   "url": "https://data.cityofchicago.org/d/ijzp-q8t2",
+   "rows_updated_at": "2026-11-12T12:16:46Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(date) as d, count(*) as n",
+    "$where": "date between '2006-01-01T00:00:00' and '2026-08-31T23:59:59' AND (fbi_code in ('04A','04B'))",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-13T07:48:29-0500",
+   "n_rows": 7548,
+   "domain": "https://data.cityofchicago.org"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "gumc-mgzr",
+   "name": "Violence Reduction - Victims of Homicides and Non-Fatal Shootings",
+   "url": "https://data.cityofchicago.org/d/gumc-mgzr",
+   "rows_updated_at": "2026-11-12T14:37:55Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(date) as d, count(distinct case_number) as n",
+    "$where": "date between '2010-01-01T00:00:00' and '2026-08-31T23:59:59' AND (gunshot_injury_i in ('Y','YES'))",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-13T07:48:46-0500",
+   "n_rows": 6012,
+   "domain": "https://data.cityofchicago.org"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00014819",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00014819.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:32:44 GMT",
+   "fetched": "2026-11-12T22:33:29-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qgea-i56i",
+   "name": "NYPD Complaint Data Historic",
+   "url": "https://data.cityofnewyork.us/d/qgea-i56i",
+   "rows_updated_at": "2026-04-28T16:10:09Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(cmplnt_fr_dt) as d, count(*) as n",
+    "$where": "cmplnt_fr_dt between '2006-01-01T00:00:00' and '2025-12-31T23:59:59' AND (ky_cd=106)",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-13T07:48:50-0500",
+   "n_rows": 7305,
+   "domain": "https://data.cityofnewyork.us"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$where": "occur_date between '2006-01-01T00:00:00' and '2026-08-31T23:59:59' AND (1=1)",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-13T07:48:57-0500",
+   "n_rows": 6936,
+   "domain": "https://data.cityofnewyork.us"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  }
+ ],
+ "prediction_scored": "miss. The registered downturn (pooled ratio 0.88 to 0.98) was not found: the support condition fails by a wide margin (z = 4.1 against 0.98, and every variant excludes the band). The refutation condition is met by 0.008: the pooled lower limit is 1.008. It is not met with a Hartung-Knapp interval (0.992 to 1.081), with the daily minimum in the model (0.984), with second stations (0.987), with a day from 06:00 to 05:59 (0.994), without 2020 and 2021 (0.997), without 2018 (0.998), or without any one of Phoenix, Tucson and Austin. The result is no downturn at 38 C, with the rate level or slightly higher.",
+ "settle": "Hourly counts with indoor and outdoor location would show whether the flat rate above 35 C hides a fall outdoors and a rise indoors, as Stevens et al. report for New South Wales. More days above 41 C outside Phoenix would show whether the lower estimates at 41 C and above are a turn or noise.",
+ "research_needed": [
+  {
+   "question": "Does the rate fall above 41 C?",
+   "data": "Aggravated assaults in more desert cities (Las Vegas, Mesa, Palm Springs, cities in the Gulf and South Asia)",
+   "design": "the same within-city contrast with 41 C and above as the hot bin",
+   "priority": "high"
+  },
+  {
+   "question": "Is the plateau an average of an outdoor fall and an indoor rise?",
+   "data": "premise type and hour of each incident (Phoenix and Los Angeles publish both)",
+   "design": "the same curve by premise type and by day and night",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/heat_extremes/dose_response_by_city.png"
+ ],
+ "notes": "Registered result. Pooled rate ratio 1.035 (1.008 to 1.063); Phoenix 1.038 (0.994 to 1.084), Tucson 1.062 (0.999 to 1.130), Dallas 0.977 (0.906 to 1.052), Austin 1.040 (0.994 to 1.087); I2 = 0.02. The point estimate at 38 C and above is 3.5% above 32 to 35 C, so there is no downturn at 38 C; the rate is level or slightly higher (reworded after the referee). It is also lower than the straight-line prediction from each city's slope below 35 C, 1.075 (1.064 to 1.086) (z = 2.6), so the rise slows. Planned description, not deciding: the piecewise-linear slope above 35 C is 1.003 (0.985 to 1.022) per 5 C against 1.060 (1.046 to 1.073) per 5 C from 20 to 35 C; the steps against 32 to 35 C are 1.010 for 35 to 38 C, 1.041 for 38 to 41 C and 1.007 for 41 C and above. The verdict label 'contested' means that the downturn hypothesis is refuted at 38 C. It comes from the literal condition, a lower limit above 1.00; the registration assigned a plateau to unsettled, and the curve above about 35 C is close to a plateau (reworded after the referee).\n\nAfter the referee (13 Nov 2026): the verdict is kept and reworded. The referee rebuilt the four daily series from the raw files with separate code; the counts agree on every day and the refit gives 1.035 (1.008 to 1.063), Q = 3.07. The registered refutation condition, a lower limit above 1.00, is met, and rule 1 gives contested. The two conditions were met with very different margins, and the notes now say so.\nThe downturn. The support condition fails by a wide margin: z = 4.1 against the upper end of the predicted band (0.98), and no variant below has a lower limit under 0.98. The registered downturn at 38 C is excluded.\nThe rise. The refutation condition is met by 0.008 (z = 2.56 against 1.00, p = 0.010; no single city excludes 1.00). It is not met, that is the lower limit is at or below 1.00, with a Hartung-Knapp interval, the usual correction for a pool of four estimates (0.992 to 1.081); with the daily minimum in the model, 1.019 (0.984 to 1.056); with rain amount and the previous day's maximum, 1.022 (0.987 to 1.059); with second weather stations in Phoenix, Dallas and Austin, 1.017 (0.987 to 1.049); with the day from 06:00 to 05:59, 1.030 (0.993 to 1.069) in the referee's fit and 1.030 (0.994 to 1.068) with the registered code; without 2020 and 2021, 1.027 (0.997 to 1.057); with hot days in June to August only, 1.029 (0.997 to 1.061); with June to September and year-by-month terms, 1.034 (0.980 to 1.092); without 2018 (lower limit 0.998); and without Phoenix (0.989), Tucson (0.997) or Austin (0.989). The point estimate stays between 1.017 and 1.044 (referee). The earlier sentence that the condition was met 'by less than the sampling error (rule 10)' is withdrawn: rule 10 concerns conditions on a point estimate, and this one is on an interval bound.\nWording. The result is: no downturn at 38 C; the rate is level or slightly higher. It is not 'assaults are more frequent at 38 C and above'. The registration assigned a plateau to the verdict unsettled and a linear rise to contested. The label contested comes from the literal condition, a lower limit above 1.00, which a small rise well short of the linear prediction (1.075; the published band starts at 1.06, z = -1.8) meets. The earlier sentence that the data 'fit a plateau better than either registered alternative' described the alternative that the registration tied to unsettled.\nOffence definitions. The four series are not the same offence. The Dallas file withholds family violence: 23,299 incidents are coded 'AGG ASSAULT - NFV' and 35 family violence. In Austin 47% of incidents carry the family-violence flag or a family or strangulation offence type (37% in 2003 to 2008, about 50% afterwards), and the category includes deadly conduct (7.5%). Phoenix and Tucson use a UCR summary category with no family-violence field. The difference does not explain the Dallas estimate: in Austin the ratio is 1.039 (0.976 to 1.106) for family violence and 1.038 (0.976 to 1.104) for the rest, and with Austin's non-family incidents the pool is 1.034 (1.005 to 1.064).\nPhoenix records. From 3 September 2025 the Phoenix file carries no time of day, September 2025 has 417 incidents against about 570 a year earlier, and the count of all offence rows rises by 40% in October 2025, which looks like a change of records system. The file runs to 31 December 2025 and build.py ends the series on 30 November 2025; neither the registration nor the script gives the reason. Ending Phoenix on 31 August 2025 gives 1.037 for the city and the same pool.\nStations. Camp Mabry records 710 days at 38 C or more and Austin-Bergstrom 443; Sky Harbor 1,112 and Phoenix Deer Valley 854 on the same dates. A fixed threshold at a warm station is partly a comparison at a lower temperature across the city.\nNight and hour (referee, exploratory). In Phoenix incidents of the night that follows a hot day rise by 1.129 (1.019 to 1.251) and afternoon and evening incidents do not (1.011, 0.956 to 1.069), so the excess at 38 C and above may belong to the night. Incidents from 12:00 to 23:59 give 0.894 (0.811 to 0.984) in Dallas, in the direction of the daylight downturn that Rotton and Cohn reported for that city; it is one of twelve cells and not significant after correction.\nDegrees against percentiles. The statement that one curve in degrees fits better than one in percentiles is withdrawn as evidence on adaptation. The registrant's degree bins hold 2,700 to 6,400 days each and two percentile bins hold about 11,500 days each, so the comparison was unequal: 496 AIC units with those bins, 43 with ten equal-count bins on each scale, about 450 with splines of equal degrees of freedom. A scale of degrees from each city's own mean, which is a relative scale, fits as well as absolute degrees or better (3,053 against 2,822 units with ten bins; 3,227 against 3,217 with twenty). Among the hottest quarter of each city's days degrees are better by 4 to 17 units, and in the four hot cities alone percentiles are better by 5. The comparison shows that the curve is close to linear in degrees and that ranks distort it. It does not show that cities share one absolute curve.\nNew York heat waves (exploratory). The ratio for days two and later of a run at 32 C or more, 0.836 (0.739 to 0.946) for shootings, does not replicate with the same code in the two other cities with shooting series: Chicago 0.983 (0.913 to 1.057), Philadelphia 1.036 (0.912 to 1.177), the two together 0.996 (0.935 to 1.061). It depends on the threshold: 1.023 at 29 C, 0.966 at 30, 0.932 at 31, 0.836 at 32, 0.901 at 33 and 0.839 at 34, with only the 32 C interval excluding 1.00. Part of it comes from first days of a run being high (1.098 against isolated days). It is a New York shootings result that two other cities do not show, and not a property of heat waves.\nThe 06:00 day (re-checked with the registered test.py and describe.py on rebuilt daily files). Incidents from 00:01 to 05:59 are 17% of the Phoenix series, 23% of Dallas and 28% of Austin; Tucson publishes no time and is unchanged, and Phoenix ends on 31 August 2025 because the file has no time after that. Calendar date first: pooled 1.035 (1.008 to 1.063) on calendar dates and 1.030 (0.994 to 1.068) on the 06:00 day; Phoenix 1.038 (0.994 to 1.084) on calendar dates and 1.044 (1.001 to 1.088) on the 06:00 day; Dallas 0.977 (0.906 to 1.052) on calendar dates and 0.955 (0.887 to 1.028) on the 06:00 day; Austin 1.040 (0.994 to 1.087) on calendar dates and 1.037 (0.991 to 1.085) on the 06:00 day; year-by-month strata 1.031 (1.003 to 1.061) on calendar dates and 1.026 (0.989 to 1.065) on the 06:00 day; May to September 1.044 (1.009 to 1.080) on calendar dates and 1.043 (0.999 to 1.090) on the 06:00 day; without 2020 and 2021 1.027 (0.997 to 1.057) on calendar dates and 1.023 (0.991 to 1.055) on the 06:00 day; 35 to 38 C 1.010 (0.988 to 1.033) on calendar dates and 1.024 (1.001 to 1.047) on the 06:00 day; 38 to 41 C 1.041 (1.014 to 1.069) on calendar dates and 1.040 (1.004 to 1.078) on the 06:00 day; 41 C and above 1.007 (0.973 to 1.042) on calendar dates and 1.010 (0.976 to 1.046) on the 06:00 day; the linear prediction 1.075 (1.064 to 1.086) on calendar dates and 1.073 (1.061 to 1.084) on the 06:00 day (z of the observed ratio below it 2.6 and 2.1); slope per 5 C from 20 to 35 C 1.060 (1.046 to 1.073) on calendar dates and 1.061 (1.050 to 1.072) on the 06:00 day and above 35 C 1.003 (0.985 to 1.022) on calendar dates and 0.997 (0.978 to 1.016) on the 06:00 day; New York shootings on later days of a heat wave 0.836 (0.739 to 0.946) on calendar dates and 0.812 (0.718 to 0.919) on the 06:00 day, New York felony assaults 0.965 (0.930 to 1.001) on calendar dates and 0.956 (0.926 to 0.988) on the 06:00 day, Chicago shootings 0.983 (0.913 to 1.057) and 0.938 (0.868 to 1.014), Philadelphia shootings 1.036 (0.912 to 1.177) and 0.984 (0.863 to 1.122), and those two cities together 0.996 (0.935 to 1.061) and 0.950 (0.888 to 1.016): on the 06:00 day the two other cities point the same way as New York and their intervals still include 1.00. The degrees model is better than the percentile model by 496 and 485 AIC units with the registrant's bins. On the 06:00 day the registered rule reads unsettled: the refutation condition changes side. Under rule 4 a count chosen after the data decides nothing, so the verdict is not revised; the condition that changes side is reported here and to the coordinator. The downturn band is excluded under both definitions. Exploratory, run after the outcome, and deciding nothing under rule 4 (analyses/critique/round6_six_am_extremes.py; data/derived/round6_heat/six_am_extremes.json).",
+ "registration_sha256": "d22d9dabfb9e58b688d59f50dc84e59e196ccd70ccc8a0a4826a42f20beadee6",
+ "decided_at": "2026-11-13T08:03:34-0500",
+ "stance": {
+  "value": -0.857,
+  "lo": -0.979,
+  "hi": -0.293,
+  "z": -2.56
+ },
+ "verdict_note": "Contested means here that the registered downturn at 38 C is refuted: no downturn; the rate is level or slightly higher, 1.035 (1.008 to 1.063). The downturn band (0.88 to 0.98) is excluded under every variant (z = 4.1). The lower limit above 1.00 is fragile: it is at or below 1.00 with a Hartung-Knapp interval (0.992), the daily minimum in the model (0.984), second weather stations (0.987), a day from 06:00 to 05:59 (0.994), without 2020 and 2021 (0.997), without 2018 (0.998), and without any one of Phoenix, Tucson and Austin. The registration assigned a plateau to unsettled; the label follows the literal condition.",
+ "stance_note": "The stance (-0.857, z = -2.56) measures disagreement of the city estimate with the registered downturn. It is not agreement with the graph's monotonic rise: the observed 1.035 is below the lower end of the published linear band (1.06, z = -1.8) and below the cities' own extrapolated slope (1.075, z = -2.6). On the variants listed in the verdict note the interval includes 1.00.",
+ "six_am_day": {
+  "pooled": {
+   "estimate": 1.0300615070030321,
+   "lo": 0.9936361838637922,
+   "hi": 1.0678221319230894
+  },
+  "cities": {
+   "phoenix": {
+    "estimate": 1.0436215478851396,
+    "lo": 1.000609519579326,
+    "hi": 1.08848248382453,
+    "days": 1111,
+    "days_ref": 264
+   },
+   "tucson": {
+    "estimate": 1.0624325950605542,
+    "lo": 0.9990175034233815,
+    "hi": 1.1298731155151105,
+    "days": 667,
+    "days_ref": 328
+   },
+   "dallas": {
+    "estimate": 0.9546802718870117,
+    "lo": 0.8866310562493214,
+    "hi": 1.0279522864738995,
+    "days": 187,
+    "days_ref": 481
+   },
+   "austin": {
+    "estimate": 1.0366882137720221,
+    "lo": 0.9908302681995993,
+    "hi": 1.0846685724757519,
+    "days": 710,
+    "days_ref": 1188
+   }
+  },
+  "reading_by_registered_rule": "unsettled",
+  "note": "Exploratory (rule 4): incidents from 00:01 to 05:59 counted on the previous date in Phoenix, Dallas and Austin; Tucson unchanged. Decides nothing."
+ },
+ "critique": {
+  "report": "critique/heat-extremes-downturn.md",
+  "answer": "accepted; verdict kept under rule 1 and reworded, fragility of the lower limit listed, stance note added"
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "Aggravated assaults, days at 38 C or more against days at 32 to 35 C, pooled over Phoenix, Tucson, Dallas and Austin",
+    "estimate": 1.0351692880590742,
+    "lo": 1.0081742992072855,
+    "hi": 1.0628870977799143,
+    "scale": "rate ratio",
+    "null": 1,
+    "n": "2696 days at 38 C or more and 2277 reference days in four cities"
+   },
+   "stance": {
+    "value": -0.857,
+    "lo": -0.979,
+    "hi": -0.293,
+    "z": -2.56
+   },
+   "decided_at": "2026-11-13T08:03:34-0500",
+   "prediction_scored": "miss. The registered downturn (pooled ratio 0.88 to 0.98) was not found. The refutation condition is met: the pooled lower limit is 1.008, above 1.00 by less than the sampling error (rule 10), and it falls to 0.997 when 2020 and 2021 are left out."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep contested, reworded as 'no downturn at 38 C; the rate is level or slightly higher'. The fragility of the lower limit (1.008) is listed, the reference to rule 10 removed, the family-violence difference between Dallas and Austin and the Phoenix records break of September 2025 recorded, the degrees-against-percentiles comparison withdrawn as evidence on adaptation, and the New York heat-wave ratio marked as not replicating in Chicago or Philadelphia. On the 06:00 day the refutation condition is not met; the verdict is not revised (rule 4).",
+  "critique": "critique/heat-extremes-downturn.md",
+  "revised_at": "2026-11-13T09:19:59-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

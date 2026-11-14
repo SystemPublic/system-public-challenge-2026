@@ -1,0 +1,1560 @@
+{
+ "package": {
+  "claim": "levers-vacant-lot-trial-match",
+  "built_at": "2026-11-13T22:56:54-0500",
+  "tool": "tools/replicate.py",
+  "tool_blob": "227e649fbc524670361a2e3669887ba27f05af5c",
+  "paths": "relative to the repository (inputs keep their repo paths under inputs/) or to ~/opt/nyc-concordance"
+ },
+ "claim": {
+  "id": "levers-vacant-lot-trial-match",
+  "registration": {
+   "id": "levers-vacant-lot-trial-match",
+   "kind": "bridge",
+   "statement": "Of New York's tax lots recorded as vacant land (MapPLUTO 26v2 land use 11) in the census tracts with the most shootings, about three in ten resemble the lots of the Philadelphia vacant-lot trial (small, unpaved, not under development, not a garden or buyout parcel), and greening them would prevent on the order of 20 shootings a year.",
+   "graph_evidence": [
+    {
+     "association_id": "all_boats vacant_lot_greening x violence",
+     "pubmed_ids": [
+      "30496003",
+      "29483246"
+     ],
+     "direction": "-",
+     "summary": "Cluster randomised trial, Philadelphia, 541 lots in 110 clusters: greening -6.8% (-10.6 to -2.7), mowing and trash cleanup -9.2% (-13.2 to -4.8) in shootings (kernel density at lot, 500 m bandwidth). Branas 2018: gun violence -29.1% in neighbourhoods below the poverty line."
+    },
+    {
+     "association_id": "nbhd-vacant-shootings (this repo)",
+     "direction": "+",
+     "summary": "NYC tracts: shootings per resident IRR 1.17 (1.12-1.22) per quintile of vacant-land share; cross-sectional."
+    }
+   ],
+   "literature": [
+    {
+     "citation": "Moyer R, MacDonald JM, Ridgeway G, Branas CC. Am J Public Health 2019;109:140-144",
+     "doi": "10.2105/AJPH.2018.304752",
+     "finding": "Excluded lots with insufficient blight, area > 510 m2 or paved parking. Greening -6.8%, cleanup -9.2% shootings."
+    },
+    {
+     "citation": "Branas CC et al. PNAS 2018;115:2946-2951",
+     "doi": "10.1073/pnas.1718503115",
+     "finding": "Greening cost about $5 per m2 initially and $0.50 per m2 a year to maintain."
+    }
+   ],
+   "plan": "Universe: MapPLUTO 26v2 (64uk-42ks) lots with landuse 11. High-shooting tracts: the top decile (by count) of the 2,208 analysed 2020 tracts in data/derived/neighbourhood/vacant_shootings_tracts.csv (shootings 2019-2024); a lot is in one by PLUTO bct2020. Each lot is placed in the first type that applies, in this order: (1) garden: BBL in GreenThumb Garden Info (p78i-pat6); (2) buyout: owner name contains HOUSING TRUST FUND, GOSR or STORM RECOVERY, or ownertype O in the 2015 1% floodplain; (3) active development: a DOB permit (ipu4-2q9a or rbx6-tga4) of job type NB or DM, or work type FO/EW/foundation/earthwork/support of excavation/full demolition/new building, issued on the BBL from 2024-11-13 to 2026-11-13, or a NB job filed (BIS ic3t-wcy2 or DOB NOW w9ak-ipjd) in that period; (4) stalled: on the DOB Stalled Construction Sites list (i296-73x5, BIN matched to BBL through DOB permits) or a NB job or foundation permit on the BBL from 2014-01-01 to 2024-11-12 and nothing in the last 24 months; (5) city interim: ownertype C; (6) private idle: the rest. Imagery: NAIP 2022 (New York flight, four bands) from the Planetary Computer; NDVI = (NIR-R)/(NIR+R) over the pixels within a disk at the PLUTO centroid of radius 0.4*sqrt(lot area) capped at 10 m (polygons are used instead if MapPLUTO lot polygons can be fetched for the sampled BBLs); vegetated share = share of pixels with NDVI >= 0.2. Land cover class: vegetated (share >= 0.5), mixed (0.2-0.5), bare or paved (< 0.2). If more than 2,500 lots in high-shooting tracts remain in types 4-6 after the size filter, NAIP is read for a random sample stratified by type and borough and the counts are weighted back. Trial-like (primary): in a high-shooting tract, type 5 or 6, lot area <= 510 m2 (5,490 sq ft), vegetated share >= 0.2. Reported also: the count without the imagery filter, and types 4-6 together. Prevented shootings: shootings (5ucz-vwe8) in 2023-2025, annual mean, within the union of 300 m buffers around the trial-like lots, times 6.8% (2.7 to 10.6) for greening and 9.2% (4.8 to 13.2) for cleanup. The union avoids counting a shooting twice.",
+   "prediction": {
+    "direction": "+",
+    "magnitude": "Land use 11 lots in high-shooting tracts: 2,000 to 3,500. Trial-like share of them: 0.30 (0.18 to 0.45); trial-like number: about 800 (400 to 1,500). Shootings a year within 300 m of trial-like lots: 250 to 450; prevented by greening: about 20 (8 to 40) a year.",
+    "support_if": "The trial-like share lies in 0.18-0.45 and the trial-like number in 400-1,500.",
+    "refute_if": "The trial-like share is below 0.18 or above 0.45. If the share is in range but the number is not, the result is unsettled. The prevented-shootings figure is an estimate and decides nothing."
+   },
+   "alternatives": [
+    "Lots recorded as vacant are held for development and show DOB activity, so few resemble the trial's abandoned lots.",
+    "Small vacant lots in high-shooting tracts are paved for parking or are side yards of adjacent houses, so the imagery filter removes most.",
+    "PLUTO centroids fall on the street or a neighbour's roof for narrow lots, so the NDVI disk misclassifies the lot.",
+    "NDVI cannot see trash or blight; a vegetated lot may be a maintained side lawn, which the trial excluded as insufficiently blighted."
+   ],
+   "prior": 0.45,
+   "registrant": "claude (levers agent, 13 November 2026)",
+   "registered_at": "2026-11-13T13:31:12-0500",
+   "sha256": "31d31f4114ae025178cede169e4da36d9648c5c5dd6438c6eab15c73b7ee90f6"
+  },
+  "registration_path": "claims/registered/levers-vacant-lot-trial-match.json",
+  "registration_sha256": "31d31f4114ae025178cede169e4da36d9648c5c5dd6438c6eab15c73b7ee90f6",
+  "registration_hash_ok": true,
+  "registration_file_sha256": "5aafb8f512f9012d3d0b51f6d160a7cc33e6fe795e20e2fc79053022487e0fea",
+  "registration_commit": {
+   "commit": "2a7c4b4f2124654b88ba6d236bdd5c40191f0bcb",
+   "committed_at": "2026-11-13T13:31:12-05:00",
+   "subject": "register levers-vacant-lot-trial-match (before lot-level DOB, garden, shooting or NAIP data)"
+  },
+  "prereg_branch": {
+   "name": "prereg/levers-vacant-lot-trial-match",
+   "sha": "2a7c4b4f2124654b88ba6d236bdd5c40191f0bcb",
+   "reachable": true,
+   "contains_registration_commit": true
+  },
+  "outcome": {
+   "id": "levers-vacant-lot-trial-match",
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Share of land use 11 lots in the top-decile shooting tracts that resemble the Philadelphia trial lots",
+    "estimate": 0.417,
+    "lo": null,
+    "hi": null,
+    "scale": "share of lots (a count, no sampling interval: every lot was classified)",
+    "null": null,
+    "n": 2678
+   },
+   "graph_effect": {
+    "label": "Moyer et al. 2019: greening, change in shootings near the lot",
+    "estimate": -6.8,
+    "lo": -10.6,
+    "hi": -2.7,
+    "scale": "% change",
+    "null": 0
+   },
+   "sources": [
+    {
+     "kind": "nyc-open-data",
+     "dataset": "64uk-42ks",
+     "name": "Primary Land Use Tax Lot Output (PLUTO)",
+     "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+     "rows_updated_at": "2026-08-24T20:48:51Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "bbl,borough,block,lot,address,lotarea,ownertype,ownername,latitude,longitude,bct2020,pfirm15_flag,bldgclass",
+      "$where": "landuse='11'",
+      "$order": ":id"
+     },
+     "fetched": "2026-11-13T13:31:44-0500",
+     "n_rows": 24663
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "p78i-pat6",
+     "name": "GreenThumb Garden Info",
+     "url": "https://data.cityofnewyork.us/d/p78i-pat6",
+     "rows_updated_at": "2026-11-11T14:02:54Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "bbl,gardenname,status",
+      "$order": ":id"
+     },
+     "fetched": "2026-11-13T13:31:50-0500",
+     "n_rows": 635
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "ipu4-2q9a",
+     "name": "DOB Permit Issuance",
+     "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+     "rows_updated_at": "2026-11-12T00:36:38Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "bbl,bin__,job_type,work_type,issuance_date",
+      "$where": "(job_type in ('NB','DM') or work_type in ('FO','EW')) and issuance_date >= '01/01/2014'",
+      "$order": ":id"
+     },
+     "fetched": "2026-11-13T13:40:47-0500",
+     "n_rows": 671298
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "rbx6-tga4",
+     "name": "DOB NOW: Build – Approved Permits",
+     "url": "https://data.cityofnewyork.us/d/rbx6-tga4",
+     "rows_updated_at": "2026-11-12T19:44:18Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "bbl,bin,work_type,issued_date",
+      "$where": "issued_date >= '2014-01-01' and (work_type in ('New Building','Full Demolition','Foundation','Earth Work','Support of Excavation','Earthwork'))",
+      "$order": ":id"
+     },
+     "fetched": "2026-11-13T13:41:23-0500",
+     "n_rows": 55091
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "ic3t-wcy2",
+     "name": "DOB Job Application Filings",
+     "url": "https://data.cityofnewyork.us/d/ic3t-wcy2",
+     "rows_updated_at": "2026-11-11T23:14:49Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "bbl,bin__,job_type,pre__filing_date",
+      "$where": "job_type='NB'",
+      "$order": ":id"
+     },
+     "fetched": "2026-11-13T13:45:05-0500",
+     "n_rows": 225409
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "w9ak-ipjd",
+     "name": "DOB NOW: Build – Job Application Filings",
+     "url": "https://data.cityofnewyork.us/d/w9ak-ipjd",
+     "rows_updated_at": "2026-11-11T21:29:13Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "bbl,bin,job_type,filing_date",
+      "$where": "job_type='New Building'",
+      "$order": ":id"
+     },
+     "fetched": "2026-11-13T13:45:40-0500",
+     "n_rows": 59107
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "i296-73x5",
+     "name": "DOB Stalled Construction Sites",
+     "url": "https://data.cityofnewyork.us/d/i296-73x5",
+     "rows_updated_at": "2026-11-12T21:01:40Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "bin,date_complaint_received"
+     },
+     "fetched": "2026-11-13T13:47:54-0500",
+     "n_rows": 50000
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "5ucz-vwe8",
+     "name": "Shootings (2006-Present)",
+     "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+     "rows_updated_at": "2026-11-05T20:59:39Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "incident_key,occur_date,occur_time,boro,precinct,latitude,longitude",
+      "$where": "occur_date >= '2023-01-01T00:00:00' and occur_date < '2026-01-01T00:00:00'",
+      "$order": ":id"
+     },
+     "fetched": "2026-11-13T13:38:31-0500",
+     "n_rows": 2566
+    },
+    {
+     "kind": "other",
+     "name": "MapPLUTO lot polygons, DCP ArcGIS feature service",
+     "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/MAPPLUTO/FeatureServer/0/query",
+     "version": [
+      "26v2"
+     ],
+     "fetched": "2026-11-13T13:45:59-0500"
+    },
+    {
+     "kind": "other",
+     "name": "USDA NAIP 2022, New York flight, via Microsoft Planetary Computer STAC (collection naip)",
+     "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+    },
+    {
+     "kind": "literature",
+     "name": "Moyer et al. 2019 AJPH, PMID 30496003"
+    }
+   ],
+   "prediction_scored": "hit. The trial-like share was 0.417 (registered 0.18 to 0.45, central 0.30) and the number 1,116 (registered 400 to 1,500, central 800). Lots in high-shooting tracts: 2,678 (registered 2,000 to 3,500). Shootings within 300 m: 388.0 a year (registered 250 to 450). Prevented by greening: 26.4 (10.5 to 41.1) a year (registered about 20, 8 to 40). The share is near the top of its range.",
+   "settle": "Whether the trial-like lots are blighted as the trial required cannot be seen in NDVI. A street-level survey of a random sample of the 1,116 lots (trash, overgrowth, fencing, use as a side yard) would settle how many qualify; a randomised greening programme in New York would settle whether the Philadelphia effect transfers.",
+   "research_needed": [
+    {
+     "question": "How many of New York's trial-like lots are blighted (trash, overgrowth) rather than maintained side yards or private gardens?",
+     "data": "street-level survey or Street View of a stratified sample",
+     "design": "random sample of the 1,116 lots, two coders",
+     "priority": "high"
+    },
+    {
+     "question": "Does vacant-lot greening reduce shootings in New York, where lots are smaller, denser and more often privately held for development?",
+     "data": "NYPD shootings, the lot list from this claim",
+     "design": "cluster randomised trial with the city's or a charity's lot programme",
+     "priority": "high"
+    },
+    {
+     "question": "Does the effect diminish when many treated lots lie within 300 m of the same shootings?",
+     "data": "Philadelphia trial data by cluster density",
+     "design": "re-analysis",
+     "priority": "medium"
+    }
+   ],
+   "figures": [
+    "figures/levers/map_greening.png",
+    "figures/levers/lot_contact_sheet.png"
+   ],
+   "notes": "All 2,678 land use 11 lots in the 235 tracts with 10 or more shootings in 2019-2024 were classified by records; by type: {'private_idle': 1471, 'city_interim': 668, 'stalled': 281, 'active_development': 258}. No GreenThumb garden and no buyout parcel fell in these tracts (gardens are mostly land use 9). After the size limit of 510 m2, 1,705 private-idle or city-interim lots remained, fewer than the 2,500 at which the plan called for sampling, so NAIP was read for every one (and for the small stalled and active lots, for comparison). Of the small idle lots, NAIP 2022 classed {'vegetated': 720, 'bare_or_paved': 565, 'mixed': 396, 'not_read': 24}. Trial-like lots: 1,116 (owners: {'private': 717, 'city': 304, 'X': 76, 'O': 19}; boroughs: {'BK': 405, 'BX': 274, 'QN': 274, 'SI': 90, 'MN': 73}), 225,620 m2 in all. Without the imagery filter the count is 1,705; adding stalled lots gives 1,252. 388.0 shootings a year (2023-2025) fell within 300 m of a trial-like lot, of 855.3 citywide. At the trial's effects, greening all of them would prevent 26.4 (10.5 to 41.1) shootings a year, cleanup 35.7 (18.6 to 51.2); the intervals are the trial's only and leave out the doubt about transfer. At the trial's costs ($5 per m2, $0.50 per m2 a year) greening would cost about $1,128,102 and $112,810 a year. Two problems were found after the data were read. The shooting dataset (5ucz-vwe8) as fetched has its latitude and longitude columns swapped; the analysis swaps them back. BIS permits for new buildings end in May 2020, so recent development activity rests on DOB NOW foundation, earthwork and demolition permits and on new-building filings. An exploratory visual check of 40 random lot images found that 4 of the 18 lots the rule calls trial-like show a building roof or a maintained ball field, so the count may be about a fifth too high; the share would still lie in the registered range.",
+   "registration_sha256": "31d31f4114ae025178cede169e4da36d9648c5c5dd6438c6eab15c73b7ee90f6",
+   "decided_at": "2026-11-13T13:58:27-0500",
+   "stance": null,
+   "notes_referee": "Referee rebuilt 1,087 of 2,678 (0.406) vs 1,116 (0.417): 42 lots with DOB NOW activity missed by the join. Confirmed stands under rule 1; share 0.31-0.41 under tested choices. Exploratory image check: 28 of 40 screened lots (70%, 55-82%) not vacant blighted land; trial-like share ~0.12, below the registered floor. Rule 9 not met (scripts committed with outcome).",
+   "history": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "Share of land use 11 lots in the top-decile shooting tracts that resemble the Philadelphia trial lots",
+      "estimate": 0.417,
+      "lo": null,
+      "hi": null,
+      "scale": "share of lots (a count, no sampling interval: every lot was classified)",
+      "null": null,
+      "n": 2678
+     },
+     "stance": null,
+     "decided_at": "2026-11-13T13:58:27-0500",
+     "prediction_scored": "hit. The trial-like share was 0.417 (registered 0.18 to 0.45, central 0.30) and the number 1,116 (registered 400 to 1,500, central 800). Lots in high-shooting tracts: 2,678 (registered 2,000 to 3,500). Shootings within 300 m: 388.0 a year (registered 250 to 450). Prevented by greening: 26.4 (10.5 to 41.1) a year (registered about 20, 8 to 40). The share is near the top of its range."
+    }
+   ],
+   "revision": {
+    "reason": "Round 7 referee: verdict kept, reading narrowed",
+    "critique": "critique/levers-vacant-lot-trial-match.md",
+    "revised_at": "2026-11-13T14:42:59-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   }
+  },
+  "outcome_path": "claims/outcomes/levers-vacant-lot-trial-match.json",
+  "outcome_file_sha256": "563e6250824c78eba2e148e5d344bd461f9ae56200adb046dcba9dbcbebb682f",
+  "revision_history": {
+   "in_file": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "Share of land use 11 lots in the top-decile shooting tracts that resemble the Philadelphia trial lots",
+      "estimate": 0.417,
+      "lo": null,
+      "hi": null,
+      "scale": "share of lots (a count, no sampling interval: every lot was classified)",
+      "null": null,
+      "n": 2678
+     },
+     "stance": null,
+     "decided_at": "2026-11-13T13:58:27-0500",
+     "prediction_scored": "hit. The trial-like share was 0.417 (registered 0.18 to 0.45, central 0.30) and the number 1,116 (registered 400 to 1,500, central 800). Lots in high-shooting tracts: 2,678 (registered 2,000 to 3,500). Shootings within 300 m: 388.0 a year (registered 250 to 450). Prevented by greening: 26.4 (10.5 to 41.1) a year (registered about 20, 8 to 40). The share is near the top of its range."
+    }
+   ],
+   "last_revision": {
+    "reason": "Round 7 referee: verdict kept, reading narrowed",
+    "critique": "critique/levers-vacant-lot-trial-match.md",
+    "revised_at": "2026-11-13T14:42:59-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   },
+   "outcome_commits": [
+    {
+     "commit": "79f12e4cfcd4d83cd5773047907073a7990be84b",
+     "committed_at": "2026-11-13T14:42:59-05:00",
+     "subject": "Levers: apply round 7 referee notes on the vacant-lot screen"
+    },
+    {
+     "commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+     "committed_at": "2026-11-13T14:00:26-05:00",
+     "subject": "levers: lever-ranking tool, page and note; outcome levers-vacant-lot-trial-match (confirmed: 1,116 of 2,678 lots, share 0.417)"
+    }
+   ]
+  },
+  "referee_reports": [
+   {
+    "path": "critique/levers-vacant-lot-trial-match.md",
+    "role": "referee report for this claim",
+    "sha256": "a0b739878926a29913eb8203f9b6799ba5bf528792baaea83fec2cbccb2403c6"
+   }
+  ]
+ },
+ "code": {
+  "repo_commit": "47e2f54ff97e1795900c0c186583aeba809d3259",
+  "repo_dirty_paths": 39,
+  "scripts": [
+   {
+    "path": "analyses/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "first_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/levers/lot_test.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "f9bb466841dd07e82f4875fb82546a8810498893",
+    "blob_at_HEAD": "f9bb466841dd07e82f4875fb82546a8810498893",
+    "clean": true,
+    "last_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "first_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "sha256": "cc5a2b8a220511685d71f7b32f965e5138063c93ff419d6c2a08f4c45147f5dd"
+   },
+   {
+    "path": "analyses/levers/lots_fetch.py",
+    "found_by": "rerun recipe (upstream stage, not rerun)",
+    "exists": true,
+    "blob": "09ca2c4b03c232042d4ed5bb250ea70bbc844985",
+    "blob_at_HEAD": "09ca2c4b03c232042d4ed5bb250ea70bbc844985",
+    "clean": true,
+    "last_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "first_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "sha256": "888f3977142b7164d1094e649301f87a7be3ab0a893412953a94039aa2baa699"
+   },
+   {
+    "path": "analyses/levers/lot_ndvi.py",
+    "found_by": "rerun recipe (upstream stage, not rerun)",
+    "exists": true,
+    "blob": "bad79d4690703d94d6d5b468e70fd91c809b81d4",
+    "blob_at_HEAD": "bad79d4690703d94d6d5b468e70fd91c809b81d4",
+    "clean": true,
+    "last_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "first_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "sha256": "aefede9a140460e234d9ae56f930e0f95f66915afa60d0708c2b9e4808fbcf39"
+   },
+   {
+    "path": "analyses/levers/lot_polygons.py",
+    "found_by": "rerun recipe (upstream stage, not rerun)",
+    "exists": true,
+    "blob": "706ee05a9a1d4d0a78392ecc081982f8ba9824b3",
+    "blob_at_HEAD": "706ee05a9a1d4d0a78392ecc081982f8ba9824b3",
+    "clean": true,
+    "last_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "first_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "sha256": "593bc4b8c28a56213a8f76dc76d854e73bb11e4cd8bfd1e40dc0f8682fb20960"
+   },
+   {
+    "path": "analyses/levers/city_metrics.py",
+    "found_by": "rerun recipe (upstream stage, not rerun)",
+    "exists": true,
+    "blob": "cbde0a04e0d9eefaa2565d9b0441b4ed2094f8fb",
+    "blob_at_HEAD": "cbde0a04e0d9eefaa2565d9b0441b4ed2094f8fb",
+    "clean": true,
+    "last_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "first_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "sha256": "14721ac34b619c51901ff6a2be1f69aeaf055c072513488def8b0285ed0e5b20"
+   },
+   {
+    "path": "analyses/levers/outcome_lots.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "60bc9739ee30d9432041387de1fdefbb0a8d2814",
+    "blob_at_HEAD": "60bc9739ee30d9432041387de1fdefbb0a8d2814",
+    "clean": true,
+    "last_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "first_commit": "f09bc0cf828f80207e6c2508f7d089681bcbc9c2",
+    "sha256": "9b4e54c65e64c7e6adae58ed74d7625a17e75614e70a9604dbc204b590441e83"
+   },
+   {
+    "path": "analyses/levers/register_lots.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "54f166efa07a306ced36fd3bdfb1f4e6fbc43036",
+    "blob_at_HEAD": "54f166efa07a306ced36fd3bdfb1f4e6fbc43036",
+    "clean": true,
+    "last_commit": "2a7c4b4f2124654b88ba6d236bdd5c40191f0bcb",
+    "first_commit": "2a7c4b4f2124654b88ba6d236bdd5c40191f0bcb",
+    "sha256": "569ded94c54c40466ffe44def4fa14b4c4450f74df67b23dec8c317ce0acb5b2"
+   }
+  ],
+  "seeds": [],
+  "draw_counts": [],
+  "commits_named_in_registration": [],
+  "procedure_note": "The registration names no seed and no resampling draw count; the deciding number is deterministic given the inputs."
+ },
+ "data": [
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "64uk-42ks",
+    "name": "Primary Land Use Tax Lot Output (PLUTO)",
+    "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+    "rows_updated_at": "2026-08-24T20:48:51Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "bbl,borough,block,lot,address,lotarea,ownertype,ownername,latitude,longitude,bct2020,pfirm15_flag,bldgclass",
+     "$where": "landuse='11'",
+     "$order": ":id"
+    },
+    "fetched": "2026-11-13T13:31:44-0500",
+    "n_rows": 24663
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "bbl,borough,block,lot,address,lotarea,ownertype,ownername,latitude,longitude,bct2020,pfirm15_flag,bldgclass",
+    "$where": "landuse='11'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:31:44-0500",
+   "n_rows": 24663,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/64uk-42ks-3db7d0f5fd616e7b8dfe6b53.json",
+     "sha256": "1c71cebf72d90a1cc0a2a30e103dae7a3c1ff9c4659fe92615249764c0a3bd54",
+     "rows_sha256": "0c9a447f91e1582e8ebd0110b2acdf097a36b11e3fbd9bd2b39c18028105b0c9",
+     "bytes": 6770338,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "p78i-pat6",
+    "name": "GreenThumb Garden Info",
+    "url": "https://data.cityofnewyork.us/d/p78i-pat6",
+    "rows_updated_at": "2026-11-11T14:02:54Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "bbl,gardenname,status",
+     "$order": ":id"
+    },
+    "fetched": "2026-11-13T13:31:50-0500",
+    "n_rows": 635
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "p78i-pat6",
+   "rows_updated_at": "2026-11-11T14:02:54Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "bbl,gardenname,status",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:31:50-0500",
+   "n_rows": 635,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/p78i-pat6-26acadb5d32a002bbddcb958.json",
+     "sha256": "dddb2c497b1d08bb7a2f69155d6d7fdb5ddab8ea0df4c46f1d28a0b314e3c164",
+     "rows_sha256": "3543c3244fad733786abc4dab485a61659734e253f6aeede3d4018e692b63180",
+     "bytes": 57747,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "ipu4-2q9a",
+    "name": "DOB Permit Issuance",
+    "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+    "rows_updated_at": "2026-11-12T00:36:38Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "bbl,bin__,job_type,work_type,issuance_date",
+     "$where": "(job_type in ('NB','DM') or work_type in ('FO','EW')) and issuance_date >= '01/01/2014'",
+     "$order": ":id"
+    },
+    "fetched": "2026-11-13T13:40:47-0500",
+    "n_rows": 671298
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "ipu4-2q9a",
+   "rows_updated_at": "2026-11-12T00:36:38Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "bbl,bin__,job_type,work_type,issuance_date",
+    "$where": "(job_type in ('NB','DM') or work_type in ('FO','EW')) and issuance_date >= '01/01/2014'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:40:47-0500",
+   "n_rows": 671298,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-c6868813a9236c5306426819.json",
+     "sha256": "330ad9654f054fca64e9cafe276ce37f99ae45f5e0e3844b8c950ad32076b75e",
+     "rows_sha256": "070fc0d248d11776e99c11217f1d15bcccc3f79702d088c278ca77cceae9c1b4",
+     "bytes": 4700942,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-1a445c79476c26075a5803cc.json",
+     "sha256": "677af1fbc0f03c5b105557d4d7bb7d2b66714e47b0b29d49c6d77c4bbc5f8ed1",
+     "rows_sha256": "37ca8357f2353817a692419eced49def9ebe0ecad10883da5ace9a027b5653f0",
+     "bytes": 5041071,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-248fa6b4855775b192679ed7.json",
+     "sha256": "1164a71a1e0e0c9a1ebda081f9f85be509e40732d713562049fc7a46ddeec0ed",
+     "rows_sha256": "8c36408f065dcfb54f3f03443f3ad71e01db48e46b5f2d6c7524ffa1a20485a3",
+     "bytes": 5035249,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-1325dcfe5fd142b0d59ff7bf.json",
+     "sha256": "3516a42471abf7543eabe946276bd1217cef6cfb688fbd3ea37779f2fe875809",
+     "rows_sha256": "ced23dd8096325182ee7cbb8ca839b8cbc461e34a80573778bf90a14fca8bd67",
+     "bytes": 5039087,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-38a3e078f3f17f04f741098e.json",
+     "sha256": "5a89ff70406f527b45e04ff0f76f39ca716789be0d9865cf93286e03dad51f8b",
+     "rows_sha256": "aef148af873be3e7b8fa7e91e4a2496087270a2cfadd1711945d09a2eb5aec38",
+     "bytes": 5064682,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-cd8b1ffcc9abd4adbd2602be.json",
+     "sha256": "9837c2100172364142f6dbe96713160dff785359aa9cbe749dc62a0f8002f519",
+     "rows_sha256": "9e495e7a909796c9829d3329a6bd7dd977921fa61b1b1d3db88299f69a515506",
+     "bytes": 5074891,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-b650cf65a56fc70d55429633.json",
+     "sha256": "7767796c855fcc57fc4060862e91f294adbc0da4f314e612df9a20df5ac8154c",
+     "rows_sha256": "3a9fb41cacc20b7abfbcc3c119ee2eda23fd1b5290358ca615901a393b8e26ef",
+     "bytes": 5044376,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-21e4e075710b29d342877cde.json",
+     "sha256": "0890bcea4d73a74af542b1d11ebc35c65f463715cc9fac21a99ff798c75535d9",
+     "rows_sha256": "455b5739ca393bc3b7fa399488ab913d072e81bf7aa86cae8ebec923d10d89ef",
+     "bytes": 4999832,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-47bfe23209e828a3afe8af80.json",
+     "sha256": "35312eb3fca26d280619433d50f3e92b15dc12d7ed6efbd7167104180a003470",
+     "rows_sha256": "74168eeedbe790087b890c1763a380fe850fb1b747c01f72a212f01f803abc58",
+     "bytes": 4976467,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-b2c5e0ef17eb307f3e11e68f.json",
+     "sha256": "40d68f34cfe878042ea34e19cb8b5006c422bb30843f3b694b94a2fc4cd9a8b9",
+     "rows_sha256": "6732c5241928d6cb84b37ad02bbd6945416b3faf751e3800c184cd4472367a41",
+     "bytes": 4938485,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-eddb33a7380e36c4a0755d49.json",
+     "sha256": "4c677448fb3d3de41c30c4ca885460f8a13ed42f986798eb225efe920a13ec31",
+     "rows_sha256": "8536a3a4af1d70e7dc4782c0e69530053580d141013318298959aa16b22ff62b",
+     "bytes": 4815467,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-86eaaa188b4936958b5797dc.json",
+     "sha256": "fc0a30cd4a28faed781a85409324de702d0d6cc2563e82e7f4af26d4e39fe07f",
+     "rows_sha256": "85fec416be90de4d5c4556dfb300b2bccf5fb4be57d5314a8a320d34d7d18dc2",
+     "bytes": 4949730,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-37118a4844ce6c8229080a01.json",
+     "sha256": "f5324d4aedc1e84a979a31d289fb163d1a0ee7ba0fc4fe0396f0d0c7823bd4ea",
+     "rows_sha256": "e072a8b0abb2414a16c0168afc40d956c793cbdbeafa58e32fdab57cbe050e4c",
+     "bytes": 5018258,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ipu4-2q9a-e0fc20cbf637a6e6dde04c9c.json",
+     "sha256": "defcbf7d7f4949235d3c47965645335795658945a19f78c3ab1673e14d356a2b",
+     "rows_sha256": "52351b1ba343150b6b31793e8d8ed75bfc8490727948fd6cc346c8e8e1e6e5aa",
+     "bytes": 2138154,
+     "copied": false
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "rbx6-tga4",
+    "name": "DOB NOW: Build – Approved Permits",
+    "url": "https://data.cityofnewyork.us/d/rbx6-tga4",
+    "rows_updated_at": "2026-11-12T19:44:18Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "bbl,bin,work_type,issued_date",
+     "$where": "issued_date >= '2014-01-01' and (work_type in ('New Building','Full Demolition','Foundation','Earth Work','Support of Excavation','Earthwork'))",
+     "$order": ":id"
+    },
+    "fetched": "2026-11-13T13:41:23-0500",
+    "n_rows": 55091
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "rbx6-tga4",
+   "rows_updated_at": "2026-11-12T19:44:18Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "bbl,bin,work_type,issued_date",
+    "$where": "issued_date >= '2014-01-01' and (work_type in ('New Building','Full Demolition','Foundation','Earth Work','Support of Excavation','Earthwork'))",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:41:23-0500",
+   "n_rows": 55091,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/rbx6-tga4-5d119329304bae40abc0caf6.json",
+     "sha256": "a619921217c86220f5013bb6d36448a18c69d70873079bf62d1b88a30e6c755e",
+     "rows_sha256": "ba0196311d5751b9f8f78b366166505c3a0acce9992f5ae3aaa2f6914d94423c",
+     "bytes": 5492010,
+     "copied": true
+    },
+    {
+     "path": "data/cache/socrata/rbx6-tga4-2b78aa4b73eac501277d7e66.json",
+     "sha256": "c69bbefd8b1f3cc25cae633f9dbca565ad3283ec643c1b52a8e37d513153a12f",
+     "rows_sha256": "460eb0d0a72cc932717fa5f8a1e0497eee093ecea960d609e80231cb65cf5cd1",
+     "bytes": 559825,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "ic3t-wcy2",
+    "name": "DOB Job Application Filings",
+    "url": "https://data.cityofnewyork.us/d/ic3t-wcy2",
+    "rows_updated_at": "2026-11-11T23:14:49Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "bbl,bin__,job_type,pre__filing_date",
+     "$where": "job_type='NB'",
+     "$order": ":id"
+    },
+    "fetched": "2026-11-13T13:45:05-0500",
+    "n_rows": 225409
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "ic3t-wcy2",
+   "rows_updated_at": "2026-11-11T23:14:49Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "bbl,bin__,job_type,pre__filing_date",
+    "$where": "job_type='NB'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:45:05-0500",
+   "n_rows": 225409,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/ic3t-wcy2-1f77ab4f4e24a6b409001ca3.json",
+     "sha256": "6e6fbdb0b24fb0447ce880f11fa1d01e47db4e5702e8fe2b0186acc8fd6cc6e3",
+     "rows_sha256": "a319c2155eb5c36dbb6dc38aad9d793dbcfdfd124bb9d0e28a36d658c2b10c7a",
+     "bytes": 4661657,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ic3t-wcy2-e0418a024bebfde8d4b2c8c5.json",
+     "sha256": "1caf630ea1d0f20c41d0874ba99d5132b955fa8d3075534145804d4a3933d344",
+     "rows_sha256": "3e4ef2406290bfee7e5b95f58e51c61d5a81f2d2dda5f4a0ba003f45d96447e1",
+     "bytes": 4683261,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ic3t-wcy2-32957b9071f6708fdd03fcbf.json",
+     "sha256": "a50367f97f1c4a9291f3a98bf2b1b9fedf2b7e261cb7257f2e55095f9ededbf9",
+     "rows_sha256": "d5ab211da324848212356ae05f437ca0fb561147ee56f29e6b2c92119b3d4821",
+     "bytes": 4635497,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ic3t-wcy2-0144e6dee087f28430dfe15a.json",
+     "sha256": "89fab5b0485da5645570356338a71865a49f34d824d926df3c269eed8f3265f0",
+     "rows_sha256": "d7953e98c4ad4e959b0b384d8a08a5f55f96ebe71b2ff3a25d493231feec97e2",
+     "bytes": 4719707,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/ic3t-wcy2-5fcbeb4b623a0ad184b55fe5.json",
+     "sha256": "cf06a291f69dcb1bfee73e6258cceef31bfb462ff68832fb60decefd75c49ad6",
+     "rows_sha256": "bbc26848b0f3b9a22bcb2149a4ec9a51859caabc440f046078449c2c1ffba188",
+     "bytes": 2396239,
+     "copied": false
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "w9ak-ipjd",
+    "name": "DOB NOW: Build – Job Application Filings",
+    "url": "https://data.cityofnewyork.us/d/w9ak-ipjd",
+    "rows_updated_at": "2026-11-11T21:29:13Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "bbl,bin,job_type,filing_date",
+     "$where": "job_type='New Building'",
+     "$order": ":id"
+    },
+    "fetched": "2026-11-13T13:45:40-0500",
+    "n_rows": 59107
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "w9ak-ipjd",
+   "rows_updated_at": "2026-11-11T21:29:13Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "bbl,bin,job_type,filing_date",
+    "$where": "job_type='New Building'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:45:40-0500",
+   "n_rows": 59107,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/w9ak-ipjd-955f8b932e7ff4281a1c858b.json",
+     "sha256": "36f67fe587b5fc62a9f0856376ee83f1e5746536ae5b08992202555864894bfa",
+     "rows_sha256": "540b581819b661b13c6f5ba9f450aac7393bca2d1c0687724f68a4a18b49f40d",
+     "bytes": 5370700,
+     "copied": false
+    },
+    {
+     "path": "data/cache/socrata/w9ak-ipjd-c54ce1170aac9d7b0f8ccebd.json",
+     "sha256": "af375908005729f2036dfe399735e2b55618dc279680d091ab7be71f0a3bd5cf",
+     "rows_sha256": "0101c6b681de07c261748a28ba27006c537a5d23723d83fe78ad6ef8e2f6030c",
+     "bytes": 979462,
+     "copied": false
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "i296-73x5",
+    "name": "DOB Stalled Construction Sites",
+    "url": "https://data.cityofnewyork.us/d/i296-73x5",
+    "rows_updated_at": "2026-11-12T21:01:40Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "bin,date_complaint_received"
+    },
+    "fetched": "2026-11-13T13:47:54-0500",
+    "n_rows": 50000
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "i296-73x5",
+   "rows_updated_at": "2026-11-12T21:01:40Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "bin,date_complaint_received"
+   },
+   "fetched": "2026-11-13T13:47:54-0500",
+   "n_rows": 50000,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/i296-73x5-9f61fb094fdb89a6180f670e.json",
+     "sha256": "3c2ae2cd6ff88ccfa4a50b919a3554be2485b8d836e95c5aa512e81a748da754",
+     "rows_sha256": "41d102c98cda5790b62f860a195ad799c08c5626a7cd9ead439f18ec44013f1b",
+     "bytes": 3700334,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "5ucz-vwe8",
+    "name": "Shootings (2006-Present)",
+    "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+    "rows_updated_at": "2026-11-05T20:59:39Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "incident_key,occur_date,occur_time,boro,precinct,latitude,longitude",
+     "$where": "occur_date >= '2023-01-01T00:00:00' and occur_date < '2026-01-01T00:00:00'",
+     "$order": ":id"
+    },
+    "fetched": "2026-11-13T13:38:31-0500",
+    "n_rows": 2566
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "incident_key,occur_date,occur_time,boro,precinct,latitude,longitude",
+    "$where": "occur_date >= '2023-01-01T00:00:00' and occur_date < '2026-01-01T00:00:00'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:38:31-0500",
+   "n_rows": 2566,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/5ucz-vwe8-14bf5f652b48329006f36c5c.json",
+     "sha256": "c3a527e074eedbedd6719d7b3351f228ea8a7dbee863de57384b3178fd843366",
+     "rows_sha256": "7a2ffa35f6c0c1c58cff99b3c47d63385e1f62eeea74b02710d35c859e4c66ea",
+     "bytes": 490072,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "other",
+   "record": {
+    "kind": "other",
+    "name": "MapPLUTO lot polygons, DCP ArcGIS feature service",
+    "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/MAPPLUTO/FeatureServer/0/query",
+    "version": [
+     "26v2"
+    ],
+    "fetched": "2026-11-13T13:45:59-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "other",
+   "record": {
+    "kind": "other",
+    "name": "USDA NAIP 2022, New York flight, via Microsoft Planetary Computer STAC (collection naip)",
+    "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "literature",
+   "record": {
+    "kind": "literature",
+    "name": "Moyer et al. 2019 AJPH, PMID 30496003"
+   },
+   "type": "pointer"
+  },
+  {
+   "type": "upstream-file",
+   "role": "source records of lots_records.csv",
+   "path": "data/derived/levers/lots_sources.json",
+   "sha256": "b0139339bcd33c62876e3b9b06b4d2ce3cec69af65bbc7cd5e15ada6685339ff",
+   "bytes": 3471,
+   "copied": true
+  },
+  {
+   "type": "upstream-file",
+   "role": "source record of the MapPLUTO polygons",
+   "path": "data/derived/levers/lot_polygons_source.json",
+   "sha256": "8b4c576584b2d8158699de6ac290d66382427ec9c269da645561610d5fd696c8",
+   "bytes": 281,
+   "copied": true
+  },
+  {
+   "type": "upstream-file",
+   "role": "tract shooting counts read by lots_fetch.py",
+   "path": "data/derived/neighbourhood/vacant_shootings_tracts.csv",
+   "sha256": "9963a7ed2287d7a98bbb54c4eb392686b5e31442cfc6297383098151441107dc",
+   "bytes": 1176768,
+   "copied": false
+  },
+  {
+   "type": "big-file",
+   "role": "MapPLUTO 26v2 lot polygons read by lot_ndvi.py",
+   "path": "~/opt/nyc-concordance/levers/lu11_polygons.geojson",
+   "bytes": 13581012,
+   "sha256": "a4b924f65193473ee9abe1bd9d4539831c3986220063a19e9469e790a998ced8"
+  }
+ ],
+ "environment": {
+  "python": "3.12.10 (main, Apr  9 2025, 03:49:38) [Clang 20.1.0 ]",
+  "venv": "~/.venvs/nyc-concordance",
+  "uv_pip_freeze": [
+   "affine==3.0.1",
+   "annotated-types==0.8.0",
+   "attrs==26.1.0",
+   "certifi==2026.10.23",
+   "charset-normalizer==3.5.2",
+   "click==8.5.1",
+   "contourpy==1.4.0",
+   "cycler==0.12.1",
+   "duckdb==2.0.0",
+   "fonttools==4.68.0",
+   "formulaic==1.2.2",
+   "geopandas==1.2.0",
+   "idna==3.20",
+   "interface-meta==2.0.1",
+   "jsonschema==4.26.0",
+   "jsonschema-specifications==2025.9.1",
+   "kiwisolver==1.5.1",
+   "matplotlib==3.11.2",
+   "mercantile==1.2.1",
+   "narwhals==2.28.0",
+   "numpy==2.5.4",
+   "packaging==26.3",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pillow==13.0.0",
+   "planetary-computer==1.0.0",
+   "pyarrow==26.0.1",
+   "pydantic==2.14.3",
+   "pydantic-core==2.50.4",
+   "pyogrio==0.13.0",
+   "pyparsing==3.3.3",
+   "pyproj==3.8.0",
+   "pystac==1.16.0",
+   "pystac-client==0.9.1",
+   "pystac-core==1.16.0",
+   "pystac-ext-classification==2.0.2",
+   "pystac-ext-datacube==2.2.2",
+   "pystac-ext-eo==1.1.2",
+   "pystac-ext-file==2.1.2",
+   "pystac-ext-grid==1.1.2",
+   "pystac-ext-item-assets==1.0.2",
+   "pystac-ext-label==1.0.3",
+   "pystac-ext-mgrs==1.0.2",
+   "pystac-ext-mlm==1.4.2",
+   "pystac-ext-pointcloud==1.0.2",
+   "pystac-ext-projection==2.0.2",
+   "pystac-ext-raster==1.1.2",
+   "pystac-ext-render==2.0.1",
+   "pystac-ext-sar==1.0.2",
+   "pystac-ext-sat==1.0.2",
+   "pystac-ext-scientific==1.0.2",
+   "pystac-ext-storage==2.0.2",
+   "pystac-ext-table==1.2.2",
+   "pystac-ext-timestamps==1.1.2",
+   "pystac-ext-version==1.2.2",
+   "pystac-ext-view==1.0.2",
+   "pystac-ext-xarray-assets==1.0.2",
+   "python-dateutil==4.0.0",
+   "python-dotenv==1.2.4",
+   "pytz==2026.6",
+   "rasterio==1.5.2",
+   "referencing==0.37.0",
+   "requests==2.34.2",
+   "rpds-py==2026.9.1",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0",
+   "typing-extensions==4.16.0",
+   "typing-inspection==0.4.5",
+   "tzdata==2026.6",
+   "urllib3==2.8.0",
+   "wrapt==2.5.2"
+  ],
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "os": "Darwin 27.2.0",
+  "mac_ver": "27.2.1",
+  "requirements": [
+   "geopandas==1.2.0",
+   "numpy==2.5.4",
+   "pandas==3.1.1",
+   "pyogrio==0.13.0",
+   "pyproj==3.8.0",
+   "requests==2.34.2",
+   "shapely==2.2.0"
+  ]
+ },
+ "inputs": {
+  "cap_bytes": 20971520,
+  "copied_bytes": 20925742,
+  "files": [
+   {
+    "path": "data/derived/levers/lots_records.csv",
+    "bytes": 3169822,
+    "sha256": "9f693f7793e255b099337be0c612627bc5ae6390ca0336532d08c1f9e2149b3e",
+    "role": "derived table read by the rerun",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/levers/lots_naip.csv",
+    "bytes": 479580,
+    "sha256": "cf50d3308ced91a3369f83355b796c9141e76ae5144a77db7fc6610568da95ef",
+    "role": "derived table read by the rerun",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/levers/shootings_2023_2025.csv",
+    "bytes": 202262,
+    "sha256": "40060096e10dda1f132b65b8672c6748dc33514818e09fdb2e24a19de20422d8",
+    "role": "derived table read by the rerun",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/socrata/64uk-42ks-3db7d0f5fd616e7b8dfe6b53.json",
+    "bytes": 6770338,
+    "sha256": "1c71cebf72d90a1cc0a2a30e103dae7a3c1ff9c4659fe92615249764c0a3bd54",
+    "role": "cached Socrata response, 64uk-42ks",
+    "rows_sha256": "0c9a447f91e1582e8ebd0110b2acdf097a36b11e3fbd9bd2b39c18028105b0c9",
+    "n_rows": 24663,
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/p78i-pat6-26acadb5d32a002bbddcb958.json",
+    "bytes": 57747,
+    "sha256": "dddb2c497b1d08bb7a2f69155d6d7fdb5ddab8ea0df4c46f1d28a0b314e3c164",
+    "role": "cached Socrata response, p78i-pat6",
+    "rows_sha256": "3543c3244fad733786abc4dab485a61659734e253f6aeede3d4018e692b63180",
+    "n_rows": 635,
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-c6868813a9236c5306426819.json",
+    "bytes": 4700942,
+    "sha256": "330ad9654f054fca64e9cafe276ce37f99ae45f5e0e3844b8c950ad32076b75e",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "070fc0d248d11776e99c11217f1d15bcccc3f79702d088c278ca77cceae9c1b4",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-1a445c79476c26075a5803cc.json",
+    "bytes": 5041071,
+    "sha256": "677af1fbc0f03c5b105557d4d7bb7d2b66714e47b0b29d49c6d77c4bbc5f8ed1",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "37ca8357f2353817a692419eced49def9ebe0ecad10883da5ace9a027b5653f0",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-248fa6b4855775b192679ed7.json",
+    "bytes": 5035249,
+    "sha256": "1164a71a1e0e0c9a1ebda081f9f85be509e40732d713562049fc7a46ddeec0ed",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "8c36408f065dcfb54f3f03443f3ad71e01db48e46b5f2d6c7524ffa1a20485a3",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-1325dcfe5fd142b0d59ff7bf.json",
+    "bytes": 5039087,
+    "sha256": "3516a42471abf7543eabe946276bd1217cef6cfb688fbd3ea37779f2fe875809",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "ced23dd8096325182ee7cbb8ca839b8cbc461e34a80573778bf90a14fca8bd67",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-38a3e078f3f17f04f741098e.json",
+    "bytes": 5064682,
+    "sha256": "5a89ff70406f527b45e04ff0f76f39ca716789be0d9865cf93286e03dad51f8b",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "aef148af873be3e7b8fa7e91e4a2496087270a2cfadd1711945d09a2eb5aec38",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-cd8b1ffcc9abd4adbd2602be.json",
+    "bytes": 5074891,
+    "sha256": "9837c2100172364142f6dbe96713160dff785359aa9cbe749dc62a0f8002f519",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "9e495e7a909796c9829d3329a6bd7dd977921fa61b1b1d3db88299f69a515506",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-b650cf65a56fc70d55429633.json",
+    "bytes": 5044376,
+    "sha256": "7767796c855fcc57fc4060862e91f294adbc0da4f314e612df9a20df5ac8154c",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "3a9fb41cacc20b7abfbcc3c119ee2eda23fd1b5290358ca615901a393b8e26ef",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-21e4e075710b29d342877cde.json",
+    "bytes": 4999832,
+    "sha256": "0890bcea4d73a74af542b1d11ebc35c65f463715cc9fac21a99ff798c75535d9",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "455b5739ca393bc3b7fa399488ab913d072e81bf7aa86cae8ebec923d10d89ef",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-47bfe23209e828a3afe8af80.json",
+    "bytes": 4976467,
+    "sha256": "35312eb3fca26d280619433d50f3e92b15dc12d7ed6efbd7167104180a003470",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "74168eeedbe790087b890c1763a380fe850fb1b747c01f72a212f01f803abc58",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-b2c5e0ef17eb307f3e11e68f.json",
+    "bytes": 4938485,
+    "sha256": "40d68f34cfe878042ea34e19cb8b5006c422bb30843f3b694b94a2fc4cd9a8b9",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "6732c5241928d6cb84b37ad02bbd6945416b3faf751e3800c184cd4472367a41",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-eddb33a7380e36c4a0755d49.json",
+    "bytes": 4815467,
+    "sha256": "4c677448fb3d3de41c30c4ca885460f8a13ed42f986798eb225efe920a13ec31",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "8536a3a4af1d70e7dc4782c0e69530053580d141013318298959aa16b22ff62b",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-86eaaa188b4936958b5797dc.json",
+    "bytes": 4949730,
+    "sha256": "fc0a30cd4a28faed781a85409324de702d0d6cc2563e82e7f4af26d4e39fe07f",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "85fec416be90de4d5c4556dfb300b2bccf5fb4be57d5314a8a320d34d7d18dc2",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-37118a4844ce6c8229080a01.json",
+    "bytes": 5018258,
+    "sha256": "f5324d4aedc1e84a979a31d289fb163d1a0ee7ba0fc4fe0396f0d0c7823bd4ea",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "e072a8b0abb2414a16c0168afc40d956c793cbdbeafa58e32fdab57cbe050e4c",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ipu4-2q9a-e0fc20cbf637a6e6dde04c9c.json",
+    "bytes": 2138154,
+    "sha256": "defcbf7d7f4949235d3c47965645335795658945a19f78c3ab1673e14d356a2b",
+    "role": "cached Socrata response, ipu4-2q9a",
+    "rows_sha256": "52351b1ba343150b6b31793e8d8ed75bfc8490727948fd6cc346c8e8e1e6e5aa",
+    "n_rows": 21298,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 63.7 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/rbx6-tga4-5d119329304bae40abc0caf6.json",
+    "bytes": 5492010,
+    "sha256": "a619921217c86220f5013bb6d36448a18c69d70873079bf62d1b88a30e6c755e",
+    "role": "cached Socrata response, rbx6-tga4",
+    "rows_sha256": "ba0196311d5751b9f8f78b366166505c3a0acce9992f5ae3aaa2f6914d94423c",
+    "n_rows": 50000,
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/rbx6-tga4-2b78aa4b73eac501277d7e66.json",
+    "bytes": 559825,
+    "sha256": "c69bbefd8b1f3cc25cae633f9dbca565ad3283ec643c1b52a8e37d513153a12f",
+    "role": "cached Socrata response, rbx6-tga4",
+    "rows_sha256": "460eb0d0a72cc932717fa5f8a1e0497eee093ecea960d609e80231cb65cf5cd1",
+    "n_rows": 5091,
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ic3t-wcy2-1f77ab4f4e24a6b409001ca3.json",
+    "bytes": 4661657,
+    "sha256": "6e6fbdb0b24fb0447ce880f11fa1d01e47db4e5702e8fe2b0186acc8fd6cc6e3",
+    "role": "cached Socrata response, ic3t-wcy2",
+    "rows_sha256": "a319c2155eb5c36dbb6dc38aad9d793dbcfdfd124bb9d0e28a36d658c2b10c7a",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 20.1 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ic3t-wcy2-e0418a024bebfde8d4b2c8c5.json",
+    "bytes": 4683261,
+    "sha256": "1caf630ea1d0f20c41d0874ba99d5132b955fa8d3075534145804d4a3933d344",
+    "role": "cached Socrata response, ic3t-wcy2",
+    "rows_sha256": "3e4ef2406290bfee7e5b95f58e51c61d5a81f2d2dda5f4a0ba003f45d96447e1",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 20.1 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ic3t-wcy2-32957b9071f6708fdd03fcbf.json",
+    "bytes": 4635497,
+    "sha256": "a50367f97f1c4a9291f3a98bf2b1b9fedf2b7e261cb7257f2e55095f9ededbf9",
+    "role": "cached Socrata response, ic3t-wcy2",
+    "rows_sha256": "d5ab211da324848212356ae05f437ca0fb561147ee56f29e6b2c92119b3d4821",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 20.1 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ic3t-wcy2-0144e6dee087f28430dfe15a.json",
+    "bytes": 4719707,
+    "sha256": "89fab5b0485da5645570356338a71865a49f34d824d926df3c269eed8f3265f0",
+    "role": "cached Socrata response, ic3t-wcy2",
+    "rows_sha256": "d7953e98c4ad4e959b0b384d8a08a5f55f96ebe71b2ff3a25d493231feec97e2",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 20.1 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/ic3t-wcy2-5fcbeb4b623a0ad184b55fe5.json",
+    "bytes": 2396239,
+    "sha256": "cf06a291f69dcb1bfee73e6258cceef31bfb462ff68832fb60decefd75c49ad6",
+    "role": "cached Socrata response, ic3t-wcy2",
+    "rows_sha256": "bbc26848b0f3b9a22bcb2149a4ec9a51859caabc440f046078449c2c1ffba188",
+    "n_rows": 25409,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 20.1 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/w9ak-ipjd-955f8b932e7ff4281a1c858b.json",
+    "bytes": 5370700,
+    "sha256": "36f67fe587b5fc62a9f0856376ee83f1e5746536ae5b08992202555864894bfa",
+    "role": "cached Socrata response, w9ak-ipjd",
+    "rows_sha256": "540b581819b661b13c6f5ba9f450aac7393bca2d1c0687724f68a4a18b49f40d",
+    "n_rows": 50000,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 6.1 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/w9ak-ipjd-c54ce1170aac9d7b0f8ccebd.json",
+    "bytes": 979462,
+    "sha256": "af375908005729f2036dfe399735e2b55618dc279680d091ab7be71f0a3bd5cf",
+    "role": "cached Socrata response, w9ak-ipjd",
+    "rows_sha256": "0101c6b681de07c261748a28ba27006c537a5d23723d83fe78ad6ef8e2f6030c",
+    "n_rows": 9107,
+    "copied": false,
+    "why_not_copied": "the pages of this query total 6.1 MB, over the remaining cap",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/i296-73x5-9f61fb094fdb89a6180f670e.json",
+    "bytes": 3700334,
+    "sha256": "3c2ae2cd6ff88ccfa4a50b919a3554be2485b8d836e95c5aa512e81a748da754",
+    "role": "cached Socrata response, i296-73x5",
+    "rows_sha256": "41d102c98cda5790b62f860a195ad799c08c5626a7cd9ead439f18ec44013f1b",
+    "n_rows": 50000,
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/socrata/5ucz-vwe8-14bf5f652b48329006f36c5c.json",
+    "bytes": 490072,
+    "sha256": "c3a527e074eedbedd6719d7b3351f228ea8a7dbee863de57384b3178fd843366",
+    "role": "cached Socrata response, 5ucz-vwe8",
+    "rows_sha256": "7a2ffa35f6c0c1c58cff99b3c47d63385e1f62eeea74b02710d35c859e4c66ea",
+    "n_rows": 2566,
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/derived/levers/lots_sources.json",
+    "bytes": 3471,
+    "sha256": "b0139339bcd33c62876e3b9b06b4d2ce3cec69af65bbc7cd5e15ada6685339ff",
+    "role": "source records of lots_records.csv",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/derived/levers/lot_polygons_source.json",
+    "bytes": 281,
+    "sha256": "8b4c576584b2d8158699de6ac290d66382427ec9c269da645561610d5fd696c8",
+    "role": "source record of the MapPLUTO polygons",
+    "copied": true,
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/derived/neighbourhood/vacant_shootings_tracts.csv",
+    "bytes": 1176768,
+    "sha256": "9963a7ed2287d7a98bbb54c4eb392686b5e31442cfc6297383098151441107dc",
+    "role": "tract shooting counts read by lots_fetch.py",
+    "copied": false,
+    "why_not_copied": "over the 20 MB cap (1.1 MB)",
+    "required_for_rerun": false
+   }
+  ]
+ },
+ "deciding": {
+  "available": true,
+  "what": "trial-like share of land use 11 lots in high-shooting tracts (a count ratio; no sampling interval)",
+  "recorded": {
+   "estimate": 0.417,
+   "n": 2678,
+   "trial_like_n": 1116
+  },
+  "tolerance": {
+   "estimate": 0.0005,
+   "n": 0,
+   "trial_like_n": 0
+  },
+  "decides": "support_if: share in 0.18-0.45 and number in 400-1,500",
+  "recorded_from": {
+   "city_effect": "claims/outcomes/levers-vacant-lot-trial-match.json",
+   "trial_like_n": "outcome prediction_scored ('the number 1,116')"
+  },
+  "wrapper": "code/rerun.py",
+  "wrapper_note": "Smallest wrapper: lot_test.py reads and writes data/derived/levers/ inside the repository, so code/rerun.py copies its three input tables to work/levers/ and sets lot_test.D there. The registration's statement says 'about three in ten' and 'on the order of 20 shootings a year'; those are its central guesses. The verdict turns on the registered range of the share (0.18 to 0.45) and of the count (400 to 1,500). The rerun also prints the shootings a year within 300 m of the trial-like lots (388.0), from which the outcome derives 26.4 prevented a year at the trial's 6.8% effect; that figure decides nothing.",
+  "refetch_rerun": false
+ },
+ "not_rebuilt": [
+  {
+   "table": "data/derived/levers/lots_records.csv",
+   "built_by": "analyses/levers/lots_fetch.py",
+   "why_not_rebuilt": "the DOB BIS permit pages (63.7 MB) and the two DOB job-filing queries (26.2 MB) are over the cap",
+   "built_from": [
+    {
+     "source": "socrata:64uk-42ks",
+     "dataset": "64uk-42ks",
+     "name": "Primary Land Use Tax Lot Output (PLUTO)",
+     "pages": 1,
+     "bytes": 6770338,
+     "copied": true,
+     "pointed_to_at": "manifest.json data[] (type socrata, dataset 64uk-42ks) cache_files[].sha256",
+     "sha256": [
+      "1c71cebf72d90a1cc0a2a30e103dae7a3c1ff9c4659fe92615249764c0a3bd54"
+     ]
+    },
+    {
+     "source": "socrata:p78i-pat6",
+     "dataset": "p78i-pat6",
+     "name": "GreenThumb Garden Info",
+     "pages": 1,
+     "bytes": 57747,
+     "copied": true,
+     "pointed_to_at": "manifest.json data[] (type socrata, dataset p78i-pat6) cache_files[].sha256",
+     "sha256": [
+      "dddb2c497b1d08bb7a2f69155d6d7fdb5ddab8ea0df4c46f1d28a0b314e3c164"
+     ]
+    },
+    {
+     "source": "socrata:ipu4-2q9a",
+     "dataset": "ipu4-2q9a",
+     "name": "DOB Permit Issuance",
+     "pages": 14,
+     "bytes": 66836691,
+     "copied": false,
+     "pointed_to_at": "manifest.json data[] (type socrata, dataset ipu4-2q9a) cache_files[].sha256",
+     "sha256": [
+      "330ad9654f054fca64e9cafe276ce37f99ae45f5e0e3844b8c950ad32076b75e",
+      "677af1fbc0f03c5b105557d4d7bb7d2b66714e47b0b29d49c6d77c4bbc5f8ed1",
+      "1164a71a1e0e0c9a1ebda081f9f85be509e40732d713562049fc7a46ddeec0ed",
+      "3516a42471abf7543eabe946276bd1217cef6cfb688fbd3ea37779f2fe875809",
+      "5a89ff70406f527b45e04ff0f76f39ca716789be0d9865cf93286e03dad51f8b",
+      "9837c2100172364142f6dbe96713160dff785359aa9cbe749dc62a0f8002f519",
+      "7767796c855fcc57fc4060862e91f294adbc0da4f314e612df9a20df5ac8154c",
+      "0890bcea4d73a74af542b1d11ebc35c65f463715cc9fac21a99ff798c75535d9",
+      "35312eb3fca26d280619433d50f3e92b15dc12d7ed6efbd7167104180a003470",
+      "40d68f34cfe878042ea34e19cb8b5006c422bb30843f3b694b94a2fc4cd9a8b9",
+      "4c677448fb3d3de41c30c4ca885460f8a13ed42f986798eb225efe920a13ec31",
+      "fc0a30cd4a28faed781a85409324de702d0d6cc2563e82e7f4af26d4e39fe07f",
+      "f5324d4aedc1e84a979a31d289fb163d1a0ee7ba0fc4fe0396f0d0c7823bd4ea",
+      "defcbf7d7f4949235d3c47965645335795658945a19f78c3ab1673e14d356a2b"
+     ]
+    },
+    {
+     "source": "socrata:rbx6-tga4",
+     "dataset": "rbx6-tga4",
+     "name": "DOB NOW: Build – Approved Permits",
+     "pages": 2,
+     "bytes": 6051835,
+     "copied": true,
+     "pointed_to_at": "manifest.json data[] (type socrata, dataset rbx6-tga4) cache_files[].sha256",
+     "sha256": [
+      "a619921217c86220f5013bb6d36448a18c69d70873079bf62d1b88a30e6c755e",
+      "c69bbefd8b1f3cc25cae633f9dbca565ad3283ec643c1b52a8e37d513153a12f"
+     ]
+    },
+    {
+     "source": "socrata:ic3t-wcy2",
+     "dataset": "ic3t-wcy2",
+     "name": "DOB Job Application Filings",
+     "pages": 5,
+     "bytes": 21096361,
+     "copied": false,
+     "pointed_to_at": "manifest.json data[] (type socrata, dataset ic3t-wcy2) cache_files[].sha256",
+     "sha256": [
+      "6e6fbdb0b24fb0447ce880f11fa1d01e47db4e5702e8fe2b0186acc8fd6cc6e3",
+      "1caf630ea1d0f20c41d0874ba99d5132b955fa8d3075534145804d4a3933d344",
+      "a50367f97f1c4a9291f3a98bf2b1b9fedf2b7e261cb7257f2e55095f9ededbf9",
+      "89fab5b0485da5645570356338a71865a49f34d824d926df3c269eed8f3265f0",
+      "cf06a291f69dcb1bfee73e6258cceef31bfb462ff68832fb60decefd75c49ad6"
+     ]
+    },
+    {
+     "source": "socrata:w9ak-ipjd",
+     "dataset": "w9ak-ipjd",
+     "name": "DOB NOW: Build – Job Application Filings",
+     "pages": 2,
+     "bytes": 6350162,
+     "copied": false,
+     "pointed_to_at": "manifest.json data[] (type socrata, dataset w9ak-ipjd) cache_files[].sha256",
+     "sha256": [
+      "36f67fe587b5fc62a9f0856376ee83f1e5746536ae5b08992202555864894bfa",
+      "af375908005729f2036dfe399735e2b55618dc279680d091ab7be71f0a3bd5cf"
+     ]
+    },
+    {
+     "source": "socrata:i296-73x5",
+     "dataset": "i296-73x5",
+     "name": "DOB Stalled Construction Sites",
+     "pages": 1,
+     "bytes": 3700334,
+     "copied": true,
+     "pointed_to_at": "manifest.json data[] (type socrata, dataset i296-73x5) cache_files[].sha256",
+     "sha256": [
+      "3c2ae2cd6ff88ccfa4a50b919a3554be2485b8d836e95c5aa512e81a748da754"
+     ]
+    },
+    {
+     "source": "data/derived/neighbourhood/vacant_shootings_tracts.csv",
+     "path": "data/derived/neighbourhood/vacant_shootings_tracts.csv",
+     "copied": false,
+     "bytes": 1176768,
+     "sha256": "9963a7ed2287d7a98bbb54c4eb392686b5e31442cfc6297383098151441107dc",
+     "pointed_to_at": "manifest.json inputs.files[]"
+    }
+   ],
+   "table_sha256": "9f693f7793e255b099337be0c612627bc5ae6390ca0336532d08c1f9e2149b3e",
+   "table_copied": true
+  },
+  {
+   "table": "data/derived/levers/shootings_2023_2025.csv",
+   "built_by": "analyses/levers/lots_fetch.py",
+   "why_not_rebuilt": "it is built by the same upstream stage as lots_records.csv, which is not rerun",
+   "built_from": [
+    {
+     "source": "socrata:5ucz-vwe8",
+     "dataset": "5ucz-vwe8",
+     "name": "Shootings (2006-Present)",
+     "pages": 1,
+     "bytes": 490072,
+     "copied": true,
+     "pointed_to_at": "manifest.json data[] (type socrata, dataset 5ucz-vwe8) cache_files[].sha256",
+     "sha256": [
+      "c3a527e074eedbedd6719d7b3351f228ea8a7dbee863de57384b3178fd843366"
+     ]
+    }
+   ],
+   "table_sha256": "40060096e10dda1f132b65b8672c6748dc33514818e09fdb2e24a19de20422d8",
+   "table_copied": true
+  },
+  {
+   "table": "data/derived/levers/lots_naip.csv",
+   "built_by": "analyses/levers/lot_ndvi.py",
+   "why_not_rebuilt": "it needs the NAIP image tiles and the MapPLUTO polygons, which are kept outside the repository",
+   "built_from": [
+    {
+     "source": "opt:levers/lu11_polygons.geojson",
+     "path": "~/opt/nyc-concordance/levers/lu11_polygons.geojson",
+     "copied": false,
+     "bytes": 13581012,
+     "sha256": "a4b924f65193473ee9abe1bd9d4539831c3986220063a19e9469e790a998ced8",
+     "pointed_to_at": "manifest.json data[] (type big-file)"
+    },
+    {
+     "source": "external:USDA NAIP 2022 imagery, Microsoft Planetary Computer STAC collection naip",
+     "copied": false,
+     "sha256": null,
+     "note": "an external service; no file is pinned"
+    }
+   ],
+   "table_sha256": "cf50d3308ced91a3369f83355b796c9141e76ae5144a77db7fc6610568da95ef",
+   "table_copied": true
+  }
+ ]
+}

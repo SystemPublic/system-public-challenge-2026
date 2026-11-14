@@ -1,0 +1,192 @@
+{
+ "id": "sim-crz-holdout-2026",
+ "verdict": "contested",
+ "verdict_note": "Contested as registered: the link fitted on 2025 did not predict the held-out days. The held-out slope rests on two storm days (23 February and 26 January 2026), which carry 84% of the identifying variation; without 23 February alone the verdict would be unsettled, and on the remaining days the held-out elasticity is between +0.1 and -1.1 depending on how 22 winter days are treated. Vehicle entries vary by about 3% within the fixed effects, so day-level data cannot identify the relation in either year. Taxi speeds fell across the city from January 2026 (trips wholly outside the zone slowed equally and bus speeds did not; the cause was not found), so the level miss cannot be assigned to the link. The ambulance link transferred in slope (S2 = 1.10, 0.72 to 1.48) and does not depend on the storm days.",
+ "city_effect": {
+  "label": "S1: held-out elasticity of zone taxi speed to vehicle entries as a ratio of the elasticity fitted on 2025 (-0.409); non-holiday weekdays 5 January to 30 June 2026, by band of hours. The estimate is fixed by two storm days (23 February and 26 January 2026), which carry 84% of the identifying variation; without them S1 is -0.23 with a standard error of 1.05",
+  "estimate": 0.28604582466555317,
+  "lo": 0.18953420366712112,
+  "hi": 0.3825574456639852,
+  "scale": "ratio of held-out to fitted elasticity",
+  "null": 0,
+  "n": 492,
+  "interval_with_calibration_error": {
+   "lo": 0.11,
+   "hi": 0.46,
+   "se": 0.088
+  }
+ },
+ "graph_effect": null,
+ "components": {
+  "S2_ambulance": {
+   "slope": 1.1040785996174332,
+   "se": 0.19343806999694357,
+   "lo": 0.7249399824234237,
+   "hi": 1.4832172168114426,
+   "n": 492
+  },
+  "S1_band_specific": {
+   "slope": 0.22235100502860516,
+   "se": 0.0288914238349552,
+   "lo": 0.165723814312093,
+   "hi": 0.27897819574511734,
+   "n": 492
+  },
+  "level": {
+   "by_band": {
+    "night": {
+     "n": 123,
+     "entries_change_pct": -4.906006731722334,
+     "speed_ref": 10.166501016221932,
+     "speed_pred": 10.378020821058138,
+     "speed_obs": 9.517722373573337,
+     "tt_ref": 354.89083238785923,
+     "tt_chain": 350.7346093420833,
+     "tt_link": 368.53469107128495,
+     "tt_obs": 406.85604205524464,
+     "speed_err_pct": 9.03891092551181,
+     "speed_naive_err_pct": 6.8165325398645615,
+     "tt_chain_err_pct": -13.793928788586351,
+     "tt_link_err_pct": -9.418896863465099,
+     "tt_naive_err_pct": -12.772382438978102
+    },
+    "am": {
+     "n": 123,
+     "entries_change_pct": -8.324060420466228,
+     "speed_ref": 8.861920932514115,
+     "speed_pred": 9.1828740146056,
+     "speed_obs": 8.501596035166157,
+     "tt_ref": 385.7034067032848,
+     "tt_chain": 377.9326000767376,
+     "tt_link": 394.97231285665003,
+     "tt_obs": 425.4182948777462,
+     "speed_err_pct": 8.013530360903909,
+     "speed_naive_err_pct": 4.238320614829294,
+     "tt_chain_err_pct": -11.162118642465702,
+     "tt_link_err_pct": -7.15671666867207,
+     "tt_naive_err_pct": -9.335491362888925
+    },
+    "mid": {
+     "n": 123,
+     "entries_change_pct": -6.723442937570723,
+     "speed_ref": 7.100826148727472,
+     "speed_pred": 7.306047585181452,
+     "speed_obs": 6.396310169900645,
+     "tt_ref": 460.31157940744765,
+     "tt_chain": 452.86959123239404,
+     "tt_link": 488.6666241979382,
+     "tt_obs": 527.4961657292952,
+     "speed_err_pct": 14.222847096468083,
+     "speed_naive_err_pct": 11.014412373904147,
+     "tt_chain_err_pct": -14.147320747578407,
+     "tt_link_err_pct": -7.361104033367294,
+     "tt_naive_err_pct": -12.736507047204936
+    },
+    "pm": {
+     "n": 123,
+     "entries_change_pct": -6.422391177280895,
+     "speed_ref": 7.979713838484761,
+     "speed_pred": 8.199513309972177,
+     "speed_obs": 7.401797078978713,
+     "tt_ref": 443.74741562433826,
+     "tt_chain": 436.9027918685373,
+     "tt_link": 463.24894511979807,
+     "tt_obs": 505.0229682951138,
+     "speed_err_pct": 10.77733180850091,
+     "speed_naive_err_pct": 7.807789829139544,
+     "tt_chain_err_pct": -13.4885303645774,
+     "tt_link_err_pct": -8.27170758516963,
+     "tt_naive_err_pct": -12.133220965698477
+    }
+   },
+   "mean_abs_speed_err_pct": 10.51315504784618,
+   "mean_abs_speed_naive_err_pct": 7.469263839434387,
+   "mean_abs_tt_chain_err_pct": 13.147974635801965,
+   "mean_abs_tt_link_err_pct": 8.052106287668522,
+   "mean_abs_tt_naive_err_pct": 11.744400453692611
+  }
+ },
+ "sources": [
+  {
+   "dataset": "t6yz-b64h",
+   "name": "MTA Congestion Relief Zone Vehicle Entries: Beginning 2025",
+   "url": "https://data.ny.gov/d/t6yz-b64h",
+   "rows_updated_at": "2026-11-12T19:45:51Z",
+   "fetched": "2026-11-13T08:06:27-0500"
+  },
+  {
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "fetched": "2026-11-13T08:08:25-0500"
+  },
+  {
+   "kind": "tlc-trip-record-files",
+   "months": "2026-01 to 2026-06",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_YYYY-MM.parquet",
+   "filter": "pickup and drop-off in the 38 zone taxi zones; R1 trip filter of repro-mmr-cbd-speed"
+  }
+ ],
+ "prediction_scored": "miss on the primary. S1 = 0.29 (0.19 to 0.38), n = 492 band-days on 123 days: the interval lies above zero, so the sign is as fitted, but its upper bound is below 0.5 and refute_if is met. As an elasticity the held-out value is -0.117 (-0.157 to -0.078). Secondary (a), the ambulance link: S2 = 1.10 (0.72 to 1.48), a hit by the same conditions. Secondary (b), band-specific elasticities: 0.22 (0.17 to 0.28). Secondary (c), levels against January-June 2025: speed predicted from entries has a mean absolute error of 10.5% over the four bands against 7.5% for predicting no change, a miss, as I expected, and worse than I expected because entries fell (-8.3% in the morning band and -6.7% at midday as differences of mean logs, which the two storm days enlarge; -6.1% and -5.5% as ratios of means) while speed also fell, so the model predicted a rise. Travel time predicted through the chain: 13.1% against 11.7% for no change, a miss. Travel time predicted from the observed fall in speed (the blind test of the ambulance link): 8.1%, better than no change but above the registered 4%, a miss: travel times rose by 10% to 15% and the speed fall accounts for under half of that.",
+ "settle": "Counts of vehicles and of people inside the zone by hour, not only vehicles crossing its edge, so that speed can be related to what is on the streets; and a second price. The toll rises to $12 in 2028, which will give the first measured response of entries and speed to a change in the toll other than its introduction. After the referee: the cause of the citywide fall in taxi speed from January 2026, which bus speeds do not show. A day-level successor test was not registered, because about 830 ordinary weekdays would be needed for it to discriminate.",
+ "research_needed": [
+  {
+   "question": "What sets traffic speed inside a priced zone once entries are priced: vehicles crossing the cordon, trips made inside it, deliveries and kerb activity, or people on foot?",
+   "data": "Vehicle counts inside the zone, kerb and delivery activity, pedestrian counts, by hour and weekday",
+   "design": "Daily panel with weather and event controls; the 2028 toll step as a natural experiment",
+   "priority": "high"
+  },
+  {
+   "question": "Why did ambulance travel times in the zone rise by 10% to 15% from the first half of 2025 to the first half of 2026?",
+   "data": "EMS incidents (76xm-jjuj) with unit availability and hospital turnaround times",
+   "design": "Decomposition by call volume, unit hours and street speed",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/simulate/holdout_levels.png"
+ ],
+ "notes": "Exploratory, after the outcome was read, and not part of the verdict. The standard error of S1 (0.05) is a seventh of the one expected at registration (0.35). The held-out period contains two storm days, 26 January and 23 February 2026, when vehicle entries were 40% and 13% of a normal weekday. On those days entries collapsed and taxi speed rose little, and they fix the estimate. Without the four weekdays whose entries were under 80% of the median, the held-out elasticity is +0.08 (se 0.54), which neither supports nor refutes the fitted value; pooled over 2025 and 2026 without those days it is -0.23 (se 0.23). The two storm Mondays were known from subway entries (transit-weekday-pattern) and the registration should have excluded them; it did not, so the verdict stands as registered. The level result does not depend on the storm days: from January-June 2025 to January-June 2026 vehicle entries per weekday fell from 507,000 to 480,000 and zone taxi speed fell in every band. Yellow-taxi trips inside the zone also fell, from 51,000 to 45,000 a weekday, so the speed series comes from a changing set of trips. On 2025 weekdays, Mondays and Fridays have 2.8% fewer daytime vehicle entries than Tuesday to Thursday, 10.1% higher taxi speed and 6.8% shorter ambulance travel times: the weekday pattern of speed follows people present in the zone (subway entries are 13.8% lower on those days) and not vehicle entries.\n\nAfter the referee (13 Nov 2026): the verdict stays contested under rule 1. The registered refutation condition is met, it remains met when the error of the fitted elasticity is carried into the ratio (standard error 0.088, interval 0.11 to 0.46), and no rule allows a day to be excluded after the data. The verdict means that the fitted link did not predict the held-out days as registered. It does not measure the elasticity on ordinary days. After the registered fixed effects, 23 February carries 74% and 26 January 10% of the variation in log entries of the held-out period. On 23 February entries were 78% to 95% below normal by band and taxi speed was 18% to 71% above normal; a constant elasticity of -0.41 predicts a rise of about 150% for a 90% fall in entries, so those days show that the log-linear form fails at large changes. Without 23 February alone the upper bound of S1 is 0.51 and the refutation condition is not met. On the remaining days the held-out elasticity runs from +0.10 (se 0.43) without the two storm days to -0.47 (se 0.36) without the eight days under 0.90 of median entries, -0.93 (se 0.16) without the 22 days under 0.95 and -1.14 (se 0.16) on dry days. Day-level data cannot identify the relation in either year. In 2025 the residual standard deviation of log entries is 0.032, 65% of band-days lie within 2% of their expected entries and 93% within 5%, and the day after Thanksgiving alone carries 31% of the variation. The 2025 coefficient falls from -0.41 to -0.09 (se 0.11) when the number of taxi trips inside the zone is added and returns to -0.37 when mean trip distance is also added; it differs from zero only in the last quarter. Taxi and for-hire entries, which do not respond to the entry toll, have the same coefficient as other entries (-0.22 each). The level miss of the speed link cannot be assigned to the link. From January 2026 taxi speed fell across the city: trips under three miles that neither start nor end in the zone slowed by 10.1%, 13.1%, 5.4%, 4.0%, 4.3% and 2.6% in January to June against a year earlier, and trips inside the zone by 8.5%, 13.2%, 6.0%, 5.9%, 5.4% and 9.4%. In December 2025 both were within about 2% of the year before. Within 1,344 pairs of origin and destination zones speed fell 8.9%, with recorded miles per trip down 1.1% and minutes up 8.6%. Both vendors show the fall. Bus speeds do not: in the zone they fell 3.9% over the half-year, mostly in January to March, and outside it 0.6%. Weather explains a small part (the 2026 effect on log speed is -0.066, se 0.009, with weather controls). The cause was not found. Until it is, the taxi speed series should not be compared across the two years. The ambulance link does not depend on the low days: S2 is 1.22 (0.76 to 1.69) without the two storm days and 1.12 (0.60 to 1.64) without the eight days under 0.90, and its D against no relation is 32. Its size falls from about -0.6 to about -0.4 within weeks (-0.39, se 0.09) or on dry days (-0.38, se 0.12), so part of the registered slope is weather that slows taxis and ambulances together. The holiday list holds federal holidays only, and the night band joins the end of one night with the start of the next; neither changes a number that decides the verdict. The stance was +0.994, computed against no relation, which placed a contested claim at the agreeing end. It is now measured against the registered threshold. No successor was registered. On ordinary days the standard error of S1 is 1.32 on 119 days; a discrimination of 4 between S1 = 1 and S1 = 0 needs a standard error of 0.5, which is about 827 ordinary weekdays, more than three years, so a day-level test with the data to autumn 2026 could not fail (rule 8).",
+ "registration_sha256": "ffa4b6e47f0bdc524c5bbcec668ea3e591b919ccdb725fd3e11d1ff0015d110d",
+ "decided_at": "2026-11-13T08:12:34-0500",
+ "stance": {
+  "value": -0.838,
+  "lo": -0.976,
+  "hi": -0.231,
+  "z": -2.43,
+  "note": "Measured against the registered refutation threshold, S1 = 0.5 (half the fitted elasticity), with the error of the fitted elasticity carried (se 0.088). The earlier value, +0.994, was measured against no relation and placed a contested claim at the agreeing end. The value rests on two storm days; without them S1 is -0.23 (se 1.05) and the stance is not determined."
+ },
+ "critique": {
+  "report": "critique/sim-crz-holdout-2026.md",
+  "answer": "accepted; verdict kept under rule 1; verdict_note and effect label rewritten; stance measured against the registered threshold; no successor registered because a day-level test could not fail; simulator revised separately (docs/policy_simulation.md)"
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "S1: held-out elasticity of zone taxi speed to vehicle entries as a ratio of the elasticity fitted on 2025 (-0.409); non-holiday weekdays 5 January to 30 June 2026, by band of hours",
+    "estimate": 0.28604582466555317,
+    "lo": 0.18953420366712112,
+    "hi": 0.3825574456639852,
+    "scale": "ratio of held-out to fitted elasticity",
+    "null": 0,
+    "n": 492
+   },
+   "stance": {
+    "value": 0.994,
+    "lo": 0.958,
+    "hi": 0.999,
+    "z": 5.81
+   },
+   "decided_at": "2026-11-13T08:12:34-0500",
+   "prediction_scored": "miss on the primary. S1 = 0.29 (0.19 to 0.38), n = 492 band-days on 123 days: the interval lies above zero, so the sign is as fitted, but its upper bound is below 0.5 and refute_if is met. As an elasticity the held-out value is -0.117 (-0.157 to -0.078). Secondary (a), the ambulance link: S2 = 1.10 (0.72 to 1.48), a hit by the same conditions. Secondary (b), band-specific elasticities: 0.22 (0.17 to 0.28). Secondary (c), levels against January-June 2025: speed predicted from entries has a mean absolute error of 10.5% over the four bands against 7.5% for predicting no change, a miss, as I expected, and worse than I expected because entries fell (-8.3% in the morning band, -6.7% at midday) while speed also fell, so the model predicted a rise. Travel time predicted through the chain: 13.1% against 11.7% for no change, a miss. Travel time predicted from the observed fall in speed (the blind test of the ambulance link): 8.1%, better than no change but above the registered 4%, a miss: travel times rose by 10% to 15% and the speed fall accounts for under half of that."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep contested; two storm days fix S1; entries vary about 3% within the fixed effects, so day-level data cannot identify the relation; taxi speed fell citywide from January 2026 and bus speed did not; the stance is at the wrong end; ten defects in the simulator.",
+  "critique": "critique/sim-crz-holdout-2026.md",
+  "revised_at": "2026-11-13T09:08:18-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

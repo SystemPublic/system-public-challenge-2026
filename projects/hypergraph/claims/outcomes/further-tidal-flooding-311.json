@@ -1,0 +1,154 @@
+{
+ "id": "further-tidal-flooding-311",
+ "verdict": "no_test",
+ "city_effect": {
+  "label": "Tidal-set rate ratio of street-flooding complaints, Battery minor-flood day vs other rain-free days (not decisive: minimum-data rule failed)",
+  "estimate": 15.738146504504696,
+  "lo": 4.32477152673089,
+  "hi": 33.43483634030768,
+  "scale": "rate ratio",
+  "null": 1,
+  "n": 1268
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(created_date) as d, incident_zip as zip, count(*) as n",
+    "$where": "created_date between '2020-01-01T00:00:00' and '2026-10-31T23:59:59' and (upper(complaint_type) like '%STREET FLOOD%' or upper(descriptor) like '%STREET FLOOD%')",
+    "$group": "d, zip",
+    "$order": "d, zip"
+   },
+   "fetched": "2026-11-12T20:28:51-0500",
+   "n_rows": 15351,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(created_date) as d, incident_zip as zip, count(*) as n",
+    "$where": "created_date between '2020-01-01T00:00:00' and '2026-10-31T23:59:59' and (upper(complaint_type) like '%STREET FLOOD%' or upper(descriptor) like '%STREET FLOOD%' or upper(descriptor) like '%CATCH BASIN%' or upper(descriptor) like '%SEWER BACKUP%')",
+    "$group": "d, zip",
+    "$order": "d, zip"
+   },
+   "fetched": "2026-11-12T20:36:03-0500",
+   "n_rows": 101003,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$select": "complaint_type, descriptor, count(*) as n",
+    "$where": "created_date between '2020-01-01T00:00:00' and '2026-10-31T23:59:59' and (upper(complaint_type) like '%STREET FLOOD%' or upper(descriptor) like '%STREET FLOOD%' or upper(descriptor) like '%CATCH BASIN%' or upper(descriptor) like '%SEWER BACKUP%')",
+    "$group": "complaint_type, descriptor",
+    "$order": "n desc",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:40:46-0500",
+   "n_rows": 18,
+   "data_access": "open"
+  },
+  {
+   "kind": "noaa-co-ops",
+   "station": "8518750 The Battery",
+   "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=research&begin_date=20200101&end_date=20201231&datum=MLLW&station=8518750&time_zone=lst_ldt&units=metric&format=json",
+   "product": "hourly_height, datum MLLW, metric, lst_ldt",
+   "n_rows": 8784,
+   "fetched": "2026-11-12T20:23:50-0500",
+   "last_modified": "(none sent; API returns current verified/preliminary data)",
+   "data_access": "open"
+  },
+  {
+   "note": "six further CO-OPS requests, one per year 2021-2026, same product",
+   "kind": "noaa-co-ops",
+   "data_access": "open"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ",
+   "data_access": "open"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094789",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094789.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:21 GMT",
+   "fetched": "2026-11-12T20:23:56-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "aq7i-eu5q",
+   "name": "FloodNet: Street Flooding Events Measured by FloodNet Sensors",
+   "url": "https://data.cityofnewyork.us/d/aq7i-eu5q",
+   "rows_updated_at": "2026-11-02T14:49:17Z",
+   "query": {
+    "$limit": 50000,
+    "$order": "flood_start_time"
+   },
+   "fetched": "2026-11-12T20:40:48-0500",
+   "n_rows": 3581,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "kb2e-tjy3",
+   "name": "FloodNet: Sensor Deployment Metadata",
+   "url": "https://data.cityofnewyork.us/d/kb2e-tjy3",
+   "rows_updated_at": "2026-11-02T14:49:42Z",
+   "query": {
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T20:40:49-0500",
+   "n_rows": 492,
+   "data_access": "open"
+  }
+ ],
+ "prediction_scored": "partial: the registered test could not be run (20 rain-free flood days against a minimum of 30), so the prediction is not scored. The secondary estimate is in the predicted direction and above the predicted range, but rests on 20 days from 2021-2024 of which 14 fall in 2024.",
+ "settle": "More rain-free flood days: wait for further years, extend to the 2010-2019 311 file (about 120 more days at 12 a year before rain filtering), and use Jamaica Bay and Rockaway gauges. Check the Sept 2024 episode (19-22 Sept) for local rain or wind not seen at the two airport gauges.",
+ "research_needed": [
+  {
+   "question": "Does the 2010-2019 311 file, with 311 street-flooding complaints, give at least 30 further rain-free high-tide days and the same slope?",
+   "data": "76ig-c548 (id unverified), CO-OPS 8518750, GHCN",
+   "design": "same registered model, new id superseding this one",
+   "priority": "high"
+  },
+  {
+   "question": "Do FloodNet events at tidally flagged sensors match 311 reports within 250 m on high-tide days?",
+   "data": "aq7i-eu5q, kb2e-tjy3, erm2-nwe9 points",
+   "design": "event-level matching",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/further/further-tidal-flooding-311.png"
+ ],
+ "notes": "Under the registration's minimum-data rule (at least 30 rain-free days at or above the NOS minor level and at least 100 primary-set complaints in the tidal ZIPs) the verdict is no_test: the sample has 1,268 rain-free days, 20 of them flood days, and 291 C1 complaints in the tidal set. Secondary results, reported under precedence rule 3 and not deciding: tidal-set rate ratio 15.7 (95% interval 4.3 to 33.4), other-ZIP rate ratio 1.50 (0.88 to 2.10), tidal over other ratio 10.5 (2.3 to 27.3). Mean daily C1 complaints in the tidal set were 0.19 on other rain-free days and 2.65 on the 20 flood days. Leave-2024-out gives 5.5 on 6 flood days. The 7-day shifted-tide placebo gave a rate ratio of 0.13 (0.00 to 0.42), not near 1, which indicates that the year and month terms absorb the September 2024 cluster and the model baseline is unstable with so few events; the 100-day shift gave 1.25 (0.42 to 2.39). FloodNet (descriptive): tidally flagged sensors recorded 189 events in 491 sensor-days on rain-free flood days and 649 in 26,358 on other rain-free days (rate ratio 15.6, 13.3 to 18.4); non-tidal sensors 1 in 1,997 and 21 in 133,948. Complaint set C2 as registered also matches industrial-waste catch basin descriptors. Bootstrap used 1000 replicates for the primary and shifted-tide runs and 300 for checks.",
+ "registration_sha256": "f7edaad6f0153133846782cbfcda9eb997e79212d3e68c13ca26f3e95b6b6228",
+ "decided_at": "2026-11-12T20:46:38-0500",
+ "stance": {
+  "value": 0.99,
+  "lo": 0.886,
+  "hi": 0.998,
+  "z": 5.28
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "note": "Written for an Underlay push; nothing has been pushed. Hashes follow tools/underlay_export.record_hash (RFC 8785).",
+ "collection_suggestion": "nyc-concordance/replication",
+ "counts": {
+  "PackageInput": 2,
+  "PackageCode": 9,
+  "PackageSource": 1,
+  "ReplicationPackage": 1
+ },
+ "records": {
+  "replication/street-busway14-m14-speed/input/0": "e223d8faedc58fa633b7d7c33ae0f54a7226dd44ba0941ae1129caa71f0245b0",
+  "replication/street-busway14-m14-speed/input/1": "daee05dfc9370a63afdf9f2a3e6e9d4e37d63d1016b878fd2fc6c65f3a429300",
+  "replication/street-busway14-m14-speed/code/0": "75d27061008910b4b250a1c742c29345336d771301c54224a47b9bbc490b0c09",
+  "replication/street-busway14-m14-speed/code/1": "849adabac4cced6f68873ac705d82cc27ddad4aa99cf91ea023904e81688930d",
+  "replication/street-busway14-m14-speed/code/2": "02c5c6abe593904c2138cf3a62c701082ff78883519d551e9a8293fc97821f0b",
+  "replication/street-busway14-m14-speed/code/3": "5ef6c4b3caa40169c5463a879084edcd98d0b35e02c6a11c487979d44aacc437",
+  "replication/street-busway14-m14-speed/code/4": "f93ffcea75e7e6e8dd28c8e7596a042f47284470de8959e15e4b4f9449c1da5f",
+  "replication/street-busway14-m14-speed/code/5": "6f0ad27620c97abbedf23c5e03105af709f3fb2b170b2616d1f49ba461fbae0f",
+  "replication/street-busway14-m14-speed/code/6": "3d51decb90f33b994afa47f8a0022027d3a762189ca5b8aa0d6318e9624bafee",
+  "replication/street-busway14-m14-speed/code/7": "f20ca5aa03b807f12ccf539722bea20c1d6a03fec866c27425aaacf40b7da678",
+  "replication/street-busway14-m14-speed/code/8": "6831db0d7e12084aada65389c34d2223be51edac0733a2750ae8ac051f29555b",
+  "replication/street-busway14-m14-speed/source/0": "23778ef2ce83d06b000824ecd2dc340f0c2409ea282852d074b2ce7ee83fc144",
+  "replication/street-busway14-m14-speed": "447c5bbe1b2eb523a9e92b64edcc46c70985fd61d0fbf71c6d382e13726c1c7d"
+ }
+}

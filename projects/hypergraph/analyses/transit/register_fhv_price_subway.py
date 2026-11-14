@@ -1,0 +1,207 @@
+"""Registration of transit-fhv-price-subway. Run before any subway ridership or 2018-2019
+trip counts are queried for this claim.
+
+Usage: python -m analyses.transit.register_fhv_price_subway
+"""
+from __future__ import annotations
+
+from concord import claims
+
+CID = "transit-fhv-price-subway"
+
+# Registered constants, used by the analysis without change.
+LINE_96 = [[40.793919, -73.972323], [40.784318, -73.947152]]  # 96 St (1/2/3) and 96 St (Q) station coordinates
+BUFFER_M = 300
+WINDOWS_2019 = {
+    "2019": {"pre": ["2019-01-14", "2019-02-01"], "post": ["2019-02-04", "2019-03-29"]},
+    "2018": {"pre": ["2018-01-15", "2018-02-02"], "post": ["2018-02-05", "2018-03-30"]},
+    "2017": {"pre": ["2017-01-16", "2017-02-03"], "post": ["2017-02-06", "2017-03-31"]},
+}
+WINDOWS_2025 = {
+    "2025": {"pre": ["2024-09-09", "2024-11-29"], "post": ["2025-01-06", "2025-03-28"]},
+    "2024": {"pre": ["2023-09-11", "2023-12-01"], "post": ["2024-01-08", "2024-03-29"]},
+    "2023": {"pre": ["2022-09-12", "2022-12-02"], "post": ["2023-01-09", "2023-03-31"]},
+}
+EXCLUDED_DAYS = ("Saturdays and Sundays (primary); federal holidays; the day after Thanksgiving; Good Friday; "
+                 "days with Central Park snowfall of 76 mm (3 in) or more (GHCN-Daily USW00094728, SNOW)")
+COMPOSE = {"occupancy": [1.1, 1.3, 1.5], "diversion_to_subway": [0.10, 0.25, 0.50], "share_boarding_in_zone": [0.6, 0.75, 1.0]}
+
+SEEN = [
+    "No subway ridership values have been seen by this registrant. Three cached queries by other agents in this repo "
+    "(fetched 12 Nov 2026, 20:15-20:16) give the first and last timestamps of t69i-h2me (2017-01-13 to 2019-12-31), "
+    "wujg-7c2s (2020-01-01 to 2024-12-31) and 5wq4-mkjj (2025-01-01 to 2026-11-05); these dates were read and they set "
+    "the 2017 window, which cannot start before 16 January. Two further cached queries count rows per station complex on "
+    "15 May 2019 and 13 May 2026; only their query strings were read, not their rows.",
+    "Dataset metadata read: column names and descriptions of t69i-h2me, wujg-7c2s, 5wq4-mkjj, bqxa-629f and the station table "
+    "39hk-dx4f (which the project queried earlier for station coordinates in commute-fhv-subway-distance). File sizes of TLC monthly parquet files were read from HTTP headers.",
+    "For the 2025 secondary analysis the first stage is already known to the project: mob-crz-traffic found high-volume FHV trips "
+    "in the CBD down 14.3% and yellow taxi trips down 4.7% relative to outside, 2025 against 2023-24, from c5iv-bn4s monthly zone "
+    "counts, with a 2024 placebo for all trips of -4.5% (-6.3 to -2.7). Pandey, Guler and Gayah (2026) report -5.95%.",
+    "For 2019 the project has seen no trip counts by zone. c5iv-bn4s was queried for 2023 onward and for calendar 2024 only; one "
+    "cached query shows that its high-volume FHV series begins in January 2019. The published first stage (Li and Vignon 2024: "
+    "ride-hailing -11%, yellow taxis -8%) and the published subway result (Dilworth 2023: no significant relative rise) are known.",
+]
+
+GRAPH = [{
+    "note": ("The System graph API key is not on this machine, so no live lookup was made; a live lookup is pending. The cached "
+             "evidence (data/cache/sysgraph, data/derived/commuting/graph_evidence.json, used for commute-fhv-subway-distance) "
+             "shows no concept for ride-hailing, taxis or the subway; 'public transport' links to health outcomes only, and "
+             "variable search finds 7 associations mentioning ride-hail, all from one study. data/derived/graph_audit/evidence/ "
+             "holds four concept pairs, none on transport modes. The claim therefore rests on the literature below."),
+    "live_lookup": "pending",
+}]
+
+LIT = [
+    {"citation": "Hall JD, Palsson C, Price J (2018). Is Uber a substitute or complement for public transit? Journal of Urban Economics 108:36-50.",
+     "doi": "10.1016/j.jue.2018.09.003",
+     "finding": "Uber is a complement for the average US transit agency: ridership is 5% higher two years after entry. The effect is larger in large cities and negative in small ones. This is the rival (complement) direction.",
+     "data_used": "National Transit Database monthly ridership; Uber entry dates; Google Trends searches for Uber as a penetration measure",
+     "data_access": "open"},
+    {"citation": "Graehler M, Mucci RA, Erhardt GD (2019). Understanding the recent transit ridership decline in major US cities: service cuts or emerging modes? Transportation Research Board 98th Annual Meeting, paper 19-04931.",
+     "doi": None,
+     "finding": "Each year after ride-hail entry lowers heavy-rail ridership by 1.3% and bus ridership by 1.7% (22 US cities, 2002-2018). Numbers checked against press coverage of the paper (Streetsblog NYC, 23 Jan 2019), not the paper itself.",
+     "data_used": "National Transit Database monthly ridership by mode; TNC entry dates", "data_access": "open"},
+    {"citation": "Diao M, Kong H, Zhao J (2021). Impacts of transportation network companies on urban mobility. Nature Sustainability 4:494-500.",
+     "doi": "10.1038/s41893-020-00678-z",
+     "finding": "TNC entry in US metropolitan areas is associated with an 8.9% decline in transit ridership, congestion intensity +0.9% and duration +4.5%.",
+     "data_used": "National Transit Database; Texas A&M Urban Mobility Report congestion measures; TNC entry dates", "data_access": "open"},
+    {"citation": "Erhardt GD, Mucci RA, Cooper D, Sana B, Chen M, Castiglione J (2022). Do transportation network companies increase or decrease transit ridership? Empirical evidence from San Francisco. Transportation 49:313-342.",
+     "doi": "10.1007/s11116-021-10178-4",
+     "finding": "TNCs account for a net decline of about 10% in San Francisco bus ridership, 2010-2015; no significant effect on light rail.",
+     "data_used": "TNC trips scraped from two companies' APIs; SFMTA automated passenger counts", "data_access": "restricted"},
+    {"citation": "Li Y, Vignon D (2024). Do ride-hailing congestion fees in NYC work? Transportation Research Part A 190:104274.",
+     "doi": "10.1016/j.tra.2024.104274",
+     "finding": "The February 2019 surcharge reduced ride-hailing volume by about 11% (Lyft 17%, Uber 9%) and yellow taxi trips by about 8%, by difference in differences, without a matching fall in congestion. This is the published first stage.",
+     "data_used": "NYC TLC trip records (not named in the abstract; inferred)", "data_access": "open"},
+    {"citation": "Dilworth E (2023). Initial transit effects of New York City's ride-hailing congestion tax. Honors thesis, Public Policy Program, Stanford University. https://purl.stanford.edu/gg066cy0440",
+     "doi": None,
+     "finding": "Log-linear difference in differences: ride-hailing and taxi trips in the zone fell significantly relative to outside; subway ridership in the zone did not rise significantly. The abstract gives no effect sizes. This is the only study found of the subway side of the 2019 surcharge, and it is not peer-reviewed.",
+     "data_used": "not named on the repository page; presumably TLC trip records and MTA turnstile counts", "data_access": "unknown"},
+    {"citation": "Pandey A, Guler I, Gayah V (2026). The effect of the New York City congestion toll on trips served by transportation network companies. Findings.",
+     "doi": "10.32866/001c.155761",
+     "finding": "2025 toll: weekday TNC trips starting in CBD taxi zones fell 5.95% relative to Manhattan zones outside the CBD (weeks 1-14 of 2025 against 2024); shared trips requested fell 38%.",
+     "data_used": "NYC TLC high-volume FHV trip records", "data_access": "open"},
+]
+
+REG = {
+    "id": CID,
+    "kind": "confirmation",
+    "statement": ("After the congestion surcharge on for-hire and taxi trips touching Manhattan south of 96th Street began on "
+                  "2 February 2019, weekday subway entries at station complexes inside that area rose relative to complexes "
+                  "outside it, by an amount consistent with riders moving from for-hire vehicles and taxis to the subway."),
+    "edge": {"cause": "price of for-hire vehicle and taxi trips", "effect": "subway ridership"},
+    "policy_facts": {
+        "primary_2019": "NY State congestion surcharge, in effect from Saturday 2 February 2019 (planned for 1 January, delayed by a court order): $2.75 per for-hire vehicle trip, $2.50 per taxi trip, $0.75 per pooled trip, for trips that begin, end or pass through Manhattan south of 96th Street (NYC TLC congestion surcharge page; news reports of the start date).",
+        "secondary_2025": "MTA Congestion Relief Zone toll, from Sunday 5 January 2025, Manhattan at and south of 60th Street: per-trip charge of $1.50 for high-volume for-hire vehicles and $0.75 for taxis, green cabs and other FHVs, charged to passengers (MTA taxi and FHV toll page); private cars pay $9 at peak with E-ZPass.",
+    },
+    "choice_of_primary": ("The 2019 surcharge is primary because it changed the price of for-hire and taxi trips only. The 2025 toll "
+                          "also charged private cars and trucks, so a rise in zone subway entries in 2025 cannot be attributed to "
+                          "the FHV charge. The 2025 analysis is registered as secondary and descriptive; it does not decide the verdict."),
+    "graph_evidence": GRAPH,
+    "literature": LIT,
+    "data_seen_before_registration": SEEN,
+    "prediction": {
+        "direction": "+",
+        "magnitude": ("Between +0.05% and +1.3% of zone weekday entries, most likely about +0.2%. Worked before data from published "
+                      "and approximate figures: about 550,000 for-hire and taxi trips a weekday touch the zone (an assumption from "
+                      "TLC totals of about 700,000 FHV trips a day in 2019 and the zone shares of app and taxi trips); the published "
+                      "first stage is -11% and -8% (Li and Vignon 2024), so about 53,000 fewer trips a day; with 1.3 riders a trip, "
+                      "a quarter of them moving to the subway and three quarters of those boarding inside the zone, about 13,000 "
+                      "more zone entries on a base of roughly 3.2 million (assumed 58% of 5.5 million weekday riders), less the "
+                      "matching rise outside, gives about +0.2%. The upper figure uses 1.5 riders, half moving to the subway and "
+                      "all boarding inside the zone. The final composed range p_lo, p_c, p_hi is recomputed from the measured "
+                      "first stage with the constants in `compose`."),
+        "support_if": ("confirmed if all four hold: (1) the primary estimate b is positive and its 95% interval excludes zero; "
+                       "(2) that interval overlaps the composed range [p_lo, p_hi]; (3) the placebo interval (2018 against 2017) "
+                       "includes zero; (4) b is positive under both control-group sensitivities S1 and S2."),
+        "refute_if": ("contested if the upper end of the 95% interval of b is below p_lo (which is at least zero), and the placebo "
+                      "interval includes zero. In practice this needs a significant relative fall in zone entries."),
+        "unsettled_if": "Any other case, including a positive significant b whose interval lies wholly above p_hi, and any case where the placebo interval excludes zero.",
+        "no_test_if": ("The ridership cannot be fetched for all six windows; or fewer than 60 complexes inside or 150 outside pass the "
+                       "coverage rule; or the first-stage estimate for FHV and taxi pickups combined is not negative with a 95% "
+                       "interval excluding zero (if trips did not fall, there is no diversion to look for)."),
+        "detectability": ("Rule 8 reasoning applied to a single link. With D = (b/se)^2 - ((b - p_c)/se)^2, an estimate equal to the "
+                          "central composed effect p_c gives D >= 4 only when se <= p_c / 2, about 0.1 percentage points if p_c is "
+                          "0.2%. The registrant expects se between 0.3 and 0.8 points from station-level variation, before allowing "
+                          "for year-to-year differences in service and weather. The test can therefore detect only an effect near "
+                          "the top of the plausible range, and the expected verdict is unsettled. D and the minimum detectable "
+                          "effect (2.8 x se) are reported with the outcome."),
+    },
+    "compose": {
+        "constants_low_central_high": COMPOSE,
+        "formula": ("dT = T0 x (1 - exp(f)), where T0 is mean weekday FHV plus taxi trips with pickup or drop-off in the zone in the "
+                    "2019 pre window and f is the first-stage log estimate. X = occupancy x diversion x dT. "
+                    "p = 100 x (s X / E_in - (1 - s) X / E_out), where s is the share boarding in the zone and E_in, E_out are mean "
+                    "weekday entries inside and outside in the 2019 pre window. p_lo uses the low constants and is floored at 0; "
+                    "p_c the central; p_hi the high."),
+        "status_of_constants": "Occupancy, diversion share and boarding share are assumptions of the registrant, not verified figures.",
+    },
+    "plan": {
+        "datasets": {
+            "subway": "MTA Subway Hourly Ridership on data.ny.gov: t69i-h2me (2017-2019) for the primary; wujg-7c2s (2020-2024) and 5wq4-mkjj (2025 on) for the secondary. Queried through concord.socrata with DOMAIN set to https://data.ny.gov, aggregated on the server to complex by day (sum of ridership over hours, payment methods and fare classes; transit_mode = subway).",
+            "stations": "Coordinates and borough from the ridership rows; the `cbd` flag and daytime routes from MTA Subway Stations 39hk-dx4f, joined on complex id.",
+            "first_stage_2019": "TLC monthly trip files (fhv, fhvhv, yellow, green; January to March 2018 and 2019) from the TLC trip-record site, cited by URL and Last-Modified; the NYC Open Data copies are am94-epxh, u6nh-b56h, 4p5c-cbgn, t29m-gskq and 2upf-qytp. High-volume records begin in February 2019; before that the same trips are in the FHV file, so FHV and high-volume FHV are summed as one series.",
+            "weather": "NOAA GHCN-Daily Central Park through concord.noaa, for the snow-day rule.",
+        },
+        "areas": ("Inside: complexes with borough Manhattan lying south of the straight line through the 96 St (1/2/3) and 96 St (Q) "
+                  "stations (LINE_96), more than 300 m from that line. Roosevelt Island is excluded. Outside: complexes in Manhattan "
+                  "north of the line by more than 300 m, and all complexes in the Bronx, Brooklyn and Queens. The 300 m band removes "
+                  "the 96 St stations, which serve both sides."),
+        "line_96": LINE_96, "buffer_m": BUFFER_M,
+        "windows_primary": WINDOWS_2019,
+        "excluded_days": EXCLUDED_DAYS,
+        "unit": "station complex; a complex is kept if it has positive entries on at least 90% of included days in each of the four windows used by an estimate",
+        "model": ("For complex c and year Y, y = log(mean daily entries in post) - log(mean daily entries in pre). "
+                  "D_c = y(2019) - y(2018). b is the coefficient on `inside` in a weighted least-squares regression of D_c on a "
+                  "constant and `inside`, weights equal to the complex's mean daily entries in the 2018 pre window, standard errors "
+                  "clustered on 1.5 km grid cells. Reported as 100 x (exp(b) - 1) with a 95% interval. This is a triple difference: "
+                  "inside against outside, after against before, 2019 against the same weeks of 2018, which removes any seasonal "
+                  "difference between the areas."),
+        "placebo": "The same estimator one year earlier: D_c = y(2018) - y(2017), same areas, weights from the 2017 pre window. No price change occurred in February 2018.",
+        "first_stage": ("The same estimator with taxi zones as units and weekday pickups as the outcome, for FHV (all bases, including "
+                        "high-volume) and taxis (yellow and green) combined and separately, 2019 against 2018. Inside zones are "
+                        "Manhattan taxi zones whose centroid lies south of LINE_96, without Roosevelt Island, Randalls Island and the "
+                        "harbour islands. Zones 264 and 265 (unknown, outside the city) are dropped and the share of trips with no "
+                        "pickup zone is reported for each window; if it exceeds 10% of FHV trips in any window, the FHV first stage "
+                        "is reported as unreliable and the gate uses taxis alone."),
+        "sensitivities": {
+            "S1": "control group Manhattan north of 96th Street only",
+            "S2": "control group the Bronx, Brooklyn and Queens only",
+            "S3": "unweighted",
+            "S4": "the 96 St complexes included as inside",
+            "S5": "complexes served by the L route dropped (the planned L tunnel closure was cancelled on 3 January 2019 and night and weekend work began in late April)",
+            "S6": "post window extended to 16 weeks (to 24 May 2019 and the matching weeks of 2018), which takes in the fare change of 21 April 2019",
+            "S7": "entries from 20:00 to 03:59 only, when for-hire trips are a larger share of travel",
+            "S8": "Saturdays and Sundays",
+            "S9": "2019 difference in differences without subtracting 2018",
+        },
+        "secondary_2025": {
+            "areas": "Inside: complexes flagged `cbd` in 39hk-dx4f. Outside: all other complexes in Manhattan, the Bronx, Brooklyn and Queens.",
+            "windows": WINDOWS_2025,
+            "model": "Same estimator: D_c = y(2025) - y(2024) with y the log ratio of the January-March window to the preceding autumn window; placebo y(2024) - y(2023).",
+            "status": "Descriptive. It is reported next to the known 2025 first stage and to mob-crz-traffic. It cannot separate the FHV charge from the toll on private vehicles and does not enter the verdict.",
+        },
+        "figure": "figures/transit/fhv_price_subway.png: weekly log ratio of inside to outside weekday entries for 2017, 2018 and 2019 around the first week of February, and the estimates with intervals.",
+    },
+    "alternatives": [
+        "Differential subway service changes between the zone and the rest of the system in early 2019 against early 2018 (Subway Action Plan improvements, weekend and night work, station closures for renovation in 2018 that moved riders to neighbouring stations)",
+        "Weather: four nor'easters in March 2018 fall in the comparison year; the snow-day rule removes only the days at or above 76 mm",
+        "Employment and tourism growth in the Manhattan core, which raise zone entries without any substitution",
+        "The citywide driver minimum-pay rule of 1 February 2019, which raised app fares everywhere; it differences out between areas but adds a citywide push toward transit that this design cannot see",
+        "The August 2018 cap on new for-hire vehicle licences",
+        "Control contamination: a diverted trip between the zone and an outer borough adds an entry outside as well as inside, which biases the estimate toward zero; the composition allows for it",
+        "Riders moving to buses, bicycles, walking or pooled rides, or not travelling, which would give a first stage without a subway effect",
+        "Fare evasion and changes in how entries are estimated across years in the MTA series",
+    ],
+    "relation_to_other_claims": ("mob-crz-traffic measured the 2025 first stage and the zone speed gain; repro-mmr-cbd-speed asked "
+                                 "whether the gain against Manhattan north of 60th Street lasted beyond the first six months. This "
+                                 "claim asks whether the per-trip charges moved riders to the subway, the substitution that "
+                                 "commute-fhv-subway-distance looked for in cross-section and did not find."),
+    "prior": 0.08,
+    "prior_note": "Probability of confirmed 0.08, contested 0.04, no_test 0.08, unsettled 0.80.",
+    "registrant": "Claude (agent), for Jeff Vernon",
+}
+
+
+if __name__ == "__main__":
+    print(claims.register(REG))

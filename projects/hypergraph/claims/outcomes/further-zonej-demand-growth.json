@@ -1,0 +1,435 @@
+{
+ "id": "further-zonej-demand-growth",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "Zone J weather-normalised annual energy trend, 2015-2025, pandemic days 2020-03-15 to 2021-06-30 excluded",
+  "estimate": -0.752,
+  "lo": -0.837,
+  "hi": -0.666,
+  "scale": "percent a year (OLS on daily ln energy, Newey-West 14 lags, 95% interval)",
+  "null": 0,
+  "n": 3521,
+  "interval_year_clustered": {
+   "lo": -1.027,
+   "hi": -0.475,
+   "note": "standard errors clustered by year (referee); about three times as wide as the registered HAC interval with 14 lags, which is kept in lo and hi because it is the registered one"
+  },
+  "interval_year_block_bootstrap": {
+   "lo": -1.176,
+   "hi": -0.517
+  },
+  "step_model": {
+   "step_percent": -5.7,
+   "step_lo": -7.1,
+   "step_hi": -4.2,
+   "trend_with_step": 0.031,
+   "trend_lo": -0.222,
+   "trend_hi": 0.285,
+   "note": "trend plus a step after 30 June 2021, HAC 60 lags (referee); exploratory"
+  }
+ },
+ "secondary_effects": {
+  "zone_J_summer_peak_trend": {
+   "est": -0.782,
+   "lo": -0.938,
+   "hi": -0.625,
+   "n": 1190,
+   "scale": "percent a year"
+  },
+  "zone_K_energy_trend_placebo": {
+   "est": -0.86,
+   "lo": -0.965,
+   "hi": -0.755,
+   "n": 3521,
+   "scale": "percent a year"
+  },
+  "zone_K_summer_peak_trend": {
+   "est": -0.432,
+   "lo": -0.601,
+   "hi": -0.264,
+   "n": 1190,
+   "scale": "percent a year"
+  },
+  "J_minus_K_energy_trend": {
+   "est": 0.108,
+   "lo": 0.02,
+   "hi": 0.193,
+   "scale": "percentage points a year, 30-day block bootstrap"
+  },
+  "S8_block_bootstrap_J_energy": [
+   -0.8881769192854722,
+   -0.664557811138872
+  ],
+  "annual_weather_normalised_energy_twh_J": {
+   "2015": 51.945,
+   "2016": 52.678,
+   "2017": 52.257,
+   "2018": 52.465,
+   "2019": 51.784,
+   "2020": 50.824,
+   "2021": 49.231,
+   "2022": 49.107,
+   "2023": 48.745,
+   "2024": 49.498,
+   "2025": 49.848
+  },
+  "design_day_peak_mw_J": {
+   "2015": 10790.6,
+   "2016": 10706.1,
+   "2017": 10622.4,
+   "2018": 10539.5,
+   "2019": 10457.1,
+   "2020": 10375.2,
+   "2021": 10294.2,
+   "2022": 10213.8,
+   "2023": 10134.0,
+   "2024": 10054.6,
+   "2025": 9976.1
+  },
+  "sensitivity": {
+   "S1_energy": {
+    "est": -0.7417769945963548,
+    "lo": -0.8268293809662541,
+    "hi": -0.6566516660347022,
+    "n": 3987
+   },
+   "S1_peak": {
+    "est": -0.7734016346620076,
+    "lo": -0.9310808125822523,
+    "hi": -0.6154714928334748,
+    "n": 1342
+   },
+   "S2_drop_2020_2021_energy": {
+    "est": -0.7414708400901526,
+    "lo": -0.8258873807530653,
+    "hi": -0.6569824444627836,
+    "n": 3263
+   },
+   "S2_drop_2020_2021_peak": {
+    "est": -0.7705609047891304,
+    "lo": -0.9267448387705768,
+    "hi": -0.614130754801212,
+    "n": 1098
+   },
+   "S3_2015_2019_energy": {
+    "est": -0.09439389754658523,
+    "lo": -0.30258638454399023,
+    "hi": 0.11423334608162694,
+    "n": 1802
+   },
+   "S3_2015_2019_peak": {
+    "est": 0.23768373696153589,
+    "lo": -0.1958923320314221,
+    "hi": 0.6731433778033757,
+    "n": 610
+   },
+   "S4_2022_2025_energy": {
+    "est": 0.5606931629543732,
+    "lo": 0.3153326165602044,
+    "hi": 0.8066538349341013,
+    "n": 1461
+   },
+   "S4_2022_2025_peak": {
+    "est": 0.3871955997199805,
+    "lo": -0.06360893266541545,
+    "hi": 0.8400336728831448,
+    "n": 488
+   },
+   "S5_base70_60_energy": {
+    "est": -0.7430979856717701,
+    "lo": -0.8335208306648689,
+    "hi": -0.6525926905305512,
+    "n": 3521
+   },
+   "S5_base70_60_peak": {
+    "est": -0.763872181360925,
+    "lo": -0.9401203214492226,
+    "hi": -0.5873104591545664,
+    "n": 1190
+   },
+   "S6_laguardia_energy": {
+    "est": -0.752072983743457,
+    "lo": -0.8324766430405028,
+    "hi": -0.6716041342691437,
+    "n": 3521
+   },
+   "S6_laguardia_peak": {
+    "est": -0.7417110047442388,
+    "lo": -0.8762019690290224,
+    "hi": -0.6070375633971059,
+    "n": 1190
+   },
+   "S7_month_x_cdd_energy": {
+    "est": -0.7546313739059562,
+    "lo": -0.839901402566412,
+    "hi": -0.6692880196045303,
+    "n": 3521
+   }
+  },
+  "sensitivity_zone_K": {
+   "S1_energy": {
+    "est": -0.8546614644706962,
+    "lo": -0.9599607049948444,
+    "hi": -0.7492502699314452,
+    "n": 3987
+   },
+   "S1_peak": {
+    "est": -0.4282721746028506,
+    "lo": -0.5963566070628978,
+    "hi": -0.25990352342133427,
+    "n": 1342
+   },
+   "S2_drop_2020_2021_energy": {
+    "est": -0.8651836127562151,
+    "lo": -0.9695561112374462,
+    "hi": -0.7607011115524642,
+    "n": 3263
+   },
+   "S2_drop_2020_2021_peak": {
+    "est": -0.4429069733775659,
+    "lo": -0.6105472469577267,
+    "hi": -0.27498394080691657,
+    "n": 1098
+   },
+   "S3_2015_2019_energy": {
+    "est": -0.904080197336421,
+    "lo": -1.1895146032993797,
+    "hi": -0.6178212553965334,
+    "n": 1802
+   },
+   "S3_2015_2019_peak": {
+    "est": 0.046185214875404945,
+    "lo": -0.4789858052627105,
+    "hi": 0.5741275552480163,
+    "n": 610
+   },
+   "S4_2022_2025_energy": {
+    "est": 0.11129344249452,
+    "lo": -0.24225159617988767,
+    "hi": 0.46609145746772107,
+    "n": 1461
+   },
+   "S4_2022_2025_peak": {
+    "est": -0.20626084533937883,
+    "lo": -0.9217909208251052,
+    "hi": 0.5144366962691382,
+    "n": 488
+   },
+   "S5_base70_60_energy": {
+    "est": -0.851328248964478,
+    "lo": -0.9607388845018883,
+    "hi": -0.741796745328549,
+    "n": 3521
+   },
+   "S5_base70_60_peak": {
+    "est": -0.4073790093995666,
+    "lo": -0.6160526895379825,
+    "hi": -0.19826718300149926,
+    "n": 1190
+   },
+   "S6_laguardia_energy": {
+    "est": -0.8613575271434692,
+    "lo": -0.9626505456411638,
+    "hi": -0.7599609085832348,
+    "n": 3521
+   },
+   "S6_laguardia_peak": {
+    "est": -0.3797392192972704,
+    "lo": -0.5259961230416055,
+    "hi": -0.23326727362178445,
+    "n": 1190
+   },
+   "S7_month_x_cdd_energy": {
+    "est": -0.8624781052876562,
+    "lo": -0.9680468080889848,
+    "hi": -0.7567968655661561,
+    "n": 3521
+   }
+  },
+  "placebo_shifted_weather": {
+   "true_full_r2": 0.9549525026053347,
+   "true_noweather_r2": 0.7167277853850511,
+   "shift_full_r2": 0.7211220946667356,
+   "shift_noweather_r2": 0.7167277853850511,
+   "attributable_true": 0.2382247172202836,
+   "attributable_shift": 0.004394309281684494
+  },
+  "gold_book": {
+   "horizon3_n_editions": 3,
+   "horizon3_editions": [
+    2021,
+    2022,
+    2023
+   ],
+   "horizon3_errors_pp": [
+    3.04,
+    -1.9,
+    -4.04
+   ],
+   "horizon3_mean_pp": -0.9681477599450039,
+   "horizon3_boot_lo": -4.042122341202036,
+   "horizon3_boot_hi": 3.037736520780887,
+   "all_pairs_mean_err_pp": -0.1904181700473691,
+   "by_h": {
+    "1": {
+     "mean": 0.6,
+     "count": 5
+    },
+    "2": {
+     "mean": 0.14,
+     "count": 4
+    },
+    "3": {
+     "mean": -0.97,
+     "count": 3
+    },
+    "4": {
+     "mean": -1.52,
+     "count": 2
+    },
+    "5": {
+     "mean": -0.45,
+     "count": 1
+    }
+   },
+   "exploratory_vs_goldbook_actual_h3_mean_pp": -2.6389907734005997,
+   "exploratory_vs_goldbook_actual_h3": [
+    -1.51,
+    -3.14,
+    -3.26
+   ],
+   "pal_vs_goldbook_ratio": {
+    "2016": 0.998,
+    "2017": 1.01,
+    "2018": 1.001,
+    "2019": 1.001,
+    "2020": 0.999,
+    "2021": 1.004,
+    "2022": 1.002,
+    "2023": 1.002,
+    "2024": 0.999,
+    "2025": 1.002
+   }
+  },
+  "unregistered_annual_level_interval": "Descriptive only (rule 4): a t-interval on the 11 annual normalised values gives -0.77 percent a year (-1.11 to -0.42); excluding 2020 and 2021, -0.74 (-1.10 to -0.38). Wider than the daily-model HAC interval because only 9 to 11 independent years inform the trend."
+ },
+ "sources": [
+  {
+   "kind": "nyiso-pal",
+   "name": "NYISO integrated real-time actual load (PAL), 5-minute, zones N.Y.C. and LONGIL",
+   "url": "https://mis.nyiso.com/public/csv/pal/YYYYMM01pal_csv.zip",
+   "files": "132 monthly zips, 201501 to 202512",
+   "last_modified_range": [
+    "Fri, 01 Apr 2022 04:14:01 GMT",
+    "Wed, 04 Dec 2019 15:50:04 GMT"
+   ],
+   "fetched": "2026-11-12/13",
+   "version_record": "data/derived/further/zonej_pal_sources.json",
+   "data_access": "open"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ",
+   "data_access": "open"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00014732",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00014732.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:35:30 GMT",
+   "fetched": "2026-11-12T20:25:01-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ",
+   "data_access": "open",
+   "use": "sensitivity S6"
+  },
+  {
+   "kind": "nyiso-goldbook",
+   "name": "NYISO Load & Capacity Data Report (Gold Book) 2021-2026, Tables I-2 and I-3a",
+   "urls": [
+    "https://www.nyiso.com/documents/20142/2226333/<2023..2026>-Gold-Book-Public.pdf",
+    "https://www.nysrc.org/wp-content/uploads/2023/11/I.3-R2-Load-and-Capacity-Gold-Book-2022.pdf",
+    "https://nysrc.org/wp-content/uploads/2023/04/2021-April-Load-and-Capacity-Gold-Book.pdf"
+   ],
+   "extracted": "data/derived/further/zonej_goldbook.csv",
+   "data_access": "open",
+   "note": "The 2021 and 2022 editions are copies hosted by the New York State Reliability Council, not NYISO's own files."
+  },
+  {
+   "kind": "nyiso-power-trends",
+   "url": "https://www.nyiso.com/documents/d/guest/2026-power-trends",
+   "data_access": "open",
+   "note": "quote verified in the PDF text"
+  }
+ ],
+ "prediction_scored": "partial. The claim's direction (+) and the +0.5 percent threshold were not met; the refutation condition was met (upper limit -0.67 percent a year against a threshold of +0.5). The registrant's expected value of about 0.0 (range -0.6 to +0.6) was too high: the estimate of -0.75 lies just outside the range. The Gold Book part (registered as secondary) neither showed forecasts biased high nor biased low.",
+ "settle": "The full-period trend is dominated by a level shift between 2019 and 2021-2022 (normalised energy 51.8 TWh in 2019, 49.2 in 2021) that coincides with the pandemic and the exclusion window; the pre-pandemic years are flat (-0.09 percent a year, -0.30 to +0.11) and 2022-2025 rises (+0.56, +0.32 to +0.81). Whether Zone J demand is growing now is better answered by 2022-2026 data with an occupancy covariate (building access or transit ridership), by behind-the-meter solar output for Zone J to add back to net load, and by Con Edison's weather-adjusted sales by class. Those data would separate a lasting drop in commercial load from a recovery.",
+ "research_needed": [
+  {
+   "question": "How much of the post-2019 drop in Zone J load is lasting loss of office and commercial load, and how much is behind-the-meter solar and efficiency?",
+   "data": "Con Edison sales by class; NYSERDA behind-the-meter solar by zone; building occupancy (Kastle, MTA ridership); LL84 benchmarked electricity by year",
+   "design": "Decompose weather-normalised Zone J load by customer class and add back behind-the-meter generation",
+   "priority": "high"
+  },
+  {
+   "question": "Is the 2022-2025 increase (+0.56 percent a year in this analysis) a recovery or a new growth path?",
+   "data": "NYISO PAL load through 2026 and later; Gold Book 2027",
+   "design": "Pre-register a trend test on 2022 onward with an occupancy control",
+   "priority": "high"
+  },
+  {
+   "question": "Does the system-wide statement of rising demand apply to any zone other than the upstate zones with large-load proposals?",
+   "data": "Gold Book Table I-2 by zone, PAL by zone",
+   "design": "Run the same pipeline in every zone and compare with the interconnection queue by zone",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/further/zonej_demand_growth.png"
+ ],
+ "notes": "Verdict follows PRECEDENCE rule 1: the registered refute_if (upper 95 percent limit of the energy trend below +0.5 percent a year) is met in the primary model and in every sensitivity check that uses the whole period (S1, S2, S5, S6, S7, S8). Zone K shows a similar decline (-0.86), so the Zone J result is not specific to New York City; Zone J is 0.11 points a year higher than Zone K (0.02 to 0.19). The shifted-weather placebo removed almost all of the weather-attributable R-squared (0.238 to 0.004), so the weather model captures real temperature dependence. PAL annual totals match the Gold Book's own historical Zone J energy within 1 percent in every year 2016 to 2025. Measured load is net of behind-the-meter solar, which rises over the period and lowers measured load; it is not corrected. Gold Book comparison used editions 2021 to 2025 (the 2026 edition has no past target years); at a three-year horizon only three editions apply (2021, 2022, 2023), with forecast-growth errors +3.0, -1.9 and -4.0 points, mean -1.0 (bootstrap -4.0 to +3.0), so neither registered bias condition is met. The 2021 edition's base year, 2020, is a pandemic year, and the normalised value for 2020 and 2021 is less reliable because most of those years' days were excluded from the fit. Exploratory and unregistered: against the Gold Book's own later historical values, forecast growth at three years was 2.6 points too low on average (-1.5, -3.1, -3.3). The HAC intervals are narrow because the daily model has thousands of days, but the trend rests on 9 to 11 years; the unregistered annual-level interval is wider but also excludes zero.\n\nAfter the referee (13 Nov 2026): the registered interval is about three times too narrow. The trend is identified by nine to eleven years and residuals are correlated over much longer than 14 days. With standard errors clustered by year the trend is -0.752 (-1.027 to -0.475) percent a year; a bootstrap of whole calendar years gives -1.176 to -0.517. The upper limit is below +0.5 under every method, so the verdict does not depend on the interval. The result is a step and not a steady decline: a single step of -5.7% (-7.1 to -4.2) across the excluded pandemic window accounts for the whole negative trend, and with the step in the model the trend is +0.03 (-0.22 to +0.29) percent a year. The refutation condition is still met in the step model. After June 2021 the slope is +0.36 (about -0.02 to +0.75), so whether Zone J demand is growing now is open. The verdict means that the registered claim about Zone J over 2015 to 2025 was refuted. It does not contradict NYISO's statement, which concerns the whole state and forecasts. Measured load is net of behind-the-meter solar. The PAL series has no data for 1 to 24 April 2017 and 1 to 7 April 2021, which the outcome did not report. With three applicable Gold Book editions the registration called for that part to be reported as not done; the mean and interval given should be read that way. The `last_modified_range` in the source record is the alphabetical minimum and maximum of date strings and not a range of dates. The design-day peak series is a straight line by construction.",
+ "registration_sha256": "95fedd193355dacaffeff3c1938d44d485d09b756c545d8acdc7035a48356581",
+ "decided_at": "2026-11-12T20:26:45-0500",
+ "stance": {
+  "value": -1.0,
+  "lo": -1.0,
+  "hi": -1.0,
+  "z": -17.24
+ },
+ "verdict_note": "The registered claim of growth above 0.5 percent a year in Zone J over 2015 to 2025 is refuted. The decline is a step of about -5.7% across 2020 to 2021 and not a steady trend, and the result does not test NYISO's statewide forecast.",
+ "critique": {
+  "report": "critique/further-zonej-demand-growth.md",
+  "answer": "accepted; verdict kept, wider interval and step finding recorded"
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "Zone J weather-normalised annual energy trend, 2015-2025, pandemic days 2020-03-15 to 2021-06-30 excluded",
+    "estimate": -0.752,
+    "lo": -0.837,
+    "hi": -0.666,
+    "scale": "percent a year (OLS on daily ln energy, Newey-West 14 lags, 95% interval)",
+    "null": 0,
+    "n": 3521
+   },
+   "stance": {
+    "value": -1.0,
+    "lo": -1.0,
+    "hi": -1.0,
+    "z": -17.24
+   },
+   "decided_at": "2026-11-12T20:26:45-0500",
+   "prediction_scored": "partial. The claim's direction (+) and the +0.5 percent threshold were not met; the refutation condition was met (upper limit -0.67 percent a year against a threshold of +0.5). The registrant's expected value of about 0.0 (range -0.6 to +0.6) was too high: the estimate of -0.75 lies just outside the range. The Gold Book part (registered as secondary) neither showed forecasts biased high nor biased low."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep contested; year-clustered interval (-1.027 to -0.475) and the step finding (-5.7%; trend +0.03 with the step) recorded.",
+  "critique": "critique/further-zonej-demand-growth.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

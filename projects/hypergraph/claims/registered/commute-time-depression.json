@@ -1,0 +1,84 @@
+{
+ "id": "commute-time-depression",
+ "kind": "confirmation",
+ "statement": "Across New York City's 42 UHF neighbourhoods, a longer mean travel time to work goes with a higher age-adjusted share of adults with depression, after adjusting for poverty and walking access to the subway.",
+ "graph_evidence": [
+  {
+   "concepts": "commute time (variable search) -> mental health",
+   "n_findings": 19,
+   "n_studies": 7,
+   "direction": "+",
+   "summary": "15 of 17 ratio findings above 1. Abstracts read: PMID 37342827 (Korea, KWCS, n about 50,000): depression OR 1.06 (1.01-1.11) for 30-60 min, 1.23 (1.13-1.33) for 60-120 min, 1.31 (1.09-1.57) for >120 min vs <=30 min. PMID 22039952 (Scania, Sweden): ORs 1.2-1.6 for poor mental health and low vitality with public-transport commutes >60 min.",
+   "pubmed_ids": [
+    22039952,
+    25651866,
+    33307953,
+    34029976,
+    37342827,
+    39049611,
+    40268731
+   ],
+   "source": "data/derived/commuting/graph_evidence.json"
+  },
+  {
+   "concepts": "commute time (variable search) -> sleep",
+   "n_findings": 16,
+   "n_studies": 6,
+   "direction": "+",
+   "summary": "14 of 14 ratio findings above 1. PMID 31890330 (Korea): sleep problems OR about 2 for commutes >50 min. PMID 31836613 (Sweden, fixed-effects): sleep problems OR 1.16 (1.00-1.35) for >5 h/week among those working >40 h/week.",
+   "pubmed_ids": [
+    22039952,
+    31836613,
+    31890330,
+    35023923,
+    37012906,
+    37047926
+   ],
+   "source": "data/derived/commuting/graph_evidence.json"
+  },
+  {
+   "concepts": "commute time (variable search) -> physical inactivity",
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "1 of 1 ratio findings above 1. PMID 31836613: physical inactivity OR 1.25 (1.03-1.51), same subgroup.",
+   "pubmed_ids": [
+    31836613
+   ],
+   "source": "data/derived/commuting/graph_evidence.json"
+  },
+  {
+   "note": "The graph has no concept for commuting or commute time; these rows come from variable-name search. It holds no finding linking commute time to BMI or obesity. PMID 25501883, which the search also returns, measures physical activity during commuting, not commute duration, and is not used."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Hoehner CM, Barlow CE, Allen P, Schootman M (2012). Commuting distance, cardiorespiratory fitness, and metabolic risk. Am J Prev Med 42(6):571-578.",
+   "doi": "10.1016/j.amepre.2012.02.020",
+   "finding": "Longer commuting distance associated with lower fitness, higher BMI and blood pressure (Texas)."
+  },
+  {
+   "citation": "Christian TJ (2012). Trade-offs between commuting time and health-related activities. J Urban Health 89:746-757.",
+   "doi": "10.1007/s11524-012-9678-6",
+   "finding": "Each added minute of commuting is associated with less time in physical activity, food preparation and sleep (ATUS)."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Implied by the individual-level ORs (about 1.06-1.3 for longer commutes, applied to a depression prevalence near 10% among workers, who are about 60% of adults): +0.05 to +0.3 percentage points of depression per 5 minutes of mean commute. An adjusted slope above +1 point per 5 minutes would be too large to be a commute effect and would indicate confounding.",
+  "support_if": "The slope of age-adjusted depression % on mean commute minutes, adjusted for poverty % and subway walking access %, is above 0 and its 95% interval (HC3) excludes 0.",
+  "refute_if": "The same adjusted slope is below 0 and its 95% interval excludes 0."
+ },
+ "plan": "Exposure: mean one-way travel time to work (minutes), workers 16+ who did not work at home, ACS 2015-2019 5-year, ZCTA level from the Census API (B08013_001E aggregate minutes / B08303_001E workers), summed to UHF42 with zcta_to_uhf.csv from github.com/nychealth/EHDP-data at commit 547482b9df589006543e13e8cdf6546e00ed9998. Secondary exposure, reported only: share of those workers commuting 60 minutes or more (B08303_012E + _013E). Primary outcome: EHDP indicator 2417, measure 1324, depression (adults), age-adjusted %, CHS 2017-18, UHF42. Covariates: EHDP 103/221 poverty % (ACS 2015-19) and 2391/1227 % of residents within 1/4 mile of a subway entrance (2018). Model: OLS, HC3, slope per 5 minutes; n = 42 (fewer if suppressed). Secondary outcomes, reported and not deciding the verdict: no exercise in past 30 days (100 - EHDP 2060/500, mean of CHS 2017-2019) and obesity (2063/506, 2017-2019). Sensitivity: borough fixed effects; unadjusted slope. Figure: UHF42 map of mean commute time and binned or partial-regression scatter.",
+ "alternatives": [
+  "Poverty and income: long commutes in New York are concentrated in lower-income outer-borough neighbourhoods",
+  "Transit access: neighbourhoods far from the subway have long bus commutes; the subway-access covariate is meant to absorb this",
+  "Composition: age, race and ethnicity, immigrant share and occupation differ between neighbourhoods and are not adjusted",
+  "Dilution: commute time describes workers; depression describes all adults, including those not working",
+  "Ecological fallacy: a neighbourhood slope need not hold for individuals"
+ ],
+ "prior": 0.25,
+ "registrant": "commuting agent (Claude Opus 5.5), 12 Nov 2026",
+ "registered_at": "2026-11-12T16:24:52-0500",
+ "sha256": "3908e52e90ed062cd9d24cc967a43cb9af43d0811cec9687338eb50675c352bc"
+}

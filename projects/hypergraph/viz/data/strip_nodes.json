@@ -1,0 +1,31 @@
+{
+ "_note": "Node names for strips generated from a version difference (tools/strip_from_diff.py). The collection records an effect and its interval but not which variable is the exposure and which the outcome, so the two names are given here by hand. 'context' names an outcome already in the earlier version that the same edge rests on. 'modifies' draws the claim as a third variable acting on that edge. 'twin_of' folds a claim that repeats another on a different window into the other's caption. 'compare' names the same test in another place, read from the earlier version and quoted in the caption.",
+ "moon-full-emergencies": {
+  "subject": "moon",
+  "a": "full\nmoon",
+  "b": "injury\ncrashes"
+ },
+ "heat-inside-outside-2006": {
+  "subject": "heat",
+  "context": "heat-shootings",
+  "modifies": true,
+  "a": "daily\ntemperature",
+  "b": "shootings",
+  "node": "inside,\nnot outside"
+ },
+ "heat-inside-outside": {
+  "subject": "heat",
+  "twin_of": "heat-inside-outside-2006"
+ },
+ "transfer-chicago-inside-outside": {
+  "subject": "heat-chicago",
+  "context": "transfer-chicago-heat-shootings",
+  "modifies": true,
+  "a": "daily\ntemperature",
+  "b": "shootings\nin Chicago",
+  "node": "inside,\nnot outside",
+  "place": "Chicago",
+  "compare": "heat-inside-outside-2006",
+  "compare_place": "New York"
+ }
+}

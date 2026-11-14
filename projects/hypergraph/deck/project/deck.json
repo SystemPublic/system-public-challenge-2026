@@ -1,0 +1,87 @@
+{
+ "v": 5,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-13T23:30:00Z"
+ },
+ "lists": "css",
+ "format": {
+  "v": 1,
+  "shared": [
+   "project/deck.css"
+  ]
+ },
+ "title": "NYC Concordance",
+ "cover": "cover",
+ "order": [
+  "cover",
+  "edgefield",
+  "edgepanel",
+  "stripheat",
+  "striprivals",
+  "method",
+  "scorecard",
+  "stripcameras",
+  "drift",
+  "requests",
+  "close",
+  "grammar",
+  "stripair",
+  "striprestaurants",
+  "stripmoon",
+  "heatdrugs",
+  "edgesedges",
+  "challenge",
+  "selection",
+  "lineage",
+  "review",
+  "shape",
+  "literatures",
+  "power",
+  "gaps",
+  "audit",
+  "simulator",
+  "next",
+  "levers",
+  "provenance",
+  "replication",
+  "audiences"
+ ],
+ "sections": {
+  "s1": {
+   "description": "The five-minute talk: ten slides and a closing slide",
+   "start": "cover"
+  },
+  "s2": {
+   "description": "Backup: the drawing rules, more strips, heat and medicines, relations among edges, and the challenge",
+   "start": "grammar"
+  },
+  "s3": {
+   "description": "Backup: the method's record, and what the graph did when joined to city data",
+   "start": "selection"
+  },
+  "s4": {
+   "description": "Backup: tests of city levers, and what a city or charity could do",
+   "start": "next"
+  },
+  "s5": {
+   "description": "Backup: provenance and replication",
+   "start": "provenance"
+  },
+  "s6": {
+   "description": "Appendix: the two organisations behind the graph and the challenge",
+   "start": "audiences"
+  }
+ },
+ "faces": {
+  "source-serif-4": {
+   "family": "Source Serif 4",
+   "href": "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400..700&family=IBM+Plex+Sans:wght@400;600&display=swap"
+  },
+  "ibm-plex-sans": {
+   "family": "IBM Plex Sans",
+   "href": "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400..700&family=IBM+Plex+Sans:wght@400;600&display=swap"
+  }
+ },
+ "designSystems": []
+}

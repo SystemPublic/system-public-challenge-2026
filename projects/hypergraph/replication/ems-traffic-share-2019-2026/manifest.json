@@ -1,0 +1,2190 @@
+{
+ "package": {
+  "claim": "ems-traffic-share-2019-2026",
+  "built_at": "2026-11-13T22:57:21-0500",
+  "tool": "tools/replicate.py",
+  "tool_blob": "227e649fbc524670361a2e3669887ba27f05af5c",
+  "paths": "relative to the repository (inputs keep their repo paths under inputs/) or to ~/opt/nyc-concordance"
+ },
+ "claim": {
+  "id": "ems-traffic-share-2019-2026",
+  "registration": {
+   "id": "ems-traffic-share-2019-2026",
+   "kind": "conflict",
+   "statement": "Slower traffic accounts for less than half of the rise in Manhattan life-threatening ambulance travel time from January-September 2019 to January-September 2026, even if ambulance pace moved one for one with taxi pace.",
+   "graph_evidence": [
+    {
+     "summary": "The graph holds no finding on the elasticity of emergency-vehicle travel time to general traffic speed. It holds a lights-and-sirens time saving of 3.02 min (Minneapolis, PMID 9795322) and survival odds ratios of 1.02 to 1.24 per minute of shorter response (docs/congestion_tradeoffs.md).",
+     "pubmed_ids": [
+      "9795322",
+      "20798090"
+     ]
+    }
+   ],
+   "literature": [
+    {
+     "citation": "MMR FY2026, FDNY chapter",
+     "finding": "FDNY attributes the FY2026 rise to fewer ambulance tours (in-service hours down 5%) and 11 hospital ambulances leaving the 911 system."
+    },
+    {
+     "citation": "repro-mmr-cbd-speed (seen before registration)",
+     "finding": "CBD weekday taxi speed 6.94, 6.95, 6.62 mph in FY24-FY26; January-June 2026 taxi speeds 9.2% below January-June 2025 in the CBD and 5.9% in Manhattan north of 60th Street."
+    }
+   ],
+   "prediction": {
+    "direction": "-",
+    "magnitude": "S1 (traffic share at beta = 1) between 0.05 and 0.45; S at the T1 beta between 0.03 and 0.35",
+    "support_if": "The 95% upper bound of S1 is below 0.5.",
+    "refute_if": "The 95% lower bound of S1 is above 0.5."
+   },
+   "plan": "lib.traffic_share(beta, beta_se) at commit f44ab0b, base 2019-01-01 to 2019-09-30, post 2026-01-01 to 2026-09-30, sev hi, Manhattan crz + north, all hours. D = change in log mean EMS travel; pace term = EMS-incident-weighted (post-period area-hour shares) change in log taxi hours per mile by area and hour. S1 = pace term / D (deciding). S = beta x pace term / D with beta and its se from the deciding T1 fit (x only, sev hi) is reported. Interval: day-block bootstrap within each period, 400 draws, then 20,000 draws combining beta, seed 20261113. Discrimination: the predicted S1 near 0.2 is far from 0.5 if the bootstrap half-width is below 0.15, which a 9-month comparison with about 60,000 incidents a period gives. Secondary: other periods (2019 vs 2025), all severities, the overnight hours 01-05 as a check (traffic is light, so a rise there is distance or supply).",
+   "alternatives": [
+    "Fewer ambulance unit-hours (MMR: in-service hours per day 8,891 in FY22 to 8,109 in FY26), so the nearest free unit is farther away (a distance effect, not traffic)",
+    "Hospital closures and diversions lengthening repositioning (Mount Sinai Beth Israel closed 2025)",
+    "Call mix and geography (more calls in slow areas or hours)",
+    "Recording changes (share of incidents without a valid response time rose from 4.4% in 2023 to 9.5% in 2026)",
+    "A shared within-hour cause, such as rain or an event, that slows traffic and also raises demand in that hour",
+    "Ambulances may be slowed more than taxis by congestion (beta above 1), for example where cars cannot pull over; then S1 understates the traffic share."
+   ],
+   "prior": 0.8,
+   "registrant": "claude (ems_response thread)",
+   "registered_at": "2026-11-13T13:27:12-0500",
+   "sha256": "d5ae4bc880e81dbf1075d0d6df0963bb730aa71f31a494104950158198bfe180"
+  },
+  "registration_path": "claims/registered/ems-traffic-share-2019-2026.json",
+  "registration_sha256": "d5ae4bc880e81dbf1075d0d6df0963bb730aa71f31a494104950158198bfe180",
+  "registration_hash_ok": true,
+  "registration_file_sha256": "31223f1c816c8027002b480e86d355caff4202a751c0edd29abcf139ff5a8444",
+  "registration_commit": {
+   "commit": "d75fa5e45a373186fbb58bbf701634078996d8b1",
+   "committed_at": "2026-11-13T13:27:13-05:00",
+   "subject": "register ems-traffic-hourly-elasticity, ems-traffic-share-2019-2026, ems-taxi-2026-onset (before 2019-2026 taxi data)"
+  },
+  "prereg_branch": {
+   "name": "prereg/ems-traffic-share-2019-2026",
+   "sha": "d75fa5e45a373186fbb58bbf701634078996d8b1",
+   "reachable": true,
+   "contains_registration_commit": true
+  },
+  "outcome": {
+   "id": "ems-traffic-share-2019-2026",
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "share of the 2019-2026 rise in Manhattan life-threatening EMS travel time that traffic could account for if ambulance pace moved one for one with taxi pace (S1)",
+    "estimate": 0.331097434751018,
+    "lo": 0.29459485491962767,
+    "hi": 0.3674869733328879,
+    "scale": "share",
+    "null": 0.5,
+    "n": 2
+   },
+   "sources": [
+    {
+     "kind": "nyc-open-data",
+     "dataset": "76xm-jjuj",
+     "name": "EMS Incident Dispatch Data",
+     "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+     "rows_updated_at": "2026-10-07T14:42:18Z",
+     "fetched": "2026-11-13T13:10:56-0500",
+     "n_rows": 24988,
+     "queries": "analyses/ems_response/ems_fetch.py (hourly, 2017-2018) and analyses/congestion/ems_fetch.py (ems, 2019-2026); full SoQL in data/derived/ems_response/ems_sources.json and data/derived/congestion/ems_sources.json"
+    },
+    {
+     "kind": "tlc-trip-record-files",
+     "name": "TLC yellow taxi trip records, monthly parquet",
+     "page": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+     "files": [
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-01.parquet",
+       "month": "2017-01",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"aae33640989af0490ebd0d1356e0436c-9\"",
+       "bytes": 134830009,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-02.parquet",
+       "month": "2017-02",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"0cdbba3d4cd1f01bc22997d8c43c0dae-8\"",
+       "bytes": 127643793,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-03.parquet",
+       "month": "2017-03",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"734a5a57da14bb291f2e7b86696171ad-9\"",
+       "bytes": 144578214,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-04.parquet",
+       "month": "2017-04",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"17b7d895e554163323ccf547bd47a486-9\"",
+       "bytes": 141349194,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-05.parquet",
+       "month": "2017-05",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"00a34793fd32b2ea78e14ab72a9d8400-9\"",
+       "bytes": 142379076,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-06.parquet",
+       "month": "2017-06",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"7cb769de4157b85fb7047d6f22fac96b-9\"",
+       "bytes": 135482101,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-07.parquet",
+       "month": "2017-07",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"c477b116d1d5f3ac97be8f1d3ec0cc1f-8\"",
+       "bytes": 120841535,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-08.parquet",
+       "month": "2017-08",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"5973f158abb83dcf09a329afa00899a3-8\"",
+       "bytes": 118622365,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-09.parquet",
+       "month": "2017-09",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"c9fc5d243566dadcfde38a0006a70564-8\"",
+       "bytes": 126899296,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-10.parquet",
+       "month": "2017-10",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"91287cd228e88eadf366421541b8c299-9\"",
+       "bytes": 136742510,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-11.parquet",
+       "month": "2017-11",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"1c91125f673deec191c55cd1128693a0-8\"",
+       "bytes": 131062706,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-12.parquet",
+       "month": "2017-12",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"b8eeff43fe9002247f685da346c033dc-9\"",
+       "bytes": 134255377,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-01.parquet",
+       "month": "2018-01",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"794a84afe9b6dafe006f3c99ae30aeb8-8\"",
+       "bytes": 123668517,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-02.parquet",
+       "month": "2018-02",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"20bbd0711489f2a1bfed84ecfdc6dccd-8\"",
+       "bytes": 119455285,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-03.parquet",
+       "month": "2018-03",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"5535d826518a242c39fd511b256ede06-8\"",
+       "bytes": 133552006,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-04.parquet",
+       "month": "2018-04",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"e03e50e54d59ebe8886678de41fb8f71-8\"",
+       "bytes": 131609714,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-05.parquet",
+       "month": "2018-05",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"be04a3eb37076d6f0c479decb4e3738e-8\"",
+       "bytes": 130850283,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-06.parquet",
+       "month": "2018-06",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"7129313ff4765911e0831a17449caad6-8\"",
+       "bytes": 124189362,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-07.parquet",
+       "month": "2018-07",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"fe11244070626ecaf608040b98d8de2b-7\"",
+       "bytes": 112244445,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-08.parquet",
+       "month": "2018-08",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"1be7bbebd007f3ef71aea1db275fa31d-7\"",
+       "bytes": 111426538,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-09.parquet",
+       "month": "2018-09",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"09229081d0b0cbe82faeded478bc1658-7\"",
+       "bytes": 115505387,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-10.parquet",
+       "month": "2018-10",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"0c714427afa7fc134c6e87f81dd07051-8\"",
+       "bytes": 126899602,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-11.parquet",
+       "month": "2018-11",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"c6b4c39d6b17427928c17dcff3419e7c-7\"",
+       "bytes": 117170616,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-12.parquet",
+       "month": "2018-12",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"04ab75166a25da38378090ff2a3ab77a-8\"",
+       "bytes": 117845011,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-01.parquet",
+       "month": "2019-01",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 110439634,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-02.parquet",
+       "month": "2019-02",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 103356025,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-03.parquet",
+       "month": "2019-03",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 116017372,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-04.parquet",
+       "month": "2019-04",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 110139137,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-05.parquet",
+       "month": "2019-05",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 111478943,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-06.parquet",
+       "month": "2019-06",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 102903344,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-07.parquet",
+       "month": "2019-07",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 93877343,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-08.parquet",
+       "month": "2019-08",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 89999675,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-09.parquet",
+       "month": "2019-09",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 97110325,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-10.parquet",
+       "month": "2019-10",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 106293373,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-11.parquet",
+       "month": "2019-11",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 100872983,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-12.parquet",
+       "month": "2019-12",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 101044777,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-01.parquet",
+       "month": "2020-01",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 93562858,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-02.parquet",
+       "month": "2020-02",
+       "last_modified": null,
+       "etag": null,
+       "bytes": 92134881,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-07.parquet",
+       "month": "2021-07",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"f4346748b384eff7c5b41a3a71c0b22d-3\"",
+       "bytes": 43697690,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-08.parquet",
+       "month": "2021-08",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"429fb42932075a07d607fa0893de035e-3\"",
+       "bytes": 43425907,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-09.parquet",
+       "month": "2021-09",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"b8bcd669b2f6d14123b361af55e94e3b-3\"",
+       "bytes": 46125883,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-10.parquet",
+       "month": "2021-10",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"140fea323115aa2fefcf4ab126a77a2c-4\"",
+       "bytes": 53286464,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-11.parquet",
+       "month": "2021-11",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"2a6b112d3a4a1258c752fe270dee1578-4\"",
+       "bytes": 53100722,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-12.parquet",
+       "month": "2021-12",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"c3248a2107b089d5795a99fe1d7613f7-3\"",
+       "bytes": 49639052,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-01.parquet",
+       "month": "2022-01",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"ec7d7ca1530dc0c4a3644914750fcd2a-3\"",
+       "bytes": 38139949,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-02.parquet",
+       "month": "2022-02",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"3cdcb022ee65afdfe4b9b09b61603410-3\"",
+       "bytes": 45616512,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-03.parquet",
+       "month": "2022-03",
+       "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+       "etag": "\"e0a3696392d949e495c125dffa8d8d46-4\"",
+       "bytes": 55682369,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-04.parquet",
+       "month": "2022-04",
+       "last_modified": "Tue, 30 Aug 2022 16:01:40 GMT",
+       "etag": "\"bbc387175dc4092fea09039288b266ab-4\"",
+       "bytes": 55222692,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-05.parquet",
+       "month": "2022-05",
+       "last_modified": "Tue, 30 Aug 2022 16:01:40 GMT",
+       "etag": "\"ffc506f258d02f2c9996f87175942449-4\"",
+       "bytes": 55558821,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-06.parquet",
+       "month": "2022-06",
+       "last_modified": "Tue, 30 Aug 2022 16:01:40 GMT",
+       "etag": "\"3cb567412b90ab3a18714e17022ec3de-4\"",
+       "bytes": 55365184,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-07.parquet",
+       "month": "2022-07",
+       "last_modified": "Mon, 14 Nov 2022 13:55:37 GMT",
+       "etag": "\"5e42a9d3bd1d770aaa0433a0bb38408e-3\"",
+       "bytes": 49367712,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-08.parquet",
+       "month": "2022-08",
+       "last_modified": "Mon, 14 Nov 2022 13:55:37 GMT",
+       "etag": "\"e4eb255789a1c33f6d27916eb09e3a63-3\"",
+       "bytes": 49717159,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-09.parquet",
+       "month": "2022-09",
+       "last_modified": "Wed, 30 Nov 2022 20:24:30 GMT",
+       "etag": "\"bf538be4999732af6952c4c108ea73ab-3\"",
+       "bytes": 49619957,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-10.parquet",
+       "month": "2022-10",
+       "last_modified": "Mon, 19 Dec 2022 21:59:12 GMT",
+       "etag": "\"3a54d4dd190b9d9a14fa3aaeff371a59-4\"",
+       "bytes": 57061938,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-11.parquet",
+       "month": "2022-11",
+       "last_modified": "Wed, 25 Jan 2023 16:46:43 GMT",
+       "etag": "\"04ba094635a1d2619f4bbb0c74123610-3\"",
+       "bytes": 50106631,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-12.parquet",
+       "month": "2022-12",
+       "last_modified": "Mon, 20 Mar 2023 20:46:51 GMT",
+       "etag": "\"c4b29d86cdb68027eb1e24ea0f1ddc76-4\"",
+       "bytes": 53640739,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet",
+       "month": "2023-01",
+       "last_modified": "Mon, 20 Mar 2023 20:46:51 GMT",
+       "etag": "\"c1744317232f0b94f424e50e381189b5-3\"",
+       "bytes": 47673370,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-02.parquet",
+       "month": "2023-02",
+       "last_modified": "Mon, 01 May 2023 15:32:56 GMT",
+       "etag": "\"cc5e7e18ef48fa1a92214995762c11cb-3\"",
+       "bytes": 47748012,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-03.parquet",
+       "month": "2023-03",
+       "last_modified": "Fri, 19 May 2023 14:14:53 GMT",
+       "etag": "\"65e0f2cce54e069c191a8b273d98aa7d-4\"",
+       "bytes": 56127762,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-04.parquet",
+       "month": "2023-04",
+       "last_modified": "Fri, 23 Jun 2023 14:05:21 GMT",
+       "etag": "\"c2b6e702f0c2a5101686c5fc7cb3552f-4\"",
+       "bytes": 54222699,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-05.parquet",
+       "month": "2023-05",
+       "last_modified": "Wed, 26 Jul 2023 14:48:03 GMT",
+       "etag": "\"332e1b9e06438e71d5647a88a4c850ef-4\"",
+       "bytes": 58654627,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-06.parquet",
+       "month": "2023-06",
+       "last_modified": "Tue, 22 Aug 2023 13:23:37 GMT",
+       "etag": "\"12dd05ef3f0fd2b3bec5e4e367ed29e6-4\"",
+       "bytes": 54999465,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-01.parquet",
+       "month": "2026-01",
+       "last_modified": "Wed, 25 Mar 2026 15:46:09 GMT",
+       "etag": "\"715f1a37bbf83f6ec7b8d21038e8dc22-13\"",
+       "bytes": 64165080,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-02.parquet",
+       "month": "2026-02",
+       "last_modified": "Wed, 25 Mar 2026 15:46:31 GMT",
+       "etag": "\"41497120d17df99f437634b60f5b9d75-12\"",
+       "bytes": 58683353,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-03.parquet",
+       "month": "2026-03",
+       "last_modified": "Tue, 28 Apr 2026 18:56:26 GMT",
+       "etag": "\"7c9bd1bcac249e15858f8b1731c2039c-4\"",
+       "bytes": 67891249,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-04.parquet",
+       "month": "2026-04",
+       "last_modified": "Fri, 05 Jun 2026 20:44:34 GMT",
+       "etag": "\"39887281adfc4e33d959ff78c7cab632-4\"",
+       "bytes": 64818115,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-05.parquet",
+       "month": "2026-05",
+       "last_modified": "Fri, 26 Jun 2026 21:07:20 GMT",
+       "etag": "\"88babcd4eea8fabf135efb5b2b8cfc5c-5\"",
+       "bytes": 69699174,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-06.parquet",
+       "month": "2026-06",
+       "last_modified": "Thu, 17 Sep 2026 18:34:43 GMT",
+       "etag": "\"91b7716b26443cce54f6225273edf8e8-4\"",
+       "bytes": 65465637,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-07.parquet",
+       "month": "2026-07",
+       "last_modified": "Thu, 17 Sep 2026 21:03:03 GMT",
+       "etag": "\"2ff2995562ee9e1af375eea6020fdef1-4\"",
+       "bytes": 61685033,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-08.parquet",
+       "month": "2026-08",
+       "last_modified": "Thu, 01 Oct 2026 13:38:15 GMT",
+       "etag": "\"29cbf7399f1d6ffc4b505639ccbb0c8d-4\"",
+       "bytes": 59043961,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      },
+      {
+       "kind": "tlc-trip-record-file",
+       "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-09.parquet",
+       "month": "2026-09",
+       "last_modified": "Thu, 29 Oct 2026 13:56:04 GMT",
+       "etag": "\"bb076c34e09314350f112e445a7ad37a-4\"",
+       "bytes": 67374896,
+       "read_from": "local copy in ~/opt/nyc-concordance"
+      }
+     ],
+     "also_used": "data/derived/congestion/taxi_speed_2023-07_2024-12.csv and taxi_speed_2025-01_2026-06.csv (cbd and north, same filter) for July 2023 to December 2025; file versions in data/derived/reproduction/mmr_cbd_speed_files.json"
+    }
+   ],
+   "prediction_scored": "hit: S1 = 0.331 (0.295 to 0.367); the upper bound is below 0.5 by 0.13, and the estimate is inside the registered 0.05 to 0.45. At the measured elasticity for life-threatening calls (0.490) the share is 0.162 (0.142 to 0.184), inside the registered 0.03 to 0.35.",
+   "settle": "The share outside Manhattan needs a traffic measure for the Bronx, Queens and Staten Island (FHV trip speeds or DOT probe speeds) and unit locations at dispatch, which would measure the distance to the assigned unit directly.",
+   "research_needed": [
+    {
+     "question": "Distance from the assigned ambulance to the incident, by year",
+     "data": "FDNY CAD unit locations at assignment (not public)",
+     "design": "decompose travel time into distance and speed",
+     "priority": "high"
+    },
+    {
+     "question": "Free ambulances by hour and borough",
+     "data": "FDNY units in service and busy by hour (not public; MMR gives annual in-service hours only)",
+     "design": "regress travel time on free units",
+     "priority": "high"
+    }
+   ],
+   "figures": [
+    "figures/ems_response/decomposition.png",
+    "figures/ems_response/night_day.png"
+   ],
+   "notes": "Manhattan below 110th Street, January-September 2019 against January-September 2026. Life-threatening travel rose 35.0% and taxi time per mile, weighted by where and when the 2026 incidents happened, rose 10.5% (8.5 to 11.6 on the log scale x100). Secondary: 2019 against 2025, S1 = 0.202 (0.140 to 0.262); lower-severity calls, S1 = 0.261. Overnight (01:00-05:59), when traffic is light, Manhattan life-threatening travel rose 33% while taxi time per mile rose 14% in the CBD and 5% north of 60th Street (exploratory, night_day.json). The interval is a day-block bootstrap with 400 resamples combined with 20,000 draws of beta, seed 20261113; the margin to the threshold (0.13) is several times the half-width, so other seeds cannot move it across. Deviation from the plan: on 13 November the TLC file host refused downloads for about 30 minutes, so lib.taxi_hourly was changed after registration to read the cbd and north rows of data/derived/congestion/taxi_speed_*.csv for July 2023 to December 2025. Those rows use the same areas, the same trip filter and the same TLC files; the estimators were not changed. Months 2021-07 to 2023-06 and 2026-01 to 2026-09 were computed here.",
+   "registration_sha256": "d5ae4bc880e81dbf1075d0d6df0963bb730aa71f31a494104950158198bfe180",
+   "decided_at": "2026-11-13T13:43:30-0500",
+   "stance": {
+    "value": 1.0,
+    "lo": 0.998,
+    "hi": 1.0,
+    "z": 9.08
+   },
+   "notes_referee": "Referee reproduced S1 0.333 (0.298 to 0.368). Confirmed stands. The remainder (~1.23 min) is a residual; unit locations unobserved.",
+   "history": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "share of the 2019-2026 rise in Manhattan life-threatening EMS travel time that traffic could account for if ambulance pace moved one for one with taxi pace (S1)",
+      "estimate": 0.331097434751018,
+      "lo": 0.29459485491962767,
+      "hi": 0.3674869733328879,
+      "scale": "share",
+      "null": 0.5,
+      "n": 2
+     },
+     "stance": {
+      "value": 1.0,
+      "lo": 0.998,
+      "hi": 1.0,
+      "z": 9.08
+     },
+     "decided_at": "2026-11-13T13:43:30-0500",
+     "prediction_scored": "hit: S1 = 0.331 (0.295 to 0.367); the upper bound is below 0.5 by 0.13, and the estimate is inside the registered 0.05 to 0.45. At the measured elasticity for life-threatening calls (0.490) the share is 0.162 (0.142 to 0.184), inside the registered 0.03 to 0.35."
+    }
+   ],
+   "revision": {
+    "reason": "Round 7 referee: verdict kept",
+    "critique": "critique/ems-traffic-share-2019-2026.md",
+    "revised_at": "2026-11-13T14:11:42-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   }
+  },
+  "outcome_path": "claims/outcomes/ems-traffic-share-2019-2026.json",
+  "outcome_file_sha256": "23ec19cf571b399db1c30551fbb4ec07b0d7e0400f2e85a28020adc23e05fb43",
+  "revision_history": {
+   "in_file": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "share of the 2019-2026 rise in Manhattan life-threatening EMS travel time that traffic could account for if ambulance pace moved one for one with taxi pace (S1)",
+      "estimate": 0.331097434751018,
+      "lo": 0.29459485491962767,
+      "hi": 0.3674869733328879,
+      "scale": "share",
+      "null": 0.5,
+      "n": 2
+     },
+     "stance": {
+      "value": 1.0,
+      "lo": 0.998,
+      "hi": 1.0,
+      "z": 9.08
+     },
+     "decided_at": "2026-11-13T13:43:30-0500",
+     "prediction_scored": "hit: S1 = 0.331 (0.295 to 0.367); the upper bound is below 0.5 by 0.13, and the estimate is inside the registered 0.05 to 0.45. At the measured elasticity for life-threatening calls (0.490) the share is 0.162 (0.142 to 0.184), inside the registered 0.03 to 0.35."
+    }
+   ],
+   "last_revision": {
+    "reason": "Round 7 referee: verdict kept",
+    "critique": "critique/ems-traffic-share-2019-2026.md",
+    "revised_at": "2026-11-13T14:11:42-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   },
+   "outcome_commits": [
+    {
+     "commit": "01e4162f9277def56da919f411c66b83f5814e85",
+     "committed_at": "2026-11-13T14:11:43-05:00",
+     "subject": "EMS causes: apply round 7 referee notes; onset unsettled under rule 11"
+    },
+    {
+     "commit": "e63ef7fe2b667dafafbf08acce46e0223f5bdbb1",
+     "committed_at": "2026-11-13T13:43:44-05:00",
+     "subject": "ems_response: outcomes of the three registered tests, decomposition, figures, levers"
+    }
+   ]
+  },
+  "referee_reports": [
+   {
+    "path": "critique/ems-traffic-share-2019-2026.md",
+    "role": "referee report for this claim",
+    "sha256": "81c63820fdaef5f8e3ec98869e8809cb201ec6e7839e88c70972386c132c5155"
+   }
+  ]
+ },
+ "code": {
+  "repo_commit": "47e2f54ff97e1795900c0c186583aeba809d3259",
+  "repo_dirty_paths": 26,
+  "scripts": [
+   {
+    "path": "analyses/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "first_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/ems_response/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "f44ab0b438540b5e6f606e9a0e4b9c0dcab95ba5",
+    "first_commit": "f44ab0b438540b5e6f606e9a0e4b9c0dcab95ba5",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/ems_response/common.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "f014ba89d54cd1df8dc4ca4a5285b18dd35a545b",
+    "blob_at_HEAD": "f014ba89d54cd1df8dc4ca4a5285b18dd35a545b",
+    "clean": true,
+    "last_commit": "f44ab0b438540b5e6f606e9a0e4b9c0dcab95ba5",
+    "first_commit": "f44ab0b438540b5e6f606e9a0e4b9c0dcab95ba5",
+    "sha256": "c4fa168529a56af39e3a5ad6248e9d432fca0bc4a4beadc6874ab646d309e778"
+   },
+   {
+    "path": "analyses/ems_response/lib.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "838935656b8dfcd65a3dff01d331f802eaed745d",
+    "blob_at_HEAD": "838935656b8dfcd65a3dff01d331f802eaed745d",
+    "clean": true,
+    "last_commit": "e63ef7fe2b667dafafbf08acce46e0223f5bdbb1",
+    "first_commit": "f44ab0b438540b5e6f606e9a0e4b9c0dcab95ba5",
+    "sha256": "b4ea043d16f119b69c32b47cc7e386adfddff063381d7fafaa7c52674f3057ad"
+   },
+   {
+    "path": "analyses/ems_response/run_tests.py",
+    "found_by": "rerun recipe (upstream stage, not rerun)",
+    "exists": true,
+    "blob": "45a5891d364b0b89d917e1224848646daf178ecc",
+    "blob_at_HEAD": "45a5891d364b0b89d917e1224848646daf178ecc",
+    "clean": true,
+    "last_commit": "e63ef7fe2b667dafafbf08acce46e0223f5bdbb1",
+    "first_commit": "e63ef7fe2b667dafafbf08acce46e0223f5bdbb1",
+    "sha256": "89a18387bdf675d25813ad97b0ba55b300b7e002272e52dd77c31a08cd68b3ae"
+   },
+   {
+    "path": "analyses/ems_response/taxi_hourly.py",
+    "found_by": "rerun recipe (upstream stage, not rerun)",
+    "exists": true,
+    "blob": "93d71dc6c1513d5b0f33af345c184e48aa31becb",
+    "blob_at_HEAD": "93d71dc6c1513d5b0f33af345c184e48aa31becb",
+    "clean": true,
+    "last_commit": "e63ef7fe2b667dafafbf08acce46e0223f5bdbb1",
+    "first_commit": "f44ab0b438540b5e6f606e9a0e4b9c0dcab95ba5",
+    "sha256": "6459c52647ba32454ba1234216b940d7fa2e31419e6910d0193c1bbc926c3aae"
+   },
+   {
+    "path": "analyses/congestion/ems_fetch.py",
+    "found_by": "rerun recipe (upstream stage, not rerun)",
+    "exists": true,
+    "blob": "7c889a44d9be839196b43ab3f9720102306bdd01",
+    "blob_at_HEAD": "7c889a44d9be839196b43ab3f9720102306bdd01",
+    "clean": true,
+    "last_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "first_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "sha256": "1f5d59ed652665045848e2f02f4936372e55ba392d8fb32dbc294578ea5690a9"
+   },
+   {
+    "path": "analyses/congestion/taxi_speed.py",
+    "found_by": "rerun recipe (upstream stage, not rerun)",
+    "exists": true,
+    "blob": "9abc0a7c8dd7bddde67cd6f947cc1b56ea19cff0",
+    "blob_at_HEAD": "9abc0a7c8dd7bddde67cd6f947cc1b56ea19cff0",
+    "clean": true,
+    "last_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "first_commit": "1819abd64c30d70ce34ba251873f41660e946536",
+    "sha256": "dd4f32503cbc8a0abc7ac99ab1bac44b3facec2b8bc7dd90ce5ad93fbf4e8f56"
+   },
+   {
+    "path": "analyses/ems_response/ems_fetch.py",
+    "found_by": "named in the registration or outcome",
+    "exists": true,
+    "blob": "2ae265f364199b2f56dcc7a3a605b89385c5a6fb",
+    "blob_at_HEAD": "2ae265f364199b2f56dcc7a3a605b89385c5a6fb",
+    "clean": true,
+    "last_commit": "f44ab0b438540b5e6f606e9a0e4b9c0dcab95ba5",
+    "first_commit": "f44ab0b438540b5e6f606e9a0e4b9c0dcab95ba5",
+    "sha256": "ac2251200300c53df9c671064f7e3600deb2f4ab79a4b03fcb53d8bade867566"
+   },
+   {
+    "path": "analyses/ems_response/outcomes.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "08b7a2e2f1e0aa03d9c45160610e794d8e211a77",
+    "blob_at_HEAD": "08b7a2e2f1e0aa03d9c45160610e794d8e211a77",
+    "clean": true,
+    "last_commit": "e63ef7fe2b667dafafbf08acce46e0223f5bdbb1",
+    "first_commit": "e63ef7fe2b667dafafbf08acce46e0223f5bdbb1",
+    "sha256": "3f336bbfcf7164dfc255c3df1ba254f102bee5bb7c2b6042686757972357dff9"
+   },
+   {
+    "path": "analyses/ems_response/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "4e886c3cc5f19f1baa3e08f022ecff27a4d2c4f9",
+    "blob_at_HEAD": "4e886c3cc5f19f1baa3e08f022ecff27a4d2c4f9",
+    "clean": true,
+    "last_commit": "d75fa5e45a373186fbb58bbf701634078996d8b1",
+    "first_commit": "d75fa5e45a373186fbb58bbf701634078996d8b1",
+    "sha256": "437541cedca1fde0a2b10e99d466386354fb4bac83a313b9a3e6e8e7118dff11"
+   }
+  ],
+  "seeds": [
+   "20261113"
+  ],
+  "draw_counts": [
+   "20,000 draws",
+   "400 draws"
+  ],
+  "commits_named_in_registration": [
+   "f44ab0b"
+  ],
+  "procedure_note": "Seeds and draw counts above are quoted from the registration text."
+ },
+ "data": [
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "76xm-jjuj",
+    "name": "EMS Incident Dispatch Data",
+    "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+    "rows_updated_at": "2026-10-07T14:42:18Z",
+    "fetched": "2026-11-13T13:10:56-0500",
+    "n_rows": 24988,
+    "queries": "analyses/ems_response/ems_fetch.py (hourly, 2017-2018) and analyses/congestion/ems_fetch.py (ems, 2019-2026); full SoQL in data/derived/ems_response/ems_sources.json and data/derived/congestion/ems_sources.json"
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "soql": null,
+   "fetched": "2026-11-13T13:10:56-0500",
+   "n_rows": 24988,
+   "cache_files": [],
+   "cache_files_note": "no cached response found in data/cache/socrata/ for this query"
+  },
+  {
+   "kind": "tlc-trip-record-files",
+   "record": {
+    "kind": "tlc-trip-record-files",
+    "name": "TLC yellow taxi trip records, monthly parquet",
+    "page": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+    "files": [
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-01.parquet",
+      "month": "2017-01",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"aae33640989af0490ebd0d1356e0436c-9\"",
+      "bytes": 134830009,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-02.parquet",
+      "month": "2017-02",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"0cdbba3d4cd1f01bc22997d8c43c0dae-8\"",
+      "bytes": 127643793,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-03.parquet",
+      "month": "2017-03",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"734a5a57da14bb291f2e7b86696171ad-9\"",
+      "bytes": 144578214,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-04.parquet",
+      "month": "2017-04",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"17b7d895e554163323ccf547bd47a486-9\"",
+      "bytes": 141349194,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-05.parquet",
+      "month": "2017-05",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"00a34793fd32b2ea78e14ab72a9d8400-9\"",
+      "bytes": 142379076,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-06.parquet",
+      "month": "2017-06",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"7cb769de4157b85fb7047d6f22fac96b-9\"",
+      "bytes": 135482101,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-07.parquet",
+      "month": "2017-07",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"c477b116d1d5f3ac97be8f1d3ec0cc1f-8\"",
+      "bytes": 120841535,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-08.parquet",
+      "month": "2017-08",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"5973f158abb83dcf09a329afa00899a3-8\"",
+      "bytes": 118622365,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-09.parquet",
+      "month": "2017-09",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"c9fc5d243566dadcfde38a0006a70564-8\"",
+      "bytes": 126899296,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-10.parquet",
+      "month": "2017-10",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"91287cd228e88eadf366421541b8c299-9\"",
+      "bytes": 136742510,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-11.parquet",
+      "month": "2017-11",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"1c91125f673deec191c55cd1128693a0-8\"",
+      "bytes": 131062706,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-12.parquet",
+      "month": "2017-12",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"b8eeff43fe9002247f685da346c033dc-9\"",
+      "bytes": 134255377,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-01.parquet",
+      "month": "2018-01",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"794a84afe9b6dafe006f3c99ae30aeb8-8\"",
+      "bytes": 123668517,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-02.parquet",
+      "month": "2018-02",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"20bbd0711489f2a1bfed84ecfdc6dccd-8\"",
+      "bytes": 119455285,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-03.parquet",
+      "month": "2018-03",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"5535d826518a242c39fd511b256ede06-8\"",
+      "bytes": 133552006,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-04.parquet",
+      "month": "2018-04",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"e03e50e54d59ebe8886678de41fb8f71-8\"",
+      "bytes": 131609714,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-05.parquet",
+      "month": "2018-05",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"be04a3eb37076d6f0c479decb4e3738e-8\"",
+      "bytes": 130850283,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-06.parquet",
+      "month": "2018-06",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"7129313ff4765911e0831a17449caad6-8\"",
+      "bytes": 124189362,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-07.parquet",
+      "month": "2018-07",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"fe11244070626ecaf608040b98d8de2b-7\"",
+      "bytes": 112244445,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-08.parquet",
+      "month": "2018-08",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"1be7bbebd007f3ef71aea1db275fa31d-7\"",
+      "bytes": 111426538,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-09.parquet",
+      "month": "2018-09",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"09229081d0b0cbe82faeded478bc1658-7\"",
+      "bytes": 115505387,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-10.parquet",
+      "month": "2018-10",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"0c714427afa7fc134c6e87f81dd07051-8\"",
+      "bytes": 126899602,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-11.parquet",
+      "month": "2018-11",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"c6b4c39d6b17427928c17dcff3419e7c-7\"",
+      "bytes": 117170616,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-12.parquet",
+      "month": "2018-12",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"04ab75166a25da38378090ff2a3ab77a-8\"",
+      "bytes": 117845011,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-01.parquet",
+      "month": "2019-01",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 110439634,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-02.parquet",
+      "month": "2019-02",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 103356025,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-03.parquet",
+      "month": "2019-03",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 116017372,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-04.parquet",
+      "month": "2019-04",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 110139137,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-05.parquet",
+      "month": "2019-05",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 111478943,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-06.parquet",
+      "month": "2019-06",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 102903344,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-07.parquet",
+      "month": "2019-07",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 93877343,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-08.parquet",
+      "month": "2019-08",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 89999675,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-09.parquet",
+      "month": "2019-09",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 97110325,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-10.parquet",
+      "month": "2019-10",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 106293373,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-11.parquet",
+      "month": "2019-11",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 100872983,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-12.parquet",
+      "month": "2019-12",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 101044777,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-01.parquet",
+      "month": "2020-01",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 93562858,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-02.parquet",
+      "month": "2020-02",
+      "last_modified": null,
+      "etag": null,
+      "bytes": 92134881,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-07.parquet",
+      "month": "2021-07",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"f4346748b384eff7c5b41a3a71c0b22d-3\"",
+      "bytes": 43697690,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-08.parquet",
+      "month": "2021-08",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"429fb42932075a07d607fa0893de035e-3\"",
+      "bytes": 43425907,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-09.parquet",
+      "month": "2021-09",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"b8bcd669b2f6d14123b361af55e94e3b-3\"",
+      "bytes": 46125883,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-10.parquet",
+      "month": "2021-10",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"140fea323115aa2fefcf4ab126a77a2c-4\"",
+      "bytes": 53286464,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-11.parquet",
+      "month": "2021-11",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"2a6b112d3a4a1258c752fe270dee1578-4\"",
+      "bytes": 53100722,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-12.parquet",
+      "month": "2021-12",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"c3248a2107b089d5795a99fe1d7613f7-3\"",
+      "bytes": 49639052,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-01.parquet",
+      "month": "2022-01",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"ec7d7ca1530dc0c4a3644914750fcd2a-3\"",
+      "bytes": 38139949,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-02.parquet",
+      "month": "2022-02",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"3cdcb022ee65afdfe4b9b09b61603410-3\"",
+      "bytes": 45616512,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-03.parquet",
+      "month": "2022-03",
+      "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+      "etag": "\"e0a3696392d949e495c125dffa8d8d46-4\"",
+      "bytes": 55682369,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-04.parquet",
+      "month": "2022-04",
+      "last_modified": "Tue, 30 Aug 2022 16:01:40 GMT",
+      "etag": "\"bbc387175dc4092fea09039288b266ab-4\"",
+      "bytes": 55222692,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-05.parquet",
+      "month": "2022-05",
+      "last_modified": "Tue, 30 Aug 2022 16:01:40 GMT",
+      "etag": "\"ffc506f258d02f2c9996f87175942449-4\"",
+      "bytes": 55558821,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-06.parquet",
+      "month": "2022-06",
+      "last_modified": "Tue, 30 Aug 2022 16:01:40 GMT",
+      "etag": "\"3cb567412b90ab3a18714e17022ec3de-4\"",
+      "bytes": 55365184,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-07.parquet",
+      "month": "2022-07",
+      "last_modified": "Mon, 14 Nov 2022 13:55:37 GMT",
+      "etag": "\"5e42a9d3bd1d770aaa0433a0bb38408e-3\"",
+      "bytes": 49367712,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-08.parquet",
+      "month": "2022-08",
+      "last_modified": "Mon, 14 Nov 2022 13:55:37 GMT",
+      "etag": "\"e4eb255789a1c33f6d27916eb09e3a63-3\"",
+      "bytes": 49717159,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-09.parquet",
+      "month": "2022-09",
+      "last_modified": "Wed, 30 Nov 2022 20:24:30 GMT",
+      "etag": "\"bf538be4999732af6952c4c108ea73ab-3\"",
+      "bytes": 49619957,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-10.parquet",
+      "month": "2022-10",
+      "last_modified": "Mon, 19 Dec 2022 21:59:12 GMT",
+      "etag": "\"3a54d4dd190b9d9a14fa3aaeff371a59-4\"",
+      "bytes": 57061938,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-11.parquet",
+      "month": "2022-11",
+      "last_modified": "Wed, 25 Jan 2023 16:46:43 GMT",
+      "etag": "\"04ba094635a1d2619f4bbb0c74123610-3\"",
+      "bytes": 50106631,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-12.parquet",
+      "month": "2022-12",
+      "last_modified": "Mon, 20 Mar 2023 20:46:51 GMT",
+      "etag": "\"c4b29d86cdb68027eb1e24ea0f1ddc76-4\"",
+      "bytes": 53640739,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet",
+      "month": "2023-01",
+      "last_modified": "Mon, 20 Mar 2023 20:46:51 GMT",
+      "etag": "\"c1744317232f0b94f424e50e381189b5-3\"",
+      "bytes": 47673370,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-02.parquet",
+      "month": "2023-02",
+      "last_modified": "Mon, 01 May 2023 15:32:56 GMT",
+      "etag": "\"cc5e7e18ef48fa1a92214995762c11cb-3\"",
+      "bytes": 47748012,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-03.parquet",
+      "month": "2023-03",
+      "last_modified": "Fri, 19 May 2023 14:14:53 GMT",
+      "etag": "\"65e0f2cce54e069c191a8b273d98aa7d-4\"",
+      "bytes": 56127762,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-04.parquet",
+      "month": "2023-04",
+      "last_modified": "Fri, 23 Jun 2023 14:05:21 GMT",
+      "etag": "\"c2b6e702f0c2a5101686c5fc7cb3552f-4\"",
+      "bytes": 54222699,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-05.parquet",
+      "month": "2023-05",
+      "last_modified": "Wed, 26 Jul 2023 14:48:03 GMT",
+      "etag": "\"332e1b9e06438e71d5647a88a4c850ef-4\"",
+      "bytes": 58654627,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-06.parquet",
+      "month": "2023-06",
+      "last_modified": "Tue, 22 Aug 2023 13:23:37 GMT",
+      "etag": "\"12dd05ef3f0fd2b3bec5e4e367ed29e6-4\"",
+      "bytes": 54999465,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-01.parquet",
+      "month": "2026-01",
+      "last_modified": "Wed, 25 Mar 2026 15:46:09 GMT",
+      "etag": "\"715f1a37bbf83f6ec7b8d21038e8dc22-13\"",
+      "bytes": 64165080,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-02.parquet",
+      "month": "2026-02",
+      "last_modified": "Wed, 25 Mar 2026 15:46:31 GMT",
+      "etag": "\"41497120d17df99f437634b60f5b9d75-12\"",
+      "bytes": 58683353,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-03.parquet",
+      "month": "2026-03",
+      "last_modified": "Tue, 28 Apr 2026 18:56:26 GMT",
+      "etag": "\"7c9bd1bcac249e15858f8b1731c2039c-4\"",
+      "bytes": 67891249,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-04.parquet",
+      "month": "2026-04",
+      "last_modified": "Fri, 05 Jun 2026 20:44:34 GMT",
+      "etag": "\"39887281adfc4e33d959ff78c7cab632-4\"",
+      "bytes": 64818115,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-05.parquet",
+      "month": "2026-05",
+      "last_modified": "Fri, 26 Jun 2026 21:07:20 GMT",
+      "etag": "\"88babcd4eea8fabf135efb5b2b8cfc5c-5\"",
+      "bytes": 69699174,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-06.parquet",
+      "month": "2026-06",
+      "last_modified": "Thu, 17 Sep 2026 18:34:43 GMT",
+      "etag": "\"91b7716b26443cce54f6225273edf8e8-4\"",
+      "bytes": 65465637,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-07.parquet",
+      "month": "2026-07",
+      "last_modified": "Thu, 17 Sep 2026 21:03:03 GMT",
+      "etag": "\"2ff2995562ee9e1af375eea6020fdef1-4\"",
+      "bytes": 61685033,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-08.parquet",
+      "month": "2026-08",
+      "last_modified": "Thu, 01 Oct 2026 13:38:15 GMT",
+      "etag": "\"29cbf7399f1d6ffc4b505639ccbb0c8d-4\"",
+      "bytes": 59043961,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     },
+     {
+      "kind": "tlc-trip-record-file",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-09.parquet",
+      "month": "2026-09",
+      "last_modified": "Thu, 29 Oct 2026 13:56:04 GMT",
+      "etag": "\"bb076c34e09314350f112e445a7ad37a-4\"",
+      "bytes": 67374896,
+      "read_from": "local copy in ~/opt/nyc-concordance"
+     }
+    ],
+    "also_used": "data/derived/congestion/taxi_speed_2023-07_2024-12.csv and taxi_speed_2025-01_2026-06.csv (cbd and north, same filter) for July 2023 to December 2025; file versions in data/derived/reproduction/mmr_cbd_speed_files.json"
+   },
+   "type": "tlc",
+   "url": null,
+   "etag": null,
+   "last_modified": null
+  },
+  {
+   "type": "upstream-file",
+   "role": "SoQL and rowsUpdatedAt of the EMS hourly tables",
+   "path": "data/derived/congestion/ems_sources.json",
+   "sha256": "0943e5f21e562f23bcdfc58a3781e624773261a9148b3e3711cd50e9ff80863b",
+   "bytes": 32674,
+   "copied": false
+  },
+  {
+   "type": "upstream-file",
+   "role": "TLC file versions of taxi_hourly_2019-01_2020-02.csv",
+   "path": "data/derived/ems_response/taxi_files_2019-01_2020-02.json",
+   "sha256": "34dcb45f37f71054340092ac90c1e8ddaa553cc72ed5c18d976a6c012c62da03",
+   "bytes": 3791,
+   "copied": false
+  },
+  {
+   "type": "upstream-file",
+   "role": "TLC file versions of taxi_hourly_2026-01_2026-06.csv",
+   "path": "data/derived/ems_response/taxi_files_2026-01_2026-06.json",
+   "sha256": "f693f7887e7c08230ad0fc0c4667471d3e570a016d084695cc7a5cc4d367ad1d",
+   "bytes": 2002,
+   "copied": false
+  },
+  {
+   "type": "upstream-file",
+   "role": "TLC file versions of taxi_hourly_2026-07_2026-09.csv",
+   "path": "data/derived/ems_response/taxi_files_2026-07_2026-09.json",
+   "sha256": "1163fa3edd8fac47870429d6cc43e1e17a0523cc5f152d21712c0242016a96e8",
+   "bytes": 1001,
+   "copied": false
+  },
+  {
+   "type": "upstream-file",
+   "role": "TLC file versions of the congestion taxi_speed tables",
+   "path": "data/derived/reproduction/mmr_cbd_speed_files.json",
+   "sha256": "f83e304510000d76db65c16113552cf3587996e05e50d9ac8e25c0564be34f5e",
+   "bytes": 13372,
+   "copied": false
+  }
+ ],
+ "environment": {
+  "python": "3.12.10 (main, Apr  9 2025, 03:49:38) [Clang 20.1.0 ]",
+  "venv": "~/.venvs/nyc-concordance",
+  "uv_pip_freeze": [
+   "affine==3.0.1",
+   "annotated-types==0.8.0",
+   "attrs==26.1.0",
+   "certifi==2026.10.23",
+   "charset-normalizer==3.5.2",
+   "click==8.5.1",
+   "contourpy==1.4.0",
+   "cycler==0.12.1",
+   "duckdb==2.0.0",
+   "fonttools==4.68.0",
+   "formulaic==1.2.2",
+   "geopandas==1.2.0",
+   "idna==3.20",
+   "interface-meta==2.0.1",
+   "jsonschema==4.26.0",
+   "jsonschema-specifications==2025.9.1",
+   "kiwisolver==1.5.1",
+   "matplotlib==3.11.2",
+   "mercantile==1.2.1",
+   "narwhals==2.28.0",
+   "numpy==2.5.4",
+   "packaging==26.3",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pillow==13.0.0",
+   "planetary-computer==1.0.0",
+   "pyarrow==26.0.1",
+   "pydantic==2.14.3",
+   "pydantic-core==2.50.4",
+   "pyogrio==0.13.0",
+   "pyparsing==3.3.3",
+   "pyproj==3.8.0",
+   "pystac==1.16.0",
+   "pystac-client==0.9.1",
+   "pystac-core==1.16.0",
+   "pystac-ext-classification==2.0.2",
+   "pystac-ext-datacube==2.2.2",
+   "pystac-ext-eo==1.1.2",
+   "pystac-ext-file==2.1.2",
+   "pystac-ext-grid==1.1.2",
+   "pystac-ext-item-assets==1.0.2",
+   "pystac-ext-label==1.0.3",
+   "pystac-ext-mgrs==1.0.2",
+   "pystac-ext-mlm==1.4.2",
+   "pystac-ext-pointcloud==1.0.2",
+   "pystac-ext-projection==2.0.2",
+   "pystac-ext-raster==1.1.2",
+   "pystac-ext-render==2.0.1",
+   "pystac-ext-sar==1.0.2",
+   "pystac-ext-sat==1.0.2",
+   "pystac-ext-scientific==1.0.2",
+   "pystac-ext-storage==2.0.2",
+   "pystac-ext-table==1.2.2",
+   "pystac-ext-timestamps==1.1.2",
+   "pystac-ext-version==1.2.2",
+   "pystac-ext-view==1.0.2",
+   "pystac-ext-xarray-assets==1.0.2",
+   "python-dateutil==4.0.0",
+   "python-dotenv==1.2.4",
+   "pytz==2026.6",
+   "rasterio==1.5.2",
+   "referencing==0.37.0",
+   "requests==2.34.2",
+   "rpds-py==2026.9.1",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0",
+   "typing-extensions==4.16.0",
+   "typing-inspection==0.4.5",
+   "tzdata==2026.6",
+   "urllib3==2.8.0",
+   "wrapt==2.5.2"
+  ],
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "os": "Darwin 27.2.0",
+  "mac_ver": "27.2.1",
+  "requirements": [
+   "numpy==2.5.4",
+   "pandas==3.1.1",
+   "requests==2.34.2"
+  ]
+ },
+ "inputs": {
+  "cap_bytes": 15728640,
+  "copied_bytes": 15136831,
+  "files": [
+   {
+    "path": "data/derived/congestion/ems_2019.csv",
+    "bytes": 3259354,
+    "sha256": "7bc1884275a940a3e9cd7976c025935169506167c4d0a1d0e5035e1e9ee70700",
+    "role": "slice of a large input, read by the rerun",
+    "sliced_from": {
+     "bytes": 3321538,
+     "sha256": "40ca6b21ac9fd0f15267edc6e21440efe98064fd76d9d3526e500ea35f48092b",
+     "rule": {
+      "date_column": "d",
+      "from": "2019-01-01",
+      "to": "2019-09-30"
+     },
+     "how": "csv.reader over the whole file; keep the named columns (and rows whose date column lies in the range, if one is given); csv.writer with QUOTE_ALL and newline line ends"
+    },
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_hourly_2019-01_2020-02.csv",
+    "bytes": 2528428,
+    "sha256": "9c115f17d0af76fa424f65380c6617949ff41e65d3a0d9b0a40b0eb8c30321ea",
+    "role": "slice of a large input, read by the rerun",
+    "sliced_from": {
+     "bytes": 3201395,
+     "sha256": "b62d9f07fad6d2b8c34191bad570bf2fc37dbe1f3156b6600f54a882f84c32ef",
+     "rule": {
+      "date_column": "d",
+      "from": "2019-01-01",
+      "to": "2019-09-30"
+     },
+     "how": "csv.reader over the whole file; keep the named columns (and rows whose date column lies in the range, if one is given); csv.writer with QUOTE_ALL and newline line ends"
+    },
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/congestion/taxi_speed_2025-01_2026-06.csv",
+    "bytes": 600282,
+    "sha256": "729cfd966eefd2e1adbea66a4afe7c9ba695477b4f904d85c611d8a4db413f5b",
+    "role": "slice of a large input, read by the rerun",
+    "sliced_from": {
+     "bytes": 1496935,
+     "sha256": "dd2ce1108def801c512be3a820ebf76410a58157daff5b51e233686eb8d760c4",
+     "rule": {
+      "date_column": "d",
+      "from": "2026-01-01",
+      "to": "2026-09-30"
+     },
+     "how": "csv.reader over the whole file; keep the named columns (and rows whose date column lies in the range, if one is given); csv.writer with QUOTE_ALL and newline line ends"
+    },
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/congestion/ems_2026.csv",
+    "bytes": 2581143,
+    "sha256": "5283990276c48ebdb9eb0bf279ccf906e37149d725c52fee7a03528c10d1a28f",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_hourly_2026-01_2026-06.csv",
+    "bytes": 1372307,
+    "sha256": "bdf19d3abaf199d7073a23b841e48c59ab8ef5ec09cae5664f48e28ea34c520d",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_hourly_2026-07_2026-09.csv",
+    "bytes": 682170,
+    "sha256": "d527c312f6f725d8c1d1997b61ff264febb5573c5eee95e0480d6c0f3d3f1edc",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2019-01.csv",
+    "bytes": 235014,
+    "sha256": "62817dbd55236a0d24845657ab687361cd4517c81470a70dcf090d760c7688d0",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2019-02.csv",
+    "bytes": 211189,
+    "sha256": "d2cc96c1ea911dee83407bdca6ec2855cb0a70ef4c552b044e84d096c0d4420e",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2019-03.csv",
+    "bytes": 234333,
+    "sha256": "e180d1aef36314530eeda0e9ada4a915f1feeda015adb1cbcf8e41f43b354cc7",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2019-04.csv",
+    "bytes": 226937,
+    "sha256": "7a33570f23a8028056b3f2eec4231b891d5fc5c5f7b2f9d21002f7f6aac315e2",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2019-05.csv",
+    "bytes": 233578,
+    "sha256": "ef2935b00b29e18f6fb7c2eedc86e31b8d5f70d2f90ed48c4a5ae34912d05265",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2019-06.csv",
+    "bytes": 226517,
+    "sha256": "51cf2d6f2f6acbcd10584da54606a7e0f05bd1c2d642426d73a38f044de886c2",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2019-07.csv",
+    "bytes": 233499,
+    "sha256": "3adbad52756b0a154b4ab9e03824477dad672cd2bf17c66c4b43222720296890",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2019-08.csv",
+    "bytes": 232612,
+    "sha256": "60acc73aeb67d08a3913bd63218d141eafed6b342552c7c5e566babb26b5bf15",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2019-09.csv",
+    "bytes": 224837,
+    "sha256": "981721432f7af7bd5c6580ff3e0a0a3252451f64437b8b7de2af803fe4e7ed0c",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2026-01.csv",
+    "bytes": 235937,
+    "sha256": "1447233ec00753c9336ae20e44d2729e87459ae2e5a7999d45c19f2d60c04807",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2026-02.csv",
+    "bytes": 212798,
+    "sha256": "262093f7574571cfd47625719f5f998a5413c0bc70565ef59e8402cdc8a1df49",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2026-03.csv",
+    "bytes": 236556,
+    "sha256": "dfe40c6cfe0b85bf7e0d62a3802e7f07f3a48fb9c9fe67ac1407dcd4e4a02d54",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2026-04.csv",
+    "bytes": 227346,
+    "sha256": "427830a226e0ada4f0bcb057da31ea28095c7e4f3396dc943924e5c5ddedbf6f",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2026-05.csv",
+    "bytes": 234747,
+    "sha256": "3c44db28fa254db8616b5ce57f306c1cbf3b301f6fdbd82c7d120049ea786ccd",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2026-06.csv",
+    "bytes": 225033,
+    "sha256": "0744da4e6b6c8b53c109147c861e6c81d11f9f74d3a42c452c637832fb7c15cf",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2026-07.csv",
+    "bytes": 230833,
+    "sha256": "be79c7727c7cf3238747b468301f1d4e86569b632f8f3929e41a1ae7535bac6f",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2026-08.csv",
+    "bytes": 228355,
+    "sha256": "cadb571f3c1bfcb5f154d60b61f81f59d36d4dd78bf442a9b8abb239138ee38f",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/ems_response/taxi_parts/2026-09.csv",
+    "bytes": 223026,
+    "sha256": "40a3dd9cddcff9c2a342273fa1ba6f5ba33721146cdee9e2d95c59ce4108b106",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/congestion/ems_sources.json",
+    "bytes": 32674,
+    "sha256": "0943e5f21e562f23bcdfc58a3781e624773261a9148b3e3711cd50e9ff80863b",
+    "role": "SoQL and rowsUpdatedAt of the EMS hourly tables",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/derived/ems_response/taxi_files_2019-01_2020-02.json",
+    "bytes": 3791,
+    "sha256": "34dcb45f37f71054340092ac90c1e8ddaa553cc72ed5c18d976a6c012c62da03",
+    "role": "TLC file versions of taxi_hourly_2019-01_2020-02.csv",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/derived/ems_response/taxi_files_2026-01_2026-06.json",
+    "bytes": 2002,
+    "sha256": "f693f7887e7c08230ad0fc0c4667471d3e570a016d084695cc7a5cc4d367ad1d",
+    "role": "TLC file versions of taxi_hourly_2026-01_2026-06.csv",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/derived/ems_response/taxi_files_2026-07_2026-09.json",
+    "bytes": 1001,
+    "sha256": "1163fa3edd8fac47870429d6cc43e1e17a0523cc5f152d21712c0242016a96e8",
+    "role": "TLC file versions of taxi_hourly_2026-07_2026-09.csv",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/derived/reproduction/mmr_cbd_speed_files.json",
+    "bytes": 13372,
+    "sha256": "f83e304510000d76db65c16113552cf3587996e05e50d9ac8e25c0564be34f5e",
+    "role": "TLC file versions of the congestion taxi_speed tables",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   }
+  ],
+  "traced": true
+ },
+ "deciding": {
+  "available": true,
+  "what": "city_effect: S1, share of the January-September 2019 to 2026 rise in Manhattan life-threatening EMS travel time accounted for by the taxi pace change at elasticity 1, with a day-block bootstrap 95% interval (400 draws, seed 20261113)",
+  "recorded": {
+   "estimate": 0.331097434751018,
+   "lo": 0.29459485491962767,
+   "hi": 0.3674869733328879,
+   "n": 2
+  },
+  "tolerance": {
+   "estimate": 0.0001,
+   "lo": 0.0001,
+   "hi": 0.0001,
+   "n": 0
+  },
+  "decides": "support_if: upper 95% limit of S1 below 0.5 and estimate within 0.05 to 0.45",
+  "recorded_from": {
+   "city_effect": "claims/outcomes/ems-traffic-share-2019-2026.json"
+  },
+  "wrapper": "code/rerun.py",
+  "wrapper_note": "Smallest wrapper: run_tests.py runs three tests and writes results.json, so code/rerun.py calls lib.traffic_share() unchanged for T2 only. lib.taxi_hourly() globs every taxi table in two folders (29 MB); the wrapper's copy reads, in the same order, only the files that hold rows in January-September 2019 and 2026, three of them sliced to those months. The rows the rerun uses are the same, because drop_duplicates keeps the first occurrence and the omitted files hold no rows in the windows.",
+  "refetch_rerun": false,
+  "trace_run_in_repository": {
+   "printed": {
+    "estimate": 0.331097434751018,
+    "lo": 0.29459485491962767,
+    "hi": 0.3674869733328879,
+    "n": 2,
+    "D_pct": 35.0197913819529,
+    "pace_change_pct": 10.45217070647777
+   },
+   "files_read": 24
+  }
+ },
+ "not_rebuilt": [
+  {
+   "table": "data/derived/congestion/ems_2019.csv and ems_2026.csv",
+   "built_by": "analyses/congestion/ems_fetch.py",
+   "why_not_rebuilt": "the hourly EMS sums were aggregated by SoQL queries whose responses are not cached under the outcome's query; the queries and rowsUpdatedAt are in ems_sources.json",
+   "built_from": [
+    {
+     "source": "socrata:76xm-jjuj",
+     "dataset": "76xm-jjuj",
+     "name": "EMS Incident Dispatch Data",
+     "pages": 0,
+     "bytes": 0,
+     "copied": false,
+     "pointed_to_at": "manifest.json data[] (type socrata, dataset 76xm-jjuj) cache_files[].sha256",
+     "sha256": [],
+     "note": "no cached response found; only the query and rowsUpdatedAt are recorded"
+    },
+    {
+     "source": "data/derived/congestion/ems_sources.json",
+     "path": "data/derived/congestion/ems_sources.json",
+     "copied": false,
+     "bytes": 32674,
+     "sha256": "0943e5f21e562f23bcdfc58a3781e624773261a9148b3e3711cd50e9ff80863b",
+     "pointed_to_at": "manifest.json inputs.files[]"
+    }
+   ]
+  },
+  {
+   "table": "data/derived/ems_response/taxi_hourly_*.csv and taxi_parts/*.csv (2019 and 2026 months)",
+   "built_by": "analyses/ems_response/taxi_hourly.py",
+   "why_not_rebuilt": "the TLC trip files total several GB and the drive that holds them was detached at this build",
+   "built_from": [
+    {
+     "source": "external:TLC yellow taxi trip record parquet files for 2019-01 to 2019-09 and 2026-01 to 2026-09 (about 50 to 140 MB each), kept in ~/opt/nyc-concordance; URLs, ETags and Last-Modified are in the outcome's sources and in the taxi_files_*.json records",
+     "copied": false,
+     "sha256": null,
+     "note": "an external service; no file is pinned"
+    },
+    {
+     "source": "data/derived/ems_response/taxi_files_2019-01_2020-02.json",
+     "path": "data/derived/ems_response/taxi_files_2019-01_2020-02.json",
+     "copied": false,
+     "bytes": 3791,
+     "sha256": "34dcb45f37f71054340092ac90c1e8ddaa553cc72ed5c18d976a6c012c62da03",
+     "pointed_to_at": "manifest.json inputs.files[]"
+    },
+    {
+     "source": "data/derived/ems_response/taxi_files_2026-01_2026-06.json",
+     "path": "data/derived/ems_response/taxi_files_2026-01_2026-06.json",
+     "copied": false,
+     "bytes": 2002,
+     "sha256": "f693f7887e7c08230ad0fc0c4667471d3e570a016d084695cc7a5cc4d367ad1d",
+     "pointed_to_at": "manifest.json inputs.files[]"
+    },
+    {
+     "source": "data/derived/ems_response/taxi_files_2026-07_2026-09.json",
+     "path": "data/derived/ems_response/taxi_files_2026-07_2026-09.json",
+     "copied": false,
+     "bytes": 1001,
+     "sha256": "1163fa3edd8fac47870429d6cc43e1e17a0523cc5f152d21712c0242016a96e8",
+     "pointed_to_at": "manifest.json inputs.files[]"
+    }
+   ]
+  },
+  {
+   "table": "data/derived/congestion/taxi_speed_2025-01_2026-06.csv",
+   "built_by": "analyses/congestion/taxi_speed.py",
+   "why_not_rebuilt": "it is built from TLC trip files that are not carried",
+   "built_from": [
+    {
+     "source": "external:TLC yellow taxi trip record parquet files, 2025-01 to 2026-06",
+     "copied": false,
+     "sha256": null,
+     "note": "an external service; no file is pinned"
+    },
+    {
+     "source": "data/derived/reproduction/mmr_cbd_speed_files.json",
+     "path": "data/derived/reproduction/mmr_cbd_speed_files.json",
+     "copied": false,
+     "bytes": 13372,
+     "sha256": "f83e304510000d76db65c16113552cf3587996e05e50d9ac8e25c0564be34f5e",
+     "pointed_to_at": "manifest.json inputs.files[]"
+    }
+   ],
+   "table_sha256": "729cfd966eefd2e1adbea66a4afe7c9ba695477b4f904d85c611d8a4db413f5b",
+   "table_copied": true
+  }
+ ]
+}

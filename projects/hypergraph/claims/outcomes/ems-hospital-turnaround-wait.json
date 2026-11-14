@@ -1,0 +1,147 @@
+{
+ "id": "ems-hospital-turnaround-wait",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Elasticity of daily mean wait for an ambulance assignment (all calls) to daily mean time at hospital of transported patients, holding log call count, weekday and year-month; NYC, 2017-01-02 to 2026-09-30 excluding Mar-Jun 2020; OLS, HAC 7 lags",
+  "estimate": 4.546821623466572,
+  "lo": 3.2104690058612357,
+  "hi": 5.883174241071909,
+  "scale": "elasticity",
+  "null": 0,
+  "n": 3437
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(incident_datetime) as d, case(initial_severity_level_code in ('1','2','3'), 'hi', true, 'lo') as sev, count(*) as n_all",
+    "$where": "incident_datetime between '2017-01-01T00:00:00' and '2017-06-30T23:59:59'",
+    "$group": "d, sev",
+    "$order": "d, sev"
+   },
+   "fetched": "2026-11-13T11:55:08-0500",
+   "n_rows": 362
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(incident_datetime) as d, case(initial_severity_level_code in ('1','2','3'), 'hi', true, 'lo') as sev, count(*) as n_disp, sum(dispatch_response_seconds_qy) as disp_sum",
+    "$where": "incident_datetime between '2017-01-01T00:00:00' and '2017-06-30T23:59:59' and valid_dispatch_rspns_time_indc='Y'",
+    "$group": "d, sev",
+    "$order": "d, sev"
+   },
+   "fetched": "2026-11-13T11:55:38-0500",
+   "n_rows": 362
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(incident_datetime) as d, case(initial_severity_level_code in ('1','2','3'), 'hi', true, 'lo') as sev, count(*) as n_trav, sum(incident_travel_tm_seconds_qy) as trav_sum",
+    "$where": "incident_datetime between '2017-01-01T00:00:00' and '2017-06-30T23:59:59' and valid_incident_rspns_time_indc='Y'",
+    "$group": "d, sev",
+    "$order": "d, sev"
+   },
+   "fetched": "2026-11-13T11:55:50-0500",
+   "n_rows": 362
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(incident_datetime) as d, case(initial_severity_level_code in ('1','2','3'), 'hi', true, 'lo') as sev, count(*) as n_hosp, sum(((date_extract_d(incident_close_datetime)-date_extract_d(first_hosp_arrival_datetime))*86400+(date_extract_hh(incident_close_datetime)*3600+date_extract_mm(incident_close_datetime)*60+date_extract_ss(incident_close_datetime))-(date_extract_hh(first_hosp_arrival_datetime)*3600+date_extract_mm(first_hosp_arrival_datetime)*60+date_extract_ss(first_hosp_arrival_datetime)))) as hosp_sum",
+    "$where": "incident_datetime between '2017-01-01T00:00:00' and '2017-06-30T23:59:59' and incident_disposition_code='82' and first_hosp_arrival_datetime IS NOT NULL and incident_close_datetime IS NOT NULL and date_extract_m(incident_close_datetime)=date_extract_m(first_hosp_arrival_datetime) and ((date_extract_d(incident_close_datetime)-date_extract_d(first_hosp_arrival_datetime))*86400+(date_extract_hh(incident_close_datetime)*3600+date_extract_mm(incident_close_datetime)*60+date_extract_ss(incident_close_datetime))-(date_extract_hh(first_hosp_arrival_datetime)*3600+date_extract_mm(first_hosp_arrival_datetime)*60+date_extract_ss(first_hosp_arrival_datetime))) > 0 and ((date_extract_d(incident_close_datetime)-date_extract_d(first_hosp_arrival_datetime))*86400+(date_extract_hh(incident_close_datetime)*3600+date_extract_mm(incident_close_datetime)*60+date_extract_ss(incident_close_datetime))-(date_extract_hh(first_hosp_arrival_datetime)*3600+date_extract_mm(first_hosp_arrival_datetime)*60+date_extract_ss(first_hosp_arrival_datetime))) < 14400",
+    "$group": "d, sev",
+    "$order": "d, sev"
+   },
+   "fetched": "2026-11-13T11:56:01-0500",
+   "n_rows": 362
+  },
+  {
+   "note": "80 queries, one per half-year and measure"
+  },
+  {
+   "kind": "report",
+   "name": "Mayor's Management Report, FDNY chapter, FY2026",
+   "url": "https://www.nyc.gov/assets/operations/downloads/pdf/mmr2026/fdny.pdf",
+   "read": "2026-11-13"
+  }
+ ],
+ "prediction_scored": "hit on the registered condition: the lower 95% bound, 3.21, is far above 0.2. Partial on magnitude: the estimate 4.55 is above the registered range of 0.5 to 3, which suggests that same-day common shocks or late closing of incidents on busy days inflate it; the previous day's hospital time, which these cannot affect in the same way, gives 1.06 (0.13 to 1.99).",
+ "settle": "Hospital-level offload times (arrival to transfer of care) by day, from the FDNY or the state, joined to waits in each hospital's catchment; or a natural experiment such as a hospital's offload-team start date or a state offload standard.",
+ "research_needed": [
+  {
+   "question": "How much of the rise in New York's ambulance waits since 2022 comes from the fall in ambulance tours, against longer hospital turnaround?",
+   "data": "FDNY daily units in service (not published as open data), 76xm-jjuj",
+   "design": "daily model with units in service and turnaround together",
+   "priority": "high"
+  },
+  {
+   "question": "Would an offload-time standard (California's 30-minute rule) shorten waits in New York?",
+   "data": "transfer-of-care times by hospital",
+   "design": "difference in differences around hospital offload programmes",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/health_gaps/ems_turnaround_wait.png",
+  "figures/health_gaps/ems_where_when.png"
+ ],
+ "notes": "Primary elasticity 4.55 (3.21 to 5.88); call-count elasticity 5.28 (4.95 to 5.61). Previous-day turnaround 1.06 (0.13 to 1.99). Life-threatening calls (severity 1-3) 2.11 (0.95 to 3.27); other calls 4.94 (3.53 to 6.35). Annual means (all calls; wait = creation to first assignment, travel, time at hospital, seconds; calls per day): 2019 wait 100, travel 536, hospital 2168, calls 4201; 2022 101, 516, 2291, 4338; 2025 329, 649, 2437, 4417; 2026 to September 630, 722, 2517, 4412. From 2019 to 2025 log mean wait rose by 1.19 (a factor of 3.3); hospital time rose 12% and calls 5%. Applied to the annual changes, the same-day elasticities attribute 0.53 log points to hospital time and 0.27 to calls, about two thirds of the rise; with the previous-day elasticity hospital time accounts for 0.12. This extrapolation from daily variation to the trend is secondary and exploratory in strength. In 2026 wait almost doubled again while hospital time rose 3% and calls did not rise; the MMR attributes the year to a 5% fall in ambulance in-service hours (8,572 to 8,109 a day) and 11 hospital ambulances leaving the 911 system. Units in service are not in the open data, so staffing could not enter the model; year-month effects absorb it only as slow change. The MMR annual figures were read before registration; the daily data were not.",
+ "registration_sha256": "8441e4128a55fa566516f03ec6b2992030e717cba3c8197f4682524cfc46e173",
+ "decided_at": "2026-11-13T12:21:23-0500",
+ "stance": {
+  "value": 0.997,
+  "lo": 0.982,
+  "hi": 1.0,
+  "z": 6.67
+ },
+ "notes_referee": "Referee reproduced 4.54 (3.20 to 5.88); year-week FE 3.49 (2.22 to 4.75). Verdict stands under rule 1. Placebo fails: next-day turnaround predicts today's wait at 2.40 (1.20 to 3.60); with year-week FE lag and lead near zero; afternoon turnaround predicts same morning's wait. Not evidence that offload time is a lever.",
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Elasticity of daily mean wait for an ambulance assignment (all calls) to daily mean time at hospital of transported patients, holding log call count, weekday and year-month; NYC, 2017-01-02 to 2026-09-30 excluding Mar-Jun 2020; OLS, HAC 7 lags",
+    "estimate": 4.546821623466572,
+    "lo": 3.2104690058612357,
+    "hi": 5.883174241071909,
+    "scale": "elasticity",
+    "null": 0,
+    "n": 3437
+   },
+   "stance": {
+    "value": 0.997,
+    "lo": 0.982,
+    "hi": 1.0,
+    "z": 6.67
+   },
+   "decided_at": "2026-11-13T12:21:23-0500",
+   "prediction_scored": "hit on the registered condition: the lower 95% bound, 3.21, is far above 0.2. Partial on magnitude: the estimate 4.55 is above the registered range of 0.5 to 3, which suggests that same-day common shocks or late closing of incidents on busy days inflate it; the previous day's hospital time, which these cannot affect in the same way, gives 1.06 (0.13 to 1.99)."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee: verdict kept, practical reading withdrawn",
+  "critique": "critique/ems-hospital-turnaround-wait.md",
+  "revised_at": "2026-11-13T12:45:07-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

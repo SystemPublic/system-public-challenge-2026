@@ -1,0 +1,600 @@
+{
+ "id": "repro-mmr-cbd-speed",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "R1 reproduced FY26 speed minus MMR stated FY26 speed (6.5 mph); lo and hi are the range of this difference over the readings that reproduce both years (R1, R3, R7, R8, R9)",
+  "estimate": 0.117,
+  "lo": -0.071,
+  "hi": 0.142,
+  "scale": "mph",
+  "null": 0,
+  "n": 12016516
+ },
+ "reproduced": {
+  "stated": {
+   "FY24": 6.9,
+   "FY25": 6.9,
+   "FY26": 6.5
+  },
+  "tolerance_mph": 0.2,
+  "by_reading": {
+   "R1": {
+    "FY24": 6.937,
+    "FY25": 6.949,
+    "FY26": 6.617,
+    "reproduces_FY25_and_FY26": true
+   },
+   "R2": {
+    "FY24": 7.269,
+    "FY25": 7.237,
+    "FY26": 6.92,
+    "reproduces_FY25_and_FY26": false
+   },
+   "R3": {
+    "FY24": 6.804,
+    "FY25": 6.784,
+    "FY26": 6.429,
+    "reproduces_FY25_and_FY26": true
+   },
+   "R4": {
+    "FY24": 8.604,
+    "FY25": 8.532,
+    "FY26": 8.119,
+    "reproduces_FY25_and_FY26": false
+   },
+   "R5": {
+    "FY24": 9.747,
+    "FY25": 9.584,
+    "FY26": 9.132,
+    "reproduces_FY25_and_FY26": false
+   },
+   "R6": {
+    "FY24": 6.574,
+    "FY25": 6.684,
+    "FY26": 6.447,
+    "reproduces_FY25_and_FY26": false
+   },
+   "R7": {
+    "FY24": 6.943,
+    "FY25": 6.958,
+    "FY26": 6.629,
+    "reproduces_FY25_and_FY26": true
+   },
+   "R8": {
+    "FY24": 6.931,
+    "FY25": 6.878,
+    "FY26": 6.448,
+    "reproduces_FY25_and_FY26": true
+   },
+   "R9": {
+    "FY24": 6.97,
+    "FY25": 6.993,
+    "FY26": 6.642,
+    "reproduces_FY25_and_FY26": true
+   }
+  },
+  "R1_change_FY25_FY26": -0.332,
+  "stated_change_FY25_FY26": -0.4
+ },
+ "periods_mph": {
+  "CY2024": {
+   "MN_NORTH": 8.054,
+   "R1": 6.855,
+   "REST": 11.938
+  },
+  "CY2025": {
+   "MN_NORTH": 8.064,
+   "R1": 6.932,
+   "REST": 11.491
+  },
+  "FY24 H1 (Jul-Dec 2023)": {
+   "MN_NORTH": 8.039,
+   "R1": 6.811,
+   "REST": 12.533
+  },
+  "FY24 H2 (Jan-Jun 2024)": {
+   "MN_NORTH": 8.189,
+   "R1": 7.063,
+   "REST": 12.029
+  },
+  "FY25 H1 (Jul-Dec 2024, untolled)": {
+   "MN_NORTH": 7.919,
+   "R1": 6.664,
+   "REST": 11.853
+  },
+  "FY25 H2 (Jan-Jun 2025, tolled)": {
+   "MN_NORTH": 8.176,
+   "R1": 7.238,
+   "REST": 11.629
+  },
+  "FY26 H1 (Jul-Dec 2025)": {
+   "MN_NORTH": 7.953,
+   "R1": 6.657,
+   "REST": 11.373
+  },
+  "FY26 H2 (Jan-Jun 2026)": {
+   "MN_NORTH": 7.693,
+   "R1": 6.571,
+   "REST": 10.877
+  }
+ },
+ "sources": [
+  {
+   "kind": "tlc-trip-record-files",
+   "name": "TLC Yellow Taxi Trip Records, monthly parquet, Jul 2023 - Jun 2026",
+   "page": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+   "data_access": "open",
+   "files": [
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-07.parquet",
+     "month": "2023-07",
+     "last_modified": "Thu, 21 Sep 2023 22:40:27 GMT",
+     "etag": "\"0760939cdf0420e38bdf1a79fca850c8-3\"",
+     "bytes": 48361828,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2023-07.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-08.parquet",
+     "month": "2023-08",
+     "last_modified": "Thu, 02 Nov 2023 13:56:54 GMT",
+     "etag": "\"62c2d12c1ea3287202c04398bddbc3bb-3\"",
+     "bytes": 48152353,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2023-08.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-09.parquet",
+     "month": "2023-09",
+     "last_modified": "Fri, 17 Nov 2023 14:55:56 GMT",
+     "etag": "\"3ca7fcd32fd4acbf6e4c17e6c70fa30c-3\"",
+     "bytes": 47895515,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2023-09.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-10.parquet",
+     "month": "2023-10",
+     "last_modified": "Mon, 18 Dec 2023 14:32:59 GMT",
+     "etag": "\"19546cf551b48e08c2a476ec49365ec8-4\"",
+     "bytes": 59009059,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2023-10.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-11.parquet",
+     "month": "2023-11",
+     "last_modified": "Thu, 18 Jan 2024 15:04:46 GMT",
+     "etag": "\"0b64f83933047d8572df0bbc005dc0d5-4\"",
+     "bytes": 56094653,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2023-11.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-12.parquet",
+     "month": "2023-12",
+     "last_modified": "Thu, 22 Feb 2024 14:55:08 GMT",
+     "etag": "\"3e6ebc07f0ca52821a58f00785065b15-4\"",
+     "bytes": 56804275,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2023-12.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet",
+     "month": "2024-01",
+     "last_modified": "Thu, 21 Mar 2024 15:35:44 GMT",
+     "etag": "\"d6ebae95a45f284994e283e2df97c06f-3\"",
+     "bytes": 49961641,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-01.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet",
+     "month": "2024-02",
+     "last_modified": "Fri, 19 Apr 2024 18:22:42 GMT",
+     "etag": "\"7337741e6032c0652369749781534e79-3\"",
+     "bytes": 50349284,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-02.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-03.parquet",
+     "month": "2024-03",
+     "last_modified": "Wed, 22 May 2024 19:27:43 GMT",
+     "etag": "\"7a8994a37b02c8200aac7bcf9c3a2c69-4\"",
+     "bytes": 60078280,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-03.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-04.parquet",
+     "month": "2024-04",
+     "last_modified": "Thu, 20 Jun 2024 20:30:14 GMT",
+     "etag": "\"e67ba6e0a21daa942fb9c10aafa2a354-4\"",
+     "bytes": 59133625,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-04.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-05.parquet",
+     "month": "2024-05",
+     "last_modified": "Thu, 18 Jul 2024 18:35:19 GMT",
+     "etag": "\"e7dbcee49593af9a20818857f421e7be-4\"",
+     "bytes": 62553128,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-05.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-06.parquet",
+     "month": "2024-06",
+     "last_modified": "Tue, 20 Aug 2024 14:01:55 GMT",
+     "etag": "\"247a4df111330ea3b9d909854f8c72bc-4\"",
+     "bytes": 59859922,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-06.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-07.parquet",
+     "month": "2024-07",
+     "last_modified": "Wed, 18 Sep 2024 13:53:34 GMT",
+     "etag": "\"56fcd589e51d2a8919047175e973f240-4\"",
+     "bytes": 52299432,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-07.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-08.parquet",
+     "month": "2024-08",
+     "last_modified": "Wed, 23 Oct 2024 18:45:26 GMT",
+     "etag": "\"067a7eaf85df072942b9c62b9ae97b8f-3\"",
+     "bytes": 51067350,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-08.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-09.parquet",
+     "month": "2024-09",
+     "last_modified": "Wed, 20 Nov 2024 21:37:39 GMT",
+     "etag": "\"064399d34a57ef1d0b0b2a7d7c45bc43-4\"",
+     "bytes": 61170186,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-09.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-10.parquet",
+     "month": "2024-10",
+     "last_modified": "Wed, 18 Dec 2024 21:21:21 GMT",
+     "etag": "\"9fd448f7f073698d04344137417ce731-4\"",
+     "bytes": 64346071,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-10.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-11.parquet",
+     "month": "2024-11",
+     "last_modified": "Fri, 17 Jan 2025 20:03:41 GMT",
+     "etag": "\"b2fc70ec04da5a1f8b6db3f987b4e3b9-4\"",
+     "bytes": 60658709,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-11.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-12.parquet",
+     "month": "2024-12",
+     "last_modified": "Fri, 21 Feb 2025 21:29:11 GMT",
+     "etag": "\"485c9d3e08117991f3d9788c016798b4-4\"",
+     "bytes": 61524085,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2024-12.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-01.parquet",
+     "month": "2025-01",
+     "last_modified": "Wed, 23 Apr 2025 16:31:58 GMT",
+     "etag": "\"3f99a46606c0c7e76a386f81167d8e15-12\"",
+     "bytes": 59158238,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-01.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-02.parquet",
+     "month": "2025-02",
+     "last_modified": "Wed, 23 Apr 2025 16:16:58 GMT",
+     "etag": "\"d19a36ff5f2728d5fb856785ff055bda-12\"",
+     "bytes": 60343086,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-02.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-03.parquet",
+     "month": "2025-03",
+     "last_modified": "Wed, 21 May 2025 15:29:16 GMT",
+     "etag": "\"5a7b279b75549fe3c5270e995a5b8c02-14\"",
+     "bytes": 69964745,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-03.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-04.parquet",
+     "month": "2025-04",
+     "last_modified": "Wed, 25 Jun 2025 14:52:12 GMT",
+     "etag": "\"6cb85e58a1a6db7ef4610209de63c7ff-13\"",
+     "bytes": 67352824,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-04.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-05.parquet",
+     "month": "2025-05",
+     "last_modified": "Wed, 25 Jun 2025 15:52:37 GMT",
+     "etag": "\"82ed0af5930f3035156cb5f8cb248725-15\"",
+     "bytes": 77837865,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-05.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-06.parquet",
+     "month": "2025-06",
+     "last_modified": "Fri, 25 Jul 2025 14:02:45 GMT",
+     "etag": "\"fc94b9119612348a42e0887bb449b155-15\"",
+     "bytes": 73542954,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-06.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-07.parquet",
+     "month": "2025-07",
+     "last_modified": "Thu, 21 Aug 2025 16:23:37 GMT",
+     "etag": "\"16edd40595f73ceb5035197d0e652dbc-13\"",
+     "bytes": 66943728,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-07.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-08.parquet",
+     "month": "2025-08",
+     "last_modified": "Wed, 24 Sep 2025 14:18:54 GMT",
+     "etag": "\"7e65c5d9df82665d81d51f84f1e62011-12\"",
+     "bytes": 62293743,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-08.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-09.parquet",
+     "month": "2025-09",
+     "last_modified": "Thu, 23 Oct 2025 15:54:14 GMT",
+     "etag": "\"59e6ee2cf1cdaf10a4a380b13229c493-14\"",
+     "bytes": 72432945,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-09.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-10.parquet",
+     "month": "2025-10",
+     "last_modified": "Tue, 25 Nov 2025 15:27:50 GMT",
+     "etag": "\"3bdef91e79578e57e911fccdd8e00e24-15\"",
+     "bytes": 75267589,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-10.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-11.parquet",
+     "month": "2025-11",
+     "last_modified": "Fri, 19 Dec 2025 15:51:29 GMT",
+     "etag": "\"53a8054ab5bedeacf3da3cd159338e2e-14\"",
+     "bytes": 71134255,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-11.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-12.parquet",
+     "month": "2025-12",
+     "last_modified": "Wed, 25 Mar 2026 15:55:54 GMT",
+     "etag": "\"2c31ea7afe9bc1a94e01fd0833a06490-15\"",
+     "bytes": 73701327,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2025-12.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-01.parquet",
+     "month": "2026-01",
+     "last_modified": "Wed, 25 Mar 2026 15:46:09 GMT",
+     "etag": "\"715f1a37bbf83f6ec7b8d21038e8dc22-13\"",
+     "bytes": 64165080,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2026-01.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-02.parquet",
+     "month": "2026-02",
+     "last_modified": "Wed, 25 Mar 2026 15:46:31 GMT",
+     "etag": "\"41497120d17df99f437634b60f5b9d75-12\"",
+     "bytes": 58683353,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2026-02.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-03.parquet",
+     "month": "2026-03",
+     "last_modified": "Tue, 28 Apr 2026 18:56:26 GMT",
+     "etag": "\"7c9bd1bcac249e15858f8b1731c2039c-4\"",
+     "bytes": 67891249,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2026-03.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-04.parquet",
+     "month": "2026-04",
+     "last_modified": "Fri, 05 Jun 2026 20:44:34 GMT",
+     "etag": "\"39887281adfc4e33d959ff78c7cab632-4\"",
+     "bytes": 64818115,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2026-04.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-05.parquet",
+     "month": "2026-05",
+     "last_modified": "Fri, 26 Jun 2026 21:07:20 GMT",
+     "etag": "\"88babcd4eea8fabf135efb5b2b8cfc5c-5\"",
+     "bytes": 69699174,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2026-05.parquet"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-06.parquet",
+     "month": "2026-06",
+     "last_modified": "Thu, 17 Sep 2026 18:34:43 GMT",
+     "etag": "\"91b7716b26443cce54f6225273edf8e8-4\"",
+     "bytes": 65465637,
+     "fetched_local_copy": "~/opt/nyc-concordance/tlc_yellow/yellow_tripdata_2026-06.parquet"
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "rwwi-khbc",
+   "name": "2024 Yellow Taxi Trip Data",
+   "url": "https://data.cityofnewyork.us/d/rwwi-khbc",
+   "rows_updated_at": "2026-08-21T20:39:49Z",
+   "query": {
+    "$select": "date_trunc_ym(tpep_pickup_datetime) as month, count(*) as n, sum(trip_distance) as miles",
+    "$where": "tpep_pickup_datetime >= '2024-01-01T00:00:00' and tpep_pickup_datetime < '2025-01-01T00:00:00' and pulocationid in ('4','12','13','45','48','50','68','79','87','88','90','100','107','113','114','125','137','144','148','158','161','162','163','164','170','186','209','211','224','229','230','231','232','233','234','246','249','261') and dolocationid in ('4','12','13','45','48','50','68','79','87','88','90','100','107','113','114','125','137','144','148','158','161','162','163','164','170','186','209','211','224','229','230','231','232','233','234','246','249','261') and date_extract_dow(tpep_pickup_datetime) between 1 and 5 and date_extract_hh(tpep_pickup_datetime) between 8 and 17",
+    "$group": "month",
+    "$order": "month",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:59:55-0500",
+   "n_rows": 12,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "irx2-vgm4",
+   "name": "2025 Yellow Taxi Trip Data",
+   "url": "https://data.cityofnewyork.us/d/irx2-vgm4",
+   "rows_updated_at": "2026-10-01T16:57:47Z",
+   "query": {
+    "$select": "date_trunc_ym(tpep_pickup_datetime) as month, count(*) as n, sum(trip_distance) as miles",
+    "$where": "tpep_pickup_datetime >= '2025-01-01T00:00:00' and tpep_pickup_datetime < '2026-01-01T00:00:00' and pulocationid in ('4','12','13','45','48','50','68','79','87','88','90','100','107','113','114','125','137','144','148','158','161','162','163','164','170','186','209','211','224','229','230','231','232','233','234','246','249','261') and dolocationid in ('4','12','13','45','48','50','68','79','87','88','90','100','107','113','114','125','137','144','148','158','161','162','163','164','170','186','209','211','224','229','230','231','232','233','234','246','249','261') and date_extract_dow(tpep_pickup_datetime) between 1 and 5 and date_extract_hh(tpep_pickup_datetime) between 8 and 17",
+    "$group": "month",
+    "$order": "month",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:00:50-0500",
+   "n_rows": 12,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "6p29-6xqn",
+   "name": "MTA Central Business District Taxi and For-Hire Vehicle Speeds: Beginning October 2019",
+   "url": "https://data.ny.gov/d/6p29-6xqn",
+   "rows_updated_at": "2026-10-23T15:07:12Z",
+   "query": {
+    "$select": "month, zone, zonal_speed",
+    "$order": "month",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:17:57-0500",
+   "n_rows": 213,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "8meu-9t5y",
+   "name": "NYC Taxi Zones",
+   "url": "https://data.cityofnewyork.us/d/8meu-9t5y",
+   "rows_updated_at": "2025-06-09T17:12:22Z",
+   "query": {
+    "$select": "locationid,zone,borough",
+    "$where": "borough='Manhattan'",
+    "$order": "locationid",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:55:09-0500",
+   "n_rows": 69,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "yfdc-w5jh",
+   "name": "MTA Central Business District Taxi Zones",
+   "url": "https://data.ny.gov/d/yfdc-w5jh",
+   "rows_updated_at": "2024-08-16T18:30:05Z",
+   "query": {
+    "$select": "taxi_zone",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:16:25-0500",
+   "n_rows": 38,
+   "data_access": "open"
+  },
+  {
+   "kind": "report",
+   "name": "Mayor's Management Report Fiscal 2026, DOT chapter (p. 349) and indicator definitions (p. 256)",
+   "url": "https://www.nyc.gov/assets/operations/downloads/pdf/mmr2026/dot.pdf",
+   "data_access": "open"
+  }
+ ],
+ "prediction_scored": "hit: under the primary reading R1 the reproduced values are 6.95 mph for FY25 (stated 6.9) and 6.62 mph for FY26 (stated 6.5), both within the registered 0.2 mph. Secondary checks also hit: FY24 6.94 (stated 6.9) and an FY25-to-FY26 change of -0.33 mph (stated -0.4). Five of the nine readings (R1, R3, R7, R8, R9) reproduce both years; the mean of trip speeds (R2), the two looser geographies (R4, R5) and the minimal filter (R6) do not.",
+ "settle": "DOT's method note for the indicator (zone set, aggregation, trip filters, holiday list and whether trip records or GPS are used) would settle the remaining 0.1 mph gap in FY26. The disagreement with mob-crz-traffic is one of measure, not of data: see notes.",
+ "research_needed": [
+  {
+   "question": "Why did yellow-taxi speeds fall citywide in January to June 2026 (rest of city -6.5% and Manhattan north of 60th St -5.9% against January to June 2025)?",
+   "data": "TLC FHV high-volume trip records, DOT traffic speed sensors (i4gi-tjb9), MTA bus speeds",
+   "design": "Compare taxi, FHV and bus speeds by area and month; check for changes in trip-record recording (both vendors show the fall)",
+   "priority": "medium"
+  },
+  {
+   "question": "Does the CBD's speed gain relative to Manhattan north of 60th St persist after the first six months of tolling?",
+   "data": "TLC trip records 2023-2026, both comparison areas",
+   "design": "Registered difference-in-differences by half-year with spillover-adjusted comparison areas",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/reproduction/repro_mmr_cbd_speed.png"
+ ],
+ "notes": "The trip-record reproduction uses the 38 MTA CBD taxi zones for both pickup and drop-off, weekday pickups from 8AM to 6PM, federal holidays excluded, and total miles over total hours. It gives 6.94, 6.95 and 6.62 mph for FY24, FY25 and FY26 against the MMR's 6.9, 6.9 and 6.5. The parquet files match the NYC Open Data copies of 2024 and 2025 (rwwi-khbc, irx2-vgm4) exactly in trip count for most months of 2024 and within 0.31% for every month; the 2025 Open Data copy holds slightly fewer trips from April 2025 on, which suggests a later revision of one of the two copies. The MTA series 6p29-6xqn (all hours, taxi and FHV) ends in August 2025 and runs about 1.7 mph higher (8.57 and 8.66 mph in FY24 and FY25), so it is not the MMR's source. Reconciliation with mob-crz-traffic. The MMR number has no comparison area and uses fiscal years. FY25 holds six untolled months (July to December 2024, 6.66 mph under R1) and six tolled months (January to June 2025, 7.24 mph), so the toll's effect is averaged with the slow pre-toll autumn and FY25 equals FY24. FY26 holds the second half of 2025 (6.66 mph) and January to June 2026 (6.57 mph). In January to June 2026 taxi speeds fell everywhere in the city: by 9.2% in the CBD, 5.9% in Manhattan north of 60th Street and 6.5% in the rest of the city against January to June 2025, and the fall appears for both taxi vendors (exploratory check). The fall in the MMR number from 6.9 to 6.5 mph is therefore a citywide fall, not a fall in the CBD relative to elsewhere. Relative to the rest of the city the CBD gained: the ratio of CBD to rest-of-city speed rose 5.1% from calendar 2024 to calendar 2025, close to the +5.7% of mob-crz-traffic, and in January to June 2026 it was still 2.9% above January to June 2024. Relative to Manhattan north of 60th Street, the gain was 2.6% in January to June 2025 and had disappeared by the second half of 2025 (-0.5% against the second half of 2024) and January to June 2026 (-1.0% against January to June 2024). The two published results are both reproduced by the same trip records; they answer different questions, and the choice of comparison area changes the size and persistence of the effect. These comparison-area figures are descriptive outputs named in the registration's plan, not tests.\n\nAfter the referee (13 Nov 2026): the referee rebuilt R1 from the 36 trip files and obtained 6.949 and 6.617 mph, identical to the outcome. Fiscal 2026 reproduces to 0.12 mph, which rounds to 6.6 and not to the published 6.5. The method is not identified: five of the nine registered readings pass, and the 0.2 mph tolerance is half of the 0.4 mph change the indicator reports. Ten of eleven further trip filters stay within tolerance (fiscal 2026 from 6.44 to 6.70); standard-rate trips or positive fares give 6.44 and 6.87, which round to 6.4 and 6.9. A jackknife over days gives a standard error of 0.05 mph, so R1 is 2.3 standard errors from the stated fiscal 2026 value and is accepted because of the registered tolerance. The share of vendor 1, whose trips are 0.1 to 0.3 mph slower, fell from 25% to 19% of trips, and a change in the trip records is not ruled out as part of the fiscal 2026 fall; weather in February 2026 was not examined. The registration has no statement of which data the registrant had seen; the MTA speed series fetched earlier that day runs 1.7 mph higher and could not have been used to tune R1.",
+ "registration_sha256": "a328718a0a0626bbf09fe1fcfbcb948f6ca0fb7030ecf9f312f8bb4677b79933",
+ "decided_at": "2026-11-12T20:02:24-0500",
+ "stance": {
+  "value": 0.451,
+  "lo": 0.251,
+  "hi": 0.651,
+  "note": "The interval is the range over the five readings that reproduced both years, so it is conditioned on success and is narrower than the spread of the nine registered readings (fiscal 2026: 6.43 to 9.13 mph)."
+ },
+ "verdict_note": "Level and direction reproduce within the registered 0.2 mph. Fiscal 2026 is 6.62 against the published 6.5, and several trip filters pass, so DOT's method is not identified.",
+ "critique": {
+  "report": "critique/repro-mmr-cbd-speed.md",
+  "answer": "accepted; verdict kept"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "R1 reproduced FY26 speed minus MMR stated FY26 speed (6.5 mph); lo and hi are the range of this difference over the readings that reproduce both years (R1, R3, R7, R8, R9)",
+    "estimate": 0.117,
+    "lo": -0.071,
+    "hi": 0.142,
+    "scale": "mph",
+    "null": 0,
+    "n": 12016516
+   },
+   "stance": {
+    "value": 0.451,
+    "lo": 0.251,
+    "hi": 0.651
+   },
+   "decided_at": "2026-11-12T20:02:24-0500",
+   "prediction_scored": "hit: under the primary reading R1 the reproduced values are 6.95 mph for FY25 (stated 6.9) and 6.62 mph for FY26 (stated 6.5), both within the registered 0.2 mph. Secondary checks also hit: FY24 6.94 (stated 6.9) and an FY25-to-FY26 change of -0.33 mph (stated -0.4). Five of the nine readings (R1, R3, R7, R8, R9) reproduce both years; the mean of trip speeds (R2), the two looser geographies (R4, R5) and the minimal filter (R6) do not."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed; notes say fiscal 2026 reproduces to 0.12 mph (6.6 against 6.5 after rounding) and that the method is not uniquely identified.",
+  "critique": "critique/repro-mmr-cbd-speed.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "id": "construction-four-year-completion",
+ "kind": "confirmation",
+ "statement": "The share of NYC new-building jobs that reach a certificate of occupancy within four years of first permit matches the Department of City Planning's statement that 80 to 90 percent of permitted projects are completed within four years.",
+ "graph_evidence": [
+  {
+   "relationship_id": "B0QiEej1E1|COEFxSZVXO",
+   "concepts": [
+    "population growth",
+    "construction"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Population growth rate and expansion rate of construction land, Chongqing over 20 years (coefficient 1.82; doi:10.1117/12.815931). The only construction-supply finding found in the graph.",
+   "pubmed_ids": []
+  },
+  {
+   "association_id": "aFGrNWb1i5",
+   "concepts": [
+    "housing (vacant housing demolitions)",
+    "crime"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "-",
+   "summary": "Vacant housing demolitions and change in crime, mean difference -0.068 (CI -0.119 to -0.018), PMID 36228876. Shows the graph treats land and buildings as exposures for health and crime, not as supply outcomes.",
+   "pubmed_ids": [
+    36228876
+   ]
+  },
+  {
+   "association_id": "(search)",
+   "concepts": [
+    "construction",
+    "permit",
+    "completion",
+    "vacant",
+    "demolition",
+    "renovation"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "Variable and concept searches (13 terms, data/derived/construction/graph_search.json) found no finding on building permits, permit-to-completion ratios, lags or permit lapse. The construction concept (COEFxSZVXO) has 3 relationships in all (wage, population growth, natural disasters).",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "NYC Department of City Planning, 'New Housing Permits in the First Half of 2022' (information brief, 2022)",
+   "doi": null,
+   "url": "https://atlanticyardsreport.blogspot.com/2022/11/dcp-expiration-of-421-tax-break-drove.html (quotes the brief)",
+   "finding": "'Typically, 80 to 90 percent of permitted projects are completed within four years.' DOB issued permits for about 58,600 homes in the first half of 2022, ahead of the 421-a expiry."
+  },
+  {
+   "citation": "NYU Furman Center, State of New York City's Housing and Neighborhoods / 2019 data on the housing stock",
+   "doi": null,
+   "url": "https://furmancenter.org/thestoop/entry/2019-data-on-new-york-citys-housing-stock",
+   "finding": "Median time from new-building permit to certificate of occupancy was about 1.9 years for buildings permitted in 2009-2014."
+  },
+  {
+   "citation": "U.S. Census Bureau, New Residential Construction, methodology and 'Relationship between building permits, starts and completions'",
+   "doi": null,
+   "url": "https://www.census.gov/construction/nrc/pdf/summeas_nrc.pdf",
+   "finding": "Construction is undertaken for all but a very small percentage of units authorized by permit; an older bridge table puts abandonment before start near 1.5% and after start near 0.5%. Counts are housing units, not permit rows."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Registrant's expectation: the job-level share with a first CO (temporary or final) within 4 years of first NB permit, cohorts 2010-2017, is about 0.70, range 0.55 to 0.85; median permit-to-CO time 1.8 to 3.0 years among jobs that reach a CO. Research value: 0.80-0.90 (DCP), median 1.9 years (Furman), near-complete eventual completion (Census).",
+  "support_if": "pooled 2010-2017 four-year share between 0.75 and 0.95 (consistent with DCP's 0.80-0.90 given measurement differences)",
+  "refute_if": "pooled 2010-2017 four-year share below 0.65 with a 95% interval excluding 0.75; then the NYC job-level data conflict with the DCP statement"
+ },
+ "plan": "Cohort = unique NB job numbers in ipu4-2q9a whose first NB permit (permit_type NB, filing_status INITIAL) was issued 2010-2017. Outcome = earliest CO issue date for the same job number in bs8b-p36w or pkdm-hqz6. Share with CO within 1461 days, by cohort year, with Wilson 95% intervals and pooled. Residential subset checked against DCP Housing Database (br6q-ssj3: datepermit, datecomplt, job_status) as a second measure of the same quantity. Eventual completion share for cohorts 2010-2014 (CO by Nov 2026) compared with the Census near-100% statement.",
+ "alternatives": [
+  "DCP counts projects or units, and units weight large projects that finish more reliably than small one- and two-family jobs",
+  "Job numbers change between filing systems (BIS to DOB NOW), so a real CO is not matched",
+  "Buildings occupied without a CO (illegal occupancy or only a letter of no objection)",
+  "Withdrawn or superseded jobs that never meant to build"
+ ],
+ "prior": 0.35,
+ "registrant": "Claude (construction agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T15:14:19-0500",
+ "sha256": "8164e034d6847d622f5349c88037a7b6be051bb2f2d01e9c6886ec387c13ce89"
+}

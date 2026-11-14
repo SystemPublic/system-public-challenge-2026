@@ -1,0 +1,52 @@
+{
+ "id": "bridge-shot-ems-link",
+ "kind": "bridge",
+ "statement": "Second link of the heat-violence bridge: FDNY EMS dispatches with initial call type SHOT rise with the day's NYPD shooting incidents, by about one dispatch per incident.",
+ "graph_evidence": [
+  {
+   "association_id": "(PMID 33838402)",
+   "concepts": [
+    "firearm injury",
+    "emergency department visit"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Kentucky counties: firearm-associated ED visits correlate with opioid overdose ED visits (rho 0.29). The graph's only finding naming firearm ED visits as a measured outcome; it establishes the variable, not the link.",
+   "pubmed_ids": [
+    33838402
+   ]
+  },
+  {
+   "association_id": "(search)",
+   "concepts": [
+    "gun violence",
+    "emergency medical services"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "No graph finding links shootings to EMS dispatch or ED volume as a count relationship. The link rests on the structure of the records: a person shot in NYC is normally reached by an ambulance.",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "0.6 to 1.6 additional SHOT dispatches per NYPD shooting incident on the same day.",
+  "support_if": "Coefficient between 0.6 and 1.6 and its interval excludes zero.",
+  "refute_if": "Interval entirely below 0.6 or entirely above 1.6."
+ },
+ "plan": "Daily counts 2006-01-01 to 2026-08-31 of FDNY EMS Incident Dispatch Data (76xm-jjuj) with initial_call_type = 'SHOT', by date of incident_datetime; NYPD incidents per day as in heat-shootings. OLS of daily SHOT dispatches on NYPD incidents, day of week, month, year and holiday, HAC 7 lags. This uses the endpoint dataset's daily levels but not its relation to temperature.",
+ "alternatives": [
+  "Many SHOT dispatches are reports of shots fired with no victim, so the intercept and the noise are large.",
+  "Multiple callers can create separate EMS incidents for one shooting."
+ ],
+ "prior": 0.7,
+ "registrant": "Claude (bridges agent), for Jeff Vernon",
+ "chain": [
+  "bridge-shot-ems-link"
+ ],
+ "registered_at": "2026-11-12T16:04:50-0500",
+ "sha256": "afc8a2d6eada92cd10111a27ebad0449dffb259becd29c5d69118ebcbac018b2"
+}

@@ -1,0 +1,212 @@
+{
+ "id": "levers-vacant-lot-trial-match",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Share of land use 11 lots in the top-decile shooting tracts that resemble the Philadelphia trial lots",
+  "estimate": 0.417,
+  "lo": null,
+  "hi": null,
+  "scale": "share of lots (a count, no sampling interval: every lot was classified)",
+  "null": null,
+  "n": 2678
+ },
+ "graph_effect": {
+  "label": "Moyer et al. 2019: greening, change in shootings near the lot",
+  "estimate": -6.8,
+  "lo": -10.6,
+  "hi": -2.7,
+  "scale": "% change",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,borough,block,lot,address,lotarea,ownertype,ownername,latitude,longitude,bct2020,pfirm15_flag,bldgclass",
+    "$where": "landuse='11'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:31:44-0500",
+   "n_rows": 24663
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "p78i-pat6",
+   "name": "GreenThumb Garden Info",
+   "url": "https://data.cityofnewyork.us/d/p78i-pat6",
+   "rows_updated_at": "2026-11-11T14:02:54Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,gardenname,status",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:31:50-0500",
+   "n_rows": 635
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ipu4-2q9a",
+   "name": "DOB Permit Issuance",
+   "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+   "rows_updated_at": "2026-11-12T00:36:38Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,bin__,job_type,work_type,issuance_date",
+    "$where": "(job_type in ('NB','DM') or work_type in ('FO','EW')) and issuance_date >= '01/01/2014'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:40:47-0500",
+   "n_rows": 671298
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "rbx6-tga4",
+   "name": "DOB NOW: Build – Approved Permits",
+   "url": "https://data.cityofnewyork.us/d/rbx6-tga4",
+   "rows_updated_at": "2026-11-12T19:44:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,bin,work_type,issued_date",
+    "$where": "issued_date >= '2014-01-01' and (work_type in ('New Building','Full Demolition','Foundation','Earth Work','Support of Excavation','Earthwork'))",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:41:23-0500",
+   "n_rows": 55091
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ic3t-wcy2",
+   "name": "DOB Job Application Filings",
+   "url": "https://data.cityofnewyork.us/d/ic3t-wcy2",
+   "rows_updated_at": "2026-11-11T23:14:49Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,bin__,job_type,pre__filing_date",
+    "$where": "job_type='NB'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:45:05-0500",
+   "n_rows": 225409
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "w9ak-ipjd",
+   "name": "DOB NOW: Build – Job Application Filings",
+   "url": "https://data.cityofnewyork.us/d/w9ak-ipjd",
+   "rows_updated_at": "2026-11-11T21:29:13Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bbl,bin,job_type,filing_date",
+    "$where": "job_type='New Building'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:45:40-0500",
+   "n_rows": 59107
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "i296-73x5",
+   "name": "DOB Stalled Construction Sites",
+   "url": "https://data.cityofnewyork.us/d/i296-73x5",
+   "rows_updated_at": "2026-11-12T21:01:40Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "bin,date_complaint_received"
+   },
+   "fetched": "2026-11-13T13:47:54-0500",
+   "n_rows": 50000
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "incident_key,occur_date,occur_time,boro,precinct,latitude,longitude",
+    "$where": "occur_date >= '2023-01-01T00:00:00' and occur_date < '2026-01-01T00:00:00'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T13:38:31-0500",
+   "n_rows": 2566
+  },
+  {
+   "kind": "other",
+   "name": "MapPLUTO lot polygons, DCP ArcGIS feature service",
+   "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/MAPPLUTO/FeatureServer/0/query",
+   "version": [
+    "26v2"
+   ],
+   "fetched": "2026-11-13T13:45:59-0500"
+  },
+  {
+   "kind": "other",
+   "name": "USDA NAIP 2022, New York flight, via Microsoft Planetary Computer STAC (collection naip)",
+   "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip"
+  },
+  {
+   "kind": "literature",
+   "name": "Moyer et al. 2019 AJPH, PMID 30496003"
+  }
+ ],
+ "prediction_scored": "hit. The trial-like share was 0.417 (registered 0.18 to 0.45, central 0.30) and the number 1,116 (registered 400 to 1,500, central 800). Lots in high-shooting tracts: 2,678 (registered 2,000 to 3,500). Shootings within 300 m: 388.0 a year (registered 250 to 450). Prevented by greening: 26.4 (10.5 to 41.1) a year (registered about 20, 8 to 40). The share is near the top of its range.",
+ "settle": "Whether the trial-like lots are blighted as the trial required cannot be seen in NDVI. A street-level survey of a random sample of the 1,116 lots (trash, overgrowth, fencing, use as a side yard) would settle how many qualify; a randomised greening programme in New York would settle whether the Philadelphia effect transfers.",
+ "research_needed": [
+  {
+   "question": "How many of New York's trial-like lots are blighted (trash, overgrowth) rather than maintained side yards or private gardens?",
+   "data": "street-level survey or Street View of a stratified sample",
+   "design": "random sample of the 1,116 lots, two coders",
+   "priority": "high"
+  },
+  {
+   "question": "Does vacant-lot greening reduce shootings in New York, where lots are smaller, denser and more often privately held for development?",
+   "data": "NYPD shootings, the lot list from this claim",
+   "design": "cluster randomised trial with the city's or a charity's lot programme",
+   "priority": "high"
+  },
+  {
+   "question": "Does the effect diminish when many treated lots lie within 300 m of the same shootings?",
+   "data": "Philadelphia trial data by cluster density",
+   "design": "re-analysis",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/levers/map_greening.png",
+  "figures/levers/lot_contact_sheet.png"
+ ],
+ "notes": "All 2,678 land use 11 lots in the 235 tracts with 10 or more shootings in 2019-2024 were classified by records; by type: {'private_idle': 1471, 'city_interim': 668, 'stalled': 281, 'active_development': 258}. No GreenThumb garden and no buyout parcel fell in these tracts (gardens are mostly land use 9). After the size limit of 510 m2, 1,705 private-idle or city-interim lots remained, fewer than the 2,500 at which the plan called for sampling, so NAIP was read for every one (and for the small stalled and active lots, for comparison). Of the small idle lots, NAIP 2022 classed {'vegetated': 720, 'bare_or_paved': 565, 'mixed': 396, 'not_read': 24}. Trial-like lots: 1,116 (owners: {'private': 717, 'city': 304, 'X': 76, 'O': 19}; boroughs: {'BK': 405, 'BX': 274, 'QN': 274, 'SI': 90, 'MN': 73}), 225,620 m2 in all. Without the imagery filter the count is 1,705; adding stalled lots gives 1,252. 388.0 shootings a year (2023-2025) fell within 300 m of a trial-like lot, of 855.3 citywide. At the trial's effects, greening all of them would prevent 26.4 (10.5 to 41.1) shootings a year, cleanup 35.7 (18.6 to 51.2); the intervals are the trial's only and leave out the doubt about transfer. At the trial's costs ($5 per m2, $0.50 per m2 a year) greening would cost about $1,128,102 and $112,810 a year. Two problems were found after the data were read. The shooting dataset (5ucz-vwe8) as fetched has its latitude and longitude columns swapped; the analysis swaps them back. BIS permits for new buildings end in May 2020, so recent development activity rests on DOB NOW foundation, earthwork and demolition permits and on new-building filings. An exploratory visual check of 40 random lot images found that 4 of the 18 lots the rule calls trial-like show a building roof or a maintained ball field, so the count may be about a fifth too high; the share would still lie in the registered range.",
+ "registration_sha256": "31d31f4114ae025178cede169e4da36d9648c5c5dd6438c6eab15c73b7ee90f6",
+ "decided_at": "2026-11-13T13:58:27-0500",
+ "stance": null,
+ "notes_referee": "Referee rebuilt 1,087 of 2,678 (0.406) vs 1,116 (0.417): 42 lots with DOB NOW activity missed by the join. Confirmed stands under rule 1; share 0.31-0.41 under tested choices. Exploratory image check: 28 of 40 screened lots (70%, 55-82%) not vacant blighted land; trial-like share ~0.12, below the registered floor. Rule 9 not met (scripts committed with outcome).",
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Share of land use 11 lots in the top-decile shooting tracts that resemble the Philadelphia trial lots",
+    "estimate": 0.417,
+    "lo": null,
+    "hi": null,
+    "scale": "share of lots (a count, no sampling interval: every lot was classified)",
+    "null": null,
+    "n": 2678
+   },
+   "stance": null,
+   "decided_at": "2026-11-13T13:58:27-0500",
+   "prediction_scored": "hit. The trial-like share was 0.417 (registered 0.18 to 0.45, central 0.30) and the number 1,116 (registered 400 to 1,500, central 800). Lots in high-shooting tracts: 2,678 (registered 2,000 to 3,500). Shootings within 300 m: 388.0 a year (registered 250 to 450). Prevented by greening: 26.4 (10.5 to 41.1) a year (registered about 20, 8 to 40). The share is near the top of its range."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee: verdict kept, reading narrowed",
+  "critique": "critique/levers-vacant-lot-trial-match.md",
+  "revised_at": "2026-11-13T14:42:59-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "id": "mob-crz-traffic",
+ "kind": "confirmation",
+ "statement": "Congestion pricing in Manhattan's Central Business District (from 5 January 2025) raised taxi and for-hire vehicle speeds and reduced TLC trip counts in the CBD relative to the rest of New York City.",
+ "graph_evidence": [
+  {
+   "note": "The System graph holds no findings on road pricing, congestion charging or cordon tolls (variable searches: congestion pricing, road pricing, congestion charging, low emission zone, cordon, toll). This claim rests on the literature below; the gap is itself a research_needed item.",
+   "searches": {
+    "variable_searches": [
+     "congestion pricing",
+     "road pricing",
+     "congestion charging",
+     "low emission zone",
+     "cordon",
+     "toll"
+    ],
+    "relevant_hits": [
+     "toll booth removal",
+     "Reduction in the incidence of casualties after a road traffic crash (from 1996-2001 to 2003-2008)",
+     "average traffic flow reduction (%) during COVID19 lockdown period",
+     "reductions in traffic-related air pollution"
+    ]
+   }
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Eliasson J (2009). A cost-benefit analysis of the Stockholm congestion charging system. Transp Res A 43:468-480.",
+   "doi": "10.1016/j.tra.2008.11.014",
+   "finding": "Traffic across the cordon fell about 20% and stayed lower."
+  },
+  {
+   "citation": "Transport for London (2007). Central London Congestion Charging: Impacts monitoring, fifth annual report.",
+   "doi": null,
+   "finding": "Traffic entering the zone fell about 18-21%; congestion (delay) fell about 30% at first and returned toward baseline by 2006."
+  },
+  {
+   "citation": "Cook C, Kreidieh A, Vasserman S, Allcott H, Arora N, van Sambeek F, Tomkins A, Turkel E (2025). Short-run traffic effects of New York's congestion pricing. NBER working paper.",
+   "doi": null,
+   "finding": "Reported faster travel in the CBD in early 2025 (cited from memory of the working paper; not verified here)."
+  },
+  {
+   "citation": "NYC DOHMH (14 August 2026). Congestion pricing air quality report (Environment and Health Data Portal).",
+   "doi": null,
+   "finding": "States that traffic entering the zone fell about 10% in 2025 (secondary report, 6sqft, 17 Aug 2026)."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Difference-in-differences of log monthly taxi/FHV speed, CBD minus rest of city, 2025 vs 2024: +5% to +15%. Difference-in-differences of log monthly TLC trips (pickups plus drop-offs) in CBD taxi zones minus non-CBD zones, 2025 vs 2024: -3% to -12%.",
+  "support_if": "Speed DiD > 0 with a 95% interval above 0, and the trip-count DiD below 0.",
+  "refute_if": "Speed DiD <= 0 with an interval that excludes +3%, or CBD trips rise relative to outside."
+ },
+ "plan": "Data: MTA 'CBD Taxi and For-Hire Vehicle Speeds: Beginning October 2019' (data.ny.gov 6p29-6xqn), zones CBD vs rest of city (and adjacent area as a second comparison); TLC 'Pickups and Drop-offs by Taxi Zone and Industry' (data.cityofnewyork.us c5iv-bn4s) with the CBD zone list from MTA yfdc-w5jh; MTA 'Vehicle Miles Traveled in the CBD' (jbxx-kxff) as a descriptive check; MTA CRZ entries (t6yz-b64h) descriptive only because it starts in 2025. Unit: month. Model: OLS of log value on area, calendar month, year and area x post (post = Jan 2025 on), pre-period Jan 2023 - Dec 2024, post Jan - latest 2025/2026 month; HAC (Newey-West, 3 lags) standard errors. Pre-trend check: the same model with a placebo post = Jan 2024 on 2023-2024 only. Figure: monthly CBD and comparison series with the start date marked.",
+ "alternatives": [
+  "Post-pandemic return-to-office trend that differs between the CBD and outer boroughs",
+  "Seasonal and weather shocks (absorbed in part by calendar-month terms; common shocks by the comparison)",
+  "Displacement: traffic avoiding the zone slows the comparison area, which inflates the DiD",
+  "Change in TLC fleet composition or app-company pricing unrelated to the toll (the HVFHV $1.50 and taxi $0.75 per-trip CBD surcharges are part of the policy itself)"
+ ],
+ "prior": 0.8,
+ "registrant": "mobility agent (Claude Opus 5.5), for J. Vernon",
+ "registered_at": "2026-11-12T15:15:19-0500",
+ "sha256": "7e080860acc4dff2c0ecba9b77628be759c0f9681c9daa5a3e815eabdb578b26"
+}

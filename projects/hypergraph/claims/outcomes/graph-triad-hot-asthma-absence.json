@@ -1,0 +1,216 @@
+{
+ "id": "graph-triad-hot-asthma-absence",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "citywide absence rate on hot school days against other school days of the same week of the year",
+  "estimate": 1.0090418360846225,
+  "lo": 0.969767705084531,
+  "hi": 1.0499065102196579,
+  "scale": "ratio of absence rates",
+  "null": 1,
+  "n": 601,
+  "n_exposed": 66
+ },
+ "graph_effect": {
+  "label": "composed through asthma: RR(asthma exacerbation) ^ share of absences attributable to asthma",
+  "estimate": 1.0025738370025843,
+  "lo": 1.0006761898256078,
+  "hi": 1.0054867760972164,
+  "scale": "ratio of absence rates",
+  "null": 1
+ },
+ "graph_evidence": [
+  {
+   "relationship_id": [
+    "4FaXcuNJRt|EAshH_Ko3h",
+    "EAshH_Ko3h|4FaXcuNJRt",
+    "dINFs04idR|EAshH_Ko3h"
+   ],
+   "concepts": "temperature family (hot, temperature, air temperature) - asthma",
+   "n_findings": 40,
+   "n_studies": 24,
+   "direction": "+ for heat in the hot season and + for cold in the cold season; the 32 positive and 8 negative rows mix both, and include heaters and exhaled temperature",
+   "summary": "hot-season temperature 30 C against 27 C and asthma hospitalisations, cumulative RR lags 0-3 = 1.19 (1.06-1.34), Hong Kong 2004-2011, all ages (children least sensitive); also heat index quartile 4 and asthma exacerbation in April, May and October, OR 1.27 (1.19-1.36) to 2.04 (1.92-2.17) by ethnicity, Florida (PMID 34555607)",
+   "pubmed_ids": [
+    "27343213",
+    "34555607",
+    "39251927",
+    "36240934"
+   ]
+  },
+  {
+   "relationship_id": [
+    "EAshH_Ko3h|_l4tNqo_PI"
+   ],
+   "concepts": "asthma - school attendance",
+   "n_findings": 1,
+   "n_studies": 31,
+   "direction": "+ (more days absent)",
+   "summary": "children with asthma had 2.21 (1.41-3.01) more days absent per year than matched children without asthma, Rochester, Minnesota (abstract read; the relationship record lists 31 studies but the API returns one finding)",
+   "pubmed_ids": [
+    "11487757"
+   ]
+  },
+  {
+   "relationship_id": null,
+   "concepts": "temperature family - school attendance",
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": null,
+   "summary": "no direct finding in the graph for hot, temperature, air temperature, surface temperature, heat wave or urban heat island with school attendance (two findings from two studies with absenteeism)",
+   "pubmed_ids": []
+  }
+ ],
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "xwxx-rnki",
+   "name": "2006-2009 Historical Daily Attendance By School",
+   "url": "https://data.cityofnewyork.us/d/xwxx-rnki",
+   "rows_updated_at": "2017-08-23T16:45:14Z",
+   "query": {
+    "$select": "date, sum(absent) as absent, sum(enrolled) as enrolled, sum(present) as present, count(*) as schools",
+    "$group": "date",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T22:53:04-0500",
+   "n_rows": 557
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wpqj-3buw",
+   "name": "2009-2012 Historical Daily Attendance By School",
+   "url": "https://data.cityofnewyork.us/d/wpqj-3buw",
+   "rows_updated_at": "2017-08-23T19:25:27Z",
+   "query": {
+    "$select": "date, sum(absent) as absent, sum(enrolled) as enrolled, sum(present) as present, count(*) as schools",
+    "$group": "date",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T22:53:14-0500",
+   "n_rows": 550
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "pffu-gbfi",
+   "name": "2012 - 2015 Historical Daily Attendance By School",
+   "url": "https://data.cityofnewyork.us/d/pffu-gbfi",
+   "rows_updated_at": "2017-08-23T14:14:13Z",
+   "query": {
+    "$select": "date, sum(absent) as absent, sum(enrolled) as enrolled, sum(present) as present, count(*) as schools",
+    "$group": "date",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T22:53:24-0500",
+   "n_rows": 549
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "3y5p-x48f",
+   "name": "2015-2018 Historical Daily Attendance By School",
+   "url": "https://data.cityofnewyork.us/d/3y5p-x48f",
+   "rows_updated_at": "2018-11-20T16:13:41Z",
+   "query": {
+    "$select": "date, sum(absent::number) as absent, sum(enrolled::number) as enrolled, sum(present::number) as present, count(*) as schools",
+    "$group": "date",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T22:56:15-0500",
+   "n_rows": 544
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "x3bb-kg5j",
+   "name": "2018-2019 Daily Attendance",
+   "url": "https://data.cityofnewyork.us/d/x3bb-kg5j",
+   "rows_updated_at": "2019-09-11T13:54:18Z",
+   "query": {
+    "$select": "date, sum(absent) as absent, sum(enrolled) as enrolled, sum(present) as present, count(*) as schools",
+    "$group": "date",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T22:56:15-0500",
+   "n_rows": 185
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "v1.0",
+   "relationships": [
+    "4FaXcuNJRt|EAshH_Ko3h",
+    "EAshH_Ko3h|4FaXcuNJRt",
+    "dINFs04idR|EAshH_Ko3h",
+    "EAshH_Ko3h|_l4tNqo_PI"
+   ],
+   "fetched": "2026-11-12",
+   "note": "API responses carry no version; findings read through data/cache/sysgraph"
+  }
+ ],
+ "prediction_scored": "partial. The ratio is 1.009 (0.970 to 1.050), inside the registrant's expected range and containing the composed interval (1.0007 to 1.0055), but the interval includes 1, as the discrimination check said it would.",
+ "settle": "More exposed days (the 2021-22 and later files are not on the portal by school day), school-level data with air-conditioning status, or absence by reason. An endpoint with a standard error near 0.001 would be needed to test the composed size.",
+ "mediated_share": null,
+ "research_needed": [
+  {
+   "question": "How much of the hot-day rise in school absence passes through asthma?",
+   "data": "DOE absence by reason or by pupil health status; DOHMH syndromic asthma visits ages 5-17 by day",
+   "design": "mediation analysis by day with asthma visits as the middle term",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/graph/triads_network.png"
+ ],
+ "notes": "Model as registered; 2158 school days from 2006-09-05 to 2019-06-26 after excluding 218 days with low citywide enrolment (mostly Regents examination weeks in late January and June) and 9 days with absence above 30%. Mean absence rate 8.8%. Secondary estimates, none deciding: {\"lag0_2\": {\"ratio\": 1.0128, \"lo\": 0.9812, \"hi\": 1.0455, \"n\": 601}, \"per_5C\": {\"ratio\": 0.9909, \"lo\": 0.9795, \"hi\": 1.0025, \"n\": 601}, \"without_last_two_weeks_of_June\": {\"ratio\": 1.0068, \"lo\": 0.973, \"hi\": 1.0417, \"n\": 578}}. Influenza is not controlled, and in the cold arm it is the main rival. The test was registered knowing it could not detect the composed size (D below 4).\n\nAfter the referee (13 Nov 2026): the referee reproduced the estimate (1.009, 0.970 to 1.050) and no variant moves it away from 1. A placebo exposure, TMAX at or above 30 C two days later with today's exposure in the model, gives 1.021 (0.985 to 1.058), as large as the estimate itself, so the small positive point estimate reflects the end-of-year decline in attendance and not the day's heat; it comes from May and June (September alone 0.995). Rule 8 gives the same verdict as rule 2: D = 0.1. The stance is now the endpoint stance of rules 7 and 8 (0.04), as for the cold arm. A citywide rate cannot show an effect confined to schools without air conditioning, and air-conditioning status by school and year is not in the open files. The published relative risk (PMID 27343213) concerns all ages in Hong Kong, where adults were the most sensitive and children under 5 the least.",
+ "registration_sha256": "d47c0c36d36d614de5c5bdb0d943f9a98a09d59a3f467093d410e6276ceb3c0e",
+ "decided_at": "2026-11-12T22:58:13-0500",
+ "stance": {
+  "lo": null,
+  "hi": null,
+  "z": 0.32,
+  "rule": "7+8",
+  "D": 0.09,
+  "discriminates": false,
+  "value": 0.04,
+  "note": "Rules 7 and 8: agreement of the endpoint with the composed prediction, scaled by how well the test separates the chain from no effect. The earlier value was the stance of a direct effect against its null."
+ },
+ "critique": {
+  "report": "critique/graph-triad-hot-asthma-absence.md",
+  "answer": "accepted; verdict kept, placebo recorded"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "citywide absence rate on hot school days against other school days of the same week of the year",
+    "estimate": 1.0090418360846225,
+    "lo": 0.969767705084531,
+    "hi": 1.0499065102196579,
+    "scale": "ratio of absence rates",
+    "null": 1,
+    "n": 601,
+    "n_exposed": 66
+   },
+   "stance": {
+    "value": 0.219,
+    "lo": -0.64,
+    "hi": 0.834,
+    "z": 0.44
+   },
+   "decided_at": "2026-11-12T22:58:13-0500",
+   "prediction_scored": "partial. The ratio is 1.009 (0.970 to 1.050), inside the registrant's expected range and containing the composed interval (1.0007 to 1.0055), but the interval includes 1, as the discrimination check said it would."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; placebo two days ahead (1.021) recorded; stance set by the endpoint formula.",
+  "critique": "critique/graph-triad-hot-asthma-absence.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,224 @@
+{
+ "id": "heat-trees-ed-chain",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "Composed a*b, trees -> surface temperature -> log heat ED rate, CD, bootstrap 5000",
+  "estimate": -3.6848496016938515,
+  "lo": -10.284900032206224,
+  "hi": 1.342009341266004,
+  "scale": "% per SD log street-tree density",
+  "null": 0,
+  "n": 54
+ },
+ "graph_effect": {
+  "label": "No graph path: tree and green space have no relationship to temperature or heat ED; extreme heat -> heat illness ED exists (Sun 2021)",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "uvpi-gqnh",
+   "name": "2015 Street Tree Census - Tree Data",
+   "url": "https://data.cityofnewyork.us/d/uvpi-gqnh",
+   "rows_updated_at": "2017-10-04T13:41:26Z",
+   "query": {
+    "$select": "cb_num, count(*) as n",
+    "$where": "status='Alive'",
+    "$group": "cb_num",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:27:40-0500",
+   "n_rows": 59
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "uvpi-gqnh",
+   "name": "2015 Street Tree Census - Tree Data",
+   "url": "https://data.cityofnewyork.us/d/uvpi-gqnh",
+   "rows_updated_at": "2017-10-04T13:41:26Z",
+   "query": {
+    "$select": "nta, count(*) as n",
+    "$where": "status='Alive'",
+    "$group": "nta",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:27:46-0500",
+   "n_rows": 188
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2141.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2141.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2143.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2143.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2443.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2443.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2410.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2410.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-vulnerability-index/hvi-nta.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-vulnerability-index/hvi-nta.csv",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "geography/CD.geojson",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/geography/CD.geojson",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "geography/NTA2010.topo.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/geography/NTA2010.topo.json",
+   "fetched": "2026-11-12T15:28:40-0500"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qdq3-9eqn",
+   "name": "Hyperlocal Temperature Monitoring",
+   "url": "https://data.cityofnewyork.us/d/qdq3-9eqn",
+   "rows_updated_at": "2021-08-20T19:36:17Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "sensor_id, day, avg(airtemp) as t, count(*) as nh",
+    "$where": "hour >= 12 AND hour <= 18",
+    "$group": "sensor_id, day",
+    "$order": "sensor_id, day"
+   },
+   "fetched": "2026-11-12T15:31:00-0500",
+   "n_rows": 87500
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qdq3-9eqn",
+   "name": "Hyperlocal Temperature Monitoring",
+   "url": "https://data.cityofnewyork.us/d/qdq3-9eqn",
+   "rows_updated_at": "2021-08-20T19:36:17Z",
+   "query": {
+    "$select": "sensor_id, latitude, longitude, ntacode, install_type, count(*) as n",
+    "$group": "sensor_id, latitude, longitude, ntacode, install_type",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:31:12-0500",
+   "n_rows": 435
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "uvpi-gqnh",
+   "name": "2015 Street Tree Census - Tree Data",
+   "url": "https://data.cityofnewyork.us/d/uvpi-gqnh",
+   "rows_updated_at": "2017-10-04T13:41:26Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "tree_id, latitude, longitude",
+    "$where": "status='Alive'",
+    "$order": "tree_id"
+   },
+   "fetched": "2026-11-12T15:37:22-0500",
+   "n_rows": 652173
+  },
+  {
+   "kind": "sysgraph",
+   "api": "System Public Graph v1.0",
+   "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "file": "data/derived/heat/graph_evidence.json",
+   "audit": "data/derived/heat/graph_audit_heat.json"
+  }
+ ],
+ "prediction_scored": "miss: the registered refute_if is met because link heat-surftemp-ed is contested. The composed estimate is negative (-3.7%, -10.3 to +1.3) only because both links have the wrong sign (a = +0.43 F per SD, b = -8.8% per F). The total association of street-tree density with the heat ED rate is negative (-19.9% per SD, -31.4 to -6.6) but does not pass through surface temperature.",
+ "settle": "Income and race drive tree planting history, building form, AC and ED use together, and 54 districts cannot separate them. Three designs would: (1) within-neighbourhood variation, e.g. block-level canopy and residence-level heat illness from individual records; (2) MillionTreesNYC (2007-2015) planting timing as an instrument, comparing blocks planted early and late (Forestry Tree Points hn5i-inap carries planteddate) against later heat ED visits, with the caveat that planting targeted high-HVI areas; (3) a daily case-crossover of heat ED visits by ZCTA with canopy as an effect modifier, which compares each area with itself.",
+ "research_needed": [
+  {
+   "question": "Did MillionTreesNYC plantings reduce local heat illness?",
+   "data": "Forestry Tree Points planteddate (hn5i-inap), DOHMH heat ED by ZCTA, 2007-2025",
+   "design": "Staggered difference-in-differences or instrument from planting schedule by block",
+   "priority": "high"
+  },
+  {
+   "question": "Does canopy modify the daily heat-ED response within the same neighbourhood?",
+   "data": "Daily heat ED by ZCTA, LiDAR canopy",
+   "design": "Case-crossover with interaction",
+   "priority": "high"
+  },
+  {
+   "question": "What does the graph lack?",
+   "data": "Published studies of urban tree canopy and heat morbidity (e.g. Ziter 2019, Madrigano 2015) are not linked in the System graph",
+   "design": "Add tree/canopy -> air temperature and green space -> heat illness findings to the graph",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/heat/heat_bridge_chain.png"
+ ],
+ "notes": "Confounders the chain cannot separate: household income and poverty, race (percent Black residents is the strongest predictor of heat ED rates here), AC ownership, housing age and type, building density and impervious cover, age structure beyond age adjustment, occupation, ED access. The HVI is not used as an outcome because it is built from surface temperature and green space. The street-level link (hyperlocal sensors) is reported beside the chain.",
+ "registration_sha256": "9d0cb8b0e5b62f276a3d37134db4773e9c31fba59119b4f6855176493f745ec3",
+ "decided_at": "2026-11-12T15:39:52-0500",
+ "stance": {
+  "value": -0.875,
+  "lo": -0.98,
+  "hi": -0.323,
+  "z": -2.71,
+  "from_link": "heat-surftemp-ed"
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "Composed a*b, trees -> surface temperature -> log heat ED rate, CD, bootstrap 5000",
+    "estimate": -3.6848496016938515,
+    "lo": -10.284900032206224,
+    "hi": 1.342009341266004,
+    "scale": "% per SD log street-tree density",
+    "null": 0,
+    "n": 54
+   },
+   "stance": {
+    "value": 0.552,
+    "lo": -0.222,
+    "hi": 0.94,
+    "z": 1.24
+   },
+   "decided_at": "2026-11-12T15:39:52-0500",
+   "prediction_scored": "miss: the registered refute_if is met because link heat-surftemp-ed is contested. The composed estimate is negative (-3.7%, -10.3 to +1.3) only because both links have the wrong sign (a = +0.43 F per SD, b = -8.8% per F). The total association of street-tree density with the heat ED rate is negative (-19.9% per SD, -31.4 to -6.6) but does not pass through surface temperature."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: the composed product agrees in sign only because both links have the wrong sign; stance now from the weakest link.",
+  "critique": "critique/heat-trees-ed-chain.md",
+  "revised_at": "2026-11-12T15:55:02-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

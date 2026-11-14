@@ -1,0 +1,851 @@
+{
+ "package": {
+  "claim": "food-supermarket-diabetes-zcta",
+  "built_at": "2026-11-13T23:18:54-0500",
+  "tool": "tools/replicate.py",
+  "tool_blob": "233ac681786c859b70ff4642b028ecd324aeb3d2",
+  "paths": "relative to the repository (inputs keep their repo paths under inputs/) or to ~/opt/nyc-concordance"
+ },
+ "claim": {
+  "id": "food-supermarket-diabetes-zcta",
+  "registration": {
+   "id": "food-supermarket-diabetes-zcta",
+   "kind": "conflict",
+   "statement": "Across New York City ZIP code areas, the number of supermarkets per resident does not predict adult hospital admissions for diabetes (age-sex standardised) once residential density, poverty, income and median age are held, against the graph's cross-sectional findings that distance to or scarcity of supermarkets goes with more diabetes.",
+   "graph_evidence": [
+    {
+     "note": "analyses/health_gaps/graph_food.py searched 311 graph variables for food desert, food access, supermarket, grocery store, food environment, food retail, food swamp, healthy food retailer and convenience store; 109 associations have a diabetes, glycaemia, obesity, BMI or weight outcome (data/derived/health_gaps/graph_food.json). Most are cross-sectional and point to harm from scarcity."
+    },
+    {
+     "pubmed_ids": [
+      36058428
+     ],
+     "summary": "Household distance to the nearest supermarket and incidence of diabetes: OR 1.27 to 1.38 (four graph records), pre-diabetes 1.33 to 1.78."
+    },
+    {
+     "pubmed_ids": [
+      32088514
+     ],
+     "summary": "Food swamp severity and hospitalisation rates among adults with diabetes: coefficient 2.181 (no interval in the graph)."
+    },
+    {
+     "pubmed_ids": [
+      24886134
+     ],
+     "summary": "Grocery stores per 1,000 people and obesity: OR 0.58 (0.36 to 0.93)."
+    },
+    {
+     "pubmed_ids": [
+      29555650
+     ],
+     "summary": "Low physical food access and glycaemic control: mean difference 0.2 (-0.2 to 0.5), a null."
+    },
+    {
+     "pubmed_ids": [
+      32666031
+     ],
+     "summary": "Food environment interventions and BMI change: -0.37 (-0.95 to 0.22) and -0.11 (-0.19 to -0.03), small."
+    }
+   ],
+   "literature": [
+    {
+     "citation": "Elbel B et al. (2015). Assessment of a government-subsidized supermarket in a high-need area on household food availability and children's dietary intakes. Public Health Nutr 18(15):2881-90.",
+     "doi": "10.1017/S1368980015000282",
+     "finding": "A FRESH-subsidised supermarket in the Bronx did not change children's diet or household food availability."
+    },
+    {
+     "citation": "Cummins S, Flint E, Matthews SA (2014). New neighborhood grocery store increased awareness of food access but did not alter dietary habits or obesity. Health Aff 33(2):283-91.",
+     "doi": "10.1377/hlthaff.2013.0512",
+     "finding": "A Philadelphia supermarket opening did not change BMI or fruit and vegetable intake."
+    },
+    {
+     "citation": "Allcott H, Diamond R, Dube J-P (2019). The geography of poverty and nutrition: food deserts and food choices across the United States. QJE 134(4):1793-1844.",
+     "doi": "10.1093/qje/qjz015",
+     "finding": "Supply explains about 10% of the nutritional gap between high- and low-income households; demand explains about 90%."
+    }
+   ],
+   "prediction": {
+    "direction": "0",
+    "magnitude": "Ratio of the diabetes admission O/E per doubling of supermarkets (>= 6,000 sq ft) per 10,000 residents, adjusted: 0.95 to 1.03. The graph's cross-sectional findings, read as a protective effect of supply, imply about 0.85 to 0.92 per doubling. Unadjusted, a ratio below 1 is expected, and the per-area measure (stores per km2) should move towards 1 when log residential density is added (the Red Hook pattern: few stores where few people live).",
+    "support_if": "Primary ratio per doubling with 95% interval inside (0.90, 1.10) and estimate at or above 0.95.",
+    "refute_if": "Upper 95% bound of the primary ratio per doubling below 0.95 (a protective association of supermarket supply that survives adjustment)."
+   },
+   "plan": "Script analyses/health_gaps/food_access.py, committed in d787695 before this registration and before any outcome is read; it is the procedure (no resampling, no seed). Unit: NYC ZCTAs (2020) assigned to a NYC county by largest land overlap, adult population >= 5,000. Outcome: SPARCS adult PQIs by patient ZIP (health.data.ny.gov 5q8c-d6xq), PQI 01, 03, 14, 16, three latest years, log(sum observed / sum expected). Exposure: NY State Retail Food Stores (data.ny.gov 9a8c-vfzj), type A, >= 6,000 sq ft, per 10,000 residents, log2 with 0.5 added to counts. Covariates: log2 residential density (ACS 2019-23 population / 2020 Gazetteer land area), percent poor, log2 median household income, median age. Weighted least squares by population, HC3. Secondaries listed in the script are reported and do not decide. The store list is the current one (October 2026) and the outcome years are earlier, so stores that closed or opened in between add noise. FRESH store locations are not published; only FRESH zoning boundaries (cgn7-aehz) are, and they are not used.",
+   "alternatives": [
+    "Reverse placement: supermarket chains locate by purchasing power, so supply follows income and density rather than causing health; adjustment for income and density addresses this only in part.",
+    "ZIP boundaries: people shop outside their ZIP; a per-resident count within the ZIP misstates access near boundaries and biases towards the null.",
+    "Admissions measure access to and quality of primary care as well as disease prevalence.",
+    "Residual confounding by race and ethnicity, which predict diabetes and store placement; reported as a secondary model."
+   ],
+   "prior": 0.55,
+   "registrant": "health-gaps agent (Claude), 13 Nov 2026",
+   "registered_at": "2026-11-13T12:00:23-0500",
+   "sha256": "7af9b8f8298e72630678ce3e796d6338e4a27db4a3fd984b8af08f9a605c8d36"
+  },
+  "registration_path": "claims/registered/food-supermarket-diabetes-zcta.json",
+  "registration_sha256": "7af9b8f8298e72630678ce3e796d6338e4a27db4a3fd984b8af08f9a605c8d36",
+  "registration_hash_ok": true,
+  "registration_file_sha256": "361449b306ce81bca4e5c7536e66a48039b5f64e4cb5475bf094894ca02bdf09",
+  "registration_commit": {
+   "commit": "d97489780d3225135daa115962fcd4b9fb9a8e71",
+   "committed_at": "2026-11-13T12:00:23-05:00",
+   "subject": "register food-supermarket-diabetes-zcta (with the graph collection it cites)"
+  },
+  "prereg_branch": {
+   "name": "prereg/food-supermarket-diabetes-zcta",
+   "sha": "d97489780d3225135daa115962fcd4b9fb9a8e71",
+   "reachable": true,
+   "contains_registration_commit": true
+  },
+  "outcome": {
+   "id": "food-supermarket-diabetes-zcta",
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Diabetes admissions (SPARCS PQI 01, 03, 14, 16, observed/expected, 2021-2023) per doubling of supermarkets >= 6,000 sq ft per 10,000 residents, adjusted for log residential density, poverty, log income and median age; 168 NYC ZCTAs, WLS by population, HC3",
+    "estimate": 0.995099767922046,
+    "lo": 0.9463921955555745,
+    "hi": 1.0463141525984418,
+    "scale": "ratio per doubling",
+    "null": 1,
+    "n": 168
+   },
+   "graph_effect": {
+    "label": "Graph cross-sectional findings: distance to nearest supermarket and diabetes incidence OR 1.27 to 1.38 (PMID 36058428); read as a ratio per doubling of supply of about 0.85 to 0.92 (registration)",
+    "estimate": 0.89,
+    "lo": 0.85,
+    "hi": 0.92,
+    "scale": "ratio per doubling (approximate translation)",
+    "null": 1
+   },
+   "sources": [
+    {
+     "kind": "census",
+     "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_county20_natl.txt"
+    },
+    {
+     "kind": "census",
+     "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_zcta_national.zip"
+    },
+    {
+     "kind": "census-acs",
+     "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/5YRData/acsdt5y2023-<table>.dat",
+     "tables": [
+      "B01003",
+      "B19013",
+      "B17001",
+      "B01002",
+      "B03002",
+      "B08201",
+      "B09021"
+     ],
+     "vintage": "ACS 2019-2023 5-year, table-based summary file"
+    },
+    {
+     "kind": "data.ny.gov",
+     "dataset": "9a8c-vfzj",
+     "name": "Retail Food Stores",
+     "url": "https://data.ny.gov/d/9a8c-vfzj",
+     "rows_updated_at": "2026-10-14T19:08:34Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "zip_code, estab_type, square_footage",
+      "$where": "upper(county) in ('BRONX','KINGS','NEW YORK','QUEENS','RICHMOND')",
+      "$order": "license_number"
+     },
+     "fetched": "2026-11-13T12:03:18-0500",
+     "n_rows": 11159
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "5q8c-d6xq",
+     "name": "Hospital Inpatient Discharges (SPARCS De-Identified): Adult Prevention Quality Indicators (PQI) by Zip Code: Beginning 2009",
+     "url": "https://health.data.ny.gov/d/5q8c-d6xq",
+     "rows_updated_at": "2026-01-13T20:37:43Z",
+     "query": {
+      "$select": "max(year) as y",
+      "$limit": 50000
+     },
+     "fetched": "2026-11-13T12:03:41-0500",
+     "n_rows": 1
+    },
+    {
+     "kind": "health.data.ny.gov",
+     "dataset": "5q8c-d6xq",
+     "name": "Hospital Inpatient Discharges (SPARCS De-Identified): Adult Prevention Quality Indicators (PQI) by Zip Code: Beginning 2009",
+     "url": "https://health.data.ny.gov/d/5q8c-d6xq",
+     "rows_updated_at": "2026-01-13T20:37:43Z",
+     "query": {
+      "$limit": 50000,
+      "$select": "patient_zipcode, year, pqi_number, observed_rate_per_100_000_people, expected_rate_per_100_000_people",
+      "$where": "year in ('2021','2022','2023') and pqi_number in ('PQI_01','PQI_03','PQI_14','PQI_16','PQI 01','PQI 03','PQI 14','PQI 16')",
+      "$order": "patient_zipcode, year, pqi_number"
+     },
+     "fetched": "2026-11-13T12:03:46-0500",
+     "n_rows": 18480
+    }
+   ],
+   "prediction_scored": "hit: the registered support condition (95% interval inside 0.90 to 1.10, estimate at or above 0.95) is met with the interval 0.946 to 1.046 and estimate 0.995. The lower bound clears 0.90 by 0.046, about 1.8 standard errors on the log scale, so the condition is not met only within sampling error.",
+   "settle": "A longitudinal design: diabetes admissions or HbA1c (the city's A1C Registry) in ZIPs where a FRESH-certified store opened, against matched ZIPs, before and after the opening. This needs the list and opening dates of FRESH stores, which the city does not publish as open data.",
+   "research_needed": [
+    {
+     "question": "Did FRESH-certified supermarket openings change diabetes outcomes in their surrounding areas?",
+     "data": "FRESH store list with opening dates (NYC EDC/DCP), A1C Registry or SPARCS by ZIP and year",
+     "design": "staggered difference in differences on opening dates",
+     "priority": "high"
+    },
+    {
+     "question": "Does the crude association between supermarket supply and diabetes vanish on adjustment in other cities' administrative data?",
+     "data": "state discharge PQIs by ZIP, state retail store lists",
+     "design": "the same registered model in another state",
+     "priority": "medium"
+    }
+   ],
+   "figures": [
+    "figures/health_gaps/food_supermarket_diabetes.png"
+   ],
+   "notes": "Unadjusted, a doubling of supermarkets per resident goes with 0.895 (0.822 to 0.974) times the diabetes admission ratio, close to the graph's cross-sectional findings. Adjusted for residential density, poverty, income and median age the ratio is 0.995 (0.946 to 1.046). Secondary models: adding percent Black and percent Hispanic 0.993 (0.943 to 1.046); adding households without a car 0.987 (0.931 to 1.047); stores of 10,000 sq ft or more 0.978 (0.940 to 1.017); all retail food stores 0.994 (0.923 to 1.070). Chicken-and-egg check: supermarkets per km2 alone give 0.951 (0.905 to 0.999); adding log residential density gives 0.895 (0.822 to 0.975), which is algebraically the per-resident unadjusted estimate, so density explains the per-area pattern and per-resident supply then carries the crude association; that association disappears when poverty and income are added. In the primary model a 10-point rise in poverty goes with 1.22 (1.09 to 1.35) times the admission ratio; R2 0.67. Deviation from the committed script, before any outcome was read: the Census API now requires a key, so the same ACS 2019-2023 variables were read from the Census table-based summary files; the county filter for the store list was corrected to upper case after the first query returned no rows. Stores are counted by their address ZIP from the current list (October 2026), so openings and closings after 2023 add noise; two ZCTAs have no supermarket. Admissions measure access to primary care as well as disease. The cross-section cannot show what a new store would do; it shows that in New York the places with fewer supermarkets per resident do not have more diabetes admissions than their income and density predict.",
+   "registration_sha256": "7af9b8f8298e72630678ce3e796d6338e4a27db4a3fd984b8af08f9a605c8d36",
+   "decided_at": "2026-11-13T12:08:35-0500",
+   "stance": {
+    "value": 0.951,
+    "lo": 0.751,
+    "hi": 1
+   },
+   "notes_referee": "Referee reproduced 0.995 (0.946 to 1.046); clustered and spatial-error models still meet support_if; Moran's I 0.35; lower bound 0.88 unweighted or with 2.5 km supply. Outcome tracks poverty and access to care: pneumonia and UTI admissions show the same crude gradient (0.885).",
+   "history": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "Diabetes admissions (SPARCS PQI 01, 03, 14, 16, observed/expected, 2021-2023) per doubling of supermarkets >= 6,000 sq ft per 10,000 residents, adjusted for log residential density, poverty, log income and median age; 168 NYC ZCTAs, WLS by population, HC3",
+      "estimate": 0.995099767922046,
+      "lo": 0.9463921955555745,
+      "hi": 1.0463141525984418,
+      "scale": "ratio per doubling",
+      "null": 1,
+      "n": 168
+     },
+     "stance": {
+      "value": 0.951,
+      "lo": 0.751,
+      "hi": 1
+     },
+     "decided_at": "2026-11-13T12:08:35-0500",
+     "prediction_scored": "hit: the registered support condition (95% interval inside 0.90 to 1.10, estimate at or above 0.95) is met with the interval 0.946 to 1.046 and estimate 0.995. The lower bound clears 0.90 by 0.046, about 1.8 standard errors on the log scale, so the condition is not met only within sampling error."
+    }
+   ],
+   "revision": {
+    "reason": "Round 7 referee: verdict kept, reading narrowed",
+    "critique": "critique/food-supermarket-diabetes-zcta.md",
+    "revised_at": "2026-11-13T12:45:07-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   }
+  },
+  "outcome_path": "claims/outcomes/food-supermarket-diabetes-zcta.json",
+  "outcome_file_sha256": "59e0c2426a8b5fbaff076a1b6957ac5112954733cc4c64d2777ef037c3e9fc16",
+  "revision_history": {
+   "in_file": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "Diabetes admissions (SPARCS PQI 01, 03, 14, 16, observed/expected, 2021-2023) per doubling of supermarkets >= 6,000 sq ft per 10,000 residents, adjusted for log residential density, poverty, log income and median age; 168 NYC ZCTAs, WLS by population, HC3",
+      "estimate": 0.995099767922046,
+      "lo": 0.9463921955555745,
+      "hi": 1.0463141525984418,
+      "scale": "ratio per doubling",
+      "null": 1,
+      "n": 168
+     },
+     "stance": {
+      "value": 0.951,
+      "lo": 0.751,
+      "hi": 1
+     },
+     "decided_at": "2026-11-13T12:08:35-0500",
+     "prediction_scored": "hit: the registered support condition (95% interval inside 0.90 to 1.10, estimate at or above 0.95) is met with the interval 0.946 to 1.046 and estimate 0.995. The lower bound clears 0.90 by 0.046, about 1.8 standard errors on the log scale, so the condition is not met only within sampling error."
+    }
+   ],
+   "last_revision": {
+    "reason": "Round 7 referee: verdict kept, reading narrowed",
+    "critique": "critique/food-supermarket-diabetes-zcta.md",
+    "revised_at": "2026-11-13T12:45:07-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   },
+   "outcome_commits": [
+    {
+     "commit": "32585b2242aec54f0c80cccc939abcaf68a8df0b",
+     "committed_at": "2026-11-13T12:45:07-05:00",
+     "subject": "Health gaps: apply round 7 referee notes"
+    },
+    {
+     "commit": "7a423e0ee947802927f028ad0a2199a99b8c09d9",
+     "committed_at": "2026-11-13T12:08:36-05:00",
+     "subject": "outcome food-supermarket-diabetes-zcta (confirmed: adjusted ratio 0.995, 0.946 to 1.046, per doubling of supermarkets per resident; crude 0.895)"
+    }
+   ]
+  },
+  "referee_reports": [
+   {
+    "path": "critique/food-supermarket-diabetes-zcta.md",
+    "role": "referee report for this claim",
+    "sha256": "12bf9b86614c893cc3d484f5890eecdb66fa0d7a50c16c96d7071553fa1830b3"
+   }
+  ]
+ },
+ "code": {
+  "repo_commit": "a9efe822a26e6a823de2adfbd67ec4423ce68b00",
+  "repo_dirty_paths": 30,
+  "scripts": [
+   {
+    "path": "concord/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "concord/socrata.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "blob_at_HEAD": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "3cc8d26ec235c6633cae66a5ddcdf5173ea8252f72c722d28a52ff48f4d61f4b"
+   },
+   {
+    "path": "analyses/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "first_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/health_gaps/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "6278c85cce62a41c62ac0dfd020195efdf48cd34",
+    "first_commit": "6278c85cce62a41c62ac0dfd020195efdf48cd34",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/health_gaps/common.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "da3f706027e225490ace0591acf33c538f75ba55",
+    "blob_at_HEAD": "da3f706027e225490ace0591acf33c538f75ba55",
+    "clean": true,
+    "last_commit": "6278c85cce62a41c62ac0dfd020195efdf48cd34",
+    "first_commit": "6278c85cce62a41c62ac0dfd020195efdf48cd34",
+    "sha256": "b0af00fbfea4f562a032b4e77aa90dd0ee6e831bbc1f339ea7fd83380a5c6716"
+   },
+   {
+    "path": "analyses/health_gaps/food_access.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "ab04330101f3916eaa2e0471f1b98225f7bf6397",
+    "blob_at_HEAD": "ab04330101f3916eaa2e0471f1b98225f7bf6397",
+    "clean": true,
+    "last_commit": "7a423e0ee947802927f028ad0a2199a99b8c09d9",
+    "first_commit": "d787695c10769ff3c37045f0eaf25072d03baf06",
+    "sha256": "b4b7138a016ba5df5f9af555f5b67c7dee9ae2c64dd8e08df47af7e65eb8d7eb"
+   },
+   {
+    "path": "analyses/health_gaps/graph_food.py",
+    "found_by": "named in the registration or outcome",
+    "exists": true,
+    "blob": "3531d88c870a1e4383366ff4595c7ea64818d56f",
+    "blob_at_HEAD": "3531d88c870a1e4383366ff4595c7ea64818d56f",
+    "clean": true,
+    "last_commit": "d97489780d3225135daa115962fcd4b9fb9a8e71",
+    "first_commit": "d97489780d3225135daa115962fcd4b9fb9a8e71",
+    "sha256": "c1b1cdbccbf89f39b337f0afdc84c5a319ec48a522bad65ee04b7aeb85087658"
+   }
+  ],
+  "seeds": [],
+  "draw_counts": [],
+  "commits_named_in_registration": [],
+  "procedure_note": "The registration names no seed and no resampling draw count; the deciding number is deterministic given the inputs."
+ },
+ "data": [
+  {
+   "kind": "census",
+   "record": {
+    "kind": "census",
+    "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_county20_natl.txt"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "census",
+   "record": {
+    "kind": "census",
+    "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_zcta_national.zip"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "census-acs",
+   "record": {
+    "kind": "census-acs",
+    "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/5YRData/acsdt5y2023-<table>.dat",
+    "tables": [
+     "B01003",
+     "B19013",
+     "B17001",
+     "B01002",
+     "B03002",
+     "B08201",
+     "B09021"
+    ],
+    "vintage": "ACS 2019-2023 5-year, table-based summary file"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "data.ny.gov",
+   "record": {
+    "kind": "data.ny.gov",
+    "dataset": "9a8c-vfzj",
+    "name": "Retail Food Stores",
+    "url": "https://data.ny.gov/d/9a8c-vfzj",
+    "rows_updated_at": "2026-10-14T19:08:34Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "zip_code, estab_type, square_footage",
+     "$where": "upper(county) in ('BRONX','KINGS','NEW YORK','QUEENS','RICHMOND')",
+     "$order": "license_number"
+    },
+    "fetched": "2026-11-13T12:03:18-0500",
+    "n_rows": 11159
+   },
+   "type": "socrata",
+   "domain": "https://data.ny.gov",
+   "dataset": "9a8c-vfzj",
+   "rows_updated_at": "2026-10-14T19:08:34Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "zip_code, estab_type, square_footage",
+    "$where": "upper(county) in ('BRONX','KINGS','NEW YORK','QUEENS','RICHMOND')",
+    "$order": "license_number"
+   },
+   "fetched": "2026-11-13T12:03:18-0500",
+   "n_rows": 11159,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/9a8c-vfzj-88439934db2931b7b77b7485.json",
+     "sha256": "88a91218868253c6d8b5b369a5394da97e8c8560dbdc300b2e2a7712d0e49043",
+     "rows_sha256": "375b5c5e6939225d4c655bf124b3b3956f38386a881f812c3310e66bf462d005",
+     "bytes": 710487,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "5q8c-d6xq",
+    "name": "Hospital Inpatient Discharges (SPARCS De-Identified): Adult Prevention Quality Indicators (PQI) by Zip Code: Beginning 2009",
+    "url": "https://health.data.ny.gov/d/5q8c-d6xq",
+    "rows_updated_at": "2026-01-13T20:37:43Z",
+    "query": {
+     "$select": "max(year) as y",
+     "$limit": 50000
+    },
+    "fetched": "2026-11-13T12:03:41-0500",
+    "n_rows": 1
+   },
+   "type": "socrata",
+   "domain": "https://health.data.ny.gov",
+   "dataset": "5q8c-d6xq",
+   "rows_updated_at": "2026-01-13T20:37:43Z",
+   "soql": {
+    "$select": "max(year) as y",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-13T12:03:41-0500",
+   "n_rows": 1,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/5q8c-d6xq-4e59240da8f2b8ea93e62cab.json",
+     "sha256": "efb0470df29858299d2a040778a5487db0b1e2d3c5bfa235b218dcd0daaeb103",
+     "rows_sha256": "4945148ed0e95e6168c49244e81bccdb13176d1f532eeb0fbcb524241aae7292",
+     "bytes": 422,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "kind": "health.data.ny.gov",
+   "record": {
+    "kind": "health.data.ny.gov",
+    "dataset": "5q8c-d6xq",
+    "name": "Hospital Inpatient Discharges (SPARCS De-Identified): Adult Prevention Quality Indicators (PQI) by Zip Code: Beginning 2009",
+    "url": "https://health.data.ny.gov/d/5q8c-d6xq",
+    "rows_updated_at": "2026-01-13T20:37:43Z",
+    "query": {
+     "$limit": 50000,
+     "$select": "patient_zipcode, year, pqi_number, observed_rate_per_100_000_people, expected_rate_per_100_000_people",
+     "$where": "year in ('2021','2022','2023') and pqi_number in ('PQI_01','PQI_03','PQI_14','PQI_16','PQI 01','PQI 03','PQI 14','PQI 16')",
+     "$order": "patient_zipcode, year, pqi_number"
+    },
+    "fetched": "2026-11-13T12:03:46-0500",
+    "n_rows": 18480
+   },
+   "type": "socrata",
+   "domain": "https://health.data.ny.gov",
+   "dataset": "5q8c-d6xq",
+   "rows_updated_at": "2026-01-13T20:37:43Z",
+   "soql": {
+    "$limit": 50000,
+    "$select": "patient_zipcode, year, pqi_number, observed_rate_per_100_000_people, expected_rate_per_100_000_people",
+    "$where": "year in ('2021','2022','2023') and pqi_number in ('PQI_01','PQI_03','PQI_14','PQI_16','PQI 01','PQI 03','PQI 14','PQI 16')",
+    "$order": "patient_zipcode, year, pqi_number"
+   },
+   "fetched": "2026-11-13T12:03:46-0500",
+   "n_rows": 18480,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/5q8c-d6xq-0c0cd08c83c6f957ac0984cf.json",
+     "sha256": "5af8b443d44d3b2e665c245c5967dbc3a1727040f869ed994c24b77bc743e0cf",
+     "rows_sha256": "341b5f4209743414835cef52f0bb496349fd50eb05ee3ecfac58973451ab281e",
+     "bytes": 3191103,
+     "copied": true
+    }
+   ]
+  },
+  {
+   "type": "big-file",
+   "role": "Census or ACS file read by food_access.zctas() to build food_zcta.csv",
+   "path": "~/opt/nyc-concordance/census/zcta_county_rel.txt",
+   "bytes": 6821287,
+   "sha256": "3ed41278d637dc249e0323306f68be8a6c234e3090f4de88ef328dee71aeaaaf"
+  },
+  {
+   "type": "big-file",
+   "role": "Census or ACS file read by food_access.zctas() to build food_zcta.csv",
+   "path": "~/opt/nyc-concordance/census/gaz_zcta_2020.zip",
+   "bytes": 998037,
+   "sha256": "335402fb16b41303a3760f8956d2af005bbd6919b8dc6f4a96048af0005957a6"
+  },
+  {
+   "type": "big-file",
+   "role": "Census or ACS file read by food_access.zctas() to build food_zcta.csv",
+   "path": "~/opt/nyc-concordance/census/acsdt5y2023-b01003.dat",
+   "bytes": 18311997,
+   "sha256": "24ae3f523b4c54332ce0a71ba534569685a8a729056f975915d860d1eb943565"
+  },
+  {
+   "type": "big-file",
+   "role": "Census or ACS file read by food_access.zctas() to build food_zcta.csv",
+   "path": "~/opt/nyc-concordance/census/acsdt5y2023-b19013.dat",
+   "bytes": 17884943,
+   "sha256": "c9007017b7bb29ba758c77612ec9a4a0b897a4ed931d527754629866f580a110"
+  },
+  {
+   "type": "big-file",
+   "role": "Census or ACS file read by food_access.zctas() to build food_zcta.csv",
+   "path": "~/opt/nyc-concordance/census/acsdt5y2023-b17001.dat",
+   "bytes": 118402375,
+   "sha256": "578e998daf0823a16e923e937cdff470392fcdd5fc1b0f963487ba5672c1c0b7"
+  },
+  {
+   "type": "big-file",
+   "role": "Census or ACS file read by food_access.zctas() to build food_zcta.csv",
+   "path": "~/opt/nyc-concordance/census/acsdt5y2023-b01002.dat",
+   "bytes": 26654115,
+   "sha256": "270cb55fea151fde28b30b8658d653f19eea52c953515df83d1459164542be79"
+  },
+  {
+   "type": "big-file",
+   "role": "Census or ACS file read by food_access.zctas() to build food_zcta.csv",
+   "path": "~/opt/nyc-concordance/census/acsdt5y2023-b03002.dat",
+   "bytes": 82877683,
+   "sha256": "cae53cb92e7ca446e990dde45b4d767e6399badf117b805503b2ba0bdcdf3a9c"
+  },
+  {
+   "type": "big-file",
+   "role": "Census or ACS file read by food_access.zctas() to build food_zcta.csv",
+   "path": "~/opt/nyc-concordance/census/acsdt5y2023-b08201.dat",
+   "bytes": 64905879,
+   "sha256": "71e502d0d2b456cb49af97cf9ff2d43fcbd9a7f9c2ee737fdb41721f9ad87a8b"
+  },
+  {
+   "type": "big-file",
+   "role": "Census or ACS file read by food_access.zctas() to build food_zcta.csv",
+   "path": "~/opt/nyc-concordance/census/acsdt5y2023-b09021.dat",
+   "bytes": 64601660,
+   "sha256": "c313a828919e44ac05aba631a2d1cef44dd7152c9397bf1b8cd2bd960aade90c"
+  }
+ ],
+ "environment": {
+  "python": "3.12.10 (main, Apr  9 2025, 03:49:38) [Clang 20.1.0 ]",
+  "venv": "~/.venvs/nyc-concordance",
+  "uv_pip_freeze": [
+   "affine==3.0.1",
+   "annotated-types==0.8.0",
+   "attrs==26.1.0",
+   "certifi==2026.10.23",
+   "charset-normalizer==3.5.2",
+   "click==8.5.1",
+   "contourpy==1.4.0",
+   "cycler==0.12.1",
+   "duckdb==2.0.0",
+   "fonttools==4.68.0",
+   "formulaic==1.2.2",
+   "geopandas==1.2.0",
+   "idna==3.20",
+   "interface-meta==2.0.1",
+   "jsonschema==4.26.0",
+   "jsonschema-specifications==2025.9.1",
+   "kiwisolver==1.5.1",
+   "matplotlib==3.11.2",
+   "mercantile==1.2.1",
+   "narwhals==2.28.0",
+   "numpy==2.5.4",
+   "packaging==26.3",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pillow==13.0.0",
+   "planetary-computer==1.0.0",
+   "pyarrow==26.0.1",
+   "pydantic==2.14.3",
+   "pydantic-core==2.50.4",
+   "pyogrio==0.13.0",
+   "pyparsing==3.3.3",
+   "pyproj==3.8.0",
+   "pystac==1.16.0",
+   "pystac-client==0.9.1",
+   "pystac-core==1.16.0",
+   "pystac-ext-classification==2.0.2",
+   "pystac-ext-datacube==2.2.2",
+   "pystac-ext-eo==1.1.2",
+   "pystac-ext-file==2.1.2",
+   "pystac-ext-grid==1.1.2",
+   "pystac-ext-item-assets==1.0.2",
+   "pystac-ext-label==1.0.3",
+   "pystac-ext-mgrs==1.0.2",
+   "pystac-ext-mlm==1.4.2",
+   "pystac-ext-pointcloud==1.0.2",
+   "pystac-ext-projection==2.0.2",
+   "pystac-ext-raster==1.1.2",
+   "pystac-ext-render==2.0.1",
+   "pystac-ext-sar==1.0.2",
+   "pystac-ext-sat==1.0.2",
+   "pystac-ext-scientific==1.0.2",
+   "pystac-ext-storage==2.0.2",
+   "pystac-ext-table==1.2.2",
+   "pystac-ext-timestamps==1.1.2",
+   "pystac-ext-version==1.2.2",
+   "pystac-ext-view==1.0.2",
+   "pystac-ext-xarray-assets==1.0.2",
+   "python-dateutil==4.0.0",
+   "python-dotenv==1.2.4",
+   "pytz==2026.6",
+   "rasterio==1.5.2",
+   "referencing==0.37.0",
+   "requests==2.34.2",
+   "rpds-py==2026.9.1",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0",
+   "typing-extensions==4.16.0",
+   "typing-inspection==0.4.5",
+   "tzdata==2026.6",
+   "urllib3==2.8.0",
+   "wrapt==2.5.2"
+  ],
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "os": "Darwin 27.2.0",
+  "mac_ver": "27.2.1",
+  "requirements": [
+   "numpy==2.5.4",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "requests==2.34.2",
+   "scipy==1.18.1",
+   "statsmodels==0.15.0"
+  ]
+ },
+ "inputs": {
+  "cap_bytes": 15728640,
+  "copied_bytes": 4064563,
+  "files": [
+   {
+    "path": "data/derived/health_gaps/food_zcta.csv",
+    "bytes": 162551,
+    "sha256": "7f2732d7e11958cd409e8f973c4eee13999fe8a1d0cbf582276da56ecd7d0038",
+    "role": "derived table read by the rerun",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/socrata/5q8c-d6xq-0c0cd08c83c6f957ac0984cf.json",
+    "bytes": 3191103,
+    "sha256": "5af8b443d44d3b2e665c245c5967dbc3a1727040f869ed994c24b77bc743e0cf",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true,
+    "rows_sha256": "341b5f4209743414835cef52f0bb496349fd50eb05ee3ecfac58973451ab281e",
+    "n_rows": 18480
+   },
+   {
+    "path": "data/cache/socrata/5q8c-d6xq-4e59240da8f2b8ea93e62cab.json",
+    "bytes": 422,
+    "sha256": "efb0470df29858299d2a040778a5487db0b1e2d3c5bfa235b218dcd0daaeb103",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true,
+    "rows_sha256": "4945148ed0e95e6168c49244e81bccdb13176d1f532eeb0fbcb524241aae7292",
+    "n_rows": 1
+   },
+   {
+    "path": "data/cache/socrata/9a8c-vfzj-88439934db2931b7b77b7485.json",
+    "bytes": 710487,
+    "sha256": "88a91218868253c6d8b5b369a5394da97e8c8560dbdc300b2e2a7712d0e49043",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true,
+    "rows_sha256": "375b5c5e6939225d4c655bf124b3b3956f38386a881f812c3310e66bf462d005",
+    "n_rows": 11159
+   }
+  ],
+  "traced": true
+ },
+ "deciding": {
+  "available": true,
+  "what": "city_effect: ratio of the diabetes admission O/E (SPARCS PQI 01, 03, 14, 16, 2021-2023) per doubling of supermarkets >= 6,000 sq ft per 10,000 residents, adjusted, 168 ZCTAs, WLS by population, HC3 95% CI",
+  "recorded": {
+   "estimate": 0.995099767922046,
+   "lo": 0.9463921955555745,
+   "hi": 1.0463141525984418,
+   "n": 168
+  },
+  "tolerance": {
+   "estimate": 0.0001,
+   "lo": 0.0001,
+   "hi": 0.0001,
+   "n": 0
+  },
+  "decides": "support_if: primary ratio with 95% interval inside (0.90, 1.10) and estimate at or above 0.95",
+  "recorded_from": {
+   "city_effect": "claims/outcomes/food-supermarket-diabetes-zcta.json"
+  },
+  "wrapper": "code/rerun.py",
+  "wrapper_note": "Smallest wrapper: food_access.py main() downloads Census files into ~/opt/nyc-concordance/census, fits ten models and writes into the repository. code/rerun.py reruns stores() and pqi() unchanged from the cached Socrata responses, takes the Census columns from the derived table food_zcta.csv, repeats the merge and filter of main() and calls fit() and coef() unchanged for the primary model. The referee's negative control (critique/food-supermarket-diabetes-zcta.md) uses other admission measures and is not rerun here.",
+  "refetch_rerun": false,
+  "trace_run_in_repository": {
+   "printed": {
+    "estimate": 0.995099767922046,
+    "lo": 0.9463921955555745,
+    "hi": 1.0463141525984418,
+    "n": 168,
+    "years": [
+     2021,
+     2022,
+     2023
+    ],
+    "unadjusted": 0.8950980357347417,
+    "unadjusted_lo": 0.822407182013065,
+    "unadjusted_hi": 0.9742138822463066
+   },
+   "files_read": 4
+  }
+ },
+ "not_rebuilt": [
+  {
+   "table": "data/derived/health_gaps/food_zcta.csv",
+   "built_by": "analyses/health_gaps/food_access.py",
+   "why_not_rebuilt": "its Census columns come from national Census and ACS files kept in ~/opt/nyc-concordance/census (about 400 MB together), outside the repository; the rerun uses only those columns of the table and recomputes the store and PQI columns",
+   "built_from": [
+    {
+     "source": "opt:census/zcta_county_rel.txt",
+     "path": "~/opt/nyc-concordance/census/zcta_county_rel.txt",
+     "copied": false,
+     "bytes": 6821287,
+     "sha256": "3ed41278d637dc249e0323306f68be8a6c234e3090f4de88ef328dee71aeaaaf",
+     "pointed_to_at": "manifest.json data[] (type big-file)"
+    },
+    {
+     "source": "opt:census/gaz_zcta_2020.zip",
+     "path": "~/opt/nyc-concordance/census/gaz_zcta_2020.zip",
+     "copied": false,
+     "bytes": 998037,
+     "sha256": "335402fb16b41303a3760f8956d2af005bbd6919b8dc6f4a96048af0005957a6",
+     "pointed_to_at": "manifest.json data[] (type big-file)"
+    },
+    {
+     "source": "opt:census/acsdt5y2023-b01003.dat",
+     "path": "~/opt/nyc-concordance/census/acsdt5y2023-b01003.dat",
+     "copied": false,
+     "bytes": 18311997,
+     "sha256": "24ae3f523b4c54332ce0a71ba534569685a8a729056f975915d860d1eb943565",
+     "pointed_to_at": "manifest.json data[] (type big-file)"
+    },
+    {
+     "source": "opt:census/acsdt5y2023-b19013.dat",
+     "path": "~/opt/nyc-concordance/census/acsdt5y2023-b19013.dat",
+     "copied": false,
+     "bytes": 17884943,
+     "sha256": "c9007017b7bb29ba758c77612ec9a4a0b897a4ed931d527754629866f580a110",
+     "pointed_to_at": "manifest.json data[] (type big-file)"
+    },
+    {
+     "source": "opt:census/acsdt5y2023-b17001.dat",
+     "path": "~/opt/nyc-concordance/census/acsdt5y2023-b17001.dat",
+     "copied": false,
+     "bytes": 118402375,
+     "sha256": "578e998daf0823a16e923e937cdff470392fcdd5fc1b0f963487ba5672c1c0b7",
+     "pointed_to_at": "manifest.json data[] (type big-file)"
+    },
+    {
+     "source": "opt:census/acsdt5y2023-b01002.dat",
+     "path": "~/opt/nyc-concordance/census/acsdt5y2023-b01002.dat",
+     "copied": false,
+     "bytes": 26654115,
+     "sha256": "270cb55fea151fde28b30b8658d653f19eea52c953515df83d1459164542be79",
+     "pointed_to_at": "manifest.json data[] (type big-file)"
+    },
+    {
+     "source": "opt:census/acsdt5y2023-b03002.dat",
+     "path": "~/opt/nyc-concordance/census/acsdt5y2023-b03002.dat",
+     "copied": false,
+     "bytes": 82877683,
+     "sha256": "cae53cb92e7ca446e990dde45b4d767e6399badf117b805503b2ba0bdcdf3a9c",
+     "pointed_to_at": "manifest.json data[] (type big-file)"
+    },
+    {
+     "source": "opt:census/acsdt5y2023-b08201.dat",
+     "path": "~/opt/nyc-concordance/census/acsdt5y2023-b08201.dat",
+     "copied": false,
+     "bytes": 64905879,
+     "sha256": "71e502d0d2b456cb49af97cf9ff2d43fcbd9a7f9c2ee737fdb41721f9ad87a8b",
+     "pointed_to_at": "manifest.json data[] (type big-file)"
+    },
+    {
+     "source": "opt:census/acsdt5y2023-b09021.dat",
+     "path": "~/opt/nyc-concordance/census/acsdt5y2023-b09021.dat",
+     "copied": false,
+     "bytes": 64601660,
+     "sha256": "c313a828919e44ac05aba631a2d1cef44dd7152c9397bf1b8cd2bd960aade90c",
+     "pointed_to_at": "manifest.json data[] (type big-file)"
+    }
+   ],
+   "table_sha256": "7f2732d7e11958cd409e8f973c4eee13999fe8a1d0cbf582276da56ecd7d0038",
+   "table_copied": true
+  }
+ ]
+}

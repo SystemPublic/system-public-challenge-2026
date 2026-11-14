@@ -1,0 +1,69 @@
+{
+ "id": "construction2-rows-per-job-dobnow",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "DOB NOW work-permit rows per NB job by Nov 2026, jobs first permitted 2021-2022",
+  "estimate": 12.77,
+  "lo": 12.24,
+  "hi": 13.31,
+  "scale": "rows per job (null: 1 row per building)",
+  "null": 1,
+  "n": 1528
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "w9ak-ipjd",
+   "name": "DOB NOW: Build – Job Application Filings",
+   "url": "https://data.cityofnewyork.us/d/w9ak-ipjd",
+   "rows_updated_at": "2026-11-11T21:29:13Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_filing_number,filing_status,job_type,bbl,filing_date,first_permit_date,approved_date,signoff_date,proposed_dwelling_units,latitude,longitude",
+    "$where": "job_type='New Building'"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 59039
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "rbx6-tga4",
+   "name": "DOB NOW: Build – Approved Permits",
+   "url": "https://data.cityofnewyork.us/d/rbx6-tga4",
+   "rows_updated_at": "2026-11-12T19:44:18Z",
+   "query": {
+    "$limit": 50000,
+    "$order": "job_filing_number, work_type, filing_reason",
+    "$select": "job_filing_number, work_type, filing_reason, count(*) as n",
+    "$where": "issued_date >= '2020-01-01T00:00:00'",
+    "$group": "job_filing_number, work_type, filing_reason"
+   },
+   "fetched": "2026-11-12T16:04:29-0500",
+   "n_rows": 797285
+  }
+ ],
+ "prediction_scored": "hit on the decisive rule, partial on magnitude: the pooled mean was 12.8 rows per job (95% bootstrap interval 12.2 to 13.3; 1,528 jobs), above the support threshold of 3.0, but above the registered range of 4 to 12. The median was 10.",
+ "settle": "The count will rise as the 2021-2022 jobs keep renewing; a re-count in 2028 would give a lifetime value.",
+ "research_needed": [
+  {
+   "question": "How many permit rows does a typical NB job carry in each system, and are the systems' rows comparable (renewal practice, work types)?",
+   "data": "DOB Permit Issuance ipu4-2q9a; DOB NOW Build Approved Permits rbx6-tga4",
+   "design": "Match jobs that moved between systems and compare row counts per job",
+   "priority": "low"
+  }
+ ],
+ "figures": [
+  "figures/construction2/rows_per_job_replication.png"
+ ],
+ "notes": "Registered in commit 6159cf6. Cohort means were 10.0 (2021, 253 jobs) and 13.3 (2022, 1,275 jobs); 19 jobs had no rows. Of 19,513 rows, 10,482 were initial permits and 9,031 renewals (46%). The largest work types were General Construction (4,121), Foundation (3,318), Structural (2,425), Earth Work (2,036), Plumbing (1,706) and Mechanical Systems (1,697). DOB NOW splits an NB job into more work types than the legacy system did, so its rows per job are higher; the registered alternative that DOB NOW updates rather than adds renewal rows is contradicted by the 9,031 renewal rows.",
+ "registration_sha256": "9216924adaba1c88a903dc6aa76df0af4f2114c3c92cb5d88cca7ff720cfdc78",
+ "decided_at": "2026-11-12T16:06:37-0500",
+ "stance": {
+  "value": 1.0,
+  "lo": 1.0,
+  "hi": 1.0,
+  "z": 119.14
+ }
+}

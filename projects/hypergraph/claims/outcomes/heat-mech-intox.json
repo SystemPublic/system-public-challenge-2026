@@ -1,0 +1,184 @@
+{
+ "id": "heat-mech-intox",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Attenuation of the heat-shootings slope by daily EMS drug and alcohol dispatches, 2006-2026",
+  "estimate": 0.14084592655928285,
+  "lo": 0.09458620133404194,
+  "hi": 0.18821276353616057,
+  "scale": "share of the log IRR of shootings per 5 C removed by adding the proxy",
+  "null": 0,
+  "n": 7548
+ },
+ "graph_effect": {
+  "label": "ED visits for substance use disorders on extreme heat days, Nori-Sarma 2022 (US adults)",
+  "estimate": 1.08,
+  "lo": 1.07,
+  "hi": 1.1,
+  "scale": "IRR, extreme heat day vs reference",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:22-0500",
+   "n_rows": 6959
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n, sum(case(statistical_murder_flag=true, 1, true, 0)) as murders_victims",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 6431
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$where": "statistical_murder_flag=true",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:41-0500",
+   "n_rows": 3176
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(incident_datetime) as d, initial_call_type, count(*) as n",
+    "$where": "incident_datetime between '2006-01-01' and '2026-08-31T23:59:59' and initial_call_type in ('DRUG', 'DRUGFC', 'EDP', 'EDPC', 'EDPM')",
+    "$group": "d, initial_call_type",
+    "$order": "d, initial_call_type"
+   },
+   "fetched": "2026-11-12T22:37:26-0500",
+   "n_rows": 21160
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76ig-c548",
+   "name": "311 Service Requests from 2010 to 2019",
+   "url": "https://data.cityofnewyork.us/d/76ig-c548",
+   "rows_updated_at": "2025-12-24T18:19:08Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(created_date) as d, complaint_type, count(*) as n",
+    "$where": "complaint_type in ('Noise - Street/Sidewalk', 'Drinking') and created_date between '2010-01-01T00:00:00' and '2019-12-31T23:59:59'",
+    "$group": "d, complaint_type",
+    "$order": "d, complaint_type"
+   },
+   "fetched": "2026-11-12T22:25:41-0500",
+   "n_rows": 6974
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(created_date) as d, complaint_type, count(*) as n",
+    "$where": "complaint_type in ('Noise - Street/Sidewalk', 'Drinking') and created_date between '2020-01-01T00:00:00' and '2026-08-31T23:59:59'",
+    "$group": "d, complaint_type",
+    "$order": "d, complaint_type"
+   },
+   "fetched": "2026-11-12T22:33:30-0500",
+   "n_rows": 4831
+  },
+  {
+   "kind": "system-public-graph",
+   "api": "v1.0",
+   "fetched": "2026-11-12",
+   "note": "responses cached in data/cache/sysgraph; derived tables in data/derived/graph/heat_mechanisms/"
+  }
+ ],
+ "prediction_scored": "partial. First link hit: DRUG dispatches IRR 1.045 (1.041 to 1.048) per 5 C, inside the registered 1.01 to 1.06. Attenuation miss: A = 0.141 (0.095 to 0.188), above the registered ceiling of 0.10 and below the 0.25 that would contest the claim, so neither registered condition is met.",
+ "settle": "Toxicology of shooting victims and arrested shooters by day and temperature (the design of Marzuk et al. 1998, which found no change in the cocaine-positive share of New York homicide victims on hot days), or alcohol sales by day.",
+ "research_needed": [
+  {
+   "question": "Do people in New York drink more on hot days, and are shooting victims more often intoxicated on hot days?",
+   "data": "Medical examiner toxicology by date; daily alcohol sales or wastewater ethanol markers",
+   "design": "Repeat Marzuk et al. 1998 for alcohol and for 2006-2026; the graph's only temperature-alcohol finding compares countries",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/graph/heat_mechanisms_paths.png",
+  "figures/graph/heat_mechanisms_curves.png"
+ ],
+ "notes": "EMS drug and alcohol dispatches (mean 220 per day) rise 1.045 (1.041 to 1.048) per 5 C and keep rising at the hot end (1.030 (1.020 to 1.039) from 27 to 33 C). Adding them lowers the shootings IRR from 1.146 (1.130 to 1.163) to 1.124 (1.107 to 1.142). Sensitivity: year-by-month terms 0.165 (0.124 to 0.217); without 2020-2021 0.154; May-September 0.111; proxy lagged one day 0.028. The share falls to 0.028 when the proxy is taken from the previous day, so the association is between dispatches and shootings on the same day. Secondary proxies: psychiatric dispatches rise 1.021 (1.019 to 1.024) per 5 C and give A = -0.026 (-0.052 to -0.002), with a negative coefficient in the shootings model; 311 public drinking complaints rise 1.210 (1.191 to 1.229) per 5 C and give A = 0.031 (-0.009 to 0.073). The call type DRUG does not separate alcohol from other drugs, and dispatches may partly measure people in public view.\n\nAfter the referee (13 Nov 2026): the referee found no error, and the share stays between 0.09 and 0.19 in every variant (0.154 in 2010 to 2019, 0.107 in 2022 to 2026, 0.017 for next-day dispatches). With street-noise complaints already in the model, drug dispatches still remove 0.166 (0.086 to 0.277) of the remaining slope, so the named alternative that dispatches measure people in public view does not account for the result as far as noise complaints measure street presence. The claim of no step is not supported (A is 5.9 standard errors from zero) and a step of a quarter of the slope is excluded (4.6 standard errors below 0.25); the registered rule has no verdict for a small non-zero share other than unsettled. Not addressed: same-day events such as parades, street parties and paydays, which produce both intoxication calls and shootings without heat acting through intoxication. The first-link hit is a match with a range the registrant built by assuming a reference temperature about 20 C cooler, which the abstract of Nori-Sarma et al. does not give.",
+ "registration_sha256": "c3a02fb57ef61909330e922821425cff6e396b1bd7a467f0caaec172bc364a8f",
+ "decided_at": "2026-11-12T23:34:28-0500",
+ "stance": {
+  "value": 0,
+  "lo": -0.2,
+  "hi": 0.2
+ },
+ "critique": {
+  "report": "critique/heat-mech-intox.md",
+  "answer": "accepted; verdict kept"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Attenuation of the heat-shootings slope by daily EMS drug and alcohol dispatches, 2006-2026",
+    "estimate": 0.14084592655928285,
+    "lo": 0.09458620133404194,
+    "hi": 0.18821276353616057,
+    "scale": "share of the log IRR of shootings per 5 C removed by adding the proxy",
+    "null": 0,
+    "n": 7548
+   },
+   "stance": {
+    "value": 0,
+    "lo": -0.2,
+    "hi": 0.2
+   },
+   "decided_at": "2026-11-12T23:34:28-0500",
+   "prediction_scored": "partial. First link hit: DRUG dispatches IRR 1.045 (1.041 to 1.048) per 5 C, inside the registered 1.01 to 1.06. Attenuation miss: A = 0.141 (0.095 to 0.188), above the registered ceiling of 0.10 and below the 0.25 that would contest the claim, so neither registered condition is met."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; variants and the unaddressed same-day-event alternative recorded.",
+  "critique": "critique/heat-mech-intox.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "id": "afford-poor-count-shift",
+ "verdict": "confirmed",
+ "verdict_note": "Confirmed on the registered condition (upper limit below 0) by a margin of 0.02 log points, on an end period affected by a boundary change. Six of the 22 single removals of an area, and the end years 2023 and 2024 taken singly, put the upper limit at or above 0, and with borough terms the interval includes zero (-0.173, -0.479 to +0.132). The exploratory repeats on end periods before the boundary change give a narrower interval with the same sign (-0.24, -0.35 to -0.14 for 2017-2019); they were chosen after the data and do not decide the verdict. The verdict covers the change of a count of poor residents and is not evidence on displacement.",
+ "city_effect": {
+  "label": "difference in mean log change of the number of poor residents, 2000 to 2022-2024, gentrified minus other low-rent areas",
+  "estimate": -0.28292856142783823,
+  "lo": -0.5443626363105794,
+  "hi": -0.021494486545097058,
+  "scale": "difference in log change",
+  "null": 0,
+  "n": 22
+ },
+ "sources": [
+  {
+   "kind": "file",
+   "publisher": "NYU Furman Center, CoreData.nyc neighbourhood indicators",
+   "url": "https://www.furmancenter.org/files/CoreData/Neighorhood_Indicators_CoreDataDownload_2026-05-05.xlsx",
+   "file_date": "2026-05-05",
+   "sha256": "d8868b9ddeb29c093f3c34f5174856e47a8989ddde96ae3f0499faccbfe1c2ef",
+   "bytes": 1184109,
+   "fetched": "2026-11-13T07:37:28-0500",
+   "rows": 4096,
+   "note": "Dollar amounts are inflation-adjusted by the publisher. Sub-borough areas are groups of census tracts that approximate community districts (55 areas)."
+  },
+  {
+   "kind": "sysgraph",
+   "file": "data/derived/affordability/graph_findings.json",
+   "requests": 246,
+   "findings": 335,
+   "pubmed_ids": 155
+  }
+ ],
+ "prediction_scored": "within the predicted range, not scored as a blind hit: the range and the direction were written after a simulated run that showed a noisy version of the group membership. -0.28 (-0.54 to -0.02) against a predicted -0.45 to -0.10, best guess -0.25. The upper limit is 0.02 from the threshold.",
+ "settle": "Records that follow people: the ACS or census linked files used by Brummet and Reed, Medicaid enrolment histories as in Dragan, Ellen and Glied, or the hospital records of Lim 2017, compared between gentrifying and other low-rent areas.",
+ "research_needed": [
+  {
+   "question": "Do poor residents of gentrifying New York neighbourhoods leave at a higher rate than poor residents of other low-rent neighbourhoods, and where do they go?",
+   "data": "Linked individual address histories (Medicaid, SPARCS, tax records)",
+   "design": "Cohort of residents at baseline, exit and destination by neighbourhood type",
+   "priority": "high"
+  },
+  {
+   "question": "The graph holds no finding on exit rates by neighbourhood type.",
+   "data": "Freeman and Braconi 2004; Ding, Hwang and Divringi 2016; Dragan, Ellen and Glied 2020; Brummet and Reed 2019",
+   "design": "Add the economics and planning literature to the graph",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/affordability/poor_count_change.png"
+ ],
+ "notes": "The number of residents below the poverty line fell 29% in the 8 gentrified areas (341,000 to 241,000), 10% in the 14 other low-rent areas and 3% in the other 33; the city total fell 11%. Secondary (b): the share of low-income renters paying 30% or more changed by -0.2 points in gentrified areas and -1.8 in the others, difference 1.6 (-0.7 to 4.0). Found after the outcome: the 2022 American Community Survey moved to 2020 public-use microdata areas, and in the Furman file the population of 28 of 55 areas changes by more than 8% between 2021 and 2022 (7 of 55 at the 2012 change, 13 in an ordinary year). The registered end period, 2022-2024, is therefore on different boundaries from 2000 for about half the areas. Exploratory repeat with the end period 2017-2019 and the registered groups: -0.24 (-0.35 to -0.14); the poverty rate fell 6.5 points more in gentrified areas (4.4 to 8.6). A fall in the count does not show displacement: the data cannot separate residents who left from residents who died or whose income rose.\n\nAfter the referee (13 Nov 2026): the verdict is kept under rule 1: the registered condition, an upper limit of the Welch interval below 0, is met at -0.283 (-0.544 to -0.021; standard error 0.121, 13.4 degrees of freedom, p = 0.036), and the referee reproduced it with separate code. The referee's reason for keeping the verdict is the result on end periods before 2022. Those periods were chosen after the data and decide nothing under rule 4; the verdict stands because the registered condition is met, and for no other reason. The changes follow.\nFragility. Six of the 22 single removals of an area put the upper limit at or above 0 (without Washington Heights/Inwood +0.032, Brooklyn Heights/Fort Greene +0.030, North Crown Heights/Prospect Heights +0.030, Bushwick +0.020, Throgs Neck/Co-op City +0.017, Morningside Heights/Hamilton Heights +0.012). So do the end years 2023 and 2024 taken singly (-0.280, -0.579 to +0.018; -0.257, -0.519 to +0.005), Washington Heights/Inwood classed as not gentrified (-0.230, -0.523 to +0.063), East Harlem classed as gentrified (-0.234, -0.493 to +0.025) and groups by the k2 definition (-0.214, -0.498 to +0.071). Those two areas are 0.8 and 2.0 points of rent growth from the threshold. The point estimate is negative in every variant (referee).\nBoundary change. A count is a rate multiplied by a population, so it takes the full 2022 change of survey areas. The standard error of the contrast is 0.050 with the end period 2017-2019, 0.062 with 2018, 2019 and 2021, and 0.121 with 2022-2024; the standard deviation of the log change within the groups rises from 0.11 and 0.12 to 0.28 and 0.26. Across the 22 areas the difference between the log change to 2022-2024 and the log change to 2017-2019 correlates 0.69 with the population jump between 2021 and 2022. The error does not favour either group: the contrast in log population change is +0.027 (-0.171 to +0.225). With end periods before the change the contrast is -0.243 (-0.350 to -0.137) and -0.250 (-0.380 to -0.119), and no single removal moves the 2017-2019 upper limit above -0.117. The log change of the poverty rate to 2022-2024 differs by -0.310 (-0.474 to -0.146) and the rate by -6.5 points (-10.3 to -2.7). All of these are post hoc. The interval of 4.4 to 8.6 points given above for the rate is for 2017-2019.\nBorough. Seven of the 14 comparison areas are in the Bronx, where no area gentrified, so the contrast is partly Brooklyn and Manhattan against the Bronx. With borough terms the registered contrast is -0.173 (-0.479 to +0.132) and the 2017-2019 contrast is -0.165 (-0.294 to -0.037); without the seven Bronx areas they are -0.204 (-0.474 to +0.067) and -0.182 (-0.299 to -0.064). A different trend in Bronx poverty, for reasons unrelated to rent, is a rival the registration does not name.\nIndependence. The Welch interval treats the 22 areas as independent. Five of the eight gentrified areas adjoin one another in Brooklyn and the other three in upper Manhattan, so the effective number of areas is below 22 and the interval is too narrow by an amount these data cannot give.\nShared data. The groups are defined by a rise in the college share from the same survey samples and areas that give the poverty count, and graduates are seldom poor, so part of the association follows from the definition. Among the 22 the log change in the poor count follows the college change (-0.13 per 10 points, -0.23 to -0.04; rank correlation -0.61) more closely than rent growth (rank correlation -0.33).\nTiming. The contrast in the change of the count by period is -0.002 (-0.068 to +0.065) from 2000 to 2005-2007, -0.087 (-0.186 to +0.011) from 2005-2007 to 2010-2012, -0.154 (-0.246 to -0.062) from 2010-2012 to 2017-2019 and -0.040 (-0.230 to +0.150) from 2017-2019 to 2022-2024. Most of the difference arose between 2010 and 2019, and these data say nothing reliable about the period since. (The referee's text labels these as changes 'to' each period; the script computes the change within each period.)\nWhat the count cannot show. In the gentrified areas the number of residents above the poverty line rose 24.6% (728,000 to 907,000) while the number below it fell 29.2%; in the other low-rent areas the figures are +11.8% and -10.5%. The same contrast would result if poor residents moved out, if they died or aged and were replaced by residents who are not poor, if the incomes of residents who stayed rose past the national poverty line, or if poor households were counted in another area after the boundary change. The claim and the verdict concern the change of a count. They are not evidence on displacement.\nThe leak. By the referee's rebuild, the simulated run printed this claim's block from line 70 of 116, so the registrant's statement that the output was cut at 70 lines and the block not read is consistent with the output. The run also wrote the block to gentrification_results_SIMULATED.json, which is not in the repository, so the statement rests on the registrant's account. The simulated contrast was -0.520 (-1.053 to +0.014). The condition has no free threshold that such a view could tune; the predicted range could have been informed by it.",
+ "registration_sha256": "48a9801226fd5e68c65363e8728563631b39983abda37e120af9b668f3515aa3",
+ "decided_at": "2026-11-13T07:51:50-0500",
+ "stance": null,
+ "stance_note": "Null after the referee: the graph holds no finding on counts of poor residents and the studies cited follow individuals, so there is no research direction for the city contrast to agree with. The earlier value of 0.786 was the distance of the contrast from zero (z = 2.12 on the stance scale, t = -2.33).",
+ "critique": {
+  "report": "critique/afford-poor-count-shift.md",
+  "answer": "accepted; verdict kept under rule 1 and not on the post hoc periods, stance null"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "difference in mean log change of the number of poor residents, 2000 to 2022-2024, gentrified minus other low-rent areas",
+    "estimate": -0.28292856142783823,
+    "lo": -0.5443626363105794,
+    "hi": -0.021494486545097058,
+    "scale": "difference in log change",
+    "null": 0,
+    "n": 22
+   },
+   "stance": {
+    "value": 0.786,
+    "lo": 0.08,
+    "hi": 0.967,
+    "z": 2.12
+   },
+   "decided_at": "2026-11-13T07:51:50-0500",
+   "prediction_scored": "hit. -0.28 (-0.54 to -0.02) against a predicted -0.45 to -0.10, best guess -0.25. The upper limit is 0.02 from the threshold."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed with its note. Fragility recorded (6 of 22 single-area removals, and the end years 2023 and 2024 singly, put the upper limit at or above zero); the 2022 boundary change raises the standard error from 0.050 to 0.121; borough, spatial clustering, shared data and timing recorded; a falling count cannot show displacement; stance null.",
+  "critique": "critique/afford-poor-count-shift.md",
+  "revised_at": "2026-11-13T09:07:30-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,115 @@
+{
+ "id": "further-chinatown-shift",
+ "kind": "reproduction",
+ "target": {
+  "report": "Mapping Chinatown: Displacement in Boston, New York City, and Philadelphia",
+  "agency": "Asian American Legal Defense and Education Fund (AALDEF), with University of Pennsylvania and University of Washington partners",
+  "date": "2025-12-04",
+  "url": "https://cdn.sanity.io/files/iroghafc/production/7e834bfbb630c91eade349dcfd0ac6953924c7d6.pdf",
+  "location": "Key Findings (p. 3 of the PDF text) and the table 'Manhattan Chinatown: Racial Composition and Change', printed page 24",
+  "number": {
+   "nh_asian_or_pi_2010": 52613,
+   "nh_asian_or_pi_2020": 41024,
+   "nh_asian_or_pi_change_pct": -22,
+   "total_population_2010": 116722,
+   "total_population_2020": 120173,
+   "total_population_change_pct": 3,
+   "nh_white_2010": 23314,
+   "nh_white_2020": 30520,
+   "nh_white_change_pct": 31,
+   "nh_black_2010": 8457,
+   "nh_black_2020": 11094,
+   "nh_black_change_pct": 31,
+   "hispanic_2010": 30227,
+   "hispanic_2020": 32840,
+   "hispanic_change_pct": 9,
+   "quotes": [
+    "Manhattan Chinatown's Asian population decreased from roughly 52,000 to 41,000",
+    "the number of Asian residents decreased by 22%",
+    "Over the past decade, Chinatown lost over 11,000 Asian residents"
+   ],
+   "deciding_numbers": "the three numbers nh_asian_or_pi_2010, nh_asian_or_pi_2020 and nh_asian_or_pi_change_pct; the others are reported as diagnostics"
+  },
+  "definition": "Table label '(Non-Hispanic) Asian or Pacific Islander'. The report says race data come from the decennial census 'for prior decades' and, for 2020, from the 2018-2022 five-year ACS ('due to the impact of the proposed citizenship question and the COVID-19 pandemic on the 2020 decennial census'). The 2020 point is therefore an ACS estimate, not a decennial count. The boundary is described in words only (Boundaries, printed page 23): from where Chinatown meets the courthouse complex and City Hall in the south, generally to Houston Street in the north, east through the Lower East Side and Two Bridges to the waterfront, and north along the East River NYCHA buildings to East 14th Street; the report says it matches its 2013 report and roughly the Chinatown Working Group Plan. No tract list is given.",
+  "data_used": [
+   "decennial census 2000 and 2010 (tract level, aggregated to an unlisted boundary)",
+   "ACS 5-year 2018-2022 for 2020"
+  ],
+  "data_access": "open"
+ },
+ "statement": "Recomputed from census tracts, Manhattan's Chinatown area lost about 22 percent of its non-Hispanic Asian and Pacific Islander residents between 2010 and 2020 (AALDEF: 52,613 to 41,024, with 2020 taken from the 2018-2022 ACS), the loss is not removed by decennial-to-decennial comparison, and over the same period Asian-alone population in Sunset Park fell in the tracts along the 8th Avenue corridor relative to the rest of Sunset Park while Flushing's Asian-alone population grew.",
+ "graph_evidence": [
+  {
+   "concepts": "Asian American residential concentration / Chinatown population change -> displacement; ethnic enclave -> neighbourhood change",
+   "n_findings": null,
+   "n_studies": null,
+   "direction": "?",
+   "summary": "Live lookup pending: the System graph API key is not on the machine that registered this claim, so graph evidence was not collected before registration. To be filled by a later graph lookup; the registration does not depend on it.",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "AALDEF (2025). Mapping Chinatown: Displacement in Boston, New York City, and Philadelphia. Report, released 4 December 2025.",
+   "url": "https://cdn.sanity.io/files/iroghafc/production/7e834bfbb630c91eade349dcfd0ac6953924c7d6.pdf",
+   "doi": null,
+   "finding": "'Manhattan Chinatown's Asian population decreased from roughly 52,000 to 41,000'; table: non-Hispanic Asian or Pacific Islander 52,613 (2010) to 41,024 (2020), -22%; total population 116,722 to 120,173 (+3%); non-Hispanic white +31%, non-Hispanic Black +31%.",
+   "data_used": "decennial census 2000 and 2010; ACS 2018-2022 5-year for 2020",
+   "data_access": "open"
+  },
+  {
+   "citation": "Asian American Federation (2021). Council district brief (Asian American Federation City Council Brief 2021).",
+   "url": "https://aafederation.org/2021citycouncilbrief",
+   "doi": null,
+   "finding": "'District 1 lost 9 percent of its Asian population' (2010 to 2019 ACS); 'In Brooklyn, District 38 (covering Sunset Park and Greenwood Heights) experienced a decline in Asian population driven by Asian population losses in the areas around the 8th Avenue commercial corridor that makes up Sunset Park's Chinatown.'",
+   "data_used": "ACS 2019 and Census population estimates",
+   "data_access": "open"
+  },
+  {
+   "citation": "Asian American Federation (2025). Expanding Communities, Expanding Needs: City Council brief.",
+   "url": "https://www.aafederation.org/wp-content/uploads/2025/05/2025CityCouncilBrief.pdf",
+   "doi": null,
+   "finding": "'Asian populations continued to grow in areas such as Flushing, Queens and Sunset Park, Brooklyn'; Council Districts 1 and 24 'experienced a drop of about 8% of their Asian population' (ACS 2018 to 2023, 2023 districts projected onto 2018 tracts).",
+   "data_used": "ACS 5-year 2018 and 2023 at tract level, weighted by 2020 census blocks",
+   "data_access": "open"
+  },
+  {
+   "citation": "Logan JR, Alba RD, Zhang W (2002). Immigrant enclaves and ethnic communities in New York and Los Angeles. American Sociological Review 67(2):299-322.",
+   "url": "https://doi.org/10.1177/000312240206700207",
+   "doi": "10.1177/000312240206700207",
+   "finding": "Not read in full for this registration; cited by the scouting note as the test of the enclave model against the ethnic-community model for New York and Los Angeles. Used only as background, not as a source of any prediction here.",
+   "data_used": "1990 and 2000 census tract data",
+   "data_access": "partly_open"
+  },
+  {
+   "citation": "The Lo-Down (22 August 2021). Here's a first look at Lower East Side, Chinatown census figures.",
+   "url": "https://www.thelodownny.com/leslog/2021/08/heres-a-first-look-at-lower-east-side-chinatown-census-figures.html",
+   "doi": null,
+   "finding": "Cited by the scouting note as reporting a drop of about 4,600 (14 percent) Asians in Chinatown-Two Bridges on 2020 census figures; not re-read for this registration. Treated as secondary press; its boundary is not the AALDEF boundary.",
+   "data_used": "2020 census",
+   "data_access": "open"
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "PART A (decides the verdict; reproduction). Under the primary reading (boundary B1, data D1, mapping M1) the non-Hispanic Asian plus Pacific Islander count is 52,613 +/- 5% (49,983 to 55,244) in 2010 and 41,024 +/- 5% (38,973 to 43,075) in 2020, and the percentage change is -22 +/- 3 percentage points (-25% to -19%). PART B (secondary, own scoring, does not decide the verdict). Asian alone (any Hispanic origin), 2010 SF1 to 2020 DHC, for the 8 Sunset Park core tracts versus the 23 periphery tracts: core change between -20% and +5%, periphery change between 0% and +25%, difference core minus periphery between -30 and -5 percentage points. PART C (secondary). Asian alone, all 31 Sunset Park tracts: +2% to +20%; all 38 Flushing tracts: +5% to +30%. Chinatown (B1) Asian alone decennial to decennial: -5% to -25%.",
+  "support_if": "PART A: under the primary reading the 2010 count, the 2020 count and the percentage change are all inside the tolerance bands given in magnitude. Verdict confirmed. Part B is scored hit if the core-minus-periphery difference is at most -5 percentage points and the upper end of its 95% tract-bootstrap interval is below 0; Part C is scored hit for a place if its change is positive with the lower end of its 95% tract-bootstrap interval above 0.",
+  "refute_if": "PART A: no registered reading (boundary B1, B2 or B3 combined with data D1 to D5 and mapping M1; 15 combinations, plus M2 for B1 with D1) brings the 2010 count, the 2020 count and the percentage change all inside the tolerance bands. Verdict contested. Part B is scored miss if the lower end of the 95% interval of the core-minus-periphery difference is above 0. Part C is scored miss for a place if the upper end of its interval is below 0.",
+  "verdict_rule": "Per concord.claims.PRECEDENCE: Part A decides the verdict. confirmed = support_if of Part A met under the primary reading; contested = refute_if of Part A met; unsettled = the primary reading misses but another registered reading reproduces. Parts B and C and every secondary measure are scored in prediction_scored and notes and never change the verdict. no_test if tract counts for 2010 or 2020 cannot be retrieved for the B1 set."
+ },
+ "plan": "WHAT WAS SEEN BEFORE REGISTRATION. Published text only: the AALDEF report, the AAF 2021 and 2025 briefs (text read, quotes above). Lookup and boundary tables, with no population values read: DCP 2010 census-tract to NTA equivalency 8ius-dhrr (rowsUpdatedAt 2015-02-17), Census Gazetteer internal points for 2010 and 2020 tracts (the 2010 file also carries a POP10 column, which was not printed or used), Census 2010-to-2020 tract relationship file tab20_tract20_tract10_natl.txt (downloaded, not opened beyond its header), NYC centerline inkn-q76z (street geometry for 8 AVE in Brooklyn and MAIN ST/ROOSEVELT AVE in Queens), and Census API variable and geography listings. The repository holds no earlier query of Census population counts, of any NYC Open Data population table, or of any dataset on this subject (checked: data/cache/socrata, analyses/, claims/). The scouting note (notes/scouting/enclave-shift.md) read no outcome values. The tract sets below are fixed by data/derived/further/chinatown_sets.json (sha256 228e965434863f646c548c643a15549ae058475a671e546f02f37bd529c4ce82), written by analyses/further/chinatown_sets.py, and are part of this registration.\nUNITS AND SETS (2010 census tracts, 11-digit GEOID without the leading 36, county code first). Chinatown B1 (primary): all 2010 tracts of NTAs MN27 Chinatown and MN28 Lower East Side, 23 tracts: 061000201 061000202 061000600 061000800 061001001 061001002 061001200 061001401 061001402 061001600 061001800 061002000 061002201 061002202 061002400 061002500 061002601 061002602 061002700 061002800 061002900 061003001 061003601. B2: MN27 only, 8 tracts. B3: MN27, MN28 and MN22 East Village, 30 tracts. B1 is primary because the AALDEF boundary runs from the City Hall courthouse area to Houston Street and the East River and (in words) up the NYCHA riverfront to East 14th Street; B1 is the closest NTA union and B3 brackets it from above. Sunset Park: all 31 tracts of NTAs BK32 Sunset Park West and BK34 Sunset Park East. Core (8 tracts) = tracts whose Gazetteer internal point is within 400 m of a centreline segment of 8 AVE in Brooklyn between 40.620 and 40.648 N (approximately 40th to 65th Street): 047009000 047009200 047009400 047010400 047010600 047010800 047011800 047012000. Periphery = the other 23 tracts. Flushing: 38 tracts of NTAs QN22 Flushing, QN51 Murray Hill and QN52 East Flushing; core (7 tracts) = internal point within 700 m of the Main Street and Roosevelt Avenue intersection (40.75958 N, -73.83014 E): 081084900 081085300 081085500 081085700 081086500 081086900 081087100; periphery = the other 31.\nMEASURES AND SOURCES. 2010: Census API 2010/dec/sf1 tract tables P003 (race), P005 (Hispanic origin by race: P005006 non-Hispanic Asian alone, P005007 non-Hispanic Native Hawaiian and Other Pacific Islander alone, P005004 non-Hispanic Black alone, P005003 non-Hispanic White alone, P004003 Hispanic), PCT005 (Chinese except Taiwanese alone, with one Asian category). 2020: Census API 2020/dec/dhc tract tables P1 (race), P9 (P9_008N non-Hispanic Asian alone, P9_009N non-Hispanic NHPI alone, P9_002N Hispanic), and ACS 2018-2022 5-year (2022 vintage) B03002 (B03002_006E, _007E, _012E and margins of error). Chinese alone in 2020 from DDHC-A (2020/dec/ddhca) if it returns a Chinese-alone tract total, otherwise from ACS 2022 5-year B02015; if neither gives it for the Chinatown, Sunset Park and Flushing tracts, the Chinese-alone secondary is reported as not obtained.\nDATA READINGS. D1 (primary): 2010 SF1 non-Hispanic Asian alone plus non-Hispanic NHPI alone; 2020 ACS 2018-2022 B03002_006E+007E (the AALDEF construction). D2: same 2010; 2020 decennial DHC P9_008N+P9_009N. D3: non-Hispanic Asian alone only (no NHPI), 2010 SF1 and 2020 ACS. D4: as D3, 2020 decennial DHC. D5: Asian alone any Hispanic origin (P003005 / P1_006N). Boundary readings B1 (primary), B2, B3.\nMAPPING 2010 to 2020 TRACTS. M1 (primary): the 2020 set for a 2010 set S10 = 2020 tracts for which the summed AREALAND_PART over S10 tracts, divided by AREALAND_TRACT_20, is at least 0.5, from the Census relationship file. 2010 counts are summed over S10 as published. M2 (sensitivity): 2020 counts apportioned to 2010 tracts by AREALAND_PART / AREALAND_TRACT_20 and summed over S10. Because land area is not population, M2 is a check on M1, not a better estimate. All Manhattan, Brooklyn and Queens 2020 tracts in the sets are listed in the outcome with their 2010 parents.\nREPRODUCTION (Part A). For each reading report the 2010 count, the 2020 count (with the ACS margin of error, aggregated as the square root of the sum of squared tract margins, for ACS readings), the percentage change, the signed gap to AALDEF's 52,613, 41,024 and -22%, and whether each is in tolerance. Also report total population and non-Hispanic white, Black and Hispanic counts for the primary boundary as diagnostics against AALDEF's table (this is the only place total population is compared and it is not used to choose a boundary). The primary reading is fixed; a reading that fits better is not promoted to primary after the data are seen.\nSUNSET PARK AND FLUSHING (Parts B and C). Asian alone (any origin), 2010 SF1 P003005 to 2020 DHC P1_006N, tract level, M1. Percentage change = (sum 2020 - sum 2010)/sum 2010 within each set. Core minus periphery difference in percentage points for Sunset Park and for Flushing. Intervals: 95% percentile interval from 5,000 tract-cluster bootstrap resamples (resampling the parent 2010 tracts with replacement within each of core and periphery, with their mapped 2020 counts carried with the parent via M2 apportionment; seed 20261112). The bootstrap describes spatial heterogeneity between tracts, not sampling error of the census, which is a full count. The Chinatown figures are reported with the same bootstrap.\nPRE-SPECIFIED SENSITIVITY CHECKS. (1) Decennial to decennial (D2, D4, D5) against decennial to ACS (D1, D3). (2) Boundary B1, B2, B3. (3) Mapping M1 and M2. (4) 2020 disclosure-avoidance noise: add independent normal noise with standard deviation 5 persons and then 20 persons to each 2020 tract cell and report the change in the primary-set percentage (the standard deviations are assumptions, not Census figures; with 8 to 31 tracts the aggregate noise is small against sets of thousands, and this check shows how small). (5) 2020 undercount: recompute the Asian change after raising 2020 Asian counts by 3% and by 5%; this shows what size of Asian undercount would be needed to move the change out of the tolerance band; no published undercount rate is asserted. (6) Chinese-alone version of Parts A-C if the data are obtainable.\nCENTROID AND NORTHERN EDGE (secondary, descriptive, no verdict). Using Gazetteer internal points for the tracts of each year: (i) the Asian-alone-weighted centroid of all Manhattan tracts south of 14th Street (internal point latitude below 40.7365 N), 2010 and 2020, and its displacement in metres; (ii) the northern edge of the majority-Asian area = the highest latitude of any Manhattan tract south of 14th Street whose Asian-alone share (any origin) is at least 50% of its total population, 2010 and 2020 with that year's own tracts; (iii) the same Asian-alone-weighted centroid for Sunset Park (31 tracts) and Flushing (38 tracts). Displacements are given without intervals because tract boundaries differ between years; they are descriptive.\nQUESTION 2 (secondary, only if free of registration walls). 2000 SF1 tract counts of Asian alone for Manhattan are on the Census API (2000/dec/sf1). If the 2000 tract Gazetteer and counts are retrievable without an account, report the northern edge (ii) for 2000 with 2000 tracts. 1990 data need NHGIS or another registration and are not attempted. If 2000 data cannot be obtained, the outcome says so.\nPLACEBOS. (a) Sunset Park: the same core-minus-periphery difference for Hispanic or Latino residents (2010 P004003 to 2020 P2_002N). If the Hispanic difference is within 10 percentage points of zero while the Asian difference is at most -5, the Asian gap is not a general property of core tracts (for example housing loss or undercount affecting all residents of the corridor); if the Hispanic difference is of similar size and sign to the Asian one, the Asian result is not specific to Asian residents. (b) Chinatown: the distribution of the Asian-alone percentage change across 2,000 random sets of 23 Manhattan tracts south of 96th Street (seed 20261112), to show how unusual the B1 change is for a Manhattan tract set of that size.\nFIGURE. One map of tract-level change in Asian-alone population 2010 to 2020 (apportioned by M2 to 2010 tracts) for the three areas with the sets outlined, saved to figures/further/ with an embedded sRGB profile. Tract polygons from the Census cartographic boundary files (2010), a boundary dataset not used for any count.\nEverything not listed here is labelled exploratory in the outcome and decides nothing.",
+ "alternatives": [
+  "Boundary: AALDEF's Chinatown is not an NTA union, so a different boundary (B2 narrower, B3 wider, or an unlisted line) changes the counts and the percentage change.",
+  "Measure: AALDEF's 2020 value is an ACS five-year estimate (2018-2022), a pooled sample with sampling error at tract level, not the decennial count; a decennial-to-decennial change may differ from -22% either way.",
+  "Undercount: the 2020 census may have undercounted Asian residents or residents of dense, multi-unit and immigrant tracts, so part of the measured decline could be a count error.",
+  "Disclosure avoidance: 2020 tract counts carry injected noise, small at set level.",
+  "Housing change: new market-rate construction adds non-Asian residents and does not by itself displace Asian residents, so the Asian share can fall while the Asian count is stable; the Asian count and the share have to be read separately.",
+  "Out-migration by age and life stage (AAF: adult children leave, older parents stay) with household counts stable, which is displacement of the next generation and not eviction.",
+  "Chinese movement to other places (Sunset Park, Flushing) versus movement within the same neighbourhood to periphery tracts; the sets can separate the second only if tract boundaries are fine enough.",
+  "Boundary change between 2010 and 2020 tracts (splits and merges) mapped by land area."
+ ],
+ "prior": 0.4,
+ "registrant": "Claude (agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T20:25:17-0500",
+ "sha256": "c174b413a292e82799e78ae8ed86dd152036576f75d2ff607d43b42599177dc0"
+}

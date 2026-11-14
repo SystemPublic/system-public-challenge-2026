@@ -1,0 +1,40 @@
+{
+ "id": "commute-fhv-subway-distance",
+ "kind": "confirmation",
+ "statement": "Outside Manhattan, New York City taxi zones whose residents live farther from a subway or Staten Island Railway station have more high-volume for-hire (app) pickups per resident in 2024, after adjusting for household income and jobs per resident.",
+ "graph_evidence": [
+  {
+   "note": "The System graph has no concept for ride-hailing, taxis or the subway, and 'public transport' links to health outcomes only. Variable search finds 7 associations mentioning ride-hail, all from one study. The claim therefore rests on transport literature found on the web."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Barajas JM, Brown A (2021). Not minding the gap: Does ride-hailing serve transit deserts? J Transport Geography 90:102918.",
+   "doi": "10.1016/j.jtrangeo.2020.102918",
+   "finding": "Chicago: after controls, more ride-hail trip ends where rail service is prevalent and fewer where only bus serves; ride-hail does not concentrate in transit deserts. This is the rival (complement) direction."
+  },
+  {
+   "citation": "Transit-desert substitution argument (e.g. Schaller Consulting reports for NYC; TLC fact books)",
+   "doi": null,
+   "finding": "App trips grew fastest in the outer boroughs, attributed in part to poor transit coverage. Not peer-reviewed."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Elasticity of 2024 app pickups per resident with respect to population-weighted distance to the nearest station: +0.10 to +0.50.",
+  "support_if": "The adjusted elasticity on log distance is above 0 and its 95% interval (HC3) excludes 0.",
+  "refute_if": "The adjusted elasticity is below 0 and its 95% interval excludes 0 (the complement direction of Barajas and Brown)."
+ },
+ "plan": "Unit: TLC taxi zones in the Bronx, Brooklyn, Queens and Staten Island, excluding airports (zones 1, 132, 138), unknown zones (264, 265) and zones with fewer than 2,000 residents. Outcome: 2024 pickups (12 months) of industry 'FHV - High Volume' from NYC Open Data c5iv-bn4s, divided by 2020 census population. Exposure: population-weighted mean straight-line distance (km) from 2020 census tract internal points (Census Gazetteer 2020) to the nearest station in MTA Subway Stations (data.ny.gov 39hk-dx4f, including SIR); tracts assigned to zones by internal point in the TLC taxi_zones shapefile. Population: 2020 Census P1_001N by tract. Covariates: log mean household income (ACS 2019-23 B19025_001E / B11001_001E, summed over tracts) and log jobs per resident (LEHD LODES8 WAC 2021, all jobs, blocks to tracts). Model: OLS of log pickups per resident on log distance and covariates, HC3. Sensitivity, reported only: adding share of households with no vehicle (ACS B08201_002E / _001E), borough fixed effects, drop-offs instead of pickups, all boroughs including Manhattan, and yellow plus green taxi trips. Figures: zone map of pickups per resident with stations; binned scatter against distance.",
+ "alternatives": [
+  "Car ownership: households far from the subway own cars and need fewer app trips (the no-vehicle sensitivity addresses this)",
+  "Non-resident demand: pickups count visitors and workers leaving a zone, not only residents (jobs per resident addresses part)",
+  "Bus service quality and express buses, not measured",
+  "Former livery-cab markets in the Bronx and upper Manhattan, which moved to app platforms",
+  "Income: app trips are expensive; poverty and income are correlated with distance in both directions across boroughs"
+ ],
+ "prior": 0.35,
+ "registrant": "commuting agent (Claude Opus 5.5), 12 Nov 2026",
+ "registered_at": "2026-11-12T16:24:52-0500",
+ "sha256": "f5c9850d08414a240736be26161839476b37c00b5839ed649dedca39db456172"
+}

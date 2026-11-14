@@ -1,0 +1,348 @@
+{
+ "id": "repro-dcp-2025-completions",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "relative difference, R1 (sum of classaprop, New Building, compltyear 2025, 26Q2.1) minus DCP's 38,682, as a share of 38,682; interval is +/- the 0.34% revision DCP made to 2024 between releases, not a sampling interval",
+  "estimate": 0.00018,
+  "lo": -0.00322,
+  "hi": 0.00358,
+  "scale": "proportion",
+  "null": 0,
+  "n": 1014
+ },
+ "graph_effect": null,
+ "reproduced": {
+  "R1_primary_classaprop": 38689.0,
+  "R2_units_co": 40567.0,
+  "R3_final_co_only": 38689.0,
+  "stated": 38682,
+  "R1_rel_diff": 0.00018,
+  "R2_rel_diff": 0.0487,
+  "boroughs_R1": {
+   "Manhattan": 4874.0,
+   "Bronx": 5683.0,
+   "Brooklyn": 18046.0,
+   "Queens": 9608.0,
+   "Staten Island": 478.0
+  },
+  "boroughs_stated": {
+   "Manhattan (by subtraction)": 4874,
+   "Bronx": 5683,
+   "Brooklyn": 18048,
+   "Queens": 9600,
+   "Staten Island": 477
+  },
+  "permits_P1": 18539.0,
+  "permits_P2": 18549.0,
+  "permits_stated": 17673,
+  "P1_rel_diff": 0.049,
+  "R1_2024": 33859,
+  "dcp_2024_stated": {
+   "earlier release": 33974,
+   "25Q4": 33859
+  },
+  "aggregate_dbdt_5s7j_comp2025_all_job_types": 43654.0,
+  "completed_2025_units_by_permit_year": {
+   "2000": 1.0,
+   "2003": 8.0,
+   "2004": 3.0,
+   "2005": 12.0,
+   "2006": 2.0,
+   "2007": 40.0,
+   "2008": 11.0,
+   "2009": 6.0,
+   "2011": 23.0,
+   "2012": 27.0,
+   "2013": 1.0,
+   "2014": 1.0,
+   "2015": 470.0,
+   "2016": 186.0,
+   "2017": 985.0,
+   "2018": 343.0,
+   "2019": 356.0,
+   "2020": 2232.0,
+   "2021": 1275.0,
+   "2022": 23669.0,
+   "2023": 6875.0,
+   "2024": 1987.0,
+   "2025": 97.0,
+   "null": 79.0
+  },
+  "jobs_completed_2025": 1014,
+  "version": "26Q2.1"
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "br6q-ssj3",
+   "name": "Housing Database Project Level Files",
+   "url": "https://data.cityofnewyork.us/d/br6q-ssj3",
+   "rows_updated_at": "2026-09-30T18:04:43Z",
+   "query": {
+    "$select": "job_status, boro, count(*) as n, sum(classaprop) as classaprop, sum(units_co) as units_co",
+    "$where": "job_type='New Building' AND compltyear='2025'",
+    "$group": "job_status, boro",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:57:16-0500",
+   "n_rows": 5,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "br6q-ssj3",
+   "name": "Housing Database Project Level Files",
+   "url": "https://data.cityofnewyork.us/d/br6q-ssj3",
+   "rows_updated_at": "2026-09-30T18:04:43Z",
+   "query": {
+    "$select": "permityear, count(*) as n, sum(classaprop) as units",
+    "$where": "job_type='New Building' AND compltyear='2025'",
+    "$group": "permityear",
+    "$order": "permityear",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:57:17-0500",
+   "n_rows": 24,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "br6q-ssj3",
+   "name": "Housing Database Project Level Files",
+   "url": "https://data.cityofnewyork.us/d/br6q-ssj3",
+   "rows_updated_at": "2026-09-30T18:04:43Z",
+   "query": {
+    "$select": "job_status, count(*) as n, sum(classaprop) as units",
+    "$where": "job_type='New Building' AND permityear='2025'",
+    "$group": "job_status",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:57:17-0500",
+   "n_rows": 3,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "br6q-ssj3",
+   "name": "Housing Database Project Level Files",
+   "url": "https://data.cityofnewyork.us/d/br6q-ssj3",
+   "rows_updated_at": "2026-09-30T18:04:43Z",
+   "query": {
+    "$select": "version, count(*) as n",
+    "$group": "version",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:57:18-0500",
+   "n_rows": 1,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "br6q-ssj3",
+   "name": "Housing Database Project Level Files",
+   "url": "https://data.cityofnewyork.us/d/br6q-ssj3",
+   "rows_updated_at": "2026-09-30T18:04:43Z",
+   "query": {
+    "$select": "compltyear, count(*) as n, sum(classaprop) as units, sum(units_co) as units_co",
+    "$where": "job_type='New Building' AND compltyear >= '2015'",
+    "$group": "compltyear",
+    "$order": "compltyear",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:57:18-0500",
+   "n_rows": 12,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "dbdt-5s7j",
+   "name": "Housing Database by Community District",
+   "url": "https://data.cityofnewyork.us/d/dbdt-5s7j",
+   "rows_updated_at": "2026-09-30T23:04:28Z",
+   "query": {
+    "$select": "sum(comp2025) as c25, sum(comp2024) as c24, count(*) as n",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T19:57:19-0500",
+   "n_rows": 1,
+   "data_access": "open"
+  },
+  {
+   "kind": "report",
+   "name": "NYC DCP, Housing Production Snapshot 2025 (ArcGIS StoryMap, modified March 2026)",
+   "data_access": "open",
+   "note": "stated numbers as transcribed in docs/reproduction_inventory.md"
+  },
+  {
+   "kind": "agency-archive",
+   "name": "NYC DCP Housing Database, project-level files, release 25Q4 (BYTES of the BIG APPLE archive)",
+   "url": "https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/housing-database/housing-project-level/nychdb_25q4_csv.zip",
+   "landing_page": "https://www.nyc.gov/content/planning/pages/resources/datasets/housing-project-level",
+   "bytes": 9278590,
+   "sha256": "76f16a63535ea661700afd2440f143e718f9ffa4e8685de6e166c4ea208cada2",
+   "last_modified": "2026-03-04T20:04:04Z",
+   "etag": "33031c6c0ce5ebb4ca751c2db343afc7:1778685308.378603",
+   "fetched": "2026-11-13T07:36:18-0500",
+   "members": [
+    {
+     "name": "HousingDB_post2010.csv",
+     "bytes": 47904057,
+     "sha256": "cbd2725a930eb8ee0bf47863990a8f9c860c610f39a09672b25c461582284395",
+     "rows": 81708,
+     "version_column": "25Q4 on every row"
+    },
+    {
+     "name": "Housing_Database_Data_Dictionary.xlsx",
+     "bytes": 135977,
+     "sha256": "fb77519cf5a6f52b0d5fa27ade4a6f7df0d9f192d791b50080d73653fe189947",
+     "note": "not opened"
+    }
+   ],
+   "fetched_local_copy": "~/opt/nyc-concordance/dcp_25q4/",
+   "data_access": "open",
+   "approval": "download of this one archive approved by Jeff on 13 November 2026"
+  }
+ ],
+ "prediction_scored": "hit. R1 is 38,689 against the stated 38,682 (+7 units, +0.02%), inside the exact band of 2%, and the boroughs agree within 8 units each. R2 (units_co, 40,567, +4.9%) lies outside the revision band, so the snapshot counts proposed Class A units, not units on the certificate. R3 equals R1 because every new-building job with a first CO in 2025 has status 5 in this release. The registrant expected R2 to exceed R1 by 0 to 5%; it exceeds it by 4.9%. The secondary permit count was not reproduced: P1 is 18,539 against 17,673 (+4.9%), outside the 4% band.",
+ "settle": "The archived 25Q4 file was computed on 13 November 2026 (see followup_25q4). What remains is the 9-unit difference in completions (8 in Queens, 1 in Staten Island) and the 4-unit difference in permits on the snapshot's own release, which DCP's snapshot code or a statement of its rule would settle.",
+ "research_needed": [
+  {
+   "question": "Are the 866 extra 2025 new-building permit units in 26Q2.1 late-recorded permits, or does the snapshot count permits differently (for example excluding jobs later superseded)?",
+   "data": "DCP Housing Database 25Q4 and 26Q2.1 project-level files (BYTES archive); DOB NOW approved permits rbx6-tga4",
+   "design": "job-level diff between releases for permityear 2025",
+   "priority": "medium",
+   "status": "answered 13 Nov 2026 (exploratory): on 25Q4 P1 is 17,669; the excess in 26Q2.1 is mostly unit-count edits on 22 jobs (+1,082), see followup_25q4"
+  },
+  {
+   "question": "How much of a year's completions belong to the 421-a deadline cohort, and when does that cohort's contribution end?",
+   "data": "br6q-ssj3 releases through 2027",
+   "design": "completed units by compltyear x permityear, tracked across releases",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/reproduction/dcp_2025_completions.png"
+ ],
+ "notes": "The DCP headline count is reproduced to within 7 units from the public portal copy, using the rule that the Housing Database data dictionary implies: new-building jobs whose first certificate of occupancy fell in 2025 (compltyear), counted by proposed Class A units (classaprop, which equals classanet for new buildings). The release used is 26Q2.1, later than the 25Q4 release the snapshot used. The completion counts barely moved between releases: R1 for 2024 is 33,859, the same as DCP's 25Q4 figure. The 25Q4 archive was found after the first draft of the registration and before commit; it was not downloaded, because a file download needs Jeff's approval. Exploratory, not a test: of the 38,689 units completed in 2025, 23,669 (61%) were in jobs first permitted in 2022, the year of the 421-a deadline rush, and 6,875 in jobs permitted in 2023. Units completed in new buildings rose from 33,859 in 2024 to 38,689 in 2025, while units in new-building permits issued in 2025 were 18,539 (P1). The high 2025 completion count is therefore the 2022 permit surge reaching certificates of occupancy, not a rise in new starts. The aggregate table dbdt-5s7j gives 43,654 net units for 2025 across all job types (alterations and demolitions included, counted incrementally), so the aggregate tables do not equal the new-building figure and should not be quoted as it. R2 shows that units_co, the field a reader might choose for 'units completed', overstates the snapshot by 4.9%, because certificates can include Class B and hotel units.\n\nAfter the referee (13 Nov 2026): the match (38,689 against 38,682) is on release 26Q2.1, later than the 25Q4 release the snapshot used. Of the 2025 completions, 209 jobs with 19,800 units were updated after 15 January 2026 and DCP edited classaprop by hand on 19 jobs, so the agreement is a match after revision and not proof that DCP used exactly this rule. The referee recomputed R1 at row level and under three further variants and obtained 38,689 each time. The permit figure is not reproduced (18,539 against 17,673), and the referee found no simple rule that gives 17,673 in this release; permits dated December 2025 hold 4,138 units, so late recording is a plausible source. A row-level copy of the new-building rows was in the project cache before registration; the registration says only its headers were read, which cannot be verified. The interval in city_effect is the size of one earlier revision and not a sampling interval, so the stance computed from it had no statistical meaning and is now null, as for repro-dot-2025-deaths. Follow-up of 13 November 2026 on the snapshot's own release. Jeff approved the download of nychdb_25q4_csv.zip from DCP's archive on nyc.gov (9,278,590 bytes, SHA-256 76f16a63...8cada2, fetched 13 November 2026 07:36 EST; every row carries version 25Q4). The registered follow-up, R1 on this file, gives 38,691 units in 1,014 jobs, 9 units (+0.023%) above the stated 38,682 and inside the exact band of 2%. The registration says that this result is secondary and does not change the verdict, which stays confirmed. The stated figure is not matched to the unit even on its own release. The following numbers on 25Q4 were not registered for this file and are exploratory. The boroughs are Brooklyn 18,048 (stated 18,048), Bronx 5,683 (5,683), Manhattan 4,874 (4,874 by subtraction), Queens 9,608 (9,600) and Staten Island 478 (477), so the 9 units are 8 in Queens and 1 in Staten Island; the cause is not known. R2 is 40,569 and R3 equals R1. R1 for 2024 is 33,861 against DCP's 33,859. The permit count P1 is 17,669 against the stated 17,673 (-4 units), and no 2025 new-building permit job is withdrawn in 25Q4, so P2 equals P1. The permit figure is therefore reproduced on the snapshot's release, and the 4.9% excess found on 26Q2.1 is revision between releases. A job-level comparison of the two releases shows that the revision is mostly edited unit counts and not late-recorded permits: 22 jobs present in both releases changed ClassAProp for a net +1,082 units, 6 jobs entered the 2025 permit set (+145 units, of which 2 jobs with 10 units were absent from 25Q4), and 5 jobs left it (-357 units). For completions the same 1,014 jobs are in both releases and one job changed by -2 units. The registered secondary permit condition was written for the portal copy and remains not met there.",
+ "registration_sha256": "2bbc079a78bf19f98dc822453ac50780f634050ebab6de515556b7b32e01cd70",
+ "decided_at": "2026-11-12T19:58:20-0500",
+ "stance": null,
+ "verdict_note": "Reproduced on release 26Q2.1 (R1 38,689) and, in the registered follow-up, on the 25Q4 release the snapshot used (R1 38,691, +9 units, inside the exact band). The permit figure was not reproduced on 26Q2.1 (18,539) and is reproduced on 25Q4 (17,669 against 17,673; exploratory).",
+ "critique": {
+  "report": "critique/repro-dcp-2025-completions.md",
+  "answer": "accepted; verdict kept, stance null"
+ },
+ "revision": {
+  "reason": "Registered follow-up run on DCP's archived 25Q4 release after Jeff approved the download: R1 is 38,691, inside the exact band. Added as a note and a followup_25q4 field; by the registration the follow-up does not change the verdict, which stays confirmed. city_effect unchanged; stance kept null (rule 6).",
+  "critique": "critique/repro-dcp-2025-completions.md",
+  "revised_at": "2026-11-13T07:37:36-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ },
+ "followup_25q4": {
+  "status": "registered follow-up (release_choice in the registration): R1 on the 25Q4 archive, judged by the exact band of 2% alone; secondary, does not change the verdict",
+  "release": "25Q4",
+  "R1": 38691.0,
+  "stated": 38682,
+  "R1_minus_stated": 9.0,
+  "R1_rel_diff": 0.00023,
+  "exact_band_met": true,
+  "jobs": 1014,
+  "not_registered_for_25Q4_reported_as_exploratory": {
+   "R2_units_co": 40569.0,
+   "R3_final_co_only": 38691.0,
+   "boroughs_R1": {
+    "Manhattan": 4874.0,
+    "Bronx": 5683.0,
+    "Brooklyn": 18048.0,
+    "Queens": 9608.0,
+    "Staten Island": 478.0
+   },
+   "permits_P1": 17669.0,
+   "permits_P2": 17669.0,
+   "permits_stated": 17673,
+   "P1_minus_stated": -4.0,
+   "P1_rel_diff": -0.00023,
+   "R1_2024": 33861.0,
+   "release_diff_permits_2025": {
+    "units_25Q4": 17669.0,
+    "units_26Q2.1": 18539.0,
+    "jobs_25Q4": 905,
+    "jobs_26Q2.1": 906,
+    "added_jobs": 6,
+    "added_units": 145.0,
+    "added_absent_from_25Q4_jobs": 2,
+    "added_absent_from_25Q4_units": 10.0,
+    "added_present_in_25Q4_other_year_or_status_jobs": 4,
+    "added_present_in_25Q4_other_year_or_status_units": 135.0,
+    "dropped_jobs": 5,
+    "dropped_units": 357.0,
+    "dropped_still_in_26Q2.1_jobs": 5,
+    "common_jobs_units_changed": 22,
+    "common_jobs_net_unit_change": 1082.0,
+    "added_units_by_permit_month": {
+     "2025-03": 0.0,
+     "2025-07": 14.0,
+     "2025-10": 34.0,
+     "2025-11": 87.0,
+     "2025-12": 10.0
+    }
+   },
+   "release_diff_completions_2025": {
+    "units_25Q4": 38691.0,
+    "units_26Q2.1": 38689.0,
+    "jobs_25Q4": 1014,
+    "jobs_26Q2.1": 1014,
+    "added_jobs": 0,
+    "added_units": 0,
+    "added_absent_from_25Q4_jobs": 0,
+    "added_absent_from_25Q4_units": 0,
+    "added_present_in_25Q4_other_year_or_status_jobs": 0,
+    "added_present_in_25Q4_other_year_or_status_units": 0,
+    "dropped_jobs": 0,
+    "dropped_units": 0,
+    "dropped_still_in_26Q2.1_jobs": 0,
+    "common_jobs_units_changed": 1,
+    "common_jobs_net_unit_change": -2.0
+   }
+  },
+  "script": "analyses/reproduction/dcp_2025_25q4.py",
+  "results": "data/derived/reproduction/dcp_2025_25q4_results.json",
+  "computed_at": "2026-11-13"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "relative difference, R1 (sum of classaprop, New Building, compltyear 2025, 26Q2.1) minus DCP's 38,682, as a share of 38,682; interval is +/- the 0.34% revision DCP made to 2024 between releases, not a sampling interval",
+    "estimate": 0.00018,
+    "lo": -0.00322,
+    "hi": 0.00358,
+    "scale": "proportion",
+    "null": 0,
+    "n": 1014
+   },
+   "stance": {
+    "value": 0.974,
+    "lo": 0.774,
+    "hi": 1
+   },
+   "decided_at": "2026-11-12T19:58:20-0500",
+   "prediction_scored": "hit. R1 is 38,689 against the stated 38,682 (+7 units, +0.02%), inside the exact band of 2%, and the boroughs agree within 8 units each. R2 (units_co, 40,567, +4.9%) lies outside the revision band, so the snapshot counts proposed Class A units, not units on the certificate. R3 equals R1 because every new-building job with a first CO in 2025 has status 5 in this release. The registrant expected R2 to exceed R1 by 0 to 5%; it exceeds it by 4.9%. The secondary permit count was not reproduced: P1 is 18,539 against 17,673 (+4.9%), outside the 4% band."
+  },
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "relative difference, R1 (sum of classaprop, New Building, compltyear 2025, 26Q2.1) minus DCP's 38,682, as a share of 38,682; interval is +/- the 0.34% revision DCP made to 2024 between releases, not a sampling interval",
+    "estimate": 0.00018,
+    "lo": -0.00322,
+    "hi": 0.00358,
+    "scale": "proportion",
+    "null": 0,
+    "n": 1014
+   },
+   "stance": null,
+   "decided_at": "2026-11-12T19:58:20-0500",
+   "prediction_scored": "hit. R1 is 38,689 against the stated 38,682 (+7 units, +0.02%), inside the exact band of 2%, and the boroughs agree within 8 units each. R2 (units_co, 40,567, +4.9%) lies outside the revision band, so the snapshot counts proposed Class A units, not units on the certificate. R3 equals R1 because every new-building job with a first CO in 2025 has status 5 in this release. The registrant expected R2 to exceed R1 by 0 to 5%; it exceeds it by 4.9%. The secondary permit count was not reproduced: P1 is 18,539 against 17,673 (+4.9%), outside the 4% band."
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "id": "construction-sheds-outnumber-nb",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "ratio of jobs with an active sidewalk-shed permit to jobs with an active NB work permit, 1 Nov 2026",
+  "estimate": 2.3,
+  "lo": 2.16,
+  "hi": 2.3,
+  "scale": "ratio (interval spans the two definitions of active, not sampling error)",
+  "null": 1,
+  "n": 10886
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "rbx6-tga4",
+   "name": "DOB NOW: Build – Approved Permits",
+   "url": "https://data.cityofnewyork.us/d/rbx6-tga4",
+   "rows_updated_at": "2026-11-12T19:44:18Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_filing_number,work_permit,filing_reason,work_type,permit_status,issued_date,expired_date,bbl",
+    "$where": "expired_date >= '2022-01-01T00:00:00'"
+   },
+   "fetched": "2026-11-12T15:35:17-0500",
+   "n_rows": 858826
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ipu4-2q9a",
+   "name": "DOB Permit Issuance",
+   "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+   "rows_updated_at": "2026-11-12T00:36:38Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job__,job_type,permit_type,permit_subtype,filing_status,permit_status,issuance_date,expiration_date,bbl",
+    "$where": "permit_subtype='SH'"
+   },
+   "fetched": "2026-11-12T15:37:26-0500",
+   "n_rows": 179868
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ipu4-2q9a",
+   "name": "DOB Permit Issuance",
+   "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+   "rows_updated_at": "2026-11-12T00:36:38Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job__,job_doc___,permit_type,filing_status,permit_status,issuance_date,expiration_date,bbl,borough,residential,gis_latitude,gis_longitude",
+    "$where": "job_type='NB'"
+   },
+   "fetched": "2026-11-12T15:26:51-0500",
+   "n_rows": 572035
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "w9ak-ipjd",
+   "name": "DOB NOW: Build – Job Application Filings",
+   "url": "https://data.cityofnewyork.us/d/w9ak-ipjd",
+   "rows_updated_at": "2026-11-11T21:29:13Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_filing_number,filing_status,job_type,bbl,filing_date,first_permit_date,approved_date,signoff_date,proposed_dwelling_units,latitude,longitude",
+    "$where": "job_type='New Building'"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 59039
+  },
+  {
+   "kind": "sysgraph",
+   "api_version": "v1.0",
+   "dataset_version": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "queries": "variable and concept search for 13 terms; relationships of concepts COEFxSZVXO (construction), jCrN64TC75 (building), IFcQ3j86qe (housing); associations of 8 variables",
+   "derived": "data/derived/construction/graph_search.json",
+   "fetched": "2026-11-12"
+  },
+  {
+   "kind": "other",
+   "name": "NYC DOB, Get Sheds Down (July 2023)",
+   "url": "https://www.nyc.gov/site/buildings/dob/get-sheds-down.page"
+  }
+ ],
+ "prediction_scored": "hit. On 1 November 2026, 7,585 jobs had an unexpired sidewalk-shed permit (6,880 excluding signed-off permits; predicted 6,000-11,000) and 3,301 jobs had an unexpired NB work permit (3,180; predicted 1,500-5,000). The ratio was 2.30 (2.16; predicted 1.5-6). 10.0% of shed lots also had an active NB job (9.2%; predicted 5-25%). Every criterion falls inside the registered range.",
+ "settle": "Permits are a proxy for sheds that stand. A street survey or the DOB shed map on one day, and a count of sheds standing on expired permits, would settle the count. Whether people judge 'construction' by sheds is a perception question that needs a survey.",
+ "research_needed": [
+  {
+   "question": "Do residents' estimates of construction activity track sheds, scaffolds and fences near them more than new buildings?",
+   "data": "survey with geocoded respondents; rbx6-tga4 active permits",
+   "design": "cross-sectional survey, exposure within 200 m",
+   "priority": "high"
+  },
+  {
+   "question": "Is the fall in active shed permits in 2026 (about 10,000 to 7,600) real removal or delayed renewal records?",
+   "data": "rbx6-tga4 re-queried in early 2027",
+   "design": "compare the same date counted at two release dates",
+   "priority": "medium"
+  },
+  {
+   "question": "Should the graph hold findings on housing supply (permits, starts, completions, lapse)? It now holds none.",
+   "data": "Census New Residential Construction; NYC DCP Housing Database; Furman Center CoreData",
+   "design": "extraction of urban-economics and planning literature into the graph",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/construction/active_sites.png"
+ ],
+ "notes": "Active means issued on or before 1 Nov 2026 and expiring after it. Over 2022-2026 the monthly count of shed jobs ran 9,500-10,600 and NB jobs 3,100-4,200 (data/derived/construction/active_by_month.csv). On the date, 59,249 distinct DOB NOW jobs held at least one active permit, of which 2,712 were new buildings; the rest are alterations. Construction fences (6,947), supported scaffolds (3,587) and suspended scaffolds (3,096) add to what is visible from the street. A wider NB definition (first permit in the last six years and no CO) gives 3,847 jobs, which leaves the ratio near 2. Graph evidence check (12 Nov 2026, after the coordinator's audit): association aFGrNWb1i5 (vacant housing demolitions and 'change in crime', PMID 36228876), cited in the registration, is NOT in the Dataverse v2.1 CSV. The abstract (Kvik et al., Prev Med 2022) shows it is mis-extracted: the -0.068 (95% CI -0.119 to -0.018) is the change in total emergency-department visits per 1,000 people, and demolitions showed no significant change in crime. It should be dropped; it bore on context only, not on any test here. Of the other graph rows cited, UXzKbLS899 (population growth and construction land, Chongqing) is in the CSV. The vacant-lot and renovation rows looked at during the search (3rfxckzPtm, R0ctB4TYK1, CVCABCQUUe, 168lUaKwYN, 20AOg9kwfR, IfVJnDqqH0) are not in the CSV. The graph holds no finding on permits, permit-to-completion ratios, lags or permit lapse, so the research side of every construction claim comes from the literature.",
+ "registration_sha256": "68c5ba696bdd755dd9de33aa5fc2cb00428b1c7187e3bb6c3327d843053f0a58",
+ "decided_at": "2026-11-12T15:44:27-0500",
+ "stance": null,
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "ratio of jobs with an active sidewalk-shed permit to jobs with an active NB work permit, 1 Nov 2026",
+    "estimate": 2.3,
+    "lo": 2.16,
+    "hi": 2.3,
+    "scale": "ratio (interval spans the two definitions of active, not sampling error)",
+    "null": 1,
+    "n": 10886
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 51.99
+   },
+   "decided_at": "2026-11-12T15:44:27-0500",
+   "prediction_scored": "hit. On 1 November 2026, 7,585 jobs had an unexpired sidewalk-shed permit (6,880 excluding signed-off permits; predicted 6,000-11,000) and 3,301 jobs had an unexpired NB work permit (3,180; predicted 1,500-5,000). The ratio was 2.30 (2.16; predicted 1.5-6). 10.0% of shed lots also had an active NB job (9.2%; predicted 5-25%). Every criterion falls inside the registered range."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep the verdict for the permit counts only; the ratio has no research-side null.",
+  "critique": "critique/construction-sheds-outnumber-nb.md",
+  "revised_at": "2026-11-12T15:55:02-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

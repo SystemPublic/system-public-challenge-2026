@@ -1,0 +1,166 @@
+{
+ "id": "further-chinatown-shift",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "Change in non-Hispanic Asian+Pacific Islander residents, 23-tract Chinatown set B1, 2010 census to ACS 2018-22 (primary reading D1, M1); interval is the ACS 90% margin of error applied to the 2020 count",
+  "estimate": -21.48,
+  "lo": -26.71,
+  "hi": -16.24,
+  "scale": "percent change",
+  "null": 0,
+  "n": 23
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "census-bulk-file",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2022/table-based-SF/data/5YRData/acsdt5y2022-b03002.dat",
+   "last_modified": "Mon, 30 Oct 2023 16:34:15 GMT",
+   "fetched": "2026-11-13T01:26:28Z",
+   "size": "82886726 bytes",
+   "data_access": "open"
+  },
+  {
+   "kind": "census-bulk-file",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2022/table-based-SF/data/5YRData/acsdt5y2022-b02015.dat",
+   "last_modified": "Mon, 30 Oct 2023 16:34:13 GMT",
+   "fetched": "2026-11-13T01:26:30Z",
+   "size": "58664967 bytes",
+   "data_access": "open"
+  },
+  {
+   "kind": "census-bulk-file",
+   "url": "https://www2.census.gov/census_2010/01-Redistricting_File--PL_94-171/New_York/ny2010.pl.zip",
+   "last_modified": "Thu, 24 Mar 2011 18:00:19 GMT",
+   "fetched": "2026-11-13T01:26:31Z",
+   "size": "47224379 bytes",
+   "data_access": "open"
+  },
+  {
+   "kind": "census-bulk-file",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/New_York/ny2020.pl.zip",
+   "last_modified": "Thu, 12 Aug 2021 17:19:42 GMT",
+   "fetched": "2026-11-13T01:26:33Z",
+   "size": "72608321 bytes",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "8ius-dhrr",
+   "name": "2010 Census Tract to Neighborhood Tabulation Area Equivalency table",
+   "rows_updated_at": "2015-02-17T16:34:59Z",
+   "url": "https://data.cityofnewyork.us/d/8ius-dhrr",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "inkn-q76z",
+   "name": "NYC Street Centerline (CSCL)",
+   "rows_updated_at": "2026-11-08T00:49:28Z",
+   "url": "https://data.cityofnewyork.us/d/inkn-q76z",
+   "data_access": "open"
+  },
+  {
+   "kind": "census-bulk-file",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_tracts_national.zip",
+   "last_modified": "Wed, 03 Apr 2013 13:11:38 GMT",
+   "data_access": "open"
+  },
+  {
+   "kind": "census-bulk-file",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_tracts_national.zip",
+   "last_modified": "Fri, 22 Jan 2021 14:24:01 GMT",
+   "data_access": "open"
+  },
+  {
+   "kind": "census-bulk-file",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/tract/tab20_tract20_tract10_natl.txt",
+   "last_modified": "Tue, 25 Jan 2022 18:16:26 GMT",
+   "data_access": "open"
+  },
+  {
+   "kind": "published-report",
+   "url": "https://cdn.sanity.io/files/iroghafc/production/7e834bfbb630c91eade349dcfd0ac6953924c7d6.pdf",
+   "last_modified": "Thu, 04 Dec 2025 15:31:55 GMT",
+   "note": "AALDEF, read in full text",
+   "data_access": "open"
+  },
+  {
+   "kind": "note",
+   "note": "api.census.gov returned an HTML 'Missing Key' page for every query on 12 Nov 2026; no key was requested. Keyless bulk files were used (PL 94-171 in place of SF1 P5 and DHC P9; ACS table-based summary file in place of the ACS API)."
+  }
+ ],
+ "prediction_scored": "Part A (decides): miss. Under the primary reading the percentage change is -21.5% (inside the -25 to -19 band), but the 2010 count is 48749 (AALDEF 52,613, -7.3% off) and the 2020 count is 38279 (AALDEF 41,024, -6.7% off), both outside the 5% band; none of the 16 registered readings brings all three numbers inside tolerance, so refute_if is met. Part B (secondary): hit. Sunset Park core +9.6%, periphery +29.3%, difference -19.8 points (95% bootstrap -28.0 to -11.4). Part C (secondary): hit for Sunset Park as a whole (+19.0%, 95% 13.0 to 25.7), Flushing (+21.0%, 95% 13.3 to 32.5) and Chinatown decennial to decennial (-10.3%, 95% -17.0 to -0.6). Placebo (a): the Hispanic core-minus-periphery difference is +12.0 points (95% 3.0 to 24.6), outside both registered branches (not within 10 points of zero, and opposite in sign to the Asian difference).",
+ "settle": "AALDEF's confirmation of the two tract lists found by the referee, which reproduce its 2010 and 2020 columns exactly and are not the same area. With one area held fixed, the Asian decline is 24% to 26% against the 2018-22 ACS and 12% to 13% against the 2020 census, and the total population falls. Which of the ACS and the 2020 census is closer to the truth for Asian residents of these tracts is the second open question (the Post-Enumeration Survey by race, or administrative records such as NYCHA and school enrolment).",
+ "research_needed": [
+  {
+   "question": "Will AALDEF confirm the two tract lists found by the referee (22 tracts for 2010, 25 for the 2018-22 ACS) and say why the area differs between the two years?",
+   "data": "AALDEF tract lists; 2010 census and ACS 2018-22 table B03002",
+   "design": "Request to AALDEF; register a new reproduction on the two exact sets, with the fixed-area change as the prediction",
+   "priority": "high"
+  },
+  {
+   "question": "Is the 2018-22 ACS lower than the 2020 census for Asian residents of these tracts because of ACS controls and sampling, or because the 2020 count is too high?",
+   "data": "ACS 2018-22 and 2020 DHC by tract; Post-Enumeration Survey; DCP population estimates",
+   "design": "Tract-level reconciliation of ACS 5-year totals with the census",
+   "priority": "high"
+  },
+  {
+   "question": "Chinese-alone change by tract 2010 to 2020",
+   "data": "2010 SF1 PCT5 (535 MB state file) and 2020 Detailed DHC-A tract tables",
+   "design": "Same sets, Chinese alone; DDHC-A suppresses small cells",
+   "priority": "medium"
+  },
+  {
+   "question": "Did Sunset Park's 8th Avenue core lose Asian share while gaining Asian residents?",
+   "data": "Same tracts, shares and Hispanic, white and total counts, 2000 to 2020",
+   "design": "Core versus periphery with share as the outcome",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/further/chinatown_shift_map.png"
+ ],
+ "notes": "Deviations from the registration. The Census API returned 'Missing Key' for all queries, so no key was requested and keyless bulk files were used: 2010 and 2020 PL 94-171 tract tables in place of SF1 P5 and DHC P9 (the 2010 values equal SF1; the 2020 PL values come from a different disclosure-avoidance run than DHC and can differ slightly), and the ACS 2018-22 table-based summary file in place of the API. The registered Chinese-alone secondary was not obtained: 2010 needs the 535 MB SF1 state file and the 2020 detailed tables were not located in time; the ACS 2018-22 Chinese-alone count (B02015) is in data/derived/further/acs2022_tracts.csv but gives one time point. The mapping grid was run for M1 and M2 for all 15 boundary and data readings (30 rows), a superset of the registered 16; none reproduces under either mapping. Diagnostics for B1 against AALDEF's table: total population 2010 120,801 (AALDEF 116,722), white 24,270 (23,314), Black 10,216 (8,457), Hispanic 35,290 (30,227), Asian+PI 48,749 (52,613). An exploratory comparison of NTA unions (data/derived/further/chinatown_exploratory_unions.csv, not registered, decides nothing) found none that matches. The reason is given in the referee's finding below: the published table uses a different tract set in each year. The decennial-to-decennial change in the B1 set is -10.3% (95% tract bootstrap -17.1 to -0.7), about half of AALDEF's 22%; the larger figure arises from comparing the 2010 census with ACS 2018-22, whose 2020-vintage tract estimate of Asian+PI residents in the same 24 tracts (38,279, margin 2,551) is below the census count (43,715). Total population in the set was 120801 in 2010 and 119699 in 2020 (census), a change of -0.9%, not AALDEF's +3%. Undercount: raising the 2020 Asian counts by 3% or 5% makes the decennial change -7.6% or -5.8%, so an Asian undercount would reduce the decline, not remove the gap with 22%. Disclosure-avoidance noise of 5 or 20 persons per tract changes the set estimate by under 0.5 points (assumed standard deviations). Manhattan south of 14th Street: Asian-alone-weighted centroid moved 22 m east and 0 m north between 2010 and 2020 and about 120 m south between 2000 and 2010; the northern edge of the majority-Asian tracts was tract 36061004100 (latitude 40.7202 in 2000, 40.7192 in 2010 and 2020) in all three years, so no shift is visible at tract resolution; the number of majority-Asian tracts was 7 (2000), 8 (2010), 6 (2020). Sunset Park and Flushing Asian-alone centroids moved 28 m and 14 m. Placebo (b): 2,000 random sets of 23 Manhattan tracts south of 96th Street had a mean Asian-alone change of +23.5% (5th to 95th percentile +4.3 to +44.6); none was as low as the Chinatown set. Manhattan Asian alone rose 23.6% and the city 33.4%. Flushing core minus periphery is +1.4 points (95% -19.8 to 57.4), not distinguishable from zero. Sunset Park core had 8 tracts and the 2020 tracts split the 2010 ones, so M1 and M2 agree exactly. Intervals from the tract bootstrap describe variation between tracts, not census sampling error. 1990 tract data were not attempted (registration wall).\n\nAfter the referee (13 Nov 2026): the earlier diagnosis of the mismatch was wrong and has been removed. The referee searched tract sets near B1 and found one that matches AALDEF's 2010 table exactly on all five rows, and a different one that matches its 2020 column exactly on all five rows (re-checked from the tract tables in data/derived/further). The 2010 set is B1 without tracts 22.02, 26.01, 26.02 and 28 and with tracts 41, 43 and 45 (22 tracts: total 116,722, white 23,314, Black 8,457, Hispanic 30,227, Asian 52,613). The 2020 set is the 24 tracts of B1 plus tract 41 (25 tracts, ACS 2018-22: 120,173; 30,520; 11,094; 32,840; 41,024). None of the seven tracts that differ changed boundary between the censuses, so the published table compares two different areas. On AALDEF's 2010 set in both years the total fell 7.7%, Asian residents fell 25.7% against the ACS (90% margin -30.5 to -20.9) and 12.9% against the 2020 census, white residents rose 15.8%, Black residents 15.1% and Hispanic residents fell 7.4%. On its 2020 set the figures are -6.6%, -23.6% (-28.5 to -18.8), -11.6%, +15.0%, +8.1% and -7.8%. The published +3% total, +31% white, +31% Black, +9% Hispanic and the gain of about 12,000 white, Black and Hispanic residents come from the change of area; on the 2010 set the three groups together gained about 2,700. The Asian decline of 22% to 26% against the ACS does not depend on the change of area. The search was made after the data were seen and decides nothing under rule 4; the verdict rests on the registered readings. The row labelled 'Asian or Pacific Islander' is Asian alone (23 Pacific Islanders in the set). The gap between the ACS and the 2020 census can come from a census count that is too high, an ACS estimate that is too low, or real change within the 2018-22 window; the undercount check ran in one direction only, and the Post-Enumeration Survey estimated a net overcount of the Asian population nationally. Group quarters and student housing in tracts 41, 43 and 45 were not examined.",
+ "registration_sha256": "c174b413a292e82799e78ae8ed86dd152036576f75d2ff607d43b42599177dc0",
+ "decided_at": "2026-11-12T20:31:00-0500",
+ "stance": {
+  "value": 0.998,
+  "lo": 0.984,
+  "hi": 1.0,
+  "z": 6.75,
+  "note": "Agreement with the direction of change (a decline in Asian residents), not with the published counts; the contested verdict concerns the counts. The interval in city_effect is a 90% ACS margin and is converted to 95% here."
+ },
+ "critique": {
+  "report": "critique/further-chinatown-shift.md",
+  "answer": "accepted; verdict kept, boundary diagnosis replaced"
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "Change in non-Hispanic Asian+Pacific Islander residents, 23-tract Chinatown set B1, 2010 census to ACS 2018-22 (primary reading D1, M1); interval is the ACS 90% margin of error applied to the 2020 count",
+    "estimate": -21.48,
+    "lo": -26.71,
+    "hi": -16.24,
+    "scale": "percent change",
+    "null": 0,
+    "n": 23
+   },
+   "stance": {
+    "value": 0.999,
+    "lo": 0.995,
+    "hi": 1.0,
+    "z": 8.04
+   },
+   "decided_at": "2026-11-12T20:31:00-0500",
+   "prediction_scored": "Part A (decides): miss. Under the primary reading the percentage change is -21.5% (inside the -25 to -19 band), but the 2010 count is 48749 (AALDEF 52,613, -7.3% off) and the 2020 count is 38279 (AALDEF 41,024, -6.7% off), both outside the 5% band; none of the 16 registered readings brings all three numbers inside tolerance, so refute_if is met. Part B (secondary): hit. Sunset Park core +9.6%, periphery +29.3%, difference -19.8 points (95% bootstrap -28.0 to -11.4). Part C (secondary): hit for Sunset Park as a whole (+19.0%, 95% 13.0 to 25.7), Flushing (+21.0%, 95% 13.3 to 32.5) and Chinatown decennial to decennial (-10.3%, 95% -17.0 to -0.6). Placebo (a): the Hispanic core-minus-periphery difference is +12.0 points (95% 3.0 to 24.6), outside both registered branches (not within 10 points of zero, and opposite in sign to the Asian difference)."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep contested; the notes' boundary diagnosis replaced by the finding that the published table uses two different tract sets.",
+  "critique": "critique/further-chinatown-shift.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

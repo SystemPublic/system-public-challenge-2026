@@ -1,0 +1,84 @@
+{
+ "id": "construction-aerial-triangulation",
+ "kind": "bridge",
+ "statement": "Aerial photographs (USDA NAIP) give a third, independent record of whether permitted new buildings were built: for a random sample of NB jobs first permitted 2018-2020, visible change on the lot between a pre-permit and a recent NAIP year agrees with the CO record, and shows sites under construction that the CO record misses.",
+ "graph_evidence": [
+  {
+   "relationship_id": "B0QiEej1E1|COEFxSZVXO",
+   "concepts": [
+    "population growth",
+    "construction"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Population growth rate and expansion rate of construction land, Chongqing over 20 years (coefficient 1.82; doi:10.1117/12.815931). The only construction-supply finding found in the graph.",
+   "pubmed_ids": []
+  },
+  {
+   "association_id": "aFGrNWb1i5",
+   "concepts": [
+    "housing (vacant housing demolitions)",
+    "crime"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "-",
+   "summary": "Vacant housing demolitions and change in crime, mean difference -0.068 (CI -0.119 to -0.018), PMID 36228876. Shows the graph treats land and buildings as exposures for health and crime, not as supply outcomes.",
+   "pubmed_ids": [
+    36228876
+   ]
+  },
+  {
+   "association_id": "(search)",
+   "concepts": [
+    "construction",
+    "permit",
+    "completion",
+    "vacant",
+    "demolition",
+    "renovation"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "Variable and concept searches (13 terms, data/derived/construction/graph_search.json) found no finding on building permits, permit-to-completion ratios, lags or permit lapse. The construction concept (COEFxSZVXO) has 3 relationships in all (wage, population growth, natural disasters).",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "NYC Department of City Planning, 'New Housing Permits in the First Half of 2022' (information brief, 2022)",
+   "doi": null,
+   "url": "https://atlanticyardsreport.blogspot.com/2022/11/dcp-expiration-of-421-tax-break-drove.html (quotes the brief)",
+   "finding": "'Typically, 80 to 90 percent of permitted projects are completed within four years.' DOB issued permits for about 58,600 homes in the first half of 2022, ahead of the 421-a expiry."
+  },
+  {
+   "citation": "NYU Furman Center, State of New York City's Housing and Neighborhoods / 2019 data on the housing stock",
+   "doi": null,
+   "url": "https://furmancenter.org/thestoop/entry/2019-data-on-new-york-citys-housing-stock",
+   "finding": "Median time from new-building permit to certificate of occupancy was about 1.9 years for buildings permitted in 2009-2014."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Random sample of 48 NB jobs (seed 20261112) first permitted 2018-2020. Visible change of the lot between the latest NAIP year <= 2017 and the latest year >= 2022: 65% to 90% of jobs. Agreement of visible change with 'has a CO by the later image date': Cohen's kappa 0.2 to 0.7. Jobs changed on the aerial but without a CO: 10% to 35%. Jobs with a CO but no visible change: under 10%.",
+  "support_if": "visible-change share >= 0.6 AND kappa > 0.2 AND CO-but-no-change share < 0.15",
+  "refute_if": "visible-change share < 0.45, or CO-but-no-change share >= 0.25 (the aerial and the CO disagree about what was built)"
+ },
+ "plan": "Sample NB jobs from ipu4-2q9a (first NB permit 2018-2020) and DOB NOW (w9ak-ipjd New Building with first_permit_date 2018-2020), stratified by nothing, seed fixed. Lot polygon from PLUTO (64uk-42ks geom) by BBL. NAIP tiles from the Planetary Computer STAC for the lot box plus a 15 m margin, earlier and later years. Primary measure: my visual judgement of each before/after pair (changed / unchanged / unclear), made on a label-free grid BEFORE the CO status is joined, saved as data/derived/construction/aerial_judgements.csv. Secondary measure: mean absolute difference of grey levels inside the lot polygon after per-image standardisation, with a threshold set by eye on 6 cases. Then join CO status and compute the 2x2 table and kappa. Figure: grid of before/after thumbnails.",
+ "alternatives": [
+  "Seasonal and sun-angle differences in NAIP make unchanged lots look changed",
+  "Tall neighbouring buildings lean over small lots in an orthophoto and hide them",
+  "Interior gut renovations under an NB filing (rare) or enlargements produce little roof change",
+  "Demolition alone (lot cleared, not rebuilt) counts as visible change but is not a completed building"
+ ],
+ "prior": 0.45,
+ "registrant": "Claude (construction agent), for Jeff Vernon",
+ "chain": [
+  "construction-permit-funnel",
+  "construction-four-year-completion"
+ ],
+ "registered_at": "2026-11-12T15:14:19-0500",
+ "sha256": "b42be119e44d67ed12a7a931fdb8041c865bbcf97b3332de4bb3df303a9738e6"
+}

@@ -1,0 +1,240 @@
+{
+ "id": "retimed-ems-presence",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Elasticity of daytime EMS incidents to subway entries: the business-district-minus-rest change in the Monday-and-Friday ratio of incidents, divided by the same difference for entries (-0.0639)",
+  "estimate": 0.45047475586137825,
+  "lo": 0.1707746176238145,
+  "hi": 0.6989792985639989,
+  "scale": "elasticity",
+  "null": 0,
+  "n": 54
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$select": "date_trunc_ymd(incident_datetime) as d, communitydistrict as cd, count(*) as n",
+    "$where": "incident_datetime between '2016-01-01T00:00:00' and '2016-12-31T23:59:59' and date_extract_hh(incident_datetime) between 6 and 19",
+    "$group": "d, cd",
+    "$order": "d, cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:51:09-0500",
+   "n_rows": 23798
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$select": "date_trunc_ymd(incident_datetime) as d, communitydistrict as cd, count(*) as n",
+    "$where": "incident_datetime between '2017-01-01T00:00:00' and '2017-12-31T23:59:59' and date_extract_hh(incident_datetime) between 6 and 19",
+    "$group": "d, cd",
+    "$order": "d, cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:44:05-0500",
+   "n_rows": 23720
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$select": "date_trunc_ymd(incident_datetime) as d, communitydistrict as cd, count(*) as n",
+    "$where": "incident_datetime between '2018-01-01T00:00:00' and '2018-12-31T23:59:59' and date_extract_hh(incident_datetime) between 6 and 19",
+    "$group": "d, cd",
+    "$order": "d, cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:44:43-0500",
+   "n_rows": 23679
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$select": "date_trunc_ymd(incident_datetime) as d, communitydistrict as cd, count(*) as n",
+    "$where": "incident_datetime between '2019-01-01T00:00:00' and '2019-12-31T23:59:59' and date_extract_hh(incident_datetime) between 6 and 19",
+    "$group": "d, cd",
+    "$order": "d, cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:52:23-0500",
+   "n_rows": 23636
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$select": "date_trunc_ymd(incident_datetime) as d, communitydistrict as cd, count(*) as n",
+    "$where": "incident_datetime between '2024-10-01T00:00:00' and '2025-09-30T23:59:59' and date_extract_hh(incident_datetime) between 6 and 19",
+    "$group": "d, cd",
+    "$order": "d, cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:53:29-0500",
+   "n_rows": 23815
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$select": "date_trunc_ymd(incident_datetime) as d, communitydistrict as cd, count(*) as n",
+    "$where": "incident_datetime between '2025-10-01T00:00:00' and '2026-09-30T23:59:59' and date_extract_hh(incident_datetime) between 6 and 19",
+    "$group": "d, cd",
+    "$order": "d, cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:54:06-0500",
+   "n_rows": 23715
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(incident_datetime) as d, communitydistrict as cd, case(date_extract_hh(incident_datetime) < 10, 'am', date_extract_hh(incident_datetime) < 16, 'mid', true, 'pm') as band, case(initial_severity_level_code in ('1','2','3'), 'high', true, 'low') as sev, count(*) as n",
+    "$where": "incident_datetime between '2018-01-01T00:00:00' and '2018-12-31T23:59:59' and date_extract_hh(incident_datetime) between 6 and 19",
+    "$group": "d, cd, band, sev",
+    "$order": "d, cd, band, sev"
+   },
+   "fetched": "2026-11-12T23:56:44-0500",
+   "n_rows": 131487
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(incident_datetime) as d, communitydistrict as cd, case(date_extract_hh(incident_datetime) < 10, 'am', date_extract_hh(incident_datetime) < 16, 'mid', true, 'pm') as band, case(initial_severity_level_code in ('1','2','3'), 'high', true, 'low') as sev, count(*) as n",
+    "$where": "incident_datetime between '2019-01-01T00:00:00' and '2019-12-31T23:59:59' and date_extract_hh(incident_datetime) between 6 and 19",
+    "$group": "d, cd, band, sev",
+    "$order": "d, cd, band, sev"
+   },
+   "fetched": "2026-11-13T00:00:34-0500",
+   "n_rows": 131484
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(incident_datetime) as d, communitydistrict as cd, case(date_extract_hh(incident_datetime) < 10, 'am', date_extract_hh(incident_datetime) < 16, 'mid', true, 'pm') as band, case(initial_severity_level_code in ('1','2','3'), 'high', true, 'low') as sev, count(*) as n",
+    "$where": "incident_datetime between '2024-10-01T00:00:00' and '2025-09-30T23:59:59' and date_extract_hh(incident_datetime) between 6 and 19",
+    "$group": "d, cd, band, sev",
+    "$order": "d, cd, band, sev"
+   },
+   "fetched": "2026-11-13T00:02:16-0500",
+   "n_rows": 132515
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(incident_datetime) as d, communitydistrict as cd, case(date_extract_hh(incident_datetime) < 10, 'am', date_extract_hh(incident_datetime) < 16, 'mid', true, 'pm') as band, case(initial_severity_level_code in ('1','2','3'), 'high', true, 'low') as sev, count(*) as n",
+    "$where": "incident_datetime between '2025-10-01T00:00:00' and '2026-09-30T23:59:59' and date_extract_hh(incident_datetime) between 6 and 19",
+    "$group": "d, cd, band, sev",
+    "$order": "d, cd, band, sev"
+   },
+   "fetched": "2026-11-13T00:04:13-0500",
+   "n_rows": 132337
+  },
+  {
+   "kind": "derived",
+   "path": "data/derived/transit/dose_map_long.csv",
+   "sources": "data/derived/transit/dose_map_sources.json"
+  },
+  {
+   "kind": "sysgraph",
+   "note": "variable searches, API v1.0, 12 Nov 2026; data/derived/round2/retimed_consequences/graph_gap_check.json and graph_leads.json; 20 uncached requests"
+  }
+ ],
+ "prediction_scored": "hit. The contrast is -0.029 (-0.045 to -0.011) on the log scale, -2.8% (-4.4 to -1.1), inside the registered range of -0.013 to -0.064, and its interval is below zero. The elasticity is 0.45 (0.17 to 0.70), near the 0.4 I expected. The interval excludes 1, so incidents did not fall in proportion to entries.",
+ "settle": "A count of people present by district and day (mobile-device or turnstile exits) to replace entries as the denominator, and the incident location type, to separate calls from workplaces from calls from homes, streets and stations. The call type, which the dataset already holds, would separate office-hours illness and injury from calls tied to events, hotels and shelters in Midtown, where the fall is concentrated.",
+ "research_needed": [
+  {
+   "question": "How does emergency call volume scale with the daytime population of a business district, by call type?",
+   "data": "EMS incidents with location type; daytime population by district and weekday",
+   "design": "Weekday panel across cities with different returns to the office",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/round2/retimed_consequences.png"
+ ],
+ "notes": "Incidents between 06:00 and 19:59, 84 retained weeks in 2018-19 and 79 from October 2024 to September 2026; 377 and 354 a weekday in the six business-district districts, 2301 and 2454 in the other 48. The Monday-and-Friday ratio changed by -4.0% (-5.7 to -2.1) in the business district and by -1.2% (-2.2 to -0.1) in the rest. The rest of the city did not gain incidents on those days, so the contrast is a fall in the business district and not a rise elsewhere. Friday changed more than Monday in the business district (-5.3% against -2.5%). Placebo (2016-17 against 2018-19): -0.002 (-0.020 to 0.016). With 2019 and the last 12 months only: -0.022 (-0.047 to 0.003). By hours: 06-09 -0.023 (-0.060 to 0.015), 10-15 -0.030 (-0.055 to -0.004), 16-19 -0.031 (-0.064 to 0.003). High-severity incidents (initial severity 1 to 3): -0.037 (-0.064 to -0.009). The slope across the 54 districts is 0.30 (-0.17 to 0.75), which the registration said could not be estimated well. The standard error of the contrast, 0.0087, matches the 0.009 expected from the design check. Entries are fare-paid boardings and miss people who walk, drive or arrive by commuter rail, so the elasticity is per unit of subway thinning and not per person.\n\nAfter the referee (13 Nov 2026): the result depends on Midtown. Without community district 105 the contrast is -0.016 (-0.036 to +0.004), and against the six other Manhattan districts it is -0.021 (-0.043 to +0.002); both intervals include zero. District 105 alone gives -0.071 and 104 gives -0.039, while 103 and 106 give 0.000 and +0.011 although 106 has nearly the largest thinning of entries. A dose-response within the business district is therefore not shown, and something particular to Midtown on Mondays and Fridays (events, hotels, shelter intake sites, a change in unit coverage) is not separated from office attendance. In favour of the claim, a night placebo (20:00 to 05:59) gives +0.009 (-0.014 to +0.032), every pairing of a baseline year with a recent year gives a negative contrast, and five other seeds give the same upper bound. The interval of the elasticity treats its denominator (-0.0639) as known and is somewhat too narrow; the verdict rests on the contrast. Incidents without a district code rose from about 1.0% to 2.4% of daytime incidents from January 2026, spread evenly over weekdays. Part of the contrast is a midweek rise (Wednesday index 0.998 to 1.013), which the statement 'fell on Mondays and Fridays' does not say. The estimator and exposure files were committed with the outcome, so their state at registration rests on file times.",
+ "registration_sha256": "ba0e599732842d1b203cbc648dd0acb0cddf7b85b93e6c06b12cebca86e98f64",
+ "decided_at": "2026-11-13T00:05:03-0500",
+ "stance": {
+  "value": 0.932,
+  "lo": 0.561,
+  "hi": 0.989,
+  "z": 3.34
+ },
+ "verdict_note": "Confirmed under the registered pooled contrast. The fall is concentrated in Midtown (district 105); without it the interval includes zero.",
+ "critique": {
+  "report": "critique/retimed-ems-presence.md",
+  "answer": "accepted; verdict kept, dependence on district 105 recorded"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Elasticity of daytime EMS incidents to subway entries: the business-district-minus-rest change in the Monday-and-Friday ratio of incidents, divided by the same difference for entries (-0.0639)",
+    "estimate": 0.45047475586137825,
+    "lo": 0.1707746176238145,
+    "hi": 0.6989792985639989,
+    "scale": "elasticity",
+    "null": 0,
+    "n": 54
+   },
+   "stance": {
+    "value": 0.932,
+    "lo": 0.561,
+    "hi": 0.989,
+    "z": 3.34
+   },
+   "decided_at": "2026-11-13T00:05:03-0500",
+   "prediction_scored": "hit. The contrast is -0.029 (-0.045 to -0.011) on the log scale, -2.8% (-4.4 to -1.1), inside the registered range of -0.013 to -0.064, and its interval is below zero. The elasticity is 0.45 (0.17 to 0.70), near the 0.4 I expected. The interval excludes 1, so incidents did not fall in proportion to entries."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed; notes say the contrast loses significance without Midtown district 105 and against the rest of Manhattan.",
+  "critique": "critique/retimed-ems-presence.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

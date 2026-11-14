@@ -1,0 +1,93 @@
+{
+ "id": "afford-gentrification-prevalence",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "share of the 22 lowest-rent areas of 2000 whose rent and college share both grew faster than the city's by 2022-2024",
+  "estimate": 0.36363636363636365,
+  "lo": 0.1973320457082143,
+  "hi": 0.5704829206386436,
+  "scale": "proportion (Wilson interval)",
+  "null": 0,
+  "n": 22
+ },
+ "graph_effect": {
+  "label": "share of eligible neighbourhoods classed as gentrifying in studies the graph holds (Bhavsar 2022, 5 of 28; Spitzer 2023, 23.8% of tracts; Alroy 2023, 14 of 42)",
+  "estimate": 0.24,
+  "lo": 0.18,
+  "hi": 0.33,
+  "scale": "proportion; lowest and highest of three studies' shares, not an interval",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "file",
+   "publisher": "NYU Furman Center, CoreData.nyc neighbourhood indicators",
+   "url": "https://www.furmancenter.org/files/CoreData/Neighorhood_Indicators_CoreDataDownload_2026-05-05.xlsx",
+   "file_date": "2026-05-05",
+   "sha256": "d8868b9ddeb29c093f3c34f5174856e47a8989ddde96ae3f0499faccbfe1c2ef",
+   "bytes": 1184109,
+   "fetched": "2026-11-13T07:37:28-0500",
+   "rows": 4096,
+   "note": "Dollar amounts are inflation-adjusted by the publisher. Sub-borough areas are groups of census tracts that approximate community districts (55 areas)."
+  },
+  {
+   "kind": "sysgraph",
+   "file": "data/derived/affordability/graph_findings.json",
+   "requests": 246,
+   "findings": 335,
+   "pubmed_ids": 155
+  }
+ ],
+ "prediction_scored": "not blind (scored 'hit' before the referee). k = 8 (predicted 6 to 10, best guess 8), k2 = 8, Spearman 0.68 (0.50 to 0.80; predicted 0.3 to 0.7). The predicted range was written after a simulated run that showed k = 6 and a correlation of 0.38, so its agreement with the outcome is not evidence of foresight. All six areas named in advance are in the set, and two of the six (Bedford Stuyvesant and Central Harlem) were not in the leaked list. No Bronx area is in it (the registration says eight Bronx low-start areas; there are seven).",
+ "settle": "Tract-level data on fixed boundaries for 2000, 2010 and 2020 onward (the Census API with a key, or the NHGIS time series) would show how much of each area changed and remove the 2022 boundary break.",
+ "research_needed": [
+  {
+   "question": "How many of New York's low-rent census tracts of 2000 gentrified, on fixed boundaries?",
+   "data": "Census 2000 SF3 and ACS five-year tract tables with a 2000-2010-2020 crosswalk",
+   "design": "The same two-condition definition at tract level, with the end period chosen before the data are read",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/affordability/rent_rank_trajectories.png",
+  "figures/affordability/rent_growth_vs_college.png"
+ ],
+ "notes": "Reading: real but a minority. 8 of 22 low-rent areas (36%, Wilson 20% to 57%) met both conditions: Bedford Stuyvesant, Brooklyn Heights/Fort Greene, Bushwick, Central Harlem, Morningside Heights/Hamilton Heights, North Crown Heights/Prospect Heights, Washington Heights/Inwood and Williamsburg/Greenpoint. City rent growth was 41% in constant dollars and the city's college share rose 14.7 points. Five of the eight (the Brooklyn areas) rose 32 to 38 rank places in rent; the three upper Manhattan areas passed the rent condition by 1 to 9 points of growth and moved 4 to 8 places. Secondary: 6 of the other 33 areas met both conditions; 8 of 22 with the low-start group defined on income; 9 of 22 met the rent condition and 12 of 22 the college condition; the Spearman correlation of 2000 rent with 2022-2024 rent is 0.71. Found after the outcome: the 2022 American Community Survey moved to 2020 public-use microdata areas, and in the Furman file the population of 28 of 55 areas changes by more than 8% between 2021 and 2022 (7 of 55 at the 2012 change, 13 in an ordinary year). The registered end period, 2022-2024, is therefore on different boundaries from 2000 for about half the areas. Exploratory check with the end period 2017-2019: k = 9 (South Crown Heights added), Spearman 0.53, 10 of the other 33. The reading does not change.\n\nAfter the referee (13 Nov 2026): the verdict is kept under rule 1. The referee rebuilt the area table with separate code and reproduced k = 8 of 22, k2 = 8 and the correlation of 0.68 (0.50 to 0.80); all three registered conditions of the reading 'real but a minority' are met. The changes follow.\nNot blind. The faulty --simulate run that the registrant read before registering was informative. Rebuilt with seed 0 it gives what the registration reports (k 6, k2 7, correlation 0.38). Over 400 other seeds the simulated k has mean 6.9 (95% range 2 to 15), the simulated correlation has mean 0.33 (0.08 to 0.53), an average of 5.4 of the areas in a simulated set are among the true eight, and the simulated k is between 4 and 11 in 79% of draws (referee). A registrant who had seen that output knew that the count and the correlation were probably inside the supporting window. The registration says the thresholds and the script were written before the simulated run. The repository cannot confirm this: no commit of the script or thresholds precedes the registration commit (07:47:16), the script's last save (07:43:44) is compatible with either order, and the file the simulated run wrote, gentrification_results_SIMULATED.json, is not in data/derived/affordability/. The referee judged tuning unlikely, because the window of 4 to 11 is wider than a window fitted to a leaked 6 would need to be and the six areas named in the prediction differ from the six leaked. The result is therefore a measurement under a definition fixed before the exact values were known, and not a blind prediction. The prediction is no longer scored as a hit.\nDependence on the rule. Over 35 combinations of seven rent rules and five college rules the count ranges from 5 to 12, and 34 of the 35 are between 5 and 11 (referee). With other end periods it is 6 to 10. Five Brooklyn areas (Williamsburg/Greenpoint, Bedford Stuyvesant, Bushwick, North Crown Heights/Prospect Heights and Brooklyn Heights/Fort Greene) are in the set under each of the eleven end periods tried and pass the rent condition by 42 to 96 points of growth. The three upper Manhattan areas pass it by 8.7, 7.9 and 0.8 points; Washington Heights/Inwood, at 0.8, leaves the set in five of the ten other end periods. East Harlem misses by 2.0 points. The supported statement is that five areas changed by a wide margin and that two to five more are near the threshold.\nNo difference from the other areas. Six of the other 33 areas also meet both conditions (18%), against 8 of 22 (36%); Fisher's exact test gives p = 0.21 (re-checked). The data show that about a third of low-rent areas had rent and college share rise faster than the city's. They do not show that this happened more often in low-rent areas than elsewhere.\nThe benchmark. The city's rent growth (41.1%) is above the median area's (35.6%) and its college change (14.7 points) above the median area's (12.3), so 18 of 55 areas exceed the city on rent and 21 on college share. The reading 'common' needed 12 of the 22 to pass both, which the benchmark made hard to reach; the registered binomial table did not allow for this. The correlation condition is the part that could fail and it is well supported (0.68 across 55 areas, 0.77 within the 22, 0.62 within the other 33).\nThe research range. The graph_effect of 0.24 (0.18 to 0.33) is the lowest and highest of three studies' shares, from different units, periods and definitions. It is not an interval, and agreement with it shows little, because the registered window of 18% to 50% would have accepted any of the three.\nNot changed: regression to the mean in rent is not visible (rank correlation of 2000 rent with rent growth -0.14; k = 7 when selection and baseline both use 2005-2007), and rent and college share take little of the 2022 boundary change.",
+ "registration_sha256": "fa3c20066db90e238edf57fbc75937cd481410e3747859490e78ae69235a501e",
+ "decided_at": "2026-11-13T07:51:50-0500",
+ "stance": null,
+ "verdict_note": "Confirmed on the registered conditions (k = 8 of 22, k2 = 8, correlation 0.68 with a lower limit of 0.50). The registration followed a noisy view of the deciding numbers, in which about 5 of the 8 areas appear in a typical draw. No commit shows that the thresholds existed before that view, and the simulated results file is not in the repository. The result is a measurement under a fixed definition and not a blind prediction. It does not show that low-rent areas gentrified more often than other areas (36% against 18%, Fisher p = 0.21).",
+ "stance_note": "Null after the referee (rule 6): the city effect is a raw proportion with a null of 0, which does not express a research direction. The earlier value of 0.957 was the distance of 36% from zero.",
+ "critique": {
+  "report": "critique/afford-gentrification-prevalence.md",
+  "answer": "accepted; verdict kept, prediction rescored as not blind, stance null"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "share of the 22 lowest-rent areas of 2000 whose rent and college share both grew faster than the city's by 2022-2024",
+    "estimate": 0.36363636363636365,
+    "lo": 0.1973320457082143,
+    "hi": 0.5704829206386436,
+    "scale": "proportion (Wilson interval)",
+    "null": 0,
+    "n": 22
+   },
+   "stance": {
+    "value": 0.957,
+    "lo": 0.777,
+    "hi": 0.995,
+    "z": 3.82
+   },
+   "decided_at": "2026-11-13T07:51:50-0500",
+   "prediction_scored": "hit. k = 8 (predicted 6 to 10, best guess 8), k2 = 8, Spearman 0.68 (0.50 to 0.80; predicted 0.3 to 0.7). All six areas named in advance are in the set, with Morningside Heights/Hamilton Heights and Washington Heights/Inwood, which were not named; no Bronx area is in it (the registration says eight Bronx low-start areas; there are seven). The prediction was made after a noisy view of the outcome, described under already_seen in the registration."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed. The pre-registration preview was informative and its timing relative to the thresholds cannot be verified, so the prediction is scored as not blind; the count is 5 to 12 over 35 rule combinations with five Brooklyn areas always in; low-rent areas are not distinguishable from the other 33 (36% against 18%, p = 0.21); stance null under rule 6.",
+  "critique": "critique/afford-gentrification-prevalence.md",
+  "revised_at": "2026-11-13T09:07:30-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

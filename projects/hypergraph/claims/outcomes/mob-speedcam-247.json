@@ -1,0 +1,108 @@
+{
+ "id": "mob-speedcam-247",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Injury crashes, new hours vs old hours, Aug 2022-Jul 2023 vs Aug 2021-Jul 2022 (ratio of ratios), citywide",
+  "estimate": 0.934,
+  "lo": 0.86,
+  "hi": 1.014,
+  "scale": "ratio of ratios",
+  "null": 1,
+  "n": 48
+ },
+ "graph_effect": {
+  "label": "Graph findings near camera sites: Barcelona RR 0.73 (0.63-0.85) collisions; South Wales injurious crashes 0.49 (0.42-0.57)",
+  "estimate": 0.73,
+  "lo": 0.63,
+  "hi": 0.85,
+  "scale": "rate ratio, camera sites",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$select": "date_trunc_ym(crash_date) as m, date_extract_dow(crash_date) as dow, case(crash_time < '06:00', 'early', crash_time >= '22:00', 'late', true, 'day') as band, count(*) as crashes, sum(case(number_of_persons_injured > 0 or number_of_persons_killed > 0, 1, true, 0)) as injury_crashes, sum(number_of_persons_injured) as injured, sum(number_of_pedestrians_injured) as ped_injured, sum(number_of_cyclist_injured) as cyc_injured, sum(number_of_persons_killed) as killed",
+    "$where": "crash_date >= '2019-01-01T00:00:00' and crash_date < '2025-01-01T00:00:00'",
+    "$group": "m, dow, band",
+    "$order": "m",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:31:58-0500",
+   "n_rows": 1512
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "nc67-uf89",
+   "name": "Open Parking and Camera Violations",
+   "url": "https://data.cityofnewyork.us/d/nc67-uf89",
+   "rows_updated_at": "2026-11-11T10:17:55Z",
+   "query": {
+    "$select": "substring(violation_time, 1, 2) as hh, substring(violation_time, 6, 1) as ap, count(*) as n",
+    "$where": "violation = 'PHTO SCHOOL ZN SPEED VIOLATION' and issue_date like '07/%/2022'",
+    "$group": "hh, ap",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:32:53-0500",
+   "n_rows": 18
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "nc67-uf89",
+   "name": "Open Parking and Camera Violations",
+   "url": "https://data.cityofnewyork.us/d/nc67-uf89",
+   "rows_updated_at": "2026-11-11T10:17:55Z",
+   "query": {
+    "$select": "substring(violation_time, 1, 2) as hh, substring(violation_time, 6, 1) as ap, count(*) as n",
+    "$where": "violation = 'PHTO SCHOOL ZN SPEED VIOLATION' and issue_date like '09/%/2022'",
+    "$group": "hh, ap",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:33:39-0500",
+   "n_rows": 24
+  },
+  {
+   "kind": "sysgraph",
+   "file": "data/derived/mobility/graph_evidence.json",
+   "note": "speed camera variable associations"
+  }
+ ],
+ "prediction_scored": "partial. The estimate 0.934 (0.860-1.014) is inside the registered range (0.92-1.00) but its interval crosses 1, so the support condition is not met and the refutation condition is not met either. Persons injured: 0.920 (0.846-1.001); pedestrians injured: 0.974 (0.835-1.135); persons killed: 0.956 (0.679-1.345). The placebo year (fake start 1 Aug 2021) gives 0.981 (0.898-1.071).",
+ "settle": "Crashes geocoded within about 250 m of each camera, compared by hour group before and after August 2022, with nearby non-camera road segments as a second control. This needs the camera locations, which NYC DOT does not publish as open data (the ticket data carry no coordinates). Hourly traffic volumes by hour group would remove the main confounder, the post-pandemic shift of travel between night and day.",
+ "research_needed": [
+  {
+   "question": "Publish NYC school-zone speed camera locations and activation dates as open data.",
+   "data": "NYC DOT camera inventory",
+   "design": "site-level DiD with distance bands",
+   "priority": "high"
+  },
+  {
+   "question": "Did the share of travel at night and on weekends change in 2022-23 relative to weekdays?",
+   "data": "MTA bridge and tunnel hourly crossings, DOT traffic speeds and counts by hour",
+   "design": "exposure denominators by hour group",
+   "priority": "medium"
+  },
+  {
+   "question": "The graph holds 7 speed-camera associations from 6 studies, one of them mis-extracted; add the Cochrane review and US automated enforcement studies.",
+   "data": "Wilson et al. 2010 Cochrane review; IIHS studies",
+   "design": "graph curation",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/mobility/speedcam_247_new_vs_old_hours.png"
+ ],
+ "notes": "The mechanism is visible: in July 2022, 0.0% of school-zone speed camera tickets (407,565 in all) were issued between 10 pm and 6 am; in September 2022, 24.0% (646,589) were (Open Parking and Camera Violations, nc67-uf89; weekend tickets are not separated here). The share of injury crashes that fall in the new hours was 37.7% in 2019, rose to 40.4% and 39.9% in the two pandemic-affected years, and was 38.3% and 38.7% in the two years after the change. The fall after August 2022 is a return to the 2019 share, which the design cannot separate from the end of pandemic-era travel patterns. NYC DOT reports about 7.6% fewer injuries in the new hours at camera locations; a citywide effect of that size diluted by unaffected streets would be smaller than the interval here can resolve. Graph check: PMID 17666698 has a second association (RR 0.99) that is the comparison roads, not the cameras, so the graph mis-extracts it as a camera effect.",
+ "registration_sha256": "dceaaebfd4c399d50f80cf40c4ef0435101593ff9e9723f0a57f810a9c422043",
+ "decided_at": "2026-11-12T15:34:53-0500",
+ "stance": {
+  "value": 0.671,
+  "lo": -0.164,
+  "hi": 0.946,
+  "z": 1.62
+ }
+}

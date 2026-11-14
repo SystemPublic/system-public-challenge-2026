@@ -1,0 +1,109 @@
+{
+ "id": "further-datacentre-share-manhattan-v2",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "High figure for data-centre share of Manhattan LL84 grid electricity, CY2024, minus 4.4 percent",
+  "estimate": -2.14,
+  "lo": -2.25,
+  "hi": -2.02,
+  "scale": "percentage points",
+  "null": 0,
+  "n": 10647,
+  "note": "Bootstrap over the buildings outside the numerator; it excludes reporting error, tenant metering and the choice of PUE and baseline. Low figure 1.01 percent (0.96 to 1.06)."
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5zyy-y8am",
+   "name": "NYC Building Energy and Water Data Disclosure for Local Law 84 2023 to Present (Data for Calendar Year 2022-Present)",
+   "url": "https://data.cityofnewyork.us/d/5zyy-y8am",
+   "rows_updated_at": "2025-11-25T19:02:35Z",
+   "note": "cached query of the first claim, data/derived/further/datacentre_sources.json; no new LL84 query",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "g2x3-izm4",
+   "name": "Utility Energy Registry Monthly ZIP Code Energy Use: Beginning 2021",
+   "url": "https://data.ny.gov/d/g2x3-izm4",
+   "note": "Manhattan non-residential (cached) and all New York City ZIP codes total consumption (new, data/derived/round2/datacentre_v2/sources_uer_nyc.json); 2023 has only six months and is not used as a denominator",
+   "data_access": "open",
+   "domain": "https://data.ny.gov"
+  },
+  {
+   "kind": "other",
+   "name": "NYISO integrated real-time load, Zone J (N.Y.C.), 2024 daily energy",
+   "note": "cached file data/derived/further/zonej_daily.csv",
+   "data_access": "open"
+  },
+  {
+   "kind": "other",
+   "name": "LBNL summary of the 2024 United States Data Center Energy Usage Report",
+   "url": "https://energyanalysis.lbl.gov/news/berkeley-lab-report-evaluates-increase-electricity-demand-data-centers",
+   "quote": "Data centers consumed about 4.4% of total U.S. electricity in 2023",
+   "fetched": "2026-11-12",
+   "data_access": "partly_open"
+  },
+  {
+   "kind": "other",
+   "name": "EPRI, Powering Intelligence (2024 white paper)",
+   "url": "https://restservice.epri.com/publicdownload/000000003002028905/0/Product",
+   "quote": "a quarter of Virginia's electric load in 2023",
+   "fetched": "2026-11-12",
+   "data_access": "partly_open"
+  }
+ ],
+ "prediction_scored": "hit on all four conditions, one at the edge. (a) S_high 2.26 percent of D1 and 2.41 of D2, both below 4.4. (b) S_low 1.01 percent of D1, inside 1.0 to 1.3 by 0.01. (c) S_high 2.26 inside 1.8 to 3.5. (d) listed-building excess 1.70 percent of D1 against a placebo 97.5th percentile of 0.21.",
+ "settle": "Metered data-centre electricity for the carrier hotels and colocation buildings: Con Edison service-class or account data, or tenant-metered Portfolio Manager IT meters. Landlord-reported grid electricity omits tenant meters, so the figures here are allocations and not measurements.",
+ "research_needed": [
+  {
+   "question": "How much carrier-hotel electricity is tenant-metered and absent from LL84?",
+   "data": "Con Edison account-level data (not open); Local Law 97 reports by space type",
+   "design": "Compare landlord grid electricity with Con Edison delivery to the lot",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/round2/datacentre_share_v2.png"
+ ],
+ "notes": "Primary 2024. D1 17.06 TWh (matches the first run), D2 16.03 TWh, D3 22.61 TWh (Zone J 49.76 TWh times Manhattan's 45.4 percent of Con Edison New York City deliveries, 208 ZIP codes). Allocated electricity: low 173 GWh, high 386 GWh. Shares: D1 1.01 to 2.26 percent (bootstrap 0.96 to 1.06, 2.15 to 2.38); D2 1.08 to 2.41; D3 0.76 to 1.71. Median office intensity 9.6 kWh per square foot (538 offices); this is low, probably because landlord figures omit tenant meters, which raises B. The cap binds: the 56 Hudson Street property (Western Union Building) reports IT energy equal to 90 percent of its grid electricity, so IT x 1.4 exceeds the building total, and it supplies half of the low figure. 19 buildings report positive IT energy (the first run's 26 included zero values), 3 of them listed. The BBL for 60 Hudson Street again joins to 56 Hudson Street. B alone is 1.70 percent of D1; 111 Eighth Avenue (53 kWh per square foot) contributes 107 GWh of it. Sensitivity (D1 high figure): uncapped 2.72; 2023 1.05 to 2.47; adding area-proportional electricity for 150 other buildings with data-centre floor area gives 3.00. Dropping estimated or alert rows leaves a 6.6 TWh D1 and gives 2.3 to 3.5 percent, a different and smaller population. Reverse bound: unreported data-centre load would have to be 1.9 times the allocated high figure for the D1 share to reach 4.4 percent. Bronx placebo: no IT-reporting building. Condition (a) was judged before the test to be almost incapable of failing (registered probability 0.03); the verdict rests on (b), (c) and (d). The placebo for (d) uses a median baseline, so its draws sit near zero by construction.\n\nAfter the referee (13 Nov 2026): the stance is set to null. Its interval resampled only the buildings outside the numerator, so the z of 36 measured nothing about reporting error or tenant metering, and the comparison with the national 4.4% is not like for like. The result describes the share visible in landlord-reported Local Law 84 electricity, not metered data-centre load: the unreported load would need to be 1.9 times the allocated load for the share to reach 4.4%, which is not a large factor for tenant-metered colocation. Condition (b) passes by 0.011 points on a point estimate whose bootstrap interval (0.96 to 1.06) includes the limit, and a PUE of 1.3 gives 0.98 and fails it (rule 10 asks that this be said). D1 counts campuses twice: 468 parent rows (2.16 TWh) and 685 child rows (1.68 TWh) are both summed. Without child rows the figures are 1.12 and 2.51 percent, and without parent rows 1.16 and 2.59; all four conditions remain met. The high figure is not an upper figure: fifteen other Manhattan rows whose largest use type is 'Data Center', mostly telephone central offices, hold 99 GWh, and with them the share is 2.84 percent. Each of conditions (b) and (c) rests on one building: the Western Union Building supplies 86 of the 173 GWh in the low figure and 111 Eighth Avenue 107 of the 289 GWh of excess; without the largest contributor the figures are 0.51 and 1.64. The join of 60 Hudson Street to 56 Hudson Street is correct, since both are addresses of the same building. The registrant had seen the first run's totals, which bounded the high figure between 1.66 and 3.9 before registration.",
+ "registration_sha256": "5c4525d1aeea63752d791b55c347f466582630c49b79fc609de8fd5f01f8a91b",
+ "decided_at": "2026-11-12T23:42:42-0500",
+ "stance": null,
+ "stance_note": "Null after the referee: the bootstrap interval excluded reporting error and tenant metering, and the national figure is not a like-for-like comparison.",
+ "verdict_note": "The registered conditions are met for landlord-reported electricity. Condition (b) passes by 0.01 points, and the result is an allocation, not a measurement of data-centre load.",
+ "critique": {
+  "report": "critique/further-datacentre-share-manhattan-v2.md",
+  "answer": "accepted; verdict kept, stance null"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "High figure for data-centre share of Manhattan LL84 grid electricity, CY2024, minus 4.4 percent",
+    "estimate": -2.14,
+    "lo": -2.25,
+    "hi": -2.02,
+    "scale": "percentage points",
+    "null": 0,
+    "n": 10647,
+    "note": "Bootstrap over the buildings outside the numerator; it excludes reporting error, tenant metering and the choice of PUE and baseline. Low figure 1.01 percent (0.96 to 1.06)."
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 36.47
+   },
+   "decided_at": "2026-11-12T23:42:42-0500",
+   "prediction_scored": "hit on all four conditions, one at the edge. (a) S_high 2.26 percent of D1 and 2.41 of D2, both below 4.4. (b) S_low 1.01 percent of D1, inside 1.0 to 1.3 by 0.01. (c) S_high 2.26 inside 1.8 to 3.5. (d) listed-building excess 1.70 percent of D1 against a placebo 97.5th percentile of 0.21."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed; stance set to null (its interval measures nothing about the uncertainty that matters); double counting, omitted buildings and the 0.011-point margin recorded.",
+  "critique": "critique/further-datacentre-share-manhattan-v2.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

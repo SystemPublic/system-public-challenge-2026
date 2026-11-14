@@ -1,0 +1,119 @@
+{
+ "Claim": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Claim",
+  "description": "A hypothesis registered before the city data that test it were queried (concord/claims.py). The registration hash and the git commit that added the file let a reader check that the prediction came first.",
+  "type": "object",
+  "properties": {
+   "kind": {"type": "string", "enum": ["confirmation", "conflict", "bridge"]},
+   "statement": {"type": "string"},
+   "prediction": {
+    "type": "object",
+    "properties": {
+     "direction": {"type": "string", "enum": ["+", "-", "0"]},
+     "magnitude": {"type": "string"},
+     "support_if": {"type": "string"},
+     "refute_if": {"type": "string"}
+    },
+    "required": ["direction"]
+   },
+   "plan": {"type": "string"},
+   "alternatives": {"type": "array", "items": {"type": "string"}},
+   "prior": {"type": "number", "minimum": 0, "maximum": 1},
+   "registrant": {"type": "string"},
+   "registered_at": {"type": "string"},
+   "registration_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+   "registration_commit": {
+    "type": "object",
+    "description": "First git commit that added claims/registered/<id>.json",
+    "properties": {"commit": {"type": "string"}, "committed_at": {"type": "string"}}
+   },
+   "supersedes": {"type": "string", "x-ref-type": "Claim"},
+   "chain": {"type": "array", "items": {"type": "string", "x-ref-type": "Claim"}},
+   "literature": {"type": "array", "items": {"type": "object"}},
+   "graph_evidence": {"type": "array", "items": {"type": "string", "x-ref-type": "GraphEvidence"}}
+  },
+  "required": ["kind", "statement", "prediction", "registration_sha256"]
+ },
+ "Outcome": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Outcome",
+  "description": "The verdict on a registered claim, scored against its prediction, citing the dataset versions it rests on.",
+  "type": "object",
+  "properties": {
+   "claim": {"type": "string", "x-ref-type": "Claim"},
+   "verdict": {"type": "string", "enum": ["confirmed", "contested", "unsettled", "bridged", "no_test"]},
+   "city_effect": {"type": "object"},
+   "graph_effect": {"type": "object"},
+   "stance": {"type": "object"},
+   "prediction_scored": {"type": "string"},
+   "settle": {"type": "string"},
+   "notes": {"type": "string"},
+   "figures": {"type": "array", "items": {"type": "string"}},
+   "decided_at": {"type": "string"},
+   "registration_sha256": {"type": "string"},
+   "outcome_commit": {"type": "object", "properties": {"commit": {"type": "string"}, "committed_at": {"type": "string"}}},
+   "sources": {"type": "array", "items": {"type": "string", "x-ref-type": "Source"}},
+   "graph_source": {"type": "string", "x-ref-type": "Source"},
+   "research_needed": {"type": "array", "items": {"type": "string", "x-ref-type": "ResearchNeed"}}
+  },
+  "required": ["claim", "verdict", "sources"]
+ },
+ "GraphEvidence": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GraphEvidence",
+  "description": "One item of research evidence from the System Public Graph cited by a claim, checked against the Dataverse CSV.",
+  "type": "object",
+  "properties": {
+   "claim": {"type": "string", "x-ref-type": "Claim"},
+   "relationship_id": {"type": "string"},
+   "association_id": {"type": "string"},
+   "concepts": {"type": "array", "items": {"type": "string"}},
+   "n_findings": {"type": "integer"},
+   "n_studies": {"type": "integer"},
+   "direction": {"type": "string"},
+   "summary": {"type": "string"},
+   "pubmed_ids": {"type": "array", "items": {"type": "string"}},
+   "in_dataverse_csv": {"type": "boolean"},
+   "source": {"type": "string", "x-ref-type": "Source"},
+   "extra": {"type": "object"}
+  },
+  "required": ["claim", "source"]
+ },
+ "Source": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Source",
+  "description": "A dataset version that an outcome rests on, with the field that identifies the version and how it was obtained.",
+  "type": "object",
+  "properties": {
+   "kind": {"type": "string"},
+   "name": {"type": "string"},
+   "dataset": {"type": "string"},
+   "url": {"type": "string"},
+   "version": {"type": "string"},
+   "version_basis": {"type": "string"},
+   "query": {"type": "object"},
+   "fetched": {"type": "string"},
+   "n_rows": {"type": "integer"},
+   "release_time": {"type": "string"},
+   "files_sha256": {"type": "object"},
+   "license": {"type": "string"},
+   "raw": {"type": "object"}
+  },
+  "required": ["kind"]
+ },
+ "ResearchNeed": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ResearchNeed",
+  "description": "A question an outcome leaves open, with the data and design that would settle it.",
+  "type": "object",
+  "properties": {
+   "outcome": {"type": "string", "x-ref-type": "Outcome"},
+   "question": {"type": "string"},
+   "data": {"type": "string"},
+   "design": {"type": "string"},
+   "priority": {}
+  },
+  "required": ["outcome", "question"]
+ }
+}

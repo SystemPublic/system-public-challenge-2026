@@ -1,0 +1,127 @@
+{
+ "id": "restaurants-score-complaints",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "IRR of 311 Food Poisoning complaints at the lot in the 365 days after a routine initial inspection, score >= 14 against 0-13",
+  "estimate": 1.124,
+  "lo": 0.957,
+  "hi": 1.319,
+  "scale": "incidence rate ratio",
+  "null": 1,
+  "n": 10360,
+  "events": 876
+ },
+ "graph_effect": {
+  "label": "Firestone 2020: protection-from-contamination violation and outbreak level",
+  "estimate": 4.92,
+  "lo": 1.57,
+  "hi": 15.39,
+  "scale": "odds ratio",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "43nn-pn8j",
+   "name": "DOHMH New York City Restaurant Inspection Results",
+   "url": "https://data.cityofnewyork.us/d/43nn-pn8j",
+   "rows_updated_at": "2026-11-12T23:06:40Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "camis, dba, boro, bbl, nta, zipcode, cuisine_description, inspection_date, inspection_type, max(score) as score, max(grade) as grade, count(violation_code) as n_viol, sum(case(critical_flag='Critical', 1, true, 0)) as n_crit, max(latitude) as lat, max(longitude) as lon",
+    "$where": "inspection_date between '2022-01-01' and '2026-12-31'",
+    "$group": "camis, dba, boro, bbl, nta, zipcode, cuisine_description, inspection_date, inspection_type",
+    "$order": "camis, dba, boro, bbl, nta, zipcode, cuisine_description, inspection_date, inspection_type"
+   },
+   "fetched": "2026-11-13T14:09:07-0500",
+   "n_rows": 92061,
+   "tag": "live2022"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "unique_key, created_date, bbl",
+    "$where": "complaint_type='Food Poisoning' and bbl is not null and created_date between '2022-01-01' and '2026-07-01' and location_type='Restaurant/Bar/Deli/Bakery'",
+    "$order": "unique_key"
+   },
+   "fetched": "2026-11-13T14:13:16-0500",
+   "n_rows": 9972
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "unique_key, created_date, bbl",
+    "$where": "complaint_type='Noise - Commercial' and bbl is not null and created_date between '2022-01-01' and '2026-07-01'",
+    "$order": "unique_key"
+   },
+   "fetched": "2026-11-13T14:27:09-0500",
+   "n_rows": 278278
+  }
+ ],
+ "prediction_scored": "Primary IRR 1.12 (0.96 to 1.32); placebo (Noise - Commercial) IRR 1.67 (1.11 to 2.52); ratio 0.67 (0.43 to 1.04). support_if met: False; refute_if met: False; placebo meets support: True; D against placebo -1.0, against no effect -2.1.",
+ "settle": "Complaints linked to restaurants by name and address in the 311 text, and laboratory-confirmed outbreak attributions (DOHMH Bureau of Communicable Disease), would replace a noisy, self-reported outcome.",
+ "research_needed": [
+  {
+   "question": "Do routine inspection results predict confirmed restaurant outbreaks in NYC?",
+   "data": "DOHMH outbreak investigations by restaurant (not public)",
+   "design": "matched case-control as Irwin 1989, with the last routine inspection before the outbreak",
+   "priority": "high"
+  },
+  {
+   "question": "Do Yelp illness reviews track inspection results better than 311 complaints?",
+   "data": "DOHMH Yelp-classifier output (Effland 2018)",
+   "design": "the registered design with Yelp reports as outcome",
+   "priority": "medium"
+  }
+ ],
+ "figures": [],
+ "notes": "Secondary, deciding nothing: C-range against A IRR 1.22 (1.00-1.49); per 10 points 1.07 (1.02-1.14); NTA fixed effects 1.12 (0.96-1.31); Manhattan only 1.21 (0.93-1.57); complaints in the 365 days before the inspection 1.17 (1.00-1.37). Cohort 10360 restaurants, 876 food-poisoning and 18294 noise complaints. Pearson dispersion of the primary model 1.37. The live table omits closed restaurants, which biases towards 1.",
+ "registration_sha256": "6e8e2be9eb4e8187941bcac75955c9add2f3fcc1ff77822bd68ee8cf72610254",
+ "decided_at": "2026-11-13T14:27:38-0500",
+ "stance": {
+  "value": 0.613,
+  "lo": -0.262,
+  "hi": 0.934,
+  "z": 1.43
+ },
+ "notes_referee": "Referee IRR 1.130 (0.962 to 1.326), placebo 1.672. Unsettled under rule 2 (support_if fails). Single-lot rule drops 76% of linked complaints; address matching gives 1.26 (1.05 to 1.51), placebo 1.38 (unregistered).",
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "IRR of 311 Food Poisoning complaints at the lot in the 365 days after a routine initial inspection, score >= 14 against 0-13",
+    "estimate": 1.124,
+    "lo": 0.957,
+    "hi": 1.319,
+    "scale": "incidence rate ratio",
+    "null": 1,
+    "n": 10360,
+    "events": 876
+   },
+   "stance": {
+    "value": 0.613,
+    "lo": -0.262,
+    "hi": 0.934,
+    "z": 1.43
+   },
+   "decided_at": "2026-11-13T14:27:38-0500",
+   "prediction_scored": "Primary IRR 1.12 (0.96 to 1.32); placebo (Noise - Commercial) IRR 1.67 (1.11 to 2.52); ratio 0.67 (0.43 to 1.04). support_if met: False; refute_if met: False; placebo meets support: True; D against placebo -1.0, against no effect -2.1."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee: verdict kept",
+  "critique": "critique/restaurants-score-complaints.md",
+  "revised_at": "2026-11-13T14:49:22-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,131 @@
+{
+ "id": "bridge-shot-ems-link",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Daily EMS SHOT dispatches per NYPD shooting incident, same day (OLS with day of week, month, year, holiday; HAC 7)",
+  "estimate": 1.2481259189852711,
+  "lo": 1.1976372638059938,
+  "hi": 1.2986145741645485,
+  "scale": "dispatches per incident",
+  "null": 0,
+  "n": 7548
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:22-0500",
+   "n_rows": 6959
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n, sum(case(statistical_murder_flag=true, 1, true, 0)) as murders_victims",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 6431
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$where": "statistical_murder_flag=true",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:41-0500",
+   "n_rows": 3176
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T15:06:44-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "query": {
+    "$limit": 50000,
+    "$order": "d, initial_call_type",
+    "$select": "date_trunc_ymd(incident_datetime) as d, initial_call_type, count(*) as n",
+    "$where": "incident_datetime between '2006-01-01' and '2026-08-31T23:59:59' and initial_call_type in ('SHOT', 'T-SHOT', 'STAB')",
+    "$group": "d, initial_call_type"
+   },
+   "fetched": "2026-11-12T16:08:40-0500",
+   "n_rows": 15361
+  }
+ ],
+ "prediction_scored": "hit: 1.25 (1.20 to 1.30) lies in the registered 0.6 to 1.6.",
+ "settle": "Linked records (EMS incident to NYPD incident) would show how many SHOT dispatches have a recorded shooting behind them; the published data cannot be linked.",
+ "research_needed": [
+  {
+   "question": "What share of EMS gunshot dispatches correspond to an NYPD-recorded shooting victim?",
+   "data": "Linked FDNY and NYPD records",
+   "design": "Record linkage",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/bridges/bridge_heat_shootings_ems.png"
+ ],
+ "notes": "This link test uses the endpoint dataset's daily levels but not its relation to temperature. Annual SHOT dispatches are 2.5 to 4 times the NYPD incident count, so most SHOT dispatches have no NYPD-recorded shooting behind them.\n\nAfter the bridge referee: this is a check on how records are kept (one shooting, about 1.25 EMS gunshot dispatches), not a research link; it has no graph estimate, so no stance. The same-day slope is confounded by temperature.",
+ "registration_sha256": "afc8a2d6eada92cd10111a27ebad0449dffb259becd29c5d69118ebcbac018b2",
+ "decided_at": "2026-11-12T16:10:34-0500",
+ "stance": null,
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Daily EMS SHOT dispatches per NYPD shooting incident, same day (OLS with day of week, month, year, holiday; HAC 7)",
+    "estimate": 1.2481259189852711,
+    "lo": 1.1976372638059938,
+    "hi": 1.2986145741645485,
+    "scale": "dispatches per incident",
+    "null": 0,
+    "n": 7548
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 48.45
+   },
+   "decided_at": "2026-11-12T16:10:34-0500",
+   "prediction_scored": "hit: 1.25 (1.20 to 1.30) lies in the registered 0.6 to 1.6."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep; stance null.",
+  "critique": "critique/bridge-shot-ems-link.md",
+  "revised_at": "2026-11-12T16:18:01-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

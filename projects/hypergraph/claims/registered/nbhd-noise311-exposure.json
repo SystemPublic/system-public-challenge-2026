@@ -1,0 +1,117 @@
+{
+ "id": "nbhd-noise311-exposure",
+ "kind": "conflict",
+ "statement": "311 noise complaint rates by census tract are a poor measure of noise exposure: they align weakly with modelled transportation noise and more strongly with neighbourhood change (rent increase and growth of the non-Hispanic white share).",
+ "graph_evidence": [
+  {
+   "relationship_id": "cEPG6i4Yq1|fo-h4u_aJp",
+   "concepts": [
+    "traffic noise",
+    "arterial hypertension"
+   ],
+   "n_findings": 12,
+   "n_studies": 8,
+   "direction": "+",
+   "summary": "Road traffic noise and hypertension; e.g. OR 1.11 per 10 dB(A) (1.00-1.23) (PMID 24952459); incident hypertension RR 1.13 (1.02-1.24) in ESCAPE cohorts (PMID 28417138).",
+   "pubmed_ids": [
+    24952459,
+    28417138,
+    33733673,
+    18335099,
+    21183206
+   ]
+  },
+  {
+   "relationship_id": "cEPG6i4Yq1|XW9F7OPopQ",
+   "concepts": [
+    "traffic noise",
+    "stroke"
+   ],
+   "n_findings": 14,
+   "n_studies": 8,
+   "direction": "+",
+   "summary": "Traffic noise and stroke (count from the relationship record).",
+   "pubmed_ids": []
+  },
+  {
+   "relationship_id": "cEPG6i4Yq1|nDIFXeS4Xr",
+   "concepts": [
+    "traffic noise",
+    "sleep"
+   ],
+   "n_findings": 3,
+   "n_studies": 2,
+   "direction": "+",
+   "summary": "High road traffic noise and poorer sleep health OR 1.13 (1.06-1.20) (PMID 35513113).",
+   "pubmed_ids": [
+    35513113,
+    29078795
+   ]
+  },
+  {
+   "variable_id": "pMSKrA677f",
+   "concepts": [
+    "aircraft and road noise",
+    "hypertension"
+   ],
+   "direction": "+",
+   "summary": "Aircraft plus road noise >=45 dB: incident hypertension HR 1.39 (1.14-1.70) (PMID 30078646).",
+   "pubmed_ids": [
+    30078646
+   ]
+  },
+  {
+   "note": "The graph holds no finding on noise complaints as a measure. The research evidence is on measured or modelled dB, so the conflict is about whether the city's common proxy measures the research exposure."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Legewie J, Schaeffer M. Contested boundaries: explaining where ethnoracial diversity provokes neighborhood conflict. Am J Sociol 2016;122(1):125-61.",
+   "doi": "10.1086/686942",
+   "finding": "NYC 311 neighbour complaints (loud music, parties) are about 26% higher at fuzzy ethnoracial boundaries than in homogeneous areas or at sharp boundaries."
+  },
+  {
+   "citation": "Kontokosta CE, Hong B. Bias in smart city governance: how socio-spatial disparities in 311 complaint behavior impact the fairness of data-driven decisions. Sustain Cities Soc 2021;64:102503.",
+   "doi": "10.1016/j.scs.2020.102503",
+   "finding": "311 reporting propensity differs by income, race and tenure in NYC."
+  },
+  {
+   "citation": "Estimating reporting bias in 311 complaint data. Ann Appl Stat 2025.",
+   "doi": "10.1214/24-aoas2003",
+   "finding": "Reporting rates for the same underlying incident vary across NYC neighbourhoods."
+  },
+  {
+   "citation": "Zheng Y, Liu T, Wang Y, et al. Diagnosing New York City's noises with ubiquitous data. UbiComp 2014.",
+   "doi": "10.1145/2632048.2632102",
+   "finding": "Uses 311 noise complaints as the target for inferring noise, i.e. treats complaints as a measure."
+  },
+  {
+   "citation": "Bello JP, Silva C, Nov O, et al. SONYC: a system for monitoring, analyzing, and mitigating urban noise pollution. Commun ACM 2019;62(2):68-77.",
+   "doi": "10.1145/3224204",
+   "finding": "Sensor network in NYC; argues complaints are an incomplete signal of noise."
+  },
+  {
+   "citation": "NY State Comptroller. Silencing excessive NYC noise (2018).",
+   "doi": null,
+   "finding": "311 noise complaints rose from about 200,000 (2010) to 384,000 (2015); few complaints are measured."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "In a joint OLS of log(1 + residential noise complaints per 1,000 residents, 2022-2024) on standardised predictors with borough fixed effects, the coefficient on rent change (ACS 2008-12 to 2018-22) exceeds the coefficient on modelled transportation noise by 0.05-0.30 log units per SD. Spearman rho between residential complaint rate and modelled noise below 0.25. Street/vehicle complaints show a positive association with modelled noise (rho 0.15-0.45).",
+  "support_if": "The difference (rent-change coefficient minus modelled-noise coefficient) has a bootstrap 95% CI above 0.",
+  "refute_if": "The difference has a 95% CI below 0 (complaints track modelled noise more than change): contested. Spanning 0: unsettled."
+ },
+ "plan": "Unit: 2020 census tracts with at least 500 residents. Complaints: 311 Service Requests 2020-present (erm2-nwe9), created 2022-01-01 to 2024-12-31, complaint_type 'Noise - Residential' (primary), also 'Noise - Street/Sidewalk' + 'Noise - Vehicle', 'Noise - Commercial', and all types beginning 'Noise'; aggregated with SoQL group by latitude, longitude and complaint_type, then joined to tracts locally. Modelled noise: US DOT/BTS National Transportation Noise Map 2020, road+aviation+rail LAeq 24h, read from the geo.dot.gov tile service (classes 45-50, 50-55, 55-60, 60-70, 70-80, 80-90, >90 dB) and summarised as tract-mean class midpoint (below 45 dB set to 40) and share of area >=60 dB. Nightlife: active on-premises liquor licences per tract (NY State Liquor Authority data, data.ny.gov). Neighbourhood change: change in median gross rent (B25064, inflation not adjusted, in log) and in non-Hispanic white share (B03002) from ACS 2008-2012 (2010 tracts, area-weighted to 2020 tracts with the Census relationship file) to ACS 2018-2022. Controls: log population density, poverty share, borough fixed effects. Bootstrap tracts (1,000 draws) for the coefficient difference. SONYC sensor data used only if a public levels file is found; otherwise noted as unavailable. Figure: tract maps of complaint rate and modelled noise; coefficient plot with the research dose-response (per 10 dB) noted beside it.",
+ "alternatives": [
+  "Residential complaints concern neighbour noise, which the transport noise map does not model; a weak link to modelled noise is then expected even if complaints measure exposure to their own source.",
+  "Rent change and nightlife are collinear (new bars follow rising rents); the rent coefficient may carry real noise from new venues.",
+  "Population density drives both complaints and actual neighbour noise.",
+  "The noise map is coarse (classes, no values under 45 dB) and models traffic volume, not observed levels.",
+  "Reporting propensity differs by language, trust in government and tenure, independent of change."
+ ],
+ "prior": 0.45,
+ "registrant": "claude-code agent (neighbourhood), for Jeff Vernon",
+ "registered_at": "2026-11-12T15:24:16-0500",
+ "sha256": "723e5cfcd9ef6a3b82a2fe81579fee25d9595c76bcb788b31f1eb7502bb723fd"
+}

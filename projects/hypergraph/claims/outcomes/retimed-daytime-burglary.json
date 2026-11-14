@@ -1,0 +1,115 @@
+{
+ "id": "retimed-daytime-burglary",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Ratio of the Monday-and-Friday to Tuesday-to-Thursday ratio of daytime residential burglaries, 2023 to September 2026 over 2015-2019, citywide",
+  "estimate": 1.0114236434298949,
+  "lo": 0.9525496596021868,
+  "hi": 1.0774697637052368,
+  "scale": "ratio of ratios",
+  "null": 1,
+  "n": 20625
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qgea-i56i",
+   "name": "NYPD Complaint Data Historic",
+   "url": "https://data.cityofnewyork.us/d/qgea-i56i",
+   "rows_updated_at": "2026-04-28T16:10:09Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "cmplnt_num, cmplnt_fr_dt, cmplnt_fr_tm, cmplnt_to_dt, crm_atpt_cptd_cd, prem_typ_desc, latitude, longitude",
+    "$where": "cmplnt_fr_dt between '2015-01-01T00:00:00' and '2025-12-31T23:59:59' and ky_cd=107 and prem_typ_desc in ('RESIDENCE - APT. HOUSE','RESIDENCE-HOUSE','RESIDENCE - PUBLIC HOUSING') and date_extract_dow(cmplnt_fr_dt) between 1 and 5 and cmplnt_fr_tm >= '08:00:00' and cmplnt_fr_tm < '18:00:00'",
+    "$order": "cmplnt_num"
+   },
+   "fetched": "2026-11-12T23:53:00-0500",
+   "n_rows": 31935
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5uac-w243",
+   "name": "NYPD Complaint Data Current (Year To Date)",
+   "url": "https://data.cityofnewyork.us/d/5uac-w243",
+   "rows_updated_at": "2026-11-05T21:20:50Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "cmplnt_num, cmplnt_fr_dt, cmplnt_fr_tm, cmplnt_to_dt, crm_atpt_cptd_cd, prem_typ_desc, latitude, longitude",
+    "$where": "cmplnt_fr_dt between '2026-01-01T00:00:00' and '2026-09-30T23:59:59' and ky_cd=107 and prem_typ_desc in ('RESIDENCE - APT. HOUSE','RESIDENCE-HOUSE','RESIDENCE - PUBLIC HOUSING') and date_extract_dow(cmplnt_fr_dt) between 1 and 5 and cmplnt_fr_tm >= '08:00:00' and cmplnt_fr_tm < '18:00:00'",
+    "$order": "cmplnt_num"
+   },
+   "fetched": "2026-11-12T23:53:05-0500",
+   "n_rows": 1324
+  },
+  {
+   "kind": "nyc-open-data-boundary",
+   "dataset": "5crt-au7u",
+   "name": "Community Districts",
+   "path": "data/cache/boundaries/5crt-au7u.geojson"
+  },
+  {
+   "kind": "derived",
+   "path": "data/derived/transit/dose_map_long.csv",
+   "sources": "data/derived/transit/dose_map_sources.json"
+  },
+  {
+   "kind": "sysgraph",
+   "note": "variable searches, API v1.0, 12 Nov 2026; data/derived/round2/retimed_consequences/graph_gap_check.json and graph_leads.json; 20 uncached requests"
+  }
+ ],
+ "prediction_scored": "miss. The registered fall of 5% to 10% did not appear: the ratio is 1.011 (0.953 to 1.077). Neither condition is decided. The lower bound of the interval is 0.9525 with the seed that was run, 0.947 to 0.956 over 40 other seeds and 0.9509 with 50,000 draws, so the registered procedure cannot place it above or below the 0.95 threshold of the second refutation condition. No sign of a fall is seen, and a fall of more than about 5% to 7% is unlikely.",
+ "settle": "Burglary records with the time the victim left and returned, or with a flag for whether someone was at home, and the count of households at home by day from a time-use or mobility source. The district contrast should be registered as a primary test on data from 2027 onward.",
+ "research_needed": [
+  {
+   "question": "Does working at home lower daytime burglary of the worker's own home, and does it displace burglary to neighbouring districts or days?",
+   "data": "NYPD complaints with occupancy at the time; household-level work-at-home days (American Time Use Survey or mobile-device home dwell time) by district",
+   "design": "District-by-weekday panel with a registered contrast between districts by change in daytime occupancy",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/round2/retimed_consequences.png"
+ ],
+ "notes": "33,259 complaints on weekdays, of which 13,965 fall in the 209 retained baseline weeks and 6,660 in the 152 retained recent weeks; 3 had no usable coordinates. Friday is the peak day in both periods (index 1.20 and 1.25 of midweek). Monday changed by -2.1% and Friday by +3.9% relative to midweek. Secondary, registered as not deciding: in the 24 districts that send more commuters the ratio changed by -4.6% (-13.3 to +5.7), in the 24 that send fewer by +9.9% (+1.1 to +19.8); the difference is -13.2% (-23.9 to -1.2). The sign is the one registered, but the difference comes from a rise in the lower-sending districts and not from a fall in the higher-sending ones, and the registration gave this contrast a D of 1.3. The same difference in the placebo (2015-17 against 2018-19) is -1.8% (-17.5 to +16.4); with a 2017-19 baseline it is -16.7% (-28.8 to -1.8); for complaints ending the day they began -12.1% (-24.9 to +3.1); for completed burglaries -12.0% (-23.5 to +1.2). Citywide sensitivity: placebo +0.9% (-6.2 to +8.6); baseline 2017-19 +2.5% (-4.8 to +11.0); same-day end -2.8% (-9.6 to +4.7); completed only +0.7% (-5.4 to +7.4). In the six business-district community districts the ratio changed by -16.4% (-33.9 to +7.7) on 1,499 complaints. The yearly ratio of Monday-and-Friday to midweek burglaries ranges from 1.05 to 1.20 with no trend (by_year in burglary_results.json). The recorded day is the start of the period in which the burglary could have happened, as reported by the victim.\n\nAfter the referee (13 Nov 2026): the verdict is changed from contested to unsettled. The second refutation condition (lower bound of the 95% interval above 0.95) was met by 0.003 with the one seed that was run, and the registration fixed 2,000 draws but no seed. The referee found the lower bound between 0.947 and 0.956 over 40 other seeds, above 0.95 in 62% of them, 0.9509 with 50,000 draws and 0.9499 in the registrant's own check with 20,000 draws. The registered procedure therefore does not place the bound on either side of the threshold, the condition is neither met nor unmet, and rule 2 applies (rule 9, added after this result, states this). Seven of eight further specifications run by the referee have a lower bound below 0.95 (recent period 2023-2025 0.999 (0.936 to 1.061); public housing excluded 0.985 (0.925 to 1.049); start and end within one day 0.988 (0.920 to 1.055)). Two things the outcome did not examine. Public housing rose from 5.2% to 10.9% of complaints and its ratio is 1.24 (1.00 to 1.52), which raises the citywide ratio. The recorded day is the start of the victim's absence, and complaints with a window of two days or more have a ratio of 1.11 (0.96 to 1.29) against 0.99 (0.92 to 1.06) for those within one day, which is what more Friday departures for long weekends would produce. What stands: no fall is seen, and a fall of more than about 5% to 7% is unlikely. The district contrast (-13.2%) has a permutation p of 0.08 over the 48 districts, so its bootstrap interval is too narrow. The graph finding PMID 35491751 concerns alcohol outlets and has no bearing on occupancy.",
+ "registration_sha256": "1d701f85abd57987c8ed0c01399a6b1883f353bb7d5c0918046546108f38b9a8",
+ "decided_at": "2026-11-13T00:05:03-0500",
+ "stance": {
+  "value": -0.179,
+  "lo": -0.83,
+  "hi": 0.649,
+  "z": -0.36
+ },
+ "critique": {
+  "report": "critique/retimed-daytime-burglary.md",
+  "answer": "accepted; verdict changed to unsettled"
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "Ratio of the Monday-and-Friday to Tuesday-to-Thursday ratio of daytime residential burglaries, 2023 to September 2026 over 2015-2019, citywide",
+    "estimate": 1.0114236434298949,
+    "lo": 0.9525496596021868,
+    "hi": 1.0774697637052368,
+    "scale": "ratio of ratios",
+    "null": 1,
+    "n": 20625
+   },
+   "stance": {
+    "value": -0.179,
+    "lo": -0.83,
+    "hi": 0.649,
+    "z": -0.36
+   },
+   "decided_at": "2026-11-13T00:05:03-0500",
+   "prediction_scored": "miss. The registered fall of 5% to 10% did not appear: the ratio is 1.011 (0.953 to 1.077). The lower bound is above 0.95, so the second refutation condition is met, by 0.003. That margin is within the Monte Carlo error of 2,000 bootstrap draws: a check with 20,000 draws, run after the result was seen, gives a lower bound of 0.9499. The verdict follows the registered procedure; the plain reading is that there is no sign of a fall and a fall of more than about 5% is excluded."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: the refutation bound depends on the bootstrap seed (met in 62% of seeds; 0.9509 at 50,000 draws); verdict changed from contested to unsettled under rules 2 and 9.",
+  "critique": "critique/retimed-daytime-burglary.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}
