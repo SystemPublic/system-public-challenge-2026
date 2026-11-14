@@ -48,11 +48,20 @@ def sgn(v):
     return 0 if v is None or pd.isna(v) else int(np.sign(v))
 
 
+CHECKLIST = C.PROJECT / "review" / "to_check.csv"
+
+
 def load_exclusions():
-    if not REVIEW.exists():
-        return {}
-    with open(REVIEW) as f:
-        return {r["system_id"]: r.get("reason", "") for r in csv.DictReader(f) if r.get("system_id")}
+    """Findings judged wrong by hand: rows in review/excluded_findings.csv, plus checklist rows marked 'wrong'."""
+    out = {}
+    if REVIEW.exists():
+        with open(REVIEW) as f:
+            out.update({r["system_id"]: r.get("reason", "") for r in csv.DictReader(f) if r.get("system_id")})
+    if CHECKLIST.exists():
+        with open(CHECKLIST) as f:
+            out.update({r["system_id"]: r.get("reason", "") for r in csv.DictReader(f)
+                        if (r.get("decision") or "").strip().lower() == "wrong"})
+    return out
 
 
 def research_side(con, claim, excluded, frames):
@@ -239,7 +248,8 @@ def main():
     if sheet:
         rv = pd.concat(sheet)
         rv["paper"] = "https://doi.org/" + rv["doi"].fillna("")
-        rv[["claim", "system_id", "paper", "name_a", "name_b", "system_statistic_type", "statistic_value",
+        rv["pubmed"] = rv["pubmed_id"].map(lambda x: f"https://pubmed.ncbi.nlm.nih.gov/{int(x)}/" if pd.notna(x) else "")
+        rv[["claim", "system_id", "paper", "pubmed", "name_a", "name_b", "system_statistic_type", "statistic_value",
             "ci_lower", "ci_upper", "p_value", "sign", "region", "population_string"]].to_csv(
             C.OUT / "review_sheet.csv", index=False)
 
