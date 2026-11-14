@@ -146,10 +146,12 @@ def runs_last_hour(profile_id):
 
 
 def fail_stale_runs():
-    """Runs left 'running' by a restart can never finish: mark them failed, with the events the UI expects."""
+    """Runs left 'running' by a restart can never finish: mark them failed, with the events the UI expects.
+    Only runs older than 10 minutes: another server sharing this database may still be running newer ones."""
     q("""update runs set status = 'failed', finished_at = now(), events = events || jsonb_build_array(
            jsonb_build_object('type', 'error', 'message', 'Interrupted by a server restart.', 't', now()),
-           jsonb_build_object('type', 'run_done', 'status', 'failed', 't', now())) where status = 'running'""")
+           jsonb_build_object('type', 'run_done', 'status', 'failed', 't', now())) where status = 'running'
+           and created_at < now() - interval '10 minutes'""")
 
 
 def create_run(project_id, query, agents):
