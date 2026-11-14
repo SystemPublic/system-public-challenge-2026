@@ -57,7 +57,7 @@ class Handler(SimpleHTTPRequestHandler):
                     return self._json(400, {"error": "versions look like v1.2.0"})
                 return self._json(200, cv.build(owner, slug, frm, to))
             if u.path == "/api/inspections/compare":
-                d = json.loads((ROOT / "data/derived/underlay_drift/changed_scores.json").read_text())
+                d = json.loads((ROOT / "viz/data/inspections_changed_scores.json").read_text())
                 for side in ("june", "november"):  # one live call each: the version the numbers rest on
                     v = cv.get(f"{cv.API}/collections/{d[side]['owner']}/{d[side]['slug']}/versions/{d[side]['version']}") or {}
                     d[side].update(hash=v.get("hash"), recordCount=v.get("recordCount"), createdAt=v.get("createdAt"))

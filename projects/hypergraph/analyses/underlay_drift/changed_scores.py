@@ -2,7 +2,7 @@
 
 Usage: python -m analyses.underlay_drift.changed_scores
 Reads the match table built by analyses/underlay_drift/compare.py (kept outside the repository) and the snapshot's
-Restaurant records, and writes data/derived/underlay_drift/changed_scores.json for viz/inspections.html.
+Restaurant records, and writes viz/data/inspections_changed_scores.json for viz/inspections.html.
 Written on 14 November 2026.
 """
 import json
@@ -40,7 +40,7 @@ def main() -> None:
                       "scores_changed": len(c), "scores_fell": int((c["drop"] > 0).sum()), "scores_rose": int((c["drop"] < 0).sum()), "median_drop": float(c["drop"].median()),
                       "band_changed": int((c.band_s != c.band_l).sum()), "into_A_range": int(((c.score_s >= 14) & (c.score_l <= 13)).sum()), "restaurants_gone": 519},
            "rows": rows}
-    (ROOT / "data/derived/underlay_drift/changed_scores.json").write_text(json.dumps(out, indent=0))
+    (ROOT / "viz/data/inspections_changed_scores.json").write_text(json.dumps(out, indent=0))
     print(json.dumps(out["counts"]))
 
 
