@@ -12,7 +12,8 @@ export const linked = (t) => esc(t).replace(IND_RE, (id) => `<a class="ind-id" h
 const DATASETS = { WB_WDI: 'World Development Indicators', WB_GS: 'Gender Statistics', WB_HNP: 'Health, Nutrition and Population',
   WB_FINDEX: 'Global Findex', WB_WBL: 'Women, Business and the Law', WB_ES: 'Enterprise Surveys', WB_BREADY: 'B-READY',
   WB_EDSTATS: 'Education Statistics', WB_WWBI: 'Worldwide Bureaucracy Indicators', WB_ESG: 'Environment, Social and Governance',
-  WB_CLEAR: 'CLEAR', FAO_FS: 'FAO Food Security' };
+  WB_CLEAR: 'CLEAR', FAO_FS: 'FAO Food Security',
+  IMF_AI: 'IMF AI Preparedness Index', OECD_IDD: 'OECD Income Distribution Database' };
 export const datasetName = (d) => DATASETS[String(d).toUpperCase()] || String(d);
 // Source labels name their provider; each becomes a chip linking to that provider. Older labels match by prefix.
 const PROVIDERS = [[/^system public graph|^system graph|^graph/i, 'https://system.com/public'], [/data360|world bank/i, 'https://data360.worldbank.org'],
@@ -118,7 +119,7 @@ let nextChart = 0;
 export function chart(c) {
   const id = `chart-${nextChart++}`;
   specs.set(id, c.vega_lite_json);
-  return `<figure class="chart"><figcaption>${esc(c.title)}</figcaption><div class="vega" id="${id}"></div></figure>`;
+  return `<figure class="chart">${c.title ? `<figcaption>${esc(c.title)}</figcaption>` : ''}<div class="vega" id="${id}"></div></figure>`;
 }
 
 const SUPPORT = { backed: 'Backed', partial: 'Partial', unbacked: 'Unbacked' };
@@ -196,7 +197,7 @@ export function linkGroups(runs) {
   const { all } = mapRows(runs);
   if (!all.length) return '';
   const max = Math.max(...all.map((x) => x.l.studies));
-  const row = ({ l, i, kind }) => `<li data-kind="${i ? 'ind ' : ''}${kind}">
+  const row = ({ l, i, kind }) => `<li data-kind="${i ? 'ind ' : ''}${kind}" data-concept="${esc(l.concept_label)}">
     <span class="lr-c"><strong>${esc(l.concept_label)}</strong> <span class="pill ${TIER[tier(l.studies)]}">${cap(tier(l.studies))}</span></span>
     <span class="lr-n num">${plural(l.studies, 'study', 'studies')}<span class="sbar"><span style="width:${((100 * l.studies) / max).toFixed(1)}%"></span></span></span>
     <span class="lr-i">${i ? `${indLink(i.name, i.indicator_id)} ${dataset(i.database)}` : '<span class="small muted">No World Bank indicator measures this</span>'}</span>
@@ -210,17 +211,84 @@ export function linkGroups(runs) {
     + group('Gaps', 'Research links these to the topic, but no World Bank indicator in the datasets we checked measures them.', all.filter((x) => x.kind === 'gap'))
     + `<p class="small muted">From ${questions(all)}. Study counts: System Public Graph. Indicators: World Bank Data360.</p>`;
 }
+const filterLinks = (show) => document.querySelectorAll('.lgroup').forEach((g) => {
+  g.querySelectorAll('li[data-kind]').forEach((li) => { li.hidden = !show(li); });
+  g.hidden = !g.querySelector('li[data-kind]:not([hidden])');
+});
 // A KPI card filters the link lists to its rows; pressing it again shows all.
 document.addEventListener('click', (e) => {
   const k = e.target.closest('[data-kfilter]');
   if (!k) return;
   const on = k.getAttribute('aria-pressed') !== 'true' && k.dataset.kfilter;
   document.querySelectorAll('[data-kfilter]').forEach((b) => b.setAttribute('aria-pressed', b === k && k.getAttribute('aria-pressed') !== 'true'));
-  document.querySelectorAll('.lgroup').forEach((g) => {
-    g.querySelectorAll('li[data-kind]').forEach((li) => { li.hidden = !!on && !li.dataset.kind.split(' ').includes(on); });
-    g.hidden = !g.querySelector('li[data-kind]:not([hidden])');
-  });
+  filterLinks((li) => !on || li.dataset.kind.split(' ').includes(on));
 });
+// A bar in the concept chart filters the lists to that concept; clicking it again shows all.
+let pickedConcept = null;
+function pickConcept(c) {
+  if (!document.querySelector(`li[data-concept="${CSS.escape(c)}"]`)) return;
+  pickedConcept = pickedConcept === c ? null : c;
+  document.querySelectorAll('[data-kfilter]').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+  filterLinks((li) => !pickedConcept || li.dataset.concept === pickedConcept);
+  document.getElementById('ln-h')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Overview charts from the stored answers: [id, heading, one-line takeaway, chart], each left out when it has no data.
+const VL = 'https://vega.github.io/schema/vega-lite/v5.json';
+const GROUP = { other: 'Less obvious', same: 'Obvious', gap: 'Gap' };
+const srcLine = (t) => `<p class="small muted">Source: ${t}.</p>`;
+const hbars = (values, y, x, color, tooltip, extra = {}) => chart({ vega_lite_json: JSON.stringify({ $schema: VL, data: { values }, height: values.length * 26,
+  mark: { type: 'bar', cornerRadiusEnd: 4, cursor: extra.cursor }, encoding: { y: { field: y, type: 'nominal', sort: null, title: null, scale: { paddingInner: 0.3 }, axis: { labelLimit: innerWidth < 600 ? 120 : 200 } },
+    x: { field: 'n', type: 'quantitative', title: x, axis: { tickMinStep: 1 } }, color, tooltip } }) });
+const colors = (field, map) => ({ field, type: 'nominal', scale: { domain: Object.keys(map), range: Object.values(map).map(css) }, legend: { title: null } });
+export function overviewCharts(runs) {
+  const out = [];
+  const { all } = mapRows(runs);
+  if (all.length) {
+    const by = new Map();
+    for (const x of all) {
+      const c = by.get(x.l.concept_id) || by.set(x.l.concept_id, { concept: x.l.concept_label, n: 0, kinds: new Set(), inds: [] }).get(x.l.concept_id);
+      c.n = Math.max(c.n, x.l.studies); c.kinds.add(x.kind); if (x.i) c.inds.push(x.i);
+    }
+    const top = [...by.values()].sort((a, b) => b.n - a.n).slice(0, 12).map((c) => ({ concept: c.concept, n: c.n,
+      group: GROUP[['other', 'same', 'gap'].find((k) => c.kinds.has(k))], indicator: c.inds[0]?.name || 'None found',
+      dataset: c.inds.length ? [...new Set(c.inds.map((i) => datasetName(i.database)))].join(', ') : 'Not found in the datasets we checked' }));
+    const present = Object.fromEntries([['Less obvious', '--cat-1'], ['Obvious', '--cat-2'], ['Gap', '--cat-5']].filter(([g]) => top.some((t) => t.group === g)));
+    out.push(['cc', 'Studies per linked concept', `${cap(top[0].concept)} has the most studies (${top[0].n}). Pick a bar to filter the links below.`,
+      hbars(top, 'concept', 'Studies', colors('group', present), [{ field: 'concept', title: 'Concept' }, { field: 'n', title: 'Studies' },
+        { field: 'group', title: 'Group' }, { field: 'indicator', title: 'Indicator' }, { field: 'dataset', title: 'Dataset' }], { cursor: 'pointer' })
+      + srcLine('System Public Graph study counts; World Bank Data360 indicators')]);
+    const ds = new Map();
+    all.filter((x) => x.i).forEach(({ i }) => (ds.get(i.database) || ds.set(i.database, new Set()).get(i.database)).add(i.indicator_id));
+    const gaps = uniq(all.filter((x) => x.kind === 'gap').map((x) => x.l.concept_id));
+    const rows = [...ds].map(([d, s]) => ({ dataset: datasetName(d), code: d, n: s.size, found: 'Found', unit: 'indicators' })).sort((a, b) => b.n - a.n);
+    if (gaps) rows.push({ dataset: 'Not found', code: 'none', n: gaps, found: 'Not found', unit: 'linked concepts' });
+    out.push(['cd', 'Where the data lives', `${plural(uniq(all.filter((x) => x.i).map((x) => x.i.indicator_id)), 'indicator', 'indicators')} in ${plural(ds.size, 'World Bank dataset', 'World Bank datasets')}${gaps ? `; ${plural(gaps, 'linked concept has', 'linked concepts have')} none` : ''}.`,
+      hbars(rows, 'dataset', 'Linked indicators (Not found: concepts)', { ...colors('found', { Found: '--cat-1', 'Not found': '--cat-5' }), legend: null },
+        [{ field: 'dataset', title: 'Dataset' }, { field: 'code', title: 'Code' }, { field: 'n', title: 'Count' }, { field: 'unit', title: 'Counting' }])
+      + srcLine('World Bank Data360 indicators; gaps from System Public Graph links')]);
+  }
+  const claims = new Map();
+  for (const r of runs) for (const s of r.answer?.sections || []) for (const c of s.type === 'evidence' ? s.cards : []) if (c.meter) claims.set(c.claim, c);
+  if (claims.size) {
+    const SEG = { 'Significant, below null': '--down-sig', 'Below null': '--down', 'Above null': '--up', 'Significant, above null': '--up-sig' };
+    const values = [...claims.values()].flatMap(({ claim, verdict, meter: m }) => [[-m.significant_down, 2], [m.significant_down - m.down, 1], [m.up - m.significant_up, 1], [m.significant_up, 2]]
+      .map(([n, o], k) => ({ claim, label: claim.length > 80 ? `${claim.slice(0, 79)}…` : claim, verdict: cap(verdict), seg: Object.keys(SEG)[k], n, abs: Math.abs(n), o, findings: m.findings, studies: m.studies })));
+    const phone = innerWidth < 600;
+    const lo = Math.max(...[...claims.values()].map((c) => c.meter.down)), hi = Math.max(...[...claims.values()].map((c) => c.meter.up));
+    const step = Math.max(1, Math.ceil((lo + hi) / 8)), ticks = [];
+    for (let t = -Math.floor(lo / step) * step; t <= hi; t += step) ticks.push(t);
+    out.push(['cf', 'Direction of findings by claim', `${plural(claims.size, 'claim', 'claims')}. Bars left of zero are findings below the null, right of zero above it; the stronger shade on each side marks findings whose 95% CI excludes the null.`,
+      chart({ vega_lite_json: JSON.stringify({ $schema: VL, data: { values }, height: claims.size * 32, mark: { type: 'bar', stroke: css('--surface'), strokeWidth: 2 },
+        encoding: { y: { field: 'label', type: 'nominal', sort: null, title: null, scale: { paddingInner: 0.3 }, axis: { labelLimit: phone ? 120 : 320 } },
+          x: { field: 'n', type: 'quantitative', stack: 'zero', title: 'Findings', axis: { values: ticks, labelExpr: 'abs(datum.value)' } },
+          order: { field: 'o' }, color: { ...colors('seg', SEG), legend: { title: null, columns: phone ? 1 : 4 } },
+          tooltip: [{ field: 'claim', title: 'Claim' }, { field: 'verdict', title: 'Verdict' }, { field: 'seg', title: 'Direction' }, { field: 'abs', title: 'Findings' },
+            { field: 'findings', title: 'All findings' }, { field: 'studies', title: 'Studies' }] } }) })
+      + srcLine('System Public Graph findings, from the evidence cards in this project')]);
+  }
+  return out;
+}
 
 const indicator = (i, l) => `<li>${indLink(i.name, i.indicator_id)} ${dataset(i.database)}
   <button type="button" class="chip" data-pick="${pick(i, l)}">Add to my list</button></li>`;
@@ -393,7 +461,9 @@ export function mountCharts(root) {
     try { spec = JSON.parse(raw); } catch { el.innerHTML = '<p class="small muted">This chart spec is not valid JSON, so it is not drawn.</p>'; continue; }
     spec = { ...spec, width: 'container', autosize: { type: 'fit-x', contains: 'padding' }, config: { ...spec.config, ...chartTheme() } };
     if (!window.vegaEmbed) { el.innerHTML = '<p class="small muted">The chart library did not load. Check your connection and reload.</p>'; continue; }
-    window.vegaEmbed(el, spec, { actions: false, renderer: 'svg' })
+    const theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    window.vegaEmbed(el, spec, { actions: false, renderer: 'svg', tooltip: { theme } })
+      .then(({ view }) => view.addEventListener('click', (_, item) => item?.datum?.concept && pickConcept(item.datum.concept)))
       .catch((e) => { el.innerHTML = `<p class="small muted">Could not draw this chart: ${esc(short(e.message))}. The rest of the answer is unaffected.</p>`; });
   }
 }

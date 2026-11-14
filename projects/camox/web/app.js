@@ -1,5 +1,5 @@
 // State, API calls, the run event stream and page layout. Section rendering is in sections.js, the graph in graph.js.
-import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv, renderMyList, kpiStrip, linkGroups, verifyPill } from './sections.js';
+import { esc, plural, short, renderAnswer, refBody, mountCharts, answerConcepts, downloadCsv, renderMyList, kpiStrip, linkGroups, overviewCharts, verifyPill } from './sections.js';
 import { drawGraph } from './graph.js';
 import { bindDashboard } from './dashboard.js';
 import { mountKG } from './kg.js';
@@ -437,7 +437,10 @@ function bindComposer() {
 const renderOverview = () => {
   const o = $('#overview'); if (!o) return;
   const g = linkGroups(state.project.runs);
-  o.innerHTML = kpiStrip(state.project.runs) + (g ? block('ln', 'Links across questions', 'Every indicator map in this project, merged. Pick a number above to filter.', g) : '');
+  const charts = overviewCharts(state.project.runs).map(([id, title, line, body], i, a) => block(id, title, line, body, i === a.length - 1 && a.length % 2 ? 'wide' : ''));
+  o.innerHTML = kpiStrip(state.project.runs) + (charts.length ? `<div class="viz">${charts.join('')}</div>` : '')
+    + (g ? block('ln', 'Links across questions', 'Every indicator map in this project, merged. Pick a number or a bar above to filter.', g) : '');
+  mountCharts(o);
 };
 
 const turnBody = `<p class="context small muted" hidden></p><div class="status-line" role="status" hidden></div>
