@@ -103,6 +103,14 @@ The MCP server is at `http://localhost:8000/mcp/` (header `Authorization: Bearer
 - Matching an indicator to a graph concept can be wrong; the match type and its reason are shown so a reader can judge it.
 - "No matching indicator" means we didn't find one, not that the data doesn't exist.
 
+## Next steps
+
+- A per-project knowledge graph of the entities in papers (countries, populations, drugs) for graph RAG and for finding links that point opposite ways in different settings.
+- Regional and country data, and ILOSTAT and the Global Labor Database for the jobs agenda.
+- A Sources view listing every source a project used, and a pass that checks every link and label in an answer.
+- A workspace where a project's papers, notes and answers sit together, in the style of NotebookLM.
+- A hand-checked set of indicator-to-concept pairs to measure how often matching is right.
+
 ## AI coding tools
 
 Yes. Claude Code (with subagents) wrote most of the code and docs. The product's agents run on OpenAI (`gpt-6-luna`).
