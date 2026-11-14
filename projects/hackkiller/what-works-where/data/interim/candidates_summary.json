@@ -1,0 +1,39 @@
+{
+ "snapshot_file": "system-public-graph-v1-associations.csv",
+ "snapshot_rows": 1999877,
+ "snapshot_duplicate_ids": 0,
+ "snapshot_conflicting_ids": 0,
+ "malaria_context_pmids": 2745,
+ "candidates": 481,
+ "candidate_pmids": 273,
+ "by_match_rule": {
+  "both": 317,
+  "ours": 150,
+  "teammate": 14
+ },
+ "by_class": {
+  "nets": 408,
+  "smc": 38,
+  "vaccines": 37
+ },
+ "pmids_by_class": {
+  "nets": 240,
+  "smc": 15,
+  "vaccines": 20
+ },
+ "with_both_ci": 391,
+ "statistic_types": {
+  "odds_ratio": 206,
+  "adjusted_odds_ratio": 93,
+  "mean_difference_unstandardized": 47,
+  "relative_risk_ratio": 47,
+  "incident_rate_ratio": 26,
+  "hazard_ratio": 20,
+  "prevalence_ratio": 20,
+  "risk_difference": 7,
+  "coefficient": 6,
+  "pearson_r": 5,
+  "adjusted_hazard_ratio": 3,
+  "mean_difference_standardized": 1
+ }
+}

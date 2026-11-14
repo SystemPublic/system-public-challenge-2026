@@ -1,0 +1,115 @@
+{
+  "pipeline_version": "1.1.0",
+  "files": [
+    {
+      "path": "data/processed/README.md",
+      "bytes": 3894,
+      "sha256": "422cad3994687895e71c0f22b518fbf638312ce8dc39491121041b48f315480c"
+    },
+    {
+      "path": "data/processed/map_context.csv",
+      "bytes": 136324,
+      "sha256": "2b24e705861b34981ea3a69616c3f71b2f23cbfa9a6168ad225209a2ac08527a"
+    },
+    {
+      "path": "data/processed/map_context.json",
+      "bytes": 253969,
+      "sha256": "ef5df846859286a57bdeb32ea4a31cfd30f0c76061fabd73bccc531cd45434f8"
+    },
+    {
+      "path": "data/processed/pf8_country_year_resistance.csv",
+      "bytes": 255556,
+      "sha256": "a0cb2cbdede5f0b5d6f55bcfd43ca8be008d4aecb8c1b1aca080dd48b100467a"
+    },
+    {
+      "path": "data/processed/pf8_country_year_resistance.json",
+      "bytes": 912597,
+      "sha256": "b704b8b4dc5b5d31cf282dbe294b732dd2b3d4ff320208799223ad63970be1bf"
+    },
+    {
+      "path": "data/processed/pf8_drug_classifications.csv",
+      "bytes": 8536746,
+      "sha256": "8c3ff387e581055e95056849dcc8bfa9a5fec2b04905c67b8039408e4e0734a0"
+    },
+    {
+      "path": "data/processed/pf8_drug_classifications.json",
+      "bytes": 30016625,
+      "sha256": "cfd46ea5837603d0f89ced0f70e0dd4e6953b110103f398a1c2076f1787ad4f1"
+    },
+    {
+      "path": "data/processed/pf8_marker_calls.csv.gz",
+      "bytes": 3079033,
+      "sha256": "2671e95f710d12e5d9833422585f340dd2f327be797037f25b44f4e88b98aa99"
+    },
+    {
+      "path": "data/processed/pf8_resistance_context.csv",
+      "bytes": 489026,
+      "sha256": "90ffd67f97128ab9c5025de14e9a75dff71a19a139bda5b61802d5fbd4d74319"
+    },
+    {
+      "path": "data/processed/pf8_resistance_context.json",
+      "bytes": 1744250,
+      "sha256": "dcbbce8a02af352fdfa4b255bae39eb562c70ebee2692323c5032c7f02e81f27"
+    },
+    {
+      "path": "data/processed/pf8_samples.csv",
+      "bytes": 6839597,
+      "sha256": "ec5e970e5ea6010139c7d41990f4fb48dbfb86c65f245d126bb62f7f0419245a"
+    },
+    {
+      "path": "data/processed/pf8_samples.json",
+      "bytes": 23408332,
+      "sha256": "c8a427d9bd9686ec55af9bbe8ed23d085bb7f1320f02814bf29f78cee55f77fe"
+    },
+    {
+      "path": "data/processed/system_candidate_summary.csv",
+      "bytes": 182,
+      "sha256": "74f9c94d71ced33636b20199e5d5ee512ccd01238dc20ac34b2b3a16bc681627"
+    },
+    {
+      "path": "data/processed/system_candidate_summary.json",
+      "bytes": 583,
+      "sha256": "3659c57838ad834d8b8dfa51c2997527be96a0896eb8c7facdfe9bd9f4d0ba95"
+    },
+    {
+      "path": "data/processed/system_candidates.csv",
+      "bytes": 175736,
+      "sha256": "2ceedc638054f1e117844d8ab9775c61f0d29759230204419d29d0eab780182d"
+    },
+    {
+      "path": "data/processed/system_candidates.json",
+      "bytes": 554017,
+      "sha256": "79edf33db12ac5c42022116b7b7b08381388f1515bec084edf1bfa3cc6222108"
+    },
+    {
+      "path": "data/processed/system_review_queue.csv",
+      "bytes": 57221,
+      "sha256": "299b0ae8a311b30c631777519c08e58d6028744a5dba680f8b96bf29ba124ebf"
+    },
+    {
+      "path": "data/processed/system_review_queue.json",
+      "bytes": 116940,
+      "sha256": "b11a6b27589b141e30696de0a14b83d3298d8b6e4b0006ed23e89ce5187b73a4"
+    },
+    {
+      "path": "data/processed/system_study_lookup.csv",
+      "bytes": 29550,
+      "sha256": "0421ccb670c88c0a6cb0b8dea5f98c70f41ca03cd51638c45ff3db9355f85ebe"
+    },
+    {
+      "path": "data/processed/system_study_lookup.json",
+      "bytes": 51745,
+      "sha256": "b853b36fa27ea368b586c93e0e5c57942a9b4d480d7032a038b9a2737f6ad231"
+    },
+    {
+      "path": "data/processed/who_context.csv",
+      "bytes": 61499,
+      "sha256": "10c528d95c0aceaf8ea6b421af2ff9ddecdd92c5c3e7f26d830d568c8c3299b4"
+    },
+    {
+      "path": "data/processed/who_context.json",
+      "bytes": 165950,
+      "sha256": "f396c20c46750bd2bc316f3e9321805afee8faa6f1f84d2257d9c49bffdec8c6"
+    }
+  ]
+}

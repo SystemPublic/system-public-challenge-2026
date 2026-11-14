@@ -1,0 +1,135 @@
+{
+  "system": {
+    "input_rows": 1999877,
+    "lexical_candidate_rows": 331,
+    "all_study_rows": 844435,
+    "output_candidates": 331,
+    "unique_study_records": 203,
+    "study_lookup_matched": 203,
+    "source_verified_count": 0,
+    "global_missing": {
+      "ci_level": 1064848,
+      "p_value": 627802,
+      "ci_lower": 1044842,
+      "ci_upper": 1044879
+    },
+    "global_statistic_types": {
+      "adjusted_odds_ratio": 83322,
+      "adjusted_hazard_ratio": 19193,
+      "mean_difference_standardized": 11156,
+      "odds_ratio": 577611,
+      "relative_risk_ratio": 104104,
+      "coefficient": 281686,
+      "pearson_r": 193449,
+      "hazard_ratio": 235030,
+      "incident_rate_ratio": 17748,
+      "mean_difference_unstandardized": 444825,
+      "prevalence_ratio": 9930,
+      "spearman_correlation": 15671,
+      "risk_difference": 4488,
+      "elasticity": 530,
+      "coefficient_of_determination": 819,
+      "t_test": 263,
+      "gini_coefficient": 52
+    },
+    "candidate_flags": {
+      "p_operator_unspecified": 191,
+      "nonpositive_ratio": 1
+    },
+    "class_summary": [
+      {
+        "candidate_class": "nets",
+        "association_count": 262,
+        "study_record_count": 173,
+        "with_complete_ci": 208,
+        "numeric_checks_passed": 261,
+        "source_verified_count": 0
+      },
+      {
+        "candidate_class": "smc",
+        "association_count": 34,
+        "study_record_count": 12,
+        "with_complete_ci": 30,
+        "numeric_checks_passed": 34,
+        "source_verified_count": 0
+      },
+      {
+        "candidate_class": "vaccines",
+        "association_count": 37,
+        "study_record_count": 20,
+        "with_complete_ci": 28,
+        "numeric_checks_passed": 37,
+        "source_verified_count": 0
+      }
+    ],
+    "search_patterns": {
+      "nets": "insecticide[ -]treated (?:bed[ -]?)?nets?|long[ -]lasting insecticid\\w* nets?|\\b(?:bed[ -]?nets?|llins?|interceptor g2|royal guard|permanet|olyset)\\b|(?:chlorfenapyr|pyriproxyfen|piperonyl butoxide)",
+      "smc": "seasonal malaria chemoprevention|\\bsmc\\b|sulfadoxine[ -]pyrimethamine.{0,35}amodiaquine|\\bsp[ +/\\-]+aq\\b",
+      "vaccines": "\\brts\\s*[,/\\-]?\\s*s\\b|\\br21(?:/matrix[ -]?m)?\\b|malaria vaccin\\w*|vaccin\\w*.{0,30}malaria"
+    },
+    "context_pattern": "malaria|plasmodium|anopheles|mosquito|\\b(?:itns?|llins?)\\b",
+    "scope": "lexical candidate search, not exhaustive; study records are not independent trials",
+    "content_hints": {
+      "unclassified": 90,
+      "behaviour_or_acceptance": 110,
+      "human_infection_or_disease": 159,
+      "immunological": 2,
+      "entomological": 38
+    }
+  },
+  "who": {
+    "output_rows": 331,
+    "exact_duplicates_removed": 0,
+    "by_indicator": {
+      "MALARIA_EST_INCIDENCE": 125,
+      "MALARIA_IRS_COVERAGE": 31,
+      "MALARIA_ITN_COVERAGE": 50,
+      "MALARIA_ITN_USE": 125
+    },
+    "flags": {},
+    "countries": [
+      "BEN",
+      "BFA",
+      "MLI",
+      "NGA",
+      "TZA"
+    ]
+  },
+  "map": {
+    "output_rows": 390,
+    "release": "202608",
+    "countries": [
+      "BEN",
+      "BFA",
+      "MLI",
+      "NGA",
+      "TZA"
+    ],
+    "flags": {},
+    "years": [
+      2000,
+      2025
+    ]
+  },
+  "pf8": {
+    "input_samples": 33325,
+    "qc_pass_samples": 24409,
+    "genotype_rows": 24409,
+    "classification_rows": 24409,
+    "qc_pass_case_groups": 24409,
+    "aggregation_eligible_cases": 24409,
+    "resistance_context_rows": 4010,
+    "country_year_resistance_rows": 2220,
+    "marker_call_rows": 951951,
+    "metadata_without_genotypes": 8916,
+    "orphan_genotype_samples": 0,
+    "orphan_classification_samples": 0,
+    "flags": {
+      "missing_or_unmapped_country": 330,
+      "missing_or_invalid_year": 330
+    },
+    "countries": 34
+  },
+  "pipeline_version": "1.1.0",
+  "paper_linking_performed": false
+}

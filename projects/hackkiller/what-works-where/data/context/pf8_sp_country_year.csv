@@ -1,0 +1,333 @@
+iso3,year,drug,n_determined,n_resistant,n_sensitive,n_undetermined,resistant_share,scope
+BEN,2014,Pyrimethamine,36,36,0,0,1.0,sampled_cases_not_prevalence
+BEN,2014,SP (IPTp),36,0,36,0,0.0,sampled_cases_not_prevalence
+BEN,2014,SP (uncomplicated),35,34,1,1,0.9714285714285714,sampled_cases_not_prevalence
+BEN,2014,Sulfadoxine,36,35,1,0,0.9722222222222222,sampled_cases_not_prevalence
+BEN,2016,Pyrimethamine,109,109,0,0,1.0,sampled_cases_not_prevalence
+BEN,2016,SP (IPTp),109,0,109,0,0.0,sampled_cases_not_prevalence
+BEN,2016,SP (uncomplicated),109,109,0,0,1.0,sampled_cases_not_prevalence
+BEN,2016,Sulfadoxine,109,108,1,0,0.9908256880733946,sampled_cases_not_prevalence
+BFA,2008,Pyrimethamine,34,15,19,22,0.4411764705882353,sampled_cases_not_prevalence
+BFA,2008,SP (IPTp),56,0,56,0,0.0,sampled_cases_not_prevalence
+BFA,2008,SP (uncomplicated),36,10,26,20,0.2777777777777778,sampled_cases_not_prevalence
+BFA,2008,Sulfadoxine,39,24,15,17,0.6153846153846154,sampled_cases_not_prevalence
+GHA,2009,Pyrimethamine,96,81,15,24,0.84375,sampled_cases_not_prevalence
+GHA,2009,SP (IPTp),120,0,120,0,0.0,sampled_cases_not_prevalence
+GHA,2009,SP (uncomplicated),86,51,35,34,0.5930232558139535,sampled_cases_not_prevalence
+GHA,2009,Sulfadoxine,95,90,5,25,0.9473684210526315,sampled_cases_not_prevalence
+GHA,2010,Pyrimethamine,141,115,26,27,0.8156028368794326,sampled_cases_not_prevalence
+GHA,2010,SP (IPTp),167,0,167,1,0.0,sampled_cases_not_prevalence
+GHA,2010,SP (uncomplicated),119,71,48,49,0.5966386554621849,sampled_cases_not_prevalence
+GHA,2010,Sulfadoxine,148,133,15,20,0.8986486486486487,sampled_cases_not_prevalence
+GHA,2011,Pyrimethamine,90,77,13,12,0.8555555555555555,sampled_cases_not_prevalence
+GHA,2011,SP (IPTp),102,0,102,0,0.0,sampled_cases_not_prevalence
+GHA,2011,SP (uncomplicated),82,50,32,20,0.6097560975609756,sampled_cases_not_prevalence
+GHA,2011,Sulfadoxine,81,65,16,21,0.8024691358024691,sampled_cases_not_prevalence
+GHA,2012,Pyrimethamine,75,71,4,12,0.9466666666666667,sampled_cases_not_prevalence
+GHA,2012,SP (IPTp),87,0,87,0,0.0,sampled_cases_not_prevalence
+GHA,2012,SP (uncomplicated),63,51,12,24,0.8095238095238095,sampled_cases_not_prevalence
+GHA,2012,Sulfadoxine,79,72,7,8,0.9113924050632911,sampled_cases_not_prevalence
+GHA,2013,Pyrimethamine,205,178,27,42,0.8682926829268293,sampled_cases_not_prevalence
+GHA,2013,SP (IPTp),247,0,247,0,0.0,sampled_cases_not_prevalence
+GHA,2013,SP (uncomplicated),185,128,57,62,0.6918918918918919,sampled_cases_not_prevalence
+GHA,2013,Sulfadoxine,215,201,14,32,0.9348837209302325,sampled_cases_not_prevalence
+GHA,2014,Pyrimethamine,401,361,40,79,0.9002493765586035,sampled_cases_not_prevalence
+GHA,2014,SP (IPTp),466,0,466,14,0.0,sampled_cases_not_prevalence
+GHA,2014,SP (uncomplicated),368,261,107,112,0.7092391304347826,sampled_cases_not_prevalence
+GHA,2014,Sulfadoxine,416,395,21,64,0.9495192307692307,sampled_cases_not_prevalence
+GHA,2015,Pyrimethamine,331,299,32,41,0.9033232628398792,sampled_cases_not_prevalence
+GHA,2015,SP (IPTp),371,0,371,1,0.0,sampled_cases_not_prevalence
+GHA,2015,SP (uncomplicated),298,229,69,74,0.7684563758389261,sampled_cases_not_prevalence
+GHA,2015,Sulfadoxine,331,297,34,41,0.8972809667673716,sampled_cases_not_prevalence
+GHA,2016,Pyrimethamine,270,262,8,37,0.9703703703703703,sampled_cases_not_prevalence
+GHA,2016,SP (IPTp),305,0,305,2,0.0,sampled_cases_not_prevalence
+GHA,2016,SP (uncomplicated),234,202,32,73,0.8632478632478633,sampled_cases_not_prevalence
+GHA,2016,Sulfadoxine,275,261,14,32,0.9490909090909091,sampled_cases_not_prevalence
+GHA,2017,Pyrimethamine,613,551,62,85,0.8988580750407831,sampled_cases_not_prevalence
+GHA,2017,SP (IPTp),689,0,689,9,0.0,sampled_cases_not_prevalence
+GHA,2017,SP (uncomplicated),533,421,112,165,0.7898686679174484,sampled_cases_not_prevalence
+GHA,2017,Sulfadoxine,609,569,40,89,0.9343185550082101,sampled_cases_not_prevalence
+GHA,2018,Pyrimethamine,1736,1665,71,128,0.9591013824884793,sampled_cases_not_prevalence
+GHA,2018,SP (IPTp),1851,0,1851,13,0.0,sampled_cases_not_prevalence
+GHA,2018,SP (uncomplicated),1550,1296,254,314,0.8361290322580646,sampled_cases_not_prevalence
+GHA,2018,Sulfadoxine,1740,1625,115,124,0.9339080459770115,sampled_cases_not_prevalence
+GHA,2019,Pyrimethamine,197,190,7,22,0.9644670050761421,sampled_cases_not_prevalence
+GHA,2019,SP (IPTp),219,0,219,0,0.0,sampled_cases_not_prevalence
+GHA,2019,SP (uncomplicated),172,144,28,47,0.8372093023255814,sampled_cases_not_prevalence
+GHA,2019,Sulfadoxine,195,182,13,24,0.9333333333333333,sampled_cases_not_prevalence
+GHA,2020,Pyrimethamine,194,190,4,32,0.979381443298969,sampled_cases_not_prevalence
+GHA,2020,SP (IPTp),216,0,216,10,0.0,sampled_cases_not_prevalence
+GHA,2020,SP (uncomplicated),182,150,32,44,0.8241758241758241,sampled_cases_not_prevalence
+GHA,2020,Sulfadoxine,211,201,10,15,0.95260663507109,sampled_cases_not_prevalence
+GHA,2021,Pyrimethamine,15,15,0,0,1.0,sampled_cases_not_prevalence
+GHA,2021,SP (IPTp),15,0,15,0,0.0,sampled_cases_not_prevalence
+GHA,2021,SP (uncomplicated),13,12,1,2,0.9230769230769231,sampled_cases_not_prevalence
+GHA,2021,Sulfadoxine,15,13,2,0,0.8666666666666667,sampled_cases_not_prevalence
+GMB,1966,Pyrimethamine,7,0,7,0,0.0,sampled_cases_not_prevalence
+GMB,1966,SP (IPTp),7,0,7,0,0.0,sampled_cases_not_prevalence
+GMB,1966,SP (uncomplicated),7,0,7,0,0.0,sampled_cases_not_prevalence
+GMB,1966,Sulfadoxine,7,0,7,0,0.0,sampled_cases_not_prevalence
+GMB,1967,Pyrimethamine,7,0,7,0,0.0,sampled_cases_not_prevalence
+GMB,1967,SP (IPTp),7,0,7,0,0.0,sampled_cases_not_prevalence
+GMB,1967,SP (uncomplicated),7,0,7,0,0.0,sampled_cases_not_prevalence
+GMB,1967,Sulfadoxine,7,0,7,0,0.0,sampled_cases_not_prevalence
+GMB,1968,Pyrimethamine,12,0,12,0,0.0,sampled_cases_not_prevalence
+GMB,1968,SP (IPTp),12,0,12,0,0.0,sampled_cases_not_prevalence
+GMB,1968,SP (uncomplicated),12,0,12,0,0.0,sampled_cases_not_prevalence
+GMB,1968,Sulfadoxine,12,0,12,0,0.0,sampled_cases_not_prevalence
+GMB,1969,Pyrimethamine,13,0,13,0,0.0,sampled_cases_not_prevalence
+GMB,1969,SP (IPTp),13,0,13,0,0.0,sampled_cases_not_prevalence
+GMB,1969,SP (uncomplicated),13,0,13,0,0.0,sampled_cases_not_prevalence
+GMB,1969,Sulfadoxine,13,0,13,0,0.0,sampled_cases_not_prevalence
+GMB,1970,Pyrimethamine,15,0,15,0,0.0,sampled_cases_not_prevalence
+GMB,1970,SP (IPTp),15,0,15,0,0.0,sampled_cases_not_prevalence
+GMB,1970,SP (uncomplicated),15,0,15,0,0.0,sampled_cases_not_prevalence
+GMB,1970,Sulfadoxine,15,0,15,0,0.0,sampled_cases_not_prevalence
+GMB,1971,Pyrimethamine,1,0,1,0,0.0,sampled_cases_not_prevalence
+GMB,1971,SP (IPTp),1,0,1,0,0.0,sampled_cases_not_prevalence
+GMB,1971,SP (uncomplicated),1,0,1,0,0.0,sampled_cases_not_prevalence
+GMB,1971,Sulfadoxine,1,0,1,0,0.0,sampled_cases_not_prevalence
+GMB,1984,Pyrimethamine,127,6,121,10,0.047244094488188976,sampled_cases_not_prevalence
+GMB,1984,SP (IPTp),137,0,137,0,0.0,sampled_cases_not_prevalence
+GMB,1984,SP (uncomplicated),137,0,137,0,0.0,sampled_cases_not_prevalence
+GMB,1984,Sulfadoxine,135,1,134,2,0.007407407407407408,sampled_cases_not_prevalence
+GMB,1990,Pyrimethamine,8,1,7,2,0.125,sampled_cases_not_prevalence
+GMB,1990,SP (IPTp),10,0,10,0,0.0,sampled_cases_not_prevalence
+GMB,1990,SP (uncomplicated),10,1,9,0,0.1,sampled_cases_not_prevalence
+GMB,1990,Sulfadoxine,10,1,9,0,0.1,sampled_cases_not_prevalence
+GMB,1991,Pyrimethamine,2,0,2,0,0.0,sampled_cases_not_prevalence
+GMB,1991,SP (IPTp),2,0,2,0,0.0,sampled_cases_not_prevalence
+GMB,1991,SP (uncomplicated),2,0,2,0,0.0,sampled_cases_not_prevalence
+GMB,1991,Sulfadoxine,2,0,2,0,0.0,sampled_cases_not_prevalence
+GMB,2001,Pyrimethamine,31,23,8,3,0.7419354838709677,sampled_cases_not_prevalence
+GMB,2001,SP (IPTp),34,0,34,0,0.0,sampled_cases_not_prevalence
+GMB,2001,SP (uncomplicated),30,21,9,4,0.7,sampled_cases_not_prevalence
+GMB,2001,Sulfadoxine,27,14,13,7,0.5185185185185185,sampled_cases_not_prevalence
+GMB,2008,Pyrimethamine,73,67,6,1,0.9178082191780822,sampled_cases_not_prevalence
+GMB,2008,SP (IPTp),74,0,74,0,0.0,sampled_cases_not_prevalence
+GMB,2008,SP (uncomplicated),72,61,11,2,0.8472222222222222,sampled_cases_not_prevalence
+GMB,2008,Sulfadoxine,67,51,16,7,0.7611940298507462,sampled_cases_not_prevalence
+GMB,2013,Pyrimethamine,49,45,4,0,0.9183673469387755,sampled_cases_not_prevalence
+GMB,2013,SP (IPTp),49,0,49,0,0.0,sampled_cases_not_prevalence
+GMB,2013,SP (uncomplicated),49,44,5,0,0.8979591836734694,sampled_cases_not_prevalence
+GMB,2013,Sulfadoxine,45,25,20,4,0.5555555555555556,sampled_cases_not_prevalence
+GMB,2014,Pyrimethamine,291,278,13,11,0.9553264604810997,sampled_cases_not_prevalence
+GMB,2014,SP (IPTp),302,0,302,0,0.0,sampled_cases_not_prevalence
+GMB,2014,SP (uncomplicated),288,270,18,14,0.9375,sampled_cases_not_prevalence
+GMB,2014,Sulfadoxine,283,184,99,19,0.6501766784452296,sampled_cases_not_prevalence
+GMB,2015,Pyrimethamine,131,128,3,5,0.9770992366412213,sampled_cases_not_prevalence
+GMB,2015,SP (IPTp),136,0,136,0,0.0,sampled_cases_not_prevalence
+GMB,2015,SP (uncomplicated),131,126,5,5,0.9618320610687023,sampled_cases_not_prevalence
+GMB,2015,Sulfadoxine,131,92,39,5,0.7022900763358778,sampled_cases_not_prevalence
+GMB,2016,Pyrimethamine,125,121,4,6,0.968,sampled_cases_not_prevalence
+GMB,2016,SP (IPTp),131,0,131,0,0.0,sampled_cases_not_prevalence
+GMB,2016,SP (uncomplicated),124,113,11,7,0.9112903225806451,sampled_cases_not_prevalence
+GMB,2016,Sulfadoxine,123,91,32,8,0.7398373983739838,sampled_cases_not_prevalence
+GMB,2017,Pyrimethamine,133,129,4,10,0.9699248120300752,sampled_cases_not_prevalence
+GMB,2017,SP (IPTp),142,0,142,1,0.0,sampled_cases_not_prevalence
+GMB,2017,SP (uncomplicated),129,120,9,14,0.9302325581395349,sampled_cases_not_prevalence
+GMB,2017,Sulfadoxine,132,101,31,11,0.7651515151515151,sampled_cases_not_prevalence
+GMB,2018,Pyrimethamine,103,102,1,10,0.9902912621359223,sampled_cases_not_prevalence
+GMB,2018,SP (IPTp),110,0,110,3,0.0,sampled_cases_not_prevalence
+GMB,2018,SP (uncomplicated),96,94,2,17,0.9791666666666666,sampled_cases_not_prevalence
+GMB,2018,Sulfadoxine,106,82,24,7,0.7735849056603774,sampled_cases_not_prevalence
+GMB,2019,Pyrimethamine,122,112,10,11,0.9180327868852459,sampled_cases_not_prevalence
+GMB,2019,SP (IPTp),128,0,128,5,0.0,sampled_cases_not_prevalence
+GMB,2019,SP (uncomplicated),114,102,12,19,0.8947368421052632,sampled_cases_not_prevalence
+GMB,2019,Sulfadoxine,117,93,24,16,0.7948717948717948,sampled_cases_not_prevalence
+GMB,2020,Pyrimethamine,53,50,3,4,0.9433962264150944,sampled_cases_not_prevalence
+GMB,2020,SP (IPTp),54,0,54,3,0.0,sampled_cases_not_prevalence
+GMB,2020,SP (uncomplicated),54,49,5,3,0.9074074074074074,sampled_cases_not_prevalence
+GMB,2020,Sulfadoxine,52,43,9,5,0.8269230769230769,sampled_cases_not_prevalence
+KEN,1994,Pyrimethamine,39,25,14,14,0.6410256410256411,sampled_cases_not_prevalence
+KEN,1994,SP (IPTp),53,0,53,0,0.0,sampled_cases_not_prevalence
+KEN,1994,SP (uncomplicated),44,8,36,9,0.18181818181818182,sampled_cases_not_prevalence
+KEN,1994,Sulfadoxine,48,12,36,5,0.25,sampled_cases_not_prevalence
+KEN,1995,Pyrimethamine,41,22,19,16,0.5365853658536586,sampled_cases_not_prevalence
+KEN,1995,SP (IPTp),57,0,57,0,0.0,sampled_cases_not_prevalence
+KEN,1995,SP (uncomplicated),46,6,40,11,0.13043478260869565,sampled_cases_not_prevalence
+KEN,1995,Sulfadoxine,52,3,49,5,0.057692307692307696,sampled_cases_not_prevalence
+KEN,1996,Pyrimethamine,51,33,18,14,0.6470588235294118,sampled_cases_not_prevalence
+KEN,1996,SP (IPTp),65,0,65,0,0.0,sampled_cases_not_prevalence
+KEN,1996,SP (uncomplicated),52,2,50,13,0.038461538461538464,sampled_cases_not_prevalence
+KEN,1996,Sulfadoxine,61,4,57,4,0.06557377049180328,sampled_cases_not_prevalence
+KEN,1997,Pyrimethamine,44,35,9,17,0.7954545454545454,sampled_cases_not_prevalence
+KEN,1997,SP (IPTp),61,0,61,0,0.0,sampled_cases_not_prevalence
+KEN,1997,SP (uncomplicated),46,12,34,15,0.2608695652173913,sampled_cases_not_prevalence
+KEN,1997,Sulfadoxine,52,11,41,9,0.21153846153846154,sampled_cases_not_prevalence
+KEN,1998,Pyrimethamine,54,44,10,10,0.8148148148148148,sampled_cases_not_prevalence
+KEN,1998,SP (IPTp),64,0,64,0,0.0,sampled_cases_not_prevalence
+KEN,1998,SP (uncomplicated),44,19,25,20,0.4318181818181818,sampled_cases_not_prevalence
+KEN,1998,Sulfadoxine,58,18,40,6,0.3103448275862069,sampled_cases_not_prevalence
+KEN,1999,Pyrimethamine,8,7,1,4,0.875,sampled_cases_not_prevalence
+KEN,1999,SP (IPTp),12,0,12,0,0.0,sampled_cases_not_prevalence
+KEN,1999,SP (uncomplicated),8,1,7,4,0.125,sampled_cases_not_prevalence
+KEN,1999,Sulfadoxine,10,5,5,2,0.5,sampled_cases_not_prevalence
+KEN,2000,Pyrimethamine,17,16,1,1,0.9411764705882353,sampled_cases_not_prevalence
+KEN,2000,SP (IPTp),18,0,18,0,0.0,sampled_cases_not_prevalence
+KEN,2000,SP (uncomplicated),17,9,8,1,0.5294117647058824,sampled_cases_not_prevalence
+KEN,2000,Sulfadoxine,17,12,5,1,0.7058823529411765,sampled_cases_not_prevalence
+KEN,2003,Pyrimethamine,54,52,2,2,0.9629629629629629,sampled_cases_not_prevalence
+KEN,2003,SP (IPTp),56,0,56,0,0.0,sampled_cases_not_prevalence
+KEN,2003,SP (uncomplicated),48,31,17,8,0.6458333333333334,sampled_cases_not_prevalence
+KEN,2003,Sulfadoxine,52,40,12,4,0.7692307692307693,sampled_cases_not_prevalence
+KEN,2004,Pyrimethamine,63,61,2,2,0.9682539682539683,sampled_cases_not_prevalence
+KEN,2004,SP (IPTp),65,0,65,0,0.0,sampled_cases_not_prevalence
+KEN,2004,SP (uncomplicated),57,37,20,8,0.6491228070175439,sampled_cases_not_prevalence
+KEN,2004,Sulfadoxine,56,45,11,9,0.8035714285714286,sampled_cases_not_prevalence
+KEN,2005,Pyrimethamine,58,58,0,1,1.0,sampled_cases_not_prevalence
+KEN,2005,SP (IPTp),58,0,58,1,0.0,sampled_cases_not_prevalence
+KEN,2005,SP (uncomplicated),45,27,18,14,0.6,sampled_cases_not_prevalence
+KEN,2005,Sulfadoxine,50,44,6,9,0.88,sampled_cases_not_prevalence
+KEN,2006,Pyrimethamine,52,52,0,1,1.0,sampled_cases_not_prevalence
+KEN,2006,SP (IPTp),52,0,52,1,0.0,sampled_cases_not_prevalence
+KEN,2006,SP (uncomplicated),41,30,11,12,0.7317073170731707,sampled_cases_not_prevalence
+KEN,2006,Sulfadoxine,46,36,10,7,0.782608695652174,sampled_cases_not_prevalence
+KEN,2007,Pyrimethamine,105,104,1,2,0.9904761904761905,sampled_cases_not_prevalence
+KEN,2007,SP (IPTp),107,1,106,0,0.009345794392523364,sampled_cases_not_prevalence
+KEN,2007,SP (uncomplicated),91,61,30,16,0.6703296703296703,sampled_cases_not_prevalence
+KEN,2007,Sulfadoxine,97,85,12,10,0.8762886597938144,sampled_cases_not_prevalence
+KEN,2008,Pyrimethamine,51,49,2,0,0.9607843137254902,sampled_cases_not_prevalence
+KEN,2008,SP (IPTp),51,0,51,0,0.0,sampled_cases_not_prevalence
+KEN,2008,SP (uncomplicated),40,27,13,11,0.675,sampled_cases_not_prevalence
+KEN,2008,Sulfadoxine,43,36,7,8,0.8372093023255814,sampled_cases_not_prevalence
+KEN,2009,Pyrimethamine,69,68,1,1,0.9855072463768116,sampled_cases_not_prevalence
+KEN,2009,SP (IPTp),70,0,70,0,0.0,sampled_cases_not_prevalence
+KEN,2009,SP (uncomplicated),60,45,15,10,0.75,sampled_cases_not_prevalence
+KEN,2009,Sulfadoxine,63,56,7,7,0.8888888888888888,sampled_cases_not_prevalence
+KEN,2010,Pyrimethamine,90,84,6,0,0.9333333333333333,sampled_cases_not_prevalence
+KEN,2010,SP (IPTp),90,0,90,0,0.0,sampled_cases_not_prevalence
+KEN,2010,SP (uncomplicated),78,56,22,12,0.717948717948718,sampled_cases_not_prevalence
+KEN,2010,Sulfadoxine,83,67,16,7,0.8072289156626506,sampled_cases_not_prevalence
+KEN,2011,Pyrimethamine,72,72,0,0,1.0,sampled_cases_not_prevalence
+KEN,2011,SP (IPTp),72,0,72,0,0.0,sampled_cases_not_prevalence
+KEN,2011,SP (uncomplicated),63,48,15,9,0.7619047619047619,sampled_cases_not_prevalence
+KEN,2011,Sulfadoxine,70,66,4,2,0.9428571428571428,sampled_cases_not_prevalence
+KEN,2012,Pyrimethamine,84,84,0,0,1.0,sampled_cases_not_prevalence
+KEN,2012,SP (IPTp),84,1,83,0,0.011904761904761904,sampled_cases_not_prevalence
+KEN,2012,SP (uncomplicated),75,52,23,9,0.6933333333333334,sampled_cases_not_prevalence
+KEN,2012,Sulfadoxine,81,72,9,3,0.8888888888888888,sampled_cases_not_prevalence
+KEN,2013,Pyrimethamine,79,75,4,3,0.9493670886075949,sampled_cases_not_prevalence
+KEN,2013,SP (IPTp),82,0,82,0,0.0,sampled_cases_not_prevalence
+KEN,2013,SP (uncomplicated),72,46,26,10,0.6388888888888888,sampled_cases_not_prevalence
+KEN,2013,Sulfadoxine,78,61,17,4,0.782051282051282,sampled_cases_not_prevalence
+KEN,2014,Pyrimethamine,123,123,0,0,1.0,sampled_cases_not_prevalence
+KEN,2014,SP (IPTp),121,0,121,2,0.0,sampled_cases_not_prevalence
+KEN,2014,SP (uncomplicated),117,107,10,6,0.9145299145299145,sampled_cases_not_prevalence
+KEN,2014,Sulfadoxine,120,115,5,3,0.9583333333333334,sampled_cases_not_prevalence
+KEN,2015,Pyrimethamine,43,43,0,0,1.0,sampled_cases_not_prevalence
+KEN,2015,SP (IPTp),43,0,43,0,0.0,sampled_cases_not_prevalence
+KEN,2015,SP (uncomplicated),37,31,6,6,0.8378378378378378,sampled_cases_not_prevalence
+KEN,2015,Sulfadoxine,42,41,1,1,0.9761904761904762,sampled_cases_not_prevalence
+KEN,2016,Pyrimethamine,49,49,0,0,1.0,sampled_cases_not_prevalence
+KEN,2016,SP (IPTp),48,1,47,1,0.020833333333333332,sampled_cases_not_prevalence
+KEN,2016,SP (uncomplicated),43,33,10,6,0.7674418604651163,sampled_cases_not_prevalence
+KEN,2016,Sulfadoxine,48,46,2,1,0.9583333333333334,sampled_cases_not_prevalence
+KEN,2017,Pyrimethamine,49,49,0,2,1.0,sampled_cases_not_prevalence
+KEN,2017,SP (IPTp),49,0,49,2,0.0,sampled_cases_not_prevalence
+KEN,2017,SP (uncomplicated),39,36,3,12,0.9230769230769231,sampled_cases_not_prevalence
+KEN,2017,Sulfadoxine,48,47,1,3,0.9791666666666666,sampled_cases_not_prevalence
+KEN,2018,Pyrimethamine,261,260,1,0,0.9961685823754789,sampled_cases_not_prevalence
+KEN,2018,SP (IPTp),254,5,249,7,0.01968503937007874,sampled_cases_not_prevalence
+KEN,2018,SP (uncomplicated),225,203,22,36,0.9022222222222223,sampled_cases_not_prevalence
+KEN,2018,Sulfadoxine,257,253,4,4,0.9844357976653697,sampled_cases_not_prevalence
+KEN,2019,Pyrimethamine,241,238,3,3,0.9875518672199171,sampled_cases_not_prevalence
+KEN,2019,SP (IPTp),226,4,222,18,0.017699115044247787,sampled_cases_not_prevalence
+KEN,2019,SP (uncomplicated),203,186,17,41,0.916256157635468,sampled_cases_not_prevalence
+KEN,2019,Sulfadoxine,235,228,7,9,0.9702127659574468,sampled_cases_not_prevalence
+KEN,2020,Pyrimethamine,44,43,1,0,0.9772727272727273,sampled_cases_not_prevalence
+KEN,2020,SP (IPTp),43,0,43,1,0.0,sampled_cases_not_prevalence
+KEN,2020,SP (uncomplicated),34,31,3,10,0.9117647058823529,sampled_cases_not_prevalence
+KEN,2020,Sulfadoxine,43,43,0,1,1.0,sampled_cases_not_prevalence
+MLI,2007,Pyrimethamine,66,31,35,19,0.4696969696969697,sampled_cases_not_prevalence
+MLI,2007,SP (IPTp),85,0,85,0,0.0,sampled_cases_not_prevalence
+MLI,2007,SP (uncomplicated),63,27,36,22,0.42857142857142855,sampled_cases_not_prevalence
+MLI,2007,Sulfadoxine,65,19,46,20,0.2923076923076923,sampled_cases_not_prevalence
+MLI,2012,Pyrimethamine,2,2,0,1,1.0,sampled_cases_not_prevalence
+MLI,2012,SP (IPTp),3,0,3,0,0.0,sampled_cases_not_prevalence
+MLI,2012,SP (uncomplicated),2,2,0,1,1.0,sampled_cases_not_prevalence
+MLI,2012,Sulfadoxine,3,3,0,0,1.0,sampled_cases_not_prevalence
+MLI,2013,Pyrimethamine,282,192,90,47,0.6808510638297872,sampled_cases_not_prevalence
+MLI,2013,SP (IPTp),329,0,329,0,0.0,sampled_cases_not_prevalence
+MLI,2013,SP (uncomplicated),271,169,102,58,0.6236162361623616,sampled_cases_not_prevalence
+MLI,2013,Sulfadoxine,271,121,150,58,0.44649446494464945,sampled_cases_not_prevalence
+MLI,2014,Pyrimethamine,117,81,36,17,0.6923076923076923,sampled_cases_not_prevalence
+MLI,2014,SP (IPTp),134,0,134,0,0.0,sampled_cases_not_prevalence
+MLI,2014,SP (uncomplicated),112,69,43,22,0.6160714285714286,sampled_cases_not_prevalence
+MLI,2014,Sulfadoxine,112,47,65,22,0.41964285714285715,sampled_cases_not_prevalence
+MLI,2015,Pyrimethamine,150,113,37,16,0.7533333333333333,sampled_cases_not_prevalence
+MLI,2015,SP (IPTp),166,0,166,0,0.0,sampled_cases_not_prevalence
+MLI,2015,SP (uncomplicated),148,103,45,18,0.6959459459459459,sampled_cases_not_prevalence
+MLI,2015,Sulfadoxine,146,65,81,20,0.4452054794520548,sampled_cases_not_prevalence
+MLI,2016,Pyrimethamine,343,296,47,49,0.8629737609329446,sampled_cases_not_prevalence
+MLI,2016,SP (IPTp),390,0,390,2,0.0,sampled_cases_not_prevalence
+MLI,2016,SP (uncomplicated),329,266,63,63,0.8085106382978723,sampled_cases_not_prevalence
+MLI,2016,Sulfadoxine,341,225,116,51,0.6598240469208211,sampled_cases_not_prevalence
+MLI,2017,Pyrimethamine,42,34,8,0,0.8095238095238095,sampled_cases_not_prevalence
+MLI,2017,SP (IPTp),41,0,41,1,0.0,sampled_cases_not_prevalence
+MLI,2017,SP (uncomplicated),41,31,10,1,0.7560975609756098,sampled_cases_not_prevalence
+MLI,2017,Sulfadoxine,37,29,8,5,0.7837837837837838,sampled_cases_not_prevalence
+MLI,2018,Pyrimethamine,11,11,0,3,1.0,sampled_cases_not_prevalence
+MLI,2018,SP (IPTp),14,0,14,0,0.0,sampled_cases_not_prevalence
+MLI,2018,SP (uncomplicated),11,10,1,3,0.9090909090909091,sampled_cases_not_prevalence
+MLI,2018,Sulfadoxine,11,9,2,3,0.8181818181818182,sampled_cases_not_prevalence
+MLI,2019,Pyrimethamine,40,37,3,4,0.925,sampled_cases_not_prevalence
+MLI,2019,SP (IPTp),44,0,44,0,0.0,sampled_cases_not_prevalence
+MLI,2019,SP (uncomplicated),40,35,5,4,0.875,sampled_cases_not_prevalence
+MLI,2019,Sulfadoxine,38,31,7,6,0.8157894736842105,sampled_cases_not_prevalence
+MLI,2020,Pyrimethamine,38,36,2,6,0.9473684210526315,sampled_cases_not_prevalence
+MLI,2020,SP (IPTp),41,0,41,3,0.0,sampled_cases_not_prevalence
+MLI,2020,SP (uncomplicated),33,29,4,11,0.8787878787878788,sampled_cases_not_prevalence
+MLI,2020,Sulfadoxine,34,29,5,10,0.8529411764705882,sampled_cases_not_prevalence
+NGA,2008,Pyrimethamine,10,10,0,0,1.0,sampled_cases_not_prevalence
+NGA,2008,SP (IPTp),10,0,10,0,0.0,sampled_cases_not_prevalence
+NGA,2008,SP (uncomplicated),10,9,1,0,0.9,sampled_cases_not_prevalence
+NGA,2008,Sulfadoxine,10,9,1,0,0.9,sampled_cases_not_prevalence
+NGA,2011,Pyrimethamine,1,1,0,0,1.0,sampled_cases_not_prevalence
+NGA,2011,SP (IPTp),1,0,1,0,0.0,sampled_cases_not_prevalence
+NGA,2011,SP (uncomplicated),1,1,0,0,1.0,sampled_cases_not_prevalence
+NGA,2011,Sulfadoxine,1,1,0,0,1.0,sampled_cases_not_prevalence
+NGA,2012,Pyrimethamine,4,4,0,0,1.0,sampled_cases_not_prevalence
+NGA,2012,SP (IPTp),4,0,4,0,0.0,sampled_cases_not_prevalence
+NGA,2012,SP (uncomplicated),4,4,0,0,1.0,sampled_cases_not_prevalence
+NGA,2012,Sulfadoxine,4,4,0,0,1.0,sampled_cases_not_prevalence
+NGA,2014,Pyrimethamine,24,23,1,0,0.9583333333333334,sampled_cases_not_prevalence
+NGA,2014,SP (IPTp),24,0,24,0,0.0,sampled_cases_not_prevalence
+NGA,2014,SP (uncomplicated),24,22,2,0,0.9166666666666666,sampled_cases_not_prevalence
+NGA,2014,Sulfadoxine,23,19,4,1,0.8260869565217391,sampled_cases_not_prevalence
+NGA,2017,Pyrimethamine,90,90,0,9,1.0,sampled_cases_not_prevalence
+NGA,2017,SP (IPTp),98,0,98,1,0.0,sampled_cases_not_prevalence
+NGA,2017,SP (uncomplicated),82,80,2,17,0.975609756097561,sampled_cases_not_prevalence
+NGA,2017,Sulfadoxine,92,87,5,7,0.9456521739130435,sampled_cases_not_prevalence
+NGA,2018,Pyrimethamine,20,20,0,2,1.0,sampled_cases_not_prevalence
+NGA,2018,SP (IPTp),21,0,21,1,0.0,sampled_cases_not_prevalence
+NGA,2018,SP (uncomplicated),21,13,8,1,0.6190476190476191,sampled_cases_not_prevalence
+NGA,2018,Sulfadoxine,21,18,3,1,0.8571428571428571,sampled_cases_not_prevalence
+NGA,2019,Pyrimethamine,27,27,0,2,1.0,sampled_cases_not_prevalence
+NGA,2019,SP (IPTp),29,0,29,0,0.0,sampled_cases_not_prevalence
+NGA,2019,SP (uncomplicated),27,27,0,2,1.0,sampled_cases_not_prevalence
+NGA,2019,Sulfadoxine,28,26,2,1,0.9285714285714286,sampled_cases_not_prevalence
+NGA,2020,Pyrimethamine,190,187,3,21,0.9842105263157894,sampled_cases_not_prevalence
+NGA,2020,SP (IPTp),205,0,205,6,0.0,sampled_cases_not_prevalence
+NGA,2020,SP (uncomplicated),175,168,7,36,0.96,sampled_cases_not_prevalence
+NGA,2020,Sulfadoxine,191,182,9,20,0.9528795811518325,sampled_cases_not_prevalence
+TZA,2010,Pyrimethamine,44,42,2,3,0.9545454545454546,sampled_cases_not_prevalence
+TZA,2010,SP (IPTp),46,5,41,1,0.10869565217391304,sampled_cases_not_prevalence
+TZA,2010,SP (uncomplicated),40,34,6,7,0.85,sampled_cases_not_prevalence
+TZA,2010,Sulfadoxine,43,31,12,4,0.7209302325581395,sampled_cases_not_prevalence
+TZA,2013,Pyrimethamine,267,266,1,2,0.9962546816479401,sampled_cases_not_prevalence
+TZA,2013,SP (IPTp),246,65,181,23,0.26422764227642276,sampled_cases_not_prevalence
+TZA,2013,SP (uncomplicated),248,222,26,21,0.8951612903225806,sampled_cases_not_prevalence
+TZA,2013,Sulfadoxine,250,229,21,19,0.916,sampled_cases_not_prevalence
+TZA,2014,Pyrimethamine,268,268,0,5,1.0,sampled_cases_not_prevalence
+TZA,2014,SP (IPTp),223,62,161,50,0.27802690582959644,sampled_cases_not_prevalence
+TZA,2014,SP (uncomplicated),251,234,17,22,0.9322709163346613,sampled_cases_not_prevalence
+TZA,2014,Sulfadoxine,259,243,16,14,0.9382239382239382,sampled_cases_not_prevalence
+TZA,2016,Pyrimethamine,4,4,0,0,1.0,sampled_cases_not_prevalence
+TZA,2016,SP (IPTp),4,0,4,0,0.0,sampled_cases_not_prevalence
+TZA,2016,SP (uncomplicated),2,1,1,2,0.5,sampled_cases_not_prevalence
+TZA,2016,Sulfadoxine,3,3,0,1,1.0,sampled_cases_not_prevalence
+TZA,2019,Pyrimethamine,427,421,6,5,0.9859484777517564,sampled_cases_not_prevalence
+TZA,2019,SP (IPTp),428,1,427,4,0.002336448598130841,sampled_cases_not_prevalence
+TZA,2019,SP (uncomplicated),367,320,47,65,0.8719346049046321,sampled_cases_not_prevalence
+TZA,2019,Sulfadoxine,388,345,43,44,0.8891752577319587,sampled_cases_not_prevalence

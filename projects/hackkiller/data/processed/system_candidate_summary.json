@@ -1,0 +1,26 @@
+[
+  {
+    "candidate_class": "nets",
+    "association_count": 262,
+    "study_record_count": 173,
+    "with_complete_ci": 208,
+    "numeric_checks_passed": 261,
+    "source_verified_count": 0
+  },
+  {
+    "candidate_class": "smc",
+    "association_count": 34,
+    "study_record_count": 12,
+    "with_complete_ci": 30,
+    "numeric_checks_passed": 34,
+    "source_verified_count": 0
+  },
+  {
+    "candidate_class": "vaccines",
+    "association_count": 37,
+    "study_record_count": 20,
+    "with_complete_ci": 28,
+    "numeric_checks_passed": 37,
+    "source_verified_count": 0
+  }
+]
