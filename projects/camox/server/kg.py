@@ -16,7 +16,8 @@ def rebuild(project_id: int) -> dict:
     runs = db.q("select id, query, answer from runs where project_id = %s and status = 'done' and answer is not null "
                 "order by id", (project_id,))
     cache = {r["text"]: r["data"] for r in db.q("select text, data from kg_extract")}
-    nodes, edges, new = kg.build(runs, cache)
+    goals = (db.q("select goals from projects where id = %s", (project_id,), one=True) or {}).get("goals", "")
+    nodes, edges, new = kg.build(runs, cache, goals)
     for text, data in new.items():
         db.q("insert into kg_extract(text, data) values (%s, %s) on conflict do nothing", (text, Jsonb(data)))
     db.q("delete from kg_edges where project_id = %s", (project_id,))
