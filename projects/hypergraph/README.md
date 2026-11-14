@@ -3,7 +3,15 @@
 **Team:** Hypergraph
 **Members:** Ida Benedetto and Jeff Nickerson
 **Challenge:** Build Challenge 4
-**Pitch slides:** the slide source for the talk is in `deck2/` in this folder (the earlier, longer deck is in `deck/`); a hosted link will be added before the deadline
+**Pitch slides:** https://docs.google.com/presentation/d/1Kxf0IH-j8Zmj4jzWuB3pb0fMRD1Pvq5QBTBD5L3n4x4 (the organizers' template). Longer decks, as source, are in `deck2/` and `deck/` in this folder.
+
+## What was built when
+
+The rules ask for work done during the event, so this section states what was not. The claim register, the test scripts, the edge explorer (`viz/hypergraph.html`) and most write-ups were built on 12 and 13 November 2026, before the hacking session, and the commit history shows this. Built on 14 November, during the event:
+
+- The strips: `viz/comics.html`, its drawing rules (`docs/comics.md`) and seven hand-specified strips.
+- `tools/strip_from_diff.py`, which draws a strip from the difference between two versions of an Underlay collection, and versions 1.1.0 and 1.2.0 of `system-community/nyc-concordance-claims`.
+- Four registered and refereed tests: the full moon, shootings inside against outside in New York (two windows) and the same test in Chicago (`docs/conjectures.md`).
 
 ## What it does
 

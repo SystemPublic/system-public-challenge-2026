@@ -28,6 +28,182 @@ const COMICS_GENERATED = {
  ],
  "strips": [
   {
+   "id": "diff-transfer-chicago-inside-outside",
+   "generated": true,
+   "pair": "v1.1.0..v1.2.0",
+   "title": "Generated from the Underlay: daily temperature and shootings in Chicago, v1.1.0 to v1.2.0 (Chicago)",
+   "lede": "Drawn by tools/strip_from_diff.py from the difference between two versions of system-community/nyc-concordance-claims: 3 records added, 0 updated, 0 removed. Numbers, verdicts and the revision reason are read from the records; only the two variable names are supplied by hand. The same difference on the Underlay: https://www.underlay.org/system-community/nyc-concordance-claims/versions/compare?from=v1.1.0&to=v1.2.0",
+   "sources": [
+    {
+     "text": "Outcome transfer-chicago-heat-shootings in system-community/nyc-concordance-claims v1.1.0.",
+     "href": "https://www.underlay.org/api/collections/system-community/nyc-concordance-claims/versions/v1.1.0/records/Outcome/transfer-chicago-heat-shootings",
+     "link": "record"
+    },
+    {
+     "text": "Outcome transfer-chicago-inside-outside in v1.2.0, added in this difference. Registration sha256 dcf2869a78e6.",
+     "href": "https://www.underlay.org/api/collections/system-community/nyc-concordance-claims/versions/v1.2.0/records/Outcome/transfer-chicago-inside-outside",
+     "link": "record"
+    },
+    {
+     "text": "Revision transfer-chicago-inside-outside/r1 in v1.2.0: critique/referee_2026-11-14_chicago_inside.md.",
+     "href": "https://www.underlay.org/api/collections/system-community/nyc-concordance-claims/versions/v1.2.0/records/Revision/transfer-chicago-inside-outside%2Fr1",
+     "link": "record"
+    }
+   ],
+   "frames": [
+    {
+     "head": "Version 1.1.0",
+     "nodes": [
+      {
+       "id": "A",
+       "label": "daily\ntemperature",
+       "x": 70,
+       "y": 120
+      },
+      {
+       "id": "B",
+       "label": "shootings\nin Chicago",
+       "x": 326,
+       "y": 120
+      }
+     ],
+     "edges": [
+      {
+       "id": "ab",
+       "a": "A",
+       "b": "B",
+       "ev": "obs",
+       "w": 3,
+       "city": true,
+       "label": "×1.13",
+       "refs": [
+        1
+       ],
+       "lo": -14
+      }
+     ],
+     "cap": "Version 1.1.0 of the collection holds 284 records. On this edge it has claim transfer-chicago-heat-shootings: 1.13 (1.12 to 1.14), confirmed."
+    },
+    {
+     "head": "Version 1.2.0 adds",
+     "nodes": [
+      {
+       "id": "A",
+       "label": "daily\ntemperature",
+       "x": 70,
+       "y": 96
+      },
+      {
+       "id": "B",
+       "label": "shootings\nin Chicago",
+       "x": 326,
+       "y": 96
+      },
+      {
+       "id": "M",
+       "label": "inside,\nnot outside",
+       "x": 198,
+       "y": 236,
+       "state": "new"
+      }
+     ],
+     "edges": [
+      {
+       "id": "ab",
+       "a": "A",
+       "b": "B",
+       "ev": "obs",
+       "w": 3,
+       "city": true,
+       "label": "×1.13",
+       "lo": -14
+      }
+     ],
+     "mods": [
+      {
+       "from": "M",
+       "onto": "ab",
+       "ev": "obs",
+       "w": 2,
+       "state": "new",
+       "city": true,
+       "label": "×0.97",
+       "refs": [
+        2
+       ],
+       "lx": 40,
+       "ly": 0
+      }
+     ],
+     "cap": "Version 1.2.0 adds claim transfer-chicago-inside-outside, registered on 2026-11-14 and scored confirmed: 0.97 (0.94 to 0.99). In New York, claim heat-inside-outside-2006 gave 0.86 (0.83 to 0.90)."
+    },
+    {
+     "head": "A revision",
+     "nodes": [
+      {
+       "id": "A",
+       "label": "daily\ntemperature",
+       "x": 70,
+       "y": 96
+      },
+      {
+       "id": "B",
+       "label": "shootings\nin Chicago",
+       "x": 326,
+       "y": 96
+      },
+      {
+       "id": "M",
+       "label": "inside,\nnot outside",
+       "x": 198,
+       "y": 236
+      }
+     ],
+     "edges": [
+      {
+       "id": "ab",
+       "a": "A",
+       "b": "B",
+       "ev": "obs",
+       "w": 3,
+       "city": true,
+       "label": "×1.13",
+       "lo": -14
+      }
+     ],
+     "mods": [
+      {
+       "from": "M",
+       "onto": "ab",
+       "ev": "obs",
+       "w": 2,
+       "state": "kept",
+       "city": true,
+       "label": "×0.97",
+       "refs": [
+        2
+       ],
+       "lx": 40,
+       "ly": 0
+      }
+     ],
+     "cap": "The same version holds a revision record. <b>Referee corrected the interval (a statsmodels scale error) and counted 37% of inside incidents as ambiguously classed; verdict unchanged.</b>",
+     "texts": [
+      {
+       "text": "interval 0.942 to 0.995, now 0.943 to 0.994",
+       "x": 198,
+       "y": 277,
+       "state": "new",
+       "size": 12.5,
+       "refs": [
+        3
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "diff-heat-inside-outside-2006",
    "generated": true,
    "pair": "v1.0.0..v1.1.0",
@@ -327,183 +503,7 @@ const COMICS_GENERATED = {
      "cap": "The same version holds a revision record. <b>Referee corrected the comparison with the Japanese crash finding and raised rule 11; verdict unchanged.</b>"
     }
    ]
-  },
-  {
-   "id": "diff-transfer-chicago-inside-outside",
-   "generated": true,
-   "pair": "v1.1.0..v1.2.0",
-   "title": "Generated from the Underlay: daily temperature and shootings in Chicago, v1.1.0 to v1.2.0 (Chicago)",
-   "lede": "Drawn by tools/strip_from_diff.py from the difference between two versions of system-community/nyc-concordance-claims: 3 records added, 0 updated, 0 removed. Numbers, verdicts and the revision reason are read from the records; only the two variable names are supplied by hand. The same difference on the Underlay: https://www.underlay.org/system-community/nyc-concordance-claims/versions/compare?from=v1.1.0&to=v1.2.0",
-   "sources": [
-    {
-     "text": "Outcome transfer-chicago-heat-shootings in system-community/nyc-concordance-claims v1.1.0.",
-     "href": "https://www.underlay.org/api/collections/system-community/nyc-concordance-claims/versions/v1.1.0/records/Outcome/transfer-chicago-heat-shootings",
-     "link": "record"
-    },
-    {
-     "text": "Outcome transfer-chicago-inside-outside in v1.2.0, added in this difference. Registration sha256 dcf2869a78e6.",
-     "href": "https://www.underlay.org/api/collections/system-community/nyc-concordance-claims/versions/v1.2.0/records/Outcome/transfer-chicago-inside-outside",
-     "link": "record"
-    },
-    {
-     "text": "Revision transfer-chicago-inside-outside/r1 in v1.2.0: critique/referee_2026-11-14_chicago_inside.md.",
-     "href": "https://www.underlay.org/api/collections/system-community/nyc-concordance-claims/versions/v1.2.0/records/Revision/transfer-chicago-inside-outside%2Fr1",
-     "link": "record"
-    }
-   ],
-   "frames": [
-    {
-     "head": "Version 1.1.0",
-     "nodes": [
-      {
-       "id": "A",
-       "label": "daily\ntemperature",
-       "x": 70,
-       "y": 120
-      },
-      {
-       "id": "B",
-       "label": "shootings\nin Chicago",
-       "x": 326,
-       "y": 120
-      }
-     ],
-     "edges": [
-      {
-       "id": "ab",
-       "a": "A",
-       "b": "B",
-       "ev": "obs",
-       "w": 3,
-       "city": true,
-       "label": "×1.13",
-       "refs": [
-        1
-       ],
-       "lo": -14
-      }
-     ],
-     "cap": "Version 1.1.0 of the collection holds 284 records. On this edge it has claim transfer-chicago-heat-shootings: 1.13 (1.12 to 1.14), confirmed."
-    },
-    {
-     "head": "Version 1.2.0 adds",
-     "nodes": [
-      {
-       "id": "A",
-       "label": "daily\ntemperature",
-       "x": 70,
-       "y": 96
-      },
-      {
-       "id": "B",
-       "label": "shootings\nin Chicago",
-       "x": 326,
-       "y": 96
-      },
-      {
-       "id": "M",
-       "label": "inside,\nnot outside",
-       "x": 198,
-       "y": 236,
-       "state": "new"
-      }
-     ],
-     "edges": [
-      {
-       "id": "ab",
-       "a": "A",
-       "b": "B",
-       "ev": "obs",
-       "w": 3,
-       "city": true,
-       "label": "×1.13",
-       "lo": -14
-      }
-     ],
-     "mods": [
-      {
-       "from": "M",
-       "onto": "ab",
-       "ev": "obs",
-       "w": 2,
-       "state": "new",
-       "city": true,
-       "label": "×0.97",
-       "refs": [
-        2
-       ],
-       "lx": 40,
-       "ly": 0
-      }
-     ],
-     "cap": "Version 1.2.0 adds claim transfer-chicago-inside-outside, registered on 2026-11-14 and scored confirmed: 0.97 (0.94 to 0.99). In New York, claim heat-inside-outside-2006 gave 0.86 (0.83 to 0.90)."
-    },
-    {
-     "head": "A revision",
-     "nodes": [
-      {
-       "id": "A",
-       "label": "daily\ntemperature",
-       "x": 70,
-       "y": 96
-      },
-      {
-       "id": "B",
-       "label": "shootings\nin Chicago",
-       "x": 326,
-       "y": 96
-      },
-      {
-       "id": "M",
-       "label": "inside,\nnot outside",
-       "x": 198,
-       "y": 236
-      }
-     ],
-     "edges": [
-      {
-       "id": "ab",
-       "a": "A",
-       "b": "B",
-       "ev": "obs",
-       "w": 3,
-       "city": true,
-       "label": "×1.13",
-       "lo": -14
-      }
-     ],
-     "mods": [
-      {
-       "from": "M",
-       "onto": "ab",
-       "ev": "obs",
-       "w": 2,
-       "state": "kept",
-       "city": true,
-       "label": "×0.97",
-       "refs": [
-        2
-       ],
-       "lx": 40,
-       "ly": 0
-      }
-     ],
-     "cap": "The same version holds a revision record. <b>Referee corrected the interval (a statsmodels scale error) and counted 37% of inside incidents as ambiguously classed; verdict unchanged.</b>",
-     "texts": [
-      {
-       "text": "interval 0.942 to 0.995, now 0.943 to 0.994",
-       "x": 198,
-       "y": 277,
-       "state": "new",
-       "size": 12.5,
-       "refs": [
-        3
-       ]
-      }
-     ]
-    }
-   ]
   }
  ]
 };
-if (typeof COMICS !== 'undefined') COMICS.strips.push(...COMICS_GENERATED.strips);
+if (typeof COMICS !== 'undefined') COMICS.strips.splice(1, 0, ...COMICS_GENERATED.strips);

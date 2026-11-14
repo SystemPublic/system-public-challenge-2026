@@ -181,11 +181,11 @@ def main() -> int:
     if a.keep and out.exists():
         old = json.loads(out.read_text().split("const COMICS_GENERATED = ", 1)[1].rsplit(";\nif (typeof", 1)[0])
         pair = f"{a.frm}..{a.to}"
-        strips = [s for s in old["strips"] if s.get("pair") != pair] + strips
+        strips = strips + [s for s in old["strips"] if s.get("pair") != pair]  # newest difference first
         metas = [m for m in old.get("metas", [old.get("meta")]) if m and (m["from"], m["to"]) != (a.frm, a.to)] + metas
     out.write_text("// Written by tools/strip_from_diff.py. Do not edit by hand.\n"
                    f"const COMICS_GENERATED = {json.dumps({'metas': metas, 'strips': strips}, indent=1, ensure_ascii=False)};\n"
-                   "if (typeof COMICS !== 'undefined') COMICS.strips.push(...COMICS_GENERATED.strips);\n")
+                   "if (typeof COMICS !== 'undefined') COMICS.strips.splice(1, 0, ...COMICS_GENERATED.strips);\n")
     print(json.dumps(meta, indent=1))
     for s in strips:
         print(s["id"], len(s["frames"]), "frames")

@@ -24,6 +24,31 @@ const COMICS = {
       { node: "unknown", text: "Dashed circle. A factor not yet named or measured." } ] }
   ],
   strips: [
+    { id: "moon", title: "The full moon and a moon we made up",
+      lede: "A common belief, tested on the city's records, with a made-up moon as the comparison. The made-up moon is a placebo: the same test run where no effect can exist.",
+      sources: [
+        { text: "Claim moon-full-emergencies, registered on 14 November 2026 before the test was run. Three-day window around each full moon: shootings 1.007 (0.966 to 1.049), 2006 to 2025; ambulance incidents 0.997 (0.991 to 1.004), 2017 to 2026; injury crashes 1.002 (0.987 to 1.018), 2014 to 2025. Refereed.", href: "evidence.html#moon-full-emergencies", link: "test card" },
+        { text: "The same claim's registered placebo, a three-day window that recurs every 23 days: shootings 1.008 (0.969 to 1.048), ambulance incidents 0.998 (0.993 to 1.003), injury crashes 1.002 (0.988 to 1.016).", href: "evidence.html#moon-full-emergencies", link: "test card" },
+        { text: "The System graph holds 60 findings on lunar variables from 36 studies, which disagree: 1.042 for crash transports in Japan (PMID 29990928), 0.85 for homicides in Finland (PMID 30647032), 1.007 for cardiac arrest (PMID 33693140). Rotton and Kelly 1985 reviewed 37 studies and found almost no effect (PMID 3885282).", href: "../docs/conjectures.md", link: "note" }
+      ],
+      frames: [
+        { head: "The belief",
+          nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "crashes", x: 320, y: 242 } ],
+          edges: [ { a: "M", b: "C", ev: "conj", w: 1, mark: "?", markT: 0.5 }, { a: "M", b: "E", ev: "conj", w: 1, mark: "?", markT: 0.5 }, { a: "M", b: "A", ev: "conj", w: 1, mark: "?", markT: 0.5 } ],
+          cap: "On a busy night in the emergency room, someone says it must be a full moon." },
+        { head: "The real moon",
+          nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "crashes", x: 320, y: 242 } ],
+          edges: [ { a: "M", b: "C", ev: "obs", w: 2, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.01", refs: [1], lo: -14, labelT: 0.36 },
+                   { a: "M", b: "E", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [1], lo: -13, labelT: 0.36 },
+                   { a: "M", b: "A", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [1], lo: 15, labelT: 0.36 } ],
+          cap: "We checked New York's records for the days around every full moon. <b>Nothing changes.</b>" },
+        { head: "A moon we made up",
+          nodes: [ { id: "M", label: "made-up moon,\nfull every\n23 days", x: 74, y: 150, state: "new" }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "crashes", x: 320, y: 242 } ],
+          edges: [ { a: "M", b: "C", ev: "obs", w: 2, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.01", refs: [2], lo: -14, labelT: 0.36 },
+                   { a: "M", b: "E", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [2], lo: -13, labelT: 0.36 },
+                   { a: "M", b: "A", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [2], lo: 15, labelT: 0.36 } ],
+          cap: "Then we made up a moon that is full every 23 days. <b>It gives the same numbers as the real one.</b>" }
+      ] },
     { id: "heat", title: "Heat and shootings",
       lede: "The graph holds one edge from temperature to homicide. Two cities' records make it thicker, and tests of the step in between support one account: people outdoors.",
       sources: [
@@ -215,31 +240,6 @@ const COMICS = {
           mods: [ { from: "M", onto: "td", t: 0.6, ev: "obs", w: 2, label: "×2.4", refs: [1], lx: 26, ly: -4 },
                   { from: "M", onto: "ts", t: 0.6, ev: "conj", w: 1, state: "gone", mark: "x", markT: 0.5 } ],
           cap: "We withdraw the dotted arrow. It was a conjecture, and the evidence we could gather counts against it. <b>The risk of death in heat stays</b>, and a city can act on that." }
-      ] },
-    { id: "moon", title: "The full moon and a moon we made up",
-      lede: "A common belief, tested on the city's records, with a made-up moon as the comparison. The made-up moon is a placebo: the same test run where no effect can exist.",
-      sources: [
-        { text: "Claim moon-full-emergencies, registered on 14 November 2026 before the test was run. Three-day window around each full moon: shootings 1.007 (0.966 to 1.049), 2006 to 2025; ambulance incidents 0.997 (0.991 to 1.004), 2017 to 2026; injury crashes 1.002 (0.987 to 1.018), 2014 to 2025. Refereed.", href: "evidence.html#moon-full-emergencies", link: "test card" },
-        { text: "The same claim's registered placebo, a three-day window that recurs every 23 days: shootings 1.008 (0.969 to 1.048), ambulance incidents 0.998 (0.993 to 1.003), injury crashes 1.002 (0.988 to 1.016).", href: "evidence.html#moon-full-emergencies", link: "test card" },
-        { text: "The System graph holds 60 findings on lunar variables from 36 studies, which disagree: 1.042 for crash transports in Japan (PMID 29990928), 0.85 for homicides in Finland (PMID 30647032), 1.007 for cardiac arrest (PMID 33693140). Rotton and Kelly 1985 reviewed 37 studies and found almost no effect (PMID 3885282).", href: "../docs/conjectures.md", link: "note" }
-      ],
-      frames: [
-        { head: "The belief",
-          nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "crashes", x: 320, y: 242 } ],
-          edges: [ { a: "M", b: "C", ev: "conj", w: 1, mark: "?", markT: 0.5 }, { a: "M", b: "E", ev: "conj", w: 1, mark: "?", markT: 0.5 }, { a: "M", b: "A", ev: "conj", w: 1, mark: "?", markT: 0.5 } ],
-          cap: "On a busy night in the emergency room, someone says it must be a full moon." },
-        { head: "The real moon",
-          nodes: [ { id: "M", label: "full\nmoon", x: 62, y: 150 }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "crashes", x: 320, y: 242 } ],
-          edges: [ { a: "M", b: "C", ev: "obs", w: 2, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.01", refs: [1], lo: -14, labelT: 0.36 },
-                   { a: "M", b: "E", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [1], lo: -13, labelT: 0.36 },
-                   { a: "M", b: "A", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [1], lo: 15, labelT: 0.36 } ],
-          cap: "We checked New York's records for the days around every full moon. <b>Nothing changes.</b>" },
-        { head: "A moon we made up",
-          nodes: [ { id: "M", label: "made-up moon,\nfull every\n23 days", x: 74, y: 150, state: "new" }, { id: "C", label: "shootings", x: 320, y: 58 }, { id: "E", label: "ambulance\ncalls", x: 320, y: 150 }, { id: "A", label: "crashes", x: 320, y: 242 } ],
-          edges: [ { a: "M", b: "C", ev: "obs", w: 2, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.01", refs: [2], lo: -14, labelT: 0.36 },
-                   { a: "M", b: "E", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [2], lo: -13, labelT: 0.36 },
-                   { a: "M", b: "A", ev: "obs", w: 3, state: "new", city: true, mark: "0", markT: 0.7, label: "×1.00", refs: [2], lo: 15, labelT: 0.36 } ],
-          cap: "Then we made up a moon that is full every 23 days. <b>It gives the same numbers as the real one.</b>" }
       ] }
   ]
 };
