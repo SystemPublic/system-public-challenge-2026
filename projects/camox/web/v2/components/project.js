@@ -10,6 +10,8 @@ const GOALS_HINT = 'What the work is for, who will read it, and its scope: count
 
 export function ProjectHome({ project, profile, agents, session, threads, thread, reload, projects, owner, onDeleted }) {
   const [editGoals, setEditGoals] = useState(false);
+  const [tab, setTab] = useState('questions');  // chat first; the rest are one tap away
+  useEffect(() => setTab('questions'), [project.id]);
   // Poll the project while a dashboard or report is being built.
   useEffect(() => {
     if (!building(project.dashboard_status) && !building(project.report_status)) return;
@@ -22,45 +24,44 @@ export function ProjectHome({ project, profile, agents, session, threads, thread
   const threadTitle = threads?.find((t) => (t.id ?? null) === thread)?.title || 'Main';
   const fp = project.runs.filter(isFirstPass);
   const tailored = [profile.role, profile.organisation].filter(Boolean).join(', ');
-  const jump = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   return html`<div class="page">
     <header class="phead">
       <p class="eyebrow">Project · ${plural(project.runs.length, 'run', 'runs')}</p>
       <h1>${project.title}</h1>
       <p class="tailored">Tailored for: <strong>${tailored || profile.name}</strong> <a class="small" href=${`#profile=${profile.id}&view=settings`}>Edit profile</a></p>
-      ${editGoals ? html`<${GoalsForm} project=${project} reload=${reload} done=${() => setEditGoals(false)} />`
+      ${tab === 'overview' && (editGoals ? html`<${GoalsForm} project=${project} reload=${reload} done=${() => setEditGoals(false)} />`
         : html`<div class="goals">
           ${project.goals ? html`<p>${project.goals}</p>` : html`<p class="muted">No goals yet. Say what this work is for, who reads it and its scope; the agents read the goals with every question.</p>`}
-          <button type="button" class="ghost-btn small" onClick=${() => setEditGoals(true)}>${project.goals ? 'Edit goals' : 'Add goals'}</button></div>`}
-      ${owner && html`<${ProjectTools} project=${project} projects=${projects} reload=${reload} onDeleted=${onDeleted} />`}
-      <nav class="jump" aria-label="On this page">
-        ${[['data', 'Data availability'], ['dashboard', 'Dashboard'], ['kg', 'Knowledge graph'], hasReport && ['report', 'Report'], ['questions', `Questions · ${inThread.length}`]]
-          .filter(Boolean).map(([id, t]) => html`<button key=${id} type="button" class="chip" onClick=${() => jump(id)}>${t}</button>`)}
+          <button type="button" class="ghost-btn small" onClick=${() => setEditGoals(true)}>${project.goals ? 'Edit goals' : 'Add goals'}</button></div>`)}
+      ${tab === 'overview' && owner && html`<${ProjectTools} project=${project} projects=${projects} reload=${reload} onDeleted=${onDeleted} />`}
+      <nav class="jump" aria-label="Project views">
+        ${[['questions', `Chat · ${inThread.length}`], ['overview', 'Goals and data'], ['dashboard', 'Dashboard'], ['kg', 'Knowledge graph'], hasReport && ['report', 'Report']]
+          .filter(Boolean).map(([id, t]) => html`<button key=${id} type="button" class="chip" aria-pressed=${tab === id} onClick=${() => setTab(id)}>${t}</button>`)}
       </nav>
     </header>
 
-    <${Block} id="data" title="Data availability" eyebrow=${fp.some((r) => r.status === 'running') ? 'First pass · running' : fp.some((r) => r.answer) ? 'First pass · ready' : 'First pass'}
+    ${tab === 'overview' && html`<${Block} id="data" title="Data availability" eyebrow=${fp.some((r) => r.status === 'running') ? 'First pass · running' : fp.some((r) => r.answer) ? 'First pass · ready' : 'First pass'}
       line="What exists for this project and where sources disagree. Runs once, from the goals.">
       <${FirstPass} project=${project} runs=${fp} reload=${reload} addGoals=${() => setEditGoals(true)} />
-    <//>
-    <${Block} id="dashboard" title="Dashboard" eyebrow=${project.dashboard ? `Dashboard · ${plural(project.dashboard.panels?.length ?? 0, 'panel', 'panels')}` : 'Dashboard'}
+    <//>`}
+    ${tab === 'dashboard' && html`<${Block} id="dashboard" title="Dashboard" eyebrow=${project.dashboard ? `Dashboard · ${plural(project.dashboard.panels?.length ?? 0, 'panel', 'panels')}` : 'Dashboard'}
       line="Key numbers, World Bank data and charts built from the answers in this project.">
       <${Dashboard} project=${project} reload=${reload} />
-    <//>
-    <${Block} id="kg" title="Knowledge graph" eyebrow="Knowledge graph"
+    <//>`}
+    ${tab === 'kg' && html`<${Block} id="kg" title="Knowledge graph" eyebrow="Knowledge graph"
       line="The entities in this project's answers and the facts linking them, with the studies behind each.">
       <${KG} project=${project} />
-    <//>
-    ${hasReport && html`<${Block} id="report" title="Report" eyebrow=${`Report · ${plural(project.reports?.length ?? 0, 'version', 'versions')}`}
+    <//>`}
+    ${tab === 'report' && hasReport && html`<${Block} id="report" title="Report" eyebrow=${`Report · ${plural(project.reports?.length ?? 0, 'version', 'versions')}`}
       line="A cited report of this project with references and data provenance, to print or save as PDF.">
       <${Report} project=${project} reload=${reload} />
     <//>`}
-    <section class="block open" id="questions" aria-labelledby="questions-h">
+    ${tab === 'questions' && html`<section class="block open" id="questions" aria-labelledby="questions-h">
       <div class="block-head"><p class="eyebrow">Questions · ${threadTitle} thread</p><h2 id="questions-h">Questions</h2>
         <p class="muted small">Every answer reads the goals and the earlier answers in this thread.</p></div>
       <${Questions} project=${project} projects=${owner ? projects : []} runs=${inThread} thread=${thread} threads=${threads} agents=${agents} session=${session} profile=${profile} reload=${reload} />
-    </section>
+    </section>`}
   </div>`;
 }
 
