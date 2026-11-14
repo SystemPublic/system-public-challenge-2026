@@ -65,9 +65,10 @@ export async function mountKG(el, projectId, { base = '' } = {}) {
       <aside class="kg-side" aria-live="polite"><p class="muted">Tap an entity to see its facts, their qualifiers and the studies behind them.</p></aside></div>
     <div class="kg-bar"><span class="small muted num" data-shown></span><button type="button" class="ghost small" data-more>Show more</button>
       <button type="button" class="ghost small" data-fit>Fit</button><button type="button" class="ghost small" data-rebuild>Rebuild from answers</button></div>
-    <div class="kg-legend"><span>Shape and colour: kind</span><span>Line width: studies behind the link</span><span>Solid: linked to; dashed: measures; dotted: studied in or reported in; orange dashed: external evidence</span>
-      <span>Dashed outline: from an external source, not the System Public Graph</span></div>
-    <div class="kg-legend"><span>Sources:</span>${Object.entries(sources).map(([src, k]) => `<span>${badge(src)} <span class="num">${k}</span></span>`).join('')}</div></div>`;
+    <div class="kg-legend"><span>Kinds:</span>${Object.values(KINDS).map(([name, shape, c]) => `<span><span style="color:var(${c})" aria-hidden="true">&#9679;</span> ${name} (${shape.replace('-', ' ')})</span>`).join('')}</div>
+    <div class="kg-legend"><span>Line width: studies behind the link</span><span>Line width: studies behind the link</span><span>Solid: linked to; dashed: measures; dotted: studied in or reported in; orange dashed: external evidence</span>
+      <span>Dashed outline: from an outside source, not the System Public Graph</span></div>
+    <div class="kg-legend"><span>Sources (dashed badge = outside source; count = entities):</span>${Object.entries(sources).map(([src, k]) => `<span>${badge(src)} <span class="num">${k}</span></span>`).join('')}</div></div>`;
   const side = el.querySelector('.kg-side');
   const color = (k) => css(KINDS[k][2], el) || '#8b909a';
   const cy = window.cytoscape({

@@ -29,7 +29,7 @@ export function ProjectHome({ project, profile, agents, session, threads, thread
   return html`<div class="page">
     <header class="phead">
       <div class="phead-row">
-        <h1>${project.title}</h1>
+        <h1>${project.title} <span class=${`pill ${owner ? 's-backed' : 's-partial'}`} title=${owner ? 'A project you own' : 'A demo project; read only'}>${owner ? 'Your project' : 'Demo'}</span></h1>
         <p class="tailored">Tailored for <strong>${tailored || profile.name}</strong>${owner && html` <a class="small" href=${`#profile=${profile.id}&view=settings`}>Edit profile</a>`}</p>
       </div>
       ${tab === 'overview' && (editGoals ? html`<${GoalsForm} project=${project} reload=${reload} done=${() => setEditGoals(false)} />`
@@ -38,34 +38,34 @@ export function ProjectHome({ project, profile, agents, session, threads, thread
           ${owner && html`<button type="button" class="ghost-btn small" onClick=${() => setEditGoals(true)}>${project.goals ? 'Edit goals' : 'Add goals'}</button>`}</div>`)}
       ${tab === 'overview' && owner && html`<${ProjectTools} project=${project} projects=${projects} reload=${reload} onDeleted=${onDeleted} />`}
       <nav class="jump" aria-label="Project views">
-        ${[['questions', `Chat · ${inThread.length}`], ['overview', `Data · ${fp.length + topics.length}`], ['dashboard', 'Dashboard'], ['kg', 'Knowledge graph'], hasReport && ['report', 'Report']]
+        ${[['questions', `Chat questions · ${inThread.length}`], ['overview', `Data runs · ${fp.length + topics.length}`], ['dashboard', 'Dashboard'], ['kg', 'Knowledge graph'], hasReport && ['report', 'Report']]
           .filter(Boolean).map(([id, t]) => html`<button key=${id} type="button" class="chip" aria-pressed=${tab === id} onClick=${() => setTab(id)}>${t}</button>`)}
       </nav>
     </header>
 
     ${tab === 'overview' && html`<${Block} id="data" title="Data availability" eyebrow=${fp.some((r) => r.status === 'running') ? 'First pass · running' : fp.some((r) => r.answer) ? 'First pass · ready' : 'First pass'}
-      line="What exists for this project and where sources disagree. Runs once, from the goals.">
+      line="Data run (not a chat question): what exists for this project in the graph, World Bank and the literature, and where sources disagree. Runs once, from the goals.">
       <${FirstPass} project=${project} runs=${fp} reload=${reload} addGoals=${() => setEditGoals(true)} />
     <//>`}
-    ${tab === 'overview' && html`<${Block} id="topics" title="Data by topic" eyebrow=${`Data thread · ${plural(topics.length, 'topic', 'topics')}`}
-      line="Pull everything on one topic: graph coverage, World Bank indicators, and outside studies where the graph is thin. Every chat thread reads these.">
+    ${tab === 'overview' && html`<${Block} id="topics" title="Data runs by topic" eyebrow=${`Data thread · ${plural(topics.length, 'topic', 'topics')}`}
+      line="Data runs: what exists per topic in the System Public Graph, World Bank and the literature. Every chat reads these.">
       <${DataTopics} project=${project} runs=${topics} reload=${reload} />
     <//>`}
     ${tab === 'dashboard' && html`<${Block} id="dashboard" title="Dashboard" eyebrow=${project.dashboard ? `Dashboard · ${plural(project.dashboard.panels?.length ?? 0, 'panel', 'panels')}` : 'Dashboard'}
-      line="Key numbers, World Bank data and charts built from the answers in this project.">
+      line="Built from the answers in this project: System Public Graph study counts and World Bank indicators. Click a card or bar to filter.">
       <${Dashboard} project=${project} reload=${reload} />
     <//>`}
     ${tab === 'kg' && html`<${Block} id="kg" title="Knowledge graph" eyebrow="Knowledge graph"
-      line="The entities in this project's answers and the facts linking them, with the studies behind each.">
+      line="Entities from this project's answers. Colour and shape = kind, dashed outline = outside source.">
       <${KG} project=${project} />
     <//>`}
     ${tab === 'report' && hasReport && html`<${Block} id="report" title="Report" eyebrow=${`Report · ${plural(project.reports?.length ?? 0, 'version', 'versions')}`}
-      line="A cited report of this project with references and data provenance, to print or save as PDF.">
+      line="Cited reports written from the answers, checked by the verifier. Print or save as PDF.">
       <${Report} project=${project} reload=${reload} />
     <//>`}
     ${tab === 'questions' && html`<section class="block open" id="questions" aria-labelledby="questions-h">
       <div class="block-head"><p class="eyebrow">Questions · ${threadTitle} thread</p><h2 id="questions-h">Questions</h2>
-        <p class="muted small">Every answer reads the goals and the earlier answers in this thread.</p></div>
+        <p class="muted small">Chat questions answered by the agents. Every answer reads the goals, the data runs and the earlier answers in this thread.</p></div>
       <${Questions} project=${project} projects=${owner ? projects : []} runs=${inThread} thread=${thread} threads=${threads} agents=${agents} session=${session} profile=${profile} reload=${reload} />
     </section>`}
   </div>`;

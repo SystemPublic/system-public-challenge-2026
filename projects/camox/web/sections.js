@@ -185,27 +185,32 @@ export function kpiStrip(runs) {
   const ind = all.filter((x) => x.i), other = all.filter((x) => x.kind === 'other'), gap = all.filter((x) => x.kind === 'gap');
   const studies = new Map(); all.forEach(({ l }) => studies.set(l.concept_id, Math.max(l.studies, studies.get(l.concept_id) || 0)));
   const datasets = new Set([...seeds, ...ind.map((x) => x.i.database)]); datasets.delete('unknown dataset');
-  const cards = [[studies.size, 'linked concepts', '', all], [[...studies.values()].reduce((a, b) => a + b, 0), 'total studies', '', all],
-    [uniq(ind.map((x) => x.i.indicator_id)), 'World Bank indicators found', 'ind', ind], [datasets.size, 'datasets spanned', 'ind', ind],
-    [other.length, 'links outside the starting dataset', 'other', other], [uniq(gap.map((x) => x.l.concept_id)), 'not found in the World Bank datasets we checked', 'gap', gap]];
-  return `<div class="kstrip" role="group" aria-label="Project totals; pick one to filter the links">${cards.map(([v, label, f, xs]) =>
-    `<button type="button" class="kcard" data-kfilter="${f}" aria-pressed="false"><span class="kv num">${v.toLocaleString()}</span>
+  const cards = [[studies.size, 'Linked concepts', '', all, 'Graph concepts linked to the starting indicator in the indicator maps'],
+    [[...studies.values()].reduce((a, b) => a + b, 0), 'Studies behind the links', '', all, 'Studies in the System Public Graph behind those links, summed over concepts'],
+    [uniq(ind.map((x) => x.i.indicator_id)), 'World Bank indicators', 'ind', ind, 'World Bank Data360 indicators that measure a linked concept'],
+    [datasets.size, 'World Bank datasets', 'ind', ind, 'World Bank Data360 datasets those indicators come from, plus the starting one'],
+    [other.length, 'Less obvious links', 'other', other, 'Links measured in a different World Bank dataset from the starting indicator'],
+    [uniq(gap.map((x) => x.l.concept_id)), 'Gaps: no indicator', 'gap', gap, 'Linked concepts no World Bank indicator in the datasets we checked measures']];
+  return `<div class="kstrip" role="group" aria-label="Project totals; pick one to filter the links">${cards.map(([v, label, f, xs, def]) =>
+    `<button type="button" class="kcard" data-kfilter="${f}" aria-pressed="false" title="${def}"><span class="kv num">${v.toLocaleString()}</span>
       <span class="kl">${label}</span><span class="small muted">from ${questions(xs.length ? xs : all)}</span></button>`).join('')}</div>`;
 }
 const TIER = { strong: 's-backed', moderate: 's-partial', thin: 's-unbacked' };
+const TIER_TXT = { strong: 'Strong (10+ studies)', moderate: 'Moderate (3-9)', thin: 'Thin (1-2)' };
 export function linkGroups(runs) {
   const { all } = mapRows(runs);
   if (!all.length) return '';
   const max = Math.max(...all.map((x) => x.l.studies));
   const row = ({ l, i, kind }) => `<li data-kind="${i ? 'ind ' : ''}${kind}" data-concept="${esc(l.concept_label)}">
-    <span class="lr-c"><strong>${esc(l.concept_label)}</strong> <span class="pill ${TIER[tier(l.studies)]}">${cap(tier(l.studies))}</span></span>
+    <span class="lr-c"><strong>${esc(l.concept_label)}</strong> <span class="pill ${TIER[tier(l.studies)]}">${TIER_TXT[tier(l.studies)]}</span></span>
     <span class="lr-n num">${plural(l.studies, 'study', 'studies')}<span class="sbar"><span style="width:${((100 * l.studies) / max).toFixed(1)}%"></span></span></span>
     <span class="lr-i">${i ? `${indLink(i.name, i.indicator_id)} ${dataset(i.database)}` : '<span class="small muted">No World Bank indicator measures this</span>'}</span>
     ${i ? `<button type="button" class="chip" data-pick="${pick(i, l)}">Add to my list</button>` : ''}</li>`;
   const group = (title, line, xs, note = '') => (xs.length ? `<div class="lgroup"><h3>${title} <span class="muted num">${xs.length}</span></h3>
     <p class="small muted">${line}</p><ul class="links">${xs.map(row).join('')}</ul>${note}</div>` : '');
   const other = all.filter((x) => x.kind === 'other'), thin = other.filter((x) => tier(x.l.studies) === 'thin').length;
-  return group('Less obvious', 'Linked by 3 or more studies, measured in a different World Bank dataset from the starting indicator.',
+  return '<p class="small muted">Less obvious: measured in a different World Bank dataset. Obvious: same dataset as the starting indicator. Gaps: no World Bank indicator. Tiers count studies in the System Public Graph: Strong 10+, Moderate 3-9, Thin 1-2.</p>'
+    + group('Less obvious', 'Linked by 3 or more studies, measured in a different World Bank dataset from the starting indicator.',
     other.filter((x) => tier(x.l.studies) !== 'thin'), thin ? `<p class="small muted">${plural(thin, 'more link', 'more links')} to other datasets rest on 1 or 2 studies; they are in the full analysis below.</p>` : '')
     + group('Obvious', 'Measured in the same dataset as the starting indicator.', all.filter((x) => x.kind === 'same'))
     + group('Gaps', 'Research links these to the topic, but no World Bank indicator in the datasets we checked measures them.', all.filter((x) => x.kind === 'gap'))
@@ -240,7 +245,7 @@ const srcLine = (t) => `<p class="small muted">Source: ${t}.</p>`;
 const hbars = (values, y, x, color, tooltip, extra = {}) => chart({ vega_lite_json: JSON.stringify({ $schema: VL, data: { values }, height: values.length * 26,
   mark: { type: 'bar', cornerRadiusEnd: 4, cursor: extra.cursor }, encoding: { y: { field: y, type: 'nominal', sort: null, title: null, scale: { paddingInner: 0.3 }, axis: { labelLimit: innerWidth < 600 ? 120 : 200 } },
     x: { field: 'n', type: 'quantitative', title: x, axis: { tickMinStep: 1 } }, color, tooltip } }) });
-const colors = (field, map) => ({ field, type: 'nominal', scale: { domain: Object.keys(map), range: Object.values(map).map(css) }, legend: { title: null } });
+const colors = (field, map) => ({ field, type: 'nominal', scale: { domain: Object.keys(map), range: Object.values(map).map(css) }, legend: { title: 'Link type' } });
 export function overviewCharts(runs) {
   const out = [];
   const { all } = mapRows(runs);
@@ -255,18 +260,18 @@ export function overviewCharts(runs) {
       dataset: c.inds.length ? [...new Set(c.inds.map((i) => datasetName(i.database)))].join(', ') : 'Not found in the datasets we checked' }));
     const present = Object.fromEntries([['Less obvious', '--cat-1'], ['Obvious', '--cat-2'], ['Gap', '--cat-5']].filter(([g]) => top.some((t) => t.group === g)));
     out.push(['cc', 'Studies per linked concept', `${cap(top[0].concept)} has the most studies (${top[0].n}). Pick a bar to filter the links below.`,
-      hbars(top, 'concept', 'Studies', colors('group', present), [{ field: 'concept', title: 'Concept' }, { field: 'n', title: 'Studies' },
+      hbars(top, 'concept', 'Studies in the System Public Graph', colors('group', present), [{ field: 'concept', title: 'Concept' }, { field: 'n', title: 'Studies' },
         { field: 'group', title: 'Group' }, { field: 'indicator', title: 'Indicator' }, { field: 'dataset', title: 'Dataset' }], { cursor: 'pointer' })
-      + srcLine('System Public Graph study counts; World Bank Data360 indicators')]);
+      + srcLine('System Public Graph (study counts per concept); World Bank Data360 (indicators), merged from this project\'s indicator maps')]);
     const ds = new Map();
     all.filter((x) => x.i).forEach(({ i }) => (ds.get(i.database) || ds.set(i.database, new Set()).get(i.database)).add(i.indicator_id));
     const gaps = uniq(all.filter((x) => x.kind === 'gap').map((x) => x.l.concept_id));
     const rows = [...ds].map(([d, s]) => ({ dataset: datasetName(d), code: d, n: s.size, found: 'Found', unit: 'indicators' })).sort((a, b) => b.n - a.n);
     if (gaps) rows.push({ dataset: 'Not found', code: 'none', n: gaps, found: 'Not found', unit: 'linked concepts' });
     out.push(['cd', 'Where the data lives', `${plural(uniq(all.filter((x) => x.i).map((x) => x.i.indicator_id)), 'indicator', 'indicators')} in ${plural(ds.size, 'World Bank dataset', 'World Bank datasets')}${gaps ? `; ${plural(gaps, 'linked concept has', 'linked concepts have')} none` : ''}.`,
-      hbars(rows, 'dataset', 'Linked indicators (Not found: concepts)', { ...colors('found', { Found: '--cat-1', 'Not found': '--cat-5' }), legend: null },
+      hbars(rows, 'dataset', 'World Bank Data360 indicators (Not found: concepts)', { ...colors('found', { Found: '--cat-1', 'Not found': '--cat-5' }), legend: null },
         [{ field: 'dataset', title: 'Dataset' }, { field: 'code', title: 'Code' }, { field: 'n', title: 'Count' }, { field: 'unit', title: 'Counting' }])
-      + srcLine('World Bank Data360 indicators; gaps from System Public Graph links')]);
+      + srcLine('World Bank Data360 (indicators per dataset); Not found = System Public Graph concepts with no indicator')]);
   }
   const claims = new Map();
   for (const r of runs) for (const s of r.answer?.sections || []) for (const c of s.type === 'evidence' ? s.cards : []) if (c.meter) claims.set(c.claim, c);
@@ -281,11 +286,11 @@ export function overviewCharts(runs) {
     out.push(['cf', 'Direction of findings by claim', `${plural(claims.size, 'claim', 'claims')}. Bars left of zero are findings below the null, right of zero above it; the stronger shade on each side marks findings whose 95% CI excludes the null.`,
       chart({ vega_lite_json: JSON.stringify({ $schema: VL, data: { values }, height: claims.size * 32, mark: { type: 'bar', stroke: css('--surface'), strokeWidth: 2 },
         encoding: { y: { field: 'label', type: 'nominal', sort: null, title: null, scale: { paddingInner: 0.3 }, axis: { labelLimit: phone ? 120 : 320 } },
-          x: { field: 'n', type: 'quantitative', stack: 'zero', title: 'Findings', axis: { values: ticks, labelExpr: 'abs(datum.value)' } },
-          order: { field: 'o' }, color: { ...colors('seg', SEG), legend: { title: null, columns: phone ? 1 : 4 } },
+          x: { field: 'n', type: 'quantitative', stack: 'zero', title: 'Findings in the System Public Graph (count)', axis: { values: ticks, labelExpr: 'abs(datum.value)' } },
+          order: { field: 'o' }, color: { ...colors('seg', SEG), legend: { title: 'Direction vs null', columns: phone ? 1 : 4 } },
           tooltip: [{ field: 'claim', title: 'Claim' }, { field: 'verdict', title: 'Verdict' }, { field: 'seg', title: 'Direction' }, { field: 'abs', title: 'Findings' },
             { field: 'findings', title: 'All findings' }, { field: 'studies', title: 'Studies' }] } }) })
-      + srcLine('System Public Graph findings, from the evidence cards in this project')]);
+      + srcLine('System Public Graph findings (effect direction and 95% CI), from the evidence cards in this project')]);
   }
   return out;
 }
