@@ -26,7 +26,7 @@ NULL = {"ratio": 1.0, "difference": 0.0, "correlation": 0.0}
 @functools.cache
 def _db():
     return duckdb.connect(str(Path(__file__).resolve().parents[1] / os.environ.get("GRAPH_DB", "data/graph.duckdb")),
-                          read_only=True)
+                          read_only=True, config={"memory_limit": os.environ.get("DUCKDB_MEMORY", "75%")})
 
 
 def _rows(sql, params=()):
