@@ -13,7 +13,7 @@ from pathlib import Path
 import httpx
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.concurrency import run_in_threadpool
-from fastapi.responses import JSONResponse, PlainTextResponse, StreamingResponse
+from fastapi.responses import JSONResponse, PlainTextResponse, RedirectResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from openai import AsyncOpenAI
 from pydantic import BaseModel
@@ -408,6 +408,12 @@ async def no_cache_web(request, call_next):
     if not request.url.path.startswith(("/api", "/mcp")):
         response.headers["Cache-Control"] = "no-cache"
     return response
+
+
+@app.get("/", include_in_schema=False)
+def home():
+    """The product UI lives at /v2/ (the URL hash, e.g. #profile=1&project=10, carries over); the classic UI is /index.html."""
+    return RedirectResponse("/v2/")
 
 
 app.mount("/mcp", mcp_server.http_app())
