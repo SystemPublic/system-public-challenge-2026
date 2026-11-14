@@ -20,7 +20,7 @@ An edge has five properties that a reader needs, and each is drawn with one visu
 
 Three further marks say what happened to an edge:
 
-- Red means the edge or node was added or changed in this frame. Black means it was carried over. Grey with a red cross means its support was withdrawn in this frame.
+- The figures are white on black. Yellow means the edge or node was added or changed in this frame. White means it was carried over. Red with a yellow cross means its support was withdrawn in this frame. Figures are lettered in Helvetica and captions by hand.
 - A struck circle on a line means the edge was tested and no effect was found.
 - A question mark in a circle means the edge is open: either no study exists or the studies disagree.
 
@@ -43,13 +43,13 @@ Each frame has a heading that names its kind. The strips so far use six.
 
 A strip can end in three ways. The evidence agrees and the edge becomes thicker. The evidence conflicts and the frame shows both edges with a question mark. Or support is withdrawn and the edge turns grey. The third is the case that a large replication project would produce many times at once.
 
-## The six strips
+## The seven strips
 
 All numbers come from registered claims in this repository or from abstracts read in PubMed. Each strip's source list is on the page.
 
 ![Heat and shootings](../figures/comics/strip_heat.png)
 
-**Heat and shootings.** The graph's edge from temperature to homicide pools to 1.07 per 5 °C. New York and Chicago give 1.15 and 1.13 for shootings. Three steps between heat and shootings were tested: people outdoors (removes 44% of the slope, confirmed), intoxication (14%, unsettled) and warm nights (1.03, unsettled). The last frame draws a conjecture: antipsychotic medicines raise the risk of death in a heat wave (Chen 2025, 2.43), and nobody has tested whether they change the effect of heat on violence. The search of 14 November found no such study (`notes/comic_sources.md`).
+**Heat and shootings.** The graph's edge from temperature to homicide pools to 1.07 per 5 °C. New York and Chicago give 1.15 and 1.13 for shootings. Three steps between heat and shootings were tested: people outdoors (removes 44% of the slope, confirmed), intoxication (14%, unsettled) and warm nights (1.03, unsettled). The strip had a fourth frame, a conjecture about medicines, until 14 November; that conjecture now has its own strip below.
 
 ![Air conditioning](../figures/comics/strip_aircon.png)
 
@@ -67,13 +67,17 @@ All numbers come from registered claims in this repository or from abstracts rea
 
 **One edge, five conjectures.** A strip can hold several rival conjectures at once. Two run through behaviour (people outdoors, alcohol and drugs) and three through the body (short temper, sleep loss, medicines that impair cooling). The third frame draws a measurement on which some of them disagree, shootings inside against outside. The fourth gives the registered result: 1.17 per 5 °C outside and 1.01 inside. The result rules out a bodily effect that follows people indoors and leaves a direct effect of heat felt outdoors open. The reasoning is in `docs/conjectures.md`.
 
+![A conjecture set aside](../figures/comics/strip_medicine.png)
+
+**A conjecture we set aside.** We had proposed that medicines which impair cooling might explain part of the rise in shootings with heat. The second frame shows what the conjecture predicts and what the city's record gives: psychiatric ambulance calls rise 1.02 per 5 °C and carry none of the slope. The third frame withdraws the dotted arrow in red and keeps the edge to death in a heat wave. The conjecture was never a registered claim; it is withdrawn as a line of work.
+
 ![The full moon](../figures/comics/strip_moon.png)
 
 **The full moon.** The first frame draws a common belief as three dotted arrows. The second shows what the graph holds: more crash transports in Japan, fewer homicides in Finland, no change in cardiac arrests. The third is a registered null for New York's shootings, ambulance incidents and injury crashes, drawn as thick arrows with struck circles: the estimate is precise and it is no effect.
 
 ## Colour and lettering variants
 
-`comics.html?theme=dark` draws white on black with yellow for what a frame adds. `theme=blue` replaces the red with blue. `theme=helv` sets the diagram lettering in Helvetica and leaves the captions hand-lettered. The values combine with commas. Examples are in `figures/comics/variants/`.
+The style above was chosen on 14 November from three variants (`figures/comics/variants/`). The earlier style is still available: `comics.html?theme=light` draws black on cream with red for additions and grey for withdrawals, `theme=light,blue` uses blue for additions, and `theme=hand` letters the figures by hand.
 
 ## From versions to frames
 

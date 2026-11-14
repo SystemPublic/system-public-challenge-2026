@@ -53,7 +53,7 @@ MAX_BYTES = 25 * 1024 * 1024
 
 # Folders copied whole (subject to .gitignore and EXCLUDE).
 TREES = ["claims/registered", "claims/outcomes", "critique", "concord", "tools", "analyses", "sim",
-         "viz", "replication", "deck", "docs"]
+         "viz", "replication", "deck", "deck2", "docs"]
 # Single files always copied, besides the figures found by scanning.
 FILES = ["figures/viz/dashboard.png"]
 # Paths never copied.
@@ -71,6 +71,17 @@ DECK_BLOBS = {
     "576181bdf4afbf11f78c4623d9b01c60": "figures/hypergraph/slide_edge_panel.png",
     "17d9b5aa575d5359b04d90a22076ed09": "figures/hypergraph/slide_edges_about_edges.png",
     "5115c7adc20b0f486260a73573902434": "figures/heat_drugs/slide_heat_drugs.png",
+    "af5563adcdbdb0aa9be45928c0476d88": "figures/comics/strip_heat.png",
+    "b6a52c190bdd0d78ea0b7deb174be0ae": "figures/comics/strip_rivals.png",
+    "cbefef7ede79a12194955ccf58a9b2e2": "figures/comics/strip_medicine.png",
+    "27965c5899efd3261a397a2822821444": "figures/comics/strip_cameras.png",
+    "578a05da5598afc4e1c0d3075232350b": "figures/comics/strip_aircon.png",
+    "924bdd521662766295bea764e9db31b5": "figures/comics/strip_restaurants.png",
+    "a44feaefc6bbc60b633f03ceb72c69ec": "figures/comics/strip_moon.png",
+    "f68550f0a7902e28fc5b9b6fd94027f2": "figures/comics/grammar.png",
+    "561f2c79a7fb5be12bbd1864c35e830e": "figures/hypergraph/slide_edge_field.png",
+    "bef1ce93b20a29245860fa4720ed6bbf": "figures/hypergraph/slide_edge_panel.png",
+    "4fc263d3d4f9194130bf99e1a8bb75ee": "figures/viz/evidence_review_changes.png",
     "36322880a89ae74985d1ab3f4e567f14": "figures/comics/strip_heat.png",
     "0646de327d78cc2f3feec5f461eb5e48": "figures/comics/strip_cameras.png",
     "130472b6690021dfd7f700ddc264d739": "figures/comics/grammar.png",
@@ -80,7 +91,7 @@ DECK_BLOBS = {
     "b0b41869c55923747c753e3a4a3326ec": "figures/comics/strip_moon.png",
 }
 # Files scanned for figure references.
-SCAN_FOR_FIGURES = ("docs/", "viz/", "deck/", "claims/", "critique/", "replication/")
+SCAN_FOR_FIGURES = ("docs/", "viz/", "deck/", "deck2/", "claims/", "critique/", "replication/")
 FIG_RE = re.compile(r"(?<![\w.-])(?:\.\./)*(figures/[\w./-]+?\.(?:png|jpe?g|svg|gif|webp|pdf))", re.I)
 TEXT_EXT = {".md", ".html", ".htm", ".js", ".json", ".jsonl", ".css", ".py", ".txt", ".csv", ".sh", ".toml",
             ".yaml", ".yml", ".geojson", ".svg", ".meta", ".sql", ""}
@@ -140,7 +151,7 @@ def stage(rev: str, src: Path, dest: Path) -> list[str]:
         out = dest / rel
         out.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src / rel, out)
-        if rel.startswith("deck/") and rel.endswith(".html"):
+        if rel.startswith(("deck/", "deck2/")) and rel.endswith(".html"):
             t = out.read_text()
             for blob, fig in DECK_BLOBS.items():
                 t = t.replace(f"/_blob/{blob}", os.path.relpath(ROOT / fig, (ROOT / rel).parent))
@@ -305,7 +316,7 @@ def check(base: Path) -> bool:
                 bad.append(f"{rel(p)} -> {r}: {why}")
     figrefs, figbad = 0, []
     for p, t in texts.items():
-        if rel(p).startswith(("viz/", "docs/", "deck/")) and p.suffix in (".js", ".json", ".html", ".md"):
+        if rel(p).startswith(("viz/", "docs/", "deck/", "deck2/")) and p.suffix in (".js", ".json", ".html", ".md"):
             for m in FIG_RE.finditer(t):
                 figrefs += 1
                 if not (base / m.group(1)).exists():

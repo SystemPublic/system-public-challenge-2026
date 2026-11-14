@@ -3,7 +3,7 @@
 **Team:** Hypergraph
 **Members:** Ida Benedetto and Jeff Nickerson
 **Challenge:** Build Challenge 4
-**Pitch slides:** the slide source is in `deck/` in this folder; a hosted link will be added before the deadline
+**Pitch slides:** the slide source for the talk is in `deck2/` in this folder (the earlier, longer deck is in `deck/`); a hosted link will be added before the deadline
 
 ## What it does
 
@@ -43,7 +43,7 @@ The folder runs without a System API key. A key is needed only to send new queri
    ```
    .venv/bin/python -m http.server 8000
    ```
-   Open http://localhost:8000/viz/hypergraph.html first. It shows the 69 links, their findings and the city tests. `viz/comics.html` shows six changes to an edge as strips of frames, among them five rival conjectures for heat and shootings with a registered test that narrows them (`docs/conjectures.md`); the drawing rules are in `docs/comics.md`. The other pages are `viz/heat_drugs.html` (heat, medicines and chronic conditions), `viz/index.html` (claims dashboard), `viz/evidence.html` (test cards, review changes and provenance), `viz/levers.html` (city levers), `viz/explorer.html` (graph explorer), `viz/explore.html` (neighbourhood explorer) and `viz/simulate.html` (toll simulator). Every page has the same navigation bar. The dashboard and the explorer load D3 from cdnjs.cloudflare.com.
+   Open http://localhost:8000/viz/hypergraph.html first. It shows the 69 links, their findings and the city tests. `viz/comics.html` shows seven changes to an edge as strips of frames, among them five rival conjectures for heat and shootings with a registered test that narrows them (`docs/conjectures.md`); the drawing rules are in `docs/comics.md`. The other pages are `viz/heat_drugs.html` (heat, medicines and chronic conditions), `viz/index.html` (claims dashboard), `viz/evidence.html` (test cards, review changes and provenance), `viz/levers.html` (city levers), `viz/explorer.html` (graph explorer), `viz/explore.html` (neighbourhood explorer) and `viz/simulate.html` (toll simulator). Every page has the same navigation bar. The dashboard and the explorer load D3 from cdnjs.cloudflare.com.
 5. Re-run one claim from pinned inputs. Each of the twelve packages in `replication/` reruns the deciding number of one claim and prints MATCH, DRIFT or MISMATCH:
    ```
    cd replication/heat-shootings

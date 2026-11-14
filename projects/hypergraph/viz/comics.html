@@ -10,12 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&text=0123456789.%2C%25%C3%97%2B%E2%88%92&display=swap" rel="stylesheet">
 <script src="data/comics.js"></script>
 <style>
-  :root { --paper: #fbf8f0; --pink: #14120f; --new: #c8371a; --gone: #b9b3a6; --letter: "Patrick Hand", "Architects Daughter", "Avenir Next Condensed", "Arial Narrow", sans-serif; --diagram: var(--letter); }
-  /* Variants for comparison: comics.html?theme=dark | blue | helv (can be combined with commas). */
-  body.t-dark { --paper: #000; --pink: #fff; --new: #ffd60a; --gone: #6f6f6f; }
+  /* House style since 14 November: white on black, yellow for what a frame adds, red for a withdrawn edge,
+     Helvetica in the figures and hand lettering in the captions. Earlier styles: ?theme=light, blue (with light), hand. */
+  :root { --paper: #000; --pink: #fff; --new: #ffd60a; --gone: #ff3b30;
+          --letter: "Patrick Hand", "Architects Daughter", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+          --diagram: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body.t-light { --paper: #fbf8f0; --pink: #14120f; --new: #c8371a; --gone: #b9b3a6; }
   body.t-blue { --new: #1f4fd8; }
-  body.t-helv { --diagram: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  body.t-helv .frame svg text { letter-spacing: .01em; }
+  body.t-hand { --diagram: var(--letter); }
+  .frame svg text { letter-spacing: .01em; }
   main, header.site, footer { max-width: 1400px; }
   .lead { font-size: 16px; max-width: 86ch; color: var(--ink); margin: 6px 0 0; }
   h2.strip-title { margin: 34px 0 2px; font-size: 19px; }
@@ -52,7 +55,7 @@
 <header class="site">
   <nav class="pages"><a href="hypergraph.html">Edges as objects</a><a href="heat_drugs.html">Heat and medicines</a><a href="comics.html" aria-current="page">Strips</a><a href="index.html">Evidence dashboard</a><a href="evidence.html">Test cards and provenance</a><a href="levers.html">Levers</a></nav>
   <h1>Strips: how an edge changes</h1>
-  <p class="lead">A graph of findings changes whenever a study, a dataset or a retraction arrives. Each strip below shows one such change as a sequence of frames. A frame is the state of a few edges at one time. What a frame adds is drawn in red, and what it removes is drawn in grey. Every number has a numbered source under the strip.</p>
+  <p class="lead">A graph of findings changes whenever a study, a dataset or a retraction arrives. Each strip below shows one such change as a sequence of frames. A frame is the state of a few edges at one time. What a frame adds is drawn in yellow, and what it withdraws is drawn in red. Every number has a numbered source under the strip.</p>
 </header>
 <main>
   <section class="noexport" id="grammar-sec">

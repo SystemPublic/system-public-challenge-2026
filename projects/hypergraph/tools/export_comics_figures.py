@@ -24,12 +24,13 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SRGB = ImageCms.ImageCmsProfile(ImageCms.createProfile("sRGB")).tobytes()
 # file name, query, CSS width
 FIGS = [
-    ("strip_heat.png", "export=heat&cap=14", 1280),
+    ("strip_heat.png", "export=heat&cap=17", 1280),
     ("strip_aircon.png", "export=aircon&cap=17", 1280),
     ("strip_restaurants.png", "export=restaurants&cap=14", 1280),
     ("strip_cameras.png", "export=cameras&cap=17", 1280),
     ("strip_rivals.png", "export=rivals&cap=14", 1280),
     ("strip_moon.png", "export=moon&cap=17", 1280),
+    ("strip_medicine.png", "export=medicine&cap=17", 1280),
     ("grammar.png", "export=grammar", 1280),
 ]
 

@@ -1,5 +1,7 @@
 # Heat, medicines and chronic illness
 
+Note of 14 November 2026: the idea that these medicines explain part of the rise in shootings with heat has been set aside (`docs/conjectures.md`). The health material below is unchanged.
+
 A hackathon judge who works on temperature and health pointed out that some medicines change how heat affects people. Antipsychotics and anticholinergics reduce sweating and blunt the sense of heat, diuretics and ACE inhibitors deplete fluid or impair the kidney's response to it, and insulin is absorbed faster in heat. This note asks what the System Public Graph, a database of findings extracted from published research, holds on heat combined with these medicines and with four chronic conditions; what it lacks; and whether New York's open data can test any of it. Scripts are in `analyses/heat_drugs/`, data in `data/derived/heat_drugs/`, and the map is `viz/heat_drugs.html` (figure: `figures/heat_drugs/heat_drugs_map.png`).
 
 No claim was registered, that is, no hypothesis was written down and committed before its New York data were read. The one design that New York's open data allow cannot distinguish the effect the literature predicts from no effect (D = 2.1, where registration requires 4; section 3).

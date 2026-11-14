@@ -16,8 +16,8 @@ const COMICS = {
       { e: { ev: "obs", w: 3 }, text: "Thick. Pooled or repeated, with a narrow interval." },
       { e: { ev: "obs", w: 2, label: "×1.15", refs: [3], city: true, lo: -11 }, text: "The number is the effect. The small figure is its source. A diamond marks a city's registered test." } ] },
     { title: "Change, marks and nodes", rows: [
-      { e: { ev: "obs", w: 2, state: "new" }, text: "Red. Added or changed in this frame." },
-      { e: { ev: "obs", w: 2, state: "gone", mark: "x" }, text: "Grey with a cross. Support withdrawn in this frame." },
+      { e: { ev: "obs", w: 2, state: "new" }, text: "Yellow. Added or changed in this frame." },
+      { e: { ev: "obs", w: 2, state: "gone", mark: "x" }, text: "Red with a cross. Support withdrawn in this frame." },
       { e: { ev: "obs", w: 1, mark: "0" }, text: "Struck circle. Tested, and no effect was found." },
       { mod: true, text: "A line ending in a dot on an arrow. A third variable changes that effect." },
       { node: "proxy", nodeLabel: "proxy", text: "Dashed box. A proxy stands in for the variable." },
@@ -25,7 +25,7 @@ const COMICS = {
   ],
   strips: [
     { id: "heat", title: "Heat and shootings",
-      lede: "The graph holds one edge from temperature to homicide. Two cities' records make it thicker, and tests of the step in between leave one conjecture open.",
+      lede: "The graph holds one edge from temperature to homicide. Two cities' records make it thicker, and tests of the step in between support one account: people outdoors.",
       sources: [
         { text: "Rahman et al. 2023, Sci Total Environ. Case-crossover, California. PMID 36858215.", href: "https://doi.org/10.1016/j.scitotenv.2023.162462", link: "doi" },
         { text: "Pooled from three findings in two studies, read from the abstracts: 1.065 (1.039 to 1.092) per 5 °C.", href: "hypergraph.html", link: "edge panel" },
@@ -33,9 +33,7 @@ const COMICS = {
         { text: "Claim transfer-chicago-heat-shootings: 1.131 (1.120 to 1.143). Registered and refereed.", href: "evidence.html#transfer-chicago-heat-shootings", link: "test card" },
         { text: "Claim heat-mech-outdoors: 311 street-noise complaints remove 0.44 (0.33 to 0.56) of the slope. Confirmed; a next-day control removes 0.10.", href: "evidence.html#heat-mech-outdoors", link: "test card" },
         { text: "Claim heat-mech-intox: ambulance dispatches for drugs and alcohol remove 0.14 (0.09 to 0.19). Unsettled.", href: "evidence.html#heat-mech-intox", link: "test card" },
-        { text: "Claim heat-night-minimum: 1.03 (0.96 to 1.11) per 5 °C of the night's minimum. Unsettled.", href: "evidence.html#heat-night-minimum", link: "test card" },
-        { text: "Chen et al. 2025, Sci Rep. People with schizophrenia, British Columbia heat dome: odds ratio of death 2.43 (1.52 to 4.01) with an antipsychotic dispensed. PMID 41044101. Not in the graph.", href: "https://pubmed.ncbi.nlm.nih.gov/41044101/", link: "PubMed" },
-        { text: "No study of medication, heat and violence was found. New York's open prescription data give the prescriber's ZIP code (docs/heat_drugs.md).", href: "heat_drugs.html", link: "map" }
+        { text: "Claim heat-night-minimum: 1.03 (0.96 to 1.11) per 5 °C of the night's minimum. Unsettled.", href: "evidence.html#heat-night-minimum", link: "test card" }
       ],
       frames: [
         { head: "The graph",
@@ -56,14 +54,7 @@ const COMICS = {
                    { a: "T", b: "O", ev: "obs", w: 2, state: "new" }, { a: "O", b: "S", ev: "obs", w: 2, state: "new", city: true, label: "44% of\nthe slope", refs: [5], lx: 44, ly: -22, labelT: 0.4 },
                    { a: "T", b: "I", ev: "obs", w: 1, state: "new" }, { a: "I", b: "S", ev: "obs", w: 1, state: "new", city: true, label: "14%", refs: [6], lo: 15, labelT: 0.4 },
                    { a: "N", b: "S", ev: "obs", w: 1, state: "new", mark: "0", markT: 0.5, city: true, label: "×1.03", refs: [7], lx: 42, ly: 8, labelT: 0.5 } ],
-          cap: "<b>Street-noise complaints</b>, a proxy for people outdoors, remove 44% of the slope. Ambulance calls for intoxication remove 14%. Warm nights add nothing that can be told from zero." },
-        { head: "A conjecture",
-          nodes: [ { id: "T", label: "daily\ntemperature", x: 66, y: 152 }, { id: "D", label: "death in a\nheat wave", x: 334, y: 56 }, { id: "S", label: "shootings", x: 334, y: 250 },
-                   { id: "M", label: "antipsychotic\nmedicines", x: 290, y: 152, state: "new" } ],
-          edges: [ { id: "td", a: "T", b: "D", ev: "obs", w: 2 }, { id: "ts", a: "T", b: "S", ev: "obs", w: 3, label: "×1.15", lo: 15, labelT: 0.3 } ],
-          mods: [ { from: "M", onto: "td", t: 0.6, ev: "obs", w: 2, state: "new", label: "×2.4", refs: [8], lx: 26, ly: -4 },
-                  { from: "M", onto: "ts", t: 0.6, ev: "conj", w: 1, state: "new", mark: "?", markT: 0.5 } ],
-          cap: "These medicines raise the risk of death in a heat wave. Do they change the heat-violence slope? <b>No study was found</b>, and New York publishes the prescriber's ZIP code, not the patient's." }
+          cap: "<b>Street-noise complaints</b>, a proxy for people outdoors, remove 44% of the slope. Ambulance calls for intoxication remove 14%. Warm nights add nothing that can be told from zero." }
       ] },
     { id: "aircon", title: "Air conditioning: a city test and a new study disagree",
       lede: "The city's test and a study published in 2025 ask the same question of the same city's shootings and give different answers. The strip ends on the measurement that would decide between them.",
@@ -192,6 +183,38 @@ const COMICS = {
           edges: [ { a: "T", b: "So", ev: "obs", w: 3, state: "new", city: true, label: "×1.17", refs: [6], lo: -15, labelT: 0.45 },
                    { a: "T", b: "Si", ev: "obs", w: 1, state: "new", city: true, mark: "0", markT: 0.62, label: "×1.01", refs: [6], lo: 15, labelT: 0.36 } ],
           cap: "The test was registered before the counts were read. Outside, shootings rise 1.17 for each 5 °C. <b>Inside, they do not rise.</b> A bodily effect that follows people indoors is not seen. Heat felt outdoors could still act directly." }
+      ] },
+    { id: "medicine", title: "A conjecture we set aside",
+      lede: "We proposed that medicines which impair cooling might explain part of the rise in shootings with heat. The evidence we could gather counts against it. The strip records the proposal and its withdrawal, and keeps the health risk that prompted it.",
+      sources: [
+        { text: "Chen et al. 2025, Sci Rep. People with schizophrenia, British Columbia heat dome: odds ratio of death 2.43 (1.52 to 4.01) with an antipsychotic dispensed. PMID 41044101. Not in the graph.", href: "https://pubmed.ncbi.nlm.nih.gov/41044101/", link: "PubMed" },
+        { text: "Claim heat-shootings, New York, 2006 to 2026: 1.146 (1.130 to 1.163) per 5 °C.", href: "evidence.html#heat-shootings", link: "test card" },
+        { text: "Secondary result of claim heat-mech-intox: psychiatric ambulance dispatches rise 1.021 (1.019 to 1.024) per 5 °C, and adding them to the shootings model removes -0.026 (-0.052 to -0.002) of the slope.", href: "evidence.html#heat-mech-intox", link: "test card" },
+        { text: "Layton et al. 2020, PLoS One, PMID 33301532: no meaningful interaction between heat waves and heat-sensitising medicines for hospital admission. Nori-Sarma et al. 2022, JAMA Psychiatry, PMID 35195664: emergency visits on extreme heat days rise 1.05 for schizophrenia and 1.08 for any mental health condition.", href: "https://doi.org/10.1371/journal.pone.0243665", link: "doi" },
+        { text: "The conjecture was never registered as a claim, because no public data give where patients live (docs/heat_drugs.md, docs/conjectures.md). It is withdrawn as a line of work, not refuted by a test.", href: "heat_drugs.html", link: "map" }
+      ],
+      frames: [
+        { head: "Our conjecture",
+          nodes: [ { id: "T", label: "daily\ntemperature", x: 66, y: 152 }, { id: "D", label: "death in a\nheat wave", x: 334, y: 56 }, { id: "S", label: "shootings", x: 334, y: 250 },
+                   { id: "M", label: "antipsychotic\nmedicines", x: 290, y: 152 } ],
+          edges: [ { id: "td", a: "T", b: "D", ev: "obs", w: 2 }, { id: "ts", a: "T", b: "S", ev: "obs", w: 3, city: true, label: "×1.15", refs: [2], lo: 15, labelT: 0.3 } ],
+          mods: [ { from: "M", onto: "td", t: 0.6, ev: "obs", w: 2, label: "×2.4", refs: [1], lx: 26, ly: -4 },
+                  { from: "M", onto: "ts", t: 0.6, ev: "conj", w: 1, state: "new", mark: "?", markT: 0.5 } ],
+          cap: "These medicines raise the risk of death in a heat wave. We asked whether they also change how heat acts on violence. <b>No study was found</b>, so we drew a dotted arrow." },
+        { head: "What it predicts",
+          nodes: [ { id: "T", label: "daily\ntemperature", x: 64, y: 190 }, { id: "S", label: "shootings", x: 342, y: 190 },
+                   { id: "P", label: "psychiatric\ncalls", x: 200, y: 66, kind: "proxy", state: "new" } ],
+          edges: [ { a: "T", b: "S", ev: "obs", w: 3, city: true, label: "×1.15", lo: 15 },
+                   { a: "T", b: "P", ev: "obs", w: 2, state: "new", city: true, label: "×1.02", refs: [3], lx: -34, ly: -6 },
+                   { a: "P", b: "S", ev: "obs", w: 1, state: "new", city: true, mark: "0", markT: 0.66, label: "none of\nthe slope", refs: [3], lx: 62, ly: -22, labelT: 0.3 } ],
+          cap: "If medicines mattered, psychiatric crises should rise and carry part of the slope. <b>Psychiatric ambulance calls</b> rise 2% per 5 °C and remove none of it. A Medicare study found no interaction." },
+        { head: "Set aside",
+          nodes: [ { id: "T", label: "daily\ntemperature", x: 66, y: 152 }, { id: "D", label: "death in a\nheat wave", x: 334, y: 56 }, { id: "S", label: "shootings", x: 334, y: 250 },
+                   { id: "M", label: "antipsychotic\nmedicines", x: 290, y: 152 } ],
+          edges: [ { id: "td", a: "T", b: "D", ev: "obs", w: 2 }, { id: "ts", a: "T", b: "S", ev: "obs", w: 3, city: true, label: "×1.15", lo: 15, labelT: 0.3 } ],
+          mods: [ { from: "M", onto: "td", t: 0.6, ev: "obs", w: 2, label: "×2.4", refs: [1], lx: 26, ly: -4 },
+                  { from: "M", onto: "ts", t: 0.6, ev: "conj", w: 1, state: "gone", mark: "x", markT: 0.5 } ],
+          cap: "We withdraw the dotted arrow. It was a conjecture, and the evidence we could gather counts against it. <b>The risk of death in heat stays</b>, and a city can act on that." }
       ] },
     { id: "moon", title: "The full moon: a belief, the graph and a null",
       lede: "A graph of findings can also be used to test a common belief. The graph holds studies on both sides, and the city's record gives a narrow interval around no effect.",

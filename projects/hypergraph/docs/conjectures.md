@@ -31,6 +31,8 @@ Shootings outside rise with heat. Shootings inside do not. Both claims are confi
 
 The result is what the first conjecture predicts. It does not separate that conjecture from a direct effect of heat on people who are outdoors: most indoor spaces are cooled, so a direct effect also predicts a smaller rise inside. The referee made this point, and it limits the claim. What the result counts against is a bodily effect that follows people indoors on the same day. Effects that carry over from a hot night, or that depend on medication, were not tested with lags. Flat inside counts are also consistent with a direct rise offset by people leaving their homes, and shootings inside are a different mix of events. The prison result (Mukherjee 2021) remains evidence that heat can raise violence with contact held roughly fixed.
 
+A short search found no peer-reviewed estimate of this split for shootings (`notes/conjecture_sources.md`, section D). A 2018 newspaper analysis of Philadelphia shootings (Asher, New York Times) described the same pattern without a model. Australian assault data show the opposite for assault: indoor assault keeps rising with heat (Stevens 2024). The New York result should be described as agreeing with the Philadelphia report and as untested elsewhere.
+
 ## Does the prescriber's ZIP code stand in for the patient's?
 
 The public data on antipsychotic prescribing in New York (Medicare Part D) give the prescriber's address. The literature search found no study that validates this as a proxy for where patients live, and none that gives the share of antipsychotic prescriptions written in the patient's own ZIP code. The nearest evidence is for buprenorphine in West Virginia Medicaid, where the prescriber used was on average 33.6 miles away when the nearest was 7.1 (Saloner 2022).
@@ -46,6 +48,8 @@ Suppose the proxy were good. That would make the conjecture testable with public
 If the proxy is weak, as the check suggests, the error biases any area comparison toward no difference, so a null result would not count against the conjecture either. The proxy therefore hurts in both directions: a positive result cannot be attributed to the drug, and a null cannot refute it. The test that would decide is within persons: Medicaid pharmacy claims linked to emergency visits or arrests, comparing the same person on hot and cool days (the design of Layton 2020).
 
 One result already in hand counts against the conjecture as an account of shootings: psychiatric ambulance calls rise less with heat than shootings do and remove none of the slope. The inside result adds little here, because it does not test medication.
+
+On 14 November Jeff decided not to pursue the medication conjecture as an account of shootings. The strip "A conjecture we set aside" records the proposal and its withdrawal. The health finding that prompted it, the higher risk of death in heat for people taking these medicines, is unchanged.
 
 ## The full moon
 

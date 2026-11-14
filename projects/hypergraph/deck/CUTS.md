@@ -33,3 +33,20 @@ On 14 November `striprivals` replaced `heatdrugs` as slide 5; `heatdrugs` and `s
 - The three-minute order has no cover. Say the team name and the idea over `edgefield`.
 - `replication` is in neither cut. If asked, twelve claims are packaged and all twelve reproduced in a sealed test.
 - `power`, `provenance` and `next` were corrected on 13 November and can be shown in questions.
+
+## The deck of 14 November (`deck2/`), ten slides, five minutes
+
+This deck leads with the process: how a new piece of evidence changes the reading of an old one. It is a separate artifact, and the deck above is kept.
+
+1. `cover`: "A graph of findings is never finished; we built a procedure and a drawing for what happens when new evidence arrives."
+2. `edgefield`: "Each link in the System graph is a running meta-analysis; here are 69 links with 1,123 findings, and New York's own estimate on 25 of them."
+3. `stripheat`: "One link as a strip: the graph says 7% more homicide per 5 °C, two cities' shootings say 15% and 13%, and of three steps we tested, people outdoors carries 44% of the slope."
+4. `striprivals`: "The literature gives five reasons; some disagree about shootings indoors, so this morning we registered that test: 17% outside, 1% inside, on 24,000 shootings."
+5. `stripmedicine`: "Yesterday we had our own conjecture, about medicines; the evidence counts against it, so the arrow is red, and the health risk stays."
+6. `stripcameras`: "The same thing happens to confirmed results: the camera test gave 1.33, the same test a year earlier with no cameras gave 1.25, and the confirmation was withdrawn."
+7. `stripair`: "And to our tests when a new paper arrives: a 2025 study outside the graph finds what our district test did not, and the strip ends on the measurement that would decide."
+8. `record`: "Ninety-six scored predictions: 36 confirmed, 36 unsettled, 19 contested; referees changed eleven verdicts, and one corrected us this morning within the hour."
+9. `use`: "What a city can use: heat acts on shootings outdoors, safety evaluations need a placebo year, and results need a fixed version of the data."
+10. `requests`: "Three fields would let any collection draw its own strips: direction and design, withdrawal records, and version differences."
+
+If a slide must go, drop `stripair`.
