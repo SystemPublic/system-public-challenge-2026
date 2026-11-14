@@ -2,6 +2,7 @@
 import { html, useState, useEffect, api, when, dur } from '../api.js';
 import { plural, short } from '../../sections.js';
 import { Answer } from './answer.js';
+import { Process } from './process.js';
 
 export function Turn({ run, latest, firstPass, agents = [], onDone, onAgain }) {
   const [events, setEvents] = useState(null);
@@ -55,7 +56,7 @@ export function Turn({ run, latest, firstPass, agents = [], onDone, onAgain }) {
     ${live && html`<${LiveStatus} m=${m} conn=${conn} title=${title} hasAnswer=${!!answer} />`}
     <details class="trace" open=${traceOpen} onToggle=${toggleTrace}>
       <summary>${live ? 'Agents and tool calls' : events ? `Trace · ${plural([...m.agents.values()].length, 'agent', 'agents')}, ${plural(m.tools, 'tool call', 'tool calls')}, ${dur(m.ms)}` : 'Show agents and tool calls'}</summary>
-      ${traceOpen && html`<${Trace} m=${m} loading=${!events} title=${title} />`}
+      ${traceOpen && html`<${Process} events=${events} live=${live} title=${title} />`}
     </details>
     ${answer && (open ? html`<${Answer} answer=${answer} runId=${String(run.id)} drawNow=${latest} />`
       : html`<button type="button" class="older" onClick=${() => setOpen(true)}><span class="more">Show the answer</span><span class="muted">${summary}</span></button>`)}
