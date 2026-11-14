@@ -14,79 +14,22 @@
       "label": "Researcher",
       "sublabel": "e.g. World Bank analyst",
       "pos": [
-        40,
-        40
+        30,
+        95
       ],
       "size": [
-        150,
+        130,
         64
       ]
     },
     {
-      "id": "web",
+      "id": "demo-ui",
       "type": "frontend",
-      "label": "Web dashboard",
-      "sublabel": "profile, project + goals, follow-ups",
+      "label": "Demo UI",
+      "sublabel": "at /, the original UI",
       "pos": [
-        400,
+        200,
         40
-      ],
-      "size": [
-        215,
-        64
-      ]
-    },
-    {
-      "id": "backend",
-      "type": "backend",
-      "label": "FastAPI backend",
-      "sublabel": "projects, runs, SSE stream",
-      "pos": [
-        880,
-        40
-      ],
-      "size": [
-        180,
-        64
-      ]
-    },
-    {
-      "id": "postgres",
-      "type": "database",
-      "label": "Neon Postgres",
-      "sublabel": "profiles, projects + goals, runs, dashboards",
-      "pos": [
-        1180,
-        40
-      ],
-      "size": [
-        240,
-        64
-      ]
-    },
-    {
-      "id": "first-pass",
-      "type": "backend",
-      "label": "Automatic first pass",
-      "sublabel": "availability, indicator map, research",
-      "tag": "fixed plan",
-      "pos": [
-        620,
-        250
-      ],
-      "size": [
-        215,
-        64
-      ]
-    },
-    {
-      "id": "dash-planner",
-      "type": "backend",
-      "label": "Dashboard planner",
-      "sublabel": "panels from goals + answers",
-      "pos": [
-        1200,
-        210
       ],
       "size": [
         200,
@@ -94,16 +37,87 @@
       ]
     },
     {
-      "id": "planner",
-      "type": "backend",
-      "label": "Planner",
-      "sublabel": "question to tasks",
+      "id": "product-ui",
+      "type": "frontend",
+      "label": "Product UI",
+      "sublabel": "at /v2, chat-first tabs",
       "pos": [
-        40,
-        400
+        200,
+        150
+      ],
+      "size": [
+        200,
+        64
+      ]
+    },
+    {
+      "id": "backend",
+      "type": "backend",
+      "label": "FastAPI backend",
+      "sublabel": "projects, threads, runs, SSE stream",
+      "pos": [
+        460,
+        95
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "accounts",
+      "type": "security",
+      "label": "Accounts",
+      "sublabel": "login, HttpOnly cookie",
+      "pos": [
+        940,
+        15
       ],
       "size": [
         150,
+        64
+      ]
+    },
+    {
+      "id": "postgres",
+      "type": "database",
+      "label": "Neon Postgres",
+      "sublabel": "users, projects, runs, graph",
+      "pos": [
+        660,
+        15
+      ],
+      "size": [
+        170,
+        64
+      ]
+    },
+    {
+      "id": "data-thread",
+      "type": "backend",
+      "label": "Data thread",
+      "sublabel": "first pass + \"Data: topic\" runs",
+      "tag": "data agents",
+      "pos": [
+        30,
+        280
+      ],
+      "size": [
+        220,
+        64
+      ]
+    },
+    {
+      "id": "planner",
+      "type": "backend",
+      "label": "Planner",
+      "sublabel": "tasks, using the profile",
+      "pos": [
+        30,
+        450
+      ],
+      "size": [
+        140,
         64
       ]
     },
@@ -113,11 +127,11 @@
       "label": "Specialist agents",
       "sublabel": "7 roles, in parallel",
       "pos": [
-        265,
-        400
+        210,
+        450
       ],
       "size": [
-        280,
+        190,
         64
       ]
     },
@@ -127,11 +141,11 @@
       "label": "Formatter",
       "sublabel": "summary, DOI citations, follow-ups",
       "pos": [
-        630,
-        400
+        440,
+        450
       ],
       "size": [
-        195,
+        180,
         64
       ]
     },
@@ -141,11 +155,25 @@
       "label": "Verifier",
       "sublabel": "re-checks key claims",
       "pos": [
-        960,
-        400
+        670,
+        450
       ],
       "size": [
-        165,
+        140,
+        64
+      ]
+    },
+    {
+      "id": "dash-planner",
+      "type": "backend",
+      "label": "Dashboard planner",
+      "sublabel": "panels from goals + answers",
+      "pos": [
+        900,
+        210
+      ],
+      "size": [
+        180,
         64
       ]
     },
@@ -155,11 +183,25 @@
       "label": "Panel builders",
       "sublabel": "in parallel, numbers checked",
       "pos": [
-        1200,
-        400
+        900,
+        330
       ],
       "size": [
-        200,
+        180,
+        64
+      ]
+    },
+    {
+      "id": "report",
+      "type": "backend",
+      "label": "Report writer",
+      "sublabel": "auto first report, purpose",
+      "pos": [
+        900,
+        450
+      ],
+      "size": [
+        180,
         64
       ]
     },
@@ -169,11 +211,11 @@
       "label": "OpenAI",
       "sublabel": "gpt-6-luna, web search",
       "pos": [
-        40,
-        580
+        30,
+        680
       ],
       "size": [
-        180,
+        150,
         64
       ]
     },
@@ -183,11 +225,25 @@
       "label": "MCP server",
       "sublabel": "the only tool surface, /mcp",
       "pos": [
-        290,
-        580
+        220,
+        680
       ],
       "size": [
-        450,
+        380,
+        64
+      ]
+    },
+    {
+      "id": "kg",
+      "type": "database",
+      "label": "Project knowledge graph",
+      "sublabel": "rebuilt after each run",
+      "pos": [
+        680,
+        680
+      ],
+      "size": [
+        220,
         64
       ]
     },
@@ -197,11 +253,11 @@
       "label": "System Graph API",
       "sublabel": "live, public-api.system.com",
       "pos": [
-        40,
-        750
+        30,
+        850
       ],
       "size": [
-        200,
+        170,
         64
       ]
     },
@@ -211,11 +267,11 @@
       "label": "Local graph copy",
       "sublabel": "DuckDB, cleaned Dataverse subset",
       "pos": [
-        290,
-        750
+        240,
+        850
       ],
       "size": [
-        200,
+        180,
         64
       ]
     },
@@ -225,11 +281,11 @@
       "label": "Literature",
       "sublabel": "OpenAlex, PubMed",
       "pos": [
-        540,
-        750
+        470,
+        850
       ],
       "size": [
-        200,
+        170,
         64
       ]
     },
@@ -239,11 +295,11 @@
       "label": "World Bank",
       "sublabel": "Indicators API, Data360",
       "pos": [
-        790,
-        750
+        700,
+        850
       ],
       "size": [
-        200,
+        170,
         64
       ]
     }
@@ -251,7 +307,7 @@
   "boundaries": [
     {
       "kind": "region",
-      "label": "Each question",
+      "label": "Each question and data run",
       "wraps": [
         "planner",
         "specialists",
@@ -261,62 +317,84 @@
     },
     {
       "kind": "region",
-      "label": "Project dashboard",
+      "label": "Project dashboard and report",
       "wraps": [
         "dash-planner",
-        "panels"
+        "panels",
+        "report"
       ]
     }
   ],
   "connections": [
     {
+      "id": "demo",
+      "from": "researcher",
+      "to": "demo-ui",
+      "label": "demo"
+    },
+    {
       "id": "ask",
       "from": "researcher",
-      "to": "web",
+      "to": "product-ui",
       "label": "asks, replies",
       "variant": "emphasis"
     },
     {
-      "id": "api",
-      "from": "web",
+      "id": "demo-api",
+      "from": "demo-ui",
       "to": "backend",
-      "label": "REST + SSE events",
+      "label": "REST + SSE",
+      "toSide": "left"
+    },
+    {
+      "id": "api",
+      "from": "product-ui",
+      "to": "backend",
+      "label": "REST + SSE, cookie",
       "variant": "emphasis"
+    },
+    {
+      "id": "auth",
+      "from": "backend",
+      "to": "accounts",
+      "label": "/api/auth",
+      "fromSide": "right",
+      "toSide": "bottom"
+    },
+    {
+      "id": "users",
+      "from": "accounts",
+      "to": "postgres",
+      "label": "users, sessions",
+      "fromSide": "left",
+      "toSide": "right"
     },
     {
       "id": "store",
       "from": "backend",
       "to": "postgres",
-      "label": "read / write"
+      "label": "read / write",
+      "fromSide": "top",
+      "toSide": "left"
     },
     {
-      "id": "goals",
+      "id": "data-runs",
       "from": "backend",
-      "to": "first-pass",
-      "label": "project gets goals",
-      "fromSide": "bottom",
-      "toSide": "right",
-      "via": [
-        [
-          970,
-          282
-        ]
-      ]
+      "to": "data-thread",
+      "label": "goals set, or \"Data: topic\""
     },
     {
       "id": "question",
       "from": "backend",
       "to": "planner",
-      "label": "each question",
-      "variant": "emphasis",
-      "fromSide": "left",
-      "toSide": "top"
+      "label": "question + profile + history",
+      "variant": "emphasis"
     },
     {
-      "id": "fixed-plan",
-      "from": "first-pass",
-      "to": "specialists",
-      "label": "fixed plan"
+      "id": "data-plan",
+      "from": "data-thread",
+      "to": "planner",
+      "label": "planned with data agents"
     },
     {
       "id": "tasks",
@@ -340,10 +418,17 @@
       "variant": "emphasis"
     },
     {
+      "id": "fix-pass",
+      "from": "verifier",
+      "to": "formatter",
+      "label": "major issues: one fix pass",
+      "variant": "dashed"
+    },
+    {
       "id": "verified",
       "from": "verifier",
       "to": "backend",
-      "label": "answer + checks",
+      "label": "answer + checks, or not verified",
       "variant": "emphasis"
     },
     {
@@ -352,13 +437,36 @@
       "to": "dash-planner",
       "label": "after first pass",
       "fromSide": "right",
-      "toSide": "left"
+      "toSide": "top"
     },
     {
       "id": "panel-plans",
       "from": "dash-planner",
       "to": "panels",
       "label": "3 to 6 panels"
+    },
+    {
+      "id": "first-report",
+      "from": "panels",
+      "to": "report",
+      "label": "first dashboard, then report"
+    },
+    {
+      "id": "report-check",
+      "from": "report",
+      "to": "verifier",
+      "label": "report",
+      "fromSide": "left",
+      "toSide": "right"
+    },
+    {
+      "id": "revision",
+      "from": "verifier",
+      "to": "report",
+      "label": "one revision",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left"
     },
     {
       "id": "llm",
@@ -377,6 +485,12 @@
       "from": "panels",
       "to": "mcp",
       "label": "tool calls"
+    },
+    {
+      "id": "kg-tool",
+      "from": "mcp",
+      "to": "kg",
+      "label": "project_graph tool"
     },
     {
       "id": "live",
@@ -401,32 +515,52 @@
       "from": "mcp",
       "to": "worldbank",
       "label": "indicators"
+    },
+    {
+      "id": "kg-thin",
+      "from": "kg",
+      "to": "worldbank",
+      "label": "thin coverage"
+    },
+    {
+      "id": "kg-papers",
+      "from": "kg",
+      "to": "literature",
+      "label": "thin coverage"
     }
   ],
   "cards": [
     {
       "dot": "emerald",
-      "title": "Specialist agents",
+      "title": "Agents and runs",
       "items": [
-        "Graph evidence: verdicts, consensus meters, DOIs",
-        "Skeptic: contrary and null findings only",
-        "Policy / theory of change: backed or unbacked links",
-        "EDA: coverage, distributions, gaps",
-        "Indicator map: evidence around a World Bank indicator",
-        "Availability: where sources disagree or run out",
-        "Research: OpenAlex, PubMed, web search"
+        "Specialists: graph evidence, skeptic, policy / theory of change, EDA, indicator map, availability, research",
+        "Data thread: the first pass and \"Data: topic\" runs use availability, indicator map, research and evidence; every chat thread reads them",
+        "The profile (role, organisation, what you work on) goes into every planner, the dashboard and the report",
+        "Product UI at /v2: accounts, settings, folders, chat-first tabs, select text and reply"
       ]
     },
     {
       "dot": "rose",
-      "title": "Checks in code",
+      "title": "Checks and verifier gates",
       "items": [
         "Every DOI, concept id, effect size and CI traced to tool results",
-        "Consensus meters match evidence summaries",
-        "No causal wording",
-        "Summary cites only DOIs from the sections",
+        "No causal wording; summary cites only DOIs from the sections",
         "Dashboard numbers must appear in tool results, or the panel is dropped",
-        "A failed check goes back to the agent to retry"
+        "Answers: major issues get one formatter fix pass",
+        "Reports: major issues get one report writer revision",
+        "Remaining issues are shown; a failed verifier labels the output not verified"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Project knowledge graph",
+      "items": [
+        "Rebuilt in code after each done run from the stored answers",
+        "Nodes: topics, concepts, indicators, places, populations, papers",
+        "Facts carry qualifiers: effect, value, CI, verdict, population, DOI, run",
+        "Thin coverage linked to OpenAlex and World Bank indicators",
+        "Served at /api/projects/{id}/kg and as the project_graph MCP tool"
       ]
     },
     {
