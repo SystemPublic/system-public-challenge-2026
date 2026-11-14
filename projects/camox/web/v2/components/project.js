@@ -1,6 +1,6 @@
 // Project home, top to bottom: header and goals, data availability (first pass), dashboard, report, questions.
 import { html, useState, useEffect, useRef, useMemo, api, Raw, FIRST_PASS, isFirstPass, isDataRun, when } from '../api.js';
-import { esc, linked, wbUrl, table, chart, mountCharts, plural } from '../../sections.js';
+import { esc, linked, wbUrl, table, chart, mountCharts, plural, kpiStrip, linkGroups, overviewCharts, renderMyList } from '../../sections.js';
 import { Turn } from './turn.js';
 import { Questions } from './questions.js';
 import { mountKG } from '../../kg.js';
@@ -181,13 +181,27 @@ function StatusBar({ text, busy, children }) {
   return html`<div class="status-bar"><span class=${`status ${busy ? 'busy' : ''}`} role="status">${busy && html`<i class="dot busy"></i>`}${text}</span>${children}</div>`;
 }
 
+// Top to bottom: KPI strip, overview charts, links across questions, where the data runs out, the agent-built panels, my list.
+const isGap = (p) => /runs out|gaps?\b/i.test(p.title || '');
+const sub = (title, line, body) => `<section class="dsec"><h3>${title}</h3><p class="small muted">${line}</p>${body}</section>`;
+
 function Dashboard({ project, reload }) {
   const [msg, setMsg] = useState('');
   const s = project.dashboard_status || '';
   const busy = building(s);
   const hasAnswers = project.runs.some((r) => r.answer);
   const key = JSON.stringify(project.dashboard || null);
-  const markup = useMemo(() => (project.dashboard ? dashboardHtml(project.dashboard) : ''), [key]);
+  const runsKey = project.runs.map((r) => `${r.id}${r.answer ? 'a' : ''}`).join();
+  const gap = project.dashboard?.panels?.find(isGap);
+  const top = useMemo(() => {
+    const g = linkGroups(project.runs);
+    const charts = overviewCharts(project.runs).map(([, title, line, body], i, a) =>
+      `<section class="panel${i === a.length - 1 && a.length % 2 ? ' wide' : ''}"><h3>${title}</h3><p class="small muted">${line}</p>${body}</section>`);
+    return kpiStrip(project.runs) + (charts.length ? `<div class="viz">${charts.join('')}</div>` : '')
+      + (g ? sub('Links across questions', 'Every indicator map in this project, merged. Pick a number or a bar above to filter.', g) : '')
+      + (gap ? sub('Where the data runs out', 'Topics the evidence covers but no data series measures well.', panel(gap)) : '');
+  }, [runsKey, key]);
+  const markup = useMemo(() => (project.dashboard ? dashboardHtml({ ...project.dashboard, panels: (project.dashboard.panels || []).filter((p) => p !== gap) }) : ''), [key]);
   const step = s.replace(/^building:? ?/, '').replace('dashboard_planner', 'planning panels').replace('panel: ', '');
   const build = async () => {
     try { await api(`/api/projects/${project.id}/dashboard`, { method: 'POST' }); setMsg(''); reload(); }
@@ -197,10 +211,21 @@ function Dashboard({ project, reload }) {
     : s === 'failed' ? 'The last build failed. Build it again; it reads the answers in this project.'
     : project.dashboard ? '' : hasAnswers ? 'No dashboard yet. Build it from the answers in this project.'
     : 'Builds itself when the first pass finishes. Nothing to show yet.');
-  return html`<${StatusBar} text=${text} busy=${busy}>
-      ${hasAnswers && html`<button type="button" class=${project.dashboard ? 'outline' : 'primary'} disabled=${busy} onClick=${build}>${project.dashboard ? 'Rebuild' : 'Build dashboard'}</button>`}
-    <//>
-    ${markup && html`<${Raw} className="dashboard" markup=${markup} onMount=${mountCharts} />`}`;
+  return html`${top && html`<${Raw} className="dash-top" markup=${top} onMount=${mountCharts} />`}
+    <section class=${top ? 'dsec' : ''}>
+      <${StatusBar} text=${text} busy=${busy}>
+        ${hasAnswers && html`<button type="button" class=${project.dashboard ? 'outline' : 'primary'} disabled=${busy} onClick=${build}>${project.dashboard ? 'Rebuild' : 'Build dashboard'}</button>`}
+      <//>
+      ${markup && html`<${Raw} className="dashboard" markup=${markup} onMount=${mountCharts} />`}
+    </section>
+    <${MyList} project=${project} />`;
+}
+
+function MyList({ project }) {
+  const ref = useRef(null);
+  useEffect(() => { renderMyList(ref.current); }, [project.id]);
+  return html`<section class="dsec"><h3>My list</h3><p class="small muted">Indicators you picked from this project's indicator maps, to download as CSV.</p>
+    <div class="my-list" ref=${ref}></div></section>`;
 }
 
 function Report({ project, reload }) {

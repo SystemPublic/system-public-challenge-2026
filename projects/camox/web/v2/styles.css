@@ -492,6 +492,44 @@ fieldset:disabled input, fieldset:disabled textarea { opacity: .7; }
   .hero-actions button { flex: 1 1 auto; }
 }
 
+/* Project dashboard: KPI strip (filters the link lists), links across questions, my list. */
+.dsec { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); min-width: 0; }
+.dsec > h3 { font-size: 18px; margin-bottom: 4px; }
+.dash-top > .dsec:first-child { margin-top: 24px; }
+.kstrip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.kcard { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; padding: 14px 16px; min-width: 0;
+  background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r-inner); font-weight: 400; }
+.kcard:hover { border-color: var(--line-strong); }
+.kcard[aria-pressed="true"] { border-color: var(--accent-line); background: var(--accent-soft); }
+.kv { font-size: 30px; font-weight: 760; letter-spacing: -.03em; line-height: 1.05; color: var(--ink); }
+.kcard[aria-pressed="true"] .kv { color: var(--accent-ink); }
+.kl { font-size: 13px; font-weight: 650; line-height: 1.3; color: var(--teal); }
+.kcard .small { font-size: 12px; color: var(--faint); }
+.lgroup { margin-top: 18px; }
+.lgroup h3 { font-size: 15px; }
+.lgroup h3 .num { font-weight: 500; color: var(--faint); }
+ul.links { list-style: none; margin: 8px 0 0; padding: 0; }
+ul.links li { display: grid; grid-template-columns: minmax(0, 1.2fr) 120px minmax(0, 2fr) auto; gap: 6px 16px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line); }
+ul.links .pill { margin-left: 6px; vertical-align: 1px; }
+ul.links .ind-id { display: none; }
+.lr-n { font-size: 12.5px; color: var(--muted); }
+.sbar { display: block; height: 3px; margin-top: 5px; border-radius: 2px; background: var(--line); }
+.sbar > span { display: block; height: 100%; border-radius: 2px; background: var(--accent); }
+.my-list ul.plain { margin: 8px 0 12px; }
+.my-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 8px 0; border-top: 1px solid var(--line); }
+@media (min-width: 1360px) { .kstrip { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .kstrip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kcard { padding: 12px; }
+  .kv { font-size: 24px; }
+  ul.links li { grid-template-columns: minmax(0, 1fr) auto; }
+  .lr-c, .lr-i { grid-column: 1 / -1; }
+  .lr-n, ul.links .chip { order: 1; }
+}
+.viz { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 14px; }
+.viz .panel > p { margin-bottom: 10px; }
+@media (min-width: 1100px) { .viz { grid-template-columns: repeat(2, minmax(0, 1fr)); } .viz .wide { grid-column: 1 / -1; } }
+
 /* Process flow: plan, parallel agent lanes, write, verify. Lanes stack under 600 px. */
 .process { margin-top: 12px; padding: 14px 16px; border: 1px solid var(--teal-line); border-radius: var(--r-inner); background: var(--panel); }
 .process .pq { font-size: 14px; }
@@ -530,3 +568,4 @@ fieldset:disabled input, fieldset:disabled textarea { opacity: .7; }
   .pcalls li { grid-template-columns: minmax(0, 1fr) auto auto; }
   .pc-line { grid-column: 1 / -1; grid-row: 2; }
 }
+@media (max-width: 600px) { .viz .panel { padding: 14px 12px; } }
