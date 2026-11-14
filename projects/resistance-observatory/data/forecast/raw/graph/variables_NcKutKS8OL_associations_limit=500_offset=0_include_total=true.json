@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/NcKutKS8OL/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "IiQSSZz6fq",
+    "variable_1_id": "NcKutKS8OL",
+    "variable_2_id": "96VNxIEXl9",
+    "variable_2_wikidata_id": "Q127076",
+    "variable_2_concept_id": "abksZXpIsu",
+    "variable_1_name": "Artesunate + Mefloquine (artesunate\u2009+\u2009mefloquine) [vs Artesunate + Sulfadoxine-Pyrimethamine (artesunate\u2009+\u2009sulfadoxine-pyrimethamine)]",
+    "variable_2_name": "Vomiting within 7 days post-treatment",
+    "study_id": "g8DRR-Xops",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 5.3,
+    "p_value": 0.001,
+    "pubmed_id": 29973212,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

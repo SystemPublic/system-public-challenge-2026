@@ -1,0 +1,59 @@
+{
+ "_request": "GET /variables/ReHfXiRmeO/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "i6RIdBmrEn",
+    "variable_1_id": "Cy_39cuK5b",
+    "variable_2_id": "ReHfXiRmeO",
+    "variable_1_wikidata_id": "Q59178547",
+    "variable_1_concept_id": "qODaxGmiJk",
+    "variable_1_name": "knowledge of the use of insecticide treated nets",
+    "variable_2_name": "use of sulfadoxine-pyrimethamine-IPTp",
+    "study_id": "nhAItOvOjv",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.13,
+    "ci_upper": 3.73,
+    "ci_lower": 1.7,
+    "ci_level": 0,
+    "pubmed_id": 27147109,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "C_JplTo3Yk",
+    "variable_1_id": "mqJYqKF_AW",
+    "variable_2_id": "ReHfXiRmeO",
+    "variable_1_wikidata_id": "Q411557",
+    "variable_1_concept_id": "bzQO0hAZXK",
+    "variable_1_name": "knowledge of the use of sulfadoxine-pyrimethamine",
+    "variable_2_name": "use of sulfadoxine-pyrimethamine-IPTp",
+    "study_id": "nhAItOvOjv",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 22.13,
+    "ci_upper": 43.2,
+    "ci_lower": 8.1,
+    "ci_level": 0,
+    "pubmed_id": 27147109,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "v3PZvQjnRF",
+    "variable_1_id": "7knJ7sOC70",
+    "variable_2_id": "ReHfXiRmeO",
+    "variable_1_wikidata_id": "Q59178547",
+    "variable_1_concept_id": "qODaxGmiJk",
+    "variable_1_name": "use of insecticide treated nets",
+    "variable_2_name": "use of sulfadoxine-pyrimethamine-IPTp",
+    "study_id": "nhAItOvOjv",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.38,
+    "ci_upper": 12.31,
+    "ci_lower": 1.24,
+    "ci_level": 0,
+    "pubmed_id": 27147109,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

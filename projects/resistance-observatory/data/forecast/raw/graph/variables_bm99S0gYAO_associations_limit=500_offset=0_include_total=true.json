@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/bm99S0gYAO/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "uV4aZgsWaq",
+    "variable_1_id": "bm99S0gYAO",
+    "variable_2_id": "q_9IARC6x6",
+    "variable_1_name": "artesunate-sulfadoxine-pyrimethamine [vs artesunate-amodiaquine]",
+    "variable_2_name": "Cure rate",
+    "study_id": "J2lEJTamO7",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 2.3,
+    "p_value": 0.05,
+    "pubmed_id": 17244406,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

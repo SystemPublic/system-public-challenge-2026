@@ -1,0 +1,20 @@
+{
+ "_request": "GET /variables?search=name:437G&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Y8f_pNau2D",
+    "name": "prevalence of 437G and 581G alleles in the pfdhps gene"
+   },
+   {
+    "system_id": "iaseEvvnzp",
+    "name": "Prevalence of quadruple dhfr-mutants + dhps-437G"
+   },
+   {
+    "system_id": "3sxxaT2NrP",
+    "name": "Prevalence of Pfdhps 437G mutation"
+   }
+  ],
+  "total": 5654715
+ }
+}

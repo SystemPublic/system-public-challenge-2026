@@ -1,0 +1,16 @@
+{
+ "_request": "GET /variables?search=name:581G&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Y8f_pNau2D",
+    "name": "prevalence of 437G and 581G alleles in the pfdhps gene"
+   },
+   {
+    "system_id": "zWIF_K29s5",
+    "name": "single nucleotide polymorphisms located in the tumor necrosis factor gene (- 376G> A, - 238G> A and 581G> A)"
+   }
+  ],
+  "total": 5654715
+ }
+}

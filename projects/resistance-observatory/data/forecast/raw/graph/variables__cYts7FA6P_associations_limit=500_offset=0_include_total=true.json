@@ -1,0 +1,20 @@
+{
+ "_request": "GET /variables/_cYts7FA6P/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Wh94pAWDEM",
+    "variable_1_id": "_cYts7FA6P",
+    "variable_2_id": "5sqjIpCo4A",
+    "variable_1_name": "DHPS gene",
+    "variable_2_name": "in vivo-resistance (of Plasmodium falciparum strains against antimalarials)",
+    "study_id": "tnK_sxyhf8",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 16.0,
+    "pubmed_id": 12950663,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

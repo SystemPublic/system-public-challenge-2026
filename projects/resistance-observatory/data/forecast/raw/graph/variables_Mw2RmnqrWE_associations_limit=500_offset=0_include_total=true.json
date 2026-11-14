@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/Mw2RmnqrWE/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "72E0-K32bV",
+    "variable_1_id": "-VT4k9DEw5",
+    "variable_2_id": "Mw2RmnqrWE",
+    "variable_1_wikidata_id": "Q12156",
+    "variable_1_concept_id": "7xpZryeSKE",
+    "variable_1_name": "malaria chemoprevention regimens",
+    "variable_2_name": "number of deaths (among children receiving monthly SP-AQ)",
+    "study_id": "55KzWSbNQK",
+    "statistic_type": "hazard_ratio",
+    "statistic_value": 5.44,
+    "ci_upper": 32.11,
+    "ci_lower": 0.92,
+    "ci_level": 0,
+    "p_value": 0.064,
+    "pubmed_id": 36215323,
+    "system_statistic_type": "hazard_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

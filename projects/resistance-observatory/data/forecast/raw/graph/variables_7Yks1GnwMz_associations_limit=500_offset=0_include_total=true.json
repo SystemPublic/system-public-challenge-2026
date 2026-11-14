@@ -1,0 +1,20 @@
+{
+ "_request": "GET /variables/7Yks1GnwMz/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "siFRT3HX7r",
+    "variable_1_id": "7Yks1GnwMz",
+    "variable_2_id": "fbpuuvUuni",
+    "variable_1_name": "having adequate knowledge on sulphadoxine-pyrimethamine",
+    "variable_2_name": "uptake of adequate sulphadoxine-pyrimethamine",
+    "study_id": "wzydcMWV7v",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.4,
+    "pubmed_id": 31827414,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

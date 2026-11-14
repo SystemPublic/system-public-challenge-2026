@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/Wb1RFu8Tq6/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "BzFTybJlYq",
+    "variable_1_id": "Wb1RFu8Tq6",
+    "variable_2_id": "16TknJmdZ_",
+    "variable_2_wikidata_id": "Q79749",
+    "variable_2_concept_id": "1e7hIn9Lmi",
+    "variable_1_name": "intermittent preventive treatment of malaria in pregnancy-SP uptake",
+    "variable_2_name": "plasma SP level at delivery",
+    "study_id": "NRnZFITLrB",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 32.3,
+    "ci_upper": 78.4,
+    "ci_lower": 13.3,
+    "ci_level": 0,
+    "p_value": 0.005,
+    "pubmed_id": 31836735,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

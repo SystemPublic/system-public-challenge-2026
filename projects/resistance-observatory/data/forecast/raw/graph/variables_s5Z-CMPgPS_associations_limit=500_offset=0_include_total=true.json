@@ -1,0 +1,24 @@
+{
+ "_request": "GET /variables/s5Z-CMPgPS/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Kzn2lA2QFP",
+    "variable_1_id": "BQyOfe99h1",
+    "variable_2_id": "s5Z-CMPgPS",
+    "variable_1_name": "Sulfadoxine-pyrimethamine treatment (SP) compared to placebo",
+    "variable_2_name": "prevalence of dhps double-pure mutant parasites",
+    "study_id": "durHZUTJxi",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.43,
+    "ci_upper": 0.84,
+    "ci_lower": 0.22,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 18419347,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

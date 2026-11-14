@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/dUtDZGikrq/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "oaJGv3Tyxn",
+    "variable_1_id": "dUtDZGikrq",
+    "variable_2_id": "_FWdZGc-db",
+    "variable_2_wikidata_id": "Q4366062",
+    "variable_2_concept_id": "yIphWD5llw",
+    "variable_1_name": "SPAZ-intermittent preventive treatment of malaria in pregnancy [vs SP plus chloroquine]",
+    "variable_2_name": "number of macrolide-resistant pneumococcal isolates",
+    "study_id": "xIqRoAFirs",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 11.1,
+    "p_value": 0.033,
+    "pubmed_id": 25673788,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

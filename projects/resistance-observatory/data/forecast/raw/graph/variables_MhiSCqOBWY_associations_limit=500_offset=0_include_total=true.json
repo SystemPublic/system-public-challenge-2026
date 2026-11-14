@@ -1,0 +1,57 @@
+{
+ "_request": "GET /variables/MhiSCqOBWY/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "pswDTs39uA",
+    "variable_1_id": "MhiSCqOBWY",
+    "variable_2_id": "85ivH8PMPM",
+    "variable_2_wikidata_id": "Q106002870",
+    "variable_2_concept_id": "18mhgMIYTv",
+    "variable_1_name": "combination of chloroquine and sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "PCR-confirmed recrudescent infections among treatment failures",
+    "study_id": "4LnMwnNACj",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.14,
+    "ci_upper": 0.25,
+    "ci_lower": 0.078,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 16871319,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "WtSYTzR9Hi",
+    "variable_1_id": "MhiSCqOBWY",
+    "variable_2_id": "jX1tMlZgWi",
+    "variable_1_name": "combination of chloroquine and sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "clinical failure requiring rescue medication by day 28",
+    "study_id": "4LnMwnNACj",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.324,
+    "ci_upper": 2.5,
+    "ci_lower": 0.705,
+    "ci_level": 0,
+    "pubmed_id": 16871319,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "rpy0pCKLMw",
+    "variable_1_id": "MhiSCqOBWY",
+    "variable_2_id": "804gqJiSzQ",
+    "variable_1_name": "combination of chloroquine and sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "parasitaemia at any time during follow-up",
+    "study_id": "4LnMwnNACj",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.106,
+    "ci_upper": 0.194,
+    "ci_lower": 0.057,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 16871319,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

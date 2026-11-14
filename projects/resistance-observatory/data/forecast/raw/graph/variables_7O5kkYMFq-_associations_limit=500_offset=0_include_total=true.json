@@ -1,0 +1,43 @@
+{
+ "_request": "GET /variables/7O5kkYMFq-/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "_O44lNr-6F",
+    "variable_1_id": "7O5kkYMFq-",
+    "variable_2_id": "9nwtZlSaDb",
+    "variable_2_wikidata_id": "Q67520723",
+    "variable_2_concept_id": "lPNBkdfh_o",
+    "variable_1_name": "intermittent preventive treatment in pregnancy with Sulfadoxine-Pyrimethamine",
+    "variable_2_name": "perinatal mortality",
+    "study_id": "w0Q6VpYFWz",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.0233,
+    "ci_upper": 0.1464,
+    "ci_lower": 0.0037,
+    "ci_level": 0,
+    "p_value": 0.0001,
+    "pubmed_id": 32158176,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "pS9DfuUlnM",
+    "variable_1_id": "7O5kkYMFq-",
+    "variable_2_id": "IbTtH0ddy8",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "intermittent preventive treatment in pregnancy with Sulfadoxine-Pyrimethamine",
+    "variable_2_name": "congenital malaria",
+    "study_id": "w0Q6VpYFWz",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.8,
+    "ci_upper": 3.8769,
+    "ci_lower": 0.1651,
+    "ci_level": 0,
+    "pubmed_id": 32158176,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

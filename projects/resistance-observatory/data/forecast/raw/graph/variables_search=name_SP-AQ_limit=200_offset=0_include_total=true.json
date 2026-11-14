@@ -1,0 +1,12 @@
+{
+ "_request": "GET /variables?search=name:SP-AQ&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Mw2RmnqrWE",
+    "name": "number of deaths (among children receiving monthly SP-AQ)"
+   }
+  ],
+  "total": 5654715
+ }
+}

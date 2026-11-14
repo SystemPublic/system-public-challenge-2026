@@ -1,0 +1,36 @@
+{
+ "_request": "GET /variables/iaseEvvnzp/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "peitXdsBF5",
+    "variable_1_id": "RZamReXWwH",
+    "variable_2_id": "iaseEvvnzp",
+    "variable_1_name": "Survey after one year of Intermittent preventive treatment in infants implementation [vs Baseline survey]",
+    "variable_2_name": "Prevalence of quadruple dhfr-mutants + dhps-437G",
+    "study_id": "diutippUQd",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -2.2,
+    "p_value": 0.9,
+    "pubmed_id": 20064223,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "tpQmPftMjJ",
+    "variable_1_id": "B0tX2oYnKy",
+    "variable_2_id": "iaseEvvnzp",
+    "variable_1_wikidata_id": "Q421072",
+    "variable_1_concept_id": "6Q_i0GlCWE",
+    "variable_1_name": "Intermittent preventive treatment in infants (IPTi) with sulphadoxine-pyrimethamine (SP) during routine vaccinations (implemented for one year)",
+    "variable_2_name": "Prevalence of quadruple dhfr-mutants + dhps-437G",
+    "study_id": "diutippUQd",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 0.4,
+    "p_value": 0.9,
+    "pubmed_id": 20064223,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 2
+ }
+}

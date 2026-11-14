@@ -1,0 +1,70 @@
+{
+ "_request": "GET https://api.openalex.org/works?filter=pmid:16127028|33684211&select=id,doi,ids,title,publication_date,publication_year&per-page=100",
+ "_retrieved": "2026-11-14T17:05:17Z",
+ "response": {
+  "meta": {
+   "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+   "count": 2,
+   "db_response_time_ms": 17,
+   "page": 1,
+   "per_page": 100,
+   "groups_count": null,
+   "x_query": {
+    "oql": "get works where PMID is (16127028 or 33684211)",
+    "x_new_oql": "get works where PMID is (16127028 or 33684211)",
+    "oqo": {
+     "get_rows": "works",
+     "filter_rows": [
+      {
+       "join": "or",
+       "filters": [
+        {
+         "column_id": "ids.pmid",
+         "value": "16127028"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "33684211"
+        }
+       ]
+      }
+     ]
+    },
+    "url": "/works?filter=ids.pmid:16127028|33684211&per_page=100",
+    "order": "most cited (age-adjusted) first",
+    "order_default": true
+   },
+   "cost_usd": 0.0001
+  },
+  "results": [
+   {
+    "id": "https://openalex.org/W2140458835",
+    "doi": "https://doi.org/10.1128/aac.49.9.3601-3606.2005",
+    "ids": {
+     "openalex": "https://openalex.org/W2140458835",
+     "doi": "https://doi.org/10.1128/aac.49.9.3601-3606.2005",
+     "mag": "2140458835",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/16127028",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/1195435"
+    },
+    "title": "Association between the Pharmacokinetics and In Vivo Therapeutic Efficacy of Sulfadoxine-Pyrimethamine in Malawian Children",
+    "publication_date": "2005-08-26",
+    "publication_year": 2005
+   },
+   {
+    "id": "https://openalex.org/W3135620091",
+    "doi": "https://doi.org/10.1093/infdis/jiab117",
+    "ids": {
+     "openalex": "https://openalex.org/W3135620091",
+     "doi": "https://doi.org/10.1093/infdis/jiab117",
+     "mag": "3135620091",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/33684211"
+    },
+    "title": "Reduced Birth Weight Caused by Sextuple Drug-Resistant Plasmodium falciparum Infection in Early Second Trimester",
+    "publication_date": "2021-02-26",
+    "publication_year": 2021
+   }
+  ],
+  "group_by": []
+ }
+}

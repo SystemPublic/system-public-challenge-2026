@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/ba-nNcCDEy/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "9piJI0SwqK",
+    "variable_1_id": "ba-nNcCDEy",
+    "variable_2_id": "uUjjpF8y5C",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "use of sulfadoxine-pyrimethamine",
+    "variable_2_name": "malaria in pregnancy",
+    "study_id": "CCRrt40vnd",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.44,
+    "ci_upper": 1.06,
+    "ci_lower": 0.18,
+    "ci_level": 0,
+    "pubmed_id": 12625128,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

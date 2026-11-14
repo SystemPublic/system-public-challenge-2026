@@ -1,0 +1,42 @@
+{
+ "_request": "GET /variables/VmTNXMy_Ql/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "yfqV2iLK15",
+    "variable_1_id": "JKTo0eQIMF",
+    "variable_2_id": "VmTNXMy_Ql",
+    "variable_1_wikidata_id": "Q1527264",
+    "variable_1_concept_id": "6yoKTYSOJa",
+    "variable_1_name": "country income level",
+    "variable_2_name": "optimum IPTp-SP uptake",
+    "study_id": "L-UVbdOtOv",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 3.268,
+    "ci_upper": 4.098,
+    "ci_lower": 2.392,
+    "ci_level": 0,
+    "pubmed_id": 34716158,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "DeQYwDUwOV",
+    "variable_1_id": "CDCPFdZZJM",
+    "variable_2_id": "VmTNXMy_Ql",
+    "variable_1_wikidata_id": "Q12156",
+    "variable_1_concept_id": "7xpZryeSKE",
+    "variable_1_name": "knowledge of malaria and preventive measures (high knowledge)",
+    "variable_2_name": "optimum IPTp-SP uptake",
+    "study_id": "L-UVbdOtOv",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 1.298,
+    "ci_upper": 1.398,
+    "ci_lower": 1.206,
+    "ci_level": 0,
+    "pubmed_id": 34716158,
+    "system_statistic_type": "adjusted_odds_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

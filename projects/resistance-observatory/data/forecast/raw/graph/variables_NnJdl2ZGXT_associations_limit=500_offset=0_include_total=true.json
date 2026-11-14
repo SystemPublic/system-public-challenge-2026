@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/NnJdl2ZGXT/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "L3grkNXA7L",
+    "variable_1_id": "NnJdl2ZGXT",
+    "variable_2_id": "rZAvsRmbU5",
+    "variable_2_wikidata_id": "Q38933",
+    "variable_2_concept_id": "-4z8u-acvk",
+    "variable_1_name": "Seasonal Malaria Chemoprevention (SMC) with sulfadoxine-pyrimethamine and amodiaquine (SPAQ) in the intervention county",
+    "variable_2_name": "caregiver-reported fever",
+    "study_id": "qX3TkA4r0J",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.3,
+    "ci_upper": 0.7,
+    "ci_lower": 0.12,
+    "ci_level": 0,
+    "p_value": 0.003,
+    "pubmed_id": 38267985,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

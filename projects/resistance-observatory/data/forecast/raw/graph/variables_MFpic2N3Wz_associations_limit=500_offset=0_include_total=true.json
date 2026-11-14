@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/MFpic2N3Wz/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "o81I-56Mt5",
+    "variable_1_id": "GwfpmPtWgt",
+    "variable_2_id": "MFpic2N3Wz",
+    "variable_1_name": "one year after SP/AQ introduction [vs before SP/AQ introduction]",
+    "variable_2_name": "frequency of the SP-resistance associated Pfdhps double mutant (SGEAA) haplotype",
+    "study_id": "NzCtX3gQQ5",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 21.0,
+    "p_value": 0.001,
+    "pubmed_id": 18590577,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

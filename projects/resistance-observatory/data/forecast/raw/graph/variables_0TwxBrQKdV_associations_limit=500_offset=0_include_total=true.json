@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/0TwxBrQKdV/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "QW7RO2Ywhc",
+    "variable_1_id": "0TwxBrQKdV",
+    "variable_2_id": "eZlH3rgFkT",
+    "variable_1_name": "AQ group [vs SP group]",
+    "variable_2_name": "day-28 PCR-adjusted failure rates",
+    "study_id": "AzJILIiSG6",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 16.6,
+    "p_value": 0.0195,
+    "pubmed_id": 18267042,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

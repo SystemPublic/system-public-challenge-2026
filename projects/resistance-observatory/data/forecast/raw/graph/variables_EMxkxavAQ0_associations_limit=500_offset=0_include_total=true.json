@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/EMxkxavAQ0/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "fORA-e0g7R",
+    "variable_1_id": "EMxkxavAQ0",
+    "variable_2_id": "EebZ0Ecodw",
+    "variable_1_name": "sulphadoxine-pyrimethamine use",
+    "variable_2_name": "haemoglobin levels level",
+    "study_id": "hqj0wJVB1B",
+    "statistic_type": "pearson_r",
+    "statistic_value": 0.15,
+    "p_value": 0.008,
+    "pubmed_id": 22206597,
+    "system_statistic_type": "pearson_r"
+   }
+  ],
+  "total": 1
+ }
+}

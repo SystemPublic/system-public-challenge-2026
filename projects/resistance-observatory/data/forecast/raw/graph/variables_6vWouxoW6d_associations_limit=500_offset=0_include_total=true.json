@@ -1,0 +1,48 @@
+{
+ "_request": "GET /variables/6vWouxoW6d/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "oGqP5yLCph",
+    "variable_1_id": "6vWouxoW6d",
+    "variable_2_id": "YYkoSJHrgT",
+    "variable_1_wikidata_id": "Q311383",
+    "variable_2_wikidata_id": "Q281579",
+    "variable_1_concept_id": "QGsnhC2Mq6",
+    "variable_2_concept_id": "XhASWgkt_i",
+    "variable_1_name": "treatment of clinical Plasmodium falciparum malaria with sulfadoxine-pyrimethamine and amodiaquine (AQ)",
+    "variable_2_name": "gametocyte carriage",
+    "study_id": "2EfLpHQvDE",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.0,
+    "ci_upper": 4.95,
+    "ci_lower": 0.2,
+    "ci_level": 0,
+    "p_value": 1.0,
+    "pubmed_id": 33771166,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "1VqriAIQpQ",
+    "variable_1_id": "6vWouxoW6d",
+    "variable_2_id": "YYkoSJHrgT",
+    "variable_1_wikidata_id": "Q311383",
+    "variable_2_wikidata_id": "Q281579",
+    "variable_1_concept_id": "QGsnhC2Mq6",
+    "variable_2_concept_id": "XhASWgkt_i",
+    "variable_1_name": "treatment of clinical Plasmodium falciparum malaria with sulfadoxine-pyrimethamine and amodiaquine (AQ)",
+    "variable_2_name": "gametocyte carriage",
+    "study_id": "2EfLpHQvDE",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.6,
+    "ci_upper": 2.51,
+    "ci_lower": 0.14,
+    "ci_level": 0,
+    "p_value": 0.48,
+    "pubmed_id": 33771166,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

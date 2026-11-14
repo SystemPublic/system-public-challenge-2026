@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/zFQpDYEjPr/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "ZPGDdrkvVI",
+    "variable_1_id": "zFQpDYEjPr",
+    "variable_2_id": "6nc-md3xWP",
+    "variable_2_wikidata_id": "Q56317195",
+    "variable_2_concept_id": "MZpwE2CWM6",
+    "variable_1_name": "presence of the double mutant dhps A437G/K540E",
+    "variable_2_name": "treatment failure (among the patients with the presence of the double mutant dhps A437G/K540E)",
+    "study_id": "xdBifnj4pj",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 22.4,
+    "ci_upper": 98.1,
+    "ci_lower": 5.1,
+    "ci_level": 0,
+    "pubmed_id": 25583123,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

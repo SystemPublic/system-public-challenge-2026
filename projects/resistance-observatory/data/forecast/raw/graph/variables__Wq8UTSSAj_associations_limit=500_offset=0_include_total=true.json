@@ -1,0 +1,66 @@
+{
+ "_request": "GET /variables/_Wq8UTSSAj/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Izko_Z_Vtg",
+    "variable_1_id": "_Wq8UTSSAj",
+    "variable_2_id": "8CpPyKGpFi",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "intermittent preventive treatment in pregnancy with monthly dihydroartemisinin-piperaquine treatment group [vs Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine treatment group]",
+    "variable_2_name": "prevalence of low birth weight",
+    "study_id": "egVRLouGRA",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -5.0,
+    "p_value": 0.003,
+    "pubmed_id": 33891721,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "KIdxCM0c10",
+    "variable_1_id": "_Wq8UTSSAj",
+    "variable_2_id": "KSIOFWU-PL",
+    "variable_2_wikidata_id": "Q1235888",
+    "variable_2_concept_id": "pRC-JhBFLn",
+    "variable_1_name": "intermittent preventive treatment in pregnancy with monthly dihydroartemisinin-piperaquine treatment group [vs Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine treatment group]",
+    "variable_2_name": "prevalence of any adverse birth outcomes",
+    "study_id": "egVRLouGRA",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -5.9,
+    "p_value": 0.06,
+    "pubmed_id": 33891721,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "00yvzW-jqZ",
+    "variable_1_id": "_Wq8UTSSAj",
+    "variable_2_id": "WvNQxje9TX",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "intermittent preventive treatment in pregnancy with monthly dihydroartemisinin-piperaquine treatment group [vs Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine treatment group]",
+    "variable_2_name": "incidence of symptomatic-malaria",
+    "study_id": "egVRLouGRA",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -0.1,
+    "p_value": 0.002,
+    "pubmed_id": 33891721,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "x5gC0i-3QZ",
+    "variable_1_id": "_Wq8UTSSAj",
+    "variable_2_id": "hMoaJlqHP0",
+    "variable_1_name": "intermittent preventive treatment in pregnancy with monthly dihydroartemisinin-piperaquine treatment group [vs Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine treatment group]",
+    "variable_2_name": "prevalence of parasitemia during pregnancy",
+    "study_id": "egVRLouGRA",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -0.39,
+    "p_value": 0.001,
+    "pubmed_id": 33891721,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 4
+ }
+}

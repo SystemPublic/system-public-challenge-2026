@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/3T8K506Jut/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Y9rWixorgb",
+    "variable_1_id": "7BAQg9Ky6C",
+    "variable_2_id": "3T8K506Jut",
+    "variable_1_name": "Seasonal Malaria Chemoprevention with monthly administration of amodiaquine/sulfadoxine-pyrimethamine to children aged 3-59 months during the transmission season in Nanoro, Burkina Faso (2010-2012 vs 2020)",
+    "variable_2_name": "prevalence of Pfdhfr/Pfdhps quintuple mutant IRN-436A437G",
+    "study_id": "0V45kaRJyi",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -39.7,
+    "p_value": 0.0001,
+    "pubmed_id": 39414909,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

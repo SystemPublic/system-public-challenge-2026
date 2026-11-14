@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/airhhho3ig/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "4-T8s32ZjA",
+    "variable_1_id": "airhhho3ig",
+    "variable_2_id": "ac4y4_L5Me",
+    "variable_1_wikidata_id": "Q422438",
+    "variable_2_wikidata_id": "Q10253316",
+    "variable_1_concept_id": "FSXE9QnJOc",
+    "variable_2_concept_id": "aLGvrXuIez",
+    "variable_1_name": "Chloroquine [vs Chloroquine-Pyrimethamine-Sulfadoxine (CQPS)]",
+    "variable_2_name": "Parasite-clearance time (Pcombination treatments)",
+    "study_id": "IPDJnKtS8e",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 0.5,
+    "p_value": 0.0002,
+    "pubmed_id": 12061970,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

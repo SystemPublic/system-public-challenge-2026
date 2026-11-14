@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/ay67NiZAJV/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Jokqpz4V6A",
+    "variable_1_id": "ay67NiZAJV",
+    "variable_2_id": "ac4y4_L5Me",
+    "variable_1_wikidata_id": "Q239569",
+    "variable_2_wikidata_id": "Q10253316",
+    "variable_1_concept_id": "F8DI_OveVS",
+    "variable_2_concept_id": "aLGvrXuIez",
+    "variable_1_name": "Amodiaquine (AQ) [vs Amodiaquine-Pyrimethamine-Sulfadoxine (AQPS)]",
+    "variable_2_name": "Parasite-clearance time (Pcombination treatments)",
+    "study_id": "IPDJnKtS8e",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 0.5,
+    "p_value": 1e-05,
+    "pubmed_id": 12061970,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

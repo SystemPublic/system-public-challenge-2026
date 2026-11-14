@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/GUOBVPv_CA/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "wUSJPWJQ-z",
+    "variable_1_id": "GUOBVPv_CA",
+    "variable_2_id": "N19b8xsyAT",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "receipt of antiretroviral therapy and dosage of sulfadoxine-pyrimethamine",
+    "variable_2_name": "risk of delivering an low birth weight infant",
+    "study_id": "nIiWJGGxkY",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 1.09,
+    "ci_upper": 1.21,
+    "ci_lower": 0.99,
+    "ci_level": 0,
+    "pubmed_id": 27799645,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

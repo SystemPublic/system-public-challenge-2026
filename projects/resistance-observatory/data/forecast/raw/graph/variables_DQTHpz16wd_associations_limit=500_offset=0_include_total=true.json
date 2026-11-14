@@ -1,0 +1,22 @@
+{
+ "_request": "GET /variables/DQTHpz16wd/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "vc2mr-sYi-",
+    "variable_1_id": "7fsEDyDzDP",
+    "variable_2_id": "DQTHpz16wd",
+    "variable_1_wikidata_id": "Q308623",
+    "variable_1_concept_id": "1TPeWEe_2z",
+    "variable_1_name": "Pregnant women receiving SMS",
+    "variable_2_name": "receiving all sulfadoxine-pyrimethamine doses during pregnancy",
+    "study_id": "U2Wv5ec_SG",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 12.0,
+    "pubmed_id": 31392951,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

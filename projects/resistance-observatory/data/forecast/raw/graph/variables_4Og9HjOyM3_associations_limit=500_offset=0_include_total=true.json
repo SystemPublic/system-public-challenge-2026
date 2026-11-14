@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/4Og9HjOyM3/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Loz_TV54OJ",
+    "variable_1_id": "4Og9HjOyM3",
+    "variable_2_id": "xpGkG1As0G",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "Mefloquine Intermittent preventive treatment in pregnancy (15 mg/kg) in the context of long lasting insecticide treated nets [vs SP Intermittent preventive treatment in pregnancy]",
+    "variable_2_name": "Low birth weight prevalence",
+    "study_id": "qFXP_h2dLw",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 0.3,
+    "p_value": 0.8,
+    "pubmed_id": 25247709,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

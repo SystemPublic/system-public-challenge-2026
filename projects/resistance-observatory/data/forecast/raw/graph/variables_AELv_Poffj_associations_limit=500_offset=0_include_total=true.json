@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/AELv_Poffj/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "KZOf_GF3v_",
+    "variable_1_id": "AELv_Poffj",
+    "variable_2_id": "8xj47Pu8gK",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "presumptive treatment with sulphadoxine-pyrimethamine",
+    "variable_2_name": "prevalence of malaria",
+    "study_id": "AGc3Vcm5DM",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.5,
+    "ci_upper": 0.97,
+    "ci_lower": 0.26,
+    "ci_level": 0,
+    "p_value": 0.042,
+    "pubmed_id": 19852829,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

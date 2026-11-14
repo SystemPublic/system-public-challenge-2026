@@ -1,0 +1,2440 @@
+{
+ "source": {
+  "id": "malariagen-pf8",
+  "label": "MalariaGEN Pf8",
+  "licence": "These data are available open access under the terms of the Creative Commons Attribution 4.0 International license (CC-BY 4.0). Publications using these data should acknowledge and cite the source of the data.",
+  "citation": "This publication uses data from MalariaGEN as described in 'Pf8: An open dataset of Plasmodium falciparum genome variation in 33,325 worldwide samples', MalariaGEN et al., Wellcome Open Research, 2025; 10: 325 DOI: 10.12688/wellcomeopenres.24031.1",
+  "url": "https://www.malariagen.net/resource/36/",
+  "retrievedAt": "2026-11-14T16:04:38Z",
+  "notes": [
+   "Samples come from partner studies, not national surveys, so counts are not national prevalence.",
+   "A year without samples is not sampled, not zero.",
+   "A mixed call that includes E counts as carrying K540E and is shown separately.",
+   "Other alleles at codon 540 (for example N or Y) count as tested but not as K540E.",
+   "The 9 calls marked with * in the Pf8 file are treated as missing, following the Pf8 README.",
+   "Country is where the sample was collected; the year is the collection year."
+  ]
+ },
+ "minYear": 1966,
+ "maxYear": 2022,
+ "countries": [
+  {
+   "iso3": "BEN",
+   "name": "Benin",
+   "years": [
+    {
+     "year": 2014,
+     "tested": 36,
+     "kOnly": 36,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 109,
+     "kOnly": 109,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "BFA",
+   "name": "Burkina Faso",
+   "years": [
+    {
+     "year": 2008,
+     "tested": 56,
+     "kOnly": 55,
+     "eOnly": 0,
+     "mixedWithE": 1,
+     "withE": 1,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "BGD",
+   "name": "Bangladesh",
+   "years": [
+    {
+     "year": 2008,
+     "tested": 14,
+     "kOnly": 1,
+     "eOnly": 9,
+     "mixedWithE": 4,
+     "withE": 13,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2009,
+     "tested": 15,
+     "kOnly": 3,
+     "eOnly": 10,
+     "mixedWithE": 2,
+     "withE": 12,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 49,
+     "kOnly": 7,
+     "eOnly": 36,
+     "mixedWithE": 6,
+     "withE": 42,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 454,
+     "kOnly": 118,
+     "eOnly": 276,
+     "mixedWithE": 56,
+     "withE": 332,
+     "other": 4,
+     "missing": 1
+    },
+    {
+     "year": 2016,
+     "tested": 770,
+     "kOnly": 186,
+     "eOnly": 506,
+     "mixedWithE": 70,
+     "withE": 576,
+     "other": 8,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 12,
+     "kOnly": 2,
+     "eOnly": 8,
+     "mixedWithE": 2,
+     "withE": 10,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "CIV",
+   "name": "Côte d'Ivoire",
+   "years": [
+    {
+     "year": 2013,
+     "tested": 53,
+     "kOnly": 53,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 18,
+     "kOnly": 18,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "CMR",
+   "name": "Cameroon",
+   "years": [
+    {
+     "year": 2013,
+     "tested": 231,
+     "kOnly": 231,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 9,
+     "kOnly": 9,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 21,
+     "kOnly": 21,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "COD",
+   "name": "Democratic Republic of the Congo",
+   "years": [
+    {
+     "year": 2012,
+     "tested": 173,
+     "kOnly": 156,
+     "eOnly": 11,
+     "mixedWithE": 6,
+     "withE": 17,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2013,
+     "tested": 108,
+     "kOnly": 97,
+     "eOnly": 5,
+     "mixedWithE": 6,
+     "withE": 11,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 107,
+     "kOnly": 92,
+     "eOnly": 8,
+     "mixedWithE": 7,
+     "withE": 15,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 39,
+     "kOnly": 31,
+     "eOnly": 2,
+     "mixedWithE": 6,
+     "withE": 8,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 78,
+     "kOnly": 61,
+     "eOnly": 11,
+     "mixedWithE": 6,
+     "withE": 17,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2021,
+     "tested": 14,
+     "kOnly": 8,
+     "eOnly": 3,
+     "mixedWithE": 3,
+     "withE": 6,
+     "other": 0,
+     "missing": 2
+    },
+    {
+     "year": 2022,
+     "tested": 662,
+     "kOnly": 467,
+     "eOnly": 129,
+     "mixedWithE": 66,
+     "withE": 195,
+     "other": 0,
+     "missing": 29
+    }
+   ]
+  },
+  {
+   "iso3": "COL",
+   "name": "Colombia",
+   "years": [
+    {
+     "year": 2011,
+     "tested": 16,
+     "kOnly": 16,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 6,
+     "kOnly": 6,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 34,
+     "kOnly": 34,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 77,
+     "kOnly": 77,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 2,
+     "kOnly": 2,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2019,
+     "tested": 3,
+     "kOnly": 3,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 1
+    },
+    {
+     "year": 2020,
+     "tested": 1,
+     "kOnly": 1,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "ETH",
+   "name": "Ethiopia",
+   "years": [
+    {
+     "year": 2013,
+     "tested": 12,
+     "kOnly": 0,
+     "eOnly": 12,
+     "mixedWithE": 0,
+     "withE": 12,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 10,
+     "kOnly": 2,
+     "eOnly": 8,
+     "mixedWithE": 0,
+     "withE": 8,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "GAB",
+   "name": "Gabon",
+   "years": [
+    {
+     "year": 2014,
+     "tested": 55,
+     "kOnly": 55,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "GHA",
+   "name": "Ghana",
+   "years": [
+    {
+     "year": 2009,
+     "tested": 120,
+     "kOnly": 118,
+     "eOnly": 0,
+     "mixedWithE": 2,
+     "withE": 2,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2010,
+     "tested": 168,
+     "kOnly": 166,
+     "eOnly": 0,
+     "mixedWithE": 2,
+     "withE": 2,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2011,
+     "tested": 102,
+     "kOnly": 100,
+     "eOnly": 0,
+     "mixedWithE": 2,
+     "withE": 2,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 87,
+     "kOnly": 86,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2013,
+     "tested": 247,
+     "kOnly": 246,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 456,
+     "kOnly": 451,
+     "eOnly": 3,
+     "mixedWithE": 2,
+     "withE": 5,
+     "other": 0,
+     "missing": 24
+    },
+    {
+     "year": 2015,
+     "tested": 372,
+     "kOnly": 366,
+     "eOnly": 3,
+     "mixedWithE": 3,
+     "withE": 6,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 305,
+     "kOnly": 301,
+     "eOnly": 2,
+     "mixedWithE": 2,
+     "withE": 4,
+     "other": 0,
+     "missing": 2
+    },
+    {
+     "year": 2017,
+     "tested": 688,
+     "kOnly": 685,
+     "eOnly": 2,
+     "mixedWithE": 1,
+     "withE": 3,
+     "other": 0,
+     "missing": 10
+    },
+    {
+     "year": 2018,
+     "tested": 1852,
+     "kOnly": 1823,
+     "eOnly": 13,
+     "mixedWithE": 16,
+     "withE": 29,
+     "other": 0,
+     "missing": 12
+    },
+    {
+     "year": 2019,
+     "tested": 219,
+     "kOnly": 214,
+     "eOnly": 1,
+     "mixedWithE": 4,
+     "withE": 5,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2020,
+     "tested": 206,
+     "kOnly": 204,
+     "eOnly": 1,
+     "mixedWithE": 1,
+     "withE": 2,
+     "other": 0,
+     "missing": 20
+    },
+    {
+     "year": 2021,
+     "tested": 15,
+     "kOnly": 14,
+     "eOnly": 0,
+     "mixedWithE": 1,
+     "withE": 1,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "GIN",
+   "name": "Guinea",
+   "years": [
+    {
+     "year": 2011,
+     "tested": 149,
+     "kOnly": 140,
+     "eOnly": 4,
+     "mixedWithE": 5,
+     "withE": 9,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "GMB",
+   "name": "Gambia",
+   "years": [
+    {
+     "year": 1966,
+     "tested": 7,
+     "kOnly": 7,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1967,
+     "tested": 7,
+     "kOnly": 7,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1968,
+     "tested": 12,
+     "kOnly": 12,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1969,
+     "tested": 13,
+     "kOnly": 13,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1970,
+     "tested": 15,
+     "kOnly": 15,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1971,
+     "tested": 1,
+     "kOnly": 1,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1984,
+     "tested": 137,
+     "kOnly": 137,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1990,
+     "tested": 10,
+     "kOnly": 10,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1991,
+     "tested": 2,
+     "kOnly": 2,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2001,
+     "tested": 34,
+     "kOnly": 34,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2008,
+     "tested": 74,
+     "kOnly": 74,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2013,
+     "tested": 49,
+     "kOnly": 49,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 302,
+     "kOnly": 299,
+     "eOnly": 3,
+     "mixedWithE": 0,
+     "withE": 3,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 136,
+     "kOnly": 136,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 131,
+     "kOnly": 130,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 140,
+     "kOnly": 139,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 0,
+     "missing": 3
+    },
+    {
+     "year": 2018,
+     "tested": 106,
+     "kOnly": 102,
+     "eOnly": 4,
+     "mixedWithE": 0,
+     "withE": 4,
+     "other": 0,
+     "missing": 7
+    },
+    {
+     "year": 2019,
+     "tested": 127,
+     "kOnly": 122,
+     "eOnly": 4,
+     "mixedWithE": 1,
+     "withE": 5,
+     "other": 0,
+     "missing": 6
+    },
+    {
+     "year": 2020,
+     "tested": 54,
+     "kOnly": 54,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 3
+    }
+   ]
+  },
+  {
+   "iso3": "IDN",
+   "name": "Indonesia",
+   "years": [
+    {
+     "year": 2010,
+     "tested": 1,
+     "kOnly": 0,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2011,
+     "tested": 21,
+     "kOnly": 2,
+     "eOnly": 19,
+     "mixedWithE": 0,
+     "withE": 19,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 9,
+     "kOnly": 0,
+     "eOnly": 9,
+     "mixedWithE": 0,
+     "withE": 9,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2013,
+     "tested": 13,
+     "kOnly": 1,
+     "eOnly": 12,
+     "mixedWithE": 0,
+     "withE": 12,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 37,
+     "kOnly": 2,
+     "eOnly": 35,
+     "mixedWithE": 0,
+     "withE": 35,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 9,
+     "kOnly": 1,
+     "eOnly": 8,
+     "mixedWithE": 0,
+     "withE": 8,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 13,
+     "kOnly": 3,
+     "eOnly": 10,
+     "mixedWithE": 0,
+     "withE": 10,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 16,
+     "kOnly": 1,
+     "eOnly": 15,
+     "mixedWithE": 0,
+     "withE": 15,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "IND",
+   "name": "India",
+   "years": [
+    {
+     "year": 2016,
+     "tested": 57,
+     "kOnly": 43,
+     "eOnly": 8,
+     "mixedWithE": 5,
+     "withE": 13,
+     "other": 1,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 180,
+     "kOnly": 147,
+     "eOnly": 19,
+     "mixedWithE": 13,
+     "withE": 32,
+     "other": 1,
+     "missing": 1
+    },
+    {
+     "year": 2018,
+     "tested": 12,
+     "kOnly": 10,
+     "eOnly": 1,
+     "mixedWithE": 1,
+     "withE": 2,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "KEN",
+   "name": "Kenya",
+   "years": [
+    {
+     "year": 1994,
+     "tested": 53,
+     "kOnly": 37,
+     "eOnly": 11,
+     "mixedWithE": 5,
+     "withE": 16,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1995,
+     "tested": 57,
+     "kOnly": 49,
+     "eOnly": 2,
+     "mixedWithE": 6,
+     "withE": 8,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1996,
+     "tested": 65,
+     "kOnly": 58,
+     "eOnly": 4,
+     "mixedWithE": 3,
+     "withE": 7,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1997,
+     "tested": 61,
+     "kOnly": 42,
+     "eOnly": 11,
+     "mixedWithE": 8,
+     "withE": 19,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1998,
+     "tested": 64,
+     "kOnly": 40,
+     "eOnly": 16,
+     "mixedWithE": 8,
+     "withE": 24,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 1999,
+     "tested": 12,
+     "kOnly": 5,
+     "eOnly": 5,
+     "mixedWithE": 2,
+     "withE": 7,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2000,
+     "tested": 18,
+     "kOnly": 5,
+     "eOnly": 12,
+     "mixedWithE": 1,
+     "withE": 13,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2003,
+     "tested": 56,
+     "kOnly": 12,
+     "eOnly": 40,
+     "mixedWithE": 4,
+     "withE": 44,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2004,
+     "tested": 65,
+     "kOnly": 10,
+     "eOnly": 45,
+     "mixedWithE": 10,
+     "withE": 55,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2005,
+     "tested": 59,
+     "kOnly": 6,
+     "eOnly": 44,
+     "mixedWithE": 9,
+     "withE": 53,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2006,
+     "tested": 53,
+     "kOnly": 11,
+     "eOnly": 36,
+     "mixedWithE": 6,
+     "withE": 42,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2007,
+     "tested": 107,
+     "kOnly": 12,
+     "eOnly": 81,
+     "mixedWithE": 14,
+     "withE": 95,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2008,
+     "tested": 51,
+     "kOnly": 8,
+     "eOnly": 36,
+     "mixedWithE": 7,
+     "withE": 43,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2009,
+     "tested": 70,
+     "kOnly": 8,
+     "eOnly": 56,
+     "mixedWithE": 6,
+     "withE": 62,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2010,
+     "tested": 90,
+     "kOnly": 16,
+     "eOnly": 65,
+     "mixedWithE": 9,
+     "withE": 74,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2011,
+     "tested": 72,
+     "kOnly": 5,
+     "eOnly": 65,
+     "mixedWithE": 2,
+     "withE": 67,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 84,
+     "kOnly": 9,
+     "eOnly": 72,
+     "mixedWithE": 3,
+     "withE": 75,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2013,
+     "tested": 82,
+     "kOnly": 17,
+     "eOnly": 61,
+     "mixedWithE": 4,
+     "withE": 65,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 123,
+     "kOnly": 5,
+     "eOnly": 115,
+     "mixedWithE": 3,
+     "withE": 118,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 43,
+     "kOnly": 1,
+     "eOnly": 40,
+     "mixedWithE": 2,
+     "withE": 42,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 49,
+     "kOnly": 3,
+     "eOnly": 44,
+     "mixedWithE": 2,
+     "withE": 46,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 50,
+     "kOnly": 1,
+     "eOnly": 47,
+     "mixedWithE": 2,
+     "withE": 49,
+     "other": 0,
+     "missing": 1
+    },
+    {
+     "year": 2018,
+     "tested": 261,
+     "kOnly": 5,
+     "eOnly": 250,
+     "mixedWithE": 6,
+     "withE": 256,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2019,
+     "tested": 243,
+     "kOnly": 7,
+     "eOnly": 223,
+     "mixedWithE": 13,
+     "withE": 236,
+     "other": 0,
+     "missing": 1
+    },
+    {
+     "year": 2020,
+     "tested": 44,
+     "kOnly": 0,
+     "eOnly": 41,
+     "mixedWithE": 3,
+     "withE": 44,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "KHM",
+   "name": "Cambodia",
+   "years": [
+    {
+     "year": 1993,
+     "tested": 5,
+     "kOnly": 0,
+     "eOnly": 5,
+     "mixedWithE": 0,
+     "withE": 5,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2007,
+     "tested": 29,
+     "kOnly": 1,
+     "eOnly": 21,
+     "mixedWithE": 1,
+     "withE": 22,
+     "other": 6,
+     "missing": 0
+    },
+    {
+     "year": 2008,
+     "tested": 44,
+     "kOnly": 4,
+     "eOnly": 20,
+     "mixedWithE": 2,
+     "withE": 22,
+     "other": 18,
+     "missing": 0
+    },
+    {
+     "year": 2009,
+     "tested": 63,
+     "kOnly": 7,
+     "eOnly": 19,
+     "mixedWithE": 3,
+     "withE": 22,
+     "other": 34,
+     "missing": 0
+    },
+    {
+     "year": 2010,
+     "tested": 166,
+     "kOnly": 58,
+     "eOnly": 51,
+     "mixedWithE": 11,
+     "withE": 62,
+     "other": 46,
+     "missing": 1
+    },
+    {
+     "year": 2011,
+     "tested": 302,
+     "kOnly": 91,
+     "eOnly": 79,
+     "mixedWithE": 24,
+     "withE": 103,
+     "other": 108,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 129,
+     "kOnly": 39,
+     "eOnly": 37,
+     "mixedWithE": 3,
+     "withE": 40,
+     "other": 50,
+     "missing": 1
+    },
+    {
+     "year": 2013,
+     "tested": 76,
+     "kOnly": 20,
+     "eOnly": 30,
+     "mixedWithE": 1,
+     "withE": 31,
+     "other": 25,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 66,
+     "kOnly": 22,
+     "eOnly": 17,
+     "mixedWithE": 4,
+     "withE": 21,
+     "other": 23,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 44,
+     "kOnly": 0,
+     "eOnly": 10,
+     "mixedWithE": 4,
+     "withE": 14,
+     "other": 30,
+     "missing": 5
+    },
+    {
+     "year": 2016,
+     "tested": 200,
+     "kOnly": 14,
+     "eOnly": 44,
+     "mixedWithE": 12,
+     "withE": 56,
+     "other": 130,
+     "missing": 6
+    },
+    {
+     "year": 2017,
+     "tested": 221,
+     "kOnly": 13,
+     "eOnly": 38,
+     "mixedWithE": 11,
+     "withE": 49,
+     "other": 159,
+     "missing": 11
+    },
+    {
+     "year": 2018,
+     "tested": 313,
+     "kOnly": 30,
+     "eOnly": 62,
+     "mixedWithE": 5,
+     "withE": 67,
+     "other": 216,
+     "missing": 53
+    },
+    {
+     "year": 2019,
+     "tested": 13,
+     "kOnly": 2,
+     "eOnly": 2,
+     "mixedWithE": 0,
+     "withE": 2,
+     "other": 9,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "LAO",
+   "name": "Laos",
+   "years": [
+    {
+     "year": 2010,
+     "tested": 36,
+     "kOnly": 33,
+     "eOnly": 1,
+     "mixedWithE": 1,
+     "withE": 2,
+     "other": 1,
+     "missing": 0
+    },
+    {
+     "year": 2011,
+     "tested": 59,
+     "kOnly": 43,
+     "eOnly": 11,
+     "mixedWithE": 5,
+     "withE": 16,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 25,
+     "kOnly": 15,
+     "eOnly": 6,
+     "mixedWithE": 1,
+     "withE": 7,
+     "other": 3,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 7,
+     "kOnly": 1,
+     "eOnly": 3,
+     "mixedWithE": 0,
+     "withE": 3,
+     "other": 3,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 3,
+     "kOnly": 3,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 520,
+     "kOnly": 332,
+     "eOnly": 81,
+     "mixedWithE": 8,
+     "withE": 89,
+     "other": 99,
+     "missing": 1
+    },
+    {
+     "year": 2018,
+     "tested": 775,
+     "kOnly": 488,
+     "eOnly": 133,
+     "mixedWithE": 25,
+     "withE": 158,
+     "other": 129,
+     "missing": 3
+    },
+    {
+     "year": 2019,
+     "tested": 196,
+     "kOnly": 126,
+     "eOnly": 43,
+     "mixedWithE": 3,
+     "withE": 46,
+     "other": 24,
+     "missing": 10
+    },
+    {
+     "year": 2020,
+     "tested": 72,
+     "kOnly": 21,
+     "eOnly": 40,
+     "mixedWithE": 0,
+     "withE": 40,
+     "other": 11,
+     "missing": 1
+    },
+    {
+     "year": 2021,
+     "tested": 15,
+     "kOnly": 0,
+     "eOnly": 12,
+     "mixedWithE": 1,
+     "withE": 13,
+     "other": 2,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "MDG",
+   "name": "Madagascar",
+   "years": [
+    {
+     "year": 2012,
+     "tested": 7,
+     "kOnly": 7,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2013,
+     "tested": 11,
+     "kOnly": 10,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 6,
+     "kOnly": 6,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "MLI",
+   "name": "Mali",
+   "years": [
+    {
+     "year": 2007,
+     "tested": 85,
+     "kOnly": 84,
+     "eOnly": 0,
+     "mixedWithE": 1,
+     "withE": 1,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 3,
+     "kOnly": 3,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2013,
+     "tested": 329,
+     "kOnly": 327,
+     "eOnly": 0,
+     "mixedWithE": 2,
+     "withE": 2,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 134,
+     "kOnly": 131,
+     "eOnly": 1,
+     "mixedWithE": 2,
+     "withE": 3,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 165,
+     "kOnly": 163,
+     "eOnly": 2,
+     "mixedWithE": 0,
+     "withE": 2,
+     "other": 0,
+     "missing": 1
+    },
+    {
+     "year": 2016,
+     "tested": 389,
+     "kOnly": 381,
+     "eOnly": 4,
+     "mixedWithE": 4,
+     "withE": 8,
+     "other": 0,
+     "missing": 3
+    },
+    {
+     "year": 2017,
+     "tested": 39,
+     "kOnly": 39,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 3
+    },
+    {
+     "year": 2018,
+     "tested": 13,
+     "kOnly": 13,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 1
+    },
+    {
+     "year": 2019,
+     "tested": 44,
+     "kOnly": 44,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2020,
+     "tested": 39,
+     "kOnly": 39,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 5
+    }
+   ]
+  },
+  {
+   "iso3": "MMR",
+   "name": "Myanmar",
+   "years": [
+    {
+     "year": 2011,
+     "tested": 75,
+     "kOnly": 1,
+     "eOnly": 66,
+     "mixedWithE": 1,
+     "withE": 67,
+     "other": 7,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 105,
+     "kOnly": 6,
+     "eOnly": 87,
+     "mixedWithE": 1,
+     "withE": 88,
+     "other": 11,
+     "missing": 0
+    },
+    {
+     "year": 2013,
+     "tested": 66,
+     "kOnly": 6,
+     "eOnly": 55,
+     "mixedWithE": 1,
+     "withE": 56,
+     "other": 4,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 32,
+     "kOnly": 2,
+     "eOnly": 27,
+     "mixedWithE": 0,
+     "withE": 27,
+     "other": 3,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 25,
+     "kOnly": 0,
+     "eOnly": 21,
+     "mixedWithE": 1,
+     "withE": 22,
+     "other": 3,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 412,
+     "kOnly": 3,
+     "eOnly": 391,
+     "mixedWithE": 2,
+     "withE": 393,
+     "other": 16,
+     "missing": 3
+    },
+    {
+     "year": 2017,
+     "tested": 282,
+     "kOnly": 2,
+     "eOnly": 275,
+     "mixedWithE": 3,
+     "withE": 278,
+     "other": 2,
+     "missing": 1
+    }
+   ]
+  },
+  {
+   "iso3": "MOZ",
+   "name": "Mozambique",
+   "years": [
+    {
+     "year": 2014,
+     "tested": 17,
+     "kOnly": 0,
+     "eOnly": 14,
+     "mixedWithE": 3,
+     "withE": 17,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 55,
+     "kOnly": 1,
+     "eOnly": 53,
+     "mixedWithE": 1,
+     "withE": 54,
+     "other": 0,
+     "missing": 4
+    },
+    {
+     "year": 2016,
+     "tested": 58,
+     "kOnly": 0,
+     "eOnly": 54,
+     "mixedWithE": 4,
+     "withE": 58,
+     "other": 0,
+     "missing": 7
+    },
+    {
+     "year": 2017,
+     "tested": 308,
+     "kOnly": 53,
+     "eOnly": 242,
+     "mixedWithE": 13,
+     "withE": 255,
+     "other": 0,
+     "missing": 32
+    },
+    {
+     "year": 2018,
+     "tested": 449,
+     "kOnly": 48,
+     "eOnly": 363,
+     "mixedWithE": 38,
+     "withE": 401,
+     "other": 0,
+     "missing": 15
+    },
+    {
+     "year": 2019,
+     "tested": 18,
+     "kOnly": 1,
+     "eOnly": 17,
+     "mixedWithE": 0,
+     "withE": 17,
+     "other": 0,
+     "missing": 1
+    }
+   ]
+  },
+  {
+   "iso3": "MRT",
+   "name": "Mauritania",
+   "years": [
+    {
+     "year": 2014,
+     "tested": 92,
+     "kOnly": 88,
+     "eOnly": 3,
+     "mixedWithE": 1,
+     "withE": 4,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "MWI",
+   "name": "Malawi",
+   "years": [
+    {
+     "year": 2011,
+     "tested": 264,
+     "kOnly": 1,
+     "eOnly": 259,
+     "mixedWithE": 4,
+     "withE": 263,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 15,
+     "kOnly": 0,
+     "eOnly": 14,
+     "mixedWithE": 1,
+     "withE": 15,
+     "other": 0,
+     "missing": 7
+    },
+    {
+     "year": 2016,
+     "tested": 1,
+     "kOnly": 0,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 0,
+     "missing": 1
+    }
+   ]
+  },
+  {
+   "iso3": "NGA",
+   "name": "Nigeria",
+   "years": [
+    {
+     "year": 2008,
+     "tested": 10,
+     "kOnly": 10,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2011,
+     "tested": 1,
+     "kOnly": 1,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 4,
+     "kOnly": 4,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 24,
+     "kOnly": 24,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 96,
+     "kOnly": 96,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 3
+    },
+    {
+     "year": 2018,
+     "tested": 20,
+     "kOnly": 20,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 2
+    },
+    {
+     "year": 2019,
+     "tested": 29,
+     "kOnly": 29,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2020,
+     "tested": 204,
+     "kOnly": 201,
+     "eOnly": 3,
+     "mixedWithE": 0,
+     "withE": 3,
+     "other": 0,
+     "missing": 7
+    }
+   ]
+  },
+  {
+   "iso3": "PER",
+   "name": "Peru",
+   "years": [
+    {
+     "year": 2009,
+     "tested": 10,
+     "kOnly": 10,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2011,
+     "tested": 11,
+     "kOnly": 7,
+     "eOnly": 4,
+     "mixedWithE": 0,
+     "withE": 4,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 1,
+     "kOnly": 0,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 0,
+     "missing": 1
+    },
+    {
+     "year": 2016,
+     "tested": 1,
+     "kOnly": 1,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 3,
+     "kOnly": 0,
+     "eOnly": 3,
+     "mixedWithE": 0,
+     "withE": 3,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2018,
+     "tested": 51,
+     "kOnly": 0,
+     "eOnly": 51,
+     "mixedWithE": 0,
+     "withE": 51,
+     "other": 0,
+     "missing": 7
+    }
+   ]
+  },
+  {
+   "iso3": "PNG",
+   "name": "Papua New Guinea",
+   "years": [
+    {
+     "year": 2008,
+     "tested": 29,
+     "kOnly": 26,
+     "eOnly": 2,
+     "mixedWithE": 1,
+     "withE": 3,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2009,
+     "tested": 14,
+     "kOnly": 12,
+     "eOnly": 2,
+     "mixedWithE": 0,
+     "withE": 2,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2010,
+     "tested": 2,
+     "kOnly": 1,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 20,
+     "kOnly": 18,
+     "eOnly": 1,
+     "mixedWithE": 1,
+     "withE": 2,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2013,
+     "tested": 54,
+     "kOnly": 25,
+     "eOnly": 27,
+     "mixedWithE": 2,
+     "withE": 29,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 94,
+     "kOnly": 29,
+     "eOnly": 63,
+     "mixedWithE": 2,
+     "withE": 65,
+     "other": 0,
+     "missing": 9
+    }
+   ]
+  },
+  {
+   "iso3": "SDN",
+   "name": "Sudan",
+   "years": [
+    {
+     "year": 2015,
+     "tested": 16,
+     "kOnly": 5,
+     "eOnly": 11,
+     "mixedWithE": 0,
+     "withE": 11,
+     "other": 0,
+     "missing": 2
+    },
+    {
+     "year": 2016,
+     "tested": 19,
+     "kOnly": 9,
+     "eOnly": 10,
+     "mixedWithE": 0,
+     "withE": 10,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 74,
+     "kOnly": 32,
+     "eOnly": 37,
+     "mixedWithE": 5,
+     "withE": 42,
+     "other": 0,
+     "missing": 4
+    }
+   ]
+  },
+  {
+   "iso3": "SEN",
+   "name": "Senegal",
+   "years": [
+    {
+     "year": 2013,
+     "tested": 64,
+     "kOnly": 64,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 27,
+     "kOnly": 27,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 60,
+     "kOnly": 60,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "THA",
+   "name": "Thailand",
+   "years": [
+    {
+     "year": 2001,
+     "tested": 34,
+     "kOnly": 0,
+     "eOnly": 31,
+     "mixedWithE": 1,
+     "withE": 32,
+     "other": 2,
+     "missing": 0
+    },
+    {
+     "year": 2002,
+     "tested": 51,
+     "kOnly": 1,
+     "eOnly": 47,
+     "mixedWithE": 1,
+     "withE": 48,
+     "other": 2,
+     "missing": 0
+    },
+    {
+     "year": 2003,
+     "tested": 77,
+     "kOnly": 2,
+     "eOnly": 65,
+     "mixedWithE": 3,
+     "withE": 68,
+     "other": 7,
+     "missing": 0
+    },
+    {
+     "year": 2004,
+     "tested": 74,
+     "kOnly": 0,
+     "eOnly": 66,
+     "mixedWithE": 1,
+     "withE": 67,
+     "other": 7,
+     "missing": 0
+    },
+    {
+     "year": 2005,
+     "tested": 44,
+     "kOnly": 1,
+     "eOnly": 36,
+     "mixedWithE": 4,
+     "withE": 40,
+     "other": 3,
+     "missing": 1
+    },
+    {
+     "year": 2006,
+     "tested": 2,
+     "kOnly": 0,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 1,
+     "missing": 0
+    },
+    {
+     "year": 2007,
+     "tested": 27,
+     "kOnly": 0,
+     "eOnly": 25,
+     "mixedWithE": 1,
+     "withE": 26,
+     "other": 1,
+     "missing": 0
+    },
+    {
+     "year": 2008,
+     "tested": 258,
+     "kOnly": 4,
+     "eOnly": 222,
+     "mixedWithE": 6,
+     "withE": 228,
+     "other": 26,
+     "missing": 1
+    },
+    {
+     "year": 2009,
+     "tested": 16,
+     "kOnly": 0,
+     "eOnly": 15,
+     "mixedWithE": 1,
+     "withE": 16,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2010,
+     "tested": 14,
+     "kOnly": 0,
+     "eOnly": 12,
+     "mixedWithE": 0,
+     "withE": 12,
+     "other": 2,
+     "missing": 0
+    },
+    {
+     "year": 2011,
+     "tested": 60,
+     "kOnly": 0,
+     "eOnly": 51,
+     "mixedWithE": 3,
+     "withE": 54,
+     "other": 6,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 114,
+     "kOnly": 1,
+     "eOnly": 109,
+     "mixedWithE": 1,
+     "withE": 110,
+     "other": 3,
+     "missing": 1
+    },
+    {
+     "year": 2013,
+     "tested": 115,
+     "kOnly": 2,
+     "eOnly": 110,
+     "mixedWithE": 2,
+     "withE": 112,
+     "other": 1,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 6,
+     "kOnly": 0,
+     "eOnly": 6,
+     "mixedWithE": 0,
+     "withE": 6,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2015,
+     "tested": 26,
+     "kOnly": 0,
+     "eOnly": 11,
+     "mixedWithE": 0,
+     "withE": 11,
+     "other": 15,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 5,
+     "kOnly": 0,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 4,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 20,
+     "kOnly": 1,
+     "eOnly": 2,
+     "mixedWithE": 1,
+     "withE": 3,
+     "other": 16,
+     "missing": 0
+    },
+    {
+     "year": 2018,
+     "tested": 48,
+     "kOnly": 0,
+     "eOnly": 11,
+     "mixedWithE": 0,
+     "withE": 11,
+     "other": 37,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "TZA",
+   "name": "Tanzania",
+   "years": [
+    {
+     "year": 2010,
+     "tested": 47,
+     "kOnly": 12,
+     "eOnly": 31,
+     "mixedWithE": 4,
+     "withE": 35,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2013,
+     "tested": 269,
+     "kOnly": 22,
+     "eOnly": 226,
+     "mixedWithE": 21,
+     "withE": 247,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2014,
+     "tested": 270,
+     "kOnly": 17,
+     "eOnly": 238,
+     "mixedWithE": 15,
+     "withE": 253,
+     "other": 0,
+     "missing": 3
+    },
+    {
+     "year": 2016,
+     "tested": 4,
+     "kOnly": 0,
+     "eOnly": 3,
+     "mixedWithE": 1,
+     "withE": 4,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2019,
+     "tested": 432,
+     "kOnly": 44,
+     "eOnly": 343,
+     "mixedWithE": 45,
+     "withE": 388,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "UGA",
+   "name": "Uganda",
+   "years": [
+    {
+     "year": 2010,
+     "tested": 10,
+     "kOnly": 1,
+     "eOnly": 8,
+     "mixedWithE": 1,
+     "withE": 9,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "VEN",
+   "name": "Venezuela",
+   "years": [
+    {
+     "year": 2012,
+     "tested": 1,
+     "kOnly": 0,
+     "eOnly": 0,
+     "mixedWithE": 1,
+     "withE": 1,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2016,
+     "tested": 1,
+     "kOnly": 1,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    }
+   ]
+  },
+  {
+   "iso3": "VNM",
+   "name": "Vietnam",
+   "years": [
+    {
+     "year": 2000,
+     "tested": 1,
+     "kOnly": 1,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2003,
+     "tested": 8,
+     "kOnly": 6,
+     "eOnly": 1,
+     "mixedWithE": 1,
+     "withE": 2,
+     "other": 0,
+     "missing": 1
+    },
+    {
+     "year": 2005,
+     "tested": 11,
+     "kOnly": 11,
+     "eOnly": 0,
+     "mixedWithE": 0,
+     "withE": 0,
+     "other": 0,
+     "missing": 1
+    },
+    {
+     "year": 2006,
+     "tested": 2,
+     "kOnly": 0,
+     "eOnly": 2,
+     "mixedWithE": 0,
+     "withE": 2,
+     "other": 0,
+     "missing": 2
+    },
+    {
+     "year": 2007,
+     "tested": 4,
+     "kOnly": 3,
+     "eOnly": 1,
+     "mixedWithE": 0,
+     "withE": 1,
+     "other": 0,
+     "missing": 2
+    },
+    {
+     "year": 2009,
+     "tested": 14,
+     "kOnly": 10,
+     "eOnly": 3,
+     "mixedWithE": 1,
+     "withE": 4,
+     "other": 0,
+     "missing": 0
+    },
+    {
+     "year": 2010,
+     "tested": 88,
+     "kOnly": 56,
+     "eOnly": 24,
+     "mixedWithE": 7,
+     "withE": 31,
+     "other": 1,
+     "missing": 0
+    },
+    {
+     "year": 2011,
+     "tested": 115,
+     "kOnly": 56,
+     "eOnly": 35,
+     "mixedWithE": 14,
+     "withE": 49,
+     "other": 10,
+     "missing": 0
+    },
+    {
+     "year": 2012,
+     "tested": 130,
+     "kOnly": 33,
+     "eOnly": 89,
+     "mixedWithE": 4,
+     "withE": 93,
+     "other": 4,
+     "missing": 13
+    },
+    {
+     "year": 2013,
+     "tested": 12,
+     "kOnly": 6,
+     "eOnly": 4,
+     "mixedWithE": 0,
+     "withE": 4,
+     "other": 2,
+     "missing": 6
+    },
+    {
+     "year": 2014,
+     "tested": 38,
+     "kOnly": 16,
+     "eOnly": 18,
+     "mixedWithE": 4,
+     "withE": 22,
+     "other": 0,
+     "missing": 3
+    },
+    {
+     "year": 2015,
+     "tested": 81,
+     "kOnly": 27,
+     "eOnly": 23,
+     "mixedWithE": 4,
+     "withE": 27,
+     "other": 27,
+     "missing": 3
+    },
+    {
+     "year": 2016,
+     "tested": 68,
+     "kOnly": 6,
+     "eOnly": 9,
+     "mixedWithE": 4,
+     "withE": 13,
+     "other": 49,
+     "missing": 0
+    },
+    {
+     "year": 2017,
+     "tested": 527,
+     "kOnly": 94,
+     "eOnly": 41,
+     "mixedWithE": 26,
+     "withE": 67,
+     "other": 366,
+     "missing": 1
+    },
+    {
+     "year": 2018,
+     "tested": 646,
+     "kOnly": 57,
+     "eOnly": 38,
+     "mixedWithE": 4,
+     "withE": 42,
+     "other": 547,
+     "missing": 0
+    },
+    {
+     "year": 2019,
+     "tested": 525,
+     "kOnly": 30,
+     "eOnly": 10,
+     "mixedWithE": 4,
+     "withE": 14,
+     "other": 481,
+     "missing": 0
+    }
+   ]
+  }
+ ]
+}

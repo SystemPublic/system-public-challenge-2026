@@ -1,0 +1,154 @@
+{
+ "_request": "GET /variables?search=name:seasonal%20malaria%20chemoprevention&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "_CRx0Qt9hO",
+    "name": "Seasonal Malaria Chemoprevention with sulfadoxine-pyrimethamine (SP) plus amodiaquine (AQ)"
+   },
+   {
+    "system_id": "fbbkaUpq_A",
+    "name": "Fifth round of seasonal malaria chemoprevention (SMC) in older children living in Dangassa, a rural malaria endemic area"
+   },
+   {
+    "system_id": "B9ai_5oer_",
+    "name": "Seasonal malaria chemoprevention with sulfadoxine-pyrimethamine and amodiaquine (SMC with SPAQ) in the intervention county"
+   },
+   {
+    "system_id": "aW_B8n9kW1",
+    "name": "Fifth additional round of seasonal malaria chemoprevention (SMC) in older children in Dangassa, a rural malaria endemic area"
+   },
+   {
+    "system_id": "NnJdl2ZGXT",
+    "name": "Seasonal Malaria Chemoprevention (SMC) with sulfadoxine-pyrimethamine and amodiaquine (SPAQ) in the intervention county"
+   },
+   {
+    "system_id": "NExlqwYuyE",
+    "name": "children younger than 5 years receiving seasonal malaria chemoprevention in 2018 [vs children younger than 5 years receiving seasonal malaria chemoprevention in 2016]"
+   },
+   {
+    "system_id": "fP12iKvdyV",
+    "name": "children who received at least the first dose of seasonal malaria chemoprevention treatment [vs children in the comparison group]"
+   },
+   {
+    "system_id": "Dz6DpMk1g1",
+    "name": "Seasonal Malaria Chemoprevention (SMC) with Sulfadoxine-Pyrimethamine and Amodiaquine (SPAQ) in the intervention county"
+   },
+   {
+    "system_id": "8yC4lMyblU",
+    "name": "Seasonal Malaria Chemoprevention (SMC) in the Implementation Year"
+   },
+   {
+    "system_id": "9BXgp9fgYv",
+    "name": "previous adverse reaction to seasonal malaria chemoprevention medicines by eligible children"
+   },
+   {
+    "system_id": "AObw-pulEw",
+    "name": "implementation of seasonal malaria chemoprevention"
+   },
+   {
+    "system_id": "nN4Z-5owlC",
+    "name": "Seasonal Malaria Chemoprevention (severe malaria casesC) programme",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "1zTyxNN9Vy",
+    "name": "having received seasonal malaria chemoprevention",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "oa8pKYQA8U",
+    "name": "exposure to Seasonal Malaria Chemoprevention",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "tpaspX4QBy",
+    "name": "seasonal-malaria-chemoprevention",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "dkXo5LD66A",
+    "name": "Intervention group (with seasonal malaria chemoprevention) [vs Control group (without seasonal malaria chemoprevention)]",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "5cMmCNWrHo",
+    "name": "seasonal malaria chemoprevention with SPAQ or DHAPQ",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "ySfGsexllD",
+    "name": "Seasonal malaria chemoprevention (SMC)",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "VaWU5c4LDg",
+    "name": "integrating seasonal malaria chemoprevention (SMC) with nutrition interventions",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "GiCEygAI9u",
+    "name": "Seasonal malaria chemoprevention",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "z6zXzIQnV4",
+    "name": "2014 (after seasonal malaria chemoprevention) [vs 2012 (before seasonal malaria chemoprevention)]",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "4DqURw-zsH",
+    "name": "Seasonal malaria chemoprevention coverage",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "vZJV34rb9B",
+    "name": "seasonal malaria chemoprevention",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "o09UDD8tr-",
+    "name": "receiving Seasonal Malaria Chemoprevention (SMC)",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "bQTpAXPXbN",
+    "name": "Children who received Seasonal Malaria Chemoprevention (SMC) (Cases) vs. Children who did not receive Seasonal Malaria Chemoprevention (SMC) (Controls)"
+   },
+   {
+    "system_id": "6KPj9UHN8i",
+    "name": "seasonal malaria chemoprevention intervention",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "qI6L4N7tb2",
+    "name": "Children under 5 receiving Seasonal Malaria Chemoprevention [vs Children under 5 not receiving Seasonal Malaria Chemoprevention]",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "rh9C_FGSl1",
+    "name": "combining seasonal RTS,S/AS01 malaria vaccination with seasonal malaria chemoprevention",
+    "concept_id": "vtzCBL9BRr"
+   },
+   {
+    "system_id": "ajNhkJ6Rn3",
+    "name": "seasonal malaria chemoprevention-eligible children",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "jxEaHg9kJW",
+    "name": "Exposure to Seasonal malaria chemoprevention",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "f1w316D6CV",
+    "name": "Seasonal Malaria Chemoprevention with amodiaquine/sulfadoxine-pyrimethamine in children aged 3-59 months during transmission season (pre-SMC: 2010-2012 vs post-SMC: 2020) in Burkina Faso"
+   },
+   {
+    "system_id": "7BAQg9Ky6C",
+    "name": "Seasonal Malaria Chemoprevention with monthly administration of amodiaquine/sulfadoxine-pyrimethamine to children aged 3-59 months during the transmission season in Nanoro, Burkina Faso (2010-2012 vs 2020)"
+   }
+  ],
+  "total": 5654715
+ }
+}

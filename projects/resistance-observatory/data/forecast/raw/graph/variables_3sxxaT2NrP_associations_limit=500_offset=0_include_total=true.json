@@ -1,0 +1,49 @@
+{
+ "_request": "GET /variables/3sxxaT2NrP/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Quq-Ic1sBf",
+    "variable_1_id": "aFkBv5bC43",
+    "variable_2_id": "3sxxaT2NrP",
+    "variable_1_name": "IPTi/c group in 2011 [vs Control group in 2010]",
+    "variable_2_name": "Prevalence of Pfdhps 437G mutation",
+    "study_id": "5Aedo_Mrvp",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -16.0,
+    "p_value": 0.07,
+    "pubmed_id": 23916206,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "JNKsUWLxEZ",
+    "variable_1_id": "ZlrPgxLyeC",
+    "variable_2_id": "3sxxaT2NrP",
+    "variable_1_wikidata_id": "Q2148398",
+    "variable_1_concept_id": "vaEwC2_Yr-",
+    "variable_1_name": "Control group in 2011 (without IPTi/c) [vs Control group in 2010 (without IPTi/c)]",
+    "variable_2_name": "Prevalence of Pfdhps 437G mutation",
+    "study_id": "Ilg6nxyyWY",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -16.0,
+    "p_value": 0.07,
+    "pubmed_id": 23589534,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "UvZ-jRjpFA",
+    "variable_1_id": "JjogKxB2-Q",
+    "variable_2_id": "3sxxaT2NrP",
+    "variable_1_name": "IPTi/c group [vs Control group]",
+    "variable_2_name": "Prevalence of Pfdhps 437G mutation",
+    "study_id": "Ilg6nxyyWY",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -19.2,
+    "p_value": 0.02,
+    "pubmed_id": 23589534,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 3
+ }
+}

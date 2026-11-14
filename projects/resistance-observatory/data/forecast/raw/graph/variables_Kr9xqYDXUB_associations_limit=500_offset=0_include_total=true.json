@@ -1,0 +1,38 @@
+{
+ "_request": "GET /variables/Kr9xqYDXUB/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "80xqTdgPPX",
+    "variable_1_id": "zGlx-8nek-",
+    "variable_2_id": "Kr9xqYDXUB",
+    "variable_1_name": "prior receipt of intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine and gestational age during the current pregnancy",
+    "variable_2_name": "probability of receiving intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine during the antenatal care visit",
+    "study_id": "X3ri8x4OBJ",
+    "statistic_type": "coefficient",
+    "statistic_value": 0.85,
+    "ci_upper": 0.92,
+    "ci_lower": 0.79,
+    "ci_level": 0,
+    "pubmed_id": 36232166,
+    "system_statistic_type": "coefficient"
+   },
+   {
+    "system_id": "ijK13nHo58",
+    "variable_1_id": "zGlx-8nek-",
+    "variable_2_id": "Kr9xqYDXUB",
+    "variable_1_name": "prior receipt of intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine and gestational age during the current pregnancy",
+    "variable_2_name": "probability of receiving intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine during the antenatal care visit",
+    "study_id": "X3ri8x4OBJ",
+    "statistic_type": "coefficient",
+    "statistic_value": 0.84,
+    "ci_upper": 0.86,
+    "ci_lower": 0.83,
+    "ci_level": 0,
+    "pubmed_id": 36232166,
+    "system_statistic_type": "coefficient"
+   }
+  ],
+  "total": 2
+ }
+}

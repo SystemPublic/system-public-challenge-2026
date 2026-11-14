@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/J87EGr0kSu/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "JZnte8PDlQ",
+    "variable_1_id": "vCx_oLIFfc",
+    "variable_2_id": "J87EGr0kSu",
+    "variable_1_wikidata_id": "Q422438",
+    "variable_1_concept_id": "FSXE9QnJOc",
+    "variable_1_name": "chloroquine+sulfadoxine-pyrimethamine",
+    "variable_2_name": "28-day clinical failure risks (among patients receiving chloroquine+sulfadoxine-pyrimethamine)",
+    "study_id": "aJ3EOEC9Hg",
+    "statistic_type": "risk_difference",
+    "statistic_value": 26.0,
+    "ci_upper": 36.0,
+    "ci_lower": 16.0,
+    "ci_level": 0,
+    "p_value": 0.0001,
+    "pubmed_id": 15567011,
+    "system_statistic_type": "risk_difference"
+   }
+  ],
+  "total": 1
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "_request": "GET /variables/KEQEhz0sY7/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "sJRCPGP0u7",
+    "variable_1_id": "KEQEhz0sY7",
+    "variable_2_id": "nN2MEbg1l_",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "malaria treatments [artesunate + amodiaquine (AS + AQ), artesunate + sulphadoxine-pyrimethamine (AS + SP) or artemether-lumefantrine (AL)]",
+    "variable_2_name": "malaria recurrent episodes",
+    "study_id": "za5h-hg2Ne",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.74,
+    "ci_upper": 0.87,
+    "ci_lower": 0.62,
+    "ci_level": 0,
+    "pubmed_id": 25073652,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "AZ_HqpHJiF",
+    "variable_1_id": "KEQEhz0sY7",
+    "variable_2_id": "nN2MEbg1l_",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "malaria treatments [artesunate + amodiaquine (AS + AQ), artesunate + sulphadoxine-pyrimethamine (AS + SP) or artemether-lumefantrine (AL)]",
+    "variable_2_name": "malaria recurrent episodes",
+    "study_id": "za5h-hg2Ne",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.76,
+    "ci_upper": 0.89,
+    "ci_lower": 0.64,
+    "ci_level": 0,
+    "pubmed_id": 25073652,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "gvhsyZ7P8B",
+    "variable_1_id": "KEQEhz0sY7",
+    "variable_2_id": "nN2MEbg1l_",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "malaria treatments [artesunate + amodiaquine (AS + AQ), artesunate + sulphadoxine-pyrimethamine (AS + SP) or artemether-lumefantrine (AL)]",
+    "variable_2_name": "malaria recurrent episodes",
+    "study_id": "za5h-hg2Ne",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.74,
+    "ci_upper": 0.88,
+    "ci_lower": 0.62,
+    "ci_level": 0,
+    "pubmed_id": 25073652,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "wuy1ALU_5Z",
+    "variable_1_id": "KEQEhz0sY7",
+    "variable_2_id": "nN2MEbg1l_",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "malaria treatments [artesunate + amodiaquine (AS + AQ), artesunate + sulphadoxine-pyrimethamine (AS + SP) or artemether-lumefantrine (AL)]",
+    "variable_2_name": "malaria recurrent episodes",
+    "study_id": "za5h-hg2Ne",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.75,
+    "ci_upper": 0.89,
+    "ci_lower": 0.62,
+    "ci_level": 0,
+    "pubmed_id": 25073652,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 4
+ }
+}

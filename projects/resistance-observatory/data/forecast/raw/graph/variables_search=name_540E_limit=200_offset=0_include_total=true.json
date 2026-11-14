@@ -1,0 +1,12 @@
+{
+ "_request": "GET /variables?search=name:540E&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "5bJrK_wJcx",
+    "name": "Prevalence of antifolate drugs resistance in the 51I, 59R, 108N, or 540E SNPs"
+   }
+  ],
+  "total": 5654715
+ }
+}

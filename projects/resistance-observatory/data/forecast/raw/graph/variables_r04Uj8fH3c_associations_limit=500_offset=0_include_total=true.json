@@ -1,0 +1,27 @@
+{
+ "_request": "GET /variables/r04Uj8fH3c/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "QIrkddNp_j",
+    "variable_1_id": "r04Uj8fH3c",
+    "variable_2_id": "J8_ArHnePY",
+    "variable_1_wikidata_id": "Q76123647",
+    "variable_2_wikidata_id": "Q421072",
+    "variable_1_concept_id": "epHHtoSk-A",
+    "variable_2_concept_id": "6Q_i0GlCWE",
+    "variable_1_name": "dihydrofolate reductase triple (Asn-108/Ile-51/Arg-59) mutants or the dhps double mutants (Gly-437/Glu-540)",
+    "variable_2_name": "sulfadoxine-pyrimethamine treatment failure in children aged less than 5 years",
+    "study_id": "wC3yE3mRbl",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 24.72,
+    "ci_upper": 74.15,
+    "ci_lower": 8.24,
+    "ci_level": 0,
+    "pubmed_id": 16023986,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "_request": "GET /variables?search=name:intermittent%20preventive%20therapy&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "IOc1aKNHD4",
+    "name": "IPTp-SP (Intermittent Preventive Therapy with Sulphadoxine-Pyrimethamine)"
+   },
+   {
+    "system_id": "I4uaX2n9Ph",
+    "name": "cotrimoxazole (CTX) with or without sulfadoxine-pyrimethamine (SP) intermittent-preventive-therapy (IPTp)"
+   },
+   {
+    "system_id": "o5BU7So6DX",
+    "name": "intermittent preventive therapy in pregnancy"
+   },
+   {
+    "system_id": "ySRa3AnhKL",
+    "name": "uptake of Intermittent Preventive Therapy with Sulfadoxine-Pyrimethamine"
+   },
+   {
+    "system_id": "SE-o4dsLDM",
+    "name": "3-dose intermittent preventive therapy in pregnancy with sulfadoxine-pyrimethamine (SP)"
+   },
+   {
+    "system_id": "t_r1GPUxhD",
+    "name": "Intervention group (intermittent preventive therapy post-discharge) [vs Placebo group]"
+   },
+   {
+    "system_id": "cztjzGZkVs",
+    "name": "intermittent preventive treatment using artemisinin-based combination therapies (ACTs)",
+    "concept_id": "QeEVpx9Wlg"
+   },
+   {
+    "system_id": "pIWIFUpTS1",
+    "name": "use of \u22653 doses of intermittent preventive therapy in pregnancy using sulfadoxine-pyrimethamine",
+    "concept_id": "bzQO0hAZXK"
+   },
+   {
+    "system_id": "4pa8RpyKzz",
+    "name": "adequate uptake of intermittent preventive therapy with IPTp-SP"
+   },
+   {
+    "system_id": "lyvgpCuDNs",
+    "name": "non-uptake of intermittent preventive therapy for malaria",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "t0KhqP4aAr",
+    "name": "intermittent preventive therapy in pregnancy-sulfadoxine-pyrimethamine use"
+   },
+   {
+    "system_id": "jNCw530rqU",
+    "name": "intermittent preventive therapy of malaria in pregnancy-Sulfadoxine-pyrimethamine",
+    "concept_id": "bzQO0hAZXK"
+   },
+   {
+    "system_id": "bQtHWigkX4",
+    "name": "intermittent preventive therapy in pregnancy with sulfadoxine-pyrimethamine",
+    "concept_id": "bzQO0hAZXK"
+   }
+  ],
+  "total": 5654715
+ }
+}

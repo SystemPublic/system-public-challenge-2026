@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/TaKS18jKT6/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "rgO2bc-iSN",
+    "variable_1_id": "TaKS18jKT6",
+    "variable_2_id": "Mr1IUWHTHA",
+    "variable_2_wikidata_id": "Q56317195",
+    "variable_2_concept_id": "MZpwE2CWM6",
+    "variable_1_name": "presence of the quadruple mutant dhfr N51I/S108N+dhps A437G/K540E",
+    "variable_2_name": "treatment failure (among the study participants)",
+    "study_id": "xdBifnj4pj",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 5.5,
+    "ci_upper": 13.6,
+    "ci_lower": 2.3,
+    "ci_level": 0,
+    "pubmed_id": 25583123,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

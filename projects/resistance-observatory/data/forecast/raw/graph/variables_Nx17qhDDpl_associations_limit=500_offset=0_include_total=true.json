@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/Nx17qhDDpl/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "nLJUHL1ClC",
+    "variable_1_id": "IQbwc0Yl2F",
+    "variable_2_id": "Nx17qhDDpl",
+    "variable_1_wikidata_id": "Q3308829",
+    "variable_1_concept_id": "LiA9WnJT_e",
+    "variable_1_name": "place of antenatal care attendance",
+    "variable_2_name": "using sulfadoxine-pyrimethamine in pregnancy",
+    "study_id": "7soDKHP7-B",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.68,
+    "ci_upper": 0.76,
+    "ci_lower": 0.6,
+    "ci_level": 0,
+    "pubmed_id": 32733659,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

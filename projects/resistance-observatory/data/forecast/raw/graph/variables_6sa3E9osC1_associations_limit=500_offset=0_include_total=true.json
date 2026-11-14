@@ -1,0 +1,56 @@
+{
+ "_request": "GET /variables/6sa3E9osC1/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "JmvTWB2Qan",
+    "variable_1_id": "6sa3E9osC1",
+    "variable_2_id": "ZDTB5poBFn",
+    "variable_1_name": "treatment with artesunate plus Sulfadoxine-pyrimethamine",
+    "variable_2_name": "parasitological failure by days 14",
+    "study_id": "3H6dqLdICn",
+    "statistic_type": "risk_difference",
+    "statistic_value": -9.3,
+    "ci_upper": -1.2,
+    "ci_lower": -17.3,
+    "ci_level": 0,
+    "p_value": 0.027,
+    "pubmed_id": 15307433,
+    "system_statistic_type": "risk_difference"
+   },
+   {
+    "system_id": "Tj3F_lQuwT",
+    "variable_1_id": "6sa3E9osC1",
+    "variable_2_id": "8VgwGGoHl8",
+    "variable_1_name": "treatment with artesunate plus Sulfadoxine-pyrimethamine",
+    "variable_2_name": "parasitological failure by days 28",
+    "study_id": "3H6dqLdICn",
+    "statistic_type": "risk_difference",
+    "statistic_value": -20.0,
+    "ci_upper": -10.6,
+    "ci_lower": -29.4,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 15307433,
+    "system_statistic_type": "risk_difference"
+   },
+   {
+    "system_id": "6Hki9TVNLD",
+    "variable_1_id": "6sa3E9osC1",
+    "variable_2_id": "8VgwGGoHl8",
+    "variable_1_name": "treatment with artesunate plus Sulfadoxine-pyrimethamine",
+    "variable_2_name": "parasitological failure by days 28",
+    "study_id": "3H6dqLdICn",
+    "statistic_type": "risk_difference",
+    "statistic_value": -7.8,
+    "ci_upper": 2.1,
+    "ci_lower": -17.7,
+    "ci_level": 0,
+    "p_value": 0.16,
+    "pubmed_id": 15307433,
+    "system_statistic_type": "risk_difference"
+   }
+  ],
+  "total": 3
+ }
+}

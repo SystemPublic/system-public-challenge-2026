@@ -1,0 +1,28 @@
+{
+ "_request": "GET /variables/5YwFDZUPYF/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "v__MXRVBex",
+    "variable_1_id": "5YwFDZUPYF",
+    "variable_2_id": "qcOnSbNCJ8",
+    "variable_1_wikidata_id": "Q707939",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_1_concept_id": "c_f3i8lTBc",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "placebo or sulfadoxine-pyrimethamine combined with a single dose of artesunate",
+    "variable_2_name": "malaria incidence",
+    "study_id": "Q1epxiVPGM",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.91,
+    "ci_upper": 1.22,
+    "ci_lower": 0.68,
+    "ci_level": 0,
+    "p_value": 0.49,
+    "pubmed_id": 14584381,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

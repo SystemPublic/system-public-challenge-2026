@@ -1,0 +1,44 @@
+{
+ "_request": "GET /variables/MtUnuv79Hw/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "m0wsEm6plg",
+    "variable_1_id": "MtUnuv79Hw",
+    "variable_2_id": "hQCqQQySPw",
+    "variable_2_wikidata_id": "Q58702",
+    "variable_2_concept_id": "QPxlNKv3zV",
+    "variable_1_name": "Provision of AZI-sulfadoxine-pyrimethamine rather than 2 doses of sulfadoxine-pyrimethamine during pregnancy",
+    "variable_2_name": "postneonatal mortality",
+    "study_id": "ZtaXyTqQXl",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.34,
+    "ci_upper": 0.76,
+    "ci_lower": 0.15,
+    "ci_level": 0,
+    "p_value": 0.008,
+    "pubmed_id": 29472491,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "XO09CmvMT3",
+    "variable_1_id": "MtUnuv79Hw",
+    "variable_2_id": "3q4f4CEpAi",
+    "variable_2_wikidata_id": "Q18975920",
+    "variable_2_concept_id": "oxVg-aL1sX",
+    "variable_1_name": "Provision of AZI-sulfadoxine-pyrimethamine rather than 2 doses of sulfadoxine-pyrimethamine during pregnancy",
+    "variable_2_name": "incidence of stunting in childhood",
+    "study_id": "ZtaXyTqQXl",
+    "statistic_type": "hazard_ratio",
+    "statistic_value": 0.7,
+    "ci_upper": 0.83,
+    "ci_lower": 0.6,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 29472491,
+    "system_statistic_type": "hazard_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

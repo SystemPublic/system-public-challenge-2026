@@ -1,0 +1,28 @@
+{
+ "_request": "GET /variables/PvQqGhyQoX/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "WGAVhdcfWo",
+    "variable_1_id": "NJDknSww4X",
+    "variable_2_id": "PvQqGhyQoX",
+    "variable_1_wikidata_id": "Q42918",
+    "variable_2_wikidata_id": "Q239569",
+    "variable_1_concept_id": "9M4nx2APzM",
+    "variable_2_concept_id": "F8DI_OveVS",
+    "variable_1_name": "pfdhfr mutations",
+    "variable_2_name": "efficacy of amodiaquine plus sulfadoxine-pyrimethamine (AQ+SP)",
+    "study_id": "3vayGNjOdw",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.2,
+    "ci_upper": 3.7,
+    "ci_lower": 1.34,
+    "ci_level": 0,
+    "p_value": 0.13,
+    "pubmed_id": 19841150,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "_request": "GET /variables/7lbgwnfoS1/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "ktwuZ48byh",
+    "variable_1_id": "PUSCk_irGb",
+    "variable_2_id": "7lbgwnfoS1",
+    "variable_2_wikidata_id": "Q18554672",
+    "variable_2_concept_id": "n8o7PdNYDI",
+    "variable_1_name": "mutations in dhfr and dhps",
+    "variable_2_name": "sulfadoxine-pyrimethamine treatment failure in Plasmodium falciparum malaria in the Democratic Republic of the Congo (DRC)",
+    "study_id": "YN-3xWbnuO",
+    "statistic_type": "risk_difference",
+    "statistic_value": 17.0,
+    "ci_upper": 36.0,
+    "ci_lower": -3.0,
+    "ci_level": 0,
+    "pubmed_id": 19055622,
+    "system_statistic_type": "risk_difference"
+   },
+   {
+    "system_id": "czmz6OoX32",
+    "variable_1_id": "PUSCk_irGb",
+    "variable_2_id": "7lbgwnfoS1",
+    "variable_2_wikidata_id": "Q18554672",
+    "variable_2_concept_id": "n8o7PdNYDI",
+    "variable_1_name": "mutations in dhfr and dhps",
+    "variable_2_name": "sulfadoxine-pyrimethamine treatment failure in Plasmodium falciparum malaria in the Democratic Republic of the Congo (DRC)",
+    "study_id": "YN-3xWbnuO",
+    "statistic_type": "risk_difference",
+    "statistic_value": 51.0,
+    "ci_upper": 67.0,
+    "ci_lower": 34.0,
+    "ci_level": 0,
+    "pubmed_id": 19055622,
+    "system_statistic_type": "risk_difference"
+   }
+  ],
+  "total": 2
+ }
+}

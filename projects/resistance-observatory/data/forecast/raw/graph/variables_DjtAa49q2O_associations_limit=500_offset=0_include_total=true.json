@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/DjtAa49q2O/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "xuL1x4ORrj",
+    "variable_1_id": "DjtAa49q2O",
+    "variable_2_id": "ru4d8I40XA",
+    "variable_2_wikidata_id": "Q422226",
+    "variable_2_concept_id": "wuhNjoz0om",
+    "variable_1_name": "pfdhps mutations",
+    "variable_2_name": "efficacy of chlorproguanil-dapsone plus artesunate (CPG-DDS+A)",
+    "study_id": "3vayGNjOdw",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.1,
+    "ci_upper": 3.54,
+    "ci_lower": 1.21,
+    "ci_level": 0,
+    "p_value": 0.008,
+    "pubmed_id": 19841150,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

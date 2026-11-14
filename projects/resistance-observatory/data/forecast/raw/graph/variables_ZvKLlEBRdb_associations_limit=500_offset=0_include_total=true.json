@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/ZvKLlEBRdb/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "6j-OzBV_L6",
+    "variable_1_id": "AjiksT9fOO",
+    "variable_2_id": "ZvKLlEBRdb",
+    "variable_1_wikidata_id": "Q1492760",
+    "variable_1_concept_id": "eEejiV3iw7",
+    "variable_1_name": "Adolescent primigravidae [vs Adult primigravidae]",
+    "variable_2_name": "Uptake of IPTp-SP",
+    "study_id": "Mc1FqVMMGw",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -11.2,
+    "p_value": 0.001,
+    "pubmed_id": 20528200,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/2qOEFEHtTQ/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "4l4eM0iWSc",
+    "variable_1_id": "2qOEFEHtTQ",
+    "variable_2_id": "S1H3QTMLUo",
+    "variable_1_name": "SP+AQ",
+    "variable_2_name": "SP+AS",
+    "study_id": "8QhBy3tzGI",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 0.008,
+    "p_value": 0.001,
+    "pubmed_id": 21936885,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "_request": "GET /variables/OPyy841fL3/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "rxABsNdMRw",
+    "variable_1_id": "OPyy841fL3",
+    "variable_2_id": "S08Cg00rd_",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "monthly sulfadoxine-pyrimethamine and two doses of azithromycin (AZI-sulfadoxine-pyrimethamine)",
+    "variable_2_name": "low birth weight",
+    "study_id": "H377bLctYN",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.61,
+    "p_value": 0.02,
+    "pubmed_id": 21118924,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "Sxh3dlzg36",
+    "variable_1_id": "OPyy841fL3",
+    "variable_2_id": "jbPkVnntFf",
+    "variable_2_wikidata_id": "Q625506",
+    "variable_2_concept_id": "sdWLpL7z_l",
+    "variable_1_name": "monthly sulfadoxine-pyrimethamine and two doses of azithromycin (AZI-sulfadoxine-pyrimethamine)",
+    "variable_2_name": "preterm delivery [of/among/in] pregnant women",
+    "study_id": "H377bLctYN",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.66,
+    "p_value": 0.01,
+    "pubmed_id": 21118924,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

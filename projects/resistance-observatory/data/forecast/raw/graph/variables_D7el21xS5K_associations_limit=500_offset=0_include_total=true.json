@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/D7el21xS5K/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "oAd3DaXG22",
+    "variable_1_id": "D7el21xS5K",
+    "variable_2_id": "2QL0RssSsJ",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "Case management group using sulfadoxine-pyrimethamine (SP) (receiving two doses of SP) vs. Monthly SP treatment group (receiving monthly SP)",
+    "variable_2_name": "low birth weight infants",
+    "study_id": "BYm-tlOymj",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 6.0,
+    "p_value": 0.078,
+    "pubmed_id": 9840604,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

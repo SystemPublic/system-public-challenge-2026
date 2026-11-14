@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/YEQYVkctz2/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "hlUz-8l4nY",
+    "variable_1_id": "YEQYVkctz2",
+    "variable_2_id": "AfyYGBeNPQ",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "number of intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine doses",
+    "variable_2_name": "low-birth-weight (LBW)",
+    "study_id": "Rn3fUXcUll",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.56,
+    "p_value": 0.009,
+    "pubmed_id": 32168945,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/5WVh0yDH51/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "CZDMt53x2U",
+    "variable_1_id": "5WVh0yDH51",
+    "variable_2_id": "9e_4pGKCra",
+    "variable_1_name": "Amodiaquine and Sulphadoxine-Pyrimethamine Treatment (AQ+SP)",
+    "variable_2_name": "adverse events (among patients with uncomplicated Plasmodium falciparum malaria)",
+    "study_id": "iRK4efuuNO",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 4.0,
+    "p_value": 0.001,
+    "pubmed_id": 16640610,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

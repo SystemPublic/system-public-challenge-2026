@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/XFwMOqxklE/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Hyjlk2wc_n",
+    "variable_1_id": "XFwMOqxklE",
+    "variable_2_id": "mDMxx4QPyX",
+    "variable_1_name": "Use of both insecticide treated nets (ITNs) and intermittent presumptive treatment for pregnant women using sulphadoxine-pyrimethamine (IPTp-SP)",
+    "variable_2_name": "risk of severe anaemia (Hb<8 g/dL)",
+    "study_id": "xSQDsrM9a0",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.31,
+    "ci_upper": 0.67,
+    "ci_lower": 0.14,
+    "ci_level": 0,
+    "pubmed_id": 15541178,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

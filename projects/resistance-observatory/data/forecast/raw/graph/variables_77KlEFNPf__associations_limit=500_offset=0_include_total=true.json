@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/77KlEFNPf_/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "4IGPVPiJIA",
+    "variable_1_id": "77KlEFNPf_",
+    "variable_2_id": "wRh5zQaBLc",
+    "variable_1_name": "Maternal knowledge of IPTp-sulphadoxine pyrimethamine benefits",
+    "variable_2_name": "Optimal IPTp-sulphadoxine pyrimethamine uptake",
+    "study_id": "WKov2yM4Qs",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.4,
+    "ci_upper": 4.5,
+    "ci_lower": 1.3,
+    "ci_level": 0,
+    "pubmed_id": 34362443,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

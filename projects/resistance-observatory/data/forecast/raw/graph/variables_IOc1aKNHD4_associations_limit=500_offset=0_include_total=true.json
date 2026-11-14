@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/IOc1aKNHD4/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "z7OTxnQrT3",
+    "variable_1_id": "IOc1aKNHD4",
+    "variable_2_id": "Jnr-ae3JCP",
+    "variable_1_name": "IPTp-SP (Intermittent Preventive Therapy with Sulphadoxine-Pyrimethamine)",
+    "variable_2_name": "relative risk of patent infection",
+    "study_id": "TxCN0nllyt",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 1.02,
+    "ci_upper": 1.16,
+    "ci_lower": 0.61,
+    "ci_level": 0,
+    "pubmed_id": 34746720,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

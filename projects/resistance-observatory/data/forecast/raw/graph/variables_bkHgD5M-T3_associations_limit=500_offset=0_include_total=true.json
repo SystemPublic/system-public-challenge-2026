@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/bkHgD5M-T3/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "5cnJAspBYN",
+    "variable_1_id": "bkHgD5M-T3",
+    "variable_2_id": "Mr1IUWHTHA",
+    "variable_2_wikidata_id": "Q56317195",
+    "variable_2_concept_id": "MZpwE2CWM6",
+    "variable_1_name": "presence of the quintuple mutant dhfr N51I/C59R/S108N+dhps A437G/K540E",
+    "variable_2_name": "treatment failure (among the study participants)",
+    "study_id": "xdBifnj4pj",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 3.5,
+    "ci_upper": 8.8,
+    "ci_lower": 1.4,
+    "ci_level": 0,
+    "pubmed_id": 25583123,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

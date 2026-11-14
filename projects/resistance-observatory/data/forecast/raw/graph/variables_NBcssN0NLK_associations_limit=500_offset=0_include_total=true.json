@@ -1,0 +1,44 @@
+{
+ "_request": "GET /variables/NBcssN0NLK/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "a7TVEbNmZx",
+    "variable_1_id": "ZJ9bcMycYC",
+    "variable_2_id": "NBcssN0NLK",
+    "variable_1_wikidata_id": "Q67376917",
+    "variable_1_concept_id": "MeQSeeyyrW",
+    "variable_1_name": "Woman's decision-making autonomy",
+    "variable_2_name": "uptake of 3+ doses of IPTp-SP",
+    "study_id": "VMUwsHeFkW",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 2.33,
+    "ci_upper": 3.01,
+    "ci_lower": 1.81,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 37612754,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "U8Zfm_lNXP",
+    "variable_1_id": "WNu0Hy_pkr",
+    "variable_2_id": "NBcssN0NLK",
+    "variable_1_wikidata_id": "Q18189",
+    "variable_1_concept_id": "3bsZWIMWFp",
+    "variable_1_name": "Women's educational attainment",
+    "variable_2_name": "uptake of 3+ doses of IPTp-SP",
+    "study_id": "VMUwsHeFkW",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 1.51,
+    "ci_upper": 2.06,
+    "ci_lower": 1.1,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 37612754,
+    "system_statistic_type": "adjusted_odds_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

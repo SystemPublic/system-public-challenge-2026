@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/4WklposG3I/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "es2Nu36lEZ",
+    "variable_1_id": "4WklposG3I",
+    "variable_2_id": "ZtQ8Erq5RR",
+    "variable_1_name": "sulphadoxine-pyrimethamine+AS+PQ treatment group [vs sulphadoxine-pyrimethamine+AS treatment group]",
+    "variable_2_name": "gametocyte prevalence",
+    "study_id": "6r-8zNTAeF",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -58.8,
+    "p_value": 0.001,
+    "pubmed_id": 17925871,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

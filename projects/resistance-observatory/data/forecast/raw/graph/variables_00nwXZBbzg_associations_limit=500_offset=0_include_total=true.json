@@ -1,0 +1,51 @@
+{
+ "_request": "GET /variables/00nwXZBbzg/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "b8n9x8SUIR",
+    "variable_1_id": "00nwXZBbzg",
+    "variable_2_id": "Yc9vbwP5o8",
+    "variable_2_wikidata_id": "Q1897162",
+    "variable_2_concept_id": "zjycE-zYCh",
+    "variable_1_name": "sulphadoxine-pyrimethamine+artesunate treatment group [vs control group]",
+    "variable_2_name": "prevalence of asymptomatic parasitemia",
+    "study_id": "J5ks3LnHd-",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -8.5,
+    "p_value": 0.002,
+    "pubmed_id": 32957604,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "Q1BFHD7Hi4",
+    "variable_1_id": "00nwXZBbzg",
+    "variable_2_id": "mCvRGfhY2a",
+    "variable_1_name": "sulphadoxine-pyrimethamine+artesunate treatment group [vs control group]",
+    "variable_2_name": "hemoglobin concentration",
+    "study_id": "J5ks3LnHd-",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 0.36,
+    "p_value": 0.001,
+    "pubmed_id": 32957604,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "7fzjkPPbtA",
+    "variable_1_id": "00nwXZBbzg",
+    "variable_2_id": "Yc9vbwP5o8",
+    "variable_2_wikidata_id": "Q1897162",
+    "variable_2_concept_id": "zjycE-zYCh",
+    "variable_1_name": "sulphadoxine-pyrimethamine+artesunate treatment group [vs control group]",
+    "variable_2_name": "prevalence of asymptomatic parasitemia",
+    "study_id": "J5ks3LnHd-",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -21.2,
+    "p_value": 0.002,
+    "pubmed_id": 32957604,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 3
+ }
+}

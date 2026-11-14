@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/Zj0KkFr-ki/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "gQ2QrmhRCn",
+    "variable_1_id": "Zj0KkFr-ki",
+    "variable_2_id": "x5v2xhM3pl",
+    "variable_2_wikidata_id": "Q5445",
+    "variable_2_concept_id": "A9O2_M4sui",
+    "variable_1_name": "intermittent preventive treatment of malaria using sulphadoxine-pyrimethamine",
+    "variable_2_name": "anaemia",
+    "study_id": "mFMGGEGcQR",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.5,
+    "ci_upper": 0.85,
+    "ci_lower": 0.29,
+    "ci_level": 0,
+    "p_value": 0.01,
+    "pubmed_id": 18274885,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

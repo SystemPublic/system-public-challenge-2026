@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/HexIdY2lwf/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "TIBuU6xBZ3",
+    "variable_1_id": "XcITAzlMOP",
+    "variable_2_id": "HexIdY2lwf",
+    "variable_1_name": "2018 [vs 2015]",
+    "variable_2_name": "frequency of pfdhfr/pfdhps quintuple mutants associated with sulfadoxine-pyrimethamine resistance",
+    "study_id": "8xzWeEYm25",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 9.0,
+    "p_value": 0.001,
+    "pubmed_id": 37291425,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

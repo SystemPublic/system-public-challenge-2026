@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/GE8-9mkeGW/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "hb7U_0XS5L",
+    "variable_1_id": "GE8-9mkeGW",
+    "variable_2_id": "fhu4HI3yzc",
+    "variable_2_wikidata_id": "Q56317195",
+    "variable_2_concept_id": "MZpwE2CWM6",
+    "variable_1_name": "pfdhps haplotype SGEGA at five codons",
+    "variable_2_name": "treatment failures (among the study participants)",
+    "study_id": "IWm-53wdva",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 7.3,
+    "ci_upper": 368.0,
+    "ci_lower": 0.65,
+    "ci_level": 0,
+    "pubmed_id": 23870667,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

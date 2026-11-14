@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/RwkJnfEa8I/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "SVRekpYH37",
+    "variable_1_id": "RwkJnfEa8I",
+    "variable_2_id": "cIJRjqydVD",
+    "variable_1_wikidata_id": "Q707939",
+    "variable_2_wikidata_id": "Q416199",
+    "variable_1_concept_id": "c_f3i8lTBc",
+    "variable_2_concept_id": "tSb18X5lXy",
+    "variable_1_name": "artesunate + sulfadoxine-pyrimethamine (AS + SP)",
+    "variable_2_name": "artemether + lumefantrine (AL)",
+    "study_id": "JD_4e-2Ra1",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 2.94,
+    "p_value": 0.001,
+    "pubmed_id": 28028628,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

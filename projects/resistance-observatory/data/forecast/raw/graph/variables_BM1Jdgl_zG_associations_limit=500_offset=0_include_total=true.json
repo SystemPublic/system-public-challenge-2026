@@ -1,0 +1,59 @@
+{
+ "_request": "GET /variables/BM1Jdgl_zG/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Ug6UJN_1oo",
+    "variable_1_id": "isv6CspQsm",
+    "variable_2_id": "BM1Jdgl_zG",
+    "variable_1_wikidata_id": "Q666752",
+    "variable_1_concept_id": "vpcO7cs28E",
+    "variable_1_name": "age (aged 20 years and above)",
+    "variable_2_name": "uptake of three or more doses of intermittent preventive treatment during pregnancy with sulphadoxine-pyrimethamine",
+    "study_id": "DWfK0YiY8w",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.83,
+    "ci_upper": 3.03,
+    "ci_lower": 2.64,
+    "ci_level": 0,
+    "pubmed_id": 31230017,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "IKpRNAQ_z8",
+    "variable_1_id": "Z36dvocqXL",
+    "variable_2_id": "BM1Jdgl_zG",
+    "variable_1_wikidata_id": "Q11920938",
+    "variable_1_concept_id": "3_9csjFvnL",
+    "variable_1_name": "marital status",
+    "variable_2_name": "uptake of three or more doses of intermittent preventive treatment during pregnancy with sulphadoxine-pyrimethamine",
+    "study_id": "DWfK0YiY8w",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.1,
+    "ci_upper": 1.19,
+    "ci_lower": 1.02,
+    "ci_level": 0,
+    "pubmed_id": 31230017,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "RYJy04vv9r",
+    "variable_1_id": "Iyy233Q6tG",
+    "variable_2_id": "BM1Jdgl_zG",
+    "variable_1_wikidata_id": "Q3308829",
+    "variable_1_concept_id": "LiA9WnJT_e",
+    "variable_1_name": "number of antenatal care visits",
+    "variable_2_name": "uptake of three or more doses of intermittent preventive treatment during pregnancy with sulphadoxine-pyrimethamine",
+    "study_id": "DWfK0YiY8w",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.83,
+    "ci_upper": 3.03,
+    "ci_lower": 2.64,
+    "ci_level": 0,
+    "pubmed_id": 31230017,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/W127P7U5d_/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "oiew5jLXRo",
+    "variable_1_id": "W127P7U5d_",
+    "variable_2_id": "FoxVavch2Q",
+    "variable_1_name": "having adequate knowledge on Intermittent Preventive Treatment during pregnancy with Sulfadoxine-Pyrimethamine",
+    "variable_2_name": "uptake of > 3 doses of Intermittent Preventive Treatment during pregnancy with Sulfadoxine-Pyrimethamine",
+    "study_id": "9mC3R6Bi6k",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.7,
+    "ci_upper": 3.9,
+    "ci_lower": 1.9,
+    "ci_level": 0,
+    "pubmed_id": 31775686,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

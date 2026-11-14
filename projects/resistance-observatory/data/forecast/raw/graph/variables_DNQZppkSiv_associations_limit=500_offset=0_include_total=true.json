@@ -1,0 +1,62 @@
+{
+ "_request": "GET /variables/DNQZppkSiv/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "4RE8l_nL4w",
+    "variable_1_id": "DNQZppkSiv",
+    "variable_2_id": "cDXHWVr6GE",
+    "variable_2_wikidata_id": "Q891382",
+    "variable_2_concept_id": "vUwiaNEBVo",
+    "variable_1_name": "presence of mutations at the DHPS locus",
+    "variable_2_name": "survival (among patients with HIV-1 infection and Pneumocystis carinii pneumonia)",
+    "study_id": "TLm1siurTG",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.55,
+    "ci_upper": 1.25,
+    "ci_lower": 0.24,
+    "ci_level": 0,
+    "p_value": 0.15,
+    "pubmed_id": 11520525,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "U0WihJBVe-",
+    "variable_1_id": "DNQZppkSiv",
+    "variable_2_id": "dnCQGWVzqE",
+    "variable_2_wikidata_id": "Q891382",
+    "variable_2_concept_id": "vUwiaNEBVo",
+    "variable_1_name": "presence of mutations at the DHPS locus",
+    "variable_2_name": "survival (of patients aged 40 years or older)",
+    "study_id": "TLm1siurTG",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.25,
+    "ci_upper": 0.67,
+    "ci_lower": 0.09,
+    "ci_level": 0,
+    "p_value": 0.005,
+    "pubmed_id": 11520525,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "klCrMTLJaA",
+    "variable_1_id": "DNQZppkSiv",
+    "variable_2_id": "Fc281NQ1gR",
+    "variable_2_wikidata_id": "Q413546",
+    "variable_2_concept_id": "bnVd1efP6T",
+    "variable_1_name": "presence of mutations at the DHPS locus",
+    "variable_2_name": "response to co-trimoxazole or other drugs",
+    "study_id": "TLm1siurTG",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.42,
+    "ci_upper": 0.86,
+    "ci_lower": 0.2,
+    "ci_level": 0,
+    "p_value": 0.02,
+    "pubmed_id": 11520525,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

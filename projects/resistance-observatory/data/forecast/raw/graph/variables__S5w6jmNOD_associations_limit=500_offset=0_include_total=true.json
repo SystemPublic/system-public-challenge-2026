@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/_S5w6jmNOD/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "_0IwC4n9Rv",
+    "variable_1_id": "_S5w6jmNOD",
+    "variable_2_id": "JdAtoMiyAH",
+    "variable_2_wikidata_id": "Q4128476",
+    "variable_2_concept_id": "_GtjsdCZgn",
+    "variable_1_name": "dhps A581G",
+    "variable_2_name": "birth weight",
+    "study_id": "EwimqyckFY",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 252.0,
+    "ci_upper": 457.0,
+    "ci_lower": 46.0,
+    "ci_level": 0,
+    "p_value": 0.017,
+    "pubmed_id": 32221555,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

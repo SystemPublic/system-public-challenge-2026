@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/Gdg1qyBHom/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "pRibj_OfCs",
+    "variable_1_id": "hsJsAa2-Uw",
+    "variable_2_id": "Gdg1qyBHom",
+    "variable_1_wikidata_id": "Q18189",
+    "variable_1_concept_id": "3bsZWIMWFp",
+    "variable_1_name": "education level (multigravid women)",
+    "variable_2_name": "failure to receive sulfadoxine-pyrimethamine/intermittent preventive treatment",
+    "study_id": "aJiEr9OsGz",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 1.2,
+    "ci_upper": 1.5,
+    "ci_lower": 1.02,
+    "ci_level": 0,
+    "p_value": 0.03,
+    "pubmed_id": 14728610,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/DE3Wy9vtPp/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "FXIE_Dwzkc",
+    "variable_1_id": "DE3Wy9vtPp",
+    "variable_2_id": "ypaFL46Pho",
+    "variable_1_wikidata_id": "Q707939",
+    "variable_1_concept_id": "c_f3i8lTBc",
+    "variable_1_name": "artesunate plus sulfadoxine-pyrimethamine [vs. sulfadoxine-pyrimethamine alone]",
+    "variable_2_name": "treatment failures at delivery",
+    "study_id": "2WhNLx6Br7",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.15,
+    "ci_upper": 0.59,
+    "ci_lower": 0.04,
+    "ci_level": 0,
+    "pubmed_id": 18843672,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

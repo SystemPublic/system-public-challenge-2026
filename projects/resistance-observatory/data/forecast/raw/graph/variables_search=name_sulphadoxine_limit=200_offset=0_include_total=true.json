@@ -1,0 +1,340 @@
+{
+ "_request": "GET /variables?search=name:sulphadoxine&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "fbpuuvUuni",
+    "name": "uptake of adequate sulphadoxine-pyrimethamine"
+   },
+   {
+    "system_id": "iG5qkempRm",
+    "name": "Intermittent Presumptive Treatment of Malaria using Sulphadoxine-Pyrimethamine (SP) vs. Chloroquine (CQ)"
+   },
+   {
+    "system_id": "h0nQt3y4vK",
+    "name": "Pregnant women who received sulphadoxine-pyrimethamine [vs Pregnant women who received placebo]"
+   },
+   {
+    "system_id": "MhiSCqOBWY",
+    "name": "combination of chloroquine and sulphadoxine-pyrimethamine (SP)"
+   },
+   {
+    "system_id": "j90-Tpl3gD",
+    "name": "Intermittent Preventive Treatment in pregnancy with sulphadoxine-pyrimethamine (SP)"
+   },
+   {
+    "system_id": "BM1Jdgl_zG",
+    "name": "uptake of three or more doses of intermittent preventive treatment during pregnancy with sulphadoxine-pyrimethamine"
+   },
+   {
+    "system_id": "IOc1aKNHD4",
+    "name": "IPTp-SP (Intermittent Preventive Therapy with Sulphadoxine-Pyrimethamine)"
+   },
+   {
+    "system_id": "HjY8cPNv3m",
+    "name": "intermittent preventive treatment with sulphadoxine-pyrimethamine (SP)"
+   },
+   {
+    "system_id": "uAz-VUZMep",
+    "name": "receiving at least three doses of sulphadoxine-pyrimethamine (IPTp3+) during pregnancy"
+   },
+   {
+    "system_id": "XFwMOqxklE",
+    "name": "Use of both insecticide treated nets (ITNs) and intermittent presumptive treatment for pregnant women using sulphadoxine-pyrimethamine (IPTp-SP)"
+   },
+   {
+    "system_id": "EiwAqOtOJH",
+    "name": "two dose regimen of sulphadoxine-pyrimethamine"
+   },
+   {
+    "system_id": "flZ9RP6gxq",
+    "name": "Uptake and adherence to sulphadoxine-pyrimethamine-based intermittent preventive treatment of malaria during pregnancy"
+   },
+   {
+    "system_id": "e38u5aUvwN",
+    "name": "uptake of intermittent preventive treatment of malaria during pregnancy using sulphadoxine-pyrimethamine and insecticide-treated net (ITN) use"
+   },
+   {
+    "system_id": "00nwXZBbzg",
+    "name": "sulphadoxine-pyrimethamine+artesunate treatment group [vs control group]"
+   },
+   {
+    "system_id": "tybhcOPsRU",
+    "name": "received intermittent preventive treatment with sulphadoxine-pyrimethamine [vs did not receive any dose of sulphadoxine-pyrimethamine]"
+   },
+   {
+    "system_id": "Vvb20JGYkR",
+    "name": "Doses of sulphadoxine-pyrimethamine"
+   },
+   {
+    "system_id": "1xZjcMzbN5",
+    "name": "receipt of two or more doses of sulphadoxine-pyrimethamine compared to women in Nairobi"
+   },
+   {
+    "system_id": "wRh5zQaBLc",
+    "name": "Optimal IPTp-sulphadoxine pyrimethamine uptake"
+   },
+   {
+    "system_id": "Mis_mASCRn",
+    "name": "sulphadoxine-pyrimethamine use in intermittent preventive treatment of malaria in pregnancy"
+   },
+   {
+    "system_id": "7Yks1GnwMz",
+    "name": "having adequate knowledge on sulphadoxine-pyrimethamine"
+   },
+   {
+    "system_id": "4WklposG3I",
+    "name": "sulphadoxine-pyrimethamine+AS+PQ treatment group [vs sulphadoxine-pyrimethamine+AS treatment group]"
+   },
+   {
+    "system_id": "5WVh0yDH51",
+    "name": "Amodiaquine and Sulphadoxine-Pyrimethamine Treatment (AQ+SP)"
+   },
+   {
+    "system_id": "Sc7nTYBlqa",
+    "name": "Intermittent preventive treatment of malaria in pregnancy (IPTp) with sulphadoxine-pyrimethamine (SP)"
+   },
+   {
+    "system_id": "EMxkxavAQ0",
+    "name": "sulphadoxine-pyrimethamine use"
+   },
+   {
+    "system_id": "AELv_Poffj",
+    "name": "presumptive treatment with sulphadoxine-pyrimethamine"
+   },
+   {
+    "system_id": "5_qn9rZwgE",
+    "name": "Patients who received MSP (mefloquine, sulphadoxine, and pyrimethamine) treatment in 1985-86 vs. Patients who received MSP treatment in 1989"
+   },
+   {
+    "system_id": "kZjz3UtaSg",
+    "name": "sulphadoxine-pyrimethamine dosage taken"
+   },
+   {
+    "system_id": "FGk9UPMMn7",
+    "name": "Intermittent preventive treatment with sulphadoxine-pyrimethamine (SP)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "E-tfmBMhs3",
+    "name": "intermittent preventive treatment of malaria in pregnancy using sulphadoxine-pyrimethamine users [vs non-users]",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "77KlEFNPf_",
+    "name": "Maternal knowledge of IPTp-sulphadoxine pyrimethamine benefits"
+   },
+   {
+    "system_id": "53HAbVIIiy",
+    "name": "Artesunate treatment [vs Pyrimethamine-sulphadoxine alone]",
+    "concept_id": "c_f3i8lTBc"
+   },
+   {
+    "system_id": "uecVyHI0D8",
+    "name": "uptake of sulphadoxine-pyrimethamine during pregnancy",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "eycti4znjF",
+    "name": "Women who had sulphadoxine-pyrimethamine [vs Women who did not receive sulphadoxine-pyrimethamine]"
+   },
+   {
+    "system_id": "Ol5xMZ-iUG",
+    "name": "Intervention group (received IPTc with sulphadoxine pyrimethamine [SP] plus amodiaquine [AQ]) [vs Control group (received placebos)]",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "KOW0lUeHFc",
+    "name": "intermittent preventive treatment of malaria in pregnancy using sulphadoxine-pyrimethamine users' babies [vs non-users' babies]",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "HdVeBeZvWZ",
+    "name": "sulphadoxine pyrimethamine administration at antenatal care clinic",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "LQi34n599y",
+    "name": "Antibacterial activities of the trimethoprim-sulphadoxine combination",
+    "concept_id": "CVDMy6An_F"
+   },
+   {
+    "system_id": "v99ddm1i81",
+    "name": "experiencing side effects to sulphadoxine-pyrimethamine"
+   },
+   {
+    "system_id": "XGYEr1sYUR",
+    "name": "treatment with pyrimethamine-sulphadoxine plus one dose of artesunate (4mg/kg bodyweight)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "ZkpFIG2kLD",
+    "name": "Sulphadoxine-pyrimethamine (SPAZ) monthly from second trimester",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "tdGWLDWiBo",
+    "name": "intermittent preventive treatment during pregnancy with sulphadoxine-pyrimethamine"
+   },
+   {
+    "system_id": "UmDy1z_HLP",
+    "name": "administration of 3 or more doses of intermittent preventive treatment in pregnancy with sulphadoxine-pyrimethamine (IPTp-SP)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "33B1GPZ-Qw",
+    "name": "Maternal knowledge of optimal sulphadoxine pyrimethamine dose",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "JqGtdvBJQK",
+    "name": "Product A (containing 200 mg sulphadoxine and 40 mg trimethoprim per mL) vs. Product B (containing 62.5 mg sulphadoxine and 12.5 mg trimethoprim per mL plus lidocaine (1 mg/mL))",
+    "concept_id": "bzQO0hAZXK"
+   },
+   {
+    "system_id": "vcbVesDul5",
+    "name": "Intermittent preventive treatment with sulphadoxine-pyrimethamine [vs PYR]",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "B0tX2oYnKy",
+    "name": "Intermittent preventive treatment in infants (IPTi) with sulphadoxine-pyrimethamine (SP) during routine vaccinations (implemented for one year)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "Zj0KkFr-ki",
+    "name": "intermittent preventive treatment of malaria using sulphadoxine-pyrimethamine"
+   },
+   {
+    "system_id": "3grn0odQvU",
+    "name": "Chloroquine group [vs Sulphadoxine-pyrimethamine (SP) group]",
+    "concept_id": "FSXE9QnJOc"
+   },
+   {
+    "system_id": "11COF5tyQm",
+    "name": "routine antenatal haematinic supplementation programmes and intermittent preventive treatment with sulphadoxine-pyrimethamine (SP)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "uwjGoG4cXY",
+    "name": "intermittent preventive treatment in pregnancy regimen with monthly sulphadoxine-pyrimethamine",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "1xYY3c8iWi",
+    "name": "Three rounds of IPTc with artesunate + sulphadoxine-pyrimethamine (or placebo) at monthly intervals eight months earlier (in Senegalese children aged 6 months-5 years)",
+    "concept_id": "c_f3i8lTBc"
+   },
+   {
+    "system_id": "ywyRGTavN7",
+    "name": "receipt of one dose of sulphadoxine-pyrimethamine versus none",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "vuG84w5bE2",
+    "name": "intermittent preventive malaria treatment with sulphadoxine pyrimethamine",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "UzkCsy80ND",
+    "name": "protective efficacy of the first sulphadoxine-pyrimethamine administration",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "7ckoYPA1Pt",
+    "name": "amodiaquine + sulphadoxine-pyrimethamine treatment",
+    "concept_id": "F8DI_OveVS"
+   },
+   {
+    "system_id": "gb-tzjFzIJ",
+    "name": "Amodiaquine and Sulphadoxine-Pyrimethamine (AQ+SP) (first-line malaria treatment)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "_UtIcIsEvR",
+    "name": "Intermittent Preventive Treatment in Pregnancy with Sulphadoxine-Pyrimethamine (IPTp-SP) usage",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "iEyqDDjmQ9",
+    "name": "intermittent presumptive treatment for pregnant women using sulphadoxine-pyrimethamine use",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "X7xumsw5NL",
+    "name": "Availability of sulphadoxine-pyrimethamine at reproductive and child health",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "T3aK9LGsIT",
+    "name": "IPTp-SP (Intermittent preventive treatment with sulphadoxine-pyrimethamine)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "hP_V0h4LCe",
+    "name": "Sulphadoxine-pyrimethamine (SP) group [vs Azithromycin group]",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "ixVF5ZCZi8",
+    "name": "implementation of intermittent preventive treatment of malaria in infant with sulphadoxine-pyrimethamine in health services in Mali",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "pKzQ1OZMtE",
+    "name": "Intermittent preventive treatment with sulphadoxine-pyrimethamine (IPTp-SP)"
+   },
+   {
+    "system_id": "K5OkaFCSYh",
+    "name": "uptake of optimal doses of sulphadoxine pyrimethamine"
+   },
+   {
+    "system_id": "KEQEhz0sY7",
+    "name": "malaria treatments [artesunate + amodiaquine (AS + AQ), artesunate + sulphadoxine-pyrimethamine (AS + SP) or artemether-lumefantrine (AL)]"
+   },
+   {
+    "system_id": "BG6MHSNhJl",
+    "name": "introduction of artesunate co-administered with Sulphadoxine-pyrimethamine (AS + Sulphadoxine-pyrimethamine)",
+    "concept_id": "c_f3i8lTBc"
+   },
+   {
+    "system_id": "pi839p7jGi",
+    "name": "stock-outs of sulphadoxine-pyrimethamine",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "CKEZkJweNi",
+    "name": "treatment with chloroquine or sulphadoxine-pyrimethamine (SP)",
+    "concept_id": "JjCLIJGmy6"
+   },
+   {
+    "system_id": "M8CQFiurkK",
+    "name": "artesunate + sulphadoxine-pyrimethamine [vs chloroquine]",
+    "concept_id": "c_f3i8lTBc"
+   },
+   {
+    "system_id": "nPiazOplZ_",
+    "name": "Efficacy of trimethoprim-sulphadoxine",
+    "concept_id": "bzQO0hAZXK"
+   },
+   {
+    "system_id": "dMuh1zAicI",
+    "name": "receipt of two or more doses of sulphadoxine-pyrimethamine",
+    "concept_id": "bzQO0hAZXK"
+   },
+   {
+    "system_id": "y3RitYT6x3",
+    "name": "Intervention zone receiving intermittent preventive treatment of malaria in infant with sulphadoxine-pyrimethamine [vs Non-intervention zone]"
+   },
+   {
+    "system_id": "90vfUXkXg_",
+    "name": "sulphadoxine-pyrimethamine"
+   },
+   {
+    "system_id": "uwZ_2lTmE8",
+    "name": "Two-dose sulphadoxine-pyrimethamine"
+   }
+  ],
+  "total": 5654715
+ }
+}

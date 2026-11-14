@@ -1,0 +1,72 @@
+{
+ "_request": "GET /variables/LyauphKn09/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "sDhVBv1RQR",
+    "variable_1_id": "LyauphKn09",
+    "variable_2_id": "fFysbDn-AM",
+    "variable_1_wikidata_id": "Q239569",
+    "variable_1_concept_id": "F8DI_OveVS",
+    "variable_1_name": "Artesunate plus amodiaquine [vs Chloroquine plus pyrimethamine-sulfadoxine]",
+    "variable_2_name": "Cure rate on day 21",
+    "study_id": "XcDrHHRTE4",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 6.0,
+    "p_value": 0.03,
+    "pubmed_id": 16262741,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "vEr4_xL5AK",
+    "variable_1_id": "LyauphKn09",
+    "variable_2_id": "u1Ie_Tz6kB",
+    "variable_1_wikidata_id": "Q239569",
+    "variable_2_wikidata_id": "Q10253316",
+    "variable_1_concept_id": "F8DI_OveVS",
+    "variable_2_concept_id": "aLGvrXuIez",
+    "variable_1_name": "Artesunate plus amodiaquine [vs Chloroquine plus pyrimethamine-sulfadoxine]",
+    "variable_2_name": "Parasite clearance time",
+    "study_id": "XcDrHHRTE4",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -0.8,
+    "p_value": 0.0001,
+    "pubmed_id": 16262741,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "rEEy5CqAvN",
+    "variable_1_id": "LyauphKn09",
+    "variable_2_id": "Bk8G4FS0el",
+    "variable_1_wikidata_id": "Q239569",
+    "variable_2_wikidata_id": "Q180502",
+    "variable_1_concept_id": "F8DI_OveVS",
+    "variable_2_concept_id": "8bzN3QDRn1",
+    "variable_1_name": "Artesunate plus amodiaquine [vs Chloroquine plus pyrimethamine-sulfadoxine]",
+    "variable_2_name": "Proportion of patients whose parasitaemia cleared by day 2",
+    "study_id": "XcDrHHRTE4",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 50.0,
+    "p_value": 1e-05,
+    "pubmed_id": 16262741,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "yp59qUNwYM",
+    "variable_1_id": "LyauphKn09",
+    "variable_2_id": "bJWpcBsS3B",
+    "variable_1_wikidata_id": "Q239569",
+    "variable_1_concept_id": "F8DI_OveVS",
+    "variable_1_name": "Artesunate plus amodiaquine [vs Chloroquine plus pyrimethamine-sulfadoxine]",
+    "variable_2_name": "Cure rate on day 28",
+    "study_id": "XcDrHHRTE4",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 10.0,
+    "p_value": 0.003,
+    "pubmed_id": 16262741,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 4
+ }
+}

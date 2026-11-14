@@ -1,0 +1,93 @@
+{
+ "_request": "GET /variables/5wofFjqbF1/associations?limit=500&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "9m7K8USUhL",
+    "variable_1_id": "MHsc8dcBMF",
+    "variable_2_id": "5wofFjqbF1",
+    "variable_1_wikidata_id": "Q70680242",
+    "variable_1_concept_id": "EtFwKYP7RR",
+    "variable_1_name": "attended first antenatal care in the third trimester of pregnancy",
+    "variable_2_name": "uptake of optimal intermittent preventive treatment of malaria in pregnancy using sulfadoxine-pyrimethamine doses",
+    "study_id": "QqeG9CqcP2",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.58,
+    "ci_upper": 0.87,
+    "ci_lower": 0.38,
+    "ci_level": 0,
+    "pubmed_id": 31349829,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "9yHZBaWX4t",
+    "variable_1_id": "LhvcpHcPU0",
+    "variable_2_id": "5wofFjqbF1",
+    "variable_1_wikidata_id": "Q467",
+    "variable_1_concept_id": "IzRboLj9ez",
+    "variable_1_name": "Age category > 34 years (Women aged 35 years and older)",
+    "variable_2_name": "uptake of optimal intermittent preventive treatment of malaria in pregnancy using sulfadoxine-pyrimethamine doses",
+    "study_id": "QqeG9CqcP2",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.7,
+    "ci_upper": 0.92,
+    "ci_lower": 0.53,
+    "ci_level": 0,
+    "pubmed_id": 31349829,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "XCOXVAMMIV",
+    "variable_1_id": "1Cni-SAKP3",
+    "variable_2_id": "5wofFjqbF1",
+    "variable_1_wikidata_id": "Q18189",
+    "variable_1_concept_id": "3bsZWIMWFp",
+    "variable_1_name": "education status (attained secondary-level education)",
+    "variable_2_name": "uptake of optimal intermittent preventive treatment of malaria in pregnancy using sulfadoxine-pyrimethamine doses",
+    "study_id": "QqeG9CqcP2",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.5,
+    "ci_upper": 2.15,
+    "ci_lower": 1.04,
+    "ci_level": 0,
+    "pubmed_id": 31349829,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "rdWw5m5ZPy",
+    "variable_1_id": "049LsFdc1T",
+    "variable_2_id": "5wofFjqbF1",
+    "variable_1_wikidata_id": "Q3308829",
+    "variable_1_concept_id": "LiA9WnJT_e",
+    "variable_1_name": "attended antenatal care \u2265 4 times",
+    "variable_2_name": "uptake of optimal intermittent preventive treatment of malaria in pregnancy using sulfadoxine-pyrimethamine doses",
+    "study_id": "QqeG9CqcP2",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.34,
+    "ci_upper": 1.6,
+    "ci_lower": 1.12,
+    "ci_level": 0,
+    "pubmed_id": 31349829,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "zJojTov6G0",
+    "variable_1_id": "EHpMJ8mr6H",
+    "variable_2_id": "5wofFjqbF1",
+    "variable_1_wikidata_id": "Q872",
+    "variable_1_concept_id": "fp1z9KTj_S",
+    "variable_1_name": "exposed to radio messages",
+    "variable_2_name": "uptake of optimal intermittent preventive treatment of malaria in pregnancy using sulfadoxine-pyrimethamine doses",
+    "study_id": "QqeG9CqcP2",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.23,
+    "ci_upper": 1.48,
+    "ci_lower": 1.02,
+    "ci_level": 0,
+    "pubmed_id": 31349829,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 5
+ }
+}

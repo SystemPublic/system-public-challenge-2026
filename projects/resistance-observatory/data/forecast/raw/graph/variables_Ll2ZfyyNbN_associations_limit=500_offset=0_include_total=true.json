@@ -1,0 +1,53 @@
+{
+ "_request": "GET /variables/Ll2ZfyyNbN/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "B33ZUzQlKg",
+    "variable_1_id": "R_BvcLO-cJ",
+    "variable_2_id": "Ll2ZfyyNbN",
+    "variable_1_name": "age (women aged 30 years and above)",
+    "variable_2_name": "use of two or more doses of SP for IPTp in the two years before the survey",
+    "study_id": "kb4hZuaY4P",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.4,
+    "ci_upper": 1.7,
+    "ci_lower": 1.1,
+    "ci_level": 0,
+    "pubmed_id": 30949287,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "n0rnCHL1xj",
+    "variable_1_id": "dVdRyBS_8q",
+    "variable_2_id": "Ll2ZfyyNbN",
+    "variable_1_name": "number of ANC visits",
+    "variable_2_name": "use of two or more doses of SP for IPTp in the two years before the survey",
+    "study_id": "kb4hZuaY4P",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 4.2,
+    "ci_upper": 12.5,
+    "ci_lower": 1.4,
+    "ci_level": 0,
+    "pubmed_id": 30949287,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "d9Yc6pBDGY",
+    "variable_1_id": "92uDgL_9oW",
+    "variable_2_id": "Ll2ZfyyNbN",
+    "variable_1_name": "wealth-index",
+    "variable_2_name": "use of two or more doses of SP for IPTp in the two years before the survey",
+    "study_id": "kb4hZuaY4P",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.5,
+    "ci_upper": 2.0,
+    "ci_lower": 1.1,
+    "ci_level": 0,
+    "pubmed_id": 30949287,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/HQHEBtFuAt/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "AdBSkBwvz4",
+    "variable_1_id": "HQHEBtFuAt",
+    "variable_2_id": "JDgR-ZP-Oc",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "Addition of community scheduled malaria screening and treatment (CSST) with artemether-lumefantrine by community health workers (CHWs) to standard intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine (IPTp-SP) (CSST+IPTp-SP)",
+    "variable_2_name": "prevalence of placental malaria",
+    "study_id": "_gy5rE2Itx",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.06,
+    "ci_upper": 1.44,
+    "ci_lower": 0.78,
+    "ci_level": 0,
+    "p_value": 0.72,
+    "pubmed_id": 29961848,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

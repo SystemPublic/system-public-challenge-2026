@@ -1,0 +1,51 @@
+{
+ "_request": "GET /variables/Q90MjA1sUW/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "rgFohwq5fY",
+    "variable_1_id": "Q90MjA1sUW",
+    "variable_2_id": "ENBfRX0KB0",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "intermittent preventive treatment with dihydroartemisinin-piperaquine [vs intermittent preventive treatment with sulfadoxine-pyrimethamine]",
+    "variable_2_name": "Malaria infection at delivery",
+    "study_id": "nTA-uxOaR-",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -7.0,
+    "p_value": 0.0001,
+    "pubmed_id": 26429700,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "nWfK8dbKWo",
+    "variable_1_id": "Q90MjA1sUW",
+    "variable_2_id": "0PpGnT_tuI",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "intermittent preventive treatment with dihydroartemisinin-piperaquine [vs intermittent preventive treatment with sulfadoxine-pyrimethamine]",
+    "variable_2_name": "Malaria infection during pregnancy",
+    "study_id": "nTA-uxOaR-",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 137.6,
+    "p_value": 0.0001,
+    "pubmed_id": 26429700,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "ha2Jy6rI5b",
+    "variable_1_id": "Q90MjA1sUW",
+    "variable_2_id": "lWpf51nGVJ",
+    "variable_1_name": "intermittent preventive treatment with dihydroartemisinin-piperaquine [vs intermittent preventive treatment with sulfadoxine-pyrimethamine]",
+    "variable_2_name": "Clinical malaria during pregnancy",
+    "study_id": "nTA-uxOaR-",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 31.8,
+    "p_value": 0.0001,
+    "pubmed_id": 26429700,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 3
+ }
+}

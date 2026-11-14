@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/_CRx0Qt9hO/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "FcIN1xGcIf",
+    "variable_1_id": "_CRx0Qt9hO",
+    "variable_2_id": "zNzOKH1yHZ",
+    "variable_2_wikidata_id": "Q58702",
+    "variable_2_concept_id": "QPxlNKv3zV",
+    "variable_1_name": "Seasonal Malaria Chemoprevention with sulfadoxine-pyrimethamine (SP) plus amodiaquine (AQ)",
+    "variable_2_name": "all-cause mortality (among children)",
+    "study_id": "uoE0Zi0rRG",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.9,
+    "ci_upper": 1.2,
+    "ci_lower": 0.68,
+    "ci_level": 0,
+    "p_value": 0.496,
+    "pubmed_id": 27875528,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

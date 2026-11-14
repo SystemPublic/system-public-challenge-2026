@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/1xZjcMzbN5/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "ugB2j1GaRm",
+    "variable_1_id": "j5qZ9J8iP4",
+    "variable_2_id": "1xZjcMzbN5",
+    "variable_1_name": "residence in the western province",
+    "variable_2_name": "receipt of two or more doses of sulphadoxine-pyrimethamine compared to women in Nairobi",
+    "study_id": "adzuGTWY2u",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.27,
+    "ci_upper": 0.94,
+    "ci_lower": 0.08,
+    "ci_level": 0,
+    "pubmed_id": 23912315,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

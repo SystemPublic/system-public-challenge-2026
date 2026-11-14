@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/1cGWzVD0-R/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "wk2Ks4__Zd",
+    "variable_1_id": "1cGWzVD0-R",
+    "variable_2_id": "DZc7hNqXqO",
+    "variable_1_wikidata_id": "Q5861101",
+    "variable_1_concept_id": "nffJstTHnc",
+    "variable_1_name": "Women who received at least one tetanus toxoid immunization [vs Women who received at least one dose of intermittent preventive treatment (SP)]",
+    "variable_2_name": "Receipt of intermittent preventive treatment",
+    "study_id": "fjLQzyqPmv",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 27.0,
+    "p_value": 0.05,
+    "pubmed_id": 15117309,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

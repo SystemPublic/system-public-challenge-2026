@@ -1,0 +1,219 @@
+{
+ "_request": "GET /variables?search=name:IPTp-SP&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "koHdri-iUQ",
+    "name": "intermittent preventive treatment with sulfadoxine/pyrimethamine (IPTp-SP)"
+   },
+   {
+    "system_id": "jJUGocIP1U",
+    "name": "non-adherence to direct observation therapy for administration of IPTp-SP"
+   },
+   {
+    "system_id": "lNt0MmxU9J",
+    "name": "uptake of IPTp-SP/dosage"
+   },
+   {
+    "system_id": "kMCsPfqOx5",
+    "name": "In-service training (training on the World Health Organization recommended guidelines for IPTp-SP)"
+   },
+   {
+    "system_id": "bfjwAl2s6O",
+    "name": "utilisation of IPTp-SP"
+   },
+   {
+    "system_id": "b9RyN-1pPh",
+    "name": "adequate uptake of IPTp-SP"
+   },
+   {
+    "system_id": "IOc1aKNHD4",
+    "name": "IPTp-SP (Intermittent Preventive Therapy with Sulphadoxine-Pyrimethamine)"
+   },
+   {
+    "system_id": "HQHEBtFuAt",
+    "name": "Addition of community scheduled malaria screening and treatment (CSST) with artemether-lumefantrine by community health workers (CHWs) to standard intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine (IPTp-SP) (CSST+IPTp-SP)"
+   },
+   {
+    "system_id": "y25TSgpJxf",
+    "name": "uptake of 2 doses of IPTp-SP"
+   },
+   {
+    "system_id": "wHRH8dg_1m",
+    "name": "use of intermittent preventive treatment sulfadoxine-pyrimethamine (IPTp-SP) and insecticide-treated nets (ITNs)"
+   },
+   {
+    "system_id": "7wat-YZBbb",
+    "name": "optimal uptake of IPTp-SP doses"
+   },
+   {
+    "system_id": "52PnT1LO5o",
+    "name": "uptake of IPTp-SP"
+   },
+   {
+    "system_id": "VmTNXMy_Ql",
+    "name": "optimum IPTp-SP uptake"
+   },
+   {
+    "system_id": "XFwMOqxklE",
+    "name": "Use of both insecticide treated nets (ITNs) and intermittent presumptive treatment for pregnant women using sulphadoxine-pyrimethamine (IPTp-SP)"
+   },
+   {
+    "system_id": "H87RkD3JVI",
+    "name": "Intermittent preventive treatment for malaria with sulfadoxine-pyrimethamine (IPTp-SP)"
+   },
+   {
+    "system_id": "DyhXP8xm8t",
+    "name": "uptake of IPTp-SP doses"
+   },
+   {
+    "system_id": "dcsLVCEHWc",
+    "name": "SP-users [vs non-users receiving IPTp-SP treatment]"
+   },
+   {
+    "system_id": "XQVPr9YjxT",
+    "name": "Adequate knowledge of MIP and IPTp-SP (Intermittent Preventive Treatment in Pregnancy with Sulfadoxine-Pyrimethamine)"
+   },
+   {
+    "system_id": "NBcssN0NLK",
+    "name": "uptake of 3+ doses of IPTp-SP"
+   },
+   {
+    "system_id": "Qx9_yv5F9e",
+    "name": "group that took intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP) [vs group that did not take intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP)]"
+   },
+   {
+    "system_id": "E2cf9ztkcr",
+    "name": "uptake of \u2265 2 doses of IPTp-SP"
+   },
+   {
+    "system_id": "J8SxEIrrS3",
+    "name": "Promotional campaign to increase IPTp-SP coverage (Intervention A)"
+   },
+   {
+    "system_id": "a7-tbsDujR",
+    "name": "taking at least 3 doses of IPTp-SP"
+   },
+   {
+    "system_id": "cQky0xE250",
+    "name": "IPTp-SP administration"
+   },
+   {
+    "system_id": "8PTwr5BOfz",
+    "name": "three or more IPTp-SP doses"
+   },
+   {
+    "system_id": "BEAoFGMb0u",
+    "name": "being on the IPTp-SP program"
+   },
+   {
+    "system_id": "4RGfw_-wwg",
+    "name": "IPTp-SP exposure"
+   },
+   {
+    "system_id": "0yS22duzeX",
+    "name": "uptake of \u2265 3 doses of IPTp-SP"
+   },
+   {
+    "system_id": "pfehrNVOhf",
+    "name": "two-dose of SP for IPTp-SP"
+   },
+   {
+    "system_id": "pTY9Gss_kh",
+    "name": "intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP)"
+   },
+   {
+    "system_id": "5J8vXDiIAs",
+    "name": "Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine (IPTp-SP) in 2011 (pregnant women) [vs Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine (IPTp-SP) in 2005 (pregnant women)]",
+    "concept_id": "bzQO0hAZXK"
+   },
+   {
+    "system_id": "aPSxIXQM5V",
+    "name": "pregnant women using both IPTp-SP and ITNs",
+    "concept_id": "1TPeWEe_2z"
+   },
+   {
+    "system_id": "UmDy1z_HLP",
+    "name": "administration of 3 or more doses of intermittent preventive treatment in pregnancy with sulphadoxine-pyrimethamine (IPTp-SP)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "Wih2SdbLS_",
+    "name": "Intermittent Preventive Treatment in pregnancy (IPTp-SP)",
+    "concept_id": "FPgHTPTt4S"
+   },
+   {
+    "system_id": "tsRSrkdgxi",
+    "name": "receiving <two doses of IPTp-SP"
+   },
+   {
+    "system_id": "_UtIcIsEvR",
+    "name": "Intermittent Preventive Treatment in Pregnancy with Sulphadoxine-Pyrimethamine (IPTp-SP) usage",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "4pa8RpyKzz",
+    "name": "adequate uptake of intermittent preventive therapy with IPTp-SP"
+   },
+   {
+    "system_id": "7Itsr-DZoD",
+    "name": "community promotion in addition to IPTp-SP",
+    "concept_id": "eZaavE8LW5"
+   },
+   {
+    "system_id": "LMxe5oTZ9s",
+    "name": "complete IPTp-SP"
+   },
+   {
+    "system_id": "xNltvyQwkI",
+    "name": "incidence of infection [among infants born to women enrolled in a randomized clinical trial comparing IPTp-SP and IPTp-DP in Malawi]"
+   },
+   {
+    "system_id": "T3aK9LGsIT",
+    "name": "IPTp-SP (Intermittent preventive treatment with sulphadoxine-pyrimethamine)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "pwjvtF2hyH",
+    "name": "Pregnant women in 2011 (after IPTp-SP implementation) [vs Pregnant women in 2005 (before IPTp-SP implementation)]",
+    "concept_id": "1TPeWEe_2z"
+   },
+   {
+    "system_id": "pKzQ1OZMtE",
+    "name": "Intermittent preventive treatment with sulphadoxine-pyrimethamine (IPTp-SP)"
+   },
+   {
+    "system_id": "-Qn-XhfuLP",
+    "name": "proportion of women receiving three doses of IPTp-SP"
+   },
+   {
+    "system_id": "dAwtS56nqr",
+    "name": "use of sulfadoxine-pyrimethamine used as intermittent preventive treatment during pregnancy (IPTp-SP)",
+    "concept_id": "bzQO0hAZXK"
+   },
+   {
+    "system_id": "l6IABWXw9Z",
+    "name": "IPTp-SP use"
+   },
+   {
+    "system_id": "ZvKLlEBRdb",
+    "name": "Uptake of IPTp-SP"
+   },
+   {
+    "system_id": "JVnNPkVccK",
+    "name": "Strategically assigned community promotion in addition to IPTp-SP (Intervention A)",
+    "concept_id": "eZaavE8LW5"
+   },
+   {
+    "system_id": "W4qv_24BKu",
+    "name": "the uptake of less than three doses of sulfadoxine-pyrimethamine for the intermittent preventive treatment of malaria in pregnancy (IPTp-SP)",
+    "concept_id": "bzQO0hAZXK"
+   },
+   {
+    "system_id": "7YhotrdJO4",
+    "name": "IPTp-SP"
+   }
+  ],
+  "total": 5654715
+ }
+}

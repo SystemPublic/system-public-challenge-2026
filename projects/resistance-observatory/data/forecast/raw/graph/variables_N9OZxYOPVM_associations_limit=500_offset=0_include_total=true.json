@@ -1,0 +1,28 @@
+{
+ "_request": "GET /variables/N9OZxYOPVM/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "7ZzjvAz4df",
+    "variable_1_id": "ySfGsexllD",
+    "variable_2_id": "N9OZxYOPVM",
+    "variable_1_wikidata_id": "Q12156",
+    "variable_2_wikidata_id": "Q411557",
+    "variable_1_concept_id": "7xpZryeSKE",
+    "variable_2_concept_id": "bzQO0hAZXK",
+    "variable_1_name": "Seasonal malaria chemoprevention (SMC)",
+    "variable_2_name": "prevalence of quintuple mutation associated with resistance to sulfadoxine-pyrimethamine",
+    "study_id": "uVMAuzbN39",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 4.8,
+    "ci_upper": 13.7,
+    "ci_lower": 1.7,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 33278936,
+    "system_statistic_type": "prevalence_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

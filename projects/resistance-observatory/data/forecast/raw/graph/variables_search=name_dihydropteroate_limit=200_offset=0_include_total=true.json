@@ -1,0 +1,52 @@
+{
+ "_request": "GET /variables?search=name:dihydropteroate&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "aZ-hbsnCRY",
+    "name": "presence of polymorphisms in P. falciparum dihydrofolate reductase and dihydropteroate synthase"
+   },
+   {
+    "system_id": "8KPYUCVmCY",
+    "name": "patients with dihydropteroate synthase gene mutations [vs patients without dihydropteroate synthase gene mutations]",
+    "concept_id": "QftpZC6uM4"
+   },
+   {
+    "system_id": "w1ktrLk4Wc",
+    "name": "Presence of K540 E: in dihydropteroate synthase",
+    "concept_id": "QftpZC6uM4"
+   },
+   {
+    "system_id": "zy2XeN66nA",
+    "name": "prevalence of Plasmodium falciparum dihydropteroate synthetase gene vagKgs quintuple mutant",
+    "concept_id": "QGsnhC2Mq6"
+   },
+   {
+    "system_id": "CbE6DxL4J7",
+    "name": "Prevalence of dihydropteroate synthase mutations",
+    "concept_id": "QftpZC6uM4"
+   },
+   {
+    "system_id": "LTWum_bOuO",
+    "name": "Prevalence of P. carinii dihydropteroate synthase mutations in the United States and China (year comparison)",
+    "concept_id": "QftpZC6uM4"
+   },
+   {
+    "system_id": "-rtpp_-U3i",
+    "name": "prevalence of P. carinii dihydropteroate synthase mutations",
+    "concept_id": "QftpZC6uM4"
+   },
+   {
+    "system_id": "W8abFR8UDl",
+    "name": "having mutant Dihydropteroate synthase",
+    "concept_id": "QftpZC6uM4"
+   },
+   {
+    "system_id": "WPF4ZPzIOY",
+    "name": "P. carinii dihydropteroate synthase mutations",
+    "concept_id": "QftpZC6uM4"
+   }
+  ],
+  "total": 5654715
+ }
+}

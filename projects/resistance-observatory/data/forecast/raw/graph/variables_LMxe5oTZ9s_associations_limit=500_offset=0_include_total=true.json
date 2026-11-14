@@ -1,0 +1,40 @@
+{
+ "_request": "GET /variables/LMxe5oTZ9s/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "w6G1p4GGtW",
+    "variable_1_id": "9FbGEAcaQW",
+    "variable_2_id": "LMxe5oTZ9s",
+    "variable_1_name": "Profession (occupation)",
+    "variable_2_name": "complete IPTp-SP",
+    "study_id": "5KE8peG6rt",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 1.49,
+    "ci_upper": 2.18,
+    "ci_lower": 1.04,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 36333739,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "KoddMA3P8H",
+    "variable_1_id": "b5SZUA2ArD",
+    "variable_2_id": "LMxe5oTZ9s",
+    "variable_1_name": "antenatal care visit",
+    "variable_2_name": "complete IPTp-SP",
+    "study_id": "5KE8peG6rt",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 0.176,
+    "ci_upper": 0.22,
+    "ci_lower": 0.14,
+    "ci_level": 0,
+    "p_value": 0.034,
+    "pubmed_id": 36333739,
+    "system_statistic_type": "adjusted_odds_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

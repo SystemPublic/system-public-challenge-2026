@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/CKEZkJweNi/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "7MlXfvUnEP",
+    "variable_1_id": "CKEZkJweNi",
+    "variable_2_id": "X8nAm50Iw6",
+    "variable_1_wikidata_id": "Q27264629",
+    "variable_1_concept_id": "JjCLIJGmy6",
+    "variable_1_name": "treatment with chloroquine or sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "parasitological failure rates",
+    "study_id": "aujRTTSddR",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 2.1,
+    "ci_upper": 2.6,
+    "ci_lower": 1.6,
+    "ci_level": 0,
+    "p_value": 0.0001,
+    "pubmed_id": 17949398,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

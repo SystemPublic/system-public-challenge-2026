@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/GUhh4ycJ36/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "JD2VMTp0IH",
+    "variable_1_id": "GUhh4ycJ36",
+    "variable_2_id": "ukseQH0PR1",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "SMC using sulfadoxine-pyrimethamine and amodiaquine (SPAQ) in the intervention county",
+    "variable_2_name": "RDT-confirmed malaria",
+    "study_id": "qX3TkA4r0J",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.18,
+    "ci_upper": 0.54,
+    "ci_lower": 0.06,
+    "ci_level": 0,
+    "p_value": 0.003,
+    "pubmed_id": 38267985,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

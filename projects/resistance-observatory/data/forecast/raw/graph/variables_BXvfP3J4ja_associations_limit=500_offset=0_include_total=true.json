@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/BXvfP3J4ja/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "cGtpSe15zm",
+    "variable_1_id": "BXvfP3J4ja",
+    "variable_2_id": "qsHQEnUsyt",
+    "variable_2_wikidata_id": "Q2781245",
+    "variable_2_concept_id": "dnIEpQCTQ1",
+    "variable_1_name": "mothers received any iron/folic acid supplements and sulfadoxine-pyrimethamine intermittent preventive treatment (SP-IPT(p)) for malaria during pregnancy",
+    "variable_2_name": "neonatal death",
+    "study_id": "tcNnt8azgD",
+    "statistic_type": "hazard_ratio",
+    "statistic_value": 0.76,
+    "ci_upper": 0.99,
+    "ci_lower": 0.58,
+    "ci_level": 0,
+    "pubmed_id": 20504976,
+    "system_statistic_type": "hazard_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "_request": "GET /variables/Qx9_yv5F9e/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "7qCFuum7Dn",
+    "variable_1_id": "Qx9_yv5F9e",
+    "variable_2_id": "Ox5mOaTFuL",
+    "variable_1_name": "group that took intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP) [vs group that did not take intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP)]",
+    "variable_2_name": "prevalence of ISgKAA mutant",
+    "study_id": "6X-wA3I__7",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -15.4,
+    "p_value": 0.0503,
+    "pubmed_id": 36611259,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "iJcN4hRRVc",
+    "variable_1_id": "Qx9_yv5F9e",
+    "variable_2_id": "zy2XeN66nA",
+    "variable_2_wikidata_id": "Q311383",
+    "variable_2_concept_id": "QGsnhC2Mq6",
+    "variable_1_name": "group that took intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP) [vs group that did not take intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP)]",
+    "variable_2_name": "prevalence of Plasmodium falciparum dihydropteroate synthetase gene vagKgs quintuple mutant",
+    "study_id": "6X-wA3I__7",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 18.0,
+    "p_value": 0.001,
+    "pubmed_id": 36611259,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 2
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/Y_DrsbcE6U/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "7w3YhbRZzb",
+    "variable_1_id": "zC81AYywGK",
+    "variable_2_id": "Y_DrsbcE6U",
+    "variable_1_name": "Delivery of sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy by community-directed drug distributors (CDDs) of ivermectin for onchocerciasis control (intervention arm) vs. Delivery of sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy during antenatal care visit (control arm)",
+    "variable_2_name": "Access to sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy",
+    "study_id": "9HDYy16O2R",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 10.2,
+    "p_value": 0.001,
+    "pubmed_id": 19467686,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

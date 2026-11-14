@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/CbE6DxL4J7/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "uqyyN5mgEK",
+    "variable_1_id": "iVtrB2WF3R",
+    "variable_2_id": "CbE6DxL4J7",
+    "variable_2_wikidata_id": "Q5276443",
+    "variable_2_concept_id": "QftpZC6uM4",
+    "variable_1_name": "Patients exposed to sulfa prophylaxis [vs Patients not exposed to sulfa prophylaxis]",
+    "variable_2_name": "Prevalence of dihydropteroate synthase mutations",
+    "study_id": "PVmpxmlfKU",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 15.0,
+    "p_value": 0.017,
+    "pubmed_id": 11992293,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

@@ -1,0 +1,132 @@
+{
+ "_meta": {
+  "note": "Published definitions are quoted or closely paraphrased from the cited WHO documents. Presets are this project's notification defaults, not clinical or policy rules; label them as presets in the UI."
+ },
+ "marker": {
+  "key": "dhps_K540E",
+  "gene": "PfDHPS",
+  "alteration": "K540E",
+  "label": "PfDHPS K540E",
+  "species": "P. falciparum",
+  "drug": "Sulfadoxine-pyrimethamine (SP)",
+  "drug_component": "Sulfadoxine",
+  "who_classification_alone": "Not assessed as a stand-alone entry in the WHO compendium as retrieved; assessed within DHFR/DHPS haplotypes",
+  "who_classification_haplotype": "The DHFR/DHPS quintuple mutant (N51I + C59R + S108N & A437G + K540E) is a WHO-validated marker (Epi., Lab. & Clin.) for sulfadoxine-pyrimethamine",
+  "who_compendium": {
+   "source": "WHO Compendium of molecular markers for antimalarial drug resistance, workbook \"July 2026 - Version 2.0\", retrieved 2026-11-11",
+   "url": "https://www.who.int/publications/m/item/compendium-of-molecular-markers-for-antimalarial-drug-resistance"
+  }
+ },
+ "who_categories": {
+  "kind": "published",
+  "label": "WHO guideline categories of SP resistance",
+  "applies_to": "DHPS K540E and A581G (East/Southern Africa), DHPS A437G (Central/West Africa)",
+  "categories": [
+   {
+    "level": "low",
+    "rule": "A437G below 75% in Central/West Africa, or K540E below 40% in East/Southern Africa"
+   },
+   {
+    "level": "medium",
+    "rule": "A437G 75% or more in Central/West Africa, or K540E 40-60% with A581G below 5% in East/Southern Africa"
+   },
+   {
+    "level": "high",
+    "rule": "K540E 60% or more with A581G below 5% in East/Southern Africa"
+   },
+   {
+    "level": "very_high",
+    "rule": "K540E 60% or more with A581G 5% or more in East/Southern Africa"
+   }
+  ],
+  "combination_rule": {
+   "name": "Very high SP resistance",
+   "all_of": [
+    {
+     "marker": "dhps_K540E",
+     "comparator": ">=",
+     "threshold_pct": 60
+    },
+    {
+     "marker": "dhps_A581G",
+     "comparator": ">=",
+     "threshold_pct": 5
+    }
+   ]
+  },
+  "default_thresholds_pct": {
+   "dhps_K540E": 60,
+   "dhps_A581G": 5,
+   "dhps_A437G": 75,
+   "dhfr_dhps_quintuple": 60
+  },
+  "statement": "WHO guidelines grade SP resistance by DHPS mutation prevalence but say there is insufficient evidence to withhold SP in pregnancy where A581G exceeds 10%, and that it should continue to be used in areas of high SP resistance until more effective alternatives are found.",
+  "limits": "These categories describe resistance level; they are not a rule to stop using the drug. The region split here uses MalariaGEN Pf8 population labels (AF-E and AF-NE as East/Southern; AF-W and AF-C as Central/West), which is an approximation of the WHO wording. The 60% preset for the quintuple mutant is a project preset, not a WHO figure.",
+  "sources": [
+   {
+    "name": "WHO guidelines for malaria, 13 August 2025",
+    "url": "https://iris.who.int/server/api/core/bitstreams/26a6af2d-060c-4449-8207-1f25e63c6cc3/content"
+   }
+  ],
+  "verbatim": {
+   "quote": "Resistance was defined as low (Ala437Gly < 75% in Central/West Africa or Lys540Glu < 40% in Eastern/Southern Africa), medium (Ala437Gly ≥ 75% in Central/West Africa or Lys540Glu 40–60% and AlaA581Gly < 5% in Eastern/Southern Africa), high (Lys540Glu ≥ 60 & Ala581Gly < 5% in Eastern/Southern Africa) and very high (Lys540Glu ≥ 60% and dhps Ala581Gly ≥ 5% in Eastern/Southern Africa).",
+   "where": "WHO guidelines for malaria, 13 August 2025, section 4.2.1 (IPTp), footnote to the evidence summary, page 105 of the PDF",
+   "continue_quote": "Although the ability of IPTp-SP to clear existing infections and prevent new ones is compromised in areas of high to very high resistance, the intervention still reduces low birthweight and maternal anaemia. Consequently, IPTp-SP should continue to be used in areas of high SP resistance until more effective alternatives for malaria chemoprevention are found.",
+   "continue_where": "WHO guidelines for malaria, 13 August 2025, section 4.2.1 (IPTp), PDF page 104 of 478 (and pages 107-108 of 478)",
+   "note": "Lys540Glu is K540E, Ala581Gly is A581G, Ala437Gly is A437G. The categories are how the guideline's evidence summary graded resistance; they are not an instruction to stop using SP.",
+   "programme_quote": "Given that SP continues to have positive outcomes for mother and baby even in areas of very high SP resistance, national malaria programmes may want to continue IPTp-SP programmes, despite worsening efficacy on malaria-specific outcomes.",
+   "programme_where": "WHO guidelines for malaria, 13 August 2025, PDF pages 107-108 of 478"
+  }
+ },
+ "presets": {
+  "min_samples": 20,
+  "east_southern_africa": {
+   "thresholds_pct": [
+    40,
+    60
+   ],
+   "basis": "published"
+  },
+  "central_west_africa": {
+   "threshold_pct": 5,
+   "basis": "preset",
+   "why": "WHO grades SP resistance in Central and West Africa by A437G, not K540E. K540E is rare there, so emergence is the news."
+  },
+  "outside_africa": {
+   "threshold_pct": 50,
+   "basis": "preset",
+   "why": "No published K540E threshold found outside Africa."
+  },
+  "change_points": 20,
+  "change_note": "Change is in percentage points between two pooled periods for the same area, both with at least min_samples tested. Alert in both directions: falling prevalence is news too.",
+  "first_detection": "First cell or paper in the selected country with at least one positive sample, after at least one earlier one that tested and found none. If the very first record is already positive it is a baseline, not an alert. Mark as weak if only one positive sample or fewer than min_samples tested.",
+  "signal": "point estimate is at or above the threshold with at least min_samples tested",
+  "strong_signal": "the bound of the 95% confidence interval nearest the threshold is also beyond it"
+ },
+ "context": [
+  {
+   "id": "policy_change",
+   "text": "WHO recommends changing national treatment policy when treatment failure exceeds 10% in a therapeutic efficacy study; newly adopted medicines should have a cure rate above 95%. This is a clinical outcome, not a marker prevalence.",
+   "source": "WHO, Report on antimalarial drug efficacy, resistance and response (2010-2019), 2020",
+   "url": "https://iris.who.int/bitstream/handle/10665/336692/9789240012813-eng.pdf"
+  },
+  {
+   "id": "early_warning",
+   "text": "WHO describes a changing prevalence of a molecular marker in an area as an early warning signal, and says a marked increase in a partner-drug marker should lead countries to consider or prepare a policy change before a 10% failure rate is reached.",
+   "source": "WHO, Report on antimalarial drug efficacy, resistance and response (2010-2019), 2020",
+   "url": "https://iris.who.int/bitstream/handle/10665/336692/9789240012813-eng.pdf"
+  }
+ ],
+ "history": [
+  {
+   "year": 2013,
+   "text": "A WHO evidence review group suggested considering stopping SP in pregnancy where K540E exceeded 95% and A581G exceeded 10%. Superseded by current guidance.",
+   "url": "https://www.who.int/docs/default-source/malaria/mpac-documentation/mpac-sep13-erg-ipt-malaria-pregnancy-report.pdf"
+  },
+  {
+   "year": 2022,
+   "text": "WHO removed the restriction on infant chemoprevention with SP based on prevalence of Pfdhps 540 mutations.",
+   "url": "https://www.who.int/news/item/03-06-2022-Updated-WHO-recommendations-for-malaria-chemoprevention-among-children-and-pregnant-women"
+  }
+ ]
+}

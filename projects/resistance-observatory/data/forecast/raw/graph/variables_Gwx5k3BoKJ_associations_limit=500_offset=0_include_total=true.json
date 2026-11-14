@@ -1,0 +1,24 @@
+{
+ "_request": "GET /variables/Gwx5k3BoKJ/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "c7R0eiMYFv",
+    "variable_1_id": "Gwx5k3BoKJ",
+    "variable_2_id": "CdS3JN7MX2",
+    "variable_1_name": "SP-azithromycin (sulfadoxine-pyrimethamine plus azithromycin)",
+    "variable_2_name": "incidence of adverse outcomes (among pregnant women with uncomplicated Plasmodium falciparum malaria)",
+    "study_id": "rSrCnErGyy",
+    "statistic_type": "hazard_ratio",
+    "statistic_value": 0.19,
+    "ci_upper": 0.63,
+    "ci_lower": 0.06,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 18000538,
+    "system_statistic_type": "hazard_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

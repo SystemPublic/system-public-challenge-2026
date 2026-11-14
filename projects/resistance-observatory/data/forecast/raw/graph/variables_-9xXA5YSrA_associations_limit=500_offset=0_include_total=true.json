@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/-9xXA5YSrA/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "i2XBp0CGBU",
+    "variable_1_id": "-9xXA5YSrA",
+    "variable_2_id": "alEd44Hp6K",
+    "variable_2_wikidata_id": "Q1897162",
+    "variable_2_concept_id": "zjycE-zYCh",
+    "variable_1_name": "after deployment of artesunate plus sulfadoxine-pyrimethamine (AS-sulfadoxine-pyrimethamine) [vs before deployment of artesunate plus sulfadoxine-pyrimethamine (AS-sulfadoxine-pyrimethamine)]",
+    "variable_2_name": "asexual parasite prevalence",
+    "study_id": "B7kCUJr09D",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -40.4,
+    "p_value": 0.0001,
+    "pubmed_id": 20439956,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

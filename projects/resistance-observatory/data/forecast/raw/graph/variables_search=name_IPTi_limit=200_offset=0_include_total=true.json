@@ -1,0 +1,46 @@
+{
+ "_request": "GET /variables?search=name:IPTi&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "l27ay1W9HE",
+    "name": "IPTi-sulfadoxine/pyrimethamine intervention area [vs Non-IPTi-sulfadoxine/pyrimethamine comparison area]"
+   },
+   {
+    "system_id": "vUxWSczcfM",
+    "name": "Mean MOI during the first year of life (Tamale) vs. MOI at 15 months of age (six months after receiving IPTi-SP or placebo)"
+   },
+   {
+    "system_id": "ODNbsYCB6W",
+    "name": "IPTi intervention group [vs comparison group]"
+   },
+   {
+    "system_id": "Avyfu9RJiy",
+    "name": "low-risk group (identified by the IPTI)"
+   },
+   {
+    "system_id": "MZz47daYt_",
+    "name": "Intermittent Preventive Treatment in Infants with Sulfadoxine-Pyrimethamine (SP) (IPTi)"
+   },
+   {
+    "system_id": "wH7SYawQT1",
+    "name": "IPTI (index of pretreatment intensity)"
+   },
+   {
+    "system_id": "c4bxuyAUsp",
+    "name": "IPTi",
+    "concept_id": "qkIOYR1rT5"
+   },
+   {
+    "system_id": "B0tX2oYnKy",
+    "name": "Intermittent preventive treatment in infants (IPTi) with sulphadoxine-pyrimethamine (SP) during routine vaccinations (implemented for one year)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "sdwKKPKuq2",
+    "name": "Type of tumor implantation method (IPTI)"
+   }
+  ],
+  "total": 5654715
+ }
+}

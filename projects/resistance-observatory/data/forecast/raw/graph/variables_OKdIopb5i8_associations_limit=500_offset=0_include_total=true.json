@@ -1,0 +1,42 @@
+{
+ "_request": "GET /variables/OKdIopb5i8/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "qSj1gdVLJK",
+    "variable_1_id": "OKdIopb5i8",
+    "variable_2_id": "yvuIYV-U6V",
+    "variable_2_wikidata_id": "Q1897162",
+    "variable_2_concept_id": "zjycE-zYCh",
+    "variable_1_name": "treatment with pyrimethamine-sulfadoxine",
+    "variable_2_name": "incidence of parasitemia",
+    "study_id": "64W9VKinQc",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.63,
+    "ci_upper": 0.93,
+    "ci_lower": 0.43,
+    "ci_level": 0,
+    "pubmed_id": 9333058,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "61wKb3hzCA",
+    "variable_1_id": "OKdIopb5i8",
+    "variable_2_id": "yvuIYV-U6V",
+    "variable_2_wikidata_id": "Q1897162",
+    "variable_2_concept_id": "zjycE-zYCh",
+    "variable_1_name": "treatment with pyrimethamine-sulfadoxine",
+    "variable_2_name": "incidence of parasitemia",
+    "study_id": "64W9VKinQc",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 1.31,
+    "ci_upper": 1.73,
+    "ci_lower": 0.99,
+    "ci_level": 0,
+    "pubmed_id": 9333058,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

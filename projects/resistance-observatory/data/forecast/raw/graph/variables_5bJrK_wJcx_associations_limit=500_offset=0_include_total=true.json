@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/5bJrK_wJcx/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "iD_4aq3uIs",
+    "variable_1_id": "vjJ1RJecx-",
+    "variable_2_id": "5bJrK_wJcx",
+    "variable_1_wikidata_id": "Q73902577",
+    "variable_1_concept_id": "QeEVpx9Wlg",
+    "variable_1_name": "Artemisinin-based combination therapy (2009-2013) [vs Artemisinin-based combination therapy (2003-2005)]",
+    "variable_2_name": "Prevalence of antifolate drugs resistance in the 51I, 59R, 108N, or 540E SNPs",
+    "study_id": "qYX21-LU0d",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -41.3,
+    "p_value": 0.05,
+    "pubmed_id": 29854394,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

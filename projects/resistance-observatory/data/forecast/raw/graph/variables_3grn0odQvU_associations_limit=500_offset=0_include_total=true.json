@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/3grn0odQvU/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "moD6csSkgP",
+    "variable_1_id": "3grn0odQvU",
+    "variable_2_id": "SO7Z_pieqr",
+    "variable_1_wikidata_id": "Q422438",
+    "variable_1_concept_id": "FSXE9QnJOc",
+    "variable_1_name": "Chloroquine group [vs Sulphadoxine-pyrimethamine (SP) group]",
+    "variable_2_name": "Prevalence of parasitological failure",
+    "study_id": "4LnMwnNACj",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 42.7,
+    "p_value": 0.001,
+    "pubmed_id": 16871319,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}
