@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/5BW4n3Ej11/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "o23pQ-icgn",
+    "variable_1_id": "5BW4n3Ej11",
+    "variable_2_id": "c5Rej-8snR",
+    "variable_1_wikidata_id": "Q311383",
+    "variable_2_wikidata_id": "Q421072",
+    "variable_1_concept_id": "QGsnhC2Mq6",
+    "variable_2_concept_id": "6Q_i0GlCWE",
+    "variable_1_name": "Patients who cleared the infection (quintuple resistant P. falciparum parasites) vs. Patients who did not clear the infection (quintuple resistant P. falciparum parasites)",
+    "variable_2_name": "blood pyrimethamine concentrations",
+    "study_id": "SGWeh5J0Ya",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 77.0,
+    "p_value": 0.037,
+    "pubmed_id": 16127028,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

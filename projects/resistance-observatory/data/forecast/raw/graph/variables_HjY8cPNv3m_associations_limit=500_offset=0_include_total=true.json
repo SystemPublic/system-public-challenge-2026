@@ -1,0 +1,74 @@
+{
+ "_request": "GET /variables/HjY8cPNv3m/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "QUkFW3oPVW",
+    "variable_1_id": "HjY8cPNv3m",
+    "variable_2_id": "MqTFqYwyuS",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "intermittent preventive treatment with sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "low birthweight",
+    "study_id": "Au2t301RdP",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 0.65,
+    "ci_upper": 0.95,
+    "ci_lower": 0.45,
+    "ci_level": 0,
+    "pubmed_id": 14996364,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "BsZDcOGBYV",
+    "variable_1_id": "HjY8cPNv3m",
+    "variable_2_id": "q45dXgqM9k",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "intermittent preventive treatment with sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "placental malaria",
+    "study_id": "Au2t301RdP",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 0.56,
+    "ci_upper": 0.83,
+    "ci_lower": 0.39,
+    "ci_level": 0,
+    "pubmed_id": 14996364,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "Dem3i1DZuz",
+    "variable_1_id": "HjY8cPNv3m",
+    "variable_2_id": "K-lpQ8v6h0",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "intermittent preventive treatment with sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "placental malaria in HIV-seropositive women",
+    "study_id": "Au2t301RdP",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 0.45,
+    "ci_upper": 1.05,
+    "ci_lower": 0.2,
+    "ci_level": 0,
+    "pubmed_id": 14996364,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "kRkJrT3PEJ",
+    "variable_1_id": "HjY8cPNv3m",
+    "variable_2_id": "leBor8ZwEA",
+    "variable_1_name": "intermittent preventive treatment with sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "placental malaria in HIV-seronegative women",
+    "study_id": "Au2t301RdP",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 0.49,
+    "ci_upper": 0.86,
+    "ci_lower": 0.28,
+    "ci_level": 0,
+    "pubmed_id": 14996364,
+    "system_statistic_type": "adjusted_odds_ratio"
+   }
+  ],
+  "total": 4
+ }
+}

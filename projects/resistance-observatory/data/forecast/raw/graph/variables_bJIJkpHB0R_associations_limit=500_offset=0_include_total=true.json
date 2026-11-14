@@ -1,0 +1,48 @@
+{
+ "_request": "GET /variables/bJIJkpHB0R/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "489sn1mPQa",
+    "variable_1_id": "bJIJkpHB0R",
+    "variable_2_id": "JdAtoMiyAH",
+    "variable_1_wikidata_id": "Q311383",
+    "variable_2_wikidata_id": "Q4128476",
+    "variable_1_concept_id": "QGsnhC2Mq6",
+    "variable_2_concept_id": "_GtjsdCZgn",
+    "variable_1_name": "Mutations in the Plasmodium falciparum genes Pfdhfr and Pfdhps, particularly the sextuple mutant haplotype",
+    "variable_2_name": "birth weight",
+    "study_id": "Cxsr7UsKD_",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -461.0,
+    "ci_upper": -44.0,
+    "ci_lower": -877.0,
+    "ci_level": 0,
+    "p_value": 0.03,
+    "pubmed_id": 33684211,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "gD0V6goixf",
+    "variable_1_id": "bJIJkpHB0R",
+    "variable_2_id": "JdAtoMiyAH",
+    "variable_1_wikidata_id": "Q311383",
+    "variable_2_wikidata_id": "Q4128476",
+    "variable_1_concept_id": "QGsnhC2Mq6",
+    "variable_2_concept_id": "_GtjsdCZgn",
+    "variable_1_name": "Mutations in the Plasmodium falciparum genes Pfdhfr and Pfdhps, particularly the sextuple mutant haplotype",
+    "variable_2_name": "birth weight",
+    "study_id": "Cxsr7UsKD_",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -267.0,
+    "ci_upper": -59.0,
+    "ci_lower": -454.0,
+    "ci_level": 0,
+    "p_value": 0.01,
+    "pubmed_id": 33684211,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 2
+ }
+}

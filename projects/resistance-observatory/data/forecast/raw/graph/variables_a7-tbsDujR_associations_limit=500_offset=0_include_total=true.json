@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/a7-tbsDujR/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "6_DjMCNL8p",
+    "variable_1_id": "a7-tbsDujR",
+    "variable_2_id": "0kSM_oSals",
+    "variable_2_wikidata_id": "Q113361605",
+    "variable_2_concept_id": "wYL8n9x4mu",
+    "variable_1_name": "taking at least 3 doses of IPTp-SP",
+    "variable_2_name": "malaria prevalence",
+    "study_id": "_aLn-y5KxG",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.44,
+    "ci_upper": 0.7,
+    "ci_lower": 0.27,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 33299426,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

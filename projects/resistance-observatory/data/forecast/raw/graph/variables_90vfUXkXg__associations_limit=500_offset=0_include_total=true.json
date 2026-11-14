@@ -1,0 +1,49 @@
+{
+ "_request": "GET /variables/90vfUXkXg_/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "0jhXhKvQFw",
+    "variable_1_id": "90vfUXkXg_",
+    "variable_2_id": "ptBFEUxUHO",
+    "variable_1_name": "sulphadoxine-pyrimethamine",
+    "variable_2_name": "odds for parasitological failure at day 28",
+    "study_id": "AUV5u--H8n",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 7.0,
+    "ci_upper": 17.0,
+    "ci_lower": 3.0,
+    "ci_level": 0,
+    "pubmed_id": 15040559,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "gTFfySGynp",
+    "variable_1_id": "90vfUXkXg_",
+    "variable_2_id": "5tFougHl4I",
+    "variable_2_wikidata_id": "Q18554672",
+    "variable_2_concept_id": "n8o7PdNYDI",
+    "variable_1_name": "sulphadoxine-pyrimethamine",
+    "variable_2_name": "clearing P. falciparum infection",
+    "study_id": "GNTGkTDmNB",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 1.0,
+    "pubmed_id": 10203167,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "81FqRY42e3",
+    "variable_1_id": "90vfUXkXg_",
+    "variable_2_id": "s_6NGb9FiL",
+    "variable_1_name": "sulphadoxine-pyrimethamine",
+    "variable_2_name": "clearing parasitaemia in many women by the time of delivery",
+    "study_id": "GNTGkTDmNB",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 1.0,
+    "pubmed_id": 10203167,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

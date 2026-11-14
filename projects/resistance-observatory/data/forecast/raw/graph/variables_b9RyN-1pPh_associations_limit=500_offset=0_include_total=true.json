@@ -1,0 +1,58 @@
+{
+ "_request": "GET /variables/b9RyN-1pPh/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "9vvfdwybJk",
+    "variable_1_id": "HIQyXoozoD",
+    "variable_2_id": "b9RyN-1pPh",
+    "variable_1_name": "late first ANC visit",
+    "variable_2_name": "adequate uptake of IPTp-SP",
+    "study_id": "fYxVH1WERB",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 6.8,
+    "ci_upper": 15.4,
+    "ci_lower": 3.0,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 28149434,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "rD0DH6_xYJ",
+    "variable_1_id": "RzP7C35AUi",
+    "variable_2_id": "b9RyN-1pPh",
+    "variable_1_wikidata_id": "Q41171",
+    "variable_1_concept_id": "3x-TeF7nX4",
+    "variable_1_name": "Unemployment",
+    "variable_2_name": "adequate uptake of IPTp-SP",
+    "study_id": "fYxVH1WERB",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 4.9,
+    "ci_upper": 13.1,
+    "ci_lower": 1.9,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 28149434,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "NNODBqo-wH",
+    "variable_1_id": "Z9E2kz2om0",
+    "variable_2_id": "b9RyN-1pPh",
+    "variable_1_name": "single gravidae",
+    "variable_2_name": "adequate uptake of IPTp-SP",
+    "study_id": "fYxVH1WERB",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 3.4,
+    "ci_upper": 7.6,
+    "ci_lower": 1.5,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 28149434,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

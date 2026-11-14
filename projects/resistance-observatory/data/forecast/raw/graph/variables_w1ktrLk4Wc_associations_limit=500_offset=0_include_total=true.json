@@ -1,0 +1,44 @@
+{
+ "_request": "GET /variables/w1ktrLk4Wc/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "paFNq6MPX5",
+    "variable_1_id": "w1ktrLk4Wc",
+    "variable_2_id": "0cJIG1ZlzC",
+    "variable_1_wikidata_id": "Q5276443",
+    "variable_1_concept_id": "QftpZC6uM4",
+    "variable_1_name": "Presence of K540 E: in dihydropteroate synthase",
+    "variable_2_name": "Patent infection in peripheral blood",
+    "study_id": "ISjODSn06i",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 2.76,
+    "ci_upper": 4.18,
+    "ci_lower": 1.82,
+    "ci_level": 0,
+    "pubmed_id": 25564249,
+    "system_statistic_type": "prevalence_ratio"
+   },
+   {
+    "system_id": "AeI-laBxXr",
+    "variable_1_id": "w1ktrLk4Wc",
+    "variable_2_id": "zdNzhSeZWX",
+    "variable_1_wikidata_id": "Q5276443",
+    "variable_2_wikidata_id": "Q71151469",
+    "variable_1_concept_id": "QftpZC6uM4",
+    "variable_2_concept_id": "ZmgtJD1icS",
+    "variable_1_name": "Presence of K540 E: in dihydropteroate synthase",
+    "variable_2_name": "Patent infection in placental blood",
+    "study_id": "ISjODSn06i",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 3.28,
+    "ci_upper": 5.78,
+    "ci_lower": 1.88,
+    "ci_level": 0,
+    "pubmed_id": 25564249,
+    "system_statistic_type": "prevalence_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

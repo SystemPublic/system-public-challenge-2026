@@ -1,0 +1,4836 @@
+{
+ "source": {
+  "id": "pubmed-k540e-pack",
+  "label": "PubMed papers that mention K540E",
+  "licence": "Bibliographic metadata from PubMed; quotes are short excerpts from abstracts, shown with attribution and a link to the source.",
+  "citation": "PubMed (NCBI E-utilities), searched 2026-11-14",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/",
+  "retrievedAt": "2026-11-14",
+  "notes": [
+   "This list comes from the Alert tab's data pack at commit a1cc503: PubMed papers whose title or abstract matches the query below.",
+   "Countries were machine-read from each abstract and have not been checked by a human.",
+   "\"Read by the Graph\" means the System Public Graph holds findings from that paper (its PubMed ID is in the Graph's CSV snapshot).",
+   "Abstracts only: full texts were not read.",
+   "Definitions differ between papers, so papers are not one survey series.",
+   "Search query (verbatim): ((dhps[tiab] OR pfdhps[tiab] OR dihydropteroate[tiab]) AND (540E[tiab] OR K540E[tiab] OR 540[tiab] OR quintuple[tiab]) OR K540E[tiab]) AND (falciparum[tiab] OR malaria[tiab])",
+   "Method (verbatim): Titles and abstracts were read by a language model to pull out explicitly stated K540E prevalence figures, association statements and first-report claims, each with a verbatim quote. A program then kept only items whose quote appears word for word in the abstract and, for prevalence, contains both the stated number and \"540\". No human checked them."
+  ]
+ },
+ "total": 372,
+ "readByGraph": 10,
+ "papers": [
+  {
+   "pmid": "9395372",
+   "doi": "10.1086/514159",
+   "title": "Mutations in Plasmodium falciparum dihydrofolate reductase and dihydropteroate synthase and epidemiologic patterns of pyrimethamine-sulfadoxine use and resistance.",
+   "journal": "J Infect Dis",
+   "year": 1997,
+   "month": 12,
+   "countries": [
+    "BOL",
+    "KEN",
+    "MLI",
+    "MWI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/9395372/"
+  },
+  {
+   "pmid": "9550212",
+   "doi": "10.1017/s0031182097002187",
+   "title": "Development and comparison of quantitative assays for the dihydropteroate synthetase codon 540 mutation associated with sulfadoxine resistance in Plasmodium falciparum.",
+   "journal": "Parasitology",
+   "year": 1998,
+   "month": 3,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/9550212/"
+  },
+  {
+   "pmid": "9603482",
+   "doi": "10.1006/expr.1998.4274",
+   "title": "Plasmodium falciparum: detection of polymorphisms in the dihydrofolate reductase and dihydropteroate synthetase genes by PCR and restriction digestion.",
+   "journal": "Exp Parasitol",
+   "year": 1998,
+   "month": 5,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/9603482/"
+  },
+  {
+   "pmid": "9735930",
+   "doi": "10.1046/j.1365-3156.1998.00280.x",
+   "title": "Polymorphisms in the dihydrofolate reductase (DHFR) and dihydropteroate synthetase (DHPS) genes of Plasmodium falciparum and in vivo resistance to sulphadoxine/pyrimethamine in isolates from Tanzania.",
+   "journal": "Trop Med Int Health",
+   "year": 1998,
+   "month": 8,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/9735930/"
+  },
+  {
+   "pmid": "10572658",
+   "doi": null,
+   "title": "[Mechanisms and dynamics of drug resistance in Plasmodium falciparum].",
+   "journal": "Bull Soc Pathol Exot",
+   "year": 1999,
+   "month": null,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/10572658/"
+  },
+  {
+   "pmid": "10497991",
+   "doi": "10.4269/ajtmh.1999.61.463",
+   "title": "Plasmodium falciparum resistance to sulfadoxine/pyrimethamine in Uganda: correlation with polymorphisms in the dihydrofolate reductase and dihydropteroate synthetase genes.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 1999,
+   "month": 9,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/10497991/"
+  },
+  {
+   "pmid": "10998224",
+   "doi": "10.1590/s0074-02762000000500020",
+   "title": "Mutations in Plasmodium falciparum dihydrofolate reductase and dihydropteroate synthase of isolates from the Amazon region of Brazil.",
+   "journal": "Mem Inst Oswaldo Cruz",
+   "year": 2000,
+   "month": null,
+   "countries": [
+    "BRA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/10998224/"
+  },
+  {
+   "pmid": "11280065",
+   "doi": "10.1016/s0035-9203(01)90329-3",
+   "title": "Mutations in the pfmdr1, dhfr and dhps genes of Plasmodium falciparum are associated with in-vivo drug resistance in West Papua, Indonesia.",
+   "journal": "Trans R Soc Trop Med Hyg",
+   "year": 2001,
+   "month": null,
+   "countries": [
+    "IDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/11280065/"
+  },
+  {
+   "pmid": "11311186",
+   "doi": "10.1016/s0001-706x(01)00084-5",
+   "title": "Molecular analysis of DHFR and DHPS genes in P. falciparum clinical isolates from the Haut--Ogooué region in Gabon.",
+   "journal": "Acta Trop",
+   "year": 2001,
+   "month": 3,
+   "countries": [
+    "GAB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/11311186/"
+  },
+  {
+   "pmid": "11679122",
+   "doi": "10.1046/j.1365-3156.2001.00791.x",
+   "title": "Prevalence of polymorphisms in the dihydrofolate reductase and dihydropteroate synthetase genes of Plasmodium falciparum isolates from southern Mauritania.",
+   "journal": "Trop Med Int Health",
+   "year": 2001,
+   "month": 10,
+   "countries": [
+    "MRT"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/11679122/"
+  },
+  {
+   "pmid": "11784419",
+   "doi": "10.1080/00034980120103234",
+   "title": "Plasmodium falciparum in Kenya: high prevalence of drug-resistance-associated polymorphisms in hospital admissions with severe malaria in an epidemic area.",
+   "journal": "Ann Trop Med Parasitol",
+   "year": 2001,
+   "month": 10,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/11784419/"
+  },
+  {
+   "pmid": "11926005",
+   "doi": "10.1016/s0035-9203(02)90254-3",
+   "title": "Do mutations in Plasmodium falciparum dihydropteroate synthase and dihydrofolate reductase confer resistance to sulfadoxine-pyrimethamine in Iran?",
+   "journal": "Trans R Soc Trop Med Hyg",
+   "year": 2002,
+   "month": null,
+   "countries": [
+    "IRN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/11926005/"
+  },
+  {
+   "pmid": "12427462",
+   "doi": "10.1016/s0014-4894(02)00108-x",
+   "title": "Plasmodium falciparum: in vitro activity of sulfadoxine and dapsone in field isolates from Kenya: point mutations in dihydropteroate synthase may not be the only determinants in sulfa resistance.",
+   "journal": "Exp Parasitol",
+   "year": 2002,
+   "month": null,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/12427462/"
+  },
+  {
+   "pmid": "11807721",
+   "doi": "10.1086/338566",
+   "title": "Molecular markers for failure of sulfadoxine-pyrimethamine and chlorproguanil-dapsone treatment of Plasmodium falciparum malaria.",
+   "journal": "J Infect Dis",
+   "year": 2002,
+   "month": 2,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/11807721/"
+  },
+  {
+   "pmid": "12452494",
+   "doi": "10.4269/ajtmh.2002.67.400",
+   "title": "Genetics of drug-resistant Plasmodium falciparum malaria in the Venezuelan state of Bolivar.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2002,
+   "month": 10,
+   "countries": [
+    "VEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/12452494/"
+  },
+  {
+   "pmid": "12581437",
+   "doi": "10.1046/j.1365-3156.2003.01005.x",
+   "title": "Short communication: point mutations in the dihydrofolate reductase and dihydropteroate synthase genes of Plasmodium falciparum isolates from Colombia.",
+   "journal": "Trop Med Int Health",
+   "year": 2003,
+   "month": 2,
+   "countries": [
+    "COL"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/12581437/"
+  },
+  {
+   "pmid": "12659974",
+   "doi": "10.1016/s0001-706x(02)00264-4",
+   "title": "High prevalence of quintuple mutant dhps/dhfr genes in Plasmodium falciparum infections seven years after introduction of sulfadoxine and pyrimethamine as first line treatment in Malawi.",
+   "journal": "Acta Trop",
+   "year": 2003,
+   "month": 3,
+   "countries": [
+    "MWI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/12659974/"
+  },
+  {
+   "pmid": "12803866",
+   "doi": "10.1179/000349803235001552",
+   "title": "Molecular survey of Plasmodium falciparum resistance in south-eastern Iran.",
+   "journal": "Ann Trop Med Parasitol",
+   "year": 2003,
+   "month": 3,
+   "countries": [
+    "IRN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/12803866/"
+  },
+  {
+   "pmid": "12667224",
+   "doi": "10.1046/j.1472-8206.2003.00164.x",
+   "title": "The mechanisms of resistance to antimalarial drugs in Plasmodium falciparum.",
+   "journal": "Fundam Clin Pharmacol",
+   "year": 2003,
+   "month": 4,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/12667224/"
+  },
+  {
+   "pmid": "12805261",
+   "doi": "10.1093/jac/dkg294",
+   "title": "DHFR and DHPS genotypes of Plasmodium falciparum isolates from Gabon correlate with in vitro activity of pyrimethamine and cycloguanil, but not with sulfadoxine-pyrimethamine treatment efficacy.",
+   "journal": "J Antimicrob Chemother",
+   "year": 2003,
+   "month": 7,
+   "countries": [
+    "GAB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/12805261/"
+  },
+  {
+   "pmid": "14628939",
+   "doi": null,
+   "title": "Validation of a simplified method for using molecular markers to predict sulfadoxine-pyrimethamine treatment failure in African children with falciparum malaria.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2003,
+   "month": 9,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/14628939/"
+  },
+  {
+   "pmid": "14641841",
+   "doi": "10.1046/j.1360-2276.2003.01144.x",
+   "title": "Molecular assessment of drug resistance in Plasmodium falciparum from Bahr El Gazal province, Sudan.",
+   "journal": "Trop Med Int Health",
+   "year": 2003,
+   "month": 12,
+   "countries": [
+    "SDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/14641841/"
+  },
+  {
+   "pmid": "14740877",
+   "doi": null,
+   "title": "Frequency distribution of antimalarial drug-resistant alleles among isolates of Plasmodium falciparum in Purworejo district, Central Java Province, Indonesia.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2003,
+   "month": 12,
+   "countries": [
+    "IDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/14740877/"
+  },
+  {
+   "pmid": "15047993",
+   "doi": null,
+   "title": "Associations of antifolate resistance in vitro and point mutations in dihydrofolate reductase and dihydropteroate synthetase genes of Plasmodium falciparum.",
+   "journal": "J Postgrad Med",
+   "year": 2004,
+   "month": null,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15047993/"
+  },
+  {
+   "pmid": "15272415",
+   "doi": "10.1086/422758",
+   "title": "Molecular diagnosis of resistance to antimalarial drugs during epidemics and in war zones.",
+   "journal": "J Infect Dis",
+   "year": 2004,
+   "month": 8,
+   "countries": [
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15272415/"
+  },
+  {
+   "pmid": "15273102",
+   "doi": "10.1128/AAC.48.8.2924-2929.2004",
+   "title": "Rapid real-time PCR genotyping of mutations associated with sulfadoxine-pyrimethamine resistance in Plasmodium falciparum.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2004,
+   "month": 8,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15273102/"
+  },
+  {
+   "pmid": "15374529",
+   "doi": "10.1016/j.meegid.2004.04.002",
+   "title": "Two mutations in dihydrofolate reductase combined with one in the dihydropteroate synthase gene predict sulphadoxine-pyrimethamine parasitological failure in Ugandan children with uncomplicated falciparum malaria.",
+   "journal": "Infect Genet Evol",
+   "year": 2004,
+   "month": 12,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15374529/"
+  },
+  {
+   "pmid": "15642957",
+   "doi": null,
+   "title": "Therapeutic efficacy of sulfadoxine-pyrimethamine and prevalence of resistance markers in Tanzania prior to revision of malaria treatment policy: Plasmodium falciparum dihydrofolate reductase and dihydropteroate synthase mutations in monitoring in vivo resistance.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2004,
+   "month": 12,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15642957/"
+  },
+  {
+   "pmid": "15642967",
+   "doi": null,
+   "title": "Principal role of dihydropteroate synthase mutations in mediating resistance to sulfadoxine-pyrimethamine in single-drug and combination therapy of uncomplicated malaria in Uganda.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2004,
+   "month": 12,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15642967/"
+  },
+  {
+   "pmid": "15741554",
+   "doi": null,
+   "title": "Molecular epidemiology of Plasmodium falciparum resistance to antimalarial drugs in Indonesia.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2005,
+   "month": 2,
+   "countries": [
+    "IDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15741554/"
+  },
+  {
+   "pmid": "15728909",
+   "doi": "10.1128/AAC.49.3.1101-1105.2005",
+   "title": "High prevalence of markers for sulfadoxine and pyrimethamine resistance in Plasmodium falciparum in the absence of drug pressure in the Ashanti region of Ghana.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2005,
+   "month": 3,
+   "countries": [
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15728909/"
+  },
+  {
+   "pmid": "15804381",
+   "doi": "10.1016/j.exppara.2005.02.001",
+   "title": "Plasmodium falciparum: evaluation of a quantitative nucleic acid sequence-based amplification assay to predict the outcome of sulfadoxine-pyrimethamine treatment of uncomplicated malaria.",
+   "journal": "Exp Parasitol",
+   "year": 2005,
+   "month": 5,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15804381/"
+  },
+  {
+   "pmid": "15941416",
+   "doi": "10.1111/j.1365-3156.2005.01414.x",
+   "title": "Plasmodium falciparum: higher incidence of molecular resistance markers for sulphadoxine than for pyrimethamine in Kasangati, Uganda.",
+   "journal": "Trop Med Int Health",
+   "year": 2005,
+   "month": 6,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15941416/"
+  },
+  {
+   "pmid": "16018959",
+   "doi": "10.1016/j.actatropica.2005.06.003",
+   "title": "Rapid increase in resistance of Plasmodium falciparum to chloroquine-Fansidar in Uganda and the potential of amodiaquine-Fansidar as a better alternative.",
+   "journal": "Acta Trop",
+   "year": 2005,
+   "month": 9,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16018959/"
+  },
+  {
+   "pmid": "16023986",
+   "doi": "10.1016/j.actatropica.2005.06.015",
+   "title": "Polymorphisms in Plasmodium falciparum dhfr and dhps genes and age related in vivo sulfadoxine-pyrimethamine resistance in malaria-infected patients from Nigeria.",
+   "journal": "Acta Trop",
+   "year": 2005,
+   "month": 9,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16023986/"
+  },
+  {
+   "pmid": "16159551",
+   "doi": "10.1157/13078421",
+   "title": "[Molecular epidemiological surveillance of markers for antimalarial drugs in Plasmodium falciparum isolates imported to Barcelona, Spain].",
+   "journal": "Med Clin (Barc)",
+   "year": 2005,
+   "month": 9,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16159551/"
+  },
+  {
+   "pmid": "16185238",
+   "doi": "10.1111/j.1365-3156.2005.01490.x",
+   "title": "Epidemiology of drug-resistant malaria in Republic of Congo: using molecular evidence for monitoring antimalarial drug resistance combined with assessment of antimalarial drug use.",
+   "journal": "Trop Med Int Health",
+   "year": 2005,
+   "month": 10,
+   "countries": [
+    "COG"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16185238/"
+  },
+  {
+   "pmid": "16282289",
+   "doi": null,
+   "title": "Drug resistance and genetic diversity of Plasmodium falciparum parasites from suriname.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2005,
+   "month": 11,
+   "countries": [
+    "SUR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16282289/"
+  },
+  {
+   "pmid": "16474071",
+   "doi": null,
+   "title": "Frequency distribution of antimalarial drug-resistant alleles among isolates of Plasmodium falciparum in Bangui, Central African Republic.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2006,
+   "month": 2,
+   "countries": [
+    "CAF"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16474071/"
+  },
+  {
+   "pmid": "16518760",
+   "doi": "10.1086/500951",
+   "title": "Geographic differences in antimalarial drug efficacy in Uganda are explained by differences in endemicity and not by known molecular markers of drug resistance.",
+   "journal": "J Infect Dis",
+   "year": 2006,
+   "month": 4,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16518760/"
+  },
+  {
+   "pmid": "16817953",
+   "doi": "10.1086/375419",
+   "title": "High prevalence of drug-resistance mutations in Plasmodium falciparum and Plasmodium vivax in southern Ethiopia.",
+   "journal": "Malar J",
+   "year": 2006,
+   "month": 7,
+   "countries": [
+    "ETH"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16817953/"
+  },
+  {
+   "pmid": "16837723",
+   "doi": null,
+   "title": "Short report: molecular markers associated with Plasmodium falciparum resistance to sulfadoxine-pyrimethamine in the Democratic Republic of Congo.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2006,
+   "month": 7,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16837723/"
+  },
+  {
+   "pmid": "16837725",
+   "doi": null,
+   "title": "Roles of specific Plasmodium falciparum mutations in resistance to amodiaquine and sulfadoxine-pyrimethamine in Burkina Faso.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2006,
+   "month": 7,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16837725/"
+  },
+  {
+   "pmid": "16854546",
+   "doi": "10.1016/j.medmal.2006.05.005",
+   "title": "[Antimalarial drug resistance].",
+   "journal": "Med Mal Infect",
+   "year": 2006,
+   "month": 8,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16854546/"
+  },
+  {
+   "pmid": "16968909",
+   "doi": null,
+   "title": "Effect of cotrimoxazole prophylaxis taken by human immunodeficiency virus (HIV)-infected persons on the selection of sulfadoxine-pyrimethamine-resistant malaria parasites among HIV-uninfected household members.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2006,
+   "month": 9,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16968909/"
+  },
+  {
+   "pmid": "17076899",
+   "doi": "10.1016/0166-6851(92)90026-G",
+   "title": "Drug resistance to sulphadoxine-pyrimethamine in Plasmodium falciparum malaria in Mlimba, Tanzania.",
+   "journal": "Malar J",
+   "year": 2006,
+   "month": 10,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17076899/"
+  },
+  {
+   "pmid": "16957045",
+   "doi": "10.1128/JCM.01209-06",
+   "title": "Pyrosequencing, a high-throughput method for detecting single nucleotide polymorphisms in the dihydrofolate reductase and dihydropteroate synthetase genes of Plasmodium falciparum.",
+   "journal": "J Clin Microbiol",
+   "year": 2006,
+   "month": 11,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16957045/"
+  },
+  {
+   "pmid": "17876469",
+   "doi": "10.1590/s0037-86822007000400015",
+   "title": "[Sulfadoxine-pyrimethamine resistance in Maputo, Mozambique: presence of mutations in the dhfr and dhps genes of Plasmodium falciparum].",
+   "journal": "Rev Soc Bras Med Trop",
+   "year": 2007,
+   "month": null,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17876469/"
+  },
+  {
+   "pmid": "16690361",
+   "doi": "10.1016/j.meegid.2006.03.008",
+   "title": "Field-based evidence for linkage of mutations associated with chloroquine (pfcrt/pfmdr1) and sulfadoxine-pyrimethamine (pfdhfr/pfdhps) resistance and for the fitness cost of multiple mutations in P. falciparum.",
+   "journal": "Infect Genet Evol",
+   "year": 2007,
+   "month": 1,
+   "countries": [
+    "SDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16690361/"
+  },
+  {
+   "pmid": "17224049",
+   "doi": "10.1128/AAC.44.4.991-996.2000",
+   "title": "Molecular surveillance of drug-resistance associated mutations of Plasmodium falciparum in south-west Tanzania.",
+   "journal": "Malar J",
+   "year": 2007,
+   "month": 1,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17224049/"
+  },
+  {
+   "pmid": "17024359",
+   "doi": "10.1007/s00436-006-0291-z",
+   "title": "Genotypes and in vivo resistance of Plasmodium falciparum isolates in an endemic region of Iran.",
+   "journal": "Parasitol Res",
+   "year": 2007,
+   "month": 2,
+   "countries": [
+    "IRN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17024359/"
+  },
+  {
+   "pmid": "17378942",
+   "doi": "10.1016/S0035-9203(02)90349-4",
+   "title": "Analysis of sulphadoxine/pyrimethamine resistance-conferring mutations of Plasmodium falciparum from Mozambique reveals the absence of the dihydrofolate reductase 164L mutant.",
+   "journal": "Malar J",
+   "year": 2007,
+   "month": 3,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17378942/"
+  },
+  {
+   "pmid": "17426157",
+   "doi": null,
+   "title": "Sulfadoxine-pyrimethamine efficacy and selection of Plasmodium falciparum DHFR mutations in Burkina Faso before its introduction as intermittent preventive treatment for pregnant women.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2007,
+   "month": 4,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17426157/"
+  },
+  {
+   "pmid": "17477865",
+   "doi": "10.2165/00003495-200262090-00003",
+   "title": "Efficacy of antimalarial treatment in Guinea: in vivo study of two artemisinin combination therapies in Dabola and molecular markers of resistance to sulphadoxine-pyrimethamine in N'Zérékoré.",
+   "journal": "Malar J",
+   "year": 2007,
+   "month": 5,
+   "countries": [
+    "GIN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17477865/"
+  },
+  {
+   "pmid": "17727034",
+   "doi": null,
+   "title": "[Molecular surveillance of sulfadoxine-pyrimethamine-resistant Plasmodium falciparum in São Tomé and Príncipe].",
+   "journal": "Bull Soc Pathol Exot",
+   "year": 2007,
+   "month": 5,
+   "countries": [
+    "STP"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17727034/"
+  },
+  {
+   "pmid": "17283199",
+   "doi": "10.1128/AAC.01228-06",
+   "title": "Common origin and fixation of Plasmodium falciparum dhfr and dhps mutations associated with sulfadoxine-pyrimethamine resistance in a low-transmission area in South America.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2007,
+   "month": 6,
+   "countries": [
+    "VEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17283199/"
+  },
+  {
+   "pmid": "17686173",
+   "doi": "10.1111/j.1365-3156.2005.01471.x",
+   "title": "The implication of dihydrofolate reductase and dihydropteroate synthetase gene mutations in modification of Plasmodium falciparum characteristics.",
+   "journal": "Malar J",
+   "year": 2007,
+   "month": 8,
+   "countries": [
+    "SDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17686173/"
+  },
+  {
+   "pmid": "17760967",
+   "doi": "10.1537/ase.050802",
+   "title": "Malaria prevalence in Nias District, North Sumatra Province, Indonesia.",
+   "journal": "Malar J",
+   "year": 2007,
+   "month": 8,
+   "countries": [
+    "IDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17760967/"
+  },
+  {
+   "pmid": "17546463",
+   "doi": "10.1007/s00436-007-0597-5",
+   "title": "High prevalence of molecular markers for resistance to chloroquine and pyrimethamine in Plasmodium falciparum from Zimbabwe.",
+   "journal": "Parasitol Res",
+   "year": 2007,
+   "month": 9,
+   "countries": [
+    "ZWE"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17546463/"
+  },
+  {
+   "pmid": "17999755",
+   "doi": "10.1128/JCM.02291-06",
+   "title": "Prevalence of mutations associated with antimalarial drugs in Plasmodium falciparum isolates prior to the introduction of sulphadoxine-pyrimethamine as first-line treatment in Iran.",
+   "journal": "Malar J",
+   "year": 2007,
+   "month": 11,
+   "countries": [
+    "IRN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/17999755/"
+  },
+  {
+   "pmid": "18267042",
+   "doi": "10.1007/s00228-004-0871-8",
+   "title": "Sulphadoxine/pyrimethamine versus amodiaquine for treating uncomplicated childhood malaria in Gabon: a randomized trial to guide national policy.",
+   "journal": "Malar J",
+   "year": 2008,
+   "month": 2,
+   "countries": [
+    "GAB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/18267042/"
+  },
+  {
+   "pmid": "18346279",
+   "doi": "10.1016/S1471-4922(01)02085-2",
+   "title": "Real-time PCR/MCA assay using fluorescence resonance energy transfer for the genotyping of resistance related DHPS-540 mutations in Plasmodium falciparum.",
+   "journal": "Malar J",
+   "year": 2008,
+   "month": 3,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/18346279/"
+  },
+  {
+   "pmid": "18495008",
+   "doi": "10.1056/NEJMp068214",
+   "title": "Escalating Plasmodium falciparum antifolate drug resistance mutations in Macha, rural Zambia.",
+   "journal": "Malar J",
+   "year": 2008,
+   "month": 5,
+   "countries": [
+    "ZMB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/18495008/"
+  },
+  {
+   "pmid": "18419347",
+   "doi": "10.1086/588144",
+   "title": "Molecular markers of resistance to sulfadoxine-pyrimethamine during intermittent preventive treatment for malaria in Mozambican infants.",
+   "journal": "J Infect Dis",
+   "year": 2008,
+   "month": 6,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/18419347/"
+  },
+  {
+   "pmid": "18590577",
+   "doi": "10.1016/S0140-6736(03)12951-0",
+   "title": "Rapid increase of Plasmodium falciparum dhfr/dhps resistant haplotypes, after the adoption of sulphadoxine-pyrimethamine as first line treatment in 2002, in southern Mozambique.",
+   "journal": "Malar J",
+   "year": 2008,
+   "month": 7,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/18590577/"
+  },
+  {
+   "pmid": "18671871",
+   "doi": "10.1073/pnas.0308714100",
+   "title": "Molecular epidemiology of drug-resistant malaria in western Kenya highlands.",
+   "journal": "BMC Infect Dis",
+   "year": 2008,
+   "month": 7,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/18671871/"
+  },
+  {
+   "pmid": "18373107",
+   "doi": "10.1007/s10096-008-0499-1",
+   "title": "High frequency of Plasmodium falciparum CICNI/SGEAA and CVIET haplotypes without association with resistance to sulfadoxine/pyrimethamine and chloroquine combination in the Daraweesh area, in Sudan.",
+   "journal": "Eur J Clin Microbiol Infect Dis",
+   "year": 2008,
+   "month": 8,
+   "countries": [
+    "SDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/18373107/"
+  },
+  {
+   "pmid": "18784222",
+   "doi": null,
+   "title": "Does cotrimoxazole prophylaxis for the prevention of HIV-associated opportunistic infections select for resistant pathogens in Kenyan adults?",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2008,
+   "month": 9,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/18784222/"
+  },
+  {
+   "pmid": "19014684",
+   "doi": "10.1186/1475-2875-7-236",
+   "title": "Prevalence of pfmdr1, pfcrt, pfdhfr and pfdhps mutations associated with drug resistance, in Luanda, Angola.",
+   "journal": "Malar J",
+   "year": 2008,
+   "month": 11,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19014684/"
+  },
+  {
+   "pmid": "19055622",
+   "doi": "10.1111/j.1365-3156.2008.02150.x",
+   "title": "dhfr and dhps genotype and sulfadoxine-pyrimethamine treatment failure in children with falciparum malaria in the Democratic Republic of Congo.",
+   "journal": "Trop Med Int Health",
+   "year": 2008,
+   "month": 11,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19055622/"
+  },
+  {
+   "pmid": "19238219",
+   "doi": "10.1371/journal.pone.0004569",
+   "title": "High resistance of Plasmodium falciparum to sulphadoxine/pyrimethamine in northern Tanzania and the emergence of dhps resistance mutation at Codon 581.",
+   "journal": "PLoS One",
+   "year": 2009,
+   "month": null,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19238219/"
+  },
+  {
+   "pmid": "19245687",
+   "doi": "10.1016/S0035-9203(01)90331-1",
+   "title": "Efficacy of chloroquine, amodiaquine and sulphadoxine-pyrimethamine for the treatment of uncomplicated falciparum malaria: revisiting molecular markers in an area of emerging AQ and SP resistance in Mali.",
+   "journal": "Malar J",
+   "year": 2009,
+   "month": 2,
+   "countries": [
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19245687/"
+  },
+  {
+   "pmid": "19257898",
+   "doi": "10.1001/jama.297.20.2210",
+   "title": "Extended high efficacy of the combination sulphadoxine-pyrimethamine with artesunate in children with uncomplicated falciparum malaria on the Benin coast, West Africa.",
+   "journal": "Malar J",
+   "year": 2009,
+   "month": 3,
+   "countries": [
+    "BEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19257898/"
+  },
+  {
+   "pmid": "19346374",
+   "doi": null,
+   "title": "Resistance-mediating polymorphisms in Plasmodium falciparum infections in Kinshasa, Democratic Republic of the Congo.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2009,
+   "month": 4,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19346374/"
+  },
+  {
+   "pmid": "19413906",
+   "doi": "10.1128/CMR.00021-06",
+   "title": "A systematic review and meta-analysis of evidence for correlation between molecular markers of parasite resistance and treatment outcome in falciparum malaria.",
+   "journal": "Malar J",
+   "year": 2009,
+   "month": 5,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19413906/"
+  },
+  {
+   "pmid": "19364873",
+   "doi": "10.1074/jbc.M806944200",
+   "title": "Polymorphism in PfMRP1 (Plasmodium falciparum multidrug resistance protein 1) amino acid 1466 associated with resistance to sulfadoxine-pyrimethamine treatment.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2009,
+   "month": 6,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19364873/"
+  },
+  {
+   "pmid": "19558654",
+   "doi": "10.1128/AAC.49.9.3919-3921.2005",
+   "title": "Efficacy of sulphadoxine-pyrimethamine with or without artesunate for the treatment of uncomplicated Plasmodium falciparum malaria in southern Mozambique: a randomized controlled trial.",
+   "journal": "Malar J",
+   "year": 2009,
+   "month": 6,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": true,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19558654/"
+  },
+  {
+   "pmid": "19556560",
+   "doi": null,
+   "title": "High prevalence and fixation of Plasmodium vivax dhfr/dhps mutations related to sulfadoxine/pyrimethamine resistance in French Guiana.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2009,
+   "month": 7,
+   "countries": [
+    "GUF"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19556560/"
+  },
+  {
+   "pmid": "19433569",
+   "doi": "10.1136/bmj.a120",
+   "title": "Novel pfdhps haplotypes among imported cases of Plasmodium falciparum malaria in the United Kingdom.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2009,
+   "month": 8,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19433569/"
+  },
+  {
+   "pmid": "19707564",
+   "doi": "10.1371/journal.pone.0006762",
+   "title": "Effects of point mutations in Plasmodium falciparum dihydrofolate reductase and dihydropterate synthase genes on clinical outcomes and in vitro susceptibility to sulfadoxine and pyrimethamine.",
+   "journal": "PLoS One",
+   "year": 2009,
+   "month": 8,
+   "countries": [
+    "PER"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19707564/"
+  },
+  {
+   "pmid": "19379843",
+   "doi": "10.1016/j.meegid.2009.04.010",
+   "title": "Distinct haplotypes of dhfr and dhps among Plasmodium falciparum isolates in an area of high level of sulfadoxine-pyrimethamine (SP) resistance in eastern Sudan.",
+   "journal": "Infect Genet Evol",
+   "year": 2009,
+   "month": 9,
+   "countries": [
+    "SDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19379843/"
+  },
+  {
+   "pmid": "19624477",
+   "doi": "10.1111/j.1365-3156.2009.02340.x",
+   "title": "Low level genotypic chloroquine resistance near Malawi's northern border with Tanzania.",
+   "journal": "Trop Med Int Health",
+   "year": 2009,
+   "month": 9,
+   "countries": [
+    "MWI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/19624477/"
+  },
+  {
+   "pmid": "20890550",
+   "doi": null,
+   "title": "[Point mutations in dihydrofolate reductase and dihydropteroate synthase genes of Plasmodium falciparum from three endemic malaria regions in Colombia].",
+   "journal": "Biomedica",
+   "year": 2010,
+   "month": null,
+   "countries": [
+    "COL"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20890550/"
+  },
+  {
+   "pmid": "20064223",
+   "doi": "10.1111/j.1365-3156.2005.01471.x",
+   "title": "Molecular markers of resistance to sulphadoxine-pyrimethamine one year after implementation of intermittent preventive treatment of malaria in infants in Mali.",
+   "journal": "Malar J",
+   "year": 2010,
+   "month": 1,
+   "countries": [
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20064223/"
+  },
+  {
+   "pmid": "20105282",
+   "doi": "10.1186/1475-2875-7-16",
+   "title": "Efficacy of amodiaquine, sulphadoxine-pyrimethamine and their combination for the treatment of uncomplicated Plasmodium falciparum malaria in children in Cameroon at the time of policy change to artemisinin-based combination therapy.",
+   "journal": "Malar J",
+   "year": 2010,
+   "month": 1,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20105282/"
+  },
+  {
+   "pmid": "20187935",
+   "doi": "10.1371/journal.pmed.0020330",
+   "title": "Nonlinear mixed effects modeling of gametocyte carriage in patients with uncomplicated malaria.",
+   "journal": "Malar J",
+   "year": 2010,
+   "month": 2,
+   "countries": [
+    "MOZ",
+    "ZAF"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20187935/"
+  },
+  {
+   "pmid": "20053688",
+   "doi": "10.1093/jac/dkp467",
+   "title": "High prevalence of sulfadoxine/pyrimethamine-resistant alleles of Plasmodium falciparum isolates in pregnant women at the time of introduction of intermittent preventive treatment with sulfadoxine/pyrimethamine in Gabon.",
+   "journal": "J Antimicrob Chemother",
+   "year": 2010,
+   "month": 3,
+   "countries": [
+    "GAB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20053688/"
+  },
+  {
+   "pmid": "20199676",
+   "doi": "10.1126/science.1074045",
+   "title": "Markers of anti-malarial drug resistance in Plasmodium falciparum isolates from Swaziland: identification of pfmdr1-86F in natural parasite isolates.",
+   "journal": "Malar J",
+   "year": 2010,
+   "month": 3,
+   "countries": [
+    "SWZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20199676/"
+  },
+  {
+   "pmid": "20360965",
+   "doi": "10.1371/journal.pmed.1000055",
+   "title": "Origin and evolution of sulfadoxine resistant Plasmodium falciparum.",
+   "journal": "PLoS Pathog",
+   "year": 2010,
+   "month": 3,
+   "countries": [
+    "CMR",
+    "KEN",
+    "KHM",
+    "VEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20360965/"
+  },
+  {
+   "pmid": "20439953",
+   "doi": "10.4269/ajtmh.2010.08-0408",
+   "title": "Plasmodium falciparum dihydrofolate reductase and dihyropteroate synthase mutations and the use of trimethoprim-sulfamethoxazole prophylaxis among persons infected with human immunodeficiency virus.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2010,
+   "month": 5,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20439953/"
+  },
+  {
+   "pmid": "20439956",
+   "doi": "10.4269/ajtmh.2010.09-0401",
+   "title": "Five years of large-scale dhfr and dhps mutation surveillance following the phased implementation of artesunate plus sulfadoxine-pyrimethamine in Maputo Province, Southern Mozambique.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2010,
+   "month": 5,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20439956/"
+  },
+  {
+   "pmid": "20534146",
+   "doi": "10.1371/journal.pgen.0020186",
+   "title": "Tracing the origins and signatures of selection of antifolate resistance in island populations of Plasmodium falciparum.",
+   "journal": "BMC Infect Dis",
+   "year": 2010,
+   "month": 6,
+   "countries": [
+    "STP"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20534146/"
+  },
+  {
+   "pmid": "20573194",
+   "doi": "10.1371/journal.pone.0004569",
+   "title": "Effect of trimethoprim-sulphamethoxazole on the risk of malaria in HIV-infected Ugandan children living in an area of widespread antifolate resistance.",
+   "journal": "Malar J",
+   "year": 2010,
+   "month": 6,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": true,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20573194/"
+  },
+  {
+   "pmid": "20602754",
+   "doi": "10.1371/journal.pone.0000139",
+   "title": "Drug coverage in treatment of malaria and the consequences for resistance evolution--evidence from the use of sulphadoxine/pyrimethamine.",
+   "journal": "Malar J",
+   "year": 2010,
+   "month": 7,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20602754/"
+  },
+  {
+   "pmid": "20515695",
+   "doi": "10.1016/j.ijpara.2010.05.004",
+   "title": "Sulfadoxine-pyrimethamine impairs Plasmodium falciparum gametocyte infectivity and Anopheles mosquito survival.",
+   "journal": "Int J Parasitol",
+   "year": 2010,
+   "month": 8,
+   "countries": [
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20515695/"
+  },
+  {
+   "pmid": "20799995",
+   "doi": "10.1111/j.1365-3156.2004.01249.x",
+   "title": "Anti-folate drug resistance in Africa: meta-analysis of reported dihydrofolate reductase (dhfr) and dihydropteroate synthase (dhps) mutant genotype frequencies in African Plasmodium falciparum parasite populations.",
+   "journal": "Malar J",
+   "year": 2010,
+   "month": 8,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20799995/"
+  },
+  {
+   "pmid": "20399698",
+   "doi": "10.1016/j.ijid.2009.11.035",
+   "title": "High prevalence of the 437G mutation associated with sulfadoxine resistance among Plasmodium falciparum clinical isolates from Iran, three years after the introduction of sulfadoxine-pyrimethamine.",
+   "journal": "Int J Infect Dis",
+   "year": 2010,
+   "month": 9,
+   "countries": [
+    "IRN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20399698/"
+  },
+  {
+   "pmid": "20728060",
+   "doi": "10.1016/j.pt.2010.05.001",
+   "title": "Following the path of most resistance: dhps K540E dispersal in African Plasmodium falciparum.",
+   "journal": "Trends Parasitol",
+   "year": 2010,
+   "month": 9,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20728060/"
+  },
+  {
+   "pmid": "20838642",
+   "doi": "10.1371/journal.pone.0012618",
+   "title": "Protective efficacy of intermittent preventive treatment of malaria in infants (IPTi) using sulfadoxine-pyrimethamine and parasite resistance.",
+   "journal": "PLoS One",
+   "year": 2010,
+   "month": 9,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20838642/"
+  },
+  {
+   "pmid": "21106088",
+   "doi": "10.1186/1475-2875-4-36",
+   "title": "Increased prevalence of the pfdhfr/phdhps quintuple mutant and rapid emergence of pfdhps resistance mutations at codons 581 and 613 in Kisumu, Kenya.",
+   "journal": "Malar J",
+   "year": 2010,
+   "month": 11,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21106088/"
+  },
+  {
+   "pmid": "22022487",
+   "doi": "10.1371/journal.pone.0025992",
+   "title": "Five years of antimalarial resistance marker surveillance in Gaza Province, Mozambique, following artemisinin-based combination therapy roll out.",
+   "journal": "PLoS One",
+   "year": 2011,
+   "month": null,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22022487/"
+  },
+  {
+   "pmid": "22096496",
+   "doi": "10.1371/journal.pone.0026746",
+   "title": "Effect of transmission reduction by insecticide-treated bednets (ITNs) on antimalarial drug resistance in western Kenya.",
+   "journal": "PLoS One",
+   "year": 2011,
+   "month": null,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22096496/"
+  },
+  {
+   "pmid": "21272384",
+   "doi": "10.1016/j.actatropica.2009.07.008",
+   "title": "Prevalence of resistance associated polymorphisms in Plasmodium falciparum field isolates from southern Pakistan.",
+   "journal": "Malar J",
+   "year": 2011,
+   "month": 1,
+   "countries": [
+    "PAK"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21272384/"
+  },
+  {
+   "pmid": "21078925",
+   "doi": "10.1128/AAC.00939-10",
+   "title": "Molecular assessment of Plasmodium falciparum resistance to antimalarial drugs in Papua New Guinea using an extended ligase detection reaction fluorescent microsphere assay.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2011,
+   "month": 2,
+   "countries": [
+    "PNG"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21078925/"
+  },
+  {
+   "pmid": "21288345",
+   "doi": "10.1093/jac/dkq090",
+   "title": "Evaluation of prevalence's of pfdhfr and pfdhps mutations in Angola.",
+   "journal": "Malar J",
+   "year": 2011,
+   "month": 2,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21288345/"
+  },
+  {
+   "pmid": "21343464",
+   "doi": "10.1128/AAC.01394-10",
+   "title": "Novel K540N mutation in Plasmodium falciparum dihydropteroate synthetase confers a lower level of sulfa drug resistance than does a K540E mutation.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2011,
+   "month": 5,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21343464/"
+  },
+  {
+   "pmid": "21569596",
+   "doi": "10.1093/aje/kwf030",
+   "title": "High prevalence of dhfr triple mutant and correlation with high rates of sulphadoxine-pyrimethamine treatment failures in vivo in Gabonese children.",
+   "journal": "Malar J",
+   "year": 2011,
+   "month": 5,
+   "countries": [
+    "GAB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21569596/"
+  },
+  {
+   "pmid": "21207062",
+   "doi": "10.1007/s00436-010-2236-9",
+   "title": "Prevalence of molecular markers of Plasmodium falciparum resistance to sulfadoxine-pyrimethamine during the intermittent preventive treatment in infants coupled with the expanded program immunization in Senegal.",
+   "journal": "Parasitol Res",
+   "year": 2011,
+   "month": 7,
+   "countries": [
+    "SEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21207062/"
+  },
+  {
+   "pmid": "21734119",
+   "doi": "10.4269/ajtmh.2011.10-0523",
+   "title": "Molecular epidemiology of malaria in Cameroon. XXX. sequence analysis of Plasmodium falciparum ATPase 6, dihydrofolate reductase, and dihydropteroate synthase resistance markers in clinical isolates from children treated with an artesunate-sulfadoxine-pyrimethamine combination.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2011,
+   "month": 7,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21734119/"
+  },
+  {
+   "pmid": "21767415",
+   "doi": "10.1093/jac/dkp467",
+   "title": "Molecular markers of resistance to sulphadoxine-pyrimethamine during intermittent preventive treatment of pregnant women in Benin.",
+   "journal": "Malar J",
+   "year": 2011,
+   "month": 7,
+   "countries": [
+    "BEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21767415/"
+  },
+  {
+   "pmid": "21810256",
+   "doi": "10.1179/136485905X75395",
+   "title": "Detection of high levels of mutations involved in anti-malarial drug resistance in Plasmodium falciparum and Plasmodium vivax at a rural hospital in southern Ethiopia.",
+   "journal": "Malar J",
+   "year": 2011,
+   "month": 8,
+   "countries": [
+    "ETH"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21810256/"
+  },
+  {
+   "pmid": "21854642",
+   "doi": "10.4269/ajtmh.2010.09-0514",
+   "title": "Molecular markers of anti-malarial drug resistance in Lahj Governorate, Yemen: baseline data and implications.",
+   "journal": "Malar J",
+   "year": 2011,
+   "month": 8,
+   "countries": [
+    "YEM"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21854642/"
+  },
+  {
+   "pmid": "21864379",
+   "doi": "10.1186/1475-2875-10-248",
+   "title": "Molecular markers of antifolate resistance in Plasmodium falciparum isolates from Luanda, Angola.",
+   "journal": "Malar J",
+   "year": 2011,
+   "month": 8,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21864379/"
+  },
+  {
+   "pmid": "21835078",
+   "doi": "10.1017/S0031182011000746",
+   "title": "Drug resistance maps to guide intermittent preventive treatment of malaria in African infants.",
+   "journal": "Parasitology",
+   "year": 2011,
+   "month": 10,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21835078/"
+  },
+  {
+   "pmid": "22904636",
+   "doi": "10.2147/IDR.S31409",
+   "title": "Molecular analysis of markers associated with chloroquine and sulfadoxine/pyrimethamine resistance in Plasmodium falciparum malaria parasites from southeastern Côte-d'Ivoire by the time of Artemisinin-based Combination Therapy adoption in 2005.",
+   "journal": "Infect Drug Resist",
+   "year": 2012,
+   "month": null,
+   "countries": [
+    "CIV"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22904636/"
+  },
+  {
+   "pmid": "21996622",
+   "doi": "10.1016/j.actatropica.2011.09.009",
+   "title": "Molecular markers of Plasmodium falciparum drug resistance in southern highland Rwanda.",
+   "journal": "Acta Trop",
+   "year": 2012,
+   "month": 1,
+   "countries": [
+    "RWA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21996622/"
+  },
+  {
+   "pmid": "22369089",
+   "doi": "10.1186/1475-2875-10-304",
+   "title": "Efficacy of artemether-lumefantrine in treatment of malaria among under-fives and prevalence of drug resistance markers in Igombe-Mwanza, north-western Tanzania.",
+   "journal": "Malar J",
+   "year": 2012,
+   "month": 2,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22369089/"
+  },
+  {
+   "pmid": "22119749",
+   "doi": "10.1016/j.meegid.2011.11.006",
+   "title": "Adaptive evolution and fixation of drug-resistant Plasmodium falciparum genotypes in pregnancy-associated malaria: 9-year results from the QuEERPAM study.",
+   "journal": "Infect Genet Evol",
+   "year": 2012,
+   "month": 3,
+   "countries": [
+    "MWI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22119749/"
+  },
+  {
+   "pmid": "22462737",
+   "doi": "10.1128/AAC.50.5.1893-1895.2006",
+   "title": "Molecular markers in plasmodium falciparum linked to resistance to anti-malarial drugs in samples imported from Africa over an eight-year period (2002-2010): impact of the introduction of artemisinin combination therapy.",
+   "journal": "Malar J",
+   "year": 2012,
+   "month": 3,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22462737/"
+  },
+  {
+   "pmid": "22314538",
+   "doi": "10.1128/AAC.05388-11",
+   "title": "Comparative efficacies of artemisinin combination therapies in Plasmodium falciparum malaria and polymorphism of pfATPase6, pfcrt, pfdhfr, and pfdhps genes in tea gardens of Jalpaiguri District, India.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2012,
+   "month": 5,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22314538/"
+  },
+  {
+   "pmid": "22694921",
+   "doi": "10.1016/j.pt.2007.09.008",
+   "title": "Prevalence of molecular markers of Plasmodium falciparum drug resistance in Dakar, Senegal.",
+   "journal": "Malar J",
+   "year": 2012,
+   "month": 6,
+   "countries": [
+    "SEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22694921/"
+  },
+  {
+   "pmid": "22540158",
+   "doi": "10.1128/AAC.00856-06",
+   "title": "Temporal trends of sulphadoxine-pyrimethamine (SP) drug-resistance molecular markers in Plasmodium falciparum parasites from pregnant women in western Kenya.",
+   "journal": "Malar J",
+   "year": 2012,
+   "month": 7,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22540158/"
+  },
+  {
+   "pmid": "22839209",
+   "doi": "10.1128/AAC.00032-10",
+   "title": "Molecular epidemiology of drug resistance markers of Plasmodium falciparum in Yunnan Province, China.",
+   "journal": "Malar J",
+   "year": 2012,
+   "month": 7,
+   "countries": [
+    "CHN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22839209/"
+  },
+  {
+   "pmid": "22889367",
+   "doi": "10.1128/AAC.00036-10",
+   "title": "Evaluation of dihydrofolate reductase and dihydropteroate synthetase genotypes that confer resistance to sulphadoxine-pyrimethamine in Plasmodium falciparum in Haiti.",
+   "journal": "Malar J",
+   "year": 2012,
+   "month": 8,
+   "countries": [
+    "HTI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22889367/"
+  },
+  {
+   "pmid": "22898135",
+   "doi": "10.1016/S0140-6736(12)60484-X",
+   "title": "Therapeutic efficacy of artesunate in the treatment of uncomplicated Plasmodium falciparum malaria and anti-malarial, drug-resistance marker polymorphisms in populations near the China-Myanmar border.",
+   "journal": "Malar J",
+   "year": 2012,
+   "month": 8,
+   "countries": [
+    "CHN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22898135/"
+  },
+  {
+   "pmid": "22909027",
+   "doi": "10.1111/j.1365-3156.2012.03071.x",
+   "title": "Novel quadruple mutations in dihydropteroate synthase genes of Plasmodium falciparum in West Bengal, India.",
+   "journal": "Trop Med Int Health",
+   "year": 2012,
+   "month": 11,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22909027/"
+  },
+  {
+   "pmid": "23969132",
+   "doi": "10.1186/1475-2875-11-141",
+   "title": "Plasmodium falciparum mutant haplotype infection during pregnancy associated with reduced birthweight, Tanzania.",
+   "journal": "Emerg Infect Dis",
+   "year": 2013,
+   "month": null,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23969132/"
+  },
+  {
+   "pmid": "23198734",
+   "doi": "10.1016/S1473-3099(12)70222-0",
+   "title": "Increased prevalence of dhfr and dhps mutants at delivery in Malawian pregnant women receiving intermittent preventive treatment for malaria.",
+   "journal": "Trop Med Int Health",
+   "year": 2013,
+   "month": 2,
+   "countries": [
+    "MWI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23198734/"
+  },
+  {
+   "pmid": "23403684",
+   "doi": "10.1001/jama.2012.216231",
+   "title": "Intermittent preventive therapy for malaria during pregnancy using 2 vs 3 or more doses of sulfadoxine-pyrimethamine and risk of low birth weight in Africa: systematic review and meta-analysis.",
+   "journal": "JAMA",
+   "year": 2013,
+   "month": 2,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23403684/"
+  },
+  {
+   "pmid": "23497229",
+   "doi": "10.1016/S0140-6736(00)02505-8",
+   "title": "Prevalence of antifolate resistance mutations in Plasmodium falciparum isolates in Afghanistan.",
+   "journal": "Malar J",
+   "year": 2013,
+   "month": 3,
+   "countries": [
+    "AFG"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23497229/"
+  },
+  {
+   "pmid": "23510258",
+   "doi": "10.1016/S0140-6736(06)68264-0",
+   "title": "Plasmodium falciparum susceptibility to anti-malarial drugs in Dakar, Senegal, in 2010: an ex vivo and drug resistance molecular markers study.",
+   "journal": "Malar J",
+   "year": 2013,
+   "month": 3,
+   "countries": [
+    "SEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23510258/"
+  },
+  {
+   "pmid": "23357175",
+   "doi": "10.1016/j.actatropica.2013.01.010",
+   "title": "Molecular monitoring of antimalarial drug resistance among Plasmodium falciparum field isolates from Odisha, India.",
+   "journal": "Acta Trop",
+   "year": 2013,
+   "month": 4,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23357175/"
+  },
+  {
+   "pmid": "23617576",
+   "doi": "10.1186/1475-2875-10-67",
+   "title": "Prevalence of molecular markers of drug resistance in an area of seasonal malaria chemoprevention in children in Senegal.",
+   "journal": "Malar J",
+   "year": 2013,
+   "month": 4,
+   "countries": [
+    "SEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23617576/"
+  },
+  {
+   "pmid": "23426929",
+   "doi": "10.1371/journal.pmed.0020092",
+   "title": "High prevalence of asymptomatic malaria in a tribal population in eastern India.",
+   "journal": "J Clin Microbiol",
+   "year": 2013,
+   "month": 5,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23426929/"
+  },
+  {
+   "pmid": "23428313",
+   "doi": "10.1016/j.ijantimicag.2013.01.005",
+   "title": "Malaria treatment failure with novel mutation in the Plasmodium falciparum dihydrofolate reductase (pfdhfr) gene in Kolkata, West Bengal, India.",
+   "journal": "Int J Antimicrob Agents",
+   "year": 2013,
+   "month": 5,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23428313/"
+  },
+  {
+   "pmid": "23634705",
+   "doi": "10.1093/infdis/jis742",
+   "title": "Prevalence of the molecular marker of Plasmodium falciparum resistance to chloroquine and sulphadoxine/pyrimethamine in Benin seven years after the change of malaria treatment policy.",
+   "journal": "Malar J",
+   "year": 2013,
+   "month": 5,
+   "countries": [
+    "BEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23634705/"
+  },
+  {
+   "pmid": "23758883",
+   "doi": "10.1001/jama.2012.216231",
+   "title": "High rates of parasite recrudescence following intermittent preventive treatment with sulphadoxine-pyrimethamine during pregnancy in Benin.",
+   "journal": "Malar J",
+   "year": 2013,
+   "month": 6,
+   "countries": [
+    "BEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23758883/"
+  },
+  {
+   "pmid": "23758930",
+   "doi": "10.1016/S0166-6851(01)00440-6",
+   "title": "High prevalence of mutation in the Plasmodium falciparum dhfr and dhps genes in field isolates from Sabah, Northern Borneo.",
+   "journal": "Malar J",
+   "year": 2013,
+   "month": 6,
+   "countries": [
+    "MYS"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23758930/"
+  },
+  {
+   "pmid": "23870667",
+   "doi": "10.1186/1475-2875-12-255",
+   "title": "Selection of pfdhfr/pfdhps alleles and declining artesunate/sulphadoxine-pyrimethamine efficacy against Plasmodium falciparum eight years after deployment in eastern Sudan.",
+   "journal": "Malar J",
+   "year": 2013,
+   "month": 7,
+   "countries": [
+    "SDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23870667/"
+  },
+  {
+   "pmid": "23714094",
+   "doi": "10.1016/j.meegid.2013.05.017",
+   "title": "Haplotypes associated with resistance to sulfadoxine-pyrimethamine in Plasmodium falciparum in two malaria endemic locations in Colombia.",
+   "journal": "Infect Genet Evol",
+   "year": 2013,
+   "month": 8,
+   "countries": [
+    "COL"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23714094/"
+  },
+  {
+   "pmid": "23893800",
+   "doi": "10.1007/s13149-013-0301-1",
+   "title": "[Prevalence of Plasmodium falciparum, anemia and molecular markers of chloroquine and sulfadoxine-pyriméthamine resistance in delivered women in Fana, Mali].",
+   "journal": "Bull Soc Pathol Exot",
+   "year": 2013,
+   "month": 8,
+   "countries": [
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23893800/"
+  },
+  {
+   "pmid": "23988011",
+   "doi": "10.1128/AAC.05388-11",
+   "title": "A comprehensive survey of polymorphisms conferring anti-malarial resistance in Plasmodium falciparum across Pakistan.",
+   "journal": "Malar J",
+   "year": 2013,
+   "month": 8,
+   "countries": [
+    "PAK"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23988011/"
+  },
+  {
+   "pmid": "24028889",
+   "doi": "10.1016/j.pt.2013.08.002",
+   "title": "Mapping 'partially resistant', 'fully resistant', and 'super resistant' malaria.",
+   "journal": "Trends Parasitol",
+   "year": 2013,
+   "month": 10,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/24028889/"
+  },
+  {
+   "pmid": "24225351",
+   "doi": "10.1186/1475-2875-6-41",
+   "title": "Low prevalence of the molecular markers of Plasmodium falciparum resistance to chloroquine and sulphadoxine/pyrimethamine in asymptomatic children in Northern Benin.",
+   "journal": "Malar J",
+   "year": 2013,
+   "month": 11,
+   "countries": [
+    "BEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/24225351/"
+  },
+  {
+   "pmid": "24055717",
+   "doi": "10.1016/j.actatropica.2013.09.010",
+   "title": "Prevalence of sulfadoxine-pyrimethamine resistance-associated mutations in dhfr and dhps genes of Plasmodium falciparum three years after SP withdrawal in Bahir Dar, Northwest Ethiopia.",
+   "journal": "Acta Trop",
+   "year": 2013,
+   "month": 12,
+   "countries": [
+    "ETH"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/24055717/"
+  },
+  {
+   "pmid": "24484467",
+   "doi": "10.1086/426400",
+   "title": "Parasite clearance following treatment with sulphadoxine-pyrimethamine for intermittent preventive treatment in Burkina-Faso and Mali: 42-day in vivo follow-up study.",
+   "journal": "Malar J",
+   "year": 2014,
+   "month": 1,
+   "countries": [
+    "BFA",
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/24484467/"
+  },
+  {
+   "pmid": "24751352",
+   "doi": "10.1186/1475-2875-10-116",
+   "title": "High levels of sulphadoxine-pyrimethamine resistance Pfdhfr-Pfdhps quintuple mutations: a cross sectional survey of six regions in Tanzania.",
+   "journal": "Malar J",
+   "year": 2014,
+   "month": 4,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/24751352/"
+  },
+  {
+   "pmid": "24909578",
+   "doi": "10.1093/cid/cir376",
+   "title": "Efficacy of sulphadoxine-pyrimethamine for intermittent preventive treatment of malaria in pregnancy, Mansa, Zambia.",
+   "journal": "Malar J",
+   "year": 2014,
+   "month": 6,
+   "countries": [
+    "ZMB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/24909578/"
+  },
+  {
+   "pmid": "24799371",
+   "doi": "10.4269/ajtmh.13-0647",
+   "title": "Temporal changes in prevalence of molecular markers mediating antimalarial drug resistance in a high malaria transmission setting in Uganda.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2014,
+   "month": 7,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/24799371/"
+  },
+  {
+   "pmid": "24989984",
+   "doi": "10.1186/1475-2875-12-13",
+   "title": "Trends in drug resistance codons in Plasmodium falciparum dihydrofolate reductase and dihydropteroate synthase genes in Kenyan parasites from 2008 to 2012.",
+   "journal": "Malar J",
+   "year": 2014,
+   "month": 7,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/24989984/"
+  },
+  {
+   "pmid": "25052385",
+   "doi": "10.1186/1475-2875-13-284",
+   "title": "Declining efficacy of artesunate plus sulphadoxine-pyrimethamine in northeastern India.",
+   "journal": "Malar J",
+   "year": 2014,
+   "month": 7,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25052385/"
+  },
+  {
+   "pmid": "25061906",
+   "doi": "10.1186/1475-2875-12-397",
+   "title": "Independent origin of plasmodium falciparum antifolate super-resistance, Uganda, Tanzania, and Ethiopia.",
+   "journal": "Emerg Infect Dis",
+   "year": 2014,
+   "month": 8,
+   "countries": [
+    "ETH",
+    "TZA",
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25061906/"
+  },
+  {
+   "pmid": "25239550",
+   "doi": "10.1186/1475-2875-12-118",
+   "title": "Analysis of polymorphisms in Plasmodium falciparum genes related to drug resistance: a survey over four decades under different treatment policies in Brazil.",
+   "journal": "Malar J",
+   "year": 2014,
+   "month": 9,
+   "countries": [
+    "BRA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25239550/"
+  },
+  {
+   "pmid": "25511211",
+   "doi": "10.4103/0022-3859.147019",
+   "title": "Genetic polymorphisms associated with sulphadoxine-pyrimethamine drug resistance among Plasmodium falciparum field isolates in malaria endemic areas of Assam.",
+   "journal": "J Postgrad Med",
+   "year": 2015,
+   "month": null,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25511211/"
+  },
+  {
+   "pmid": "26202938",
+   "doi": "10.1159/000430987",
+   "title": "Carriage of Mutant Dihydrofolate Reductase and Dihydropteroate Synthase Genes among Plasmodium falciparum Isolates Recovered from Pregnant Women with Asymptomatic Infection in Lagos, Nigeria.",
+   "journal": "Med Princ Pract",
+   "year": 2015,
+   "month": null,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26202938/"
+  },
+  {
+   "pmid": "26368675",
+   "doi": "10.1093/infdis/jiv078",
+   "title": "Prevalence of the dhfr and dhps Mutations among Pregnant Women in Rural Burkina Faso Five Years after the Introduction of Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine.",
+   "journal": "PLoS One",
+   "year": 2015,
+   "month": null,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26368675/"
+  },
+  {
+   "pmid": "26431464",
+   "doi": "10.1093/infdis/jis742",
+   "title": "Declining trend of Plasmodium falciparum dihydrofolate reductase (dhfr) and dihydropteroate synthase (dhps) mutant alleles after the withdrawal of Sulfadoxine-Pyrimethamine in North Western Ethiopia.",
+   "journal": "PLoS One",
+   "year": 2015,
+   "month": null,
+   "countries": [
+    "ETH"
+   ],
+   "readByGraph": true,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26431464/"
+  },
+  {
+   "pmid": "25889220",
+   "doi": "10.1098/rspb.1995.0105",
+   "title": "Assessment of molecular markers for anti-malarial drug resistance after the introduction and scale-up of malaria control interventions in western Kenya.",
+   "journal": "Malar J",
+   "year": 2015,
+   "month": 2,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25889220/"
+  },
+  {
+   "pmid": "25889865",
+   "doi": "10.1128/AAC.00875-06",
+   "title": "Molecular epidemiology of drug-resistant Plasmodium falciparum in Benguela province, Angola.",
+   "journal": "Malar J",
+   "year": 2015,
+   "month": 3,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25889865/"
+  },
+  {
+   "pmid": "25583123",
+   "doi": "10.1111/tmi.12458",
+   "title": "Treatment of uncomplicated malaria with artesunate plus sulfadoxine-pyrimethamine is failing in Somalia: evidence from therapeutic efficacy studies and Pfdhfr and Pfdhps mutant alleles.",
+   "journal": "Trop Med Int Health",
+   "year": 2015,
+   "month": 4,
+   "countries": [
+    "SOM"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25583123/"
+  },
+  {
+   "pmid": "25653131",
+   "doi": "10.1016/j.meegid.2015.01.020",
+   "title": "High prevalence of pfdhfr-pfdhps triple mutations associated with anti-malarial drugs resistance in Plasmodium falciparum isolates seven years after the adoption of sulfadoxine-pyrimethamine in combination with artesunate as first-line treatment in Iran.",
+   "journal": "Infect Genet Evol",
+   "year": 2015,
+   "month": 4,
+   "countries": [
+    "IRN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25653131/"
+  },
+  {
+   "pmid": "25943379",
+   "doi": "10.1001/jama.297.23.2603",
+   "title": "High prevalence of dhfr and dhps molecular markers in Plasmodium falciparum in pregnant women of Nchelenge district, Northern Zambia.",
+   "journal": "Malar J",
+   "year": 2015,
+   "month": 5,
+   "countries": [
+    "ZMB"
+   ],
+   "readByGraph": true,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25943379/"
+  },
+  {
+   "pmid": "25962439",
+   "doi": "10.1186/1475-2875-12-195",
+   "title": "In vivo efficacy of sulphadoxine-pyrimethamine for the treatment of asymptomatic parasitaemia in pregnant women in Machinga District, Malawi.",
+   "journal": "Malar J",
+   "year": 2015,
+   "month": 5,
+   "countries": [
+    "MWI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25962439/"
+  },
+  {
+   "pmid": "25564249",
+   "doi": "10.1093/infdis/jiu836",
+   "title": "The A581G Mutation in the Gene Encoding Plasmodium falciparum Dihydropteroate Synthetase Reduces the Effectiveness of Sulfadoxine-Pyrimethamine Preventive Therapy in Malawian Pregnant Women.",
+   "journal": "J Infect Dis",
+   "year": 2015,
+   "month": 6,
+   "countries": [
+    "MWI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25564249/"
+  },
+  {
+   "pmid": "26119542",
+   "doi": null,
+   "title": "Molecular determination of antifolate resistance associated point mutations in Plasmodium falciparum dihydrofolate reductase (dhfr) and dihydropteroate synthetase (dhps) genes among the field samples in Arunachal Pradesh.",
+   "journal": "J Vector Borne Dis",
+   "year": 2015,
+   "month": 6,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26119542/"
+  },
+  {
+   "pmid": "25934142",
+   "doi": "10.1016/j.meegid.2015.04.007",
+   "title": "High prevalence of sulphadoxine-pyrimethamine resistance-associated mutations in Plasmodium falciparum field isolates from pregnant women in Brazzaville, Republic of Congo.",
+   "journal": "Infect Genet Evol",
+   "year": 2015,
+   "month": 7,
+   "countries": [
+    "COG"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25934142/"
+  },
+  {
+   "pmid": "26275820",
+   "doi": "10.1111/j.1471-0528.2010.02880.x",
+   "title": "Antimalarial drugs for preventing malaria during pregnancy and the risk of low birth weight: a systematic review and meta-analysis of randomized and quasi-randomized trials.",
+   "journal": "BMC Med",
+   "year": 2015,
+   "month": 8,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26275820/"
+  },
+  {
+   "pmid": "25672905",
+   "doi": "10.1093/infdis/jiv078",
+   "title": "Persistence of Sulfadoxine-Pyrimethamine Resistance Despite Reduction of Drug Pressure in Malawi.",
+   "journal": "J Infect Dis",
+   "year": 2015,
+   "month": 9,
+   "countries": [
+    "MWI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25672905/"
+  },
+  {
+   "pmid": "26080363",
+   "doi": "10.1093/jac/dkv160",
+   "title": "Prevalence of Plasmodium falciparum parasites resistant to sulfadoxine/pyrimethamine in pregnant women in Yaoundé, Cameroon: emergence of highly resistant pfdhfr/pfdhps alleles.",
+   "journal": "J Antimicrob Chemother",
+   "year": 2015,
+   "month": 9,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26080363/"
+  },
+  {
+   "pmid": "26124154",
+   "doi": "10.1128/AAC.00498-09",
+   "title": "Prevalence of Plasmodium falciparum resistance markers to sulfadoxine-pyrimethamine among pregnant women receiving intermittent preventive treatment for malaria in Uganda.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2015,
+   "month": 9,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26124154/"
+  },
+  {
+   "pmid": "26381498",
+   "doi": "10.1186/1475-2875-12-445",
+   "title": "Polymorphism in drug resistance genes dihydrofolate reductase and dihydropteroate synthase in Plasmodium falciparum in some states of India.",
+   "journal": "Parasit Vectors",
+   "year": 2015,
+   "month": 9,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26381498/"
+  },
+  {
+   "pmid": "26410081",
+   "doi": "10.1371/journal.pone.0014425",
+   "title": "Lack of effect of intermittent preventive treatment for malaria in pregnancy and intense drug resistance in western Uganda.",
+   "journal": "Malar J",
+   "year": 2015,
+   "month": 9,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": true,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26410081/"
+  },
+  {
+   "pmid": "26415927",
+   "doi": "10.1186/1475-2875-11-77",
+   "title": "RDTs as a source of DNA to study Plasmodium falciparum drug resistance in isolates from Senegal and the Comoros Islands.",
+   "journal": "Malar J",
+   "year": 2015,
+   "month": 9,
+   "countries": [
+    "COM",
+    "SEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26415927/"
+  },
+  {
+   "pmid": "26437774",
+   "doi": "10.1093/infdis/jir664",
+   "title": "The effect of local variation in malaria transmission on the prevalence of sulfadoxine-pyrimethamine resistant haplotypes and selective sweep characteristics in Malawi.",
+   "journal": "Malar J",
+   "year": 2015,
+   "month": 10,
+   "countries": [
+    "MWI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26437774/"
+  },
+  {
+   "pmid": "26542942",
+   "doi": "10.1186/1475-2875-10-123",
+   "title": "High-level Plasmodium falciparum sulfadoxine-pyrimethamine resistance with the concomitant occurrence of septuple haplotype in Tanzania.",
+   "journal": "Malar J",
+   "year": 2015,
+   "month": 11,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26542942/"
+  },
+  {
+   "pmid": "26693691",
+   "doi": "10.1016/j.actatropica.2015.05.013",
+   "title": "Frequencies distribution of dihydrofolate reductase and dihydropteroate synthetase mutant alleles associated with sulfadoxine-pyrimethamine resistance in Plasmodium falciparum population from Hadhramout Governorate, Yemen.",
+   "journal": "Malar J",
+   "year": 2015,
+   "month": 12,
+   "countries": [
+    "YEM"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26693691/"
+  },
+  {
+   "pmid": "27190671",
+   "doi": "10.1186/1475-2875-10-245",
+   "title": "Increased Prevalence of Mutant Allele Pfdhps 437G and Pfdhfr Triple Mutation in Plasmodium falciparum Isolates from a Rural Area of Gabon, Three Years after the Change of Malaria Treatment Policy.",
+   "journal": "Malar Res Treat",
+   "year": 2016,
+   "month": null,
+   "countries": [
+    "GAB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27190671/"
+  },
+  {
+   "pmid": "27353588",
+   "doi": null,
+   "title": "Monitoring the efficacy of antimalarial medicines in India via sentinel sites: Outcomes and risk factors for treatment failure.",
+   "journal": "J Vector Borne Dis",
+   "year": 2016,
+   "month": null,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27353588/"
+  },
+  {
+   "pmid": "27662368",
+   "doi": "10.1186/1475-2875-12-147",
+   "title": "Seasonal Malaria Chemoprevention with Sulphadoxine-Pyrimethamine and Amodiaquine Selects Pfdhfr-dhps Quintuple Mutant Genotype in Mali.",
+   "journal": "PLoS One",
+   "year": 2016,
+   "month": null,
+   "countries": [
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27662368/"
+  },
+  {
+   "pmid": "27788228",
+   "doi": "10.1371/journal.pone.0023486",
+   "title": "Prevalence of Plasmodium falciparum Molecular Markers of Antimalarial Drug Resistance in a Residual Malaria Focus Area in Sabah, Malaysia.",
+   "journal": "PLoS One",
+   "year": 2016,
+   "month": null,
+   "countries": [
+    "MYS"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27788228/"
+  },
+  {
+   "pmid": "28004634",
+   "doi": "10.1051/parasite/2016069",
+   "title": "Polymorphisms in K13, pfcrt, pfmdr1, pfdhfr, and pfdhps in parasites isolated from symptomatic malaria patients in Burkina Faso.",
+   "journal": "Parasite",
+   "year": 2016,
+   "month": null,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28004634/"
+  },
+  {
+   "pmid": "26486699",
+   "doi": "10.1093/cid/civ881",
+   "title": "Impact of Sulfadoxine-Pyrimethamine Resistance on Effectiveness of Intermittent Preventive Therapy for Malaria in Pregnancy at Clearing Infections and Preventing Low Birth Weight.",
+   "journal": "Clin Infect Dis",
+   "year": 2016,
+   "month": 2,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26486699/"
+  },
+  {
+   "pmid": "26850038",
+   "doi": "10.1073/pnas.0501747102",
+   "title": "Mutations of pvdhfr and pvdhps genes in vivax endemic-malaria areas in Kota Marudu and Kalabakan, Sabah.",
+   "journal": "Malar J",
+   "year": 2016,
+   "month": 2,
+   "countries": [
+    "MYS"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26850038/"
+  },
+  {
+   "pmid": "27267365",
+   "doi": "10.1093/infdis/jiu836",
+   "title": "Low-grade sulfadoxine-pyrimethamine resistance in Plasmodium falciparum parasites from Lubango, Angola.",
+   "journal": "Malar J",
+   "year": 2016,
+   "month": 6,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27267365/"
+  },
+  {
+   "pmid": "27339129",
+   "doi": "10.1186/1475-2875-10-238",
+   "title": "Molecular monitoring of Plasmodium falciparum super-resistance to sulfadoxine-pyrimethamine in Tanzania.",
+   "journal": "Malar J",
+   "year": 2016,
+   "month": 6,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27339129/"
+  },
+  {
+   "pmid": "27387549",
+   "doi": "10.1056/NEJMoa1314981",
+   "title": "Prevalence of anti-malarial resistance genes in Dakar, Senegal from 2013 to 2014.",
+   "journal": "Malar J",
+   "year": 2016,
+   "month": 7,
+   "countries": [
+    "SEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27387549/"
+  },
+  {
+   "pmid": "27485211",
+   "doi": "10.1126/science.1098876",
+   "title": "Low prevalence of dihydro folate reductase (dhfr) and dihydropteroate synthase (dhps) quadruple and quintuple mutant alleles associated with SP resistance in Plasmodium vivax isolates of West Bengal, India.",
+   "journal": "Malar J",
+   "year": 2016,
+   "month": 8,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27485211/"
+  },
+  {
+   "pmid": "30152948",
+   "doi": null,
+   "title": "RETROSPECTIVE INVESTIGATION OF PYRIMETHAMINE-SULFADOXINE RESISTANCE INDICATORS IN FALCIPARUM-MALARIA POSITIVE BLOOD SAMPLES FROM SOUTH-WESTERN SAUDI ARABIA.",
+   "journal": "J Egypt Soc Parasitol",
+   "year": 2016,
+   "month": 8,
+   "countries": [
+    "SAU"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30152948/"
+  },
+  {
+   "pmid": "27343362",
+   "doi": "10.1016/j.actatropica.2016.06.016",
+   "title": "Molecular markers associated with resistance to commonly used antimalarial drugs among Plasmodium falciparum isolates from a malaria-endemic area in Taiz governorate-Yemen during the transmission season.",
+   "journal": "Acta Trop",
+   "year": 2016,
+   "month": 10,
+   "countries": [
+    "YEM"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27343362/"
+  },
+  {
+   "pmid": "27515812",
+   "doi": "10.1016/j.actatropica.2016.08.006",
+   "title": "Efficacy of artemisinin-based combination therapies for the treatment of falciparum malaria in Pakistan (2007-2015): In vivo response and dhfr and dhps mutations.",
+   "journal": "Acta Trop",
+   "year": 2016,
+   "month": 12,
+   "countries": [
+    "PAK"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27515812/"
+  },
+  {
+   "pmid": "27647575",
+   "doi": "10.1016/j.actatropica.2016.09.008",
+   "title": "Molecular surveillance of Plasmodium falciparum drug resistance markers reveals partial recovery of chloroquine susceptibility but sustained sulfadoxine-pyrimethamine resistance at two sites of different malaria transmission intensities in Rwanda.",
+   "journal": "Acta Trop",
+   "year": 2016,
+   "month": 12,
+   "countries": [
+    "RWA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27647575/"
+  },
+  {
+   "pmid": "27821281",
+   "doi": "10.1016/j.ijpddr.2016.08.004",
+   "title": "Molecular determinants of sulfadoxine-pyrimethamine resistance in Plasmodium falciparum in Nigeria and the regional emergence of dhps 431V.",
+   "journal": "Int J Parasitol Drugs Drug Resist",
+   "year": 2016,
+   "month": 12,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27821281/"
+  },
+  {
+   "pmid": "28086777",
+   "doi": "10.1186/1475-2875-12-441",
+   "title": "Profile of molecular mutations in pfdhfr, pfdhps, pfmdr1, and pfcrt genes of Plasmodium falciparum related to resistance to different anti-malarial drugs in the Bata District (Equatorial Guinea).",
+   "journal": "Malar J",
+   "year": 2017,
+   "month": 1,
+   "countries": [
+    "GNQ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28086777/"
+  },
+  {
+   "pmid": "28114990",
+   "doi": "10.1128/IAI.73.7.4190-4197.2005",
+   "title": "Recent uptake of intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine is associated with increased prevalence of Pfdhfr mutations in Bobo-Dioulasso, Burkina Faso.",
+   "journal": "Malar J",
+   "year": 2017,
+   "month": 1,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28114990/"
+  },
+  {
+   "pmid": "28245259",
+   "doi": "10.1371/journal.pone.0001934",
+   "title": "Estimated impact on birth weight of scaling up intermittent preventive treatment of malaria in pregnancy given sulphadoxine-pyrimethamine resistance in Africa: A mathematical model.",
+   "journal": "PLoS Med",
+   "year": 2017,
+   "month": 2,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28245259/"
+  },
+  {
+   "pmid": "28151566",
+   "doi": "10.1111/tmi.12847",
+   "title": "Efficacy of artesunate + sulphadoxine/pyrimethamine and artemether + lumefantrine and dhfr and dhps mutations in Somalia: evidence for updating the malaria treatment policy.",
+   "journal": "Trop Med Int Health",
+   "year": 2017,
+   "month": 4,
+   "countries": [
+    "SOM"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28151566/"
+  },
+  {
+   "pmid": "28237831",
+   "doi": "10.1016/j.ijantimicag.2016.12.007",
+   "title": "Different origin and dispersal of sulfadoxine-resistant Plasmodium falciparum haplotypes between Eastern Africa and Democratic Republic of Congo.",
+   "journal": "Int J Antimicrob Agents",
+   "year": 2017,
+   "month": 4,
+   "countries": [
+    "COD",
+    "TZA",
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28237831/"
+  },
+  {
+   "pmid": "28381273",
+   "doi": "10.1016/bs.apar.2015.04.002",
+   "title": "Characterization of Plasmodium falciparum genes associated with drug resistance in Hodh Elgharbi, a malaria hotspot near Malian-Mauritanian border.",
+   "journal": "Malar J",
+   "year": 2017,
+   "month": 4,
+   "countries": [
+    "MRT"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28381273/"
+  },
+  {
+   "pmid": "28420422",
+   "doi": "10.1186/s12936-016-1379-2",
+   "title": "High resolution melting: a useful field-deployable method to measure dhfr and dhps drug resistance in both highly and lowly endemic Plasmodium populations.",
+   "journal": "Malar J",
+   "year": 2017,
+   "month": 4,
+   "countries": [
+    "SEN",
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28420422/"
+  },
+  {
+   "pmid": "28454537",
+   "doi": "10.1111/tmi.12595",
+   "title": "Increase in the prevalence of mutations associated with sulfadoxine-pyrimethamine resistance in Plasmodium falciparum isolates collected from early to late pregnancy in Nanoro, Burkina Faso.",
+   "journal": "Malar J",
+   "year": 2017,
+   "month": 4,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28454537/"
+  },
+  {
+   "pmid": "28615016",
+   "doi": "10.1186/s12936-016-1379-2",
+   "title": "Ex vivo susceptibility and genotyping of Plasmodium falciparum isolates from Pikine, Senegal.",
+   "journal": "Malar J",
+   "year": 2017,
+   "month": 6,
+   "countries": [
+    "SEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28615016/"
+  },
+  {
+   "pmid": "28785011",
+   "doi": "10.1371/journal.pone.0164054",
+   "title": "Mapping sulphadoxine-pyrimethamine-resistant Plasmodium falciparum malaria in infected humans and in parasite populations in Africa.",
+   "journal": "Sci Rep",
+   "year": 2017,
+   "month": 8,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28785011/"
+  },
+  {
+   "pmid": "28797263",
+   "doi": "10.1007/s00436-010-2236-9",
+   "title": "Measuring the impact of seasonal malaria chemoprevention as part of routine malaria control in Kita, Mali.",
+   "journal": "Malar J",
+   "year": 2017,
+   "month": 8,
+   "countries": [
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28797263/"
+  },
+  {
+   "pmid": "28533179",
+   "doi": "10.1016/j.meegid.2017.05.013",
+   "title": "Polymorphisms in pfdhfr and pfdhps genes after five years of artemisinin combination therapy (ACT) implementation from urban Kolkata, India.",
+   "journal": "Infect Genet Evol",
+   "year": 2017,
+   "month": 9,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28533179/"
+  },
+  {
+   "pmid": "28818675",
+   "doi": "10.1016/j.molbiopara.2017.08.003",
+   "title": "Presence of quintuple dhfr N51, C59, S108 - dhps A437, K540 mutations in Plasmodium falciparum isolates from pregnant women and the general population in Nanoro, Burkina Faso.",
+   "journal": "Mol Biochem Parasitol",
+   "year": 2017,
+   "month": 10,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28818675/"
+  },
+  {
+   "pmid": "32382694",
+   "doi": "10.1186/s12936-017-1957-y",
+   "title": "Prevalence of chloroquine and antifolate drug resistance alleles in Plasmodium falciparum clinical isolates from three areas in Ghana.",
+   "journal": "AAS Open Res",
+   "year": 2018,
+   "month": null,
+   "countries": [
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32382694/"
+  },
+  {
+   "pmid": "29260689",
+   "doi": "10.3201/eid2103.140898",
+   "title": "Drug-Resistant Polymorphisms and Copy Numbers in Plasmodium falciparum, Mozambique, 2015.",
+   "journal": "Emerg Infect Dis",
+   "year": 2018,
+   "month": 1,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/29260689/"
+  },
+  {
+   "pmid": "29316929",
+   "doi": "10.3201/eid2007.131720",
+   "title": "Molecular identification of sulfadoxine-pyrimethamine resistance in malaria infected women who received intermittent preventive treatment in the Democratic Republic of Congo.",
+   "journal": "Malar J",
+   "year": 2018,
+   "month": 1,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/29316929/"
+  },
+  {
+   "pmid": "29486766",
+   "doi": "10.1186/s12936-016-1387-2",
+   "title": "Molecular markers of resistance to amodiaquine plus sulfadoxine-pyrimethamine in an area with seasonal malaria chemoprevention in south central Niger.",
+   "journal": "Malar J",
+   "year": 2018,
+   "month": 2,
+   "countries": [
+    "NER"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/29486766/"
+  },
+  {
+   "pmid": "29332155",
+   "doi": "10.1007/s00436-018-5754-5",
+   "title": "Prevalence of the Pfdhfr and Pfdhps mutations among asymptomatic pregnant women in Southeast Nigeria.",
+   "journal": "Parasitol Res",
+   "year": 2018,
+   "month": 3,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/29332155/"
+  },
+  {
+   "pmid": "29363453",
+   "doi": "10.4269/ajtmh.17-0763",
+   "title": "Impacts of Antimalarial Drugs on Plasmodium falciparum Drug Resistance Markers, Western Kenya, 2003-2015.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2018,
+   "month": 3,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/29363453/"
+  },
+  {
+   "pmid": "29395997",
+   "doi": "10.1016/S1473-3099(18)30064-1",
+   "title": "Prevention of malaria in pregnancy.",
+   "journal": "Lancet Infect Dis",
+   "year": 2018,
+   "month": 4,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/29395997/"
+  },
+  {
+   "pmid": "29582732",
+   "doi": "10.4269/ajtmh.18-0009",
+   "title": "Molecular Markers of Plasmodium falciparum Drug Resistance in Parasitemic Pregnant Women in the Middle Forest Belt of Ghana.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2018,
+   "month": 6,
+   "countries": [
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/29582732/"
+  },
+  {
+   "pmid": "30103683",
+   "doi": "10.1128/AAC.01636-09",
+   "title": "A barcode of multilocus nuclear DNA identifies genetic relatedness in pre- and post-Artemether/Lumefantrine treated Plasmodium falciparum in Nigeria.",
+   "journal": "BMC Infect Dis",
+   "year": 2018,
+   "month": 8,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30103683/"
+  },
+  {
+   "pmid": "29932931",
+   "doi": "10.1016/j.actatropica.2018.06.016",
+   "title": "Efficacy of artemisinin-based combination therapies and prevalence of molecular markers associated with artemisinin, piperaquine and sulfadoxine-pyrimethamine resistance in Sierra Leone.",
+   "journal": "Acta Trop",
+   "year": 2018,
+   "month": 9,
+   "countries": [
+    "SLE"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/29932931/"
+  },
+  {
+   "pmid": "30053021",
+   "doi": "10.1093/jac/dky258",
+   "title": "Prevalence of Plasmodium falciparum parasites resistant to sulfadoxine/pyrimethamine in the Democratic Republic of the Congo: emergence of highly resistant pfdhfr/pfdhps alleles.",
+   "journal": "J Antimicrob Chemother",
+   "year": 2018,
+   "month": 10,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30053021/"
+  },
+  {
+   "pmid": "30398146",
+   "doi": "10.4269/ajtmh.18-0549",
+   "title": "Molecular Evidence for Plasmodium falciparum Resistance to Sulfadoxine-Pyrimethamine but Absence of K13 Mutations in Mangaluru, Southwestern India.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2018,
+   "month": 12,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30398146/"
+  },
+  {
+   "pmid": "30558587",
+   "doi": "10.1186/s12936-017-1700-8",
+   "title": "Prevalence of molecular markers of sulfadoxine-pyrimethamine and artemisinin resistance in Plasmodium falciparum from Pakistan.",
+   "journal": "Malar J",
+   "year": 2018,
+   "month": 12,
+   "countries": [
+    "PAK"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30558587/"
+  },
+  {
+   "pmid": "30558597",
+   "doi": "10.1186/s12936-015-0903-0",
+   "title": "Origins and spread of novel genetic variants of sulfadoxine-pyrimethamine resistance in Plasmodium falciparum isolates in Indonesia.",
+   "journal": "Malar J",
+   "year": 2018,
+   "month": 12,
+   "countries": [
+    "IDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30558597/"
+  },
+  {
+   "pmid": "31210925",
+   "doi": "10.4269/ajtmh.12-0780",
+   "title": "Increased Frequency of Pfdhps A581G Mutation in Plasmodium falciparum Isolates from Gabonese HIV-Infected Individuals.",
+   "journal": "Malar Res Treat",
+   "year": 2019,
+   "month": null,
+   "countries": [
+    "GAB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31210925/"
+  },
+  {
+   "pmid": "30726345",
+   "doi": "10.1590/0074-02760180425",
+   "title": "Lack of quadruple and quintuple mutant alleles associated with sulfadoxine-pyrimethamine resistance in Plasmodium vivax isolates from Brazilian endemic areas.",
+   "journal": "Mem Inst Oswaldo Cruz",
+   "year": 2019,
+   "month": 2,
+   "countries": [
+    "BRA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30726345/"
+  },
+  {
+   "pmid": "30865632",
+   "doi": "10.1128/AAC.50.5.1893-1895.2006",
+   "title": "Seasonal malaria chemoprevention combined with community case management of malaria in children under 10 years of age, over 5 months, in south-east Senegal: A cluster-randomised trial.",
+   "journal": "PLoS Med",
+   "year": 2019,
+   "month": 3,
+   "countries": [
+    "SEN"
+   ],
+   "readByGraph": true,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30865632/"
+  },
+  {
+   "pmid": "30897090",
+   "doi": "10.1371/journal.pone.0004364",
+   "title": "The prevalence and antifolate drug resistance profiles of Plasmodium falciparum in study participants randomized to discontinue or continue cotrimoxazole prophylaxis.",
+   "journal": "PLoS Negl Trop Dis",
+   "year": 2019,
+   "month": 3,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30897090/"
+  },
+  {
+   "pmid": "30914041",
+   "doi": "10.1093/infdis/jiq038",
+   "title": "High prevalence of Pfdhfr-Pfdhps quadruple mutations associated with sulfadoxine-pyrimethamine resistance in Plasmodium falciparum isolates from Bioko Island, Equatorial Guinea.",
+   "journal": "Malar J",
+   "year": 2019,
+   "month": 3,
+   "countries": [
+    "GNQ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30914041/"
+  },
+  {
+   "pmid": "31296112",
+   "doi": "10.1080/20477724.2019.1639018",
+   "title": "Molecular surveillance of putative drug resistance markers of antifolate and artemisinin among imported Plasmodium falciparum in Qatar.",
+   "journal": "Pathog Glob Health",
+   "year": 2019,
+   "month": 6,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31296112/"
+  },
+  {
+   "pmid": "31438951",
+   "doi": "10.4269/ajtmh.17-0021",
+   "title": "Absence of kelch13 artemisinin resistance markers but strong selection for lumefantrine-tolerance molecular markers following 18 years of artemisinin-based combination therapy use in Mpumalanga Province, South Africa (2001-2018).",
+   "journal": "Malar J",
+   "year": 2019,
+   "month": 8,
+   "countries": [
+    "ZAF"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31438951/"
+  },
+  {
+   "pmid": "31505774",
+   "doi": "10.1186/s12936-018-2396-0",
+   "title": "Genetic Variations Associated with Drug Resistance Markers in Asymptomatic Plasmodium falciparum Infections in Myanmar.",
+   "journal": "Genes (Basel)",
+   "year": 2019,
+   "month": 9,
+   "countries": [
+    "MMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31505774/"
+  },
+  {
+   "pmid": "31591113",
+   "doi": "10.1016/0035-9203(79)90220-7",
+   "title": "No evidence of P. falciparum K13 artemisinin conferring mutations over a 24-year analysis in Coastal Kenya, but a near complete reversion to chloroquine wild type parasites.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2019,
+   "month": 9,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31591113/"
+  },
+  {
+   "pmid": "31358591",
+   "doi": "10.1017/S0031182018001609",
+   "title": "Molecular Surveillance of Drug Resistance of Plasmodium falciparum Isolates Imported from Angola in Henan Province, China.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2019,
+   "month": 10,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31358591/"
+  },
+  {
+   "pmid": "31623623",
+   "doi": "10.1073/pnas.0702715104",
+   "title": "Mosquitoes as a feasible sentinel group for anti-malarial resistance surveillance by Next Generation Sequencing of Plasmodium falciparum.",
+   "journal": "Malar J",
+   "year": 2019,
+   "month": 10,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31623623/"
+  },
+  {
+   "pmid": "31640574",
+   "doi": "10.1086/655659",
+   "title": "The changing landscape of Plasmodium falciparum drug resistance in the Democratic Republic of Congo.",
+   "journal": "BMC Infect Dis",
+   "year": 2019,
+   "month": 10,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31640574/"
+  },
+  {
+   "pmid": "31852480",
+   "doi": "10.1016/S0140-6736(09)60997-1",
+   "title": "Markers of sulfadoxine-pyrimethamine resistance in Eastern Democratic Republic of Congo; implications for malaria chemoprevention.",
+   "journal": "Malar J",
+   "year": 2019,
+   "month": 12,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31852480/"
+  },
+  {
+   "pmid": "32431521",
+   "doi": "10.1016/j.pt.2013.08.002",
+   "title": "Trends in Molecular Markers Associated with Resistance to Sulfadoxine-Pyrimethamine (SP) Among Plasmodium falciparum Isolates on Bioko Island, Equatorial Guinea: 2011-2017.",
+   "journal": "Infect Drug Resist",
+   "year": 2020,
+   "month": null,
+   "countries": [
+    "GNQ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32431521/"
+  },
+  {
+   "pmid": "32817665",
+   "doi": "10.1038/nbt.2925",
+   "title": "Antimalarial drug resistance molecular makers of Plasmodium falciparum isolates from Sudan during 2015-2017.",
+   "journal": "PLoS One",
+   "year": 2020,
+   "month": null,
+   "countries": [
+    "SDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32817665/"
+  },
+  {
+   "pmid": "33324580",
+   "doi": "10.1002/jcc.21816",
+   "title": "Plasmodium falciparum DHFR and DHPS Mutations Are Associated With HIV-1 Co-Infection and a Novel DHPS Mutation I504T Is Identified in Western Kenya.",
+   "journal": "Front Cell Infect Microbiol",
+   "year": 2020,
+   "month": null,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33324580/"
+  },
+  {
+   "pmid": "31677349",
+   "doi": "10.1093/infdis/jiz451",
+   "title": "Counter-Selection of Antimalarial Resistance Polymorphisms by Intermittent Preventive Treatment in Pregnancy.",
+   "journal": "J Infect Dis",
+   "year": 2020,
+   "month": 1,
+   "countries": [
+    "BEN",
+    "GAB",
+    "KEN",
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31677349/"
+  },
+  {
+   "pmid": "32070355",
+   "doi": "10.4269/ajtmh.15-0477",
+   "title": "Assessment of Plasmodium falciparum drug resistance molecular markers from the Blue Nile State, Southeast Sudan.",
+   "journal": "Malar J",
+   "year": 2020,
+   "month": 2,
+   "countries": [
+    "SDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32070355/"
+  },
+  {
+   "pmid": "32127009",
+   "doi": "10.3201/eid1703.100870",
+   "title": "Molecular characterization of Plasmodium falciparum antifolate resistance markers in Thailand between 2008 and 2016.",
+   "journal": "Malar J",
+   "year": 2020,
+   "month": 3,
+   "countries": [
+    "THA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32127009/"
+  },
+  {
+   "pmid": "31809965",
+   "doi": "10.1016/j.ijpddr.2019.11.002",
+   "title": "Widespread resistance mutations to sulfadoxine-pyrimethamine in malaria parasites imported to China from Central and Western Africa.",
+   "journal": "Int J Parasitol Drugs Drug Resist",
+   "year": 2020,
+   "month": 4,
+   "countries": [
+    "CMR",
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31809965/"
+  },
+  {
+   "pmid": "32310062",
+   "doi": "10.1186/1475-2875-9-247",
+   "title": "Nationwide Monitoring for Plasmodium falciparum Drug-Resistance Alleles to Chloroquine, Sulfadoxine, and Pyrimethamine, Haiti, 2016-2017.",
+   "journal": "Emerg Infect Dis",
+   "year": 2020,
+   "month": 5,
+   "countries": [
+    "HTI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32310062/"
+  },
+  {
+   "pmid": "32448228",
+   "doi": "10.4269/ajtmh.17-0763",
+   "title": "Prevalence of pfdhfr and pfdhps mutations in Plasmodium falciparum associated with drug resistance among pregnant women receiving IPTp-SP at Msambweni County Referral Hospital, Kwale County, Kenya.",
+   "journal": "Malar J",
+   "year": 2020,
+   "month": 5,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32448228/"
+  },
+  {
+   "pmid": "32653033",
+   "doi": "10.1097/QCO.0b013e3282f1673a",
+   "title": "High multiple mutations of Plasmodium falciparum-resistant genotypes to sulphadoxine-pyrimethamine in Lagos, Nigeria.",
+   "journal": "Infect Dis Poverty",
+   "year": 2020,
+   "month": 7,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32653033/"
+  },
+  {
+   "pmid": "32698764",
+   "doi": "10.1186/s12879-020-05253-7",
+   "title": "Occurrence of septuple and elevated Pfdhfr-Pfdhps quintuple mutations in a general population threatens the use of sulfadoxine-pyrimethamine for malaria prevention during pregnancy in eastern-coast of Tanzania.",
+   "journal": "BMC Infect Dis",
+   "year": 2020,
+   "month": 7,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32698764/"
+  },
+  {
+   "pmid": "32698879",
+   "doi": "10.1093/infdis/jiu358",
+   "title": "Characterization of putative drug resistant biomarkers in Plasmodium falciparum isolated from Ghanaian blood donors.",
+   "journal": "BMC Infect Dis",
+   "year": 2020,
+   "month": 7,
+   "countries": [
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32698879/"
+  },
+  {
+   "pmid": "32588794",
+   "doi": "10.4269/ajtmh.20-0235",
+   "title": "Molecular Surveillance and in vitro Drug Sensitivity Study of Plasmodium falciparum Isolates from the China-Myanmar Border.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2020,
+   "month": 9,
+   "countries": [
+    "CHN",
+    "MMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32588794/"
+  },
+  {
+   "pmid": "32805431",
+   "doi": "10.1016/j.meegid.2020.104503",
+   "title": "Analysis of sulphadoxine-pyrimethamine resistance-associated mutations in Plasmodium falciparum isolates obtained from asymptomatic pregnant women in Ogun State, Southwest Nigeria.",
+   "journal": "Infect Genet Evol",
+   "year": 2020,
+   "month": 11,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32805431/"
+  },
+  {
+   "pmid": "33160417",
+   "doi": "10.1073/pnas.0901415106",
+   "title": "A snapshot of Plasmodium falciparum malaria drug resistance markers in Sudan: a pilot study.",
+   "journal": "BMC Res Notes",
+   "year": 2020,
+   "month": 11,
+   "countries": [
+    "SDN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33160417/"
+  },
+  {
+   "pmid": "33267841",
+   "doi": "10.1186/1475-2875-12-413",
+   "title": "Increased prevalence of pfdhfr and pfdhps mutations associated with sulfadoxine-pyrimethamine resistance in Plasmodium falciparum isolates from Jazan Region, Southwestern Saudi Arabia: important implications for malaria treatment policy.",
+   "journal": "Malar J",
+   "year": 2020,
+   "month": 12,
+   "countries": [
+    "SAU"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33267841/"
+  },
+  {
+   "pmid": "33278936",
+   "doi": "10.1016/S0140-6736(20)32227-3",
+   "title": "Effectiveness of seasonal malaria chemoprevention at scale in west and central Africa: an observational study.",
+   "journal": "Lancet",
+   "year": 2020,
+   "month": 12,
+   "countries": [
+    "BFA",
+    "GIN",
+    "GMB",
+    "MLI",
+    "NER",
+    "NGA",
+    "TCD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33278936/"
+  },
+  {
+   "pmid": "34344849",
+   "doi": null,
+   "title": "Analysis of drug resistance marker genes of Plasmodium falciparum after implementation of artemisinin-based combination therapy in Pune district, India.",
+   "journal": "J Biosci",
+   "year": 2021,
+   "month": null,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/34344849/"
+  },
+  {
+   "pmid": "34411157",
+   "doi": "10.1038/s41598-017-06708-9",
+   "title": "Antimalarial drug resistance in the Central and Adamawa regions of Cameroon: Prevalence of mutations in P. falciparum crt, Pfmdr1, Pfdhfr and Pfdhps genes.",
+   "journal": "PLoS One",
+   "year": 2021,
+   "month": null,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/34411157/"
+  },
+  {
+   "pmid": "34568082",
+   "doi": "10.1016/j.ijpddr.2019.11.002",
+   "title": "High Frequency Mutations in pfdhfr and pfdhps of Plasmodium falciparum in Response to Sulfadoxine-Pyrimethamine: A Cross-Sectional Survey in Returning Chinese Migrants From Africa.",
+   "journal": "Front Cell Infect Microbiol",
+   "year": 2021,
+   "month": null,
+   "countries": [
+    "CHN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/34568082/"
+  },
+  {
+   "pmid": "38840941",
+   "doi": "10.4269/ajtmh.14-0602",
+   "title": "Screening for antifolate and artemisinin resistance in Plasmodium falciparum dried-blood spots from three hospitals of Eritrea.",
+   "journal": "F1000Res",
+   "year": 2021,
+   "month": null,
+   "countries": [
+    "ERI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38840941/"
+  },
+  {
+   "pmid": "33404643",
+   "doi": "10.1093/tropej/fmaa120",
+   "title": "High Prevalence of Molecular Markers of Plasmodium falciparum Resistance to Sulphadoxine-Pyrimethamine in Parts of Ghana: A Threat to ITPTp-SP?",
+   "journal": "J Trop Pediatr",
+   "year": 2021,
+   "month": 1,
+   "countries": [
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33404643/"
+  },
+  {
+   "pmid": "33422080",
+   "doi": "10.1186/s12936-020-03543-8",
+   "title": "Drug resistance markers within an evolving efficacy of anti-malarial drugs in Cameroon: a systematic review and meta-analysis (1998-2020).",
+   "journal": "Malar J",
+   "year": 2021,
+   "month": 1,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33422080/"
+  },
+  {
+   "pmid": "33436791",
+   "doi": "10.1128/AAC.05737-11",
+   "title": "Polymorphisms in Plasmodium falciparum dihydropteroate synthetase and dihydrofolate reductase genes in Nigerian children with uncomplicated malaria using high-resolution melting technique.",
+   "journal": "Sci Rep",
+   "year": 2021,
+   "month": 1,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33436791/"
+  },
+  {
+   "pmid": "33482823",
+   "doi": "10.1016/j.pt.2014.02.004",
+   "title": "Sulfadoxine-pyrimethamine parasitological efficacy against Plasmodium falciparum among pregnant women and molecular markers of resistance in Zambia: an observational cohort study.",
+   "journal": "Malar J",
+   "year": 2021,
+   "month": 1,
+   "countries": [
+    "ZMB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33482823/"
+  },
+  {
+   "pmid": "33546703",
+   "doi": "10.3201/eid2313.170366",
+   "title": "Low prevalence of highly sulfadoxine-resistant dihydropteroate synthase alleles in Plasmodium falciparum isolates in Benin.",
+   "journal": "Malar J",
+   "year": 2021,
+   "month": 2,
+   "countries": [
+    "BEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33546703/"
+  },
+  {
+   "pmid": "33549098",
+   "doi": "10.1016/S0140-6736(09)61258-7",
+   "title": "Evaluation of health system readiness and coverage of intermittent preventive treatment of malaria in infants (IPTi) in Kambia district to inform national scale-up in Sierra Leone.",
+   "journal": "Malar J",
+   "year": 2021,
+   "month": 2,
+   "countries": [
+    "SLE"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33549098/"
+  },
+  {
+   "pmid": "33731134",
+   "doi": "10.1186/s12936-019-2848-1",
+   "title": "Temporal evolution of sulfadoxine-pyrimethamine resistance genotypes and genetic diversity in response to a decade of increased interventions against Plasmodium falciparum in northern Ghana.",
+   "journal": "Malar J",
+   "year": 2021,
+   "month": 3,
+   "countries": [
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33731134/"
+  },
+  {
+   "pmid": "33827587",
+   "doi": "10.1186/s12936-016-1358-7",
+   "title": "Historical trends and new surveillance of Plasmodium falciparum drug resistance markers in Angola.",
+   "journal": "Malar J",
+   "year": 2021,
+   "month": 4,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33827587/"
+  },
+  {
+   "pmid": "33823558",
+   "doi": "10.1093/trstmh/trab061",
+   "title": "Antimalarial drug resistance markers in human immunodeficiency virus (HIV)-positive and HIV-negative adults with asymptomatic malaria infections in Port Harcourt, Nigeria.",
+   "journal": "Trans R Soc Trop Med Hyg",
+   "year": 2021,
+   "month": 5,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33823558/"
+  },
+  {
+   "pmid": "33976269",
+   "doi": "10.1128/AAC.02762-14",
+   "title": "Artemisinin combination therapy fails even in the absence of Plasmodium falciparum kelch13 gene polymorphism in Central India.",
+   "journal": "Sci Rep",
+   "year": 2021,
+   "month": 5,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33976269/"
+  },
+  {
+   "pmid": "33774217",
+   "doi": "10.1016/j.jgar.2021.03.003",
+   "title": "High prevalence of genotypes associated with sulfadoxine/pyrimethamine resistance in the rural area of Fougamou, Gabon.",
+   "journal": "J Glob Antimicrob Resist",
+   "year": 2021,
+   "month": 6,
+   "countries": [
+    "GAB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33774217/"
+  },
+  {
+   "pmid": "33775670",
+   "doi": "10.1016/j.ijpara.2020.12.011",
+   "title": "Geographical spread and structural basis of sulfadoxine-pyrimethamine drug-resistant malaria parasites.",
+   "journal": "Int J Parasitol",
+   "year": 2021,
+   "month": 6,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33775670/"
+  },
+  {
+   "pmid": "34284138",
+   "doi": "10.1016/j.meegid.2021.105009",
+   "title": "Evaluation of the usefulness of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine in a context with increased resistance of Plasmodium falciparum in Kingasani Hospital, Kinshasa in the Democratic Republic of Congo.",
+   "journal": "Infect Genet Evol",
+   "year": 2021,
+   "month": 10,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": true,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/34284138/"
+  },
+  {
+   "pmid": "34707204",
+   "doi": "10.1073/pnas.1520426112",
+   "title": "Population genomics and evidence of clonal replacement of Plasmodium falciparum in the Peruvian Amazon.",
+   "journal": "Sci Rep",
+   "year": 2021,
+   "month": 10,
+   "countries": [
+    "PER"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/34707204/"
+  },
+  {
+   "pmid": "34746720",
+   "doi": "10.1016/j.eclinm.2021.101160",
+   "title": "Intermittent screening and treatment with artemisinin-combination therapy versus intermittent preventive treatment with sulphadoxine-pyrimethamine for malaria in pregnancy: a systematic review and individual participant data meta-analysis of randomised clinical trials.",
+   "journal": "EClinicalMedicine",
+   "year": 2021,
+   "month": 11,
+   "countries": [
+    "KEN",
+    "MWI"
+   ],
+   "readByGraph": true,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/34746720/"
+  },
+  {
+   "pmid": "34906159",
+   "doi": "10.1186/s12936-021-04000-w",
+   "title": "Temporal evolution of the resistance genotypes of Plasmodium falciparum in isolates from Equatorial Guinea during 20 years (1999 to 2019).",
+   "journal": "Malar J",
+   "year": 2021,
+   "month": 12,
+   "countries": [
+    "GNQ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/34906159/"
+  },
+  {
+   "pmid": "35939419",
+   "doi": "10.1093/jac/dkv160",
+   "title": "The prevalence of molecular markers of resistance to sulfadoxine-pyrimethamine among pregnant women at first antenatal clinic attendance and delivery in the forest-savannah area of Ghana.",
+   "journal": "PLoS One",
+   "year": 2022,
+   "month": null,
+   "countries": [
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/35939419/"
+  },
+  {
+   "pmid": "36583107",
+   "doi": "10.1016/j.ijpddr.2019.11.002",
+   "title": "Genomic characterization of Plasmodium falciparum genes associated with anti-folate drug resistance and treatment outcomes in eastern India: A molecular surveillance study from 2008 to 2017.",
+   "journal": "Front Cell Infect Microbiol",
+   "year": 2022,
+   "month": null,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36583107/"
+  },
+  {
+   "pmid": "36590995",
+   "doi": "10.11604/pamj.2022.43.80.34334",
+   "title": "Distinct pattern and prevalence of Plasmodium falciparum dihydropteroate synthase gene mutations in children with sickle cell anaemia and haemoglobin AA in Benin City, Nigeria: the impact of HbAA.",
+   "journal": "Pan Afr Med J",
+   "year": 2022,
+   "month": null,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36590995/"
+  },
+  {
+   "pmid": "35135546",
+   "doi": "10.1186/s12936-018-2242-4",
+   "title": "Effect of three years' seasonal malaria chemoprevention on molecular markers of resistance of Plasmodium falciparum to sulfadoxine-pyrimethamine and amodiaquine in Ouelessebougou, Mali.",
+   "journal": "Malar J",
+   "year": 2022,
+   "month": 2,
+   "countries": [
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/35135546/"
+  },
+  {
+   "pmid": "35346205",
+   "doi": "10.1093/cid/cix026",
+   "title": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine and parasite resistance: cross-sectional surveys from antenatal care visit and delivery in rural Ghana.",
+   "journal": "Malar J",
+   "year": 2022,
+   "month": 3,
+   "countries": [
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/35346205/"
+  },
+  {
+   "pmid": "35266823",
+   "doi": "10.1093/nar/gkq313",
+   "title": "Targeted Amplicon Deep Sequencing for Monitoring Antimalarial Resistance Markers in Western Kenya.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2022,
+   "month": 4,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/35266823/"
+  },
+  {
+   "pmid": "35477399",
+   "doi": "10.1136/bmjgh-2020-003217",
+   "title": "Artesunate-amodiaquine and artemether-lumefantrine for the treatment of uncomplicated falciparum malaria in Liberia: in vivo efficacy and frequency of molecular markers.",
+   "journal": "Malar J",
+   "year": 2022,
+   "month": 4,
+   "countries": [
+    "LBR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/35477399/"
+  },
+  {
+   "pmid": "35051550",
+   "doi": "10.1016/j.parint.2022.102541",
+   "title": "Identification of polymorphisms in genes associated with drug resistance in Plasmodium falciparum isolates from school-age children in Kinshasa, Democratic Republic of Congo.",
+   "journal": "Parasitol Int",
+   "year": 2022,
+   "month": 6,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/35051550/"
+  },
+  {
+   "pmid": "36006247",
+   "doi": "10.1186/s40249-017-0350-y",
+   "title": "Prevalence of Mutations in the Pfdhfr, Pfdhps, and Pfmdr1 Genes of Malarial Parasites Isolated from Symptomatic Patients in Dogondoutchi, Niger.",
+   "journal": "Trop Med Infect Dis",
+   "year": 2022,
+   "month": 7,
+   "countries": [
+    "NER"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36006247/"
+  },
+  {
+   "pmid": "36100912",
+   "doi": "10.1093/infdis/jiaa687",
+   "title": "Temporal trends in molecular markers of drug resistance in Plasmodium falciparum in human blood and profiles of corresponding resistant markers in mosquito oocysts in Asembo, western Kenya.",
+   "journal": "Malar J",
+   "year": 2022,
+   "month": 9,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36100912/"
+  },
+  {
+   "pmid": "36121226",
+   "doi": "10.1128/AAC.47.4.1347-1354.2003",
+   "title": "Molecular Determinants of Sulfadoxine-Pyrimethamine Resistance in Plasmodium falciparum Isolates from Central Africa between 2016 and 2021: Wide Geographic Spread of Highly Mutated Pfdhfr and Pfdhps Alleles.",
+   "journal": "Microbiol Spectr",
+   "year": 2022,
+   "month": 10,
+   "countries": [
+    "CMR",
+    "GAB",
+    "GNQ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36121226/"
+  },
+  {
+   "pmid": "36307852",
+   "doi": "10.1073/pnas.221440898",
+   "title": "Molecular surveillance for anti-malarial drug resistance and genetic diversity of Plasmodium falciparum after chloroquine and sulfadoxine-pyrimethamine withdrawal in Quibdo, Colombia, 2018.",
+   "journal": "Malar J",
+   "year": 2022,
+   "month": 10,
+   "countries": [
+    "COL"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36307852/"
+  },
+  {
+   "pmid": "36443817",
+   "doi": "10.1186/s12936-015-0903-0",
+   "title": "Drug resistance of Plasmodium falciparum and Plasmodium vivax isolates in Indonesia.",
+   "journal": "Malar J",
+   "year": 2022,
+   "month": 11,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36443817/"
+  },
+  {
+   "pmid": "36566182",
+   "doi": "10.1086/338566",
+   "title": "Molecular surveillance of anti-malarial drug resistance genes in Plasmodium falciparum isolates in Odisha, India.",
+   "journal": "Malar J",
+   "year": 2022,
+   "month": 12,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36566182/"
+  },
+  {
+   "pmid": "36615340",
+   "doi": "10.1063/1.470043",
+   "title": "Global Analysis of Plasmodium falciparum Dihydropteroate Synthase Variants Associated with Sulfadoxine Resistance Reveals Variant Distribution and Mechanisms of Resistance: A Computational-Based Study.",
+   "journal": "Molecules",
+   "year": 2022,
+   "month": 12,
+   "countries": [
+    "COD",
+    "MWI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36615340/"
+  },
+  {
+   "pmid": "37849789",
+   "doi": "10.1186/s12936-017-1695-1",
+   "title": "Plasmodium falciparum Genetic Diversity and Resistance Genotype Profile in Infected Placental Samples Collected After Delivery in Ouagadougou.",
+   "journal": "Infect Drug Resist",
+   "year": 2023,
+   "month": null,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37849789/"
+  },
+  {
+   "pmid": "36038059",
+   "doi": "10.1016/j.parint.2022.102657",
+   "title": "Anti-folate quintuple mutations in Plasmodium falciparum asymptomatic infections in Yaoundé, Cameroon.",
+   "journal": "Parasitol Int",
+   "year": 2023,
+   "month": 2,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36038059/"
+  },
+  {
+   "pmid": "36611259",
+   "doi": "10.1093/jac/dkac432",
+   "title": "Effect of sulfadoxine-pyrimethamine chemoprophylaxis in pregnant women on selection of the new P. falciparum dhps quintuple mutant carrying the I431V mutation.",
+   "journal": "J Antimicrob Chemother",
+   "year": 2023,
+   "month": 3,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36611259/"
+  },
+  {
+   "pmid": "36680454",
+   "doi": "10.1186/s12936-018-2623-8",
+   "title": "Baseline prevalence of molecular marker of sulfadoxine/pyrimethamine resistance in Ebonyi and Osun states, Nigeria: amplicon deep sequencing of dhps-540.",
+   "journal": "J Antimicrob Chemother",
+   "year": 2023,
+   "month": 3,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36680454/"
+  },
+  {
+   "pmid": "36859238",
+   "doi": "10.3201/eid1909.130133",
+   "title": "A snapshot of the prevalence of dihydropteroate synthase-431V mutation and other sulfadoxine-pyrimethamine resistance markers in Plasmodium falciparum isolates in Nigeria.",
+   "journal": "Malar J",
+   "year": 2023,
+   "month": 3,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36859238/"
+  },
+  {
+   "pmid": "36864514",
+   "doi": "10.1186/s12916-017-0893-6",
+   "title": "Sub-microscopic Plasmodium falciparum parasitaemia, dihydropteroate synthase (dhps) resistance mutations to sulfadoxine-pyrimethamine, transmission intensity and risk of malaria infection in pregnancy in Mount Cameroon Region.",
+   "journal": "Malar J",
+   "year": 2023,
+   "month": 3,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": true,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36864514/"
+  },
+  {
+   "pmid": "36916920",
+   "doi": "10.1128/AAC.02474-17",
+   "title": "Molecular Markers of Sulfadoxine-Pyrimethamine Resistance in Samples from Children with Uncomplicated Plasmodium falciparum at Three Sites in Angola in 2019.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2023,
+   "month": 4,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36916920/"
+  },
+  {
+   "pmid": "37291425",
+   "doi": "10.1016/j.ijpddr.2021.06.001",
+   "title": "Targeted and whole-genome sequencing reveal a north-south divide in P. falciparum drug resistance markers and genetic structure in Mozambique.",
+   "journal": "Commun Biol",
+   "year": 2023,
+   "month": 6,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37291425/"
+  },
+  {
+   "pmid": "37312220",
+   "doi": "10.1186/s12916-018-1207-3",
+   "title": "Assessment of genetic polymorphisms associated with malaria antifolate resistance among the population of Libreville, Gabon.",
+   "journal": "Malar J",
+   "year": 2023,
+   "month": 6,
+   "countries": [
+    "GAB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37312220/"
+  },
+  {
+   "pmid": "37375534",
+   "doi": "10.1093/infdis/jiz510",
+   "title": "Effectiveness of Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine in Pregnancy: Low Coverage and High Prevalence of Plasmodium falciparum dhfr-dhps Quintuple Mutants as Major Challenges in Douala, an Urban Setting in Cameroon.",
+   "journal": "Pathogens",
+   "year": 2023,
+   "month": 6,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37375534/"
+  },
+  {
+   "pmid": "37452073",
+   "doi": "10.1093/bioinformatics/btx100",
+   "title": "Drug resistance profiling of asymptomatic and low-density Plasmodium falciparum malaria infections on Ngodhe island, Kenya, using custom dual-indexing next-generation sequencing.",
+   "journal": "Sci Rep",
+   "year": 2023,
+   "month": 7,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37452073/"
+  },
+  {
+   "pmid": "37474966",
+   "doi": "10.1186/1475-2875-8-89",
+   "title": "Plasmodium falciparum drug resistance-associated mutations in isolates from children living in endemic areas of Burkina Faso.",
+   "journal": "Malar J",
+   "year": 2023,
+   "month": 7,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37474966/"
+  },
+  {
+   "pmid": "37582796",
+   "doi": "10.1186/s12936-023-04651-x",
+   "title": "Nationwide spatiotemporal drug resistance genetic profiling from over three decades in Indian Plasmodium falciparum and Plasmodium vivax isolates.",
+   "journal": "Malar J",
+   "year": 2023,
+   "month": 8,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37582796/"
+  },
+  {
+   "pmid": "37612601",
+   "doi": "10.1186/s12936-023-04644-w",
+   "title": "Therapeutic efficacy of artesunate-amodiaquine and artemether-lumefantrine for the treatment of uncomplicated falciparum malaria in Chad: clinical and genetic surveillance.",
+   "journal": "Malar J",
+   "year": 2023,
+   "month": 8,
+   "countries": [
+    "TCD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37612601/"
+  },
+  {
+   "pmid": "37348801",
+   "doi": "10.1016/j.actatropica.2023.106975",
+   "title": "Polymorphism analysis of drug resistance markers in Plasmodium falciparum isolates from Benin.",
+   "journal": "Acta Trop",
+   "year": 2023,
+   "month": 9,
+   "countries": [
+    "BEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37348801/"
+  },
+  {
+   "pmid": "37783456",
+   "doi": "10.4269/ajtmh.23-0225",
+   "title": "Peripheral and Placental Prevalence of Sulfadoxine-Pyrimethamine Resistance Markers in Plasmodium falciparum among Pregnant Women in Southern Province, Rwanda.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2023,
+   "month": 11,
+   "countries": [
+    "RWA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37783456/"
+  },
+  {
+   "pmid": "37950227",
+   "doi": "10.1186/s12936-022-04407-z",
+   "title": "Seasonal malaria chemoprevention in a context of high presumed sulfadoxine-pyrimethamine resistance: malaria morbidity and molecular drug resistance profiles in South Sudan.",
+   "journal": "Malar J",
+   "year": 2023,
+   "month": 11,
+   "countries": [
+    "SSD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37950227/"
+  },
+  {
+   "pmid": "37968386",
+   "doi": "10.1007/s00284-023-03522-7",
+   "title": "First Insight into Drug Resistance Genetic Markers, Glucose-6-Phosphate Dehydrogenase and Phylogenetic Patterns of Misdiagnosed Plasmodium vivax Malaria in Far North Region, Cameroon.",
+   "journal": "Curr Microbiol",
+   "year": 2023,
+   "month": 11,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37968386/"
+  },
+  {
+   "pmid": "37968745",
+   "doi": "10.1016/j.actatropica.2014.04.031",
+   "title": "The landscape of drug resistance in Plasmodium falciparum malaria in the Democratic Republic of Congo: a mapping systematic review.",
+   "journal": "Trop Med Health",
+   "year": 2023,
+   "month": 11,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37968745/"
+  },
+  {
+   "pmid": "37999623",
+   "doi": "10.7554/eLife.66277",
+   "title": "Polymorphism of Drug Resistance Genes dhfr and dhps in Plasmodium falciparum Isolates among Chinese Migrant Workers Who Returned from Ghana in 2013.",
+   "journal": "Trop Med Infect Dis",
+   "year": 2023,
+   "month": 11,
+   "countries": [
+    "CHN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37999623/"
+  },
+  {
+   "pmid": "37865113",
+   "doi": "10.1016/S2666-5247(23)00211-2",
+   "title": "Evolution and spread of Plasmodium falciparum mutations associated with resistance to sulfadoxine-pyrimethamine in central Africa: a cross-sectional study.",
+   "journal": "Lancet Microbe",
+   "year": 2023,
+   "month": 12,
+   "countries": [
+    "AGO",
+    "CAF",
+    "CMR",
+    "COD",
+    "COG",
+    "GAB",
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37865113/"
+  },
+  {
+   "pmid": "37947766",
+   "doi": "10.1046/j.1365-294x.2000.01020.x",
+   "title": "Geographical emergence of sulfadoxine-pyrimethamine drug resistance-associated P. falciparum and P. malariae alleles in co-existing Anopheles mosquito and asymptomatic human populations across Cameroon.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2023,
+   "month": 12,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37947766/"
+  },
+  {
+   "pmid": "38444799",
+   "doi": "10.4103/tp.tp_43_23",
+   "title": "Prevalence of polymorphisms in marker genes associated with antimalarial drug resistance in Plasmodium falciparum following 10 years of artemisinin-based combination therapy implementation in urban Kolkata.",
+   "journal": "Trop Parasitol",
+   "year": 2024,
+   "month": null,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38444799/"
+  },
+  {
+   "pmid": "39649624",
+   "doi": "10.1016/S2666-5247(23)00211-2",
+   "title": "Plasmodium falciparum dhps and dhfr markers of resistance to sulfadoxine-pyrimethamine five years (2016-2020) after the implementation of seasonal malaria chemoprevention in Cameroon.",
+   "journal": "Wellcome Open Res",
+   "year": 2024,
+   "month": null,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/39649624/"
+  },
+  {
+   "pmid": "38154659",
+   "doi": "10.1016/j.ijantimicag.2023.107071",
+   "title": "Meta-analysis on Plasmodium falciparum sulfadoxine-pyrimethamine resistance-conferring mutations in India identifies hot spots for genetic surveillance.",
+   "journal": "Int J Antimicrob Agents",
+   "year": 2024,
+   "month": 3,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38154659/"
+  },
+  {
+   "pmid": "38478177",
+   "doi": "10.1093/infdis/jiu836",
+   "title": "Characterization of Plasmodium Falciparum Resistance Genes to Common Antimalarial Drugs in Semi-urban Areas of Burkina Faso.",
+   "journal": "Acta Parasitol",
+   "year": 2024,
+   "month": 3,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38478177/"
+  },
+  {
+   "pmid": "38411062",
+   "doi": "10.1093/infdis/jiy223",
+   "title": "Ex vivo drug susceptibility and resistance mediating genetic polymorphisms of Plasmodium falciparum in Bobo-Dioulasso, Burkina Faso.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2024,
+   "month": 4,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38411062/"
+  },
+  {
+   "pmid": "38570791",
+   "doi": "10.1016/S0020-7519(02)00192-3",
+   "title": "Efficacy of artemether-lumefantrine and dihydroartemisinin-piperaquine and prevalence of molecular markers of anti-malarial drug resistance in children in Togo in 2021.",
+   "journal": "Malar J",
+   "year": 2024,
+   "month": 4,
+   "countries": [
+    "TGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38570791/"
+  },
+  {
+   "pmid": "38574550",
+   "doi": "10.4269/ajtmh.23-0631",
+   "title": "Systematic Review and Geospatial Modeling of Molecular Markers of Resistance to Artemisinins and Sulfadoxine-Pyrimethamine in Plasmodium falciparum in India.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2024,
+   "month": 5,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38574550/"
+  },
+  {
+   "pmid": "38574776",
+   "doi": "10.1016/j.jinf.2024.106144",
+   "title": "Sustained clinical benefit of malaria chemoprevention with sulfadoxine-pyrimethamine (SP) in pregnant women in a region with high SP resistance markers.",
+   "journal": "J Infect",
+   "year": 2024,
+   "month": 5,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": true,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38574776/"
+  },
+  {
+   "pmid": "38636200",
+   "doi": "10.1016/j.ebiom.2024.105115",
+   "title": "Sanger sequencing and deconvolution of polyclonal infections: a quantitative approach to monitor drug-resistant Plasmodium falciparum.",
+   "journal": "EBioMedicine",
+   "year": 2024,
+   "month": 5,
+   "countries": [
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38636200/"
+  },
+  {
+   "pmid": "38725016",
+   "doi": "10.11613/BM.2012.031",
+   "title": "Sub-microscopic Plasmodium falciparum infections and multiple drug resistant single nucleotide polymorphic alleles in pregnant women from southwestern Nigeria.",
+   "journal": "BMC Res Notes",
+   "year": 2024,
+   "month": 5,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38725016/"
+  },
+  {
+   "pmid": "38874098",
+   "doi": "10.1093/infdis/jiae288",
+   "title": "Varied Prevalence of Antimalarial Drug Resistance Markers in Different Populations of Newly Arrived Refugees in Uganda.",
+   "journal": "J Infect Dis",
+   "year": 2024,
+   "month": 8,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38874098/"
+  },
+  {
+   "pmid": "39148823",
+   "doi": "10.17504/protocols.io.bh69j9h6",
+   "title": "National genomic profiling of Plasmodium falciparum antimalarial resistance in Zambian children participating in the 2018 Malaria Indicator Survey.",
+   "journal": "medRxiv",
+   "year": 2024,
+   "month": 8,
+   "countries": [
+    "ZMB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/39148823/"
+  },
+  {
+   "pmid": "39136465",
+   "doi": "10.1093/nar/gkx1201",
+   "title": "A retrospective analysis of P. falciparum drug resistance markers detects an early (2016/17) high prevalence of the k13 C469Y mutation in asymptomatic infections in Northern Uganda.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2024,
+   "month": 9,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/39136465/"
+  },
+  {
+   "pmid": "39414909",
+   "doi": "10.1128/JCM.01178-07",
+   "title": "Evolution of Pfdhps and Pfdhfr mutations before and after adopting seasonal malaria chemoprevention in Nanoro, Burkina Faso.",
+   "journal": "Sci Rep",
+   "year": 2024,
+   "month": 10,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/39414909/"
+  },
+  {
+   "pmid": "39496624",
+   "doi": "10.3389/fcimb.2021.644576",
+   "title": "Prevalence of molecular markers of sulfadoxine-pyrimethamine resistance in Plasmodium falciparum isolates from West Africa during 2012-2022.",
+   "journal": "Sci Rep",
+   "year": 2024,
+   "month": 11,
+   "countries": [
+    "LBR",
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/39496624/"
+  },
+  {
+   "pmid": "39649586",
+   "doi": "10.1101/2024.11.23.24315401",
+   "title": "Dihydroartemisinin-piperaquine versus sulfadoxine-pyrimethamine for intermittent preventive treatment of malaria in pregnancy: a systematic review and individual participant data meta-analysis.",
+   "journal": "medRxiv",
+   "year": 2024,
+   "month": 11,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/39649586/"
+  },
+  {
+   "pmid": "39488015",
+   "doi": "10.1186/s40249-022-00964-2",
+   "title": "Profile of molecular markers of Sulfadoxine-Pyrimethamine-resistant Plasmodium falciparum in individuals living in southern area of Brazzaville, Republic of Congo.",
+   "journal": "Int J Parasitol Drugs Drug Resist",
+   "year": 2024,
+   "month": 12,
+   "countries": [
+    "COG"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/39488015/"
+  },
+  {
+   "pmid": "39968164",
+   "doi": "10.1177/20499361251319665",
+   "title": "Profiling antimalarial drug-resistant haplotypes in Pfcrt, Pfmdr1, Pfdhps and Pfdhfr genes in Plasmodium falciparum causing malaria in the Central Region of Ghana: a multicentre cross-sectional study.",
+   "journal": "Ther Adv Infect Dis",
+   "year": 2025,
+   "month": null,
+   "countries": [
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/39968164/"
+  },
+  {
+   "pmid": "40124705",
+   "doi": "10.1016/j.meegid.2006.03.008",
+   "title": "Seasonal malaria chemoprevention and mutations in Pfdhfr and Pfdhps genes in children in the health district of Nanoro, Burkina Faso.",
+   "journal": "Malariaworld J",
+   "year": 2025,
+   "month": null,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40124705/"
+  },
+  {
+   "pmid": "41080970",
+   "doi": "10.1186/s12936-020-03163-2",
+   "title": "Prevalence of Molecular Markers of Resistance to Antimalarial Drugs Three Years After Perennial Malaria Chemoprevention in Sierra Leone.",
+   "journal": "Gates Open Res",
+   "year": 2025,
+   "month": null,
+   "countries": [
+    "SLE"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41080970/"
+  },
+  {
+   "pmid": "39985013",
+   "doi": "10.2196/51774",
+   "title": "Phase one of a hybrid effectiveness-implementation study to assess the feasibility, acceptability and effectiveness of implementing seasonal malaria chemoprevention in Nampula Province, Mozambique.",
+   "journal": "Malar J",
+   "year": 2025,
+   "month": 2,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/39985013/"
+  },
+  {
+   "pmid": "40200353",
+   "doi": "10.3390/diseases9010006",
+   "title": "Mutational profile of pfdhfr, pfdhps, pfmdr1, pfcrt and pfk13 genes of P. falciparum associated with resistance to different antimalarial drugs in Osun state, southwestern Nigeria.",
+   "journal": "Trop Med Health",
+   "year": 2025,
+   "month": 4,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40200353/"
+  },
+  {
+   "pmid": "40241183",
+   "doi": "10.1128/mbio.02093-20",
+   "title": "Prevalence of antimalaria drug resistance-conferring mutations associated with sulphadoxine-pyrimethamineine-resistant Plasmodium falciparum in East Africa: a systematic review and meta-analysis.",
+   "journal": "Ann Clin Microbiol Antimicrob",
+   "year": 2025,
+   "month": 4,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40241183/"
+  },
+  {
+   "pmid": "40247054",
+   "doi": "10.1093/tropej/fmad001",
+   "title": "Disparate co-evolution and prevalence of sulfadoxine and pyrimethamine resistance alleles and haplotypes at dhfr and dhps genes across Africa.",
+   "journal": "Sci Rep",
+   "year": 2025,
+   "month": 4,
+   "countries": [
+    "GHA",
+    "GMB",
+    "KEN",
+    "MDG",
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40247054/"
+  },
+  {
+   "pmid": "40297444",
+   "doi": "10.1128/aac.00552-19",
+   "title": "Geographical Heterogeneity in Antimalarial Resistance Markers Revealed by Genomic Surveillance in Angola, 2023.",
+   "journal": "medRxiv",
+   "year": 2025,
+   "month": 4,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40297444/"
+  },
+  {
+   "pmid": "40341172",
+   "doi": "10.1038/s42003-023-04997-7",
+   "title": "Impact of dhps mutations on sulfadoxine-pyrimethamine protective efficacy and implications for malaria chemoprevention.",
+   "journal": "Nat Commun",
+   "year": 2025,
+   "month": 5,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40341172/"
+  },
+  {
+   "pmid": "40370584",
+   "doi": "10.1016/j.eclinm.2025.103202",
+   "title": "Dihydroartemisinin-piperaquine versus sulfadoxine-pyrimethamine for intermittent preventive treatment of malaria in pregnancy: a systematic review and individual participant data meta-analysis.",
+   "journal": "EClinicalMedicine",
+   "year": 2025,
+   "month": 5,
+   "countries": [
+    "KEN",
+    "MWI",
+    "TZA",
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40370584/"
+  },
+  {
+   "pmid": "40514714",
+   "doi": "10.1111/mmi.12349",
+   "title": "Comprehensive analysis of molecular markers linked to antimalarial drug resistance in Plasmodium falciparum in Northern, Northeastern and Eastern Uganda.",
+   "journal": "Malar J",
+   "year": 2025,
+   "month": 6,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40514714/"
+  },
+  {
+   "pmid": "40790052",
+   "doi": "10.1007/s11686-024-00923-x",
+   "title": "Antimalarial drug resistance and population structure of Plasmodium falciparum in Mozambique using genomic surveillance at health facilities in 2021 and 2022.",
+   "journal": "Sci Rep",
+   "year": 2025,
+   "month": 8,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40790052/"
+  },
+  {
+   "pmid": "41018696",
+   "doi": "10.1002/9780470015902.a0003624.pub3",
+   "title": "Changes in the Prevalence of Antimalarial Partner Drug Resistance Markers and Policy in 6 Sub-Saharan African Countries From 2000 to 2021: A Systematic Review.",
+   "journal": "Open Forum Infect Dis",
+   "year": 2025,
+   "month": 9,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41018696/"
+  },
+  {
+   "pmid": "40823868",
+   "doi": "10.1186/s12936-021-03659-5",
+   "title": "Frequencies of molecular markers of drug resistance in the context of two different Seasonal Malaria Chemoprevention (SMC) treatment regimens in the Koulikoro health district, Mali.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2025,
+   "month": 10,
+   "countries": [
+    "MLI"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40823868/"
+  },
+  {
+   "pmid": "40938322",
+   "doi": "10.5603/imh.100440",
+   "title": "Prevalence of resistance markers of artemisinin, partner drugs, and sulfadoxine-pyrimethamine in Nanyumbu and Masasi Districts, Tanzania between 2020 and 2021.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2025,
+   "month": 10,
+   "countries": [
+    "TZA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40938322/"
+  },
+  {
+   "pmid": "41035044",
+   "doi": "10.1186/s12936-022-04284-6",
+   "title": "Regional variation in sulfadoxine-pyrimethamine resistance genotypes and haplotypes of Plasmodium falciparum dihydrofolate reductase and dihydropteroate synthase genes in Western Kenya.",
+   "journal": "Malar J",
+   "year": 2025,
+   "month": 10,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41035044/"
+  },
+  {
+   "pmid": "41219832",
+   "doi": "10.1038/s41598-017-02724-x",
+   "title": "Parasite clearance and protection from Plasmodium falciparum infection (PCPI): a two-arm, parallel, double-blinded, placebo-controlled, randomised trial of presumptive sulfadoxine-pyrimethamine versus artesunate monotherapy among asymptomatic children 3-5 years of age in Zambia.",
+   "journal": "BMC Infect Dis",
+   "year": 2025,
+   "month": 11,
+   "countries": [
+    "ZMB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41219832/"
+  },
+  {
+   "pmid": "41231725",
+   "doi": "10.1093/cid/ciaf615",
+   "title": "Pharmacometric evaluation of sulfadoxine-pyrimethamine- amodiaquine and dihydroartemisinin-piperaquine seasonal malaria chemoprevention in northern Uganda.",
+   "journal": "Clin Infect Dis",
+   "year": 2025,
+   "month": 11,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41231725/"
+  },
+  {
+   "pmid": "41291694",
+   "doi": "10.1056/NEJMoa2210956",
+   "title": "Genetic diversity, population structure, and drug resistance of Plasmodium falciparum in Kenya: a systematic review and meta-analysis.",
+   "journal": "Malar J",
+   "year": 2025,
+   "month": 11,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41291694/"
+  },
+  {
+   "pmid": "41372349",
+   "doi": "10.1186/s12936-019-2716-z",
+   "title": "Molecular epidemiology of Plasmodium falciparum drug resistance and vaccine targets in high-transmission settings in Africa.",
+   "journal": "Sci Rep",
+   "year": 2025,
+   "month": 12,
+   "countries": [
+    "NGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41372349/"
+  },
+  {
+   "pmid": "41444531",
+   "doi": "10.1017/S0950268810001652",
+   "title": "Characterization of Plasmodium falciparum infections among people living with HIV under antiretroviral and co-trimoxazole chemoprophylaxis in Brazzaville, Republic of Congo.",
+   "journal": "BMC Infect Dis",
+   "year": 2025,
+   "month": 12,
+   "countries": [
+    "COG"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41444531/"
+  },
+  {
+   "pmid": "41476309",
+   "doi": "10.1016/S1473-3099(07)70021-X",
+   "title": "Trends in Plasmodium falciparum resistance markers to sulfadoxine-pyrimethamine and amodiaquine over ten years of seasonal malaria chemoprevention in Moissala Health District, Chad.",
+   "journal": "Malar J",
+   "year": 2025,
+   "month": 12,
+   "countries": [
+    "TCD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41476309/"
+  },
+  {
+   "pmid": "42334021",
+   "doi": "10.1051/parasite/2026035",
+   "title": "Molecular surveillance of Plasmodium falciparum resistance to sulfadoxine-pyrimethamine among pregnant women attending antenatal clinics in Bobo-Dioulasso, Burkina Faso.",
+   "journal": "Parasite",
+   "year": 2026,
+   "month": null,
+   "countries": [
+    "BFA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42334021/"
+  },
+  {
+   "pmid": "41652479",
+   "doi": "10.1038/s41598-022-09474-5",
+   "title": "Evolving patterns of antimalarial drug resistance markers in symptomatic infections in Kenya, 2013-2022.",
+   "journal": "Parasit Vectors",
+   "year": 2026,
+   "month": 2,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41652479/"
+  },
+  {
+   "pmid": "41754485",
+   "doi": "10.1186/s12889-023-17194-2",
+   "title": "Persistent and Circulating Plasmodium falciparum dhfr and dhps Mutations in Busia County, Western Kenya.",
+   "journal": "Pathogens",
+   "year": 2026,
+   "month": 2,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41754485/"
+  },
+  {
+   "pmid": "41840616",
+   "doi": "10.1186/s12936-016-1358-7",
+   "title": "Molecular markers of antimalarial drug resistance in pfk13, pfmdr1, pfdhfr, and pfdhps genes of Plasmodium falciparum in a rural municipality in Cubal, Benguela Province, Angola (2022-2023).",
+   "journal": "Malar J",
+   "year": 2026,
+   "month": 3,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41840616/"
+  },
+  {
+   "pmid": "41846600",
+   "doi": "10.1093/ofid/ofag106",
+   "title": "Targeted Genomic Surveillance Unveils Genetic Variations Linked to Regional Malaria Drug Resistance Dynamics in India.",
+   "journal": "Open Forum Infect Dis",
+   "year": 2026,
+   "month": 3,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41846600/"
+  },
+  {
+   "pmid": "41891011",
+   "doi": "10.1101/2025.05.15.25327701",
+   "title": "Sustained High Prevalence of Multiple Antimalarial Drug Resistance Markers in Uganda in 2023-24.",
+   "journal": "medRxiv",
+   "year": 2026,
+   "month": 3,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41891011/"
+  },
+  {
+   "pmid": "41896338",
+   "doi": "10.1016/S1473-3099(24)00741-2",
+   "title": "Emergence of Plasmodium falciparum pfdhps A581G mutation in Southern Senegal under Seasonal Malaria Chemoprevention pressure, 2020-2023.",
+   "journal": "Commun Med (Lond)",
+   "year": 2026,
+   "month": 3,
+   "countries": [
+    "SEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41896338/"
+  },
+  {
+   "pmid": "41570756",
+   "doi": "10.1016/j.ijpddr.2026.100633",
+   "title": "Prevalence of antimalarial drug resistance molecular markers in Makenene, central Cameroon.",
+   "journal": "Int J Parasitol Drugs Drug Resist",
+   "year": 2026,
+   "month": 4,
+   "countries": [
+    "CMR"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41570756/"
+  },
+  {
+   "pmid": "41963472",
+   "doi": "10.1186/s12879-025-10462-z",
+   "title": "Spatiotemporal antimalarial drug resistance saturation and emerging artemisinin tolerance in western Kenya during a pilot multiple first-line treatment study.",
+   "journal": "Sci Rep",
+   "year": 2026,
+   "month": 4,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41963472/"
+  },
+  {
+   "pmid": "42032728",
+   "doi": "10.1371/journal.ppat.1013771",
+   "title": "Therapeutic efficacy of artemether-lumefantrine and molecular markers of antimalarial drug resistance in Benin, 2022.",
+   "journal": "Malar J",
+   "year": 2026,
+   "month": 4,
+   "countries": [
+    "BEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42032728/"
+  },
+  {
+   "pmid": "42062354",
+   "doi": "10.32614/RJ-2018-009",
+   "title": "National genomic profiling of Plasmodium falciparum antimalarial resistance in Zambian children participating in the 2018 malaria indicator survey.",
+   "journal": "Sci Rep",
+   "year": 2026,
+   "month": 4,
+   "countries": [
+    "ZMB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42062354/"
+  },
+  {
+   "pmid": "42178979",
+   "doi": "10.4269/ajtmh.21-1095",
+   "title": "Genetic profiling of sulfadoxine-pyrimethamine resistance markers in Indian Plasmodium falciparum field isolates.",
+   "journal": "Future Microbiol",
+   "year": 2026,
+   "month": 4,
+   "countries": [
+    "IND"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42178979/"
+  },
+  {
+   "pmid": "42198630",
+   "doi": "10.1038/s41467-021-22573-7",
+   "title": "Prevalence of pfdhfr-pfdhps Sextuple and Gametocyte-Associated Quintuple Sulfadoxine-Pyrimethamine Resistance Mutations in Plasmodium falciparum Isolates from Pregnant Women in Mozambique.",
+   "journal": "Pathogens",
+   "year": 2026,
+   "month": 5,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42198630/"
+  },
+  {
+   "pmid": "42238473",
+   "doi": "10.64898/2026.05.20.26353165",
+   "title": "Geographical Variation in Antimalarial Drug Resistance Marker Prevalence Across the Southern African Elimination Eight Region.",
+   "journal": "medRxiv",
+   "year": 2026,
+   "month": 5,
+   "countries": [
+    "AGO",
+    "MOZ",
+    "NAM",
+    "SWZ",
+    "ZAF",
+    "ZMB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42238473/"
+  },
+  {
+   "pmid": "42118117",
+   "doi": "10.4161/fly.19695",
+   "title": "Spatial and temporal description of antimalarial drug resistance markers in Ghana using targeted amplicon deep sequencing.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2026,
+   "month": 6,
+   "countries": [
+    "GHA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42118117/"
+  },
+  {
+   "pmid": "42396318",
+   "doi": "10.1371/journal.pone.0243054",
+   "title": "Survival differences and artemisinin resistance in severe malaria among HIV coinfected patients: data from Mozambique.",
+   "journal": "medRxiv",
+   "year": 2026,
+   "month": 6,
+   "countries": [
+    "MOZ"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42396318/"
+  },
+  {
+   "pmid": "42415199",
+   "doi": "10.3201/eid2707.203230",
+   "title": "Drug resistance gene polymorphisms of Plasmodium falciparum clinical isolates from Kinshasa, Democratic Republic of the Congo.",
+   "journal": "Trop Med Health",
+   "year": 2026,
+   "month": 7,
+   "countries": [
+    "COD"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42415199/"
+  },
+  {
+   "pmid": "42294652",
+   "doi": "10.1016/S1473-3099(16)30409-1",
+   "title": "Sustained high prevalence of multiple antimalarial drug resistance markers in Uganda in 2023-2024.",
+   "journal": "Antimicrob Agents Chemother",
+   "year": 2026,
+   "month": 8,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42294652/"
+  },
+  {
+   "pmid": "42595091",
+   "doi": "10.1016/j.cmi.2026.08.006",
+   "title": "Effect of sulphadoxine-pyrimethamine resistance on birthweight and parasite persistence among women receiving intermittent preventive treatment for malaria in pregnancy in Northern Uganda: a directed acyclic graph-guided analysis.",
+   "journal": "Clin Microbiol Infect",
+   "year": 2026,
+   "month": 8,
+   "countries": [
+    "UGA"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42595091/"
+  },
+  {
+   "pmid": "41889445",
+   "doi": "10.1016/j.idm.2026.03.004",
+   "title": "Modeling the Impact of Malaria Chemoprevention with sulphadoxine-pyrimethamine on the spread of Plasmodium falciparum dhps A581G mutation.",
+   "journal": "Infect Dis Model",
+   "year": 2026,
+   "month": 9,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41889445/"
+  },
+  {
+   "pmid": "42437651",
+   "doi": "10.1016/j.actatropica.2026.108237",
+   "title": "Regional Patterns and Temporal Trends of Pfdhfr and Pfdhps Markers of Antifolate Resistance in Plasmodium falciparum in East and West Africa, 2010-2025: A Systematic Review.",
+   "journal": "Acta Trop",
+   "year": 2026,
+   "month": 9,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42437651/"
+  },
+  {
+   "pmid": "42697054",
+   "doi": "10.1007/s11686-024-00826-x",
+   "title": "Changes in molecular markers of Plasmodium falciparum drug resistance between 2017 and 2024 in Southern Benin.",
+   "journal": "Int J Parasitol Drugs Drug Resist",
+   "year": 2026,
+   "month": 9,
+   "countries": [
+    "BEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42697054/"
+  },
+  {
+   "pmid": "42698082",
+   "doi": "10.1016/S1473-3099(18)30732-1",
+   "title": "Spatio-temporal trends of the prevalence of Plasmodium falciparum antimalarial drug resistance markers across sub-Saharan Africa from 2010 to 2024: a systematic review and meta-analysis.",
+   "journal": "BMC Infect Dis",
+   "year": 2026,
+   "month": 9,
+   "countries": [],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42698082/"
+  },
+  {
+   "pmid": "40744006",
+   "doi": "10.1101/2024.12.31.24319821v1",
+   "title": "Plasmodium falciparum Genomic Surveillance Reveals a Diversity of Kelch 13 Mutations in Zambia.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2026,
+   "month": 11,
+   "countries": [
+    "ZMB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/40744006/"
+  },
+  {
+   "pmid": "41843937",
+   "doi": "10.4269/ajtmh.25-0226",
+   "title": "Geographical Heterogeneity in Antimalarial Resistance Markers by Genomic Surveillance in Angola, 2023.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2026,
+   "month": 11,
+   "countries": [
+    "AGO"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/41843937/"
+  },
+  {
+   "pmid": "42838037",
+   "doi": "10.64898/2026.06.04.26354343v1.full",
+   "title": "Geographical Variation in Antimalarial Drug Resistance Marker Prevalence across the Southern African Elimination Eight Region.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2026,
+   "month": 11,
+   "countries": [
+    "AGO",
+    "MOZ",
+    "NAM",
+    "SWZ",
+    "ZAF",
+    "ZMB"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42838037/"
+  },
+  {
+   "pmid": "42993972",
+   "doi": "10.4269/ajtmh.25-0513",
+   "title": "Two Decades of Molecular Surveillance in Kenya Reveal Shifting Plasmodium falciparum Drug Resistance Mutations Linked to Frontline Drug Changes.",
+   "journal": "Am J Trop Med Hyg",
+   "year": 2026,
+   "month": 11,
+   "countries": [
+    "KEN"
+   ],
+   "readByGraph": false,
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42993972/"
+  }
+ ]
+}

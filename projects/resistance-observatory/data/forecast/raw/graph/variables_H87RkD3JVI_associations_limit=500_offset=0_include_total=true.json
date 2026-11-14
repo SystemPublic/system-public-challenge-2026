@@ -1,0 +1,59 @@
+{
+ "_request": "GET /variables/H87RkD3JVI/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "IutBshC61x",
+    "variable_1_id": "H87RkD3JVI",
+    "variable_2_id": "S08Cg00rd_",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "Intermittent preventive treatment for malaria with sulfadoxine-pyrimethamine (IPTp-SP)",
+    "variable_2_name": "low birth weight",
+    "study_id": "5sbeQB7fXo",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.03,
+    "ci_upper": 1.22,
+    "ci_lower": 0.88,
+    "ci_level": 0,
+    "pubmed_id": 26258474,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "vWgnju0Uiq",
+    "variable_1_id": "H87RkD3JVI",
+    "variable_2_id": "yt9a39qd48",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "Intermittent preventive treatment for malaria with sulfadoxine-pyrimethamine (IPTp-SP)",
+    "variable_2_name": "active malaria infection of the placenta",
+    "study_id": "5sbeQB7fXo",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.95,
+    "ci_upper": 1.12,
+    "ci_lower": 0.81,
+    "ci_level": 0,
+    "pubmed_id": 26258474,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "4OwU9YtDzJ",
+    "variable_1_id": "H87RkD3JVI",
+    "variable_2_id": "RCmYzcoVG5",
+    "variable_2_wikidata_id": "Q6577969",
+    "variable_2_concept_id": "DXirswrGV4",
+    "variable_1_name": "Intermittent preventive treatment for malaria with sulfadoxine-pyrimethamine (IPTp-SP)",
+    "variable_2_name": "mean hemoglobin concentration at the last clinic attendance before delivery",
+    "study_id": "5sbeQB7fXo",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -0.03,
+    "ci_upper": 0.06,
+    "ci_lower": -0.13,
+    "ci_level": 0,
+    "pubmed_id": 26258474,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 3
+ }
+}

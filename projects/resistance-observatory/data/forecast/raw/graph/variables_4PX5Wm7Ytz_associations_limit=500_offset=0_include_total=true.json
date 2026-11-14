@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/4PX5Wm7Ytz/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "KL67h5A5Ml",
+    "variable_1_id": "zbpgxgC_WN",
+    "variable_2_id": "4PX5Wm7Ytz",
+    "variable_1_name": "Ebonyi State [vs Osun State]",
+    "variable_2_name": "dhps-540K/E prevalence",
+    "study_id": "jMqeVgkFL0",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 4.57,
+    "p_value": 0.069,
+    "pubmed_id": 36680454,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

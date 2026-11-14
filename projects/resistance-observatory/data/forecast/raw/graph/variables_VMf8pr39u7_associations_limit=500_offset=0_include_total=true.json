@@ -1,0 +1,22 @@
+{
+ "_request": "GET /variables/VMf8pr39u7/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "pV6EBLWT_L",
+    "variable_1_id": "Wo4ci-hAoj",
+    "variable_2_id": "VMf8pr39u7",
+    "variable_1_wikidata_id": "Q65682609",
+    "variable_1_concept_id": "IU8SdIQXHq",
+    "variable_1_name": "second-generation sequencing protocol",
+    "variable_2_name": "mutant allele frequencies in the Plasmodium falciparum genes dhfr and dhps in mixed isolates",
+    "study_id": "ylygSUkqFa",
+    "statistic_type": "pearson_r",
+    "statistic_value": 0.98,
+    "pubmed_id": 23908494,
+    "system_statistic_type": "pearson_r"
+   }
+  ],
+  "total": 1
+ }
+}

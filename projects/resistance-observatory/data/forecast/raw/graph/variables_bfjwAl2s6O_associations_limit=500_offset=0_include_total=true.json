@@ -1,0 +1,70 @@
+{
+ "_request": "GET /variables/bfjwAl2s6O/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "hTVTqA7XrV",
+    "variable_1_id": "J2g3PUhKlM",
+    "variable_2_id": "bfjwAl2s6O",
+    "variable_1_name": "early booking for ANC",
+    "variable_2_name": "utilisation of IPTp-SP",
+    "study_id": "hFdQ_02luA",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 5.6,
+    "ci_upper": 26.6,
+    "ci_lower": 1.2,
+    "ci_level": 0,
+    "pubmed_id": 31489079,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "VhP36LDexp",
+    "variable_1_id": "cO1AmGKJdZ",
+    "variable_2_id": "bfjwAl2s6O",
+    "variable_1_wikidata_id": "Q656365",
+    "variable_1_concept_id": "Ea-MgLRglN",
+    "variable_1_name": "being employed",
+    "variable_2_name": "utilisation of IPTp-SP",
+    "study_id": "hFdQ_02luA",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 1.4,
+    "ci_upper": 1.7,
+    "ci_lower": 1.1,
+    "ci_level": 0,
+    "pubmed_id": 31489079,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "hganN4I6UP",
+    "variable_1_id": "_9r_CjAihO",
+    "variable_2_id": "bfjwAl2s6O",
+    "variable_1_name": "positive attitude towards IPTp",
+    "variable_2_name": "utilisation of IPTp-SP",
+    "study_id": "hFdQ_02luA",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 2.1,
+    "ci_upper": 2.9,
+    "ci_lower": 1.5,
+    "ci_level": 0,
+    "pubmed_id": 31489079,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "qAkTkOEEa4",
+    "variable_1_id": "hL4M5lVLDV",
+    "variable_2_id": "bfjwAl2s6O",
+    "variable_1_name": "good knowledge on IPTp",
+    "variable_2_name": "utilisation of IPTp-SP",
+    "study_id": "hFdQ_02luA",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 9.3,
+    "ci_upper": 16.0,
+    "ci_lower": 5.4,
+    "ci_level": 0,
+    "pubmed_id": 31489079,
+    "system_statistic_type": "adjusted_odds_ratio"
+   }
+  ],
+  "total": 4
+ }
+}

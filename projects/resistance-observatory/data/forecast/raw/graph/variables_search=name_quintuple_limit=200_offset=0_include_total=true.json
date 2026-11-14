@@ -1,0 +1,72 @@
+{
+ "_request": "GET /variables?search=name:quintuple&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "ux-Fou0q6l",
+    "name": "Prevalence of quintuple mutations (dhfr (108Asn/51Ile/59Arg)/dhps437Gly/dhps540Glu)"
+   },
+   {
+    "system_id": "Gfeb73HqmP",
+    "name": "prevalence of quintuple mutant infections"
+   },
+   {
+    "system_id": "xBCqrcDWv2",
+    "name": "Prevalence of the quintuple dhfr/dhps mutation"
+   },
+   {
+    "system_id": "bkHgD5M-T3",
+    "name": "presence of the quintuple mutant dhfr N51I/C59R/S108N+dhps A437G/K540E"
+   },
+   {
+    "system_id": "c7Ro-vvnRi",
+    "name": "Prevalence of quintuple mutant infections"
+   },
+   {
+    "system_id": "rprVHjAq9i",
+    "name": "Prevalence of quintuple haplotype (51I/59R/108N/437G/540E)"
+   },
+   {
+    "system_id": "wlwixcTUwt",
+    "name": "having a quintuple dhfr/dhps mutation"
+   },
+   {
+    "system_id": "zy2XeN66nA",
+    "name": "prevalence of Plasmodium falciparum dihydropteroate synthetase gene vagKgs quintuple mutant",
+    "concept_id": "QGsnhC2Mq6"
+   },
+   {
+    "system_id": "HexIdY2lwf",
+    "name": "frequency of pfdhfr/pfdhps quintuple mutants associated with sulfadoxine-pyrimethamine resistance"
+   },
+   {
+    "system_id": "uIE31XKPmM",
+    "name": "quintupling the dose of fluticasone [vs adding salmeterol and doubling the fluticasone]",
+    "concept_id": "BSLsOdOdpC"
+   },
+   {
+    "system_id": "lv_WhwVbxQ",
+    "name": "prevalence of dhfr/dhps quintuple mutant"
+   },
+   {
+    "system_id": "6X0ocq5Xhh",
+    "name": "Triple and Quintuple triathlons [vs Deca Iron ultra-triathlons]"
+   },
+   {
+    "system_id": "N9OZxYOPVM",
+    "name": "prevalence of quintuple mutation associated with resistance to sulfadoxine-pyrimethamine",
+    "concept_id": "bzQO0hAZXK"
+   },
+   {
+    "system_id": "5BW4n3Ej11",
+    "name": "Patients who cleared the infection (quintuple resistant P. falciparum parasites) vs. Patients who did not clear the infection (quintuple resistant P. falciparum parasites)",
+    "concept_id": "QGsnhC2Mq6"
+   },
+   {
+    "system_id": "3T8K506Jut",
+    "name": "prevalence of Pfdhfr/Pfdhps quintuple mutant IRN-436A437G"
+   }
+  ],
+  "total": 5654715
+ }
+}

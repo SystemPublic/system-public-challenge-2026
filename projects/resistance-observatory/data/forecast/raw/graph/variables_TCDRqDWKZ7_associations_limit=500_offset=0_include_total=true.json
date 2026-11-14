@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/TCDRqDWKZ7/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "x8iiDKkaPu",
+    "variable_1_id": "TCDRqDWKZ7",
+    "variable_2_id": "SBk0Tuh_1c",
+    "variable_2_wikidata_id": "Q311383",
+    "variable_2_concept_id": "QGsnhC2Mq6",
+    "variable_1_name": "Receiving five monthly rounds of sulfadoxine-pyrimethamine plus amodiaquine (SMC treatment) aimed at preventing malaria in children age 5 to 14 years",
+    "variable_2_name": "prevalence of Plasmodium falciparum malaria infection",
+    "study_id": "5bcPgM9Miv",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.22,
+    "ci_upper": 0.42,
+    "ci_lower": 0.11,
+    "ci_level": 0,
+    "pubmed_id": 34781256,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

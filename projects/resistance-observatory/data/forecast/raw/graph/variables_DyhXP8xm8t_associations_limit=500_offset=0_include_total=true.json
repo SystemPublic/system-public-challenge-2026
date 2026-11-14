@@ -1,0 +1,56 @@
+{
+ "_request": "GET /variables/DyhXP8xm8t/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "-nloWwr1T9",
+    "variable_1_id": "j-VgEYRt9i",
+    "variable_2_id": "DyhXP8xm8t",
+    "variable_1_name": "Province of residence",
+    "variable_2_name": "uptake of IPTp-SP doses",
+    "study_id": "31It7glm3v",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 8.72,
+    "ci_upper": 44.26,
+    "ci_lower": 1.72,
+    "ci_level": 0,
+    "p_value": 0.009,
+    "pubmed_id": 37236665,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "uM83HGYyql",
+    "variable_1_id": "j-VgEYRt9i",
+    "variable_2_id": "DyhXP8xm8t",
+    "variable_1_name": "Province of residence",
+    "variable_2_name": "uptake of IPTp-SP doses",
+    "study_id": "31It7glm3v",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 6.67,
+    "ci_upper": 37.47,
+    "ci_lower": 1.19,
+    "ci_level": 0,
+    "p_value": 0.031,
+    "pubmed_id": 37236665,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "y1f9JIC6zR",
+    "variable_1_id": "xMHHrkUL7o",
+    "variable_2_id": "DyhXP8xm8t",
+    "variable_1_name": "Wealth tertile",
+    "variable_2_name": "uptake of IPTp-SP doses",
+    "study_id": "31It7glm3v",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.32,
+    "ci_upper": 0.79,
+    "ci_lower": 0.13,
+    "ci_level": 0,
+    "p_value": 0.014,
+    "pubmed_id": 37236665,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

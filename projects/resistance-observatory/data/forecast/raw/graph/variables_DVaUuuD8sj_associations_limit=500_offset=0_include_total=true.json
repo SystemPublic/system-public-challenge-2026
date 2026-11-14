@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/DVaUuuD8sj/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "cKQXWTLQCv",
+    "variable_1_id": "QjOAh61Psn",
+    "variable_2_id": "DVaUuuD8sj",
+    "variable_1_wikidata_id": "Q5404323",
+    "variable_1_concept_id": "EhpdS79G1u",
+    "variable_1_name": "ethnicity",
+    "variable_2_name": "taking adequate doses of Intermittent preventive treatment in pregnancy-SP drugs",
+    "study_id": "eipyNuz0Os",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.378,
+    "ci_upper": 0.983,
+    "ci_lower": 0.145,
+    "ci_level": 0,
+    "pubmed_id": 31694607,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

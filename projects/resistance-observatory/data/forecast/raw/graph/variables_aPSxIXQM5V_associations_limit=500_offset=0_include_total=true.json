@@ -1,0 +1,46 @@
+{
+ "_request": "GET /variables/aPSxIXQM5V/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "tYzctoLMVw",
+    "variable_1_id": "aPSxIXQM5V",
+    "variable_2_id": "kbk6NZDZlt",
+    "variable_1_wikidata_id": "Q308623",
+    "variable_1_concept_id": "1TPeWEe_2z",
+    "variable_1_name": "pregnant women using both IPTp-SP and ITNs",
+    "variable_2_name": "anaemia status",
+    "study_id": "mAXm6h0Wnv",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.341,
+    "ci_upper": 0.841,
+    "ci_lower": 0.138,
+    "ci_level": 0,
+    "p_value": 0.034,
+    "pubmed_id": 26987387,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "sx0X46BuRG",
+    "variable_1_id": "aPSxIXQM5V",
+    "variable_2_id": "0kSM_oSals",
+    "variable_1_wikidata_id": "Q308623",
+    "variable_2_wikidata_id": "Q113361605",
+    "variable_1_concept_id": "1TPeWEe_2z",
+    "variable_2_concept_id": "wYL8n9x4mu",
+    "variable_1_name": "pregnant women using both IPTp-SP and ITNs",
+    "variable_2_name": "malaria prevalence",
+    "study_id": "mAXm6h0Wnv",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.341,
+    "ci_upper": 0.841,
+    "ci_lower": 0.138,
+    "ci_level": 0,
+    "p_value": 0.103,
+    "pubmed_id": 26987387,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

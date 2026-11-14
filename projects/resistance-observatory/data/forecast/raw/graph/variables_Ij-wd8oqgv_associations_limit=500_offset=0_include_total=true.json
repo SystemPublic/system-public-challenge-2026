@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/Ij-wd8oqgv/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "vtwBZ6U2Pa",
+    "variable_1_id": "_Fu7NWuD1S",
+    "variable_2_id": "Ij-wd8oqgv",
+    "variable_1_name": "Nkhata Bay District [vs Ntcheu District]",
+    "variable_2_name": "Citing intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine as a way to prevent malaria in pregnancy",
+    "study_id": "ft-VrxaCQV",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 16.2,
+    "p_value": 0.02,
+    "pubmed_id": 32295579,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

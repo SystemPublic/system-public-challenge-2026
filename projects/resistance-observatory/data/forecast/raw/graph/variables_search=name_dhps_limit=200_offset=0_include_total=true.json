@@ -1,0 +1,141 @@
+{
+ "_request": "GET /variables?search=name:dhps&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "JI67MUEQQv",
+    "name": "DHPs"
+   },
+   {
+    "system_id": "KoAoGDl2G5",
+    "name": "different dhps genotypes"
+   },
+   {
+    "system_id": "VMf8pr39u7",
+    "name": "mutant allele frequencies in the Plasmodium falciparum genes dhfr and dhps in mixed isolates"
+   },
+   {
+    "system_id": "PUSCk_irGb",
+    "name": "mutations in dhfr and dhps"
+   },
+   {
+    "system_id": "_cYts7FA6P",
+    "name": "DHPS gene"
+   },
+   {
+    "system_id": "bkHgD5M-T3",
+    "name": "presence of the quintuple mutant dhfr N51I/C59R/S108N+dhps A437G/K540E"
+   },
+   {
+    "system_id": "TaKS18jKT6",
+    "name": "presence of the quadruple mutant dhfr N51I/S108N+dhps A437G/K540E"
+   },
+   {
+    "system_id": "Kcmmpx1fWC",
+    "name": "Patients given co-trimoxazole with DHPS mutant [vs Patients given co-trimoxazole with wild type]"
+   },
+   {
+    "system_id": "DNQZppkSiv",
+    "name": "presence of mutations at the DHPS locus"
+   },
+   {
+    "system_id": "iaseEvvnzp",
+    "name": "Prevalence of quadruple dhfr-mutants + dhps-437G"
+   },
+   {
+    "system_id": "oYz0qmE_N6",
+    "name": "frequency of clinical episodes of malaria caused by P. falciparum parasites with mutations in dhfr and dhps"
+   },
+   {
+    "system_id": "6nc-md3xWP",
+    "name": "treatment failure (among the patients with the presence of the double mutant dhps A437G/K540E)",
+    "concept_id": "MZpwE2CWM6"
+   },
+   {
+    "system_id": "Xg3SbwpI3i",
+    "name": "Number of searches for DHPs"
+   },
+   {
+    "system_id": "s5Z-CMPgPS",
+    "name": "prevalence of dhps double-pure mutant parasites"
+   },
+   {
+    "system_id": "bq2s9bG-YW",
+    "name": "patients with P. carinii isolates with DHPS mutations [vs patients with P. carinii isolates with wild-type DHPS]"
+   },
+   {
+    "system_id": "c-4xYZ5pGP",
+    "name": "lercanidipine group [vs other-dihydropyridines (DHPs) group]"
+   },
+   {
+    "system_id": "oMOLyrkNLE",
+    "name": "hospitalizations (among users of long-acting dihydropyridines (DHPs))",
+    "concept_id": "Gl-I4wBZ5r"
+   },
+   {
+    "system_id": "_LaUwibhhx",
+    "name": "Prevalence of sulfadoxine-pyrimethamine resistance-associated mutations in dhfr and dhps genes of P. falciparum"
+   },
+   {
+    "system_id": "htpqV3Dvfg",
+    "name": "Dhps",
+    "concept_id": "oA2R3aCiFt"
+   },
+   {
+    "system_id": "r04Uj8fH3c",
+    "name": "dihydrofolate reductase triple (Asn-108/Ile-51/Arg-59) mutants or the dhps double mutants (Gly-437/Glu-540)",
+    "concept_id": "epHHtoSk-A"
+   },
+   {
+    "system_id": "M-IoBpTh8J",
+    "name": "Patients with DHPS mutant [vs Patients with wild type]"
+   },
+   {
+    "system_id": "4PX5Wm7Ytz",
+    "name": "dhps-540K/E prevalence"
+   },
+   {
+    "system_id": "zFQpDYEjPr",
+    "name": "presence of the double mutant dhps A437G/K540E"
+   },
+   {
+    "system_id": "dO6zDH4xQu",
+    "name": "practice among Dental Health Professionals (DHPs)",
+    "concept_id": "UvXuiYeSke"
+   },
+   {
+    "system_id": "HplEjE9LqO",
+    "name": "current users of long-acting dihydropyridines (DHPs)",
+    "concept_id": "RTqWGwtg0Q"
+   },
+   {
+    "system_id": "_S5w6jmNOD",
+    "name": "dhps A581G"
+   },
+   {
+    "system_id": "RnQENmlYvs",
+    "name": "Pneumocystis DHPS mutations"
+   },
+   {
+    "system_id": "X1t3PYR1k1",
+    "name": "dhps-1",
+    "concept_id": "egiCL8iUu7"
+   },
+   {
+    "system_id": "ohy1q61dCi",
+    "name": "serum concentration of 16-dehydropregnenolone (3 beta-hydroxy-5,16-pregnadien-20-one) 3-sulfate (16-DHPS)",
+    "concept_id": "O8vZRDweFF"
+   },
+   {
+    "system_id": "zvGLApJ3Wr",
+    "name": "Combination therapy including ACE inhibitors (ACE-I) (with or without thiazide diuretics), and angiotensin receptor blockers (ARBs) (with or without thiazide diuretics), and selective beta blockers, and dihydropyridine calcium-channel-blockers (DHPs)"
+   },
+   {
+    "system_id": "YChhXtO4F7",
+    "name": "DHPS",
+    "concept_id": "yg6SoJdcJX"
+   }
+  ],
+  "total": 5654715
+ }
+}

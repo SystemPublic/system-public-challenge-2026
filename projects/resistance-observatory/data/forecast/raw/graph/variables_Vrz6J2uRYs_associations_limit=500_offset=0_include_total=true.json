@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/Vrz6J2uRYs/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "3RZzvSO31L",
+    "variable_1_id": "Vrz6J2uRYs",
+    "variable_2_id": "x-YW6vciLj",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "monthly administration of sulfadoxine-pyrimethamine + AQ",
+    "variable_2_name": "malaria incidence rate",
+    "study_id": "1mtorpBAxb",
+    "statistic_type": "incident_rate_ratio",
+    "statistic_value": 0.078,
+    "ci_upper": 0.096,
+    "ci_lower": 0.063,
+    "ci_level": 0,
+    "pubmed_id": 36814301,
+    "system_statistic_type": "incident_rate_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

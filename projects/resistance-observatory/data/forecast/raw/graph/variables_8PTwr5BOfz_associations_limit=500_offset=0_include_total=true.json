@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/8PTwr5BOfz/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "kwJ8LM3Tod",
+    "variable_1_id": "8PTwr5BOfz",
+    "variable_2_id": "aaOBCjpswQ",
+    "variable_2_wikidata_id": "Q311383",
+    "variable_2_concept_id": "QGsnhC2Mq6",
+    "variable_1_name": "three or more IPTp-SP doses",
+    "variable_2_name": "Plasmodium falciparum multidrug resistant gene 1 86Y mutant allele carriage",
+    "study_id": "L8JOF_nJpS",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 0.25,
+    "ci_upper": 0.92,
+    "ci_lower": 0.07,
+    "ci_level": 0,
+    "p_value": 0.04,
+    "pubmed_id": 33172485,
+    "system_statistic_type": "adjusted_odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

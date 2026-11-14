@@ -1,0 +1,22 @@
+{
+ "_request": "GET /variables/LQi34n599y/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "abL-WmXSV-",
+    "variable_1_id": "LQi34n599y",
+    "variable_2_id": "RXEin_B6vg",
+    "variable_1_wikidata_id": "Q422665",
+    "variable_1_concept_id": "CVDMy6An_F",
+    "variable_1_name": "Antibacterial activities of the trimethoprim-sulphadoxine combination",
+    "variable_2_name": "nutrient broth",
+    "study_id": "B7_9-ZGFu-",
+    "statistic_type": "pearson_r",
+    "statistic_value": 1.0,
+    "pubmed_id": 7527174,
+    "system_statistic_type": "pearson_r"
+   }
+  ],
+  "total": 1
+ }
+}

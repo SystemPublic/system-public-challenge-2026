@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/Hb4rtVYg4T/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "8CAUhlGpqS",
+    "variable_1_id": "4RGfw_-wwg",
+    "variable_2_id": "Hb4rtVYg4T",
+    "variable_2_wikidata_id": "Q625506",
+    "variable_2_concept_id": "sdWLpL7z_l",
+    "variable_1_name": "IPTp-SP exposure",
+    "variable_2_name": "preterm delivery (among pregnant women who received intermittent preventive treatment using sulfadoxine-pyrimethamine)",
+    "study_id": "uVsYZo3HbT",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.42,
+    "ci_upper": 0.67,
+    "ci_lower": 0.27,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 28329383,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

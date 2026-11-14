@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/5_qn9rZwgE/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "kGkODpi5y5",
+    "variable_1_id": "5_qn9rZwgE",
+    "variable_2_id": "FdLj62pOLX",
+    "variable_2_wikidata_id": "Q56317195",
+    "variable_2_concept_id": "MZpwE2CWM6",
+    "variable_1_name": "Patients who received MSP (mefloquine, sulphadoxine, and pyrimethamine) treatment in 1985-86 vs. Patients who received MSP treatment in 1989",
+    "variable_2_name": "proportion of early treatment failures",
+    "study_id": "c-lLltrbQ6",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -3.43,
+    "p_value": 0.0001,
+    "pubmed_id": 1674024,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

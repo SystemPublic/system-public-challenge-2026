@@ -1,0 +1,51 @@
+{
+ "_request": "GET /variables/4Ye6BVEZ4o/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "HFIgJYZXxT",
+    "variable_1_id": "4Ye6BVEZ4o",
+    "variable_2_id": "0_n-WAOkCc",
+    "variable_2_wikidata_id": "Q5445",
+    "variable_2_concept_id": "A9O2_M4sui",
+    "variable_1_name": "IPT-treated group (receiving intermittent preventive treatment with sulfadoxine-pyrimethamine) [vs Control group (not receiving intermittent preventive treatment)]",
+    "variable_2_name": "Anemia",
+    "study_id": "IC4Vn1SLzG",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -8.6,
+    "pubmed_id": 22529505,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "RxjJc1Zg0d",
+    "variable_1_id": "4Ye6BVEZ4o",
+    "variable_2_id": "0fJo1LGTO6",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "IPT-treated group (receiving intermittent preventive treatment with sulfadoxine-pyrimethamine) [vs Control group (not receiving intermittent preventive treatment)]",
+    "variable_2_name": "Presence of placental malaria",
+    "study_id": "IC4Vn1SLzG",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -0.7,
+    "p_value": 0.76,
+    "pubmed_id": 22529505,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "waOKWmSq1h",
+    "variable_1_id": "4Ye6BVEZ4o",
+    "variable_2_id": "tBusUb7OIn",
+    "variable_2_wikidata_id": "Q1897162",
+    "variable_2_concept_id": "zjycE-zYCh",
+    "variable_1_name": "IPT-treated group (receiving intermittent preventive treatment with sulfadoxine-pyrimethamine) [vs Control group (not receiving intermittent preventive treatment)]",
+    "variable_2_name": "Moderate to severe placental parasitemia",
+    "study_id": "IC4Vn1SLzG",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -45.3,
+    "pubmed_id": 22529505,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 3
+ }
+}

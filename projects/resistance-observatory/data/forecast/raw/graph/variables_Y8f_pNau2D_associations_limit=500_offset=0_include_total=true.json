@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/Y8f_pNau2D/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "iA0zb6Dzku",
+    "variable_1_id": "IFnz4VJLYJ",
+    "variable_2_id": "Y8f_pNau2D",
+    "variable_1_name": "Samples taken between November 2008 and August 2010 (n = 46) [vs Samples taken between June 2002 and June 2006 (n = 113)]",
+    "variable_2_name": "prevalence of 437G and 581G alleles in the pfdhps gene",
+    "study_id": "oLKAAy9DZD",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -69.1,
+    "p_value": 0.024,
+    "pubmed_id": 22462737,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

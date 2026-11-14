@@ -1,0 +1,80 @@
+{
+ "_request": "GET /variables/I4uaX2n9Ph/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "qCaP44YLgV",
+    "variable_1_id": "I4uaX2n9Ph",
+    "variable_2_id": "Vww2oU8Cdl",
+    "variable_2_wikidata_id": "Q5445",
+    "variable_2_concept_id": "A9O2_M4sui",
+    "variable_1_name": "cotrimoxazole (CTX) with or without sulfadoxine-pyrimethamine (SP) intermittent-preventive-therapy (IPTp)",
+    "variable_2_name": "anemia",
+    "study_id": "1u4_UpeOwh",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 0.72,
+    "ci_upper": 0.83,
+    "ci_lower": 0.61,
+    "ci_level": 0,
+    "p_value": 0.01,
+    "pubmed_id": 21216867,
+    "system_statistic_type": "prevalence_ratio"
+   },
+   {
+    "system_id": "oDzzGvNjbA",
+    "variable_1_id": "I4uaX2n9Ph",
+    "variable_2_id": "Vww2oU8Cdl",
+    "variable_2_wikidata_id": "Q5445",
+    "variable_2_concept_id": "A9O2_M4sui",
+    "variable_1_name": "cotrimoxazole (CTX) with or without sulfadoxine-pyrimethamine (SP) intermittent-preventive-therapy (IPTp)",
+    "variable_2_name": "anemia",
+    "study_id": "1u4_UpeOwh",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 0.67,
+    "ci_upper": 0.83,
+    "ci_lower": 0.54,
+    "ci_level": 0,
+    "p_value": 0.01,
+    "pubmed_id": 21216867,
+    "system_statistic_type": "prevalence_ratio"
+   },
+   {
+    "system_id": "XovHhIgtkF",
+    "variable_1_id": "I4uaX2n9Ph",
+    "variable_2_id": "MDU97YbXds",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "cotrimoxazole (CTX) with or without sulfadoxine-pyrimethamine (SP) intermittent-preventive-therapy (IPTp)",
+    "variable_2_name": "malaria parasitemia",
+    "study_id": "1u4_UpeOwh",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.09,
+    "ci_upper": 0.66,
+    "ci_lower": 0.01,
+    "ci_level": 0,
+    "p_value": 0.01,
+    "pubmed_id": 21216867,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "rAVWeWf0ZE",
+    "variable_1_id": "I4uaX2n9Ph",
+    "variable_2_id": "MDU97YbXds",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "cotrimoxazole (CTX) with or without sulfadoxine-pyrimethamine (SP) intermittent-preventive-therapy (IPTp)",
+    "variable_2_name": "malaria parasitemia",
+    "study_id": "1u4_UpeOwh",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.43,
+    "ci_upper": 0.97,
+    "ci_lower": 0.19,
+    "ci_level": 0,
+    "p_value": 0.01,
+    "pubmed_id": 21216867,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 4
+ }
+}

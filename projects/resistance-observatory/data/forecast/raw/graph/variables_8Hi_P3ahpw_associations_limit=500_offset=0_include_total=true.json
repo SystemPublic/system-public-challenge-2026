@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/8Hi_P3ahpw/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "tYaxkKZp0Z",
+    "variable_1_id": "pY41u47MvH",
+    "variable_2_id": "8Hi_P3ahpw",
+    "variable_1_wikidata_id": "Q15787",
+    "variable_1_concept_id": "2J5_gYjK1G",
+    "variable_1_name": "human immunodeficiency virus infection",
+    "variable_2_name": "response to sulfadoxine-pyrimethamine treatment",
+    "study_id": "hI1WxeCCnM",
+    "statistic_type": "hazard_ratio",
+    "statistic_value": 3.38,
+    "ci_upper": 7.34,
+    "ci_lower": 1.56,
+    "ci_level": 0,
+    "pubmed_id": 17083036,
+    "system_statistic_type": "hazard_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

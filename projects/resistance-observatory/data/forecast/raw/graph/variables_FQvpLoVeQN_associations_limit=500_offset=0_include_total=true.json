@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/FQvpLoVeQN/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Meqo31WUtn",
+    "variable_1_id": "5ZWi576tfg",
+    "variable_2_id": "FQvpLoVeQN",
+    "variable_1_wikidata_id": "Q747810",
+    "variable_1_concept_id": "f77jd4Np3t",
+    "variable_1_name": "2010 survey [vs 2006 survey]",
+    "variable_2_name": "Prevalence of pfdhps mutations",
+    "study_id": "3QoiFxiIh5",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 25.0,
+    "p_value": 0.001,
+    "pubmed_id": 26452541,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

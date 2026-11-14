@@ -1,0 +1,80 @@
+{
+ "_request": "GET /variables/0yS22duzeX/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "i4oO2Y9Q-5",
+    "variable_1_id": "0yS22duzeX",
+    "variable_2_id": "4ZYJsPXBRb",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "uptake of \u2265 3 doses of IPTp-SP",
+    "variable_2_name": "placental malaria infection",
+    "study_id": "c3U2PtvDD4",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 2.36,
+    "ci_upper": 4.87,
+    "ci_lower": 1.41,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 32122339,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "LSD7Md0Trm",
+    "variable_1_id": "0yS22duzeX",
+    "variable_2_id": "k7b0mNSnm2",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "uptake of \u2265 3 doses of IPTp-SP",
+    "variable_2_name": "low birth weight (LBW)",
+    "study_id": "c3U2PtvDD4",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.31,
+    "ci_upper": 0.87,
+    "ci_lower": 0.11,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 32122339,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "DsOi7V9ddR",
+    "variable_1_id": "0yS22duzeX",
+    "variable_2_id": "k7b0mNSnm2",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "uptake of \u2265 3 doses of IPTp-SP",
+    "variable_2_name": "low birth weight (LBW)",
+    "study_id": "c3U2PtvDD4",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 0.31,
+    "ci_upper": 0.87,
+    "ci_lower": 0.11,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 32122339,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "Vst1aaXCPP",
+    "variable_1_id": "0yS22duzeX",
+    "variable_2_id": "4ZYJsPXBRb",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "uptake of \u2265 3 doses of IPTp-SP",
+    "variable_2_name": "placental malaria infection",
+    "study_id": "c3U2PtvDD4",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.36,
+    "ci_upper": 4.87,
+    "ci_lower": 1.41,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 32122339,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 4
+ }
+}

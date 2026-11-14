@@ -1,0 +1,36 @@
+{
+ "_request": "GET /variables/MGZ3B40hiz/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "mJ4DQ8TlF2",
+    "variable_1_id": "MGZ3B40hiz",
+    "variable_2_id": "HS5m-NdkaG",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "early intake of the first sulfadoxine-pyrimethamine dose",
+    "variable_2_name": "risk of low birth weight",
+    "study_id": "QtIctUwVcC",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 0.5,
+    "p_value": 0.01,
+    "pubmed_id": 22514730,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "yLuo6rQZsR",
+    "variable_1_id": "MGZ3B40hiz",
+    "variable_2_id": "v6CcB-K6KP",
+    "variable_1_name": "early intake of the first sulfadoxine-pyrimethamine dose",
+    "variable_2_name": "risk of placental infection",
+    "study_id": "QtIctUwVcC",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 1.7,
+    "p_value": 0.1,
+    "pubmed_id": 22514730,
+    "system_statistic_type": "adjusted_odds_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

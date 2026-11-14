@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/c7Ro-vvnRi/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "kWNskGOE75",
+    "variable_1_id": "h0nQt3y4vK",
+    "variable_2_id": "c7Ro-vvnRi",
+    "variable_1_name": "Pregnant women who received sulphadoxine-pyrimethamine [vs Pregnant women who received placebo]",
+    "variable_2_name": "Prevalence of quintuple mutant infections",
+    "study_id": "54mL0KkJw3",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 12.0,
+    "p_value": 0.031,
+    "pubmed_id": 21148518,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

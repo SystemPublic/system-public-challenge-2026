@@ -1,0 +1,3507 @@
+{
+  "source": {
+    "name": "System Public Graph",
+    "version": "2.1",
+    "snapshot": "2026-07-01",
+    "license": "CC BY-NC 4.0",
+    "doi": "10.7910/DVN/7V6JDO",
+    "api_base": "https://public-api.system.com/v1",
+    "documented_known_bad_extraction_share_percent": 20
+  },
+  "generated_at": "2026-11-14T16:09:15.693Z",
+  "generated_by": "scripts/graph-stats.ts",
+  "requests_made": 300,
+  "searches": [
+    {
+      "term": "dhps",
+      "query": "GET /variables?search=name:dhps&limit=50&offset=<n>&include_total=true",
+      "hits": 31,
+      "truncated_at_cap": false
+    },
+    {
+      "term": "pfdhps",
+      "query": "GET /variables?search=name:pfdhps&limit=50&offset=<n>&include_total=true",
+      "hits": 11,
+      "truncated_at_cap": false
+    },
+    {
+      "term": "dihydropteroate",
+      "query": "GET /variables?search=name:dihydropteroate&limit=50&offset=<n>&include_total=true",
+      "hits": 9,
+      "truncated_at_cap": false
+    },
+    {
+      "term": "K540E",
+      "query": "GET /variables?search=name:K540E&limit=50&offset=<n>&include_total=true",
+      "hits": 0,
+      "truncated_at_cap": false
+    },
+    {
+      "term": "540E",
+      "query": "GET /variables?search=name:540E&limit=50&offset=<n>&include_total=true",
+      "hits": 1,
+      "truncated_at_cap": false
+    },
+    {
+      "term": "sulfadoxine",
+      "query": "GET /variables?search=name:sulfadoxine&limit=50&offset=<n>&include_total=true",
+      "hits": 190,
+      "truncated_at_cap": false
+    },
+    {
+      "term": "sulfadoxine-pyrimethamine",
+      "query": "GET /variables?search=name:sulfadoxine-pyrimethamine&limit=50&offset=<n>&include_total=true",
+      "hits": 149,
+      "truncated_at_cap": false
+    }
+  ],
+  "variables": [
+    {
+      "system_id": "eAM2Y_iPqG",
+      "name": "uptake of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine during the last pregnancy",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 8
+    },
+    {
+      "system_id": "Mp_DeEeZbC",
+      "name": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine (SP)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 8
+    },
+    {
+      "system_id": "V_sWEQ_UwI",
+      "name": "intermittent preventive treatment with sulfadoxine and pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 8
+    },
+    {
+      "system_id": "vYvEH3xIAV",
+      "name": "sulfadoxine-pyrimethamine (SP)",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 6
+    },
+    {
+      "system_id": "_nDiLV4gb_",
+      "name": "Sulfadoxine-pyrimethamine plus amodiaquine implementation",
+      "concept_id": "6Q_i0GlCWE",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 5
+    },
+    {
+      "system_id": "5wofFjqbF1",
+      "name": "uptake of optimal intermittent preventive treatment of malaria in pregnancy using sulfadoxine-pyrimethamine doses",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 5
+    },
+    {
+      "system_id": "L4_M3W-qgX",
+      "name": "receiving ≥3 intermittent preventive treatment in pregnancy using sulfadoxine-pyrimethamine doses during pregnancy",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 5
+    },
+    {
+      "system_id": "N5HxrhyxYl",
+      "name": "Intermittent preventive treatment in pregnancy (IPTp) with azithromycin and monthly sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 5
+    },
+    {
+      "system_id": "_Wq8UTSSAj",
+      "name": "intermittent preventive treatment in pregnancy with monthly dihydroartemisinin-piperaquine treatment group [vs Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine treatment group]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 4
+    },
+    {
+      "system_id": "FoxVavch2Q",
+      "name": "uptake of > 3 doses of Intermittent Preventive Treatment during pregnancy with Sulfadoxine-Pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 4
+    },
+    {
+      "system_id": "GChAl3DowJ",
+      "name": "sulfadoxine-pyrimethamine alone [vs Asulfadoxine-pyrimethamine]",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 4
+    },
+    {
+      "system_id": "I4uaX2n9Ph",
+      "name": "cotrimoxazole (CTX) with or without sulfadoxine-pyrimethamine (SP) intermittent-preventive-therapy (IPTp)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 4
+    },
+    {
+      "system_id": "LyauphKn09",
+      "name": "Artesunate plus amodiaquine [vs Chloroquine plus pyrimethamine-sulfadoxine]",
+      "concept_id": "F8DI_OveVS",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 4
+    },
+    {
+      "system_id": "ohy1q61dCi",
+      "name": "serum concentration of 16-dehydropregnenolone (3 beta-hydroxy-5,16-pregnadien-20-one) 3-sulfate (16-DHPS)",
+      "concept_id": "O8vZRDweFF",
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 4
+    },
+    {
+      "system_id": "OmpZe3BLOx",
+      "name": "treatment with artesunate plus sulfadoxine-pyrimethamine",
+      "concept_id": "c_f3i8lTBc",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 4
+    },
+    {
+      "system_id": "tkrXp89sL3",
+      "name": "dihydroartemisinin-piperaquine group [vs sulfadoxine-pyrimethamine group]",
+      "concept_id": "lkPRUZG3Up",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 4
+    },
+    {
+      "system_id": "xR0c_ssDBh",
+      "name": "Artesunate plus sulfadoxine-pyrimethamine treatment [vs Sulfadoxine-pyrimethamine treatment]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 4
+    },
+    {
+      "system_id": "ySRa3AnhKL",
+      "name": "uptake of Intermittent Preventive Therapy with Sulfadoxine-Pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 4
+    },
+    {
+      "system_id": "2KyO-QlFif",
+      "name": "MQ group (receiving mefloquine) [vs SP group (receiving sulfadoxine-pyrimethamine)]",
+      "concept_id": "ulo6zHPp_o",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "3sxxaT2NrP",
+      "name": "Prevalence of Pfdhps 437G mutation",
+      "concept_id": null,
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "4Ye6BVEZ4o",
+      "name": "IPT-treated group (receiving intermittent preventive treatment with sulfadoxine-pyrimethamine) [vs Control group (not receiving intermittent preventive treatment)]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "6sa3E9osC1",
+      "name": "treatment with artesunate plus Sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "aZ-hbsnCRY",
+      "name": "presence of polymorphisms in P. falciparum dihydrofolate reductase and dihydropteroate synthase",
+      "concept_id": null,
+      "matched_terms": [
+        "dihydropteroate"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "dAwtS56nqr",
+      "name": "use of sulfadoxine-pyrimethamine used as intermittent preventive treatment during pregnancy (IPTp-SP)",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "DNQZppkSiv",
+      "name": "presence of mutations at the DHPS locus",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "eOgeZeZ8A8",
+      "name": "sulfadoxine-pyrimethamine use",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "H87RkD3JVI",
+      "name": "Intermittent preventive treatment for malaria with sulfadoxine-pyrimethamine (IPTp-SP)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "HplEjE9LqO",
+      "name": "current users of long-acting dihydropyridines (DHPs)",
+      "concept_id": "RTqWGwtg0Q",
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "mYMd7xCbRQ",
+      "name": "Receipt of ≥ 2 sulfadoxine-pyrimethamine doses",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "Q90MjA1sUW",
+      "name": "intermittent preventive treatment with dihydroartemisinin-piperaquine [vs intermittent preventive treatment with sulfadoxine-pyrimethamine]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "ReHfXiRmeO",
+      "name": "use of sulfadoxine-pyrimethamine-IPTp",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "SE-o4dsLDM",
+      "name": "3-dose intermittent preventive therapy in pregnancy with sulfadoxine-pyrimethamine (SP)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "tgsnSuXHnt",
+      "name": "three or more doses of sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 3
+    },
+    {
+      "system_id": "-IyaZlOOM5",
+      "name": "sulfadoxine-pyrimethamine intermittent preventive treatment (SP-IPT(p))",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "34HSK5NPzP",
+      "name": "intermittent preventive treatment in pregnancy with monthly sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "4_miBkGcam",
+      "name": "Intermittent preventive treatment for malaria in infants with sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "4B1RJl79OS",
+      "name": "intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine users [vs non-intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine users]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "6vWouxoW6d",
+      "name": "treatment of clinical Plasmodium falciparum malaria with sulfadoxine-pyrimethamine and amodiaquine (AQ)",
+      "concept_id": "QGsnhC2Mq6",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "7lbgwnfoS1",
+      "name": "sulfadoxine-pyrimethamine treatment failure in Plasmodium falciparum malaria in the Democratic Republic of the Congo (DRC)",
+      "concept_id": "n8o7PdNYDI",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "7O5kkYMFq-",
+      "name": "intermittent preventive treatment in pregnancy with Sulfadoxine-Pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "8v3-AOSAc7",
+      "name": "sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "9M2VcP5ASE",
+      "name": "Sulfadoxine-pyrimethamine (SP)",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "bJIJkpHB0R",
+      "name": "Mutations in the Plasmodium falciparum genes Pfdhfr and Pfdhps, particularly the sextuple mutant haplotype",
+      "concept_id": "QGsnhC2Mq6",
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "cjjsKReiis",
+      "name": "intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "dDmQkqNtWS",
+      "name": "receiving sulfadoxine-pyrimethamine for malaria prevention in their last pregnancy of the past 5 years",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "dzI3ZxdDyT",
+      "name": "adequate doses of taking intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "esbyRD1FeI",
+      "name": "Dihydroartemisinin-piperaquine [vs Sulfadoxine-pyrimethamine ]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "eUfgJ_Hqa-",
+      "name": "cotrimoxazole [vs pyrimethamine-sulfadoxine]",
+      "concept_id": "bnVd1efP6T",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "f9zd-DaMg8",
+      "name": "amodiaquine plus sulfadoxine-pyrimethamine treatment [vs artemether-lumefantrine treatment]",
+      "concept_id": "F8DI_OveVS",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "gWl4ybOU26",
+      "name": "receipt of Intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine",
+      "concept_id": "6Q_i0GlCWE",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "iaseEvvnzp",
+      "name": "Prevalence of quadruple dhfr-mutants + dhps-437G",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "iB05wiIH8Q",
+      "name": "Sulfadoxine-pyrimethamine and co-trimoxazole",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "jBKSMS6YYV",
+      "name": "use of ≤ 2 doses of IPTp-sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "KoAoGDl2G5",
+      "name": "different dhps genotypes",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "Kr9xqYDXUB",
+      "name": "probability of receiving intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine during the antenatal care visit",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "Kx6y_6PTjz",
+      "name": "Intermittent preventive treatment (IPTp) to pregnant women with sulfadoxine-pyrimethamine",
+      "concept_id": "6Q_i0GlCWE",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "lpxC27pJQl",
+      "name": "sulfadoxine concentrations",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "MGZ3B40hiz",
+      "name": "early intake of the first sulfadoxine-pyrimethamine dose",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "mMWHitVwdC",
+      "name": "monthly sulfadoxine-pyrimethamine regimen",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "MtUnuv79Hw",
+      "name": "Provision of AZI-sulfadoxine-pyrimethamine rather than 2 doses of sulfadoxine-pyrimethamine during pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "o_0aATGf7T",
+      "name": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "OKdIopb5i8",
+      "name": "treatment with pyrimethamine-sulfadoxine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "OPyy841fL3",
+      "name": "monthly sulfadoxine-pyrimethamine and two doses of azithromycin (AZI-sulfadoxine-pyrimethamine)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "pTY9Gss_kh",
+      "name": "intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "PUSCk_irGb",
+      "name": "mutations in dhfr and dhps",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "qAqOGEkqnt",
+      "name": "three or more doses of IPTp-sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "qb07_CRR2v",
+      "name": "treatment of Plasmodium falciparum malaria with sulfadoxine-pyrimethamine or SP plus one dose of artesunate (SP+AS)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "Qx9_yv5F9e",
+      "name": "group that took intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP) [vs group that did not take intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP)]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "R6Kq3_OGlx",
+      "name": "intermittent preventive treatment in pregnancy with monthly sulfadoxine-pyrimethamine and two doses of azithromycin (AZI-sulfadoxine-pyrimethamine)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "RnQENmlYvs",
+      "name": "Pneumocystis DHPS mutations",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "t-i-giqwW1",
+      "name": "Sulfadoxine-pyrimethamine plus amodiaquine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "t0KhqP4aAr",
+      "name": "intermittent preventive therapy in pregnancy-sulfadoxine-pyrimethamine use",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "w1ktrLk4Wc",
+      "name": "Presence of K540 E: in dihydropteroate synthase",
+      "concept_id": "QftpZC6uM4",
+      "matched_terms": [
+        "dihydropteroate"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "W4qv_24BKu",
+      "name": "the uptake of less than three doses of sulfadoxine-pyrimethamine for the intermittent preventive treatment of malaria in pregnancy (IPTp-SP)",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "w4TNEfzlNj",
+      "name": "sulfadoxine-pyrimethamineAS3",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "wHRH8dg_1m",
+      "name": "use of intermittent preventive treatment sulfadoxine-pyrimethamine (IPTp-SP) and insecticide-treated nets (ITNs)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "yc3RZzLejU",
+      "name": "intermittent screening and treatment with dihydroartemisinin-piperaquine [vs intermittent preventive treatment with sulfadoxine-pyrimethamine]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "YPFsli67E4",
+      "name": "Amodiaquine plus sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "za95yElNte",
+      "name": "intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine users",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "zGlx-8nek-",
+      "name": "prior receipt of intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine and gestational age during the current pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 2
+    },
+    {
+      "system_id": "_CRx0Qt9hO",
+      "name": "Seasonal Malaria Chemoprevention with sulfadoxine-pyrimethamine (SP) plus amodiaquine (AQ)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "_cYts7FA6P",
+      "name": "DHPS gene",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "_LaUwibhhx",
+      "name": "Prevalence of sulfadoxine-pyrimethamine resistance-associated mutations in dhfr and dhps genes of P. falciparum",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps",
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "_S5w6jmNOD",
+      "name": "dhps A581G",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "-9xXA5YSrA",
+      "name": "after deployment of artesunate plus sulfadoxine-pyrimethamine (AS-sulfadoxine-pyrimethamine) [vs before deployment of artesunate plus sulfadoxine-pyrimethamine (AS-sulfadoxine-pyrimethamine)]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "-rtpp_-U3i",
+      "name": "prevalence of P. carinii dihydropteroate synthase mutations",
+      "concept_id": "QftpZC6uM4",
+      "matched_terms": [
+        "dihydropteroate"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "1hKTXH6jJq",
+      "name": "receiving the first dose of sulfadoxine pyrimethamine in the third trimester",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "2cpyMwG4F_",
+      "name": "New delivery system for intermittent preventive treatment (IPTp) with sulfadoxine-pyrimethamine vs. Health unit provided routine IPTp",
+      "concept_id": "6Q_i0GlCWE",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "4PX5Wm7Ytz",
+      "name": "dhps-540K/E prevalence",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "5bihukeLZE",
+      "name": "Pfdhps double mutation",
+      "concept_id": null,
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "5bJrK_wJcx",
+      "name": "Prevalence of antifolate drugs resistance in the 51I, 59R, 108N, or 540E SNPs",
+      "concept_id": null,
+      "matched_terms": [
+        "540E"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "5J8vXDiIAs",
+      "name": "Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine (IPTp-SP) in 2011 (pregnant women) [vs Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine (IPTp-SP) in 2005 (pregnant women)]",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "5YwFDZUPYF",
+      "name": "placebo or sulfadoxine-pyrimethamine combined with a single dose of artesunate",
+      "concept_id": "c_f3i8lTBc",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "6nc-md3xWP",
+      "name": "treatment failure (among the patients with the presence of the double mutant dhps A437G/K540E)",
+      "concept_id": "MZpwE2CWM6",
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "7S9QwQsJvH",
+      "name": "sulfadoxine-pyrimethamine group [vs placebo group]",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "8Hi_P3ahpw",
+      "name": "response to sulfadoxine-pyrimethamine treatment",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "8KPYUCVmCY",
+      "name": "patients with dihydropteroate synthase gene mutations [vs patients without dihydropteroate synthase gene mutations]",
+      "concept_id": "QftpZC6uM4",
+      "matched_terms": [
+        "dihydropteroate"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "9c8sh0YZoL",
+      "name": "Chloroquine plus sulfadoxine-pyrimethamine (CQ + S + 25 mg P) given sequentially [vs Chloroquine plus sulfadoxine-pyrimethamine (CQ + S + 25 mg P) given simultaneously]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "9gk1l4DtXO",
+      "name": "Chloroquine arm [vs sulfadoxine-pyrimethamine plus artesunate arm]",
+      "concept_id": "FSXE9QnJOc",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "9gmDudNcUL",
+      "name": "extents of sulfadoxine absorption",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "airhhho3ig",
+      "name": "Chloroquine [vs Chloroquine-Pyrimethamine-Sulfadoxine (CQPS)]",
+      "concept_id": "FSXE9QnJOc",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "AmsZfr1l1L",
+      "name": "chloroquine alone [vs sulfadoxine plus pyrimethamine alone]",
+      "concept_id": "FSXE9QnJOc",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "ay67NiZAJV",
+      "name": "Amodiaquine (AQ) [vs Amodiaquine-Pyrimethamine-Sulfadoxine (AQPS)]",
+      "concept_id": "F8DI_OveVS",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "B9ai_5oer_",
+      "name": "Seasonal malaria chemoprevention with sulfadoxine-pyrimethamine and amodiaquine (SMC with SPAQ) in the intervention county",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "ba-nNcCDEy",
+      "name": "use of sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "bkHgD5M-T3",
+      "name": "presence of the quintuple mutant dhfr N51I/C59R/S108N+dhps A437G/K540E",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "bm99S0gYAO",
+      "name": "artesunate-sulfadoxine-pyrimethamine [vs artesunate-amodiaquine]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "bq2s9bG-YW",
+      "name": "patients with P. carinii isolates with DHPS mutations [vs patients with P. carinii isolates with wild-type DHPS]",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "bQtHWigkX4",
+      "name": "intermittent preventive therapy in pregnancy with sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "BQyOfe99h1",
+      "name": "Sulfadoxine-pyrimethamine treatment (SP) compared to placebo",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "BsSmCjuXyr",
+      "name": "Absence of intermittent preventive treatment with sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "BXvfP3J4ja",
+      "name": "mothers received any iron/folic acid supplements and sulfadoxine-pyrimethamine intermittent preventive treatment (SP-IPT(p)) for malaria during pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "c-4xYZ5pGP",
+      "name": "lercanidipine group [vs other-dihydropyridines (DHPs) group]",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "cAj2IeLHYB",
+      "name": "estimated maximum sulfadoxine concentrations",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "CbE6DxL4J7",
+      "name": "Prevalence of dihydropteroate synthase mutations",
+      "concept_id": "QftpZC6uM4",
+      "matched_terms": [
+        "dihydropteroate"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "cwc6n4zsmm",
+      "name": "treatment with pyrimethamine-sulfadoxine alone",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "CYOI8vCjej",
+      "name": "exposure to sulfadoxine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "CzGoP2TYlE",
+      "name": "use of at least 2 doses of intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "D7el21xS5K",
+      "name": "Case management group using sulfadoxine-pyrimethamine (SP) (receiving two doses of SP) vs. Monthly SP treatment group (receiving monthly SP)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "DE3Wy9vtPp",
+      "name": "artesunate plus sulfadoxine-pyrimethamine [vs. sulfadoxine-pyrimethamine alone]",
+      "concept_id": "c_f3i8lTBc",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "DjtAa49q2O",
+      "name": "pfdhps mutations",
+      "concept_id": null,
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "dO6zDH4xQu",
+      "name": "practice among Dental Health Professionals (DHPs)",
+      "concept_id": "UvXuiYeSke",
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "DQTHpz16wd",
+      "name": "receiving all sulfadoxine-pyrimethamine doses during pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Dz6DpMk1g1",
+      "name": "Seasonal Malaria Chemoprevention (SMC) with Sulfadoxine-Pyrimethamine and Amodiaquine (SPAQ) in the intervention county",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "EWA2bf8hgg",
+      "name": "Patients with uncomplicated falciparum malaria (treated with sulfadoxine and pyrimethamine, a fixed-dose combination) in 2002 [vs Patients with uncomplicated falciparum malaria (treated with sulfadoxine and pyrimethamine, a fixed-dose combination) in 1998]",
+      "concept_id": "6Q_i0GlCWE",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "ezVgilf-eR",
+      "name": "number of sulfadoxine-pyrimethamine doses during pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "F3sns1rkQt",
+      "name": "Atovaquone-proguanil [vs Chloroquine-sulfadoxine-pyrimethamine]",
+      "concept_id": "rqPOazm37i",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "ffAffD_tao",
+      "name": "dosage of sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Fjdnc42QqZ",
+      "name": "daily iron and intermittent preventive treatment with sulfadoxine-pyrimethamine placebo",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "fP6e-vnzJr",
+      "name": "treatment failure (among HIV-1 positive and negative patients with acute uncomplicated falciparum malaria treated with chloroquine plus sulfadoxine-pyrimethamine)",
+      "concept_id": "MZpwE2CWM6",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "FQvpLoVeQN",
+      "name": "Prevalence of pfdhps mutations",
+      "concept_id": null,
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "fULIBBzkQe",
+      "name": "Withdrawal of sulfadoxine-pyrimethamine (SP) as the first-line anti-malarial drug in 2008 [vs Use of sulfadoxine-pyrimethamine (SP) as the first-line anti-malarial drug in 2005]",
+      "concept_id": "85bCpa5non",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "FXWEg2vQVy",
+      "name": "IPTp with DP [vs IPTp with sulfadoxine-pyrimethamine]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "G9lWUCCYUR",
+      "name": "obtaining at least two doses of sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Gdg1qyBHom",
+      "name": "failure to receive sulfadoxine-pyrimethamine/intermittent preventive treatment",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "GE8-9mkeGW",
+      "name": "pfdhps haplotype SGEGA at five codons",
+      "concept_id": null,
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "gffkqLnbdz",
+      "name": "Sulfadoxine-pyrimethamine group [vs Chloroquine group]",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "gREmpcTPep",
+      "name": "intermittent preventive treatment with sulfadoxine-pyrimethamine at 4 and 8 weeks and daily iron for 12 weeks",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "GtBiCmZMr2",
+      "name": "Fever case management (CM) approach using sulfadoxine-pyrimethamine (SP) vs. Monthly SP",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "GUhh4ycJ36",
+      "name": "SMC using sulfadoxine-pyrimethamine and amodiaquine (SPAQ) in the intervention county",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "GUOBVPv_CA",
+      "name": "receipt of antiretroviral therapy and dosage of sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Gwx5k3BoKJ",
+      "name": "SP-azithromycin (sulfadoxine-pyrimethamine plus azithromycin)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Hb4rtVYg4T",
+      "name": "preterm delivery (among pregnant women who received intermittent preventive treatment using sulfadoxine-pyrimethamine)",
+      "concept_id": "sdWLpL7z_l",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "HexIdY2lwf",
+      "name": "frequency of pfdhfr/pfdhps quintuple mutants associated with sulfadoxine-pyrimethamine resistance",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "hJgAw-pO6o",
+      "name": "Intermittent treatment with sulfadoxine-pyrimethamine (SP) and use of insecticide-treated nets (ITN) vs. Placebo treatment",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "HQHEBtFuAt",
+      "name": "Addition of community scheduled malaria screening and treatment (CSST) with artemether-lumefantrine by community health workers (CHWs) to standard intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine (IPTp-SP) (CSST+IPTp-SP)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "HrCbbwlun2",
+      "name": "using sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "HUjSj0-6eR",
+      "name": "low sulfadoxine-pyrimethamine dose (<27.5/1.375 mg/kg)",
+      "concept_id": "6Q_i0GlCWE",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Ico1VcX0me",
+      "name": "sulfadoxine plus pyrimethamine plus chloroquine [vs sulfadoxine plus pyrimethamine alone]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Ij-wd8oqgv",
+      "name": "Citing intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine as a way to prevent malaria in pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "J8_ArHnePY",
+      "name": "sulfadoxine-pyrimethamine treatment failure in children aged less than 5 years",
+      "concept_id": "6Q_i0GlCWE",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "J87EGr0kSu",
+      "name": "28-day clinical failure risks (among patients receiving chloroquine+sulfadoxine-pyrimethamine)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "jbR7SdgAPX",
+      "name": "prevalence of Pfdhps A437G mutation",
+      "concept_id": null,
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "jlQ1yWP7Ng",
+      "name": "amodiaquine+sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "jN_pqwhFjd",
+      "name": "getting sulfadoxine-pyrimethamine prophylaxis",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "jNCw530rqU",
+      "name": "intermittent preventive therapy of malaria in pregnancy-Sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "kaymIhBt2x",
+      "name": "mefloquine treatment [vs sulfadoxine-pyrimethamine treatment]",
+      "concept_id": "ulo6zHPp_o",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Kcmmpx1fWC",
+      "name": "Patients given co-trimoxazole with DHPS mutant [vs Patients given co-trimoxazole with wild type]",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "KTzTwhgPUn",
+      "name": "Chloroquine plus pyrimethamine-sulfadoxine [vs Artesunate plus amodiaquine]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "l-acL-LJLz",
+      "name": "Treatment group (received five monthly rounds of sulfadoxine-pyrimethamine plus amodiaquine)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "l27ay1W9HE",
+      "name": "IPTi-sulfadoxine/pyrimethamine intervention area [vs Non-IPTi-sulfadoxine/pyrimethamine comparison area]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "LPZZFwC_ZH",
+      "name": "pfdhps A437G",
+      "concept_id": null,
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "LTWum_bOuO",
+      "name": "Prevalence of P. carinii dihydropteroate synthase mutations in the United States and China (year comparison)",
+      "concept_id": "QftpZC6uM4",
+      "matched_terms": [
+        "dihydropteroate"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "M-IoBpTh8J",
+      "name": "Patients with DHPS mutant [vs Patients with wild type]",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "M7kacUlpjp",
+      "name": "intermittent sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "MFpic2N3Wz",
+      "name": "frequency of the SP-resistance associated Pfdhps double mutant (SGEAA) haplotype",
+      "concept_id": null,
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "mqJYqKF_AW",
+      "name": "knowledge of the use of sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "MZz47daYt_",
+      "name": "Intermittent Preventive Treatment in Infants with Sulfadoxine-Pyrimethamine (SP) (IPTi)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "N7c2kA2vRe",
+      "name": "Compliance to sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "N96ArTqg_3",
+      "name": "intermittent preventive treatment with sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "N9OZxYOPVM",
+      "name": "prevalence of quintuple mutation associated with resistance to sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "NcKutKS8OL",
+      "name": "Artesunate + Mefloquine (artesunate + mefloquine) [vs Artesunate + Sulfadoxine-Pyrimethamine (artesunate + sulfadoxine-pyrimethamine)]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "NfmrH1gSNI",
+      "name": "Frequency of Pfdhps double mutation in 2005 (Pawe hospital, North Western Ethiopia) vs. Frequency of Pfdhps double mutation in 2007/08 (Pawe hospital, North Western Ethiopia)",
+      "concept_id": null,
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "nld2s2HvNr",
+      "name": "receipt of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "NMU_MYLALu",
+      "name": "SP-artesunate (combination of sulfadoxine-pyrimethamine and artesunate)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "NnJdl2ZGXT",
+      "name": "Seasonal Malaria Chemoprevention (SMC) with sulfadoxine-pyrimethamine and amodiaquine (SPAQ) in the intervention county",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "NrwJ7gP8x2",
+      "name": "time between the first and second dose of sulfadoxine - pyrimethamine longer than ten weeks",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Nx17qhDDpl",
+      "name": "using sulfadoxine-pyrimethamine in pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "oceKl1xwi3",
+      "name": "receiving ≥3 doses of sulfadoxine pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "ojBD2z1iLA",
+      "name": "Prevalence of sulfa drug treatment (sulfadoxine-pyrimethamine) for P. falciparum malaria in 2005 (n=78) vs. Prevalence of sulfa drug treatment (sulfadoxine-pyrimethamine) for P. falciparum malaria in 2008 (n=87)",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Olu8YQnIS0",
+      "name": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine [vs Intermittent preventive treatment in pregnancy with dihydroartemisinin-piperaquine plus azithromycin]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "oMOLyrkNLE",
+      "name": "hospitalizations (among users of long-acting dihydropyridines (DHPs))",
+      "concept_id": "Gl-I4wBZ5r",
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "oYz0qmE_N6",
+      "name": "frequency of clinical episodes of malaria caused by P. falciparum parasites with mutations in dhfr and dhps",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "p0sVY5Nhlb",
+      "name": "AQ+sulfadoxine-pyrimethamine treatment",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "PdJPy5aIC2",
+      "name": "iron/folic acid supplements and sulfadoxine-pyrimethamine intermittent preventive treatment (SP-IPT(p))",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "pIWIFUpTS1",
+      "name": "use of ≥3 doses of intermittent preventive therapy in pregnancy using sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "PsQUGiRwHi",
+      "name": "Sulfadoxine-pyrimethamine treatment group [vs CQ treatment group]",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "pT0Iznomxx",
+      "name": "chloroquine plus sulfadoxine-pyrimethamine [vs artesunate plus mefloquine]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "PvQqGhyQoX",
+      "name": "efficacy of amodiaquine plus sulfadoxine-pyrimethamine (AQ+SP)",
+      "concept_id": "F8DI_OveVS",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "QetWAgOrXK",
+      "name": "mefloquine, sulfadoxine and pyrimethamine plus primaquine [vs mefloquine, sulfadoxine and pyrimethamine alone]",
+      "concept_id": "ulo6zHPp_o",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "r04Uj8fH3c",
+      "name": "dihydrofolate reductase triple (Asn-108/Ile-51/Arg-59) mutants or the dhps double mutants (Gly-437/Glu-540)",
+      "concept_id": "epHHtoSk-A",
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "r815Bfabnf",
+      "name": "sulfadoxine-pyrimethamine arm [vs AL arm]",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "RwkJnfEa8I",
+      "name": "artesunate + sulfadoxine-pyrimethamine (AS + SP)",
+      "concept_id": "c_f3i8lTBc",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "rWP22GlyG0",
+      "name": "Treatment failure with sulfadoxine-pyrimethamine [vs Adequate clinical and parasitological response with sulfadoxine-pyrimethamine]",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "s5Z-CMPgPS",
+      "name": "prevalence of dhps double-pure mutant parasites",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "sLu6FAPFH3",
+      "name": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine [vs Intermittent preventive treatment in pregnancy with dihydroartemisinin-piperaquine]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "TaKS18jKT6",
+      "name": "presence of the quadruple mutant dhfr N51I/S108N+dhps A437G/K540E",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "TCDRqDWKZ7",
+      "name": "Receiving five monthly rounds of sulfadoxine-pyrimethamine plus amodiaquine (SMC treatment) aimed at preventing malaria in children age 5 to 14 years",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "TD6hxFhLja",
+      "name": "plasma concentrations of sulfadoxine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "tWXabXTS6y",
+      "name": "sulfadoxine-pyrimethamine intake in the previous 15-35 days",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "TxefNKqvOs",
+      "name": "use of intermittent preventive treatment using sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "uGl73LZJva",
+      "name": "old officially abandoned first line anti-malaria drug Sulfadoxin-pyrimethamine",
+      "concept_id": "6Q_i0GlCWE",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "UVN1eyU4LM",
+      "name": "Women with IPTp (intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine) [vs Women without chemoprophylaxis against malaria]",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "uxRVFitRet",
+      "name": "treatment failure rate (among the patients who received amodiaquine plus sulfadoxine-pyrimethamine in Papua New Guinea)",
+      "concept_id": "MZpwE2CWM6",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "v1s4T-JLqi",
+      "name": "Sulfadoxine-pyrimethamine plus artesunate [vs AQ/AS]",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "vCx_oLIFfc",
+      "name": "chloroquine+sulfadoxine-pyrimethamine",
+      "concept_id": "FSXE9QnJOc",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "vGB3invQEk",
+      "name": "whole blood to plasma concentration ratio for sulfadoxine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "VMf8pr39u7",
+      "name": "mutant allele frequencies in the Plasmodium falciparum genes dhfr and dhps in mixed isolates",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Vrz6J2uRYs",
+      "name": "monthly administration of sulfadoxine-pyrimethamine + AQ",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "W127P7U5d_",
+      "name": "having adequate knowledge on Intermittent Preventive Treatment during pregnancy with Sulfadoxine-Pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "W1anF-3Gar",
+      "name": "sulfadoxine terminal-phase elimination half-lives",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "W8abFR8UDl",
+      "name": "having mutant Dihydropteroate synthase",
+      "concept_id": "QftpZC6uM4",
+      "matched_terms": [
+        "dihydropteroate"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "WKhpuoorMB",
+      "name": "Dihydroartemisinin-piperaquine and sulfadoxine-pyrimethamine plus amodiaquine arms [vs Control arm (no chemoprevention)]",
+      "concept_id": "F8DI_OveVS",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "WPF4ZPzIOY",
+      "name": "P. carinii dihydropteroate synthase mutations",
+      "concept_id": "QftpZC6uM4",
+      "matched_terms": [
+        "dihydropteroate"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "wWoBerpbDX",
+      "name": "iron/folic acid supplements and sulfadoxine-pyrimethamine intermittent preventive treatment (SP-IPT(p)) for malaria during pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Xg3SbwpI3i",
+      "name": "Number of searches for DHPs",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "xIR0MrTZmb",
+      "name": "intervention arm receiving sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy through CDDs [vs control arm receiving sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy during antenatal care visit]",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "XQVPr9YjxT",
+      "name": "Adequate knowledge of MIP and IPTp-SP (Intermittent Preventive Treatment in Pregnancy with Sulfadoxine-Pyrimethamine)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "XqweW3U6qK",
+      "name": "Premigration antimalarial therapy (with sulfadoxine-pyrimethamine and artesunate)",
+      "concept_id": "6Q_i0GlCWE",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Xro3PUAgob",
+      "name": "blood concentration of sulfadoxine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "xTgF-0GoCj",
+      "name": "sulfadoxine-pyrimethamine intermittent preventive treatment (SP-IPT(p)) for malaria during pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Y_DrsbcE6U",
+      "name": "Access to sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "Y8f_pNau2D",
+      "name": "prevalence of 437G and 581G alleles in the pfdhps gene",
+      "concept_id": null,
+      "matched_terms": [
+        "pfdhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "YEQYVkctz2",
+      "name": "number of intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine doses",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "yghUpBtzFs",
+      "name": "azithromycin-PQ treatment [vs sulfadoxine-pyrimethamine treatment]",
+      "concept_id": "XGFLEvq9iX",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "yL7JDKebH9",
+      "name": "chloroquine therapy [vs sulfadoxine-pyrimethamine therapy]",
+      "concept_id": "FSXE9QnJOc",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "yLUXUyUJEd",
+      "name": "half-life of sulfadoxine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "YMVnsg8yCD",
+      "name": "taking ≥ 3 doses of intermittent preventive treatment of malaria in pregnancy using sulfadoxine-pyrimethamine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "ypfxOrCaiQ",
+      "name": "pregnant women on intermittent preventive treatment with sulfadoxine-pyrimethamine (SP) [vs control group]",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "yr1Qbu2Km4",
+      "name": "sulfadoxine-pyrimethamine treatment",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine",
+        "sulfadoxine-pyrimethamine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "ytI4NKhPfW",
+      "name": "number of intermittent preventive treatment during pregnancy-sulfadoxine/pyrimethamine (IPTp-sulfadoxine/pyrimethamine) doses",
+      "concept_id": "6Q_i0GlCWE",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "zC81AYywGK",
+      "name": "Delivery of sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy by community-directed drug distributors (CDDs) of ivermectin for onchocerciasis control (intervention arm) vs. Delivery of sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy during antenatal care visit (control arm)",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "zFQpDYEjPr",
+      "name": "presence of the double mutant dhps A437G/K540E",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "zvGLApJ3Wr",
+      "name": "Combination therapy including ACE inhibitors (ACE-I) (with or without thiazide diuretics), and angiotensin receptor blockers (ARBs) (with or without thiazide diuretics), and selective beta blockers, and dihydropyridine calcium-channel-blockers (DHPs)",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "zy2XeN66nA",
+      "name": "prevalence of Plasmodium falciparum dihydropteroate synthetase gene vagKgs quintuple mutant",
+      "concept_id": "QGsnhC2Mq6",
+      "matched_terms": [
+        "dihydropteroate"
+      ],
+      "association_count": 1
+    },
+    {
+      "system_id": "htpqV3Dvfg",
+      "name": "Dhps",
+      "concept_id": "oA2R3aCiFt",
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 0
+    },
+    {
+      "system_id": "JI67MUEQQv",
+      "name": "DHPs",
+      "concept_id": null,
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 0
+    },
+    {
+      "system_id": "V4_a7n1lxS",
+      "name": "mefloquine-sulfadoxine-pyrimethamine",
+      "concept_id": null,
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 0
+    },
+    {
+      "system_id": "vpPGyQZdkb",
+      "name": "sulfadoxine",
+      "concept_id": "bzQO0hAZXK",
+      "matched_terms": [
+        "sulfadoxine"
+      ],
+      "association_count": 0
+    },
+    {
+      "system_id": "X1t3PYR1k1",
+      "name": "dhps-1",
+      "concept_id": "egiCL8iUu7",
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 0
+    },
+    {
+      "system_id": "YChhXtO4F7",
+      "name": "DHPS",
+      "concept_id": "yg6SoJdcJX",
+      "matched_terms": [
+        "dhps"
+      ],
+      "association_count": 0
+    }
+  ],
+  "top_pfdhps_variable": {
+    "system_id": "3sxxaT2NrP",
+    "name": "Prevalence of Pfdhps 437G mutation",
+    "concept_id": null,
+    "matched_terms": [
+      "pfdhps"
+    ],
+    "association_count": 3,
+    "selection_rule": "highest association_count among search hits whose name contains 'pfdhps' (case-insensitive); ties broken by system_id",
+    "associations_query": "GET /variables/3sxxaT2NrP/associations?limit=50&offset=<n>&include_total=true",
+    "associations_total": 3,
+    "associations_truncated": false
+  },
+  "associations": [
+    {
+      "system_id": "Quq-Ic1sBf",
+      "variable_1_id": "aFkBv5bC43",
+      "variable_2_id": "3sxxaT2NrP",
+      "variable_1_name": "IPTi/c group in 2011 [vs Control group in 2010]",
+      "variable_2_name": "Prevalence of Pfdhps 437G mutation",
+      "study_id": "5Aedo_Mrvp",
+      "statistic_type": "mean_difference_unstandardized",
+      "statistic_value": -16,
+      "p_value": 0.07,
+      "pubmed_id": 23916206,
+      "system_statistic_type": "mean_difference_unstandardized"
+    },
+    {
+      "system_id": "JNKsUWLxEZ",
+      "variable_1_id": "ZlrPgxLyeC",
+      "variable_2_id": "3sxxaT2NrP",
+      "variable_1_wikidata_id": "Q2148398",
+      "variable_1_concept_id": "vaEwC2_Yr-",
+      "variable_1_name": "Control group in 2011 (without IPTi/c) [vs Control group in 2010 (without IPTi/c)]",
+      "variable_2_name": "Prevalence of Pfdhps 437G mutation",
+      "study_id": "Ilg6nxyyWY",
+      "statistic_type": "mean_difference_unstandardized",
+      "statistic_value": -16,
+      "p_value": 0.07,
+      "pubmed_id": 23589534,
+      "system_statistic_type": "mean_difference_unstandardized"
+    },
+    {
+      "system_id": "UvZ-jRjpFA",
+      "variable_1_id": "JjogKxB2-Q",
+      "variable_2_id": "3sxxaT2NrP",
+      "variable_1_name": "IPTi/c group [vs Control group]",
+      "variable_2_name": "Prevalence of Pfdhps 437G mutation",
+      "study_id": "Ilg6nxyyWY",
+      "statistic_type": "mean_difference_unstandardized",
+      "statistic_value": -19.2,
+      "p_value": 0.02,
+      "pubmed_id": 23589534,
+      "system_statistic_type": "mean_difference_unstandardized"
+    }
+  ],
+  "concept": null,
+  "concept_relationships_query": null,
+  "concept_relationships_total": null,
+  "concept_relationships_truncated": false,
+  "concept_relationships": [],
+  "studies_query": "GET /studies/{study_id}",
+  "studies": [
+    {
+      "study_id": "5Aedo_Mrvp",
+      "doi": "10.1016/j.crvi.2013.04.016",
+      "pubmed_id": 23916206,
+      "study_type": null,
+      "population": "352 children under 5 years of age in three health districts in southern Senegal."
+    },
+    {
+      "study_id": "Ilg6nxyyWY",
+      "doi": "10.4269/ajtmh.12-0739",
+      "pubmed_id": 23589534,
+      "study_type": null,
+      "population": "352 children under the age of 5 in two cross-sectional surveys conducted in 2010 and 2011."
+    }
+  ],
+  "marker": {
+    "id": "pfdhps-K540E",
+    "drug": "sulfadoxine (with pyrimethamine, as SP)",
+    "name_pattern": "540\\s*E|540\\s*K\\/E|Glu-540",
+    "selection_rule": "every variable returned by the searches above whose name matches name_pattern (case-insensitive); associations fetched per variable with GET /variables/{id}/associations?limit=50&offset=<n>&include_total=true and de-duplicated by system_id",
+    "variables": [
+      {
+        "system_id": "w1ktrLk4Wc",
+        "name": "Presence of K540 E: in dihydropteroate synthase",
+        "concept_id": "QftpZC6uM4",
+        "matched_terms": [
+          "dihydropteroate"
+        ],
+        "association_count": 2
+      },
+      {
+        "system_id": "4PX5Wm7Ytz",
+        "name": "dhps-540K/E prevalence",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "5bJrK_wJcx",
+        "name": "Prevalence of antifolate drugs resistance in the 51I, 59R, 108N, or 540E SNPs",
+        "concept_id": null,
+        "matched_terms": [
+          "540E"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "6nc-md3xWP",
+        "name": "treatment failure (among the patients with the presence of the double mutant dhps A437G/K540E)",
+        "concept_id": "MZpwE2CWM6",
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "bkHgD5M-T3",
+        "name": "presence of the quintuple mutant dhfr N51I/C59R/S108N+dhps A437G/K540E",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "r04Uj8fH3c",
+        "name": "dihydrofolate reductase triple (Asn-108/Ile-51/Arg-59) mutants or the dhps double mutants (Gly-437/Glu-540)",
+        "concept_id": "epHHtoSk-A",
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "TaKS18jKT6",
+        "name": "presence of the quadruple mutant dhfr N51I/S108N+dhps A437G/K540E",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "zFQpDYEjPr",
+        "name": "presence of the double mutant dhps A437G/K540E",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      }
+    ],
+    "associations": [
+      {
+        "system_id": "paFNq6MPX5",
+        "variable_1_id": "w1ktrLk4Wc",
+        "variable_2_id": "0cJIG1ZlzC",
+        "variable_1_wikidata_id": "Q5276443",
+        "variable_1_concept_id": "QftpZC6uM4",
+        "variable_1_name": "Presence of K540 E: in dihydropteroate synthase",
+        "variable_2_name": "Patent infection in peripheral blood",
+        "study_id": "ISjODSn06i",
+        "statistic_type": "prevalence_ratio",
+        "statistic_value": 2.76,
+        "ci_upper": 4.18,
+        "ci_lower": 1.82,
+        "ci_level": 0,
+        "pubmed_id": 25564249,
+        "system_statistic_type": "prevalence_ratio",
+        "marker_variable_id": "w1ktrLk4Wc",
+        "relationship": null,
+        "in_vetted_csv": false,
+        "vetted": false,
+        "vetting_note": "Mis-extraction (PMID 25564249). Checked against the source abstract: the prevalence ratio recorded here belongs to the A581G sextuple mutant, not to K540E; K540E appears in that sentence only as a proxy definition. Not in System's vetted Dataverse CSV.",
+        "vetting_method": "source_abstract_check_and_vetted_csv"
+      },
+      {
+        "system_id": "AeI-laBxXr",
+        "variable_1_id": "w1ktrLk4Wc",
+        "variable_2_id": "zdNzhSeZWX",
+        "variable_1_wikidata_id": "Q5276443",
+        "variable_2_wikidata_id": "Q71151469",
+        "variable_1_concept_id": "QftpZC6uM4",
+        "variable_2_concept_id": "ZmgtJD1icS",
+        "variable_1_name": "Presence of K540 E: in dihydropteroate synthase",
+        "variable_2_name": "Patent infection in placental blood",
+        "study_id": "ISjODSn06i",
+        "statistic_type": "prevalence_ratio",
+        "statistic_value": 3.28,
+        "ci_upper": 5.78,
+        "ci_lower": 1.88,
+        "ci_level": 0,
+        "pubmed_id": 25564249,
+        "system_statistic_type": "prevalence_ratio",
+        "marker_variable_id": "w1ktrLk4Wc",
+        "relationship": {
+          "relationship_id": "QftpZC6uM4|ZmgtJD1icS",
+          "query": "GET /relationships/QftpZC6uM4%7CZmgtJD1icS",
+          "num_findings": 1,
+          "num_studies": 1,
+          "last_published_date": "2015-06-15T00:00:00",
+          "source_concept": {
+            "system_id": "QftpZC6uM4",
+            "wikidata_label": "Dihydropteroate synthase",
+            "wikidata_id": "Q5276443"
+          },
+          "target_concept": {
+            "system_id": "ZmgtJD1icS",
+            "wikidata_label": "Placental Circulation",
+            "wikidata_id": "Q71151469"
+          }
+        },
+        "in_vetted_csv": false,
+        "vetted": false,
+        "vetting_note": "Mis-extraction (PMID 25564249). Checked against the source abstract: the prevalence ratio recorded here belongs to the A581G sextuple mutant, not to K540E; K540E appears in that sentence only as a proxy definition. Not in System's vetted Dataverse CSV.",
+        "vetting_method": "source_abstract_check_and_vetted_csv"
+      },
+      {
+        "system_id": "KL67h5A5Ml",
+        "variable_1_id": "zbpgxgC_WN",
+        "variable_2_id": "4PX5Wm7Ytz",
+        "variable_1_name": "Ebonyi State [vs Osun State]",
+        "variable_2_name": "dhps-540K/E prevalence",
+        "study_id": "jMqeVgkFL0",
+        "statistic_type": "mean_difference_unstandardized",
+        "statistic_value": 4.57,
+        "p_value": 0.069,
+        "pubmed_id": 36680454,
+        "system_statistic_type": "mean_difference_unstandardized",
+        "marker_variable_id": "4PX5Wm7Ytz",
+        "relationship": null,
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "iD_4aq3uIs",
+        "variable_1_id": "vjJ1RJecx-",
+        "variable_2_id": "5bJrK_wJcx",
+        "variable_1_wikidata_id": "Q73902577",
+        "variable_1_concept_id": "QeEVpx9Wlg",
+        "variable_1_name": "Artemisinin-based combination therapy (2009-2013) [vs Artemisinin-based combination therapy (2003-2005)]",
+        "variable_2_name": "Prevalence of antifolate drugs resistance in the 51I, 59R, 108N, or 540E SNPs",
+        "study_id": "qYX21-LU0d",
+        "statistic_type": "mean_difference_unstandardized",
+        "statistic_value": -41.3,
+        "p_value": 0.05,
+        "pubmed_id": 29854394,
+        "system_statistic_type": "mean_difference_unstandardized",
+        "marker_variable_id": "5bJrK_wJcx",
+        "relationship": null,
+        "in_vetted_csv": false,
+        "vetted": false,
+        "vetting_note": "Mis-extraction (PMID 29854394). Found by an AI-assisted spot-check against the PubMed abstract (data/forecast/graph-verification.json), not reviewed by a human; the abstract was re-read when this flag was set. The abstract reports no difference in the antifolate SNPs 51I, 59R, 108N or 540E (P > 0.05). The -41.3 recorded here equals the drop the abstract gives for a different, non-antifolate marker (97.3% to 56.0%).",
+        "vetting_method": "ai_assisted_spot_check"
+      },
+      {
+        "system_id": "ZPGDdrkvVI",
+        "variable_1_id": "zFQpDYEjPr",
+        "variable_2_id": "6nc-md3xWP",
+        "variable_2_wikidata_id": "Q56317195",
+        "variable_2_concept_id": "MZpwE2CWM6",
+        "variable_1_name": "presence of the double mutant dhps A437G/K540E",
+        "variable_2_name": "treatment failure (among the patients with the presence of the double mutant dhps A437G/K540E)",
+        "study_id": "xdBifnj4pj",
+        "statistic_type": "odds_ratio",
+        "statistic_value": 22.4,
+        "ci_upper": 98.1,
+        "ci_lower": 5.1,
+        "ci_level": 0,
+        "pubmed_id": 25583123,
+        "system_statistic_type": "odds_ratio",
+        "marker_variable_id": "6nc-md3xWP",
+        "relationship": null,
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "5cnJAspBYN",
+        "variable_1_id": "bkHgD5M-T3",
+        "variable_2_id": "Mr1IUWHTHA",
+        "variable_2_wikidata_id": "Q56317195",
+        "variable_2_concept_id": "MZpwE2CWM6",
+        "variable_1_name": "presence of the quintuple mutant dhfr N51I/C59R/S108N+dhps A437G/K540E",
+        "variable_2_name": "treatment failure (among the study participants)",
+        "study_id": "xdBifnj4pj",
+        "statistic_type": "odds_ratio",
+        "statistic_value": 3.5,
+        "ci_upper": 8.8,
+        "ci_lower": 1.4,
+        "ci_level": 0,
+        "pubmed_id": 25583123,
+        "system_statistic_type": "odds_ratio",
+        "marker_variable_id": "bkHgD5M-T3",
+        "relationship": null,
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "QIrkddNp_j",
+        "variable_1_id": "r04Uj8fH3c",
+        "variable_2_id": "J8_ArHnePY",
+        "variable_1_wikidata_id": "Q76123647",
+        "variable_2_wikidata_id": "Q421072",
+        "variable_1_concept_id": "epHHtoSk-A",
+        "variable_2_concept_id": "6Q_i0GlCWE",
+        "variable_1_name": "dihydrofolate reductase triple (Asn-108/Ile-51/Arg-59) mutants or the dhps double mutants (Gly-437/Glu-540)",
+        "variable_2_name": "sulfadoxine-pyrimethamine treatment failure in children aged less than 5 years",
+        "study_id": "wC3yE3mRbl",
+        "statistic_type": "odds_ratio",
+        "statistic_value": 24.72,
+        "ci_upper": 74.15,
+        "ci_lower": 8.24,
+        "ci_level": 0,
+        "pubmed_id": 16023986,
+        "system_statistic_type": "odds_ratio",
+        "marker_variable_id": "r04Uj8fH3c",
+        "relationship": {
+          "relationship_id": "epHHtoSk-A|6Q_i0GlCWE",
+          "query": "GET /relationships/epHHtoSk-A%7C6Q_i0GlCWE",
+          "num_findings": 1,
+          "num_studies": 1,
+          "last_published_date": "2005-09-01T00:00:00",
+          "source_concept": {
+            "system_id": "epHHtoSk-A",
+            "wikidata_label": "Tetrahydrofolate Dehydrogenase",
+            "wikidata_id": "Q76123647"
+          },
+          "target_concept": {
+            "system_id": "6Q_i0GlCWE",
+            "wikidata_label": "pyrimethamine",
+            "wikidata_id": "Q421072"
+          }
+        },
+        "in_vetted_csv": false,
+        "vetted": false,
+        "vetting_note": "Mis-extraction (PMID 16023986). Found by an AI-assisted spot-check against the PubMed abstract (data/forecast/graph-verification.json), not reviewed by a human; the abstract was re-read when this flag was set. The abstract gives OR 24.72 (95% CI 8.24-74.15) for the dhfr+dhps quintuple mutant in both younger and older children, not for the triple-or-double mutants in children under 5 that this finding names.",
+        "vetting_method": "ai_assisted_spot_check"
+      },
+      {
+        "system_id": "rgO2bc-iSN",
+        "variable_1_id": "TaKS18jKT6",
+        "variable_2_id": "Mr1IUWHTHA",
+        "variable_2_wikidata_id": "Q56317195",
+        "variable_2_concept_id": "MZpwE2CWM6",
+        "variable_1_name": "presence of the quadruple mutant dhfr N51I/S108N+dhps A437G/K540E",
+        "variable_2_name": "treatment failure (among the study participants)",
+        "study_id": "xdBifnj4pj",
+        "statistic_type": "odds_ratio",
+        "statistic_value": 5.5,
+        "ci_upper": 13.6,
+        "ci_lower": 2.3,
+        "ci_level": 0,
+        "pubmed_id": 25583123,
+        "system_statistic_type": "odds_ratio",
+        "marker_variable_id": "TaKS18jKT6",
+        "relationship": null,
+        "in_vetted_csv": false
+      }
+    ],
+    "studies": [
+      {
+        "study_id": "ISjODSn06i",
+        "doi": "10.1093/infdis/jiu836",
+        "pubmed_id": 25564249,
+        "study_type": null,
+        "population": "1809 pregnant women without HIV infection in Malawi between 2009 and 2011."
+      },
+      {
+        "study_id": "jMqeVgkFL0",
+        "doi": "10.1093/jac/dkad011",
+        "pubmed_id": 36680454,
+        "study_type": null,
+        "population": "Children in Ebonyi and Osun states in Nigeria."
+      },
+      {
+        "study_id": "qYX21-LU0d",
+        "doi": "10.1155/2018/7071383",
+        "pubmed_id": 29854394,
+        "study_type": null,
+        "population": "Individuals from Mutengene, Cameroon who provided dry blood samples for parasite DNA extraction from 2003-2005 and 2009-2013."
+      },
+      {
+        "study_id": "xdBifnj4pj",
+        "doi": "10.1111/tmi.12458",
+        "pubmed_id": 25583123,
+        "study_type": null,
+        "population": "Adults and children aged 6 months to 14 years with uncomplicated malaria in Somalia in 2011."
+      },
+      {
+        "study_id": "wC3yE3mRbl",
+        "doi": "10.1016/j.actatropica.2005.06.015",
+        "pubmed_id": 16023986,
+        "study_type": null,
+        "population": "109 children treated with SP for acute uncomplicated malaria in Ibadan, Nigeria."
+      }
+    ],
+    "publication_dates_source": {
+      "name": "OpenAlex",
+      "license": "CC0",
+      "query": "GET https://api.openalex.org/works?filter=pmid:<id>|<id>|...&select=id,doi,ids,publication_date&per-page=50",
+      "note": "One date per paper, matched on pubmed_id. A null publication_date means OpenAlex returned no work for that PubMed ID."
+    },
+    "publication_dates": [
+      {
+        "pubmed_id": 25564249,
+        "publication_date": "2015-01-06",
+        "openalex_id": "https://openalex.org/W2107150651",
+        "openalex_doi": "https://doi.org/10.1093/infdis/jiu836"
+      },
+      {
+        "pubmed_id": 36680454,
+        "publication_date": "2023-01-21",
+        "openalex_id": "https://openalex.org/W4317653950",
+        "openalex_doi": "https://doi.org/10.1093/jac/dkad011"
+      },
+      {
+        "pubmed_id": 29854394,
+        "publication_date": "2018-05-02",
+        "openalex_id": "https://openalex.org/W2801575778",
+        "openalex_doi": "https://doi.org/10.1155/2018/7071383"
+      },
+      {
+        "pubmed_id": 25583123,
+        "publication_date": "2015-01-13",
+        "openalex_id": "https://openalex.org/W2041672057",
+        "openalex_doi": "https://doi.org/10.1111/tmi.12458"
+      },
+      {
+        "pubmed_id": 16023986,
+        "publication_date": "2005-07-18",
+        "openalex_id": "https://openalex.org/W1970665084",
+        "openalex_doi": "https://doi.org/10.1016/j.actatropica.2005.06.015"
+      }
+    ],
+    "grounded_variable_id": "w1ktrLk4Wc",
+    "concept": {
+      "system_id": "QftpZC6uM4",
+      "wikidata_label": "Dihydropteroate synthase",
+      "wikidata_id": "Q5276443",
+      "wikidata_description": "class of enzymes",
+      "wikidata_aliases": [
+        "(2-amino-4-hydroxy-7,8-dihydropteridin-6-yl)methyl-diphosphate:4-aminobenzoate 2-amino-4-hydroxydihydropteridine-6-methenyltransferase",
+        "7,8-dihydropteroic acid synthetase",
+        "2-amino-4-hydroxy-6-hydroxymethyl-7,8-dihydropteridine-diphosphate:4-aminobenzoate 2-amino-4-hydroxydihydropteridine-6-methenyltransferase",
+        "7,8-dihydropteroate synthase",
+        "dihydropteroate diphosphorylase",
+        "7,8-dihydropteroate synthetase",
+        "DHPS",
+        "dihydropteroic synthetase",
+        "dihydropteroate synthetase",
+        "dihydropteroate pyrophosphorylase"
+      ]
+    },
+    "concept_relationships_query": "GET /concepts/QftpZC6uM4/relationships?limit=50&offset=<n>&include_total=true",
+    "concept_relationships": [
+      {
+        "relationship_id": "QftpZC6uM4|ZmgtJD1icS",
+        "num_findings": 1,
+        "num_studies": 1,
+        "last_published_date": "2015-06-15T00:00:00",
+        "source_concept": {
+          "system_id": "QftpZC6uM4",
+          "wikidata_label": "Dihydropteroate synthase",
+          "wikidata_id": "Q5276443"
+        },
+        "target_concept": {
+          "system_id": "ZmgtJD1icS",
+          "wikidata_label": "Placental Circulation",
+          "wikidata_id": "Q71151469"
+        }
+      },
+      {
+        "relationship_id": "QftpZC6uM4|vUwiaNEBVo",
+        "num_findings": 1,
+        "num_studies": 1,
+        "last_published_date": "2024-01-01T00:00:00",
+        "source_concept": {
+          "system_id": "QftpZC6uM4",
+          "wikidata_label": "Dihydropteroate synthase",
+          "wikidata_id": "Q5276443"
+        },
+        "target_concept": {
+          "system_id": "vUwiaNEBVo",
+          "wikidata_label": "survival skill",
+          "wikidata_id": "Q891382"
+        }
+      },
+      {
+        "relationship_id": "QftpZC6uM4|QPxlNKv3zV",
+        "num_findings": 1,
+        "num_studies": 1,
+        "last_published_date": "1999-10-16T00:00:00",
+        "source_concept": {
+          "system_id": "QftpZC6uM4",
+          "wikidata_label": "Dihydropteroate synthase",
+          "wikidata_id": "Q5276443"
+        },
+        "target_concept": {
+          "system_id": "QPxlNKv3zV",
+          "wikidata_label": "mortality rate",
+          "wikidata_id": "Q58702"
+        }
+      },
+      {
+        "relationship_id": "QftpZC6uM4|dJepC0Zpgx",
+        "num_findings": 1,
+        "num_studies": 1,
+        "last_published_date": "2010-09-01T00:00:00",
+        "source_concept": {
+          "system_id": "QftpZC6uM4",
+          "wikidata_label": "Dihydropteroate synthase",
+          "wikidata_id": "Q5276443"
+        },
+        "target_concept": {
+          "system_id": "dJepC0Zpgx",
+          "wikidata_label": "hospital mortality",
+          "wikidata_id": "Q65335221"
+        }
+      },
+      {
+        "relationship_id": "QftpZC6uM4|QsNVnZ1yTR",
+        "num_findings": 1,
+        "num_studies": 1,
+        "last_published_date": "2000-08-01T00:00:00",
+        "source_concept": {
+          "system_id": "QftpZC6uM4",
+          "wikidata_label": "Dihydropteroate synthase",
+          "wikidata_id": "Q5276443"
+        },
+        "target_concept": {
+          "system_id": "QsNVnZ1yTR",
+          "wikidata_label": "sulfonamide",
+          "wikidata_id": "Q3208529"
+        }
+      }
+    ]
+  },
+  "pfdhps_context": {
+    "selection_rule": "every variable returned by the searches above whose name contains 'pfdhps', or contains dhps/dihydropteroate together with 'falciparum' or a pfdhps codon (437, 540, 581) and not carinii/pneumocystis; plus the marker variables. Associations fetched per variable with GET /variables/{id}/associations?limit=50&offset=<n>&include_total=true and de-duplicated by system_id; studies are distinct study_id values.",
+    "variables": [
+      {
+        "system_id": "3sxxaT2NrP",
+        "name": "Prevalence of Pfdhps 437G mutation",
+        "concept_id": null,
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 3
+      },
+      {
+        "system_id": "aZ-hbsnCRY",
+        "name": "presence of polymorphisms in P. falciparum dihydrofolate reductase and dihydropteroate synthase",
+        "concept_id": null,
+        "matched_terms": [
+          "dihydropteroate"
+        ],
+        "association_count": 3
+      },
+      {
+        "system_id": "bJIJkpHB0R",
+        "name": "Mutations in the Plasmodium falciparum genes Pfdhfr and Pfdhps, particularly the sextuple mutant haplotype",
+        "concept_id": "QGsnhC2Mq6",
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 2
+      },
+      {
+        "system_id": "iaseEvvnzp",
+        "name": "Prevalence of quadruple dhfr-mutants + dhps-437G",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 2
+      },
+      {
+        "system_id": "w1ktrLk4Wc",
+        "name": "Presence of K540 E: in dihydropteroate synthase",
+        "concept_id": "QftpZC6uM4",
+        "matched_terms": [
+          "dihydropteroate"
+        ],
+        "association_count": 2
+      },
+      {
+        "system_id": "_LaUwibhhx",
+        "name": "Prevalence of sulfadoxine-pyrimethamine resistance-associated mutations in dhfr and dhps genes of P. falciparum",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps",
+          "sulfadoxine",
+          "sulfadoxine-pyrimethamine"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "_S5w6jmNOD",
+        "name": "dhps A581G",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "4PX5Wm7Ytz",
+        "name": "dhps-540K/E prevalence",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "5bihukeLZE",
+        "name": "Pfdhps double mutation",
+        "concept_id": null,
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "5bJrK_wJcx",
+        "name": "Prevalence of antifolate drugs resistance in the 51I, 59R, 108N, or 540E SNPs",
+        "concept_id": null,
+        "matched_terms": [
+          "540E"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "6nc-md3xWP",
+        "name": "treatment failure (among the patients with the presence of the double mutant dhps A437G/K540E)",
+        "concept_id": "MZpwE2CWM6",
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "bkHgD5M-T3",
+        "name": "presence of the quintuple mutant dhfr N51I/C59R/S108N+dhps A437G/K540E",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "DjtAa49q2O",
+        "name": "pfdhps mutations",
+        "concept_id": null,
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "FQvpLoVeQN",
+        "name": "Prevalence of pfdhps mutations",
+        "concept_id": null,
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "GE8-9mkeGW",
+        "name": "pfdhps haplotype SGEGA at five codons",
+        "concept_id": null,
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "HexIdY2lwf",
+        "name": "frequency of pfdhfr/pfdhps quintuple mutants associated with sulfadoxine-pyrimethamine resistance",
+        "concept_id": null,
+        "matched_terms": [
+          "sulfadoxine",
+          "sulfadoxine-pyrimethamine"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "jbR7SdgAPX",
+        "name": "prevalence of Pfdhps A437G mutation",
+        "concept_id": null,
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "LPZZFwC_ZH",
+        "name": "pfdhps A437G",
+        "concept_id": null,
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "MFpic2N3Wz",
+        "name": "frequency of the SP-resistance associated Pfdhps double mutant (SGEAA) haplotype",
+        "concept_id": null,
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "NfmrH1gSNI",
+        "name": "Frequency of Pfdhps double mutation in 2005 (Pawe hospital, North Western Ethiopia) vs. Frequency of Pfdhps double mutation in 2007/08 (Pawe hospital, North Western Ethiopia)",
+        "concept_id": null,
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "oYz0qmE_N6",
+        "name": "frequency of clinical episodes of malaria caused by P. falciparum parasites with mutations in dhfr and dhps",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "r04Uj8fH3c",
+        "name": "dihydrofolate reductase triple (Asn-108/Ile-51/Arg-59) mutants or the dhps double mutants (Gly-437/Glu-540)",
+        "concept_id": "epHHtoSk-A",
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "TaKS18jKT6",
+        "name": "presence of the quadruple mutant dhfr N51I/S108N+dhps A437G/K540E",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "VMf8pr39u7",
+        "name": "mutant allele frequencies in the Plasmodium falciparum genes dhfr and dhps in mixed isolates",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "Y8f_pNau2D",
+        "name": "prevalence of 437G and 581G alleles in the pfdhps gene",
+        "concept_id": null,
+        "matched_terms": [
+          "pfdhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "zFQpDYEjPr",
+        "name": "presence of the double mutant dhps A437G/K540E",
+        "concept_id": null,
+        "matched_terms": [
+          "dhps"
+        ],
+        "association_count": 1
+      },
+      {
+        "system_id": "zy2XeN66nA",
+        "name": "prevalence of Plasmodium falciparum dihydropteroate synthetase gene vagKgs quintuple mutant",
+        "concept_id": "QGsnhC2Mq6",
+        "matched_terms": [
+          "dihydropteroate"
+        ],
+        "association_count": 1
+      }
+    ],
+    "associations": [
+      {
+        "system_id": "Quq-Ic1sBf",
+        "variable_1_name": "IPTi/c group in 2011 [vs Control group in 2010]",
+        "variable_2_name": "Prevalence of Pfdhps 437G mutation",
+        "study_id": "5Aedo_Mrvp",
+        "pubmed_id": 23916206,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "JNKsUWLxEZ",
+        "variable_1_name": "Control group in 2011 (without IPTi/c) [vs Control group in 2010 (without IPTi/c)]",
+        "variable_2_name": "Prevalence of Pfdhps 437G mutation",
+        "study_id": "Ilg6nxyyWY",
+        "pubmed_id": 23589534,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "UvZ-jRjpFA",
+        "variable_1_name": "IPTi/c group [vs Control group]",
+        "variable_2_name": "Prevalence of Pfdhps 437G mutation",
+        "study_id": "Ilg6nxyyWY",
+        "pubmed_id": 23589534,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "9uTFvbAcu2",
+        "variable_1_name": "presence of polymorphisms in P. falciparum dihydrofolate reductase and dihydropteroate synthase",
+        "variable_2_name": "in vivo treatment outcomes (among the patients enrolled in the study)",
+        "study_id": "Dp5QIYwYwT",
+        "pubmed_id": 19707564,
+        "statistic_type": "relative_risk_ratio",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "UZUVvFga1e",
+        "variable_1_name": "presence of polymorphisms in P. falciparum dihydrofolate reductase and dihydropteroate synthase",
+        "variable_2_name": "in vivo treatment outcomes (among patients)",
+        "study_id": "Dp5QIYwYwT",
+        "pubmed_id": 19707564,
+        "statistic_type": "relative_risk_ratio",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "l3EndGI_ph",
+        "variable_1_name": "presence of polymorphisms in P. falciparum dihydrofolate reductase and dihydropteroate synthase",
+        "variable_2_name": "in vivo treatment outcomes (among patients with uncomplicated falciparum malaria)",
+        "study_id": "Dp5QIYwYwT",
+        "pubmed_id": 19707564,
+        "statistic_type": "relative_risk_ratio",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "489sn1mPQa",
+        "variable_1_name": "Mutations in the Plasmodium falciparum genes Pfdhfr and Pfdhps, particularly the sextuple mutant haplotype",
+        "variable_2_name": "birth weight",
+        "study_id": "Cxsr7UsKD_",
+        "pubmed_id": 33684211,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": true
+      },
+      {
+        "system_id": "gD0V6goixf",
+        "variable_1_name": "Mutations in the Plasmodium falciparum genes Pfdhfr and Pfdhps, particularly the sextuple mutant haplotype",
+        "variable_2_name": "birth weight",
+        "study_id": "Cxsr7UsKD_",
+        "pubmed_id": 33684211,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": true
+      },
+      {
+        "system_id": "peitXdsBF5",
+        "variable_1_name": "Survey after one year of Intermittent preventive treatment in infants implementation [vs Baseline survey]",
+        "variable_2_name": "Prevalence of quadruple dhfr-mutants + dhps-437G",
+        "study_id": "diutippUQd",
+        "pubmed_id": 20064223,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "tpQmPftMjJ",
+        "variable_1_name": "Intermittent preventive treatment in infants (IPTi) with sulphadoxine-pyrimethamine (SP) during routine vaccinations (implemented for one year)",
+        "variable_2_name": "Prevalence of quadruple dhfr-mutants + dhps-437G",
+        "study_id": "diutippUQd",
+        "pubmed_id": 20064223,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "paFNq6MPX5",
+        "variable_1_name": "Presence of K540 E: in dihydropteroate synthase",
+        "variable_2_name": "Patent infection in peripheral blood",
+        "study_id": "ISjODSn06i",
+        "pubmed_id": 25564249,
+        "statistic_type": "prevalence_ratio",
+        "in_vetted_csv": false,
+        "vetted": false,
+        "vetting_note": "Mis-extraction (PMID 25564249). Checked against the source abstract: the prevalence ratio recorded here belongs to the A581G sextuple mutant, not to K540E; K540E appears in that sentence only as a proxy definition. Not in System's vetted Dataverse CSV.",
+        "vetting_method": "source_abstract_check_and_vetted_csv"
+      },
+      {
+        "system_id": "AeI-laBxXr",
+        "variable_1_name": "Presence of K540 E: in dihydropteroate synthase",
+        "variable_2_name": "Patent infection in placental blood",
+        "study_id": "ISjODSn06i",
+        "pubmed_id": 25564249,
+        "statistic_type": "prevalence_ratio",
+        "in_vetted_csv": false,
+        "vetted": false,
+        "vetting_note": "Mis-extraction (PMID 25564249). Checked against the source abstract: the prevalence ratio recorded here belongs to the A581G sextuple mutant, not to K540E; K540E appears in that sentence only as a proxy definition. Not in System's vetted Dataverse CSV.",
+        "vetting_method": "source_abstract_check_and_vetted_csv"
+      },
+      {
+        "system_id": "y5nghPrl5_",
+        "variable_1_name": "Prevalence of the dhfr59Arg mutant-type (2005) vs. Prevalence of the wild type dhfr59Cys haplotypes (2008)",
+        "variable_2_name": "Prevalence of sulfadoxine-pyrimethamine resistance-associated mutations in dhfr and dhps genes of P. falciparum",
+        "study_id": "1GUcQ9Jcua",
+        "pubmed_id": 24055717,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "_0IwC4n9Rv",
+        "variable_1_name": "dhps A581G",
+        "variable_2_name": "birth weight",
+        "study_id": "EwimqyckFY",
+        "pubmed_id": 32221555,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "KL67h5A5Ml",
+        "variable_1_name": "Ebonyi State [vs Osun State]",
+        "variable_2_name": "dhps-540K/E prevalence",
+        "study_id": "jMqeVgkFL0",
+        "pubmed_id": 36680454,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "Zh360F19Yv",
+        "variable_1_name": "Frequency of Pfdhps double mutation in 2005 (Pawe hospital, North Western Ethiopia) vs. Frequency of Pfdhps double mutation in 2007/08 (Pawe hospital, North Western Ethiopia)",
+        "variable_2_name": "Pfdhps double mutation",
+        "study_id": "xhlZ2PHLTn",
+        "pubmed_id": 26431464,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "iD_4aq3uIs",
+        "variable_1_name": "Artemisinin-based combination therapy (2009-2013) [vs Artemisinin-based combination therapy (2003-2005)]",
+        "variable_2_name": "Prevalence of antifolate drugs resistance in the 51I, 59R, 108N, or 540E SNPs",
+        "study_id": "qYX21-LU0d",
+        "pubmed_id": 29854394,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false,
+        "vetted": false,
+        "vetting_note": "Mis-extraction (PMID 29854394). Found by an AI-assisted spot-check against the PubMed abstract (data/forecast/graph-verification.json), not reviewed by a human; the abstract was re-read when this flag was set. The abstract reports no difference in the antifolate SNPs 51I, 59R, 108N or 540E (P > 0.05). The -41.3 recorded here equals the drop the abstract gives for a different, non-antifolate marker (97.3% to 56.0%).",
+        "vetting_method": "ai_assisted_spot_check"
+      },
+      {
+        "system_id": "ZPGDdrkvVI",
+        "variable_1_name": "presence of the double mutant dhps A437G/K540E",
+        "variable_2_name": "treatment failure (among the patients with the presence of the double mutant dhps A437G/K540E)",
+        "study_id": "xdBifnj4pj",
+        "pubmed_id": 25583123,
+        "statistic_type": "odds_ratio",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "5cnJAspBYN",
+        "variable_1_name": "presence of the quintuple mutant dhfr N51I/C59R/S108N+dhps A437G/K540E",
+        "variable_2_name": "treatment failure (among the study participants)",
+        "study_id": "xdBifnj4pj",
+        "pubmed_id": 25583123,
+        "statistic_type": "odds_ratio",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "xuL1x4ORrj",
+        "variable_1_name": "pfdhps mutations",
+        "variable_2_name": "efficacy of chlorproguanil-dapsone plus artesunate (CPG-DDS+A)",
+        "study_id": "3vayGNjOdw",
+        "pubmed_id": 19841150,
+        "statistic_type": "odds_ratio",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "Meqo31WUtn",
+        "variable_1_name": "2010 survey [vs 2006 survey]",
+        "variable_2_name": "Prevalence of pfdhps mutations",
+        "study_id": "3QoiFxiIh5",
+        "pubmed_id": 26452541,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "hb7U_0XS5L",
+        "variable_1_name": "pfdhps haplotype SGEGA at five codons",
+        "variable_2_name": "treatment failures (among the study participants)",
+        "study_id": "IWm-53wdva",
+        "pubmed_id": 23870667,
+        "statistic_type": "odds_ratio",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "TIBuU6xBZ3",
+        "variable_1_name": "2018 [vs 2015]",
+        "variable_2_name": "frequency of pfdhfr/pfdhps quintuple mutants associated with sulfadoxine-pyrimethamine resistance",
+        "study_id": "8xzWeEYm25",
+        "pubmed_id": 37291425,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "qwzM9Lx9x2",
+        "variable_1_name": "Seasonal Malaria Chemoprevention with amodiaquine/sulfadoxine-pyrimethamine in children aged 3-59 months during transmission season (pre-SMC: 2010-2012 vs post-SMC: 2020) in Burkina Faso",
+        "variable_2_name": "prevalence of Pfdhps A437G mutation",
+        "study_id": "0V45kaRJyi",
+        "pubmed_id": 39414909,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "ntTxGcZt2J",
+        "variable_1_name": "pfdhps A437G",
+        "variable_2_name": "treatment failure with amodiaquine+SP",
+        "study_id": "FjlzFZSK8o",
+        "pubmed_id": 18423045,
+        "statistic_type": "odds_ratio",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "o81I-56Mt5",
+        "variable_1_name": "one year after SP/AQ introduction [vs before SP/AQ introduction]",
+        "variable_2_name": "frequency of the SP-resistance associated Pfdhps double mutant (SGEAA) haplotype",
+        "study_id": "NzCtX3gQQ5",
+        "pubmed_id": 18590577,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "40m8-yN8gE",
+        "variable_1_name": "Intermittent Preventive Treatment in Infants with Sulfadoxine-Pyrimethamine (SP) (IPTi)",
+        "variable_2_name": "frequency of clinical episodes of malaria caused by P. falciparum parasites with mutations in dhfr and dhps",
+        "study_id": "durHZUTJxi",
+        "pubmed_id": 18419347,
+        "statistic_type": "odds_ratio",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "QIrkddNp_j",
+        "variable_1_name": "dihydrofolate reductase triple (Asn-108/Ile-51/Arg-59) mutants or the dhps double mutants (Gly-437/Glu-540)",
+        "variable_2_name": "sulfadoxine-pyrimethamine treatment failure in children aged less than 5 years",
+        "study_id": "wC3yE3mRbl",
+        "pubmed_id": 16023986,
+        "statistic_type": "odds_ratio",
+        "in_vetted_csv": false,
+        "vetted": false,
+        "vetting_note": "Mis-extraction (PMID 16023986). Found by an AI-assisted spot-check against the PubMed abstract (data/forecast/graph-verification.json), not reviewed by a human; the abstract was re-read when this flag was set. The abstract gives OR 24.72 (95% CI 8.24-74.15) for the dhfr+dhps quintuple mutant in both younger and older children, not for the triple-or-double mutants in children under 5 that this finding names.",
+        "vetting_method": "ai_assisted_spot_check"
+      },
+      {
+        "system_id": "rgO2bc-iSN",
+        "variable_1_name": "presence of the quadruple mutant dhfr N51I/S108N+dhps A437G/K540E",
+        "variable_2_name": "treatment failure (among the study participants)",
+        "study_id": "xdBifnj4pj",
+        "pubmed_id": 25583123,
+        "statistic_type": "odds_ratio",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "pV6EBLWT_L",
+        "variable_1_name": "second-generation sequencing protocol",
+        "variable_2_name": "mutant allele frequencies in the Plasmodium falciparum genes dhfr and dhps in mixed isolates",
+        "study_id": "ylygSUkqFa",
+        "pubmed_id": 23908494,
+        "statistic_type": "pearson_r",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "iA0zb6Dzku",
+        "variable_1_name": "Samples taken between November 2008 and August 2010 (n = 46) [vs Samples taken between June 2002 and June 2006 (n = 113)]",
+        "variable_2_name": "prevalence of 437G and 581G alleles in the pfdhps gene",
+        "study_id": "oLKAAy9DZD",
+        "pubmed_id": 22462737,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      },
+      {
+        "system_id": "iJcN4hRRVc",
+        "variable_1_name": "group that took intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP) [vs group that did not take intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP)]",
+        "variable_2_name": "prevalence of Plasmodium falciparum dihydropteroate synthetase gene vagKgs quintuple mutant",
+        "study_id": "6X-wA3I__7",
+        "pubmed_id": 36611259,
+        "statistic_type": "mean_difference_unstandardized",
+        "in_vetted_csv": false
+      }
+    ],
+    "study_ids": [
+      "5Aedo_Mrvp",
+      "Ilg6nxyyWY",
+      "Dp5QIYwYwT",
+      "Cxsr7UsKD_",
+      "diutippUQd",
+      "ISjODSn06i",
+      "1GUcQ9Jcua",
+      "EwimqyckFY",
+      "jMqeVgkFL0",
+      "xhlZ2PHLTn",
+      "qYX21-LU0d",
+      "xdBifnj4pj",
+      "3vayGNjOdw",
+      "3QoiFxiIh5",
+      "IWm-53wdva",
+      "8xzWeEYm25",
+      "0V45kaRJyi",
+      "FjlzFZSK8o",
+      "NzCtX3gQQ5",
+      "durHZUTJxi",
+      "wC3yE3mRbl",
+      "ylygSUkqFa",
+      "oLKAAy9DZD",
+      "6X-wA3I__7"
+    ]
+  },
+  "verification": {
+    "vetted_csv": {
+      "doi": "10.7910/DVN/7V6JDO",
+      "filename": "system-public-graph-v1-associations.csv",
+      "url": "https://dataverse.harvard.edu/api/access/datafile/14061020"
+    },
+    "vetted_csv_checked": true,
+    "verified_at": "2026-11-14T18:14:46.293Z",
+    "note": "in_vetted_csv says whether a finding's system_id is a row in the vetted associations CSV. That CSV holds only associations whose two variables are both grounded to a concept, so false is conclusive only for those. vetted: false marks a finding compared with its source paper and found mis-extracted; vetting_method says how it was found, and vetting_note says what was wrong."
+  }
+}

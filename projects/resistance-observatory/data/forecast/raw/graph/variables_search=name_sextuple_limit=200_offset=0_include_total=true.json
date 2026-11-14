@@ -1,0 +1,13 @@
+{
+ "_request": "GET /variables?search=name:sextuple&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "bJIJkpHB0R",
+    "name": "Mutations in the Plasmodium falciparum genes Pfdhfr and Pfdhps, particularly the sextuple mutant haplotype",
+    "concept_id": "QGsnhC2Mq6"
+   }
+  ],
+  "total": 5654715
+ }
+}

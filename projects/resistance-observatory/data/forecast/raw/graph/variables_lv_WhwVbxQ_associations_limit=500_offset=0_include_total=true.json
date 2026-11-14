@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/lv_WhwVbxQ/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Id34AYaZpE",
+    "variable_1_id": "2Y_ZnNXIjj",
+    "variable_2_id": "lv_WhwVbxQ",
+    "variable_1_name": "2007 samples from Asembo, Gem, and Karemo [vs 2001 samples from Asembo]",
+    "variable_2_name": "prevalence of dhfr/dhps quintuple mutant",
+    "study_id": "xZ-FFuORZt",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 20.0,
+    "p_value": 0.03,
+    "pubmed_id": 25889220,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

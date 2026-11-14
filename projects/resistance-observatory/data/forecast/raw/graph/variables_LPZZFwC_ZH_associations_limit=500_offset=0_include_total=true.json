@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/LPZZFwC_ZH/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "ntTxGcZt2J",
+    "variable_1_id": "LPZZFwC_ZH",
+    "variable_2_id": "DZSBg95YAg",
+    "variable_2_wikidata_id": "Q239569",
+    "variable_2_concept_id": "F8DI_OveVS",
+    "variable_1_name": "pfdhps A437G",
+    "variable_2_name": "treatment failure with amodiaquine+SP",
+    "study_id": "FjlzFZSK8o",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 3.44,
+    "p_value": 0.01,
+    "pubmed_id": 18423045,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

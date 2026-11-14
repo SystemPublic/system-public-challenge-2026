@@ -1,0 +1,61 @@
+{
+ "_request": "GET /variables?search=name:SP%2BAQ&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "_CRx0Qt9hO",
+    "name": "Seasonal Malaria Chemoprevention with sulfadoxine-pyrimethamine (SP) plus amodiaquine (AQ)"
+   },
+   {
+    "system_id": "2qOEFEHtTQ",
+    "name": "SP+AQ"
+   },
+   {
+    "system_id": "Mw2RmnqrWE",
+    "name": "number of deaths (among children receiving monthly SP-AQ)"
+   },
+   {
+    "system_id": "5WVh0yDH51",
+    "name": "Amodiaquine and Sulphadoxine-Pyrimethamine Treatment (AQ+SP)"
+   },
+   {
+    "system_id": "Ol5xMZ-iUG",
+    "name": "Intervention group (received IPTc with sulphadoxine pyrimethamine [SP] plus amodiaquine [AQ]) [vs Control group (received placebos)]",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "PvQqGhyQoX",
+    "name": "efficacy of amodiaquine plus sulfadoxine-pyrimethamine (AQ+SP)",
+    "concept_id": "F8DI_OveVS"
+   },
+   {
+    "system_id": "z9fHun22Qo",
+    "name": "detectable SP or AQ"
+   },
+   {
+    "system_id": "QvMSR6c2Qj",
+    "name": "Type of antimalarial treatment (AQ, AQ+SP, SP)",
+    "concept_id": "85bCpa5non"
+   },
+   {
+    "system_id": "gb-tzjFzIJ",
+    "name": "Amodiaquine and Sulphadoxine-Pyrimethamine (AQ+SP) (first-line malaria treatment)",
+    "concept_id": "6Q_i0GlCWE"
+   },
+   {
+    "system_id": "KEQEhz0sY7",
+    "name": "malaria treatments [artesunate + amodiaquine (AS + AQ), artesunate + sulphadoxine-pyrimethamine (AS + SP) or artemether-lumefantrine (AL)]"
+   },
+   {
+    "system_id": "n0_rkSvUfq",
+    "name": "severe anaemia following treatment with AQ+SP",
+    "concept_id": "A9O2_M4sui"
+   },
+   {
+    "system_id": "0TwxBrQKdV",
+    "name": "AQ group [vs SP group]"
+   }
+  ],
+  "total": 5654715
+ }
+}

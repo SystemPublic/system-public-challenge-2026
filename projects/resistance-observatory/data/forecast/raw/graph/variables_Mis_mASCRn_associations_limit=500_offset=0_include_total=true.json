@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/Mis_mASCRn/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "x0OfmslxMd",
+    "variable_1_id": "Mis_mASCRn",
+    "variable_2_id": "HJS1FJXgMj",
+    "variable_2_wikidata_id": "Q4128476",
+    "variable_2_concept_id": "_GtjsdCZgn",
+    "variable_1_name": "sulphadoxine-pyrimethamine use in intermittent preventive treatment of malaria in pregnancy",
+    "variable_2_name": "birth weights of neonates",
+    "study_id": "Lt8BNbqJn4",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.91,
+    "ci_upper": 1.1,
+    "ci_lower": 0.8,
+    "ci_level": 0,
+    "p_value": 0.26,
+    "pubmed_id": 24038372,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

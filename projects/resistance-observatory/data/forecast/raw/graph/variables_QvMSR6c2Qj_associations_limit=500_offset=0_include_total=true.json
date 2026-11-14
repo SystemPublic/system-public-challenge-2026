@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/QvMSR6c2Qj/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "ic1pyZ8CPr",
+    "variable_1_id": "QvMSR6c2Qj",
+    "variable_2_id": "779c1gOzpE",
+    "variable_1_wikidata_id": "Q521616",
+    "variable_2_wikidata_id": "Q9690",
+    "variable_1_concept_id": "85bCpa5non",
+    "variable_2_concept_id": "hItXxNKHYl",
+    "variable_1_name": "Type of antimalarial treatment (AQ, AQ+SP, SP)",
+    "variable_2_name": "fatigue",
+    "study_id": "iRK4efuuNO",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 4.0,
+    "p_value": 0.001,
+    "pubmed_id": 16640610,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

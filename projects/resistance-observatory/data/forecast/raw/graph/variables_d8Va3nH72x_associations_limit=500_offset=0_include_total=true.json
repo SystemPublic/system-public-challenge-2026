@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/d8Va3nH72x/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "G670fjgPVF",
+    "variable_1_id": "d8Va3nH72x",
+    "variable_2_id": "w4ez8QzKEm",
+    "variable_1_name": "intermittent preventive treatment in pregnancy with Sulphadoxine/Pyrimethamine [vs Placebo]",
+    "variable_2_name": "Severe Anaemia",
+    "study_id": "BjW335kv4v",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 1.9,
+    "p_value": 0.17,
+    "pubmed_id": 16827700,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

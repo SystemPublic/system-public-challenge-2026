@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/QetWAgOrXK/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "f2Rz2kHhpc",
+    "variable_1_id": "QetWAgOrXK",
+    "variable_2_id": "hywnvyzwLo",
+    "variable_1_wikidata_id": "Q736270",
+    "variable_2_wikidata_id": "Q1410510",
+    "variable_1_concept_id": "ulo6zHPp_o",
+    "variable_2_concept_id": "krKXtCeyH3",
+    "variable_1_name": "mefloquine, sulfadoxine and pyrimethamine plus primaquine [vs mefloquine, sulfadoxine and pyrimethamine alone]",
+    "variable_2_name": "gametocyte clearance time",
+    "study_id": "QOpBBv4CZu",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -14.9,
+    "p_value": 0.01,
+    "pubmed_id": 7957448,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

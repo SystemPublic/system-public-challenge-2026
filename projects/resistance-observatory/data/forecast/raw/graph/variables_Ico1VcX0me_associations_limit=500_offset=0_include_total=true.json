@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/Ico1VcX0me/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "7kmXOxptKE",
+    "variable_1_id": "Ico1VcX0me",
+    "variable_2_id": "JbQjO1eV1c",
+    "variable_1_name": "sulfadoxine plus pyrimethamine plus chloroquine [vs sulfadoxine plus pyrimethamine alone]",
+    "variable_2_name": "median survival time to fever clearance",
+    "study_id": "k2nlVUIhOM",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -12.0,
+    "p_value": 0.001,
+    "pubmed_id": 12100442,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

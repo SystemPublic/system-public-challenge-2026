@@ -1,0 +1,12 @@
+{
+ "_request": "GET /variables?search=name:SGEAA&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "MFpic2N3Wz",
+    "name": "frequency of the SP-resistance associated Pfdhps double mutant (SGEAA) haplotype"
+   }
+  ],
+  "total": 5654715
+ }
+}

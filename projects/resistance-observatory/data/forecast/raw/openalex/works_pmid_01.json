@@ -1,0 +1,366 @@
+{
+ "_request": "GET https://api.openalex.org/works?filter=pmid:31275401|31694607|32122339|32562650|32733659|33172485|33530957|33891721|34284138|34488770|34662864|35313840|35879789|36520849|36611259|36680454|7957448|9692160|9840604&select=id,doi,ids,title,publication_date,publication_year&per-page=100",
+ "_retrieved": "2026-11-14T16:37:05Z",
+ "response": {
+  "meta": {
+   "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+   "count": 19,
+   "db_response_time_ms": 39,
+   "page": 1,
+   "per_page": 100,
+   "groups_count": null,
+   "x_query": {
+    "oql": "get works where PMID is (31275401 or 31694607 or 32122339 or 32562650 or 32733659 or 33172485 or 33530957 or 33891721 or 34284138 or 34488770 or 34662864 or 35313840 or 35879789 or 36520849 or 36611259 or 36680454 or 7957448 or 9692160 or 9840604)",
+    "x_new_oql": "get works where PMID is (31275401 or 31694607 or 32122339 or 32562650 or 32733659 or 33172485 or 33530957 or 33891721 or 34284138 or 34488770 or 34662864 or 35313840 or 35879789 or 36520849 or 36611259 or 36680454 or 7957448 or 9692160 or 9840604)",
+    "oqo": {
+     "get_rows": "works",
+     "filter_rows": [
+      {
+       "join": "or",
+       "filters": [
+        {
+         "column_id": "ids.pmid",
+         "value": "31275401"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "31694607"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "32122339"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "32562650"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "32733659"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "33172485"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "33530957"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "33891721"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "34284138"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "34488770"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "34662864"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "35313840"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "35879789"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "36520849"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "36611259"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "36680454"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "7957448"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "9692160"
+        },
+        {
+         "column_id": "ids.pmid",
+         "value": "9840604"
+        }
+       ]
+      }
+     ]
+    },
+    "url": "/works?filter=ids.pmid:31275401|31694607|32122339|32562650|32733659|33172485|33530957|33891721|34284138|34488770|34662864|35313840|35879789|36520849|36611259|36680454|7957448|9692160|9840604&per_page=100",
+    "order": "most cited (age-adjusted) first",
+    "order_default": true
+   },
+   "cost_usd": 0.0001
+  },
+  "results": [
+   {
+    "id": "https://openalex.org/W2106773795",
+    "doi": "https://doi.org/10.4269/ajtmh.1998.59.813",
+    "ids": {
+     "openalex": "https://openalex.org/W2106773795",
+     "doi": "https://doi.org/10.4269/ajtmh.1998.59.813",
+     "mag": "2106773795",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/9840604"
+    },
+    "title": "Efficacy of sulfadoxine-pyrimethamine for prevention of placental malaria in an area of Kenya with a high prevalence of malaria and human immunodeficiency virus infection.",
+    "publication_date": "1998-11-01",
+    "publication_year": 1998
+   },
+   {
+    "id": "https://openalex.org/W3035820823",
+    "doi": "https://doi.org/10.1016/s2214-109x(20)30119-4",
+    "ids": {
+     "openalex": "https://openalex.org/W3035820823",
+     "doi": "https://doi.org/10.1016/s2214-109x(20)30119-4",
+     "mag": "3035820823",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/32562650",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/7303957"
+    },
+    "title": "Overall, anti-malarial, and non-malarial effect of intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine on birthweight: a mediation analysis",
+    "publication_date": "2020-06-17",
+    "publication_year": 2020
+   },
+   {
+    "id": "https://openalex.org/W2984597285",
+    "doi": "https://doi.org/10.1186/s12889-019-7847-1",
+    "ids": {
+     "openalex": "https://openalex.org/W2984597285",
+     "doi": "https://doi.org/10.1186/s12889-019-7847-1",
+     "mag": "2984597285",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/31694607",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/6836543"
+    },
+    "title": "Antenatal visits are positively associated with uptake of tetanus toxoid and intermittent preventive treatment in pregnancy in Ivory Coast",
+    "publication_date": "2019-11-06",
+    "publication_year": 2019
+   },
+   {
+    "id": "https://openalex.org/W2947083487",
+    "doi": "https://doi.org/10.1155/2019/6712685",
+    "ids": {
+     "openalex": "https://openalex.org/W2947083487",
+     "doi": "https://doi.org/10.1155/2019/6712685",
+     "mag": "2947083487",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/31275401",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/6582795"
+    },
+    "title": "Intermittent Preventive Treatment of Malaria in Pregnancy: Assessment of the Sulfadoxine-Pyrimethamine Three-Dose Policy on Birth Outcomes in Rural Northern Ghana",
+    "publication_date": "2019-06-02",
+    "publication_year": 2019
+   },
+   {
+    "id": "https://openalex.org/W3010961805",
+    "doi": "https://doi.org/10.1186/s12936-020-03155-2",
+    "ids": {
+     "openalex": "https://openalex.org/W3010961805",
+     "doi": "https://doi.org/10.1186/s12936-020-03155-2",
+     "mag": "3010961805",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/32122339",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/7053117"
+    },
+    "title": "Coverage and effectiveness of intermittent preventive treatment in pregnancy with sulfadoxine–pyrimethamine (IPTp-SP) on adverse pregnancy outcomes in the Mount Cameroon area, South West Cameroon",
+    "publication_date": "2020-03-02",
+    "publication_year": 2020
+   },
+   {
+    "id": "https://openalex.org/W3155465520",
+    "doi": "https://doi.org/10.1002/cpt.2273",
+    "ids": {
+     "openalex": "https://openalex.org/W3155465520",
+     "doi": "https://doi.org/10.1002/cpt.2273",
+     "mag": "3155465520",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/33891721"
+    },
+    "title": "Effectiveness of Intermittent Preventive Treatment With Dihydroartemisinin‐Piperaqunine Against Malaria in Pregnancy in Tanzania: A Randomized Controlled Trial",
+    "publication_date": "2021-04-23",
+    "publication_year": 2021
+   },
+   {
+    "id": "https://openalex.org/W3139065650",
+    "doi": "https://doi.org/10.1186/s12936-021-03896-8",
+    "ids": {
+     "openalex": "https://openalex.org/W3139065650",
+     "doi": "https://doi.org/10.1186/s12936-021-03896-8",
+     "mag": "3139065650",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/34488770",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/8422625"
+    },
+    "title": "Risk factors for Plasmodium falciparum infection in pregnant women in Burkina Faso: a community-based cross-sectional survey",
+    "publication_date": "2021-09-06",
+    "publication_year": 2021
+   },
+   {
+    "id": "https://openalex.org/W3128675889",
+    "doi": "https://doi.org/10.1186/s12884-021-03582-2",
+    "ids": {
+     "openalex": "https://openalex.org/W3128675889",
+     "doi": "https://doi.org/10.1186/s12884-021-03582-2",
+     "mag": "3128675889",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/33530957",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/7852262"
+    },
+    "title": "Late ANC initiation and factors associated with sub-optimal uptake of sulphadoxine-pyrimethamine in pregnancy: a preliminary study in Cape Coast Metropolis, Ghana",
+    "publication_date": "2021-02-02",
+    "publication_year": 2021
+   },
+   {
+    "id": "https://openalex.org/W3186094516",
+    "doi": "https://doi.org/10.1016/j.meegid.2021.105009",
+    "ids": {
+     "openalex": "https://openalex.org/W3186094516",
+     "doi": "https://doi.org/10.1016/j.meegid.2021.105009",
+     "mag": "3186094516",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/34284138"
+    },
+    "title": "Evaluation of the usefulness of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine in a context with increased resistance of Plasmodium falciparum in Kingasani Hospital, Kinshasa in the Democratic Republic of Congo",
+    "publication_date": "2021-07-18",
+    "publication_year": 2021
+   },
+   {
+    "id": "https://openalex.org/W3206284528",
+    "doi": "https://doi.org/10.4269/ajtmh.21-0314",
+    "ids": {
+     "openalex": "https://openalex.org/W3206284528",
+     "doi": "https://doi.org/10.4269/ajtmh.21-0314",
+     "mag": "3206284528",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/34662864",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/8641328"
+    },
+    "title": "Modeled Impact of Seasonal Malaria Chemoprevention on District-Level Suspected and Confirmed Malaria Cases in Chad Based on Routine Clinical Data (2013–2018)",
+    "publication_date": "2021-10-18",
+    "publication_year": 2021
+   },
+   {
+    "id": "https://openalex.org/W4221051401",
+    "doi": "https://doi.org/10.1186/s12884-022-04554-w",
+    "ids": {
+     "openalex": "https://openalex.org/W4221051401",
+     "doi": "https://doi.org/10.1186/s12884-022-04554-w",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/35313840",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/8935822"
+    },
+    "title": "Low birth weight and its associated risk factors in a rural health district of Burkina Faso: a cross sectional study",
+    "publication_date": "2022-03-21",
+    "publication_year": 2022
+   },
+   {
+    "id": "https://openalex.org/W4311552330",
+    "doi": "https://doi.org/10.1371/journal.pone.0277877",
+    "ids": {
+     "openalex": "https://openalex.org/W4311552330",
+     "doi": "https://doi.org/10.1371/journal.pone.0277877",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/36520849",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/9754266"
+    },
+    "title": "Factors influencing intermittent preventive treatment for malaria prevention among pregnant women accessing antenatal care in selected primary health care facilities of Bwari Area Council, Abuja Nigeria",
+    "publication_date": "2022-12-15",
+    "publication_year": 2022
+   },
+   {
+    "id": "https://openalex.org/W4313706700",
+    "doi": "https://doi.org/10.1093/jac/dkac432",
+    "ids": {
+     "openalex": "https://openalex.org/W4313706700",
+     "doi": "https://doi.org/10.1093/jac/dkac432",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/36611259"
+    },
+    "title": "Effect of sulfadoxine-pyrimethamine chemoprophylaxis in pregnant women on selection of the new P. falciparum dhps quintuple mutant carrying the I431V mutation",
+    "publication_date": "2022-12-16",
+    "publication_year": 2022
+   },
+   {
+    "id": "https://openalex.org/W4287446897",
+    "doi": "https://doi.org/10.1186/s41182-022-00442-3",
+    "ids": {
+     "openalex": "https://openalex.org/W4287446897",
+     "doi": "https://doi.org/10.1186/s41182-022-00442-3",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/35879789",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/9317114"
+    },
+    "title": "Prevalence and risk factors of malaria among first antenatal care attendees in rural Burkina Faso",
+    "publication_date": "2022-07-25",
+    "publication_year": 2022
+   },
+   {
+    "id": "https://openalex.org/W3028595636",
+    "doi": "https://doi.org/10.4314/mmj.v32i1.9",
+    "ids": {
+     "openalex": "https://openalex.org/W3028595636",
+     "doi": "https://doi.org/10.4314/mmj.v32i1.9",
+     "mag": "3028595636",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/32733659",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/7366158"
+    },
+    "title": "Inequities in the use of sulphadoxine-pyrimethamine for malaria prophylaxis during pregnancy in Nigeria",
+    "publication_date": "2020-03-31",
+    "publication_year": 2020
+   },
+   {
+    "id": "https://openalex.org/W2011159672",
+    "doi": "https://doi.org/10.1007/bf03188819",
+    "ids": {
+     "openalex": "https://openalex.org/W2011159672",
+     "doi": "https://doi.org/10.1007/bf03188819",
+     "mag": "2011159672",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/7957448"
+    },
+    "title": "Pharmacokinetic study of mefloquine in Thai children aged 5–12 years suffering from uncomplicated falciparum malaria treated with MSP or MSP plus primaquine",
+    "publication_date": "1994-03-01",
+    "publication_year": 1994
+   },
+   {
+    "id": "https://openalex.org/W4317653950",
+    "doi": "https://doi.org/10.1093/jac/dkad011",
+    "ids": {
+     "openalex": "https://openalex.org/W4317653950",
+     "doi": "https://doi.org/10.1093/jac/dkad011",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/36680454",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/9978573"
+    },
+    "title": "Baseline prevalence of molecular marker of sulfadoxine/pyrimethamine resistance in Ebonyi and Osun states, Nigeria: amplicon deep sequencing ofdhps-540",
+    "publication_date": "2023-01-21",
+    "publication_year": 2023
+   },
+   {
+    "id": "https://openalex.org/W3102867461",
+    "doi": "https://doi.org/10.1186/s12936-020-03473-5",
+    "ids": {
+     "openalex": "https://openalex.org/W3102867461",
+     "doi": "https://doi.org/10.1186/s12936-020-03473-5",
+     "mag": "3102867461",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/33172485",
+     "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/7653827"
+    },
+    "title": "Prevalence and factors associated with carriage of Pfmdr1 polymorphisms among pregnant women receiving intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP) and artemether-lumefantrine for malaria treatment in Burkina Faso",
+    "publication_date": "2020-11-10",
+    "publication_year": 2020
+   },
+   {
+    "id": "https://openalex.org/W1999523435",
+    "doi": "https://doi.org/10.1016/s0035-9203(98)90962-2",
+    "ids": {
+     "openalex": "https://openalex.org/W1999523435",
+     "doi": "https://doi.org/10.1016/s0035-9203(98)90962-2",
+     "mag": "1999523435",
+     "pmid": "https://pubmed.ncbi.nlm.nih.gov/9692160"
+    },
+    "title": "A trial of Fansidar® plus chloroquine or Fansidar® alone for the treatment of uncomplicated malaria in Gambian children",
+    "publication_date": "1998-01-01",
+    "publication_year": 1998
+   }
+  ],
+  "group_by": []
+ }
+}

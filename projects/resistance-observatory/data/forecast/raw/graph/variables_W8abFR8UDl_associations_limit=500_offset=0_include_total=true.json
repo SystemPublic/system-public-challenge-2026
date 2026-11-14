@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/W8abFR8UDl/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "4_cMGGP03A",
+    "variable_1_id": "W8abFR8UDl",
+    "variable_2_id": "_E1bVxfYwH",
+    "variable_1_wikidata_id": "Q5276443",
+    "variable_2_wikidata_id": "Q891382",
+    "variable_1_concept_id": "QftpZC6uM4",
+    "variable_2_concept_id": "vUwiaNEBVo",
+    "variable_1_name": "having mutant Dihydropteroate synthase",
+    "variable_2_name": "30-day survival (among non-HIV-infected PCP patients)",
+    "study_id": "O8WEX4tKsd",
+    "statistic_type": "adjusted_hazard_ratio",
+    "statistic_value": 0.4084967320261438,
+    "p_value": 0.001,
+    "pubmed_id": 37925109,
+    "system_statistic_type": "adjusted_hazard_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

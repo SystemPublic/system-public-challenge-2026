@@ -1,0 +1,26 @@
+{
+ "_request": "GET /variables/NMU_MYLALu/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "TwmY1zr898",
+    "variable_1_id": "NMU_MYLALu",
+    "variable_2_id": "H677aO50s5",
+    "variable_2_wikidata_id": "Q10253316",
+    "variable_2_concept_id": "aLGvrXuIez",
+    "variable_1_name": "SP-artesunate (combination of sulfadoxine-pyrimethamine and artesunate)",
+    "variable_2_name": "parasite and fever clearance times",
+    "study_id": "rSrCnErGyy",
+    "statistic_type": "hazard_ratio",
+    "statistic_value": 0.25,
+    "ci_upper": 0.65,
+    "ci_lower": 0.1,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 18000538,
+    "system_statistic_type": "hazard_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

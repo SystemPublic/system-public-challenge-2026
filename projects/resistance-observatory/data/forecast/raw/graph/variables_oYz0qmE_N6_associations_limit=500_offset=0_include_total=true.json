@@ -1,0 +1,24 @@
+{
+ "_request": "GET /variables/oYz0qmE_N6/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "40m8-yN8gE",
+    "variable_1_id": "MZz47daYt_",
+    "variable_2_id": "oYz0qmE_N6",
+    "variable_1_name": "Intermittent Preventive Treatment in Infants with Sulfadoxine-Pyrimethamine (SP) (IPTi)",
+    "variable_2_name": "frequency of clinical episodes of malaria caused by P. falciparum parasites with mutations in dhfr and dhps",
+    "study_id": "durHZUTJxi",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 10.56,
+    "ci_upper": 86.14,
+    "ci_lower": 1.3,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 18419347,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

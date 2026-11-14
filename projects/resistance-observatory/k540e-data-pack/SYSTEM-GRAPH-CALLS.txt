@@ -1,0 +1,42 @@
+
+# System Public Graph API — calls to make at startup
+# Docs: https://docs.system.com/system/public/v1.0-api-documentation
+# Auth: header  x-api-key: $SYSTEM_API_KEY
+# Limits: 10,000 requests per key per day. Response shape may change; closed beta.
+
+1. Sanity (no data change): GET /v1/relationships?limit=1&include_total=true
+
+2. Has the graph read this paper? (any of the 372 PubMed IDs in k540e-literature.json)
+   GET /v1/studies?filter=pubmed_id:33684211&include_total=true
+   Compare against the bundled in_graph flag; recompute coverage live.
+
+3. What the graph extracts from one K540E paper (study_ids are in k540e-graph.json):
+   GET /v1/studies/Cxsr7UsKD_/associations?limit=50&include_total=true
+   The 10 study_ids are listed below.
+
+4. Confirm a displayed finding by ID (all are in the vetted list):
+   GET /v1/associations/489sn1mPQa
+   GET /v1/associations/gD0V6goixf
+
+5. Probe for a variable naming K540E (today it returns none — this is a real coverage gap, say so):
+   GET /v1/variables?search=name:K540E&include_total=true
+   Also try: GET /v1/variables?search=name:540E
+
+6. Sulfadoxine / pyrimethamine concepts (IDs from k540e-graph.json):
+   GET /v1/concepts/bzQO0hAZXK/relationships?sort=num_findings:desc&include_total=true
+   GET /v1/concepts/6Q_i0GlCWE/relationships?sort=num_findings:desc&include_total=true
+   GET /v1/concepts/QftpZC6uM4/relationships?sort=num_findings:desc&include_total=true
+
+7. Relationship ID format reminder: pipe (|) must be sent as %7C.
+
+study_ids for the 10 K540E papers:
+Cxsr7UsKD_  33684211  (Tanzania, birth weight — source_checked finding 489sn1mPQa)
+8Zo_tKJA1z  38574776
+TxCN0nllyt  34746720
+0NDp--F8Bt  34284138
+uRP3VhJ9Ps  30865632
+xhlZ2PHLTn  26431464
+HhZo7Xvsdh  26410081
+TKWw63F-3O  25943379
+1lnC3_2Fg5  20573194
+OdvTsm8FIL  19558654

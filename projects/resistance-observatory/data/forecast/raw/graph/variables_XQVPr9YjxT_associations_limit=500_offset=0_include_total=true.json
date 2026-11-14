@@ -1,0 +1,24 @@
+{
+ "_request": "GET /variables/XQVPr9YjxT/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "AsB8HolkZG",
+    "variable_1_id": "XQVPr9YjxT",
+    "variable_2_id": "rqX4XfXyvg",
+    "variable_1_name": "Adequate knowledge of MIP and IPTp-SP (Intermittent Preventive Treatment in Pregnancy with Sulfadoxine-Pyrimethamine)",
+    "variable_2_name": "receiving IPTp3",
+    "study_id": "ft-VrxaCQV",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 1.5,
+    "ci_upper": 2.32,
+    "ci_lower": 0.97,
+    "ci_level": 0,
+    "p_value": 0.066,
+    "pubmed_id": 32295579,
+    "system_statistic_type": "adjusted_odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

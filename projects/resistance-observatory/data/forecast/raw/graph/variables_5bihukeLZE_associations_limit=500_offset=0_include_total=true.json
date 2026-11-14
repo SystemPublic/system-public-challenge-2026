@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/5bihukeLZE/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "Zh360F19Yv",
+    "variable_1_id": "NfmrH1gSNI",
+    "variable_2_id": "5bihukeLZE",
+    "variable_1_name": "Frequency of Pfdhps double mutation in 2005 (Pawe hospital, North Western Ethiopia) vs. Frequency of Pfdhps double mutation in 2007/08 (Pawe hospital, North Western Ethiopia)",
+    "variable_2_name": "Pfdhps double mutation",
+    "study_id": "xhlZ2PHLTn",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 13.8,
+    "p_value": 0.08,
+    "pubmed_id": 26431464,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

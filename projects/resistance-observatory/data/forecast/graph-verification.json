@@ -1,0 +1,1385 @@
+{
+  "method": "For each finding, the System Public Graph's variables, statistic, interval and study population were compared by reading the paper's PubMed abstract (NCBI E-utilities) and, where Europe PMC served open-access full text, the full text. Statuses reflect only text fetched in this run; no background knowledge of the papers was used.",
+  "checkedBy": "AI-assisted spot-check (Claude subagent); not reviewed by a human",
+  "checkedAt": "2026-11-14T17:06:02Z",
+  "scope": "Pass 1: all 11 K540E-haplotype findings, then every sp_outcome finding tagged Nigeria (9), Kenya (23) and The Gambia (5): 48 findings from 25 papers. Pass 2: every remaining sp_outcome or k540e_haplotype finding with a graph_record country, in country order TZA, GHA, BFA, MWI, MOZ, UGA, COD, SLE, CMR, MLI, SEN, BEN, ZMB, SDN, ETH, then the rest: 102 findings from 45 papers. Together 150 findings, every country-naming finding the app shows. Most were checked against the PubMed abstract only; Europe PMC open-access full text was used where available. The Graph p value on l5J-ceSD7x could not be found in the accessible text and remains unchecked. Pass 3: the three not-country-specific haplotype findings shown on the Alert tab (o23pQ-icgn, gD0V6goixf, 489sn1mPQa; kind other_dhps), checked against abstracts only; neither paper had open-access full text, so whether their quintuple/sextuple definitions include dhps K540E is unverified. Total 153 findings.",
+  "records": [
+    {
+      "systemId": "5cnJAspBYN",
+      "pubmedId": "25583123",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "quintuple mutant dhfr N51I/C59R/S108N+dhps A437G/K540E (OR = 3.5, 95% CI: 1.4-8.8)",
+      "note": "Odds ratio and interval match the abstract exactly.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "ZPGDdrkvVI",
+      "pubmedId": "25583123",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "Treatment failure was associated with the presence of the double mutant dhps A437G/K540E (OR = 22.4, 95% CI: 5.1-98.1)",
+      "note": "Value and interval match, but the Graph outcome label wrongly restricts treatment failure to patients carrying the double mutant; the paper compares failure by presence of the double mutant among all participants.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "rgO2bc-iSN",
+      "pubmedId": "25583123",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "quadruple mutant dhfr N51I/S108N+dhps A437G/K540E (OR = 5.5, 95% CI: 2.3-13.6)",
+      "note": "Odds ratio and interval match the abstract exactly.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "paFNq6MPX5",
+      "pubmedId": "25564249",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "The sextuple mutant was associated with higher risks of patent infection in peripheral blood (adjusted prevalence ratio [aPR], 2.76; 95% confidence interval [CI], 1.82-4.18)",
+      "note": "The paper attributes this ratio to the sextuple mutant (quintuple plus dhps A581G), not to K540E; the abstract says K540E was only used as a marker for the quintuple background.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "AeI-laBxXr",
+      "pubmedId": "25564249",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "placental blood (aPR 3.28; 95% CI, 1.88-5.78)",
+      "note": "Same paper: this ratio belongs to the sextuple mutant (dhps A581G on a quintuple background); the abstract says K540E presence was used only as a marker for the quintuple mutant.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "KL67h5A5Ml",
+      "pubmedId": "36680454",
+      "status": "partly_supported",
+      "where": "full_text",
+      "quote": "The dhps-540K/E was more common in Ebonyi compared with Osun though the difference was not statistically significant (Ebonyi, 21.11%; Osun, 16.54%; P = 0.069",
+      "note": "The difference (21.11% minus 16.54%) and P value match, but the full text says samples came from symptomatic patients of all ages, not children as the Graph population states, and 540E was seen only mixed with wild type.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "NEpELzpWh9",
+      "pubmedId": "24055717",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "quintuple mutations (dhfr (108Asn/51Ile/59Arg)/dhps437Gly/dhps540Glu) showed a reduction from 60.6% to 37.2% after three years (p<0.01)",
+      "note": "The 23.4-point drop matches, but the Graph labels misdescribe the timeline: the abstract says SP was withdrawn as first-line in 2004, so 2005 and 2008 were both after withdrawal.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "QIrkddNp_j",
+      "pubmedId": "16023986",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "The dhfr and dhps quintuple mutant (dhfr triple mutant+dhps double mutant) was the genotype most strongly associated with SP treatment failure (OR=24.72, 95%CI=8.24-74.15)",
+      "note": "The abstract gives OR 24.72 for the quintuple mutant (triple AND double) in both younger and older children, not for triple-or-double mutants in children under 5 (no OR is given for that).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "iD_4aq3uIs",
+      "pubmedId": "29854394",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "No difference was observed in SNPs associated with antifolate drugs resistance 51I, 59R, 108N, or 540E (P > 0.05).",
+      "note": "The paper reports no change in antifolate markers; its full-text table shows 540E at 2.2% (5/225) in 2003-2005 and 0% (0/240) in 2009-2013; -41.3 equals the drop of a non-antifolate marker listed in the abstract (97.3% to 56.0%).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "o81I-56Mt5",
+      "pubmedId": "18590577",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "The frequency of the SP-resistance associated Pfdhps double mutant (SGEAA) haplotype increased significantly from 14% to 35% (P < 0.001)",
+      "note": "Matches (35% minus 14%); the full text defines SGEAA as dhps A437G + K540E with wild type at codons 436, 581 and 613.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "umNpTiumH4",
+      "pubmedId": "30897090",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "The prevalence of quintuple haplotype (51I/59R/108N/437G/540E) was 51.8% in STOP-CTX vs. 6.3% (P = 0.0007) in CTX arm.",
+      "note": "Difference of 45.5 points and P value match.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "BtUBIXcl50",
+      "pubmedId": "32733659",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "Women in the upper three wealth quintiles were 1.33 - 1.80 times more likely to receive SP than the poorest (CI: 1.15-1.56; 1.41-1.97; 1.49-2.17).",
+      "note": "Value and interval match, but the Graph label \"Wealth index\" omits the contrast; the full-text table shows 1.33 (1.15-1.56) is the middle quintile versus the poorest.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Vy7uovqyAH",
+      "pubmedId": "32733659",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "Women in the upper three wealth quintiles were 1.33 - 1.80 times more likely to receive SP than the poorest (CI: 1.15-1.56; 1.41-1.97; 1.49-2.17).",
+      "note": "Mixed-up interval: the full-text table gives the richest quintile OR 1.80 (1.49-2.17) and the richer quintile OR 1.67 (1.41-1.97); the Graph pairs 1.8 with 1.41-1.97.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "PiTLrKJcFa",
+      "pubmedId": "32733659",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Using the unadjusted odds ratio, women residing in rural areas were 0.86 times less likely to use SP compared to those in urban areas.",
+      "note": "Matches as an unadjusted OR; the full-text table gives an adjusted OR of 0.99 (0.90-1.10) for urban vs rural.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "nLJUHL1ClC",
+      "pubmedId": "32733659",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Women who received ANC from public health facilities were twice as likely (inverse of OR 0.68) to use SP in pregnancy than those who used private facilities (CI: 0.60-0.76).",
+      "note": "Matches; the paper reports the OR as public vs private and interprets it via its inverse.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "tFwW0FIDTv",
+      "pubmedId": "32733659",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Those who attended at least 4 ANC visits were 1.46 times more likely to get SP prophylaxis (CI: 1.31-1.63).",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "InzmYiFg9h",
+      "pubmedId": "31034180",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "The use of at least 2 doses of IPT-SP was not an independent factor for neonatal survival (HR 0.72, 95% CI (0.53 - 1.15).",
+      "note": "Matches; the paper reports this as not an independent factor (interval includes 1).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "RewkycI8iY",
+      "pubmedId": "27424614",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "86 (86.0%) of SP and 80 (80.0%) of AZ groups, respectively (P = 0.26)",
+      "note": "Six-point difference in completion and P value match.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "u6JH5M1nb1",
+      "pubmedId": "27424614",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Four (4.7%) participants who had SP compared to five (6.2%) in AZ group developed malaria",
+      "note": "Difference of -1.5 points matches (P = 0.56 in the abstract).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "l5J-ceSD7x",
+      "pubmedId": "36520849",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Respondents who had tertiary and secondary education were 8.3 (95% CI: 1.01-68.27) times more likely to use IPT-SP than those without formal education.",
+      "note": "OR and interval match; the Graph p value of 0.05 was not checked.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "3R6ZB-jdEP",
+      "pubmedId": "9840604",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "compared with 9% (28 of 316; P < 0.001) of women who received monthly SP",
+      "note": "Matches 27% (CM group) vs 9% (monthly SP), an 18-point difference.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "oAd3DaXG22",
+      "pubmedId": "9840604",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "compared with 8% (26 of 331; P=0.078) of women who received monthly SP",
+      "note": "The 6-point difference (14% vs 8%) and P match, but the Graph label wrongly says the case-management group received two doses of SP; two-dose SP was a separate arm.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "69RRr6Xqmm",
+      "pubmedId": "23912315",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "nurse or midwife and women who owned a bed net were almost twice as likely to receive one dose of SP versus none (aOR 1.92, 95% CI 1.28, 2.86",
+      "note": "The abstract assigns aOR 1.92 (1.28-2.86) to nurse or midwife care and aOR 1.79 (1.12-2.78) to bed net ownership; the Graph gives nurse/midwife the bed-net value.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "ba0hoWPwPT",
+      "pubmedId": "23912315",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "95% CI 1.28, 2.86 and aOR 1.79; 95% CI 1.12, 2.78; respectively)",
+      "note": "Matches the bed-net value (second in the \"respectively\" pair).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "e3iCjefJp8",
+      "pubmedId": "23912315",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "women who received other anti-malarial drugs were over 90% less likely to receive one dose of SP versus none (aOR 0.08; 95% CI 0.02, 0.26)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "qmc-EG2mgi",
+      "pubmedId": "23912315",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "nurse or midwife and women who owned a bed net were almost twice as likely to receive one dose of SP versus none (aOR 1.92, 95% CI 1.28, 2.86",
+      "note": "The abstract assigns aOR 1.92 (1.28-2.86) to nurse or midwife care and gives no OR for other provinces; full text was not accessible.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "GQdmfW4vfl",
+      "pubmedId": "23912315",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "increased numbers of antenatal care visits were associated with receipt of two or more doses of SP (aOR 1.16; 95% CI 1.02, 1.32-per additional visit)",
+      "note": "Matches; per additional visit, among women who received any SP.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "ugB2j1GaRm",
+      "pubmedId": "23912315",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "women living in the western province were nearly 75% less likely to receive two or more doses compared to women in Nairobi (aOR 0.27; 95% CI 0.08, 0.94)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "6MNSCw6DyE",
+      "pubmedId": "25247995",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "IPTp-MQ was associated with reduced rates of maternal parasitemia (risk ratio [RR], 0.47 [95% CI 0.27-0.82]; p=0.008)",
+      "note": "The exposure is mefloquine IPTp versus placebo, not SP; the abstract says SP is contraindicated in these cotrimoxazole-treated women.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "KxIowna7vl",
+      "pubmedId": "25247995",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "placental malaria (RR, 0.52 [95% CI 0.29-0.90]; p=0.021)",
+      "note": "Same mefloquine trial: this ratio is for IPTp with mefloquine versus placebo, not SP.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "ehh5xAnLgz",
+      "pubmedId": "25247995",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "reduced incidence of non-obstetric hospital admissions (RR, 0.59 [95% CI 0.37-0.95]; p=0.031)",
+      "note": "Same mefloquine trial: this ratio is for IPTp with mefloquine versus placebo, not SP.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "6jrbBRbjQa",
+      "pubmedId": "25409680",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "stock-outs of sulphadoxine-pyrimethamine (RR = 0.40; 95% CI: 0.27-0.60)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "9piJI0SwqK",
+      "pubmedId": "12625128",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Use of sulfadoxine-pyrimethamine (SP), reported by 2.1% of the women, was a protective factor (RR 0.44, 95% CI 0.18-1.06).",
+      "note": "Matches; the outcome in the abstract is malaria at delivery and the interval includes 1.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Ou4VegsPqi",
+      "pubmedId": "17053829",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "27.1% (38/140) in the FA 5 mg arm (AHR, 2.19; 98.7% CI, 1.09 to 4.40; p = 0.005)",
+      "note": "All participants received SP; this hazard ratio compares folic acid 5 mg with placebo (98.7% CI), not SP with anything.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "RyvRdnGPms",
+      "pubmedId": "17053829",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "14.5% (20/138) in the FA 0.4 mg arm (adjusted hazard ratio [AHR], 1.07; 98.7% confidence interval [CI], 0.48 to 2.37; p = 0.8)",
+      "note": "All participants received SP; this hazard ratio compares folic acid 0.4 mg with placebo, not SP with anything.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "PEyo2A8Ol0",
+      "pubmedId": "26429700",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "(15 [3%] of 457 women vs 47 [10%] of 459 women; relative risk 0·32, 95% CI 0·18-0·56; p<0·0001)",
+      "note": "RR 0.32 is dihydroartemisinin-piperaquine IPTp versus SP IPTp (DP lower); the Graph presents it as an effect of SP, reversing the comparison.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "rgFohwq5fY",
+      "pubmedId": "26429700",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "(15 [3%] of 457 women vs 47 [10%] of 459 women; relative risk 0·32, 95% CI 0·18-0·56; p<0·0001)",
+      "note": "3% (DP) minus 10% (SP) = -7 points, matching.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "ha2Jy6rI5b",
+      "pubmedId": "26429700",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "clinical malaria during pregnancy (37·9 vs 6·1 events; 0·16, 0·08-0·33; p<0·0001)",
+      "note": "Magnitude matches (37.9 SP vs 6.1 DP events per 100 person-years), but the Graph lists DP first with a positive difference, implying DP had more clinical malaria, the opposite of the paper.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "nWfK8dbKWo",
+      "pubmedId": "26429700",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "(192·0 vs 54·4 events per 100 person-years; incidence rate ratio [IRR] 0·28, 95% CI 0·22-0·36; p<0·0001)",
+      "note": "Magnitude matches (192.0 SP vs 54.4 DP), but the Graph lists DP first with a positive difference, implying DP had more infection, the opposite of the paper.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Zz4Nixw_nR",
+      "pubmedId": "12599083",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "1.14 g/dL (95% confidence interval [CI], 0.82-1.47 g/dL) greater for the IPT+iron group",
+      "note": "Versus the double-placebo group.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "iBbDRVayGM",
+      "pubmedId": "12599083",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "0.79 g/dL (95% CI, 0.46-1.10 g/dL) greater for the iron group",
+      "note": "Versus the double-placebo group.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "lD2D2PmgQV",
+      "pubmedId": "32562650",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "Mediation analyses showed sulfadoxine-pyrimethamine conferred a greater non-malarial effect than did dihydroartemisinin-piperaquine (mean difference 87 g, 95% CI 43 to 131)",
+      "note": "Value matches, but it is the mediation-analysis non-malarial (direct) effect versus DP; the overall birthweight difference was 69 g (26 to 112).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "qr_TZ4ez4z",
+      "pubmedId": "15228241",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "Among primigravidae in all the groups there was a significant improvement in Hb levels at delivery (107.6 g/L) compared with recruitment (101.9 g/L) (P < 0.006)",
+      "note": "The 5.7 g/L and P come from a before/after change among primigravidae in all groups, not an SP+ITN versus placebo comparison.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "4x1gKKV5d-",
+      "pubmedId": "10665554",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "By day 1, only 178 (47%) of 381 children treated with artesunate were still parasitaemic, compared with 157 (81%) of 195 children in the pyrimethamine-sulphadoxine alone group",
+      "note": "RR 1.7 is PS alone relative to both artesunate arms pooled (more parasitaemia without artesunate); the Graph assigns it to the one-dose artesunate arm, reversing the direction.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "8oPkmv2v9d",
+      "pubmedId": "10665554",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "By day 1, only 178 (47%) of 381 children treated with artesunate were still parasitaemic, compared with 157 (81%) of 195 children in the pyrimethamine-sulphadoxine alone group",
+      "note": "47% minus 81% = -34 points, matching (p<0.001).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "kRSYc6u8D6",
+      "pubmedId": "10665554",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "Treatment-failure rates at day 14 were 3.1% in the pyrimethamine sulphadoxine alone group, and 3.7% in the one-dose artesunate group (risk difference -0.6% [-4.2 to 3.0])",
+      "note": "Value and interval match the paper, but the paper computes PS alone minus one-dose (3.1% vs 3.7%), so the one-dose arm had slightly more failures, not fewer; not significant.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "YUIOeR4oVQ",
+      "pubmedId": "9692160",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "Significantly more children treated with Fansidar alone, compared to those treated with Fansidar plus chloroquine (19/203 vs. 2/202; P < 0.001), returned to the clinic with persistent symptoms",
+      "note": "The value 1.9064 does not appear; the abstract shows fewer persistent symptoms with the combination, while a positive combination-minus-alone difference implies the opposite.",
+      "countryAgrees": null
+    },
+    {
+      "systemId": "v__MXRVBex",
+      "pubmedId": "14584381",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "The mean rate ratio, adjusted for individual and village-level covariates, was 0.91 (95% CI 0.68-1.22, P = 0.49).",
+      "note": "Value matches, but the Graph exposure label merges both arms (placebo or SP plus artesunate) and its population merges the 14,017 people treated with the 1375 children followed for malaria.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "00yvzW-jqZ",
+      "pubmedId": "33891721",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "The incidence per person-years at risk for symptomatic-malaria (0.02 vs. 0.12, P = 0.002)",
+      "note": "0.02 (DHP) minus 0.12 (SP) = -0.10 per person-year.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "7PQthtqs1C",
+      "pubmedId": "33891721",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "parasitemia during pregnancy (0.28 vs. 0.67, P < 0.001) were significantly lower in the IPTp-DHP group than in the IPTp-SP group",
+      "note": "0.28 is the incidence per person-year in the DHP arm, not an incidence rate ratio for SP.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "BqWUlpk0T-",
+      "pubmedId": "33891721",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "The incidence per person-years at risk for symptomatic-malaria (0.02 vs. 0.12, P = 0.002)",
+      "note": "0.02 is the incidence per person-year in the DHP arm, not an incidence rate ratio for SP.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Izko_Z_Vtg",
+      "pubmedId": "33891721",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "the prevalence of LBW (4.6% vs. 9.6%, P = 0.003) was significantly lower in IPTp-DHP compared with IPTp-SP",
+      "note": "4.6% minus 9.6% = -5.0 points.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "KIdxCM0c10",
+      "pubmedId": "33891721",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "The prevalence of any adverse birth outcomes (composite) was not significantly (P = 0.06) different between IPTp-DHP (17.9%) and IPTp-SP (23.8%).",
+      "note": "17.9% minus 23.8% = -5.9 points; not significant.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "x5gC0i-3QZ",
+      "pubmedId": "33891721",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "parasitemia during pregnancy (0.28 vs. 0.67, P < 0.001) were significantly lower in the IPTp-DHP group than in the IPTp-SP group",
+      "note": "0.28 minus 0.67 = -0.39 per person-year.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "LNFDV9P2Tp",
+      "pubmedId": "17897454",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "In Ifakara, IPTi was associated with a 53% (95% CI 14.0; 74.1) reduction in the risk of clinical malaria between the second and the third dose",
+      "note": "The 53% is a percentage risk reduction in Ifakara (Tanzania) only, between doses 2 and 3, not a risk difference; the abstract reports no significant effect in Manhica (Mozambique).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "M0l4hyI4Ba",
+      "pubmedId": "22978351",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "was significantly associated with childrens' presentation to the hospital with severe malaria (OR 12.5; 95% CI 1.6-108.0)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "7n328tg7ya",
+      "pubmedId": "28797296",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Women who made ≥4 visits were more likely to receive ≥3 doses of SP than those who made <4 visits (AOR = 4.57, 95% CI 1.15-18.16, p < 0.05)",
+      "note": "Matches; the outcome is receiving 3 or more doses.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "gVseJ5wKr4",
+      "pubmedId": "28797296",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "(AOR = 0.04, 95% CI 0.01-0.16, p < 0.05)",
+      "note": "Third-trimester versus second-trimester first dose.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "9T0l_vRSku",
+      "pubmedId": "33530957",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "mothers who made ≥4 ANC visits were 53.77 times more likely to take ≥3 doses of SP compared with those who made < 4 ANC visits (p <  0.001)",
+      "note": "Value matches, but the paper reports it as an odds-type \"times more likely\" from logistic regression, not a coefficient, and the outcome is 3 or more doses.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "CMOfXcWEuE",
+      "pubmedId": "33530957",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "Those who initiated ANC during the first trimester were 3.60 times more likely to receive ≥5 doses",
+      "note": "Value matches, but it is a \"times more likely\" from logistic regression, not a coefficient, and the outcome is 5 or more doses (P = 0.022).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "AByodmg7lO",
+      "pubmedId": "21734118",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "anemia (odds ratio = 0.20, 95% confidence interval = 0.12-0.34) remained significant",
+      "note": "Adjusted for other variables.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "oVT7sqoa0N",
+      "pubmedId": "21734118",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "anemia (odds ratio = 0.20, 95% confidence interval = 0.12-0.34) remained significant",
+      "note": "Adjusted for other variables.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "tlBlNXCmbD",
+      "pubmedId": "21734118",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "the difference in the prevalence of malaria (odds ratio = 0.18, 95% confidence interval = 0.08-0.37)",
+      "note": "Adjusted for other variables.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "vfDmtZ63Mx",
+      "pubmedId": "21734118",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "the difference in the prevalence of malaria (odds ratio = 0.18, 95% confidence interval = 0.08-0.37)",
+      "note": "Adjusted for other variables.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "mkviSixbGf",
+      "pubmedId": "21734118",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "A total of 58.4% of non-IPTp users were anemic compared with 22.8% of IPTp users (P < 0.001).",
+      "note": "22.8% minus 58.4% = -35.6 points.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "nqaVeVzLAI",
+      "pubmedId": "21734118",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "A total of 15.3% of IPTp users had malaria compared with 44.7% of non-IPTp users (P < 0.001).",
+      "note": "15.3% minus 44.7% = -29.4 points.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "J12vcO4bWf",
+      "pubmedId": "31275401",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Women who received ≥ 3 doses of SP were more likely (OR = 3.3; 95% CI: 1.69-6.33) to give birth at term",
+      "note": "Matches; the exposure is 3 or more doses.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "eR4TzvOwEN",
+      "pubmedId": "31275401",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "also have normal weight babies (OR =4.0; 95% CI: 1.98-8.06)",
+      "note": "Matches; the exposure is 3 or more doses.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "iLTVCyCMR6",
+      "pubmedId": "26448871",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "IPTp-SP usage significantly (odds ratio = 0.13, 95% confidence interval = 0.07-0.23, p = 0.005) reduced the prevalence of submicroscopic malaria",
+      "note": "Unadjusted.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "l1AcCnDzSE",
+      "pubmedId": "26448871",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "After controlling for other variables the effect of IPTp-SP remained statistically significant (odds ratio = 0.11, 95% confidence interval = 0.02-0.22, p = 0.006).",
+      "note": "Adjusted.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "x0OfmslxMd",
+      "pubmedId": "24038372",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "The variation in birth weight of the neonates, however, did not show significant difference (OR = 0.91, 95% CI 0.8-1.1, P ≥0.26) over the period",
+      "note": "The abstract gives OR 0.91 for variation in birth weight over the study period, not for SP use.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "6gHNBtEMhm",
+      "pubmedId": "35313840",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "the uptake of less than three doses of sulfadoxine-pyrimethamine for the intermittent preventive treatment of malaria in pregnancy (IPTp-SP) (aOR = 2.2, [95% CI: 1.3-3.9])",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "iAgGo5krDd",
+      "pubmedId": "35313840",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "the uptake of less than three doses of sulfadoxine-pyrimethamine for the intermittent preventive treatment of malaria in pregnancy (IPTp-SP) (aOR = 2.2, [95% CI: 1.3-3.9])",
+      "note": "The paper reports this as an adjusted OR.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "B0A-37BHbL",
+      "pubmedId": "18801158",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "SP uptake (> or = 2 doses) was higher with (Intervention A: 70%) than without promotion (Intervention B: 49%) (OR 2.45 95%CI 1.25-4.82 p = 0.014)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "CJSUyFiyCF",
+      "pubmedId": "18801158",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "(peripheral: OR 0.84 95%CI 0.60-1.18 p = 0.280; placental: OR 0.86 95%CI 0.58-1.29 p = 0.430)",
+      "note": "Intervention A versus Intervention B.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "KJJ1_-918z",
+      "pubmedId": "18801158",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "(peripheral: OR 0.84 95%CI 0.60-1.18 p = 0.280; placental: OR 0.86 95%CI 0.58-1.29 p = 0.430)",
+      "note": "Intervention A versus Intervention B.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "IOisiiGe1-",
+      "pubmedId": "18801158",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "placental: 20.5% OR 0.59 95%CI 0.44-0.78 p = 0.002",
+      "note": "Matches; the comparator is the weekly chloroquine control arm.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Ujt6TKl5qi",
+      "pubmedId": "34488770",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "each additional dose of IPTp-SP reducing the odds of infection by 44% (OR = 0.56, 95% CI 0.39-0.79, p = 0.001)",
+      "note": "Per additional dose.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "WBoM8e21Av",
+      "pubmedId": "17292769",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "The risk of recurrent symptomatic malaria was lowest in the group given amodiaquine plus sulfadoxine-pyrimethamine (1.7%vs 10.2%; risk difference 8.5%; 95% CI 4.3-12.6; p=0.0001)",
+      "note": "Value matches, but AQ+SP had the lower risk; the positive 8.5% is artemether-lumefantrine minus AQ+SP.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "d3YMyvlqFA",
+      "pubmedId": "17292769",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "as was the risk of recurrent parasitaemia (4.7%vs 15.1%; 10.4%; 5.1-15.6; p=0.0002)",
+      "note": "Value matches, but AQ+SP had the lower risk; the positive 10.4% is artemether-lumefantrine minus AQ+SP.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "ezb25BhDOa",
+      "pubmedId": "35879789",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "the absence of intermittent preventive treatment with sulfadoxine-pyrimethamine (aOR: 5.8; 95% CI 2.1-24.5)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "kwJ8LM3Tod",
+      "pubmedId": "33172485",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "both three or more IPTp-SP doses (AOR = 0.25 (95% CI 0.07-0.92); P = 0.04)",
+      "note": "Outcome is pfmdr1 86Y carriage at delivery.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "81FqRY42e3",
+      "pubmedId": "10203167",
+      "status": "not_verifiable",
+      "where": null,
+      "quote": null,
+      "note": "The abstract says there was no significant difference in parasite prevalence at delivery by SP use but gives no RR of 1.0; no open-access full text.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "gTFfySGynp",
+      "pubmedId": "10203167",
+      "status": "not_verifiable",
+      "where": null,
+      "quote": null,
+      "note": "The abstract says there was no significant difference in parasite prevalence at delivery by SP use but gives no RR of 1.0; no open-access full text.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "SuLGummy5v",
+      "pubmedId": "30195996",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "intermittent therapy (39 [15%] of 253; RR 1·00, 0·67-1·50) compared with intermittent sulfadoxine-pyrimethamine",
+      "note": "RR 1.00 (0.67-1.50) is intermittent chloroquine versus intermittent SP, so SP is the reference, not the exposure; at 1.00 the direction is unaffected.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Sxh3dlzg36",
+      "pubmedId": "21118924",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "11.8% in AZI-SP group (risk ratio = 0.66, P = 0.01)",
+      "note": "Versus controls who received SP twice.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "rxABsNdMRw",
+      "pubmedId": "21118924",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Compared with controls, those in AZI-SP group had a risk ratio of 0.61 (P = 0.02) for LBW.",
+      "note": "Versus controls who received SP twice.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "sJ8weDgXxL",
+      "pubmedId": "27622558",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "all women: relative risk [RR] = 1.04 [95% CI 0.90-1.20], p = 0.625",
+      "note": "RR 1.04 is screening-and-treatment with DP versus IPTp-SP (29.9% vs 28.8%); the Graph presents it as an effect of IPTp-SP, reversing the comparison (not significant).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "gzkLn-xJT2",
+      "pubmedId": "29530044",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "low awareness of IPTp-SP (AOR = 1.6, P < 0.002)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "4143oeVqof",
+      "pubmedId": "15228253",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "(risk ratio [RR] = 1.5, 95% CI 1.3-1.8 at 14 d and RR = 1.8, 95% CI 1.5-2.3 at 28 d)",
+      "note": "Value matches the day-28 cure-rate ratio for SP plus 3 days of artesunate versus SP alone; the Graph label omits the day and the comparator.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "KKWaC2-WfW",
+      "pubmedId": "15228253",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "(risk ratio [RR] = 1.5, 95% CI 1.3-1.8 at 14 d and RR = 1.8, 95% CI 1.5-2.3 at 28 d)",
+      "note": "Value matches the day-14 cure-rate ratio for SP plus 3 days of artesunate versus SP alone; the Graph label omits the day and the comparator.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "rbtDfPyqzM",
+      "pubmedId": "12504399",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Clinical treatment failure after 14 days was significantly more frequent in the sulfadoxine/pyrimethamine group (38 of 215, 18%)",
+      "note": "18% minus 1% (SP plus amodiaquine) = 17 points, p<0.0001.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "AVy5IwHSXY",
+      "pubmedId": "34284138",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "low-birth weights (OR = 0.2 [0.1; 0.5]; p < 0.001)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Z-11enSJrn",
+      "pubmedId": "34284138",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "three or more doses of SP were associated with reduced maternal anemia at delivery (OR = 0.4 [0.2; 0.9]; p = 0.024)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "fuHJcBpdI5",
+      "pubmedId": "34284138",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "shortened gestation (OR = 0.4 [0.2; 0.8]; p = 0.009)",
+      "note": "Value matches, but the outcome is shortened gestation; the Graph label says only \"gestation\".",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "6OErRHgw0M",
+      "pubmedId": "30736456",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "having higher parity (>4) was associated with lower odds of taking IPTp-SP (OR = 0.663; 95%CI = 0.442, 0.994)",
+      "note": "Parity above 4.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "lZ8VcldX6u",
+      "pubmedId": "30736456",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "having higher parity (>4) was associated with lower odds of taking IPTp-SP (OR = 0.663; 95%CI = 0.442, 0.994)",
+      "note": "Parity above 4; the Graph p value of 0.001 was not found in the abstract.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "WVZpbcR8Zj",
+      "pubmedId": "30736456",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Women with higher education had lower odds of taking IPTp-SP (Odds Ratio = 0.647, 95%CI = 0.444, 0.943)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "hCIhBeea_p",
+      "pubmedId": "30736456",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Women with higher education had lower odds of taking IPTp-SP (Odds Ratio = 0.647, 95%CI = 0.444, 0.943)",
+      "note": "The Graph p value of 0.001 was not found in the abstract.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Mn7GZdBJdt",
+      "pubmedId": "30736456",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "rural areas (OR = 1.903, 95%CI = 1.069, 1.966)",
+      "note": "Value matches, but it applies to rural women only; the Graph label omits the subgroup.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Ub2Foedzmh",
+      "pubmedId": "30736456",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "rural areas (OR = 1.903, 95%CI = 1.069, 1.966)",
+      "note": "Value matches, but it applies to rural women only; the Graph label omits the subgroup.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "PKT5B744Ke",
+      "pubmedId": "30736456",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "adequate ANC use increased the odds of taking IPTp-SP in both urban (OR = 1.450, 95%CI = 1.158, 3.128)",
+      "note": "Value matches, but it applies to urban women only; the Graph label omits the subgroup.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "elZpOkRpBE",
+      "pubmedId": "30736456",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "adequate ANC use increased the odds of taking IPTp-SP in both urban (OR = 1.450, 95%CI = 1.158, 3.128)",
+      "note": "Value matches, but it applies to urban women only; the Graph label omits the subgroup.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "jzyOYn5Zfe",
+      "pubmedId": "30736456",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "the positive association between ANC visits and adequate doses of taking IPTp-SP was true for rural women only (OR = 1.408, 95%CI = 1.174, 1.689)",
+      "note": "Value matches, but it applies to rural women only; the Graph label omits the subgroup.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "xaYvH4d3id",
+      "pubmedId": "30736456",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "the positive association between ANC visits and adequate doses of taking IPTp-SP was true for rural women only (OR = 1.408, 95%CI = 1.174, 1.689)",
+      "note": "Value matches, but it applies to rural women only; the Graph label omits the subgroup.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "7qCFuum7Dn",
+      "pubmedId": "36611259",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "the ISgKAA mutant, widely distributed in this area and known to be less susceptible to SP, tended to be less abundant in this group (48.6% versus 64.0%; P = 0.0503)",
+      "note": "48.6% minus 64.0% = -15.4 points.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "86O0UaES4j",
+      "pubmedId": "32122339",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "Although ≥ 3 (AOR: 0.31: 95% CI  0.11-0.87) and 2 (AOR: 0.32: 95% CI  0.11-0.93) doses of SP was associated with lower odds of LBW",
+      "note": "Value matches the exactly-2-doses group, not 2 or more doses as the Graph says.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "DsOi7V9ddR",
+      "pubmedId": "32122339",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Although ≥ 3 (AOR: 0.31: 95% CI  0.11-0.87) and 2 (AOR: 0.32: 95% CI  0.11-0.93) doses of SP was associated with lower odds of LBW",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "LSD7Md0Trm",
+      "pubmedId": "32122339",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Although ≥ 3 (AOR: 0.31: 95% CI  0.11-0.87) and 2 (AOR: 0.32: 95% CI  0.11-0.93) doses of SP was associated with lower odds of LBW",
+      "note": "Reported as an adjusted OR.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Vst1aaXCPP",
+      "pubmedId": "32122339",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "The prevalence of PM was 18.5% where uptake of ≥ 3 SP doses (AOR = 2.36: 95% CI  1.41-4.87)",
+      "note": "Matches: 3 or more doses was associated with higher odds of placental malaria in this study.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "i4oO2Y9Q-5",
+      "pubmedId": "32122339",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "The prevalence of PM was 18.5% where uptake of ≥ 3 SP doses (AOR = 2.36: 95% CI  1.41-4.87)",
+      "note": "Matches: 3 or more doses was associated with higher odds of placental malaria in this study.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Az5UNR8eRQ",
+      "pubmedId": "24886135",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "The time between the first and second dose of SP was longer than ten weeks in the cases (OR 5.5, 95% CI 3.2 - 9.3, p < 0.001)",
+      "note": "Case-control comparison within the cohort.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "ZjfOB6Cxmi",
+      "pubmedId": "26034763",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "to mothers on 1 or no IPTp-sulfadoxine/pyrimethamine (SP) dose (adjusted OR = 0.51, 95% CI = 0.28-0.91) were protected",
+      "note": "Value matches, but it is for infants of mothers with 1 or no dose (lower odds of malaria), which the Graph label \"number of doses\" does not convey.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "MmaXLItoVu",
+      "pubmedId": "18611271",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "the incidence of clinical malaria per 1000 persons-days was similar between the two groups (23.0 vs 21.5 episodes, age-adjusted IRR = 1.07 [95% CI, 0.90-1.27])",
+      "note": "Value matches, but it is for the following transmission season after IPT ended (rebound check); the treatment-year effect was a 42.5% protective efficacy.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "a1qUmm-oDY",
+      "pubmedId": "21167018",
+      "status": "not_verifiable",
+      "where": null,
+      "quote": null,
+      "note": "No correlation coefficient of 0.54 appears in the abstract; no open-access full text was retrieved.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "9XvUKVIkqj",
+      "pubmedId": "19656069",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "maternal anemia at delivery (as defined by a hemoglobin level <10 g/dL) (prevalence, 16% vs 20%; marginally significant at P = .09)",
+      "note": "16% (MQ) minus 20% (SP) = -4 points.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "mKVHpdIFh8",
+      "pubmedId": "19656069",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "MQ was more efficacious than SP in preventing placental malaria (prevalence, 1.7% vs 4.4% of women; P = .005)",
+      "note": "1.7% minus 4.4% = -2.7 points.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "ujExLYLnMX",
+      "pubmedId": "19656069",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "clinical malaria (incidence rate, 26 cases/10,000 person-months vs. 68 cases/10,000 person-months; P = .007)",
+      "note": "26 minus 68 = -42 cases per 10,000 person-months.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "VpuMUNTcq7",
+      "pubmedId": "18154655",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "Treatment failure (PCR corrected) was significantly lower in the artesunate + sulphadoxine-pyrimethamine group (4/77, 5.3%) than in chloroquine group(51/71, 71.8%)",
+      "note": "5.3% minus 71.8% = -66.5 points.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "-uHF8PKJLb",
+      "pubmedId": "16923176",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "late parasitological failure (OR:3.18; 95% CI: 1.25-8.09; P = 0.02) were significantly higher in the SP group",
+      "note": "SP versus artemether-lumefantrine.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "ulmpXPLSZd",
+      "pubmedId": "16923176",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "(96/393; 19.3%) as compared to the AL (22/403; 5.4%) group (OR: 4.15; 95% CI: 2.52-6.83; P < 0.001)",
+      "note": "SP versus artemether-lumefantrine.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "3Ovoo_BH6y",
+      "pubmedId": "16923176",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "Late clinical failure (OR: 2.55; 95% CI: 1.34-4.84; P = 0.004)",
+      "note": "OR 2.55 is for late clinical failure; mean haemoglobin at day 45 was 134 vs 130 g/l (AL vs SP, p = 0.02), not an odds ratio.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "QgWBfT_0ML",
+      "pubmedId": "16923176",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "Early treatment failure was significantly higher in the SP (25/464) than in the AL (2/463) (OR: 13.1 95% CI: 3.08-55.50; P < 0.001).",
+      "note": "OR 13.1 is for early treatment failure; fever at day 3 was 3.5% vs 0.9% (SP vs AL, p = 0.007).",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "wUSJPWJQ-z",
+      "pubmedId": "27799645",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "but this risk was attenuated among women who were receiving SP (risk ratio = 1.09; 95% CI = 0.99-1.21)",
+      "note": "Value matches, but it is the risk of combination ART versus none among women receiving SP; the Graph label garbles the exposure.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "Tyepvjq9OL",
+      "pubmedId": "16004704",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "were much more likely to be febrile (30% v. 3.3%; P=0.006)",
+      "note": "30% minus 3.3% = 26.7 points on day 1.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "SUG_7UNL-c",
+      "pubmedId": "16004704",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "parasitaemic (50% v. 6.7%; P<00001) on day 1",
+      "note": "The 43.3-point day-1 difference matches, but the Graph p value of 1.0 is wrong; the abstract gives P<0.0001 (printed \"P<00001\").",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "aJoqjO4SG0",
+      "pubmedId": "16004704",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "parasitaemic (50% v. 6.7%; P<00001) on day 1",
+      "note": "43.3 is the day-1 difference in the proportion parasitaemic (50% vs 6.7%), not a parasite clearance time; the p value of 1.0 is also wrong.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "bDeL09OfvL",
+      "pubmedId": "16004704",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "were much more likely to be febrile (30% v. 3.3%; P=0.006)",
+      "note": "26.7 is the day-1 difference in the proportion febrile (30% vs 3.3%), not a fever clearance time.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "4avf24yKnZ",
+      "pubmedId": "26431464",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "The frequency of triple Pfdhfr mutation decreased significantly from 50.8% (32/63) to 15.9% (10/63) (P<0.001)",
+      "note": "The -34.9 points matches, but the Graph labels both time points as SP treatment; the abstract says SP was replaced as first-line in 2004.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "kt15jCcicD",
+      "pubmedId": "24055717",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "a significant increase of the wild type dhfr59Cys haplotypes from 4.9% in 2005 to 29.5% in 2008 (p<0.01)",
+      "note": "4.9% minus 29.5% = -24.6 points matches, but the Graph labels the groups as prevalence of SP treatment; they are sampling years after SP withdrawal.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "8ncIXfhgBL",
+      "pubmedId": "11693875",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "RR = 0.5, 95% CI = 0.2-1.1 on day 14",
+      "note": "Artesunate plus SP versus SP alone.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "TfYjsMghYK",
+      "pubmedId": "11693875",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "(RR = 0.5, 95% CI = 0.2-1.0 on day 7",
+      "note": "Artesunate plus SP versus SP alone.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "R2Mph097KA",
+      "pubmedId": "11693875",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "(P = 0.000001, relative risk [RR] = 0.4, 95% CI = 0.3-0.6)",
+      "note": "Artesunate plus SP versus SP alone.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "VIzFShj6ZW",
+      "pubmedId": "11693875",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "Relative risk of treatment failure at 28 days was 0.3 (95% confidence interval [CI] = 0.1-1.3).",
+      "note": "RR and interval match (day 28), but the Graph p value 0.12 is the day-14 comparison; day 28 had P = 0.16.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "BjibpF14KF",
+      "pubmedId": "25591391",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "preterm delivery (0.62, 95% CI: 0.43-0.89, P = 0.010)",
+      "note": "SP plus azithromycin monthly versus SP plus chloroquine once.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "KEVHhFekgC",
+      "pubmedId": "25591391",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "SPAZ reduced maternal parasitaemia (RR: 0.57, 95% CI: 0.35-0.95, P = 0.029)",
+      "note": "SP plus azithromycin monthly versus SP plus chloroquine once.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "eonsZV8DCd",
+      "pubmedId": "25591391",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "SPAZ reduced LBW (risk ratio [RR]: 0.74, 95% CI: 0.60-0.91, P = 0.005",
+      "note": "SP plus azithromycin monthly versus SP plus chloroquine once.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "lz2GF4sdfw",
+      "pubmedId": "25591391",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "active placental malaria (0.68, 95% CI: 0.47-0.98, P = 0.037)",
+      "note": "SP plus azithromycin monthly versus SP plus chloroquine once.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "sNX-tQt1UC",
+      "pubmedId": "25591391",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "reduced carriage of gonorrhoea (0.66, 95% CI: 0.44-0.99, P = 0.041)",
+      "note": "SP plus azithromycin monthly versus SP plus chloroquine once.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "CD0AQR65Tu",
+      "pubmedId": "34662864",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "suspected (rate ratio [RR]: 0.82, 95% CI: 0.72-0.94. P = 0.006)",
+      "note": "Seasonal malaria chemoprevention with SP plus amodiaquine.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "JxGdIpiL-2",
+      "pubmedId": "34662864",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "confirmed malaria cases (RR: 0.81, 95% CI: 0.71-0.93, P = 0.003)",
+      "note": "Seasonal malaria chemoprevention with SP plus amodiaquine.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "MvEou2SNbR",
+      "pubmedId": "34662864",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "confirmed malaria cases (RR: 0.81, 95% CI: 0.71-0.93, P = 0.003)",
+      "note": "Seasonal malaria chemoprevention with SP plus amodiaquine.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "ROOSEY1saH",
+      "pubmedId": "34662864",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "suspected (rate ratio [RR]: 0.82, 95% CI: 0.72-0.94. P = 0.006)",
+      "note": "Value matches suspected cases only; the Graph label says suspected and confirmed.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "KYksS9zGnS",
+      "pubmedId": "34662864",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "confirmed malaria cases (RR: 0.81, 95% CI: 0.71-0.93, P = 0.003)",
+      "note": "Value matches confirmed cases only; the Graph label says suspected and confirmed.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "FgmMdDMoBa",
+      "pubmedId": "30838038",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "exposure to sulfadoxine (odds adjusted ratio = 5.95; 95%CI= [1.36-31.35])",
+      "note": "Ocular sequelae of Stevens-Johnson syndrome/toxic epidermal necrolysis, not malaria.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "WGAVhdcfWo",
+      "pubmedId": "19841150",
+      "status": "contradicted",
+      "where": "abstract",
+      "quote": "The risk of failure following CPG-DDS+A treatment was 2.2 times higher (95% CI = 1.34 to 3.7) for each additional pfdhfr mutation",
+      "note": "OR 2.2 (1.34-3.7) is for chlorproguanil-dapsone plus artesunate; for AQ+SP the abstract gives OR 2.4 (1.01-5.55) per pfdhfr mutation.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "buluZNubAZ",
+      "pubmedId": "31694607",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "higher age groups, 25-29 years (OR = 2.028, 95%CI = 1.120-3.669)",
+      "note": null,
+      "countryAgrees": true
+    },
+    {
+      "systemId": "cKQXWTLQCv",
+      "pubmedId": "31694607",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "participants from Mandé du Nord ethnicity (OR = 0.378,95%CI = 0.145-0.983) compared to those from other ethnicities",
+      "note": "Value matches, but it is Mandé du Nord versus other ethnicities; the Graph label says only \"ethnicity\".",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "f2Rz2kHhpc",
+      "pubmedId": "7957448",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "the gametocyte clearance time was shorter in children given MSP plus primaquine (7 +/- 2.7 days) than the children given MSP alone (21.9 +/- 4.4 days) (P < 0.01)",
+      "note": "7 minus 21.9 = -14.9 days.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "jfo7MXsJ1Z",
+      "pubmedId": "26410081",
+      "status": "supported",
+      "where": "abstract",
+      "quote": "IPTp had no significant influence on the presence of P. falciparum infection (13.8 vs. 9.6 %, P = 0.31)",
+      "note": "Full-text Table 3 shows 9.6% (53/552) with IPTp vs 13.8% (8/58) with no chemoprophylaxis, so -4.2 points matches.",
+      "countryAgrees": true
+    },
+    {
+      "systemId": "o23pQ-icgn",
+      "pubmedId": "16127028",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "day 3 blood pyrimethamine concentrations were higher in those who cleared the infection than in those who did not (305 +/- 35.4 versus 228 +/- 21.7 ng/ml; P = 0.037)",
+      "note": "Value matches (305 minus 228 = 77 ng/ml, day 3), but the paper studied Malawian children (per its title), not adults in an unspecified location; the abstract does not define the quintuple haplotype or mention dhps K540E, and no open-access full text was available, so K540E inclusion is unverified.",
+      "countryAgrees": null
+    },
+    {
+      "systemId": "gD0V6goixf",
+      "pubmedId": "33684211",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "delivered newborns with a lower birth weight compared with women who did not have malaria during pregnancy (difference, -267 g; 95% confidence interval, -454 to -59; P = .01)",
+      "note": "Value, interval (-454 to -59) and P = .01 match, but the Graph label is a sentence fragment that omits the early-second-trimester timing and the comparator (no malaria in pregnancy); the abstract does not define the sextuple haplotype, mention dhps K540E or name a country (it describes women followed from before conception or the first trimester to delivery), and no open-access full text was available.",
+      "countryAgrees": null
+    },
+    {
+      "systemId": "489sn1mPQa",
+      "pubmedId": "33684211",
+      "status": "partly_supported",
+      "where": "abstract",
+      "quote": "and women infected with less SP-resistant haplotypes (-461 g; -877 to -44; P = .03)",
+      "note": "Value, interval and P match, but the Graph label omits that this compares early-second-trimester sextuple infections with infections by less SP-resistant haplotypes; the abstract does not define the sextuple haplotype, mention dhps K540E or name a country, and no open-access full text was available.",
+      "countryAgrees": null
+    }
+  ]
+}

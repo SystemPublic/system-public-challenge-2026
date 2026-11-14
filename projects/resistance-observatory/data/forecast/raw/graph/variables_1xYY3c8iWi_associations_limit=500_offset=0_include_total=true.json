@@ -1,0 +1,24 @@
+{
+ "_request": "GET /variables/1xYY3c8iWi/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "a1qUmm-oDY",
+    "variable_1_id": "1xYY3c8iWi",
+    "variable_2_id": "JIiD5IJ_8F",
+    "variable_1_wikidata_id": "Q707939",
+    "variable_2_wikidata_id": "Q130948",
+    "variable_1_concept_id": "c_f3i8lTBc",
+    "variable_2_concept_id": "fdUkIhWGjU",
+    "variable_1_name": "Three rounds of IPTc with artesunate + sulphadoxine-pyrimethamine (or placebo) at monthly intervals eight months earlier (in Senegalese children aged 6 months-5 years)",
+    "variable_2_name": "anti-Plasmodium Ab levels",
+    "study_id": "xNZ1pOsMxn",
+    "statistic_type": "pearson_r",
+    "statistic_value": 0.54,
+    "pubmed_id": 21167018,
+    "system_statistic_type": "pearson_r"
+   }
+  ],
+  "total": 1
+ }
+}

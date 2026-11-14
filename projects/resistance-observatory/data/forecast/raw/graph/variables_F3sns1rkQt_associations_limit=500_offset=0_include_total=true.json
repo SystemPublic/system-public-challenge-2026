@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/F3sns1rkQt/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "fp6CvxU9xm",
+    "variable_1_id": "F3sns1rkQt",
+    "variable_2_id": "yPk3LHK1Os",
+    "variable_1_wikidata_id": "Q418179",
+    "variable_1_concept_id": "rqPOazm37i",
+    "variable_1_name": "Atovaquone-proguanil [vs Chloroquine-sulfadoxine-pyrimethamine]",
+    "variable_2_name": "cure rate",
+    "study_id": "KYqzutWT45",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 12.5,
+    "p_value": 0.05,
+    "pubmed_id": 10228090,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

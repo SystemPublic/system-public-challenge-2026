@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/Olu8YQnIS0/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "I6WV2TvYDy",
+    "variable_1_id": "Olu8YQnIS0",
+    "variable_2_id": "Zu_WUFfDY6",
+    "variable_2_wikidata_id": "Q66057507",
+    "variable_2_concept_id": "cTEu6zVoCx",
+    "variable_1_name": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine [vs Intermittent preventive treatment in pregnancy with dihydroartemisinin-piperaquine plus azithromycin]",
+    "variable_2_name": "Adverse pregnancy outcomes",
+    "study_id": "n7B6hIWHju",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -4.3,
+    "p_value": 0.017,
+    "pubmed_id": 36913959,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "_request": "GET /variables/BG6MHSNhJl/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "UsbJMiF_70",
+    "variable_1_id": "BG6MHSNhJl",
+    "variable_2_id": "Svzd78qQjp",
+    "variable_1_wikidata_id": "Q707939",
+    "variable_2_wikidata_id": "Q140401",
+    "variable_1_concept_id": "c_f3i8lTBc",
+    "variable_2_concept_id": "wRWgK1LbgF",
+    "variable_1_name": "introduction of artesunate co-administered with Sulphadoxine-pyrimethamine (AS + Sulphadoxine-pyrimethamine)",
+    "variable_2_name": "sporozoite prevalence",
+    "study_id": "tqcEZaDXnW",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.9,
+    "ci_upper": 1.2,
+    "ci_lower": 0.7,
+    "ci_level": 0,
+    "p_value": 0.5,
+    "pubmed_id": 22513162,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "qHKrVfG4On",
+    "variable_1_id": "BG6MHSNhJl",
+    "variable_2_id": "bzj4BGWDif",
+    "variable_1_wikidata_id": "Q707939",
+    "variable_2_wikidata_id": "Q143715",
+    "variable_1_concept_id": "c_f3i8lTBc",
+    "variable_2_concept_id": "NyoS6s9w6F",
+    "variable_1_name": "introduction of artesunate co-administered with Sulphadoxine-pyrimethamine (AS + Sulphadoxine-pyrimethamine)",
+    "variable_2_name": "oocyst prevalence",
+    "study_id": "tqcEZaDXnW",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 3.9,
+    "ci_upper": 5.3,
+    "ci_lower": 2.9,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 22513162,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

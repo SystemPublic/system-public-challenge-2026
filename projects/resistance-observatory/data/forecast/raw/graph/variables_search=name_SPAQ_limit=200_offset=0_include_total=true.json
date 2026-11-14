@@ -1,0 +1,47 @@
+{
+ "_request": "GET /variables?search=name:SPAQ&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "GUhh4ycJ36",
+    "name": "SMC using sulfadoxine-pyrimethamine and amodiaquine (SPAQ) in the intervention county"
+   },
+   {
+    "system_id": "B9ai_5oer_",
+    "name": "Seasonal malaria chemoprevention with sulfadoxine-pyrimethamine and amodiaquine (SMC with SPAQ) in the intervention county"
+   },
+   {
+    "system_id": "NnJdl2ZGXT",
+    "name": "Seasonal Malaria Chemoprevention (SMC) with sulfadoxine-pyrimethamine and amodiaquine (SPAQ) in the intervention county"
+   },
+   {
+    "system_id": "Dz6DpMk1g1",
+    "name": "Seasonal Malaria Chemoprevention (SMC) with Sulfadoxine-Pyrimethamine and Amodiaquine (SPAQ) in the intervention county"
+   },
+   {
+    "system_id": "IL9WGSHoWh",
+    "name": "Self-reported seasonality (measured using the Seasonal Pattern Assessment Questionnaire, SPAQ)"
+   },
+   {
+    "system_id": "5cMmCNWrHo",
+    "name": "seasonal malaria chemoprevention with SPAQ or DHAPQ",
+    "concept_id": "7xpZryeSKE"
+   },
+   {
+    "system_id": "6DcBLrImy-",
+    "name": "SPAQ",
+    "concept_id": "FGTw7D77Az"
+   },
+   {
+    "system_id": "TG6pSW_i3V",
+    "name": "global seasonality score in mood disorder patients (assessed using SPAQ)",
+    "concept_id": "SQuBf6o2Te"
+   },
+   {
+    "system_id": "yfqIZ5fu4s",
+    "name": "step size (variation in SPAQ step size)"
+   }
+  ],
+  "total": 5654715
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "_request": "GET /variables?search=name:A437G&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "LPZZFwC_ZH",
+    "name": "pfdhps A437G"
+   },
+   {
+    "system_id": "jbR7SdgAPX",
+    "name": "prevalence of Pfdhps A437G mutation"
+   }
+  ],
+  "total": 5654715
+ }
+}

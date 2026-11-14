@@ -1,0 +1,46 @@
+{
+ "_request": "GET /variables/IkKu5h_1VL/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "CB96s42dUU",
+    "variable_1_id": "IkKu5h_1VL",
+    "variable_2_id": "q45dXgqM9k",
+    "variable_1_wikidata_id": "Q11995",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_1_concept_id": "FPgHTPTt4S",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "monthly SP Intermittent preventive treatment during pregnancy",
+    "variable_2_name": "placental malaria",
+    "study_id": "qGh-P6pclr",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.36,
+    "ci_upper": 0.79,
+    "ci_lower": 0.17,
+    "ci_level": 0,
+    "pubmed_id": 16826475,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "i4-shZr21F",
+    "variable_1_id": "IkKu5h_1VL",
+    "variable_2_id": "q45dXgqM9k",
+    "variable_1_wikidata_id": "Q11995",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_1_concept_id": "FPgHTPTt4S",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "monthly SP Intermittent preventive treatment during pregnancy",
+    "variable_2_name": "placental malaria",
+    "study_id": "qGh-P6pclr",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 0.37,
+    "ci_upper": 1.19,
+    "ci_lower": 0.11,
+    "ci_level": 0,
+    "pubmed_id": 16826475,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

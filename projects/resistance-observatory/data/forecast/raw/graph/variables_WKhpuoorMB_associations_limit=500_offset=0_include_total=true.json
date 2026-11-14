@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/WKhpuoorMB/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "TkGNA4NpwM",
+    "variable_1_id": "WKhpuoorMB",
+    "variable_2_id": "1cGDZueFH2",
+    "variable_1_wikidata_id": "Q239569",
+    "variable_1_concept_id": "F8DI_OveVS",
+    "variable_1_name": "Dihydroartemisinin-piperaquine and sulfadoxine-pyrimethamine plus amodiaquine arms [vs Control arm (no chemoprevention)]",
+    "variable_2_name": "Incidence of clinical malaria",
+    "study_id": "Wt8er_82FK",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -0.16,
+    "p_value": 0.0001,
+    "pubmed_id": 37682871,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

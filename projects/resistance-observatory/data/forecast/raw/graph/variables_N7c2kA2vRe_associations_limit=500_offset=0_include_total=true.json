@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/N7c2kA2vRe/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "3vaKP4m5Ya",
+    "variable_1_id": "xIR0MrTZmb",
+    "variable_2_id": "N7c2kA2vRe",
+    "variable_1_wikidata_id": "Q411557",
+    "variable_1_concept_id": "bzQO0hAZXK",
+    "variable_1_name": "intervention arm receiving sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy through CDDs [vs control arm receiving sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy during antenatal care visit]",
+    "variable_2_name": "Compliance to sulfadoxine-pyrimethamine-intermittent preventive treatment of malaria in pregnancy",
+    "study_id": "9HDYy16O2R",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 37.3,
+    "p_value": 0.001,
+    "pubmed_id": 19467686,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

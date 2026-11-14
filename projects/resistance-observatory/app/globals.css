@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------------
+ * Design tokens. One dark palette, taken from the story page
+ * (public/story.html) so the story and the app read as one product. Every
+ * colour in the app goes through these. Colour is never the only encoding
+ * (CLAUDE.md) — tokens are paired with shape, position or label wherever they
+ * carry meaning.
+ * ---------------------------------------------------------------------- */
+:root {
+  /* The story's own tokens, verbatim. */
+  --ink: #06101b;
+  --white: #f5f4ef;
+  --mint: #70e0ca;
+  --amber: #f2bd76;
+  --quiet: #b0bdcb;
+  --page: #050d17;
+
+  /* App roles, mapped onto them. */
+  --bg: var(--page);
+  --surface: #0d2233;      /* the story's dashboard panel */
+  --surface-2: #16344a;    /* the story's dashboard card */
+  --fg: var(--white);
+  --body: #c4cdd6;         /* the story's paragraph colour */
+  --muted: var(--quiet);
+  --line: #ffffff1f;
+  --line-strong: #ffffff50;
+
+  /* Semantic hues */
+  --drug: var(--mint);     /* links, active states, emphasis, the drug acting */
+  --drug-soft: #12363a;
+  --signal: var(--amber);  /* the mutation, warnings, flags — used sparingly */
+  --signal-soft: #3a2e1c;
+  --gap: var(--quiet);     /* the evidence gap / neutral notices */
+  --gap-soft: #16344a;
+
+  --focus: var(--mint);
+  --radius: 9px;
+  --shadow: 0 33px 95px #0b253844;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-drug: var(--drug);
+  --color-drug-soft: var(--drug-soft);
+  --color-signal: var(--signal);
+  --color-signal-soft: var(--signal-soft);
+  --color-gap: var(--gap);
+  --color-gap-soft: var(--gap-soft);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  letter-spacing: -0.013em;
+}
+
+/* ------------------------------------------------------ Typography --- */
+/* Inter throughout, as on the story page. Headings carry the story's weight
+ * and tight tracking; small display text is tracked less so it stays legible. */
+.font-display {
+  font-weight: 620;
+  letter-spacing: -0.067em;
+}
+.font-display.text-lg,
+.font-display.text-xl,
+.font-display.text-2xl {
+  font-weight: 640;
+  letter-spacing: -0.035em;
+}
+/* Eyebrows and kickers: Inter, bold, uppercase, letter-spaced. Monospace is
+ * kept for the identity strip and for IDs, which are not uppercase. */
+.font-mono.uppercase {
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+a:hover {
+  text-decoration-color: var(--mint);
+}
+
+/* ------------------------------------------------------------- Nav --- */
+/* Same bar as the story page: fixed, transparent gradient at the top of the
+ * page, solid and blurred once the page has scrolled. */
+.ro-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 clamp(22px, 5.4vw, 100px);
+  background: linear-gradient(#040b13d8, #040b1300);
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s, border 0.3s;
+}
+.ro-nav[data-on="true"] {
+  background: #06101be9;
+  border-color: #ffffff14;
+  backdrop-filter: blur(16px);
+}
+.ro-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 13px;
+  font-weight: 760;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ro-nav-symbol {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #70e0ca88;
+  border-radius: 50%;
+  color: var(--mint);
+  font-size: 24px;
+  line-height: 1;
+}
+.ro-nav-brand i {
+  font-size: 10px;
+  letter-spacing: 0.17em;
+  font-style: normal;
+  color: #94a9b7;
+  font-weight: 500;
+  border-left: 1px solid #ffffff32;
+  margin-left: 7px;
+  padding-left: 17px;
+}
+.ro-nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.4vw, 32px);
+  overflow-x: auto;
+  /* Room for the active link's underline and for focus rings. */
+  padding: 14px 6px;
+}
+.ro-nav-links a {
+  font-size: 12px;
+  color: #d2d9e2;
+  letter-spacing: 0.05em;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.ro-nav-links a:hover {
+  color: var(--mint);
+}
+.ro-nav-links a[aria-current="page"] {
+  color: var(--mint);
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}
+.ro-nav-links a.ro-nav-end {
+  border: 1px solid #ffffff50;
+  border-radius: 100px;
+  padding: 10px 17px;
+  color: var(--white);
+  font-family: var(--font-mono);
+  letter-spacing: 0;
+}
+@media (max-width: 860px) {
+  .ro-nav {
+    padding: 0 24px;
+  }
+  .ro-nav-brand i,
+  .ro-nav-links a.ro-nav-end {
+    display: none;
+  }
+}
+/* Narrow screens: keep all six tabs on screen. The wordmark text collapses to
+ * the mark (it stays in the accessible name), and the links tighten. */
+@media (max-width: 560px) {
+  .ro-nav {
+    padding: 0 14px;
+    gap: 10px;
+  }
+  .ro-nav-brand .ro-nav-word {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .ro-nav-links {
+    gap: 11px;
+    padding: 14px 2px;
+  }
+  .ro-nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.01em;
+  }
+}
+@media (max-width: 500px) {
+  .ro-nav {
+    height: 65px;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--drug-soft);
+  color: var(--fg);
+}
+
+/* Visible placeholder token for unsourced figures. Intentionally loud. */
+.placeholder-token {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.42em;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+  padding: 0.35em 0.6em;
+  border: 1.5px dashed var(--gap);
+  color: var(--gap);
+  background: var(--gap-soft);
+  border-radius: 6px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------- Learn first screen --- */
+/* The story's dark field, carried into Learn so arriving from the story reads
+ * as a continuation: deep navy with a soft teal glow behind the diagram. */
+.learn-top {
+  margin-top: -76px;
+  padding-top: 76px;
+  background:
+    radial-gradient(ellipse 60% 70% at 78% 38%, #247a7d38, transparent 70%),
+    linear-gradient(90deg, #030913 0%, #030913d8 30%, #03091300 70%),
+    #050d17;
+}
+@media (max-width: 500px) {
+  .learn-top {
+    margin-top: -65px;
+    padding-top: 65px;
+  }
+}
+
+/* ------------------------------------------------------------ Motion --- */
+/* Every animated element has a legible static state. Under reduced motion
+ * nothing moves and everything is visible. */
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--delay, 0ms);
+}
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* --------------------------------------------------------- Home backdrop --- */
+@keyframes ro-spin { to { transform: rotate(360deg); } }
+@keyframes ro-spin-rev { to { transform: rotate(-360deg); } }
+@keyframes ro-drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -14px, 0); }
+}
+@keyframes ro-sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes ro-travel {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+.ro-spin { animation: ro-spin 120s linear infinite; transform-origin: center; transform-box: fill-box; }
+.ro-spin-rev { animation: ro-spin-rev 160s linear infinite; transform-origin: center; transform-box: fill-box; }
+.ro-sweep { animation: ro-sweep 18s linear infinite; transform-origin: 600px 600px; }
+.ro-drift { animation: ro-drift 9s ease-in-out infinite; }

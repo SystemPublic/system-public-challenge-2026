@@ -1,0 +1,53 @@
+{
+ "_request": "GET /variables/4pa8RpyKzz/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "UwXKRLKNtp",
+    "variable_1_id": "6-zmu8JVSY",
+    "variable_2_id": "4pa8RpyKzz",
+    "variable_1_name": "wealth (poor vs rich)",
+    "variable_2_name": "adequate uptake of intermittent preventive therapy with IPTp-SP",
+    "study_id": "rjVBSJ-E3n",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.8,
+    "ci_upper": 0.91,
+    "ci_lower": 0.78,
+    "ci_level": 0,
+    "pubmed_id": 36207727,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "E5rAOeZnP-",
+    "variable_1_id": "0KE1GSeiZi",
+    "variable_2_id": "4pa8RpyKzz",
+    "variable_1_name": "Age (15-19)",
+    "variable_2_name": "adequate uptake of intermittent preventive therapy with IPTp-SP",
+    "study_id": "rjVBSJ-E3n",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.42,
+    "ci_upper": 0.98,
+    "ci_lower": 0.33,
+    "ci_level": 0,
+    "pubmed_id": 36207727,
+    "system_statistic_type": "odds_ratio"
+   },
+   {
+    "system_id": "Oq7-h8TUZy",
+    "variable_1_id": "ipBv471QPX",
+    "variable_2_id": "4pa8RpyKzz",
+    "variable_1_name": "Region (Comparing most disadvantaged regions to least disadvantaged regions)",
+    "variable_2_name": "adequate uptake of intermittent preventive therapy with IPTp-SP",
+    "study_id": "rjVBSJ-E3n",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 0.59,
+    "ci_upper": 0.78,
+    "ci_lower": 0.48,
+    "ci_level": 0,
+    "pubmed_id": 36207727,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

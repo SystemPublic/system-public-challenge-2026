@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/53HAbVIIiy/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "8oPkmv2v9d",
+    "variable_1_id": "53HAbVIIiy",
+    "variable_2_id": "H4tmWz2Yx9",
+    "variable_1_wikidata_id": "Q707939",
+    "variable_2_wikidata_id": "Q1897162",
+    "variable_1_concept_id": "c_f3i8lTBc",
+    "variable_2_concept_id": "zjycE-zYCh",
+    "variable_1_name": "Artesunate treatment [vs Pyrimethamine-sulphadoxine alone]",
+    "variable_2_name": "Parasitaemia",
+    "study_id": "yuuvHI0P9R",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -34.0,
+    "p_value": 0.001,
+    "pubmed_id": 10665554,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

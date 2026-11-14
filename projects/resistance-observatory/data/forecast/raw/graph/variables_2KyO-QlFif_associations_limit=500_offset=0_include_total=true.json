@@ -1,0 +1,59 @@
+{
+ "_request": "GET /variables/2KyO-QlFif/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "9XvUKVIkqj",
+    "variable_1_id": "2KyO-QlFif",
+    "variable_2_id": "AT-rsvF_kI",
+    "variable_1_wikidata_id": "Q736270",
+    "variable_2_wikidata_id": "Q5445",
+    "variable_1_concept_id": "ulo6zHPp_o",
+    "variable_2_concept_id": "A9O2_M4sui",
+    "variable_1_name": "MQ group (receiving mefloquine) [vs SP group (receiving sulfadoxine-pyrimethamine)]",
+    "variable_2_name": "Prevalence of maternal anemia at delivery",
+    "study_id": "fGjCdryIF_",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -4.0,
+    "p_value": 0.09,
+    "pubmed_id": 19656069,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "ujExLYLnMX",
+    "variable_1_id": "2KyO-QlFif",
+    "variable_2_id": "U85cKscMh2",
+    "variable_1_wikidata_id": "Q736270",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_1_concept_id": "ulo6zHPp_o",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "MQ group (receiving mefloquine) [vs SP group (receiving sulfadoxine-pyrimethamine)]",
+    "variable_2_name": "Incidence rate of clinical malaria",
+    "study_id": "fGjCdryIF_",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -42.0,
+    "p_value": 0.007,
+    "pubmed_id": 19656069,
+    "system_statistic_type": "mean_difference_unstandardized"
+   },
+   {
+    "system_id": "mKVHpdIFh8",
+    "variable_1_id": "2KyO-QlFif",
+    "variable_2_id": "7H3a66ydbG",
+    "variable_1_wikidata_id": "Q736270",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_1_concept_id": "ulo6zHPp_o",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "MQ group (receiving mefloquine) [vs SP group (receiving sulfadoxine-pyrimethamine)]",
+    "variable_2_name": "Prevalence of placental malaria",
+    "study_id": "fGjCdryIF_",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -2.7,
+    "p_value": 0.005,
+    "pubmed_id": 19656069,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 3
+ }
+}

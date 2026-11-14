@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/_LaUwibhhx/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "y5nghPrl5_",
+    "variable_1_id": "cuR2o3_PDh",
+    "variable_2_id": "_LaUwibhhx",
+    "variable_1_name": "Prevalence of the dhfr59Arg mutant-type (2005) vs. Prevalence of the wild type dhfr59Cys haplotypes (2008)",
+    "variable_2_name": "Prevalence of sulfadoxine-pyrimethamine resistance-associated mutations in dhfr and dhps genes of P. falciparum",
+    "study_id": "1GUcQ9Jcua",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 23.9,
+    "p_value": 0.01,
+    "pubmed_id": 24055717,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

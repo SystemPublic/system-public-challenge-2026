@@ -1,0 +1,232 @@
+/* Forecast tab. Everything is scoped under .fc-root. The app's design tokens
+ * are re-mapped here so shared components and Tailwind token classes resolve
+ * to the Forecast palette inside this subtree. */
+.fc-root {
+  --bg: #050d17; --surface: #0d2233; --surface-2: #16344a; --fg: #f5f4ef; --muted: #b0bdcb;
+  --line: #1d3f58; --line-strong: #2f607f;
+  --drug: #70e0ca; --drug-soft: #113a3a; --signal: #f2bd76; --signal-soft: #3a2c14; --gap: #f2bd76; --gap-soft: #3a2c14;
+  --focus: #70e0ca; color-scheme: dark;
+  /* Tokens added by the restyled shell, pinned here too. */
+  --ink: #06101b; --white: #f5f4ef; --mint: #70e0ca; --amber: #f2bd76; --quiet: #b0bdcb;
+  --page: #050d17; --body: #c4cdd6; --radius: 10px;
+  /* Evidence gap is a neutral notice in the shell; amber stays reserved for alerts and "new". */
+  --gap: #b0bdcb; --gap-soft: #16344a;
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-sans);
+  /* The shell sets body letter-spacing; an inherited absolute length collapses
+   * SVG text drawn in tiny projected units. Reset it for this subtree. */
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
+}
+.fc-root svg, .fc-root svg text { letter-spacing: 0; word-spacing: normal; }
+
+.fc-root .fc-stage {
+  position: relative;
+  overflow: hidden;
+  height: calc(100dvh - 76px);
+  min-height: 560px;
+  background: radial-gradient(ellipse at 50% 40%, #0a1a2a 0%, #050d17 70%);
+}
+
+.fc-root .fc-card {
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.fc-root .fc-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.fc-root .fc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--fg);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fc-root .fc-btn:hover { background: var(--surface-2); }
+
+/* Map */
+.fc-root .fc-map { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; user-select: none; }
+.fc-root .fc-map.is-dragging { cursor: grabbing; }
+.fc-root .fc-country {
+  stroke: #24506d;
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+  transition: fill 250ms ease, opacity 250ms ease;
+  outline: none;
+}
+.fc-root .fc-country.is-interactive { cursor: pointer; }
+.fc-root .fc-country.is-interactive:hover { stroke: #8fb4cc; stroke-width: 1; }
+.fc-root .fc-dim .fc-country:not(.is-selected) { opacity: 0.62; }
+.fc-root .fc-country:focus-visible { stroke: #f5f4ef; stroke-width: 2; }
+.fc-root .fc-sel-outline {
+  fill: none;
+  stroke: #70e0ca;
+  stroke-width: 2.25;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px rgb(112 224 202 / 0.7));
+}
+.fc-root .fc-sel-halo {
+  fill: none;
+  stroke: #050d17;
+  stroke-width: 6;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+.fc-root .fc-marker { vector-effect: non-scaling-stroke; transition: fill 250ms ease; }
+.fc-root .fc-marker.is-interactive { cursor: pointer; }
+.fc-root .fc-label-text {
+  letter-spacing: 0;
+  word-spacing: normal;
+  fill: #f5f4ef;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: #050d17;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.fc-root .fc-tooltip {
+  position: absolute;
+  z-index: 30;
+  pointer-events: none;
+  max-width: 290px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Side panel */
+.fc-root .fc-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(420px, 100%);
+  z-index: 25;
+  overflow-y: auto;
+  border-left: 1px solid var(--line);
+  background: var(--surface);
+  animation: fc-slide-in 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@keyframes fc-slide-in {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fc-root .fc-panel { animation: none; }
+  .fc-root .fc-country, .fc-root .fc-marker { transition: none; }
+}
+
+@media (max-width: 500px) {
+  .fc-root .fc-stage { height: calc(100dvh - 65px); }
+}
+
+/* Left column: search card, what moved (flexible, scrolls), legend. */
+.fc-root .fc-leftcol {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  bottom: 16px;
+  width: 360px;
+  max-width: calc(100% - 32px);
+  z-index: 22;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+.fc-root .fc-leftcol > * { pointer-events: auto; }
+.fc-root .fc-leftcol .fc-search-card { position: relative; z-index: 3; flex: none; }
+.fc-root .fc-leftcol .fc-moved { position: relative; z-index: 1; flex: 1 1 auto; min-height: 0; overflow-y: auto; }
+/* Legend strip: bottom of the map, between the left column and the panel,
+ * left of the zoom buttons. Wraps to two rows rather than hiding anything. */
+.fc-root .fc-strip {
+  position: absolute;
+  bottom: 16px;
+  z-index: 21;
+  transition: right 300ms ease;
+}
+.fc-root .fc-seg-sm button { flex: none; height: 28px; padding: 0 10px; white-space: nowrap; }
+
+/* Amber rings: pulse twice, then stay. Static under reduced motion. */
+.fc-root .fc-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fc-pulse 900ms ease-out 2;
+}
+@keyframes fc-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  45% { transform: scale(1.7); opacity: 0.15; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.fc-root .fc-flag { cursor: pointer; outline: none; }
+.fc-root .fc-flag:focus-visible .fc-flag-focus { stroke: #f5f4ef; }
+@media (prefers-reduced-motion: reduce) {
+  .fc-root .fc-pulse { animation: none; }
+}
+.fc-root .fc-leftcol .fc-moved { width: 100%; max-width: none; flex: 1 1 auto; min-height: 0; }
+
+/* Layer switch: two-option segmented control. */
+.fc-root .fc-seg {
+  display: flex;
+  border: 1px solid var(--line-strong);
+  border-radius: 5px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.fc-root .fc-seg button {
+  flex: 1 1 0;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+}
+.fc-root .fc-seg button + button { border-left: 1px solid var(--line-strong); }
+.fc-root .fc-seg button[aria-pressed="true"] { background: var(--surface-2); color: var(--fg); box-shadow: inset 0 -2px 0 var(--fg); }
+.fc-root .fc-seg button:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; border-radius: 4px; }
+
+/* Scrolling inside the panel or the lists never drags the page. */
+.fc-root .fc-panel,
+.fc-root .fc-moved,
+.fc-root aside,
+.fc-root [data-scroll],
+.fc-root .overflow-y-auto,
+.fc-root .overflow-auto { overscroll-behavior: contain; }
+.fc-root .fc-stage { overscroll-behavior: contain; }
+
+/* Header card: its own absolutely positioned block (tab order), above every
+ * other card so the search results list stays on top. */
+.fc-root .fc-head {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 360px;
+  max-width: calc(100% - 32px);
+  z-index: 26;
+}
+/* Visible keyboard focus on flags and country markers. */
+.fc-root .fc-flag:focus-visible rect { stroke: var(--focus); stroke-width: 1.5; }
+.fc-root .fc-country:focus-visible { stroke: #70e0ca; stroke-width: 2.5; }

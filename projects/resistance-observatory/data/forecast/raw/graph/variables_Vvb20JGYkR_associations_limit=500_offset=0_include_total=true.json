@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/Vvb20JGYkR/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "CanE7lLTxx",
+    "variable_1_id": "Vvb20JGYkR",
+    "variable_2_id": "H4tmWz2Yx9",
+    "variable_2_wikidata_id": "Q1897162",
+    "variable_2_concept_id": "zjycE-zYCh",
+    "variable_1_name": "Doses of sulphadoxine-pyrimethamine",
+    "variable_2_name": "Parasitaemia",
+    "study_id": "hqj0wJVB1B",
+    "statistic_type": "pearson_r",
+    "statistic_value": -0.07,
+    "p_value": 0.24,
+    "pubmed_id": 22206597,
+    "system_statistic_type": "pearson_r"
+   }
+  ],
+  "total": 1
+ }
+}

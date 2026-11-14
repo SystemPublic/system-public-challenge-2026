@@ -1,0 +1,34 @@
+{
+ "_request": "GET /variables/KoAoGDl2G5/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "6uBEZHsT-i",
+    "variable_1_id": "KoAoGDl2G5",
+    "variable_2_id": "-8tw4dYWb5",
+    "variable_1_name": "different dhps genotypes",
+    "variable_2_name": "in vitro outcome to SDX and SMX",
+    "study_id": "TlgRxlmMVG",
+    "statistic_type": "pearson_r",
+    "statistic_value": 0.34,
+    "p_value": 0.001,
+    "pubmed_id": 12812351,
+    "system_statistic_type": "pearson_r"
+   },
+   {
+    "system_id": "ceGWuFGHR3",
+    "variable_1_id": "KoAoGDl2G5",
+    "variable_2_id": "-8tw4dYWb5",
+    "variable_1_name": "different dhps genotypes",
+    "variable_2_name": "in vitro outcome to SDX and SMX",
+    "study_id": "TlgRxlmMVG",
+    "statistic_type": "pearson_r",
+    "statistic_value": 0.3,
+    "p_value": 0.001,
+    "pubmed_id": 12812351,
+    "system_statistic_type": "pearson_r"
+   }
+  ],
+  "total": 2
+ }
+}

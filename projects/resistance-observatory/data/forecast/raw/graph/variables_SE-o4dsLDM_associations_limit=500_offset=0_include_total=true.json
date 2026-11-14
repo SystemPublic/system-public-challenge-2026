@@ -1,0 +1,57 @@
+{
+ "_request": "GET /variables/SE-o4dsLDM/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "2NPBDI_2OO",
+    "variable_1_id": "SE-o4dsLDM",
+    "variable_2_id": "OX7qTQSTZX",
+    "variable_1_name": "3-dose intermittent preventive therapy in pregnancy with sulfadoxine-pyrimethamine (SP)",
+    "variable_2_name": "prevalence of preterm births",
+    "study_id": "eDZBNQaETj",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 0.37,
+    "ci_upper": 0.71,
+    "ci_lower": 0.19,
+    "ci_level": 0,
+    "pubmed_id": 21765069,
+    "system_statistic_type": "prevalence_ratio"
+   },
+   {
+    "system_id": "Dyg3BIxD3R",
+    "variable_1_id": "SE-o4dsLDM",
+    "variable_2_id": "5pmW4wa3_X",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "3-dose intermittent preventive therapy in pregnancy with sulfadoxine-pyrimethamine (SP)",
+    "variable_2_name": "prevalence of low birth weight (LBW)",
+    "study_id": "eDZBNQaETj",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 0.5,
+    "ci_upper": 0.79,
+    "ci_lower": 0.32,
+    "ci_level": 0,
+    "pubmed_id": 21765069,
+    "system_statistic_type": "prevalence_ratio"
+   },
+   {
+    "system_id": "vAlDK1AQZP",
+    "variable_1_id": "SE-o4dsLDM",
+    "variable_2_id": "JDgR-ZP-Oc",
+    "variable_2_wikidata_id": "Q12156",
+    "variable_2_concept_id": "7xpZryeSKE",
+    "variable_1_name": "3-dose intermittent preventive therapy in pregnancy with sulfadoxine-pyrimethamine (SP)",
+    "variable_2_name": "prevalence of placental malaria",
+    "study_id": "eDZBNQaETj",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 0.48,
+    "ci_upper": 0.71,
+    "ci_lower": 0.32,
+    "ci_level": 0,
+    "pubmed_id": 21765069,
+    "system_statistic_type": "prevalence_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

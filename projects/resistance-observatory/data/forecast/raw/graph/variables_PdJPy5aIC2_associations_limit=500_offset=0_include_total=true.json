@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/PdJPy5aIC2/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "PbxVefDp2B",
+    "variable_1_id": "PdJPy5aIC2",
+    "variable_2_id": "J6EgeM0Av9",
+    "variable_2_wikidata_id": "Q3324547",
+    "variable_2_concept_id": "GXPo2ZlO9e",
+    "variable_1_name": "iron/folic acid supplements and sulfadoxine-pyrimethamine intermittent preventive treatment (SP-IPT(p))",
+    "variable_2_name": "neonatal mortality",
+    "study_id": "tcNnt8azgD",
+    "statistic_type": "hazard_ratio",
+    "statistic_value": 0.76,
+    "ci_upper": 0.99,
+    "ci_lower": 0.58,
+    "ci_level": 0,
+    "pubmed_id": 20504976,
+    "system_statistic_type": "hazard_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

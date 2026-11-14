@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/xBCqrcDWv2/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "M_j2pGpBj5",
+    "variable_1_id": "8itNkAyAbr",
+    "variable_2_id": "xBCqrcDWv2",
+    "variable_1_wikidata_id": "Q1020",
+    "variable_1_concept_id": "yxVL1zgiGK",
+    "variable_1_name": "Karonga, Malawi [vs Blantyre, Malawi]",
+    "variable_2_name": "Prevalence of the quintuple dhfr/dhps mutation",
+    "study_id": "xydvN2sce0",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -12.0,
+    "p_value": 0.005,
+    "pubmed_id": 19624477,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

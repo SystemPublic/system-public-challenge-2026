@@ -1,0 +1,4668 @@
+{
+ "source": {
+  "id": "system-public-graph",
+  "label": "System Public Graph",
+  "licence": "CC BY-NC 4.0",
+  "citation": "System, Inc. (2026). System Public Graph (Version 2.1) [Data set]. DOI: https://doi.org/10.7910/DVN/7V6JDO",
+  "url": "https://public-api.system.com/v1/",
+  "retrievedAt": "2026-11-14T16:05:21Z",
+  "notes": [
+   "The Graph has no geography field: countries are matched from the free text of each study's population description.",
+   "The Graph has no per-finding publication date: dates and titles come from OpenAlex, looked up by PubMed ID or DOI.",
+   "System's documentation says about 20% of associations served by the API are known-bad extractions; these findings have not been checked against the papers.",
+   "255 SP findings have no study record, so they have no population text and their country is unknown."
+  ]
+ },
+ "version": "2.1",
+ "snapshot": "2026-07-01",
+ "selectionRule": "Variables were found by name search in the System Public Graph API (terms for sulfadoxine-pyrimethamine and for pfdhps/dihydropteroate synthase, including K540E and 540E), then all associations of the kept variables were fetched. A finding is 'sp' when a variable name refers to SP (sulfadoxine, sulphadoxine, Fansidar, SP, SPAQ, IPTp-SP) and no dhps variable is involved. A finding is 'codon540' when a variable name explicitly includes 540E (for example K540E, 540K/E, Glu-540, dhps540Glu); dhps findings that do not name 540E are excluded. A country is attached only when its name appears in the Graph study population text or in a variable name. Only findings naming at least one country are listed.",
+ "totals": {
+  "sp": 443,
+  "spNamingCountry": 139,
+  "spWithoutStudyRecord": 255,
+  "codon540": 11,
+  "codon540NamingCountry": 11,
+  "papersBehindCodon540": 8,
+  "haplotype": 3,
+  "haplotypeNamingCountry": 0
+ },
+ "findings": [
+  {
+   "systemId": "5cnJAspBYN",
+   "kind": "codon540",
+   "spLooksLikeUptake": false,
+   "variable1": "presence of the quintuple mutant dhfr N51I/C59R/S108N+dhps A437G/K540E",
+   "variable2": "treatment failure (among the study participants)",
+   "statisticType": "odds_ratio",
+   "statisticValue": 3.5,
+   "ciLower": 1.4,
+   "ciUpper": 8.8,
+   "pValue": null,
+   "studyId": "xdBifnj4pj",
+   "pubmedId": "25583123",
+   "doi": "10.1111/tmi.12458",
+   "population": "Adults and children aged 6 months to 14 years with uncomplicated malaria in Somalia in 2011.",
+   "countries": [
+    {
+     "iso3": "SOM",
+     "matchedText": "Somalia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Treatment of uncomplicated malaria with artesunate plus sulfadoxine–pyrimethamine is failing in Somalia: evidence from therapeutic efficacy studies and Pfdhfr and Pfdhps mutant alleles",
+    "publishedDate": "2015-01-13",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "AeI-laBxXr",
+   "kind": "codon540",
+   "spLooksLikeUptake": false,
+   "variable1": "Presence of K540 E: in dihydropteroate synthase",
+   "variable2": "Patent infection in placental blood",
+   "statisticType": "prevalence_ratio",
+   "statisticValue": 3.28,
+   "ciLower": 1.88,
+   "ciUpper": 5.78,
+   "pValue": null,
+   "studyId": "ISjODSn06i",
+   "pubmedId": "25564249",
+   "doi": "10.1093/infdis/jiu836",
+   "population": "1809 pregnant women without HIV infection in Malawi between 2009 and 2011.",
+   "countries": [
+    {
+     "iso3": "MWI",
+     "matchedText": "Malawi",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "The A581GMutation in the Gene EncodingPlasmodium falciparumDihydropteroate Synthetase Reduces the Effectiveness of Sulfadoxine-Pyrimethamine Preventive Therapy in Malawian Pregnant Women",
+    "publishedDate": "2015-01-06",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "KL67h5A5Ml",
+   "kind": "codon540",
+   "spLooksLikeUptake": false,
+   "variable1": "Ebonyi State [vs Osun State]",
+   "variable2": "dhps-540K/E prevalence",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 4.57,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.069,
+   "studyId": "jMqeVgkFL0",
+   "pubmedId": "36680454",
+   "doi": "10.1093/jac/dkad011",
+   "population": "Children in Ebonyi and Osun states in Nigeria.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Baseline prevalence of molecular marker of sulfadoxine/pyrimethamine resistance in Ebonyi and Osun states, Nigeria: amplicon deep sequencing ofdhps-540",
+    "publishedDate": "2023-01-21",
+    "year": 2023,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "NEpELzpWh9",
+   "kind": "codon540",
+   "spLooksLikeUptake": true,
+   "variable1": "Withdrawal of sulfadoxine-pyrimethamine (SP) as the first-line anti-malarial drug in 2008 [vs Use of sulfadoxine-pyrimethamine (SP) as the first-line anti-malarial drug in 2005]",
+   "variable2": "Prevalence of quintuple mutations (dhfr (108Asn/51Ile/59Arg)/dhps437Gly/dhps540Glu)",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -23.4,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.01,
+   "studyId": "1GUcQ9Jcua",
+   "pubmedId": "24055717",
+   "doi": "10.1016/j.actatropica.2013.09.010",
+   "population": "165 patients infected with Plasmodium falciparum in Bahir Dar, Northwest Ethiopia in 2005 and 2008.",
+   "countries": [
+    {
+     "iso3": "ETH",
+     "matchedText": "Ethiopia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence of sulfadoxine–pyrimethamine resistance-associated mutations in dhfr and dhps genes of Plasmodium falciparum three years after SP withdrawal in Bahir Dar, Northwest Ethiopia",
+    "publishedDate": "2013-09-18",
+    "year": 2013,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "QIrkddNp_j",
+   "kind": "codon540",
+   "spLooksLikeUptake": false,
+   "variable1": "dihydrofolate reductase triple (Asn-108/Ile-51/Arg-59) mutants or the dhps double mutants (Gly-437/Glu-540)",
+   "variable2": "sulfadoxine-pyrimethamine treatment failure in children aged less than 5 years",
+   "statisticType": "odds_ratio",
+   "statisticValue": 24.72,
+   "ciLower": 8.24,
+   "ciUpper": 74.15,
+   "pValue": null,
+   "studyId": "wC3yE3mRbl",
+   "pubmedId": "16023986",
+   "doi": "10.1016/j.actatropica.2005.06.015",
+   "population": "109 children treated with SP for acute uncomplicated malaria in Ibadan, Nigeria.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Polymorphisms in Plasmodium falciparum dhfr and dhps genes and age related in vivo sulfadoxine–pyrimethamine resistance in malaria-infected patients from Nigeria",
+    "publishedDate": "2005-07-18",
+    "year": 2005,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "ZPGDdrkvVI",
+   "kind": "codon540",
+   "spLooksLikeUptake": false,
+   "variable1": "presence of the double mutant dhps A437G/K540E",
+   "variable2": "treatment failure (among the patients with the presence of the double mutant dhps A437G/K540E)",
+   "statisticType": "odds_ratio",
+   "statisticValue": 22.4,
+   "ciLower": 5.1,
+   "ciUpper": 98.1,
+   "pValue": null,
+   "studyId": "xdBifnj4pj",
+   "pubmedId": "25583123",
+   "doi": "10.1111/tmi.12458",
+   "population": "Adults and children aged 6 months to 14 years with uncomplicated malaria in Somalia in 2011.",
+   "countries": [
+    {
+     "iso3": "SOM",
+     "matchedText": "Somalia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Treatment of uncomplicated malaria with artesunate plus sulfadoxine–pyrimethamine is failing in Somalia: evidence from therapeutic efficacy studies and Pfdhfr and Pfdhps mutant alleles",
+    "publishedDate": "2015-01-13",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "iD_4aq3uIs",
+   "kind": "codon540",
+   "spLooksLikeUptake": false,
+   "variable1": "Artemisinin-based combination therapy (2009-2013) [vs Artemisinin-based combination therapy (2003-2005)]",
+   "variable2": "Prevalence of antifolate drugs resistance in the 51I, 59R, 108N, or 540E SNPs",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -41.3,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.05,
+   "studyId": "qYX21-LU0d",
+   "pubmedId": "29854394",
+   "doi": "10.1155/2018/7071383",
+   "population": "Individuals from Mutengene, Cameroon who provided dry blood samples for parasite DNA extraction from 2003-2005 and 2009-2013.",
+   "countries": [
+    {
+     "iso3": "CMR",
+     "matchedText": "Cameroon",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effects of Drug Policy Changes on Evolution of Molecular Markers of Plasmodium falciparum Resistance to Chloroquine, Amodiaquine, and Sulphadoxine-Pyrimethamine in the South West Region of Cameroon",
+    "publishedDate": "2018-05-02",
+    "year": 2018,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "o81I-56Mt5",
+   "kind": "codon540",
+   "spLooksLikeUptake": false,
+   "variable1": "one year after SP/AQ introduction [vs before SP/AQ introduction]",
+   "variable2": "frequency of the SP-resistance associated Pfdhps double mutant (SGEAA) haplotype",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 21.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "NzCtX3gQQ5",
+   "pubmedId": "18590577",
+   "doi": "10.1186/1475-2875-7-115",
+   "population": "796 and 692 children one year or older and adults randomly selected living in Maciana, an area located in Manhiça district, Southern Mozambique.",
+   "countries": [
+    {
+     "iso3": "MOZ",
+     "matchedText": "Mozambique",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Rapid increase of Plasmodium falciparum dhfr/dhps resistant haplotypes, after the adoption of sulphadoxine-pyrimethamine as first line treatment in 2002, in southern Mozambique",
+    "publishedDate": "2008-07-01",
+    "year": 2008,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "paFNq6MPX5",
+   "kind": "codon540",
+   "spLooksLikeUptake": false,
+   "variable1": "Presence of K540 E: in dihydropteroate synthase",
+   "variable2": "Patent infection in peripheral blood",
+   "statisticType": "prevalence_ratio",
+   "statisticValue": 2.76,
+   "ciLower": 1.82,
+   "ciUpper": 4.18,
+   "pValue": null,
+   "studyId": "ISjODSn06i",
+   "pubmedId": "25564249",
+   "doi": "10.1093/infdis/jiu836",
+   "population": "1809 pregnant women without HIV infection in Malawi between 2009 and 2011.",
+   "countries": [
+    {
+     "iso3": "MWI",
+     "matchedText": "Malawi",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "The A581GMutation in the Gene EncodingPlasmodium falciparumDihydropteroate Synthetase Reduces the Effectiveness of Sulfadoxine-Pyrimethamine Preventive Therapy in Malawian Pregnant Women",
+    "publishedDate": "2015-01-06",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "rgO2bc-iSN",
+   "kind": "codon540",
+   "spLooksLikeUptake": false,
+   "variable1": "presence of the quadruple mutant dhfr N51I/S108N+dhps A437G/K540E",
+   "variable2": "treatment failure (among the study participants)",
+   "statisticType": "odds_ratio",
+   "statisticValue": 5.5,
+   "ciLower": 2.3,
+   "ciUpper": 13.6,
+   "pValue": null,
+   "studyId": "xdBifnj4pj",
+   "pubmedId": "25583123",
+   "doi": "10.1111/tmi.12458",
+   "population": "Adults and children aged 6 months to 14 years with uncomplicated malaria in Somalia in 2011.",
+   "countries": [
+    {
+     "iso3": "SOM",
+     "matchedText": "Somalia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Treatment of uncomplicated malaria with artesunate plus sulfadoxine–pyrimethamine is failing in Somalia: evidence from therapeutic efficacy studies and Pfdhfr and Pfdhps mutant alleles",
+    "publishedDate": "2015-01-13",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "umNpTiumH4",
+   "kind": "codon540",
+   "spLooksLikeUptake": false,
+   "variable1": "STOP-CTX (discontinue cotrimoxazole) [vs CTX (continue cotrimoxazole)]",
+   "variable2": "Prevalence of quintuple haplotype (51I/59R/108N/437G/540E)",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 45.5,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.0007,
+   "studyId": "HCsI_XcW-1",
+   "pubmedId": "30897090",
+   "doi": "10.1371/journal.pntd.0007223",
+   "population": "HIV-infected individuals on antiretroviral treatment randomized to discontinue (STOP-CTX), or continue (CTX) cotrimoxazole in Western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "The prevalence and antifolate drug resistance profiles of Plasmodium falciparum in study participants randomized to discontinue or continue cotrimoxazole prophylaxis",
+    "publishedDate": "2019-03-21",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "489sn1mPQa",
+   "kind": "haplotype",
+   "spLooksLikeUptake": false,
+   "variable1": "Mutations in the Plasmodium falciparum genes Pfdhfr and Pfdhps, particularly the sextuple mutant haplotype",
+   "variable2": "birth weight",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -461.0,
+   "ciLower": -877.0,
+   "ciUpper": -44.0,
+   "pValue": 0.03,
+   "studyId": "Cxsr7UsKD_",
+   "pubmedId": "33684211",
+   "doi": "10.1093/infdis/jiab117",
+   "population": "Pregnant women in malaria-endemic areas who were monitored from before conception or from the first trimester until delivery.",
+   "countries": [],
+   "paper": {
+    "title": "Reduced Birth Weight Caused by Sextuple Drug-Resistant Plasmodium falciparum Infection in Early Second Trimester",
+    "publishedDate": "2021-02-26",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "gD0V6goixf",
+   "kind": "haplotype",
+   "spLooksLikeUptake": false,
+   "variable1": "Mutations in the Plasmodium falciparum genes Pfdhfr and Pfdhps, particularly the sextuple mutant haplotype",
+   "variable2": "birth weight",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -267.0,
+   "ciLower": -454.0,
+   "ciUpper": -59.0,
+   "pValue": 0.01,
+   "studyId": "Cxsr7UsKD_",
+   "pubmedId": "33684211",
+   "doi": "10.1093/infdis/jiab117",
+   "population": "Pregnant women in malaria-endemic areas who were monitored from before conception or from the first trimester until delivery.",
+   "countries": [],
+   "paper": {
+    "title": "Reduced Birth Weight Caused by Sextuple Drug-Resistant Plasmodium falciparum Infection in Early Second Trimester",
+    "publishedDate": "2021-02-26",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "o23pQ-icgn",
+   "kind": "haplotype",
+   "spLooksLikeUptake": false,
+   "variable1": "Patients who cleared the infection (quintuple resistant P. falciparum parasites) vs. Patients who did not clear the infection (quintuple resistant P. falciparum parasites)",
+   "variable2": "blood pyrimethamine concentrations",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 77.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.037,
+   "studyId": "SGWeh5J0Ya",
+   "pubmedId": "16127028",
+   "doi": "10.1128/aac.49.9.3601-3606.2005",
+   "population": "Adults infected with Plasmodium falciparum malaria in an unspecified location.",
+   "countries": [],
+   "paper": {
+    "title": "Association between the Pharmacokinetics and In Vivo Therapeutic Efficacy of Sulfadoxine-Pyrimethamine in Malawian Children",
+    "publishedDate": "2005-08-26",
+    "year": 2005,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "-uHF8PKJLb",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamine (SP)",
+   "variable2": "late parasitological failure",
+   "statisticType": "odds_ratio",
+   "statisticValue": 3.18,
+   "ciLower": 1.25,
+   "ciUpper": 8.09,
+   "pValue": 0.02,
+   "studyId": "mnvlimBm79",
+   "pubmedId": "16923176",
+   "doi": "10.1186/1475-2875-5-73",
+   "population": "Adults with uncomplicated Plasmodium falciparum malaria in Zambia.",
+   "countries": [
+    {
+     "iso3": "ZMB",
+     "matchedText": "Zambia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Safety and efficacy of lumefantrine-artemether (Coartem®) for the treatment of uncomplicated Plasmodium falciparum malaria in Zambian adults",
+    "publishedDate": "2006-08-21",
+    "year": 2006,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "00yvzW-jqZ",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment in pregnancy with monthly dihydroartemisinin-piperaquine treatment group [vs Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine treatment group]",
+   "variable2": "incidence of symptomatic-malaria",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -0.1,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.002,
+   "studyId": "egVRLouGRA",
+   "pubmedId": "33891721",
+   "doi": "10.1002/cpt.2273",
+   "population": "956 malaria-free pregnant women from moderate malaria transmission areas in Tanzania.",
+   "countries": [
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effectiveness of Intermittent Preventive Treatment With Dihydroartemisinin‐Piperaqunine Against Malaria in Pregnancy in Tanzania: A Randomized Controlled Trial",
+    "publishedDate": "2021-04-23",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "3Ovoo_BH6y",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamine (SP)",
+   "variable2": "mean haemoglobin at day 45",
+   "statisticType": "odds_ratio",
+   "statisticValue": 2.55,
+   "ciLower": 1.34,
+   "ciUpper": 4.84,
+   "pValue": 0.004,
+   "studyId": "mnvlimBm79",
+   "pubmedId": "16923176",
+   "doi": "10.1186/1475-2875-5-73",
+   "population": "Adults with uncomplicated Plasmodium falciparum malaria in Zambia.",
+   "countries": [
+    {
+     "iso3": "ZMB",
+     "matchedText": "Zambia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Safety and efficacy of lumefantrine-artemether (Coartem®) for the treatment of uncomplicated Plasmodium falciparum malaria in Zambian adults",
+    "publishedDate": "2006-08-21",
+    "year": 2006,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "3R6ZB-jdEP",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Fever case management (CM) approach using sulfadoxine-pyrimethamine (SP) vs. Monthly SP",
+   "variable2": "placental malaria",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 18.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "BYm-tlOymj",
+   "pubmedId": "9840604",
+   "doi": "10.4269/ajtmh.1998.59.813",
+   "population": "Pregnant primigravidae and secundigravidae in an area of intense Plasmodium falciparum malaria transmission in western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Efficacy of sulfadoxine-pyrimethamine for prevention of placental malaria in an area of Kenya with a high prevalence of malaria and human immunodeficiency virus infection.",
+    "publishedDate": "1998-11-01",
+    "year": 1998,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "4143oeVqof",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamineAS3",
+   "variable2": "treatment efficacy (among children aged 6-59 months with uncomplicated Plasmodium falciparum malaria)",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 1.8,
+   "ciLower": 1.5,
+   "ciUpper": 2.3,
+   "pValue": null,
+   "studyId": "FITrBlzGmF",
+   "pubmedId": "15228253",
+   "doi": "10.1016/s0035-9203(03)90161-1",
+   "population": "420 children aged 6-59 months with uncomplicated Plasmodium falciparum malaria in a mesoendemic region in Uganda.",
+   "countries": [
+    {
+     "iso3": "UGA",
+     "matchedText": "Uganda",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Artesunate and sulfadoxine-pyrimethamine combinations for the treatment of uncomplicated Plasmodium falciparum malaria in Uganda: a randomized, double-blind, placebo-controlled trial",
+    "publishedDate": "2003-05-01",
+    "year": 2003,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "4avf24yKnZ",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Sulfadoxine/pyrimethamine treatment (2007/08) [vs Sulfadoxine/pyrimethamine treatment (2005)]",
+   "variable2": "Frequency of triple Pfdhfr mutation",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -34.9,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "xhlZ2PHLTn",
+   "pubmedId": "26431464",
+   "doi": "10.1371/journal.pone.0126943",
+   "population": "159 isolates collected from Pawe hospital in North Western Ethiopia in 2005 and 2007/08.",
+   "countries": [
+    {
+     "iso3": "ETH",
+     "matchedText": "Ethiopia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Declining trend of Plasmodium falciparum dihydrofolate reductase (dhfr) and dihydropteroate synthase (dhps) mutant alleles after the withdrawal of Sulfadoxine-Pyrimethamine in North Western Ethiopia",
+    "publishedDate": "2015-10-02",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "4x1gKKV5d-",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "treatment with pyrimethamine-sulphadoxine plus one dose of artesunate (4mg/kg bodyweight)",
+   "variable2": "parasitaemia",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 1.7,
+   "ciLower": 1.5,
+   "ciUpper": 2.0,
+   "pValue": 0.001,
+   "studyId": "yuuvHI0P9R",
+   "pubmedId": "10665554",
+   "doi": "10.1016/s0140-6736(99)10237-x",
+   "population": "600 children aged 6 months to 10 years with acute uncomplicated Plasmodium falciparum malaria in The Gambia.",
+   "countries": [
+    {
+     "iso3": "GMB",
+     "matchedText": "Gambia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Efficacy of artesunate plus pyrimethamine-sulphadoxine for uncomplicated malaria in Gambian children: a double-blind, randomised, controlled trial",
+    "publishedDate": "2000-01-01",
+    "year": 2000,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "69RRr6Xqmm",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "receiving antenatal care from a nurse or midwife",
+   "variable2": "receipt of one dose of sulphadoxine-pyrimethamine versus none",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.79,
+   "ciLower": 1.12,
+   "ciUpper": 2.78,
+   "pValue": null,
+   "studyId": "adzuGTWY2u",
+   "pubmedId": "23912315",
+   "doi": "10.1007/s10995-013-1340-8",
+   "population": "Pregnant women in Kenya in 2008-2009.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Factors Associated with Utilization of Sulphadoxine–Pyrimethamine During Pregnancy Among Women in Kenya: A Cross-Sectional Study",
+    "publishedDate": "2013-08-03",
+    "year": 2013,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "6MNSCw6DyE",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine (SP)",
+   "variable2": "maternal parasitemia",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.47,
+   "ciLower": 0.27,
+   "ciUpper": 0.82,
+   "pValue": 0.008,
+   "studyId": "0te5EaKamn",
+   "pubmedId": "25247995",
+   "doi": "10.1371/journal.pmed.1001735",
+   "population": "1,071 HIV-infected pregnant women from Kenya, Mozambique, and Tanzania.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    },
+    {
+     "iso3": "MOZ",
+     "matchedText": "Mozambique",
+     "field": "study.population"
+    },
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment of Malaria in Pregnancy with Mefloquine in HIV-Infected Women Receiving Cotrimoxazole Prophylaxis: A Multicenter Randomized Placebo-Controlled Trial",
+    "publishedDate": "2014-09-23",
+    "year": 2014,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "6OErRHgw0M",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "parity",
+   "variable2": "uptake of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine during the last pregnancy",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.663,
+   "ciLower": 0.442,
+   "ciUpper": 0.994,
+   "pValue": null,
+   "studyId": "S0yqlQI-jk",
+   "pubmedId": "30736456",
+   "doi": "10.3390/tropicalmed4010032",
+   "population": "8526 women aged between 15-49 years in Sierra Leone in 2016.",
+   "countries": [
+    {
+     "iso3": "SLE",
+     "matchedText": "Sierra Leone",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and Associated Factors of Taking Intermittent Preventive Treatment in Pregnancy in Sierra Leone",
+    "publishedDate": "2019-02-07",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "6gHNBtEMhm",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "the uptake of less than three doses of sulfadoxine-pyrimethamine for the intermittent preventive treatment of malaria in pregnancy (IPTp-SP)",
+   "variable2": "low birth weight",
+   "statisticType": "adjusted_odds_ratio",
+   "statisticValue": 2.2,
+   "ciLower": 1.3,
+   "ciUpper": 3.9,
+   "pValue": 0.05,
+   "studyId": "aywKmrINFu",
+   "pubmedId": "35313840",
+   "doi": "10.1186/s12884-022-04554-w",
+   "population": "600 neonates and their mothers in a rural area of Burkina Faso.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Low birth weight and its associated risk factors in a rural health district of Burkina Faso: a cross sectional study",
+    "publishedDate": "2022-03-21",
+    "year": 2022,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "6jrbBRbjQa",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "stock-outs of sulphadoxine-pyrimethamine",
+   "variable2": "Intermittent preventive treatment in pregnancy delivery",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.4,
+   "ciLower": 0.27,
+   "ciUpper": 0.6,
+   "pValue": null,
+   "studyId": "_fC3Vv5k1y",
+   "pubmedId": "25409680",
+   "doi": "10.1186/1475-2875-13-440",
+   "population": "Pregnant women attending antenatal care visits in Kenya, Namibia, Rwanda, Tanzania, and Uganda between 2006 and 2010.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    },
+    {
+     "iso3": "NAM",
+     "matchedText": "Namibia",
+     "field": "study.population"
+    },
+    {
+     "iso3": "RWA",
+     "matchedText": "Rwanda",
+     "field": "study.population"
+    },
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    },
+    {
+     "iso3": "UGA",
+     "matchedText": "Uganda",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Factors affecting providers’ delivery of intermittent preventive treatment for malaria in pregnancy: a five-country analysis of national service provision assessment surveys",
+    "publishedDate": "2014-11-20",
+    "year": 2014,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "7PQthtqs1C",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine",
+   "variable2": "parasitemia during pregnancy",
+   "statisticType": "incident_rate_ratio",
+   "statisticValue": 0.28,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "egVRLouGRA",
+   "pubmedId": "33891721",
+   "doi": "10.1002/cpt.2273",
+   "population": "956 malaria-free pregnant women from moderate malaria transmission areas in Tanzania.",
+   "countries": [
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effectiveness of Intermittent Preventive Treatment With Dihydroartemisinin‐Piperaqunine Against Malaria in Pregnancy in Tanzania: A Randomized Controlled Trial",
+    "publishedDate": "2021-04-23",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "7n328tg7ya",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Number of antenatal clinic visits (≥4 visits)",
+   "variable2": "receipt of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine",
+   "statisticType": "adjusted_odds_ratio",
+   "statisticValue": 4.57,
+   "ciLower": 1.15,
+   "ciUpper": 18.16,
+   "pValue": 0.05,
+   "studyId": "5OfATf9_M1",
+   "pubmedId": "28797296",
+   "doi": "10.1186/s12936-017-1969-7",
+   "population": "Pregnant women seeking postnatal care at Osu Government Maternity Home in Accra, Ghana.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent preventive treatment of malaria in pregnancy: a cross-sectional survey to assess uptake of the new sulfadoxine–pyrimethamine five dose policy in Ghana",
+    "publishedDate": "2017-08-10",
+    "year": 2017,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "7qCFuum7Dn",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "group that took intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP) [vs group that did not take intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP)]",
+   "variable2": "prevalence of ISgKAA mutant",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -15.4,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.0503,
+   "studyId": "6X-wA3I__7",
+   "pubmedId": "36611259",
+   "doi": "10.1093/jac/dkac432",
+   "population": "Pregnant women with malaria in Yaoundé, Cameroon.",
+   "countries": [
+    {
+     "iso3": "CMR",
+     "matchedText": "Cameroon",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effect of sulfadoxine-pyrimethamine chemoprophylaxis in pregnant women on selection of the new P. falciparum dhps quintuple mutant carrying the I431V mutation",
+    "publishedDate": "2022-12-16",
+    "year": 2022,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "81FqRY42e3",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulphadoxine-pyrimethamine",
+   "variable2": "clearing parasitaemia in many women by the time of delivery",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 1.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": null,
+   "studyId": "GNTGkTDmNB",
+   "pubmedId": "10203167",
+   "doi": "10.1046/j.1365-3156.1999.00349.x",
+   "population": "Pregnant women in rural Malawi in 1993-94.",
+   "countries": [
+    {
+     "iso3": "MWI",
+     "matchedText": "Malawi",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Increased prevalence of malaria in HIV‐infected pregnant women and its implications for malaria control",
+    "publishedDate": "1999-01-01",
+    "year": 1999,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "86O0UaES4j",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "uptake of ≥ 2 doses of IPTp-SP",
+   "variable2": "low birth weight (LBW)",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.32,
+   "ciLower": 0.11,
+   "ciUpper": 0.93,
+   "pValue": 0.001,
+   "studyId": "c3U2PtvDD4",
+   "pubmedId": "32122339",
+   "doi": "10.1186/s12936-020-03155-2",
+   "population": "465 pregnant women from semi-rural and semi-urban settings in the Mount Cameroon area.",
+   "countries": [
+    {
+     "iso3": "CMR",
+     "matchedText": "Cameroon",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Coverage and effectiveness of intermittent preventive treatment in pregnancy with sulfadoxine–pyrimethamine (IPTp-SP) on adverse pregnancy outcomes in the Mount Cameroon area, South West Cameroon",
+    "publishedDate": "2020-03-02",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "8ncIXfhgBL",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "treatment with artesunate plus sulfadoxine-pyrimethamine",
+   "variable2": "gametocyte carriage on day 14",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.5,
+   "ciLower": 0.2,
+   "ciUpper": 1.1,
+   "pValue": null,
+   "studyId": "Le4fY2VPxa",
+   "pubmedId": "11693875",
+   "doi": "10.4269/ajtmh.2001.65.309",
+   "population": "105 patients in Indonesia with uncomplicated falciparum malaria, stratified by age and ethnicity.",
+   "countries": [
+    {
+     "iso3": "IDN",
+     "matchedText": "Indonesia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Therapy of uncomplicated falciparum malaria: a randomized trial comparing artesunate plus sulfadoxine-pyrimethamine versus sulfadoxine-pyrimethamine alone in Irian Jaya, Indonesia.",
+    "publishedDate": "2001-10-01",
+    "year": 2001,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "8oPkmv2v9d",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Artesunate treatment [vs Pyrimethamine-sulphadoxine alone]",
+   "variable2": "Parasitaemia",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -34.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "yuuvHI0P9R",
+   "pubmedId": "10665554",
+   "doi": "10.1016/s0140-6736(99)10237-x",
+   "population": "600 children aged 6 months to 10 years with acute uncomplicated Plasmodium falciparum malaria in The Gambia.",
+   "countries": [
+    {
+     "iso3": "GMB",
+     "matchedText": "Gambia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Efficacy of artesunate plus pyrimethamine-sulphadoxine for uncomplicated malaria in Gambian children: a double-blind, randomised, controlled trial",
+    "publishedDate": "2000-01-01",
+    "year": 2000,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "9T0l_vRSku",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Making ≥4 ANC visits",
+   "variable2": "uptake of sulphadoxine-pyrimethamine during pregnancy",
+   "statisticType": "coefficient",
+   "statisticValue": 53.77,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "5dnDKrtyWh",
+   "pubmedId": "33530957",
+   "doi": "10.1186/s12884-021-03582-2",
+   "population": "Pregnant women of ≥36 weeks gestation visiting antenatal clinics in three selected health facilities in the Cape Coast Metropolis of Ghana.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Late ANC initiation and factors associated with sub-optimal uptake of sulphadoxine-pyrimethamine in pregnancy: a preliminary study in Cape Coast Metropolis, Ghana",
+    "publishedDate": "2021-02-02",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "9XvUKVIkqj",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "MQ group (receiving mefloquine) [vs SP group (receiving sulfadoxine-pyrimethamine)]",
+   "variable2": "Prevalence of maternal anemia at delivery",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -4.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.09,
+   "studyId": "fGjCdryIF_",
+   "pubmedId": "19656069",
+   "doi": "10.1086/605474",
+   "population": "Pregnant women in Benin from July 2005 to April 2008.",
+   "countries": [
+    {
+     "iso3": "BEN",
+     "matchedText": "Benin",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Treatment for the Prevention of Malaria during Pregnancy in Benin: A Randomized, Open‐Label Equivalence Trial Comparing Sulfadoxine‐Pyrimethamine with Mefloquine",
+    "publishedDate": "2009-08-05",
+    "year": 2009,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "9piJI0SwqK",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "use of sulfadoxine-pyrimethamine",
+   "variable2": "malaria in pregnancy",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.44,
+   "ciLower": 0.18,
+   "ciUpper": 1.06,
+   "pValue": null,
+   "studyId": "CCRrt40vnd",
+   "pubmedId": "12625128",
+   "doi": "10.1016/s0035-9203(02)90319-6",
+   "population": "5093 pregnant women attending the antenatal clinic in the Provincial Hospital in Kisumu, western Kenya, between June 1996 and March 1999.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Risk factors for malaria in pregnancy in an urban and peri-urban population in western Kenya",
+    "publishedDate": "2002-11-01",
+    "year": 2002,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "AByodmg7lO",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine users",
+   "variable2": "anemia prevalence",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.2,
+   "ciLower": 0.12,
+   "ciUpper": 0.34,
+   "pValue": 0.001,
+   "studyId": "WeGutAJ5Ty",
+   "pubmedId": "21734118",
+   "doi": "10.4269/ajtmh.2011.10-0512",
+   "population": "Pregnant women attending the antenatal clinic at Korle-Bu Teaching Hospital in Accra, Ghana in June-August 2009.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine against Malaria and Anemia in Pregnant Women",
+    "publishedDate": "2011-07-01",
+    "year": 2011,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "AVy5IwHSXY",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "three or more doses of sulfadoxine-pyrimethamine",
+   "variable2": "low-birth weights",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.2,
+   "ciLower": 0.1,
+   "ciUpper": 0.5,
+   "pValue": 0.001,
+   "studyId": "0NDp--F8Bt",
+   "pubmedId": "34284138",
+   "doi": "10.1016/j.meegid.2021.105009",
+   "population": "844 laboring women and their respective newborns in Kingasani Hospital, Kinshasa in the Democratic Republic of Congo.",
+   "countries": [
+    {
+     "iso3": "COD",
+     "matchedText": "Democratic Republic of Congo",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Evaluation of the usefulness of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine in a context with increased resistance of Plasmodium falciparum in Kingasani Hospital, Kinshasa in the Democratic Republic of Congo",
+    "publishedDate": "2021-07-18",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "Az5UNR8eRQ",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "time between the first and second dose of sulfadoxine - pyrimethamine longer than ten weeks",
+   "variable2": "clinical malaria",
+   "statisticType": "odds_ratio",
+   "statisticValue": 5.5,
+   "ciLower": 3.2,
+   "ciUpper": 9.3,
+   "pValue": 0.001,
+   "studyId": "3aNqTze-FD",
+   "pubmedId": "24886135",
+   "doi": "10.1186/1472-6874-14-68",
+   "population": "Pregnant women in Yaounde, Cameroon from 2007 to 2011 who willingly accepted to participate in the study.",
+   "countries": [
+    {
+     "iso3": "CMR",
+     "matchedText": "Cameroon",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Clinical malaria among pregnant women on combined insecticide treated nets (ITNs) and intermittent preventive treatment (IPTp) with sulphadoxine-pyrimethamine in Yaounde, Cameroon",
+    "publishedDate": "2014-05-16",
+    "year": 2014,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "B0A-37BHbL",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "community promotion in addition to IPTp-SP",
+   "variable2": "SP uptake",
+   "statisticType": "odds_ratio",
+   "statisticValue": 2.45,
+   "ciLower": 1.25,
+   "ciUpper": 4.82,
+   "pValue": 0.014,
+   "studyId": "XaR9OCOMuT",
+   "pubmedId": "18801158",
+   "doi": "10.1186/1475-2875-7-180",
+   "population": "Pregnant women in Boromo Health District, Burkina Faso between 2004 and 2006.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A community effectiveness trial of strategies promoting intermittent preventive treatment with sulphadoxine-pyrimethamine in pregnant women in rural Burkina Faso",
+    "publishedDate": "2008-09-18",
+    "year": 2008,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "BjibpF14KF",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Sulphadoxine-pyrimethamine (SPAZ) monthly from second trimester",
+   "variable2": "preterm delivery (of pregnant women in Papua New Guinea)",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.62,
+   "ciLower": 0.43,
+   "ciUpper": 0.89,
+   "pValue": 0.01,
+   "studyId": "DS1q-zRSTN",
+   "pubmedId": "25591391",
+   "doi": "10.1186/s12916-014-0258-3",
+   "population": "Pregnant women in Papua New Guinea ≤ 26 gestational weeks.",
+   "countries": [
+    {
+     "iso3": "PNG",
+     "matchedText": "Papua New Guinea",
+     "field": "variable_name"
+    },
+    {
+     "iso3": "PNG",
+     "matchedText": "Papua New Guinea",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Sulphadoxine-pyrimethamine plus azithromycin for the prevention of low birthweight in Papua New Guinea: a randomised controlled trial",
+    "publishedDate": "2015-01-15",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "BqWUlpk0T-",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine",
+   "variable2": "symptomatic-malaria",
+   "statisticType": "incident_rate_ratio",
+   "statisticValue": 0.02,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.002,
+   "studyId": "egVRLouGRA",
+   "pubmedId": "33891721",
+   "doi": "10.1002/cpt.2273",
+   "population": "956 malaria-free pregnant women from moderate malaria transmission areas in Tanzania.",
+   "countries": [
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effectiveness of Intermittent Preventive Treatment With Dihydroartemisinin‐Piperaqunine Against Malaria in Pregnancy in Tanzania: A Randomized Controlled Trial",
+    "publishedDate": "2021-04-23",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "BtUBIXcl50",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Wealth index",
+   "variable2": "receiving sulfadoxine-pyrimethamine for malaria prevention in their last pregnancy of the past 5 years",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.33,
+   "ciLower": 1.15,
+   "ciUpper": 1.56,
+   "pValue": null,
+   "studyId": "7soDKHP7-B",
+   "pubmedId": "32733659",
+   "doi": "10.4314/mmj.v32i1.9",
+   "population": "Reproductive-aged women in Nigeria surveyed in 2013.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Inequities in the use of sulphadoxine-pyrimethamine for malaria prophylaxis during pregnancy in Nigeria",
+    "publishedDate": "2020-03-31",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "CD0AQR65Tu",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Sulfadoxine-pyrimethamine plus amodiaquine implementation",
+   "variable2": "monthly district-level malaria incidence (suspected cases)",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.82,
+   "ciLower": 0.72,
+   "ciUpper": 0.94,
+   "pValue": 0.006,
+   "studyId": "zApcNwhl-u",
+   "pubmedId": "34662864",
+   "doi": "10.4269/ajtmh.21-0314",
+   "population": "Children aged 3-59 months receiving seasonal malaria chemoprevention in 23 health districts in Chad from 2013-2018.",
+   "countries": [
+    {
+     "iso3": "TCD",
+     "matchedText": "Chad",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Modeled Impact of Seasonal Malaria Chemoprevention on District-Level Suspected and Confirmed Malaria Cases in Chad Based on Routine Clinical Data (2013–2018)",
+    "publishedDate": "2021-10-18",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "CJSUyFiyCF",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Strategically assigned community promotion in addition to IPTp-SP (Intervention A)",
+   "variable2": "peripheral parasite rates",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.84,
+   "ciLower": 0.6,
+   "ciUpper": 1.18,
+   "pValue": 0.28,
+   "studyId": "XaR9OCOMuT",
+   "pubmedId": "18801158",
+   "doi": "10.1186/1475-2875-7-180",
+   "population": "Pregnant women in Boromo Health District, Burkina Faso between 2004 and 2006.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A community effectiveness trial of strategies promoting intermittent preventive treatment with sulphadoxine-pyrimethamine in pregnant women in rural Burkina Faso",
+    "publishedDate": "2008-09-18",
+    "year": 2008,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "CMOfXcWEuE",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Initiating ANC during the first trimester",
+   "variable2": "uptake of sulphadoxine-pyrimethamine during pregnancy",
+   "statisticType": "coefficient",
+   "statisticValue": 3.6,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.022,
+   "studyId": "5dnDKrtyWh",
+   "pubmedId": "33530957",
+   "doi": "10.1186/s12884-021-03582-2",
+   "population": "Pregnant women of ≥36 weeks gestation visiting antenatal clinics in three selected health facilities in the Cape Coast Metropolis of Ghana.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Late ANC initiation and factors associated with sub-optimal uptake of sulphadoxine-pyrimethamine in pregnancy: a preliminary study in Cape Coast Metropolis, Ghana",
+    "publishedDate": "2021-02-02",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "DsOi7V9ddR",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "uptake of ≥ 3 doses of IPTp-SP",
+   "variable2": "low birth weight (LBW)",
+   "statisticType": "adjusted_odds_ratio",
+   "statisticValue": 0.31,
+   "ciLower": 0.11,
+   "ciUpper": 0.87,
+   "pValue": 0.001,
+   "studyId": "c3U2PtvDD4",
+   "pubmedId": "32122339",
+   "doi": "10.1186/s12936-020-03155-2",
+   "population": "465 pregnant women from semi-rural and semi-urban settings in the Mount Cameroon area.",
+   "countries": [
+    {
+     "iso3": "CMR",
+     "matchedText": "Cameroon",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Coverage and effectiveness of intermittent preventive treatment in pregnancy with sulfadoxine–pyrimethamine (IPTp-SP) on adverse pregnancy outcomes in the Mount Cameroon area, South West Cameroon",
+    "publishedDate": "2020-03-02",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "FgmMdDMoBa",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "exposure to sulfadoxine",
+   "variable2": "ocular sequelae",
+   "statisticType": "adjusted_odds_ratio",
+   "statisticValue": 5.95,
+   "ciLower": 1.36,
+   "ciUpper": 31.35,
+   "pValue": null,
+   "studyId": "Y-6qBozYB7",
+   "pubmedId": "30838038",
+   "doi": "10.1155/2019/4917024",
+   "population": "177 cases of SJS/TEN (138 cases of SJS, 29 cases of TEN, and 10 cases SJS/TEN overlap) admitted into two university hospitals of Lomé (Togo) between January 1995 and December 2017.",
+   "countries": [
+    {
+     "iso3": "TGO",
+     "matchedText": "Togo",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Ocular and Mucocutaneous Sequelae among Survivors of Stevens-Johnson Syndrome and Toxic Epidermal Necrolysis in Togo",
+    "publishedDate": "2019-01-30",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "GQdmfW4vfl",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "number of antenatal care visits",
+   "variable2": "receipt of two or more doses of sulphadoxine-pyrimethamine",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.16,
+   "ciLower": 1.02,
+   "ciUpper": 1.32,
+   "pValue": null,
+   "studyId": "adzuGTWY2u",
+   "pubmedId": "23912315",
+   "doi": "10.1007/s10995-013-1340-8",
+   "population": "Pregnant women in Kenya in 2008-2009.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Factors Associated with Utilization of Sulphadoxine–Pyrimethamine During Pregnancy Among Women in Kenya: A Cross-Sectional Study",
+    "publishedDate": "2013-08-03",
+    "year": 2013,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "IOisiiGe1-",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "IPTp-SP (Intermittent preventive treatment with sulphadoxine-pyrimethamine)",
+   "variable2": "placental parasite rates",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.59,
+   "ciLower": 0.44,
+   "ciUpper": 0.78,
+   "pValue": 0.002,
+   "studyId": "XaR9OCOMuT",
+   "pubmedId": "18801158",
+   "doi": "10.1186/1475-2875-7-180",
+   "population": "Pregnant women in Boromo Health District, Burkina Faso between 2004 and 2006.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A community effectiveness trial of strategies promoting intermittent preventive treatment with sulphadoxine-pyrimethamine in pregnant women in rural Burkina Faso",
+    "publishedDate": "2008-09-18",
+    "year": 2008,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "InzmYiFg9h",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "use of at least 2 doses of intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine",
+   "variable2": "neonatal death",
+   "statisticType": "hazard_ratio",
+   "statisticValue": 0.72,
+   "ciLower": 0.53,
+   "ciUpper": 1.15,
+   "pValue": null,
+   "studyId": "paKPayDsFC",
+   "pubmedId": "31034180",
+   "doi": "10.29063/ajrh2019/v23i1.14",
+   "population": "Pregnant women in Nigeria in 2013.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "What is the Link between Malaria Prevention in Pregnancy and Neonatal Survival in Nigeria?",
+    "publishedDate": "2019-03-01",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "Izko_Z_Vtg",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment in pregnancy with monthly dihydroartemisinin-piperaquine treatment group [vs Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine treatment group]",
+   "variable2": "prevalence of low birth weight",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -5.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.003,
+   "studyId": "egVRLouGRA",
+   "pubmedId": "33891721",
+   "doi": "10.1002/cpt.2273",
+   "population": "956 malaria-free pregnant women from moderate malaria transmission areas in Tanzania.",
+   "countries": [
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effectiveness of Intermittent Preventive Treatment With Dihydroartemisinin‐Piperaqunine Against Malaria in Pregnancy in Tanzania: A Randomized Controlled Trial",
+    "publishedDate": "2021-04-23",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "J12vcO4bWf",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "receipt of Intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine",
+   "variable2": "giving birth at term",
+   "statisticType": "odds_ratio",
+   "statisticValue": 3.3,
+   "ciLower": 1.69,
+   "ciUpper": 6.33,
+   "pValue": null,
+   "studyId": "49xW2v19dl",
+   "pubmedId": "31275401",
+   "doi": "10.1155/2019/6712685",
+   "population": "254 mothers seeking postnatal care at the War Memorial Hospital in Navrongo, Ghana.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment of Malaria in Pregnancy: Assessment of the Sulfadoxine-Pyrimethamine Three-Dose Policy on Birth Outcomes in Rural Northern Ghana",
+    "publishedDate": "2019-06-02",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "JxGdIpiL-2",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Sulfadoxine-pyrimethamine plus amodiaquine implementation",
+   "variable2": "monthly district-level malaria incidence (confirmed outpatient cases)",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.81,
+   "ciLower": 0.71,
+   "ciUpper": 0.93,
+   "pValue": 0.003,
+   "studyId": "zApcNwhl-u",
+   "pubmedId": "34662864",
+   "doi": "10.4269/ajtmh.21-0314",
+   "population": "Children aged 3-59 months receiving seasonal malaria chemoprevention in 23 health districts in Chad from 2013-2018.",
+   "countries": [
+    {
+     "iso3": "TCD",
+     "matchedText": "Chad",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Modeled Impact of Seasonal Malaria Chemoprevention on District-Level Suspected and Confirmed Malaria Cases in Chad Based on Routine Clinical Data (2013–2018)",
+    "publishedDate": "2021-10-18",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "KEVHhFekgC",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Sulphadoxine-pyrimethamine (SPAZ) monthly from second trimester",
+   "variable2": "maternal parasitaemia",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.57,
+   "ciLower": 0.35,
+   "ciUpper": 0.95,
+   "pValue": 0.029,
+   "studyId": "DS1q-zRSTN",
+   "pubmedId": "25591391",
+   "doi": "10.1186/s12916-014-0258-3",
+   "population": "Pregnant women in Papua New Guinea ≤ 26 gestational weeks.",
+   "countries": [
+    {
+     "iso3": "PNG",
+     "matchedText": "Papua New Guinea",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Sulphadoxine-pyrimethamine plus azithromycin for the prevention of low birthweight in Papua New Guinea: a randomised controlled trial",
+    "publishedDate": "2015-01-15",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "KIdxCM0c10",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment in pregnancy with monthly dihydroartemisinin-piperaquine treatment group [vs Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine treatment group]",
+   "variable2": "prevalence of any adverse birth outcomes",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -5.9,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.06,
+   "studyId": "egVRLouGRA",
+   "pubmedId": "33891721",
+   "doi": "10.1002/cpt.2273",
+   "population": "956 malaria-free pregnant women from moderate malaria transmission areas in Tanzania.",
+   "countries": [
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effectiveness of Intermittent Preventive Treatment With Dihydroartemisinin‐Piperaqunine Against Malaria in Pregnancy in Tanzania: A Randomized Controlled Trial",
+    "publishedDate": "2021-04-23",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "KJJ1_-918z",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Promotional campaign to increase IPTp-SP coverage (Intervention A)",
+   "variable2": "placental parasite rates",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.86,
+   "ciLower": 0.58,
+   "ciUpper": 1.29,
+   "pValue": 0.43,
+   "studyId": "XaR9OCOMuT",
+   "pubmedId": "18801158",
+   "doi": "10.1186/1475-2875-7-180",
+   "population": "Pregnant women in Boromo Health District, Burkina Faso between 2004 and 2006.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A community effectiveness trial of strategies promoting intermittent preventive treatment with sulphadoxine-pyrimethamine in pregnant women in rural Burkina Faso",
+    "publishedDate": "2008-09-18",
+    "year": 2008,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "KKWaC2-WfW",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamineAS3",
+   "variable2": "treatment efficacy (of uncomplicated Plasmodium falciparum malaria)",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 1.5,
+   "ciLower": 1.3,
+   "ciUpper": 1.8,
+   "pValue": null,
+   "studyId": "FITrBlzGmF",
+   "pubmedId": "15228253",
+   "doi": "10.1016/s0035-9203(03)90161-1",
+   "population": "420 children aged 6-59 months with uncomplicated Plasmodium falciparum malaria in a mesoendemic region in Uganda.",
+   "countries": [
+    {
+     "iso3": "UGA",
+     "matchedText": "Uganda",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Artesunate and sulfadoxine-pyrimethamine combinations for the treatment of uncomplicated Plasmodium falciparum malaria in Uganda: a randomized, double-blind, placebo-controlled trial",
+    "publishedDate": "2003-05-01",
+    "year": 2003,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "KYksS9zGnS",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Sulfadoxine-pyrimethamine plus amodiaquine implementation",
+   "variable2": "monthly district-level malaria incidence (suspected and confirmed outpatient cases)",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.81,
+   "ciLower": 0.71,
+   "ciUpper": 0.93,
+   "pValue": 0.003,
+   "studyId": "zApcNwhl-u",
+   "pubmedId": "34662864",
+   "doi": "10.4269/ajtmh.21-0314",
+   "population": "Children aged 3-59 months receiving seasonal malaria chemoprevention in 23 health districts in Chad from 2013-2018.",
+   "countries": [
+    {
+     "iso3": "TCD",
+     "matchedText": "Chad",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Modeled Impact of Seasonal Malaria Chemoprevention on District-Level Suspected and Confirmed Malaria Cases in Chad Based on Routine Clinical Data (2013–2018)",
+    "publishedDate": "2021-10-18",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "KxIowna7vl",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine (SP)",
+   "variable2": "placental malaria",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.52,
+   "ciLower": 0.29,
+   "ciUpper": 0.9,
+   "pValue": 0.021,
+   "studyId": "0te5EaKamn",
+   "pubmedId": "25247995",
+   "doi": "10.1371/journal.pmed.1001735",
+   "population": "1,071 HIV-infected pregnant women from Kenya, Mozambique, and Tanzania.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    },
+    {
+     "iso3": "MOZ",
+     "matchedText": "Mozambique",
+     "field": "study.population"
+    },
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment of Malaria in Pregnancy with Mefloquine in HIV-Infected Women Receiving Cotrimoxazole Prophylaxis: A Multicenter Randomized Placebo-Controlled Trial",
+    "publishedDate": "2014-09-23",
+    "year": 2014,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "LNFDV9P2Tp",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Intermittent preventive treatment with sulphadoxine-pyrimethamine (SP)",
+   "variable2": "clinical malaria protection",
+   "statisticType": "risk_difference",
+   "statisticValue": 0.53,
+   "ciLower": 0.14,
+   "ciUpper": 0.74,
+   "pValue": null,
+   "studyId": "dL5qWvZWC7",
+   "pubmedId": "17897454",
+   "doi": "10.1186/1475-2875-6-132",
+   "population": "Infants in Ifakara, Tanzania and Manhiça, Mozambique who were randomized to receive either sulphadoxine-pyrimethamine (SP) or placebo administered 3 times alongside routine vaccinations delivered through the Expanded Program on Immunisation (EPI).",
+   "countries": [
+    {
+     "iso3": "MOZ",
+     "matchedText": "Mozambique",
+     "field": "study.population"
+    },
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Varying efficacy of intermittent preventive treatment for malaria in infants in two similar trials: public health implications",
+    "publishedDate": "2007-09-26",
+    "year": 2007,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "LSD7Md0Trm",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "uptake of ≥ 3 doses of IPTp-SP",
+   "variable2": "low birth weight (LBW)",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.31,
+   "ciLower": 0.11,
+   "ciUpper": 0.87,
+   "pValue": 0.001,
+   "studyId": "c3U2PtvDD4",
+   "pubmedId": "32122339",
+   "doi": "10.1186/s12936-020-03155-2",
+   "population": "465 pregnant women from semi-rural and semi-urban settings in the Mount Cameroon area.",
+   "countries": [
+    {
+     "iso3": "CMR",
+     "matchedText": "Cameroon",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Coverage and effectiveness of intermittent preventive treatment in pregnancy with sulfadoxine–pyrimethamine (IPTp-SP) on adverse pregnancy outcomes in the Mount Cameroon area, South West Cameroon",
+    "publishedDate": "2020-03-02",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "M0l4hyI4Ba",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "old officially abandoned first line anti-malaria drug Sulfadoxin-pyrimethamine",
+   "variable2": "childrens' presentation to the hospital with severe malaria",
+   "statisticType": "odds_ratio",
+   "statisticValue": 12.5,
+   "ciLower": 1.6,
+   "ciUpper": 108.0,
+   "pValue": null,
+   "studyId": "wUU--8L3F4",
+   "pubmedId": "22978351",
+   "doi": "10.1186/1471-2334-12-219",
+   "population": "293 children with severe and 190 with non-severe disease in rural Tanzania.",
+   "countries": [
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Factors associated with severe disease from malaria, pneumonia and diarrhea among children in rural Tanzania – A hospital-based cross-sectional study",
+    "publishedDate": "2012-09-14",
+    "year": 2012,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "MmaXLItoVu",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive malaria treatment with sulphadoxine pyrimethamine",
+   "variable2": "incidence of clinical malaria",
+   "statisticType": "incident_rate_ratio",
+   "statisticValue": 1.07,
+   "ciLower": 0.9,
+   "ciUpper": 1.27,
+   "pValue": null,
+   "studyId": "mQ_j0pGEYQ",
+   "pubmedId": "18611271",
+   "doi": "10.1186/1475-2875-7-123",
+   "population": "262 children aged 6 months to 10 years in Kambila, Mali, who were randomized to receive either IPT with SP twice at eight weeks interval or no IPT during the transmission season of 2002 and were followed up for 12 months.",
+   "countries": [
+    {
+     "iso3": "MLI",
+     "matchedText": "Mali",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Impact of intermittent preventive treatment with sulphadoxine-pyrimethamine targeting the transmission season on the incidence of clinical malaria in children in Mali",
+    "publishedDate": "2008-07-08",
+    "year": 2008,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "Mn7GZdBJdt",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "antenatal care use",
+   "variable2": "uptake of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine during the last pregnancy",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.903,
+   "ciLower": 1.069,
+   "ciUpper": 1.966,
+   "pValue": 0.001,
+   "studyId": "S0yqlQI-jk",
+   "pubmedId": "30736456",
+   "doi": "10.3390/tropicalmed4010032",
+   "population": "8526 women aged between 15-49 years in Sierra Leone in 2016.",
+   "countries": [
+    {
+     "iso3": "SLE",
+     "matchedText": "Sierra Leone",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and Associated Factors of Taking Intermittent Preventive Treatment in Pregnancy in Sierra Leone",
+    "publishedDate": "2019-02-07",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "MvEou2SNbR",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Sulfadoxine-pyrimethamine plus amodiaquine implementation",
+   "variable2": "monthly district-level malaria incidence (confirmed cases)",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.81,
+   "ciLower": 0.71,
+   "ciUpper": 0.93,
+   "pValue": 0.003,
+   "studyId": "zApcNwhl-u",
+   "pubmedId": "34662864",
+   "doi": "10.4269/ajtmh.21-0314",
+   "population": "Children aged 3-59 months receiving seasonal malaria chemoprevention in 23 health districts in Chad from 2013-2018.",
+   "countries": [
+    {
+     "iso3": "TCD",
+     "matchedText": "Chad",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Modeled Impact of Seasonal Malaria Chemoprevention on District-Level Suspected and Confirmed Malaria Cases in Chad Based on Routine Clinical Data (2013–2018)",
+    "publishedDate": "2021-10-18",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "Ou4VegsPqi",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Sulfadoxine-pyrimethamine (SP)",
+   "variable2": "treatment failure rate (among pregnant women)",
+   "statisticType": "hazard_ratio",
+   "statisticValue": 2.19,
+   "ciLower": 1.09,
+   "ciUpper": 4.4,
+   "pValue": 0.005,
+   "studyId": "f-SAP-ZVF8",
+   "pubmedId": "17053829",
+   "doi": "10.1371/journal.pctr.0010028",
+   "population": "488 pregnant women presenting with uncomplicated malaria parasitaemia, a haemoglobin level higher than 7 g/dl, a gestational age between 17 and 34 weeks, and no history of antimalarial or FA use, or sulfa allergy in western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A Randomized Controlled Trial of Folate Supplementation When Treating Malaria in Pregnancy with Sulfadoxine-Pyrimethamine",
+    "publishedDate": "2006-10-18",
+    "year": 2006,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "PEyo2A8Ol0",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment with sulfadoxine-pyrimethamine",
+   "variable2": "malaria infection at delivery",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.32,
+   "ciLower": 0.18,
+   "ciUpper": 0.56,
+   "pValue": 0.0001,
+   "studyId": "nTA-uxOaR-",
+   "pubmedId": "26429700",
+   "doi": "10.1016/s0140-6736(15)00310-4",
+   "population": "HIV-negative pregnant women between 16 and 32 weeks' gestation in western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent screening and treatment or intermittent preventive treatment with dihydroartemisinin–piperaquine versus intermittent preventive treatment with sulfadoxine–pyrimethamine for the control of malaria during pregnancy in western Kenya: an open-label, three-group, randomised controlled superiority trial",
+    "publishedDate": "2015-09-30",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "PKT5B744Ke",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "antenatal care use",
+   "variable2": "uptake of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine during the last pregnancy",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.45,
+   "ciLower": 1.158,
+   "ciUpper": 3.128,
+   "pValue": null,
+   "studyId": "S0yqlQI-jk",
+   "pubmedId": "30736456",
+   "doi": "10.3390/tropicalmed4010032",
+   "population": "8526 women aged between 15-49 years in Sierra Leone in 2016.",
+   "countries": [
+    {
+     "iso3": "SLE",
+     "matchedText": "Sierra Leone",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and Associated Factors of Taking Intermittent Preventive Treatment in Pregnancy in Sierra Leone",
+    "publishedDate": "2019-02-07",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "PiTLrKJcFa",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "place of residence",
+   "variable2": "using sulfadoxine-pyrimethamine",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.86,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": null,
+   "studyId": "7soDKHP7-B",
+   "pubmedId": "32733659",
+   "doi": "10.4314/mmj.v32i1.9",
+   "population": "Reproductive-aged women in Nigeria surveyed in 2013.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Inequities in the use of sulphadoxine-pyrimethamine for malaria prophylaxis during pregnancy in Nigeria",
+    "publishedDate": "2020-03-31",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "QgWBfT_0ML",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamine (SP)",
+   "variable2": "fever at day 3",
+   "statisticType": "odds_ratio",
+   "statisticValue": 13.1,
+   "ciLower": 3.08,
+   "ciUpper": 55.5,
+   "pValue": 0.001,
+   "studyId": "mnvlimBm79",
+   "pubmedId": "16923176",
+   "doi": "10.1186/1475-2875-5-73",
+   "population": "Adults with uncomplicated Plasmodium falciparum malaria in Zambia.",
+   "countries": [
+    {
+     "iso3": "ZMB",
+     "matchedText": "Zambia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Safety and efficacy of lumefantrine-artemether (Coartem®) for the treatment of uncomplicated Plasmodium falciparum malaria in Zambian adults",
+    "publishedDate": "2006-08-21",
+    "year": 2006,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "R2Mph097KA",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "treatment with artesunate plus sulfadoxine-pyrimethamine",
+   "variable2": "percentage of patients still parasitemic on day 1",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.4,
+   "ciLower": 0.3,
+   "ciUpper": 0.6,
+   "pValue": 1e-06,
+   "studyId": "Le4fY2VPxa",
+   "pubmedId": "11693875",
+   "doi": "10.4269/ajtmh.2001.65.309",
+   "population": "105 patients in Indonesia with uncomplicated falciparum malaria, stratified by age and ethnicity.",
+   "countries": [
+    {
+     "iso3": "IDN",
+     "matchedText": "Indonesia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Therapy of uncomplicated falciparum malaria: a randomized trial comparing artesunate plus sulfadoxine-pyrimethamine versus sulfadoxine-pyrimethamine alone in Irian Jaya, Indonesia.",
+    "publishedDate": "2001-10-01",
+    "year": 2001,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "ROOSEY1saH",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Sulfadoxine-pyrimethamine plus amodiaquine implementation",
+   "variable2": "monthly district-level malaria incidence (suspected and confirmed outpatient cases)",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.82,
+   "ciLower": 0.72,
+   "ciUpper": 0.94,
+   "pValue": 0.006,
+   "studyId": "zApcNwhl-u",
+   "pubmedId": "34662864",
+   "doi": "10.4269/ajtmh.21-0314",
+   "population": "Children aged 3-59 months receiving seasonal malaria chemoprevention in 23 health districts in Chad from 2013-2018.",
+   "countries": [
+    {
+     "iso3": "TCD",
+     "matchedText": "Chad",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Modeled Impact of Seasonal Malaria Chemoprevention on District-Level Suspected and Confirmed Malaria Cases in Chad Based on Routine Clinical Data (2013–2018)",
+    "publishedDate": "2021-10-18",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "RewkycI8iY",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Sulphadoxine-pyrimethamine (SP) group [vs Azithromycin group]",
+   "variable2": "Completion rate [of/among/in] antenatal clinic attendees",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 6.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.26,
+   "studyId": "I0-Ya0iwqH",
+   "pubmedId": "27424614",
+   "doi": "10.4103/1117-1936.186295",
+   "population": "Antenatal clinic attendees at the University College Hospital, Ibadan, Nigeria.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A comparative study of azithromycin and sulphadoxine-pyrimethamine as prophylaxis against malaria in pregnancy",
+    "publishedDate": "2016-01-01",
+    "year": 2016,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "RyvRdnGPms",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Sulfadoxine-pyrimethamine (SP)",
+   "variable2": "treatment failure rate (among pregnant women)",
+   "statisticType": "hazard_ratio",
+   "statisticValue": 1.07,
+   "ciLower": 0.48,
+   "ciUpper": 2.37,
+   "pValue": 0.8,
+   "studyId": "f-SAP-ZVF8",
+   "pubmedId": "17053829",
+   "doi": "10.1371/journal.pctr.0010028",
+   "population": "488 pregnant women presenting with uncomplicated malaria parasitaemia, a haemoglobin level higher than 7 g/dl, a gestational age between 17 and 34 weeks, and no history of antimalarial or FA use, or sulfa allergy in western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A Randomized Controlled Trial of Folate Supplementation When Treating Malaria in Pregnancy with Sulfadoxine-Pyrimethamine",
+    "publishedDate": "2006-10-18",
+    "year": 2006,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "SUG_7UNL-c",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamine alone [vs Asulfadoxine-pyrimethamine]",
+   "variable2": "Parasitaemia prevalence",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 43.3,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 1.0,
+   "studyId": "Az5T39LVaL",
+   "pubmedId": "16004704",
+   "doi": "10.1179/136485905x36299",
+   "population": "60 patients with uncomplicated Plasmodium falciparum malaria in New Halfa, eastern Sudan, in September-October 2004.",
+   "countries": [
+    {
+     "iso3": "SDN",
+     "matchedText": "Sudan",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A comparison of the efficacy of artesunate plus sulfadoxine–pyrimethamine with that of sulfadoxine–pyrimethamine alone, in the treatment of uncomplicated,Plasmodiumfalciparummalaria in eastern Sudan",
+    "publishedDate": "2005-07-01",
+    "year": 2005,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "SuLGummy5v",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent sulfadoxine-pyrimethamine",
+   "variable2": "placental malaria in the modified intent-to-treat population",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 1.0,
+   "ciLower": 0.67,
+   "ciUpper": 1.5,
+   "pValue": null,
+   "studyId": "JG9RrCoOjr",
+   "pubmedId": "30195996",
+   "doi": "10.1016/s1473-3099(18)30415-8",
+   "population": "Pregnant women in their first or second pregnancy at 20-28 weeks' gestation who were HIV negative in southern Malawi.",
+   "countries": [
+    {
+     "iso3": "MWI",
+     "matchedText": "Malawi",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Chloroquine as weekly chemoprophylaxis or intermittent treatment to prevent malaria in pregnancy in Malawi: a randomised controlled trial",
+    "publishedDate": "2018-09-05",
+    "year": 2018,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "Sxh3dlzg36",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "monthly sulfadoxine-pyrimethamine and two doses of azithromycin (AZI-sulfadoxine-pyrimethamine)",
+   "variable2": "preterm delivery [of/among/in] pregnant women",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.66,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.01,
+   "studyId": "H377bLctYN",
+   "pubmedId": "21118924",
+   "doi": "10.4269/ajtmh.2010.10-0264",
+   "population": "1,320 pregnant women in Malawi enrolled in a randomized, controlled trial to study the effects of intermittent preventive treatment of maternal malaria and reproductive tract infections.",
+   "countries": [
+    {
+     "iso3": "MWI",
+     "matchedText": "Malawi",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effect of Repeated Treatment of Pregnant Women with Sulfadoxine-Pyrimethamine and Azithromycin on Preterm Delivery in Malawi: A Randomized Controlled Trial",
+    "publishedDate": "2010-11-30",
+    "year": 2010,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "TfYjsMghYK",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "treatment with artesunate plus sulfadoxine-pyrimethamine",
+   "variable2": "gametocyte carriage on day 7",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.5,
+   "ciLower": 0.2,
+   "ciUpper": 1.0,
+   "pValue": null,
+   "studyId": "Le4fY2VPxa",
+   "pubmedId": "11693875",
+   "doi": "10.4269/ajtmh.2001.65.309",
+   "population": "105 patients in Indonesia with uncomplicated falciparum malaria, stratified by age and ethnicity.",
+   "countries": [
+    {
+     "iso3": "IDN",
+     "matchedText": "Indonesia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Therapy of uncomplicated falciparum malaria: a randomized trial comparing artesunate plus sulfadoxine-pyrimethamine versus sulfadoxine-pyrimethamine alone in Irian Jaya, Indonesia.",
+    "publishedDate": "2001-10-01",
+    "year": 2001,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "Tyepvjq9OL",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamine alone [vs Asulfadoxine-pyrimethamine]",
+   "variable2": "Fever prevalence",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 26.7,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.006,
+   "studyId": "Az5T39LVaL",
+   "pubmedId": "16004704",
+   "doi": "10.1179/136485905x36299",
+   "population": "60 patients with uncomplicated Plasmodium falciparum malaria in New Halfa, eastern Sudan, in September-October 2004.",
+   "countries": [
+    {
+     "iso3": "SDN",
+     "matchedText": "Sudan",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A comparison of the efficacy of artesunate plus sulfadoxine–pyrimethamine with that of sulfadoxine–pyrimethamine alone, in the treatment of uncomplicated,Plasmodiumfalciparummalaria in eastern Sudan",
+    "publishedDate": "2005-07-01",
+    "year": 2005,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "Ub2Foedzmh",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "antenatal care use",
+   "variable2": "uptake of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine during the last pregnancy",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.903,
+   "ciLower": 1.069,
+   "ciUpper": 1.966,
+   "pValue": null,
+   "studyId": "S0yqlQI-jk",
+   "pubmedId": "30736456",
+   "doi": "10.3390/tropicalmed4010032",
+   "population": "8526 women aged between 15-49 years in Sierra Leone in 2016.",
+   "countries": [
+    {
+     "iso3": "SLE",
+     "matchedText": "Sierra Leone",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and Associated Factors of Taking Intermittent Preventive Treatment in Pregnancy in Sierra Leone",
+    "publishedDate": "2019-02-07",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "Ujt6TKl5qi",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Intermittent Preventive Treatment in pregnancy (IPTp-SP)",
+   "variable2": "Plasmodium falciparum infection",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.56,
+   "ciLower": 0.39,
+   "ciUpper": 0.79,
+   "pValue": 0.001,
+   "studyId": "JnoH25rNnR",
+   "pubmedId": "34488770",
+   "doi": "10.1186/s12936-021-03896-8",
+   "population": "Pregnant women in Saponé Health District, central Burkina Faso.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Risk factors for Plasmodium falciparum infection in pregnant women in Burkina Faso: a community-based cross-sectional survey",
+    "publishedDate": "2021-09-06",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "VIzFShj6ZW",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "treatment with artesunate plus sulfadoxine-pyrimethamine",
+   "variable2": "risk of treatment failure (among patients with uncomplicated falciparum malaria)",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.3,
+   "ciLower": 0.1,
+   "ciUpper": 1.3,
+   "pValue": 0.12,
+   "studyId": "Le4fY2VPxa",
+   "pubmedId": "11693875",
+   "doi": "10.4269/ajtmh.2001.65.309",
+   "population": "105 patients in Indonesia with uncomplicated falciparum malaria, stratified by age and ethnicity.",
+   "countries": [
+    {
+     "iso3": "IDN",
+     "matchedText": "Indonesia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Therapy of uncomplicated falciparum malaria: a randomized trial comparing artesunate plus sulfadoxine-pyrimethamine versus sulfadoxine-pyrimethamine alone in Irian Jaya, Indonesia.",
+    "publishedDate": "2001-10-01",
+    "year": 2001,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "VpuMUNTcq7",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "artesunate + sulphadoxine-pyrimethamine [vs chloroquine]",
+   "variable2": "treatment failure (PCR corrected)",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -66.5,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "FqbHa6NnJM",
+   "pubmedId": "18154655",
+   "doi": "10.1186/1475-2875-6-170",
+   "population": "Children between six and 59 months of age with uncomplicated malaria living in the lagoon coastal area in southern Benin.",
+   "countries": [
+    {
+     "iso3": "BEN",
+     "matchedText": "Benin",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Adding artesunate to sulphadoxine-pyrimethamine greatly improves the treatment efficacy in children with uncomplicated falciparum malaria on the coast of Benin, West Africa",
+    "publishedDate": "2007-12-01",
+    "year": 2007,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "Vst1aaXCPP",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "uptake of ≥ 3 doses of IPTp-SP",
+   "variable2": "placental malaria infection",
+   "statisticType": "odds_ratio",
+   "statisticValue": 2.36,
+   "ciLower": 1.41,
+   "ciUpper": 4.87,
+   "pValue": 0.001,
+   "studyId": "c3U2PtvDD4",
+   "pubmedId": "32122339",
+   "doi": "10.1186/s12936-020-03155-2",
+   "population": "465 pregnant women from semi-rural and semi-urban settings in the Mount Cameroon area.",
+   "countries": [
+    {
+     "iso3": "CMR",
+     "matchedText": "Cameroon",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Coverage and effectiveness of intermittent preventive treatment in pregnancy with sulfadoxine–pyrimethamine (IPTp-SP) on adverse pregnancy outcomes in the Mount Cameroon area, South West Cameroon",
+    "publishedDate": "2020-03-02",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "Vy7uovqyAH",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Wealth index",
+   "variable2": "receiving sulfadoxine-pyrimethamine for malaria prevention in their last pregnancy of the past 5 years",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.8,
+   "ciLower": 1.41,
+   "ciUpper": 1.97,
+   "pValue": null,
+   "studyId": "7soDKHP7-B",
+   "pubmedId": "32733659",
+   "doi": "10.4314/mmj.v32i1.9",
+   "population": "Reproductive-aged women in Nigeria surveyed in 2013.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Inequities in the use of sulphadoxine-pyrimethamine for malaria prophylaxis during pregnancy in Nigeria",
+    "publishedDate": "2020-03-31",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "WBoM8e21Av",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Amodiaquine plus sulfadoxine-pyrimethamine",
+   "variable2": "risk of recurrent symptomatic malaria",
+   "statisticType": "risk_difference",
+   "statisticValue": 8.5,
+   "ciLower": 4.3,
+   "ciUpper": 12.6,
+   "pValue": 0.0001,
+   "studyId": "XXpIzXYS9J",
+   "pubmedId": "17292769",
+   "doi": "10.1016/s0140-6736(07)60236-0",
+   "population": "521 patients aged 6 months or older with uncomplicated falciparum malaria in Bobo-Dioulasso, Burkina Faso.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Artemether-lumefantrine versus amodiaquine plus sulfadoxine-pyrimethamine for uncomplicated falciparum malaria in Burkina Faso: a randomised non-inferiority trial",
+    "publishedDate": "2007-02-01",
+    "year": 2007,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "WGAVhdcfWo",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "pfdhfr mutations",
+   "variable2": "efficacy of amodiaquine plus sulfadoxine-pyrimethamine (AQ+SP)",
+   "statisticType": "odds_ratio",
+   "statisticValue": 2.2,
+   "ciLower": 1.34,
+   "ciUpper": 3.7,
+   "pValue": 0.13,
+   "studyId": "3vayGNjOdw",
+   "pubmedId": "19841150",
+   "doi": "10.1128/aac.00498-09",
+   "population": "Children with uncomplicated malaria caused by Plasmodium falciparum parasites in two areas of Rwanda.",
+   "countries": [
+    {
+     "iso3": "RWA",
+     "matchedText": "Rwanda",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Molecular Correlates of High-Level Antifolate Resistance in Rwandan Children with Plasmodium falciparum Malaria",
+    "publishedDate": "2009-10-19",
+    "year": 2009,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "WVZpbcR8Zj",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Education Level (Higher Education)",
+   "variable2": "uptake of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine during the last pregnancy",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.647,
+   "ciLower": 0.444,
+   "ciUpper": 0.943,
+   "pValue": null,
+   "studyId": "S0yqlQI-jk",
+   "pubmedId": "30736456",
+   "doi": "10.3390/tropicalmed4010032",
+   "population": "8526 women aged between 15-49 years in Sierra Leone in 2016.",
+   "countries": [
+    {
+     "iso3": "SLE",
+     "matchedText": "Sierra Leone",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and Associated Factors of Taking Intermittent Preventive Treatment in Pregnancy in Sierra Leone",
+    "publishedDate": "2019-02-07",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "YUIOeR4oVQ",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Fansidar plus chloroquine [vs Fansidar alone]",
+   "variable2": "Persistent symptoms (of uncomplicated Plasmodium falciparum malaria among Gambian children)",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 1.9064,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "B64WRVMpu3",
+   "pubmedId": "9692160",
+   "doi": null,
+   "population": null,
+   "countries": [
+    {
+     "iso3": "GMB",
+     "matchedText": "Gambia",
+     "field": "variable_name"
+    }
+   ],
+   "paper": {
+    "title": "A trial of Fansidar® plus chloroquine or Fansidar® alone for the treatment of uncomplicated malaria in Gambian children",
+    "publishedDate": "1998-01-01",
+    "year": 1998,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "Z-11enSJrn",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "three or more doses of sulfadoxine-pyrimethamine",
+   "variable2": "maternal anemia at delivery",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.4,
+   "ciLower": 0.2,
+   "ciUpper": 0.9,
+   "pValue": 0.024,
+   "studyId": "0NDp--F8Bt",
+   "pubmedId": "34284138",
+   "doi": "10.1016/j.meegid.2021.105009",
+   "population": "844 laboring women and their respective newborns in Kingasani Hospital, Kinshasa in the Democratic Republic of Congo.",
+   "countries": [
+    {
+     "iso3": "COD",
+     "matchedText": "Democratic Republic of Congo",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Evaluation of the usefulness of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine in a context with increased resistance of Plasmodium falciparum in Kingasani Hospital, Kinshasa in the Democratic Republic of Congo",
+    "publishedDate": "2021-07-18",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "ZjfOB6Cxmi",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "number of intermittent preventive treatment during pregnancy-sulfadoxine/pyrimethamine (IPTp-sulfadoxine/pyrimethamine) doses",
+   "variable2": "infant susceptibility to malaria",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.51,
+   "ciLower": 0.28,
+   "ciUpper": 0.91,
+   "pValue": 0.028,
+   "studyId": "Gib1AuQJCv",
+   "pubmedId": "26034763",
+   "doi": "10.1093/ofid/ofv012",
+   "population": "415 infants born to women in Southwestern Cameroon.",
+   "countries": [
+    {
+     "iso3": "CMR",
+     "matchedText": "Cameroon",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Determinants of Infant Susceptibility to Malaria During the First Year of Life in South Western Cameroon",
+    "publishedDate": "2015-01-01",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "Zz4Nixw_nR",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment with sulfadoxine-pyrimethamine at 4 and 8 weeks and daily iron for 12 weeks",
+   "variable2": "mean hemoglobin concentration at 12 weeks",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 1.14,
+   "ciLower": 0.82,
+   "ciUpper": 1.47,
+   "pValue": null,
+   "studyId": "n29DgrErU7",
+   "pubmedId": "12599083",
+   "doi": "10.1086/367986",
+   "population": "546 anemic children aged 2-36 months in an area with intense malaria transmission in western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Randomized, Controlled Trial of Daily Iron Supplementation and Intermittent Sulfadoxine‐Pyrimethamine for the Treatment of Mild Childhood Anemia in Western Kenya",
+    "publishedDate": "2003-02-15",
+    "year": 2003,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "a1qUmm-oDY",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Three rounds of IPTc with artesunate + sulphadoxine-pyrimethamine (or placebo) at monthly intervals eight months earlier (in Senegalese children aged 6 months-5 years)",
+   "variable2": "anti-Plasmodium Ab levels",
+   "statisticType": "pearson_r",
+   "statisticValue": 0.54,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": null,
+   "studyId": "xNZ1pOsMxn",
+   "pubmedId": "21167018",
+   "doi": "10.1186/1475-2875-9-363",
+   "population": "Children aged 6 months to 5 years old from Senegal who had received three rounds of IPTc with artesunate + sulphadoxine-pyrimethamine (or placebo) eight months prior.",
+   "countries": [
+    {
+     "iso3": "SEN",
+     "matchedText": "Senegal",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Immunological consequences of intermittent preventive treatment against malaria in Senegalese preschool children",
+    "publishedDate": "2010-12-01",
+    "year": 2010,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "aJoqjO4SG0",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamine alone [vs Asulfadoxine-pyrimethamine]",
+   "variable2": "Parasite clearance time",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 43.3,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 1.0,
+   "studyId": "Az5T39LVaL",
+   "pubmedId": "16004704",
+   "doi": "10.1179/136485905x36299",
+   "population": "60 patients with uncomplicated Plasmodium falciparum malaria in New Halfa, eastern Sudan, in September-October 2004.",
+   "countries": [
+    {
+     "iso3": "SDN",
+     "matchedText": "Sudan",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A comparison of the efficacy of artesunate plus sulfadoxine–pyrimethamine with that of sulfadoxine–pyrimethamine alone, in the treatment of uncomplicated,Plasmodiumfalciparummalaria in eastern Sudan",
+    "publishedDate": "2005-07-01",
+    "year": 2005,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "bDeL09OfvL",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamine alone [vs Asulfadoxine-pyrimethamine]",
+   "variable2": "Fever clearance time",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 26.7,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.006,
+   "studyId": "Az5T39LVaL",
+   "pubmedId": "16004704",
+   "doi": "10.1179/136485905x36299",
+   "population": "60 patients with uncomplicated Plasmodium falciparum malaria in New Halfa, eastern Sudan, in September-October 2004.",
+   "countries": [
+    {
+     "iso3": "SDN",
+     "matchedText": "Sudan",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A comparison of the efficacy of artesunate plus sulfadoxine–pyrimethamine with that of sulfadoxine–pyrimethamine alone, in the treatment of uncomplicated,Plasmodiumfalciparummalaria in eastern Sudan",
+    "publishedDate": "2005-07-01",
+    "year": 2005,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "ba0hoWPwPT",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "owning a bed net",
+   "variable2": "receipt of one dose of sulphadoxine-pyrimethamine versus none",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.79,
+   "ciLower": 1.12,
+   "ciUpper": 2.78,
+   "pValue": null,
+   "studyId": "adzuGTWY2u",
+   "pubmedId": "23912315",
+   "doi": "10.1007/s10995-013-1340-8",
+   "population": "Pregnant women in Kenya in 2008-2009.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Factors Associated with Utilization of Sulphadoxine–Pyrimethamine During Pregnancy Among Women in Kenya: A Cross-Sectional Study",
+    "publishedDate": "2013-08-03",
+    "year": 2013,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "buluZNubAZ",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Age groups (25-29 years)",
+   "variable2": "uptake of adequate doses of Intermittent preventive treatment in pregnancy-SP drugs",
+   "statisticType": "odds_ratio",
+   "statisticValue": 2.028,
+   "ciLower": 1.12,
+   "ciUpper": 3.669,
+   "pValue": null,
+   "studyId": "eipyNuz0Os",
+   "pubmedId": "31694607",
+   "doi": "10.1186/s12889-019-7847-1",
+   "population": "9583 women aged between 15 and 49 years in Ivory Coast in 2016.",
+   "countries": [
+    {
+     "iso3": "CIV",
+     "matchedText": "Ivory Coast",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Antenatal visits are positively associated with uptake of tetanus toxoid and intermittent preventive treatment in pregnancy in Ivory Coast",
+    "publishedDate": "2019-11-06",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "cKQXWTLQCv",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "ethnicity",
+   "variable2": "taking adequate doses of Intermittent preventive treatment in pregnancy-SP drugs",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.378,
+   "ciLower": 0.145,
+   "ciUpper": 0.983,
+   "pValue": null,
+   "studyId": "eipyNuz0Os",
+   "pubmedId": "31694607",
+   "doi": "10.1186/s12889-019-7847-1",
+   "population": "9583 women aged between 15 and 49 years in Ivory Coast in 2016.",
+   "countries": [
+    {
+     "iso3": "CIV",
+     "matchedText": "Ivory Coast",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Antenatal visits are positively associated with uptake of tetanus toxoid and intermittent preventive treatment in pregnancy in Ivory Coast",
+    "publishedDate": "2019-11-06",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "d3YMyvlqFA",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Amodiaquine plus sulfadoxine-pyrimethamine",
+   "variable2": "risk of recurrent parasitaemia",
+   "statisticType": "risk_difference",
+   "statisticValue": 10.4,
+   "ciLower": 5.1,
+   "ciUpper": 15.6,
+   "pValue": 0.0002,
+   "studyId": "XXpIzXYS9J",
+   "pubmedId": "17292769",
+   "doi": "10.1016/s0140-6736(07)60236-0",
+   "population": "521 patients aged 6 months or older with uncomplicated falciparum malaria in Bobo-Dioulasso, Burkina Faso.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Artemether-lumefantrine versus amodiaquine plus sulfadoxine-pyrimethamine for uncomplicated falciparum malaria in Burkina Faso: a randomised non-inferiority trial",
+    "publishedDate": "2007-02-01",
+    "year": 2007,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "e3iCjefJp8",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "receiving other anti-malarial drugs",
+   "variable2": "receipt of one dose of sulphadoxine-pyrimethamine versus none",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.08,
+   "ciLower": 0.02,
+   "ciUpper": 0.26,
+   "pValue": null,
+   "studyId": "adzuGTWY2u",
+   "pubmedId": "23912315",
+   "doi": "10.1007/s10995-013-1340-8",
+   "population": "Pregnant women in Kenya in 2008-2009.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Factors Associated with Utilization of Sulphadoxine–Pyrimethamine During Pregnancy Among Women in Kenya: A Cross-Sectional Study",
+    "publishedDate": "2013-08-03",
+    "year": 2013,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "eR4TzvOwEN",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "receipt of Intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine",
+   "variable2": "having normal weight babies",
+   "statisticType": "odds_ratio",
+   "statisticValue": 4.0,
+   "ciLower": 1.98,
+   "ciUpper": 8.06,
+   "pValue": null,
+   "studyId": "49xW2v19dl",
+   "pubmedId": "31275401",
+   "doi": "10.1155/2019/6712685",
+   "population": "254 mothers seeking postnatal care at the War Memorial Hospital in Navrongo, Ghana.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment of Malaria in Pregnancy: Assessment of the Sulfadoxine-Pyrimethamine Three-Dose Policy on Birth Outcomes in Rural Northern Ghana",
+    "publishedDate": "2019-06-02",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "ehh5xAnLgz",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine (SP)",
+   "variable2": "non-obstetric hospital admissions",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.59,
+   "ciLower": 0.37,
+   "ciUpper": 0.95,
+   "pValue": 0.031,
+   "studyId": "0te5EaKamn",
+   "pubmedId": "25247995",
+   "doi": "10.1371/journal.pmed.1001735",
+   "population": "1,071 HIV-infected pregnant women from Kenya, Mozambique, and Tanzania.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    },
+    {
+     "iso3": "MOZ",
+     "matchedText": "Mozambique",
+     "field": "study.population"
+    },
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment of Malaria in Pregnancy with Mefloquine in HIV-Infected Women Receiving Cotrimoxazole Prophylaxis: A Multicenter Randomized Placebo-Controlled Trial",
+    "publishedDate": "2014-09-23",
+    "year": 2014,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "elZpOkRpBE",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "antenatal care use",
+   "variable2": "uptake of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine during the last pregnancy",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.45,
+   "ciLower": 1.158,
+   "ciUpper": 3.128,
+   "pValue": 0.001,
+   "studyId": "S0yqlQI-jk",
+   "pubmedId": "30736456",
+   "doi": "10.3390/tropicalmed4010032",
+   "population": "8526 women aged between 15-49 years in Sierra Leone in 2016.",
+   "countries": [
+    {
+     "iso3": "SLE",
+     "matchedText": "Sierra Leone",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and Associated Factors of Taking Intermittent Preventive Treatment in Pregnancy in Sierra Leone",
+    "publishedDate": "2019-02-07",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "eonsZV8DCd",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Sulphadoxine-pyrimethamine (SPAZ) monthly from second trimester",
+   "variable2": "low birthweight (LBW)",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.74,
+   "ciLower": 0.6,
+   "ciUpper": 0.91,
+   "pValue": 0.005,
+   "studyId": "DS1q-zRSTN",
+   "pubmedId": "25591391",
+   "doi": "10.1186/s12916-014-0258-3",
+   "population": "Pregnant women in Papua New Guinea ≤ 26 gestational weeks.",
+   "countries": [
+    {
+     "iso3": "PNG",
+     "matchedText": "Papua New Guinea",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Sulphadoxine-pyrimethamine plus azithromycin for the prevention of low birthweight in Papua New Guinea: a randomised controlled trial",
+    "publishedDate": "2015-01-15",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "ezb25BhDOa",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Absence of intermittent preventive treatment with sulfadoxine-pyrimethamine",
+   "variable2": "malaria infection",
+   "statisticType": "adjusted_odds_ratio",
+   "statisticValue": 5.8,
+   "ciLower": 2.1,
+   "ciUpper": 24.5,
+   "pValue": null,
+   "studyId": "YZyj97DjXG",
+   "pubmedId": "35879789",
+   "doi": "10.1186/s41182-022-00442-3",
+   "population": "1067 first antenatal care attendees in rural Burkina Faso between August 2019 and September 2020.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and risk factors of malaria among first antenatal care attendees in rural Burkina Faso",
+    "publishedDate": "2022-07-25",
+    "year": 2022,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "f2Rz2kHhpc",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "mefloquine, sulfadoxine and pyrimethamine plus primaquine [vs mefloquine, sulfadoxine and pyrimethamine alone]",
+   "variable2": "gametocyte clearance time",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -14.9,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.01,
+   "studyId": "QOpBBv4CZu",
+   "pubmedId": "7957448",
+   "doi": "10.1007/bf03188819",
+   "population": "23 children hospitalized in the Hospital for Tropical Diseases, Faculty of Tropical Medicine, Bangkok, Thailand.",
+   "countries": [
+    {
+     "iso3": "THA",
+     "matchedText": "Thailand",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Pharmacokinetic study of mefloquine in Thai children aged 5–12 years suffering from uncomplicated falciparum malaria treated with MSP or MSP plus primaquine",
+    "publishedDate": "1994-03-01",
+    "year": 1994,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "fuHJcBpdI5",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "three or more doses of sulfadoxine-pyrimethamine",
+   "variable2": "gestation (among the laboring women)",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.4,
+   "ciLower": 0.2,
+   "ciUpper": 0.8,
+   "pValue": 0.009,
+   "studyId": "0NDp--F8Bt",
+   "pubmedId": "34284138",
+   "doi": "10.1016/j.meegid.2021.105009",
+   "population": "844 laboring women and their respective newborns in Kingasani Hospital, Kinshasa in the Democratic Republic of Congo.",
+   "countries": [
+    {
+     "iso3": "COD",
+     "matchedText": "Democratic Republic of Congo",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Evaluation of the usefulness of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine in a context with increased resistance of Plasmodium falciparum in Kingasani Hospital, Kinshasa in the Democratic Republic of Congo",
+    "publishedDate": "2021-07-18",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "gTFfySGynp",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulphadoxine-pyrimethamine",
+   "variable2": "clearing P. falciparum infection",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 1.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": null,
+   "studyId": "GNTGkTDmNB",
+   "pubmedId": "10203167",
+   "doi": "10.1046/j.1365-3156.1999.00349.x",
+   "population": "Pregnant women in rural Malawi in 1993-94.",
+   "countries": [
+    {
+     "iso3": "MWI",
+     "matchedText": "Malawi",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Increased prevalence of malaria in HIV‐infected pregnant women and its implications for malaria control",
+    "publishedDate": "1999-01-01",
+    "year": 1999,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "gVseJ5wKr4",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "receiving the first dose of sulfadoxine pyrimethamine in the third trimester",
+   "variable2": "receiving ≥3 doses of sulfadoxine pyrimethamine",
+   "statisticType": "adjusted_odds_ratio",
+   "statisticValue": 0.04,
+   "ciLower": 0.01,
+   "ciUpper": 0.16,
+   "pValue": 0.05,
+   "studyId": "5OfATf9_M1",
+   "pubmedId": "28797296",
+   "doi": "10.1186/s12936-017-1969-7",
+   "population": "Pregnant women seeking postnatal care at Osu Government Maternity Home in Accra, Ghana.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent preventive treatment of malaria in pregnancy: a cross-sectional survey to assess uptake of the new sulfadoxine–pyrimethamine five dose policy in Ghana",
+    "publishedDate": "2017-08-10",
+    "year": 2017,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "gzkLn-xJT2",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "low awareness of intermittent preventive treatment of malaria in pregnancy-SP",
+   "variable2": "low intermittent preventive treatment of malaria in pregnancy uptake (< 3 doses)",
+   "statisticType": "adjusted_odds_ratio",
+   "statisticValue": 1.6,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.002,
+   "studyId": "kDhwdA0LBG",
+   "pubmedId": "29530044",
+   "doi": "10.1186/s12936-018-2255-z",
+   "population": "1141 pregnant women delivering in Chókwè district, southern Mozambique.",
+   "countries": [
+    {
+     "iso3": "MOZ",
+     "matchedText": "Mozambique",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Uptake of intermittent preventive treatment and pregnancy outcomes: health facilities and community surveys in Chókwè district, southern Mozambique",
+    "publishedDate": "2018-03-12",
+    "year": 2018,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "hCIhBeea_p",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Level_of_education (specifically, higher education)",
+   "variable2": "uptake of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine during the last pregnancy",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.647,
+   "ciLower": 0.444,
+   "ciUpper": 0.943,
+   "pValue": 0.001,
+   "studyId": "S0yqlQI-jk",
+   "pubmedId": "30736456",
+   "doi": "10.3390/tropicalmed4010032",
+   "population": "8526 women aged between 15-49 years in Sierra Leone in 2016.",
+   "countries": [
+    {
+     "iso3": "SLE",
+     "matchedText": "Sierra Leone",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and Associated Factors of Taking Intermittent Preventive Treatment in Pregnancy in Sierra Leone",
+    "publishedDate": "2019-02-07",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "ha2Jy6rI5b",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment with dihydroartemisinin-piperaquine [vs intermittent preventive treatment with sulfadoxine-pyrimethamine]",
+   "variable2": "Clinical malaria during pregnancy",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 31.8,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.0001,
+   "studyId": "nTA-uxOaR-",
+   "pubmedId": "26429700",
+   "doi": "10.1016/s0140-6736(15)00310-4",
+   "population": "HIV-negative pregnant women between 16 and 32 weeks' gestation in western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent screening and treatment or intermittent preventive treatment with dihydroartemisinin–piperaquine versus intermittent preventive treatment with sulfadoxine–pyrimethamine for the control of malaria during pregnancy in western Kenya: an open-label, three-group, randomised controlled superiority trial",
+    "publishedDate": "2015-09-30",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "i4oO2Y9Q-5",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "uptake of ≥ 3 doses of IPTp-SP",
+   "variable2": "placental malaria infection",
+   "statisticType": "adjusted_odds_ratio",
+   "statisticValue": 2.36,
+   "ciLower": 1.41,
+   "ciUpper": 4.87,
+   "pValue": 0.001,
+   "studyId": "c3U2PtvDD4",
+   "pubmedId": "32122339",
+   "doi": "10.1186/s12936-020-03155-2",
+   "population": "465 pregnant women from semi-rural and semi-urban settings in the Mount Cameroon area.",
+   "countries": [
+    {
+     "iso3": "CMR",
+     "matchedText": "Cameroon",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Coverage and effectiveness of intermittent preventive treatment in pregnancy with sulfadoxine–pyrimethamine (IPTp-SP) on adverse pregnancy outcomes in the Mount Cameroon area, South West Cameroon",
+    "publishedDate": "2020-03-02",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "iAgGo5krDd",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "the uptake of less than three doses of sulfadoxine-pyrimethamine for the intermittent preventive treatment of malaria in pregnancy (IPTp-SP)",
+   "variable2": "low birth weight",
+   "statisticType": "odds_ratio",
+   "statisticValue": 2.2,
+   "ciLower": 1.3,
+   "ciUpper": 3.9,
+   "pValue": 0.05,
+   "studyId": "aywKmrINFu",
+   "pubmedId": "35313840",
+   "doi": "10.1186/s12884-022-04554-w",
+   "population": "600 neonates and their mothers in a rural area of Burkina Faso.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Low birth weight and its associated risk factors in a rural health district of Burkina Faso: a cross sectional study",
+    "publishedDate": "2022-03-21",
+    "year": 2022,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "iBbDRVayGM",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "daily iron and intermittent preventive treatment with sulfadoxine-pyrimethamine placebo",
+   "variable2": "mean hemoglobin concentration at 12 weeks",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 0.79,
+   "ciLower": 0.46,
+   "ciUpper": 1.1,
+   "pValue": null,
+   "studyId": "n29DgrErU7",
+   "pubmedId": "12599083",
+   "doi": "10.1086/367986",
+   "population": "546 anemic children aged 2-36 months in an area with intense malaria transmission in western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Randomized, Controlled Trial of Daily Iron Supplementation and Intermittent Sulfadoxine‐Pyrimethamine for the Treatment of Mild Childhood Anemia in Western Kenya",
+    "publishedDate": "2003-02-15",
+    "year": 2003,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "iLTVCyCMR6",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Intermittent Preventive Treatment in Pregnancy with Sulphadoxine-Pyrimethamine (IPTp-SP) usage",
+   "variable2": "prevalence of submicroscopic malaria",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.13,
+   "ciLower": 0.07,
+   "ciUpper": 0.23,
+   "pValue": 0.005,
+   "studyId": "quwPGLWqtZ",
+   "pubmedId": "26448871",
+   "doi": "10.1155/2015/959427",
+   "population": "872 pregnant women from Central Region, Ghana, between July and December 2009.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effectiveness of Intermittent Preventive Treatment in Pregnancy with Sulphadoxine-Pyrimethamine against SubmicroscopicfalciparumMalaria in Central Region, Ghana",
+    "publishedDate": "2015-01-01",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "jfo7MXsJ1Z",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Women with IPTp (intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine) [vs Women without chemoprophylaxis against malaria]",
+   "variable2": "Presence of P. falciparum infection",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -4.2,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.31,
+   "studyId": "HhZo7Xvsdh",
+   "pubmedId": "26410081",
+   "doi": "10.1186/s12936-015-0909-7",
+   "population": "915 delivering women in Fort Portal, western Uganda.",
+   "countries": [
+    {
+     "iso3": "UGA",
+     "matchedText": "Uganda",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Lack of effect of intermittent preventive treatment for malaria in pregnancy and intense drug resistance in western Uganda",
+    "publishedDate": "2015-09-26",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "jzyOYn5Zfe",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "antenatal care visits",
+   "variable2": "adequate doses of taking intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.408,
+   "ciLower": 1.174,
+   "ciUpper": 1.689,
+   "pValue": null,
+   "studyId": "S0yqlQI-jk",
+   "pubmedId": "30736456",
+   "doi": "10.3390/tropicalmed4010032",
+   "population": "8526 women aged between 15-49 years in Sierra Leone in 2016.",
+   "countries": [
+    {
+     "iso3": "SLE",
+     "matchedText": "Sierra Leone",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and Associated Factors of Taking Intermittent Preventive Treatment in Pregnancy in Sierra Leone",
+    "publishedDate": "2019-02-07",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "kRSYc6u8D6",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "treatment with pyrimethamine-sulphadoxine plus one dose of artesunate (4mg/kg bodyweight)",
+   "variable2": "treatment-failure rates at day 14",
+   "statisticType": "risk_difference",
+   "statisticValue": -0.6,
+   "ciLower": -4.2,
+   "ciUpper": 3.0,
+   "pValue": null,
+   "studyId": "yuuvHI0P9R",
+   "pubmedId": "10665554",
+   "doi": "10.1016/s0140-6736(99)10237-x",
+   "population": "600 children aged 6 months to 10 years with acute uncomplicated Plasmodium falciparum malaria in The Gambia.",
+   "countries": [
+    {
+     "iso3": "GMB",
+     "matchedText": "Gambia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Efficacy of artesunate plus pyrimethamine-sulphadoxine for uncomplicated malaria in Gambian children: a double-blind, randomised, controlled trial",
+    "publishedDate": "2000-01-01",
+    "year": 2000,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "kt15jCcicD",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Prevalence of sulfa drug treatment (sulfadoxine-pyrimethamine) for P. falciparum malaria in 2005 (n=78) vs. Prevalence of sulfa drug treatment (sulfadoxine-pyrimethamine) for P. falciparum malaria in 2008 (n=87)",
+   "variable2": "Prevalence of wild type dhfr59Cys haplotypes",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -24.6,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.01,
+   "studyId": "1GUcQ9Jcua",
+   "pubmedId": "24055717",
+   "doi": "10.1016/j.actatropica.2013.09.010",
+   "population": "165 patients infected with Plasmodium falciparum in Bahir Dar, Northwest Ethiopia in 2005 and 2008.",
+   "countries": [
+    {
+     "iso3": "ETH",
+     "matchedText": "Ethiopia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence of sulfadoxine–pyrimethamine resistance-associated mutations in dhfr and dhps genes of Plasmodium falciparum three years after SP withdrawal in Bahir Dar, Northwest Ethiopia",
+    "publishedDate": "2013-09-18",
+    "year": 2013,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "kwJ8LM3Tod",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "three or more IPTp-SP doses",
+   "variable2": "Plasmodium falciparum multidrug resistant gene 1 86Y mutant allele carriage",
+   "statisticType": "adjusted_odds_ratio",
+   "statisticValue": 0.25,
+   "ciLower": 0.07,
+   "ciUpper": 0.92,
+   "pValue": 0.04,
+   "studyId": "L8JOF_nJpS",
+   "pubmedId": "33172485",
+   "doi": "10.1186/s12936-020-03473-5",
+   "population": "Pregnant women participating in the COSMIC trial in the Nanoro Health District of Burkina Faso.",
+   "countries": [
+    {
+     "iso3": "BFA",
+     "matchedText": "Burkina Faso",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and factors associated with carriage of Pfmdr1 polymorphisms among pregnant women receiving intermittent preventive treatment with sulfadoxine-pyrimethamine (IPTp-SP) and artemether-lumefantrine for malaria treatment in Burkina Faso",
+    "publishedDate": "2020-11-10",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "l1AcCnDzSE",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Intermittent Preventive Treatment in Pregnancy with Sulphadoxine-Pyrimethamine (IPTp-SP) usage",
+   "variable2": "prevalence of submicroscopic malaria",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.11,
+   "ciLower": 0.02,
+   "ciUpper": 0.22,
+   "pValue": 0.006,
+   "studyId": "quwPGLWqtZ",
+   "pubmedId": "26448871",
+   "doi": "10.1155/2015/959427",
+   "population": "872 pregnant women from Central Region, Ghana, between July and December 2009.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effectiveness of Intermittent Preventive Treatment in Pregnancy with Sulphadoxine-Pyrimethamine against SubmicroscopicfalciparumMalaria in Central Region, Ghana",
+    "publishedDate": "2015-01-01",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "l5J-ceSD7x",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "level of education (tertiary and secondary education)",
+   "variable2": "use of intermittent preventive treatment using sulfadoxine-pyrimethamine",
+   "statisticType": "odds_ratio",
+   "statisticValue": 8.3,
+   "ciLower": 1.01,
+   "ciUpper": 68.27,
+   "pValue": 0.05,
+   "studyId": "QLhDlOelC2",
+   "pubmedId": "36520849",
+   "doi": "10.1371/journal.pone.0277877",
+   "population": "422 pregnant women in Bwari Area Council, Nigeria in 2018.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Factors influencing intermittent preventive treatment for malaria prevention among pregnant women accessing antenatal care in selected primary health care facilities of Bwari Area Council, Abuja Nigeria",
+    "publishedDate": "2022-12-15",
+    "year": 2022,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "lD2D2PmgQV",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamine",
+   "variable2": "birthweight",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 87.0,
+   "ciLower": 43.0,
+   "ciUpper": 131.0,
+   "pValue": null,
+   "studyId": "l0kOFm6f2y",
+   "pubmedId": "32562650",
+   "doi": "10.1016/s2214-109x(20)30119-4",
+   "population": "1617 HIV-uninfected pregnant women in Kenya and Uganda.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    },
+    {
+     "iso3": "UGA",
+     "matchedText": "Uganda",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Overall, anti-malarial, and non-malarial effect of intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine on birthweight: a mediation analysis",
+    "publishedDate": "2020-06-17",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "lZ8VcldX6u",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "parity (number of previous pregnancies)",
+   "variable2": "uptake of intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine during the last pregnancy",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.663,
+   "ciLower": 0.442,
+   "ciUpper": 0.994,
+   "pValue": 0.001,
+   "studyId": "S0yqlQI-jk",
+   "pubmedId": "30736456",
+   "doi": "10.3390/tropicalmed4010032",
+   "population": "8526 women aged between 15-49 years in Sierra Leone in 2016.",
+   "countries": [
+    {
+     "iso3": "SLE",
+     "matchedText": "Sierra Leone",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and Associated Factors of Taking Intermittent Preventive Treatment in Pregnancy in Sierra Leone",
+    "publishedDate": "2019-02-07",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "lz2GF4sdfw",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Sulphadoxine-pyrimethamine (SPAZ) monthly from second trimester",
+   "variable2": "active placental malaria",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.68,
+   "ciLower": 0.47,
+   "ciUpper": 0.98,
+   "pValue": 0.037,
+   "studyId": "DS1q-zRSTN",
+   "pubmedId": "25591391",
+   "doi": "10.1186/s12916-014-0258-3",
+   "population": "Pregnant women in Papua New Guinea ≤ 26 gestational weeks.",
+   "countries": [
+    {
+     "iso3": "PNG",
+     "matchedText": "Papua New Guinea",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Sulphadoxine-pyrimethamine plus azithromycin for the prevention of low birthweight in Papua New Guinea: a randomised controlled trial",
+    "publishedDate": "2015-01-15",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "mKVHpdIFh8",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "MQ group (receiving mefloquine) [vs SP group (receiving sulfadoxine-pyrimethamine)]",
+   "variable2": "Prevalence of placental malaria",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -2.7,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.005,
+   "studyId": "fGjCdryIF_",
+   "pubmedId": "19656069",
+   "doi": "10.1086/605474",
+   "population": "Pregnant women in Benin from July 2005 to April 2008.",
+   "countries": [
+    {
+     "iso3": "BEN",
+     "matchedText": "Benin",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Treatment for the Prevention of Malaria during Pregnancy in Benin: A Randomized, Open‐Label Equivalence Trial Comparing Sulfadoxine‐Pyrimethamine with Mefloquine",
+    "publishedDate": "2009-08-05",
+    "year": 2009,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "mkviSixbGf",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine users [vs non-intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine users]",
+   "variable2": "anemia prevalence",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -35.6,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "WeGutAJ5Ty",
+   "pubmedId": "21734118",
+   "doi": "10.4269/ajtmh.2011.10-0512",
+   "population": "Pregnant women attending the antenatal clinic at Korle-Bu Teaching Hospital in Accra, Ghana in June-August 2009.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine against Malaria and Anemia in Pregnant Women",
+    "publishedDate": "2011-07-01",
+    "year": 2011,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "nLJUHL1ClC",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "place of antenatal care attendance",
+   "variable2": "using sulfadoxine-pyrimethamine in pregnancy",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.68,
+   "ciLower": 0.6,
+   "ciUpper": 0.76,
+   "pValue": null,
+   "studyId": "7soDKHP7-B",
+   "pubmedId": "32733659",
+   "doi": "10.4314/mmj.v32i1.9",
+   "population": "Reproductive-aged women in Nigeria surveyed in 2013.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Inequities in the use of sulphadoxine-pyrimethamine for malaria prophylaxis during pregnancy in Nigeria",
+    "publishedDate": "2020-03-31",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "nWfK8dbKWo",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment with dihydroartemisinin-piperaquine [vs intermittent preventive treatment with sulfadoxine-pyrimethamine]",
+   "variable2": "Malaria infection during pregnancy",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 137.6,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.0001,
+   "studyId": "nTA-uxOaR-",
+   "pubmedId": "26429700",
+   "doi": "10.1016/s0140-6736(15)00310-4",
+   "population": "HIV-negative pregnant women between 16 and 32 weeks' gestation in western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent screening and treatment or intermittent preventive treatment with dihydroartemisinin–piperaquine versus intermittent preventive treatment with sulfadoxine–pyrimethamine for the control of malaria during pregnancy in western Kenya: an open-label, three-group, randomised controlled superiority trial",
+    "publishedDate": "2015-09-30",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "nqaVeVzLAI",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine users [vs non-intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine users]",
+   "variable2": "malaria prevalence",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -29.4,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "WeGutAJ5Ty",
+   "pubmedId": "21734118",
+   "doi": "10.4269/ajtmh.2011.10-0512",
+   "population": "Pregnant women attending the antenatal clinic at Korle-Bu Teaching Hospital in Accra, Ghana in June-August 2009.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine against Malaria and Anemia in Pregnant Women",
+    "publishedDate": "2011-07-01",
+    "year": 2011,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "oAd3DaXG22",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Case management group using sulfadoxine-pyrimethamine (SP) (receiving two doses of SP) vs. Monthly SP treatment group (receiving monthly SP)",
+   "variable2": "low birth weight infants",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 6.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.078,
+   "studyId": "BYm-tlOymj",
+   "pubmedId": "9840604",
+   "doi": "10.4269/ajtmh.1998.59.813",
+   "population": "Pregnant primigravidae and secundigravidae in an area of intense Plasmodium falciparum malaria transmission in western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Efficacy of sulfadoxine-pyrimethamine for prevention of placental malaria in an area of Kenya with a high prevalence of malaria and human immunodeficiency virus infection.",
+    "publishedDate": "1998-11-01",
+    "year": 1998,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "oVT7sqoa0N",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine",
+   "variable2": "anemia prevalence",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.2,
+   "ciLower": 0.12,
+   "ciUpper": 0.34,
+   "pValue": 0.001,
+   "studyId": "WeGutAJ5Ty",
+   "pubmedId": "21734118",
+   "doi": "10.4269/ajtmh.2011.10-0512",
+   "population": "Pregnant women attending the antenatal clinic at Korle-Bu Teaching Hospital in Accra, Ghana in June-August 2009.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine against Malaria and Anemia in Pregnant Women",
+    "publishedDate": "2011-07-01",
+    "year": 2011,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "qmc-EG2mgi",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "residence in other provinces",
+   "variable2": "receipt of one dose of sulphadoxine-pyrimethamine versus none",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.92,
+   "ciLower": 1.28,
+   "ciUpper": 2.86,
+   "pValue": null,
+   "studyId": "adzuGTWY2u",
+   "pubmedId": "23912315",
+   "doi": "10.1007/s10995-013-1340-8",
+   "population": "Pregnant women in Kenya in 2008-2009.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Factors Associated with Utilization of Sulphadoxine–Pyrimethamine During Pregnancy Among Women in Kenya: A Cross-Sectional Study",
+    "publishedDate": "2013-08-03",
+    "year": 2013,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "qr_TZ4ez4z",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "Intermittent treatment with sulfadoxine-pyrimethamine (SP) and use of insecticide-treated nets (ITN) vs. Placebo treatment",
+   "variable2": "Haemoglobin levels",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -5.7,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.006,
+   "studyId": "Ghkn0z93St",
+   "pubmedId": "15228241",
+   "doi": "10.1016/s0035-9203(03)90141-6",
+   "population": "Pregnant women in a malaria-endemic area of western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevention of anaemia in pregnancy using insecticide-treated bednets and sulfadoxine-pyrimethamine in a highly malarious area of Kenya: a randomized controlled trial",
+    "publishedDate": "2003-05-01",
+    "year": 2003,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "rbtDfPyqzM",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine/pyrimethamine [vs sulfadoxine/pyrimethamine plus amodiaquine]",
+   "variable2": "clinical treatment failure after 14 days",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": 17.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.0001,
+   "studyId": "kxDiGyezEE",
+   "pubmedId": "12504399",
+   "doi": "10.1016/s0140-6736(02)12021-6",
+   "population": "Healthy children aged 6 months to 5 years from Kampala, Uganda.",
+   "countries": [
+    {
+     "iso3": "UGA",
+     "matchedText": "Uganda",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Sulfadoxine/pyrimethamine alone or with amodiaquine or artesunate for treatment of uncomplicated malaria: a longitudinal randomised trial",
+    "publishedDate": "2002-12-01",
+    "year": 2002,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "rgFohwq5fY",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment with dihydroartemisinin-piperaquine [vs intermittent preventive treatment with sulfadoxine-pyrimethamine]",
+   "variable2": "Malaria infection at delivery",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -7.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.0001,
+   "studyId": "nTA-uxOaR-",
+   "pubmedId": "26429700",
+   "doi": "10.1016/s0140-6736(15)00310-4",
+   "population": "HIV-negative pregnant women between 16 and 32 weeks' gestation in western Kenya.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent screening and treatment or intermittent preventive treatment with dihydroartemisinin–piperaquine versus intermittent preventive treatment with sulfadoxine–pyrimethamine for the control of malaria during pregnancy in western Kenya: an open-label, three-group, randomised controlled superiority trial",
+    "publishedDate": "2015-09-30",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "rxABsNdMRw",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "monthly sulfadoxine-pyrimethamine and two doses of azithromycin (AZI-sulfadoxine-pyrimethamine)",
+   "variable2": "low birth weight",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.61,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.02,
+   "studyId": "H377bLctYN",
+   "pubmedId": "21118924",
+   "doi": "10.4269/ajtmh.2010.10-0264",
+   "population": "1,320 pregnant women in Malawi enrolled in a randomized, controlled trial to study the effects of intermittent preventive treatment of maternal malaria and reproductive tract infections.",
+   "countries": [
+    {
+     "iso3": "MWI",
+     "matchedText": "Malawi",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effect of Repeated Treatment of Pregnant Women with Sulfadoxine-Pyrimethamine and Azithromycin on Preterm Delivery in Malawi: A Randomized Controlled Trial",
+    "publishedDate": "2010-11-30",
+    "year": 2010,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "sJ8weDgXxL",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive therapy in pregnancy with sulfadoxine-pyrimethamine",
+   "variable2": "adverse live birth outcome",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 1.04,
+   "ciLower": 0.9,
+   "ciUpper": 1.2,
+   "pValue": 0.625,
+   "studyId": "Cuk8jdjy5m",
+   "pubmedId": "27622558",
+   "doi": "10.1371/journal.pmed.1002124",
+   "population": "HIV-seronegative pregnant women in Malawi with high sulfadoxine-pyrimethamine resistance.",
+   "countries": [
+    {
+     "iso3": "MWI",
+     "matchedText": "Malawi",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Scheduled Intermittent Screening with Rapid Diagnostic Tests and Treatment with Dihydroartemisinin-Piperaquine versus Intermittent Preventive Therapy with Sulfadoxine-Pyrimethamine for Malaria in Pregnancy in Malawi: An Open-Label Randomized Controlled Trial",
+    "publishedDate": "2016-09-13",
+    "year": 2016,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "sNX-tQt1UC",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Sulphadoxine-pyrimethamine (SPAZ) monthly from second trimester",
+   "variable2": "carriage of gonorrhoea",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.66,
+   "ciLower": 0.44,
+   "ciUpper": 0.99,
+   "pValue": 0.041,
+   "studyId": "DS1q-zRSTN",
+   "pubmedId": "25591391",
+   "doi": "10.1186/s12916-014-0258-3",
+   "population": "Pregnant women in Papua New Guinea ≤ 26 gestational weeks.",
+   "countries": [
+    {
+     "iso3": "PNG",
+     "matchedText": "Papua New Guinea",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Sulphadoxine-pyrimethamine plus azithromycin for the prevention of low birthweight in Papua New Guinea: a randomised controlled trial",
+    "publishedDate": "2015-01-15",
+    "year": 2015,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "tFwW0FIDTv",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Number of antenatal care visits (at least 4)",
+   "variable2": "getting sulfadoxine-pyrimethamine prophylaxis",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.46,
+   "ciLower": 1.31,
+   "ciUpper": 1.63,
+   "pValue": null,
+   "studyId": "7soDKHP7-B",
+   "pubmedId": "32733659",
+   "doi": "10.4314/mmj.v32i1.9",
+   "population": "Reproductive-aged women in Nigeria surveyed in 2013.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Inequities in the use of sulphadoxine-pyrimethamine for malaria prophylaxis during pregnancy in Nigeria",
+    "publishedDate": "2020-03-31",
+    "year": 2020,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "tlBlNXCmbD",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine",
+   "variable2": "malaria prevalence",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.18,
+   "ciLower": 0.08,
+   "ciUpper": 0.37,
+   "pValue": 0.001,
+   "studyId": "WeGutAJ5Ty",
+   "pubmedId": "21734118",
+   "doi": "10.4269/ajtmh.2011.10-0512",
+   "population": "Pregnant women attending the antenatal clinic at Korle-Bu Teaching Hospital in Accra, Ghana in June-August 2009.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine against Malaria and Anemia in Pregnant Women",
+    "publishedDate": "2011-07-01",
+    "year": 2011,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "u6JH5M1nb1",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "Sulphadoxine-pyrimethamine (SP) group [vs Azithromycin group]",
+   "variable2": "Malaria incidence",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -1.5,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.56,
+   "studyId": "I0-Ya0iwqH",
+   "pubmedId": "27424614",
+   "doi": "10.4103/1117-1936.186295",
+   "population": "Antenatal clinic attendees at the University College Hospital, Ibadan, Nigeria.",
+   "countries": [
+    {
+     "iso3": "NGA",
+     "matchedText": "Nigeria",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "A comparative study of azithromycin and sulphadoxine-pyrimethamine as prophylaxis against malaria in pregnancy",
+    "publishedDate": "2016-01-01",
+    "year": 2016,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "ugB2j1GaRm",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "residence in the western province",
+   "variable2": "receipt of two or more doses of sulphadoxine-pyrimethamine compared to women in Nairobi",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.27,
+   "ciLower": 0.08,
+   "ciUpper": 0.94,
+   "pValue": null,
+   "studyId": "adzuGTWY2u",
+   "pubmedId": "23912315",
+   "doi": "10.1007/s10995-013-1340-8",
+   "population": "Pregnant women in Kenya in 2008-2009.",
+   "countries": [
+    {
+     "iso3": "KEN",
+     "matchedText": "Kenya",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Factors Associated with Utilization of Sulphadoxine–Pyrimethamine During Pregnancy Among Women in Kenya: A Cross-Sectional Study",
+    "publishedDate": "2013-08-03",
+    "year": 2013,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "ujExLYLnMX",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "MQ group (receiving mefloquine) [vs SP group (receiving sulfadoxine-pyrimethamine)]",
+   "variable2": "Incidence rate of clinical malaria",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -42.0,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.007,
+   "studyId": "fGjCdryIF_",
+   "pubmedId": "19656069",
+   "doi": "10.1086/605474",
+   "population": "Pregnant women in Benin from July 2005 to April 2008.",
+   "countries": [
+    {
+     "iso3": "BEN",
+     "matchedText": "Benin",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Treatment for the Prevention of Malaria during Pregnancy in Benin: A Randomized, Open‐Label Equivalence Trial Comparing Sulfadoxine‐Pyrimethamine with Mefloquine",
+    "publishedDate": "2009-08-05",
+    "year": 2009,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "ulmpXPLSZd",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "sulfadoxine-pyrimethamine (SP)",
+   "variable2": "total treatment failure (among adults)",
+   "statisticType": "odds_ratio",
+   "statisticValue": 4.15,
+   "ciLower": 2.52,
+   "ciUpper": 6.83,
+   "pValue": 0.001,
+   "studyId": "mnvlimBm79",
+   "pubmedId": "16923176",
+   "doi": "10.1186/1475-2875-5-73",
+   "population": "Adults with uncomplicated Plasmodium falciparum malaria in Zambia.",
+   "countries": [
+    {
+     "iso3": "ZMB",
+     "matchedText": "Zambia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Safety and efficacy of lumefantrine-artemether (Coartem®) for the treatment of uncomplicated Plasmodium falciparum malaria in Zambian adults",
+    "publishedDate": "2006-08-21",
+    "year": 2006,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "v__MXRVBex",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "placebo or sulfadoxine-pyrimethamine combined with a single dose of artesunate",
+   "variable2": "malaria incidence",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 0.91,
+   "ciLower": 0.68,
+   "ciUpper": 1.22,
+   "pValue": 0.49,
+   "studyId": "Q1epxiVPGM",
+   "pubmedId": "14584381",
+   "doi": "10.1016/s0035-9203(03)90125-8",
+   "population": "14,017 individuals living in a rural area of The Gambia aged 6 months to 10 years.",
+   "countries": [
+    {
+     "iso3": "GMB",
+     "matchedText": "Gambia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "The effect of mass administration of sulfadoxine-pyrimethamine combined with artesunate on malaria incidence: a double-blind, community-randomized, placebo-controlled trial in The Gambia",
+    "publishedDate": "2003-03-01",
+    "year": 2003,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "vfDmtZ63Mx",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment during pregnancy with sulfadoxine-pyrimethamine users",
+   "variable2": "malaria prevalence",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.18,
+   "ciLower": 0.08,
+   "ciUpper": 0.37,
+   "pValue": 0.001,
+   "studyId": "WeGutAJ5Ty",
+   "pubmedId": "21734118",
+   "doi": "10.4269/ajtmh.2011.10-0512",
+   "population": "Pregnant women attending the antenatal clinic at Korle-Bu Teaching Hospital in Accra, Ghana in June-August 2009.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Intermittent Preventive Treatment with Sulfadoxine-Pyrimethamine against Malaria and Anemia in Pregnant Women",
+    "publishedDate": "2011-07-01",
+    "year": 2011,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  },
+  {
+   "systemId": "wUSJPWJQ-z",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "receipt of antiretroviral therapy and dosage of sulfadoxine-pyrimethamine",
+   "variable2": "risk of delivering an low birth weight infant",
+   "statisticType": "relative_risk_ratio",
+   "statisticValue": 1.09,
+   "ciLower": 0.99,
+   "ciUpper": 1.21,
+   "pValue": null,
+   "studyId": "nIiWJGGxkY",
+   "pubmedId": "27799645",
+   "doi": "10.4269/ajtmh.16-0658",
+   "population": "HIV-positive pregnant women with singleton births in Lusaka, Zambia, between February 2006 and December 2012.",
+   "countries": [
+    {
+     "iso3": "ZMB",
+     "matchedText": "Zambia",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Dosage of Sulfadoxine–Pyrimethamine and Risk of Low Birth Weight in a Cohort of Zambian Pregnant Women in a Low Malaria Prevalence Region",
+    "publishedDate": "2016-11-01",
+    "year": 2016,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "x0OfmslxMd",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "sulphadoxine-pyrimethamine use in intermittent preventive treatment of malaria in pregnancy",
+   "variable2": "birth weights of neonates",
+   "statisticType": "odds_ratio",
+   "statisticValue": 0.91,
+   "ciLower": 0.8,
+   "ciUpper": 1.1,
+   "pValue": 0.26,
+   "studyId": "Lt8BNbqJn4",
+   "pubmedId": "24038372",
+   "doi": "10.1016/j.inhe.2011.04.002",
+   "population": "Pregnant women in the Offinso District of Ghana from January 2005 to October 2007.",
+   "countries": [
+    {
+     "iso3": "GHA",
+     "matchedText": "Ghana",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effect of sulphadoxine-pyrimethamine on neonatal birth weight and perceptions on its impact on malaria in pregnancy in an intermittent preventive treatment programme setting in Offinso District, Ghana",
+    "publishedDate": "2011-05-21",
+    "year": 2011,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "x5gC0i-3QZ",
+   "kind": "sp",
+   "spLooksLikeUptake": false,
+   "variable1": "intermittent preventive treatment in pregnancy with monthly dihydroartemisinin-piperaquine treatment group [vs Intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine treatment group]",
+   "variable2": "prevalence of parasitemia during pregnancy",
+   "statisticType": "mean_difference_unstandardized",
+   "statisticValue": -0.39,
+   "ciLower": null,
+   "ciUpper": null,
+   "pValue": 0.001,
+   "studyId": "egVRLouGRA",
+   "pubmedId": "33891721",
+   "doi": "10.1002/cpt.2273",
+   "population": "956 malaria-free pregnant women from moderate malaria transmission areas in Tanzania.",
+   "countries": [
+    {
+     "iso3": "TZA",
+     "matchedText": "Tanzania",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Effectiveness of Intermittent Preventive Treatment With Dihydroartemisinin‐Piperaqunine Against Malaria in Pregnancy in Tanzania: A Randomized Controlled Trial",
+    "publishedDate": "2021-04-23",
+    "year": 2021,
+    "source": "openalex"
+   },
+   "inVettedCsv": false
+  },
+  {
+   "systemId": "xaYvH4d3id",
+   "kind": "sp",
+   "spLooksLikeUptake": true,
+   "variable1": "antenatal care visits",
+   "variable2": "adequate doses of taking intermittent preventive treatment of malaria in pregnancy with sulfadoxine-pyrimethamine",
+   "statisticType": "odds_ratio",
+   "statisticValue": 1.408,
+   "ciLower": 1.174,
+   "ciUpper": 1.689,
+   "pValue": 0.001,
+   "studyId": "S0yqlQI-jk",
+   "pubmedId": "30736456",
+   "doi": "10.3390/tropicalmed4010032",
+   "population": "8526 women aged between 15-49 years in Sierra Leone in 2016.",
+   "countries": [
+    {
+     "iso3": "SLE",
+     "matchedText": "Sierra Leone",
+     "field": "study.population"
+    }
+   ],
+   "paper": {
+    "title": "Prevalence and Associated Factors of Taking Intermittent Preventive Treatment in Pregnancy in Sierra Leone",
+    "publishedDate": "2019-02-07",
+    "year": 2019,
+    "source": "openalex"
+   },
+   "inVettedCsv": true
+  }
+ ]
+}

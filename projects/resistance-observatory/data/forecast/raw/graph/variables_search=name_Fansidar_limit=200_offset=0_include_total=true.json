@@ -1,0 +1,18 @@
+{
+ "_request": "GET /variables?search=name:Fansidar&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "nazCyzscB5",
+    "name": "taking fansidar as a directly observed therapy",
+    "concept_id": "ON1ETegzkF"
+   },
+   {
+    "system_id": "BNQBABSHjC",
+    "name": "Fansidar plus chloroquine [vs Fansidar alone]",
+    "concept_id": "FSXE9QnJOc"
+   }
+  ],
+  "total": 5654715
+ }
+}

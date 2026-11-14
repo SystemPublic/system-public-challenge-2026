@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/KTzTwhgPUn/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "hXx6YpfR9D",
+    "variable_1_id": "KTzTwhgPUn",
+    "variable_2_id": "CTpUW7b5fJ",
+    "variable_1_name": "Chloroquine plus pyrimethamine-sulfadoxine [vs Artesunate plus amodiaquine]",
+    "variable_2_name": "Proportion of children carrying gametocytes",
+    "study_id": "XcDrHHRTE4",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 9.03,
+    "p_value": 0.01,
+    "pubmed_id": 16262741,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

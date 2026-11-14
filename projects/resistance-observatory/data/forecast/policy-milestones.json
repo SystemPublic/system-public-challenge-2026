@@ -1,0 +1,26 @@
+{
+ "source": {
+  "id": "who-documents-via-alert-pack",
+  "label": "WHO documents, as listed in the Alert tab's data pack",
+  "licence": "",
+  "citation": "",
+  "url": "",
+  "retrievedAt": "2026-11-14",
+  "notes": [
+   "Published definitions are quoted or closely paraphrased from the cited WHO documents. Presets are this project's notification defaults, not clinical or policy rules; label them as presets in the UI.",
+   "Copied verbatim from k540e-data-pack/k540e-thresholds.json (history) at commit a1cc503."
+  ]
+ },
+ "items": [
+  {
+   "year": 2013,
+   "text": "A WHO evidence review group suggested considering stopping SP in pregnancy where K540E exceeded 95% and A581G exceeded 10%. Superseded by current guidance.",
+   "url": "https://www.who.int/docs/default-source/malaria/mpac-documentation/mpac-sep13-erg-ipt-malaria-pregnancy-report.pdf"
+  },
+  {
+   "year": 2022,
+   "text": "WHO removed the restriction on infant chemoprevention with SP based on prevalence of Pfdhps 540 mutations.",
+   "url": "https://www.who.int/news/item/03-06-2022-Updated-WHO-recommendations-for-malaria-chemoprevention-among-children-and-pregnant-women"
+  }
+ ]
+}

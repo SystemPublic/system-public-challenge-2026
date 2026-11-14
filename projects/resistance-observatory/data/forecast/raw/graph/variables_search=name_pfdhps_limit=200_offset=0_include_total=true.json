@@ -1,0 +1,53 @@
+{
+ "_request": "GET /variables?search=name:pfdhps&limit=200&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "GE8-9mkeGW",
+    "name": "pfdhps haplotype SGEGA at five codons"
+   },
+   {
+    "system_id": "LPZZFwC_ZH",
+    "name": "pfdhps A437G"
+   },
+   {
+    "system_id": "NfmrH1gSNI",
+    "name": "Frequency of Pfdhps double mutation in 2005 (Pawe hospital, North Western Ethiopia) vs. Frequency of Pfdhps double mutation in 2007/08 (Pawe hospital, North Western Ethiopia)"
+   },
+   {
+    "system_id": "FQvpLoVeQN",
+    "name": "Prevalence of pfdhps mutations"
+   },
+   {
+    "system_id": "Y8f_pNau2D",
+    "name": "prevalence of 437G and 581G alleles in the pfdhps gene"
+   },
+   {
+    "system_id": "MFpic2N3Wz",
+    "name": "frequency of the SP-resistance associated Pfdhps double mutant (SGEAA) haplotype"
+   },
+   {
+    "system_id": "5bihukeLZE",
+    "name": "Pfdhps double mutation"
+   },
+   {
+    "system_id": "DjtAa49q2O",
+    "name": "pfdhps mutations"
+   },
+   {
+    "system_id": "bJIJkpHB0R",
+    "name": "Mutations in the Plasmodium falciparum genes Pfdhfr and Pfdhps, particularly the sextuple mutant haplotype",
+    "concept_id": "QGsnhC2Mq6"
+   },
+   {
+    "system_id": "3sxxaT2NrP",
+    "name": "Prevalence of Pfdhps 437G mutation"
+   },
+   {
+    "system_id": "jbR7SdgAPX",
+    "name": "prevalence of Pfdhps A437G mutation"
+   }
+  ],
+  "total": 5654715
+ }
+}

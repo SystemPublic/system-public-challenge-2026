@@ -1,0 +1,76 @@
+{
+ "_request": "GET /variables/Sc7nTYBlqa/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "1ZFe5aj-bl",
+    "variable_1_id": "Sc7nTYBlqa",
+    "variable_2_id": "k7b0mNSnm2",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "Intermittent preventive treatment of malaria in pregnancy (IPTp) with sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "low birth weight (LBW)",
+    "study_id": "bW_0tzO87_",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 0.33,
+    "ci_upper": 0.91,
+    "ci_lower": 0.12,
+    "ci_level": 0,
+    "pubmed_id": 25890159,
+    "system_statistic_type": "prevalence_ratio"
+   },
+   {
+    "system_id": "827XdtMg9A",
+    "variable_1_id": "Sc7nTYBlqa",
+    "variable_2_id": "k7b0mNSnm2",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "Intermittent preventive treatment of malaria in pregnancy (IPTp) with sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "low birth weight (LBW)",
+    "study_id": "bW_0tzO87_",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 0.63,
+    "ci_upper": 0.97,
+    "ci_lower": 0.41,
+    "ci_level": 0,
+    "pubmed_id": 25890159,
+    "system_statistic_type": "prevalence_ratio"
+   },
+   {
+    "system_id": "ou22XWX9dq",
+    "variable_1_id": "Sc7nTYBlqa",
+    "variable_2_id": "k7b0mNSnm2",
+    "variable_2_wikidata_id": "Q6692979",
+    "variable_2_concept_id": "VM_BejazFq",
+    "variable_1_name": "Intermittent preventive treatment of malaria in pregnancy (IPTp) with sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "low birth weight (LBW)",
+    "study_id": "bW_0tzO87_",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 0.54,
+    "ci_upper": 0.9,
+    "ci_lower": 0.33,
+    "ci_level": 0,
+    "pubmed_id": 25890159,
+    "system_statistic_type": "prevalence_ratio"
+   },
+   {
+    "system_id": "0e_RRn5emS",
+    "variable_1_id": "Sc7nTYBlqa",
+    "variable_2_id": "x4fTG3MExP",
+    "variable_2_wikidata_id": "Q166231",
+    "variable_2_concept_id": "el0BxsVt42",
+    "variable_1_name": "Intermittent preventive treatment of malaria in pregnancy (IPTp) with sulphadoxine-pyrimethamine (SP)",
+    "variable_2_name": "any infection (among the participants)",
+    "study_id": "bW_0tzO87_",
+    "statistic_type": "prevalence_ratio",
+    "statistic_value": 0.76,
+    "ci_upper": 0.99,
+    "ci_lower": 0.58,
+    "ci_level": 0,
+    "pubmed_id": 25890159,
+    "system_statistic_type": "prevalence_ratio"
+   }
+  ],
+  "total": 4
+ }
+}

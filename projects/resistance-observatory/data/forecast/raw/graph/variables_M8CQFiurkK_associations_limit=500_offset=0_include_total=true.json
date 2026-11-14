@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/M8CQFiurkK/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "VpuMUNTcq7",
+    "variable_1_id": "M8CQFiurkK",
+    "variable_2_id": "6j6PH9xWHR",
+    "variable_1_wikidata_id": "Q707939",
+    "variable_2_wikidata_id": "Q56317195",
+    "variable_1_concept_id": "c_f3i8lTBc",
+    "variable_2_concept_id": "MZpwE2CWM6",
+    "variable_1_name": "artesunate + sulphadoxine-pyrimethamine [vs chloroquine]",
+    "variable_2_name": "treatment failure (PCR corrected)",
+    "study_id": "FqbHa6NnJM",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -66.5,
+    "p_value": 0.001,
+    "pubmed_id": 18154655,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

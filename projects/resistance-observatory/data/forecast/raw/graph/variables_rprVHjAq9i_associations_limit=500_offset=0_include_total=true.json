@@ -1,0 +1,21 @@
+{
+ "_request": "GET /variables/rprVHjAq9i/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "umNpTiumH4",
+    "variable_1_id": "WFAmz3UTXk",
+    "variable_2_id": "rprVHjAq9i",
+    "variable_1_name": "STOP-CTX (discontinue cotrimoxazole) [vs CTX (continue cotrimoxazole)]",
+    "variable_2_name": "Prevalence of quintuple haplotype (51I/59R/108N/437G/540E)",
+    "study_id": "HCsI_XcW-1",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 45.5,
+    "p_value": 0.0007,
+    "pubmed_id": 30897090,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

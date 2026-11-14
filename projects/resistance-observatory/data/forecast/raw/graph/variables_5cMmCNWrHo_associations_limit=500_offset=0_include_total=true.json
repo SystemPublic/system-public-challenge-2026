@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/5cMmCNWrHo/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "CSScQXxPye",
+    "variable_1_id": "5cMmCNWrHo",
+    "variable_2_id": "05yaY177f7",
+    "variable_1_wikidata_id": "Q12156",
+    "variable_1_concept_id": "7xpZryeSKE",
+    "variable_1_name": "seasonal malaria chemoprevention with SPAQ or DHAPQ",
+    "variable_2_name": "risk of clinical malaria",
+    "study_id": "PiszejTv6C",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 1.33,
+    "ci_upper": 1.72,
+    "ci_lower": 1.02,
+    "ci_level": 0,
+    "pubmed_id": 25918149,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

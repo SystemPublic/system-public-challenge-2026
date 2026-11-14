@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/ux-Fou0q6l/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "NEpELzpWh9",
+    "variable_1_id": "fULIBBzkQe",
+    "variable_2_id": "ux-Fou0q6l",
+    "variable_1_wikidata_id": "Q521616",
+    "variable_1_concept_id": "85bCpa5non",
+    "variable_1_name": "Withdrawal of sulfadoxine-pyrimethamine (SP) as the first-line anti-malarial drug in 2008 [vs Use of sulfadoxine-pyrimethamine (SP) as the first-line anti-malarial drug in 2005]",
+    "variable_2_name": "Prevalence of quintuple mutations (dhfr (108Asn/51Ile/59Arg)/dhps437Gly/dhps540Glu)",
+    "study_id": "1GUcQ9Jcua",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": -23.4,
+    "p_value": 0.01,
+    "pubmed_id": 24055717,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

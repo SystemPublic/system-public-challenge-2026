@@ -1,0 +1,57 @@
+{
+ "_request": "GET /variables/aZ-hbsnCRY/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "9uTFvbAcu2",
+    "variable_1_id": "aZ-hbsnCRY",
+    "variable_2_id": "Usn2R6YqAZ",
+    "variable_1_name": "presence of polymorphisms in P. falciparum dihydrofolate reductase and dihydropteroate synthase",
+    "variable_2_name": "in vivo treatment outcomes (among the patients enrolled in the study)",
+    "study_id": "Dp5QIYwYwT",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 4.08,
+    "ci_upper": 7.46,
+    "ci_lower": 2.45,
+    "ci_level": 0,
+    "pubmed_id": 19707564,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "UZUVvFga1e",
+    "variable_1_id": "aZ-hbsnCRY",
+    "variable_2_id": "2JyWdxITik",
+    "variable_2_wikidata_id": "Q70490488",
+    "variable_2_concept_id": "DWHOo3-u5W",
+    "variable_1_name": "presence of polymorphisms in P. falciparum dihydrofolate reductase and dihydropteroate synthase",
+    "variable_2_name": "in vivo treatment outcomes (among patients)",
+    "study_id": "Dp5QIYwYwT",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 2.58,
+    "ci_upper": 3.73,
+    "ci_lower": 1.88,
+    "ci_level": 0,
+    "pubmed_id": 19707564,
+    "system_statistic_type": "relative_risk_ratio"
+   },
+   {
+    "system_id": "l3EndGI_ph",
+    "variable_1_id": "aZ-hbsnCRY",
+    "variable_2_id": "HGZsOw-Aov",
+    "variable_2_wikidata_id": "Q70490488",
+    "variable_2_concept_id": "DWHOo3-u5W",
+    "variable_1_name": "presence of polymorphisms in P. falciparum dihydrofolate reductase and dihydropteroate synthase",
+    "variable_2_name": "in vivo treatment outcomes (among patients with uncomplicated falciparum malaria)",
+    "study_id": "Dp5QIYwYwT",
+    "statistic_type": "relative_risk_ratio",
+    "statistic_value": 3.61,
+    "ci_upper": 6.64,
+    "ci_lower": 2.14,
+    "ci_level": 0,
+    "pubmed_id": 19707564,
+    "system_statistic_type": "relative_risk_ratio"
+   }
+  ],
+  "total": 3
+ }
+}

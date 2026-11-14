@@ -1,0 +1,25 @@
+{
+ "_request": "GET /variables/-2mT43B8mM/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "buluZNubAZ",
+    "variable_1_id": "MNZbeiv9yL",
+    "variable_2_id": "-2mT43B8mM",
+    "variable_2_wikidata_id": "Q11995",
+    "variable_2_concept_id": "FPgHTPTt4S",
+    "variable_1_name": "Age groups (25-29 years)",
+    "variable_2_name": "uptake of adequate doses of Intermittent preventive treatment in pregnancy-SP drugs",
+    "study_id": "eipyNuz0Os",
+    "statistic_type": "odds_ratio",
+    "statistic_value": 2.028,
+    "ci_upper": 3.669,
+    "ci_lower": 1.12,
+    "ci_level": 0,
+    "pubmed_id": 31694607,
+    "system_statistic_type": "odds_ratio"
+   }
+  ],
+  "total": 1
+ }
+}

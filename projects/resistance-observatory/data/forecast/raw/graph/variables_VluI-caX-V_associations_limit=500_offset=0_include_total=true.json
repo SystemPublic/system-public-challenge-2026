@@ -1,0 +1,40 @@
+{
+ "_request": "GET /variables/VluI-caX-V/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "hrY37NU1Ft",
+    "variable_1_id": "jw4UgTpqq9",
+    "variable_2_id": "VluI-caX-V",
+    "variable_1_name": "availability of SP at the facility",
+    "variable_2_name": "timely uptake of 1st dose of SP IPTp",
+    "study_id": "TABCutc1ux",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 4.63,
+    "ci_upper": 8.54,
+    "ci_lower": 2.51,
+    "ci_level": 0,
+    "p_value": 0.0001,
+    "pubmed_id": 27328717,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "c6Pw-tzObh",
+    "variable_1_id": "mpf_mDHqP1",
+    "variable_2_id": "VluI-caX-V",
+    "variable_1_name": "early antenatal booking",
+    "variable_2_name": "timely uptake of 1st dose of SP IPTp",
+    "study_id": "TABCutc1ux",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 2.59,
+    "ci_upper": 4.46,
+    "ci_lower": 1.51,
+    "ci_level": 0,
+    "p_value": 0.001,
+    "pubmed_id": 27328717,
+    "system_statistic_type": "adjusted_odds_ratio"
+   }
+  ],
+  "total": 2
+ }
+}

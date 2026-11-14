@@ -1,0 +1,23 @@
+{
+ "_request": "GET /variables/BNQBABSHjC/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "YUIOeR4oVQ",
+    "variable_1_id": "BNQBABSHjC",
+    "variable_2_id": "gL9H2_dXMO",
+    "variable_1_wikidata_id": "Q422438",
+    "variable_1_concept_id": "FSXE9QnJOc",
+    "variable_1_name": "Fansidar plus chloroquine [vs Fansidar alone]",
+    "variable_2_name": "Persistent symptoms (of uncomplicated Plasmodium falciparum malaria among Gambian children)",
+    "study_id": "B64WRVMpu3",
+    "statistic_type": "mean_difference_unstandardized",
+    "statistic_value": 1.9064,
+    "p_value": 0.001,
+    "pubmed_id": 9692160,
+    "system_statistic_type": "mean_difference_unstandardized"
+   }
+  ],
+  "total": 1
+ }
+}

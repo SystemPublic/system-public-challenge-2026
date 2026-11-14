@@ -1,0 +1,57 @@
+{
+ "_request": "GET /variables/K5OkaFCSYh/associations?limit=500&offset=0&include_total=true",
+ "response": {
+  "data": [
+   {
+    "system_id": "ehXs6M9agQ",
+    "variable_1_id": "4vBaZarJDz",
+    "variable_2_id": "K5OkaFCSYh",
+    "variable_1_wikidata_id": "Q12156",
+    "variable_1_concept_id": "7xpZryeSKE",
+    "variable_1_name": "knowledge of intermittent preventive treatment for malaria in pregnancy",
+    "variable_2_name": "uptake of optimal doses of sulphadoxine pyrimethamine",
+    "study_id": "hajq4mZwWs",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 1.8,
+    "ci_upper": 2.96,
+    "ci_lower": 1.15,
+    "ci_level": 0,
+    "pubmed_id": 29515740,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "_hflw24T1a",
+    "variable_1_id": "pnMPOWT-aR",
+    "variable_2_id": "K5OkaFCSYh",
+    "variable_1_name": "attending antenatal care (ANC) \u22654 times",
+    "variable_2_name": "uptake of optimal doses of sulphadoxine pyrimethamine",
+    "study_id": "hajq4mZwWs",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 4.7,
+    "ci_upper": 17.2,
+    "ci_lower": 1.31,
+    "ci_level": 0,
+    "pubmed_id": 29515740,
+    "system_statistic_type": "adjusted_odds_ratio"
+   },
+   {
+    "system_id": "i-57gxQBlD",
+    "variable_1_id": "17mLwOWRgn",
+    "variable_2_id": "K5OkaFCSYh",
+    "variable_1_wikidata_id": "Q12156",
+    "variable_1_concept_id": "7xpZryeSKE",
+    "variable_1_name": "knowledge of malaria in pregnancy",
+    "variable_2_name": "uptake of optimal doses of sulphadoxine pyrimethamine",
+    "study_id": "hajq4mZwWs",
+    "statistic_type": "adjusted_odds_ratio",
+    "statistic_value": 2.2,
+    "ci_upper": 4.62,
+    "ci_lower": 1.03,
+    "ci_level": 0,
+    "pubmed_id": 29515740,
+    "system_statistic_type": "adjusted_odds_ratio"
+   }
+  ],
+  "total": 3
+ }
+}
