@@ -1,0 +1,269 @@
+{
+ "id": "heat-night-minimum",
+ "verdict": "unsettled",
+ "parts": {
+  "a_new_york": {
+   "support": false,
+   "refute": false,
+   "refute_threshold": 1.0753814560820047
+  },
+  "a_chicago": {
+   "support": false,
+   "refute": false,
+   "refute_threshold": 1.0348194642937028
+  },
+  "b_new_york": "not separated",
+  "b_chicago": "not separated",
+  "c_replication": "inconclusive"
+ },
+ "city_effect": {
+  "label": "New York shooting incidents per 5 C of the preceding night's minimum (Central Park TMIN) at fixed TMAX, shooting days with TMAX >= 27 C, 2006-2026",
+  "estimate": 1.0326652139757795,
+  "lo": 0.9617061442858019,
+  "hi": 1.1088599677686248,
+  "scale": "rate ratio per 5 C TMIN",
+  "null": 1,
+  "n": 1667
+ },
+ "graph_effect": {
+  "label": "Composed from graph findings: room temperature to sleep (Valham 2012) and sleep to aggression (Street 2016), with an assumed outdoor-to-bedroom slope",
+  "estimate": 1.0123580658145805,
+  "lo": 1.000098967784189,
+  "hi": 1.0312311824110518,
+  "scale": "rate ratio per 5 C TMIN",
+  "null": 1
+ },
+ "graph_evidence": [
+  {
+   "relationship_id": "4FaXcuNJRt|nDIFXeS4Xr",
+   "concepts": [
+    "temperature",
+    "sleep"
+   ],
+   "n_findings": 2,
+   "n_studies": 2,
+   "direction": "-",
+   "summary": "Two findings, both on indoor temperature. Valham 2012 (randomised crossover, 40 untreated sleep apnoea patients, Sweden): sleep efficiency 6 points lower at 24 C room temperature than at 16 C (71 against 77%, P = 0.012); the abstract adds 30 minutes less total sleep, which the graph does not hold. The other finding is on cold rooms (17 C or less, difficulty initiating sleep, OR 1.79). Neither uses outdoor night temperature.",
+   "pubmed_ids": [
+    22467989,
+    38821464
+   ]
+  },
+  {
+   "association_id": "variable 0SZFkEwEQv",
+   "concepts": [
+    "bedroom temperature during sleep (variable, grounded to sleep quality)",
+    "poorer sleep quality"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "-",
+   "summary": "Lappharat 2018 (63 sleep apnoea patients, Bangkok): adjusted odds of poor sleep quality 1.46 (1.01 to 2.10) with higher measured bedroom temperature.",
+   "pubmed_ids": [
+    29609708
+   ]
+  },
+  {
+   "relationship_id": [
+    "4FaXcuNJRt|aeY3nW1sT_",
+    "aeY3nW1sT_|4FaXcuNJRt",
+    "aeY3nW1sT_|dINFs04idR"
+   ],
+   "concepts": [
+    "temperature, hot",
+    "sleep quality"
+   ],
+   "n_findings": 8,
+   "n_associations_returned": 0,
+   "n_studies": 5,
+   "direction": "0",
+   "summary": "The relationship records report 8 findings in 5 studies; the association endpoint returns none of them, as found on 12 November.",
+   "pubmed_ids": []
+  },
+  {
+   "association_id": "variable ygo-nXuMA0",
+   "concepts": [
+    "outdoor temperature",
+    "indoor bedroom temperature"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Zuurbier 2021 (113 homes of elderly people, two Dutch cities, warm episode): the graph stores r = 0.34; the abstract gives R2 = 0.34 for bedrooms, so the correlation is about 0.58. No slope in degrees per degree is given.",
+   "pubmed_ids": [
+    33421789
+   ]
+  },
+  {
+   "association_id": "variables searched by name",
+   "concepts": [
+    "night or minimum outdoor temperature (variable names)",
+    "sleep, aggression, violence, crime"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "Variable-name searches for night temperature, nighttime temperature, nocturnal temperature, minimum temperature, hot nights, tropical night and bedroom temperature and sleep temperature returned about 200 variables (the minimum temperature search is capped at 100). The 23 that name outdoor night heat or bedroom temperature link to preterm birth, mortality, heat hospitalisation, anthrax, eczema, cholesterol, body mass and crop yield. None links to sleep duration, aggression, violence or injury. None of the first 100 sleep duration variables names temperature.",
+   "pubmed_ids": [
+    36623379,
+    36274245,
+    33195962,
+    37172196,
+    28074921
+   ]
+  },
+  {
+   "relationship_id": "k4RCuWBkJ3|y83mBL5cYb",
+   "concepts": [
+    "sleep duration",
+    "aggression"
+   ],
+   "n_findings": 4,
+   "n_studies": 3,
+   "direction": "-",
+   "summary": "Street 2016 (1,878 Boston high school students): adjusted odds of moderate physical aggression against peers 0.90 (0.81 to 1.00) per hour of sleep. Van Veen 2022 (meta-analysis, 76,761 participants): correlation -0.16 (-0.19 to -0.12) in observational studies; standardised difference after experimental sleep restriction -0.37 (-0.80 to 0.05). One further finding (reactive aggression, aOR 3.13) is on short against adequate sleep.",
+   "pubmed_ids": [
+    28923255,
+    36064210,
+    25940021
+   ]
+  },
+  {
+   "relationship_id": [
+    "nDIFXeS4Xr|y83mBL5cYb",
+    "y83mBL5cYb|nDIFXeS4Xr",
+    "aeY3nW1sT_|y83mBL5cYb",
+    "y83mBL5cYb|1f0aF1BXj-",
+    "1f0aF1BXj-|2qLKgaxkm_",
+    "2qLKgaxkm_|1f0aF1BXj-",
+    "2qLKgaxkm_|aeY3nW1sT_"
+   ],
+   "concepts": [
+    "sleep, sleep quality, insomnia",
+    "aggression, violence"
+   ],
+   "n_findings": 18,
+   "n_studies": 13,
+   "direction": "-",
+   "summary": "Every signed finding says worse sleep goes with more aggression (for example preschool children sleeping under 9.44 hours, aggression OR 1.81, 1.36 to 2.41, Scharf 2013). Eight of the 18 run the other way in time: violence exposure as a cause of poor sleep.",
+   "pubmed_ids": [
+    23838583,
+    40817272,
+    34058519,
+    31883497
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "incident_key, min(occur_date) as d, min(occur_time) as t",
+    "$group": "incident_key",
+    "$order": "incident_key"
+   },
+   "fetched": "2026-11-13T01:24:57-0500",
+   "n_rows": 24477
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "gumc-mgzr",
+   "name": "Violence Reduction - Victims of Homicides and Non-Fatal Shootings",
+   "url": "https://data.cityofchicago.org/d/gumc-mgzr",
+   "rows_updated_at": "2026-11-12T14:37:55Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "case_number, min(date) as ts",
+    "$where": "date between '2010-01-01T00:00:00' and '2026-08-31T23:59:59' AND gunshot_injury_i in ('Y','YES')",
+    "$group": "case_number",
+    "$order": "case_number"
+   },
+   "fetched": "2026-11-13T01:25:32-0500",
+   "n_rows": 41078
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00014819",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00014819.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:32:44 GMT",
+   "fetched": "2026-11-12T22:33:29-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "https://public-api.system.com v1.0",
+   "uncached_requests": 124,
+   "file": "data/derived/round5/heat_night/graph.json"
+  }
+ ],
+ "prediction_scored": "partial. (a) New York 1.033 (0.962 to 1.109) per 5 C of the preceding night's minimum, inside the predicted 0.98 to 1.08; the lower limit is below 1.00 and the upper limit is above the refutation threshold 1.075, so neither rule is met. Chicago 1.009 (0.967 to 1.054), inside the predicted 0.98 to 1.06; neither rule met (threshold 1.035); replication inconclusive. (b) New York night 1.058 (0.985 to 1.137) and day 1.037 (0.918 to 1.171), ratio of ratios 1.039 (0.897 to 1.204): the night ratio is below the predicted 1.08 to 1.20, and the two are not separated. Chicago night 1.062 (1.007 to 1.120) and day 0.971 (0.903 to 1.044), ratio of ratios 1.093 (0.998 to 1.196): both inside the predicted ranges, not separated.",
+ "settle": "Hourly temperature (airport hourly observations) matched to shootings by hour would say whether shootings in the small hours follow the temperature of that hour. A sleep path needs a nightly sleep measure; the weather record cannot isolate it, and an effect of the size the graph's findings imply (about 1.01 per 5 C) is below what twenty years of one city's shootings can detect.",
+ "research_needed": [
+  {
+   "question": "Do shootings between midnight and 06:00 follow the temperature of that hour, at a fixed maximum of the day before?",
+   "data": "Hourly airport temperature and humidity (NOAA ISD or LCD) with shootings by hour, several cities",
+   "design": "Hourly case-crossover or distributed-lag model; register the 00:00 to 05:59 block as the primary",
+   "priority": "high"
+  },
+  {
+   "question": "How many minutes of sleep are lost per degree of outdoor night temperature in housing without air conditioning?",
+   "data": "Wearable sleep panels linked to location and housing; indoor temperature loggers",
+   "design": "Within-person panel; the graph holds no such finding",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/round5/heat_night_minimum.png"
+ ],
+ "notes": "Registered secondary results. The following night's minimum (TMIN of d+1), not the preceding one, carries a rate ratio above 1 on hot days: New York 1.112 (1.049 to 1.179), Chicago 1.064 (1.023 to 1.106); with both minima in the model the preceding night is 1.000 (0.929 to 1.076) and 0.992 (0.948 to 1.038) and the following night 1.112 (1.047 to 1.181) and 1.066 (1.023 to 1.110). For night shootings the following-night ratio is 1.171 (1.094 to 1.253) and 1.081 (1.032 to 1.133); for day shootings 0.927 (0.820 to 1.048) and 1.034 (0.968 to 1.104). By six-hour block, the interval of the ratio 33 against 27 C excludes 1 only from 00:00 to 05:59: New York 1.128 (1.021 to 1.246), Chicago 1.129 (1.040 to 1.226); from 18:00 to 23:59 it is 1.001 (0.917 to 1.094) and 1.010 (0.948 to 1.075). In the all-day spline model with both minima, the 33 against 27 C ratio is 1.011 (0.946 to 1.081) in New York and 1.014 (0.967 to 1.063) in Chicago. On shooting days (06:00 to 05:59) the 33 against 27 C ratio for all shootings is 1.051 (0.988 to 1.118) in New York and 1.035 (0.991 to 1.082) in Chicago, smaller than on calendar days. Exploratory, after the results (analyses/round5/heat_night/exploratory.py): on calendar-day counts the same data give 1.102 (1.038 to 1.171) and 1.059 (1.014 to 1.105), so in New York about half of the published hot-day excess comes from shootings before 06:00 on the hot date, which precede that day's maximum. The pooled two-city estimate for the preceding night is 1.016 (0.979 to 1.054). The composed graph prediction, 1.012 (1.000 to 1.031), lies inside both cities' intervals, and so does 1.00; the test does not discriminate (D 0.13 and 0.37).\n\nAfter the referee (13 Nov 2026): the verdict is kept. The referee rebuilt both daily series with separate code and reproduced every reported number, and none of twelve further specifications of part (a) changes the verdict: the New York estimate lies between 0.997 (LaGuardia) and 1.060 (previous day's maximum and minimum added), every interval includes 1.00 and every New York upper limit is above 1.075, so 1.033 is not a measured effect. The corrections follow.\nUnits. The ratios for 00:00 to 05:59, 1.128 (1.021 to 1.246) in New York and 1.129 (1.040 to 1.226) in Chicago, are for 33 against 27 C of the daily maximum, which is 6 C. Per 5 C they are 1.106 (1.017 to 1.201) and 1.107 (1.033 to 1.185) (re-checked), about 1.11 in each city, and not 1.13.\nSelection after the data. The six-hour blocks were registered as a table, with no prediction about which block would carry the excess, so singling out 00:00 to 05:59 is a choice made after the data and is exploratory under rule 4. Corrected for four blocks the p value is 0.07 in New York (0.018 uncorrected) and 0.016 in Chicago (0.004 uncorrected). The inverse-variance mean of the two cities is 1.129 (1.059 to 1.203), z = 3.7, p about 0.0008 after the correction. The contrast with the evening block, from a binomial model of the 00:00 to 05:59 share of night shootings, is 1.177 (1.037 to 1.334) in New York and 1.132 (1.023 to 1.252) in Chicago (referee). The boundary at midnight is not sharp: 02:00 to 05:59 gives 1.201 and 1.133, 00:00 to 02:59 gives 1.087 and 1.121, and 21:00 to 23:59 gives 1.006 and 0.998.\nThe following night. This variant was in the registered plan with a stated expectation and is a registered secondary result. It is not robust to one control in New York: with the next day's maximum and a wet-day term for the next date in the model the ratio is 1.073 (0.989 to 1.164) in New York and 1.063 (1.006 to 1.122) in Chicago (referee). The next day's maximum and the following night's minimum correlate at 0.76 on hot days, so the daily record cannot separate a warm night from a hot spell that continues. Two placebo checks pass: the minimum two nights later adds nothing once the following night is in the model (0.984, 0.923 to 1.048; 0.991, 0.953 to 1.031), and day shootings, which precede the following night, do not follow it (0.924, 0.813 to 1.049; 1.039, 0.970 to 1.113). At other stations the following-night ratio is 1.112 (LaGuardia), 1.083 (JFK) and 1.041 (1.000 to 1.084, O'Hare).\nOne observation. The after-midnight excess, the following-night ratio and the difference between calendar-day and shooting-day counts are the same observation stated three ways: shootings in the small hours follow the temperature of the night in which they occur. They are not three pieces of support. Shootings from 00:00 to 05:59 of a date rise by 1.261 (1.140 to 1.396) in New York and 1.222 (1.125 to 1.328) in Chicago from 27 to 33 C of that date's maximum, which comes later in the day (referee).\nRivals not tested. Humidity was named in the registration and no variant addresses it; dew point is in the hourly airport files and not in GHCN-Daily, so the following-night result may be humid heat. A warm night also keeps people outdoors after midnight, and these data cannot separate that from a sleep path. On 36% of New York hot days and 38% of Chicago hot days the next date's minimum is more than 1 C lower, so the calendar minimum of date d was probably set in the evening; on those days the 'preceding' minimum partly measures the evening of the shooting day, which would raise its coefficient. Without those days part (a) is 1.063 (0.968 to 1.168) and 1.031 (0.975 to 1.090), still unsettled.\nThreshold. The refutation threshold of 1.075 was derived from the calendar-day excess of 1.122. On the shooting days this claim uses, the excess is 1.051 (0.988 to 1.118) in New York and 1.035 (0.991 to 1.082) in Chicago, half of which is about 1.032 and 1.021 per 5 C of minimum. Both upper limits (1.109 and 1.054) are above those values as well. The threshold stays as registered.\nCode. run.py builds the following night's minimum and the previous day's maximum by shifting rows of the weather file and not calendar days. The Central Park file has no gap. The Midway file lacks 28 February 2012 and 16 August 2017 (re-checked), so on the four adjacent days the shifted value comes from two days away. With a calendar shift Chicago has 1,479 hot days and 13,503 shootings in place of 1,481 and 13,519, and the estimate is 1.009 (0.966 to 1.054) against 1.009 (0.967 to 1.054). The script is left as committed: it was fixed with the registration (rule 9), and the correction changes the registered count of days and one third decimal while changing no result.\nOrder of events. The registration and script are on the remote branch prereg/heat-night-minimum (commit 44edbc9, 01:24:38); the first query with a time of day was fetched at 01:24:57. Git records the commit time and not the push time, so the repository shows that the registration was committed 19 seconds before the fetch and cannot show that it was pushed before it.\nStance. The stance is set to null. The value 0.416 was the z of the New York estimate against no effect, and on the strip it read as agreement with the research. The registration computed D = 0.13 and 0.37 and said the test is not an endpoint test of the chain; the realised z values are 0.88 against no effect, 0.53 against the composed 1.012 and -1.12 against the threshold, so the estimate does not favour any of the three.",
+ "registration_sha256": "e07dcc3e1431af8e1b1fd759821e53a861cf1349456f11dd64e37523fc5bde54",
+ "decided_at": "2026-11-13T01:27:27-0500",
+ "stance": null,
+ "stance_note": "Null after the referee: the test cannot tell the graph-sized effect (1.012) from no effect (D = 0.13 and 0.37 as registered), and a stance computed against no effect showed an unsettled estimate as agreement with the research.",
+ "verdict_note": "Unsettled: the preceding night's minimum is compatible with no effect, with the graph-sized 1.012 and with half of the hot-day excess. The rise between 00:00 and 05:59 (about 1.11 per 5 C of maximum in each city) was singled out after the data; it, the following-night ratio and the calendar-day difference are one observation.",
+ "critique": {
+  "report": "critique/heat-night-minimum.md",
+  "answer": "accepted; verdict kept, units and labels corrected, stance null"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "New York shooting incidents per 5 C of the preceding night's minimum (Central Park TMIN) at fixed TMAX, shooting days with TMAX >= 27 C, 2006-2026",
+    "estimate": 1.0326652139757795,
+    "lo": 0.9617061442858019,
+    "hi": 1.1088599677686248,
+    "scale": "rate ratio per 5 C TMIN",
+    "null": 1,
+    "n": 1667
+   },
+   "stance": {
+    "value": 0.416,
+    "lo": -0.491,
+    "hi": 0.89,
+    "z": 0.88
+   },
+   "decided_at": "2026-11-13T01:27:27-0500",
+   "prediction_scored": "partial. (a) New York 1.033 (0.962 to 1.109) per 5 C of the preceding night's minimum, inside the predicted 0.98 to 1.08; the lower limit is below 1.00 and the upper limit is above the refutation threshold 1.075, so neither rule is met. Chicago 1.009 (0.967 to 1.054), inside the predicted 0.98 to 1.06; neither rule met (threshold 1.035); replication inconclusive. (b) New York night 1.058 (0.985 to 1.137) and day 1.037 (0.918 to 1.171), ratio of ratios 1.039 (0.897 to 1.204): the night ratio is below the predicted 1.08 to 1.20, and the two are not separated. Chicago night 1.062 (1.007 to 1.120) and day 0.971 (0.903 to 1.044), ratio of ratios 1.093 (0.998 to 1.196): both inside the predicted ranges, not separated."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled. After-midnight ratio restated per 5 C (1.11, not 1.13) and marked as selected after the data, with corrected p values; following-night control, placebos and untested humidity recorded; the three post hoc observations counted as one; row-shift error at the Midway gaps recorded; stance set to null.",
+  "critique": "critique/heat-night-minimum.md",
+  "revised_at": "2026-11-13T08:02:01-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

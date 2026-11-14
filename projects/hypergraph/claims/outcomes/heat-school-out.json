@@ -1,0 +1,135 @@
+{
+ "id": "heat-school-out",
+ "verdict": "unsettled",
+ "verdict_note": "Unsettled: the rate ratio is 1.105 (0.997 to 1.224), with the lower limit 0.003 below the threshold 1.00 and the upper limit above 1.10. About half of the excess is the night of 4 July and other holiday nights counted on the following weekday: the ratio is 1.060 (0.957 to 1.173) without weekdays after a public holiday and 1.044 (0.951 to 1.146) on days from 06:00 to 05:59. It falls from 1.217 at a 21-day window to 1.024 at 70 days, so it is a peak around the turn of June and July and not a lasting change of level, and it may be the season and not the school calendar.",
+ "city_effect": {
+  "label": "Rate ratio of shooting incidents, weekdays out of school against school weekdays at the same temperature, within 42 days of the last or first day of classes, 2006-2026",
+  "estimate": 1.1047945838930997,
+  "lo": 0.9970897003011571,
+  "hi": 1.2241336684461497,
+  "scale": "rate ratio",
+  "null": 1,
+  "n": 2260
+ },
+ "graph_effect": null,
+ "graph_evidence": [
+  {
+   "association_id": "variables searched by name: school calendar, summer vacation, school holidays",
+   "concepts": [
+    "school holidays (variable names)",
+    "violence"
+   ],
+   "n_findings": 2,
+   "n_studies": 1,
+   "direction": "-",
+   "summary": "40 variables match; the only violence outcome is referrals to domestic violence services, which fell during school holidays in England and Wales (Panovska-Griffiths 2022), a finding about access to services. The graph holds nothing on school terms and shootings, assault or youth violence.",
+   "pubmed_ids": [
+    35291956
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "incident_key, max(occur_date) as d, max(occur_time) as t, max(latitude) as lat, max(longitude) as lon, max(jurisdiction_code) as jur, max(location_desc) as loc",
+    "$where": "occur_date between '2006-01-01T00:00:00' and '2026-08-31T23:59:59'",
+    "$group": "incident_key",
+    "$order": "incident_key"
+   },
+   "fetched": "2026-11-13T07:53:21-0500",
+   "n_rows": 24429
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "incident_key, occur_date as d, occur_time as t, vic_age_group as age",
+    "$where": "occur_date between '2006-01-01T00:00:00' and '2024-12-31T23:59:59'",
+    "$order": "incident_key"
+   },
+   "fetched": "2026-11-13T07:53:24-0500",
+   "n_rows": 29744
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  }
+ ],
+ "prediction_scored": "miss. The rate ratio is 1.105 (0.997 to 1.224) on 2260 weekdays and 7199 shootings; the predicted range was 0.95 to 1.08. Neither rule is met: the lower limit is at or below 1.00 and the upper limit is above 1.10. After the referee: without the weekdays that follow a public holiday the ratio is 1.060 (0.957 to 1.173), inside the predicted range, and on days from 06:00 to 05:59 it is 1.044 (0.951 to 1.146). The registered measure is the calendar date, so the score stays a miss.",
+ "settle": "Cities whose school years end on different dates give the same calendar day in and out of school at the same season; a pooled test over several cities would separate school from season. Within New York the first day of classes moves between 2 and 13 September, which gives too few days.",
+ "research_needed": [
+  {
+   "question": "Do shootings rise on the day school ends in cities with different term dates, at the same day of the year and temperature?",
+   "data": "Shooting incidents and school calendars for Chicago, Philadelphia, Los Angeles, Baltimore",
+   "design": "Stacked regression discontinuity in time with day-of-year terms shared across cities",
+   "priority": "high"
+  },
+  {
+   "question": "Is the after-midnight excess during the recess specific to weekdays?",
+   "data": "NYPD shootings by hour",
+   "design": "The same window with Friday and Saturday nights as the comparison",
+   "priority": "medium",
+   "answered": "Partly, by the referee: on weekend dates in the same windows the 00:00 to 05:59 block is 1.100 (0.926 to 1.306), so the data do not show that the excess is specific to weekdays."
+  },
+  {
+   "question": "Do victims under 18 shift towards the hours after midnight when school is out, more than adults do?",
+   "data": "NYPD shooting victims by age group and hour (archived file to 2024 and its successor)",
+   "design": "A new registration: the share of victims shot before 06:00, out by under-18 interaction (exploratory value 2.04, 1.25 to 3.33, on 118 victims), with days from 06:00 to 05:59 and day-of-year terms",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/heat_solutions/heat_solutions.png"
+ ],
+ "notes": "Two lines of run.py (170 and 224) were changed after registration: each reads the hour of a shooting as the text before the first colon in place of the first two characters. The earlier wording of this note (one line; unpadded times in 'the file'; no model had run) was inaccurate and was corrected after the referee. The incident file 5ucz-vwe8 has no unpadded time, and the two versions of line 170 give the same hour for all 24,429 incidents. The 390 unpadded times (of 29,744) are in the archived victim file 833y-fsy8, which only heat-school-out uses, so the registered script stopped at line 224. That line comes after the air-conditioning models in main(), so in the failed run those models had been fitted in memory; the script prints and writes only at its end, so no result was displayed or saved before the change. The change alters no number of the three claims' deciding models, none of which uses the hour. Registered secondary results. Window of 21 days 1.217 (1.057 to 1.402). Quadratic trends 1.106 (0.998 to 1.224). End of term only 1.067 (0.920 to 1.238); start of term only 1.131 (0.983 to 1.301). Victims under 18 1.195 (0.897 to 1.593) (944 victims, to 2024); 18 to 24 1.112 (0.939 to 1.317); 25 or older 1.129 (0.971 to 1.312). Odds that a victim is under 18 on days out of school 1.094 (0.817 to 1.466). The heat-shootings model on all days: 1.146 (1.130 to 1.163) per 5 C without a term for the summer recess and 1.144 (1.127 to 1.161) with it; the term itself is 1.139 (1.047 to 1.238) and removes 1.5% of the log slope. The arithmetic done before registration gave the same answer: The coefficient of TMAX/5 in a regression of the summer-recess indicator on the terms of heat-shootings is 0.011. A school effect of ln g on shootings biases the log slope by ln g x 0.011: 0.8% of the slope if g = 1.10 and 1.8% if g = 1.25. For the school calendar to produce a tenth of the 14.6%, shootings would have to be 3.353 times as frequent when school is out. Exploratory, after the results, by hour block with temperature held fixed: 00:00 to 05:59 1.404 (1.144 to 1.723); 06:00 to 14:59 0.829 (0.648 to 1.062); 15:00 to 19:59 0.903 (0.741 to 1.100); 20:00 to 23:59 1.140 (0.970 to 1.339).\n\nAfter the referee (13 Nov 2026): the verdict is kept. The referee rebuilt the window with separate code: the same 2,260 weekdays, 1,125 days out and 7,199 shootings, with identical counts on every row, and 1.105 (0.997 to 1.224). Neither registered condition is met, so the verdict is unsettled. The referee found four problems, all accepted.\n1. The morning after a public holiday. Shootings before 06:00 are counted on the calendar date. Public holidays are dropped from the window, and the weekday after one is kept and carries the holiday night's shootings after midnight. The twelve weekdays dated 5 July have a mean of 6.08 shootings before 06:00 against 0.89 on other days. These are the night of 4 July, counted as days out of school about a week after the last day of classes. The window has 74 weekdays that follow a public holiday, 29 of them out of school. Without those weekdays the ratio is 1.060 (0.957 to 1.173); with a term for them 1.078 (0.976 to 1.190); with only their shootings before 06:00 removed 1.022 (0.924 to 1.130); on days from 06:00 to 05:59 1.044 (0.951 to 1.146) (referee; re-checked with the registered functions). The whole registered excess is in shootings before 06:00: from 06:00 to 23:59 on the calendar date the ratio is 0.999 (0.890 to 1.120). On the log scale 42% of the excess goes without the mornings after holidays and 57% on the 06:00 day. Events tied to the calendar were a rival named in the registration, and the first outcome did not address it.\n2. The window. The ratio is 1.169 (0.992 to 1.379) at a half-width of 14 days, 1.217 (1.057 to 1.402) at 21, 1.167 (1.030 to 1.322) at 28, 1.126 (1.006 to 1.260) at 35, 1.105 at the registered 42, 1.079 (0.981 to 1.186) at 49, 1.071 (0.981 to 1.170) at 56, 1.052 (0.968 to 1.144) at 63 and 1.024 (0.945 to 1.109) at 70. A lasting effect of the recess would not shrink as the window grows. Without the days within 7 days of a transition the ratio is 1.055 (0.910 to 1.224), and within 10 days 0.961 (0.820 to 1.125). The excess is a peak of about two weeks around the turn of June and July and is not a change of level that lasts through the recess. 'A 10% rise' is therefore replaced as the summary by the range across windows, 1.02 to 1.22.\n3. School-side days that are not school days. In the windows covered by the attendance file (September 2006 to June 2019), 66 school-side weekdays outside the last 12 days of term have no attendance record (Anniversary Day, Clerical Day, Eid, Rosh Hashanah, Yom Kippur), about 8% of school-side days. Dropping them gives 1.139 (1.004 to 1.291) against 1.153 (1.019 to 1.305) for the same years as registered; counting them as out gives 1.083 (0.977 to 1.202). High schools hold Regents examinations and no regular classes from about the middle of June, so for students of high-school age classes end one to two weeks before the registered last day. Both facts bias the estimate towards 1, and the date of the transition is uncertain by more than a week for the age group the claim is about. Moving every transition one day earlier gives 1.143 (1.032 to 1.266) and one day later 1.083 (0.977 to 1.201).\n4. Dates counted twice. The end window runs to about 7 August and the start window begins about 28 July, so 184 dates are stacked in both as days out of school, and HC0 errors treat the copies as independent. With errors clustered by date the interval is 0.995 to 1.227; with each date kept once the ratio is 1.114 (1.002 to 1.238).\nThe margin. The lower limit is 0.003 below 1.00, which is smaller than the effect of the window, the error estimator, the remote-schooling years or a one-day change in the dates: model-based errors give 1.105 (1.003 to 1.217), keeping the 2020 and 2021 transitions 1.102 (1.001 to 1.213), 2006 to 2019 alone 1.155 (1.025 to 1.300), 2022 to 2026 alone 0.953 (0.765 to 1.187), and leaving out one year a lower limit between 0.973 and 1.019. The same data would have read confirmed under some of these. Without the mornings after holidays every one is unsettled again (1.060, 0.964 to 1.166 with 2020 and 2021; 1.115, 0.991 to 1.254 for 2006 to 2019). The refutation rule is met under no variant; the smallest upper limit is 1.109. The realised standard error is 0.052 against the 0.045 expected at registration. The reference to rule 10 in the earlier verdict note is dropped: that rule concerns conditions on a point estimate, and this condition is on an interval bound.\nThe exploratory hour blocks. The ratio 1.404 (1.144 to 1.723) for 00:00 to 05:59 is the largest of four blocks chosen after the data (p = 0.005 corrected for four), and its boundary differs from the registered table of victims by hour, which used 00:00 to 07:59. Without the mornings after holidays it is 1.182 (0.970 to 1.440), and counted with the preceding day it is 1.126 (0.959 to 1.321). A placebo transition 28 days inside the term gives 0.681 (0.499 to 0.927) for this block, so the linear trends do not describe how shootings after midnight grow through May and June and the nominal interval is too narrow. The figure 1.40 should not be quoted as a recess effect; 1.18 with an interval that includes 1 is what the data support. The block also rises on weekend dates in the same windows, 1.100 (0.926 to 1.306), which answers the second research_needed question: the data do not show that the excess is specific to weekdays.\nVictims under 18 (exploratory, after the data). The registered table has 16 cells and no intervals: 51 victims under 18 between 00:00 and 07:59 on school days and 108 on days out, and the other age groups move the same way (18 to 24: 375 to 615; 25 or older: 632 to 837). In the referee's count models the ratio for victims shot before 06:00 is 3.56 (1.52 to 8.33) for under 18, 1.57 (1.13 to 2.18) for 18 to 24 and 1.35 (1.04 to 1.76) for 25 or older, and without the mornings after holidays 2.19 (0.88 to 5.41), 1.31 (0.94 to 1.83) and 1.14 (0.88 to 1.48). Without those mornings the share of under-18 victims shot before 06:00 is 8.5% on school days and 21.1% on days out, and the interaction of out with under 18 is 2.04 (1.25 to 3.33) on 118 victims. Victims under 18 do shift towards the hours after midnight more than adults do. The result was found after the data among at least 16 cells and 4 blocks, has no control for season beyond temperature and year, and needs its own registration.\nSeason (referee). On Saturdays and Sundays in the same windows the ratio is 1.011 (0.895 to 1.142). Placebo transitions 22 to 35 days inside the term or the recess give 0.912 to 1.085 with 21-day windows. For 1 to 14 September, where the same day of the month is in and out of school in different years, the ratio is 1.253 (0.867 to 1.810) on 171 weekdays. These are compatible with a school effect and with none.\nEvery quoted estimate on the 06:00 day (re-checked), calendar date first: 21-day window 1.217 (1.057 to 1.402) on calendar dates and 1.134 (0.997 to 1.290) on the 06:00 day; victims under 18 1.195 (0.897 to 1.593) on calendar dates and 1.189 (0.905 to 1.563) on the 06:00 day; 18 to 24 1.112 (0.939 to 1.317) on calendar dates and 1.009 (0.863 to 1.179) on the 06:00 day; 25 or older 1.129 (0.971 to 1.312) on calendar dates and 1.061 (0.922 to 1.220) on the 06:00 day; the heat-shootings slope without the recess term 1.146 (1.130 to 1.163) on calendar dates and 1.135 (1.118 to 1.152) on the 06:00 day and with it 1.144 (1.127 to 1.161) on calendar dates and 1.133 (1.116 to 1.150) on the 06:00 day; the recess term 1.139 (1.047 to 1.238) on calendar dates and 1.121 (1.036 to 1.214) on the 06:00 day, which removes 1.5% and 1.4% of the log slope. Victims under 18 per 100 weekdays between 00:00 and 07:59 are 4.9 on school days and 10.6 on days out on calendar dates, and 8.0 and 16.2 when those shot before 06:00 are counted with the preceding day. No registered condition changes side on the 06:00 day: the verdict is unsettled under both. Exploratory, run after the outcomes, and deciding nothing under rule 4 (analyses/critique/round6_six_am_solutions.py; data/derived/round6_heat/six_am_solutions.json).\nStance. The stance is set to null. The value 0.741 (z = 1.9) placed the claim well towards agreement on the strip. The graph holds no finding on school terms and shootings, graph_effect is null, and the one cited paper (Jacob and Lefgren 2003, cited from memory) reports more juvenile violent crime on days when school is in session, the opposite direction.\nNot accepted as a rule. The referee suggests a rule for all shootings claims that would count shootings before 06:00 on the previous date or drop the day after each excluded holiday. The criticism is accepted and the re-estimates are recorded here and in the other heat outcomes. No verdict rule is added, as in Round 5: under rule 4 a count chosen after the data cannot decide a verdict already given. New registrations on shootings by date should state the day.",
+ "registration_sha256": "2bafdf8baa8b39a7a06fdcc2c2383295f76c760317887c6cfe7a087c87dac831",
+ "decided_at": "2026-11-13T07:58:34-0500",
+ "stance": null,
+ "stance_note": "Null after the referee: the graph holds no finding on school terms and shootings (graph_effect is null) and the one cited paper points the other way, so the z against no effect (1.9) does not measure agreement with research.",
+ "critique": {
+  "report": "critique/heat-school-out.md",
+  "answer": "accepted except the proposed verdict rule; verdict kept, notes corrected, stance null"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Rate ratio of shooting incidents, weekdays out of school against school weekdays at the same temperature, within 42 days of the last or first day of classes, 2006-2026",
+    "estimate": 1.1047945838930997,
+    "lo": 0.9970897003011571,
+    "hi": 1.2241336684461497,
+    "scale": "rate ratio",
+    "null": 1,
+    "n": 2260
+   },
+   "stance": {
+    "value": 0.741,
+    "lo": -0.028,
+    "hi": 0.959,
+    "z": 1.9
+   },
+   "decided_at": "2026-11-13T07:58:34-0500",
+   "prediction_scored": "miss. The rate ratio is 1.105 (0.997 to 1.224) on 2260 weekdays and 7199 shootings; the predicted range was 0.95 to 1.08. Neither rule is met: the lower limit is at or below 1.00 and the upper limit is above 1.10."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled. Notes now say that the registered estimate counts the night of 4 July on 5 July (1.060 without weekdays after a public holiday; 1.044 on 06:00 days), that the excess is before 06:00 and falls from 1.217 at 21 days to 1.024 at 70, that two lines of run.py changed, that 184 dates are stacked twice, and that about 8% of school-side days are closures; the exploratory 1.40 is given with 1.18 (0.97 to 1.44); stance set to null. The proposed verdict rule for the 06:00 day is not adopted (rule 4).",
+  "critique": "critique/heat-school-out.md",
+  "revised_at": "2026-11-13T09:19:59-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

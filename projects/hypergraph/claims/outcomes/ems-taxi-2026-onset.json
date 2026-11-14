@@ -1,0 +1,729 @@
+{
+ "id": "ems-taxi-2026-onset",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "slope of weekly year-on-year change in Manhattan EMS travel time on that of taxi time per mile, 2025-W27 to 2026-W39",
+  "estimate": 0.8947268759183055,
+  "lo": 0.5388176637647119,
+  "hi": 1.2506360880718992,
+  "scale": "elasticity",
+  "null": 0,
+  "n": 65
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76xm-jjuj",
+   "name": "EMS Incident Dispatch Data",
+   "url": "https://data.cityofnewyork.us/d/76xm-jjuj",
+   "rows_updated_at": "2026-10-07T14:42:18Z",
+   "fetched": "2026-11-13T13:10:56-0500",
+   "n_rows": 24988,
+   "queries": "analyses/ems_response/ems_fetch.py (hourly, 2017-2018) and analyses/congestion/ems_fetch.py (ems, 2019-2026); full SoQL in data/derived/ems_response/ems_sources.json and data/derived/congestion/ems_sources.json"
+  },
+  {
+   "kind": "tlc-trip-record-files",
+   "name": "TLC yellow taxi trip records, monthly parquet",
+   "page": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+   "files": [
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-01.parquet",
+     "month": "2017-01",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"aae33640989af0490ebd0d1356e0436c-9\"",
+     "bytes": 134830009,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-02.parquet",
+     "month": "2017-02",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"0cdbba3d4cd1f01bc22997d8c43c0dae-8\"",
+     "bytes": 127643793,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-03.parquet",
+     "month": "2017-03",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"734a5a57da14bb291f2e7b86696171ad-9\"",
+     "bytes": 144578214,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-04.parquet",
+     "month": "2017-04",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"17b7d895e554163323ccf547bd47a486-9\"",
+     "bytes": 141349194,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-05.parquet",
+     "month": "2017-05",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"00a34793fd32b2ea78e14ab72a9d8400-9\"",
+     "bytes": 142379076,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-06.parquet",
+     "month": "2017-06",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"7cb769de4157b85fb7047d6f22fac96b-9\"",
+     "bytes": 135482101,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-07.parquet",
+     "month": "2017-07",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"c477b116d1d5f3ac97be8f1d3ec0cc1f-8\"",
+     "bytes": 120841535,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-08.parquet",
+     "month": "2017-08",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"5973f158abb83dcf09a329afa00899a3-8\"",
+     "bytes": 118622365,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-09.parquet",
+     "month": "2017-09",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"c9fc5d243566dadcfde38a0006a70564-8\"",
+     "bytes": 126899296,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-10.parquet",
+     "month": "2017-10",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"91287cd228e88eadf366421541b8c299-9\"",
+     "bytes": 136742510,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-11.parquet",
+     "month": "2017-11",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"1c91125f673deec191c55cd1128693a0-8\"",
+     "bytes": 131062706,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2017-12.parquet",
+     "month": "2017-12",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"b8eeff43fe9002247f685da346c033dc-9\"",
+     "bytes": 134255377,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-01.parquet",
+     "month": "2018-01",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"794a84afe9b6dafe006f3c99ae30aeb8-8\"",
+     "bytes": 123668517,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-02.parquet",
+     "month": "2018-02",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"20bbd0711489f2a1bfed84ecfdc6dccd-8\"",
+     "bytes": 119455285,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-03.parquet",
+     "month": "2018-03",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"5535d826518a242c39fd511b256ede06-8\"",
+     "bytes": 133552006,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-04.parquet",
+     "month": "2018-04",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"e03e50e54d59ebe8886678de41fb8f71-8\"",
+     "bytes": 131609714,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-05.parquet",
+     "month": "2018-05",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"be04a3eb37076d6f0c479decb4e3738e-8\"",
+     "bytes": 130850283,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-06.parquet",
+     "month": "2018-06",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"7129313ff4765911e0831a17449caad6-8\"",
+     "bytes": 124189362,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-07.parquet",
+     "month": "2018-07",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"fe11244070626ecaf608040b98d8de2b-7\"",
+     "bytes": 112244445,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-08.parquet",
+     "month": "2018-08",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"1be7bbebd007f3ef71aea1db275fa31d-7\"",
+     "bytes": 111426538,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-09.parquet",
+     "month": "2018-09",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"09229081d0b0cbe82faeded478bc1658-7\"",
+     "bytes": 115505387,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-10.parquet",
+     "month": "2018-10",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"0c714427afa7fc134c6e87f81dd07051-8\"",
+     "bytes": 126899602,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-11.parquet",
+     "month": "2018-11",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"c6b4c39d6b17427928c17dcff3419e7c-7\"",
+     "bytes": 117170616,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-12.parquet",
+     "month": "2018-12",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"04ab75166a25da38378090ff2a3ab77a-8\"",
+     "bytes": 117845011,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-01.parquet",
+     "month": "2019-01",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 110439634,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-02.parquet",
+     "month": "2019-02",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 103356025,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-03.parquet",
+     "month": "2019-03",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 116017372,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-04.parquet",
+     "month": "2019-04",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 110139137,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-05.parquet",
+     "month": "2019-05",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 111478943,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-06.parquet",
+     "month": "2019-06",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 102903344,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-07.parquet",
+     "month": "2019-07",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 93877343,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-08.parquet",
+     "month": "2019-08",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 89999675,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-09.parquet",
+     "month": "2019-09",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 97110325,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-10.parquet",
+     "month": "2019-10",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 106293373,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-11.parquet",
+     "month": "2019-11",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 100872983,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-12.parquet",
+     "month": "2019-12",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 101044777,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-01.parquet",
+     "month": "2020-01",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 93562858,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-02.parquet",
+     "month": "2020-02",
+     "last_modified": null,
+     "etag": null,
+     "bytes": 92134881,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-07.parquet",
+     "month": "2021-07",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"f4346748b384eff7c5b41a3a71c0b22d-3\"",
+     "bytes": 43697690,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-08.parquet",
+     "month": "2021-08",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"429fb42932075a07d607fa0893de035e-3\"",
+     "bytes": 43425907,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-09.parquet",
+     "month": "2021-09",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"b8bcd669b2f6d14123b361af55e94e3b-3\"",
+     "bytes": 46125883,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-10.parquet",
+     "month": "2021-10",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"140fea323115aa2fefcf4ab126a77a2c-4\"",
+     "bytes": 53286464,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-11.parquet",
+     "month": "2021-11",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"2a6b112d3a4a1258c752fe270dee1578-4\"",
+     "bytes": 53100722,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-12.parquet",
+     "month": "2021-12",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"c3248a2107b089d5795a99fe1d7613f7-3\"",
+     "bytes": 49639052,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-01.parquet",
+     "month": "2022-01",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"ec7d7ca1530dc0c4a3644914750fcd2a-3\"",
+     "bytes": 38139949,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-02.parquet",
+     "month": "2022-02",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"3cdcb022ee65afdfe4b9b09b61603410-3\"",
+     "bytes": 45616512,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-03.parquet",
+     "month": "2022-03",
+     "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+     "etag": "\"e0a3696392d949e495c125dffa8d8d46-4\"",
+     "bytes": 55682369,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-04.parquet",
+     "month": "2022-04",
+     "last_modified": "Tue, 30 Aug 2022 16:01:40 GMT",
+     "etag": "\"bbc387175dc4092fea09039288b266ab-4\"",
+     "bytes": 55222692,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-05.parquet",
+     "month": "2022-05",
+     "last_modified": "Tue, 30 Aug 2022 16:01:40 GMT",
+     "etag": "\"ffc506f258d02f2c9996f87175942449-4\"",
+     "bytes": 55558821,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-06.parquet",
+     "month": "2022-06",
+     "last_modified": "Tue, 30 Aug 2022 16:01:40 GMT",
+     "etag": "\"3cb567412b90ab3a18714e17022ec3de-4\"",
+     "bytes": 55365184,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-07.parquet",
+     "month": "2022-07",
+     "last_modified": "Mon, 14 Nov 2022 13:55:37 GMT",
+     "etag": "\"5e42a9d3bd1d770aaa0433a0bb38408e-3\"",
+     "bytes": 49367712,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-08.parquet",
+     "month": "2022-08",
+     "last_modified": "Mon, 14 Nov 2022 13:55:37 GMT",
+     "etag": "\"e4eb255789a1c33f6d27916eb09e3a63-3\"",
+     "bytes": 49717159,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-09.parquet",
+     "month": "2022-09",
+     "last_modified": "Wed, 30 Nov 2022 20:24:30 GMT",
+     "etag": "\"bf538be4999732af6952c4c108ea73ab-3\"",
+     "bytes": 49619957,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-10.parquet",
+     "month": "2022-10",
+     "last_modified": "Mon, 19 Dec 2022 21:59:12 GMT",
+     "etag": "\"3a54d4dd190b9d9a14fa3aaeff371a59-4\"",
+     "bytes": 57061938,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-11.parquet",
+     "month": "2022-11",
+     "last_modified": "Wed, 25 Jan 2023 16:46:43 GMT",
+     "etag": "\"04ba094635a1d2619f4bbb0c74123610-3\"",
+     "bytes": 50106631,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-12.parquet",
+     "month": "2022-12",
+     "last_modified": "Mon, 20 Mar 2023 20:46:51 GMT",
+     "etag": "\"c4b29d86cdb68027eb1e24ea0f1ddc76-4\"",
+     "bytes": 53640739,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet",
+     "month": "2023-01",
+     "last_modified": "Mon, 20 Mar 2023 20:46:51 GMT",
+     "etag": "\"c1744317232f0b94f424e50e381189b5-3\"",
+     "bytes": 47673370,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-02.parquet",
+     "month": "2023-02",
+     "last_modified": "Mon, 01 May 2023 15:32:56 GMT",
+     "etag": "\"cc5e7e18ef48fa1a92214995762c11cb-3\"",
+     "bytes": 47748012,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-03.parquet",
+     "month": "2023-03",
+     "last_modified": "Fri, 19 May 2023 14:14:53 GMT",
+     "etag": "\"65e0f2cce54e069c191a8b273d98aa7d-4\"",
+     "bytes": 56127762,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-04.parquet",
+     "month": "2023-04",
+     "last_modified": "Fri, 23 Jun 2023 14:05:21 GMT",
+     "etag": "\"c2b6e702f0c2a5101686c5fc7cb3552f-4\"",
+     "bytes": 54222699,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-05.parquet",
+     "month": "2023-05",
+     "last_modified": "Wed, 26 Jul 2023 14:48:03 GMT",
+     "etag": "\"332e1b9e06438e71d5647a88a4c850ef-4\"",
+     "bytes": 58654627,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-06.parquet",
+     "month": "2023-06",
+     "last_modified": "Tue, 22 Aug 2023 13:23:37 GMT",
+     "etag": "\"12dd05ef3f0fd2b3bec5e4e367ed29e6-4\"",
+     "bytes": 54999465,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-01.parquet",
+     "month": "2026-01",
+     "last_modified": "Wed, 25 Mar 2026 15:46:09 GMT",
+     "etag": "\"715f1a37bbf83f6ec7b8d21038e8dc22-13\"",
+     "bytes": 64165080,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-02.parquet",
+     "month": "2026-02",
+     "last_modified": "Wed, 25 Mar 2026 15:46:31 GMT",
+     "etag": "\"41497120d17df99f437634b60f5b9d75-12\"",
+     "bytes": 58683353,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-03.parquet",
+     "month": "2026-03",
+     "last_modified": "Tue, 28 Apr 2026 18:56:26 GMT",
+     "etag": "\"7c9bd1bcac249e15858f8b1731c2039c-4\"",
+     "bytes": 67891249,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-04.parquet",
+     "month": "2026-04",
+     "last_modified": "Fri, 05 Jun 2026 20:44:34 GMT",
+     "etag": "\"39887281adfc4e33d959ff78c7cab632-4\"",
+     "bytes": 64818115,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-05.parquet",
+     "month": "2026-05",
+     "last_modified": "Fri, 26 Jun 2026 21:07:20 GMT",
+     "etag": "\"88babcd4eea8fabf135efb5b2b8cfc5c-5\"",
+     "bytes": 69699174,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-06.parquet",
+     "month": "2026-06",
+     "last_modified": "Thu, 17 Sep 2026 18:34:43 GMT",
+     "etag": "\"91b7716b26443cce54f6225273edf8e8-4\"",
+     "bytes": 65465637,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-07.parquet",
+     "month": "2026-07",
+     "last_modified": "Thu, 17 Sep 2026 21:03:03 GMT",
+     "etag": "\"2ff2995562ee9e1af375eea6020fdef1-4\"",
+     "bytes": 61685033,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-08.parquet",
+     "month": "2026-08",
+     "last_modified": "Thu, 01 Oct 2026 13:38:15 GMT",
+     "etag": "\"29cbf7399f1d6ffc4b505639ccbb0c8d-4\"",
+     "bytes": 59043961,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    },
+    {
+     "kind": "tlc-trip-record-file",
+     "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-09.parquet",
+     "month": "2026-09",
+     "last_modified": "Thu, 29 Oct 2026 13:56:04 GMT",
+     "etag": "\"bb076c34e09314350f112e445a7ad37a-4\"",
+     "bytes": 67374896,
+     "read_from": "local copy in ~/opt/nyc-concordance"
+    }
+   ],
+   "also_used": "data/derived/congestion/taxi_speed_2023-07_2024-12.csv and taxi_speed_2025-01_2026-06.csv (cbd and north, same filter) for July 2023 to December 2025; file versions in data/derived/reproduction/mmr_cbd_speed_files.json"
+  }
+ ],
+ "prediction_scored": "hit: b = 0.895 (0.539 to 1.251), lower bound above 0.1; the 2026 step net of taxi pace c = -0.034 (-0.081 to 0.013) includes 0. Discrimination: against the alternative that none of the 2026 step is traffic (c equal to the raw EMS step, 0.034), z_chain = -1.42, z_alt = -2.85, D = 6.1.",
+ "settle": "Manhattan only. The largest 2026 rises were in Queens and the Bronx, where yellow taxis give no usable weekly speed. FHV (Uber, Lyft) trip speeds by borough and week would extend the test.",
+ "research_needed": [
+  {
+   "question": "Did the 2026 rise in Queens and Bronx ambulance travel time follow traffic speed?",
+   "data": "TLC high-volume FHV trip files (trip_miles, trip_time) by borough and week, 2025-2026",
+   "design": "the registered onset model by borough",
+   "priority": "high"
+  },
+  {
+   "question": "Why did taxi speeds fall citywide from January 2026?",
+   "data": "DOT probe speeds, street-works permits, TLC trip counts",
+   "design": "event timing by week and area",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/ems_response/weekly_yoy.png"
+ ],
+ "notes": "The raw step (January-September 2026 against July-December 2025, each against the same week a year earlier) is +3.4 log points for ambulance travel and +7.6 for taxi time per mile. Placebo year (2024-W27 to 2025-W39, split 2025-W01): b = 0.68 (0.23 to 1.13), c = 0.008 (-0.027 to 0.044). Life-threatening only: b = 0.96, c = -0.019 (-0.051 to 0.012). The weekly slope (0.89) is above the hourly elasticity (0.63) of ems-traffic-hourly-elasticity; with 0.63 the taxi step predicts +4.8 points against the observed +3.4. This confirms that the 2025-to-2026 step in Manhattan is in proportion to the fall in taxi speed; it does not explain the larger 2019-2025 rise, which ems-traffic-share-2019-2026 attributes mostly to something other than traffic. Deviation from the plan: on 13 November the TLC file host refused downloads for about 30 minutes, so lib.taxi_hourly was changed after registration to read the cbd and north rows of data/derived/congestion/taxi_speed_*.csv for July 2023 to December 2025. Those rows use the same areas, the same trip filter and the same TLC files; the estimators were not changed. Months 2021-07 to 2023-06 and 2026-01 to 2026-09 were computed here.",
+ "registration_sha256": "e9cd995a8a597b39aa3bd25d9f9a731985bd20cefd9f9665bc8e9b21a616756d",
+ "decided_at": "2026-11-13T13:43:30-0500",
+ "stance": {
+  "value": 0.986,
+  "lo": 0.902,
+  "hi": 0.998,
+  "z": 4.93
+ },
+ "notes_referee": "Referee b 0.913, c -0.037, D 5.96. The registered placebo year meets support_if (b lower bound 0.23, c includes 0); rule 11 makes the verdict unsettled. Slope rests largely on three winter weeks.",
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "slope of weekly year-on-year change in Manhattan EMS travel time on that of taxi time per mile, 2025-W27 to 2026-W39",
+    "estimate": 0.8947268759183055,
+    "lo": 0.5388176637647119,
+    "hi": 1.2506360880718992,
+    "scale": "elasticity",
+    "null": 0,
+    "n": 65
+   },
+   "stance": {
+    "value": 0.986,
+    "lo": 0.902,
+    "hi": 0.998,
+    "z": 4.93
+   },
+   "decided_at": "2026-11-13T13:43:30-0500",
+   "prediction_scored": "hit: b = 0.895 (0.539 to 1.251), lower bound above 0.1; the 2026 step net of taxi pace c = -0.034 (-0.081 to 0.013) includes 0. Discrimination: against the alternative that none of the 2026 step is traffic (c equal to the raw EMS step, 0.034), z_chain = -1.42, z_alt = -2.85, D = 6.1."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee; rule 11 (placebo meets support_if)",
+  "critique": "critique/ems-taxi-2026-onset.md",
+  "revised_at": "2026-11-13T14:11:42-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

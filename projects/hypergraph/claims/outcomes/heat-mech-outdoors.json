@@ -1,0 +1,415 @@
+{
+ "id": "heat-mech-outdoors",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Attenuation of the heat-shootings slope by daily 311 Noise - Street/Sidewalk complaints, 2010-2026",
+  "estimate": 0.44035151823694374,
+  "lo": 0.3271165486955382,
+  "hi": 0.564142933967175,
+  "scale": "share of the log IRR of shootings per 5 C removed by adding the proxy",
+  "null": 0,
+  "n": 6087
+ },
+ "graph_effect": {
+  "label": "Walking practice per 1 C of daily maximum temperature, Kim 2022 (rural Korea); the graph's only signed finding on heat and being outdoors",
+  "estimate": 0.95,
+  "lo": 0.94,
+  "hi": 0.97,
+  "scale": "OR per 1 C",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:22-0500",
+   "n_rows": 6959
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n, sum(case(statistical_murder_flag=true, 1, true, 0)) as murders_victims",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 6431
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$where": "statistical_murder_flag=true",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:41-0500",
+   "n_rows": 3176
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "76ig-c548",
+   "name": "311 Service Requests from 2010 to 2019",
+   "url": "https://data.cityofnewyork.us/d/76ig-c548",
+   "rows_updated_at": "2025-12-24T18:19:08Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(created_date) as d, complaint_type, count(*) as n",
+    "$where": "complaint_type in ('Noise - Street/Sidewalk', 'Drinking') and created_date between '2010-01-01T00:00:00' and '2019-12-31T23:59:59'",
+    "$group": "d, complaint_type",
+    "$order": "d, complaint_type"
+   },
+   "fetched": "2026-11-12T22:25:41-0500",
+   "n_rows": 6974
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(created_date) as d, complaint_type, count(*) as n",
+    "$where": "complaint_type in ('Noise - Street/Sidewalk', 'Drinking') and created_date between '2020-01-01T00:00:00' and '2026-08-31T23:59:59'",
+    "$group": "d, complaint_type",
+    "$order": "d, complaint_type"
+   },
+   "fetched": "2026-11-12T22:33:30-0500",
+   "n_rows": 4831
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2014-01-01T00:00:00' and '2014-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:37:28-0500",
+   "n_rows": 3048
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2015-01-01T00:00:00' and '2015-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:38:13-0500",
+   "n_rows": 3500
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2016-01-01T00:00:00' and '2016-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:38:22-0500",
+   "n_rows": 3991
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2017-01-01T00:00:00' and '2017-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:38:25-0500",
+   "n_rows": 4571
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2018-01-01T00:00:00' and '2018-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:38:44-0500",
+   "n_rows": 5346
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2019-01-01T00:00:00' and '2019-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:38:51-0500",
+   "n_rows": 5338
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2020-01-01T00:00:00' and '2020-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:38:55-0500",
+   "n_rows": 5157
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2021-01-01T00:00:00' and '2021-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:39:00-0500",
+   "n_rows": 5205
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2022-01-01T00:00:00' and '2022-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:41:01-0500",
+   "n_rows": 5953
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2023-01-01T00:00:00' and '2023-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:43:50-0500",
+   "n_rows": 7134
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2024-01-01T00:00:00' and '2024-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:43:59-0500",
+   "n_rows": 9694
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2025-01-01T00:00:00' and '2025-12-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:44:07-0500",
+   "n_rows": 9823
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ct66-47at",
+   "name": "Bicycle and Pedestrian Counts",
+   "url": "https://data.cityofnewyork.us/d/ct66-47at",
+   "rows_updated_at": "2026-11-12T13:18:12Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(timestamp) as d, sensor_id, sum(counts) as c, count(*) as k",
+    "$where": "travelmode = 'bike' and timestamp between '2026-01-01T00:00:00' and '2026-08-31T23:59:59'",
+    "$group": "d, sensor_id",
+    "$order": "d, sensor_id"
+   },
+   "fetched": "2026-11-12T22:44:34-0500",
+   "n_rows": 6047
+  },
+  {
+   "kind": "system-public-graph",
+   "api": "v1.0",
+   "fetched": "2026-11-12",
+   "note": "responses cached in data/cache/sysgraph; derived tables in data/derived/graph/heat_mechanisms/"
+  }
+ ],
+ "prediction_scored": "partial. First link hit: street noise complaints IRR 1.330 (1.317 to 1.343) per 5 C, inside the registered 1.15 to 1.45. Hot-end flattening hit: from 27 to 33 C complaints change by 0.968 (0.940 to 0.997) and bicycle counts by 0.976 (0.950 to 1.003), against 1.640 (1.608 to 1.672) and 1.243 (1.212 to 1.275) from 15 to 21 C; shootings rise 1.122 (1.072 to 1.173) from 27 to 33 C. Attenuation miss on the high side: A = 0.440 (0.327 to 0.564), above the registered 0.10 to 0.35. After the referee of heat-night-minimum: on night-of counts (06:00 to 05:59) A = 0.529 (0.406 to 0.665), and the rise in shootings from 27 to 33 C is 1.090 (1.041 to 1.141) with the same spline and 1.051 (0.988 to 1.118) with the piecewise-linear basis.",
+ "settle": "Whether the noise proxy carries people outdoors or a common cause of complaints and shootings needs a direct count of people on residential streets in the evening (pedestrian counters away from commuter routes, or mobility traces), and NYPD shootings split by indoor and outdoor location and by hour. The bicycle counts, which measure travel, remove none of the slope.",
+ "research_needed": [
+  {
+   "question": "Does heat raise shootings above 27 C through anything other than the number of people outdoors?",
+   "data": "NYPD shootings by hour and inside/outside; night-time minimum temperature; pedestrian counts on residential streets",
+   "design": "Daily model with separate slopes below and above 27 C; outdoor versus indoor incidents; previous-night minimum temperature given the day's maximum",
+   "priority": "high"
+  },
+  {
+   "question": "Does more street activity on a given day raise violence on that day, at fixed temperature?",
+   "data": "Any city with pedestrian counters or mobility traces and daily violence records",
+   "design": "Daily panel with weather held fixed; the System Public Graph holds no such finding, only crime reducing walking",
+   "priority": "high"
+  },
+  {
+   "question": "Do people sleep worse on hot nights at the population level, and does aggression follow the next day?",
+   "data": "Wearable sleep records by city and date; violence records",
+   "design": "Two-stage daily design; the graph counts 8 temperature-sleep quality findings but its API returns none",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/graph/heat_mechanisms_paths.png",
+  "figures/graph/heat_mechanisms_curves.png"
+ ],
+ "notes": "Verdict by the registered rule: the proxy rises with temperature, its coefficient in the shootings model is positive (0.229, 0.181 to 0.277 per unit of log complaints), A = 0.440 (0.327 to 0.564) on 6087 days, and the year-by-month sensitivity stays above 0.25. Shootings IRR per 5 C falls from 1.151 (1.132 to 1.170) to 1.082 (1.060 to 1.104). Sensitivity: year-by-month terms 0.322 (0.214 to 0.438); without 2020-2021 0.335; May-September 0.203; proxy lagged one day 0.254. The secondary proxy disagrees: bicycle counts (IRR 1.197 (1.182 to 1.213) per 5 C, 4508 days from 2014) give A = 0.039 (-0.048 to 0.132). 311 public drinking complaints, registered under heat-mech-intox, also rise with heat (IRR 1.210 (1.191 to 1.229)) and give A = 0.031 (-0.009 to 0.073). So a series that rises with heat does not by that fact remove the slope; the noise complaints share day-to-day variation with shootings that the other two series lack. This is mediation by proxy. Exploratory, run after the outcome: with a spline of temperature, adding the noise proxy lowers the rise in shootings from 15 to 21 C from 1.303 (1.253 to 1.355) to 1.153 (1.100 to 1.208) and from 21 to 27 C from 1.251 (1.213 to 1.289) to 1.167 (1.130 to 1.206), and leaves the rise from 27 to 33 C unchanged (1.126 (1.069 to 1.185) and 1.138 (1.081 to 1.197)). Bicycle panel sensors per year: {'2014': 8, '2015': 9, '2016': 9, '2017': 12, '2018': 11, '2019': 13, '2020': 14, '2021': 14, '2022': 14, '2023': 19, '2024': 25, '2025': 25, '2026': 17}.\n\nAfter the referee (13 Nov 2026): the share removed by street-noise complaints is not stable over time. It is 0.24 (0.14 to 0.37) in 2010 to 2019, just under the 0.25 threshold, and 0.84 (0.51 to 1.36) in 2022 to 2026 (referee; re-run). The pooled 0.44 averages two regimes of 311 use, and the registered sensitivity without 2020 and 2021 (0.335) does not show this. On the 2010 to 2019 data alone the claim would have been unsettled. A negative control was run: next-day complaints, which today's street activity cannot cause, remove 0.10 (0.05 to 0.16) of the slope, and complaints seven days later or earlier remove 0.007 and 0.004. A small part of the same-day share therefore comes from variation that complaints and shootings share over a few days. After 2020 complaints are four to ten times their 2010 to 2014 level; either the proxy became a better measure of street gatherings, or complaints now respond to the same gatherings, disorder and police presence that go with shootings, which is a common cause and not a step from heat. The data cannot separate the two. Of three proxies that rise with heat, only this one removes the slope. The graph_effect entry records Kim 2022's rural odds ratio (0.95); the urban value, 0.98 (0.97 to 1.00), is the relevant one for New York, and the study concerns habitual walking over a week in Korea, so no comparison of size can be made.\n\nAfter the referee of heat-night-minimum (13 Nov 2026): the shootings series of this claim is counted by calendar date, so it includes shootings between 00:00 and 05:59 that precede the day's maximum (35% of incidents). The referee of heat-night-minimum raised this. With shootings assigned to the night-of day (06:00 to 05:59) and the registered procedure otherwise unchanged (500 week resamples, seed 1), the share removed by street-noise complaints is 0.53 (0.41 to 0.66) against 0.44 (0.33 to 0.56) as registered, and 0.41 (0.30 to 0.54) with year-by-month terms (registered 0.32). The shootings slope is 1.143 (1.123 to 1.162) per 5 C and 1.065 (1.042 to 1.088) with the proxy. Complaints created between 00:00 and 05:59 are 28% of the total; with complaints moved to the night-of day as well the share is 0.55 (0.44 to 0.69), and 0.46 (0.36 to 0.60) with year-by-month terms. Every registered condition is met under each assignment, so the calendar-day count did not produce the confirmation; the share is larger on night-of counts. The instability over time that the first referee found was not re-examined on night-of counts. The hot-end comparison is weaker than reported. The rise in shootings from 27 to 33 C, scored above as 1.122 (1.072 to 1.173), is 1.090 (1.041 to 1.141) on night-of counts with the same 4-df spline and 1.051 (0.988 to 1.118) with the piecewise-linear basis of round 2, whose interval includes 1. Complaints and bicycle counts still stop rising at 27 C; the excess in shootings that they do not explain is a quarter to a half smaller on the log scale than stated, and part of the stated excess is shootings after midnight on the hot date. Exploratory, run after the outcomes, and deciding nothing under rule 4 (analyses/critique/round5_night_of_check.py; data/derived/round5/heat_night/night_of_check.json).",
+ "registration_sha256": "bb31218120e2f55dc75988f9f98a2503dff74e49902b3790984da2859b0e409d",
+ "decided_at": "2026-11-12T23:34:28-0500",
+ "stance": {
+  "value": 0.999,
+  "lo": 0.991,
+  "hi": 1.0,
+  "z": 7.28
+ },
+ "verdict_note": "Confirmed on the pooled 2010 to 2026 series. The share is 0.24 in 2010 to 2019 and 0.84 in 2022 to 2026, and a next-day negative control removes 0.10.",
+ "critique": {
+  "report": "critique/heat-night-minimum.md",
+  "answer": "accepted; verdict kept, night-of re-estimate added",
+  "earlier": {
+   "report": "critique/heat-mech-outdoors.md",
+   "answer": "accepted; verdict kept, period split and negative control recorded"
+  }
+ },
+ "revision": {
+  "reason": "Referee of heat-night-minimum: calendar-day counts include small-hours shootings that precede the day's maximum. On night-of counts the share removed is 0.53 (0.41 to 0.66) and every registered condition is still met; the hot-day rise in shootings is smaller.",
+  "critique": "critique/heat-night-minimum.md",
+  "revised_at": "2026-11-13T08:02:28-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Attenuation of the heat-shootings slope by daily 311 Noise - Street/Sidewalk complaints, 2010-2026",
+    "estimate": 0.44035151823694374,
+    "lo": 0.3271165486955382,
+    "hi": 0.564142933967175,
+    "scale": "share of the log IRR of shootings per 5 C removed by adding the proxy",
+    "null": 0,
+    "n": 6087
+   },
+   "stance": {
+    "value": 0.999,
+    "lo": 0.991,
+    "hi": 1.0,
+    "z": 7.28
+   },
+   "decided_at": "2026-11-12T23:34:28-0500",
+   "prediction_scored": "partial. First link hit: street noise complaints IRR 1.330 (1.317 to 1.343) per 5 C, inside the registered 1.15 to 1.45. Hot-end flattening hit: from 27 to 33 C complaints change by 0.968 (0.940 to 0.997) and bicycle counts by 0.976 (0.950 to 1.003), against 1.640 (1.608 to 1.672) and 1.243 (1.212 to 1.275) from 15 to 21 C; shootings rise 1.122 (1.072 to 1.173) from 27 to 33 C. Attenuation miss on the high side: A = 0.440 (0.327 to 0.564), above the registered 0.10 to 0.35."
+  },
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Attenuation of the heat-shootings slope by daily 311 Noise - Street/Sidewalk complaints, 2010-2026",
+    "estimate": 0.44035151823694374,
+    "lo": 0.3271165486955382,
+    "hi": 0.564142933967175,
+    "scale": "share of the log IRR of shootings per 5 C removed by adding the proxy",
+    "null": 0,
+    "n": 6087
+   },
+   "stance": {
+    "value": 0.999,
+    "lo": 0.991,
+    "hi": 1.0,
+    "z": 7.28
+   },
+   "decided_at": "2026-11-12T23:34:28-0500",
+   "prediction_scored": "partial. First link hit: street noise complaints IRR 1.330 (1.317 to 1.343) per 5 C, inside the registered 1.15 to 1.45. Hot-end flattening hit: from 27 to 33 C complaints change by 0.968 (0.940 to 0.997) and bicycle counts by 0.976 (0.950 to 1.003), against 1.640 (1.608 to 1.672) and 1.243 (1.212 to 1.275) from 15 to 21 C; shootings rise 1.122 (1.072 to 1.173) from 27 to 33 C. Attenuation miss on the high side: A = 0.440 (0.327 to 0.564), above the registered 0.10 to 0.35."
+  }
+ ]
+}

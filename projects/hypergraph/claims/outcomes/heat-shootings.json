@@ -1,0 +1,150 @@
+{
+ "id": "heat-shootings",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "NYC shooting incidents per day, Central Park TMAX lag 0, NB GLM with DOW, month, year, holiday, rain",
+  "estimate": 1.1462159704993367,
+  "lo": 1.1297421298925683,
+  "hi": 1.162930031787583,
+  "scale": "IRR per 5 C",
+  "null": 1,
+  "n": 7548
+ },
+ "graph_effect": {
+  "label": "Temperature -> homicide, Xu 2020 NYC (abstract value; graph row 0.088 is mis-extracted and absent from the Dataverse CSV)",
+  "estimate": 1.088,
+  "lo": 1.015,
+  "hi": 1.166,
+  "scale": "OR per 5 C daily mean, lag 0-7",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5ucz-vwe8",
+   "name": "Shootings (2006-Present)",
+   "url": "https://data.cityofnewyork.us/d/5ucz-vwe8",
+   "rows_updated_at": "2026-11-05T20:59:39Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:22-0500",
+   "n_rows": 6959
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n, sum(case(statistical_murder_flag=true, 1, true, 0)) as murders_victims",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 6431
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "833y-fsy8",
+   "name": "ARCHIVED_NYPD Shooting Incident Data (Historic)",
+   "url": "https://data.cityofnewyork.us/d/833y-fsy8",
+   "rows_updated_at": "2025-04-15T18:16:42Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "date_trunc_ymd(occur_date) as d, count(distinct incident_key) as n",
+    "$where": "statistical_murder_flag=true",
+    "$group": "d",
+    "$order": "d"
+   },
+   "fetched": "2026-11-12T15:21:41-0500",
+   "n_rows": 3176
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T15:06:44-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "System Public Graph v1.0",
+   "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "file": "data/derived/heat/graph_evidence.json",
+   "audit": "data/derived/heat/graph_audit_heat.json"
+  }
+ ],
+ "prediction_scored": "partial: the IRR per 5 C (1.146, 1.130 to 1.163) lies in the registered 1.05-1.20 range, but the spline RR at the 84th percentile (1.42, 1.36 to 1.48) exceeds the registered 1.05-1.25, and the curve keeps rising to 35 C rather than peaking at the 85th-95th percentile.",
+ "settle": "The direction is settled. The size of the hot-day excess in NYC relative to the 100-city pooled estimate (1.42 vs 1.17 at the 84th percentile) would be settled by fitting the Lyons et al. distributed-lag model to the NYPD series (same exposure metric and reference), and by the NYC row of their eTable 2. Mechanism (time outdoors vs physiology) needs data on street activity, e.g. hourly pedestrian counts or mobility traces by temperature.",
+ "research_needed": [
+  {
+   "question": "Does the temperature effect on shootings in NYC work through time spent outdoors?",
+   "data": "NYPD shootings by hour and location type (inside/outside), pedestrian counts, cell-phone mobility",
+   "design": "Mediation with daily outdoor activity; compare indoor vs outdoor shootings",
+   "priority": "high"
+  },
+  {
+   "question": "Is the NYC temperature-shooting slope steeper than the US average, and why?",
+   "data": "Gun Violence Archive and NYPD, 100 cities",
+   "design": "Harmonised multi-city DLNM with NYC as a named city",
+   "priority": "medium"
+  },
+  {
+   "question": "Do cooling interventions (open pools, cooling centres, summer programmes) reduce hot-day shootings?",
+   "data": "Parks pool openings, SYEP dates, NYPD by precinct",
+   "design": "Difference-in-differences across precincts by opening dates",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/heat/heat_shootings_curve.png"
+ ],
+ "notes": "24429 shooting incidents on 7548 days, 2006-01-01 to 2026-08-31 (5ucz-vwe8, one row per incident). The archived file 833y-fsy8 agrees to within 2 incidents for 2006-2024 ({'sum_5ucz': 23300, 'sum_833y': 23298, 'days_differ': 6}). Sensitivity analyses all lie between 1.11 and 1.17 per 5 C (lag 0-1, TMIN, May-September, 2006-2019, 2020-2026, murder incidents). The graph has no relationship between gun violence and temperature; its temperature-homicide rows contain two mis-extractions: Xu 2020 percent increases stored as odds ratios 0.095 and 0.088 (absent from the Dataverse CSV) and Rahman 2023 percent increases stored as odds ratios 4.9 and 6.2 (present in the CSV). The NYC estimate lies between the homicide estimates (1.05-1.10) and the Chicago shootings estimates (1.16-1.19).\n\nAfter the referee of heat-night-minimum (13 Nov 2026): the registered count is by calendar date, and 35% of New York shooting incidents occur between 00:00 and 05:59, before the maximum of the date they are counted on. The referee of heat-night-minimum raised this. With each shooting assigned to the day whose night it falls in (06:00 on date d to 05:59 on d+1), the registered model gives 1.135 (1.118 to 1.152) per 5 C against 1.146 (1.130 to 1.163) on calendar dates (7,547 days, 24,424 incidents). The registered condition, a lower limit above 1.00, is met either way, and the estimate stays inside the registered 1.05 to 1.20. The average slope therefore does not depend on the assignment. The hot end does: with the piecewise-linear basis of round 2 the ratio 33 against 27 C is 1.051 (0.988 to 1.118) on night-of counts against 1.102 (1.038 to 1.171) on calendar dates, and with the 4-df cubic spline of this claim it is 1.090 (1.041 to 1.141) against 1.122 (1.072 to 1.173). A quarter to a half of the log rise above 27 C on calendar dates therefore comes from the assignment of small-hours shootings to the hot date. Exploratory, run after the outcomes, and deciding nothing under rule 4 (analyses/critique/round5_night_of_check.py; data/derived/round5/heat_night/night_of_check.json).",
+ "registration_sha256": "b2a1bd8ecec550da1e1e07d368d2e5f1b7d108b07ce6f51ef658bbb197ebb762",
+ "decided_at": "2026-11-12T15:39:52-0500",
+ "stance": {
+  "value": 1.0,
+  "lo": 1.0,
+  "hi": 1.0,
+  "z": 18.48
+ },
+ "critique": {
+  "report": "critique/heat-night-minimum.md",
+  "answer": "accepted; verdict kept, night-of re-estimate added"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "NYC shooting incidents per day, Central Park TMAX lag 0, NB GLM with DOW, month, year, holiday, rain",
+    "estimate": 1.1462159704993367,
+    "lo": 1.1297421298925683,
+    "hi": 1.162930031787583,
+    "scale": "IRR per 5 C",
+    "null": 1,
+    "n": 7548
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 18.48
+   },
+   "decided_at": "2026-11-12T15:39:52-0500",
+   "prediction_scored": "partial: the IRR per 5 C (1.146, 1.130 to 1.163) lies in the registered 1.05-1.20 range, but the spline RR at the 84th percentile (1.42, 1.36 to 1.48) exceeds the registered 1.05-1.25, and the curve keeps rising to 35 C rather than peaking at the 85th-95th percentile."
+  }
+ ],
+ "revision": {
+  "reason": "Referee of heat-night-minimum: calendar-day counts include small-hours shootings that precede the day's maximum. Night-of re-estimate added to the notes; the registered condition is met either way.",
+  "critique": "critique/heat-night-minimum.md",
+  "revised_at": "2026-11-13T08:02:28-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

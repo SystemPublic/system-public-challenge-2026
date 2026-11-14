@@ -1,0 +1,68 @@
+{
+ "id": "stalled-421a-vesting-footings",
+ "kind": "confirmation",
+ "statement": "New-building jobs that began foundation work in the six months before the 421-a vesting deadline of 15 June 2022 failed to reach a certificate of occupancy within 36 months more often than jobs that began foundations in the same calendar window of 2017-2019, and more often than jobs that began them in the same window of 2023, because the program counted a project as commenced once its footings were poured.",
+ "graph_evidence": [
+  {
+   "concepts": [
+    "vacant lots",
+    "percent vacant land for 36 months or longer",
+    "vacant housing demolitions"
+   ],
+   "n_findings": null,
+   "n_studies": null,
+   "direction": "n/a",
+   "summary": "The System graph holds findings on vacant land and health or crime (Philadelphia and other cities; PMIDs 23814668, 26954939, 36716893) but no finding on construction finance, tax-incentive deadlines or stalled construction. Variable searches for 'construction', 'tax', 'incentive' and 'development' on 13 Nov 2026 returned only clinical and fiscal-health variables. The graph therefore supplies the consequence side (long-vacant land) but not the mechanism tested here.",
+   "pubmed_ids": [
+    "23814668",
+    "26954939",
+    "36716893"
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "NY Real Property Tax Law 421-a(16) (Affordable New York), definition of commencement date: excavation and construction of initial footings and foundations lawfully begun",
+   "doi": null,
+   "finding": "A project vested in the program once footings were poured on or before 15 June 2022; completion was due by 15 June 2026, extended to 15 June 2031 by the 2024 state budget for projects commenced 2016 to June 2022."
+  },
+  {
+   "citation": "The Real Deal, 20 Jan 2023, 'Expired 421a deadline jeopardizes 33k housing units' (REBNY member survey)",
+   "doi": null,
+   "finding": "About 33,000 units in 72 vested projects were at risk of missing the 2026 completion deadline; lenders wanted a 12-month buffer."
+  },
+  {
+   "citation": "Bisnow, May 2024, 'We're ready to go: stalled projects get new life with 421-a extension'",
+   "doi": null,
+   "finding": "Developers who vested but could not finance construction in time stalled and restarted after the 2031 extension."
+  },
+  {
+   "citation": "REBNY, 2022, new-building filings report",
+   "doi": null,
+   "finding": "689 NB filings in Q1 2022, the most since 2014."
+  },
+  {
+   "citation": "NYC DOB Stalled Sites Program (Local Law 2009); The Real Deal 2010 and 2014 reports",
+   "doi": null,
+   "finding": "After 2008 the city listed about 600 stalled sites and offered permit extensions; 364 restarted by May 2010. The program ended in 2013."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Share of jobs with no CO on the BBL within 1,096 days of the first initial foundation permit. Registrant's expectation: D1 = rate(15 Dec 2021-14 Jun 2022) - rate(same window 2017-2019 pooled) between +0.05 and +0.15; D2 = rate(2022 window) - rate(15 Dec 2022-14 Jun 2023) between +0.03 and +0.12.",
+  "support_if": "lower 95% bootstrap bound of D1 > 0.03 AND lower 95% bootstrap bound of D2 > 0",
+  "refute_if": "upper 95% bootstrap bound of D1 < 0.03 (no excess stalling in the rush cohort), OR upper 95% bound of D2 < 0 (the 2023 cohort, which could not vest, stalled more; that points to the 2022-2023 rise in interest rates and costs rather than footings-only vesting)"
+ },
+ "plan": "Script analyses/stalled/vesting_cohorts.py (committed with this registration), mode 'run'. Unit: NB job, legacy BIS (ipu4-2q9a FO INITIAL permits on NB jobs, cached data/big/construction/permits_nb_legacy.parquet) and DOB NOW (rbx6-tga4 work_type Foundation, Initial Permit, on New Building jobs in w9ak-ipjd). Start = first initial foundation permit. Outcome = no CO (bs8b-p36w NB rows or pkdm-hqz6) on the same BBL within 1,096 days. Windows 15 Dec (y-1) to 14 Jun y for y = 2017..2023; 2020 and 2021 are reported but not used (COVID). Bootstrap 2,000 draws, seed 20261113. Window sizes before the outcome was read: 2017 541, 2018 516, 2019 497 (controls 1,554, all legacy), 2022 807 (521 DOB NOW, 286 legacy), 2023 366. Power check (rule 8): with a stall rate near 0.4 the standard error of D1 is about 0.021 and of D2 about 0.031, so an effect of 0.10 gives z_null about 4.8 for D1 (D = 23) and 3.2 for D2 (D = 10); D1 discriminates for effects above about 0.06 and D2 for effects above about 0.06. A secondary, non-deciding comparison restricts all windows to legacy BIS jobs.",
+ "alternatives": [
+  "Interest-rate and cost shock of 2022-2023 affecting all jobs started in 2022 (D2 separates it partly; the 2023 cohort faces the same rates)",
+  "System change: 65% of the 2022 window is DOB NOW and all controls are legacy BIS; DOB NOW CO recording or BBL coding may differ (legacy-only secondary comparison)",
+  "Composition: the rush brought larger projects, which take longer than 36 months whether or not they stall",
+  "The 2024 extension to 2031 removed the pressure to finish by 2026, so slower completion need not mean a stall",
+  "CO recording lag in late 2026 for jobs near the 36-month horizon (affects the 2023 window most, biasing D2 down)"
+ ],
+ "prior": 0.45,
+ "registrant": "claude-opus (stalled-construction agent), 13 Nov 2026",
+ "registered_at": "2026-11-13T11:55:23-0500",
+ "sha256": "0ff6d1daae72533b4326615a6c4b725cd04e1dc2ef73c315fde3a3a2df7c1628"
+}

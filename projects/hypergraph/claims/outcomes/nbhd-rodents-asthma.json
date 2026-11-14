@@ -1,0 +1,180 @@
+{
+ "id": "nbhd-rodents-asthma",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "UHF42 (n=42): change in log asthma ED rate age 5-17 (2017) per SD of % homes with mice or rats in the building (NYCHVS 2017), adjusted for poverty % (2013-17) and renter housing problems % (2017); OLS, HC3",
+  "estimate": 0.467,
+  "lo": 0.063,
+  "hi": 0.872,
+  "scale": "log rate per SD",
+  "null": 0,
+  "n": 42
+ },
+ "graph_effect": {
+  "label": "Urban children with asthma, mouse-sensitised: odds of asthma-related health care use per tenfold bed mouse allergen (Torjusen et al. 2013, PMID 23067271; graph variable IET_Lwkf52)",
+  "estimate": 1.87,
+  "lo": 1.21,
+  "hi": 2.88,
+  "scale": "OR per tenfold allergen",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "p937-wjvj",
+   "name": "Rodent Inspection",
+   "url": "https://data.cityofnewyork.us/d/p937-wjvj",
+   "rows_updated_at": "2026-11-12T10:12:53Z",
+   "query": {
+    "$select": "zip_code, avg(latitude) as lat, avg(longitude) as lon, count(*) as n, sum(case(starts_with(result, 'Failed for Rat Activity'), 1, true, 0)) as rat",
+    "$where": "inspection_type = 'Initial' and inspection_date between '2022-01-01T00:00:00' and '2024-12-31T23:59:59' and latitude > 40 and longitude < -73",
+    "$group": "zip_code",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T15:42:40-0500",
+   "n_rows": 196
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "files": [
+    "indicators/data/48.json",
+    "indicators/data/2105.json",
+    "indicators/data/2379.json",
+    "indicators/data/2380.json",
+    "indicators/data/103.json",
+    "indicators/data/2399.json",
+    "indicators/data/107.json",
+    "geography/UHF42.geojson"
+   ]
+  },
+  {
+   "kind": "derived",
+   "file": "data/derived/neighbourhood/complaints311_tracts.csv",
+   "note": "311 erm2-nwe9 complaint_type 'Rodent' 2022-2024; see complaints311_sources.json"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Rodent' and created_date between '2022-01-01T00:00:00' and '2022-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:43:15-0500",
+   "n_rows": 24478,
+   "n_complaints": 40791,
+   "n_in_tracts": 40788
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Rodent' and created_date between '2023-01-01T00:00:00' and '2023-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:43:18-0500",
+   "n_rows": 24267,
+   "n_complaints": 41563,
+   "n_in_tracts": 41560
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude, longitude, count(*) as n",
+    "$where": "complaint_type = 'Rodent' and created_date between '2024-01-01T00:00:00' and '2024-12-31T23:59:59' and latitude is not null",
+    "$group": "latitude, longitude",
+    "$order": "latitude, longitude"
+   },
+   "fetched": "2026-11-12T15:43:21-0500",
+   "n_rows": 22160,
+   "n_complaints": 39475,
+   "n_in_tracts": 39473
+  },
+  {
+   "kind": "sysgraph",
+   "api_version": "v1.0",
+   "dataset_version": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "file": "data/derived/neighbourhood/graph_rodent.json"
+  }
+ ],
+ "prediction_scored": "partial. The direction and the unadjusted magnitude were right (Spearman rho 0.84; predicted 0.5-0.8). I expected adjustment to remove most of the association and leave an unsettled verdict. It did not: the coefficient fell by 31%, from 0.68 to 0.47 (95% CI 0.06 to 0.87), above the predicted 0.00-0.20, and the registered support condition holds.",
+ "settle": "The NYC estimate is ecological across 42 neighbourhoods, and the rodent measure is almost collinear with housing problems (rho 0.90) and strongly related to poverty (rho 0.70). It cannot show that rodent allergen causes the excess ED visits. What would settle the bridge: (1) household-level data in NYC linking measured mouse allergen or reported rodents to child asthma ED use, for example the NYC KIDS survey microdata or a cohort such as the Columbia Center for Children's Environmental Health; (2) the same neighbourhood model with race and ethnicity, smoking, PM2.5 and primary-care access added; (3) a within-neighbourhood test, such as change in asthma ED rates after integrated pest management in NYCHA developments.",
+ "research_needed": [
+  {
+   "question": "Does household rodent exposure explain part of the neighbourhood gradient in child asthma ED visits in NYC?",
+   "data": "NYC KIDS survey microdata (rodents in home, asthma attack), SPARCS ED visits by ZIP, NYCHVS 2021/2023 microdata",
+   "design": "multilevel model, household exposure nested in neighbourhood, adjusted for poverty, race, smoking",
+   "priority": "high"
+  },
+  {
+   "question": "Do the city's operational rodent measures (inspections, 311) measure household exposure at all?",
+   "data": "DOHMH Rodent Inspection p937-wjvj, 311 rodent complaints, NYCHVS rodents in building by sub-borough",
+   "design": "measurement-validity study against survey or allergen measurements; reporting propensity model",
+   "priority": "high"
+  },
+  {
+   "question": "Does rodent abatement (Rat Mitigation Zones, NYCHA pest management) change child asthma ED rates?",
+   "data": "RMZ boundaries and dates, SPARCS ED rates by ZIP and quarter",
+   "design": "difference-in-differences",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/neighbourhood/rodents_asthma.png"
+ ],
+ "notes": "Primary model per registration: n = 42 UHF neighbourhoods, 2017 data (latest year common to the NYCHVS rodent and housing measures and the SPARCS asthma ED rates on the EHDP portal). Adding the cockroach share left the rodent coefficient at 0.53; the adult ED outcome gave 0.41 (0.03 to 0.78). The CHS 2012 measure of adults reporting mice or rats inside gave 0.23 (-0.05 to 0.50). The city's operational rodent data behaved differently. The share of DOHMH initial inspections failed for rat activity, 2022-2024, was barely related to the survey measure (rho 0.19) and not to child asthma ED rates in 2023 (adjusted -0.08, -0.21 to 0.05). 311 rodent complaints per 1,000 residents correlated with the survey measure at rho 0.38 and with asthma at rho 0.34, but not after adjustment (0.06, -0.11 to 0.23). Inspections and complaints mostly record rats outdoors and around buildings; the research concerns indoor mouse allergen among sensitised children. The survey measure joins mice and rats. The bridge is therefore graph (household mouse allergen to asthma morbidity) plus city survey data (neighbourhood rodents to child asthma ED rates), and it does not pass through the city's operational rodent datasets. Rodent inspections were aggregated by ZIP code; each ZIP's mean inspection coordinate was assigned to a UHF42 polygon (UHF neighbourhoods are unions of ZIP codes). Alternatives not handled: race and ethnicity, smoking, outdoor air pollution, primary-care access.\n\nAfter critique round 1b: This result is fragile. The housing-problems control (EHDP measure 1248, fallback 86) itself includes rodents and cockroaches, which is why it correlates with the exposure at 0.90, so the adjusted coefficient is not rodents net of housing. Adding the non-Hispanic white share gives 0.35 (-0.09 to 0.78); dropping Sunset Park gives -0.06 to 0.90. A re-analysis needs a housing control without pests and adjustment for race and ethnicity. It should not support a bridge until then.",
+ "registration_sha256": "7e57999e5f83174070afcbefbef53ab051e737915fca1c8897d763d3dd28c33c",
+ "decided_at": "2026-11-12T15:45:27-0500",
+ "stance": {
+  "value": 0.812,
+  "lo": 0.151,
+  "hi": 0.971,
+  "z": 2.26
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "UHF42 (n=42): change in log asthma ED rate age 5-17 (2017) per SD of % homes with mice or rats in the building (NYCHVS 2017), adjusted for poverty % (2013-17) and renter housing problems % (2017); OLS, HC3",
+    "estimate": 0.467,
+    "lo": 0.063,
+    "hi": 0.872,
+    "scale": "log rate per SD",
+    "null": 0,
+    "n": 42
+   },
+   "stance": {
+    "value": 0.812,
+    "lo": 0.151,
+    "hi": 0.971,
+    "z": 2.26
+   },
+   "decided_at": "2026-11-12T15:45:27-0500",
+   "prediction_scored": "partial. The direction and the unadjusted magnitude were right (Spearman rho 0.84; predicted 0.5-0.8). I expected adjustment to remove most of the association and leave an unsettled verdict. It did not: the coefficient fell by 31%, from 0.68 to 0.47 (95% CI 0.06 to 0.87), above the predicted 0.00-0.20, and the registered support condition holds."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed as registered but flag as fragile; control contains the exposure.",
+  "critique": "critique/nbhd-rodents-asthma.md",
+  "revised_at": "2026-11-12T15:58:59-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

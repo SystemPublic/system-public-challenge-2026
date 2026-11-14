@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Graph Explorer</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="data/graph/index.js"></script>
+<style>
+  .ex-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 14px; align-items: start; }
+  @media (max-width: 860px) { .ex-layout { grid-template-columns: 1fr; } }
+  #graph { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; touch-action: none; }
+  #graph svg { display: block; width: 100%; }
+  #graph .edge-hit { stroke: transparent; cursor: pointer; }
+  #graph .node text { font-size: 11.5px; paint-order: stroke; stroke: var(--panel); stroke-width: 3px; stroke-linejoin: round; }
+  #graph .node circle { stroke: var(--panel); stroke-width: 1.5px; cursor: pointer; }
+  #graph .dim { opacity: 0.18; }
+  #side { max-height: 80vh; overflow-y: auto; }
+  .signbar { display: flex; height: 10px; border-radius: 3px; overflow: hidden; margin: 4px 0 2px; background: var(--grid); }
+  .signbar span { display: block; height: 100%; }
+  .finding { padding: 7px 0; border-top: 1px solid var(--grid); font-size: 13px; }
+  .finding:first-child { border-top: 0; }
+  .ramp { width: 120px; height: 10px; border-radius: 2px; display: inline-block; vertical-align: -1px; }
+</style>
+</head>
+<body>
+<header class="site">
+  <h1>System graph explorer</h1>
+  <p>The neighbourhood of one concept in the System Public Graph: the concepts it is linked to by published findings.</p>
+  <nav class="pages"><a href="hypergraph.html">Edges as objects</a><a href="heat_drugs.html">Heat and medicines</a><a href="index.html">Evidence dashboard</a><a href="evidence.html">Test cards and provenance</a><a href="explorer.html" aria-current="page">Graph explorer</a><a href="explore.html">Neighbourhood explorer</a><a href="levers.html">City levers</a><a href="simulate.html">Toll simulator</a></nav>
+  <div class="controls">
+    <label for="pick">Concept:</label> <select id="pick"></select>
+    <label for="topn">Edges shown:</label> <input id="topn" type="range" min="5" max="150" value="40" style="width:120px"> <span id="topn-val" class="small muted"></span>
+    <span class="seg" id="layout-switch">
+      <button data-layout="radial" aria-pressed="true">Radial</button>
+      <button data-layout="force" aria-pressed="false">Force</button>
+    </span>
+    <input id="find" type="search" placeholder="Find a concept" style="width:160px">
+    <button class="plain" id="theme">Light / dark</button>
+  </div>
+</header>
+<main>
+  <h2>Neighbourhood</h2>
+  <p class="how">The concept chosen above sits at the centre. Each other circle is a concept that published findings link to it. In the radial layout, concepts with more findings sit closer to the centre. The width of a line shows the number of findings behind the link. The graph's own totals do not say whether the findings point up or down, so the colour comes from a sample of individual findings for the links with the most findings: blue where most sampled findings are positive, vermillion where most are negative, and grey where they are mixed or null. A light dashed grey line is a link whose findings were not sampled, so its sign is unknown. Select a line or a circle to list the findings, with links to PubMed.</p>
+  <div class="legend" id="legend"></div>
+  <div class="ex-layout">
+    <div id="graph"></div>
+    <aside id="side" class="panel"><p class="muted small">Select a line or a circle.</p></aside>
+  </div>
+  <p class="small muted" id="note"></p>
+</main>
+<footer id="foot"></footer>
+<div class="tip" id="tip"></div>
+
+<script>
+(function () {
+"use strict";
+if (!window.d3) { document.body.insertAdjacentHTML("afterbegin", "<p class='banner'>The D3 library did not load from cdnjs.cloudflare.com. The page needs a network connection.</p>"); return; }
+const G = window.CONCORD_GRAPHS = window.CONCORD_GRAPHS || {};
+const index = (G.index && G.index.subgraphs) || [];
+const params = new URLSearchParams(location.search);
+const state = { slug: params.get("c") || (index.find(d => d.label === "air pollution") || index[0] || {}).file, topn: innerWidth < 600 ? 20 : 40, layout: "radial", sel: null, find: "" };
+let sim = null;
+
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function fmt(x) { if (x == null || isNaN(x)) return "–"; return d3.format("~g")(+(+x).toPrecision(3)).replace("-", "−"); }
+const slugOf = f => f.replace(/^.*\//, "").replace(/\.json$/, "");
+const tip = document.getElementById("tip");
+function showTip(ev, html) {
+  tip.innerHTML = html; tip.style.opacity = 1;
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = ev.clientX + 14, y = ev.clientY + 14;
+  if (x + w > innerWidth - 8) x = ev.clientX - w - 14;
+  if (y + h > innerHeight - 8) y = ev.clientY - h - 14;
+  tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
+}
+function hideTip() { tip.style.opacity = 0; }
+function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+
+// colour from the share of positive among signed sampled findings
+function edgeColour(e) {
+  const s = e.signs;
+  if (!s) return css("--c-unknown");
+  const signed = s.pos + s.neg;
+  if (!signed) return css("--muted");
+  const t = s.pos / signed;
+  return d3.interpolateRgbBasis([css("--c-neg"), css("--muted"), css("--c-pos")])(t);
+}
+
+function loadSlug(file, cb) {
+  const slug = slugOf(file);
+  if (G[slug]) return cb(G[slug]);
+  const s = document.createElement("script");
+  s.src = file.replace(/\.json$/, ".js");
+  s.onload = () => cb(G[slug]);
+  s.onerror = () => { document.getElementById("graph").innerHTML = `<p class="muted" style="padding:12px">Could not load ${esc(s.src)}. Run tools/build_site.py.</p>`; };
+  document.head.appendChild(s);
+}
+
+function legend() {
+  document.getElementById("legend").innerHTML =
+    `<span class="key"><span class="ramp" style="background:linear-gradient(90deg,${css("--c-neg")},${css("--muted")},${css("--c-pos")})"></span> sampled findings: all negative … mixed or null … all positive</span>` +
+    `<span class="key"><svg width="28" height="10"><line x1="0" y1="5" x2="28" y2="5" stroke="${css("--c-unknown")}" stroke-width="2" stroke-dasharray="4 3"/></svg> not sampled, sign unknown</span>` +
+    `<span class="key"><svg width="60" height="12"><line x1="0" y1="6" x2="22" y2="6" stroke="${css("--ink-2")}" stroke-width="1"/><line x1="30" y1="6" x2="60" y2="6" stroke="${css("--ink-2")}" stroke-width="7"/></svg> width: number of findings</span>`;
+}
+
+function draw(data) {
+  const host = document.getElementById("graph");
+  host.innerHTML = "";
+  if (sim) sim.stop();
+  if (!data) return;
+  const cid = data.concept.id;
+  const edges = data.edges.slice(0, state.topn);
+  const nb = new Map(data.nodes.map(n => [n.id, n]));
+  const other = e => e.source === cid ? e.target : e.source;
+  // merge both directions of the same pair into one drawn link
+  const pairs = new Map();
+  edges.forEach(e => {
+    const o = other(e);
+    if (!pairs.has(o)) pairs.set(o, { o, list: [], nf: 0, ns: 0 });
+    const p = pairs.get(o); p.list.push(e); p.nf += e.num_findings || 0; p.ns += e.num_studies || 0;
+  });
+  const P = [...pairs.values()].map(p => {
+    const signs = p.list.some(e => e.signs) ? p.list.reduce((a, e) => { if (e.signs) for (const k in e.signs) a[k] += e.signs[k]; return a; }, { pos: 0, neg: 0, null: 0, unknown: 0 }) : null;
+    return Object.assign(p, { signs, node: nb.get(p.o) });
+  });
+
+  const W = host.clientWidth || 700;
+  const H = Math.max(380, Math.min(720, Math.round(W * (W < 600 ? 1.1 : 0.72))));
+  const svg = d3.select(host).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("height", H)
+    .attr("role", "img").attr("aria-label", `Neighbourhood of ${data.concept.label}`);
+  svg.append("rect").attr("width", W).attr("height", H).attr("fill", "transparent")
+    .on("click", () => { state.sel = null; highlight(); document.getElementById("side").innerHTML = `<p class="muted small">Select a line or a circle.</p>`; });
+  const root = svg.append("g");
+  svg.call(d3.zoom().scaleExtent([0.4, 4]).on("zoom", ev => root.attr("transform", ev.transform)));
+
+  const maxF = d3.max(P, p => p.nf) || 1;
+  const wScale = d3.scaleSqrt().domain([1, maxF]).range([1, 9]).clamp(true);
+  const narrow = W < 600;
+  const cx = W / 2, cy = H / 2, R = Math.min(W, H) / 2 - (narrow ? 92 : 40);
+  const rScale = d3.scaleLog().domain([1, Math.max(2, maxF)]).range([R, R * 0.45]).clamp(true);
+
+  const center = { id: cid, label: data.concept.label, x: cx, y: cy, fx: cx, fy: cy, center: true };
+  const nodes = [center, ...P.map(p => ({ id: p.o, label: (p.node || {}).label || p.o, p }))];
+  // radial positions: sort by findings, spread around the circle
+  const ordered = nodes.slice(1).sort((a, b) => b.p.nf - a.p.nf);
+  // spread the concepts with most findings around the circle instead of side by side
+  const N = ordered.length;
+  let step = Math.max(1, Math.round(N * 0.382));
+  const gcd = (a, b) => b ? gcd(b, a % b) : a;
+  while (N > 1 && gcd(step, N) !== 1) step++;
+  ordered.forEach((n, i) => {
+    const a = (((i * step) % Math.max(1, N)) / Math.max(1, N)) * 2 * Math.PI - Math.PI / 2;
+    const r = rScale(Math.max(1, n.p.nf)) + (i % 2 ? 14 : 0) * (ordered.length > 24 ? 1 : 0);
+    n.rx = cx + r * Math.cos(a); n.ry = cy + r * Math.sin(a); n.angle = a;
+    n.x = n.rx; n.y = n.ry;
+  });
+  const links = P.map(p => ({ source: center, target: nodes.find(n => n.id === p.o), p }));
+
+  const gl = root.append("g");
+  const linkSel = gl.selectAll("g").data(links).join("g");
+  const vis = linkSel.append("line").attr("stroke", d => edgeColour(d.p)).attr("stroke-width", d => wScale(Math.max(1, d.p.nf)))
+    .attr("stroke-linecap", "round").attr("stroke-dasharray", d => d.p.signs ? null : "4 3");
+  const hit = linkSel.append("line").attr("class", "edge-hit").attr("stroke-width", d => Math.max(12, wScale(d.p.nf) + 8));
+  hit.on("mousemove", (ev, d) => showTip(ev, edgeTip(d.p, data))).on("mouseleave", hideTip)
+     .on("click", (ev, d) => { state.sel = d.p.o; hideTip(); side(data, d.p); highlight(); });
+
+  const gn = root.append("g");
+  const nodeSel = gn.selectAll("g").data(nodes).join("g").attr("class", "node");
+  nodeSel.append("circle").attr("r", d => d.center ? 9 : 3 + Math.min(6, Math.sqrt(d.p.nf)))
+    .attr("fill", d => d.center ? css("--ink") : css("--ink-2"));
+  nodeSel.append("text").text(d => narrow && !d.center && d.label.length > 13 ? d.label.slice(0, 12) + "…" : d.label).attr("font-weight", d => d.center ? 600 : 400)
+    .attr("font-size", d => d.center ? 13 : null);
+  nodeSel.filter(d => !d.center).on("click", (ev, d) => { state.sel = d.id; side(data, d.p); highlight(); })
+    .on("mousemove", (ev, d) => showTip(ev, edgeTip(d.p, data))).on("mouseleave", hideTip);
+
+  function place() {
+    linkSel.selectAll("line").attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+    nodeSel.attr("transform", d => `translate(${d.x},${d.y})`);
+    nodeSel.select("text").each(function (d) {
+      const t = d3.select(this);
+      if (d.center) { t.attr("x", 0).attr("y", -14).attr("text-anchor", "middle"); return; }
+      const a = Math.atan2(d.y - cy, d.x - cx);
+      const right = Math.cos(a) >= 0;
+      t.attr("x", right ? 8 : -8).attr("y", 4).attr("text-anchor", right ? "start" : "end");
+    });
+  }
+  function highlight() {
+    const f = state.find.toLowerCase();
+    nodeSel.classed("dim", d => !d.center && ((state.sel && d.id !== state.sel) || (f && !d.label.toLowerCase().includes(f))));
+    linkSel.classed("dim", d => (state.sel && d.p.o !== state.sel) || (f && !d.target.label.toLowerCase().includes(f)));
+  }
+  draw.highlight = highlight;
+
+  if (state.layout === "force") {
+    sim = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).distance(d => rScale(Math.max(1, d.p.nf))).strength(0.6))
+      .force("charge", d3.forceManyBody().strength(-90))
+      .force("collide", d3.forceCollide(14))
+      .force("x", d3.forceX(cx).strength(0.02)).force("y", d3.forceY(cy).strength(0.02))
+      .on("tick", place);
+    nodeSel.filter(d => !d.center).call(d3.drag()
+      .on("start", (ev, d) => { if (!ev.active) sim.alphaTarget(0.2).restart(); d.fx = d.x; d.fy = d.y; })
+      .on("drag", (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+      .on("end", (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
+  } else {
+    place();
+  }
+  highlight();
+
+  const pv = data.provenance || {};
+  const notes = [];
+  notes.push(`${data.edges.length} relationships in this file; the ${Math.min(state.topn, data.edges.length)} with the most findings are drawn${P.length < Math.min(state.topn, data.edges.length) ? `, merged into ${P.length} concept pairs where both directions exist` : ""}.`);
+  if (pv.relationships_read >= pv.relationships_cap) notes.push(`Only the first ${pv.relationships_cap} relationships returned by the API were read, so this neighbourhood is incomplete.`);
+  if (data.edges.length < 8) notes.push(`The graph holds only ${data.edges.length} relationship${data.edges.length === 1 ? "" : "s"} for this concept.`);
+  notes.push(`Signs were sampled for the ${pv.edges_sampled} relationships with the most findings. Rule: ${pv.sign_rule}. The sign follows the variables as each study named them, so a reversed variable ("lack of green space") reverses it.`);
+  document.getElementById("note").textContent = notes.join(" ");
+  document.getElementById("foot").innerHTML = `Source: ${esc(pv.api || "")}, ${esc(pv.dataset_version || "")}. Subgraph built ${esc(pv.built || "")} by <code>tools/neighborhood.py</code> from ${esc(pv.api_responses)} API responses, cached in <code>data/cache/sysgraph/</code>. About 20% of API associations may be mis-extracted (System documentation); read the abstract before relying on a finding.`;
+}
+
+function signBar(s) {
+  if (!s) return `<span class="muted small">Not sampled. The sign is unknown.</span>`;
+  const tot = s.pos + s.neg + s.null + s.unknown || 1;
+  const seg = (k, c) => s[k] ? `<span style="width:${100 * s[k] / tot}%;background:${c}" title="${k}: ${s[k]}"></span>` : "";
+  return `<div class="signbar">${seg("pos", css("--c-pos"))}${seg("null", css("--muted"))}${seg("unknown", css("--c-unknown"))}${seg("neg", css("--c-neg"))}</div>
+    <span class="small muted">${s.pos} positive · ${s.null} null · ${s.unknown} sign unknown · ${s.neg} negative (sampled)</span>`;
+}
+function edgeTip(p, data) {
+  return `<b>${esc(data.concept.label)} — ${esc((p.node || {}).label || p.o)}</b><br>${p.nf} findings, ${p.ns} studies` +
+    `<br>${p.signs ? `sampled: ${p.signs.pos} positive, ${p.signs.neg} negative, ${p.signs.null} null` : "not sampled"}`;
+}
+function side(data, p) {
+  const el = document.getElementById("side");
+  const name = (p.node || {}).label || p.o;
+  let h = `<h3 style="margin-top:0">${esc(data.concept.label)} — ${esc(name)}</h3>`;
+  if (p.node && p.node.description) h += `<p class="small muted" style="margin:0 0 6px">${esc(p.node.description)}${p.node.wikidata_id ? ` · <a href="https://www.wikidata.org/wiki/${esc(p.node.wikidata_id)}">${esc(p.node.wikidata_id)}</a>` : ""}</p>`;
+  p.list.forEach(e => {
+    const s = nameOf(data, e.source), t = nameOf(data, e.target);
+    h += `<dl class="kv small" style="margin:8px 0 4px"><dt>Relationship</dt><dd><span class="mono">${esc(e.id)}</span><br>${esc(s)} → ${esc(t)}</dd>
+      <dt>Findings</dt><dd>${esc(e.num_findings)} in ${esc(e.num_studies)} studies</dd>
+      <dt>Latest</dt><dd>${esc(e.last_published_date || "–")}</dd></dl>${signBar(e.signs)}`;
+    if (e.findings && e.findings.length) {
+      h += `<div style="margin-top:6px">` + e.findings.map(f => {
+        const ci = f.ci_lower != null && f.ci_upper != null ? ` (${fmt(f.ci_lower)} to ${fmt(f.ci_upper)})` : "";
+        const link = f.pubmed_id ? `<a href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(f.pubmed_id)}/">PMID ${esc(f.pubmed_id)}</a>`
+                   : f.doi ? `<a href="https://doi.org/${esc(f.doi)}">doi:${esc(f.doi)}</a>` : `<span class="muted">no PubMed id</span>`;
+        const col = f.sign === "pos" ? css("--c-pos") : f.sign === "neg" ? css("--c-neg") : css("--muted");
+        return `<div class="finding"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${col};margin-right:5px"></span>` +
+          `${esc(f.variable_1)} <span class="muted">and</span> ${esc(f.variable_2)}<br>` +
+          `<span class="mono">${esc(f.statistic_type || "?")} ${fmt(f.value)}${ci}${f.p_value != null ? `, p ${fmt(f.p_value)}` : ""}</span> · ${link}</div>`;
+      }).join("") + `</div>` + (e.n_sampled > e.findings.length ? `<p class="small muted">${e.findings.length} of ${e.n_sampled} sampled findings listed.</p>` : "");
+    }
+  });
+  el.innerHTML = h;
+}
+function nameOf(data, id) { const n = data.nodes.find(n => n.id === id); return n ? n.label : id; }
+
+function current(cb) { if (!state.slug) return; loadSlug(state.slug, cb); }
+function render() {
+  current(data => {
+    const n = data ? data.edges.length : 0;
+    const r = document.getElementById("topn");
+    r.max = Math.max(5, Math.min(150, n)); if (state.topn > r.max) state.topn = +r.max; r.value = state.topn;
+    document.getElementById("topn-val").textContent = `${Math.min(state.topn, n)} of ${n}`;
+    legend(); draw(data);
+    document.getElementById("side").innerHTML = `<p class="muted small">Select a line or a circle.</p>`;
+  });
+}
+
+const pick = document.getElementById("pick");
+pick.innerHTML = index.map(d => `<option value="${esc(d.file)}">${esc(d.label)} (${d.n_edges})</option>`).join("");
+if (!index.length) document.getElementById("graph").innerHTML = `<p class="muted" style="padding:12px">No subgraphs. Run tools/neighborhood.py --defaults, then tools/build_site.py.</p>`;
+pick.value = state.slug;
+pick.addEventListener("change", () => { state.slug = pick.value; state.sel = null; render(); });
+document.getElementById("topn").addEventListener("input", e => { state.topn = +e.target.value; render(); });
+document.querySelectorAll("#layout-switch button").forEach(b => b.addEventListener("click", () => {
+  state.layout = b.dataset.layout; d3.selectAll("#layout-switch button").attr("aria-pressed", function () { return this.dataset.layout === state.layout; }); render();
+}));
+document.getElementById("find").addEventListener("input", e => { state.find = e.target.value; if (draw.highlight) draw.highlight(); });
+document.getElementById("theme").addEventListener("click", () => {
+  const r = document.documentElement, dark = matchMedia("(prefers-color-scheme: dark)").matches;
+  const cur = r.dataset.theme || (dark ? "dark" : "light");
+  r.dataset.theme = cur === "dark" ? "light" : "dark";
+  try { localStorage.setItem("concord-theme", r.dataset.theme); } catch (e) {}
+  render();
+});
+try { const t = localStorage.getItem("concord-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(render, 150); });
+render();
+})();
+</script>
+</body>
+</html>

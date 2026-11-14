@@ -1,0 +1,78 @@
+"""Register further-datacentre-share-manhattan (run once, before any LL84 or UER values are read)."""
+from concord import claims
+
+LIST = [
+ ("60 Hudson Street (Western Union Building)", "2614608", "1001440040", "DCF Tours, Digital Realty 60 Hudson; baxtel.com/data-center/60-hudson-street"),
+ ("111 Eighth Avenue", "7536925", "1007390001", "datacenterdynamics.com NYC carrier hotel microcosm; datacenters.com 111 8th Ave"),
+ ("32 Sixth Avenue (32 Avenue of the Americas)", "6284230", "1001920001", "baxtel.com/data-center/32-avenue-of-the-americas"),
+ ("325 Hudson Street", "33987950 (2022: 3306897)", "1005970062", "datacenterfrontier.com H5 Data Centers 325 Hudson"),
+ ("375 Pearl Street", "33966445 and 14697585 (2022: 2688590)", "1001137501", "Sabey Intergate.Manhattan; scouting note; not independently sourced by this agent"),
+ ("85 Tenth Avenue", "3114292", "1006870029", "baxtel.com Lumen New York Gateway 2 (85 10th)"),
+ ("75 Broad Street", "2682108", "1000290070", "baxtel/web search: historic ITT building, Verizon colocation"),
+ ("33 Whitehall Street", "2591905 and 48547894", "1000100014", "web search: Cogent colocation"),
+ ("32 Old Slip", "6794379", "1000350001", "web search: Lumen"),
+ ("150 Varick Street", "4412459", "1005050001", "web search: Level 3"),
+]
+
+rec = {
+ "id": "further-datacentre-share-manhattan",
+ "kind": "conflict",
+ "statement": "In calendar year 2024, data-centre use is a smaller share of Manhattan's benchmarked electricity than the 4.4 percent that data centres were reported to use of total US electricity in 2023: the upper-bound share (whole-building grid electricity of a fixed list of carrier hotels and colocation buildings plus every building reporting data-centre floor area, over all Local Law 84 Manhattan grid electricity, and over Con Edison non-residential electricity in Manhattan ZIP codes) is below 4.4 percent.",
+ "edge": {"cause": "data centres", "effect": "share of a city district's electricity use"},
+ "graph_evidence": [
+  {"concepts": ["data centers", "electricity consumption"], "n_findings": None, "n_studies": None, "direction": "+",
+   "summary": "Live System Public Graph lookup pending: the API key is not on this machine. The registration rests on the literature items below.",
+   "pubmed_ids": []}
+ ],
+ "literature": [
+  {"citation": "Lawrence Berkeley National Laboratory for the US Department of Energy, 2024 United States Data Center Energy Usage Report (Shehabi et al.), December 2024; summary page dated 17 January 2025.",
+   "url": "https://energyanalysis.lbl.gov/news/berkeley-lab-report-evaluates-increase-electricity-demand-data-centers",
+   "report_url": "https://eta-publications.lbl.gov/publications/2024-lbnl-data-center-energy-usage-report",
+   "finding": "\"Data centers consumed about 4.4% of total U.S. electricity in 2023\"; 176 TWh in 2023, up from 58 TWh in 2014; 6.7 to 12 percent projected for 2028 (325 to 580 TWh). Verified at the LBNL page by this agent on 12 Nov 2026; the report PDF was not opened.",
+   "data_used": "Bottom-up model of server shipments, installed base and power draw; national scope",
+   "data_access": "partly_open"},
+  {"citation": "PolitiFact, Liz Krueger claim on data centres and household electricity, 7 May 2026 (rated Mostly False), as cited in the scouting note.",
+   "url": "https://www.politifact.com/factchecks/2026/may/07/liz-krueger/electricity-data-centers-new-york-households/",
+   "finding": "Krueger (5 March 2026): proposed New York data centres would need \"approximately double the energy usage of all households in the state combined\". Quoted from the scouting note; this agent did not open the page.",
+   "data_used": "Proposed projects, statewide; not Manhattan", "data_access": "unknown"},
+  {"citation": "New York Focus, Kinniburgh, 1 November 2024, as cited in the scouting note.",
+   "url": "unknown (title and URL not retrieved by this agent)",
+   "finding": "Wood Mackenzie finds data centres \"only expected to account for about a tenth of new power demand in the state\". Second-hand from the scouting note; not opened.",
+   "data_used": "Statewide demand forecast", "data_access": "unknown"},
+  {"citation": "Electric Power Research Institute analysis, 2024, as reported in web search summaries.",
+   "url": "unknown (not opened)",
+   "finding": "Data centres about 4 percent of US electricity in 2023. Second-hand; not opened.",
+   "data_used": "National estimate", "data_access": "unknown"},
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "The upper-bound share against the Local Law 84 denominator (D1) is 1.0 to 5.0 percent, central expectation 2.5 percent. The strict lower bound (reported IT-equipment energy only) is 0.05 to 1.0 percent of D1. The area share of reported data-centre floor area in total reported Manhattan floor area is below 0.5 percent. Against the Con Edison non-residential denominator (D2) the shares are larger than against D1 only if LL84 electricity exceeds UER non-residential electricity, which is not expected; expected D2 upper-bound share 1.5 to 6 percent.",
+  "support_if": "The CY2024 upper-bound share (U) is below 4.4 percent against D1 and also below 4.4 percent against D2, where U is the sum of whole-building grid electricity (kWh) over the fixed building list and the flagged buildings defined in the plan. 'Below' means the point estimate is below 4.4 percent; the 95 percent interval from the plan is reported but does not change the rule.",
+  "refute_if": "U is at or above 4.4 percent against both D1 and D2.",
+  "verdict_rule": "Per concord.claims.PRECEDENCE: support_if met -> confirmed; refute_if met -> contested; U below 4.4 percent against one denominator and at or above it against the other, or the registered test not run as planned (no_test), -> unsettled / no_test respectively. The verdict is decided at U only; lower-bound and area results do not decide it.",
+ },
+ "plan": (
+  "SCOPE AND YEAR. Manhattan (borough = MANHATTAN) rows of NYC Local Law 84 'Energy and Water Data Disclosure 2023 to Present' (Socrata 5zyy-y8am, data.cityofnewyork.us), report_year 2024 (calendar year 2024 by the dataset title; 2023 and 2022 are sensitivity years). UER denominator from the Utility Energy Registry monthly ZIP code file g2x3-izm4 (data.ny.gov; set concord.socrata.DOMAIN accordingly and record it), year 2024; if 2024 lacks twelve months for Con Edison in Manhattan ZIP codes, use 2023 for both numerator and denominators and say so. Coverage limits to state in the outcome: LL84 covers buildings above 25,000 or 50,000 sq ft (the two dataset descriptions differ), only large buildings; tenant-metered electricity may be absent from landlord-reported figures; UER is Con Edison deliveries by ZIP and privacy screens may blank cells.\n"
+  "BUILDING LIST (fixed here from public sources and addresses, not from electricity values). Identifiers were looked up before registration (address, property_id, BBL only): " + "; ".join(f"{n} [property_id {p}; BBL {b}; source: {s}]" for n, p, b, s in LIST) + ". Join key: nyc_borough_block_and_lot after stripping hyphens (formats vary between years), with property_id and address as cross-checks. Flagged set: every Manhattan property in report_year 2024 with data_center_gross_floor_area greater than 0 (text field; 'Not Available' and blanks are zero). A listed building with no 2024 row (60 Hudson Street has rows only for 2022 and 2023 in the identifier lookup) is taken from its latest earlier year and added to both the numerator and the D1 denominator, and reported as such.\n"
+  "MEASURES. Electricity = 'Electricity Use - Grid Purchase (kWh)' (electricity_use_grid_purchase_1), parsed from text; non-numeric and negative values are excluded and counted. Floor area = property_gfa_calculated (buildings and parking), falling back to property_gfa_self_reported. Denominator D1 = sum of grid electricity (kWh) over all Manhattan LL84 rows in the year (children and parents of campus properties are not de-duplicated; a sensitivity drops rows whose parent_property_id is not 'Not Applicable'). D2 = UER electricity 'Non-Residential Consumption (C+I)' (data_field 2_nat_consumption, MWh, Con Edison) summed over months and over Manhattan ZIP codes (zip_code beginning 100, 101 or 102); total consumption (3_nat_consumption) is the secondary denominator. Units MWh/MWH are both used.\n"
+  "ESTIMATES. U (upper bound, decides the verdict) = whole-building grid kWh of the listed and flagged buildings, over D1 and over D2 (kWh converted to MWh). L1 (strict lower bound) = sum of reported data_center_it_site_energy (kWh) over buildings reporting it, over D1 and D2. L2 = data-centre floor area / property GFA times building grid kWh (area-proportional; likely understates because data-centre intensity exceeds the building average), over D1 and D2. L3 = L1 times reported PUE where both are present. Area share = sum of data_center_gross_floor_area over total Manhattan reported floor area. Interval for each share: 2000 bootstrap resamples of the denominator buildings (listed and flagged buildings held fixed, so the numerator is a fixed set and the interval reflects the composition of the rest of Manhattan), 2.5th and 97.5th percentiles; the D2 interval is not computed because UER is a census of deliveries, and instead a range is given from using the monthly series with and without the privacy-blanked ZIP cells (cells counted by month).\n"
+  "SENSITIVITY CHECKS (pre-specified, reported, not decisive). (a) Year: 2023 and 2022. (b) Drop flagged buildings that are not on the fixed list from U (the list alone). (c) Drop rows with alert_data_center_issue_with, estimated_values_energy or estimated_data_flag set from D1 and U. (d) D1 with campus child rows removed. (e) Drop 60 Hudson Street, whose reporting is incomplete, from U. (f) Net electricity: grid purchase plus on-site generated used on site (electricity_use_grid_purchase_2) in place of grid purchase.\n"
+  "PLACEBOS. P1: the same area share, L1/L2 and the ratio of listed-set U to D1 computed for the Bronx (no carrier hotels are known there; expected near zero for the data-centre fields). P2: size-matched placebo set: 2000 random draws, from Manhattan LL84 buildings with largest_property_use_type 'Office' that are not listed or flagged, of ten buildings (ten listed buildings, or the number of listed buildings with a 2024 row) each within 25 percent of a listed building's floor area; the share of D1 they hold is the baseline for what ten large buildings hold with no data centre, and U is reported relative to that distribution (percentile of U among draws). P3: laboratory floor area (laboratory_gross_floor_area > 0) share of Manhattan reported floor area and electricity, using the same whole-building rule, as a use type of similar rarity; it tests whether the whole-building rule inflates the share of any rare use. Placebo results do not decide the verdict.\n"
+  "VERDICT. As in prediction.support_if and refute_if. Anything not named here (for example other buildings added to the list after viewing values) is exploratory and cannot decide the verdict."
+ ),
+ "alternatives": [
+  "Colocation floors are reported under Office or Other rather than Data Center, so the use-type route (L1, L2, area share) understates and the whole-building route (U) overstates; U is therefore the conservative bound for a 'below 4.4 percent' claim.",
+  "Landlords of carrier hotels may report only base-building electricity, because tenants (carriers, colocation operators) hold their own meters, so U understates true data-centre electricity in those buildings.",
+  "Buildings omitted from the list (small or unlisted colocation rooms inside financial and media offices, below the LL84 size threshold) are missing from every estimate.",
+  "Manhattan has little data-centre load because the land and power are expensive and large facilities sit in New Jersey, upstate and Queens; the national share of 4.4 percent is therefore not the relevant comparison, and a share below 4.4 percent is expected on location grounds alone.",
+  "The national denominator includes industry and transport-heavy regions, while the Manhattan denominator is dominated by offices and multifamily buildings, so the two shares are not like-for-like.",
+ ],
+ "prior": 0.7,
+ "registrant": "Claude (agent), for Jeff Vernon",
+ "data_seen_before": {
+  "this_agent": "Before registering this agent read: the scouting note; dataset metadata and column names for 5zyy-y8am, 7x5e-2fxh, usc3-8zwd, g2x3-izm4, tzb9-c2c6 (rowsUpdatedAt 2025-11-25 for 5zyy-y8am, 2026-10-03 for g2x3-izm4); the list of distinct UER data_field, display name, unit and data_stream values for Con Edison in ZIP codes beginning 100 (counts of rows only, no values); and an identifier-only query of 5zyy-y8am (report_year, property_id, property_name, address, BBL, BIN, borough) for the listed addresses. It saw no electricity, floor-area or data-centre values. It did not look at which buildings have data-centre floor area.",
+  "project": "data/cache/socrata held no earlier query of 5zyy-y8am, 7x5e-2fxh, usc3-8zwd, g2x3-izm4, tzb9-c2c6 or fvp3-gcb2 other than this agent's own identifier and metadata queries (two files for 5zyy-y8am, two for g2x3-izm4). No analysis, claim or doc in the repo other than the scouting note and the sibling registration further-zonej-demand-growth (NYISO zonal load) mentions these datasets or LL84. The project had seen PLUTO (64uk-42ks) for other claims, but not for this one.",
+  "general_knowledge": "The registrant knows from general knowledge that 60 Hudson Street and 111 Eighth Avenue are among the largest carrier hotels in the US, and has no prior values for their reported electricity."
+ },
+}
+print(claims.register(rec))

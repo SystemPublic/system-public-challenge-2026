@@ -1,0 +1,38 @@
+{
+ "id": "ems-taxi-2026-onset",
+ "kind": "confirmation",
+ "statement": "Week by week from July 2025 to September 2026, the change in Manhattan ambulance travel time against the same week a year earlier tracks the change in taxi pace, and the January 2026 step in ambulance travel time is no larger than taxi pace accounts for.",
+ "graph_evidence": [
+  {
+   "summary": "The graph holds no finding on the elasticity of emergency-vehicle travel time to general traffic speed. It holds a lights-and-sirens time saving of 3.02 min (Minneapolis, PMID 9795322) and survival odds ratios of 1.02 to 1.24 per minute of shorter response (docs/congestion_tradeoffs.md).",
+   "pubmed_ids": [
+    "9795322",
+    "20798090"
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "repro-mmr-cbd-speed outcome notes",
+   "finding": "Citywide fall in taxi speeds from January 2026, cause not found."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "b (EMS yoy on taxi-pace yoy) 0.3 to 1.0; c (the 2026 step net of taxi pace) near 0 if traffic explains the jump",
+  "support_if": "In lib.onset(yoy) over ISO weeks 2025-W27 to 2026-W39 with split 2026-W01 (HAC 4): the 95% lower bound of b is above 0.1 AND the 95% interval of c includes 0.",
+  "refute_if": "The 95% upper bound of b is below 0.1, OR the 95% lower bound of c is above 0 (ambulance travel stepped up in 2026 by more than taxi pace accounts for)."
+ },
+ "plan": "lib.weekly(range(2024, 2027)) then lib.onset at commit f44ab0b; all severities, all hours, Manhattan crz + north pooled; weeks 53 dropped. Discrimination (rule 8): 2018-vs-2017 calibration gives se(b) = 0.21 and se(c) = 0.018, so D for b at a predicted 0.7 against no effect is 11, and a 2026 residual step of 0.05 log would be 2.7 se from 0. Secondary: life-threatening only; the same model for 2024-W27 to 2025-W39 as a placebo year.",
+ "alternatives": [
+  "Fewer ambulance unit-hours (MMR: in-service hours per day 8,891 in FY22 to 8,109 in FY26), so the nearest free unit is farther away (a distance effect, not traffic)",
+  "Hospital closures and diversions lengthening repositioning (Mount Sinai Beth Israel closed 2025)",
+  "Call mix and geography (more calls in slow areas or hours)",
+  "Recording changes (share of incidents without a valid response time rose from 4.4% in 2023 to 9.5% in 2026)",
+  "A shared within-hour cause, such as rain or an event, that slows traffic and also raises demand in that hour"
+ ],
+ "prior": 0.25,
+ "registrant": "claude (ems_response thread)",
+ "registered_at": "2026-11-13T13:27:12-0500",
+ "sha256": "e9cd995a8a597b39aa3bd25d9f9a731985bd20cefd9f9665bc8e9b21a616756d"
+}

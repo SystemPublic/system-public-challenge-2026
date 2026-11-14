@@ -1,0 +1,93 @@
+"""Register bridge-crz-ems-travel. Run once, after `ems_bridge design`, before any EMS or fire
+record dated 2025 or later is fetched."""
+import json
+
+from concord import claims
+from analyses.congestion.common import DER
+
+d = json.loads((DER / "ems_design.json").read_text())
+c = d["composed"]
+pct = lambda x: round(100 * (x - 1), 2)
+lo, med, hi = c["ratio_lo_median_hi"]
+se = d["expected_endpoint_se"]
+
+rec = {
+    "id": "bridge-crz-ems-travel",
+    "kind": "bridge",
+    "statement": ("After the congestion toll began, the mean travel time of ambulances to incidents in the Congestion "
+                  "Relief Zone during peak toll hours changed, relative to the rest of the city, by the amount composed "
+                  "from the measured speed change (mob-crz-traffic) and the pre-toll elasticity of zone travel time to "
+                  f"zone taxi speed: about {pct(med)}% ({pct(lo)} to {pct(hi)}), and not in proportion to the speed change (-5.4%)."),
+    "edge": {"cause": "congestion toll (road speed)", "effect": "ambulance travel time"},
+    "chain": ["mob-crz-traffic", "link 2: pre-toll elasticity, estimated in this registration from data to December 2024"],
+    "graph_evidence": [{
+        "concepts": "congestion pricing, road pricing, traffic speed | ambulance travel or response time",
+        "n_findings": 0, "direction": "none",
+        "summary": ("docs/mobility.md: searches of the System Public Graph for congestion pricing, road pricing, congestion "
+                    "charging, cordon and toll found no relevant findings. The graph therefore supplies no link from a toll "
+                    "or from traffic speed to ambulance travel time. A variable-name search for ambulance response time and "
+                    "survival (analyses/congestion/graph_response_survival.py) was running when this was registered; it "
+                    "concerns the consequence of a change in response time, not this endpoint.")}],
+    "literature": [
+        {"citation": "MTA toll schedule, CBD charges phase 1 (mta.info/document/138931); Governor of New York press releases of 5 June 2024 and 14 November 2024.",
+         "doi": None, "finding": "Toll began 00:00 on 5 January 2025; peak 05:00-21:00 weekdays and 09:00-21:00 weekends at $9 for cars, $2.25 overnight. Qualifying emergency vehicles are exempt."}],
+    "prediction": {
+        "direction": "-",
+        "magnitude": (f"Composed log change {c['mean_log']:.4f} (sd {c['sd_log']:.4f}): {pct(med)}% ({pct(lo)} to {pct(hi)}). "
+                      f"Link 1: time per mile fell by the inverse of the speed ratio 1.0575 (1.0295 to 1.0862), CBD against Greater NYC, "
+                      f"January to August 2025 against 2023-24 (mob-crz-traffic). Link 2: exponent {d['exponent']['mean']:.3f} "
+                      f"(sd {d['exponent']['sd']:.3f}), the slope of the monthly log ratio of zone to outside EMS peak travel time on the "
+                      "log ratio of CBD to Greater NYC taxi speed, October 2019 to December 2024, with calendar-month terms; the sd is "
+                      "widened to the spread of five specifications (-0.14 to -0.49). Proportional alternative: -5.4% (log -0.0559)."),
+        "support_if": ("With e the primary estimate on the log scale and se its HAC standard error: z_chain = (e - composed mean) / "
+                       "sqrt(se^2 + composed sd^2) has |z_chain| < 1.96, AND D_prop = z_prop^2 - z_chain^2 >= 4 where z_prop = (e + 0.0559) / se. "
+                       "This says travel time moved by about a third of the speed change and not one for one."),
+        "refute_if": "|z_chain| >= 1.96: the estimate is incompatible with the composed chain, in either direction.",
+    },
+    "plan": (
+        "Data: EMS Incident Dispatch Data (76xm-jjuj), incidents with valid_incident_rspns_time_indc = 'Y', aggregated by date, "
+        "hour, area and severity group by analyses/congestion/ems_fetch.py. Outcome: incident_travel_tm_seconds_qy, mean per month. "
+        "Areas by ZIP (analyses/congestion/common.py): zone = Manhattan ZIPs south of 60th Street; comparison = all other city ZIPs "
+        "pooled. Peak hours: 05:00-20:59 weekdays, 09:00-20:59 weekends. Estimator (analyses/congestion/ems_lib.py, ems_bridge.py, "
+        "both written before registration): d_t = log mean travel time zone - log mean travel time comparison, by month; OLS of d_t on "
+        "post and calendar-month dummies, HAC 3 lags. Pre-period January 2023 to December 2024. Primary post-period 5 January to "
+        "31 August 2025, the months in which link 1 was measured (the MTA speed series 6p29-6xqn ends in August 2025). "
+        "Composition: kit.bridge.compose, 200,000 draws, seed 20261113. "
+        f"Can the test fail (rule 8)? Expected endpoint se {se:.4f} from the placebo of January-August 2024 against 2022-23. "
+        f"Against no effect the expected D is {d['discrimination_vs_no_effect']['D_expected']:.1f}, below 4: the test CANNOT tell the chain from no "
+        "effect, and a no-effect world would pass the chain band with probability "
+        f"{d['discrimination_vs_no_effect']['p_null_passes']:.2f}. It is therefore not registered as a test of whether travel time improved. "
+        f"Against the proportional alternative the expected D is {d['discrimination_vs_proportional']['D_expected']:.1f}: the test can tell "
+        "a one-third response from a one-for-one response, and that is the registered condition. The outcome reports z_null and says "
+        "whether the interval excludes zero, but a verdict of confirmed does not by itself establish an improvement. "
+        "Verdict by PRECEDENCE rules 1, 2 and 8: support_if met gives confirmed; refute_if met gives contested; otherwise unsettled "
+        "(this includes |z_chain| < 1.96 with D_prop < 4). "
+        "Secondary, reported and not deciding: the whole post-period to September 2026 (taxi speeds from trip records suggest the "
+        "speed gain shrank after mid-2025, so the chain's link 1 may not apply to it); overnight hours; the triple difference of "
+        "peak minus overnight; comparison areas Manhattan 60th-110th Street, downtown Brooklyn with Long Island City, and the rest "
+        "of the city; life-threatening (initial severity 1-3) and lower-priority incidents separately; total response time and "
+        "dispatch time; the same estimator on Fire Incident Dispatch Data (8m42-w767); the placebo with a false start in January 2024. "
+        "Known pre-trend: the 2024-against-2023 placebo is +1.6% (-0.8 to +4.0), so the zone's relative travel time was rising "
+        "before the toll, which biases the estimate against an improvement. Against Manhattan north the placebo is +5.4%, so that "
+        "comparison is not used for the verdict."),
+    "alternatives": [
+        "Mount Sinai Beth Israel hospital (First Avenue at 16th Street, inside the zone) closed in 2025; longer transports keep units busy and can lengthen travel to the next call in the zone, at all hours. The triple difference (peak minus overnight) removes what is common to both periods.",
+        "Changes in FDNY unit deployment, staffing or call volume that differ between the zone and the rest of the city.",
+        "Fewer people in the zone on Mondays and Fridays (retimed-ems-presence) changes the mix and location of calls.",
+        "The speed link is measured on taxis and for-hire vehicles in all hours; ambulances with lights and sirens depend less on general traffic speed, which the pre-toll elasticity is meant to capture.",
+        "Regression to the mean after the slow autumn of 2024."],
+    "data_seen_before_registration": [
+        "EMS 76xm-jjuj aggregates for 2019 to 2024 only (data/derived/congestion/ems_2019.csv to ems_2024.csv), used for the elasticity and the placebos in ems_design.json.",
+        "A one-week test query (1-7 June 2023) and a sample of two rows from 1 June 2023; disposition-code counts for 2023; the maximum incident_datetime (30 September 2026).",
+        "Cardiac-arrest (final_call_type ARREST) aggregates by disposition for 2019 to 2024 only; fire aggregates for 2019 onward were being fetched for years to 2024 only.",
+        "The outcome summary of retimed-ems-presence (another agent's claim), which used daily counts of EMS incidents by community district from October 2024 to September 2026. It reports counts by weekday, no travel or response time.",
+        "Taxi speeds: the MTA monthly series to August 2025 (mob-crz-traffic) and the yellow-taxi results of repro-mmr-cbd-speed to June 2026 (CBD against Manhattan north: +2.6% in January-June 2025, about zero afterwards; against the rest of the city +5.1% in 2025 and +2.9% in January-June 2026).",
+        "No EMS or fire travel time, response time or disposition dated 2025 or later has been queried or seen by the registrant. The registrant recalls no published figure for EMS travel time in the zone after the toll."],
+    "design_file": "data/derived/congestion/ems_design.json",
+    "scripts": ["analyses/congestion/common.py", "analyses/congestion/ems_fetch.py", "analyses/congestion/ems_lib.py",
+                "analyses/congestion/ems_bridge.py", "analyses/congestion/register_ems.py"],
+    "seed": 20261113, "draws": 200000,
+    "prior": 0.45,
+    "registrant": "Claude (agent, congestion tradeoffs task), 13 November 2026",
+}
+print(claims.register(rec))

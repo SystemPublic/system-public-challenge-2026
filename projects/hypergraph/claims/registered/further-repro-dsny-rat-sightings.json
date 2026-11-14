@@ -1,0 +1,75 @@
+{
+ "id": "further-repro-dsny-rat-sightings",
+ "kind": "reproduction",
+ "target": {
+  "report": "DSNY press release 25-042, New York's Strongest Delivered a Cleaner, More Sustainable City in 2025",
+  "agency": "NYC Department of Sanitation",
+  "date": "2025-12-16",
+  "url": "https://www.nyc.gov/site/dsny/news/25-042/new-york-s-strongest-delivered-cleaner-more-sustainable-city-2025",
+  "location": "section 'Empire Bins Are In, Rats Are Out'",
+  "number": {
+   "dec2023_nov2024": 25230,
+   "dec2024_nov2025": 20025,
+   "stated_decline": "more than 20 percent (20025/25230 = -20.6%)",
+   "monthly": "declined for 12 straight months against the same month one year earlier",
+   "secondary_other_source": "Mayor's Office 19 Aug 2025: 'down 16.4 percent citywide' year to date (window not stated; not verified at source here)",
+   "unit": "rat sightings reported to 311"
+  },
+  "definition": "'Rat sightings reported to 311', citywide. Dataset, complaint type and de-duplication are not stated.",
+  "data_used": "Assumed: 311 Service Requests erm2-nwe9, complaint_type 'Rodent'.",
+  "data_access": "open"
+ },
+ "statement": "The citywide counts 25,230 (Dec 2023-Nov 2024) and 20,025 (Dec 2024-Nov 2025) in DSNY release 25-042 can be recomputed from 311 open data, within 1 percent each, under the primary reading of the unstated definition.",
+ "graph_evidence": [
+  {
+   "concepts": [
+    "trash containerisation",
+    "rat sightings"
+   ],
+   "n_findings": null,
+   "n_studies": null,
+   "direction": "unknown",
+   "summary": "Live System graph lookup pending: the API key is not on this machine. No graph evidence was used in choosing the design.",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "NYC DSNY (16 Dec 2025). New York's Strongest Delivered a Cleaner, More Sustainable City in 2025. Release 25-042.",
+   "url": "https://www.nyc.gov/site/dsny/news/25-042/new-york-s-strongest-delivered-cleaner-more-sustainable-city-2025",
+   "finding": "\"Putting millions of pounds of trash in sealed containers has also sent rats fleeing.\" Also: 25,230 rat sightings reported to 311 from December 2023 to November 2024, and 20,025 for the same period one year later. In May 2025 DSNY installed 1,100 Empire Bins across Manhattan Community Board 9, 'the first neighborhood to have its trash fully containerized'. (Quotes checked at source on 12 Nov 2026.)",
+   "data_used": "311 service requests (stated as 'reported to 311'); dataset not named",
+   "data_access": "open"
+  },
+  {
+   "citation": "NYC Mayor's Office (2 Jun 2025). The Empire Bin Strikes Back. Next phase of Trash Revolution begins in West Harlem.",
+   "url": "https://www.nyc.gov/mayors-office/news/2025/06/the-empire-bin-strikes-back-against-rats-next-phase-trash-revolution-begins-west",
+   "finding": "Full service for over 29,000 households began 2 June 2025 (final containers installed 1 June). 'the number of rat sightings reported to 311 ... when compared to the same month 12 months prior ... has dropped.' The release gives no percentage and no district-level figure.",
+   "data_used": "311 (unnamed)",
+   "data_access": "open"
+  }
+ ],
+ "prediction": {
+  "direction": "0",
+  "magnitude": "Tolerance: each count within 1 percent of the stated count (252 and 200 sightings) and the percentage decline within 0.5 percentage points of 20.6. The open-data table is revised after the fact, so small differences are expected.",
+  "support_if": "Under primary reading R1 both counts are within 1 percent and the decline is within 0.5 points of 20.6 (verdict confirmed).",
+  "refute_if": "No registered reading R1-R4 gives both counts within 1 percent (verdict contested). If R1 fails but another reading R2-R4 reproduces both, or R1 reproduces one count only, the verdict is unsettled.",
+  "secondary": "Reported, not deciding: whether each of the 12 months Dec 2024-Nov 2025 is below its prior-year month under R1; the Mayor's Office '16.4 percent year to date' under R1 for January to July 2025 and January to August 2025 against the same months of 2024 (window unstated)."
+ },
+ "readings": {
+  "primary": "R1",
+  "R1": "complaint_type = 'Rodent' and descriptor = 'Rat Sighting'; created_date from 1 Dec to 30 Nov inclusive (local dates as stored); all rows, all boroughs including unspecified; no de-duplication; the table as of the fetch time.",
+  "R2": "R1 plus descriptor 'Signs of Rodents'.",
+  "R3": "All Rodent descriptors.",
+  "R4": "R1 restricted to the five named boroughs."
+ },
+ "plan": "Server-side count(*) grouped by month on erm2-nwe9 with the filters above, via concord/socrata.py; sum into the two Dec-Nov windows; compare with the stated numbers. The totals are for the whole city and are not used in the CD9 test beyond the registered monthly CD9 and comparison counts.",
+ "alternatives": [
+  "The city counts a different dataset or snapshot (e.g. a DSNY or 311 internal view)",
+  "Later reclassification or deletion of records changes counts"
+ ],
+ "prior": 0.5,
+ "registrant": "Claude (agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T20:24:12-0500",
+ "sha256": "4118fa13864020ab4ec3095df86d5d9bfd9d07a2384139dfcdb745ce7911f521"
+}

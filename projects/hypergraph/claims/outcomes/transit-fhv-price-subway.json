@@ -1,0 +1,362 @@
+{
+ "id": "transit-fhv-price-subway",
+ "verdict": "no_test",
+ "city_effect": {
+  "label": "Weekday subway entries south of 96th St vs outside, 8 weeks after 2 Feb 2019 vs 3 weeks before, less the same in 2018 (not decisive: the registered first-stage gate failed)",
+  "estimate": -0.707,
+  "lo": -2.02,
+  "hi": 0.624,
+  "scale": "percent change in entries",
+  "null": 0,
+  "n": 408
+ },
+ "graph_effect": {
+  "label": "No graph findings on ride-hail and transit. Literature: transit ridership +5% two years after Uber entry (Hall et al. 2018) against -1.3% a year for heavy rail (Graehler et al. 2019) and -8.9% (Diao et al. 2021)",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "percent change in transit ridership",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2018-01.parquet",
+   "last_modified": "Mon, 18 Jul 2022 19:25:15 GMT",
+   "etag": "\"6df3f5a1eb7d361383a5f3f31f11faa4-11\"",
+   "bytes": 180474969,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/fhv_tripdata_2018-01.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2018-02.parquet",
+   "last_modified": "Mon, 18 Jul 2022 19:25:15 GMT",
+   "etag": "\"6ee809dfaa2cb0ed561a33e308b68702-11\"",
+   "bytes": 174616810,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/fhv_tripdata_2018-02.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2018-03.parquet",
+   "last_modified": "Mon, 18 Jul 2022 19:25:15 GMT",
+   "etag": "\"bea8d475d9d76897c9aafa585f397246-12\"",
+   "bytes": 198108798,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/fhv_tripdata_2018-03.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-01.parquet",
+   "last_modified": "Mon, 18 Jul 2022 19:25:15 GMT",
+   "etag": "\"52c332d719fa1c9161b0db1e64c08d01-13\"",
+   "bytes": 210707424,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/fhv_tripdata_2019-01.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-02.parquet",
+   "last_modified": "Mon, 18 Jul 2022 19:25:14 GMT",
+   "etag": "\"f19c7c1ea83fb0d64910be0d424db109\"",
+   "bytes": 15282636,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/fhv_tripdata_2019-02.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-03.parquet",
+   "last_modified": "Mon, 18 Jul 2022 19:25:14 GMT",
+   "etag": "\"a4fa8643681be249e06aadd90f4bceca\"",
+   "bytes": 13576299,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/fhv_tripdata_2019-03.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2019-02.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:23 GMT",
+   "etag": "\"7fc499ad1836d696dc00cdb2529a22b0-31\"",
+   "bytes": 513054623,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/fhvhv_tripdata_2019-02.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2019-03.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:23 GMT",
+   "etag": "\"9d5232bb815de3116da3b9947c3aa74f-37\"",
+   "bytes": 610854382,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/fhvhv_tripdata_2019-03.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2018-01.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:19 GMT",
+   "etag": "\"f3cb3b205e134ad09e21bae8326f96bd\"",
+   "bytes": 12588773,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/green_tripdata_2018-01.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2018-02.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:19 GMT",
+   "etag": "\"bcfd48fadfeb0e046639adff00e79633\"",
+   "bytes": 12261328,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/green_tripdata_2018-02.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2018-03.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:19 GMT",
+   "etag": "\"6ab45198235ba77c5b99a2e68a030d7f\"",
+   "bytes": 13304186,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/green_tripdata_2018-03.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2019-01.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:19 GMT",
+   "etag": "\"122a877b04cb227d719ae37b80f382c9\"",
+   "bytes": 11071980,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/green_tripdata_2019-01.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2019-02.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:19 GMT",
+   "etag": "\"40126bdc8ad77c20cba2ba6c53727a78\"",
+   "bytes": 10316792,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/green_tripdata_2019-02.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2019-03.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:19 GMT",
+   "etag": "\"98354b728a68ee81dadf7985c955fc51\"",
+   "bytes": 10760872,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/green_tripdata_2019-03.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-01.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+   "etag": "\"794a84afe9b6dafe006f3c99ae30aeb8-8\"",
+   "bytes": 123668517,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/yellow_tripdata_2018-01.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-02.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+   "etag": "\"20bbd0711489f2a1bfed84ecfdc6dccd-8\"",
+   "bytes": 119455285,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/yellow_tripdata_2018-02.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2018-03.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+   "etag": "\"5535d826518a242c39fd511b256ede06-8\"",
+   "bytes": 133552006,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/yellow_tripdata_2018-03.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-01.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+   "etag": "\"564a9f76dd7c9554718f6ea0c2c372fe-7\"",
+   "bytes": 110439634,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/yellow_tripdata_2019-01.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-02.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+   "etag": "\"c65117f8ff7dddc8e4351274a6490480-7\"",
+   "bytes": 103356025,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/yellow_tripdata_2019-02.parquet"
+  },
+  {
+   "kind": "tlc-trip-record-file",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-03.parquet",
+   "last_modified": "Thu, 30 Jun 2022 03:16:20 GMT",
+   "etag": "\"b4714cd8186dff3157e3cb14f2ac578d-7\"",
+   "bytes": 116017372,
+   "data_access": "open",
+   "local_copy": "~/opt/nyc-concordance/tlc_2019/yellow_tripdata_2019-03.parquet"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ",
+   "data_access": "open",
+   "use": "snow-day rule (SNOW >= 76 mm)",
+   "n_queries": 1
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "39hk-dx4f",
+   "name": "MTA Subway Stations",
+   "url": "https://data.ny.gov/d/39hk-dx4f",
+   "rows_updated_at": "2026-11-12T19:02:22Z",
+   "query": {
+    "$select": "complex_id, cbd, daytime_routes, stop_name, borough, gtfs_latitude, gtfs_longitude",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T20:19:51-0500",
+   "n_rows": 496,
+   "data_access": "open",
+   "n_queries": 1
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "t69i-h2me",
+   "name": "MTA Subway Hourly Ridership: 2017-2019",
+   "url": "https://data.ny.gov/d/t69i-h2me",
+   "rows_updated_at": "2025-11-06T23:49:34Z",
+   "query": {
+    "note": "weekly queries of the same form over the registered windows; every query with its fetch time is in data/derived/transit/fhv_price_subway_results.json",
+    "example": {
+     "$select": "date_trunc_ymd(transit_timestamp) as d, station_complex_id, borough, transit_mode, case(date_extract_hh(transit_timestamp) >= 20 or date_extract_hh(transit_timestamp) < 4, 1, true, 0) as night, min(latitude) as lat, min(longitude) as lon, sum(ridership) as n",
+     "$where": "transit_timestamp >= '2017-01-16T00:00:00' and transit_timestamp < '2017-01-23T00:00:00'",
+     "$group": "d, station_complex_id, borough, transit_mode, night",
+     "$limit": 50000
+    }
+   },
+   "fetched": "2026-11-12T20:49:23-0500",
+   "n_rows": 5938,
+   "data_access": "open",
+   "domain": "data.ny.gov (concord.socrata.DOMAIN set to https://data.ny.gov)",
+   "n_queries": 61
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "8meu-9t5y",
+   "name": "NYC Taxi Zones",
+   "url": "https://data.cityofnewyork.us/d/8meu-9t5y",
+   "rows_updated_at": "2025-06-09T17:12:22Z",
+   "query": {
+    "$select": "locationid, zone, borough, the_geom",
+    "$limit": 500
+   },
+   "fetched": "2026-11-12T20:21:32-0500",
+   "n_rows": 263,
+   "data_access": "open",
+   "n_queries": 1
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "note": "weekly queries of the same form over the registered windows; every query with its fetch time is in data/derived/transit/fhv_price_subway_results.json",
+    "example": {
+     "$select": "date_trunc_ymd(transit_timestamp) as d, station_complex_id, borough, transit_mode, case(date_extract_hh(transit_timestamp) >= 20 or date_extract_hh(transit_timestamp) < 4, 1, true, 0) as night, min(latitude) as lat, min(longitude) as lon, sum(ridership) as n",
+     "$where": "transit_timestamp >= '2024-09-09T00:00:00' and transit_timestamp < '2024-09-16T00:00:00'",
+     "$group": "d, station_complex_id, borough, transit_mode, night",
+     "$limit": 50000
+    }
+   },
+   "fetched": "2026-11-12T21:06:47-0500",
+   "n_rows": 5974,
+   "data_access": "open",
+   "domain": "data.ny.gov (concord.socrata.DOMAIN set to https://data.ny.gov)",
+   "n_queries": 60
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "5wq4-mkjj",
+   "name": "MTA Subway Hourly Ridership: Beginning 2025",
+   "url": "https://data.ny.gov/d/5wq4-mkjj",
+   "rows_updated_at": "2026-11-12T20:17:52Z",
+   "query": {
+    "note": "weekly queries of the same form over the registered windows; every query with its fetch time is in data/derived/transit/fhv_price_subway_results.json",
+    "example": {
+     "$select": "date_trunc_ymd(transit_timestamp) as d, station_complex_id, borough, transit_mode, case(date_extract_hh(transit_timestamp) >= 20 or date_extract_hh(transit_timestamp) < 4, 1, true, 0) as night, min(latitude) as lat, min(longitude) as lon, sum(ridership) as n",
+     "$where": "transit_timestamp >= '2025-01-06T00:00:00' and transit_timestamp < '2025-01-13T00:00:00'",
+     "$group": "d, station_complex_id, borough, transit_mode, night",
+     "$limit": 50000
+    }
+   },
+   "fetched": "2026-11-12T21:07:43-0500",
+   "n_rows": 5975,
+   "data_access": "open",
+   "domain": "data.ny.gov (concord.socrata.DOMAIN set to https://data.ny.gov)",
+   "n_queries": 12
+  },
+  {
+   "kind": "sysgraph",
+   "note": "No live lookup: the API key is not on this machine. Cached evidence (data/derived/commuting/graph_evidence.json) has no concept for ride-hailing, taxis or the subway. Live lookup pending."
+  }
+ ],
+ "prediction_scored": "not scored. The registration made the test conditional on a first stage: FHV and taxi pickups inside the area had to fall relative to outside, with an interval excluding zero. More than 10% of FHV trips had no pickup zone in three of the four windows (19.3% and 18.3% in 2018, 10.9% in January 2019), so by the registered rule the gate used taxis alone, and taxi pickups changed by +1.82% (-0.85 to +4.57). The combined series gives -1.06% (-2.35 to +0.26) and FHV alone -1.86% (-3.39 to -0.31). The gate failed, so the verdict is no_test. The registered subway estimate is -0.71% (-2.02 to +0.62), with a placebo of -0.45% (-1.14 to +0.23); had the gate passed, the verdict would have been unsettled.",
+ "settle": "Two things. First, a first stage that measures the treatment: the surcharge applies to any trip that touches the area, so a trip from an airport to Midtown is charged although its pickup is outside. Trips touching the area need a comparison that is not charged, for example trips of similar length wholly outside it, from records with complete zones (the high-volume files from February 2019 are complete; the 2018 FHV files are not). Second, a subway measure that can see an effect of a few tenths of a percent: entries by hour and fare type at stations nearest the places where short for-hire trips fell most, or the MTA origin-destination estimates, which begin only in 2021 and so cover the 2025 toll but not the 2019 surcharge.",
+ "research_needed": [
+  {
+   "question": "How many of the trips priced off by the 2019 surcharge moved to the subway?",
+   "data": "A rider survey or panel of app users before and after February 2019; none is public. TLC trip records show the trips lost, not where the riders went.",
+   "design": "panel of riders, or a station-level design with exposure measured by lost short trips near each station",
+   "priority": "medium"
+  },
+  {
+   "question": "Is there a peer-reviewed estimate of the subway effect of the 2019 surcharge? The only study found is an undergraduate thesis (Dilworth 2023), which also finds no significant rise.",
+   "data": "MTA Subway Hourly Ridership 2017-2019 (t69i-h2me), TLC trip records",
+   "design": "synthetic control at station level with line-level service controls",
+   "priority": "low"
+  },
+  {
+   "question": "The System graph has no findings linking ride-hail prices or availability to transit ridership. Add Hall et al. 2018, Graehler et al. 2019, Diao et al. 2021, Erhardt et al. 2022 and Li and Vignon 2024.",
+   "data": "the transport literature",
+   "design": "graph curation",
+   "priority": "high"
+  },
+  {
+   "question": "Did subway entries rise with the 2025 zone toll once riders who board outside the zone are counted at their destination?",
+   "data": "MTA Subway Origin-Destination Ridership Estimates 2024 and 2025 (jsu2-fbtj, y2qv-fytt)",
+   "design": "difference in differences on trips ending in the zone",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/transit/fhv_price_subway.png"
+ ],
+ "notes": "Subway, 2019 (registered): 77 complexes inside and 331 outside, 156 grid cells; mean weekday entries in the 2019 pre window 2,478,997 inside and 2,652,729 outside. Sensitivities: control Manhattan north of 96th St -0.92% (-2.57 to +0.76); control Bronx, Brooklyn and Queens -0.67% (-2.15 to +0.83); unweighted +0.17% (-0.80 to +1.15); with the 96 St complexes -0.69% (-2.00 to +0.63); without L complexes -0.90% (-2.29 to +0.52); 16-week post window -0.99% (-2.40 to +0.43); nights 20:00-04:00 +2.17% (-0.42 to +4.83) with a night placebo of -1.11% (-3.40 to +1.23); weekends +1.07% (-16.90 to +22.92); 2019 alone -0.85% (-2.43 to +0.76). The standard error is 0.679 log points x 100, so the smallest effect the test could detect with 80% power is about 1.92%, above the +1.3% registered as the largest plausible effect. The registered composed range could not be computed as planned because the gate series did not fall. Exploratory, not registered: FHV and taxi trips touching the area were 590,902 a weekday before and 569,645 after, against 565,502 and 569,898 in the same weeks of 2018, a change of -4.34% with no comparison area (about 25,651 trips a weekday). With the registered constants this would add 0.174% to zone entries (range 0.026% to 0.776%), which the subway test cannot distinguish from zero. Li and Vignon (2024) report larger falls (11% ride-hail, 8% taxi). Secondary, 2025 zone toll (descriptive): entries at CBD complexes against all others, January-March 2025 against autumn 2024, less the same a year earlier, -1.23% (-2.75 to +0.33); placebo +1.44% (-0.24 to +3.16); against Manhattan north of 60th St -0.24% (-1.85 to +1.40); nights -0.60% (-2.97 to +1.82). Entries are counted where riders board, so a commuter who leaves a car at home adds an entry outside the zone in the morning and one inside in the evening. One week of 2019 ridership (13-19 May, used only by the 16-week sensitivity) timed out as a weekly query and was fetched day by day. Two-week queries cached before the chunk size was changed are not used.",
+ "exploratory": {
+  "label": "EXPLORATORY, not registered",
+  "touching_trips_change_vs_2018_pattern_pct": -4.34,
+  "trips_lost_per_weekday": 25651,
+  "p_lo": 0.026,
+  "p_c": 0.174,
+  "p_hi": 0.776,
+  "min_detectable_effect_pct": 1.92,
+  "se_pct": 0.679,
+  "se_needed_for_D4_at_p_c_pct": 0.087
+ },
+ "registration_sha256": "79b636c16f764a06c5582b66e9c873b9cbf72aa9c35ebb2479213c823050aac4",
+ "decided_at": "2026-11-12T21:10:23-0500",
+ "stance": {
+  "value": -0.481,
+  "lo": -0.905,
+  "hi": 0.432,
+  "z": -1.05
+ }
+}

@@ -1,0 +1,275 @@
+{
+ "id": "graph-confounders-commute-obesity",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Adult obesity per 10 points of walk-or-bike commute share, 42 UHF neighbourhoods, adjusted for the graph-derived set (poverty, high-school graduation, percent Black, Hispanic and Asian, walkability, perceived safety), OLS, HC3",
+  "estimate": -4.4,
+  "lo": -7.58,
+  "hi": -1.23,
+  "scale": "percentage points of obesity per 10 points of active commuting",
+  "null": 0,
+  "n": 42
+ },
+ "graph_effect": {
+  "label": "Size implied by individual-level research (Flint et al. 2014, about 1 kg/m2 lower BMI in active commuters): below 1 point per 10 points",
+  "estimate": null,
+  "lo": -1.0,
+  "hi": 0.0,
+  "scale": "percentage points of obesity per 10 points",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2415.json",
+   "indicator": 2415,
+   "measure": 1304,
+   "label": "Commuting by bicycle, % of workers (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2415.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2415.json",
+   "indicator": 2415,
+   "measure": 1307,
+   "label": "Commuting by walking, % of workers (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2415.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2063.json",
+   "indicator": 2063,
+   "measure": 506,
+   "label": "Adult obesity, % (CHS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2017",
+    "2018",
+    "2019"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2063.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/103.json",
+   "indicator": 103,
+   "measure": 221,
+   "label": "Poverty, % (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/103.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2334.json",
+   "indicator": 2334,
+   "measure": 1025,
+   "label": "Graduated high school, % (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2334.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2325.json",
+   "indicator": 2325,
+   "measure": 988,
+   "label": "Black alone, % (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2325.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2325.json",
+   "indicator": 2325,
+   "measure": 989,
+   "label": "Hispanic alone, % (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2325.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2325.json",
+   "indicator": 2325,
+   "measure": 987,
+   "label": "Asian alone, % (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2325.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2133.json",
+   "indicator": 2133,
+   "measure": 673,
+   "label": "Walkability index (Built Environment and Health Project)",
+   "geotype": "UHF42",
+   "periods": [
+    "2011"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2133.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2073.json",
+   "indicator": 2073,
+   "measure": 1058,
+   "label": "Perceive neighbourhood as safe, % (CHS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015",
+    "2016"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2073.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2388.json",
+   "indicator": 2388,
+   "measure": 1224,
+   "label": "Within walking distance of a park, %",
+   "geotype": "UHF42",
+   "periods": [
+    "2017"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2388.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2337.json",
+   "indicator": 2337,
+   "measure": 1032,
+   "label": "Unemployment, % (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2337.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2060.json",
+   "indicator": 2060,
+   "measure": 500,
+   "label": "Recent exercise, % (CHS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2017",
+    "2018",
+    "2019"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2060.json"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "v1.0",
+   "note": "shared neighbours and findings read through the API on 12 November 2026; responses cached in data/cache/sysgraph; the API carries no version identifier",
+   "files": [
+    "data/derived/graph/confounders/shared_active-travel__obesity.json",
+    "data/derived/graph/confounders/links_active-travel__obesity.json"
+   ]
+  }
+ ],
+ "prediction_scored": "miss. The registered range was -4.0 to -1.0. The primary estimate is -4.40 (-7.58 to -1.23), an attenuation of 26% from the poverty-adjusted -5.97, short of the one third required, and the interval's half-width is 3.18, above the 3.0 limit. Neither support_if nor refute_if is met.",
+ "settle": "Area data with 42 units cannot separate walking to work from walkability: the graph-derived covariates explain 80% of the variance of the exposure (variance inflation 5.1). Individual records with commute mode, weight, education, race and neighbourhood (Community Health Survey microdata), or a change design around new bike lanes or Citi Bike stations, would settle the size.",
+ "research_needed": [
+  {
+   "question": "How large is the association between active commuting and obesity among New York adults after individual education, race and ethnicity, age and neighbourhood walkability?",
+   "data": "NYC Community Health Survey microdata with commute mode (2010-2019 waves that asked it), linked to UHF walkability",
+   "design": "individual-level regression with neighbourhood random effects, mediator (leisure activity) left out",
+   "priority": "high"
+  },
+  {
+   "question": "Does the graph's list of shared neighbours, read for role, choose better adjustment sets than an analyst across many pairs?",
+   "data": "System Public Graph and any set of pairs with a known causal estimate",
+   "design": "compare attenuation toward the known estimate under graph-derived and analyst-chosen sets",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/graph/confounders_commute_obesity.png"
+ ],
+ "notes": "All 42 UHFs had every covariate. Secondary results, none deciding: with park access and unemployment added the slope is -3.25 (-5.63 to -0.87), inside the registered support range; without walkability it is -5.09 (-6.59 to -3.59); poverty with race and ethnicity alone gives -5.07 (-6.75 to -3.40); poverty with education alone -6.39 (-8.26 to -4.53); poverty with perceived safety -5.49 (-6.96 to -4.03). Race and ethnicity move the estimate most among the graph-named variables; education, which the graph ranks highest among them, moves it away from zero. Adding the graph's top-ranked shared concept, physical activity (recent exercise), which is a mediator, gives -2.61 (-4.69 to -0.54); an analyst who took the graph's ranked list without reading roles would have reported that figure. Every adjusted estimate remains several times the size individual studies imply. Age structure and sex, which the graph also names, were not available at UHF42 and were left out as registered.\n\nAfter the referee (13 Nov 2026): the stance is set to null. It was computed from the sign of the adjusted slope (+0.876), but the claim is about attenuation of that slope and its prediction was a miss, so the value presented a missed prediction as strong agreement. A paired bootstrap over neighbourhoods gives an attenuation of 28% with a 95% interval from -14% to +64%; 0.42 of resamples fall in the support range and 0.30 in the refutation range, so the data cannot tell an attenuation of one third from none. The registered thresholds were applied to a point estimate (rule 10 now asks that the interval be reported beside such a threshold). Leaving out UHF 305 puts the estimate in the support range and leaving out UHF 307 puts it in the refutation range. Without Manhattan the slope is -7.60 (-12.98 to -2.22); with borough terms it is -4.16 (-8.43 to +0.11), so the HC3 interval is likely too narrow for contiguous neighbourhoods. The random-covariate comparison that the registration named and did not run was run by the referee: six noise covariates give slopes from -6.59 to -5.36 and none of 2,000 draws reaches -4.40, so the attenuation is not what any eight covariates produce. Most of it rests on the 2011 walkability index, which has a correlation of 0.85 with the exposure. The graph_effect entry compares a prevalence slope across 42 areas with an individual-level BMI difference (Flint et al. 2014); the two differ in unit, outcome and scale and should not be read as a comparison of size.",
+ "registration_sha256": "60482012bb3dbee8c418ca0a05266238f5aa5f28db19695e68eb3271339456c6",
+ "decided_at": "2026-11-12T22:25:19-0500",
+ "stance": null,
+ "stance_note": "Null after the referee: the claim concerns the attenuation of the slope, and a stance computed from the sign of the adjusted slope showed a missed prediction as agreement.",
+ "critique": {
+  "report": "critique/graph-confounders-commute-obesity.md",
+  "answer": "accepted; verdict kept, stance null"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Adult obesity per 10 points of walk-or-bike commute share, 42 UHF neighbourhoods, adjusted for the graph-derived set (poverty, high-school graduation, percent Black, Hispanic and Asian, walkability, perceived safety), OLS, HC3",
+    "estimate": -4.4,
+    "lo": -7.58,
+    "hi": -1.23,
+    "scale": "percentage points of obesity per 10 points of active commuting",
+    "null": 0,
+    "n": 42
+   },
+   "stance": {
+    "value": 0.876,
+    "lo": 0.362,
+    "hi": 0.982,
+    "z": 2.72
+   },
+   "decided_at": "2026-11-12T22:25:19-0500",
+   "prediction_scored": "miss. The registered range was -4.0 to -1.0. The primary estimate is -4.40 (-7.58 to -1.23), an attenuation of 26% from the poverty-adjusted -5.97, short of the one third required, and the interval's half-width is 3.18, above the 3.0 limit. Neither support_if nor refute_if is met."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; stance set to null (it was the sign of the slope, not the registered attenuation); bootstrap interval of the attenuation added.",
+  "critique": "critique/graph-confounders-commute-obesity.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

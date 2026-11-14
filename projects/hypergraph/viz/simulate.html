@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toll schedule simulator</title>
+<link rel="stylesheet" href="style.css">
+<script src="data/simulate_params.js"></script>
+<script src="simulate_model.js"></script>
+<style>
+  main.sim { max-width: 1080px; margin: 0 auto; padding: 0 16px 48px; }
+  .grid2 { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 28px; align-items: start; }
+  @media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+  .slider-row { display: grid; grid-template-columns: 96px 1fr 62px; gap: 8px; align-items: center; margin: 6px 0; font-size: 14px; }
+  .slider-row output { font-variant-numeric: tabular-nums; text-align: right; }
+  input[type=range] { width: 100%; }
+  .presets button { margin: 0 6px 6px 0; }
+  table.out { border-collapse: collapse; width: 100%; font-size: 14px; }
+  table.out th, table.out td { border-bottom: 1px solid var(--rule); padding: 6px 8px; text-align: left; vertical-align: top; }
+  table.out td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .ivl { position: relative; height: 14px; min-width: 150px; background: var(--grid); border-radius: 2px; }
+  .ivl .zero { position: absolute; top: -2px; bottom: -2px; width: 1px; background: var(--muted); }
+  .ivl .bar { position: absolute; top: 4px; height: 6px; background: var(--c-confirmed); }
+  .ivl .dot { position: absolute; top: 2px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--ink); }
+  .note { border-left: 3px solid var(--c-contested); padding: 6px 12px; background: var(--panel); font-size: 14px; }
+  .tag { display: inline-block; min-width: 1.4em; text-align: center; border-radius: 3px; padding: 0 4px; color: #fff; font-size: 12px; }
+  .tag.a { background: var(--c-confirmed); } .tag.b { background: var(--c-bridged); } .tag.c { background: var(--c-unsettled-edge); }
+  h2 { margin-top: 28px; }
+  svg text { fill: var(--ink); font-size: 11px; }
+</style>
+</head>
+<body>
+<header class="site">
+  <h1>A toll schedule for the Manhattan congestion zone, simulated</h1>
+  <p>Set the weekday toll and read each outcome against the current schedule, with a 95% interval over the uncertainty in every parameter.</p>
+  <nav class="pages"><a href="hypergraph.html">Edges as objects</a><a href="heat_drugs.html">Heat and medicines</a><a href="index.html">Evidence dashboard</a><a href="evidence.html">Test cards and provenance</a><a href="explorer.html">Graph explorer</a><a href="explore.html">Neighbourhood explorer</a><a href="levers.html">City levers</a><a href="simulate.html" aria-current="page">Toll simulator</a></nav>
+</header>
+<main class="sim">
+<p class="note">This page composes associations, some measured in other cities and several assumed. It is not a causal model of New York.
+The link from vehicle entries to speed failed its held-out test, and day-to-day data do not fix its sign, so its range crosses zero.
+Speed, ambulance time and survivors can therefore move either way, and the last column gives the share of parameter draws in which each outcome improves.
+For those three outcomes that share is the probability that the link has the helpful sign, and it is the same for every schedule that lowers entries.
+A higher toll lowers entries in every draw by assumption, and a schedule scaled to hold revenue lowers entries by construction.
+Revenue is the only outcome on which schedules differ by more than their uncertainty.
+The count of survivors is an illustration of what the chain implies and is not a forecast. Baselines are 2025 means. The write-up is <code>docs/policy_simulation.md</code> in the repository.</p>
+
+<div class="grid2">
+<section>
+  <h2>Toll, passenger-car rate</h2>
+  <div id="sliders"></div>
+  <p class="small muted">The daytime toll applies from 05:00 to 21:00. The evening amount is added from 16:00 to 21:00. The current schedule is $9 by day and $2.25 overnight.</p>
+  <div class="presets" id="presets"></div>
+</section>
+<section>
+  <h2>Against the current schedule</h2>
+  <table class="out" id="out"><thead><tr><th>Outcome</th><th>Median (95% interval)</th><th>Interval</th><th>Share of draws improving</th></tr></thead><tbody></tbody></table>
+  <h2>By weekday</h2>
+  <svg id="days" viewBox="0 0 640 190" width="100%" role="img" aria-label="Change in entries and speed by weekday"></svg>
+  <p class="small muted" id="mc"></p>
+</section>
+</div>
+
+<h2>Parameters</h2>
+<p class="small">Each value is read from <code>data/derived/simulate/parameters.json</code>. Type a is estimated in this project, b is a finding in the System graph read against its abstract, c is an assumption with a wide range. Each central value is the median of its draws. The sign column says whether every estimate has the sign shown (measured), whether the range crosses zero because the evidence does not fix the sign (open), or whether the sign is assumed.</p>
+<table class="out" id="params"><thead><tr><th>Type</th><th>Link</th><th>Value (range)</th><th>Sign</th><th>Source</th></tr></thead><tbody></tbody></table>
+</main>
+<script>
+(function () {
+  const P = window.SIM_PARAMS, M = window.SimModel;
+  const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  const N = 3000, draws = M.draw(P, N, P.meta.seed);
+  const state = { peak: [9, 9, 9, 9, 9], evening: 0, night: 2.25 };
+  const sliders = document.getElementById("sliders");
+  const defs = DAYS.map((d, i) => ({ id: "d" + i, label: d, min: 0, max: 20, step: 0.5, get: () => state.peak[i], set: v => state.peak[i] = v }))
+    .concat([{ id: "ev", label: "Evening add", min: 0, max: 9, step: 0.5, get: () => state.evening, set: v => state.evening = v },
+             { id: "ni", label: "Overnight", min: 0, max: 9, step: 0.25, get: () => state.night, set: v => state.night = v }]);
+  defs.forEach(d => {
+    const row = document.createElement("div"); row.className = "slider-row";
+    row.innerHTML = `<label for="${d.id}">${d.label}</label><input type="range" id="${d.id}" min="${d.min}" max="${d.max}" step="${d.step}"><output id="${d.id}o"></output>`;
+    sliders.appendChild(row);
+    row.querySelector("input").addEventListener("input", e => { d.set(+e.target.value); render(); });
+  });
+  const presets = [
+    ["Current", { peak: [9, 9, 9, 9, 9], evening: 0, night: 2.25 }],
+    ["Tue-Thu $12, Mon and Fri $6", { peak: [6, 12, 12, 12, 6], evening: 0, night: 2.25 }],
+    ["Mon and Fri $12, Tue-Thu $6", { peak: [12, 6, 6, 6, 12], evening: 0, night: 2.25 }],
+    ["Evening $13.50", { peak: [9, 9, 9, 9, 9], evening: 4.5, night: 2.25 }],
+    ["$12 every weekday", { peak: [12, 12, 12, 12, 12], evening: 0, night: 2.25 }]];
+  presets.forEach(([name, s]) => {
+    const b = document.createElement("button"); b.className = "plain"; b.textContent = name;
+    b.addEventListener("click", () => { state.peak = s.peak.slice(); state.evening = s.evening; state.night = s.night; render(); });
+    document.getElementById("presets").appendChild(b);
+  });
+
+  const OUT = [["entries_pct", "Vehicle entries", "%", 2], ["speed_pct", "Speed in the zone, 05:00 to 21:00", "%", 2],
+    ["revenue_musd", "Weekday toll revenue", " $M a year", 1], ["ambulance_s", "Ambulance travel time, life-threatening calls", " s", 2],
+    ["arrest_survivors", "Cardiac-arrest survivors (illustration)", " a year", 2],
+    ["retail_pct", "Retail and restaurant activity", "%", 3], ["crashes_pct", "Injury crashes", "%", 2]];
+  const sgn = (x, nd) => (x >= 0 ? "+" : "−") + Math.abs(x).toFixed(nd);
+
+  function render() {
+    defs.forEach(d => { document.getElementById(d.id).value = d.get(); document.getElementById(d.id + "o").textContent = "$" + d.get().toFixed(2); });
+    const toll = state.peak.map(p => [state.night, p, p, p + state.evening]);
+    const r = M.compare(P, toll, draws);
+    const tb = document.querySelector("#out tbody"); tb.innerHTML = "";
+    OUT.forEach(([k, label, unit, nd]) => {
+      const q = r[k], m = Math.max(Math.abs(q.lo), Math.abs(q.hi), 1e-9) * 1.1, x = v => 50 + 50 * v / m;
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${label}</td><td class="num">${sgn(q.median, nd)} (${sgn(q.lo, nd)} to ${sgn(q.hi, nd)})${unit}</td>
+        <td><div class="ivl"><div class="zero" style="left:50%"></div><div class="bar" style="left:${x(q.lo)}%;width:${Math.max(x(q.hi) - x(q.lo), 0.5)}%"></div><div class="dot" style="left:${x(q.median)}%"></div></div></td>
+        <td class="num">${Math.max(Math.abs(q.lo), Math.abs(q.hi)) < 1e-9 ? "no change" : q.p_improve === null ? "by assumption" : q.p_improve.toFixed(2)}</td>`;
+      tb.appendChild(tr);
+    });
+    drawDays(r.byDay);
+    document.getElementById("mc").textContent = `${N} parameter draws, seed ${P.meta.seed}. Blue: vehicle entries. Orange: speed. Bars are medians and lines are 95% intervals. The Python command line (python -m sim) uses ${P.meta.draws} draws and a different generator, so intervals differ in the last digit.`;
+  }
+
+  function drawDays(byDay) {
+    const svg = document.getElementById("days"), W = 640, H = 190, L = 44, T = 12, B = 30, w = (W - L - 10) / 5;
+    let m = 0.5;
+    byDay.forEach(d => ["entries_pct", "speed_pct"].forEach(k => { m = Math.max(m, Math.abs(d[k].lo), Math.abs(d[k].hi)); }));
+    m *= 1.1;
+    const y = v => T + (H - T - B) * (m - v) / (2 * m);
+    let h = `<line x1="${L}" x2="${W - 10}" y1="${y(0)}" y2="${y(0)}" stroke="var(--muted)"/>`;
+    [-m / 1.1, 0, m / 1.1].forEach(v => { h += `<text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${sgn(v, 1)}%</text>`; });
+    byDay.forEach((d, i) => {
+      [["entries_pct", "var(--c-confirmed)", 0.2], ["speed_pct", "var(--c-contested)", 0.55]].forEach(([k, c, off]) => {
+        const x = L + i * w + off * w, q = d[k];
+        h += `<rect x="${x}" width="${w * 0.25}" y="${Math.min(y(q.median), y(0))}" height="${Math.abs(y(q.median) - y(0))}" fill="${c}" opacity="0.75"/>`;
+        h += `<line x1="${x + w * 0.125}" x2="${x + w * 0.125}" y1="${y(q.lo)}" y2="${y(q.hi)}" stroke="var(--ink)" stroke-width="1.5"/>`;
+      });
+      h += `<text x="${L + i * w + w / 2}" y="${H - 10}" text-anchor="middle">${DAYS[i]}</text>`;
+    });
+    svg.innerHTML = h;
+  }
+
+  const pt = document.querySelector("#params tbody");
+  Object.values(P.parameters).forEach(p => {
+    const tr = document.createElement("tr");
+    const td = (html, cls) => { const c = document.createElement("td"); if (cls) c.className = cls; c.innerHTML = html; tr.appendChild(c); return c; };
+    td(`<span class="tag ${p.type}">${p.type}</span>`);
+    td("").textContent = p.label;
+    td("", "num").textContent = `${p.value.toFixed(3)} (${p.lo.toFixed(3)} to ${p.hi.toFixed(3)})`;
+    td("", "small").textContent = p.sign;
+    td("", "small").textContent = p.source;
+    pt.appendChild(tr);
+  });
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+{
+ "id": "graph-confounders-trees-surftemp",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Change in the slope of surface temperature on z(log street trees per km2) when log population density, building footprint share and road share are added to poverty and percent Black; community districts; paired bootstrap interval; population density corrected for the four PUMAs that each cover two districts",
+  "estimate": -0.25,
+  "lo": -0.99,
+  "hi": 0.58,
+  "scale": "F per SD",
+  "null": 0,
+  "n": 55,
+  "as_registered_with_density_error": {
+   "estimate": -0.39992276625691137,
+   "lo": -1.1122412326485573,
+   "hi": 0.3365738351719278
+  }
+ },
+ "graph_effect": {
+  "label": "Change implied by the graph's population density and surface temperature correlation of 0.8, for a tree-density and population-density correlation of 0.3 to 0.6",
+  "estimate": -0.75,
+  "lo": -1.1,
+  "hi": -0.4,
+  "scale": "F per SD",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$select": "cd, sum(lotarea) as lot_ft2, count(*) as lots",
+    "$where": "lottype != '9' OR lottype IS NULL",
+    "$group": "cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:44:02-0500",
+   "n_rows": 72
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$select": "cd, sum(bldgarea/numfloors) as foot_ft2, sum(bldgarea) as floor_ft2",
+    "$where": "numfloors > 0 AND bldgarea > 0",
+    "$group": "cd",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:44:11-0500",
+   "n_rows": 71
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$select": "borocode, ct2010, sum(lotarea) as lot_ft2, count(*) as lots",
+    "$where": "lottype != '9' OR lottype IS NULL",
+    "$group": "borocode, ct2010",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:49:08-0500",
+   "n_rows": 2176
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "64uk-42ks",
+   "name": "Primary Land Use Tax Lot Output (PLUTO)",
+   "url": "https://data.cityofnewyork.us/d/64uk-42ks",
+   "rows_updated_at": "2026-08-24T20:48:51Z",
+   "query": {
+    "$select": "borocode, ct2010, sum(bldgarea/numfloors) as foot_ft2, sum(bldgarea) as floor_ft2",
+    "$where": "numfloors > 0 AND bldgarea > 0",
+    "$group": "borocode, ct2010",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:49:16-0500",
+   "n_rows": 2162
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "8ius-dhrr",
+   "name": "2010 Census Tract to Neighborhood Tabulation Area Equivalency table",
+   "url": "https://data.cityofnewyork.us/d/8ius-dhrr",
+   "rows_updated_at": "2015-02-17T16:34:59Z",
+   "query": {
+    "$select": "_2010_nyc_borough_code as b, _2010_census_tract as t, neighborhood_tabulation_area_nta_code as nta",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T23:49:18-0500",
+   "n_rows": 2168
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2325.json",
+   "indicator": 2325,
+   "measure": 992,
+   "label": "Total population (ACS)",
+   "geotype": "CD, NTA2010",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2325.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2146.json",
+   "indicator": 2146,
+   "measure": 693,
+   "label": "Older adults living alone (65+), percent (ACS)",
+   "geotype": "CD, NTA2010",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2146.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2112.json",
+   "indicator": 2112,
+   "measure": 643,
+   "label": "Traffic density, million vehicle miles per square mile",
+   "geotype": "CD",
+   "periods": [
+    "2019"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2112.json"
+  },
+  {
+   "kind": "derived",
+   "file": "data/derived/heat/bridge_cd.csv, bridge_nta.csv",
+   "note": "outcome, exposure and original covariates; sources listed in the outcomes of heat-trees-surftemp and heat-surftemp-ed"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "System Public Graph v1.0",
+   "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO (API only)",
+   "file": "data/derived/graph/confounders/links_green__temperature.json, links_temperature__heat-illness.json"
+  }
+ ],
+ "prediction_scored": "miss (rescored after the referee found an error in population density). With the density corrected the change is -0.25 (-0.99 to +0.58) F per SD, outside the predicted band of -0.3 to -1.2, and the slope under the graph set is +0.25 (-0.56 to +1.07), outside -0.7 to +0.2. Support condition (a) is not met, (b) is not met because the interval includes zero, and (c) is met. The refutation condition (a positive change) is not met. As first scored, with the density error, the change was -0.40 (-1.11 to +0.34) and condition (a) appeared met. Road share alone accounts for the fall (-0.73 (-1.38 to -0.26)).",
+ "settle": "The fall in the slope comes from road share, which also turns the exposure into trees per unit of street. A tree measure that does not scale with street area (canopy share from LiDAR or NAIP by district, or street trees per km of kerb) with the same covariates would separate removed confounding from a changed exposure. With vegetative cover as the exposure the graph set gives -1.64 (-2.42 to -0.86) F per SD.",
+ "research_needed": [
+  {
+   "question": "Does street-tree canopy lower district surface temperature when street area, building footprint and density are held fixed?",
+   "data": "NYC LiDAR land cover 2017, Landsat or ECOSTRESS scenes over several summers, PLUTO of the same year",
+   "design": "Tract-level regression with canopy share as the exposure and built form of the same year as covariates",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/round2/heat_confounders.png"
+ ],
+ "notes": "n = 55 districts. Original refitted on the same rows: +0.50 (-0.03 to +1.04). Graph set: +0.10 (-0.62 to +0.83). VIFs: ztree 2.21, POV_PCT 1.59, PCT_BLACK_POP 1.15, log_popdens 3.88, built_share 3.74, road_share 1.90. Coefficients in the graph-set model: log population density -1.09 F per log unit (SE 0.77), footprint share +0.020 F per point (SE 0.062), road share +0.136 F per point (SE 0.044). Secondary models, not deciding (slope, then change): population density alone +0.87 (+0.28 to +1.46), +0.36 (+0.02 to +0.86); footprint share alone +0.63 (-0.11 to +1.37), +0.12 (-0.31 to +0.53); road share alone -0.23 (-0.85 to +0.39), -0.73 (-1.38 to -0.26); floor area in place of footprint +0.10 (-0.62 to +0.83) with largest VIF 12.8; traffic density in place of road share +0.73 (+0.08 to +1.38). At NTA2010 (n = 194, 189 distinct NTAs; the five that span two districts appear twice, as in the original) the graph set moves the slope the other way: +0.44 (+0.15 to +0.73) to +0.75 (+0.35 to +1.15), change +0.31 (-0.05 to +0.54), largest VIF 3.45; road share alone changes it by -0.07 (-0.37 to +0.03). District 414 has a computed road share below zero (waterfront lots extend past the shoreline used for land area). PLUTO is version 26v2, eight years after the Landsat scene. Two lines of the script were changed after registration to drop lots with no district code and duplicate NTA rows; the models are as registered.\n\nAfter the referee (13 Nov 2026): population density was wrong for eight districts. EHDP reports population by PUMA, and four PUMAs each cover two districts (101 and 102, 104 and 105, 201 and 202, 203 and 206). Each of the eight districts was given the population of its pair over its own area, so its density was overstated by about a factor of two. With each pair's population divided by the pair's combined area the change in the slope is -0.25 (-0.99 to +0.58) and the slope under the graph set is +0.25 (-0.56 to +1.07) (referee; re-checked from cd.csv: -0.25, -1.01 to +0.61 with another seed). The city effect now carries the corrected change and keeps the registered figure beside it. The verdict is the same, because condition (b) fails either way, but the corrected change is outside the predicted band of -0.3 to -1.2, so condition (a) is not met either and the prediction is a miss. The fall in the slope is a change of the exposure's denominator and not removed confounding: street trees per km2 of land equal street trees per km2 of street times the road share, and with trees per km2 of street as the exposure and no graph covariates the slope is -0.82 F per SD (-1.51 to -0.13, n = 54); adding population density and footprint share to that model moves it by +0.07 (-0.24 to +0.38). That measure was chosen after the data and decides nothing. The waterfront-lot bias in road share does not drive the result (change -0.44 with the waterfront lot share added). The graph_effect entry is the registrant's derivation from a correlation of 0.82 in one municipality (Prizren); across New York's districts the correlation of population density with surface temperature is 0.00 after the correction. Against the centre of the predicted range z is about +1 and against no change about -1, so the test does not separate the prediction from no change. The two lines of the script changed after registration cannot be shown from git, because the script was first committed with the outcome.",
+ "registration_sha256": "e7c71bc91bc4eae44eab1e33c2fea2f1d1f198f2e8d38b485a74d021ea9a66b4",
+ "decided_at": "2026-11-12T23:57:40-0500",
+ "stance": {
+  "value": 0.302,
+  "lo": -0.619,
+  "hi": 0.844,
+  "z": 0.62
+ },
+ "critique": {
+  "report": "critique/graph-confounders-trees-surftemp.md",
+  "answer": "accepted; verdict kept, corrected change recorded, prediction rescored"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Change in the slope of surface temperature on z(log street trees per km2) when log population density, building footprint share and road share are added to poverty and percent Black; community districts; paired bootstrap interval",
+    "estimate": -0.39992276625691137,
+    "lo": -1.1122412326485573,
+    "hi": 0.3365738351719278,
+    "scale": "F per SD",
+    "null": 0,
+    "n": 55
+   },
+   "stance": {
+    "value": 0.494,
+    "lo": -0.426,
+    "hi": 0.906,
+    "z": 1.08
+   },
+   "decided_at": "2026-11-12T23:57:40-0500",
+   "prediction_scored": "partial: the change is -0.40 (-1.11 to +0.34) F per SD, inside the predicted band of -0.3 to -1.2, and the slope under the graph set is +0.10 (-0.62 to +0.83), inside -0.7 to +0.2. Support condition (a) is met and (c) is met (largest VIF 3.88); (b) is not, because the bootstrap interval of the change includes zero. The route was not the one derived from the graph: population density has a correlation of +0.04 with surface temperature across districts, not 0.8, and adding it alone moves the slope up by +0.36 (+0.02 to +0.86). Road share alone accounts for the fall (-0.73 (-1.38 to -0.26))."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; population density was overstated for eight paired-PUMA districts; corrected change -0.25 (-0.99 to +0.58) recorded and the prediction rescored as a miss.",
+  "critique": "critique/graph-confounders-trees-surftemp.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

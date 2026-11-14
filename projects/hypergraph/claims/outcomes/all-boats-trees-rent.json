@@ -1,0 +1,185 @@
+{
+ "id": "all-boats-trees-rent",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "2020 census tracts (n=2,048): change in log median gross rent, ACS 2008-12 to 2018-22, per 100 additional living street trees between the 2005 and 2015 censuses; OLS with baseline trees per km2, log rent, white share, log density and borough; SE clustered by NTA",
+  "estimate": 0.0127,
+  "lo": 0.0018,
+  "hi": 0.0235,
+  "scale": "log points per 100 trees",
+  "null": 0,
+  "n": 2048
+ },
+ "graph_effect": null,
+ "prediction_scored": "Predicted 0.044 (0.018 to 0.070) from the Portland study. Observed 0.0127 (0.0018 to 0.0235). support_if (interval wholly above 0.009) not met: lower bound 0.0018. refute_if (interval wholly below 0.018) not met: upper bound 0.0235. After the referee: on the registered model the estimate is 2.29 standard errors from zero, 5.67 below the central prediction and 0.96 below its lower end. Neither the exclusion of zero nor the ratio to the central prediction (29%) is robust to the form of the exposure or to the adjustments listed in the notes, so the prediction is scored as not decided in size or in sign. Standard error 0.0055 against 0.0049 computed before the data.",
+ "sensitivities": {
+  "rent_no_baseline_rent": {
+   "estimate": 0.0084,
+   "lo": -0.0027,
+   "hi": 0.0196,
+   "n": 2048
+  },
+  "rent_plus_poverty": {
+   "estimate": 0.0153,
+   "lo": 0.0044,
+   "hi": 0.0261,
+   "n": 2048
+  },
+  "rent_log_exposure": {
+   "estimate": 0.0383,
+   "lo": 0.0041,
+   "hi": 0.0725,
+   "n": 2048
+  },
+  "rent_min50_trees": {
+   "estimate": 0.0107,
+   "lo": 0.0005,
+   "hi": 0.0209,
+   "n": 1919
+  },
+  "crime_street_only": {
+   "estimate": 0.0909,
+   "lo": 0.0573,
+   "hi": 0.1245,
+   "n": 2048
+  },
+  "crime_log_exposure": {
+   "estimate": 0.116,
+   "lo": 0.04,
+   "hi": 0.1919,
+   "n": 2048
+  }
+ },
+ "exploratory": {
+  "violent_crime_poisson_slope_per_100_trees": {
+   "estimate": 0.0599,
+   "lo": 0.0317,
+   "hi": 0.0882,
+   "n": 2048,
+   "note": "Registered as unable to decide a verdict (D 2.3 before the data). The sign is opposite to the literature: tracts that gained trees had more violent crime in 2016-18 relative to 2006-08. Planting was directed to poorer tracts, and the realised standard error (0.0144) is twice the simulated one, so this is not an estimate of an effect of trees."
+  },
+  "by_third_of_2008_12_rent": {
+   "low": {
+    "rent_slope": 0.0034,
+    "rent_lo": -0.0249,
+    "rent_hi": 0.0317,
+    "crime_slope": 0.0833,
+    "mean_gain_hundreds": 0.553
+   },
+   "mid": {
+    "rent_slope": 0.0057,
+    "rent_lo": -0.0104,
+    "rent_hi": 0.0219,
+    "crime_slope": 0.067,
+    "mean_gain_hundreds": 0.302
+   },
+   "high": {
+    "rent_slope": 0.0102,
+    "rent_lo": -0.0016,
+    "rent_hi": 0.0221,
+    "crime_slope": 0.0217,
+    "mean_gain_hundreds": 0.096
+   }
+  }
+ },
+ "notes": "Without baseline rent as a covariate the slope is 0.0084 (-0.0027 to 0.0196), so the exclusion of zero depends on that covariate. Rival explanations are in the registration: planting directed to poorer tracts that gentrified for other reasons, and measurement differences between the two censuses.\n\nAfter the referee (13 Nov 2026): the verdict is kept. The referee rebuilt the tree counts from the downloaded points and the rents from the ACS summary files, matched the registrant's values in every tract, and refitted 0.0127 (0.0018 to 0.0235; standard error 0.0055; 2,048 tracts, 196 clusters). Neither registered condition is met and neither was missed narrowly (0.66 standard errors above the support threshold, 0.96 below the refutation threshold). The changes follow.\nThe exposure is only partly planting. The net change in living trees mixes new planting, loss of existing trees and differences between the two censuses. Across the sample tracts it correlates 0.31 with the count of trees of 3 inches or less in 2015, which must have been planted after 2005, and -0.35 with the 2005 count. The correlation with trees of 6 inches or less is 0.61 to 0.71 in Manhattan, the Bronx and Brooklyn, 0.29 in Queens and 0.10 on Staten Island, so in Queens and Staten Island (757 of 2,048 tracts, 37%) the exposure mostly measures losses or census differences. In the 2005 file 8,840 rows (1.5%) have a longitude of zero and fall in no tract, which is 12% of the counted citywide gain of 76,583 (re-checked); the 2005 counts are too low in unknown tracts and the gain is overstated there. The count of trees of 12 inches or more rose 48% in Manhattan, which planting cannot produce in ten years. In a model with both parts the slope is 0.0097 (-0.0032 to 0.0226) for the change in smaller trees and 0.0201 (0.0018 to 0.0385) for the change in trees of 12 inches or more, so the part that cannot be planting carries at least as much of the association as the part that can (referee).\nThe size is not stable. Over forms of the exposure and of the adjustment that can each be defended, the slope per 100 trees ranges from 0.0073 (-0.0044 to 0.0179; baseline rent corrected for sampling error at the mean error variance) to 0.0326 (0.0125 to 0.0527; tracts with a change under 200 trees), and the intervals reach 0.057 (0.0273, -0.0024 to 0.0570; net change instrumented by trees of 6 inches or less). Forty-seven tracts changed by 300 trees or more, twenty of them on Staten Island, with a median area of 0.74 square km against 0.18 for the sample; without them the slope is 0.0245 (0.0096 to 0.0395). Per square km the slope is 0.0818 (0.0445 to 0.1191) per thousand trees, which at the median tract area corresponds to 0.045 per 100 trees, the central Portland prediction. The statements that the estimate is 29% of the prediction and that its upper limit of 0.0235 is below 0.044 hold for the registered form only. These variants were chosen after the data and decide nothing under rule 4; three of them would meet the support condition and none meets the refutation condition.\nThe lower limit is not robust. The interval includes zero without baseline rent (0.0084, -0.0027 to 0.0196), with population change (0.0085, -0.0022 to 0.0193), with fixed effects for 60 districts (0.0095, -0.0005 to 0.0196) or for neighbourhoods (0.0098, -0.0008 to 0.0205), and with the correction for error in baseline rent at the mean error variance (0.0073, -0.0044 to 0.0179). With Conley standard errors to 10 km it is 0.0002 to 0.0251. No borough's interval excludes zero, and the Bronx, with the largest gain (40%), shows none (-0.0009, -0.0144 to 0.0125). The statement that the interval excludes zero is withdrawn from the prediction score.\nThe comparison with Portland is loose. The 300,000 dollar median price is an assumption; at 200,000 the prediction is 0.066 (0.026 to 0.105) and at 400,000 it is 0.033 (0.013 to 0.052), so the refutation threshold would lie between 0.013 and 0.026 and the observed upper limit of 0.0235 is inside that range. The Portland outcome is the sale price of single-family houses and the exposure is trees planted, at a lag of six years; the New York outcome is gross rent with much of the stock rent-stabilised, the exposure is a net change, and the baseline rent window (2008-12) lies inside the planting period (2005 to 2015). Each difference makes a smaller New York slope expected even if the Portland association carried over. The thresholds stay as registered.\nRivals not answered. New construction (street trees are required with new buildings, which carry higher rents) is not in the registration; the population-change adjustment addresses it in part. No pre-trend test was possible, because the files on disk hold no rent before 2008-12; whether trees went where rents were already rising is the main open rival for any positive reading. The sample drops 135 top-coded tracts, which selects on the outcome.\nBlindness. The rent change had been on disk since 12 November and had been used in an earlier claim. The registration says only its marginal distribution was read. The repository cannot show this.\nReading. These data cannot say whether street trees raised rents. A sentence saying that New York shows less rent effect than Portland predicts is not supported and has been removed from docs/all_boats.md.",
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "29bw-z7pj",
+   "name": "2005 Street Tree Census",
+   "url": "https://data.cityofnewyork.us/d/29bw-z7pj",
+   "rows_updated_at": "2017-10-10T20:48:10Z",
+   "query": {
+    "$select": "latitude,longitude,status,tree_dbh",
+    "$limit": 1000000
+   },
+   "fetched": "2026-11-13T07:44:08-0500"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "uvpi-gqnh",
+   "name": "2015 Street Tree Census - Tree Data",
+   "url": "https://data.cityofnewyork.us/d/uvpi-gqnh",
+   "rows_updated_at": "2017-10-04T13:41:26Z",
+   "query": {
+    "$select": "latitude,longitude,status,tree_dbh",
+    "$limit": 1000000
+   },
+   "fetched": "2026-11-13T07:44:08-0500"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qgea-i56i",
+   "name": "NYPD Complaint Data Historic",
+   "url": "https://data.cityofnewyork.us/d/qgea-i56i",
+   "rows_updated_at": "2026-04-28T16:10:09Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude,longitude,prem_typ_desc",
+    "$where": "ky_cd in (101,105,106) and cmplnt_fr_dt between '2006-01-01T00:00:00' and '2008-12-31T23:59:59' and latitude is not null",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T07:48:44-0500",
+   "n_rows": 118811
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qgea-i56i",
+   "name": "NYPD Complaint Data Historic",
+   "url": "https://data.cityofnewyork.us/d/qgea-i56i",
+   "rows_updated_at": "2026-04-28T16:10:09Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "latitude,longitude,prem_typ_desc",
+    "$where": "ky_cd in (101,105,106) and cmplnt_fr_dt between '2016-01-01T00:00:00' and '2018-12-31T23:59:59' and latitude is not null",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T07:52:56-0500",
+   "n_rows": 104859
+  },
+  {
+   "kind": "derived",
+   "file": "data/derived/neighbourhood/tracts_acs.csv",
+   "note": "ACS 2008-12 and 2018-22 median gross rent by 2020 tract, built by analyses/neighbourhood/base.py from Census Bureau summary files"
+  }
+ ],
+ "registration_sha256": "04c757287a2a6502078696eb6e4e13a790d502c3be954368f8f44ed6572f25b8",
+ "decided_at": "2026-11-13T07:53:23-0500",
+ "stance": null,
+ "verdict_note": "Unsettled: neither registered condition is met. The registered slope of 0.0127 (0.0018 to 0.0235) is not a stable description of size or sign: over other defensible forms the slope is 0.007 to 0.033 per 100 trees with intervals from below zero to 0.057, the exposure is only partly planting, and the lower limit includes zero under several adjustments. These data cannot say whether street trees raised rents, and they do not show that New York has less rent effect than the Portland study predicts.",
+ "settle": "A new registration with an exposure that measures planting (trees of 3 inches or less in the 2015 census, per square km) and a pre-trend test on 2000 census rent, which is not among the files on disk. The 2025 tree census, when published, would give a second period.",
+ "stance_note": "Null after the referee: the value 0.817 was the distance of the estimate from no effect (z = 2.29) and read on the strip as agreement with the prediction, while the registered model puts the estimate 5.67 standard errors below the predicted 0.044 and the verdict is unsettled. Under other defensible forms the estimate is compatible with zero and with the central prediction, so it favours neither.",
+ "critique": {
+  "report": "critique/all-boats-trees-rent.md",
+  "answer": "accepted; verdict kept, '29% of the prediction' and 'excludes zero' withdrawn, stance null"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "2020 census tracts (n=2,048): change in log median gross rent, ACS 2008-12 to 2018-22, per 100 additional living street trees between the 2005 and 2015 censuses; OLS with baseline trees per km2, log rent, white share, log density and borough; SE clustered by NTA",
+    "estimate": 0.0127,
+    "lo": 0.0018,
+    "hi": 0.0235,
+    "scale": "log points per 100 trees",
+    "null": 0,
+    "n": 2048
+   },
+   "stance": {
+    "value": 0.817,
+    "lo": 0.161,
+    "hi": 0.972,
+    "z": 2.29
+   },
+   "decided_at": "2026-11-13T07:53:23-0500",
+   "prediction_scored": "Predicted 0.044 (0.018 to 0.070) from the Portland study. Observed 0.0127 (0.0018 to 0.0235). support_if (interval wholly above 0.009) not met: lower bound 0.0018. refute_if (interval wholly below 0.018) not met: upper bound 0.0235. The estimate is positive and its interval excludes zero, and it is 29% of the central prediction. Standard error 0.0055 against 0.0049 computed before the data."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled. The exposure is only partly planting (in Queens and Staten Island it mostly measures losses or census differences; 8,840 trees of 2005 have longitude zero); the slope ranges from about 0.007 to 0.033 with intervals reaching 0.057 over defensible forms, so the comparison with the Portland prediction is not robust; the lower limit includes zero under several adjustments; stance set to null.",
+  "critique": "critique/all-boats-trees-rent.md",
+  "revised_at": "2026-11-13T09:07:30-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

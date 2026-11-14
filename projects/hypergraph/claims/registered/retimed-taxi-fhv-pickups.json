@@ -1,0 +1,39 @@
+{
+ "id": "retimed-taxi-fhv-pickups",
+ "kind": "confirmation",
+ "statement": "Between February-March 2019 and February-March 2026, daytime taxi and high-volume for-hire pickups on Mondays and Fridays fell relative to Tuesday-to-Thursday pickups in the taxi zones whose subway entries thinned most on Mondays and Fridays, in proportion to between 0.3 and 1.0 of the thinning of entries.",
+ "graph_evidence": [
+  {
+   "concepts": "taxi or ride-hail demand | commuting, working at home, weekday",
+   "n_findings": 0,
+   "direction": "none",
+   "summary": "System Public Graph, variable searches (data/derived/graph/retimed_week/gap_checks.json and data/derived/round2/retimed_consequences/graph_gap_check.json, graph_leads.json): no finding has this outcome with commuting, working at home, day of week or daytime population as the exposure. 82 variables match taxi, ride-hailing, ridesharing or uber. The nearest are rideshare trips per taxi zone-hour as an exposure for injury crashes (odds ratio 1.046, PMID 32253258) and an elasticity of 0.004 between ride-hailing use and transit ridership with no PubMed id. Neither is a finding on demand by day of week."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Barrero, Bloom and Davis 2023, The evolution of work from home, J Econ Perspectives",
+   "doi": "10.1257/jep.37.4.23",
+   "finding": "Days worked at home rose to about four times their 2019 share; no estimate for taxi demand."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Primary: the slope b of Y (pickups) on E (entries) across taxi zones is between 0.3 and 1.0. Secondary measure that must agree in sign: Y pooled over the third of zones with the most thinning (E <= -0.0639; pooled E = -0.109) minus Y pooled over the third with the least (E >= -0.0421; pooled E = -0.032) is between -0.02 and -0.08.",
+  "support_if": "The 95% interval of b lies above zero and the 95% interval of the top-third minus bottom-third contrast lies below zero.",
+  "refute_if": "The 95% interval of b lies below zero, or its upper bound is below 0.3 (any effect is smaller than registered)."
+ },
+ "plan": "Exposure comes from the dose map only (data/derived/transit/dose_map_long.csv, built from MTA hourly entries before any outcome was queried). For a group of station complexes, E = ln(MF/TWT in Nov 2025-Oct 2026) - ln(MF/TWT in 2019), where MF is mean Monday and Friday entries and TWT mean Tuesday-to-Thursday entries, for 06:00-19:59 unless the AM peak (06:00-09:59) is named. E is negative where Mondays and Fridays thinned. Files: data/derived/round2/retimed_consequences/exposure_taxi_zone.csv, exposure_community_district.csv, exposure_groups.json; code analyses/round2/retimed_consequences/exposure.py. Estimator (analyses/round2/retimed_consequences/lib.py, written before registration): for each unit and period, r = ln(mean Monday and Friday count / mean Tuesday-to-Thursday count) over retained weeks, and Y = r(recent) - r(baseline). Retained weeks have no federal holiday and no day from 24 December to 1 January, as in the dose map; the weeks of Monday 26 January and Monday 23 February 2026 are also dropped, because subway entries on those Mondays were 38% and 20% of the week's midweek level (docs/transit.md), which was known from entries before any outcome was seen. Intervals are the 2.5 and 97.5 percentiles of 2,000 bootstrap draws that resample weeks within each period and, for a slope across units, the units as well. Outcome: pickups with pickup hour 06 to 19 by pickup zone and date, yellow taxi plus high-volume for-hire (Uber, Lyft), from TLC trip records. This is a sample of months, not full years: February and March 2019 (7 retained weeks; high-volume for-hire records begin in February 2019; local parquet copies) against February and March 2026 (6 retained weeks; yellow from local parquet, high-volume for-hire by remote column scan of the TLC parquet files, which are not saved). Green taxis and other for-hire bases are left out. Units: the taxi zones that contain at least one reliable station complex (150) and have at least 200 pickups per weekday in the band in both periods. b is the unweighted OLS slope of Y on E. Sensitivity, reported and not deciding: slope weighted by 2019 pickups; yellow and for-hire separately; zones outside the CBD only; hours 06-09 against E for the AM peak. Placebo: yellow taxi February-March 2018 against 2019. Power, from data outside the test: random half-splits of the 10 retained weeks of January-March 2018 (yellow plus all for-hire, 147 zones) give a null standard deviation of 0.166 for b and 0.016 for the contrast; scaled to 7 and 6 weeks the expected standard errors are about 0.15 and 0.014 (design_taxi_placebo_2018.json). The smallest slope detectable with 80% power is about 0.41. At b = 0.5 the predicted contrast is -0.038, 2.7 standard errors from zero (D = 7.6, above the kit's threshold of 4). A true slope of zero would meet refute_if about half the time. The split-half error leaves out differences between zones that built up over seven years, so the real interval may be wider. Verdict by concord.claims.PRECEDENCE rules 1 to 4: support_if met gives confirmed, refute_if met gives contested, otherwise unsettled; no_test if the registered data cannot be read. Secondary and placebo results decide nothing.",
+ "already_seen": "The project holds TLC pickups by zone and day for January-March 2018 and 2019 (transit-fhv-price-subway, used for totals near subway complexes, not by weekday), June-October 2023 and June-September 2024 (transit-gtrain-substitution, G-train zones), and zone totals for commute-fhv-subway-distance. None was tabulated by weekday against midweek. For this registration I read yellow and for-hire pickups for January-March 2018 only, to estimate sampling error. I have not tabulated 2019 or 2026 pickups by weekday.",
+ "alternatives": [
+  "Yellow taxis lost share to for-hire vehicles unevenly across zones, and the two services have different weekday patterns (separate estimates by service address this).",
+  "Tourists and residents, who did not change their week, make most daytime trips in Manhattan, so pickups need not follow office attendance.",
+  "Weather differed between the sampled weeks of 2019 and 2026; a storm on a Monday or Friday moves the citywide ratio, though less the difference between zones.",
+  "The congestion charge from January 2025 lowered trips in the CBD on all weekdays; it biases the result only if its effect differs between Monday or Friday and midweek.",
+  "MTA service changes on Mondays and Fridays alter entries without altering presence, which would weaken the slope."
+ ],
+ "prior": 0.5,
+ "registrant": "Claude (round 2, re-timed consequences agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T23:48:46-0500",
+ "sha256": "a4208ae183234df3c7030abc703801785f69d18c46bc96534778383bc670e6b7"
+}

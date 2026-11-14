@@ -1,0 +1,133 @@
+{
+ "id": "mob-crz-traffic",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "CBD vs rest-of-city taxi/FHV speed, 2025 vs 2023-24 (DiD)",
+  "estimate": 5.75,
+  "lo": 2.95,
+  "hi": 8.62,
+  "scale": "percent change in speed",
+  "null": 0,
+  "n": 64
+ },
+ "graph_effect": {
+  "label": "No road-pricing findings in the System graph; literature: Stockholm and London traffic across the cordon -18% to -21%",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "percent change in traffic",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "6p29-6xqn",
+   "name": "MTA Central Business District Taxi and For-Hire Vehicle Speeds: Beginning October 2019",
+   "url": "https://data.ny.gov/d/6p29-6xqn",
+   "rows_updated_at": "2026-10-23T15:07:12Z",
+   "query": {
+    "$select": "month, zone, zonal_speed",
+    "$order": "month",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:17:57-0500",
+   "n_rows": 213
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "yfdc-w5jh",
+   "name": "MTA Central Business District Taxi Zones",
+   "url": "https://data.ny.gov/d/yfdc-w5jh",
+   "rows_updated_at": "2024-08-16T18:30:05Z",
+   "query": {
+    "$select": "taxi_zone",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:16:25-0500",
+   "n_rows": 38
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "c5iv-bn4s",
+   "name": "Pickups and Drop-offs by Taxi Zone and Industry",
+   "url": "https://data.cityofnewyork.us/d/c5iv-bn4s",
+   "rows_updated_at": "2026-10-27T13:39:51Z",
+   "query": {
+    "$select": "metric_month, industry, locationid, sum(trip_count) as n",
+    "$where": "metric_month >= '2023-01-01'",
+    "$group": "metric_month, industry, locationid",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:18:17-0500",
+   "n_rows": 34771
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "jbxx-kxff",
+   "name": "MTA Vehicle Miles Traveled in the Central Business District: Beginning 2024",
+   "url": "https://data.ny.gov/d/jbxx-kxff",
+   "rows_updated_at": "2026-10-23T15:20:22Z",
+   "query": {
+    "$select": "date, area, daily_vmt_agps, daily_vmt_cvd, indexed_average_vmt",
+    "$order": "date",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:18:21-0500",
+   "n_rows": 60
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "t6yz-b64h",
+   "name": "MTA Congestion Relief Zone Vehicle Entries: Beginning 2025",
+   "url": "https://data.ny.gov/d/t6yz-b64h",
+   "rows_updated_at": "2026-11-12T19:45:51Z",
+   "query": {
+    "$select": "date_trunc_ym(toll_date) as m, sum(crz_entries) as e, sum(excluded_roadway_entries) as x",
+    "$group": "m",
+    "$order": "m",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:18:36-0500",
+   "n_rows": 23
+  },
+  {
+   "kind": "sysgraph",
+   "file": "data/derived/mobility/graph_evidence.json",
+   "note": "road pricing searches, no findings"
+  }
+ ],
+ "prediction_scored": "hit: the registered range for speed was +5% to +15% and the estimate is +5.7% (+2.9 to +8.6); the registered range for trips was -3% to -12% and the estimate is -9.8% (-12.8 to -6.6). The trip result is weaker than it looks, because the 2024 placebo also shows a CBD decline (-4.5%, -6.3 to -2.7), so about half of it is a pre-existing trend.",
+ "settle": "The speed result is settled in direction. Its size needs a longer post-period (the MTA speed series ends in August 2025) and a comparison that is not affected by diverted traffic, for example speeds on comparable streets in other large US cities. Trip counts need a model with area-specific trends.",
+ "research_needed": [
+  {
+   "question": "Is there a peer-reviewed estimate of the NYC CBD traffic and speed effect with area-specific trends?",
+   "data": "TLC trip records (trip-level times), MTA CRZ entries, DOT traffic speeds",
+   "design": "synthetic control or DiD with trends",
+   "priority": "medium"
+  },
+  {
+   "question": "The System graph holds no road-pricing studies (Stockholm, London, Milan, Singapore, NYC). Add them.",
+   "data": "the transport-economics literature (e.g. Eliasson 2009; TfL monitoring reports; Simeonova et al. 2021)",
+   "design": "graph curation",
+   "priority": "high"
+  },
+  {
+   "question": "Did traffic divert to roads bordering the zone (FDR, West Side Highway, Bronx expressways)?",
+   "data": "MTA excluded-roadway entries (t6yz-b64h), DOT Traffic Speeds (i4gi-tjb9)",
+   "design": "corridor DiD",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/mobility/crz_traffic_before_after.png"
+ ],
+ "notes": "Speeds rose in the CBD relative to Greater NYC by the registered amount, and the 2024 placebo for speed is null (-0.8%). Against the CBD-adjacent area the effect is +4.2%. By industry, high-volume FHV trips in the CBD fell -14.3% relative to outside and yellow taxi trips -4.7%; green cabs, which rarely serve the CBD, show no change. The MTA CBD vehicle-miles series (jbxx-kxff) shows 2025 CRZ daily VMT -3.8% (AGPS measure) and -11.0% (connected-vehicle measure) against the same months of 2024, without a comparison area. TLC trips are exposure to the policy as well as a measure of traffic, because the per-trip CBD surcharge falls on them directly.",
+ "registration_sha256": "7e080860acc4dff2c0ecba9b77628be759c0f9681c9daa5a3e815eabdb578b26",
+ "decided_at": "2026-11-12T15:19:20-0500",
+ "stance": {
+  "value": 0.963,
+  "lo": 0.77,
+  "hi": 0.995,
+  "z": 3.98
+ }
+}

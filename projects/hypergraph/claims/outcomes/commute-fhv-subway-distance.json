@@ -1,0 +1,161 @@
+{
+ "id": "commute-fhv-subway-distance",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "elasticity of 2024 HVFHV pickups per resident with respect to distance to nearest station, adjusted for income and jobs",
+  "estimate": -0.295,
+  "lo": -0.378,
+  "hi": -0.213,
+  "scale": "log-log elasticity",
+  "null": 0,
+  "n": 174
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "tlc-taxi-zones",
+   "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zones.zip",
+   "note": "TLC taxi_zones shapefile"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "39hk-dx4f",
+   "name": "MTA Subway Stations",
+   "url": "https://data.ny.gov/d/39hk-dx4f",
+   "rows_updated_at": "2026-11-12T19:02:22Z",
+   "query": {
+    "$select": "gtfs_stop_id, complex_id, division, stop_name, borough, gtfs_latitude, gtfs_longitude",
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T16:28:37-0500",
+   "n_rows": 496
+  },
+  {
+   "kind": "census-2020-pl94171",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/New_York/ny2020.pl.zip",
+   "table": "P1_001N (P0010001), summary level 140"
+  },
+  {
+   "kind": "census-gazetteer",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_gaz_tracts_36.txt",
+   "vintage": "2020 tracts, internal points"
+  },
+  {
+   "kind": "census-acs-summary-file",
+   "vintage": "ACS 2019-2023 5-year (table-based)",
+   "table": "B19025",
+   "columns": [
+    "B19025_E001"
+   ],
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/5YRData/acsdt5y2023-b19025.dat"
+  },
+  {
+   "kind": "census-acs-summary-file",
+   "vintage": "ACS 2019-2023 5-year (table-based)",
+   "table": "B11001",
+   "columns": [
+    "B11001_E001"
+   ],
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/5YRData/acsdt5y2023-b11001.dat"
+  },
+  {
+   "kind": "census-acs-summary-file",
+   "vintage": "ACS 2019-2023 5-year (table-based)",
+   "table": "B08201",
+   "columns": [
+    "B08201_E001",
+    "B08201_E002"
+   ],
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/5YRData/acsdt5y2023-b08201.dat"
+  },
+  {
+   "kind": "lehd-lodes",
+   "url": "https://lehd.ces.census.gov/data/lodes/LODES8/ny/wac/ny_wac_S000_JT00_2021.csv.gz",
+   "vintage": "LODES8 WAC 2021, all jobs (C000), 2020 blocks"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "c5iv-bn4s",
+   "name": "Pickups and Drop-offs by Taxi Zone and Industry",
+   "url": "https://data.cityofnewyork.us/d/c5iv-bn4s",
+   "rows_updated_at": "2026-10-27T13:39:51Z",
+   "query": {
+    "$select": "industry, pickup_dropoff, locationid, sum(trip_count) as n",
+    "$where": "metric_month >= '2024-01-01' and metric_month < '2025-01-01'",
+    "$group": "industry, pickup_dropoff, locationid",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T16:29:25-0500",
+   "n_rows": 1557
+  }
+ ],
+ "prediction_scored": "miss: the elasticity is -0.30 (-0.38 to -0.21), negative with an interval that excludes 0, so the registered refute_if is met. The direction is the complement pattern of Barajas and Brown (2021).",
+ "settle": "The substitution hypothesis is about residents' trips, and zone pickups mix residents with visitors. Trip records linked to the rider's home (or a travel survey such as the NYC Citywide Mobility Survey with household car ownership and distance to the subway) would separate two explanations: that app trips are rarer far from the subway because households there own cars, or that they are rarer because app trips are mostly made in dense, mixed-use areas whatever the subway access. The no-vehicle sensitivity points to the first, but it was not the registered test.",
+ "research_needed": [
+  {
+   "question": "Among households without a car, do app trips rise with distance from the subway?",
+   "data": "NYC Citywide Mobility Survey (DOT) trip diaries with home location and vehicle ownership",
+   "design": "registered person-level count model of app trips on home-to-station distance, stratified by car ownership",
+   "priority": "high"
+  },
+  {
+   "question": "Does the positive elasticity after adjusting for no-vehicle share replicate out of sample?",
+   "data": "c5iv-bn4s for a year not used here (e.g. 2022), or HVFHV trip records with drop-off at home zones in the evening",
+   "design": "new registration with the no-vehicle model as primary; note that years are not independent samples of zones",
+   "priority": "medium"
+  },
+  {
+   "question": "Did congestion pricing change the origin-destination pattern of taxi trips that would cross the zone?",
+   "data": "TLC yellow and HVFHV trip records 2024 and 2025 (cbd_congestion_fee field from 2025)",
+   "design": "difference in trip distance for OD pairs whose straight line crosses the zone versus matched pairs that do not",
+   "priority": "medium"
+  },
+  {
+   "question": "The System graph holds no concepts for ride-hailing, taxis, subway or transit access",
+   "data": "System Public Graph",
+   "design": "add transport-geography literature",
+   "priority": "low"
+  }
+ ],
+ "figures": [
+  "figures/commuting/fhv_pickups_subway_distance.png"
+ ],
+ "notes": "Sample: 174 taxi zones in the Bronx, Brooklyn, Queens and Staten Island (175 met the population rule; Rikers Island dropped because it has no household income). In 2024 TLC recorded 239.5 million app pickups, 40.6 million yellow taxi pickups and 0.66 million green taxi pickups (c5iv-bn4s). The median zone outside Manhattan had 17.2 app pickups per resident and a population-weighted distance of 0.61 km to a station. Registered sensitivities: unadjusted -0.40 (-0.54 to -0.26); borough fixed effects -0.17 (-0.26 to -0.08); drop-offs -0.31 (-0.39 to -0.24); all boroughs -0.34 (-0.41 to -0.27); yellow and green taxis -0.65 (-0.88 to -0.42). Adding the share of households with no vehicle reverses the sign: +0.14 (+0.04 to +0.25), with each point of no-vehicle share adding 2.8% (log points x 100) to pickups per resident. Distance and no-vehicle share are correlated at -0.76 across zones, so this model rests on the zones where the two diverge. Within boroughs: Bronx -0.08 (-0.20 to +0.04), Brooklyn -0.16 (-0.40 to +0.09), Queens -0.19 (-0.32 to -0.06), Staten Island +0.18 (+0.00 to +0.35). A first run treated Census annotation codes (negative income values) as numbers; they are now set to missing, which changed the primary estimate from -0.29 to -0.30 and restored 11 zones.\n\nAfter the referee: 'contested' follows the registered rule, but it contradicts the registrant's prediction, not the published research. The one peer-reviewed source (Barajas and Brown 2021) also finds more ride-hail use near transit, and the city data agree with it. The stance is therefore drawn against the research direction. The reversal after adding car-free households is not decisive: car ownership is plausibly a mediator, the reversed estimate is +0.09 with an interval including zero when Staten Island is dropped, and it was registered as report-only.",
+ "registration_sha256": "f5c9850d08414a240736be26161839476b37c00b5839ed649dedca39db456172",
+ "decided_at": "2026-11-12T16:31:40-0500",
+ "stance": {
+  "value": 0.998,
+  "lo": 0.987,
+  "hi": 1.0,
+  "z": 7.01,
+  "note": "Sign taken against the research direction (Barajas and Brown 2021), not the registrant's prediction."
+ },
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "elasticity of 2024 HVFHV pickups per resident with respect to distance to nearest station, adjusted for income and jobs",
+    "estimate": -0.295,
+    "lo": -0.378,
+    "hi": -0.213,
+    "scale": "log-log elasticity",
+    "null": 0,
+    "n": 174
+   },
+   "stance": {
+    "value": -0.998,
+    "lo": -1.0,
+    "hi": -0.987,
+    "z": -7.01
+   },
+   "decided_at": "2026-11-12T16:31:40-0500",
+   "prediction_scored": "miss: the elasticity is -0.30 (-0.38 to -0.21), negative with an interval that excludes 0, so the registered refute_if is met. The direction is the complement pattern of Barajas and Brown (2021)."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep contested under the rule; stance shown against the research direction, which the city data agree with.",
+  "critique": "critique/commute-fhv-subway-distance.md",
+  "revised_at": "2026-11-12T16:37:37-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,288 @@
+{
+ "id": "transit-gtrain-substitution",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "change in daily Uber and Lyft pickups in seven taxi zones on days when their G-only station had no service, against 32 nearby zones (zone and date fixed effects)",
+  "estimate": 0.0429,
+  "lo": 0.0013,
+  "hi": 0.0844,
+  "scale": "log points (0.043 is about 4.4%)",
+  "null": 0,
+  "n": 4680,
+  "interval": "zone-clustered 95%, as registered; with seven treated zones it is too narrow",
+  "permutation_p": 0.189,
+  "permutation_sd": 0.0324
+ },
+ "graph_effect": null,
+ "conditions": {
+  "support_if": {
+   "a_first_stage": true,
+   "b_clustered_interval_excludes_0": true,
+   "c_permutation_p_below_0.05": false,
+   "d_placebo_2023": true
+  },
+  "refute_if": false
+ },
+ "sources": [
+  {
+   "kind": "tlc-trip-records",
+   "name": "High Volume FHV trip records 2023-06",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2023-06.parquet",
+   "etag": "\"3498062a3ca5da5ef393c5af05027bb4-30\"",
+   "last_modified": "Tue, 22 Aug 2023 13:23:37 GMT",
+   "bytes": 498799838,
+   "query": "select cast(pickup_datetime as date) as d, PULocationID as zone, hvfhs_license_num as lic, count(*) as n from parquet_scan('<url>') group by 1, 2, 3 order by 1, 2, 3",
+   "n_trips": 19366619,
+   "fetched": "2026-11-12T20:28:00-0500",
+   "data_access": "open",
+   "note": "Same records as NYC Open Data bqxa-629f (2024) and u253-aew4 (2023)."
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "High Volume FHV trip records 2023-07",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2023-07.parquet",
+   "etag": "\"afa949a215c8c7a126dda60e8cedcbb8-29\"",
+   "last_modified": "Thu, 21 Sep 2023 22:40:27 GMT",
+   "bytes": 492310857,
+   "query": "select cast(pickup_datetime as date) as d, PULocationID as zone, hvfhs_license_num as lic, count(*) as n from parquet_scan('<url>') group by 1, 2, 3 order by 1, 2, 3",
+   "n_trips": 19132131,
+   "fetched": "2026-11-12T20:28:03-0500",
+   "data_access": "open",
+   "note": "Same records as NYC Open Data bqxa-629f (2024) and u253-aew4 (2023)."
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "High Volume FHV trip records 2023-08",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2023-08.parquet",
+   "etag": "\"383f11bb5a4e82731e21fadde9f1679f-27\"",
+   "last_modified": "Thu, 02 Nov 2023 13:56:54 GMT",
+   "bytes": 450263712,
+   "query": "select cast(pickup_datetime as date) as d, PULocationID as zone, hvfhs_license_num as lic, count(*) as n from parquet_scan('<url>') group by 1, 2, 3 order by 1, 2, 3",
+   "n_trips": 18322150,
+   "fetched": "2026-11-12T20:28:06-0500",
+   "data_access": "open",
+   "note": "Same records as NYC Open Data bqxa-629f (2024) and u253-aew4 (2023)."
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "High Volume FHV trip records 2023-09",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2023-09.parquet",
+   "etag": "\"ca367203cfd2bf87641415bcd5e30b22-28\"",
+   "last_modified": "Fri, 17 Nov 2023 14:55:56 GMT",
+   "bytes": 478067839,
+   "query": "select cast(pickup_datetime as date) as d, PULocationID as zone, hvfhs_license_num as lic, count(*) as n from parquet_scan('<url>') group by 1, 2, 3 order by 1, 2, 3",
+   "n_trips": 19851123,
+   "fetched": "2026-11-12T20:28:09-0500",
+   "data_access": "open",
+   "note": "Same records as NYC Open Data bqxa-629f (2024) and u253-aew4 (2023)."
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "High Volume FHV trip records 2023-10",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2023-10.parquet",
+   "etag": "\"fa1031d175188999d811245d552e9c34-29\"",
+   "last_modified": "Mon, 18 Dec 2023 14:32:59 GMT",
+   "bytes": 485826227,
+   "query": "select cast(pickup_datetime as date) as d, PULocationID as zone, hvfhs_license_num as lic, count(*) as n from parquet_scan('<url>') group by 1, 2, 3 order by 1, 2, 3",
+   "n_trips": 20186330,
+   "fetched": "2026-11-12T20:28:13-0500",
+   "data_access": "open",
+   "note": "Same records as NYC Open Data bqxa-629f (2024) and u253-aew4 (2023)."
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "High Volume FHV trip records 2024-06",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2024-06.parquet",
+   "etag": "\"e0f5c43a5d0726db1a2d0e1206e9f1dc-29\"",
+   "last_modified": "Tue, 20 Aug 2024 14:01:56 GMT",
+   "bytes": 484417715,
+   "query": "select cast(pickup_datetime as date) as d, PULocationID as zone, hvfhs_license_num as lic, count(*) as n from parquet_scan('<url>') group by 1, 2, 3 order by 1, 2, 3",
+   "n_trips": 20123226,
+   "fetched": "2026-11-12T20:28:17-0500",
+   "data_access": "open",
+   "note": "Same records as NYC Open Data bqxa-629f (2024) and u253-aew4 (2023)."
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "High Volume FHV trip records 2024-07",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2024-07.parquet",
+   "etag": "\"18553777308dd22a920c29f2adfc1d39-28\"",
+   "last_modified": "Wed, 18 Sep 2024 13:53:34 GMT",
+   "bytes": 468437522,
+   "query": "select cast(pickup_datetime as date) as d, PULocationID as zone, hvfhs_license_num as lic, count(*) as n from parquet_scan('<url>') group by 1, 2, 3 order by 1, 2, 3",
+   "n_trips": 19182934,
+   "fetched": "2026-11-12T20:28:21-0500",
+   "data_access": "open",
+   "note": "Same records as NYC Open Data bqxa-629f (2024) and u253-aew4 (2023)."
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "High Volume FHV trip records 2024-08",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2024-08.parquet",
+   "etag": "\"acb5259d0ecf5e51175d43718577c151-28\"",
+   "last_modified": "Wed, 23 Oct 2024 18:45:26 GMT",
+   "bytes": 465991646,
+   "query": "select cast(pickup_datetime as date) as d, PULocationID as zone, hvfhs_license_num as lic, count(*) as n from parquet_scan('<url>') group by 1, 2, 3 order by 1, 2, 3",
+   "n_trips": 19128392,
+   "fetched": "2026-11-12T20:28:25-0500",
+   "data_access": "open",
+   "note": "Same records as NYC Open Data bqxa-629f (2024) and u253-aew4 (2023)."
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "High Volume FHV trip records 2024-09",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2024-09.parquet",
+   "etag": "\"20af1deee7fddec6482ed74e89cece55-28\"",
+   "last_modified": "Wed, 20 Nov 2024 21:37:39 GMT",
+   "bytes": 466470118,
+   "query": "select cast(pickup_datetime as date) as d, PULocationID as zone, hvfhs_license_num as lic, count(*) as n from parquet_scan('<url>') group by 1, 2, 3 order by 1, 2, 3",
+   "n_trips": 19209788,
+   "fetched": "2026-11-12T20:28:29-0500",
+   "data_access": "open",
+   "note": "Same records as NYC Open Data bqxa-629f (2024) and u253-aew4 (2023)."
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_trunc_ymd(transit_timestamp) as d, station_complex_id, station_complex, sum(ridership) as entries",
+    "$where": "station_complex_id in ('282', '283', '284', '286', '287', '288', '289', '290', '291', '292') and transit_timestamp >= '2023-06-01T00:00:00' and transit_timestamp < '2023-10-08T00:00:00'",
+    "$group": "d, station_complex_id, station_complex",
+    "$order": "d, station_complex_id",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:27:53-0500",
+   "n_rows": 1290,
+   "domain": "data.ny.gov (concord.socrata.DOMAIN set to https://data.ny.gov for this query)",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "wujg-7c2s",
+   "name": "MTA Subway Hourly Ridership: 2020-2024",
+   "url": "https://data.ny.gov/d/wujg-7c2s",
+   "rows_updated_at": "2025-10-15T13:19:23Z",
+   "query": {
+    "$select": "date_trunc_ymd(transit_timestamp) as d, station_complex_id, station_complex, sum(ridership) as entries",
+    "$where": "station_complex_id in ('282', '283', '284', '286', '287', '288', '289', '290', '291', '292') and transit_timestamp >= '2024-06-01T00:00:00' and transit_timestamp < '2024-10-08T00:00:00'",
+    "$group": "d, station_complex_id, station_complex",
+    "$order": "d, station_complex_id",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:27:55-0500",
+   "n_rows": 1197,
+   "domain": "data.ny.gov (concord.socrata.DOMAIN set to https://data.ny.gov for this query)",
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "bqxa-629f",
+   "name": "2024 High Volume FHV Trip Data",
+   "url": "https://data.ny.gov/d/bqxa-629f",
+   "rows_updated_at_epoch": 1788385041,
+   "data_access": "open",
+   "note": "Portal copy of the trip records. A one-month count by day and zone timed out on the server (six attempts of 180 s, 12 Nov 2026), so the registered fallback (TLC parquet files of the same records) supplied the counts."
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "u253-aew4",
+   "name": "2023 High Volume FHV Trip Data",
+   "url": "https://data.cityofnewyork.us/d/u253-aew4",
+   "rows_updated_at_epoch": 1721064543,
+   "data_access": "open",
+   "note": "Portal copy of the trip records. A one-month count by day and zone timed out on the server (six attempts of 180 s, 12 Nov 2026), so the registered fallback (TLC parquet files of the same records) supplied the counts."
+  },
+  {
+   "kind": "ny-open-data",
+   "dataset": "39hk-dx4f",
+   "name": "MTA Subway Stations",
+   "url": "https://data.ny.gov/d/39hk-dx4f",
+   "data_access": "open",
+   "note": "Lookup read before registration through concord.socrata with DOMAIN https://data.ny.gov."
+  },
+  {
+   "kind": "tlc-taxi-zones",
+   "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zones.zip",
+   "data_access": "open"
+  }
+ ],
+ "prediction_scored": "partial: the estimate is +0.043 (+0.001 to +0.084) log points, inside the predicted +0.02 to +0.12, and the 2023 placebo is -0.002 (-0.031 to +0.027), inside its predicted band. Support conditions (a), (b) and (d) are met. Condition (c) is not: the placebo-in-space permutation p-value is 0.19 (required below 0.05). The refutation condition is not met either, because the upper end of the interval (+0.084) is above +0.02. The verdict is unsettled.",
+ "settle": "The zone-day counts cannot separate a 4% rise in seven zones from ordinary differences between neighbourhood summers: random sets of seven control zones given the same schedules produce coefficients with a standard deviation of 0.032. Three kinds of information would settle it. Pickup coordinates or pickups within a few hundred metres of each closed station entrance, which TLC holds but publishes only by zone, would raise the share of affected trips in the treated unit. Hourly counts would allow a test confined to the hours when the displaced riders travel. A second event of the same kind gives an out-of-sample test: the G was cut again between Court Sq and Bedford-Nostrand Avs on nights and weekends from 14 July to 18 August 2025, and the registered model can be run on it with the Greenpoint and Clinton Hill effects as the prediction.",
+ "research_needed": [
+  {
+   "question": "Do app pickups rise within walking distance of a closed subway station, and at the hours the station is normally used?",
+   "data": "TLC trip records with pickup coordinates or census-block pickup counts (held by TLC, not published); hourly zone counts are public",
+   "design": "registered event study by distance band from the station entrance and by hour, same phases",
+   "priority": "high"
+  },
+  {
+   "question": "Does the Greenpoint result (+0.12) replicate in the 2025 night and weekend G closures?",
+   "data": "2025 High Volume FHV Trip Data (NYC Open Data nt46-nv3c) by zone and hour; MTA hourly ridership from 2025",
+   "design": "new registration before querying: same model restricted to closure hours, prediction taken from this outcome",
+   "priority": "high"
+  },
+  {
+   "question": "Where did the other displaced riders go: shuttle bus, another subway line, Citi Bike, or no trip?",
+   "data": "MTA bus ridership for the B94 and B98 shuttles (not in the open hourly bus file as far as we found), Citi Bike trip records, entries at neighbouring L, 7, C, J and M stations",
+   "design": "accounting of entries lost at closed stations against gains on each alternative, by phase",
+   "priority": "medium"
+  },
+  {
+   "question": "The System graph has no concepts for ride-hailing or subway service; a live lookup was not possible on this machine",
+   "data": "System Public Graph",
+   "design": "repeat the lookup with the API key; add the transport literature cited in the registration",
+   "priority": "low"
+  }
+ ],
+ "figures": [
+  "figures/transit/gtrain_shutdown_pickups.png"
+ ],
+ "notes": "First stage: entries at the G-only stations coded closed fell 98.9% from their 1 to 27 June mean during their closed phase (1,144,686 entries over the shutdown); every station coded closed fell by at least 97%, and Nassau Av and Bedford-Nostrand Avs, coded as terminals, kept their entries. In 2023, on the same days moved back 364 days, no station shows a closure. Stations on the open part of the line lost 15% to 60% of their entries while the line was cut elsewhere. The reference period is not clean: on Saturday 8 and Sunday 9 June 2024 entries at the ten stations fell by about three quarters, which indicates a weekend closure before the shutdown; the coding was not changed. Sample: 7 treated and 32 control zones, 120 days, 4680 zone-days; Astoria Park, Green-Wood Cemetery and Saint Michaels Cemetery/Woodside were dropped by the volume rule. Registered secondary and sensitivities, in log points: G-dependent zones (Greenpoint, Bedford, Clinton Hill) +0.072 (+0.011 to +0.132), 2023 placebo for them -0.012 (-0.041 to +0.017); phase 1 +0.087 (+0.022 to +0.153), phase 2 +0.039 (-0.005 to +0.083), phase 3 +0.043 (-0.002 to +0.087); triple difference with 2023 +0.045 (+0.006 to +0.083); Poisson on counts +0.016 (-0.022 to +0.054); all Brooklyn and Queens controls +0.036 (-0.000 to +0.072); controls not touching a treated zone +0.035 (-0.005 to +0.076); weekdays +0.051 (+0.004 to +0.099); Uber +0.039 (-0.000 to +0.077); Lyft +0.052 (-0.001 to +0.105). By zone (one treated zone each, so the intervals are not reported): Greenpoint +0.122, Long Island City/Hunters Point +0.054, Clinton Hill +0.062, Bedford +0.022, Fort Greene +0.018, East Williamsburg +0.017, Williamsburg South Side -0.005. The effect is largest where the G is the only line in the zone (Greenpoint) and absent where the L is at the same complex (Williamsburg South Side), which is the pattern substitution predicts, but this ordering was not a registered test. Implied diversion: about 55,377 extra pickups over 246 treated zone-days against 1,144,686 entries lost at the closed stations, or 4.8 pickups per 100 lost entries (0.2 to 9.3 from the clustered interval). Entries lost at a closed station overstate trips lost, since many riders entered at another station. Relation to commute-fhv-subway-distance (contested): that claim found fewer app pickups per resident in zones farther from the subway (elasticity -0.30) in the 2024 cross-section. This claim removes subway service from the same zones for weeks and finds a rise of about 4% that is not established. The two do not conflict: the cross-section compares places that differ in density and car ownership, and the shutdown measures the short-run response of people who already live without a car near a station. At most about one displaced entry in twenty became an app trip, so the subway and app trips are weak substitutes at this margin. Deviations from the task text, all fixed in the registration before any data were queried: the shutdown was in 2024, not 2023, so the trip data are 2024 with 2023 as the placebo year; phase 3 ran to Church Av with the F serving the shared stations. A wording error in the registration: Court Sq is served by the 7, E, F and G in the station table, not the 7, E and M. The trip counts came from the TLC parquet files (the registered fallback), read remotely with DuckDB; nothing was stored outside the repository. The graph evidence rests on cached responses; a live lookup is pending.\n\nAfter the referee (13 Nov 2026): the stance now uses the permutation standard deviation (0.032, z = 1.32) in place of the zone-clustered interval (z = 2.02), which the outcome itself called too narrow. The estimate is not a 4% rise in pickups overall: weighted by June pickups it is +0.020 (SE 0.020), in line with the registered Poisson (+0.016), so the result leans on the smaller treated zones. In the other direction, a triple difference with 2023 has a permutation p of 0.047 (1,000 draws); that was not a registered condition and decides nothing, but it suggests the registered permutation was the less powerful of two reasonable designs. The registration contradicts itself on zone 256, which is listed as treated for Metropolitan Av although that station shares a complex with the L; without it the estimate is +0.051 and p is 0.15. Several stations lie within metres of a zone border, so some substitute trips were recorded in control zones. The reference period is itself affected: with June as the only reference the estimate is +0.057 (permutation p 0.052), and treated zones were 2.8% above their June level in September after service returned. Support needed a coefficient of at least 0.064, so the lower half of the predicted range could not have been confirmed.",
+ "registration_sha256": "96025ddce56d9130e4aa334661ce133aae2a586c0960aa8ae324b8ac3b718c58",
+ "decided_at": "2026-11-12T20:31:21-0500",
+ "stance": {
+  "value": 0.58,
+  "lo": -0.308,
+  "hi": 0.928,
+  "z": 1.32,
+  "note": "From the permutation standard deviation (0.0324), not the zone-clustered interval, which is too narrow with seven treated zones."
+ },
+ "critique": {
+  "report": "critique/transit-gtrain-substitution.md",
+  "answer": "accepted; verdict kept, stance recomputed"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "change in daily Uber and Lyft pickups in seven taxi zones on days when their G-only station had no service, against 32 nearby zones (zone and date fixed effects)",
+    "estimate": 0.0429,
+    "lo": 0.0013,
+    "hi": 0.0844,
+    "scale": "log points (0.043 is about 4.4%)",
+    "null": 0,
+    "n": 4680,
+    "interval": "zone-clustered 95%, as registered; with seven treated zones it is too narrow",
+    "permutation_p": 0.189,
+    "permutation_sd": 0.0324
+   },
+   "stance": {
+    "value": 0.767,
+    "lo": 0.031,
+    "hi": 0.963,
+    "z": 2.02
+   },
+   "decided_at": "2026-11-12T20:31:21-0500",
+   "prediction_scored": "partial: the estimate is +0.043 (+0.001 to +0.084) log points, inside the predicted +0.02 to +0.12, and the 2023 placebo is -0.002 (-0.031 to +0.027), inside its predicted band. Support conditions (a), (b) and (d) are met. Condition (c) is not: the placebo-in-space permutation p-value is 0.19 (required below 0.05). The refutation condition is not met either, because the upper end of the interval (+0.084) is above +0.02. The verdict is unsettled."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; stance recomputed from the permutation standard deviation; weighted estimate and zone 256 recorded.",
+  "critique": "critique/transit-gtrain-substitution.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

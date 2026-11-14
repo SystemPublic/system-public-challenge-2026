@@ -1,0 +1,226 @@
+{
+ "id": "bridge-crz-injury-crashes",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Endpoint: NYPD injury crashes in the CBD geofence vs rest of city, 2025 vs 2022-24 (OLS log monthly count, HAC 3)",
+  "estimate": 1.3352842617798455,
+  "lo": -4.697894762752652,
+  "hi": 7.750398701605055,
+  "scale": "percent change",
+  "null": 0,
+  "n": 96
+ },
+ "graph_effect": {
+  "label": "Composed prediction from mob-crz-traffic and bridge-crz-crash-link (Monte Carlo, 200,000 draws)",
+  "estimate": -0.4474518172304043,
+  "lo": -8.208469707164346,
+  "hi": 8.71767428107808,
+  "scale": "percent change",
+  "null": 0
+ },
+ "endpoint_test": {
+  "D_log": 0.016772315354590922,
+  "se": 0.05313620875078332,
+  "z": 0.31564757345138345,
+  "compatible": true,
+  "placebo_2024_pct": [
+   3.810873083721389,
+   -5.43084023807311,
+   13.955727189860866
+  ]
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "srxy-5nxn",
+   "name": "MTA Central Business District Geofence: Beginning June 2024",
+   "url": "https://data.ny.gov/d/srxy-5nxn",
+   "rows_updated_at": "2025-01-10T15:22:02Z",
+   "query": {
+    "$limit": 5000
+   },
+   "fetched": "2026-11-12T16:01:23-0500",
+   "n_rows": 7
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$limit": 50000,
+    "$order": "collision_id",
+    "$select": "collision_id, crash_date, latitude, longitude, number_of_persons_injured, number_of_persons_killed, number_of_pedestrians_injured, number_of_cyclist_injured",
+    "$where": "crash_date between '2022-01-01' and '2026-08-31T23:59:59' and latitude between 40.69 and 40.78 and longitude between -74.03 and -73.95"
+   },
+   "fetched": "2026-11-12T16:05:34-0500",
+   "n_rows": 53396
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$select": "date_trunc_ym(crash_date) as m, sum(case(number_of_persons_injured > 0 or number_of_persons_killed > 0, 1, true, 0)) as injury_crashes, count(*) as crashes, sum(number_of_persons_injured) as persons_injured, sum(number_of_persons_killed) as persons_killed, sum(number_of_pedestrians_injured + number_of_cyclist_injured) as ped_cyc_injured",
+    "$where": "crash_date between '2022-01-01' and '2026-08-31T23:59:59' and latitude between 40.45 and 40.95 and longitude between -74.30 and -73.65",
+    "$group": "m",
+    "$order": "m",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T16:05:42-0500",
+   "n_rows": 56
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "h9gi-nx95",
+   "name": "Motor Vehicle Collisions - Crashes",
+   "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "query": {
+    "$select": "date_extract_y(crash_date) as y, count(*) as n, sum(case(latitude is null or latitude = 0, 1, true, 0)) as nocoord, sum(case(borough = 'MANHATTAN', 1, true, 0)) as manh, sum(case(borough = 'MANHATTAN' and (latitude is null or latitude = 0), 1, true, 0)) as manh_nocoord",
+    "$where": "crash_date between '2022-01-01' and '2026-08-31T23:59:59'",
+    "$group": "y",
+    "$order": "y",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T16:05:44-0500",
+   "n_rows": 5
+  }
+ ],
+ "prediction_scored": "partial. The registered endpoint test is met: the observed change, +1.3% (-4.7 to +7.8), is compatible with the composed -0.4% (-8.2 to +8.7); z = 0.32, and the 2024 placebo includes zero (+3.8%, -5.4 to +14.0). The registrant's directional bet (a decline of 2 to 15 percent) was not borne out: the point estimate is positive and the interval spans zero.",
+ "settle": "The endpoint interval (about 12 points wide) and the composed interval (about 17 points wide) both include zero, so the test can rule out large changes (a decline of the London size, 30 to 40 percent, or a rise above about 8 percent) but cannot tell whether the speed and volume terms cancel or are both small. Segment-level speeds and volumes inside the zone, and crashes by segment, would separate the two terms.",
+ "research_needed": [
+  {
+   "question": "Do the speed and volume effects on crashes cancel, or are both near zero at 8 to 9 mph?",
+   "data": "MTA or DOT segment speeds and counts inside the zone; geocoded crashes",
+   "design": "Segment panel, 2023-2026",
+   "priority": "high"
+  },
+  {
+   "question": "Why did London's charge reduce accidents by about 40 percent while New York's shows no change?",
+   "data": "Both cities' crash series with common definitions",
+   "design": "Comparison of designs (London 2003 vs 20 cities; NYC zone vs rest)",
+   "priority": "medium"
+  },
+  {
+   "question": "How much does improved geocoding in 2025 bias the zone-vs-rest comparison?",
+   "data": "Crash records without coordinates, geocoded from street names",
+   "design": "Re-geocode 2022-2025 missing-coordinate records",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/bridges/bridge_crz_injury_crashes.png",
+  "figures/bridges/bridge_crz_injury_crashes_v2.png"
+ ],
+ "notes": "Secondary results (reported, not deciding): Poisson GLM +1.5% (-8.6 to +12.6); persons injured -1.2% (-7.8 to +5.9); pedestrians and cyclists injured +4.8% (-3.3 to +13.5); all crashes +0.2% (-6.6 to +7.4); persons killed (Poisson) +11% (-47 to +130), against a composed +7% (-4 to +23), with 11 to 18 deaths a year in the zone; zone including the excluded highways +1.7% (-4.5 to +8.3); with January-August 2026 added +3.2% (-2.3 to +9.0). Exploratory, not registered: the share of injury crashes without coordinates fell citywide from about 9 to 11 percent in 2022-2024 to 2.6 percent in 2025, while among crashes coded MANHATTAN it rose from about 2 to 4.4 percent. If the missing records are distributed like the geocoded ones within each borough, this biases the zone-vs-rest estimate downward by roughly 2 to 3 points, which would move it to about +4 percent, still compatible with the composed prediction. Stance: rule 5 gives the weakest link's stance (mob-crz-traffic; the research link has none). The endpoint's own stance against the registered negative direction is kept as endpoint_stance. A compatible endpoint supports the chain as a whole; it does not show that each link is right, since a larger speed exponent and a larger volume elasticity would compose to the same result.\n\nAfter the bridge referee: the composed prediction (-0.4%) is near zero because the speed and volume terms cancel, so the endpoint (z 0.32 from the chain, 0.43 from no effect) cannot separate the chain from no effect; a contentless chain would have passed with probability above 0.99. The endpoint also depends on an unregistered geocoding change: injury crashes without coordinates fell from 8.7-10.7% (2022-24) to 2.6% (2025), a bias of 0 to about -10 points; at -10 points the estimate is about +11.5% (z about 2.1), which would refute the chain. Re-estimating against a comparison area that avoids the geocoding change (Manhattan north of 60th St) is exploratory now that the endpoint has been seen, and is listed as research needed.\n\nAfter the re-analysis (bridge-crz-injury-crashes-v2, registered and pushed to GitHub before its data were queried): against Manhattan north of 60th St, which shares the zone's geocoding regime, injury crashes in the zone changed by +4.5% (-2.7 to +12.2) in 2025, with z 1.25 from the v2 composed prediction (-2.2%) and z 1.21 from no effect. Its 2024 placebo, +15.2% (+4.8 to +26.6), excludes zero, so that comparison has its own pre-trend and v2 is unsettled. Under the registered bias bounds for the geocoding change the v2 estimate ranges from -2.0% to +11.6%. Neither comparison area gives a test that separates the chain from no effect. The v1 verdict stays unsettled. The geocoding bias in v1 (zone against the rest of the city) is not resolved by v2: v2 changes the comparison area and so cannot correct the v1 estimate.",
+ "registration_sha256": "00214aa37b7048fd67592e270a507ea967e22918bb76602f42ab8388507b0221",
+ "decided_at": "2026-11-12T16:10:34-0500",
+ "stance": {
+  "lo": null,
+  "hi": null,
+  "z": 0.32,
+  "rule": "7+8",
+  "D": 0.08,
+  "discriminates": false,
+  "value": 0.036,
+  "chosen_after_data": true
+ },
+ "endpoint_stance": {
+  "value": -0.207,
+  "lo": -0.84,
+  "hi": 0.629,
+  "z": -0.42
+ },
+ "revision": {
+  "reason": "Re-analysis bridge-crz-injury-crashes-v2 done as the referee asked; verdict unchanged (unsettled). The rule 7 stance is marked as chosen after the data were seen, as the referee asked.",
+  "critique": "critique/bridge-crz-injury-crashes.md",
+  "revised_at": "2026-11-12T19:37:23-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ },
+ "stance_rule_note": "The v1 outcome was decided under rules 1-6 (verdict confirmed, weakest-link stance 0.963). Rule 7, which relabelled the verdict bridged and replaced the stance with endpoint agreement (0.903), was committed in 3d8ac0d at 16:12:16 on 12 November 2026, 30 seconds after this outcome (f024acb, 16:11:46). The rule 7 stance was therefore chosen after the data were seen and, under rule 4, decides nothing for this claim. The current stance (rules 7 and 8) is kept for display only, beside the pre-registered weakest-link stance in history.",
+ "reanalysis": {
+  "id": "bridge-crz-injury-crashes-v2",
+  "verdict": "unsettled",
+  "estimate_pct": 4.4886771973749795,
+  "lo": -2.7002880956366604,
+  "hi": 12.208797423660457,
+  "z_chain": 1.2524176458927316,
+  "z_null": 1.2073158237200312,
+  "placebo_2024_pct": [
+   15.197100618572822,
+   4.842105453040202,
+   26.574833017537202
+  ]
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Endpoint: NYPD injury crashes in the CBD geofence vs rest of city, 2025 vs 2022-24 (OLS log monthly count, HAC 3)",
+    "estimate": 1.3352842617798455,
+    "lo": -4.697894762752652,
+    "hi": 7.750398701605055,
+    "scale": "percent change",
+    "null": 0,
+    "n": 96
+   },
+   "stance": {
+    "value": 0.963,
+    "lo": 0.77,
+    "hi": 0.995,
+    "z": 3.98,
+    "from_link": "mob-crz-traffic"
+   },
+   "decided_at": "2026-11-12T16:10:34-0500",
+   "prediction_scored": "partial. The registered endpoint test is met: the observed change, +1.3% (-4.7 to +7.8), is compatible with the composed -0.4% (-8.2 to +8.7); z = 0.32, and the 2024 placebo includes zero (+3.8%, -5.4 to +14.0). The registrant's directional bet (a decline of 2 to 15 percent) was not borne out: the point estimate is positive and the interval spans zero."
+  },
+  {
+   "verdict": "bridged",
+   "city_effect": {
+    "label": "Endpoint: NYPD injury crashes in the CBD geofence vs rest of city, 2025 vs 2022-24 (OLS log monthly count, HAC 3)",
+    "estimate": 1.3352842617798455,
+    "lo": -4.697894762752652,
+    "hi": 7.750398701605055,
+    "scale": "percent change",
+    "null": 0,
+    "n": 96
+   },
+   "stance": {
+    "value": 0.903,
+    "lo": null,
+    "hi": null,
+    "z": 0.32,
+    "rule": 7
+   },
+   "decided_at": "2026-11-12T16:10:34-0500",
+   "prediction_scored": "partial. The registered endpoint test is met: the observed change, +1.3% (-4.7 to +7.8), is compatible with the composed -0.4% (-8.2 to +8.7); z = 0.32, and the 2024 placebo includes zero (+3.8%, -5.4 to +14.0). The registrant's directional bet (a decline of 2 to 15 percent) was not borne out: the point estimate is positive and the interval spans zero."
+  },
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Endpoint: NYPD injury crashes in the CBD geofence vs rest of city, 2025 vs 2022-24 (OLS log monthly count, HAC 3)",
+    "estimate": 1.3352842617798455,
+    "lo": -4.697894762752652,
+    "hi": 7.750398701605055,
+    "scale": "percent change",
+    "null": 0,
+    "n": 96
+   },
+   "stance": {
+    "lo": null,
+    "hi": null,
+    "z": 0.32,
+    "rule": "7+8",
+    "D": 0.08,
+    "discriminates": false,
+    "value": 0.036
+   },
+   "decided_at": "2026-11-12T16:10:34-0500",
+   "prediction_scored": "partial. The registered endpoint test is met: the observed change, +1.3% (-4.7 to +7.8), is compatible with the composed -0.4% (-8.2 to +8.7); z = 0.32, and the 2024 placebo includes zero (+3.8%, -5.4 to +14.0). The registrant's directional bet (a decline of 2 to 15 percent) was not borne out: the point estimate is positive and the interval spans zero."
+  }
+ ]
+}

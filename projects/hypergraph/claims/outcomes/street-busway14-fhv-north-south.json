@@ -1,0 +1,106 @@
+{
+ "id": "street-busway14-fhv-north-south",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "FHV weekday trip duration, north pairs (East Chelsea to Stuy Town/Gramercy) minus controls, seasonal swing net of yellow-taxi swing",
+  "estimate": 1.559,
+  "lo": -3.14,
+  "hi": 6.487,
+  "scale": "% change in duration",
+  "null": 0,
+  "se_log": 0.02417,
+  "south": {
+   "estimate": 0.301,
+   "lo": -3.911,
+   "hi": 4.698
+  }
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "tlc-trip-records",
+   "name": "TLC High Volume FHV Trip Records (monthly parquet)",
+   "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_YYYY-MM.parquet",
+   "months": "2019-02 to 2020-02",
+   "file_bytes": {
+    "2019-02": 513054623,
+    "2019-03": 610854382,
+    "2019-04": 559656651,
+    "2019-05": 570821186,
+    "2019-06": 536191926,
+    "2019-07": 516008365,
+    "2019-08": 501435971,
+    "2019-09": 515944585,
+    "2019-10": 549370339,
+    "2019-11": 561011664,
+    "2019-12": 576648876,
+    "2020-01": 531275933,
+    "2020-02": 558874878
+   },
+   "fetched": "2026-11-13",
+   "local_copy": "~/opt/nyc-concordance/fhvhv_1920/"
+  },
+  {
+   "kind": "tlc-trip-records",
+   "name": "TLC Yellow Taxi Trip Records",
+   "months": "2016-07 to 2020-02 (seasonal baseline)",
+   "local_copy": "~/opt/nyc-concordance/tlc_yellow_1720/"
+  }
+ ],
+ "prediction_scored": "miss. North E = 1.559% (-3.14 to 6.487); south E = 0.301% (-3.911 to 4.698). refute_if (north upper bound below +7%) is met, by 0.5 points, much less than one standard error (2.4 points). The south condition of support_if (upper bound below +5%) is met, but the north conditions are not. The held-out data do not reproduce the referee's +7.4% for the north pairs; they do not exclude a lengthening of up to 6.5%.",
+ "settle": "A second year of FHV data before the busway would give FHV its own seasonal baseline; none exists, since the records begin in February 2019. Route-level data showing which trips used 14th Street would replace the zone-pair proxy.",
+ "research_needed": [
+  {
+   "question": "Did trips that crossed 14th Street north of the busway lose more time than other crosstown trips?",
+   "data": "Trip-level routes (GPS) or probe speeds on 15th to 18th Streets with a comparison set.",
+   "design": "Registered before-after on routes, not zone pairs.",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/street_space/busway_tradeoff.png"
+ ],
+ "notes": "The FHV north contrast swung by 6.584% from summer to winter in 2019-20; the yellow swing in the three earlier seasons was 5.536%, 6.307% and 3.028%, and in 2019-20 it was 10.61%. So the yellow taxis' north pairs swung more in the busway winter than in any earlier one, and the FHV north pairs swung by about the usual yellow amount. Fleet tracking before the busway was moderate for the north pairs (correlation of monthly changes 0.547) and close for the south pairs (0.9). Placebo of the estimator on yellow 2018-19: north -2.73%, south 3.447%. Secondary, distance (trip_miles): north 1.264% (-1.126 to 3.711), south 1.904% (0.483 to 3.346); the south distance rise is not predicted and is reported as exploratory. FHV weekday trips between the corridor zones numbered 143,593 in October 2019 to February 2020 (yellow: 102,600); the four north pairs carried 17,857, averaging 17.6 minutes and 1.72 miles. The seasonal baseline borrowed from yellow taxis is the main assumption; if FHV trips have a smaller winter swing than taxis, the estimate is biased down.",
+ "registration_sha256": "983488eaf0654b12927630f39477c6cc81d021550dc9f8e3ff80b38f049afe8d",
+ "decided_at": "2026-11-13T13:24:50-0500",
+ "stance": {
+  "value": 0.307,
+  "lo": -0.564,
+  "hi": 0.867,
+  "z": 0.63
+ },
+ "notes_referee": "Referee reproduced +1.56% (-3.14 to +6.49). Verdict contested under rule 1, margin stated under rule 10: with AR(1) SE the upper bound is 7.08%, with downtown controls alone 8.49%; refute_if unmet in both. Borrowed baseline not biased toward zero (pre-period slope 1.00).",
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "FHV weekday trip duration, north pairs (East Chelsea to Stuy Town/Gramercy) minus controls, seasonal swing net of yellow-taxi swing",
+    "estimate": 1.559,
+    "lo": -3.14,
+    "hi": 6.487,
+    "scale": "% change in duration",
+    "null": 0,
+    "se_log": 0.02417,
+    "south": {
+     "estimate": 0.301,
+     "lo": -3.911,
+     "hi": 4.698
+    }
+   },
+   "stance": {
+    "value": 0.307,
+    "lo": -0.564,
+    "hi": 0.867,
+    "z": 0.63
+   },
+   "decided_at": "2026-11-13T13:24:50-0500",
+   "prediction_scored": "miss. North E = 1.559% (-3.14 to 6.487); south E = 0.301% (-3.911 to 4.698). refute_if (north upper bound below +7%) is met, by 0.5 points, much less than one standard error (2.4 points). The south condition of support_if (upper bound below +5%) is met, but the north conditions are not. The held-out data do not reproduce the referee's +7.4% for the north pairs; they do not exclude a lengthening of up to 6.5%."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee: verdict kept, fragility stated",
+  "critique": "critique/street-busway14-fhv-north-south.md",
+  "revised_at": "2026-11-13T13:40:19-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

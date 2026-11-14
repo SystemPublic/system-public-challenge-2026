@@ -1,0 +1,563 @@
+{
+ "package": {
+  "claim": "street-busway14-m14-speed",
+  "built_at": "2026-11-13T22:57:10-0500",
+  "tool": "tools/replicate.py",
+  "tool_blob": "227e649fbc524670361a2e3669887ba27f05af5c",
+  "paths": "relative to the repository (inputs keep their repo paths under inputs/) or to ~/opt/nyc-concordance"
+ },
+ "claim": {
+  "id": "street-busway14-m14-speed",
+  "registration": {
+   "id": "street-busway14-m14-speed",
+   "kind": "confirmation",
+   "statement": "On weekdays in October 2019 to February 2020 the M14A and M14D Select Bus Service ran at least 4% faster, relative to the other Manhattan bus routes, than in July to September 2019, when the SBS ran without the busway.",
+   "edge": {
+    "cause": "busway (14th Street closed to through cars)",
+    "effect": "M14 route-average bus speed"
+   },
+   "graph_evidence": [
+    {
+     "concepts": "bus lane, bus rapid transit, transit priority",
+     "n_findings": 2,
+     "direction": "none on speed",
+     "summary": "Variable search 'bus lane' finds one variable (bus stops on a bus-only lane and pedestrian collisions, Lima, PMID 24357516); 'bus' finds BRT station density and walking (PMID 24096625). No finding on bus speed or travel time (data/derived/street_space/graph_evidence.json).",
+     "pubmed_ids": [
+      24357516,
+      24096625
+     ]
+    }
+   ],
+   "literature": [
+    {
+     "citation": "NYC DOT / Sam Schwartz Engineering, 14th Street Transit & Truck Priority Pilot preliminary report (fall 2019), as summarised by the Mayor's Office and Streetsblog, 18 December 2019.",
+     "doi": null,
+     "finding": "Bus travel times on the 14th Street corridor 22-47% shorter than in May/October 2018 (before the SBS); M14A/D weekday ridership +24%, weekend +30%."
+    }
+   ],
+   "prediction": {
+    "direction": "+",
+    "magnitude": "DiD between +4% and +20%, central +10%. The corridor from 3rd to 9th Avenue is roughly 40% of each route's length and more of its running time; DOT's 22-47% corridor gain includes the SBS of July 2019, which the summer baseline already contains.",
+    "support_if": "DiD >= +4% AND lower 95% bound above 0.",
+    "refute_if": "Upper 95% bound below +4%."
+   },
+   "discrimination": {
+    "rule": 8,
+    "se_log_design": 0.0185,
+    "predicted_log": 0.0953,
+    "D_if_estimate_at_prediction": 26.4,
+    "note": "se from 119 placebo DiDs (each other Manhattan route as if treated, seasons 2021-2023)."
+   },
+   "plan": "analyses/street_space/bus.py (committed before this registration): data.ny.gov cudb-vcni, weekday rows, both periods, speed = total mileage / total operating time; M14A+ and M14D+ pooled; controls = other Manhattan routes present every month; DiD of log speed Oct 2019-Feb 2020 against Jul-Sep 2019; 95% interval DiD +/- 1.96 x design sd. No resampling. Rules 1, 2 and 10 (conditions on bounds).",
+   "alternatives": [
+    "Seasonal differences between the M14 and other routes (the placebo spread covers typical ones).",
+    "SBS learning effects (riders using off-board fare more over time), which would continue after July 2019 without the busway.",
+    "Bus lane camera enforcement on 14th Street, which began with the busway and is part of the treatment.",
+    "L train slowdown (from 27 April 2019), present in both windows; it mainly raised night and weekend M14 loads."
+   ],
+   "data_seen_before_registration": [
+    "cudb-vcni: route ids, months and dimensions for Manhattan (no speeds of any 2019-20 month); speeds of all non-M14 Manhattan routes, July 2021 to February 2024 (design).",
+    "No M14 speed has been queried or seen. From the press: DOT's December 2019 summary (22-47%)."
+   ],
+   "design_file": "data/derived/street_space/bus_design.json",
+   "scripts": [
+    "analyses/street_space/bus.py"
+   ],
+   "prior": 0.75,
+   "registrant": "Claude (agent, street-space task), 13 November 2026",
+   "script_commit": "073d33f",
+   "registered_at": "2026-11-13T13:12:22-0500",
+   "sha256": "3a9ed05a54f81f1f92c8303f8aacbc11f9db8818bd5cd3d41c7e9ea99af36b37"
+  },
+  "registration_path": "claims/registered/street-busway14-m14-speed.json",
+  "registration_sha256": "3a9ed05a54f81f1f92c8303f8aacbc11f9db8818bd5cd3d41c7e9ea99af36b37",
+  "registration_hash_ok": true,
+  "registration_file_sha256": "f76c3a97c3915dc42ec51cce34768d8d4c07df98e73a5ecf8003605356a16955",
+  "registration_commit": {
+   "commit": "f26cd61cc1781f85f63b3af5a1d1cf2af7824519",
+   "committed_at": "2026-11-13T13:12:22-05:00",
+   "subject": "register street-busway14-m14-speed"
+  },
+  "prereg_branch": {
+   "name": "prereg/street-busway14-m14-speed",
+   "sha": "f26cd61cc1781f85f63b3af5a1d1cf2af7824519",
+   "reachable": true,
+   "contains_registration_commit": true
+  },
+  "outcome": {
+   "id": "street-busway14-m14-speed",
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "M14A+M14D weekday speed, Oct 2019-Feb 2020 against Jul-Sep 2019, relative to other Manhattan routes",
+    "estimate": 5.457,
+    "lo": 1.693,
+    "hi": 9.36,
+    "scale": "% change in speed",
+    "null": 0,
+    "n": 39,
+    "se_log": 0.0185421743139463
+   },
+   "graph_effect": null,
+   "sources": [
+    {
+     "kind": "nyc-open-data",
+     "dataset": "cudb-vcni",
+     "name": "MTA Bus Speeds: Beginning 2015",
+     "url": "https://data.ny.gov/d/cudb-vcni",
+     "rows_updated_at": "2026-10-23T15:23:54Z",
+     "query": {
+      "$select": "month, route_id, sum(total_mileage) as mi, sum(total_operating_time) as hr",
+      "$where": "borough='Manhattan' and day_type='1' and month between '2019-07-01' and '2020-02-01'",
+      "$group": "month, route_id",
+      "$order": "month, route_id",
+      "$limit": 50000
+     },
+     "fetched": "2026-11-13T13:12:33-0500",
+     "n_rows": 328
+    }
+   ],
+   "prediction_scored": "hit. DiD 5.457% (1.693 to 9.36). support_if (DiD >= 4% and lower bound above 0) is met; the point condition of 4% is met within sampling error, since the interval runs from 1.7% to 9.4% (rule 10). The estimate lies in the low part of the predicted range (+4% to +20%, central +10%).",
+   "settle": "Segment-level bus speeds on 14th Street for 2019 (the MTA segment-speed series begins in 2023) would separate the corridor from the rest of each route, and a longer SBS-only baseline would separate the busway from continued SBS improvement.",
+   "research_needed": [
+    {
+     "question": "How much of the M14 speed gain is the busway and how much is the SBS settling in?",
+     "data": "Segment speeds or AVL bus positions for 14th Street, April 2019 to February 2020.",
+     "design": "Segment-level before-after with the SBS start and the busway start as separate breaks.",
+     "priority": "medium"
+    }
+   ],
+   "figures": [
+    "figures/street_space/busway_tradeoff.png"
+   ],
+   "notes": "Weekday M14 speed was 5.502 mph in July to September 2019 and 5.817 mph in October 2019 to February 2020; other Manhattan routes averaged 5.895 and 5.889 mph. The M14 was already speeding up during the SBS-only summer (July 5.421, August 5.484, September 5.615 mph), so part of the estimate may be SBS improvement continuing; the design's placebo spread does not cover a route-specific trend of this kind. Route-wide speed dilutes the corridor gain, since each route runs well beyond 14th Street. Exploratory, ridership (MTA Bus Hourly Ridership, 98u6-vmgs and kv7t-n8in): weekday M14A+M14D boardings averaged 24826 in October 2018 to February 2019 and 29486 in October 2019 to February 2020 (+19%), which includes the SBS and the L train slowdown; July 2019, the month the SBS began, shows half the usual count and is likely incomplete.",
+   "registration_sha256": "3a9ed05a54f81f1f92c8303f8aacbc11f9db8818bd5cd3d41c7e9ea99af36b37",
+   "decided_at": "2026-11-13T13:21:51-0500",
+   "stance": {
+    "value": 0.884,
+    "lo": 0.408,
+    "hi": 0.983,
+    "z": 2.79
+   },
+   "notes_referee": "Referee reproduced +5.46% (1.69 to 9.36); 2 of 119 placebos as large. The gain appeared in September 2019, before the busway; busway months +0.7% over September alone (exploratory). Much of the gain may be SBS and seasonal.",
+   "history": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "M14A+M14D weekday speed, Oct 2019-Feb 2020 against Jul-Sep 2019, relative to other Manhattan routes",
+      "estimate": 5.457,
+      "lo": 1.693,
+      "hi": 9.36,
+      "scale": "% change in speed",
+      "null": 0,
+      "n": 39,
+      "se_log": 0.0185421743139463
+     },
+     "stance": {
+      "value": 0.884,
+      "lo": 0.408,
+      "hi": 0.983,
+      "z": 2.79
+     },
+     "decided_at": "2026-11-13T13:21:51-0500",
+     "prediction_scored": "hit. DiD 5.457% (1.693 to 9.36). support_if (DiD >= 4% and lower bound above 0) is met; the point condition of 4% is met within sampling error, since the interval runs from 1.7% to 9.4% (rule 10). The estimate lies in the low part of the predicted range (+4% to +20%, central +10%)."
+    }
+   ],
+   "revision": {
+    "reason": "Round 7 referee: verdict kept, attribution narrowed",
+    "critique": "critique/street-busway14-m14-speed.md",
+    "revised_at": "2026-11-13T13:40:19-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   }
+  },
+  "outcome_path": "claims/outcomes/street-busway14-m14-speed.json",
+  "outcome_file_sha256": "1294bbfa6023a6ecb5903b8de5e67a11ae4f07b843be0dee2f815431739b8e6f",
+  "revision_history": {
+   "in_file": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "M14A+M14D weekday speed, Oct 2019-Feb 2020 against Jul-Sep 2019, relative to other Manhattan routes",
+      "estimate": 5.457,
+      "lo": 1.693,
+      "hi": 9.36,
+      "scale": "% change in speed",
+      "null": 0,
+      "n": 39,
+      "se_log": 0.0185421743139463
+     },
+     "stance": {
+      "value": 0.884,
+      "lo": 0.408,
+      "hi": 0.983,
+      "z": 2.79
+     },
+     "decided_at": "2026-11-13T13:21:51-0500",
+     "prediction_scored": "hit. DiD 5.457% (1.693 to 9.36). support_if (DiD >= 4% and lower bound above 0) is met; the point condition of 4% is met within sampling error, since the interval runs from 1.7% to 9.4% (rule 10). The estimate lies in the low part of the predicted range (+4% to +20%, central +10%)."
+    }
+   ],
+   "last_revision": {
+    "reason": "Round 7 referee: verdict kept, attribution narrowed",
+    "critique": "critique/street-busway14-m14-speed.md",
+    "revised_at": "2026-11-13T13:40:19-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   },
+   "outcome_commits": [
+    {
+     "commit": "a61231a0da9349c78fb23d4781147f918a5eeb18",
+     "committed_at": "2026-11-13T13:40:19-05:00",
+     "subject": "Busway follow-ups: apply round 7 referee notes"
+    },
+    {
+     "commit": "c523b83854d6f844e632f34d768e8b1e4c3cdc08",
+     "committed_at": "2026-11-13T13:27:13-05:00",
+     "subject": "Outcomes street-busway14-fhv-north-south (contested: north +1.6%, -3.1 to +6.5), street-busway14-m14-speed (confirmed: +5.5%, 1.7 to 9.4), street-busway14-ped-injuries (contested: RR 1.32, 0.90 to 1.94); tradeoff section and figure"
+    }
+   ]
+  },
+  "referee_reports": [
+   {
+    "path": "critique/street-busway14-m14-speed.md",
+    "role": "referee report for this claim",
+    "sha256": "67e7aee5b8cc33516439cac76df5f5957c5cfa9c93dbc118cecd336c3a280dce"
+   },
+   {
+    "path": "critique/street-busway14-fhv-north-south.md",
+    "role": "mentions the claim id",
+    "sha256": "0f2001cb9c75325b8ee0f7e50c1831f8a32416110603a851f555f41526fb644d"
+   }
+  ]
+ },
+ "code": {
+  "repo_commit": "47e2f54ff97e1795900c0c186583aeba809d3259",
+  "repo_dirty_paths": 26,
+  "scripts": [
+   {
+    "path": "concord/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "concord/socrata.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "blob_at_HEAD": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "3cc8d26ec235c6633cae66a5ddcdf5173ea8252f72c722d28a52ff48f4d61f4b"
+   },
+   {
+    "path": "analyses/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "first_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/mobility/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "first_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/mobility/common.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "7d8050f76df6ba863ef5babec493ef59498dc973",
+    "blob_at_HEAD": "7d8050f76df6ba863ef5babec493ef59498dc973",
+    "clean": true,
+    "last_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "first_commit": "0bef2bb33aceefbe0f88b399daac80a5eef39680",
+    "sha256": "752ad8eb17ddfe69260c66bc7b9d15e216a8413093426a233895f1886ae1697f"
+   },
+   {
+    "path": "analyses/street_space/common.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "af18409d31f10b462b70b508cace3f0e154b6c4f",
+    "blob_at_HEAD": "af18409d31f10b462b70b508cace3f0e154b6c4f",
+    "clean": true,
+    "last_commit": "8b0917f28ce31423c5994e0c99038fc1cb5f5f95",
+    "first_commit": "8b0917f28ce31423c5994e0c99038fc1cb5f5f95",
+    "sha256": "c2ff268743d39a13bb4531963ffe69f8646398f4b36b67dfef91d60439864290"
+   },
+   {
+    "path": "analyses/street_space/bus.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "69040558ac5c87b0949c2b48f4a080c93fbf52aa",
+    "blob_at_HEAD": "69040558ac5c87b0949c2b48f4a080c93fbf52aa",
+    "clean": true,
+    "last_commit": "073d33fb1a8b0b85bf0bd2eb5b76a064d79ccc73",
+    "first_commit": "073d33fb1a8b0b85bf0bd2eb5b76a064d79ccc73",
+    "sha256": "d2f1d5474fa5a89d4840bde0c4877d2be9021003894284b88fc63fcb50953cea"
+   },
+   {
+    "path": "analyses/street_space/outcomes2.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "9f83b859b9b22448cd26915f00c8dd735451c849",
+    "blob_at_HEAD": "9f83b859b9b22448cd26915f00c8dd735451c849",
+    "clean": true,
+    "last_commit": "c523b83854d6f844e632f34d768e8b1e4c3cdc08",
+    "first_commit": "c523b83854d6f844e632f34d768e8b1e4c3cdc08",
+    "sha256": "a25993be170a7316dfff9769775428110adb72f8c9ed49b31c0e9e79ee249af1"
+   },
+   {
+    "path": "analyses/street_space/register2.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "fb886e64189fbd2332e772a207fadbff6aa77800",
+    "blob_at_HEAD": "fb886e64189fbd2332e772a207fadbff6aa77800",
+    "clean": true,
+    "last_commit": "073d33fb1a8b0b85bf0bd2eb5b76a064d79ccc73",
+    "first_commit": "073d33fb1a8b0b85bf0bd2eb5b76a064d79ccc73",
+    "sha256": "2e323cbf17c153e775bb08fb17e572c6ff28cbf1a496f0c20b691fae252a6199"
+   }
+  ],
+  "seeds": [],
+  "draw_counts": [],
+  "commits_named_in_registration": [],
+  "procedure_note": "The registration names no seed and no resampling draw count; the deciding number is deterministic given the inputs."
+ },
+ "data": [
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "cudb-vcni",
+    "name": "MTA Bus Speeds: Beginning 2015",
+    "url": "https://data.ny.gov/d/cudb-vcni",
+    "rows_updated_at": "2026-10-23T15:23:54Z",
+    "query": {
+     "$select": "month, route_id, sum(total_mileage) as mi, sum(total_operating_time) as hr",
+     "$where": "borough='Manhattan' and day_type='1' and month between '2019-07-01' and '2020-02-01'",
+     "$group": "month, route_id",
+     "$order": "month, route_id",
+     "$limit": 50000
+    },
+    "fetched": "2026-11-13T13:12:33-0500",
+    "n_rows": 328
+   },
+   "type": "socrata",
+   "domain": "https://data.ny.gov",
+   "dataset": "cudb-vcni",
+   "rows_updated_at": "2026-10-23T15:23:54Z",
+   "soql": {
+    "$select": "month, route_id, sum(total_mileage) as mi, sum(total_operating_time) as hr",
+    "$where": "borough='Manhattan' and day_type='1' and month between '2019-07-01' and '2020-02-01'",
+    "$group": "month, route_id",
+    "$order": "month, route_id",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-13T13:12:33-0500",
+   "n_rows": 328,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/cudb-vcni-d8c3b4866c9f1116df6c1b2f.json",
+     "sha256": "22187032d1d2b39ccc0d80190f881a9de04d25de99b907957eb3dc4d701f096c",
+     "rows_sha256": "85e7d1b16e68ac45c43bab14a2645c307da4291da2a84c6db612757569a3021e",
+     "bytes": 37623,
+     "copied": true
+    }
+   ]
+  }
+ ],
+ "environment": {
+  "python": "3.12.10 (main, Apr  9 2025, 03:49:38) [Clang 20.1.0 ]",
+  "venv": "~/.venvs/nyc-concordance",
+  "uv_pip_freeze": [
+   "affine==3.0.1",
+   "annotated-types==0.8.0",
+   "attrs==26.1.0",
+   "certifi==2026.10.23",
+   "charset-normalizer==3.5.2",
+   "click==8.5.1",
+   "contourpy==1.4.0",
+   "cycler==0.12.1",
+   "duckdb==2.0.0",
+   "fonttools==4.68.0",
+   "formulaic==1.2.2",
+   "geopandas==1.2.0",
+   "idna==3.20",
+   "interface-meta==2.0.1",
+   "jsonschema==4.26.0",
+   "jsonschema-specifications==2025.9.1",
+   "kiwisolver==1.5.1",
+   "matplotlib==3.11.2",
+   "mercantile==1.2.1",
+   "narwhals==2.28.0",
+   "numpy==2.5.4",
+   "packaging==26.3",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pillow==13.0.0",
+   "planetary-computer==1.0.0",
+   "pyarrow==26.0.1",
+   "pydantic==2.14.3",
+   "pydantic-core==2.50.4",
+   "pyogrio==0.13.0",
+   "pyparsing==3.3.3",
+   "pyproj==3.8.0",
+   "pystac==1.16.0",
+   "pystac-client==0.9.1",
+   "pystac-core==1.16.0",
+   "pystac-ext-classification==2.0.2",
+   "pystac-ext-datacube==2.2.2",
+   "pystac-ext-eo==1.1.2",
+   "pystac-ext-file==2.1.2",
+   "pystac-ext-grid==1.1.2",
+   "pystac-ext-item-assets==1.0.2",
+   "pystac-ext-label==1.0.3",
+   "pystac-ext-mgrs==1.0.2",
+   "pystac-ext-mlm==1.4.2",
+   "pystac-ext-pointcloud==1.0.2",
+   "pystac-ext-projection==2.0.2",
+   "pystac-ext-raster==1.1.2",
+   "pystac-ext-render==2.0.1",
+   "pystac-ext-sar==1.0.2",
+   "pystac-ext-sat==1.0.2",
+   "pystac-ext-scientific==1.0.2",
+   "pystac-ext-storage==2.0.2",
+   "pystac-ext-table==1.2.2",
+   "pystac-ext-timestamps==1.1.2",
+   "pystac-ext-version==1.2.2",
+   "pystac-ext-view==1.0.2",
+   "pystac-ext-xarray-assets==1.0.2",
+   "python-dateutil==4.0.0",
+   "python-dotenv==1.2.4",
+   "pytz==2026.6",
+   "rasterio==1.5.2",
+   "referencing==0.37.0",
+   "requests==2.34.2",
+   "rpds-py==2026.9.1",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0",
+   "typing-extensions==4.16.0",
+   "typing-inspection==0.4.5",
+   "tzdata==2026.6",
+   "urllib3==2.8.0",
+   "wrapt==2.5.2"
+  ],
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "os": "Darwin 27.2.0",
+  "mac_ver": "27.2.1",
+  "requirements": [
+   "matplotlib==3.11.2",
+   "numpy==2.5.4",
+   "pandas==3.1.1",
+   "requests==2.34.2"
+  ]
+ },
+ "inputs": {
+  "cap_bytes": 15728640,
+  "copied_bytes": 181642,
+  "files": [
+   {
+    "path": "data/cache/socrata/cudb-vcni-c4cc920b3e43c0891fcd32b1.json",
+    "bytes": 144019,
+    "sha256": "aa8e9d1be6a45c1d8eee1fc58549180972104c6fde66b174e8308d485d5820b1",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/socrata/cudb-vcni-d8c3b4866c9f1116df6c1b2f.json",
+    "bytes": 37623,
+    "sha256": "22187032d1d2b39ccc0d80190f881a9de04d25de99b907957eb3dc4d701f096c",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true,
+    "rows_sha256": "85e7d1b16e68ac45c43bab14a2645c307da4291da2a84c6db612757569a3021e",
+    "n_rows": 328
+   }
+  ],
+  "traced": true
+ },
+ "deciding": {
+  "available": true,
+  "what": "city_effect: percent change in M14A+M14D weekday speed, Oct 2019-Feb 2020 against Jul-Sep 2019, minus the mean change of 39 other Manhattan routes (DiD on log speed), with the 95% interval from the placebo SD",
+  "recorded": {
+   "estimate": 5.457,
+   "lo": 1.693,
+   "hi": 9.36,
+   "n": 39,
+   "se_log": 0.0185421743139463,
+   "placebo_sd_log": 0.0185421743139463,
+   "placebo_n": 119,
+   "placebo_n_as_large": 2
+  },
+  "tolerance": {
+   "estimate": 0.0005,
+   "lo": 0.0005,
+   "hi": 0.0005,
+   "n": 0,
+   "se_log": 1e-09,
+   "placebo_sd_log": 1e-09,
+   "placebo_n": 0,
+   "placebo_n_as_large": 0
+  },
+  "decides": "support_if: DiD >= 4% and lower 95% limit above 0",
+  "recorded_from": {
+   "city_effect": "claims/outcomes/street-busway14-m14-speed.json",
+   "placebo_sd_log": "outcome city_effect.se_log (= sd of the placebo DiDs)",
+   "placebo_n": "registration plan ('119 placebo DiDs')",
+   "placebo_n_as_large": "outcome notes_referee and critique/street-busway14-m14-speed.md ('2 of 119')"
+  },
+  "wrapper": "code/rerun.py",
+  "wrapper_note": "Smallest wrapper: bus.py reads and writes data/derived/street_space/ inside the repository, so code/rerun.py sets bus.DER to work/street_space inside the package and calls design() and final() unchanged. The standard error of the M14 DiD is the standard deviation of the 119 placebo DiDs, so the placebo stage is part of the deciding number.",
+  "refetch_rerun": true,
+  "placebo": {
+   "placebo_sd_log": {
+    "value": 0.0185421743139463,
+    "tol": 1e-09,
+    "from": "outcome city_effect.se_log (= sd of the placebo DiDs)",
+    "what": "registered null distribution: SD of the 119 placebo DiDs (each other Manhattan route as if treated, seasons 2021-2023)"
+   },
+   "placebo_n": {
+    "value": 119,
+    "tol": 0,
+    "from": "registration plan ('119 placebo DiDs')",
+    "what": "number of placebo DiDs"
+   },
+   "placebo_n_as_large": {
+    "value": 2,
+    "tol": 0,
+    "from": "outcome notes_referee and critique/street-busway14-m14-speed.md ('2 of 119')",
+    "what": "placebo DiDs at least as large as the M14 estimate (signed, as the referee counted them)"
+   }
+  },
+  "trace_run_in_repository": {
+   "printed": {
+    "estimate": 5.457,
+    "lo": 1.693,
+    "hi": 9.36,
+    "n": 39,
+    "se_log": 0.0185421743139463,
+    "placebo_sd_log": 0.0185421743139463,
+    "placebo_n": 119,
+    "placebo_n_as_large": 2
+   },
+   "files_read": 2
+  }
+ },
+ "not_rebuilt": []
+}

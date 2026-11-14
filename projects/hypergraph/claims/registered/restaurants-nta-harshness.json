@@ -1,0 +1,54 @@
+{
+ "id": "restaurants-nta-harshness",
+ "kind": "confirmation",
+ "statement": "Critical violations detected per routine initial inspection are not even across Manhattan's 2020 NTAs: after cuisine, chain status, quarter, day of week, daily inspection workload, new-restaurant status and the NTA's restaurant count, the between-NTA variation exceeds a permutation null, with a between-NTA standard deviation of 5 to 20 percent.",
+ "graph_evidence": [
+  {
+   "association_id": "CCatfE2F4k (variable) chain restaurants -- violations per inspection",
+   "pubmed_ids": [
+    "28060568"
+   ],
+   "direction": "-",
+   "n_findings": 1,
+   "n_studies": 1,
+   "summary": "Philadelphia 2013-2014 (Leinwand 2017): chains 6.5 against 9.6 violations per inspection; used here as a covariate."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Jones TF et al. Emerg Infect Dis 2004;10:688-692 (PMID 15200861)",
+   "doi": "10.3201/eid1004.030343",
+   "finding": "Tennessee: mean scores of individual inspectors ranged from 69 to 92 on a 100-point scale, so who inspects changes the result."
+  },
+  {
+   "citation": "Leinwand SE et al. Public Health Rep 2017;132:180-187 (PMID 28060568)",
+   "doi": "10.1177/0033354916687741",
+   "finding": "Philadelphia: violations per inspection differ by chain status (6.5 against 9.6) and by block-group racial composition (0.6 fewer risk-factor and 1.0 more retail-practice violations), and fall with inspection frequency in non-chains."
+  },
+  {
+   "citation": "Wong MR et al. Am J Public Health 2015;105:e81-e87 (PMID 25602861)",
+   "doi": "10.2105/AJPH.2014.302404",
+   "finding": "NYC models of inspection outcomes adjust for season and chain status; grading changed scores citywide."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Between-NTA SD of the adjusted log rate ratio (tau) 0.05 to 0.20; permutation p <= 0.01.",
+  "support_if": "Permutation p <= 0.01 (10,000 draws, seed 20261113) AND tau >= 0.05.",
+  "refute_if": "Permutation p > 0.10 (the NTAs are as even as random assignment of restaurants to NTAs).",
+  "other": "p <= 0.01 with tau < 0.05 means statistically detectable but practically even and is unsettled under rule 2. Per rule 9 the p condition is re-checked with 100,000 draws and other seeds; if it is met under some and not others, it is neither met nor unmet."
+ },
+ "plan": "Script analyses/restaurants/evenness_test.py at commit 48147d6. Fixed source: Underlay nyc/restaurant-inspections v1.0.0 (hash ulv2:07a7f08a0d5c85649920f8adc6946d27c17f5e2d75e9ee07c0ad4ae0fcc6739c), Manhattan inspections 2024-01-02 to 2026-06-09, chosen because the live table drops closed restaurants and revises recent violations downward (docs/underlay_drift.md). NTA by point in polygon (9nt8-h7nd); NTAs with < 20 restaurants dropped. Unit: Cycle Inspection / Initial Inspection; outcome: critical violation records. Null Poisson GLM as in the script docstring; statistic S = sum over NTAs of (sum(y - mu))^2 / sum(mu); null by permuting NTA labels across restaurants. tau from an NTA fixed-effects model, SE clustered by restaurant, method of moments. A companion frequency test (cycle initial inspections per restaurant-year) is computed by the same script; its result was seen by accident during a synthetic-outcome check of the script before this registration, so it is reported as exploratory and is not registered.",
+ "alternatives": [
+  "Inspector assignment: inspectors work in geographic teams, so an NTA's rate reflects its inspectors' stringency rather than its restaurants.",
+  "Unmeasured restaurant mix: size, menu complexity, age of premises and owner experience vary by NTA and are not in the data; cuisine is a weak proxy.",
+  "Building stock: older buildings have more pests (the most common critical violations are vermin), which is real hygiene, not harshness.",
+  "Clientele and complaints: complaint-driven attention may differ by NTA.",
+  "Adjudication: the snapshot holds violations before some hearings; dismissal rates may differ by NTA."
+ ],
+ "prior": 0.55,
+ "registrant": "claude (restaurants agent, 13 November 2026)",
+ "script_commit": "48147d6",
+ "registered_at": "2026-11-13T14:18:37-0500",
+ "sha256": "6f6e2eac57f3253c217e8cf0115e3b40ee9999caf31641c9e2e48a3ecaa53bc7"
+}

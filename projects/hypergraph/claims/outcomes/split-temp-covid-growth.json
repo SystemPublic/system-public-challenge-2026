@@ -1,0 +1,887 @@
+{
+ "id": "split-temp-covid-growth",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Weekly log growth of COVID-19 hospital admissions per 1 C temperature anomaly, days 7-20 before",
+  "estimate": 0.0058,
+  "lo": -0.0036,
+  "hi": 0.0152,
+  "scale": "change in weekly log growth per +1 C",
+  "null": 0,
+  "n": 291
+ },
+ "graph_effect": {
+  "label": "Graph: 26 positive and 17 negative findings; after recoding 20 say higher temperature, less transmission and 22 the opposite, 13 of the 22 being unadjusted correlations with case counts",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "mixed",
+  "null": 0
+ },
+ "graph_evidence": [
+  {
+   "association_id": "_zZhNuc_Bh",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "maximum temperature (in °C) in Bangladesh",
+    "COVID-19 transmission"
+   ],
+   "statistic": "coefficient",
+   "value": -30.52,
+   "ci": [
+    -60.24,
+    -0.78
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 33162141,
+   "code": "c"
+  },
+  {
+   "association_id": "BwCPl8T-zh",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Increase in maximum temperature (°C) by 1 unit",
+    "COVID-19 transmission"
+   ],
+   "statistic": "coefficient",
+   "value": 11.91,
+   "ci": [
+    4.77,
+    19.05
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 36099253,
+   "code": "a"
+  },
+  {
+   "association_id": "qTbs9Zl-36",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Temperature during the unlock phase (1 June 2020 to 3 May 2021)",
+    "COVID-19 infections and deaths"
+   ],
+   "statistic": "pearson_r",
+   "value": -0.75,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": false,
+   "pubmed_id": 34451467,
+   "code": "c"
+  },
+  {
+   "association_id": "o8hUz8Q2_B",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "average temperature (Gilgit-Baltistan)",
+    "COVID-19 cases"
+   ],
+   "statistic": "coefficient",
+   "value": 0.534,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 33786420,
+   "code": "a"
+  },
+  {
+   "association_id": "p4qtDTE9-d",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "temperature (Average Temperature, Maximum Temperature, Minimum Temperature)",
+    "daily newly confirmed COVID-19 cases"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.6,
+   "ci": [
+    0.43,
+    0.83
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 34637125,
+   "code": "c"
+  },
+  {
+   "association_id": "ArM_oSL3YQ",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "maximum temperature (°C) at 2 metre",
+    "COVID-19 pandemic cases"
+   ],
+   "statistic": "spearman_correlation",
+   "value": 0.94,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 32837322,
+   "code": "a"
+  },
+  {
+   "association_id": "2WvKFG7v8e",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Diurnal temperature variation (°C)",
+    "Daily confirmed COVID-19 cases"
+   ],
+   "statistic": "spearman_correlation",
+   "value": 0.115,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 33727663,
+   "code": "a"
+  },
+  {
+   "association_id": "Gfg0UjFzjO",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "temperature (°C) at 2 metre",
+    "COVID-19 pandemic cases"
+   ],
+   "statistic": "spearman_correlation",
+   "value": 0.83,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 32837322,
+   "code": "a"
+  },
+  {
+   "association_id": "eTtLW-4UnK",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Ground temperature (°C)",
+    "Daily confirmed COVID-19 cases"
+   ],
+   "statistic": "spearman_correlation",
+   "value": 0.54,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 33727663,
+   "code": "a"
+  },
+  {
+   "association_id": "9bl_l8of8B",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Daily average temperature (during the first two months)",
+    "COVID-19 transmissibility"
+   ],
+   "statistic": "coefficient",
+   "value": 0.000679,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 34254048,
+   "code": "a"
+  },
+  {
+   "association_id": "9-lxg51zeK",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Temperature (average daily temperature in the cities of Wuhan, Xiaogan, and Huanggang, China)",
+    "daily COVID-19 incidence"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.738,
+   "ci": [
+    0.717,
+    0.759
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 32389157,
+   "code": "c"
+  },
+  {
+   "association_id": "A3eXpiFDXi",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "maximum ambient temperature (°C)",
+    "daily confirmed COVID-19 cases in Jordan"
+   ],
+   "statistic": "spearman_correlation",
+   "value": 0.394,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 33420694,
+   "code": "a"
+  },
+  {
+   "association_id": "KSc6nhZGfq",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "higher-than-average temperatures (compared to average temperatures)",
+    "COVID-19 infection"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.35,
+   "ci": [
+    0.2,
+    0.6
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 36107871,
+   "code": "c"
+  },
+  {
+   "association_id": "n8Ex5Xmt4d",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Temperature (highest recorded daily temperature)",
+    "COVID-19 deaths"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.861,
+   "ci": [
+    0.851,
+    0.872
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 32837623,
+   "code": "c"
+  },
+  {
+   "association_id": "UMccQEh_79",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Temperature (average daily temperature)",
+    "daily confirmed COVID-19 infections"
+   ],
+   "statistic": "coefficient",
+   "value": 0.3839,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 34957431,
+   "code": "a"
+  },
+  {
+   "association_id": "FEbfvtTy72",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Cumulative relative risk (RR) at the first temperature percentile (3.3 °C)",
+    "transmissibility of COVID-19"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.3,
+   "ci": [
+    1.1,
+    1.7
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 34966171,
+   "code": "c"
+  },
+  {
+   "association_id": "-AraOYVkkQ",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "average temperature (minimum, maximum and average temperature)",
+    "number of confirmed COVID-19 cases in the Russian Federation"
+   ],
+   "statistic": "pearson_r",
+   "value": 0.75,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 32948946,
+   "code": "a"
+  },
+  {
+   "association_id": "vV1KdEE8z1",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "temperature (low temperatures)",
+    "COVID-19 cases"
+   ],
+   "statistic": "spearman_correlation",
+   "value": -0.447,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 32834966,
+   "code": "c"
+  },
+  {
+   "association_id": "a_CVj49MbF",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Temperature (temperature conditions in the Mexico City Metropolitan Area)",
+    "daily confirmed COVID-19 infections"
+   ],
+   "statistic": "pearson_r",
+   "value": -0.55,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 34957431,
+   "code": "c"
+  },
+  {
+   "association_id": "nXWzzYP9Pg",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Temperature (25th percentile)",
+    "COVID-19 transmission"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.122,
+   "ci": [
+    0.0667,
+    0.2232
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 33307083,
+   "code": "c"
+  },
+  {
+   "association_id": "HxBuC3z94D",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "temperature in Irbid",
+    "transmission rate of COVID-19"
+   ],
+   "statistic": "spearman_correlation",
+   "value": -0.74995,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 37500034,
+   "code": "c"
+  },
+  {
+   "association_id": "_gs2-R6iHC",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "minimum temperature (°C) at 2 metre",
+    "COVID-19 pandemic cases"
+   ],
+   "statistic": "spearman_correlation",
+   "value": 0.93,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 32837322,
+   "code": "a"
+  },
+  {
+   "association_id": "wCAPm0UBm6",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Average high-temperature",
+    "total COVID-19 cases"
+   ],
+   "statistic": "coefficient",
+   "value": 0.59,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 32531684,
+   "code": "a"
+  },
+  {
+   "association_id": "Ur5WZFDxFz",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Temperature (10th percentile compared to the median)",
+    "COVID-19 transmission"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.0074,
+   "ci": [
+    0.0023,
+    0.0237
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 33307083,
+   "code": "c"
+  },
+  {
+   "association_id": "ZE3pqHnWGd",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Average temperature (°C) in Seoul metropolitan region and Daegu-Gyeongbuk region",
+    "Daily confirmed COVID-19 cases"
+   ],
+   "statistic": "spearman_correlation",
+   "value": 0.507,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 33727663,
+   "code": "a"
+  },
+  {
+   "association_id": "hLNizqfsKJ",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Minimum temperature (°C) in Seoul metropolitan region (SMR)",
+    "Daily confirmed COVID-19 cases"
+   ],
+   "statistic": "spearman_correlation",
+   "value": 0.524,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 33727663,
+   "code": "a"
+  },
+  {
+   "association_id": "AuywoIqbm1",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Daily average temperature (°C)",
+    "confirmed cases of COVID-19"
+   ],
+   "statistic": "pearson_r",
+   "value": -1.0,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": false,
+   "pubmed_id": 36275370,
+   "code": "c"
+  },
+  {
+   "association_id": "V7Z6alRvgm",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "temperature average (°C)",
+    "covid-19 pandemic"
+   ],
+   "statistic": "pearson_r",
+   "value": 0.392,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 32298883,
+   "code": "a"
+  },
+  {
+   "association_id": "obBpj2cR74",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "normal temperature (°C)",
+    "covid-19 pandemic"
+   ],
+   "statistic": "pearson_r",
+   "value": 0.293,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 32492607,
+   "code": "a"
+  },
+  {
+   "association_id": "c9b2zQUy58",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Maximum temperature (°C) in Oslo",
+    "covid-19 pandemic"
+   ],
+   "statistic": "pearson_r",
+   "value": 0.347,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 32492607,
+   "code": "a"
+  },
+  {
+   "association_id": "0Ogz3wmWAM",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Maximum temperature (°C)",
+    "COVID-19 transmission"
+   ],
+   "statistic": "coefficient",
+   "value": 0.18,
+   "ci": [
+    0.01,
+    0.35
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 36099253,
+   "code": "a"
+  },
+  {
+   "association_id": "0BLrjm-RD3",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "temperature in the Northern Hemisphere regions",
+    "transmission rate of COVID-19"
+   ],
+   "statistic": "spearman_correlation",
+   "value": -0.65,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 37500034,
+   "code": "c"
+  },
+  {
+   "association_id": "S_H4RvPeMK",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "maximum temperature (in South Asian countries)",
+    "COVID-19 transmission"
+   ],
+   "statistic": "coefficient",
+   "value": 5.1,
+   "ci": [
+    0.06,
+    10.14
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 33162141,
+   "code": "a"
+  },
+  {
+   "association_id": "DDXzQT9Stp",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "temperature (higher solar radiation and higher temperature)",
+    "reproduction number of COVID-19"
+   ],
+   "statistic": "coefficient",
+   "value": 0.875,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 35257688,
+   "code": "c"
+  },
+  {
+   "association_id": "pDENuyvBp_",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Average temperature (negative effect)",
+    "COVID-19 deaths"
+   ],
+   "statistic": "coefficient",
+   "value": -35.061,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 33273874,
+   "code": "c"
+  },
+  {
+   "association_id": "1f5uJMilIQ",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "temperature threshold",
+    "COVID-19 infection"
+   ],
+   "statistic": "mean_difference_unstandardized",
+   "value": 0.21,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 34375443,
+   "code": "x"
+  },
+  {
+   "association_id": "vFHka-RdkW",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "1°C decrease in temperature (low temperature)",
+    "COVID-19 case fatality"
+   ],
+   "statistic": "hazard_ratio",
+   "value": 1.03,
+   "ci": [
+    1.01,
+    1.04
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 34189495,
+   "code": "c"
+  },
+  {
+   "association_id": "z8Zm6WfZPF",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "temperature (weather variable)",
+    "COVID-19 fixed effect incidence"
+   ],
+   "statistic": "pearson_r",
+   "value": -0.113,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "-",
+   "significant": false,
+   "pubmed_id": 35996423,
+   "code": "c"
+  },
+  {
+   "association_id": "aeFILxuVAd",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "higher-than-average temperatures (compared to the average temperature of the study site)",
+    "COVID-19 infection"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.52,
+   "ci": [
+    0.31,
+    0.87
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 36107871,
+   "code": "c"
+  },
+  {
+   "association_id": "OsLOQzxwK8",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "Temperature (average daily temperature)",
+    "COVID-19 spreading incidences"
+   ],
+   "statistic": "pearson_r",
+   "value": 0.62,
+   "ci": [
+    null,
+    null
+   ],
+   "stored_direction": "+",
+   "significant": false,
+   "pubmed_id": 33034718,
+   "code": "a"
+  },
+  {
+   "association_id": "UeUnCrEjUD",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "higher-than-average temperature (measured in degrees Celsius)",
+    "COVID-19 infection"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 0.21,
+   "ci": [
+    0.1,
+    0.44
+   ],
+   "stored_direction": "-",
+   "significant": true,
+   "pubmed_id": 36107871,
+   "code": "c"
+  },
+  {
+   "association_id": "R1Z5NFvxij",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "daily average temperature (temperature)",
+    "number of daily COVID-19 cases"
+   ],
+   "statistic": "coefficient",
+   "value": 1.109,
+   "ci": [
+    0.93,
+    1.31
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 36385128,
+   "code": "a"
+  },
+  {
+   "association_id": "c8_FpbAtYu",
+   "relationship_id": "4FaXcuNJRt|DZBybMvxDI",
+   "variables": [
+    "temperature (daily average temperature)",
+    "daily newly confirmed COVID-19 cases"
+   ],
+   "statistic": "relative_risk_ratio",
+   "value": 1.09,
+   "ci": [
+    1.04,
+    1.15
+   ],
+   "stored_direction": "+",
+   "significant": true,
+   "pubmed_id": 34637125,
+   "code": "a"
+  }
+ ],
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "rc75-m7u3",
+   "name": "COVID-19 Daily Counts of Cases, Hospitalizations, and Deaths",
+   "url": "https://data.cityofnewyork.us/d/rc75-m7u3",
+   "rows_updated_at": "2026-11-12T20:42:17Z",
+   "query": {
+    "$select": "date_of_interest, case_count, hospitalized_count",
+    "$order": "date_of_interest",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T22:57:21-0500",
+   "n_rows": 2054
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T20:23:55-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "system-public-graph",
+   "api": "v1.0",
+   "fetched": "2026-11-12",
+   "note": "API associations by relationship id; cached in data/cache/sysgraph; the API carries no version id"
+  }
+ ],
+ "prediction_scored": "miss. Registered: -0.030 to -0.003 per C. Found +0.0058 (-0.0036 to +0.0152) over 291 weeks; the interval includes 0 and excludes effects more negative than -0.004. Secondary (moderator) prediction: at least a quarter of calendar quarters significantly positive and a quarter significantly negative in the raw correlation. Found 5 of 22 positive (23%) and 13 of 22 negative (59%): both signs occur, the positive share is just under the registered 25%.",
+ "settle": "A multi-city panel of weekly admission growth with city and week fixed effects, so that the same variant wave is compared across cities with different weather in the same week. One city gives 291 weeks and a standard error of 0.005 per C, about the size of the effect the transmission models in the graph report.",
+ "research_needed": [
+  {
+   "question": "Does a temperature anomaly change COVID-19 growth once the variant wave is held fixed?",
+   "data": "weekly admissions for 20 or more US cities (HHS Protect, city portals), GHCN-Daily",
+   "design": "panel with city and calendar-week fixed effects",
+   "priority": "medium"
+  },
+  {
+   "question": "Which published temperature and COVID-19 correlations would reverse if the study window moved by one quarter?",
+   "data": "the 13 raw-correlation findings in the graph with their study windows; public case series for each place",
+   "design": "re-run each correlation over rolling windows",
+   "priority": "low"
+  }
+ ],
+ "figures": [
+  "figures/graph/split_literatures.png"
+ ],
+ "notes": "Sensitivity: anomaly over days 0-13, -0.0112 (-0.0224 to +0.0000); days 14-27, +0.0018; cases instead of admissions, -0.0012; dropping 2020, +0.0030; dropping the Omicron weeks, +0.0037. All intervals include 0; the days 0-13 window is the only negative one and too short for an infection to reach hospital. The raw quarterly Spearman correlations of daily temperature with daily cases range from -0.79 (2020 Q2) to +0.77 (2024 Q2). Exploratory: over the first 30, 45, 60 and 90 days from 1 March 2020 the raw correlation is +0.03, +0.17, +0.14 and -0.22.\n\nAfter the referee (13 Nov 2026): the end of the file is incomplete and the registered filter did not protect against it. The last five days report 4, 2, 1, 1 and 0 admissions against about 20 a day before, and the week ending 12 October 2025 passes the filter of 20 with the most negative growth in the sample (-0.75). Dropping the last three weeks gives +0.0078 (-0.0009 to +0.0165); the verdict does not change. The sign is not stable: weighting weeks by the precision of the log ratio gives -0.0025 (-0.0129 to +0.0079), and single-week exposure windows alternate in sign, as serial dependence in weekly growth would produce. With five or six large waves, a chance alignment of two or three wave onsets with warm or cold spells can move a coefficient of this size, and year effects with harmonics do not remove it. Care-seeking and admission practice respond to weather within the same week and were not named as an alternative. The lower limit (-0.0036) lies just inside the registered range, so the weakest registered effect is not excluded; the earlier wording 'excludes effects more negative than -0.004' should be read with that. On the graph side, PMID 33162141 reports a negative coefficient for Bangladesh and a positive one for Afghanistan and describes mixed effects, so 'mixed' is the accurate code for that study.",
+ "registration_sha256": "3ff45bbe83195bc2c6a1fc71ca14c5abc4b7edc1b47df41313f4370635d5e824",
+ "decided_at": "2026-11-12T23:00:32-0500",
+ "stance": {
+  "value": -0.54,
+  "lo": -0.919,
+  "hi": 0.359,
+  "z": -1.21
+ },
+ "critique": {
+  "report": "critique/split-temp-covid-growth.md",
+  "answer": "accepted; verdict kept"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "Weekly log growth of COVID-19 hospital admissions per 1 C temperature anomaly, days 7-20 before",
+    "estimate": 0.0058,
+    "lo": -0.0036,
+    "hi": 0.0152,
+    "scale": "change in weekly log growth per +1 C",
+    "null": 0,
+    "n": 291
+   },
+   "stance": {
+    "value": -0.54,
+    "lo": -0.919,
+    "hi": 0.359,
+    "z": -1.21
+   },
+   "decided_at": "2026-11-12T23:00:32-0500",
+   "prediction_scored": "miss. Registered: -0.030 to -0.003 per C. Found +0.0058 (-0.0036 to +0.0152) over 291 weeks; the interval includes 0 and excludes effects more negative than -0.004. Secondary (moderator) prediction: at least a quarter of calendar quarters significantly positive and a quarter significantly negative in the raw correlation. Found 5 of 22 positive (23%) and 13 of 22 negative (59%): both signs occur, the positive share is just under the registered 25%."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; the incomplete final weeks of the file recorded.",
+  "critique": "critique/split-temp-covid-growth.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

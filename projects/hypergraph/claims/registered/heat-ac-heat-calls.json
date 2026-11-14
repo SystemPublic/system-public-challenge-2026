@@ -1,0 +1,88 @@
+{
+ "id": "heat-ac-heat-calls",
+ "kind": "confirmation",
+ "statement": "The rise of ambulance calls for heat illness with daily maximum temperature is steeper in the New York community districts where fewer households have air conditioning than in the districts where more have it.",
+ "graph_evidence": [
+  {
+   "association_id": "variables searched by name: air conditioner",
+   "concepts": [
+    "working air conditioner at home",
+    "heat-related death or hospital admission"
+   ],
+   "n_findings": 5,
+   "n_studies": 4,
+   "direction": "-",
+   "summary": "Case-control studies of heat waves: odds of heat-related death with a working air conditioner 0.2 (0.1 to 0.7) in Chicago 1999 (Naughton 2002), 0.3 in Chicago 1995 (Semenza 1996), 0.03 (0 to 0.2) in Cincinnati 1999 (Kaiser 2001); odds of heat-related hospital admission with an air conditioner in the bedroom 0.12 (0.02 to 0.74) in Adelaide 2009 (Zhang 2016). The four abstracts were read in PubMed and match. A fifth record (Saito 2019, 'no air conditioner', HR 1.71) is wrong: the abstract gives 1.71 for a deprivation index, not for air conditioning.",
+   "pubmed_ids": [
+    11988377,
+    8649494,
+    11563746,
+    27256088,
+    30634562
+   ]
+  }
+ ],
+ "graph_evidence_note": "Collected on 13 November 2026 by analyses/heat_solutions/graph.py (variable-name search, API only); data/derived/heat_solutions/graph.json.",
+ "literature": [
+  {
+   "citation": "Madrigano J, Ito K, Johnson S, Kinney PL, Matte T. A case-only study of vulnerability to heat wave-related mortality in New York City (2000-2011). Environ Health Perspect 2015;123:672-678.",
+   "doi": "10.1289/ehp.1408178",
+   "finding": "Deaths during heat waves were more likely among Black residents, at home, and in census tracts with more public assistance and less green space; cited from memory, not re-read."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Difference between the log rate ratios per 5 C of the low-AC half and the high-AC half: between 0 and +0.12, best guess +0.04. If every call came from a home and homes without air conditioning had 4.348 times the rate on hot days (odds 0.23 with a working air conditioner), the hot-day log ratio between the halves would be 0.225 and the difference per 5 C about 0.112.",
+  "support_if": "The 95% lower limit of the difference is above 0. This alone decides 'confirmed'.",
+  "refute_if": "The 95% upper limit is below 0.112 and the lower limit is at or below 0. 0.112 = 0.5 x ln[(1 + (RR - 1) u_low) / (1 + (RR - 1) u_high)], RR = 1/0.23, u_low = 0.139 and u_high = 0.05 the shares of households without air conditioning in the two halves weighted by calls; the factor 0.5 spreads the hot-day contrast over 10 C.",
+  "otherwise": "Unsettled.",
+  "secondary_registered": "Reported, not deciding: the two halves' own rate ratios; bottom against top third; within the low-income half and within the high-income half; days with TMAX of 27 C or more; without the six Manhattan districts below 59th Street, where visitors and workers outnumber residents by day; a weighted regression of each district's own slope (100 or more calls) on its air-conditioning share, alone and with log median income.",
+  "joint_reading_registered": "The question whether low-AC districts have steeper slopes for BOTH shootings and heat illness is answered 'yes' only if this claim and heat-ac-shootings are both confirmed, 'no for shootings only' if this claim is confirmed and heat-ac-shootings is refuted, and otherwise 'the data cannot tell'."
+ },
+ "plan": "Script: analyses/heat_solutions/run.py (sha256 ff13670222b73baa) with analyses/heat_solutions/common.py (sha256 c271c2fae50f98b5), committed with this registration and run unchanged. No resampling and no random numbers; all intervals are Wald intervals from HC0 standard errors (rule 9). The script was exercised before registration on simulated records only (--simulate, seed 1). Air conditioning: percent of households with air conditioning by community district, from the Health Department's Heat Vulnerability Index file (EHDP-data hvi-nta-2020.csv, from the Housing and Vacancy Survey; the value is constant or nearly constant within a district). The 59 districts are split at the median (91.711%): the low half averages 86.063% and the high half 94.292%. Outcome: EMS Incident Dispatch Data 76xm-jjuj, incidents with final_call_type = 'HEAT', by date of incident_datetime and by the communitydistrict field (place of the incident), May to September, 2006 to the last year in the file. Temperature: Central Park TMAX. Model: binomial GLM of the day's calls in the low-AC half out of the day's calls in all districts on TMAX/5 and C(dow) + C(month) + C(year) + hol + wet.",
+ "can_it_fail": {
+  "source": "data/derived/heat_solutions/prereg_design.json",
+  "expected_se": 0.02658723507996208,
+  "yardstick": 0.11246530985121782,
+  "D_yardstick": 17.893315397872787,
+  "share_in_low_ac": 0.5133143128863529,
+  "calls_by_year": {
+   "2005": 737,
+   "2006": 871,
+   "2007": 441,
+   "2008": 553,
+   "2009": 291,
+   "2010": 789,
+   "2011": 814,
+   "2012": 886,
+   "2013": 916,
+   "2014": 391,
+   "2015": 1102,
+   "2016": 1226,
+   "2017": 697,
+   "2018": 1042,
+   "2019": 912,
+   "2020": 385,
+   "2021": 564,
+   "2022": 874,
+   "2023": 563,
+   "2024": 931,
+   "2025": 1220,
+   "2026": 1483
+  },
+  "reading": "Expected standard error 0.027 (Fisher information with the daily total following the published curve of heat ED visits); D for the yardstick is 17.893. With no true difference the refutation rule is met with probability about 0.988."
+ },
+ "already_seen": "The citywide daily series of heat-syndrome ED visits and its slope (4.09 per 5 C); the district rates of heat-stress ED visits over five years (heat-surftemp-ed), which are higher in several low-AC districts in level. design.py read the coordinates and jurisdiction code of shooting incidents without their dates and the count of EMS HEAT incidents by district and by year, to count events per district; it read no dated record at district level. No model, table or query of shootings or EMS calls by district and date exists in the repository. From the undated counts I know that 0.513 of HEAT calls fall in the low-AC half.",
+ "alternatives": [
+  "Income and health: low-AC districts are poorer and have more chronic illness, which raises heat illness at a given temperature with or without air conditioning.",
+  "Place: a call is assigned to where the patient was found. Calls from streets, parks, workplaces and events do not depend on household air conditioning and dilute the contrast; refutation therefore does not show that air conditioning fails to protect.",
+  "Low-AC districts are hotter at street level than Central Park by more than high-AC districts are.",
+  "Dispatch coding: HEAT is the dispatcher's call type, and its use may differ between boroughs and years; year terms absorb changes over time that are common to both halves only.",
+  "Propensity to call an ambulance, as against walking to an emergency department, differs between districts."
+ ],
+ "prior": 0.45,
+ "prior_note": "Probability of 'confirmed'. About 0.2 for refuted.",
+ "registrant": "Claude (heat solutions agent)",
+ "registered_at": "2026-11-13T07:52:12-0500",
+ "sha256": "e00e46b409098aff63a19afb68dd2de55c6d323b588a1ee34bee0c9de7886f02"
+}

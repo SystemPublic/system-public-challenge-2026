@@ -1,0 +1,168 @@
+{
+ "id": "mob-crz-air",
+ "kind": "confirmation",
+ "statement": "After congestion pricing began on 5 January 2025, daily NO2 and PM2.5 at EPA regulatory monitors inside the Congestion Relief Zone fell relative to monitors elsewhere in New York City.",
+ "graph_evidence": [
+  {
+   "note": "No road-pricing findings in the graph (see mob-crz-traffic). The traffic-to-pollutant link is thin: traffic-related pollution -> NO2 has 1 finding; traffic -> particulates and traffic -> NO2 return no relationship. The downstream health link is dense:"
+  },
+  {
+   "relationship_id": "DC_F0GO0WQ|EAshH_Ko3h",
+   "concepts": [
+    "nitrogen dioxide",
+    "asthma"
+   ],
+   "n_findings": 97,
+   "n_studies": 62,
+   "direction": "+",
+   "summary": "91 ratio findings; 78 above 1, 12 below; 59 with CI above 1, 7 with CI below 1; median ratio 1.16 (mixed increments and designs)",
+   "pubmed_ids": [
+    9371204,
+    9387953,
+    9849541,
+    10193370,
+    11034970,
+    11153587,
+    11359423,
+    11480499,
+    12507172,
+    12550084,
+    15075170,
+    16222162,
+    16506437,
+    16984840,
+    17100666,
+    17357797,
+    17582483,
+    17903240,
+    18467319,
+    18941590,
+    19251785,
+    19965811,
+    20371422,
+    21034384,
+    21432566
+   ]
+  },
+  {
+   "relationship_id": "gX6h_gZWHH|EAshH_Ko3h",
+   "concepts": [
+    "particulates",
+    "asthma"
+   ],
+   "n_findings": 133,
+   "n_studies": 77,
+   "direction": "+",
+   "summary": "157 ratio findings; 144 above 1, 9 below; 88 with CI above 1, 4 with CI below 1; median ratio 1.15 (mixed increments and designs)",
+   "pubmed_ids": [
+    1954938,
+    7786050,
+    8256893,
+    11480499,
+    12055048,
+    12361942,
+    12550084,
+    12676630,
+    14594699,
+    18467319,
+    19359271,
+    19965811,
+    20056967,
+    21216722,
+    21432566,
+    21659039,
+    22484788,
+    22490087,
+    24657516,
+    24802555,
+    24858282,
+    25593604,
+    25688676,
+    26404109,
+    26618316
+   ]
+  },
+  {
+   "relationship_id": "oG8Da1gCE9|EAshH_Ko3h",
+   "concepts": [
+    "traffic-related pollution",
+    "asthma"
+   ],
+   "n_findings": 51,
+   "n_studies": 29,
+   "direction": "+",
+   "summary": "49 ratio findings; 46 above 1, 3 below; 35 with CI above 1, 0 with CI below 1; median ratio 1.51 (mixed increments and designs)",
+   "pubmed_ids": [
+    7542442,
+    10810096,
+    11575896,
+    11908931,
+    14684722,
+    16007113,
+    18941591,
+    19151227,
+    19478970,
+    19620729,
+    20371422,
+    20561230,
+    21631953,
+    21890573,
+    23222555,
+    24659182,
+    24680015,
+    26106807,
+    26365004,
+    26862123,
+    27325078,
+    28605396,
+    31303647,
+    31665023,
+    33187300
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Johansson C, Burman L, Forsberg B (2009). The effects of congestions tax on air quality and health. Atmos Environ 43:4843-4854.",
+   "doi": "10.1016/j.atmosenv.2008.09.015",
+   "finding": "Modelled NOx emissions in inner Stockholm fell 8.5%, PM10 emissions about 13%; concentration changes were smaller."
+  },
+  {
+   "citation": "Kelly F et al. (2011). The impact of the congestion charging scheme on air quality in London. HEI Research Report 155.",
+   "doi": null,
+   "finding": "Little detectable change in measured NOx, NO2 or PM10 attributable to the London charge."
+  },
+  {
+   "citation": "Simeonova E, Currie J, Nilsson P, Walker R (2021). Congestion pricing, air pollution, and children's health. J Human Resources 56(4):971-996.",
+   "doi": "10.3368/jhr.56.4.0218-9363R2",
+   "finding": "Stockholm charge lowered ambient pollution 5-15% and acute asthma visits of young children."
+  },
+  {
+   "citation": "Fraser T, Park YG, Lu D, Tayarani M, Deng H, Gao HO (2025). A first look into congestion pricing in the United States: PM2.5 impacts after six months of New York City cordon pricing. npj Clean Air 1:39.",
+   "doi": "10.1038/s44407-025-00037-2",
+   "finding": "Daily maximum PM2.5 in the CRZ fell 3.05 ug/m3 (22%) against a counterfactual, Jan-Jun 2025, 42 monitors (press coverage; paper not read in full)."
+  },
+  {
+   "citation": "NYC DOHMH (14 August 2026). Congestion pricing air quality report.",
+   "doi": null,
+   "finding": "PM2.5, NO2, NO and black carbon in the CBD were not significantly different from the no-toll counterfactual in 2025 (secondary report)."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Two-way fixed-effects DiD (site and date effects) of log daily NO2, in-zone vs other NYC monitors, 2025 vs 2022-2024: -3% to -10%. Same for PM2.5: 0% to -8%. The research disagrees on PM2.5, so the PM2.5 prediction is weaker than the NO2 prediction.",
+  "support_if": "NO2 DiD below 0 with a 95% interval below 0 (the primary test). PM2.5 is secondary.",
+  "refute_if": "NO2 DiD at or above 0 with an interval that excludes -3%."
+ },
+ "plan": "Data: EPA AQS pre-generated daily files (aqs.epa.gov/aqsweb/airdata), NO2 parameter 42602 and PM2.5 parameter 88101, years 2022-2025, sites in the five NYC counties (FIPS 36005, 36047, 36061, 36081, 36085). In-zone: New York County sites south of 60th Street (by the site's latitude and the CRZ boundary). Adjacent: Manhattan north of 60th St, reported separately. Comparison: the other boroughs. Daily site mean of the primary monitor (POC averaged). Model: log(conc) ~ site FE + date FE + inzone x post, post = from 5 Jan 2025. Date effects absorb weather and regional transport common to the city. Interval: block bootstrap by ISO week (1,000 draws). Placebo: post = 5 Jan 2024 on 2022-2024. A secondary check uses the DOHMH NYCCAS annual averages by UHF if a 2025 value is published. Figure: monthly in-zone minus comparison log difference with the start date marked. Design limits: few in-zone sites (likely one or two), so the result is a site-level comparison, not a zone average; regional PM2.5 dominates local traffic PM2.5.",
+ "alternatives": [
+  "Regional background change (wildfire smoke in 2023, transported sulfate) — absorbed by date effects only if it is spatially uniform",
+  "Local construction or site-specific changes near a single in-zone monitor",
+  "Long-run decline in vehicle emissions that is faster in Manhattan (fleet turnover, bus electrification)",
+  "Traffic diverted to highways near comparison monitors (e.g. Cross Bronx) raises the comparison and inflates the DiD"
+ ],
+ "prior": 0.35,
+ "registrant": "mobility agent (Claude Opus 5.5), for J. Vernon",
+ "registered_at": "2026-11-12T15:15:19-0500",
+ "sha256": "06a52e5821eaef00d9a98ec30141044967099a55e5bf9ea73d203bc02cdbcfa9"
+}

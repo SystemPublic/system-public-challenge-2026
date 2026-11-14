@@ -1,0 +1,101 @@
+{
+ "id": "restaurants-nta-harshness",
+ "verdict": "contested",
+ "city_effect": {
+  "label": "Between-NTA SD of the adjusted log rate ratio of critical violations per routine initial inspection (tau, method of moments)",
+  "estimate": 0.0,
+  "lo": null,
+  "hi": null,
+  "scale": "SD of log rate ratio",
+  "null": 0,
+  "n": 12228,
+  "permutation_p": 0.3067,
+  "S_over_null_mean": 1.109,
+  "n_ntas": 31,
+  "n_restaurants": 8157
+ },
+ "graph_effect": {
+  "label": "Leinwand 2017 (Philadelphia): chain against non-chain violations per inspection",
+  "estimate": -3.1,
+  "lo": null,
+  "hi": null,
+  "scale": "violations per inspection",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "underlay",
+   "collection": "nyc/restaurant-inspections",
+   "version": "v1.0.0",
+   "hash": "ulv2:07a7f08a0d5c85649920f8adc6946d27c17f5e2d75e9ee07c0ad4ae0fcc6739c",
+   "url": "https://www.underlay.org/api/collections/nyc/restaurant-inspections",
+   "dates": "2024-01-02 to 2026-06-09"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "9nt8-h7nd",
+   "name": "2020 Neighborhood Tabulation Areas (NTAs)",
+   "url": "https://data.cityofnewyork.us/d/9nt8-h7nd",
+   "file": "data/derived/restaurants/nta2020.geojson"
+  }
+ ],
+ "prediction_scored": "miss. refute_if (permutation p > 0.10) is met: p = 0.307 with 10,000 draws; with 100,000 draws and four other seeds p lies in 0.305 to 0.313, far from the 0.10 threshold, so rule 9 does not apply. tau = 0.000, below the 0.05 floor of the predicted band. After adjustment the 31 NTAs are as even as a random assignment of restaurants.",
+ "settle": "Inspector identifiers (not published) would separate inspector stringency from place; the NTA effect would then be decomposed into inspector and restaurant parts. Restaurant size, seats and age of premises would test whether the raw differences are restaurant mix.",
+ "research_needed": [
+  {
+   "question": "Do individual NYC inspectors differ in stringency, as Jones 2004 found in Tennessee?",
+   "data": "DOHMH inspection records with inspector id (FOIL)",
+   "design": "inspector fixed effects with rotation as quasi-random assignment",
+   "priority": "medium"
+  },
+  {
+   "question": "Do hearings dismiss violations at different rates by neighbourhood?",
+   "data": "OATH hearings (jz4z-kudi) joined to inspections",
+   "design": "dismissal share by NTA, adjusted",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/restaurants/evenness_map.png"
+ ],
+ "notes": "Raw critical violations per initial inspection range from 1.65 (Midtown-Times Square) to 2.37 (Chinatown-Two Bridges); unadjusted, the permutation statistic is 4.2 times its null mean (p < 0.001). Restaurant count alone brings it to 2.6, cuisine alone to 2.4, and the registered set to 1.11. The registered adjustment set accounts for the raw differences; the share due to each covariate was not separated further. Exploratory, not registered (its result was seen during a synthetic-outcome check of the script): routine initial inspections per restaurant-year, adjusted for first score band, cuisine, chain, restaurant count and new status, give p = 0.015 and tau = 0.016, detectable but small (adjusted rate ratios 0.95 to 1.08). Also exploratory: all cycle inspections with stage as covariate, p = 0.026. Fixed source is the Underlay snapshot because the live table drops closed restaurants and revises recent violations (docs/underlay_drift.md).",
+ "registration_sha256": "6f6e2eac57f3253c217e8cf0115e3b40ee9999caf31641c9e2e48a3ecaa53bc7",
+ "decided_at": "2026-11-13T14:26:29-0500",
+ "stance": {
+  "value": 0.0,
+  "lo": null,
+  "hi": null
+ },
+ "notes_referee": "Referee p 0.323. Contested stands under rule 1, but refutes only place effects of ~5%+ (SD ~0.05 at 80% power); centred SD 0.024. Restaurant-count covariate alone moves p 0.008 -> 0.32, absorbing a density gradient (~3.5%, r = -0.51).",
+ "history": [
+  {
+   "verdict": "contested",
+   "city_effect": {
+    "label": "Between-NTA SD of the adjusted log rate ratio of critical violations per routine initial inspection (tau, method of moments)",
+    "estimate": 0.0,
+    "lo": null,
+    "hi": null,
+    "scale": "SD of log rate ratio",
+    "null": 0,
+    "n": 12228,
+    "permutation_p": 0.3067,
+    "S_over_null_mean": 1.109,
+    "n_ntas": 31,
+    "n_restaurants": 8157
+   },
+   "stance": {
+    "value": 0.0,
+    "lo": null,
+    "hi": null
+   },
+   "decided_at": "2026-11-13T14:26:29-0500",
+   "prediction_scored": "miss. refute_if (permutation p > 0.10) is met: p = 0.307 with 10,000 draws; with 100,000 draws and four other seeds p lies in 0.305 to 0.313, far from the 0.10 threshold, so rule 9 does not apply. tau = 0.000, below the 0.05 floor of the predicted band. After adjustment the 31 NTAs are as even as a random assignment of restaurants."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee: verdict kept, scope of refutation stated",
+  "critique": "critique/restaurants-nta-harshness.md",
+  "revised_at": "2026-11-13T14:49:22-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

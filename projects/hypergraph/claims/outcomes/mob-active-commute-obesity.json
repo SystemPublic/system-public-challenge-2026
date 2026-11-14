@@ -1,0 +1,153 @@
+{
+ "id": "mob-active-commute-obesity",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Adult obesity (percentage points) per 10 points of walk-or-bike commute share, poverty-adjusted, 42 UHF neighbourhoods",
+  "estimate": -5.97,
+  "lo": -7.81,
+  "hi": -4.12,
+  "scale": "percentage points of obesity per 10 points of active commuting",
+  "null": 0,
+  "n": 42
+ },
+ "graph_effect": {
+  "label": "Flint et al. 2014: active commuters' BMI about 1 kg/m2 lower than car commuters (individual level); graph physical activity -> obesity findings split in sign",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "kg/m2",
+  "null": 0,
+  "comparable": false,
+  "note": "Not comparable: an area-level slope across 42 UHFs is not the individual-level effect in the research."
+ },
+ "sources": [
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2415.json",
+   "indicator": 2415,
+   "measure": 1304,
+   "label": "Commuting by bicycle, % of workers (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2415.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2415.json",
+   "indicator": 2415,
+   "measure": 1307,
+   "label": "Commuting by walking, % of workers (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2415.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2063.json",
+   "indicator": 2063,
+   "measure": 506,
+   "label": "Adult obesity, % (CHS, self-reported BMI >= 30)",
+   "geotype": "UHF42",
+   "periods": [
+    "2017",
+    "2018",
+    "2019"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2063.json"
+  },
+  {
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/103.json",
+   "indicator": 103,
+   "measure": 221,
+   "label": "Poverty, % below FPL (ACS)",
+   "geotype": "UHF42",
+   "periods": [
+    "2015-19"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/103.json"
+  },
+  {
+   "kind": "sysgraph",
+   "file": "data/derived/mobility/graph_evidence.json",
+   "relationships": [
+    "dPeET-pgVN|cj7G775u_Q",
+    "_2dhcsFISl|cj7G775u_Q"
+   ]
+  }
+ ],
+ "prediction_scored": "partial: direction hit, magnitude miss. The poverty-adjusted slope is -5.97 (-7.81 to -4.12) points per 10 points, larger than the registered range (-0.5 to -4). Unadjusted it is -6.27 (-7.57 to -4.97); with borough effects -6.62 (-9.92 to -3.33); without Manhattan -11.56 (-14.80 to -8.32).",
+ "settle": "The association is too large to be the effect of commuting on body weight. If active commuters weigh about 1 kg/m2 less (Flint et al. 2014), moving 10% of workers from other modes to walking or cycling would lower neighbourhood obesity by well under one percentage point, while the slope here is about six. The rest is composition and selection: income above the poverty line, education, race and ethnicity, age, and who chooses walkable neighbourhoods. Individual-level data (CHS microdata with commute mode, or a cohort) and a change design, such as obesity before and after new bike lanes or Citi Bike stations arrive in a neighbourhood, would settle the causal question.",
+ "research_needed": [
+  {
+   "question": "Does obesity change in neighbourhoods after the bicycle network or Citi Bike expands into them?",
+   "data": "EHDP bicycle network coverage (indicator 2390), Citi Bike station dates, CHS obesity by year",
+   "design": "staggered DiD by UHF",
+   "priority": "medium"
+  },
+  {
+   "question": "Individual-level association of commute mode with BMI in NYC, adjusted for income, education and race",
+   "data": "CHS microdata (public-use file) if it records commute mode",
+   "design": "survey-weighted regression",
+   "priority": "high"
+  },
+  {
+   "question": "The graph has no concept for cycling or active commuting; add them, and code the sign of activity vs inactivity exposures consistently.",
+   "data": "System graph",
+   "design": "graph curation",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/mobility/active_commute_obesity_uhf42.png"
+ ],
+ "notes": "Walking dominates the measure (r = 0.995 with the combined share). Poverty and active commuting are almost uncorrelated across UHFs (r = -0.08), so adjusting for poverty changes little; poverty is not the confounder that matters here. Each extra percentage point of cycling alone goes with -3.66 (-4.75 to -2.57) points of obesity, an implausible causal size. This is best read as a bridge that is confirmed in sign at the neighbourhood level and unsettled as a causal link.",
+ "registration_sha256": "ae99f6c6638ffddcd7df7f9576b3f372e9359d98dd86b546a4c396e9a1ba80ae",
+ "decided_at": "2026-11-12T15:34:53-0500",
+ "stance": {
+  "value": 0.996,
+  "lo": 0.975,
+  "hi": 1.0,
+  "z": 6.34
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Adult obesity (percentage points) per 10 points of walk-or-bike commute share, poverty-adjusted, 42 UHF neighbourhoods",
+    "estimate": -5.97,
+    "lo": -7.81,
+    "hi": -4.12,
+    "scale": "percentage points of obesity per 10 points of active commuting",
+    "null": 0,
+    "n": 42
+   },
+   "stance": {
+    "value": 0.996,
+    "lo": 0.975,
+    "hi": 1.0,
+    "z": 6.34
+   },
+   "decided_at": "2026-11-12T15:34:53-0500",
+   "prediction_scored": "partial: direction hit, magnitude miss. The poverty-adjusted slope is -5.97 (-7.81 to -4.12) points per 10 points, larger than the registered range (-0.5 to -4). Unadjusted it is -6.27 (-7.57 to -4.97); with borough effects -6.62 (-9.92 to -3.33); without Manhattan -11.56 (-14.80 to -8.32)."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: the area-level slope is far too large to compare with individual-level research effects.",
+  "critique": "critique/mob-active-commute-obesity.md",
+  "revised_at": "2026-11-12T15:55:02-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

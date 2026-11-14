@@ -1,0 +1,904 @@
+{
+ "id": "graph-concordance-matrix",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Share of 109 qualifying indicator pairs whose poverty-partialled Spearman correlation across 42 UHF neighbourhoods has the literature's majority sign (interval: bootstrap of neighbourhoods)",
+  "estimate": 0.661,
+  "lo": 0.596,
+  "hi": 0.78,
+  "scale": "proportion of pairs",
+  "null": 0.5,
+  "n": 109
+ },
+ "graph_effect": {
+  "label": "Literature sign: majority sign of signed API findings per pair, at least 3 studies and 80% consistency; 105 of 109 positive",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "sign",
+  "null": 0
+ },
+ "graph_evidence": [
+  {
+   "relationship_id": "579 relationships among 80 concepts",
+   "n_findings": 8792,
+   "summary": "data/derived/graph/concordance/graph_findings.csv; per-pair signs in literature_signs.csv"
+  },
+  {
+   "pubmed_id": 35232120,
+   "concepts": "nitrogen dioxide | ozone",
+   "check": "abstract confirms r between -0.68 and -0.78; the only correctly extracted NO2-ozone finding among ten"
+  },
+  {
+   "pubmed_id": 29156623,
+   "concepts": "nitrogen dioxide | ozone",
+   "check": "graph error: satellite NO2 from the Ozone Monitoring Instrument against ground NO2, grounded to ozone"
+  },
+  {
+   "pubmed_id": 17723619,
+   "concepts": "nitrogen dioxide | ozone",
+   "check": "graph error: Pearson r = 1.00 is not in the abstract"
+  },
+  {
+   "pubmed_id": 37229603,
+   "concepts": "PM 2.5 | diabetes",
+   "check": "abstract confirms OR 1.31 (1.22-1.41) per IQR; women after childbirth, Taiwan"
+  },
+  {
+   "pubmed_id": 36402182,
+   "concepts": "PM 2.5 | diabetes",
+   "check": "graph error: percent changes stored as hazard ratios (0.13, 0.11, -0.30), which reverses the sign"
+  },
+  {
+   "pubmed_id": 22950554,
+   "concepts": "traffic-related pollution | mortality rate",
+   "check": "abstract confirms MRR 1.13 (1.04-1.23) per doubling of NO2; Danish cohort"
+  },
+  {
+   "pubmed_id": 33957920,
+   "concepts": "nitrogen dioxide | all-cause mortality",
+   "check": "abstract confirms RR 1.005 and 1.024 for the 6th and 10th deciles; US Medicare"
+  },
+  {
+   "pubmed_id": 37230219,
+   "concepts": "PM 2.5 | obesity",
+   "check": "abstract confirms OR 1.43 (1.37-1.49) per SD; China Multi-Ethnic Cohort"
+  },
+  {
+   "pubmed_id": 34176531,
+   "concepts": "alcohol consumption | Mortality, Premature",
+   "check": "abstract confirms HR 1.17 (1.08-1.26) per 10 g/d; Spanish graduates"
+  }
+ ],
+ "sources": [
+  {
+   "indicator": 2023,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2023.json",
+   "measure": 1425,
+   "label": "PM2.5, annual mean",
+   "geotype": "UHF42",
+   "periods": [
+    "2025"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2023.json"
+  },
+  {
+   "indicator": 2025,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2025.json",
+   "measure": 1431,
+   "label": "Nitrogen dioxide, annual mean",
+   "geotype": "UHF42",
+   "periods": [
+    "2025"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2025.json"
+  },
+  {
+   "indicator": 2024,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2024.json",
+   "measure": 1428,
+   "label": "Black carbon, annual mean",
+   "geotype": "UHF42",
+   "periods": [
+    "2025"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2024.json"
+  },
+  {
+   "indicator": 2027,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2027.json",
+   "measure": 1435,
+   "label": "Ozone, summer mean",
+   "geotype": "UHF42",
+   "periods": [
+    "2025"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2027.json"
+  },
+  {
+   "indicator": 2112,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2112.json",
+   "measure": 643,
+   "label": "Traffic volume (vehicle miles)",
+   "geotype": "UHF42",
+   "periods": [
+    "2019"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2112.json"
+  },
+  {
+   "indicator": 2141,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2141.json",
+   "measure": 688,
+   "label": "Surface temperature",
+   "geotype": "UHF42",
+   "periods": [
+    "2018"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2141.json"
+  },
+  {
+   "indicator": 2143,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2143.json",
+   "measure": 690,
+   "label": "Grass and tree cover",
+   "geotype": "UHF42",
+   "periods": [
+    "2017"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2143.json"
+  },
+  {
+   "indicator": 2157,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2157.json",
+   "measure": 708,
+   "label": "Tree shade (canopy)",
+   "geotype": "UHF42",
+   "periods": [
+    "2014"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2157.json"
+  },
+  {
+   "indicator": 2388,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2388.json",
+   "measure": 1224,
+   "label": "Park access",
+   "geotype": "UHF42",
+   "periods": [
+    "2017"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2388.json"
+  },
+  {
+   "indicator": 2133,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2133.json",
+   "measure": 673,
+   "label": "Walkability score",
+   "geotype": "UHF42",
+   "periods": [
+    "2011"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2133.json"
+  },
+  {
+   "indicator": "noise",
+   "kind": "project-derived",
+   "file": "data/derived/neighbourhood/noise_map_tracts.csv",
+   "column": "noise_leq_db",
+   "aggregation": "popmean",
+   "crosswalk": "tract representative point within UHF42 polygon (EHDP geography/UHF42.geojson at the pinned commit)"
+  },
+  {
+   "indicator": 2185,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2185.json",
+   "measure": 781,
+   "label": "Households with air conditioning",
+   "geotype": "UHF42",
+   "periods": [
+    "2017"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2185.json"
+  },
+  {
+   "indicator": 15,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/15.json",
+   "measure": 25,
+   "label": "Crowded housing units",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/15.json"
+  },
+  {
+   "indicator": 17,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/17.json",
+   "measure": 29,
+   "label": "Owner-occupied homes",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/17.json"
+  },
+  {
+   "indicator": 2399,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2399.json",
+   "measure": 1248,
+   "label": "Rented homes with maintenance problems",
+   "geotype": "UHF42",
+   "periods": [
+    "2017"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2399.json"
+  },
+  {
+   "indicator": 42,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/42.json",
+   "measure": 80,
+   "label": "Homes with leaks",
+   "geotype": "UHF42",
+   "periods": [
+    "2017"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/42.json"
+  },
+  {
+   "indicator": 107,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/107.json",
+   "measure": 245,
+   "label": "Homes with cockroaches",
+   "geotype": "UHF42",
+   "periods": [
+    "2017"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/107.json"
+  },
+  {
+   "indicator": "rodents",
+   "kind": "project-derived",
+   "file": "data/derived/neighbourhood/rodents_asthma_uhf.csv",
+   "column": "rat_fail_share",
+   "aggregation": "uhf",
+   "crosswalk": "tract representative point within UHF42 polygon (EHDP geography/UHF42.geojson at the pinned commit)"
+  },
+  {
+   "indicator": 103,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/103.json",
+   "measure": 221,
+   "label": "Poverty",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/103.json"
+  },
+  {
+   "indicator": 2337,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2337.json",
+   "measure": 1032,
+   "label": "Unemployment",
+   "geotype": "UHF42",
+   "periods": [
+    "2017-21"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2337.json"
+  },
+  {
+   "indicator": 2334,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2334.json",
+   "measure": 1025,
+   "label": "Completed high school",
+   "geotype": "UHF42",
+   "periods": [
+    "2017-21"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2334.json"
+  },
+  {
+   "indicator": 2365,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2365.json",
+   "measure": 1128,
+   "label": "Evictions",
+   "geotype": "UHF42",
+   "periods": [
+    "2022"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2365.json"
+  },
+  {
+   "indicator": 2335,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2335.json",
+   "measure": 1027,
+   "label": "Limited English",
+   "geotype": "UHF42",
+   "periods": [
+    "2017-21"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2335.json"
+  },
+  {
+   "indicator": 14,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/14.json",
+   "measure": 24,
+   "label": "Foreign born",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/14.json"
+  },
+  {
+   "indicator": 2132,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2132.json",
+   "measure": 672,
+   "label": "Adults with health insurance",
+   "geotype": "UHF42",
+   "periods": [
+    "2022"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2132.json"
+  },
+  {
+   "indicator": 2049,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2049.json",
+   "measure": 465,
+   "label": "Alcohol outlets (on-premises) per resident",
+   "geotype": "UHF42",
+   "periods": [
+    "2021"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2049.json"
+  },
+  {
+   "indicator": 2415,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2415.json",
+   "measure": 1306,
+   "label": "Commute by public transport",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2415.json"
+  },
+  {
+   "indicator": 2415,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2415.json",
+   "measure": 1307,
+   "label": "Commute on foot",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2415.json"
+  },
+  {
+   "indicator": 2415,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2415.json",
+   "measure": 1304,
+   "label": "Commute by bicycle",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2415.json"
+  },
+  {
+   "indicator": 2415,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2415.json",
+   "measure": 1305,
+   "label": "Commute by car",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2415.json"
+  },
+  {
+   "indicator": 2060,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2060.json",
+   "measure": 500,
+   "label": "Any exercise in past 30 days",
+   "geotype": "UHF42",
+   "periods": [
+    "2022"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2060.json"
+  },
+  {
+   "indicator": 2019,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2019.json",
+   "measure": 307,
+   "label": "Current smokers",
+   "geotype": "UHF42",
+   "periods": [
+    "2022"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2019.json"
+  },
+  {
+   "indicator": 2051,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2051.json",
+   "measure": 470,
+   "label": "Binge drinking",
+   "geotype": "UHF42",
+   "periods": [
+    "2022"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2051.json"
+  },
+  {
+   "indicator": 2097,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2097.json",
+   "measure": 609,
+   "label": "Sugary drinks daily",
+   "geotype": "UHF42",
+   "periods": [
+    "2020"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2097.json"
+  },
+  {
+   "indicator": "shootings",
+   "kind": "project-derived",
+   "file": "data/derived/neighbourhood/vacant_shootings_tracts.csv",
+   "column": "shootings",
+   "aggregation": "rate_per_pop",
+   "crosswalk": "tract representative point within UHF42 polygon (EHDP geography/UHF42.geojson at the pinned commit)"
+  },
+  {
+   "indicator": "vacant_land",
+   "kind": "project-derived",
+   "file": "data/derived/neighbourhood/vacant_shootings_tracts.csv",
+   "column": "vac_area/lot_area",
+   "aggregation": "ratio_of_sums",
+   "crosswalk": "tract representative point within UHF42 polygon (EHDP geography/UHF42.geojson at the pinned commit)"
+  },
+  {
+   "indicator": "pop_density",
+   "kind": "project-derived",
+   "file": "data/derived/neighbourhood/tracts_acs.csv",
+   "column": "pop/land_km2",
+   "aggregation": "ratio_of_sums",
+   "crosswalk": "tract representative point within UHF42 polygon (EHDP geography/UHF42.geojson at the pinned commit)"
+  },
+  {
+   "indicator": 2380,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2380.json",
+   "measure": 1199,
+   "label": "Asthma ED visits, adults",
+   "geotype": "UHF42",
+   "periods": [
+    "2023"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2380.json"
+  },
+  {
+   "indicator": 2379,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2379.json",
+   "measure": 1196,
+   "label": "Asthma ED visits, age 5 to 17",
+   "geotype": "UHF42",
+   "periods": [
+    "2023"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2379.json"
+  },
+  {
+   "indicator": 2063,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2063.json",
+   "measure": 506,
+   "label": "Obesity",
+   "geotype": "UHF42",
+   "periods": [
+    "2022"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2063.json"
+  },
+  {
+   "indicator": 2169,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2169.json",
+   "measure": 717,
+   "label": "Diabetes",
+   "geotype": "UHF42",
+   "periods": [
+    "2022"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2169.json"
+  },
+  {
+   "indicator": 2417,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2417.json",
+   "measure": 1324,
+   "label": "Depression",
+   "geotype": "UHF42",
+   "periods": [
+    "2021-22"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2417.json"
+  },
+  {
+   "indicator": 2419,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2419.json",
+   "measure": 1330,
+   "label": "Serious psychological distress",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-20"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2419.json"
+  },
+  {
+   "indicator": 2418,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2418.json",
+   "measure": 1327,
+   "label": "Psychiatric hospitalisations",
+   "geotype": "UHF42",
+   "periods": [
+    "2021"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2418.json"
+  },
+  {
+   "indicator": 2232,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2232.json",
+   "measure": 1059,
+   "label": "Self-reported good health",
+   "geotype": "UHF42",
+   "periods": [
+    "2022"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2232.json"
+  },
+  {
+   "indicator": 2322,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2322.json",
+   "measure": 983,
+   "label": "Death before 65",
+   "geotype": "UHF42",
+   "periods": [
+    "2020"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2322.json"
+  },
+  {
+   "indicator": 1,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/1.json",
+   "measure": 2,
+   "label": "Preterm birth",
+   "geotype": "UHF42",
+   "periods": [
+    "2020"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/1.json"
+  },
+  {
+   "indicator": 4,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/4.json",
+   "measure": 8,
+   "label": "Low birthweight at term",
+   "geotype": "UHF42",
+   "periods": [
+    "2020"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/4.json"
+  },
+  {
+   "indicator": 5,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/5.json",
+   "measure": 10,
+   "label": "Infant deaths",
+   "geotype": "UHF42",
+   "periods": [
+    "2013"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/5.json"
+  },
+  {
+   "indicator": 2094,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2094.json",
+   "measure": 676,
+   "label": "Pedestrian injuries",
+   "geotype": "UHF42",
+   "periods": [
+    "2014"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2094.json"
+  },
+  {
+   "indicator": 2075,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2075.json",
+   "measure": 537,
+   "label": "Heat ED visits",
+   "geotype": "UHF42",
+   "periods": [
+    "2014"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2075.json"
+  },
+  {
+   "indicator": 2184,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2184.json",
+   "measure": 777,
+   "label": "Child blood lead 5+ mcg/dL",
+   "geotype": "UHF42",
+   "periods": [
+    "2024"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2184.json"
+  },
+  {
+   "indicator": 2459,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2459.json",
+   "measure": 1460,
+   "label": "Difficulty walking",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2459.json"
+  },
+  {
+   "indicator": 2461,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2461.json",
+   "measure": 1464,
+   "label": "Cognitive difficulty",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2461.json"
+  },
+  {
+   "indicator": 2462,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2462.json",
+   "measure": 1466,
+   "label": "Hearing difficulty",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2462.json"
+  },
+  {
+   "indicator": 2464,
+   "kind": "ehdp-github",
+   "repo": "github.com/nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "file": "indicators/data/2464.json",
+   "measure": 1470,
+   "label": "Vision difficulty",
+   "geotype": "UHF42",
+   "periods": [
+    "2019-23"
+   ],
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2464.json"
+  },
+  {
+   "kind": "sysgraph-api",
+   "api_version": "v1.0",
+   "fetched": "2026-11-12",
+   "note": "no version identifier; associations not filtered against the Dataverse CSV",
+   "uncached_requests": 701
+  }
+ ],
+ "prediction_scored": "hit: predicted 65% (55 to 75) for the deciding correlation and 78% (68 to 88) raw; observed 66.1% and 79.8%. The support condition is met (66.1% is at least 60% and above the area-shuffle null's 97.5th percentile of 58.7%). After the referee: the hit is on the registered rate. Against the always-positive rule (64.2%) the excess is 1.8 points, and the lower bootstrap bound (59.6%) is below the 60% threshold.",
+ "settle": "Whether the literature's sign carries information beyond 'adverse conditions occur together' is not settled: a rule of 'always positive' reaches 64.2%, and the sign-shuffle null gives p = 0.14. A set of pairs with more negative literature signs (protective exposures with concepts in the graph), individual-level data, or tract-level outcomes would settle it.",
+ "research_needed": [
+  {
+   "question": "Do NO2, PM2.5 and traffic relate to mortality, diabetes and birth outcomes in the literature's direction within New York once residential sorting is removed?",
+   "data": "geocoded vital statistics or SPARCS records with NYCCAS surfaces; movers",
+   "design": "individual-level cohort or within-neighbourhood contrasts",
+   "priority": "high"
+  },
+  {
+   "question": "Is household air conditioning associated with fewer preterm births and infant deaths after adjustment for income and housing type?",
+   "data": "NYCHVS microdata linked to birth records by sub-borough; summer births",
+   "design": "season-by-AC interaction",
+   "priority": "medium"
+  },
+  {
+   "question": "Which of the 948 concept pairs without findings are unstudied and which are grounding gaps?",
+   "data": "variable-name search of the graph for each pair; a literature search for the 229 pairs with |rho| of at least 0.5",
+   "design": "audit",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/graph/concordance_matrix.png"
+ ],
+ "notes": "Raw agreement 79.8% (bootstrap 67.0% to 89.0%); deciding 66.1% (59.6% to 78.0%); area-shuffle null 95% range 40.4% to 58.7%. Agreement by kind of pair (deciding): {'air, traffic or noise with anything': {'n': 27, 'agree_deciding': 10, 'agree_raw': 10}, 'behaviour with anything else': {'n': 26, 'agree_deciding': 14, 'agree_raw': 21}, 'health outcome with health outcome': {'n': 41, 'agree_deciding': 34, 'agree_raw': 41}, 'social or housing condition with anything else': {'n': 15, 'agree_deciding': 14, 'agree_raw': 15}}. Without the five previously analysed pairs: 66.3%. Exploratory: without the negation rule 66.4% of 125 pairs; partialling population density as well as poverty 65.3% of 101. Correction to the registration text: 50 of the 56 indicators have a concept, not 48. The bootstrap interval is not centred on the estimate because resampling neighbourhoods with replacement creates ties. Several EHDP measures have no recent UHF42 release (pedestrian injuries and heat ED visits 2014, infant deaths 2013, housing conditions 2017, tree shade 2014, walkability 2011). Traffic volume is published as vehicle miles without an area denominator. The negation rule has false positives ('non-cystic fibrosis', 'compared to lowest quartile'). Individual pairs are exploratory.\n\nAfter the referee (13 Nov 2026): the referee recommended unsettled. The verdict is kept as confirmed, because the registered support condition is written on the agreement rate itself (at least 60% and above the 97.5th percentile of the area-shuffle null, 58.7%), the rate is 66.1%, and rule 1 binds. What is confirmed is narrower than the registered statement reads. The test shows that these indicators, coded so that higher means more of an adverse condition, are positively correlated across neighbourhoods after partialling poverty. It does not show that the graph's signs carry information about the city. Of the 109 literature signs 105 are positive, and a rule that ignores the literature and always answers 'positive' scores 70 of 109 (64.2%) against the literature's 72 (66.1%). The four pairs with a negative literature sign split three to one (Fisher exact p = 0.13), and the registered sign-shuffle null gives p = 0.14. The exposure-with-outcome pairs, where the literature's sign says something about a cause, agree at 29 of 56 (51.8%), which is chance; the 41 pairs of two health outcomes agree at 82.9%, the same as always-positive. The lower bootstrap bound (59.6%) is below the 60% threshold and 5% of resamples fall below it, so the condition is met on a point estimate about 1.3 standard errors above its threshold (rule 10). An always-positive rule passes the 60% threshold in 78% of resamples, so a literature with no information beyond valence would usually have been confirmed. Seven indicators each appear in 12 to 19 pairs; leaving one indicator out moves the rate between 63.5% and 70.0%. A pair qualifies only with three studies and 80% consistency, and published associations between two adverse conditions are almost all positive, so the qualifying set holds almost no negative signs by construction. The stance is now measured against the always-positive rate and not against 50%.",
+ "registration_sha256": "2421c9a2e18c1b5a67d6b0a919af4609389d6d79e2e0aa3472dda1321f8d5ff4",
+ "decided_at": "2026-11-12T22:54:31-0500",
+ "stance": {
+  "value": 0.2,
+  "lo": -0.454,
+  "hi": 0.9,
+  "z": 0.4,
+  "note": "Measured against the always-positive rate of 64.2%, not against 50%: the stance is the agreement the literature's signs add beyond common valence."
+ },
+ "verdict_note": "Confirmed only in this sense: adverse indicators are positively correlated across neighbourhoods after partialling poverty. The literature's signs add two pairs in 109 to a rule that always answers 'positive' (66.1% against 64.2%; sign-shuffle p = 0.14), and exposure-with-outcome pairs agree at 29 of 56.",
+ "critique": {
+  "report": "critique/graph-concordance-matrix.md",
+  "answer": "partly accepted; verdict kept under rule 1, meaning narrowed, stance reduced"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Share of 109 qualifying indicator pairs whose poverty-partialled Spearman correlation across 42 UHF neighbourhoods has the literature's majority sign (interval: bootstrap of neighbourhoods)",
+    "estimate": 0.661,
+    "lo": 0.596,
+    "hi": 0.78,
+    "scale": "proportion of pairs",
+    "null": 0.5,
+    "n": 109
+   },
+   "stance": {
+    "value": 0.937,
+    "lo": 0.771,
+    "hi": 0.995,
+    "z": 3.43
+   },
+   "decided_at": "2026-11-12T22:54:31-0500",
+   "prediction_scored": "hit: predicted 65% (55 to 75) for the deciding correlation and 78% (68 to 88) raw; observed 66.1% and 79.8%. The support condition is met (66.1% is at least 60% and above the area-shuffle null's 97.5th percentile of 58.7%)."
+  }
+ ],
+ "revision": {
+  "reason": "Referee recommended unsettled. Kept confirmed under rule 1 (the registered condition is on the point estimate and is met); statement of what is confirmed narrowed and stance measured against the always-positive benchmark.",
+  "critique": "critique/graph-concordance-matrix.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

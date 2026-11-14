@@ -1,0 +1,94 @@
+{
+ "id": "further-containers-rats-cd9",
+ "kind": "confirmation",
+ "statement": "After Manhattan Community District 9 became fully containerised (full service from 2 June 2025), 311 rat sightings there fell by more in the twelve months from June 2025 than in the adjacent districts 7, 10, 11 and 12 over the same months, relative to the twelve months before, and the share of DOHMH initial inspections with active rat signs did not rise relative to them.",
+ "edge": {
+  "cause": "fully containerised household trash (Empire Bins) in a community district",
+  "effect": "311 rat sightings and DOHMH active rat signs"
+ },
+ "graph_evidence": [
+  {
+   "concepts": [
+    "trash containerisation",
+    "rat sightings"
+   ],
+   "n_findings": null,
+   "n_studies": null,
+   "direction": "unknown",
+   "summary": "Live System graph lookup pending: the API key is not on this machine. No graph evidence was used in choosing the design.",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "NYC DSNY (16 Dec 2025). New York's Strongest Delivered a Cleaner, More Sustainable City in 2025. Release 25-042.",
+   "url": "https://www.nyc.gov/site/dsny/news/25-042/new-york-s-strongest-delivered-cleaner-more-sustainable-city-2025",
+   "finding": "\"Putting millions of pounds of trash in sealed containers has also sent rats fleeing.\" Also: 25,230 rat sightings reported to 311 from December 2023 to November 2024, and 20,025 for the same period one year later. In May 2025 DSNY installed 1,100 Empire Bins across Manhattan Community Board 9, 'the first neighborhood to have its trash fully containerized'. (Quotes checked at source on 12 Nov 2026.)",
+   "data_used": "311 service requests (stated as 'reported to 311'); dataset not named",
+   "data_access": "open"
+  },
+  {
+   "citation": "NYC Mayor's Office (2 Jun 2025). The Empire Bin Strikes Back. Next phase of Trash Revolution begins in West Harlem.",
+   "url": "https://www.nyc.gov/mayors-office/news/2025/06/the-empire-bin-strikes-back-against-rats-next-phase-trash-revolution-begins-west",
+   "finding": "Full service for over 29,000 households began 2 June 2025 (final containers installed 1 June). 'the number of rat sightings reported to 311 ... when compared to the same month 12 months prior ... has dropped.' The release gives no percentage and no district-level figure.",
+   "data_used": "311 (unnamed)",
+   "data_access": "open"
+  },
+  {
+   "citation": "Walsh MG (2014). Rat sightings in New York City are associated with neighborhood sociodemographics, housing characteristics, and proximity to open public space. PeerJ 2:e533.",
+   "doi": "10.7717/peerj.533",
+   "url": "https://peerj.com/articles/533",
+   "finding": "Title result: sightings reported to the city are associated with neighbourhood sociodemographics, housing and open space; the author notes direct measurement of rat density is nearly impossible, so reports are a proxy. (Abstract read via search summary, not the full text.)",
+   "data_used": "DOHMH rat sighting records 2010-2014",
+   "data_access": "open"
+  },
+  {
+   "citation": "Murray MH et al. (2018). Public Complaints Reflect Rat Relative Abundance Across Diverse Urban Neighborhoods. Front. Ecol. Evol. 6:189.",
+   "doi": "10.3389/fevo.2018.00189",
+   "url": "https://www.frontiersin.org/articles/10.3389/fevo.2018.00189",
+   "finding": "Title claim: Chicago public complaints reflect relative rat abundance across neighbourhoods; reporting may also depend on socioeconomic factors. Evidence on 311 as a rat measure is therefore mixed. (Abstract only, via search summary.)",
+   "data_used": "Chicago 311 and trapping data",
+   "data_access": "partly_open"
+  },
+  {
+   "citation": "NYC DOHMH. Rodent Inspection (NYC Open Data p937-wjvj), dataset disclaimer.",
+   "url": "https://data.cityofnewyork.us/d/p937-wjvj",
+   "finding": "Per the scouting note's reading of the disclaimer: absence from the file does not mean absence of rats and inspection counts track inspection effort. (Not re-read here.)",
+   "data_used": "DOHMH inspections",
+   "data_access": "open"
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Primary difference-in-differences rate ratio R (CD9 post/pre divided by comparison post/pre, 311 'Rat Sighting' counts) between 0.75 and 0.95. DOHMH active-sign share odds ratio between 0.80 and 1.00.",
+  "support_if": "All three hold: (a) the 95% month-block bootstrap interval of the primary R has upper bound below 1.00; (b) the placebo-year R (Jun 2023-May 2024 against Jun 2022-May 2023) has a 95% interval that includes 1.00; (c) the point estimate of the DOHMH DiD odds ratio of the active-sign share among Initial inspections is below 1.00.",
+  "refute_if": "Evaluated only when support_if is not met: the 95% interval of the primary R has lower bound above 0.90 (CD9 did not fall at least 10% more than the comparison districts; this includes CD9 rising relative to them).",
+  "otherwise": "unsettled (this includes the case where (a) holds but the placebo-year interval excludes 1, or (a) holds but (c) fails)",
+  "secondary": "Reported, not deciding: 6-month window (Jun-Nov 2025), 17-month window (Jun 2025-Oct 2026), each comparison district alone and leave-one-out, all other Manhattan districts as comparison, all Rodent descriptors, placebo complaint type Noise - Residential, event-study by quarter."
+ },
+ "plan": {
+  "treated_unit": "Manhattan Community District 9 (311 community_board '09 MANHATTAN'; DOHMH community_board '9' with borough 'Manhattan'). Treatment date: full containerised service 2 June 2025, so June 2025 is the first post month. Verified in DSNY and Mayor's releases above. The pilot-zone map and bin list are not public; CD9 boundaries stand in.",
+  "comparison": "Manhattan CD7, CD10, CD11, CD12, fixed by rule from published characteristics (adjacent northern Manhattan districts not fully containerised in the window). Fixed before any rat count was read. No match on pre-period level or trend was done, because that would require looking at the outcome.",
+  "datasets": "311 Service Requests erm2-nwe9 via concord/socrata.py; DOHMH Rodent Inspection p937-wjvj via concord/socrata.py. Both queried on the server with count(*) grouped by community board and month.",
+  "outcome_311": "complaint_type = 'Rodent' and descriptor = 'Rat Sighting' (the city's apparent definition of a rat sighting), counted by created_date month and community_board, no de-duplication.",
+  "outcome_dohmh": "Share of inspection_type = 'Initial' with result in ('Failed for Rat Activity', 'Failed for Rat Activity and Other Reason'), by inspection_date month and community board; the number of Initial inspections per cell is reported as effort.",
+  "primary_estimator": "R = (N9_post / N9_pre) / (NC_post / NC_pre), where N are summed monthly counts over the 12 months June 2025-May 2026 (post) and June 2024-May 2025 (pre), and C is the pooled comparison districts. The interval is the 2.5 and 97.5 percentiles of 4000 month-pair bootstrap replicates (resample the 12 calendar-month pairs with replacement, same pairs for all districts, numpy seed 20261112), with counts taken as observed. A quasi-Poisson GLM (district and period effects plus CD9 x post) is reported as a check. DOHMH odds ratio: same construction on shares, ratio of odds.",
+  "placebo": "(1) Placebo year: the same estimator on June 2023-May 2024 (pseudo-post) against June 2022-May 2023 (pseudo-pre), all before any citywide containerisation of homes. Decides under support_if (b). (2) Placebo complaint type Noise - Residential in the real window; reported.",
+  "sensitivity": "As listed under prediction.secondary. The comparison set and windows are fixed here and are not changed after the data are seen.",
+  "window_note": "Citywide residential containerisation (buildings with 1-9 units) began 12 Nov 2024 and falls inside the pre window; it affects CD9 and the comparison districts alike and is absorbed by the difference. If the rule affected CD9 differently (more small buildings), the estimate is biased and this is reported as a limit.",
+  "what_311_can_show": "311 counts record complaints by residents, not rats. A fall in CD9 relative to neighbours shows that complaints fell relative to neighbours; it supports fewer rats only if reporting behaviour did not change differently in CD9. The DOHMH measure does not depend on residents calling but depends on inspection effort and targeting. Neither separates bins from other concurrent changes in CD9 (the 2023 Harlem pilot, NYCHA sites, bin-related tidiness that lowers 'sighting' calls). The design cannot show that rats fell, nor that bins caused any change.",
+  "prior_data_seen": "Earlier project work (analyses/neighbourhood/fetch311.py, rodents_asthma.py, claim nbhd-rodents-asthma) queried 311 'Rodent' complaints by latitude/longitude for 2022-2024 and p937-wjvj results aggregated to census tracts, for a neighbourhood-asthma question. No monthly, community-district or 2025-2026 rat figures from those were seen by the registrant, and none were consulted for this design. Metadata, column names and distinct lists of descriptor, community_board, inspection_type and result values (without counts) were read before registering."
+ },
+ "alternatives": [
+  "Citywide 311 reporting fell for reasons unrelated to bins (attention, app changes, weather); a CD9 fall no larger than elsewhere counts against the causal sentence.",
+  "Spillover: rats displaced from CD9 into adjacent comparison districts would inflate the contrast; reduced harbourage in CD9 could instead lower neighbours' counts.",
+  "Differential reporting: new bins and DSNY presence in CD9 change who reports and what is reported.",
+  "CD9 differs in building stock (more large buildings, NYCHA) so the citywide 12 Nov 2024 rule affected it differently.",
+  "Other concurrent actions in northern Manhattan (rat mitigation zones, the 2023 Harlem pilot, construction, weather).",
+  "Regression to the mean if CD9 had an unusual high before the window (cannot be checked before registering)."
+ ],
+ "prior": 0.3,
+ "registrant": "Claude (agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T20:24:12-0500",
+ "sha256": "7bf2cdafd2d3633538f5f2c51977dc4aeaa3496ddcd0720192fabb95d92e4e8f"
+}

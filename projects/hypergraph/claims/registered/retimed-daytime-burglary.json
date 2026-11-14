@@ -1,0 +1,39 @@
+{
+ "id": "retimed-daytime-burglary",
+ "kind": "confirmation",
+ "statement": "Residential burglaries that began between 08:00 and 18:00 fell on Mondays and Fridays relative to Tuesday to Thursday between 2015-2019 and 2023-2026, by between half and all of the proportional fall in Monday and Friday morning-peak subway entries from residential districts (a ratio of 0.905 to 0.95).",
+ "graph_evidence": [
+  {
+   "concepts": "burglary | home occupancy, working at home, commuting",
+   "n_findings": 0,
+   "direction": "none",
+   "summary": "System Public Graph, variable searches (data/derived/graph/retimed_week/gap_checks.json and data/derived/round2/retimed_consequences/graph_gap_check.json, graph_leads.json): no finding has this outcome with commuting, working at home, day of week or daytime population as the exposure. 43 variables match burglary, burglaries, guardianship or home occupancy; two findings have burglaries as the outcome: restaurant openings in Oakland (rate ratio 1.05, 1.04 to 1.06, PMID 35491751) and reporting victimisation to police (0.95, 0.84 to 1.07, PMID 27466811). Neither concerns whether homes are occupied in the daytime."
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Cohen and Felson 1979, Social change and crime rate trends: a routine activity approach, American Sociological Review 44(4)",
+   "doi": "10.2307/2094589",
+   "finding": "Burglary rose as households emptied in the daytime; the reverse is expected when people work at home. Cited from memory of the argument, not for a number."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "Primary: the citywide ratio exp(Y) of the Monday-and-Friday to Tuesday-to-Thursday burglary ratio, recent over baseline, is between 0.905 and 0.95 (Y between -0.10 and -0.05). The proportional value comes from the dose map: pooled AM-peak E for community districts outside the CBD is -0.147 in the half that thinned more and -0.053 in the other half, about -0.10 overall. Secondary, not deciding: Y in the 24 higher-sending districts minus Y in the 24 lower-sending districts is negative (predicted about -0.05 to -0.09).",
+  "support_if": "The 95% interval of the citywide ratio lies below 1.",
+  "refute_if": "The 95% interval of the citywide ratio lies above 1, or its lower bound is above 0.95 (a fall of the registered size is excluded)."
+ },
+ "plan": "Exposure comes from the dose map only (data/derived/transit/dose_map_long.csv, built from MTA hourly entries before any outcome was queried). For a group of station complexes, E = ln(MF/TWT in Nov 2025-Oct 2026) - ln(MF/TWT in 2019), where MF is mean Monday and Friday entries and TWT mean Tuesday-to-Thursday entries, for 06:00-19:59 unless the AM peak (06:00-09:59) is named. E is negative where Mondays and Fridays thinned. Files: data/derived/round2/retimed_consequences/exposure_taxi_zone.csv, exposure_community_district.csv, exposure_groups.json; code analyses/round2/retimed_consequences/exposure.py. Estimator (analyses/round2/retimed_consequences/lib.py, written before registration): for each unit and period, r = ln(mean Monday and Friday count / mean Tuesday-to-Thursday count) over retained weeks, and Y = r(recent) - r(baseline). Retained weeks have no federal holiday and no day from 24 December to 1 January, as in the dose map; the weeks of Monday 26 January and Monday 23 February 2026 are also dropped, because subway entries on those Mondays were 38% and 20% of the week's midweek level (docs/transit.md), which was known from entries before any outcome was seen. Intervals are the 2.5 and 97.5 percentiles of 2,000 bootstrap draws that resample weeks within each period and, for a slope across units, the units as well. Outcome: NYPD complaints with ky_cd 107 (burglary), prem_typ_desc in RESIDENCE - APT. HOUSE, RESIDENCE-HOUSE or RESIDENCE - PUBLIC HOUSING, cmplnt_fr_dt on a Monday to Friday of a retained week and cmplnt_fr_tm from 08:00:00 to 17:59:59, from qgea-i56i (to 2025) and 5uac-w243 (2026). The day and time are the start of the period in which the burglary could have happened, as reported by the victim. Baseline: 2015 to 2019. Recent: January 2023 to September 2026; the CBD Monday and Friday deficit in entries was 14.1% in 2023, 13.0% in 2024, 12.7% in 2025 and 13.8% in the latest 12 months, so the exposure has been in place since 2023. Primary: all complaints citywide, pooled. Sending areas, defined now from the dose map and listed in exposure_groups.json: community districts outside the CBD with a reliable station complex, split at the median AM-peak E (-0.0753) into 24 higher-sending and 24 lower-sending districts; complaints are assigned to districts by latitude and longitude (NYC Open Data 5crt-au7u). Sensitivity, not deciding: complaints whose end date equals the start date; baseline 2017-2019 only; Monday and Friday separately; attempted burglaries excluded. Placebo: 2015-2017 against 2018-2019. Power: a design query that pooled Monday to Friday, and so showed nothing about the outcome, counted 17,299 such complaints in 2015-2019 and 8,500 from 2023 to September 2026 (design_burglary_weekday_totals.json). With 40% of them on Mondays and Fridays the Poisson standard error of Y is 0.027; with 15% added for clustering it is 0.031. The central prediction Y = -0.075 is 2.4 standard errors from zero (D = 5.9); the lower end, -0.05, is 1.6 (D = 2.6), so the test can confirm only a fall of about 6% or more, and an estimate above +0.011 would refute. The district contrast has a standard error near 0.06 against a predicted -0.07 (D = 1.3); it cannot separate the hypothesis from no effect and is reported as secondary for that reason. Verdict by concord.claims.PRECEDENCE rules 1 to 4: support_if met gives confirmed, refute_if met gives contested, otherwise unsettled; no_test if the registered data cannot be read. Secondary and placebo results decide nothing.",
+ "already_seen": "Earlier claims queried NYPD complaints for seven felony offences by month, hour and premises (further-subway-crime claims) and for shootings by day; none tabulated burglary by weekday. For this registration I queried counts of the outcome pooled over Monday to Friday by year, 2014 to 2026, which show the yearly level and not the weekday split.",
+ "alternatives": [
+  "Burglars' own schedules, and those of police, changed between the periods for reasons other than occupancy.",
+  "Victims who are at home notice and report a burglary on the day; victims who are away report the day they left. A change in who is at home changes the recorded day as well as the true day.",
+  "The mix of residential burglary changed (package and lobby theft recorded as burglary in apartment houses), with its own weekday pattern.",
+  "Burglary fell by half between 2015 and 2019, so the baseline pools years with different offender populations (the 2017-2019 baseline checks this).",
+  "Subway entries understate work at home among car commuters and overstate it where service was cut."
+ ],
+ "prior": 0.25,
+ "registrant": "Claude (round 2, re-timed consequences agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T23:48:46-0500",
+ "sha256": "1d701f85abd57987c8ed0c01399a6b1883f353bb7d5c0918046546108f38b9a8"
+}

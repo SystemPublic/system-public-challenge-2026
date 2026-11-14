@@ -1,0 +1,167 @@
+{
+ "id": "heat-mech-intox",
+ "kind": "bridge",
+ "statement": "Alcohol and drug intoxication is not a measurable step between heat and shootings in New York City: daily FDNY EMS dispatches for drug and alcohol abuse rise with the day's maximum temperature by only a few percent per 5 C, and adding them to the daily model removes less than a tenth of the temperature slope of shootings.",
+ "graph_evidence": [
+  {
+   "relationship_id": [
+    "4FaXcuNJRt|N5xiUDm5Jr"
+   ],
+   "concepts": [
+    "temperature side: temperature",
+    "alcohol consumption"
+   ],
+   "n_findings": 2,
+   "n_associations_returned": 1,
+   "n_studies": 1,
+   "sign_split": {
+    "plus": 0,
+    "minus": 1,
+    "unsigned": 0
+   },
+   "direction": "-",
+   "summary": "The only temperature-alcohol finding is between countries and negative: Ventura-Cots et al. 2019, 193 countries, Spearman rho -0.5 between mean annual temperature and litres of alcohol per person. It is a climate comparison and says nothing about hot days; for a daily mechanism it is noise or a confounder of place. The graph has no finding that people drink more on hot days.",
+   "pubmed_ids": [
+    30324707
+   ]
+  },
+  {
+   "relationship_id": [
+    "4FaXcuNJRt|wXQtzOsY_-"
+   ],
+   "concepts": [
+    "temperature side: temperature",
+    "drinking behavior"
+   ],
+   "n_findings": 1,
+   "n_associations_returned": 1,
+   "n_studies": 1,
+   "sign_split": {
+    "plus": 0,
+    "minus": 1,
+    "unsigned": 0
+   },
+   "direction": "-",
+   "summary": "Same study: share of drinkers falls with mean temperature, rho -0.49.",
+   "pubmed_ids": [
+    30324707
+   ]
+  },
+  {
+   "relationship_id": [
+    "14UOQBVakG|N5xiUDm5Jr",
+    "2qLKgaxkm_|N5xiUDm5Jr",
+    "N5xiUDm5Jr|14UOQBVakG",
+    "N5xiUDm5Jr|B2ZmiLUPao",
+    "N5xiUDm5Jr|RdEfyciCY-",
+    "N5xiUDm5Jr|Sb3zGs-d5I",
+    "N5xiUDm5Jr|V7ImOTxbql",
+    "N5xiUDm5Jr|X7hfhwez9f",
+    "N5xiUDm5Jr|YZku29igbl",
+    "N5xiUDm5Jr|bYLGUlP0n-",
+    "N5xiUDm5Jr|y83mBL5cYb",
+    "QmevDxhzPZ|N5xiUDm5Jr",
+    "V7ImOTxbql|N5xiUDm5Jr",
+    "YZku29igbl|N5xiUDm5Jr",
+    "bYLGUlP0n-|N5xiUDm5Jr",
+    "y83mBL5cYb|N5xiUDm5Jr"
+   ],
+   "concepts": [
+    "violence side: violence, gun violence, homicide, firearm, crime, violent crime, aggression, aggressive behavior, anger, domestic violence, intimate partner violence",
+    "alcohol consumption"
+   ],
+   "n_findings": 138,
+   "n_associations_returned": 76,
+   "n_studies": 48,
+   "sign_split": {
+    "plus": 72,
+    "minus": 3,
+    "unsigned": 1
+   },
+   "direction": "+",
+   "summary": "The second arrow is well supported: 72 of 76 returned associations are positive. Read: Nicosia et al. 2023, repeal of Sunday sales bans, homicide IRR 1.125 (1.02 to 1.24) and firearm homicide IRR 1.17 (1.03 to 1.33); Hohl et al. 2017, Philadelphia adolescents, firearm homicide aOR 4.1 (1.2 to 14.0) for a history of alcohol use and 3.2 (1.1 to 9.1) for high outlet density; Rubanzana et al. 2015, Rwanda, homicide victimisation aOR 3.1, 10.1 and 11.5 by drinking level; Scribner et al. 1999, New Orleans tracts, elasticity 0.21 to 0.24 of homicide on off-sale outlet density. All four match their abstracts.",
+   "pubmed_ids": [
+    37980844,
+    28055064,
+    26293322,
+    10371257
+   ]
+  },
+  {
+   "relationship_id": [
+    "4FaXcuNJRt|au0LnsERWi",
+    "dINFs04idR|au0LnsERWi"
+   ],
+   "concepts": [
+    "temperature side: temperature, hot",
+    "cocaine"
+   ],
+   "n_findings": 4,
+   "n_associations_returned": 4,
+   "n_studies": 3,
+   "sign_split": {
+    "plus": 2,
+    "minus": 2,
+    "unsigned": 0
+   },
+   "direction": "+",
+   "summary": "Marzuk et al. 1998, New York City medical examiner 1993-1995: on days at or above 31.1 C fatal cocaine overdoses were 33% more frequent (2.34 vs 1.76 per day), but the share of 4,638 homicide victims with cocaine in their blood was 18.9% on hot days and 19.5% on other days (P = .69). The graph stores the homicide comparison as a mean difference of -0.6 with p 0.69, which matches. Chang et al. 2023, California ED visits: cocaine overdose OR 1.159 (1.053 to 1.276) and cocaine use OR 1.044 (1.021 to 1.068) for the 50th to 95th percentile of daily mean temperature; Auger et al. 2017, Quebec: cocaine overdose death OR 2.07 (1.15 to 3.73) at 30 C vs 20 C weekly maximum.",
+   "pubmed_ids": [
+    9628710,
+    37897873,
+    28645059
+   ]
+  },
+  {
+   "relationship_id": [
+    "4FaXcuNJRt|-0HrxUPkp2",
+    "wpUeTjUbAc|-0HrxUPkp2"
+   ],
+   "concepts": [
+    "temperature side: temperature, extreme heat",
+    "mental disorder"
+   ],
+   "n_findings": 3,
+   "n_associations_returned": 3,
+   "n_studies": 3,
+   "sign_split": {
+    "plus": 3,
+    "minus": 0,
+    "unsigned": 0
+   },
+   "direction": "+",
+   "summary": "Nori-Sarma et al. 2022, US ED visits 2010-2019: extreme heat days IRR 1.08 (1.07 to 1.09) for any mental health condition and 1.08 (1.07 to 1.10) for substance use disorders (the latter found through the variable name 'ambient temperature'). Runkle et al. 2024: psychiatric ED visits in pregnancy IRR 1.07 (1.01 to 1.14) per 5 C. Sun et al. 2021: 7.9% (5.2 to 10.7) excess ED visits for mental disorders on extreme heat days; the graph stores this as a relative risk of 7.9 (5.2 to 10.7), a mis-extraction.",
+   "pubmed_ids": [
+    35195664,
+    38829735,
+    34819309
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Heat-shootings claim in this repository (claims/outcomes/heat-shootings.json)",
+   "doi": null,
+   "finding": "NYC daily shooting incidents: IRR 1.146 (1.130 to 1.163) per 5 C TMAX."
+  }
+ ],
+ "prediction": {
+  "direction": "0",
+  "magnitude": "First link: IRR of daily DRUG dispatches per 5 C TMAX between 1.01 and 1.06, from the graph's substance-use ED findings (IRR 1.08 for extreme heat days against a reference about 20 C cooler; OR 1.04 for cocaine use over about 10 C). Attenuation A between -0.02 and 0.08. The same is expected for psychiatric dispatches (EDP).",
+  "support_if": "confirmed (no measurable mediation): A < 0.10 with the upper bootstrap limit below 0.25, whatever the first link. The first-link prediction is scored separately as hit if the IRR lies in 1.01 to 1.06.",
+  "refute_if": "contested: A >= 0.25 with the lower bootstrap limit above 0.10 and a positive mediator coefficient in B1. Anything else is unsettled."
+ },
+ "plan": "Primary mediator: daily count of FDNY EMS dispatches (76xm-jjuj) with initial_call_type 'DRUG' (drug and alcohol abuse) or 'DRUGFC', by date of incident_datetime, 2006-01-01 to 2026-08-31. Secondary mediators, reported but not deciding: (a) psychiatric dispatches, initial_call_type EDP, EDPC or EDPM, the graph's 'mental disorder' candidate; (b) 311 complaints of complaint_type 'Drinking' (public drinking), 2010-01-01 to 2026-08-31, from 76ig-c548 and erm2-nwe9. The call type DRUG does not separate alcohol from other drugs. Daily series for New York City. Shootings (5ucz-vwe8, distinct incident_key per occur_date), Central Park TMAX and PRCP (GHCN-Daily USW00094728) and the calendar terms are built exactly as in analyses/heat/shootings.py. Base model B0: negative binomial GLM of daily shooting incidents on TMAX/5, day of week, calendar month, year, holiday and rain >= 1 mm (alpha by ML, HC0 errors), refitted on the days for which the mediator exists. First link L1: the same model with the mediator's daily count as the outcome, giving the mediator's IRR per 5 C; and the same with a natural cubic spline of TMAX (4 df) to read the mediator's RR at 21, 27 and 33 C against 15 C. Mediator model B1: B0 plus log(1 + mediator count) on the same day. Attenuation A = 1 - b1/b0, where b0 and b1 are the coefficients of TMAX/5 in B0 and B1. Interval for A: 500 bootstrap resamples of calendar weeks (all seven days of a week kept together), alpha held at its full-sample value, 2.5th and 97.5th percentiles. This is mediation by proxy and not identification: the proxy measures the mediator with error, which pulls A toward zero; an unmeasured cause of both the mediator and shootings that is correlated with temperature pushes A upward; and conditioning on a mediator can open a path through such a cause. Pre-specified sensitivity, the same for every mediator: (s1) year-by-month fixed effects in place of month and year; (s2) 2020 and 2021 excluded; (s3) warm season May to September only; (s4) mediator on the previous day in place of the same day. If A under s1 falls on the other side of a decision threshold from the primary A, the verdict is unsettled. Already seen by the project before this registration: the daily shootings and Central Park temperature series and their relation (heat-shootings: IRR 1.146 per 5 C, 1.130 to 1.163; spline RR against the median TMAX 1.37 at 27 C, 1.46 at 30 C, 1.54 at 33 C); daily FDNY EMS dispatches of type SHOT, T-SHOT and STAB (bridge-shot-ems-link, bridge-heat-shootings-ems); the 2023 totals of EMS dispatches by initial call type (DRUG 88,621; EDP 98,371); 311 noise complaints of 2022-2024 summed by latitude and longitude, not by day (nbhd-noise311-exposure); daily 311 street-flooding complaints (further-tidal-flooding-311); and, for this registration, the number of rows and sensors per year and travel mode in ct66-47at (no count values). No daily series of 311 Noise - Street/Sidewalk, 311 Drinking, EMS DRUG or EDP dispatches, or bicycle counts has been queried or seen.",
+ "alternatives": [
+  "EMS dispatches measure intoxication severe enough for an ambulance, not drinking among people who shoot or are shot; a small A may reflect a poor proxy and does not show that alcohol plays no part.",
+  "Dispatch volume depends on people being in public to be seen and reported, so DRUG calls may partly measure street activity.",
+  "Coding of call types changed over twenty years; year terms absorb level shifts but not within-year changes."
+ ],
+ "prior": 0.75,
+ "registrant": "Claude (graph-mechanisms agent), for Jeff Vernon",
+ "chain": [
+  "heat-shootings"
+ ],
+ "registered_at": "2026-11-12T22:21:55-0500",
+ "sha256": "c3a02fb57ef61909330e922821425cff6e396b1bd7a467f0caaec172bc364a8f"
+}

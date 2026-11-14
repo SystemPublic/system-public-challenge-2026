@@ -1,0 +1,81 @@
+{
+ "id": "graph-confounders-surftemp-ed",
+ "kind": "confirmation",
+ "relates_to": "heat-surftemp-ed",
+ "statement": "Across New York City community districts, adding the share of older adults who live alone, the common cause that the System Public Graph's findings name for temperature and heat illness, to the analyst's adjustment set (poverty, percent Black, air conditioning) changes the negative association between surface temperature and the heat-stress emergency department rate (-10.3% per 1 F) by less than 2.5 percentage points, and the association stays negative.",
+ "graph_evidence": [
+  {
+   "association_id": "rzWTS1XpNk",
+   "relationship_id": "aU6CVgYD7i|dINFs04idR",
+   "concepts": [
+    "home environment (living alone)",
+    "heat illness"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Living alone and heat-related death, OR 8.1 (1.4 to 48.1), case-control study of the 1999 Chicago heat wave, 63 cases and 77 controls matched on neighbourhood and age (Naughton et al. 2002). Checked against the PubMed abstract on 12 Nov 2026: matches. The same abstract gives a working air conditioner OR 0.2 (0.1 to 0.7) as the strongest protective factor, which supports the analyst's AC covariate although the graph does not list air conditioning as a shared neighbour of this pair.",
+   "pubmed_ids": [
+    11988377
+   ],
+   "source": "System API v1.0, read from data/cache/sysgraph and data/derived/graph/confounders/links_*.json; Dataverse copy not on this machine, so in_csv unknown"
+  },
+  {
+   "association_id": "0PyCQfb-eu",
+   "relationship_id": "aU6CVgYD7i|rYCo7LTyzN",
+   "concepts": [
+    "home environment (living alone)",
+    "heat wave death"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Living alone and death during the 2009 Adelaide heat wave, adjusted OR 42.31 (2.3 to 792.8), 82 deaths and 164 controls matched on age and sex, median age 77.5 (Zhang et al. 2017). Checked against the PubMed abstract: matches. The abstract also gives air conditioning in bedrooms, adjusted OR 0.004.",
+   "pubmed_ids": [
+    27221967
+   ],
+   "source": "System API v1.0, read from data/cache/sysgraph and data/derived/graph/confounders/links_*.json; Dataverse copy not on this machine, so in_csv unknown"
+  },
+  {
+   "concepts": [
+    "age group",
+    "heat illness"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Age group is a shared neighbour (one readable finding, value 2.41, PMID 33176353, not relied on here). The city outcome is an age-adjusted rate, so age is handled in the outcome and no age covariate is added.",
+   "pubmed_ids": [
+    33176353
+   ],
+   "source": "System API v1.0, read from data/cache/sysgraph and data/derived/graph/confounders/links_*.json; Dataverse copy not on this machine, so in_csv unknown"
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Madrigano J et al. Environ Health Perspect 2015;123:672-678",
+   "doi": "10.1289/ehp.1408178",
+   "finding": "New York City heat-wave deaths were more likely in areas with higher surface temperature and less green space (case-only)."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "The slope stays negative: between -12.8% and -9.8% per 1 F under the graph set (original -10.3%, 95% CI -17.5 to -2.6, n = 54), a change between -2.5 and +0.5 percentage points, central guess -0.5. Derivation from the graph's sizes: if a share p of older adults lives alone and living alone multiplies their heat-illness risk by the odds ratio (8.1 or 42.3, treated as risk ratios for a rare outcome), the rate among older adults is proportional to 1 + p(OR - 1); raising p from 25% to 35% raises it by 26% (OR 8.1) or 36% (OR 42.3), about 0.023 to 0.031 in log rate per point. Older adults are assumed to carry 15% to 25% of an age-adjusted heat ED rate, so the all-age log rate rises by about 0.003 to 0.008 per point of living alone. The change in the temperature coefficient is minus that number times the partial slope of living alone on surface temperature. That partial slope has not been queried; with a between-district SD of living alone of 6 to 8 points, an SD of temperature of 2.0 F and a partial correlation of at most 0.4 in size it is at most 1.6 points per F, giving a change of at most 1.3% per F in size, and 5% only if the odds ratio applied to residents of every age. The sign is taken as negative because one-person households among older adults are expected to be more common in the central districts, which are the hot-surface districts.",
+  "support_if": "All hold in the primary model: (a) the change in the point estimate (graph set minus original, same districts, percent per 1 F) is between -2.5 and +0.5; (b) the 95% paired-bootstrap interval of the change lies inside -5.2 to +5.2, half of the original estimate, so that the test excludes that living alone accounts for half of the slope; (c) the upper 95% limit (HC3) of the slope under the graph set is below 0; (d) the largest VIF is 10 or less.",
+  "refute_if": "The change is +3.4 or more (the slope loses a third or more of its size) or -5.2 or less, and the bootstrap interval of the change excludes zero, with the largest VIF 10 or less.",
+  "otherwise": "Unsettled. no_test if the largest VIF exceeds 10 or fewer than 50 districts have all variables."
+ },
+ "plan": "Unit: community districts with a heat ED rate and the original covariates (54 expected). Outcome (log age-adjusted heat-stress ED rate, EHDP 2443 measure 1405, 2018-22), exposure (surface temperature, EHDP 2141) and the three original covariates are read unchanged from data/derived/heat/bridge_cd.csv. New covariate: EHDP indicator 2146 measure 693, percent of people aged 65 and over who live alone, ACS 2015-19, CD. Primary model: OLS of log rate on surface temperature, poverty, percent Black, AC and living alone, HC3 standard errors, reported as percent change per 1 F; the original model refitted on the same rows; change and paired bootstrap interval (5000 resamples, seed 20261113) by analyses/round2_heat_confounders/reanalysis.py, written before this registration and not yet run. Secondary, not deciding: the primary model plus the three built-form covariates of graph-confounders-trees-surftemp (log population density, footprint share, road share); those three without living alone; and at NTA2010 the heat hospitalization rate from hvi-nta.csv on surface temperature with the original NTA covariates plus living alone at NTA2010 (original -3.9%, -7.2 to -0.4). The coefficient of living alone is reported with its interval and compared with the 0.003 to 0.008 per point derived from the graph.",
+ "power": "The original coefficient has HC3 SE 0.0424 log units per F (n = 54). If living alone has a partial R2 of 0.1 with surface temperature the SE of the change is about 0.014, and the smallest detectable change is about 3.9 percentage points; with partial R2 0.05 it is 2.7. A change of one third of the slope (3.4 points) is therefore near the limit of detection, and condition (b) can fail if living alone is strongly related to surface temperature. The prediction is of a small change, so the test fails if living alone turns out to be a strong ecological correlate of both variables, which is possible: in New York older adults living alone are common in affluent central districts with low heat ED rates.",
+ "alternatives": [
+  "Ecological sign reversal: the individual-level finding is that living alone raises risk, but across districts the share living alone may mark affluent central districts with low ED use, so its coefficient may be negative and the change positive.",
+  "The graph's findings are for death among mostly older people during two heat waves; the outcome here is ED visits at all ages over five summers, many of them among outdoor workers.",
+  "The same two abstracts name air conditioning as the strongest protective factor, which the analyst already included; the graph-derived addition may carry little beyond it."
+ ],
+ "prior": 0.5,
+ "registrant": "Claude (round 2, graph-derived adjustment sets for heat), 12 November 2026",
+ "already_seen": "Seen before registration by this registrant: data/derived/heat/bridge_cd.csv and bridge_nta.csv (every value of street-tree density, surface temperature, vegetative cover, heat ED rate, heat hospitalization rate, poverty, percent Black and AC, by community district and by NTA), bridge_results.json, and the outcomes of heat-trees-surftemp, heat-surftemp-ed, heat-trees-ed-chain and heat-trees-canopy-within-nta. The registrant recomputed the two original estimates from bridge_cd.csv before registering. PLUTO (64uk-42ks, version 26v2) queries already in data/cache/socrata are citywide sums by land use and by year built, lot area by 2020 tract, land use and owner type (for nbhd-vacant-shootings), and single lots; none is grouped by community district or 2010 tract and none holds building area by area. The EHDP file for indicator 2325 (race and total population) is on disk because the commuting re-analysis read its UHF42 rows; its CD and NTA rows have not been read. The file for indicator 2112 (traffic density) is on disk for the concordance matrix at UHF42; its CD rows have not been read by this registrant. Indicator 2146 (older adults living alone) has not been downloaded. Only EHDP metadata (measure names, geographies, periods) and the PLUTO column list were read to choose the covariates. The registrant's general knowledge of New York (Manhattan is the densest borough, has many one-person households, and the original outcome notes say that hot-surface districts are central) informed the priors. Seen for this claim: unadjusted -6.6% (-13.6 to +1.0), adjusted -10.3% (-17.5 to -2.6), percent Black +10.9% per 10 points in the adjusted model, NTA hospitalizations adjusted -3.9% (-7.2 to -0.4); Spearman correlations of surface temperature with AC -0.18 and with poverty +0.22.",
+ "precedence": "Verdict by concord.claims.PRECEDENCE rules 1 to 4.",
+ "registered_at": "2026-11-12T23:43:38-0500",
+ "sha256": "d487c4638e9d364954b7e654a909b8af3f49793e70cc363a92855fcdb72fd298"
+}

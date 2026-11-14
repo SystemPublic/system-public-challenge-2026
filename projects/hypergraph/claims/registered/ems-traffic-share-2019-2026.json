@@ -1,0 +1,43 @@
+{
+ "id": "ems-traffic-share-2019-2026",
+ "kind": "conflict",
+ "statement": "Slower traffic accounts for less than half of the rise in Manhattan life-threatening ambulance travel time from January-September 2019 to January-September 2026, even if ambulance pace moved one for one with taxi pace.",
+ "graph_evidence": [
+  {
+   "summary": "The graph holds no finding on the elasticity of emergency-vehicle travel time to general traffic speed. It holds a lights-and-sirens time saving of 3.02 min (Minneapolis, PMID 9795322) and survival odds ratios of 1.02 to 1.24 per minute of shorter response (docs/congestion_tradeoffs.md).",
+   "pubmed_ids": [
+    "9795322",
+    "20798090"
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "MMR FY2026, FDNY chapter",
+   "finding": "FDNY attributes the FY2026 rise to fewer ambulance tours (in-service hours down 5%) and 11 hospital ambulances leaving the 911 system."
+  },
+  {
+   "citation": "repro-mmr-cbd-speed (seen before registration)",
+   "finding": "CBD weekday taxi speed 6.94, 6.95, 6.62 mph in FY24-FY26; January-June 2026 taxi speeds 9.2% below January-June 2025 in the CBD and 5.9% in Manhattan north of 60th Street."
+  }
+ ],
+ "prediction": {
+  "direction": "-",
+  "magnitude": "S1 (traffic share at beta = 1) between 0.05 and 0.45; S at the T1 beta between 0.03 and 0.35",
+  "support_if": "The 95% upper bound of S1 is below 0.5.",
+  "refute_if": "The 95% lower bound of S1 is above 0.5."
+ },
+ "plan": "lib.traffic_share(beta, beta_se) at commit f44ab0b, base 2019-01-01 to 2019-09-30, post 2026-01-01 to 2026-09-30, sev hi, Manhattan crz + north, all hours. D = change in log mean EMS travel; pace term = EMS-incident-weighted (post-period area-hour shares) change in log taxi hours per mile by area and hour. S1 = pace term / D (deciding). S = beta x pace term / D with beta and its se from the deciding T1 fit (x only, sev hi) is reported. Interval: day-block bootstrap within each period, 400 draws, then 20,000 draws combining beta, seed 20261113. Discrimination: the predicted S1 near 0.2 is far from 0.5 if the bootstrap half-width is below 0.15, which a 9-month comparison with about 60,000 incidents a period gives. Secondary: other periods (2019 vs 2025), all severities, the overnight hours 01-05 as a check (traffic is light, so a rise there is distance or supply).",
+ "alternatives": [
+  "Fewer ambulance unit-hours (MMR: in-service hours per day 8,891 in FY22 to 8,109 in FY26), so the nearest free unit is farther away (a distance effect, not traffic)",
+  "Hospital closures and diversions lengthening repositioning (Mount Sinai Beth Israel closed 2025)",
+  "Call mix and geography (more calls in slow areas or hours)",
+  "Recording changes (share of incidents without a valid response time rose from 4.4% in 2023 to 9.5% in 2026)",
+  "A shared within-hour cause, such as rain or an event, that slows traffic and also raises demand in that hour",
+  "Ambulances may be slowed more than taxis by congestion (beta above 1), for example where cars cannot pull over; then S1 understates the traffic share."
+ ],
+ "prior": 0.8,
+ "registrant": "claude (ems_response thread)",
+ "registered_at": "2026-11-13T13:27:12-0500",
+ "sha256": "d5ae4bc880e81dbf1075d0d6df0963bb730aa71f31a494104950158198bfe180"
+}

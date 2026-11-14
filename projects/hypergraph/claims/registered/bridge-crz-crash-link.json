@@ -1,0 +1,101 @@
+{
+ "id": "bridge-crz-crash-link",
+ "kind": "bridge",
+ "statement": "Research link for the congestion-pricing bridge: on urban roads, injury crashes change with mean speed as (v1/v0)^E with E about 1.2 (Elvik 2009), and with traffic volume with an elasticity of about 0.9.",
+ "graph_evidence": [
+  {
+   "association_id": "(PMID 26759927)",
+   "concepts": [
+    "speed",
+    "pedestrian collision"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Rothman et al. 2016 (Toronto, child pedestrian-motor vehicle collisions): higher speed roads IRR 1.27 (1.13 to 1.44). Abstract read.",
+   "pubmed_ids": [
+    26759927
+   ]
+  },
+  {
+   "association_id": "(PMID 21399547)",
+   "concepts": [
+    "speed",
+    "injury severity"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Moped and scooter crashes: driving speeds above 20 mph OR 2.02 (1.73 to 2.36) for severe or lethal injury. Abstract read.",
+   "pubmed_ids": [
+    21399547
+   ]
+  },
+  {
+   "association_id": "(PMID 23411678)",
+   "concepts": [
+    "motor vehicle speed",
+    "cyclist injury"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Teschke et al. 2012 (Toronto and Vancouver cyclists, case-crossover): motor vehicle speeds below 30 km/h adjusted OR 0.52 (0.29 to 0.92) for injury. Abstract read.",
+   "pubmed_ids": [
+    23411678
+   ]
+  },
+  {
+   "association_id": "(search)",
+   "concepts": [
+    "traffic volume",
+    "crash"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "No finding in the graph links traffic volume, vehicle-miles or congestion to crashes or injuries. The graph holds no power-model (Nilsson, Elvik) findings and no road-pricing findings (see docs/mobility.md).",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Elvik R (2009). The Power Model of the relationship between speed and road safety: update and new analyses. TOI Report 1034/2009, Oslo.",
+   "doi": null,
+   "finding": "Exponents for urban and residential roads: 1.2 for injury accidents, 1.4 for injured persons, 2.6 for fatal accidents, 3.0 for persons killed (rural: 1.6, 2.2, 4.1, 4.6). The urban estimates rest on few studies (summary by ONISR, 14 May 2014)."
+  },
+  {
+   "citation": "Nilsson G (2004). Traffic safety dimensions and the Power Model to describe the effect of speed on safety. Lund Bulletin 221.",
+   "doi": null,
+   "finding": "Exponent 2 for injury accidents, 3 for fatal and serious, 4 for fatal accidents."
+  },
+  {
+   "citation": "Elvik R (2013). A re-parameterisation of the Power Model of the relationship between the speed of traffic and the number of accidents and accident victims. Accident Analysis and Prevention 50:854-860.",
+   "doi": "10.1016/j.aap.2012.07.012",
+   "finding": "Exponential form; the effective exponent depends on the initial speed and is lower at low speeds."
+  },
+  {
+   "citation": "Green CP, Heywood JS, Navarro M (2016). Traffic accidents and the London congestion charge. Journal of Public Economics 133:11-22.",
+   "doi": "10.1016/j.jpubeco.2015.10.005",
+   "finding": "London's charge (2003), with network speeds of 8.6 mph before it and vehicle-km in the zone down about 12 to 34 percent, reduced accidents in the zone by roughly 38 to 40 percent and serious-and-fatal accidents by 46 a year, against 20 British cities. The authors note that higher speeds could raise severity in theory; they found declines in serious and fatal accidents."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "E_speed for injury crashes 1.2 (drawn as N(1.2, 0.5), truncated at 0); E_speed for fatal crashes 2.6 (N(2.6, 0.8)); volume elasticity 0.9 (N(0.9, 0.2)).",
+  "support_if": "Not testable with city data apart from the endpoint of bridge-crz-injury-crashes; this link is tested only through that endpoint.",
+  "refute_if": "As above."
+ },
+ "plan": "No separate city test. The link's distributions enter analyses/bridges/compose.py. Its outcome will be no_test, with the literature values as graph_effect.",
+ "alternatives": [
+  "At network speeds of 8 to 9 mph, the power model may not apply: crash risk in congested streets depends on conflicts (turns, double parking, pedestrians crossing between stopped cars) more than on speed.",
+  "The volume elasticity may exceed 1 in congested networks (London's accident decline was about three times its vehicle-km decline)."
+ ],
+ "prior": null,
+ "registrant": "Claude (bridges agent), for Jeff Vernon",
+ "chain": [
+  "bridge-crz-crash-link"
+ ],
+ "registered_at": "2026-11-12T16:04:49-0500",
+ "sha256": "6e399c611dee95ac83ebd0e067fc83ffb98e77fa42a44c39cba646e344bab30b"
+}

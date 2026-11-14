@@ -1,0 +1,80 @@
+{
+ "id": "construction-permit-funnel",
+ "kind": "confirmation",
+ "statement": "In New York City, counts of new-building (NB) permit rows overstate new buildings: each NB job carries several permit rows, and fewer jobs reach a certificate of occupancy and a recorded year built than are permitted.",
+ "graph_evidence": [
+  {
+   "relationship_id": "B0QiEej1E1|COEFxSZVXO",
+   "concepts": [
+    "population growth",
+    "construction"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Population growth rate and expansion rate of construction land, Chongqing over 20 years (coefficient 1.82; doi:10.1117/12.815931). The only construction-supply finding found in the graph.",
+   "pubmed_ids": []
+  },
+  {
+   "association_id": "aFGrNWb1i5",
+   "concepts": [
+    "housing (vacant housing demolitions)",
+    "crime"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "-",
+   "summary": "Vacant housing demolitions and change in crime, mean difference -0.068 (CI -0.119 to -0.018), PMID 36228876. Shows the graph treats land and buildings as exposures for health and crime, not as supply outcomes.",
+   "pubmed_ids": [
+    36228876
+   ]
+  },
+  {
+   "association_id": "(search)",
+   "concepts": [
+    "construction",
+    "permit",
+    "completion",
+    "vacant",
+    "demolition",
+    "renovation"
+   ],
+   "n_findings": 0,
+   "n_studies": 0,
+   "direction": "0",
+   "summary": "Variable and concept searches (13 terms, data/derived/construction/graph_search.json) found no finding on building permits, permit-to-completion ratios, lags or permit lapse. The construction concept (COEFxSZVXO) has 3 relationships in all (wage, population growth, natural disasters).",
+   "pubmed_ids": []
+  }
+ ],
+ "literature": [
+  {
+   "citation": "U.S. Census Bureau, New Residential Construction, methodology and 'Relationship between building permits, starts and completions'",
+   "doi": null,
+   "url": "https://www.census.gov/construction/nrc/pdf/summeas_nrc.pdf",
+   "finding": "Construction is undertaken for all but a very small percentage of units authorized by permit; an older bridge table puts abandonment before start near 1.5% and after start near 0.5%. Counts are housing units, not permit rows."
+  },
+  {
+   "citation": "NYU Furman Center, State of New York City's Housing and Neighborhoods / 2019 data on the housing stock",
+   "doi": null,
+   "url": "https://furmancenter.org/thestoop/entry/2019-data-on-new-york-citys-housing-stock",
+   "finding": "Median time from new-building permit to certificate of occupancy was about 1.9 years for buildings permitted in 2009-2014."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Legacy DOB Permit Issuance (ipu4-2q9a), job_type NB, issued 2010-2019: rows per unique NB job between 3 and 10, with renewals at least 20% of rows. Unique NB jobs with a permit, per year 2010-2019: 1,500 to 4,500. PLUTO lots with yearbuilt in 2012-2021 per year: 40% to 100% of NB jobs permitted two years before.",
+  "support_if": "rows per job >= 3 in every year 2010-2019 AND jobs reaching any CO (bs8b-p36w or pkdm-hqz6) are fewer than jobs permitted, for cohorts 2010-2017",
+  "refute_if": "rows per job < 2 in most years, or CO jobs roughly equal permitted jobs (ratio > 0.97) for cohorts 2010-2017"
+ },
+ "plan": "SoQL aggregation by year of issuance on ipu4-2q9a (job_type='NB'): count of rows, count distinct job__, rows by filing_status (INITIAL/RENEWAL) and permit_type. DOB NOW NB jobs from w9ak-ipjd/rbx6-tga4 for 2021-2025. Join unique NB job numbers (first NB permit year) to CO records in bs8b-p36w (job_number, job_type NB) and pkdm-hqz6 (job_filing_name prefix, job_type New Building) to get the year of first CO. Compare with DCP Housing Database (br6q-ssj3) new-building completions by compltyear and PLUTO (64uk-42ks) count of lots by yearbuilt. Unit: NB job; years 2010-2025. Figure: funnel of rows, jobs, jobs with CO, HDB completions, PLUTO yearbuilt.",
+ "alternatives": [
+  "Jobs that are superseded or refiled under a new job number (the building is built, under another job)",
+  "CO records missing from open data or issued under a different job number (temporary CO only, or PAA)",
+  "PLUTO yearbuilt is estimated and often recorded late or not updated after demolition and rebuild",
+  "Recent cohorts are right-censored (not yet finished)"
+ ],
+ "prior": 0.75,
+ "registrant": "Claude (construction agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T15:14:19-0500",
+ "sha256": "443fc73d3f520619115c56c1a222658021e30f012b0a8da0467e47d56aaf7c16"
+}

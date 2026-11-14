@@ -1,0 +1,200 @@
+{
+ "id": "construction-four-year-completion",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "share of NB jobs with a first CO within 4 years of first NB permit, pooled cohorts 2010-2017 (registered statistic)",
+  "estimate": 0.734,
+  "lo": 0.727,
+  "hi": 0.741,
+  "scale": "proportion; null set to the registered support threshold 0.75",
+  "null": 0.75,
+  "n": 15224
+ },
+ "graph_effect": {
+  "label": "DCP: share of permitted projects completed within four years",
+  "estimate": 0.85,
+  "lo": 0.8,
+  "hi": 0.9,
+  "scale": "proportion",
+  "null": null
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ipu4-2q9a",
+   "name": "DOB Permit Issuance",
+   "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+   "rows_updated_at": "2026-11-12T00:36:38Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job__,job_doc___,permit_type,filing_status,permit_status,issuance_date,expiration_date,bbl,borough,residential,gis_latitude,gis_longitude",
+    "$where": "job_type='NB'"
+   },
+   "fetched": "2026-11-12T15:26:51-0500",
+   "n_rows": 572035
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "w9ak-ipjd",
+   "name": "DOB NOW: Build – Job Application Filings",
+   "url": "https://data.cityofnewyork.us/d/w9ak-ipjd",
+   "rows_updated_at": "2026-11-11T21:29:13Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_filing_number,filing_status,job_type,bbl,filing_date,first_permit_date,approved_date,signoff_date,proposed_dwelling_units,latitude,longitude",
+    "$where": "job_type='New Building'"
+   },
+   "fetched": "2026-11-12T15:21:36-0500",
+   "n_rows": 59039
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "bs8b-p36w",
+   "name": "DOB Certificate Of Occupancy",
+   "url": "https://data.cityofnewyork.us/d/bs8b-p36w",
+   "rows_updated_at": "2026-11-11T21:35:47Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_number,job_type,c_o_issue_date,issue_type,bbl,pr_dwelling_unit,ex_dwelling_unit",
+    "$where": "job_type='NB'"
+   },
+   "fetched": "2026-11-12T15:20:43-0500",
+   "n_rows": 53531
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "pkdm-hqz6",
+   "name": "DOB NOW: Certificate of Occupancy",
+   "url": "https://data.cityofnewyork.us/d/pkdm-hqz6",
+   "rows_updated_at": "2026-11-11T21:01:41Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_filing_name,job_type,c_of_o_issuance_date,c_of_o_filing_type,c_of_o_status,number_of_dwelling_units,bbl"
+   },
+   "fetched": "2026-11-12T15:21:05-0500",
+   "n_rows": 84095
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "br6q-ssj3",
+   "name": "Housing Database Project Level Files",
+   "url": "https://data.cityofnewyork.us/d/br6q-ssj3",
+   "rows_updated_at": "2026-09-30T18:04:43Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job_number,job_type,job_status,permityear,compltyear,datepermit,datecomplt,classaprop,units_co,bbl",
+    "$where": "job_type='New Building'"
+   },
+   "fetched": "2026-11-12T15:21:45-0500",
+   "n_rows": 35188
+  },
+  {
+   "kind": "sysgraph",
+   "api_version": "v1.0",
+   "dataset_version": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "queries": "variable and concept search for 13 terms; relationships of concepts COEFxSZVXO (construction), jCrN64TC75 (building), IFcQ3j86qe (housing); associations of 8 variables",
+   "derived": "data/derived/construction/graph_search.json",
+   "fetched": "2026-11-12"
+  },
+  {
+   "kind": "other",
+   "name": "NYC DCP, New Housing Permits in the First Half of 2022 (information brief), quoted by Atlantic Yards Report 13 Nov 2022",
+   "url": "https://atlanticyardsreport.blogspot.com/2022/11/dcp-expiration-of-421-tax-break-drove.html"
+  }
+ ],
+ "prediction_scored": "partial. The registered pooled 2010-2017 share is 0.734 (0.727-0.741), between the support threshold (0.75) and the refutation threshold (0.65), so the registered rule gives unsettled. The 2013-2017 figure of 0.807 is exploratory. The Housing Database shares are not an independent check, because their completion dates come from DOB certificates of occupancy.",
+ "settle": "Two questions remain. (1) COs before July 2012 for the 2010-2011 cohorts, from DOB's BIS CO archive, would settle the early cohorts directly. (2) The research figure is for projects or units, the city figure for jobs; a unit-weighted measure from the Housing Database shows the 2015 cohort completing only 0.67 of units within four years and the 2022 cohort 0.66 by July 2026, both years of 421-a deadline rushes. Whether DCP's 80-90 percent holds in deadline years needs the 2022 cohort followed to 2027.",
+ "research_needed": [
+  {
+   "question": "What share of units permitted in the 2022 421-a rush (about 58,600 units in H1 2022) reach a CO by mid-2027 and by the June 2031 extended deadline?",
+   "data": "DCP Housing Database (br6q-ssj3) quarterly releases; DOB NOW CO (pkdm-hqz6)",
+   "design": "cohort follow-up by units, with job withdrawals and superseding jobs tracked",
+   "priority": "high"
+  },
+  {
+   "question": "Why do 7-9% of NB jobs permitted 2012-2017 still have no CO after nine years: abandoned, built without CO, refiled, or merged?",
+   "data": "ipu4-2q9a, w9ak-ipjd, HDB job_status, aerial images",
+   "design": "stratified sample with aerial and street-level checks",
+   "priority": "medium"
+  },
+  {
+   "question": "Is the Census national near-100% start and completion rate an appropriate benchmark for a city of multifamily buildings?",
+   "data": "Census Survey of Construction microdata by structure size",
+   "design": "compare completion rates by building size",
+   "priority": "low"
+  },
+  {
+   "question": "Should the graph hold findings on housing supply (permits, starts, completions, lapse)? It now holds none.",
+   "data": "Census New Residential Construction; NYC DCP Housing Database; Furman Center CoreData",
+   "design": "extraction of urban-economics and planning literature into the graph",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/construction/four_year_completion.png"
+ ],
+ "notes": "Cohort = distinct NB job numbers by the year of first NB-type permit (legacy) or first permit date (DOB NOW); outcome = earliest CO for the same job number in either CO table, temporary or final. Shares by cohort (DOB measure): 2010: 0.835, 2011: 0.825, 2012: 0.841, 2013: 0.863, 2014: 0.881, 2015: 0.765, 2016: 0.822, 2017: 0.797, 2018: 0.756, 2019: 0.809, 2020: 0.791, 2021: 0.8 is the HDB measure; the DOB values are in data/derived/construction/cohort_completion.csv. Graph evidence check (12 Nov 2026, after the coordinator's audit): association aFGrNWb1i5 (vacant housing demolitions and 'change in crime', PMID 36228876), cited in the registration, is NOT in the Dataverse v2.1 CSV. The abstract (Kvik et al., Prev Med 2022) shows it is mis-extracted: the -0.068 (95% CI -0.119 to -0.018) is the change in total emergency-department visits per 1,000 people, and demolitions showed no significant change in crime. It should be dropped; it bore on context only, not on any test here. Of the other graph rows cited, UXzKbLS899 (population growth and construction land, Chongqing) is in the CSV. The vacant-lot and renovation rows looked at during the search (3rfxckzPtm, R0ctB4TYK1, CVCABCQUUe, 168lUaKwYN, 20AOg9kwfR, IfVJnDqqH0) are not in the CSV. The graph holds no finding on permits, permit-to-completion ratios, lags or permit lapse, so the research side of every construction claim comes from the literature.",
+ "registration_sha256": "8164e034d6847d622f5349c88037a7b6be051bb2f2d01e9c6886ec387c13ce89",
+ "decided_at": "2026-11-12T15:44:27-0500",
+ "stance": null,
+ "exploratory": {
+  "label": "cohorts 2013-2017 only (chosen after seeing that the legacy CO table starts July 2012)",
+  "estimate": 0.807,
+  "lo": 0.799,
+  "hi": 0.814,
+  "n": 10712
+ },
+ "revision": {
+  "reason": "Rule 6: the null here is a support threshold, not a research direction; a tight interval just below it would read as strong contradiction, which the registered rule (unsettled) does not say.",
+  "critique": "critique/construction-four-year-completion.md",
+  "revised_at": "2026-11-12T15:56:27-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "share of NB jobs with a first CO within 4 years of first NB permit, cohorts 2013-2017",
+    "estimate": 0.807,
+    "lo": 0.799,
+    "hi": 0.814,
+    "scale": "proportion (null: DCP lower bound 0.75 used as support threshold)",
+    "null": 0.75,
+    "n": 10712
+   },
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 14.9
+   },
+   "decided_at": "2026-11-12T15:44:27-0500",
+   "prediction_scored": "partial. The registered pooled statistic for cohorts 2010-2017 was 0.734 (95% CI 0.727-0.741, n=15,224), which falls between the support (>=0.75) and refute (<0.65) thresholds. It is pulled down by cohorts 2010 (0.29) and 2011 (0.59) only because the legacy CO table (bs8b-p36w) begins in July 2012, so COs issued before then are missing; this was a named alternative ('CO records missing from open data'). The Housing Database, named in the plan as the second measure, gives 0.83-0.88 for the same 2010-2011 cohorts and 0.76-0.88 for 2010-2021. Cohorts 2012-2021 on the DOB measure lie between 0.74 and 0.85; pooled 2013-2017 is 0.807 (0.799-0.814). The verdict 'confirmed' therefore rests on a cohort restriction chosen after the data were seen, for a documented reason, and supported by the independent HDB measure. The registrant's own expectation (about 0.70) was too low. Median time from first NB permit to first CO was 1.97 years for 2013-2017 (Furman: about 1.9). Eventual completion (CO by Nov 2026) for 2012-2017 cohorts is 0.91-0.93, below Census's near-complete national figure."
+  },
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "share of NB jobs with a first CO within 4 years of first NB permit, pooled cohorts 2010-2017 (registered statistic)",
+    "estimate": 0.734,
+    "lo": 0.727,
+    "hi": 0.741,
+    "scale": "proportion; null set to the registered support threshold 0.75",
+    "null": 0.75,
+    "n": 15224
+   },
+   "stance": {
+    "value": -0.978,
+    "lo": -0.997,
+    "hi": -0.851,
+    "z": -4.48
+   },
+   "decided_at": "2026-11-12T15:44:27-0500",
+   "prediction_scored": "partial. The registered pooled 2010-2017 share is 0.734 (0.727-0.741), between the support threshold (0.75) and the refutation threshold (0.65), so the registered rule gives unsettled. The 2013-2017 figure of 0.807 is exploratory. The Housing Database shares are not an independent check, because their completion dates come from DOB certificates of occupancy."
+  }
+ ]
+}

@@ -1,0 +1,175 @@
+{
+ "id": "crz-storefront-vacancy",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "Change in storefront vacancy share, 31 Dec 2025 vs 31 Dec 2024, zone minus all other city ZIPs (bootstrap over tax lots)",
+  "estimate": -0.4674314057962023,
+  "lo": -1.080900390717683,
+  "hi": 0.17391494617450684,
+  "scale": "percentage points",
+  "null": 0,
+  "n": 33830
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "92iy-9c3n",
+   "name": "Storefronts Reported Vacant or Not",
+   "url": "https://data.cityofnewyork.us/d/92iy-9c3n",
+   "rows_updated_at": "2026-10-13T15:23:13Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "reporting_year, filing_due_date, bbl, borough_block_lot, zip_code, vacant_on_12_31, primary_business_activity",
+    "$where": "reporting_year='2019 and 2020'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T08:06:47-0500",
+   "n_rows": 75250
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "92iy-9c3n",
+   "name": "Storefronts Reported Vacant or Not",
+   "url": "https://data.cityofnewyork.us/d/92iy-9c3n",
+   "rows_updated_at": "2026-10-13T15:23:13Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "reporting_year, filing_due_date, bbl, borough_block_lot, zip_code, vacant_on_12_31, primary_business_activity",
+    "$where": "reporting_year='2020 and 2021'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T08:06:55-0500",
+   "n_rows": 75540
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "92iy-9c3n",
+   "name": "Storefronts Reported Vacant or Not",
+   "url": "https://data.cityofnewyork.us/d/92iy-9c3n",
+   "rows_updated_at": "2026-10-13T15:23:13Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "reporting_year, filing_due_date, bbl, borough_block_lot, zip_code, vacant_on_12_31, primary_business_activity",
+    "$where": "reporting_year='2021 and 2022'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T08:07:36-0500",
+   "n_rows": 63456
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "92iy-9c3n",
+   "name": "Storefronts Reported Vacant or Not",
+   "url": "https://data.cityofnewyork.us/d/92iy-9c3n",
+   "rows_updated_at": "2026-10-13T15:23:13Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "reporting_year, filing_due_date, bbl, borough_block_lot, zip_code, vacant_on_12_31, primary_business_activity",
+    "$where": "reporting_year='2022 and 2023'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T08:08:22-0500",
+   "n_rows": 64092
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "92iy-9c3n",
+   "name": "Storefronts Reported Vacant or Not",
+   "url": "https://data.cityofnewyork.us/d/92iy-9c3n",
+   "rows_updated_at": "2026-10-13T15:23:13Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "reporting_year, filing_due_date, bbl, borough_block_lot, zip_code, vacant_on_12_31, primary_business_activity",
+    "$where": "reporting_year='2023'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T08:08:49-0500",
+   "n_rows": 65419
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "92iy-9c3n",
+   "name": "Storefronts Reported Vacant or Not",
+   "url": "https://data.cityofnewyork.us/d/92iy-9c3n",
+   "rows_updated_at": "2026-10-13T15:23:13Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "reporting_year, filing_due_date, bbl, borough_block_lot, zip_code, vacant_on_12_31, primary_business_activity",
+    "$where": "reporting_year='2024'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T08:09:01-0500",
+   "n_rows": 66668
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "92iy-9c3n",
+   "name": "Storefronts Reported Vacant or Not",
+   "url": "https://data.cityofnewyork.us/d/92iy-9c3n",
+   "rows_updated_at": "2026-10-13T15:23:13Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "reporting_year, filing_due_date, bbl, borough_block_lot, zip_code, vacant_on_12_31, primary_business_activity",
+    "$where": "reporting_year='2025'",
+    "$order": ":id"
+   },
+   "fetched": "2026-11-13T08:10:10-0500",
+   "n_rows": 68634
+  }
+ ],
+ "prediction_scored": "hit: the estimate is inside the predicted range of -1.5 to +0.5 and the upper bound (+0.17) is below +1.2. After the referee: the hit is on the comparison with all other city ZIPs and on sampling error alone; with the year-to-year movement of the difference added the upper bound against zero is +0.67.",
+ "settle": "The filing for 31 December 2026; taxable sales by ZIP or by borough, which the state does not publish; card-spending data by district.",
+ "research_needed": [
+  {
+   "question": "Did retail and restaurant sales in the zone change?",
+   "data": "taxable sales below the city level (the state publishes New York City as one jurisdiction)",
+   "design": "difference-in-differences by district and industry",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/congestion/business.png"
+ ],
+ "notes": "Vacancy in the zone was 12.33% of 15083 storefronts on 31 December 2024 and 12.50% of 15442 on 31 December 2025, a change of +0.18 points. Outside the zone it changed by +0.65 points. The difference is -0.47 (-1.08 to +0.17) points; both registered conditions for support are met (estimate at most +0.5, upper bound below +1.2). The same difference was -0.45 in 2024, the one earlier year under the present filing structure, so the 2025 value equals the 2024 value. The values for 2022 and 2023 (-0.74 and -1.40) are not used as a trend, for the reason given in the referee note below. Vacancy rose slightly in the zone and rose more elsewhere. Against Manhattan 60th-110th Street: -0.23 (-1.33 to +0.88). Against downtown Brooklyn and Long Island City: +1.09 (-0.60 to +2.85) (about 2,100 storefronts; vacancy there fell). Against the rest of the city: -0.56 (-1.18 to +0.08). The test excludes a rise of 1.2 points (about 180 storefronts) in the zone's vacancy relative to the whole rest of the city, counting sampling error only. It cannot detect a smaller rise, and one year may be too soon for leases to show an effect.\n\nAfter the referee (13 Nov 2026): the verdict stays confirmed under rule 1. Both registered support conditions are met on the registered comparison, and they remain met in the referee's four variants: with the February filing added, -0.76 (-1.70 to +0.16); on tax lots present in both years, -0.36 (-0.95 to +0.25); with a bootstrap over ZIP codes, -0.47 (-1.19 to +0.24); without ZIP 10044 (Roosevelt Island, which is in the zone list and outside the toll zone), -0.46. The label covers less than its wording suggests, and the verdict_note now says what it covers. The negative difference comes from a rise elsewhere: zone vacancy rose by 0.18 points and vacancy outside rose by 0.65. Against downtown Brooklyn and Long Island City, where vacancy fell by 0.91 points, the zone did worse by 1.09 points (-0.60 to +2.85), an interval that includes zero and twice the threshold; that area has four ZIPs and about 2,100 storefronts. The registered interval covers the sampling of tax lots only. With the year-to-year standard deviation of the difference (0.48, from three values) added, the upper bound against zero is +0.67, and against the mean of 2022-24 the 2025 value is +0.39 with a standard error of 0.64 and an upper bound of +1.66, which does not exclude 1.2. The registry was restructured between reporting years '2022 and 2023' and 2023: one filing due in August became a main filing due in June and a separate February filing in which every row is vacant, and the coding of business activity changed. The 2023 difference of -1.40 compares a filing under the old structure with one under the new; with the February rows added it is +1.14. Only 2024 (-0.45) is a clean pre-toll year, so the registration's expectation of about -0.5 without a toll rests on one year, and the mean of three earlier years (-0.86) is withdrawn from the notes. Between the filings for 31 December 2020 and 2021 the registry lost 18% of its rows outside the zone and 9% inside. The threshold of 1.2 points is the resolution of the test: the plan chose it as the effect at which the design reaches a discrimination of about 4, before the 2025 values were seen. It is not an effect size from the retail literature. The two papers in the registration (London and Stockholm) concern retail sales, were cited from memory, have not been checked against their texts, and supply no number to the test. Within the zone the change runs from -4.0 points (ZIP 10038) to +2.1 (10036) among ZIPs with 300 or more storefronts. Commercial leases commonly run five to ten years, so one filing after the toll cannot tell no effect from a delayed one.",
+ "registration_sha256": "4839a5367fdfd33a809aa3bcf910aa6e7dbeacc24f2b4bbbec45a5cf517ee070",
+ "decided_at": "2026-11-13T08:12:54-0500",
+ "stance": {
+  "value": 0.627,
+  "lo": 0.427,
+  "hi": 0.827
+ },
+ "verdict_note": "Confirmed on the registered comparison only. Zone vacancy itself rose by 0.2 points in the first year, and vacancy in the rest of the city rose by 0.65. A rise of 1.2 points relative to the whole rest of the city is ruled out, with sampling error only, and nothing smaller is. It is not excluded against the zone's earlier trend (upper bound +1.66) or against downtown Brooklyn and Long Island City (upper bound +2.85). The 2023 pre-trend value spans a change in the registry's filing, so 2024 is the only clean pre-toll year. The 1.2 threshold is the resolution of the test, and the two cited papers are unverified. Sales, rents and effects that take more than one lease cycle are not tested.",
+ "literature_note": "The two citations in the registration (Quddus, Carmel and Bell 2007; Daunfeldt, Rudholm and Ramme 2009) were written from memory and have not been checked against the papers. Nothing in the test depends on them.",
+ "critique": {
+  "report": "critique/crz-storefront-vacancy.md",
+  "answer": "accepted; verdict kept under rule 1 with a verdict_note; the mean of three earlier years withdrawn; the two citations marked unverified"
+ },
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Change in storefront vacancy share, 31 Dec 2025 vs 31 Dec 2024, zone minus all other city ZIPs (bootstrap over tax lots)",
+    "estimate": -0.4674314057962023,
+    "lo": -1.080900390717683,
+    "hi": 0.17391494617450684,
+    "scale": "percentage points",
+    "null": 0,
+    "n": 33830
+   },
+   "stance": {
+    "value": 0.627,
+    "lo": 0.427,
+    "hi": 0.827
+   },
+   "decided_at": "2026-11-13T08:12:54-0500",
+   "prediction_scored": "hit: the estimate is inside the predicted range of -1.5 to +0.5 and the upper bound (+0.17) is below +1.2"
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep confirmed; the label overstates. The exclusion of 1.2 points holds against the whole rest of the city with sampling error only, and not against the zone's earlier trend or downtown Brooklyn and Long Island City; the 2023 pre-trend value spans a change in the filing structure; the threshold is the test's resolution.",
+  "critique": "critique/crz-storefront-vacancy.md",
+  "revised_at": "2026-11-13T09:08:18-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

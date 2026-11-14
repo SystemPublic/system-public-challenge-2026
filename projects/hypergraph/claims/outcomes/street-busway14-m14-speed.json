@@ -1,0 +1,85 @@
+{
+ "id": "street-busway14-m14-speed",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "M14A+M14D weekday speed, Oct 2019-Feb 2020 against Jul-Sep 2019, relative to other Manhattan routes",
+  "estimate": 5.457,
+  "lo": 1.693,
+  "hi": 9.36,
+  "scale": "% change in speed",
+  "null": 0,
+  "n": 39,
+  "se_log": 0.0185421743139463
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "cudb-vcni",
+   "name": "MTA Bus Speeds: Beginning 2015",
+   "url": "https://data.ny.gov/d/cudb-vcni",
+   "rows_updated_at": "2026-10-23T15:23:54Z",
+   "query": {
+    "$select": "month, route_id, sum(total_mileage) as mi, sum(total_operating_time) as hr",
+    "$where": "borough='Manhattan' and day_type='1' and month between '2019-07-01' and '2020-02-01'",
+    "$group": "month, route_id",
+    "$order": "month, route_id",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-13T13:12:33-0500",
+   "n_rows": 328
+  }
+ ],
+ "prediction_scored": "hit. DiD 5.457% (1.693 to 9.36). support_if (DiD >= 4% and lower bound above 0) is met; the point condition of 4% is met within sampling error, since the interval runs from 1.7% to 9.4% (rule 10). The estimate lies in the low part of the predicted range (+4% to +20%, central +10%).",
+ "settle": "Segment-level bus speeds on 14th Street for 2019 (the MTA segment-speed series begins in 2023) would separate the corridor from the rest of each route, and a longer SBS-only baseline would separate the busway from continued SBS improvement.",
+ "research_needed": [
+  {
+   "question": "How much of the M14 speed gain is the busway and how much is the SBS settling in?",
+   "data": "Segment speeds or AVL bus positions for 14th Street, April 2019 to February 2020.",
+   "design": "Segment-level before-after with the SBS start and the busway start as separate breaks.",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/street_space/busway_tradeoff.png"
+ ],
+ "notes": "Weekday M14 speed was 5.502 mph in July to September 2019 and 5.817 mph in October 2019 to February 2020; other Manhattan routes averaged 5.895 and 5.889 mph. The M14 was already speeding up during the SBS-only summer (July 5.421, August 5.484, September 5.615 mph), so part of the estimate may be SBS improvement continuing; the design's placebo spread does not cover a route-specific trend of this kind. Route-wide speed dilutes the corridor gain, since each route runs well beyond 14th Street. Exploratory, ridership (MTA Bus Hourly Ridership, 98u6-vmgs and kv7t-n8in): weekday M14A+M14D boardings averaged 24826 in October 2018 to February 2019 and 29486 in October 2019 to February 2020 (+19%), which includes the SBS and the L train slowdown; July 2019, the month the SBS began, shows half the usual count and is likely incomplete.",
+ "registration_sha256": "3a9ed05a54f81f1f92c8303f8aacbc11f9db8818bd5cd3d41c7e9ea99af36b37",
+ "decided_at": "2026-11-13T13:21:51-0500",
+ "stance": {
+  "value": 0.884,
+  "lo": 0.408,
+  "hi": 0.983,
+  "z": 2.79
+ },
+ "notes_referee": "Referee reproduced +5.46% (1.69 to 9.36); 2 of 119 placebos as large. The gain appeared in September 2019, before the busway; busway months +0.7% over September alone (exploratory). Much of the gain may be SBS and seasonal.",
+ "history": [
+  {
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "M14A+M14D weekday speed, Oct 2019-Feb 2020 against Jul-Sep 2019, relative to other Manhattan routes",
+    "estimate": 5.457,
+    "lo": 1.693,
+    "hi": 9.36,
+    "scale": "% change in speed",
+    "null": 0,
+    "n": 39,
+    "se_log": 0.0185421743139463
+   },
+   "stance": {
+    "value": 0.884,
+    "lo": 0.408,
+    "hi": 0.983,
+    "z": 2.79
+   },
+   "decided_at": "2026-11-13T13:21:51-0500",
+   "prediction_scored": "hit. DiD 5.457% (1.693 to 9.36). support_if (DiD >= 4% and lower bound above 0) is met; the point condition of 4% is met within sampling error, since the interval runs from 1.7% to 9.4% (rule 10). The estimate lies in the low part of the predicted range (+4% to +20%, central +10%)."
+  }
+ ],
+ "revision": {
+  "reason": "Round 7 referee: verdict kept, attribution narrowed",
+  "critique": "critique/street-busway14-m14-speed.md",
+  "revised_at": "2026-11-13T13:40:19-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "id": "heat-ed-syndromic",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "NYC syndromic heat ED visits per day, May-Sep 2017-2026, Central Park TMAX lag 0, NB GLM with DOW, month, year, holiday",
+  "estimate": 4.092242632189716,
+  "lo": 3.7615528042599875,
+  "hi": 4.452004433314224,
+  "scale": "IRR per 5 C",
+  "null": 1,
+  "n": 1522
+ },
+ "graph_effect": {
+  "label": "Extreme heat (local 95th percentile vs reference day, 34.4 C vs 14.9 C national average) -> heat-related illness ED visits, Sun 2021 US adults",
+  "estimate": 1.663,
+  "lo": 1.602,
+  "hi": 1.727,
+  "scale": "RR 95th percentile vs reference day",
+  "null": 1
+ },
+ "sources": [
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-syndrome/previous_years.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/previous_years.csv",
+   "fetched": "2026-11-12T15:22:51-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-syndrome/edheat1720_supp.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat1720_supp.csv",
+   "fetched": "2026-11-12T15:22:51-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-syndrome/edheat2021_live.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2021_live.csv",
+   "fetched": "2026-11-12T15:22:51-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-syndrome/edheat2022_live.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2022_live.csv",
+   "fetched": "2026-11-12T15:22:51-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-syndrome/edheat2023_live.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2023_live.csv",
+   "fetched": "2026-11-12T15:22:51-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-syndrome/edheat2024_live.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2024_live.csv",
+   "fetched": "2026-11-12T15:22:51-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-syndrome/edheat2025_live.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2025_live.csv",
+   "fetched": "2026-11-12T15:22:51-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "key-topics/heat-syndrome/edheat2026_live.csv",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2026_live.csv",
+   "fetched": "2026-11-12T15:22:51-0500"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T15:06:44-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2074.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2074.json",
+   "fetched": "2026-11-12T15:23:21-0500"
+  },
+  {
+   "kind": "github",
+   "repo": "nychealth/EHDP-data",
+   "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+   "path": "indicators/data/2075.json",
+   "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2075.json",
+   "fetched": "2026-11-12T15:23:21-0500"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "station": "USW00094728",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "fetched": "2026-11-12T15:06:44-0500",
+   "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+  },
+  {
+   "kind": "sysgraph",
+   "api": "System Public Graph v1.0",
+   "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "file": "data/derived/heat/graph_evidence.json",
+   "audit": "data/derived/heat/graph_audit_heat.json"
+  }
+ ],
+ "prediction_scored": "hit: IRR per 5 C 4.09 (3.76 to 4.45) lies in the registered 1.5-5 range; RR at the 95th percentile (33.3 C) vs the median (26.7 C) is 11.2, above 3 as predicted. The registered yearly secondary was weak: Spearman rho of yearly SPARCS heat ED visits with days >= 90 F was 0.36 (p 0.15, 17 years); with days >= 95 F (not registered) it was 0.84.",
+ "settle": "The daily relation is settled. Its size relative to the literature is not comparable as published: the NYC syndromic series counts chief-complaint matches and is near zero on mild days, whereas Sun 2021 used claims diagnoses and a contrast of the local 95th percentile against a cooler reference day (not the median, as the registration assumed). A daily SPARCS series of heat-illness ED visits by NYC neighbourhood (not public) would settle the size and allow the neighbourhood analysis that the bridge needs.",
+ "research_needed": [
+  {
+   "question": "What is the daily heat ED exposure-response by neighbourhood in NYC?",
+   "data": "Daily syndromic or SPARCS heat ED visits by ZCTA or UHF (DOHMH, restricted)",
+   "design": "Case-crossover by neighbourhood with effect modification by tree canopy and AC",
+   "priority": "high"
+  },
+  {
+   "question": "Why did syndromic heat visits rise in 2025-2026 on few 90 F days?",
+   "data": "Syndromic case definition logs, heat warning dates, ED census",
+   "design": "Interrupted time series around heat advisories and the 2023 definition change",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/heat/heat_ed_curve.png"
+ ],
+ "notes": "7620 syndromic heat ED visits on 1522 warm-season days. previous_years.csv (revised 2023 definition) and the older supplement correlate r = 0.991 by day, with 2697 vs 2286 visits in 2017-2020. Piecewise: below 27 C IRR 1.83 per 5 C; above 27 C a further factor 6.57. Heat deaths (EHDP 2074) correlate with days >= 95 F, rho 0.78 (1999-2020). No daily heat mortality series is public; no heat or syndromic dataset was found on NYC Open Data.",
+ "registration_sha256": "8d15c930565b1a7fe3f75990127c08ae83c4a6a92ed1f84624d75cc2413422ec",
+ "decided_at": "2026-11-12T15:39:52-0500",
+ "stance": {
+  "value": 1.0,
+  "lo": 1.0,
+  "hi": 1.0,
+  "z": 32.78
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "id": "construction2-rows-per-job-legacy-2000s",
+ "verdict": "confirmed",
+ "city_effect": {
+  "label": "legacy NB permit rows per job over the table's life, jobs first permitted 2000-2009",
+  "estimate": 5.89,
+  "lo": 5.85,
+  "hi": 5.92,
+  "scale": "rows per job (null: 1 row per building)",
+  "null": 1,
+  "n": 49959
+ },
+ "graph_effect": null,
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "ipu4-2q9a",
+   "name": "DOB Permit Issuance",
+   "url": "https://data.cityofnewyork.us/d/ipu4-2q9a",
+   "rows_updated_at": "2026-11-12T00:36:38Z",
+   "query": {
+    "$limit": 50000,
+    "$order": ":id",
+    "$select": "job__,job_doc___,permit_type,filing_status,permit_status,issuance_date,expiration_date,bbl,borough,residential,gis_latitude,gis_longitude",
+    "$where": "job_type='NB'"
+   },
+   "fetched": "2026-11-12T15:26:51-0500",
+   "n_rows": 572035
+  }
+ ],
+ "prediction_scored": "hit on the decisive rule, partial on magnitude: the pooled mean was 5.89 rows per job (95% bootstrap interval 5.85 to 5.92; 49,959 jobs, 294,033 rows) and the lowest cohort mean was 4.37 (2000), so both support conditions were met. The registered magnitude of 5 to 10 in every year missed for 2000 (4.37) and 2001 (4.55).",
+ "settle": "The replication settles the descriptive point for the legacy table. Whether rows per job grew over time because of renewals or because of more permit types per job is a separate question.",
+ "research_needed": [
+  {
+   "question": "How many permit rows does a typical NB job carry in each system, and are the systems' rows comparable (renewal practice, work types)?",
+   "data": "DOB Permit Issuance ipu4-2q9a; DOB NOW Build Approved Permits rbx6-tga4",
+   "design": "Match jobs that moved between systems and compare row counts per job",
+   "priority": "low"
+  }
+ ],
+ "figures": [
+  "figures/construction2/rows_per_job_replication.png"
+ ],
+ "notes": "Registered in commit 6159cf6 before any per-cohort value for cohorts before 2010 was computed. The registration disclosed that the first round's published aggregates implied about 5.1 rows per job for all jobs first permitted before 2010. Cohort means rose from 4.37 (2000) to 7.71 (2008); renewals were 42% of rows in 2000 and 66% in 2008. Medians were 4 to 6. The rise for 2007-2009 fits the registered alternative that jobs stalled by the 2008 crash renewed for years.",
+ "registration_sha256": "0b0ea50433c04323fb86056154dcb987304443ae4b083594ccc7ed01ce67fc52",
+ "decided_at": "2026-11-12T16:06:37-0500",
+ "stance": {
+  "value": 1.0,
+  "lo": 1.0,
+  "hi": 1.0,
+  "z": 584.39
+ }
+}

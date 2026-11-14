@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>City Levers</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px 40px; }
+.lead { color: var(--ink-2); max-width: 82ch; }
+.tablebox { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--panel); }
+table.lv { border-collapse: collapse; width: 100%; font-size: 13px; min-width: 1050px; }
+table.lv th, table.lv td { padding: 7px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; text-align: left; }
+table.lv th { position: sticky; top: 0; background: var(--panel); font-weight: 600; font-size: 12px; color: var(--ink-2); cursor: pointer; white-space: nowrap; }
+table.lv th.on { color: var(--accent); }
+table.lv th .arr { font-size: 10px; margin-left: 3px; }
+table.lv tr:hover td { background: var(--band); }
+td .sub { color: var(--muted); font-size: 12px; display: block; }
+.design { display: inline-block; padding: 1px 6px; border-radius: 10px; font-size: 11px; border: 1px solid var(--rule); white-space: nowrap; }
+.d4 { background: var(--c-confirmed); color: #fff; border-color: transparent; }
+.d3 { background: var(--c-bridged); color: #fff; border-color: transparent; }
+.d2, .d1\.5 { background: var(--band); }
+.like-no { color: var(--warn); font-weight: 600; }
+.like-partly { color: var(--ink-2); }
+.missing { color: var(--muted); font-style: italic; }
+svg.ci { display: block; margin-top: 3px; }
+.ci .axis { stroke: var(--band-line); }
+.ci .zero { stroke: var(--ink-2); }
+.ci .bar { stroke: var(--c-confirmed); stroke-width: 3; }
+.ci .pt { fill: var(--c-confirmed); }
+.ci.harm .bar { stroke: var(--c-contested); } .ci.harm .pt { fill: var(--c-contested); }
+.ci.null .bar { stroke: var(--c-unsettled-edge); } .ci.null .pt { fill: var(--c-unsettled-edge); }
+.pill { display: inline-block; min-width: 18px; text-align: center; border-radius: 3px; padding: 0 4px; margin-right: 2px; font-size: 12px; }
+.pill.b { background: var(--c-confirmed); color: #fff; } .pill.h { background: var(--c-contested); color: #fff; } .pill.e { border: 1px solid var(--c-confirmed); }
+.meter { height: 6px; background: var(--grid); border-radius: 3px; margin-top: 3px; width: 90px; }
+.meter i { display: block; height: 6px; border-radius: 3px; background: var(--ink-2); }
+.maps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 10px; }
+.maps figure { margin: 0; background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 10px; }
+.maps img { width: 100%; height: auto; display: block; background: #fff; }
+.maps figcaption { font-size: 13px; color: var(--ink-2); margin-top: 6px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin: 10px 0; }
+.fact { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; }
+.fact b { display: block; font-size: 22px; font-weight: 600; }
+.fact span { font-size: 12px; color: var(--muted); }
+h2 { font-size: 18px; margin: 28px 0 6px; }
+.note { font-size: 13px; color: var(--ink-2); max-width: 82ch; }
+.chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 6px; }
+.chips img { width: 100%; height: 90px; object-fit: contain; background: #000; border-radius: 4px; }
+.chips div { font-size: 11px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<header class="site">
+  <h1>What the city could do: levers ranked on five separate components</h1>
+  <nav class="pages"><a href="hypergraph.html">Edges as objects</a><a href="heat_drugs.html">Heat and medicines</a><a href="index.html">Evidence dashboard</a><a href="evidence.html">Test cards and provenance</a><a href="explorer.html">Graph explorer</a><a href="explore.html">Neighbourhood explorer</a><a href="levers.html" aria-current="page">City levers</a><a href="simulate.html">Toll simulator</a></nav>
+</header>
+<div class="wrap">
+<p class="lead">Each row is an intervention a city agency or a private charity could pay for. The components are not added up, because they are not on one scale and no weights can be defended. Click a column heading to sort by it. The effect is the headline finding from the System graph, read against its PubMed abstract; the burden and reach come from New York's own data. A red mark under "Population" means the evidence comes from a population unlike New York's. Method and sources: <a href="../docs/levers.md">docs/levers.md</a>.</p>
+
+<div class="tablebox"><table class="lv" id="t"><thead><tr>
+  <th data-k="label">Lever</th>
+  <th data-k="design">Design</th>
+  <th data-k="effect">Effect (95% interval)</th>
+  <th data-k="like">Population</th>
+  <th data-k="breadth">Breadth</th>
+  <th data-k="burden">Burden in New York</th>
+  <th data-k="reach">Reach in New York</th>
+  <th data-k="cost">Cost per unit</th>
+  <th data-k="place">By place</th>
+</tr></thead><tbody></tbody></table></div>
+<p class="note">Effect scale: percentage change in the outcome, or in its odds where the study reports an odds ratio (which overstates the change in risk for common outcomes). The bar runs from −100% to +50%; blue is a benefit whose interval excludes zero, grey an interval that includes zero. Breadth: <span class="pill b">n</span> domains with a verified benefit, <span class="pill h">n</span> with a verified harm, <span class="pill e">n</span> benefits from experimental designs, out of eight domains. Burden meter: the share of the burden held by the tenth of areas with the most.</p>
+
+<h2>The registered test: how many of New York's vacant lots pass a screen built from the Philadelphia trial's lots?</h2>
+<div id="lot"></div>
+
+<h2>Where the three place-targetable levers apply, and where the burden is</h2>
+<div class="maps">
+  <figure><img src="../figures/levers/map_greening.png" alt="Map of New York: shootings per census tract in red, vacant lots in grey and trial-like lots in blue."><figcaption>Vacant-lot greening. Screened lots are small, vegetated, not under development, in the tenth of tracts with the most shootings. A referee's check of 40 found 70% were not vacant blighted land, so the screen needs field checking.</figcaption></figure>
+  <figure><img src="../figures/levers/map_housing.png" alt="Map of community districts shaded by childhood asthma emergency visits, with circles sized by buildings with open class C violations."><figcaption>Housing repair. The data gap: no public record links a building's condition to its residents' asthma visits.</figcaption></figure>
+  <figure><img src="../figures/levers/map_humps.png" alt="Hexagon map of pedestrian injury crashes with blue dots at speed-reducer locations found feasible."><figcaption>Speed humps. Feasible locations come from residents' requests, not from where pedestrians are hurt.</figcaption></figure>
+</div>
+
+<h2>A sample of the lots as NAIP sees them (2022, yellow outline is the tax lot)</h2>
+<div class="chips" id="chips"></div>
+<p class="note">Aerial imagery: USDA Farm Service Agency, National Agriculture Imagery Program (NAIP), 2022.</p>
+</div>
+
+<script src="data/levers.js"></script>
+<script src="data/levers_lots.js"></script>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+const fmt = v => v == null ? "" : (typeof v === "number" ? (Math.abs(v) >= 100 ? Math.round(v).toLocaleString("en-US") : v.toLocaleString("en-US")) : esc(typeof v === "object" ? Object.entries(v).map(([k,x]) => k + ": " + x).join(", ") : v));
+const L = window.LEVERS || [];
+let sortK = "design", dir = 1;
+
+function ciSvg(e) {
+  if (e.estimate == null) return "";
+  const W = 150, H = 16, x = v => 4 + (Math.max(-100, Math.min(50, v)) + 100) / 150 * (W - 8);
+  const lo = e.lo ?? e.estimate, hi = e.hi ?? e.estimate;
+  const cls = (hi < 0) ? "" : (lo > 0 ? "harm" : "null");
+  return `<svg class="ci ${cls}" width="${W}" height="${H}" role="img" aria-label="estimate ${e.estimate}%, interval ${lo} to ${hi}">
+    <line class="axis" x1="4" x2="${W-4}" y1="8" y2="8"/><line class="zero" x1="${x(0)}" x2="${x(0)}" y1="2" y2="14"/>
+    <line class="bar" x1="${x(lo)}" x2="${x(hi)}" y1="8" y2="8"/><circle class="pt" cx="${x(e.estimate)}" cy="8" r="3.5"/></svg>`;
+}
+function val(r, k) {
+  switch (k) {
+    case "label": return r.label;
+    case "design": return -r.effect.design_rank;
+    case "effect": return r.effect.estimate == null ? 1e9 : r.effect.estimate;
+    case "like": return {yes: 0, partly: 1, no: 2}[r.like_nyc];
+    case "breadth": return -r.breadth.net;
+    case "burden": return r.burden && typeof r.burden.value === "number" ? -r.burden.top_decile_share || 0 : 1;
+    case "reach": return r.reach && typeof r.reach.value === "number" ? -r.reach.value : 1;
+    case "cost": return r.cost ? 0 : 1;
+    case "place": return r.place ? 0 : 1;
+  }
+}
+function render() {
+  const rows = [...L].sort((a, b) => { const x = val(a, sortK), y = val(b, sortK); return (x < y ? -1 : x > y ? 1 : 0) * dir; });
+  document.querySelectorAll("th").forEach(th => { th.classList.toggle("on", th.dataset.k === sortK); th.innerHTML = th.textContent.replace(/[▲▼]/g, "") + (th.dataset.k === sortK ? `<span class="arr">${dir > 0 ? "▲" : "▼"}</span>` : ""); });
+  document.querySelector("#t tbody").innerHTML = rows.map(r => {
+    const e = r.effect, b = r.breadth;
+    const est = e.estimate == null ? `<span class="sub">${esc(e.scale)}</span>` :
+      `${e.estimate > 0 ? "+" : ""}${e.estimate}%${e.lo != null ? ` (${e.lo} to ${e.hi})` : ""}<span class="sub">${esc(e.scale)}</span>`;
+    const bur = r.burden ? `${fmt(r.burden.value)}<span class="sub">${esc(r.burden.unit)}</span>` +
+      (r.burden.top_decile_share != null ? `<div class="meter" title="top tenth of ${esc(r.burden.areas)} hold ${Math.round(r.burden.top_decile_share*100)}%"><i style="width:${Math.round(r.burden.top_decile_share*100)}%"></i></div><span class="sub">top tenth of ${esc(r.burden.areas)}: ${Math.round(r.burden.top_decile_share*100)}%</span>` : "")
+      : `<span class="missing">not measured</span>`;
+    let rea = r.reach ? `${fmt(r.reach.value)}<span class="sub">${esc(r.reach.unit)}</span>` : `<span class="missing">not measured</span>`;
+    if (r.reach_trial_like) { const q = r.reach_trial_like; rea += `<span class="sub">${q.referee_value != null ? `<b>${fmt(q.referee_value)}</b> (referee) and ` : ""}<b>${fmt(q.value)}</b>${q.referee_value != null ? " (registrant)" : ""} ${esc(q.unit)}</span>`; }
+    const cost = r.cost ? `${fmt(r.cost.value)}<span class="sub">${esc(r.cost.unit)}; ${esc(r.cost.source)}</span>` : `<span class="missing">no published source found</span>`;
+    return `<tr><td><b>${esc(r.label)}</b>${e.study ? `<span class="sub">${esc(e.study)}${e.pmid ? ` · <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(e.pmid)}/">PMID ${esc(e.pmid)}</a>` : ""}</span>` : ""}${e.note ? `<span class="sub">${esc(e.note)}</span>` : ""}</td>
+      <td><span class="design d${e.design_rank}">${esc(e.design)}</span></td>
+      <td>${esc(e.outcome)}<br>${est}${ciSvg(e)}</td>
+      <td class="like-${esc(r.like_nyc)}">${r.like_nyc === "no" ? "unlike New York" : esc(r.like_nyc)}<span class="sub">${esc(r.like_note)}</span></td>
+      <td><span class="pill b">${b.benefit}</span><span class="pill h">${b.harm}</span><span class="pill e">${b.experimental}</span><span class="sub">net ${b.net > 0 ? "+" : ""}${b.net}${b.note ? "; " + esc(b.note) : ""}</span></td>
+      <td>${bur}</td><td>${rea}</td><td>${cost}</td><td>${r.place ? "yes" : "no"}</td></tr>`;
+  }).join("");
+}
+document.querySelectorAll("th").forEach(th => th.addEventListener("click", () => { if (sortK === th.dataset.k) dir = -dir; else { sortK = th.dataset.k; dir = 1; } render(); }));
+render();
+
+const T = window.LEVER_LOTS;
+if (T) {
+  const r = T.results, p = r.prevented_per_year;
+  document.getElementById("lot").innerHTML = `<div class="facts">
+    <div class="fact"><b>${fmt(r.n_lu11_in_high_shooting_tracts)}</b><span>vacant tax lots in the tenth of tracts with the most shootings</span></div>
+    <div class="fact"><b>${r.trial_like_n_referee != null ? fmt(r.trial_like_n_referee) + " / " : ""}${fmt(r.trial_like_n)}</b><span>pass the screen: referee's count and registrant's (${r.trial_like_share_referee != null ? Math.round(r.trial_like_share_referee*100) + "% and " : ""}${Math.round(r.trial_like_share*100)}%; registered range 18–45%). In a check of 40, 28 were not vacant blighted land.</span></div>
+    <div class="fact"><b>${fmt(r.shootings_within_300m_trial_like_per_year)}</b><span>shootings a year within 300 m of them, 2023–2025</span></div>
+    <div class="fact"><b>${p.greening.estimate} (${p.greening.lo}–${p.greening.hi})</b><span>shootings a year that greening might prevent, at the trial's −6.8%</span></div>
+    <div class="fact"><b>${p.cleanup.estimate} (${p.cleanup.lo}–${p.cleanup.hi})</b><span>with mowing and trash cleanup, at −9.2%</span></div>
+  </div><p class="note">Claim <code>levers-vacant-lot-trial-match</code>, verdict <b>${esc(T.verdict)}</b>. ${esc(T.reading)}</p>`;
+  document.getElementById("chips").innerHTML = (T.chips || []).map(c => `<div><img src="../${esc(c.path)}" alt="Aerial of vacant lot ${esc(c.bbl)}, ${esc(c.type)}, vegetated share ${c.veg}"><div>${esc(c.type.replace("_", " "))}<br>veg ${c.veg}</div></div>`).join("");
+}
+</script>
+</body>
+</html>

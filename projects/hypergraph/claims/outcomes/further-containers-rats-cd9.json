@@ -1,0 +1,189 @@
+{
+ "id": "further-containers-rats-cd9",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "CD9 relative to CD7/10/11/12, 311 Rat Sighting counts, Jun 2025-May 2026 vs Jun 2024-May 2025",
+  "estimate": 1.017776844435111,
+  "lo": 0.8611862560157482,
+  "hi": 1.233872900242245,
+  "scale": "rate ratio (difference in differences)",
+  "null": 1,
+  "n": "CD9 380 vs 492; comparison 2439 vs 3214 sightings",
+  "interval_between_districts": {
+   "lo": 0.69,
+   "hi": 1.49,
+   "note": "from the spread of the same rate ratio across the eleven Manhattan districts without containers (SD 0.196 on the log scale, against 0.093 from the month-pair bootstrap) (referee); the registered interval is kept in lo and hi"
+  },
+  "quasi_poisson_check": {
+   "district_and_month_effects": [
+    1.018,
+    0.832,
+    1.245
+   ],
+   "district_and_one_period_effect": [
+    1.018,
+    0.704,
+    1.47
+   ],
+   "note": "the check the registration said would be reported; fitted by the referee"
+  }
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$select": "date_trunc_ym(created_date) as m, community_board as cb, complaint_type as ct, descriptor as d, count(*) as n",
+    "$where": "created_date >= '2022-01-01T00:00:00' and borough='MANHATTAN' and (complaint_type='Rodent' or complaint_type='Noise - Residential')",
+    "$group": "m, cb, ct, d",
+    "$order": "m, cb, ct, d",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:24:58-0500",
+   "n_rows": 5709,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$select": "date_trunc_ym(created_date) as m, borough as b, descriptor as d, count(*) as n",
+    "$where": "created_date >= '2022-12-01T00:00:00' and complaint_type='Rodent'",
+    "$group": "m, b, d",
+    "$order": "m, b, d",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:25:11-0500",
+   "n_rows": 978,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "p937-wjvj",
+   "name": "Rodent Inspection",
+   "url": "https://data.cityofnewyork.us/d/p937-wjvj",
+   "rows_updated_at": "2026-11-12T10:12:53Z",
+   "query": {
+    "$select": "date_trunc_ym(inspection_date) as m, community_board as cb, sum(case(starts_with(result,'Failed for Rat Activity'),1,true,0)) as act, count(*) as n",
+    "$where": "borough='Manhattan' and inspection_type='Initial' and inspection_date >= '2022-01-01T00:00:00'",
+    "$group": "m, cb",
+    "$order": "m, cb",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:25:34-0500",
+   "n_rows": 784,
+   "data_access": "open"
+  }
+ ],
+ "data_access": "open",
+ "prediction_scored": "miss: the point estimate is 1.02 (CD9 fell 22.8%, the comparison districts 24.1%), outside the predicted 0.75-0.95; support_if (a) fails because the upper bound is 1.23, and refute_if is not met because the lower bound 0.86 is below 0.90. The placebo-year interval (1.08, 0.89-1.36) includes 1. The DOHMH odds ratio point estimate is 1.09 (0.90-1.36), above 1, so condition (c) also fails. Verdict unsettled by rule 2.",
+ "settle": "The design has little power: about 380 CD9 sightings a year. Settling it needs sightings by block with bin locations (the DSNY Empire Bin list or mitigation-zone boundary), a longer post period with several containerised districts (Brooklyn CD2 in 2026), and a measure of rats not tied to calls, such as DOHMH inspections with fixed effort or tracking-powder surveys.",
+ "research_needed": [
+  {
+   "question": "Where exactly were Empire Bins and the fully containerised area, and when did each building start?",
+   "data": "DSNY bin location list or records request",
+   "design": "block-level event study of 311 and DOHMH results against bin start date",
+   "priority": "high"
+  },
+  {
+   "question": "Do 311 rat sightings track rat activity when containers change reporting behaviour?",
+   "data": "DOHMH inspection with fixed effort, tracking powder or camera surveys",
+   "design": "paired survey and 311 in treated and untreated blocks",
+   "priority": "high"
+  },
+  {
+   "question": "Does the effect appear in Brooklyn CD2 (containerised in 2026) and other districts?",
+   "data": "311, DOHMH",
+   "design": "staggered difference in differences with several treated districts",
+   "priority": "medium"
+  }
+ ],
+ "figures": [
+  "figures/further/containers_rats_cd9.png"
+ ],
+ "secondary": {
+  "placebo_year": {
+   "R": 1.0838775705404113,
+   "lo": 0.8904136187273779,
+   "hi": 1.3555919142543487,
+   "t_post": 443.0,
+   "t_pre": 510.0,
+   "c_post": 3075.0,
+   "c_pre": 3837.0
+  },
+  "dohmh_primary": {
+   "OR": 1.094544428135191,
+   "lo": 0.8996643475998644,
+   "hi": 1.3605064444814439,
+   "t_share_post": 0.14755102040816326,
+   "t_share_pre": 0.15266707541385652,
+   "c_share_post": 0.17678635871526524,
+   "c_share_pre": 0.19657650042265426,
+   "t_n_post": 4900.0,
+   "t_n_pre": 4893.0,
+   "c_n_post": 22168.0,
+   "c_n_pre": 23660.0
+  },
+  "dohmh_placebo_year": {
+   "OR": 1.04230443782379,
+   "lo": 0.5863502136389325,
+   "hi": 1.7820020165528192,
+   "t_share_post": 0.205848623853211,
+   "t_share_pre": 0.2602739726027397,
+   "c_share_post": 0.23931427696781846,
+   "c_share_pre": 0.3080139741689604,
+   "t_n_post": 5232.0,
+   "t_n_pre": 4234.0,
+   "c_n_post": 26133.0,
+   "c_n_pre": 18892.0
+  },
+  "other": "See data/derived/further/results.json: 6-month, 17-month, single and leave-one-out comparison districts, all other Manhattan districts, all Rodent descriptors (R 1.26, 1.02-1.59), Noise - Residential placebo (R 1.07, 0.99-1.15)."
+ },
+ "notes": "311 counts measure complaints. The data show that CD9 complaints fell about as much as in neighbouring districts after June 2025 (and that all of them fell by roughly a quarter against the year before), which is consistent with a citywide change in reporting or rats and gives no evidence of an extra effect of containers in CD9. They do not show that bins had no effect: the interval allows an additional fall of 14% or a rise of 23%. The DOHMH active-sign share fell in CD9 (15.3% to 14.8% of initial inspections) but fell more in the comparison districts (19.7% to 17.7%); inspection counts in the comparison districts fell 6% while CD9's were flat, so effort differs. Several of the single-district comparisons point either way (CD11 0.85, CD12 1.19). Comparison districts were fixed in advance, not matched on pre-period level; CD9 started the placebo period lower than the comparison and was higher later (event series), so pre-trends are not parallel. Data fetched 12 Nov 2026; the table's last month (Nov 2026) is incomplete and was not used.\n\nAfter the referee (13 Nov 2026): the registered interval (0.86 to 1.23) is too narrow. The same rate ratio computed for each of the other eleven Manhattan districts, none of which had containers, runs from 0.77 to 1.56, a spread about twice what the month-pair bootstrap reports; with that spread the interval for CD9 is roughly 0.69 to 1.49. The quasi-Poisson check that the registration said would be reported was not fitted; the referee's fit gives 1.018 (0.832 to 1.245) with district and month effects. The answer depends on the pre-trend and on repeat calls: CD9's share of the comparison districts' sightings rose in each of the three years before the bins (0.133, 0.144, 0.153, 0.156), a model with a linear trend gives 0.92 (0.80 to 1.07) and one without gives 1.08 (0.99 to 1.17). Counting distinct addresses gives 1.11 (0.95 to 1.29); on that unregistered measure the refutation condition would be met, and it decides nothing. The bins were installed in April and May 2025, inside the pre-period, and July 2024 holds 17% of CD9's pre-period sightings (without the July pair the ratio is 1.06). District boundaries stand in for the treated blocks, so a district ratio near 1 is compatible with a fall on the streets that have bins. Support needed a ratio below about 0.83, so most of the predicted range could not have been confirmed.",
+ "registration_sha256": "7bf2cdafd2d3633538f5f2c51977dc4aeaa3496ddcd0720192fabb95d92e4e8f",
+ "decided_at": "2026-11-12T20:26:12-0500",
+ "stance": {
+  "value": -0.096,
+  "lo": -0.816,
+  "hi": 0.672,
+  "z": -0.19
+ },
+ "critique": {
+  "report": "critique/further-containers-rats-cd9.md",
+  "answer": "accepted; verdict kept, wider interval recorded"
+ },
+ "history": [
+  {
+   "verdict": "unsettled",
+   "city_effect": {
+    "label": "CD9 relative to CD7/10/11/12, 311 Rat Sighting counts, Jun 2025-May 2026 vs Jun 2024-May 2025",
+    "estimate": 1.017776844435111,
+    "lo": 0.8611862560157482,
+    "hi": 1.233872900242245,
+    "scale": "rate ratio (difference in differences)",
+    "null": 1,
+    "n": "CD9 380 vs 492; comparison 2439 vs 3214 sightings"
+   },
+   "stance": {
+    "value": -0.096,
+    "lo": -0.816,
+    "hi": 0.672,
+    "z": -0.19
+   },
+   "decided_at": "2026-11-12T20:26:12-0500",
+   "prediction_scored": "miss: the point estimate is 1.02 (CD9 fell 22.8%, the comparison districts 24.1%), outside the predicted 0.75-0.95; support_if (a) fails because the upper bound is 1.23, and refute_if is not met because the lower bound 0.86 is below 0.90. The placebo-year interval (1.08, 0.89-1.36) includes 1. The DOHMH odds ratio point estimate is 1.09 (0.90-1.36), above 1, so condition (c) also fails. Verdict unsettled by rule 2."
+  }
+ ],
+ "revision": {
+  "reason": "Referee: keep unsettled; wider interval from the spread across untreated districts (0.69 to 1.49) and the omitted quasi-Poisson check recorded.",
+  "critique": "critique/further-containers-rats-cd9.md",
+  "revised_at": "2026-11-13T01:09:26-0500",
+  "rule": "concord.claims.PRECEDENCE"
+ }
+}

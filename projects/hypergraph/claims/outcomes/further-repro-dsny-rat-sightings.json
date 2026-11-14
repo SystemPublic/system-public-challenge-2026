@@ -1,0 +1,141 @@
+{
+ "id": "further-repro-dsny-rat-sightings",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Recomputed Dec 2024-Nov 2025 vs Dec 2023-Nov 2024 311 Rat Sightings under R1, percent change",
+  "estimate": -20.85896782789294,
+  "lo": null,
+  "hi": null,
+  "scale": "percent change; stated -20.6",
+  "null": 0,
+  "n": "25519 and 20196 (stated 25,230 and 20,025)"
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$select": "date_trunc_ym(created_date) as m, community_board as cb, complaint_type as ct, descriptor as d, count(*) as n",
+    "$where": "created_date >= '2022-01-01T00:00:00' and borough='MANHATTAN' and (complaint_type='Rodent' or complaint_type='Noise - Residential')",
+    "$group": "m, cb, ct, d",
+    "$order": "m, cb, ct, d",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:24:58-0500",
+   "n_rows": 5709,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "erm2-nwe9",
+   "name": "311 Service Requests from 2020 to Present",
+   "url": "https://data.cityofnewyork.us/d/erm2-nwe9",
+   "rows_updated_at": "2026-11-12T02:36:01Z",
+   "query": {
+    "$select": "date_trunc_ym(created_date) as m, borough as b, descriptor as d, count(*) as n",
+    "$where": "created_date >= '2022-12-01T00:00:00' and complaint_type='Rodent'",
+    "$group": "m, b, d",
+    "$order": "m, b, d",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:25:11-0500",
+   "n_rows": 978,
+   "data_access": "open"
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "p937-wjvj",
+   "name": "Rodent Inspection",
+   "url": "https://data.cityofnewyork.us/d/p937-wjvj",
+   "rows_updated_at": "2026-11-12T10:12:53Z",
+   "query": {
+    "$select": "date_trunc_ym(inspection_date) as m, community_board as cb, sum(case(starts_with(result,'Failed for Rat Activity'),1,true,0)) as act, count(*) as n",
+    "$where": "borough='Manhattan' and inspection_type='Initial' and inspection_date >= '2022-01-01T00:00:00'",
+    "$group": "m, cb",
+    "$order": "m, cb",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T20:25:34-0500",
+   "n_rows": 784,
+   "data_access": "open"
+  }
+ ],
+ "data_access": "open",
+ "prediction_scored": "partial: under R1 the first count is 25519 (+1.15% from 25,230, outside the 1% tolerance by 0.15 points) and the second is 20196 (+0.85% from 20,025, inside). The decline is -20.9% against a stated 20.6%, within 0.5 points. R1 reproduces one count only, so the verdict is unsettled by the registered clause. No other reading is closer (R4 is the same as R1; R2 and R3 are 22% and 60% too high).",
+ "settle": "DSNY's query or the 311 snapshot date; table revisions since December 2025 plausibly add about 1% of records.",
+ "research_needed": [
+  {
+   "question": "Which 311 snapshot and filter produced 25,230 and 20,025?",
+   "data": "DSNY or 311 data team",
+   "design": "ask for the query",
+   "priority": "low"
+  }
+ ],
+ "figures": [],
+ "secondary": {
+  "monthly_R1_prior_year_vs_year": {
+   "2024-12": [
+    1417,
+    1089
+   ],
+   "2025-01": [
+    1742,
+    1320
+   ],
+   "2025-02": [
+    1729,
+    1242
+   ],
+   "2025-03": [
+    1833,
+    1807
+   ],
+   "2025-04": [
+    2103,
+    1835
+   ],
+   "2025-05": [
+    2733,
+    2118
+   ],
+   "2025-06": [
+    2500,
+    2319
+   ],
+   "2025-07": [
+    2743,
+    2182
+   ],
+   "2025-08": [
+    2644,
+    2141
+   ],
+   "2025-09": [
+    2452,
+    1845
+   ],
+   "2025-10": [
+    2086,
+    1367
+   ],
+   "2025-11": [
+    1537,
+    931
+   ]
+  },
+  "all_12_months_lower": true,
+  "ytd_percent_change_R1": {
+   "2025-06": -15.81487341772152,
+   "2025-07": -16.64174738347527,
+   "2025-08": -16.99117989682144
+  },
+  "note": "Mayor's Office 16.4 percent year to date: Jan-Jul 2025 gives -16.6, Jan-Aug -17.0 (window unstated)."
+ },
+ "notes": "The citywide figures are reproduced to about 1% and all twelve monthly comparisons are lower, as stated. The registered 1% tolerance was missed by 0.15 points on the first count.",
+ "registration_sha256": "4118fa13864020ab4ec3095df86d5d9bfd9d07a2384139dfcdb745ce7911f521",
+ "decided_at": "2026-11-12T20:26:12-0500",
+ "stance": null
+}

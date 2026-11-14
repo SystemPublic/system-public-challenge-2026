@@ -1,0 +1,97 @@
+{
+ "id": "heat-trees-airtemp-hyperlocal",
+ "verdict": "unsettled",
+ "city_effect": {
+  "label": "Sensor afternoon (12-18h) air temperature on live street trees within 50 m, NTA-by-day fixed effects, install type, SE clustered by sensor",
+  "estimate": -0.0467684759766209,
+  "lo": -0.15925047879481236,
+  "hi": 0.06571352684157057,
+  "scale": "C per 10 trees",
+  "null": 0,
+  "n": 86451
+ },
+ "graph_effect": {
+  "label": "No graph finding on trees and air temperature (tree concept has no relationships)",
+  "estimate": null,
+  "lo": null,
+  "hi": null,
+  "scale": "",
+  "null": 0
+ },
+ "sources": [
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qdq3-9eqn",
+   "name": "Hyperlocal Temperature Monitoring",
+   "url": "https://data.cityofnewyork.us/d/qdq3-9eqn",
+   "rows_updated_at": "2021-08-20T19:36:17Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "sensor_id, day, avg(airtemp) as t, count(*) as nh",
+    "$where": "hour >= 12 AND hour <= 18",
+    "$group": "sensor_id, day",
+    "$order": "sensor_id, day"
+   },
+   "fetched": "2026-11-12T15:31:00-0500",
+   "n_rows": 87500
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "qdq3-9eqn",
+   "name": "Hyperlocal Temperature Monitoring",
+   "url": "https://data.cityofnewyork.us/d/qdq3-9eqn",
+   "rows_updated_at": "2021-08-20T19:36:17Z",
+   "query": {
+    "$select": "sensor_id, latitude, longitude, ntacode, install_type, count(*) as n",
+    "$group": "sensor_id, latitude, longitude, ntacode, install_type",
+    "$limit": 50000
+   },
+   "fetched": "2026-11-12T15:31:12-0500",
+   "n_rows": 435
+  },
+  {
+   "kind": "nyc-open-data",
+   "dataset": "uvpi-gqnh",
+   "name": "2015 Street Tree Census - Tree Data",
+   "url": "https://data.cityofnewyork.us/d/uvpi-gqnh",
+   "rows_updated_at": "2017-10-04T13:41:26Z",
+   "query": {
+    "$limit": 50000,
+    "$select": "tree_id, latitude, longitude",
+    "$where": "status='Alive'",
+    "$order": "tree_id"
+   },
+   "fetched": "2026-11-12T15:37:22-0500",
+   "n_rows": 652173
+  },
+  {
+   "kind": "sysgraph",
+   "api": "System Public Graph v1.0",
+   "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "file": "data/derived/heat/graph_evidence.json",
+   "audit": "data/derived/heat/graph_audit_heat.json"
+  }
+ ],
+ "prediction_scored": "miss: -0.047 C per 10 trees within 50 m (-0.159 to +0.066); registered range -0.05 to -0.5 C.",
+ "settle": "Sensors were placed in a few neighbourhoods (Cool Neighborhoods NYC) on poles and trees, not at random. A sensor network sited by design across tree-density strata within blocks, or bicycle-transect air temperature (as in Ziter 2019) through NYC streets, would settle the size of street-level cooling.",
+ "research_needed": [
+  {
+   "question": "How much do street trees cool air at pedestrian height in NYC?",
+   "data": "Mobile transects with canopy from 2017 LiDAR",
+   "design": "Ziter-style transects across canopy gradients",
+   "priority": "high"
+  }
+ ],
+ "figures": [
+  "figures/heat/heat_bridge_chain.png"
+ ],
+ "notes": "420 sensors, 86451 sensor-days in 5043 NTA-days with at least two sensors, 23 NTAs, summers 2018-2019. Within 100 m: -0.012 C per 10 trees (-0.055 to +0.030). Light-pole sensors read +1.26 C relative to tree-mounted sensors in the same NTA-day.",
+ "registration_sha256": "53c70b072b99ff4598066a241a1e0f9f5d418e24f58a1eff529a14286e473d94",
+ "decided_at": "2026-11-12T15:39:52-0500",
+ "stance": {
+  "value": 0.386,
+  "lo": -0.517,
+  "hi": 0.883,
+  "z": 0.81
+ }
+}

@@ -1,0 +1,918 @@
+{
+ "package": {
+  "claim": "heat-ed-syndromic",
+  "built_at": "2026-11-13T22:56:59-0500",
+  "tool": "tools/replicate.py",
+  "tool_blob": "227e649fbc524670361a2e3669887ba27f05af5c",
+  "paths": "relative to the repository (inputs keep their repo paths under inputs/) or to ~/opt/nyc-concordance"
+ },
+ "claim": {
+  "id": "heat-ed-syndromic",
+  "registration": {
+   "id": "heat-ed-syndromic",
+   "kind": "confirmation",
+   "statement": "In New York City, daily emergency department visits for heat-related illness (DOHMH syndromic surveillance) rise steeply with the day's maximum temperature in the warm season.",
+   "graph_evidence": [
+    {
+     "relationship_id": "wpUeTjUbAc|PtQBvGm5CM",
+     "concepts": [
+      "extreme heat",
+      "heat illness"
+     ],
+     "n_findings": 2,
+     "n_studies": 2,
+     "direction": "+",
+     "summary": "Sun et al. 2021 (BMJ, 74 million insured US adults, 2010-2019): days at the local 95th percentile of warm-season temperature had 66.3% (60.2 to 72.7) excess risk of ED visits for heat-related illness, with stronger effects in the Northeast. Stowell et al. 2023 (US children): OR 1.34 (1.16 to 1.56), ages 6-12.",
+     "pubmed_ids": [
+      34819309,
+      36337257
+     ]
+    },
+    {
+     "association_id": "variable u7xiLrAgHi",
+     "concepts": [
+      "maximum temperature",
+      "heat-related ED admissions"
+     ],
+     "n_findings": 1,
+     "n_studies": 1,
+     "direction": "+",
+     "summary": "Kingsley et al. 2016 (Rhode Island 2005-2012): Tmax 75 to 85 F associated with 23.9% higher rates of heat-related ED visits (Poisson). The graph stores 23.9 as a coefficient without units.",
+     "pubmed_ids": [
+      26251954
+     ]
+    },
+    {
+     "relationship_id": "wpUeTjUbAc|QPxlNKv3zV",
+     "concepts": [
+      "extreme heat",
+      "mortality rate"
+     ],
+     "n_findings": 25,
+     "n_studies": 14,
+     "direction": "+",
+     "summary": "Extreme heat raises mortality across 14 studies (RR 1.1 to 1.4 typical). Context; heat mortality in NYC is published only as yearly citywide counts.",
+     "pubmed_ids": [
+      39463255,
+      22340020,
+      25956805
+     ]
+    }
+   ],
+   "literature": [
+    {
+     "citation": "Sun S et al. Ambient heat and risks of emergency department visits among adults in the United States. BMJ 2021;375:e065653.",
+     "doi": "10.1136/bmj-2021-065653",
+     "finding": "95th vs median warm-season temperature (34.4 C vs 14.9 C national average): heat-related illness ED visits +66.3% (60.2 to 72.7)."
+    },
+    {
+     "citation": "Kingsley SL et al. Current and projected heat-related morbidity and mortality in Rhode Island. Environ Health Perspect 2016;124:460-467.",
+     "doi": "10.1289/ehp.1408826",
+     "finding": "Tmax 75 to 85 F (5.6 C): heat-related ED visits +23.9%."
+    }
+   ],
+   "prediction": {
+    "direction": "+",
+    "magnitude": "Warm season (May-September), IRR per 5 C Central Park TMAX between 1.5 and 5. The curve is flat below about 27 C and steep above it; on days at the city's 95th percentile TMAX versus the warm-season median, RR at least 1.66 (Sun et al. national average) and probably above 3, because syndromic counts are near zero on mild days.",
+    "support_if": "lower 95% limit of the IRR per 5 C above 1.00 and estimate >= 1.5 (hit); estimate between 1.0 and 1.5 with lower limit above 1 is partial",
+    "refute_if": "upper limit at or below 1.00"
+   },
+   "plan": "Data: EHDP-data GitHub repository (nychealth/EHDP-data, branch production, key-topics/heat-syndrome: previous_years.csv, edheat1720_supp.csv, edheatYYYY_live.csv), daily counts of heat-syndrome ED visits citywide, cited by commit SHA. If no daily series exists, use EHDP indicator 2075 (yearly heat ED visits) and say so. Weather: NOAA GHCN-Daily Central Park TMAX (the DOHMH file's own LaGuardia heat-index column is used only as a cross-check, not as the exposure). Model: negative binomial GLM of daily counts, May-September, on linear TMAX/5 with day-of-week, month and year factors; and a natural spline (4 df) for the curve, RR vs the warm-season median TMAX; RR at the 95th percentile compared with Sun et al. Secondary: EHDP yearly heat ED visits (indicator 2075, citywide) and yearly heat deaths (2074) against the number of days with TMAX >= 32.2 C (90 F) per year, Spearman correlation, descriptive.",
+   "alternatives": [
+    "Syndromic case definition changed in 2023 (applied back to all years, per DOHMH)",
+    "Chief-complaint keyword matching may respond to heat warnings and media attention, not only to illness (awareness bias)",
+    "Some residents seek care outside the city; coverage of 100% of NYC EDs only from May 2016"
+   ],
+   "prior": 0.95,
+   "registrant": "Claude (heat agent), for Jeff Vernon",
+   "registered_at": "2026-11-12T15:19:38-0500",
+   "sha256": "8d15c930565b1a7fe3f75990127c08ae83c4a6a92ed1f84624d75cc2413422ec"
+  },
+  "registration_path": "claims/registered/heat-ed-syndromic.json",
+  "registration_sha256": "8d15c930565b1a7fe3f75990127c08ae83c4a6a92ed1f84624d75cc2413422ec",
+  "registration_hash_ok": true,
+  "registration_file_sha256": "b1f84798bce3147f9dd1bbff3aff672b51397d663088f09f107914b247911a98",
+  "registration_commit": {
+   "commit": "176ef40c48e82c22f2984ca2d2abca18c056c9a0",
+   "committed_at": "2026-11-12T15:19:38-05:00",
+   "subject": "register heat-ed-syndromic"
+  },
+  "prereg_branch": {
+   "name": "prereg/heat-ed-syndromic",
+   "sha": null,
+   "reachable": true,
+   "note": "origin is reachable but has no such branch"
+  },
+  "outcome": {
+   "id": "heat-ed-syndromic",
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "NYC syndromic heat ED visits per day, May-Sep 2017-2026, Central Park TMAX lag 0, NB GLM with DOW, month, year, holiday",
+    "estimate": 4.092242632189716,
+    "lo": 3.7615528042599875,
+    "hi": 4.452004433314224,
+    "scale": "IRR per 5 C",
+    "null": 1,
+    "n": 1522
+   },
+   "graph_effect": {
+    "label": "Extreme heat (local 95th percentile vs reference day, 34.4 C vs 14.9 C national average) -> heat-related illness ED visits, Sun 2021 US adults",
+    "estimate": 1.663,
+    "lo": 1.602,
+    "hi": 1.727,
+    "scale": "RR 95th percentile vs reference day",
+    "null": 1
+   },
+   "sources": [
+    {
+     "kind": "github",
+     "repo": "nychealth/EHDP-data",
+     "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+     "path": "key-topics/heat-syndrome/previous_years.csv",
+     "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/previous_years.csv",
+     "fetched": "2026-11-12T15:22:51-0500"
+    },
+    {
+     "kind": "github",
+     "repo": "nychealth/EHDP-data",
+     "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+     "path": "key-topics/heat-syndrome/edheat1720_supp.csv",
+     "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat1720_supp.csv",
+     "fetched": "2026-11-12T15:22:51-0500"
+    },
+    {
+     "kind": "github",
+     "repo": "nychealth/EHDP-data",
+     "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+     "path": "key-topics/heat-syndrome/edheat2021_live.csv",
+     "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2021_live.csv",
+     "fetched": "2026-11-12T15:22:51-0500"
+    },
+    {
+     "kind": "github",
+     "repo": "nychealth/EHDP-data",
+     "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+     "path": "key-topics/heat-syndrome/edheat2022_live.csv",
+     "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2022_live.csv",
+     "fetched": "2026-11-12T15:22:51-0500"
+    },
+    {
+     "kind": "github",
+     "repo": "nychealth/EHDP-data",
+     "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+     "path": "key-topics/heat-syndrome/edheat2023_live.csv",
+     "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2023_live.csv",
+     "fetched": "2026-11-12T15:22:51-0500"
+    },
+    {
+     "kind": "github",
+     "repo": "nychealth/EHDP-data",
+     "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+     "path": "key-topics/heat-syndrome/edheat2024_live.csv",
+     "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2024_live.csv",
+     "fetched": "2026-11-12T15:22:51-0500"
+    },
+    {
+     "kind": "github",
+     "repo": "nychealth/EHDP-data",
+     "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+     "path": "key-topics/heat-syndrome/edheat2025_live.csv",
+     "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2025_live.csv",
+     "fetched": "2026-11-12T15:22:51-0500"
+    },
+    {
+     "kind": "github",
+     "repo": "nychealth/EHDP-data",
+     "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+     "path": "key-topics/heat-syndrome/edheat2026_live.csv",
+     "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2026_live.csv",
+     "fetched": "2026-11-12T15:22:51-0500"
+    },
+    {
+     "kind": "noaa-ghcnd",
+     "station": "USW00094728",
+     "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+     "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+     "fetched": "2026-11-12T15:06:44-0500",
+     "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+    },
+    {
+     "kind": "github",
+     "repo": "nychealth/EHDP-data",
+     "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+     "path": "indicators/data/2074.json",
+     "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2074.json",
+     "fetched": "2026-11-12T15:23:21-0500"
+    },
+    {
+     "kind": "github",
+     "repo": "nychealth/EHDP-data",
+     "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+     "path": "indicators/data/2075.json",
+     "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2075.json",
+     "fetched": "2026-11-12T15:23:21-0500"
+    },
+    {
+     "kind": "noaa-ghcnd",
+     "station": "USW00094728",
+     "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+     "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+     "fetched": "2026-11-12T15:06:44-0500",
+     "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+    },
+    {
+     "kind": "sysgraph",
+     "api": "System Public Graph v1.0",
+     "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+     "file": "data/derived/heat/graph_evidence.json",
+     "audit": "data/derived/heat/graph_audit_heat.json"
+    }
+   ],
+   "prediction_scored": "hit: IRR per 5 C 4.09 (3.76 to 4.45) lies in the registered 1.5-5 range; RR at the 95th percentile (33.3 C) vs the median (26.7 C) is 11.2, above 3 as predicted. The registered yearly secondary was weak: Spearman rho of yearly SPARCS heat ED visits with days >= 90 F was 0.36 (p 0.15, 17 years); with days >= 95 F (not registered) it was 0.84.",
+   "settle": "The daily relation is settled. Its size relative to the literature is not comparable as published: the NYC syndromic series counts chief-complaint matches and is near zero on mild days, whereas Sun 2021 used claims diagnoses and a contrast of the local 95th percentile against a cooler reference day (not the median, as the registration assumed). A daily SPARCS series of heat-illness ED visits by NYC neighbourhood (not public) would settle the size and allow the neighbourhood analysis that the bridge needs.",
+   "research_needed": [
+    {
+     "question": "What is the daily heat ED exposure-response by neighbourhood in NYC?",
+     "data": "Daily syndromic or SPARCS heat ED visits by ZCTA or UHF (DOHMH, restricted)",
+     "design": "Case-crossover by neighbourhood with effect modification by tree canopy and AC",
+     "priority": "high"
+    },
+    {
+     "question": "Why did syndromic heat visits rise in 2025-2026 on few 90 F days?",
+     "data": "Syndromic case definition logs, heat warning dates, ED census",
+     "design": "Interrupted time series around heat advisories and the 2023 definition change",
+     "priority": "medium"
+    }
+   ],
+   "figures": [
+    "figures/heat/heat_ed_curve.png"
+   ],
+   "notes": "7620 syndromic heat ED visits on 1522 warm-season days. previous_years.csv (revised 2023 definition) and the older supplement correlate r = 0.991 by day, with 2697 vs 2286 visits in 2017-2020. Piecewise: below 27 C IRR 1.83 per 5 C; above 27 C a further factor 6.57. Heat deaths (EHDP 2074) correlate with days >= 95 F, rho 0.78 (1999-2020). No daily heat mortality series is public; no heat or syndromic dataset was found on NYC Open Data.",
+   "registration_sha256": "8d15c930565b1a7fe3f75990127c08ae83c4a6a92ed1f84624d75cc2413422ec",
+   "decided_at": "2026-11-12T15:39:52-0500",
+   "stance": {
+    "value": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "z": 32.78
+   }
+  },
+  "outcome_path": "claims/outcomes/heat-ed-syndromic.json",
+  "outcome_file_sha256": "ac415a800dd3c460f6e14f78e599c36ad21662e02ffc85652ed7fa7baf75a5ec",
+  "revision_history": {
+   "in_file": [],
+   "last_revision": null,
+   "outcome_commits": [
+    {
+     "commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+     "committed_at": "2026-11-12T15:40:05-05:00",
+     "subject": "heat: analyses, derived data, figures, outcomes and docs/heat.md"
+    }
+   ]
+  },
+  "referee_reports": [
+   {
+    "path": "critique/heat-ed-syndromic.md",
+    "role": "referee report for this claim",
+    "sha256": "3c9dccbe3439c55ab385b76c46f81c102c94bed0049e97dda5dcf3dacda3e875"
+   },
+   {
+    "path": "critique/ANSWERS.md",
+    "role": "mentions the claim id",
+    "sha256": "8c6da566f9a62ca55580cb07aa1259d787018fc87961922d7fa615a4e450b96d"
+   }
+  ]
+ },
+ "code": {
+  "repo_commit": "47e2f54ff97e1795900c0c186583aeba809d3259",
+  "repo_dirty_paths": 26,
+  "scripts": [
+   {
+    "path": "concord/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "concord/noaa.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "9c104e53d0057bfd51cc6bd9e30406b3907de5f5",
+    "blob_at_HEAD": "9c104e53d0057bfd51cc6bd9e30406b3907de5f5",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "6b16cdb0ca46d148e92dcb0a718596e2038ab14cf0dff61d488319ac484f707f"
+   },
+   {
+    "path": "analyses/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "first_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/heat/common.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "c0eea33d9e7ec54892225ae7d030573823da0542",
+    "blob_at_HEAD": "c0eea33d9e7ec54892225ae7d030573823da0542",
+    "clean": true,
+    "last_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "first_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "sha256": "7c95a1175d9eb620219658632d0ea3ef05c47ebd9a6d4de347f6ee257c81c94a"
+   },
+   {
+    "path": "analyses/heat/ed_syndromic.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "c1c84fa964eeedaa0e908e61c4bad9e6af4851cc",
+    "blob_at_HEAD": "c1c84fa964eeedaa0e908e61c4bad9e6af4851cc",
+    "clean": true,
+    "last_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "first_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "sha256": "6d2f12642ad996af255b10b898bd3983b61b70557194ee201eff674aefdb8e0d"
+   },
+   {
+    "path": "analyses/graph_coverage/make_outputs.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "2a20a6a8e93db5020d3fdff5372ffd5de8c350b9",
+    "blob_at_HEAD": "2a20a6a8e93db5020d3fdff5372ffd5de8c350b9",
+    "clean": true,
+    "last_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "first_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "sha256": "63e90fb2899eb7d2a2f3be8910bf3aa2fd1e81a8ebe4b7567d99646447a457ca"
+   },
+   {
+    "path": "analyses/graph_coverage/termmap.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "a3c9b0e44bfcee7948a979b0dd0e338361889947",
+    "blob_at_HEAD": "a3c9b0e44bfcee7948a979b0dd0e338361889947",
+    "clean": true,
+    "last_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "first_commit": "622ebd541f31ef9920045e0de9992ba19dd94af4",
+    "sha256": "f65d7e481ecab3446e5a8a84fea74e13103bb31e4218b1eb86a80548d94e3191"
+   },
+   {
+    "path": "analyses/heat/ed_yearly.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "53e95cefef195fd3c7b53461d25846db844aeb79",
+    "blob_at_HEAD": "53e95cefef195fd3c7b53461d25846db844aeb79",
+    "clean": true,
+    "last_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "first_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "sha256": "f27f121e21a19422a1f8bd2d29a138c2ec6bc24ef716e1f53e780d500e7ebc1c"
+   },
+   {
+    "path": "analyses/heat/outcomes.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "f9aef824aa51f03d127a661e45231c3ef5b1b73f",
+    "blob_at_HEAD": "f9aef824aa51f03d127a661e45231c3ef5b1b73f",
+    "clean": true,
+    "last_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "first_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "sha256": "df3503ccc1920687b54f6ca022a76c71414015788e5fa9c7b60d688e0bdb7dd1"
+   },
+   {
+    "path": "analyses/heat/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "56a6537a8ef0ddebefeb2ac4169ad0b85de8bd23",
+    "blob_at_HEAD": "56a6537a8ef0ddebefeb2ac4169ad0b85de8bd23",
+    "clean": true,
+    "last_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "first_commit": "2944cee5e4ec9560e731ea51554f4228d5367d2d",
+    "sha256": "d633526a8cf849ccbbac5bca2b6e92e639a982a81423869c7363a1b0ae9ded4d"
+   }
+  ],
+  "seeds": [],
+  "draw_counts": [],
+  "commits_named_in_registration": [],
+  "procedure_note": "The registration names no seed and no resampling draw count; the deciding number is deterministic given the inputs."
+ },
+ "data": [
+  {
+   "kind": "github",
+   "record": {
+    "kind": "github",
+    "repo": "nychealth/EHDP-data",
+    "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+    "path": "key-topics/heat-syndrome/previous_years.csv",
+    "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/previous_years.csv",
+    "fetched": "2026-11-12T15:22:51-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "github",
+   "record": {
+    "kind": "github",
+    "repo": "nychealth/EHDP-data",
+    "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+    "path": "key-topics/heat-syndrome/edheat1720_supp.csv",
+    "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat1720_supp.csv",
+    "fetched": "2026-11-12T15:22:51-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "github",
+   "record": {
+    "kind": "github",
+    "repo": "nychealth/EHDP-data",
+    "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+    "path": "key-topics/heat-syndrome/edheat2021_live.csv",
+    "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2021_live.csv",
+    "fetched": "2026-11-12T15:22:51-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "github",
+   "record": {
+    "kind": "github",
+    "repo": "nychealth/EHDP-data",
+    "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+    "path": "key-topics/heat-syndrome/edheat2022_live.csv",
+    "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2022_live.csv",
+    "fetched": "2026-11-12T15:22:51-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "github",
+   "record": {
+    "kind": "github",
+    "repo": "nychealth/EHDP-data",
+    "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+    "path": "key-topics/heat-syndrome/edheat2023_live.csv",
+    "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2023_live.csv",
+    "fetched": "2026-11-12T15:22:51-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "github",
+   "record": {
+    "kind": "github",
+    "repo": "nychealth/EHDP-data",
+    "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+    "path": "key-topics/heat-syndrome/edheat2024_live.csv",
+    "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2024_live.csv",
+    "fetched": "2026-11-12T15:22:51-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "github",
+   "record": {
+    "kind": "github",
+    "repo": "nychealth/EHDP-data",
+    "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+    "path": "key-topics/heat-syndrome/edheat2025_live.csv",
+    "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2025_live.csv",
+    "fetched": "2026-11-12T15:22:51-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "github",
+   "record": {
+    "kind": "github",
+    "repo": "nychealth/EHDP-data",
+    "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+    "path": "key-topics/heat-syndrome/edheat2026_live.csv",
+    "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/key-topics/heat-syndrome/edheat2026_live.csv",
+    "fetched": "2026-11-12T15:22:51-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "record": {
+    "kind": "noaa-ghcnd",
+    "station": "USW00094728",
+    "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+    "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+    "fetched": "2026-11-12T15:06:44-0500",
+    "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+   },
+   "type": "noaa",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "station": "USW00094728",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "file": {
+    "path": "data/cache/noaa/USW00094728.csv",
+    "sha256": "6798348b51c2641de7a6ebcdb09f2af1b9c167eaf7b510650f67e84b25f75081",
+    "bytes": 2779870,
+    "copied": true,
+    "full_sha256": "d212ab1b033bb1f4f0d8e896319d49614439181d0d86d64ccff9f0f92251fd46",
+    "full_bytes": 17845904
+   }
+  },
+  {
+   "kind": "github",
+   "record": {
+    "kind": "github",
+    "repo": "nychealth/EHDP-data",
+    "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+    "path": "indicators/data/2074.json",
+    "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2074.json",
+    "fetched": "2026-11-12T15:23:21-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "github",
+   "record": {
+    "kind": "github",
+    "repo": "nychealth/EHDP-data",
+    "commit": "547482b9df589006543e13e8cdf6546e00ed9998",
+    "path": "indicators/data/2075.json",
+    "url": "https://raw.githubusercontent.com/nychealth/EHDP-data/547482b9df589006543e13e8cdf6546e00ed9998/indicators/data/2075.json",
+    "fetched": "2026-11-12T15:23:21-0500"
+   },
+   "type": "pointer"
+  },
+  {
+   "kind": "noaa-ghcnd",
+   "record": {
+    "kind": "noaa-ghcnd",
+    "station": "USW00094728",
+    "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+    "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+    "fetched": "2026-11-12T15:06:44-0500",
+    "dataset": "GHCN-Daily v3 (NCEI), doi:10.7289/V5D21VHZ"
+   },
+   "type": "noaa",
+   "url": "https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/access/USW00094728.csv",
+   "station": "USW00094728",
+   "last_modified": "Thu, 12 Nov 2026 01:29:19 GMT",
+   "file": {
+    "path": "data/cache/noaa/USW00094728.csv",
+    "sha256": "6798348b51c2641de7a6ebcdb09f2af1b9c167eaf7b510650f67e84b25f75081",
+    "bytes": 2779870,
+    "copied": true,
+    "full_sha256": "d212ab1b033bb1f4f0d8e896319d49614439181d0d86d64ccff9f0f92251fd46",
+    "full_bytes": 17845904
+   }
+  },
+  {
+   "kind": "sysgraph",
+   "record": {
+    "kind": "sysgraph",
+    "api": "System Public Graph v1.0",
+    "dataset": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+    "file": "data/derived/heat/graph_evidence.json",
+    "audit": "data/derived/heat/graph_audit_heat.json"
+   },
+   "type": "sysgraph",
+   "release": "July 1, 2026 release (as named in the challenge brief; the API returns no version id)",
+   "api": "System Public Graph v1.0",
+   "dataset_version": "Dataverse v2.1, doi:10.7910/DVN/7V6JDO",
+   "key": "not included; supply your own in ~/.config/system/token",
+   "derived_files": [
+    {
+     "path": "data/derived/heat/graph_evidence.json",
+     "sha256": "461e6aaf79039a2ab644ddb07c58b0a2d70c6d564efe3f1de14940412bf4920d",
+     "bytes": 98707,
+     "copied": false
+    },
+    {
+     "path": "data/derived/heat/graph_audit_heat.json",
+     "sha256": "f034e3df5749c39f2a42d9695f7f4edc86bcf47abe36df8400474c417617b846",
+     "bytes": 36453,
+     "copied": false
+    }
+   ],
+   "cached_requests": [
+    {
+     "request": "/v1/relationships/wpUeTjUbAc%7CPtQBvGm5CM",
+     "fetched": "2026-11-12T15:13:20-0500",
+     "path": "data/cache/sysgraph/27a670cce81c7f8e43cd7449.json",
+     "sha256": "feeac7a73f0fc80252a6dbe57ba5bddf55ed919e9555c11d55f0033824bf7eba",
+     "response_sha256": "982a9df58662a6fa7e218cd35632468facd129ce0bd59ecf945aebc870f51bc0",
+     "copied": false
+    },
+    {
+     "request": "/v1/relationships/wpUeTjUbAc%7CPtQBvGm5CM/associations?limit=100&offset=0",
+     "fetched": "2026-11-12T15:13:21-0500",
+     "path": "data/cache/sysgraph/4308ee2d43dd6892ea46a94f.json",
+     "sha256": "fdd95b3a5e328566f395fc8483996bca6f2f08a3fbb8d05b636d89f67b01b38c",
+     "response_sha256": "f46f05795430f7ab2f8334a75b3484de0e7a75a1779d0aad0db066f30dde8595",
+     "copied": false
+    },
+    {
+     "request": "/v1/relationships/wpUeTjUbAc%7CQPxlNKv3zV/associations?limit=100&offset=0",
+     "fetched": "2026-11-12T15:13:15-0500",
+     "path": "data/cache/sysgraph/aeae68093ec96addc5a0640d.json",
+     "sha256": "1c073987db085d00d5fa2cd446b1f0437cb63355b288dc71c904c18f22434318",
+     "response_sha256": "63eda2d37789ab467b0d227dece8a2cc18119943f69f796b7ffc8ab8d710e180",
+     "copied": false
+    },
+    {
+     "request": "/v1/relationships/wpUeTjUbAc%7CQPxlNKv3zV",
+     "fetched": "2026-11-12T15:13:13-0500",
+     "path": "data/cache/sysgraph/ce67d30f80e589699565db76.json",
+     "sha256": "87380cf3a37ed2c2c8d5a334630fe0d130662157ae921691d522bb7204c2a106",
+     "response_sha256": "d84bcdf4085620e007c788898c0207961aebd6822b9709ebb87bb0bd0a727088",
+     "copied": false
+    }
+   ]
+  }
+ ],
+ "environment": {
+  "python": "3.12.10 (main, Apr  9 2025, 03:49:38) [Clang 20.1.0 ]",
+  "venv": "~/.venvs/nyc-concordance",
+  "uv_pip_freeze": [
+   "affine==3.0.1",
+   "annotated-types==0.8.0",
+   "attrs==26.1.0",
+   "certifi==2026.10.23",
+   "charset-normalizer==3.5.2",
+   "click==8.5.1",
+   "contourpy==1.4.0",
+   "cycler==0.12.1",
+   "duckdb==2.0.0",
+   "fonttools==4.68.0",
+   "formulaic==1.2.2",
+   "geopandas==1.2.0",
+   "idna==3.20",
+   "interface-meta==2.0.1",
+   "jsonschema==4.26.0",
+   "jsonschema-specifications==2025.9.1",
+   "kiwisolver==1.5.1",
+   "matplotlib==3.11.2",
+   "mercantile==1.2.1",
+   "narwhals==2.28.0",
+   "numpy==2.5.4",
+   "packaging==26.3",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pillow==13.0.0",
+   "planetary-computer==1.0.0",
+   "pyarrow==26.0.1",
+   "pydantic==2.14.3",
+   "pydantic-core==2.50.4",
+   "pyogrio==0.13.0",
+   "pyparsing==3.3.3",
+   "pyproj==3.8.0",
+   "pystac==1.16.0",
+   "pystac-client==0.9.1",
+   "pystac-core==1.16.0",
+   "pystac-ext-classification==2.0.2",
+   "pystac-ext-datacube==2.2.2",
+   "pystac-ext-eo==1.1.2",
+   "pystac-ext-file==2.1.2",
+   "pystac-ext-grid==1.1.2",
+   "pystac-ext-item-assets==1.0.2",
+   "pystac-ext-label==1.0.3",
+   "pystac-ext-mgrs==1.0.2",
+   "pystac-ext-mlm==1.4.2",
+   "pystac-ext-pointcloud==1.0.2",
+   "pystac-ext-projection==2.0.2",
+   "pystac-ext-raster==1.1.2",
+   "pystac-ext-render==2.0.1",
+   "pystac-ext-sar==1.0.2",
+   "pystac-ext-sat==1.0.2",
+   "pystac-ext-scientific==1.0.2",
+   "pystac-ext-storage==2.0.2",
+   "pystac-ext-table==1.2.2",
+   "pystac-ext-timestamps==1.1.2",
+   "pystac-ext-version==1.2.2",
+   "pystac-ext-view==1.0.2",
+   "pystac-ext-xarray-assets==1.0.2",
+   "python-dateutil==4.0.0",
+   "python-dotenv==1.2.4",
+   "pytz==2026.6",
+   "rasterio==1.5.2",
+   "referencing==0.37.0",
+   "requests==2.34.2",
+   "rpds-py==2026.9.1",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0",
+   "typing-extensions==4.16.0",
+   "typing-inspection==0.4.5",
+   "tzdata==2026.6",
+   "urllib3==2.8.0",
+   "wrapt==2.5.2"
+  ],
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "os": "Darwin 27.2.0",
+  "mac_ver": "27.2.1",
+  "requirements": [
+   "numpy==2.5.4",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "requests==2.34.2",
+   "scipy==1.18.1",
+   "statsmodels==0.15.0"
+  ]
+ },
+ "inputs": {
+  "cap_bytes": 15728640,
+  "copied_bytes": 2826180,
+  "files": [
+   {
+    "path": "data/cache/noaa/USW00094728.csv",
+    "bytes": 2779870,
+    "sha256": "6798348b51c2641de7a6ebcdb09f2af1b9c167eaf7b510650f67e84b25f75081",
+    "role": "slice of a large input, read by the rerun",
+    "sliced_from": {
+     "bytes": 17845904,
+     "sha256": "d212ab1b033bb1f4f0d8e896319d49614439181d0d86d64ccff9f0f92251fd46",
+     "rule": {
+      "columns": [
+       "DATE",
+       "TMAX",
+       "TMIN",
+       "TAVG",
+       "PRCP",
+       "SNOW"
+      ]
+     },
+     "how": "csv.reader over the whole file; keep the named columns (and rows whose date column lies in the range, if one is given); csv.writer with QUOTE_ALL and newline line ends"
+    },
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/noaa/USW00094728.meta",
+    "bytes": 54,
+    "sha256": "9e5a6b37f13cecb205e274475a14c003de9fb5d3e2b9c2c416ee080ce2f12616",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/heat/ehdp/key-topics__heat-syndrome__edheat1720_supp.csv",
+    "bytes": 9135,
+    "sha256": "6d2c10d17c846781b8a9bcd4eb4177634e5b0f87eb6e829ab305864aedfb42aa",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/heat/ehdp/key-topics__heat-syndrome__edheat2021_live.csv",
+    "bytes": 2521,
+    "sha256": "15e62f8c4a2a6513e81a81fbd74138cc7250546b1750f26af5348c9b8a5710d1",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/heat/ehdp/key-topics__heat-syndrome__edheat2022_live.csv",
+    "bytes": 2524,
+    "sha256": "41f5a17881d65a8614a4aa7a40357d186f646406411bdb77700500e214fc075b",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/heat/ehdp/key-topics__heat-syndrome__edheat2023_live.csv",
+    "bytes": 2507,
+    "sha256": "178e7e69c54bc9867c2ee05ca8879be56095d99214a9456d354811a3ee0fd956",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/heat/ehdp/key-topics__heat-syndrome__edheat2024_live.csv",
+    "bytes": 2516,
+    "sha256": "f437783b99d3c04259abd10cd5fe5f317cd6e5af9f1906287797ea29ad59c2eb",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/heat/ehdp/key-topics__heat-syndrome__edheat2025_live.csv",
+    "bytes": 2397,
+    "sha256": "cb308639e8e61cf72c65996956fde4465fb95f0dd09689836574309703880d2e",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/heat/ehdp/key-topics__heat-syndrome__edheat2026_live.csv",
+    "bytes": 2524,
+    "sha256": "c2876230b83db95c61b40f7a578cfde3b70af4b716d2b2333c6169008e071c9e",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/heat/ehdp/key-topics__heat-syndrome__previous_years.csv",
+    "bytes": 22132,
+    "sha256": "8660977e1a60b21360bf4a5cf1c073011b360ae26fc4f5b743acf38d20bf2e3e",
+    "role": "read by code/rerun.py (found by tracing a run in the repository)",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/derived/heat/graph_evidence.json",
+    "bytes": 98707,
+    "sha256": "461e6aaf79039a2ab644ddb07c58b0a2d70c6d564efe3f1de14940412bf4920d",
+    "role": "graph evidence (file)",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/derived/heat/graph_audit_heat.json",
+    "bytes": 36453,
+    "sha256": "f034e3df5749c39f2a42d9695f7f4edc86bcf47abe36df8400474c417617b846",
+    "role": "graph evidence (audit)",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/27a670cce81c7f8e43cd7449.json",
+    "bytes": 869,
+    "sha256": "feeac7a73f0fc80252a6dbe57ba5bddf55ed919e9555c11d55f0033824bf7eba",
+    "role": "cached System graph response",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/4308ee2d43dd6892ea46a94f.json",
+    "bytes": 1415,
+    "sha256": "fdd95b3a5e328566f395fc8483996bca6f2f08a3fbb8d05b636d89f67b01b38c",
+    "role": "cached System graph response",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/aeae68093ec96addc5a0640d.json",
+    "bytes": 14734,
+    "sha256": "1c073987db085d00d5fa2cd446b1f0437cb63355b288dc71c904c18f22434318",
+    "role": "cached System graph response",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   },
+   {
+    "path": "data/cache/sysgraph/ce67d30f80e589699565db76.json",
+    "bytes": 874,
+    "sha256": "87380cf3a37ed2c2c8d5a334630fe0d130662157ae921691d522bb7204c2a106",
+    "role": "cached System graph response",
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   }
+  ],
+  "traced": true
+ },
+ "deciding": {
+  "available": true,
+  "what": "city_effect: IRR per 5 C of Central Park TMAX (lag 0) for daily heat-syndrome ED visits, May-September, negative binomial GLM with day of week, month, year and holiday, robust HC0 95% CI",
+  "recorded": {
+   "estimate": 4.092242632189716,
+   "lo": 3.7615528042599875,
+   "hi": 4.452004433314224,
+   "n": 1522
+  },
+  "tolerance": {
+   "estimate": 0.0001,
+   "lo": 0.0001,
+   "hi": 0.0001,
+   "n": 0
+  },
+  "decides": "prediction magnitude: IRR per 5 C between 1.5 and 5",
+  "recorded_from": {
+   "city_effect": "claims/outcomes/heat-ed-syndromic.json"
+  },
+  "wrapper": "code/rerun.py",
+  "wrapper_note": "Smallest wrapper: ed_syndromic.py main() also fits a spline curve, a piecewise model and a yearly correlation and writes five files into the repository, so code/rerun.py calls its load(), nb_fit() and irr() unchanged and repeats the lines of main() that build the May-September model frame.",
+  "refetch_rerun": true,
+  "trace_run_in_repository": {
+   "printed": {
+    "estimate": 4.092242632189716,
+    "lo": 3.7615528042599875,
+    "hi": 4.452004433314224,
+    "n": 1522,
+    "n_visits": 7620,
+    "alpha": 0.2633430491512988
+   },
+   "files_read": 10
+  }
+ },
+ "not_rebuilt": []
+}

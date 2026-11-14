@@ -1,0 +1,80 @@
+{
+ "id": "heat-ed-syndromic",
+ "kind": "confirmation",
+ "statement": "In New York City, daily emergency department visits for heat-related illness (DOHMH syndromic surveillance) rise steeply with the day's maximum temperature in the warm season.",
+ "graph_evidence": [
+  {
+   "relationship_id": "wpUeTjUbAc|PtQBvGm5CM",
+   "concepts": [
+    "extreme heat",
+    "heat illness"
+   ],
+   "n_findings": 2,
+   "n_studies": 2,
+   "direction": "+",
+   "summary": "Sun et al. 2021 (BMJ, 74 million insured US adults, 2010-2019): days at the local 95th percentile of warm-season temperature had 66.3% (60.2 to 72.7) excess risk of ED visits for heat-related illness, with stronger effects in the Northeast. Stowell et al. 2023 (US children): OR 1.34 (1.16 to 1.56), ages 6-12.",
+   "pubmed_ids": [
+    34819309,
+    36337257
+   ]
+  },
+  {
+   "association_id": "variable u7xiLrAgHi",
+   "concepts": [
+    "maximum temperature",
+    "heat-related ED admissions"
+   ],
+   "n_findings": 1,
+   "n_studies": 1,
+   "direction": "+",
+   "summary": "Kingsley et al. 2016 (Rhode Island 2005-2012): Tmax 75 to 85 F associated with 23.9% higher rates of heat-related ED visits (Poisson). The graph stores 23.9 as a coefficient without units.",
+   "pubmed_ids": [
+    26251954
+   ]
+  },
+  {
+   "relationship_id": "wpUeTjUbAc|QPxlNKv3zV",
+   "concepts": [
+    "extreme heat",
+    "mortality rate"
+   ],
+   "n_findings": 25,
+   "n_studies": 14,
+   "direction": "+",
+   "summary": "Extreme heat raises mortality across 14 studies (RR 1.1 to 1.4 typical). Context; heat mortality in NYC is published only as yearly citywide counts.",
+   "pubmed_ids": [
+    39463255,
+    22340020,
+    25956805
+   ]
+  }
+ ],
+ "literature": [
+  {
+   "citation": "Sun S et al. Ambient heat and risks of emergency department visits among adults in the United States. BMJ 2021;375:e065653.",
+   "doi": "10.1136/bmj-2021-065653",
+   "finding": "95th vs median warm-season temperature (34.4 C vs 14.9 C national average): heat-related illness ED visits +66.3% (60.2 to 72.7)."
+  },
+  {
+   "citation": "Kingsley SL et al. Current and projected heat-related morbidity and mortality in Rhode Island. Environ Health Perspect 2016;124:460-467.",
+   "doi": "10.1289/ehp.1408826",
+   "finding": "Tmax 75 to 85 F (5.6 C): heat-related ED visits +23.9%."
+  }
+ ],
+ "prediction": {
+  "direction": "+",
+  "magnitude": "Warm season (May-September), IRR per 5 C Central Park TMAX between 1.5 and 5. The curve is flat below about 27 C and steep above it; on days at the city's 95th percentile TMAX versus the warm-season median, RR at least 1.66 (Sun et al. national average) and probably above 3, because syndromic counts are near zero on mild days.",
+  "support_if": "lower 95% limit of the IRR per 5 C above 1.00 and estimate >= 1.5 (hit); estimate between 1.0 and 1.5 with lower limit above 1 is partial",
+  "refute_if": "upper limit at or below 1.00"
+ },
+ "plan": "Data: EHDP-data GitHub repository (nychealth/EHDP-data, branch production, key-topics/heat-syndrome: previous_years.csv, edheat1720_supp.csv, edheatYYYY_live.csv), daily counts of heat-syndrome ED visits citywide, cited by commit SHA. If no daily series exists, use EHDP indicator 2075 (yearly heat ED visits) and say so. Weather: NOAA GHCN-Daily Central Park TMAX (the DOHMH file's own LaGuardia heat-index column is used only as a cross-check, not as the exposure). Model: negative binomial GLM of daily counts, May-September, on linear TMAX/5 with day-of-week, month and year factors; and a natural spline (4 df) for the curve, RR vs the warm-season median TMAX; RR at the 95th percentile compared with Sun et al. Secondary: EHDP yearly heat ED visits (indicator 2075, citywide) and yearly heat deaths (2074) against the number of days with TMAX >= 32.2 C (90 F) per year, Spearman correlation, descriptive.",
+ "alternatives": [
+  "Syndromic case definition changed in 2023 (applied back to all years, per DOHMH)",
+  "Chief-complaint keyword matching may respond to heat warnings and media attention, not only to illness (awareness bias)",
+  "Some residents seek care outside the city; coverage of 100% of NYC EDs only from May 2016"
+ ],
+ "prior": 0.95,
+ "registrant": "Claude (heat agent), for Jeff Vernon",
+ "registered_at": "2026-11-12T15:19:38-0500",
+ "sha256": "8d15c930565b1a7fe3f75990127c08ae83c4a6a92ed1f84624d75cc2413422ec"
+}

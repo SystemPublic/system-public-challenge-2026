@@ -1,0 +1,765 @@
+{
+ "package": {
+  "claim": "turn-calming-ped",
+  "built_at": "2026-11-13T23:18:28-0500",
+  "tool": "tools/replicate.py",
+  "tool_blob": "16f07623c4ff653927544875f71932bac3af8902",
+  "paths": "relative to the repository (inputs keep their repo paths under inputs/) or to ~/opt/nyc-concordance"
+ },
+ "claim": {
+  "id": "turn-calming-ped",
+  "registration": {
+   "id": "turn-calming-ped",
+   "kind": "confirmation",
+   "statement": "NYC DOT left-turn traffic calming (hardened centerlines, slow-turn wedges and related treatments) reduced pedestrians injured or killed within 40 m of treated intersections in the two years after installation, relative to intersections DOT treated later.",
+   "graph_evidence": [
+    {
+     "association": "PMID 37288501 (Batomen et al. 2024, Am J Epidemiol, Montreal 2012-2019)",
+     "summary": "Graph: traffic-calming measures -> collision rates IRR 0.31 (0.12-0.86). Abstract check: correct, but the figure is a subgroup (intersections on local roads); overall the authors found weak evidence of any association, and most collisions were on arterials, where NYC places turn calming.",
+     "pubmed_ids": [
+      37288501
+     ]
+    },
+    {
+     "association": "PMID 30962130 (He et al. 2019, Chin J Traumatol, Changsha)",
+     "summary": "Graph: 'intersections with conflicting left-turning vehicle-pedestrian traffic lights' -> 'proportion of intersections' IRR 3.13 and risky conflicts IRR 4.02. Abstract check: partly mis-extracted. 3.13 is the IRR of risky conflicts (vehicle counts) and 4.02 the IRR for pedestrians; neither is a proportion. The abstract also reports no difference in transport efficiency between the two signal designs.",
+     "pubmed_ids": [
+      30962130
+     ]
+    },
+    {
+     "association": "PMID 26680430 (Morency et al. 2015, Can J Public Health, Montreal 512 intersections)",
+     "summary": "Graph: fourth branch IRR 2.40 (1.53-3.77) and parking within 5 m IRR 2.40 (1.64-3.51) for injured pedestrians. Abstract check: correct. Cross-sectional; supports intersection geometry as a cause.",
+     "pubmed_ids": [
+      26680430
+     ]
+    },
+    {
+     "association": "PMID 31033340 (Ghana)",
+     "summary": "Graph: traffic calming -> pedestrian fatality OR 1.98. Already found reversed by the street-safety agent (data/derived/street_safety/graph_check.json); not used.",
+     "pubmed_ids": [
+      31033340
+     ]
+    },
+    {
+     "note": "Variable search for 'turn restriction', 'turn ban', 'hardened centerline', 'protected left' and 'crash migration' returned no relevant variables. The graph holds no evaluation of turn bans or turn calming on crashes. Collection: analyses/turn_restrictions/graph_collect.py."
+    }
+   ],
+   "literature": [
+    {
+     "citation": "NYC DOT (2016). Don't Cut Corners: Left Turn Pedestrian & Bicyclist Crash Study.",
+     "doi": null,
+     "finding": "108 of 859 pedestrian and bicyclist deaths 2010-2014 involved left-turning vehicles; left turns 19% of pedestrian and bicyclist KSI vs right turns 6%. Before-after at 478 intersections, no control group: left-turn restrictions -41% left-turn pedestrian and bicyclist injuries (51 sites, 113 to 67 in 3 years), left-turn bays -15%, left-turn-only signals -33%, LPIs -14%."
+    },
+    {
+     "citation": "NYC DOT Turn Calming Program web page (accessed 13 Nov 2026).",
+     "doi": null,
+     "finding": "Pedestrian injuries -18%, pedestrian severe injuries -33%, median left-turn speed -54%; injuries 'declining faster than nearby comparable locations'; comparison sites and periods not stated. An earlier page (2016-2018 installations) gave -20%. A 2022 DOT evaluation slide gave all injuries flat."
+    },
+    {
+     "citation": "Hu W, Cicchino JB (2020). Hardened centerlines at intersections in Washington, DC; J Safety Res, December 2020 (IIHS bibliography ref 2202; title paraphrased).",
+     "doi": null,
+     "finding": "10 treated, 8 control intersections: vehicle-pedestrian conflicts -70.5%, mean left-turn speed -9.8%; most of the conflict reduction at two sites with many conflicts before."
+    }
+   ],
+   "prediction": {
+    "direction": "-",
+    "magnitude": "Ratio of ratios 0.80-0.97 (DOT's own uncontrolled -18% to -20% shrinks under a controlled design).",
+    "support_if": "Upper bound of the 95% interval of the ratio of ratios below 1.00.",
+    "refute_if": "Lower bound of the 95% interval above 0.97."
+   },
+   "plan": "Treatment: data/derived/turn_restrictions/sites.json, built from NYC DOT VZV Turn Traffic Calming (sm2x-35i7): 1,457 left-turn records merged within 40 m into 1,207 intersections with install dates 2016-2026 (right-turn and bike-island records dropped). Outcome data, read only after this registration: Motor Vehicle Collisions - Crashes (h9gi-nx95) points since 2014 and Vehicles (bm4k-52h4) collision ids with pre_crash 'Making Left Turn' (the brief's 'bk4m-6pyy' is bm4k-52h4). Script: analyses/turn_restrictions/did.py at commit bd2a8d9, run unchanged. Design: stacked cohorts by install quarter 2016Q3-2023Q2; treated windows 24 months before and months 1-24 after the install month; controls are calming sites installed more than 24 months after the cohort ends (not yet treated), same calendar windows. Model: binomial GLM of post/(pre+post) on cohort fixed effects and a treated indicator, which is conditional Poisson; exp(b) is the ratio of ratios; SEs clustered by site; 95% Wald interval. Data through September 2026. Power check (analyses/turn_restrictions/power.py, assumed rates): about 770 treated sites in 23 cohorts; expected SE of log ratio 0.077 for pedestrians injured (z about -1.6 if the predicted midpoint is true, so this test may well end unsettled), 0.049 for left-turn crashes (z about -4.1), 0.046 for the pedestrian ring. Non-deciding checks: 30 m radius; cohorts whose windows avoid March-June 2020; event-time figure. Left-turn bans are not tested: no dated list of bans exists on NYC Open Data, and the 42nd Street changes of 2019 (extensions of time-of-day bans at 6th Ave, 7th Ave and Lexington Ave) are too few and imprecisely dated. Outcome: 'ped' in did.py.",
+   "alternatives": [
+    "Regression to the mean: DOT chooses sites after crash clusters (the design compares with sites DOT chose later, which were also chosen for crash history, but those were chosen later and may have had their clusters later)",
+    "Co-installed treatments: LPIs, daylighting, street improvement projects at the same intersections and dates",
+    "Changes in NYPD crash reporting and pre-crash coding, notably the fall of 'Making Left Turn' records in 2020",
+    "Differential pandemic and post-pandemic traffic recovery between early-treated and later-treated places",
+    "Geocoding error: NYPD crash coordinates snap to intersections or block faces, so a 40 m radius may miss or misassign crashes",
+    "Growth of e-bikes and mopeds, whose crashes with pedestrians are not left-turn car crashes"
+   ],
+   "prior": 0.35,
+   "registrant": "turn-restrictions agent (Claude Opus 5.5), for J. Vernon",
+   "registered_at": "2026-11-13T13:18:40-0500",
+   "sha256": "5941844b4bc2fd346ebb469eafa51c0dc44fca0f1ff247bc0086f3fba10debc2"
+  },
+  "registration_path": "claims/registered/turn-calming-ped.json",
+  "registration_sha256": "5941844b4bc2fd346ebb469eafa51c0dc44fca0f1ff247bc0086f3fba10debc2",
+  "registration_hash_ok": true,
+  "registration_file_sha256": "39b6acbce398b1d1690b335c6426d6158313d314f24123594ea9c35548e4f647",
+  "registration_commit": {
+   "commit": "85b40afe305542b98df35efa4e483d89628ec263",
+   "committed_at": "2026-11-13T13:18:40-05:00",
+   "subject": "register turn-calming-ped, turn-calming-leftturn, turn-calming-displacement (before any crash data at the sites)"
+  },
+  "prereg_branch": {
+   "name": "prereg/turn-calming-ped",
+   "sha": "85b40afe305542b98df35efa4e483d89628ec263",
+   "reachable": true,
+   "contains_registration_commit": true
+  },
+  "outcome": {
+   "id": "turn-calming-ped",
+   "verdict": "confirmed",
+   "city_effect": {
+    "label": "Pedestrians injured or killed within 40 m, 24 months after vs 24 months before installation, treated vs later-treated calming sites, stacked cohorts 2016Q3-2023Q2",
+    "estimate": 0.8482,
+    "lo": 0.7787,
+    "hi": 0.924,
+    "scale": "ratio of ratios",
+    "null": 1,
+    "n": 712
+   },
+   "prediction_scored": "hit: ratio 0.848 (0.779-0.924) lies inside the predicted 0.80-0.97 and the upper bound is below 1.00, so support_if is met by 0.076 on the upper bound. The causal reading is not supported by the exploratory placebo (see notes).",
+   "notes": "Exploratory, written after the registered result was seen (analyses/turn_restrictions/did_explore.py): a placebo installation 12 months early gives a ratio of 0.9119 (0.8252-1.0078), so treated sites were already declining relative to later-treated sites before installation. Extending that pre-installation trend gives a trend-adjusted ratio of 1.0279 (0.8207-1.2873). The likely cause is the comparison group: DOT chooses sites after crash clusters, so treated sites are past their peak while later-treated sites in the same calendar months are still approaching theirs. The registered ratio therefore mixes any treatment effect with regression to the mean in opposite directions in the two groups. Checks fixed in did.py: 30 m radius 0.8436; cohorts avoiding March-June 2020 0.827 (0.7367-0.9284). Treated sites: 1,966 pedestrians injured or killed before, 1,706 after.",
+   "graph_effect": {
+    "label": "No graph evaluation of turn calming or turn bans. Nearest: traffic-calming measures on local-road intersections, Montreal, collisions IRR 0.31 (0.12-0.86), weak evidence overall (PMID 37288501). Literature outside the graph: NYC DOT uncontrolled before-after, pedestrian injuries -18% (turn calming), left-turn pedestrian and bicyclist injuries -41% (51 left-turn restrictions, 2016 study).",
+    "estimate": 0.82,
+    "lo": null,
+    "hi": null,
+    "scale": "ratio, DOT turn-calming page (-18%)",
+    "null": 1
+   },
+   "sources": [
+    {
+     "kind": "nyc-open-data",
+     "dataset": "sm2x-35i7",
+     "name": "VZV Turn Traffic Calming",
+     "url": "https://data.cityofnewyork.us/d/sm2x-35i7",
+     "rows_updated_at": "2026-11-01T11:46:54Z",
+     "query": {
+      "$limit": 50000
+     },
+     "fetched": "2026-11-13T13:06:40-0500",
+     "n_rows": 1601
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "h9gi-nx95",
+     "name": "Motor Vehicle Collisions - Crashes",
+     "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+     "rows_updated_at": "2026-11-12T14:31:25Z",
+     "query": {
+      "$select": "collision_id, crash_date, latitude, longitude, number_of_pedestrians_injured, number_of_pedestrians_killed, number_of_persons_injured, number_of_persons_killed",
+      "$where": "crash_date >= '2014-01-01T00:00:00' and latitude > 40.4 and latitude < 41.0 (paged by collision_id)",
+      "format": "csv"
+     },
+     "fetched": "2026-11-13T13:53:46-0500",
+     "local_file": "~/opt/nyc-concordance/turn_restrictions/crashes.csv",
+     "n_rows": 1798550
+    },
+    {
+     "kind": "nyc-open-data",
+     "dataset": "bm4k-52h4",
+     "name": "Motor Vehicle Collisions - Vehicles",
+     "url": "https://data.cityofnewyork.us/d/bm4k-52h4",
+     "rows_updated_at": "2026-11-13T15:33:26Z",
+     "query": {
+      "$select": "collision_id, crash_date, pre_crash",
+      "$where": "pre_crash = 'Making Left Turn' (paged by $offset on :id)",
+      "format": "csv"
+     },
+     "fetched": "2026-11-13T14:01:50-0500",
+     "local_file": "~/opt/nyc-concordance/turn_restrictions/left_vehicles.csv",
+     "n_rows": 227926
+    }
+   ],
+   "settle": "A design that separates the treatment from regression to the mean: empirical Bayes before-after with a safety performance function, or a comparison group of untreated signalized intersections matched on the crash history DOT used for selection, registered before the data are read. DOT's site-selection lists (which crash years it used) would let the selection window be excluded.",
+   "research_needed": [
+    {
+     "question": "Does turn calming reduce pedestrian injuries once the pre-installation decline at selected sites is accounted for?",
+     "data": "sm2x-35i7 install dates; h9gi-nx95; DOT's site-selection crash windows",
+     "design": "Register a model with site-specific pre-trends or an empirical Bayes before-after with a safety performance function fitted on untreated signalized intersections (FHWA method), so that regression to the mean is modelled rather than assumed away",
+     "priority": "high"
+    },
+    {
+     "question": "Do left-turn bans (not calming) reduce pedestrian injuries, and where do the turns go?",
+     "data": "A dated list of left-turn prohibitions (DOT sign orders or the CSCL/LION turn-restriction layer by date), which is not on NYC Open Data",
+     "design": "Staggered DiD as here, with a displacement ring along the detour route",
+     "priority": "high"
+    },
+    {
+     "question": "What does a turn ban or calming do to vehicle throughput at the intersection?",
+     "data": "Signal-timing and turning-movement counts at treated intersections (DOT ATR or video counts); i4gi-tjb9 covers highways only",
+     "design": "Before-after counts at treated and comparison intersections",
+     "priority": "medium"
+    }
+   ],
+   "figures": [
+    "figures/turn_restrictions/event_time.png",
+    "figures/turn_restrictions/forest.png",
+    "figures/turn_restrictions/sites_map.png"
+   ],
+   "registration_sha256": "5941844b4bc2fd346ebb469eafa51c0dc44fca0f1ff247bc0086f3fba10debc2",
+   "decided_at": "2026-11-13T14:04:20-0500",
+   "stance": {
+    "value": 0.955,
+    "lo": 0.719,
+    "hi": 0.994,
+    "z": 3.77
+   },
+   "notes_referee": "Referee reproduced 0.849 (0.779 to 0.924); placebo 0.911; trend-adjusted 1.03. Verdict stands under rules 1 and 4; against the placebo D = 0.39, so it is not evidence of agreement. Treated sites decline 3.5-5%/yr from three years before installation.",
+   "history": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "Pedestrians injured or killed within 40 m, 24 months after vs 24 months before installation, treated vs later-treated calming sites, stacked cohorts 2016Q3-2023Q2",
+      "estimate": 0.8482,
+      "lo": 0.7787,
+      "hi": 0.924,
+      "scale": "ratio of ratios",
+      "null": 1,
+      "n": 712
+     },
+     "stance": {
+      "value": 0.955,
+      "lo": 0.719,
+      "hi": 0.994,
+      "z": 3.77
+     },
+     "decided_at": "2026-11-13T14:04:20-0500",
+     "prediction_scored": "hit: ratio 0.848 (0.779-0.924) lies inside the predicted 0.80-0.97 and the upper bound is below 1.00, so support_if is met by 0.076 on the upper bound. The causal reading is not supported by the exploratory placebo (see notes)."
+    }
+   ],
+   "revision": {
+    "reason": "Round 7 referee: verdict kept, reading narrowed",
+    "critique": "critique/turn-calming-ped.md",
+    "revised_at": "2026-11-13T14:18:50-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   }
+  },
+  "outcome_path": "claims/outcomes/turn-calming-ped.json",
+  "outcome_file_sha256": "67ad9f672bba85388af04960b659e9fd79ed065fe7736d119a8c0b57c4793d8a",
+  "revision_history": {
+   "in_file": [
+    {
+     "verdict": "confirmed",
+     "city_effect": {
+      "label": "Pedestrians injured or killed within 40 m, 24 months after vs 24 months before installation, treated vs later-treated calming sites, stacked cohorts 2016Q3-2023Q2",
+      "estimate": 0.8482,
+      "lo": 0.7787,
+      "hi": 0.924,
+      "scale": "ratio of ratios",
+      "null": 1,
+      "n": 712
+     },
+     "stance": {
+      "value": 0.955,
+      "lo": 0.719,
+      "hi": 0.994,
+      "z": 3.77
+     },
+     "decided_at": "2026-11-13T14:04:20-0500",
+     "prediction_scored": "hit: ratio 0.848 (0.779-0.924) lies inside the predicted 0.80-0.97 and the upper bound is below 1.00, so support_if is met by 0.076 on the upper bound. The causal reading is not supported by the exploratory placebo (see notes)."
+    }
+   ],
+   "last_revision": {
+    "reason": "Round 7 referee: verdict kept, reading narrowed",
+    "critique": "critique/turn-calming-ped.md",
+    "revised_at": "2026-11-13T14:18:50-0500",
+    "rule": "concord.claims.PRECEDENCE"
+   },
+   "outcome_commits": [
+    {
+     "commit": "3b42e042eff03417536304e47440db057288f14d",
+     "committed_at": "2026-11-13T14:18:50-05:00",
+     "subject": "Turn calming: apply round 7 referee notes; rule 12 requires registered placebos"
+    },
+    {
+     "commit": "bd2ae758881c41ace78d70adff397460450ae5e0",
+     "committed_at": "2026-11-13T14:05:24-05:00",
+     "subject": "turn_restrictions: outcomes for turn-calming-ped (confirmed), turn-calming-leftturn (confirmed), turn-calming-displacement (unsettled); exploratory placebo shows a pre-installation decline of similar size; exploratory M42 bus speeds; docs/turn_restrictions.md and figures"
+    }
+   ]
+  },
+  "referee_reports": [
+   {
+    "path": "critique/turn-calming-ped.md",
+    "role": "referee report for this claim",
+    "sha256": "9a767c30cf2752903efb24bbac53a24465e168424d22e7ddcad0a3c490dcf32b"
+   },
+   {
+    "path": "critique/turn-calming-displacement.md",
+    "role": "mentions the claim id",
+    "sha256": "7a8dee76853bb49f1fe52bf87aaaa59291ee463f53ca535cb7afa9d53a7ba152"
+   },
+   {
+    "path": "critique/turn-calming-leftturn.md",
+    "role": "mentions the claim id",
+    "sha256": "eb75a096a64d88682fd54d146424f0c925f79c6db345bca561cc2d137e4d3b7a"
+   }
+  ]
+ },
+ "code": {
+  "repo_commit": "a9efe822a26e6a823de2adfbd67ec4423ce68b00",
+  "repo_dirty_paths": 17,
+  "scripts": [
+   {
+    "path": "concord/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "concord/socrata.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "blob_at_HEAD": "40db0eebec1ee69f783e908574e76210fbdc7ca2",
+    "clean": true,
+    "last_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "first_commit": "c06f1096e5f361c5f37e1f0fd10440c8e93896dc",
+    "sha256": "3cc8d26ec235c6633cae66a5ddcdf5173ea8252f72c722d28a52ff48f4d61f4b"
+   },
+   {
+    "path": "analyses/__init__.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "blob_at_HEAD": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "clean": true,
+    "last_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "first_commit": "76d0c0459af400bfa1e04989989606880ac4eaff",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "path": "analyses/turn_restrictions/sites.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "ae4340a7ace5bb1ed22c16013259690dec490ec7",
+    "blob_at_HEAD": "ae4340a7ace5bb1ed22c16013259690dec490ec7",
+    "clean": true,
+    "last_commit": "bd2a8d96c09bd1a66f5f5f9cfe6626c3122e37c0",
+    "first_commit": "bd2a8d96c09bd1a66f5f5f9cfe6626c3122e37c0",
+    "sha256": "0f19efebec2cc363b97c8a326694c65e2f5295a4726bd1f2a05e6cfd3485a152"
+   },
+   {
+    "path": "analyses/turn_restrictions/did.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "4a3f8f21ef31deac7482e27bf0633d9f31844973",
+    "blob_at_HEAD": "4a3f8f21ef31deac7482e27bf0633d9f31844973",
+    "clean": true,
+    "last_commit": "bd2a8d96c09bd1a66f5f5f9cfe6626c3122e37c0",
+    "first_commit": "bd2a8d96c09bd1a66f5f5f9cfe6626c3122e37c0",
+    "sha256": "77fa0104992b5fd0c23cdd95c462a8a68b038118fbbdf220d9943f78b4cd7dce"
+   },
+   {
+    "path": "analyses/turn_restrictions/did_explore.py",
+    "found_by": "rerun recipe (imported by code/rerun.py)",
+    "exists": true,
+    "blob": "5f06b27b53fb1a9578754beb26d1b4756e8a60db",
+    "blob_at_HEAD": "5f06b27b53fb1a9578754beb26d1b4756e8a60db",
+    "clean": true,
+    "last_commit": "bd2ae758881c41ace78d70adff397460450ae5e0",
+    "first_commit": "bd2ae758881c41ace78d70adff397460450ae5e0",
+    "sha256": "700fab87f3efb7685522e3aaff198bd1a45fb7f86c0ec4d2d82c3d8ee12c8eb0"
+   },
+   {
+    "path": "analyses/turn_restrictions/graph_collect.py",
+    "found_by": "named in the registration or outcome",
+    "exists": true,
+    "blob": "451f845976543dcf4b6843feedf8ed3dff1d6d37",
+    "blob_at_HEAD": "451f845976543dcf4b6843feedf8ed3dff1d6d37",
+    "clean": true,
+    "last_commit": "bd2a8d96c09bd1a66f5f5f9cfe6626c3122e37c0",
+    "first_commit": "bd2a8d96c09bd1a66f5f5f9cfe6626c3122e37c0",
+    "sha256": "107186951ea5a06de5dbaa090d44def455d844e98a1bc56c43ac5b9a0107f078"
+   },
+   {
+    "path": "analyses/turn_restrictions/power.py",
+    "found_by": "named in the registration or outcome",
+    "exists": true,
+    "blob": "4f80b8f7d613634cf6d3bd0cf7becb8e9d7eac83",
+    "blob_at_HEAD": "4f80b8f7d613634cf6d3bd0cf7becb8e9d7eac83",
+    "clean": true,
+    "last_commit": "bd2a8d96c09bd1a66f5f5f9cfe6626c3122e37c0",
+    "first_commit": "bd2a8d96c09bd1a66f5f5f9cfe6626c3122e37c0",
+    "sha256": "79fd180879b521eca12ac2ff8119e8b74e387a982992b63ec756fc2f9129bcde"
+   },
+   {
+    "path": "analyses/turn_restrictions/outcomes.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "f042e2def1c7fbf393d7c28f6308d7a9325c2b6c",
+    "blob_at_HEAD": "f042e2def1c7fbf393d7c28f6308d7a9325c2b6c",
+    "clean": true,
+    "last_commit": "bd2ae758881c41ace78d70adff397460450ae5e0",
+    "first_commit": "bd2ae758881c41ace78d70adff397460450ae5e0",
+    "sha256": "d295a3f1ce2e0b511b2b842d72691866b488bcec9c01094fc0a36a1df4ad5e69"
+   },
+   {
+    "path": "analyses/turn_restrictions/register.py",
+    "found_by": "contains the claim id (search of analyses/)",
+    "exists": true,
+    "blob": "1e24ce1118a6b8468aef9b90ff7e82a2ee249dcd",
+    "blob_at_HEAD": "1e24ce1118a6b8468aef9b90ff7e82a2ee249dcd",
+    "clean": true,
+    "last_commit": "85b40afe305542b98df35efa4e483d89628ec263",
+    "first_commit": "85b40afe305542b98df35efa4e483d89628ec263",
+    "sha256": "34490a666e8bbcb7e0afe50b34280dc2a6455a462cf7a7f91ed154d592ade44b"
+   }
+  ],
+  "seeds": [],
+  "draw_counts": [],
+  "commits_named_in_registration": [
+   "bd2a8d9"
+  ],
+  "procedure_note": "The registration names no seed and no resampling draw count; the deciding number is deterministic given the inputs."
+ },
+ "data": [
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "sm2x-35i7",
+    "name": "VZV Turn Traffic Calming",
+    "url": "https://data.cityofnewyork.us/d/sm2x-35i7",
+    "rows_updated_at": "2026-11-01T11:46:54Z",
+    "query": {
+     "$limit": 50000
+    },
+    "fetched": "2026-11-13T13:06:40-0500",
+    "n_rows": 1601
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "sm2x-35i7",
+   "rows_updated_at": "2026-11-01T11:46:54Z",
+   "soql": {
+    "$limit": 50000
+   },
+   "fetched": "2026-11-13T13:06:40-0500",
+   "n_rows": 1601,
+   "cache_files": [
+    {
+     "path": "data/cache/socrata/sm2x-35i7-28298048f09e2906e26154a7.json",
+     "sha256": "197157eec5d6250ebe7c8ef56bb53f0cd6048c876561419f1c485668c929e4f3",
+     "rows_sha256": "a8326a9d18fb6115a4c2e3c232e72ca29e8c32fe412808c1d3f8b3b8d894056f",
+     "bytes": 442762,
+     "copied": false
+    }
+   ]
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "h9gi-nx95",
+    "name": "Motor Vehicle Collisions - Crashes",
+    "url": "https://data.cityofnewyork.us/d/h9gi-nx95",
+    "rows_updated_at": "2026-11-12T14:31:25Z",
+    "query": {
+     "$select": "collision_id, crash_date, latitude, longitude, number_of_pedestrians_injured, number_of_pedestrians_killed, number_of_persons_injured, number_of_persons_killed",
+     "$where": "crash_date >= '2014-01-01T00:00:00' and latitude > 40.4 and latitude < 41.0 (paged by collision_id)",
+     "format": "csv"
+    },
+    "fetched": "2026-11-13T13:53:46-0500",
+    "local_file": "~/opt/nyc-concordance/turn_restrictions/crashes.csv",
+    "n_rows": 1798550
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "h9gi-nx95",
+   "rows_updated_at": "2026-11-12T14:31:25Z",
+   "soql": {
+    "$select": "collision_id, crash_date, latitude, longitude, number_of_pedestrians_injured, number_of_pedestrians_killed, number_of_persons_injured, number_of_persons_killed",
+    "$where": "crash_date >= '2014-01-01T00:00:00' and latitude > 40.4 and latitude < 41.0 (paged by collision_id)",
+    "format": "csv"
+   },
+   "fetched": "2026-11-13T13:53:46-0500",
+   "n_rows": 1798550,
+   "cache_files": [],
+   "cache_files_note": "no cached response found in data/cache/socrata/ for this query"
+  },
+  {
+   "kind": "nyc-open-data",
+   "record": {
+    "kind": "nyc-open-data",
+    "dataset": "bm4k-52h4",
+    "name": "Motor Vehicle Collisions - Vehicles",
+    "url": "https://data.cityofnewyork.us/d/bm4k-52h4",
+    "rows_updated_at": "2026-11-13T15:33:26Z",
+    "query": {
+     "$select": "collision_id, crash_date, pre_crash",
+     "$where": "pre_crash = 'Making Left Turn' (paged by $offset on :id)",
+     "format": "csv"
+    },
+    "fetched": "2026-11-13T14:01:50-0500",
+    "local_file": "~/opt/nyc-concordance/turn_restrictions/left_vehicles.csv",
+    "n_rows": 227926
+   },
+   "type": "socrata",
+   "domain": "https://data.cityofnewyork.us",
+   "dataset": "bm4k-52h4",
+   "rows_updated_at": "2026-11-13T15:33:26Z",
+   "soql": {
+    "$select": "collision_id, crash_date, pre_crash",
+    "$where": "pre_crash = 'Making Left Turn' (paged by $offset on :id)",
+    "format": "csv"
+   },
+   "fetched": "2026-11-13T14:01:50-0500",
+   "n_rows": 227926,
+   "cache_files": [],
+   "cache_files_note": "no cached response found in data/cache/socrata/ for this query"
+  },
+  {
+   "type": "big-file",
+   "role": "all geocoded crashes, 2014-2026, read by did.py",
+   "path": "~/opt/nyc-concordance/turn_restrictions/crashes.csv",
+   "bytes": 182369259,
+   "sha256": "0348a9eeee336881ff3d4dd9d137ca921cf42a5bd13bad73e4e3b6fe92a25eb9"
+  },
+  {
+   "type": "big-file",
+   "role": "vehicles making a left turn, read by did.py",
+   "path": "~/opt/nyc-concordance/turn_restrictions/left_vehicles.csv",
+   "bytes": 18234120,
+   "sha256": "4ceb4850aedbf88b603c28f0c39992e49751c6639fe726935520e37fe1d161f0"
+  }
+ ],
+ "environment": {
+  "python": "3.12.10 (main, Apr  9 2025, 03:49:38) [Clang 20.1.0 ]",
+  "venv": "~/.venvs/nyc-concordance",
+  "uv_pip_freeze": [
+   "affine==3.0.1",
+   "annotated-types==0.8.0",
+   "attrs==26.1.0",
+   "certifi==2026.10.23",
+   "charset-normalizer==3.5.2",
+   "click==8.5.1",
+   "contourpy==1.4.0",
+   "cycler==0.12.1",
+   "duckdb==2.0.0",
+   "fonttools==4.68.0",
+   "formulaic==1.2.2",
+   "geopandas==1.2.0",
+   "idna==3.20",
+   "interface-meta==2.0.1",
+   "jsonschema==4.26.0",
+   "jsonschema-specifications==2025.9.1",
+   "kiwisolver==1.5.1",
+   "matplotlib==3.11.2",
+   "mercantile==1.2.1",
+   "narwhals==2.28.0",
+   "numpy==2.5.4",
+   "packaging==26.3",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "pillow==13.0.0",
+   "planetary-computer==1.0.0",
+   "pyarrow==26.0.1",
+   "pydantic==2.14.3",
+   "pydantic-core==2.50.4",
+   "pyogrio==0.13.0",
+   "pyparsing==3.3.3",
+   "pyproj==3.8.0",
+   "pystac==1.16.0",
+   "pystac-client==0.9.1",
+   "pystac-core==1.16.0",
+   "pystac-ext-classification==2.0.2",
+   "pystac-ext-datacube==2.2.2",
+   "pystac-ext-eo==1.1.2",
+   "pystac-ext-file==2.1.2",
+   "pystac-ext-grid==1.1.2",
+   "pystac-ext-item-assets==1.0.2",
+   "pystac-ext-label==1.0.3",
+   "pystac-ext-mgrs==1.0.2",
+   "pystac-ext-mlm==1.4.2",
+   "pystac-ext-pointcloud==1.0.2",
+   "pystac-ext-projection==2.0.2",
+   "pystac-ext-raster==1.1.2",
+   "pystac-ext-render==2.0.1",
+   "pystac-ext-sar==1.0.2",
+   "pystac-ext-sat==1.0.2",
+   "pystac-ext-scientific==1.0.2",
+   "pystac-ext-storage==2.0.2",
+   "pystac-ext-table==1.2.2",
+   "pystac-ext-timestamps==1.1.2",
+   "pystac-ext-version==1.2.2",
+   "pystac-ext-view==1.0.2",
+   "pystac-ext-xarray-assets==1.0.2",
+   "python-dateutil==4.0.0",
+   "python-dotenv==1.2.4",
+   "pytz==2026.6",
+   "rasterio==1.5.2",
+   "referencing==0.37.0",
+   "requests==2.34.2",
+   "rpds-py==2026.9.1",
+   "scipy==1.18.1",
+   "shapely==2.2.0",
+   "statsmodels==0.15.0",
+   "typing-extensions==4.16.0",
+   "typing-inspection==0.4.5",
+   "tzdata==2026.6",
+   "urllib3==2.8.0",
+   "wrapt==2.5.2"
+  ],
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "os": "Darwin 27.2.0",
+  "mac_ver": "27.2.1",
+  "requirements": [
+   "numpy==2.5.4",
+   "pandas==3.1.1",
+   "patsy==1.0.3",
+   "requests==2.34.2",
+   "scipy==1.18.1",
+   "statsmodels==0.15.0"
+  ]
+ },
+ "inputs": {
+  "cap_bytes": 15728640,
+  "copied_bytes": 2114554,
+  "files": [
+   {
+    "path": "prepared/turn_restrictions/crashes.csv",
+    "bytes": 1580206,
+    "sha256": "c7df930cfd9819f3dc8a4666dc335352311dbff06d5d6d4dcc21aa37a85a8ecd",
+    "role": "prepared input, read by the rerun",
+    "copied": true,
+    "required_for_rerun": true,
+    "prepared_from": [
+     {
+      "source": "~/opt/nyc-concordance/turn_restrictions/crashes.csv",
+      "bytes": 182369259,
+      "sha256": "0348a9eeee336881ff3d4dd9d137ca921cf42a5bd13bad73e4e3b6fe92a25eb9"
+     },
+     {
+      "source": "~/opt/nyc-concordance/turn_restrictions/left_vehicles.csv",
+      "bytes": 18234120,
+      "sha256": "4ceb4850aedbf88b603c28f0c39992e49751c6639fe726935520e37fe1d161f0"
+     },
+     {
+      "source": "data/derived/turn_restrictions/sites.json",
+      "bytes": 299728,
+      "sha256": "d877a2a9cf5e211b50715fd33677c0034b5f202a0d0bf5278ab41034da5eb392"
+     }
+    ],
+    "prepared_by": "code/prepare.py",
+    "what": "the crash records (h9gi-nx95, fetched by analyses/turn_restrictions/fetch_crashes.py) with a pedestrian injured or killed within 40.5 m of a left-turn calming site, and the left-turn vehicle records (bm4k-52h4) of those crashes"
+   },
+   {
+    "path": "prepared/turn_restrictions/left_vehicles.csv",
+    "bytes": 234620,
+    "sha256": "43b46e4d79c15adf9d02f2a4eb48001943e60f6cbc874e2e8543d43bebf9f937",
+    "role": "prepared input, read by the rerun",
+    "copied": true,
+    "required_for_rerun": true,
+    "prepared_from": [
+     {
+      "source": "~/opt/nyc-concordance/turn_restrictions/crashes.csv",
+      "bytes": 182369259,
+      "sha256": "0348a9eeee336881ff3d4dd9d137ca921cf42a5bd13bad73e4e3b6fe92a25eb9"
+     },
+     {
+      "source": "~/opt/nyc-concordance/turn_restrictions/left_vehicles.csv",
+      "bytes": 18234120,
+      "sha256": "4ceb4850aedbf88b603c28f0c39992e49751c6639fe726935520e37fe1d161f0"
+     },
+     {
+      "source": "data/derived/turn_restrictions/sites.json",
+      "bytes": 299728,
+      "sha256": "d877a2a9cf5e211b50715fd33677c0034b5f202a0d0bf5278ab41034da5eb392"
+     }
+    ],
+    "prepared_by": "code/prepare.py",
+    "what": "the crash records (h9gi-nx95, fetched by analyses/turn_restrictions/fetch_crashes.py) with a pedestrian injured or killed within 40.5 m of a left-turn calming site, and the left-turn vehicle records (bm4k-52h4) of those crashes"
+   },
+   {
+    "path": "data/derived/turn_restrictions/sites.json",
+    "bytes": 299728,
+    "sha256": "d877a2a9cf5e211b50715fd33677c0034b5f202a0d0bf5278ab41034da5eb392",
+    "role": "derived table read by the rerun",
+    "copied": true,
+    "required_for_rerun": true
+   },
+   {
+    "path": "data/cache/socrata/sm2x-35i7-28298048f09e2906e26154a7.json",
+    "bytes": 442762,
+    "sha256": "197157eec5d6250ebe7c8ef56bb53f0cd6048c876561419f1c485668c929e4f3",
+    "role": "cached Socrata response, sm2x-35i7",
+    "rows_sha256": "a8326a9d18fb6115a4c2e3c232e72ca29e8c32fe412808c1d3f8b3b8d894056f",
+    "n_rows": 1601,
+    "copied": false,
+    "why_not_copied": "not read by the rerun; pointed to by hash",
+    "required_for_rerun": false
+   }
+  ],
+  "traced": true
+ },
+ "deciding": {
+  "available": true,
+  "what": "city_effect: ratio of ratios of pedestrians injured or killed within 40 m, 24 months after against 24 months before installation, treated against later-treated sites, stacked cohorts 2016Q3-2023Q2, conditional Poisson (binomial GLM), SE clustered by site",
+  "recorded": {
+   "estimate": 0.8482,
+   "lo": 0.7787,
+   "hi": 0.924,
+   "n": 712,
+   "placebo_12m_ror": 0.9119,
+   "placebo_12m_lo": 0.8252,
+   "placebo_12m_hi": 1.0078
+  },
+  "tolerance": {
+   "estimate": 0.0001,
+   "lo": 0.0001,
+   "hi": 0.0001,
+   "n": 0,
+   "placebo_12m_ror": 0.0001,
+   "placebo_12m_lo": 0.0001,
+   "placebo_12m_hi": 0.0001
+  },
+  "decides": "support_if: upper bound of the 95% interval of the ratio of ratios below 1.00",
+  "recorded_from": {
+   "city_effect": "claims/outcomes/turn-calming-ped.json",
+   "placebo_12m_ror": "outcome notes and data/derived/turn_restrictions/did_explore.json (ped.placebo_12m_early)",
+   "placebo_12m_lo": "data/derived/turn_restrictions/did_explore.json",
+   "placebo_12m_hi": "data/derived/turn_restrictions/did_explore.json"
+  },
+  "wrapper": "code/rerun.py",
+  "wrapper_note": "Smallest wrapper: did.py reads 174 MB of crash records from ~/opt and writes into the repository. code/prepare.py keeps the crashes within 40.5 m of a calming site with at least one pedestrian injured or killed, the only crashes that add to the pedestrian count within 40 m, and code/rerun.py calls load_crashes(), site_monthly(), stack() and fit() unchanged for that outcome. The left-turn and ring outcomes are not reproduced from this cut. The recorded n (712) is the number of treated sites. The placebo is the referee's exploratory check, not a registered one.",
+  "refetch_rerun": false,
+  "placebo": {
+   "placebo_12m_ror": {
+    "value": 0.9119,
+    "tol": 0.0001,
+    "registered": false,
+    "from": "outcome notes and data/derived/turn_restrictions/did_explore.json (ped.placebo_12m_early)",
+    "what": "UNREGISTERED exploratory placebo named by the referee: installation moved 12 months early (months -24..-13 against -12..-1)"
+   },
+   "placebo_12m_lo": {
+    "value": 0.8252,
+    "tol": 0.0001,
+    "registered": false,
+    "from": "data/derived/turn_restrictions/did_explore.json",
+    "what": "its lower 95% limit"
+   },
+   "placebo_12m_hi": {
+    "value": 1.0078,
+    "tol": 0.0001,
+    "registered": false,
+    "from": "data/derived/turn_restrictions/did_explore.json",
+    "what": "its upper 95% limit"
+   }
+  },
+  "trace_run_in_repository": {
+   "printed": {
+    "estimate": 0.8482,
+    "lo": 0.7787,
+    "hi": 0.924,
+    "n": 712,
+    "treated_pre": 1966,
+    "treated_post": 1706,
+    "placebo_12m_ror": 0.9119,
+    "placebo_12m_lo": 0.8252,
+    "placebo_12m_hi": 1.0078
+   },
+   "files_read": 1
+  }
+ },
+ "not_rebuilt": []
+}
