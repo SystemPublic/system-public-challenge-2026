@@ -24,7 +24,7 @@ from agents.harness import MODEL
 from server import auth, db, kg
 from tools import graph, literature  # importing tools loads .env
 
-RUNS_PER_PROFILE, RUNS_TOTAL = 10**9, 10**9  # rate limit off for the demo
+RUNS_PER_PROFILE, RUNS_TOTAL = 60, 300  # per hour
 subscribers: dict[int, list[asyncio.Queue]] = {}   # run id -> live SSE queues, only while the run is going
 events_sent: dict[int, int] = {}                    # run id -> events emitted so far
 tasks = set()
@@ -109,12 +109,13 @@ def list_profiles():
 
 @app.post("/api/profiles")
 def create_profile(p: ProfileIn):
-    return db.create_profile(p.name, p.role, p.organisation, p.about)
+    """Public example profiles are fixed; signed-in users add theirs with POST /api/auth/profiles."""
+    raise HTTPException(403, "Sign up to create your own profile.")
 
 
 @app.put("/api/profiles/{profile_id}/keys")
-def set_keys(profile_id: int, keys: dict[str, str]):
-    found(db.get_profile(profile_id))
+def set_keys(profile_id: int, keys: dict[str, str], request: Request):
+    owns_profile(request, profile_id)
     return {"key_names": db.set_keys(profile_id, keys)}
 
 
@@ -131,7 +132,8 @@ async def create_project(profile_id: int, p: ProjectIn):
 
 
 @app.put("/api/projects/{project_id}")
-async def update_project(project_id: int, p: ProjectIn):
+async def update_project(project_id: int, p: ProjectIn, request: Request):
+    owned(request, project_id)
     before = found(await run_in_threadpool(db.get_project, project_id))
     project = await run_in_threadpool(db.update_project, project_id, p.title, p.goals)
     first = not before["goals"].strip() and p.goals.strip()
@@ -185,7 +187,8 @@ def create_thread(project_id: int, t: ThreadIn):
 
 
 @app.put("/api/threads/{thread_id}")
-def rename_thread(thread_id: int, t: ThreadIn):
+def rename_thread(thread_id: int, t: ThreadIn, request: Request):
+    owned(request, found(db.q("select project_id from threads where id = %s", (thread_id,), one=True))["project_id"])
     return found(db.rename_thread(thread_id, t.title.strip() or "New thread"))
 
 
@@ -195,6 +198,13 @@ class FolderIn(BaseModel):
 
 class MoveIn(BaseModel):
     project_id: int
+
+
+def owns_profile(request: Request, profile_id: int):
+    owner = found(db.q("select user_id from profiles where id = %s", (profile_id,), one=True))["user_id"]
+    user = auth.current_user(request)
+    if not owner or not user or user["id"] != owner:
+        raise HTTPException(403, "Log in as this profile's owner to do this. Example profiles can't be changed.")
 
 
 def owned(request: Request, project_id: int):
@@ -213,7 +223,8 @@ def delete_project(project_id: int, request: Request):
 
 
 @app.put("/api/projects/{project_id}/folder")
-def set_folder(project_id: int, f: FolderIn):
+def set_folder(project_id: int, f: FolderIn, request: Request):
+    owned(request, project_id)
     """Folders are labels: setting a new name creates the folder, clearing it moves the project out."""
     return found(db.set_folder(project_id, (f.folder or "").strip() or None))
 

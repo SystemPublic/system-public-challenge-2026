@@ -14,7 +14,7 @@ export function Settings({ session, setSession, profile, agents }) {
     <${Section} title="Profile" line="Every agent reads this to tailor plans and answers.">
       <${ProfileForm} key=${profile.id} session=${session} setSession=${setSession} profile=${profile} />
     <//>
-    <${Section} title="API keys" line="Optional. A key switches on the tools that need it. Keys are stored encrypted; only their names are shown again.">
+    <${Section} title="API keys" line="Optional. Store your own API keys (for example OpenAlex) for keyed tools as we add them. Keys are stored encrypted; only their names are shown again.">
       <${Keys} key=${profile.id} profile=${profile} />
     <//>
     <${Section} title="Agents" line="Your default choice for new questions. You can still change it under each question.">
