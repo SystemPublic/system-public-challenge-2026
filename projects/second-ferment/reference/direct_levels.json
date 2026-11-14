@@ -1,0 +1,12 @@
+{
+  "d05": {
+    "measure": "heat index percentile, compared with the 25th-74th percentile",
+    "source": "PMID 38060348 abstract",
+    "levels": [
+      {"band": "75th-84th", "value": 1.09, "ci_lower": 1.04, "ci_upper": 1.13},
+      {"band": "85th-94th", "value": 1.12, "ci_lower": 1.08, "ci_upper": 1.17},
+      {"band": "95th-98th", "value": 1.14, "ci_lower": 1.08, "ci_upper": 1.20},
+      {"band": "above 99th", "value": 1.38, "ci_lower": 1.28, "ci_upper": 1.48}
+    ]
+  }
+}

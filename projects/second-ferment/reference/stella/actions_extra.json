@@ -1,0 +1,489 @@
+{
+ "_about": "Hand-curated 2026-11-14. Actions in the two new buckets (Continue, don't stop; Counsel and plan) and timing-specific actions not in the original draft. Each cites only sources read this session: guidance ids from guidance.json, 'label' = openFDA label text pulled by label_pull.py, PMIDs read in literature_read.json. basis: study | guidance | label | draft.",
+ "timing": {
+  "before": "Before the season (spring)",
+  "alert": "Heat-alert day",
+  "unwell": "Unwell in the heat",
+  "after": "After the heat"
+ },
+ "trigger_note": "Heat-alert day = a local heat advisory, or CDC HeatRisk orange (moderate) or higher for people sensitive to heat. Team to confirm the NYC threshold.",
+ "all_classes": [
+  {
+   "bucket": "Counsel and plan",
+   "when": "before",
+   "text": "Run a pre-season medication review with the patient; document any hot-day changes and when to resume the usual schedule.",
+   "who": "Prescriber or pharmacist",
+   "sources": [
+    "who",
+    "cdc",
+    "nyc"
+   ],
+   "pmids": [
+    "38831143"
+   ],
+   "basis": "guidance",
+   "note": "WHO Europe p. 214; CDC/NYC general steps. In the Netherlands ~40% of medication-related AKI/dehydration admissions were judged preventable by timely adjustment (38831143)."
+  },
+  {
+   "bucket": "Counsel and plan",
+   "when": "before",
+   "text": "Ask about air conditioning and whether the patient can afford to run it; name a contact who will check on them; share cooling-centre and energy-assistance options.",
+   "who": "Any clinician; social work",
+   "sources": [
+    "nyc",
+    "az",
+    "who"
+   ],
+   "pmids": [],
+   "basis": "guidance"
+  },
+  {
+   "bucket": "Continue, don't stop",
+   "when": "alert",
+   "text": "Do not stop medicines abruptly on hot days without a plan from the prescriber.",
+   "who": "Patient, reinforced by pharmacist",
+   "sources": [
+    "cdc",
+    "nyc",
+    "az"
+   ],
+   "pmids": [],
+   "basis": "guidance"
+  }
+ ],
+ "classes": {
+  "Diuretics": [
+   {
+    "bucket": "Counsel and plan",
+    "when": "before",
+    "text": "Agree a hot-day fluid plan, including whether any fluid restriction should be relaxed.",
+    "who": "Prescriber",
+    "sources": [
+     "cdc",
+     "nyc",
+     "az"
+    ],
+    "pmids": [],
+    "basis": "guidance"
+   },
+   {
+    "bucket": "Dose adjustment",
+    "when": "before",
+    "text": "Consider a lower summer dose where blood pressure is already at or below target; diuretics are the drugs doctors most often reduce in summer.",
+    "who": "Prescriber",
+    "sources": [],
+    "pmids": [
+     "29939771",
+     "36418530"
+    ],
+    "basis": "study"
+   },
+   {
+    "bucket": "Closer monitoring",
+    "when": "alert",
+    "text": "Check sodium and electrolytes in prolonged heat, especially in older adults.",
+    "who": "Prescriber orders; nurse or pharmacist follows up",
+    "sources": [
+     "canada"
+    ],
+    "pmids": [
+     "30462243",
+     "16911573"
+    ],
+    "basis": "study"
+   }
+  ],
+  "ACE inhibitors / ARBs": [
+   {
+    "bucket": "Dose adjustment",
+    "when": "before",
+    "text": "Avoid starting or adding a diuretic to an ACE inhibitor just before or during summer where it can wait; this combination carried the highest admission risk when started.",
+    "who": "Prescriber",
+    "sources": [],
+    "pmids": [
+     "27378245"
+    ],
+    "basis": "study"
+   },
+   {
+    "bucket": "Closer monitoring",
+    "when": "alert",
+    "text": "Monitor hydration; watch for vomiting, diarrhoea and low blood pressure.",
+    "who": "Nurse or pharmacist",
+    "sources": [
+     "canada"
+    ],
+    "pmids": [],
+    "basis": "guidance"
+   }
+  ],
+  "Beta blockers": [
+   {
+    "bucket": "Continue, don't stop",
+    "when": "alert",
+    "text": "Do not stop a beta blocker abruptly in the heat (rebound risk); review the indication before summer instead.",
+    "who": "Prescriber",
+    "sources": [
+     "cdc",
+     "nyc"
+    ],
+    "pmids": [],
+    "basis": "draft",
+    "note": "Rebound on abrupt withdrawal is standard label content; the label section was not pulled in this session."
+   },
+   {
+    "bucket": "Counsel and plan",
+    "when": "before",
+    "text": "Tell patients that heart rate may not rise normally in heat, so a fitness watch's heart-rate warning can under-read strain.",
+    "who": "Prescriber or pharmacist",
+    "sources": [],
+    "pmids": [
+     "1335440"
+    ],
+    "basis": "study"
+   }
+  ],
+  "Calcium channel blockers": [
+   {
+    "bucket": "Closer monitoring",
+    "when": "alert",
+    "text": "Monitor hydration; watch for diarrhoea, vomiting and dizziness.",
+    "who": "Nurse or pharmacist",
+    "sources": [
+     "canada"
+    ],
+    "pmids": [
+     "34338579"
+    ],
+    "basis": "guidance"
+   }
+  ],
+  "Anticholinergics": [
+   {
+    "bucket": "Substitute or hold",
+    "when": "before",
+    "text": "Deprescribe or switch where possible before summer (e.g. bladder antimuscarinics, sedating antihistamines).",
+    "who": "Prescriber; pharmacist flags",
+    "sources": [
+     "ansm",
+     "who"
+    ],
+    "pmids": [
+     "27378245"
+    ],
+    "basis": "study",
+    "note": "Starting anticholinergic agents raised admission for dehydration or heat illness (27378245)."
+   },
+   {
+    "bucket": "Counsel and plan",
+    "when": "before",
+    "text": "Warn that sweating is reduced: hot, dry skin and confusion are warning signs; a sweat or skin sensor will not show strain.",
+    "who": "Prescriber or pharmacist",
+    "sources": [
+     "cdc"
+    ],
+    "pmids": [
+     "3606515"
+    ],
+    "basis": "label"
+   }
+  ],
+  "Antipsychotics": [
+   {
+    "bucket": "Continue, don't stop",
+    "when": "alert",
+    "text": "Do not stop abruptly; prioritise people on combination antipsychotic therapy for heat outreach.",
+    "who": "Psychiatry; community mental health",
+    "sources": [
+     "cdc"
+    ],
+    "pmids": [
+     "41044101"
+    ],
+    "basis": "study",
+    "note": "BC 2021 heat dome: combination therapy OR 4.05 for death in schizophrenia."
+   },
+   {
+    "bucket": "Closer monitoring",
+    "when": "alert",
+    "text": "Monitor electrolytes, temperature and signs of heat intolerance.",
+    "who": "Prescriber; community team",
+    "sources": [
+     "canada"
+    ],
+    "pmids": [
+     "20104062",
+     "10910799"
+    ],
+    "basis": "study"
+   }
+  ],
+  "Lithium": [
+   {
+    "bucket": "Counsel and plan",
+    "when": "alert",
+    "text": "Hydrate with water rather than electrolyte drinks; know the signs of lithium toxicity.",
+    "who": "Prescriber or pharmacist",
+    "sources": [
+     "canada"
+    ],
+    "pmids": [],
+    "basis": "guidance"
+   }
+  ],
+  "Antidepressants": [
+   {
+    "bucket": "Closer monitoring",
+    "when": "alert",
+    "text": "Check sodium in older adults on SSRIs during prolonged heat.",
+    "who": "Prescriber",
+    "sources": [
+     "canada"
+    ],
+    "pmids": [
+     "27378245"
+    ],
+    "basis": "study"
+   },
+   {
+    "bucket": "Continue, don't stop",
+    "when": "alert",
+    "text": "Do not stop abruptly (discontinuation symptoms).",
+    "who": "Prescriber",
+    "sources": [
+     "cdc",
+     "nyc"
+    ],
+    "pmids": [],
+    "basis": "draft"
+   }
+  ],
+  "Benzodiazepines / sedatives": [
+   {
+    "bucket": "Continue, don't stop",
+    "when": "alert",
+    "text": "Taper rather than stop; sedation dulls thirst, so add check-in calls on hot days.",
+    "who": "Prescriber; contact person",
+    "sources": [
+     "ansm",
+     "ukhsa"
+    ],
+    "pmids": [],
+    "basis": "guidance"
+   }
+  ],
+  "Opioids": [
+   {
+    "bucket": "Counsel and plan",
+    "when": "before",
+    "text": "Offer naloxone and plan hot-day check-ins for people at risk of overdose.",
+    "who": "Prescriber; addiction services; pharmacist",
+    "sources": [],
+    "pmids": [
+     "37897873",
+     "41048198"
+    ],
+    "basis": "study"
+   },
+   {
+    "bucket": "Counsel and plan",
+    "when": "before",
+    "text": "Fentanyl patch: keep heating pads, electric blankets, hot tubs and direct sun off the patch; fever raises absorption.",
+    "who": "Prescriber or pharmacist",
+    "sources": [],
+    "pmids": [
+     "15101888"
+    ],
+    "basis": "label"
+   }
+  ],
+  "Insulin": [
+   {
+    "bucket": "Storage and stability",
+    "when": "before",
+    "text": "Keep unopened insulin refrigerated (2–8 °C); in-use pens and vials up to 30 °C for 28 days; keep out of hot cars; plan for power cuts.",
+    "who": "Pharmacist; patient",
+    "sources": [
+     "cdc",
+     "nyc",
+     "canada"
+    ],
+    "pmids": [],
+    "basis": "label"
+   },
+   {
+    "bucket": "Closer monitoring",
+    "when": "alert",
+    "text": "Check glucose more often in heat (CGM if available); warm skin at the injection or pump site speeds absorption.",
+    "who": "Patient; endocrinology or primary care",
+    "sources": [],
+    "pmids": [
+     "38060348",
+     "22538141",
+     "41464483"
+    ],
+    "basis": "study"
+   }
+  ],
+  "SGLT2 inhibitors": [
+   {
+    "bucket": "Substitute or hold",
+    "when": "unwell",
+    "text": "Sick-day rule: pause when unable to eat or drink, vomiting or dehydrated (volume depletion, ketoacidosis).",
+    "who": "Prescriber sets the plan; pharmacist reinforces",
+    "sources": [],
+    "pmids": [
+     "39627353"
+    ],
+    "basis": "label",
+    "note": "Labels warn about volume depletion; dehydration adverse events peak in July–August (Japan)."
+   }
+  ],
+  "Metformin and sulfonylureas": [
+   {
+    "bucket": "Closer monitoring",
+    "when": "alert",
+    "text": "Sulfonylureas: check glucose more often on hot days; hypoglycaemia rises with temperature for glimepiride and glyburide.",
+    "who": "Patient; prescriber",
+    "sources": [],
+    "pmids": [
+     "39433419"
+    ],
+    "basis": "study"
+   }
+  ],
+  "NSAIDs": [
+   {
+    "bucket": "Substitute or hold",
+    "when": "alert",
+    "text": "Avoid NSAIDs when dehydrated, especially with a diuretic plus ACE inhibitor/ARB; do not self-medicate with NSAIDs after heat exposure.",
+    "who": "Pharmacist; patient",
+    "sources": [
+     "ansm"
+    ],
+    "pmids": [
+     "29116624",
+     "29613996"
+    ],
+    "basis": "guidance"
+   }
+  ],
+  "Topiramate / zonisamide": [
+   {
+    "bucket": "Counsel and plan",
+    "when": "before",
+    "text": "Warn families that children may sweat less: limit exertion in heat and watch for fever.",
+    "who": "Neurology; school nurse",
+    "sources": [
+     "canada"
+    ],
+    "pmids": [
+     "12760427"
+    ],
+    "basis": "label"
+   }
+  ],
+  "Stimulants": [
+   {
+    "bucket": "Counsel and plan",
+    "when": "before",
+    "text": "Warn about overheating during sport in hot weather; core temperature can rise without feeling harder.",
+    "who": "Prescriber; coach or school",
+    "sources": [],
+    "pmids": [
+     "18408610",
+     "29613996"
+    ],
+    "basis": "study"
+   }
+  ],
+  "Heat-labile emergency products": [
+   {
+    "bucket": "Storage and stability",
+    "when": "before",
+    "text": "Keep inhalers, auto-injectors and GTN out of hot cars and direct sun; inhaler canisters can burst above 49 °C (120 °F).",
+    "who": "Pharmacist; patient",
+    "sources": [
+     "cdc",
+     "nyc"
+    ],
+    "pmids": [],
+    "basis": "label",
+    "note": "Epinephrine and fentanyl stayed within specification for a year in an ambulance (35717271): replacement after brief heat exposure may not always be needed."
+   }
+  ],
+  "GLP-1 agonists": [
+   {
+    "bucket": "Substitute or hold",
+    "when": "unwell",
+    "text": "Consider pausing when vomiting or unable to keep fluids down; check kidney function if losses persist.",
+    "who": "Prescriber sets the plan",
+    "sources": [
+     "ansm"
+    ],
+    "pmids": [],
+    "basis": "label"
+   }
+  ],
+  "Parkinson / dopaminergic": [
+   {
+    "bucket": "Continue, don't stop",
+    "when": "alert",
+    "text": "Never stop or sharply cut dopaminergic drugs in the heat: withdrawal can cause hyperthermia.",
+    "who": "Neurology; carer",
+    "sources": [
+     "ansm"
+    ],
+    "pmids": [
+     "35965941"
+    ],
+    "basis": "label"
+   }
+  ],
+  "Cholinesterase inhibitors": [
+   {
+    "bucket": "Counsel and plan",
+    "when": "before",
+    "text": "Rivastigmine patch: keep saunas and strong sun off the patch; carers check fluids on hot days.",
+    "who": "Pharmacist; carer",
+    "sources": [
+     "ansm",
+     "canada"
+    ],
+    "pmids": [],
+    "basis": "label"
+   }
+  ],
+  "Combination: diuretic + ACEi/ARB (± NSAID)": [
+   {
+    "bucket": "Dose adjustment",
+    "when": "before",
+    "text": "Avoid starting the ACEi + diuretic combination just before or during summer when it can wait; flag any NSAID added on top.",
+    "who": "Prescriber; pharmacist flags",
+    "sources": [
+     "cdc"
+    ],
+    "pmids": [
+     "27378245"
+    ],
+    "basis": "study"
+   }
+  ],
+  "Polypharmacy (several heat-sensitising drugs)": [
+   {
+    "bucket": "Counsel and plan",
+    "when": "before",
+    "text": "Put people on several heat-sensitising drugs (plus age 65+, no AC or living alone) on the pre-season review and heat outreach list.",
+    "who": "Practice or health-system team",
+    "sources": [
+     "who",
+     "cdc"
+    ],
+    "pmids": [
+     "31842287"
+    ],
+    "basis": "guidance"
+   }
+  ]
+ }
+}

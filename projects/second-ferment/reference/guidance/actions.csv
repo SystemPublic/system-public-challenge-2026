@@ -1,0 +1,35 @@
+doc,bucket,scope,classes,text,timing,section
+cdc_2025,adjust_dose,general,,"Consider adjusting medication dose or frequency in hot weather, individualised and drug-class dependent, weighing risks and benefits.",Hot weather months,What Clinicians Can Do
+cdc_2025,adjust_dose,class,diuretics,Consider adjusting fluid restrictions on hot days for patients on medicines that cause dehydration or affect electrolytes.,Hot days,What Clinicians Can Do
+cdc_2025,counsel,general,,"Remind patients not to stop medicines abruptly without a plan; document adjustments and when to resume the normal schedule.",,What Clinicians Can Do
+cdc_2025,counsel,general,,"Review regimens, especially multiple drugs that add to heat risk; discuss symptoms, emergencies and a point of contact for older patients and those with altered cognition.",,What Clinicians Can Do
+cdc_2025,storage,class,insulin,"Insulin can be degraded by heat and should be refrigerated; inhalers can burst and epinephrine auto-injectors may underdose in heat; do not leave medicines in a car; plan for power outages.",,What Clinicians Can Do
+nyc_page,adjust_dose,general,,Consider adjusting medication dose or frequency during hot weather months; individualised and drug-class dependent.,Hot weather months,Medication Use
+nyc_page,adjust_dose,class,diuretics,Consider adjusting fluid restrictions on hot days for patients on medicines that cause dehydration or electrolyte changes.,Hot days,Medication Use
+nyc_page,counsel,general,,"Avoid stopping medicines abruptly without a plan; review the medication list with the patient; name a point of contact; plan for hot days and when to seek care.",,Medication Use
+nyc_page,storage,class,insulin,"Do not leave medicines in a car; insulin may lose effect in heat; inhalers and epinephrine auto-injectors can fail; power outage plan for refrigerated medicines.",,Safe Storage
+nyc_han_2026,adjust_dose,general,,"For people on medicines that impair thermoregulation or cause dehydration, adjust regimens as needed on hot days.",Hot days,Summary
+nyc_han_2026,monitor,general,,Recommend self-monitoring of hydration.,Hot days,Summary
+nyc_han_2026,monitor,class,insulin;other_diabetes;sglt2,People with diabetes should check their blood sugar more frequently in high temperatures.,During heat,Some medical conditions increase heat vulnerability
+nyc_han_2026,counsel,general,,"Review medicines that may affect thermoregulation; discuss symptoms of heat illness; advise more fluids when medically appropriate; air conditioning or a cool space.",During heat,Some medical conditions increase heat vulnerability
+hc_2011,adjust_dose,class,diuretics;beta_blockers;acei_arb;ccb,Use of antihypertensives during extreme heat events should be optimised as much as possible.,During heat events,4.4.2
+hc_2011,monitor,class,acei_arb;ccb,"Monitor patient hydration (also named for cholinesterase inhibitors, antiarrhythmics, nitrates).",,Table 4.2
+hc_2011,monitor,class,anticonvulsants,"Topiramate: watch for hyperthermia and heat intolerance; oxcarbazepine and carbamazepine: precautions against hyponatremia, which needs close monitoring.",,Table 4.2; 4.4.1
+hc_2011,counsel,class,lithium,Lithium: hydrate with water rather than electrolyte solutions (risk of hypernatremia).,,4.4.1; Table 4.2
+hc_2011,counsel,class,antipsychotics;antidepressants;anticonvulsants;diuretics,Drink water or electrolyte solutions through the day; protect from heat.,,Table 4.2
+hc_2011,counsel,general,,"Minimising heat exposure is the best course; caution about the risks of changing treatment; consult the prescriber before summer begins.",Before summer,4.5
+hc_2011,storage,class,insulin,"Know proper insulin storage: vials at 32 °C can lose 14-18% potency over 28 days.",,3.1.1
+hc_2024,counsel,general,,"Identify patients and medications that raise heat risk; give heat-health information; discuss safe handling of heat-sensitive medicines.",During extreme heat events,Recommendations for pharmacists
+ukhsa_2024,counsel,general,,"The medicines list is a prompt to consider action and assess the risks and benefits of any changes.",,Medications with increased risk during hot weather
+ukhsa_2024,monitor,general,,"Monitor fluid intake, for example by monitoring body weight.",During hot weather,How to keep people cool
+ukhsa_2024,storage,general,,"Keep most medicines below 25 °C, out of direct sunlight; refrigerate only if specified.",,Storage of medications
+ukhsa_2024,counsel,class,nsaids,Do not give aspirin or paracetamol to someone with heatstroke while waiting for an ambulance.,,Emergency treatment
+ansm_2023,hold_swap,class,nsaids,"Not recommended in strong heat for fever or unusual pain: aspirin, paracetamol, NSAIDs (NSAID kidney toxicity rises with dehydration).",During heat,Front page
+ansm_2023,counsel,general,,"Reducing or stopping interacting medicines is not justified systematically; list each patient's medicines, identify those that impair heat adaptation and reassess the value of each.",During a heat wave,Recommendations
+ansm_2023,monitor,general,,Assess and check the patient's dehydration status.,During a heat wave,Recommendations
+ansm_2023,adjust_dose,class,insulin,Insulin: risk of hypoglycaemia from faster absorption in heat; transdermal patches may detach.,,Section 1
+ansm_2023,storage,general,,"2-8 °C medicines stay refrigerated with temperature checks; below-25/30 °C medicines tolerate a few days' excursion; glucose meters and strips protected from heat.",,Storage and transport
+vic_2024,adjust_dose,general,,Advise patients on any changes to medication dosage and fluid restrictions during extreme heat.,During extreme heat,Assess patients' risk from medications and medical conditions
+vic_2024,monitor,general,,"Consider self-monitoring of hydration (fluid goal, drinks, urination, urine colour).",During extreme heat,Advise patients to drink appropriately
+vic_2024,storage,general,,Prescribed medicines should generally be stored below 25 °C.,,Heatwaves and medicines
+vic_2024,counsel,general,,"Pre-summer medical assessment for at-risk people; a plan with patients and caregivers for forecast heat; collect medicines on cooler days or by telehealth.",Before summer; when heat is forecast,Assess patients' risk

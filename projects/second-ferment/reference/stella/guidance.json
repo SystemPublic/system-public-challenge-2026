@@ -1,0 +1,1053 @@
+{
+ "_about": "Hand-coded from guidance pages and PDFs read on 2026-11-14. level: action = class-specific instruction; mention = named with mechanism only (or listed); storage = storage advice only; absent = not named.",
+ "sources": [
+  {
+   "id": "cdc",
+   "name": "CDC: Heat and Medications, Guidance for Clinicians",
+   "short": "CDC",
+   "url": "https://www.cdc.gov/heat-health/hcp/clinical-guidance/heat-and-medications-guidance-for-clinicians.html",
+   "date": "2025-09-18",
+   "status": "reviewed",
+   "note": "States that it reflects expert opinion and that its table is not comprehensive. Mechanisms for about 35 classes; class-specific actions only for sun-sensitising antimicrobials. General steps apply to every class.",
+   "year": 2025,
+   "jurisdiction": "US"
+  },
+  {
+   "id": "nyc",
+   "name": "NYC Health: Heat and Medications (provider page)",
+   "short": "NYC DOH",
+   "url": "https://www.nyc.gov/site/doh/providers/emergency-prep/heat-and-medications.page",
+   "date": "2025 (no page date; footer © 2025)",
+   "status": "reviewed",
+   "note": "Medication table mirrors CDC almost word for word. Adds a non-drug checklist: AC access and cost, 78 °F setting, cooling centres (311), HEAP cooling assistance, a named check-in contact.",
+   "year": 2025,
+   "jurisdiction": "NYC"
+  },
+  {
+   "id": "az",
+   "name": "Arizona (ADHS / SCORCH): Heat and Medications Information Sheet for Health Care Providers",
+   "short": "Arizona",
+   "url": "https://scorch.arizona.edu/sites/default/files/2024-08/heat-medications-Info-for-health-care-providers.pdf",
+   "date": "2024-07-18",
+   "year": 2024,
+   "jurisdiction": "US state",
+   "status": "reviewed",
+   "note": "Consolidated drug-name list taken from CDC, plus insulin. No mechanisms per drug. General steps: fluid-intake advice, assess dose changes, buddy plan, cooling centres, utility assistance."
+  },
+  {
+   "id": "ukhsa",
+   "name": "UKHSA: Supporting vulnerable people before and during hot weather: healthcare professionals",
+   "short": "UKHSA",
+   "url": "https://www.gov.uk/guidance/supporting-vulnerable-people-before-and-during-hot-weather-healthcare-professionals",
+   "date": "2024-12-19",
+   "year": 2024,
+   "jurisdiction": "England",
+   "status": "reviewed",
+   "note": "Mechanism list only; asks clinicians to assess risks and benefits of any change. Most medicines should be kept below 25 °C. Monitor fluid intake, for example by body weight. Also names colchicine, digoxin, immunosuppressants, chemotherapy, thyroxine."
+  },
+  {
+   "id": "canada",
+   "name": "Health Canada: Extreme Heat Events Guidelines: Technical Guide for Health Care Workers",
+   "short": "Health Canada",
+   "url": "https://www.canada.ca/en/health-canada/services/environmental-workplace-health/reports-publications/climate-change-health/extreme-heat-events-guidelines-technical-guide-health-care-workers.html",
+   "date": "2011",
+   "year": 2011,
+   "jurisdiction": "Canada",
+   "status": "reviewed",
+   "note": "The only source with class-specific monitoring actions (Table 4.2). Insulin vials at 32 °C lost 14–18% potency over 28 days. Chapters 3–4 read verbatim; later chapters not coded."
+  },
+  {
+   "id": "ansm",
+   "name": "ANSM (with CRPV Toulouse): Liste des médicaments pouvant diminuer l'adaptation de l'organisme aux vagues de chaleur",
+   "short": "ANSM France",
+   "url": "https://ansm.sante.fr/uploads/2025/06/19/20250618-liste-des-medicaments-pouvant-diminuer-l-adaptation-de-l-organisme-aux-vagues-de-chaleur.pdf",
+   "date": "2024-07",
+   "year": 2024,
+   "jurisdiction": "France",
+   "status": "reviewed",
+   "note": "Most complete list, organised by mechanism. The only source naming SGLT2 inhibitors, metformin/sulfonylureas, GLP-1 agonists and statins. Warns that patch delivery changes with heat and sweating. No class actions."
+  },
+  {
+   "id": "calor",
+   "name": "ADAPT-HEAT study: CALOR list of heat-potentially inadequate medications (Germany)",
+   "short": "CALOR",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13305179/",
+   "date": "Protocol published 2026-05-25",
+   "status": "pending",
+   "note": "Only the study protocol is published (Bunz M et al., Methods Protoc 2026;9(3):78, PMID 42347031, CC BY). The Delphi consensus list has not been released; the study runs to December 2026. No drug-level recommendations exist yet.",
+   "year": null,
+   "jurisdiction": "Germany"
+  },
+  {
+   "id": "who",
+   "name": "WHO Regional Office for Europe: Heat–health action plans: guidance, second edition",
+   "short": "WHO Europe",
+   "url": "https://iris.who.int/server/api/core/bitstreams/fa86acea-2315-4ef1-9a16-8931e88335e0/content",
+   "date": "2026",
+   "status": "reviewed",
+   "note": "Frames medicines as a health-system task: pre-season medication reviews for patients on diuretics, antihypertensives, anticholinergics, antipsychotics, antidepressants and lithium (p. 214); at-risk registers that include medication use (pp. 90, 209); storage and supply checks for temperature-sensitive medicines (pp. 134, 212). No class-specific clinical actions and no doses. Read from a copy supplied by the team.",
+   "year": 2026,
+   "jurisdiction": "WHO European Region",
+   "isbn": "9789289062930",
+   "licence": "CC BY-NC-SA 3.0 IGO"
+  }
+ ],
+ "general_actions": [
+  "Review the full medication list, especially when several heat-interacting drugs are combined",
+  "Do not stop medications abruptly without a plan",
+  "Consider dose or frequency changes on hot days; individualised and drug-class dependent (no doses given)",
+  "Consider adjusting fluid restrictions for drugs that cause dehydration or electrolyte effects",
+  "Document hot-day adjustments and when to resume the usual schedule",
+  "Name a contact person to check on the patient",
+  "Plan for refrigerated medicines and powered devices during outages"
+ ],
+ "classes": {
+  "Diuretics": {
+   "cdc": {
+    "level": "action",
+    "mech": "Electrolyte imbalance; volume depletion with fainting and falls; reduced thirst",
+    "action": "Consider adjusting fluid restrictions on hot days (general step that names this mechanism)"
+   },
+   "nyc": {
+    "level": "action",
+    "mech": "Same as CDC",
+    "action": "Consider adjusting fluid restrictions on hot days"
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed (furosemide, hydrochlorothiazide, acetazolamide)",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "mention",
+    "mech": "Dehydration and electrolyte disturbance, loop diuretics especially",
+    "action": ""
+   },
+   "canada": {
+    "level": "action",
+    "mech": "Hyponatraemia, electrolyte imbalance",
+    "action": "Monitor sodium and electrolytes"
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Cause dehydration; limit cardiac output rise",
+    "action": ""
+   },
+   "who": {
+    "level": "mention",
+    "mech": "Affect sweating, hydration, renal function or cardiovascular response (p. 86)",
+    "action": "Pre-season medication review; document adjustments and counselling (p. 214)"
+   }
+  },
+  "ACE inhibitors / ARBs": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Lower blood pressure with fainting and falls; reduced thirst. Warns that an ACEi or ARB combined with a diuretic may significantly increase harm; ARNIs may carry the same risk",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed (ACE inhibitors, ARBs, ARNI)",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "mention",
+    "mech": "Only 'antihypertensives' named: interfere with cardiovascular heat response",
+    "action": ""
+   },
+   "canada": {
+    "level": "action",
+    "mech": "Dehydration, hyponatraemia (ARBs not named)",
+    "action": "Monitor hydration; watch for vomiting, diarrhoea"
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Impair kidney function; lower blood pressure",
+    "action": ""
+   },
+   "who": {
+    "level": "mention",
+    "mech": "Named only as 'antihypertensives' (pp. 214, 245)",
+    "action": "Pre-season medication review; document adjustments and counselling (p. 214)"
+   }
+  },
+  "Beta blockers": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Reduced skin vasodilation; decreased sweating; lower blood pressure with falls",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "mention",
+    "mech": "Interfere with sweating",
+    "action": ""
+   },
+   "canada": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Limit cardiac output rise",
+    "action": ""
+   },
+   "who": {
+    "level": "mention",
+    "mech": "Named only as 'antihypertensives' (pp. 214, 245)",
+    "action": "Pre-season medication review; document adjustments and counselling (p. 214)"
+   }
+  },
+  "Calcium channel blockers": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Lower blood pressure with falls; electrolyte imbalance",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "action",
+    "mech": "Dehydration",
+    "action": "Monitor hydration"
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "All antihypertensives: lower blood pressure",
+    "action": ""
+   },
+   "who": {
+    "level": "mention",
+    "mech": "Named only as 'antihypertensives' (pp. 214, 245)",
+    "action": "Pre-season medication review; document adjustments and counselling (p. 214)"
+   }
+  },
+  "Anticholinergics": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Decreased sweating; impaired thermoregulation (anticholinergic antihistamines and anticholinergic agents)",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed (oxybutynin, diphenhydramine, benztropine)",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "mention",
+    "mech": "Interfere with sweating",
+    "action": ""
+   },
+   "canada": {
+    "level": "mention",
+    "mech": "Additive anticholinergic effect raises heat-stroke risk",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Limit sweating; long list incl. oxybutynin, tolterodine, ipratropium",
+    "action": ""
+   },
+   "who": {
+    "level": "mention",
+    "mech": "Affect sweating (p. 86)",
+    "action": "Pre-season medication review; document adjustments and counselling (p. 214)"
+   }
+  },
+  "Antipsychotics": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Impaired sweating and central thermoregulation; sedation with falls and reduced thirst",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "mention",
+    "mech": "Interfere with central thermoregulation",
+    "action": ""
+   },
+   "canada": {
+    "level": "action",
+    "mech": "Electrolytes, hyperthermia, heat intolerance",
+    "action": "Monitor electrolytes and temperature"
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Central thermoregulation; NMS hyperthermia",
+    "action": ""
+   },
+   "who": {
+    "level": "mention",
+    "mech": "Neuroleptics affect sweating and hydration (p. 86)",
+    "action": "Pre-season medication review; document adjustments and counselling (p. 214)"
+   }
+  },
+  "Lithium": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Diabetes-insipidus-type water loss; electrolyte imbalance; toxicity with dehydration (narrow therapeutic index)",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "mention",
+    "mech": "Levels affected by dehydration",
+    "action": ""
+   },
+   "canada": {
+    "level": "action",
+    "mech": "Toxicity with dehydration",
+    "action": "Hydrate with water, not electrolyte drinks; watch for toxicity"
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Elimination affected by dehydration; thermoregulation",
+    "action": ""
+   },
+   "who": {
+    "level": "mention",
+    "mech": "Listed for pre-season review (p. 214)",
+    "action": "Pre-season medication review; document adjustments and counselling (p. 214)"
+   }
+  },
+  "Antidepressants": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Tricyclics: decreased sweating. SSRIs/SNRIs: the table says increased sweating while the text says impaired sweating; the page does not reconcile the two",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC, including the SSRI/SNRI contradiction",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed (SSRIs, SNRIs, TCAs, bupropion)",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "action",
+    "mech": "Hyponatraemia, especially SSRIs",
+    "action": "Monitor sodium and electrolytes"
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Central thermoregulation; TCAs anticholinergic; serotonin syndrome",
+    "action": ""
+   },
+   "who": {
+    "level": "mention",
+    "mech": "'Some antidepressants' interfere with heat dissipation or fluid balance (p. 245)",
+    "action": "Pre-season medication review; document adjustments and counselling (p. 214)"
+   }
+  },
+  "Benzodiazepines / sedatives": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Named only in the text: sedation with falls and reduced thirst",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "mention",
+    "mech": "Hypnotics and anxiolytics alter alertness",
+    "action": ""
+   },
+   "canada": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Reduce alertness, so people forget to drink",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "Opioids": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Named only in the text: sedation with falls and reduced thirst. Overdose is not mentioned",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed under analgesics",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "mention",
+    "mech": "Diarrhoea and vomiting cause dehydration",
+    "action": ""
+   },
+   "canada": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Central thermoregulation (tramadol, oxycodone)",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "Insulin": {
+   "cdc": {
+    "level": "storage",
+    "mech": "Storage only: refrigerate; may lose effect after prolonged heat. Hypoglycaemia in heat is not mentioned",
+    "action": "Remind patients to refrigerate insulin; plan for power outages"
+   },
+   "nyc": {
+    "level": "storage",
+    "mech": "Same as CDC",
+    "action": "Insulin should be refrigerated; plan for power outages"
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "storage",
+    "mech": "Vials at 32 °C lose 14–18% potency over 28 days",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Elimination affected by dehydration",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "SGLT2 inhibitors": {
+   "cdc": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "nyc": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "az": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Cause dehydration (gliflozines)",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "Metformin and sulfonylureas": {
+   "cdc": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "nyc": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "az": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Elimination affected by dehydration",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "NSAIDs": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Kidney injury with dehydration; reduced renal blood flow",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "mention",
+    "mech": "Impair renal function",
+    "action": ""
+   },
+   "canada": {
+    "level": "absent",
+    "mech": "Antipyretic use named only as a risk factor",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Impair kidney function (incl. aspirin > 500 mg/day, coxibs)",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "Topiramate / zonisamide": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Topiramate: decreased sweating. Zonisamide not named",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Topiramate listed",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "mention",
+    "mech": "Antiepileptics: levels affected by dehydration",
+    "action": ""
+   },
+   "canada": {
+    "level": "action",
+    "mech": "Topiramate: hyperthermia, heat intolerance",
+    "action": "Watch for hyperthermia and heat intolerance"
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Cause dehydration (topiramate, zonisamide)",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "Stimulants": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Amphetamine, methylphenidate: increased body temperature; central thermoregulation. Cocaine: reduced sweating",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Listed (amphetamines, methylphenidate, modafinil…)",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "mention",
+    "mech": "Amphetamines: heat production (fatal paediatric case)",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Illicit amphetamines and cocaine only",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "Heat-labile emergency products": {
+   "cdc": {
+    "level": "storage",
+    "mech": "Inhalers can burst in extreme heat; epinephrine auto-injectors may malfunction or under-deliver. Nitrates named only for worsened hypotension",
+    "action": "Do not leave medicines in a car or other very hot places"
+   },
+   "nyc": {
+    "level": "storage",
+    "mech": "Same as CDC",
+    "action": "Do not leave medicines in a car or other very hot places"
+   },
+   "az": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "General: most medicines below 25 °C",
+    "action": ""
+   },
+   "canada": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ansm": {
+    "level": "absent",
+    "mech": "Patch warning only; general storage below 25–30 °C on web pages",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "General only: keep medications cool; check storage of temperature-sensitive medicines in facilities",
+    "action": ""
+   }
+  },
+  "GLP-1 agonists": {
+   "cdc": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "nyc": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "az": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Can impair kidney function ('agonistes du GLP-1')",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "Parkinson / dopaminergic": {
+   "cdc": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "nyc": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "az": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "mention",
+    "mech": "Anti-Parkinson's agents named among heat-risk drugs",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Abrupt stop of dopaminergic drugs causes hyperthermia; anticholinergic anti-Parkinson drugs limit sweating",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "Cholinesterase inhibitors": {
+   "cdc": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "nyc": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "az": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "mention",
+    "mech": "Diarrhoea, vomiting and dehydration",
+    "action": ""
+   },
+   "ansm": {
+    "level": "mention",
+    "mech": "Increase sweating (donepezil, galantamine, rivastigmine)",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "Combination: diuretic + ACEi/ARB (± NSAID)": {
+   "cdc": {
+    "level": "mention",
+    "mech": "ACEi or ARB combined with a diuretic may significantly increase harm",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ansm": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "who": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   }
+  },
+  "Polypharmacy (several heat-sensitising drugs)": {
+   "cdc": {
+    "level": "mention",
+    "mech": "Review the full list, especially with several heat-interacting drugs",
+    "action": ""
+   },
+   "nyc": {
+    "level": "mention",
+    "mech": "Same as CDC",
+    "action": ""
+   },
+   "az": {
+    "level": "mention",
+    "mech": "Polypharmacy listed as a risk factor",
+    "action": ""
+   },
+   "ukhsa": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "canada": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "ansm": {
+    "level": "absent",
+    "mech": "",
+    "action": ""
+   },
+   "who": {
+    "level": "mention",
+    "mech": "Multiple medications may reduce coping capacity (p. 85); pre-season review (p. 214)",
+    "action": "Pre-season medication review; document adjustments (p. 214)"
+   }
+  }
+ },
+ "not_in_grid": [
+  {
+   "name": "Antiplatelets (clopidogrel, aspirin)",
+   "mech": "Reduced skin vasodilation"
+  },
+  {
+   "name": "Nitrates (as a clinical risk)",
+   "mech": "Worsened hypotension"
+  },
+  {
+   "name": "Carbamazepine, oxcarbazepine",
+   "mech": "Dizziness; increased sweating and urination; toxicity with dehydration"
+  },
+  {
+   "name": "Acetaminophen",
+   "mech": "Heat-related liver injury raises hepatotoxicity risk"
+  },
+  {
+   "name": "Sulfonamides, indinavir",
+   "mech": "Kidney injury with dehydration"
+  },
+  {
+   "name": "Sun-sensitising antimicrobials (tetracyclines, fluoroquinolones, metronidazole, voriconazole …)",
+   "mech": "Photosensitivity",
+   "action": "Sun avoidance, protective clothing, SPF 30+ broad-spectrum sunscreen (the only class-specific action on either page)"
+  },
+  {
+   "name": "Levothyroxine",
+   "mech": "Excessive sweating"
+  },
+  {
+   "name": "Apixaban",
+   "mech": "Reduced clearance when dehydrated"
+  },
+  {
+   "name": "Laxatives, antacids",
+   "mech": "Volume depletion; electrolyte imbalance"
+  },
+  {
+   "name": "Alcohol, MDMA and hallucinogens",
+   "mech": "Sweating, urination, impaired heat perception"
+  }
+ ],
+ "alignment_checks": [
+  {
+   "id": "antipsychotics",
+   "label": "Names antipsychotics",
+   "why": "Heat-wave deaths OR 2.09 (vetted)",
+   "rule": {
+    "class": "Antipsychotics",
+    "levels": [
+     "action",
+     "mention"
+    ]
+   }
+  },
+  {
+   "id": "antidepressants",
+   "label": "Names antidepressants",
+   "why": "Heat-wave deaths OR 1.71 (vetted)",
+   "rule": {
+    "class": "Antidepressants",
+    "levels": [
+     "action",
+     "mention"
+    ]
+   }
+  },
+  {
+   "id": "insulin_clin",
+   "label": "Treats insulin as a clinical risk, not only storage",
+   "why": "Serious hypoglycaemia in heat OR 1.38 (vetted)",
+   "rule": {
+    "class": "Insulin",
+    "levels": [
+     "action",
+     "mention"
+    ]
+   }
+  },
+  {
+   "id": "opioid_od",
+   "label": "Warns that opioid overdose rises in heat",
+   "why": "Opioid overdose ED visits rise with daily temperature, OR 1.079 per step (vetted)",
+   "rule": {
+    "flag": "overdose"
+   }
+  },
+  {
+   "id": "raas",
+   "label": "Names ACE inhibitors / ARBs",
+   "why": "Heatstroke mortality HR 2.17, class-wide (vetted)",
+   "rule": {
+    "class": "ACE inhibitors / ARBs",
+    "levels": [
+     "action",
+     "mention"
+    ]
+   }
+  },
+  {
+   "id": "sglt2",
+   "label": "Names SGLT2 inhibitors",
+   "why": "Dehydration and kidney-injury bridge (moderate)",
+   "rule": {
+    "class": "SGLT2 inhibitors",
+    "levels": [
+     "action",
+     "mention"
+    ]
+   }
+  },
+  {
+   "id": "nsaid",
+   "label": "Names NSAIDs",
+   "why": "Strongest kidney-injury bridge (50 studies)",
+   "rule": {
+    "class": "NSAIDs",
+    "levels": [
+     "action",
+     "mention"
+    ]
+   }
+  },
+  {
+   "id": "storage",
+   "label": "Gives storage advice for insulin, inhalers or auto-injectors",
+   "why": "Label limits; inhaler burst above 49 °C",
+   "rule": {
+    "storage_any": true
+   }
+  }
+ ]
+}

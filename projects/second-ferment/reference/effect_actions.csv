@@ -1,0 +1,19 @@
+effect,bucket,basis,note
+fluid_loss,monitor,nyc_han_2026;ukhsa_2024;ansm_2023;vic_2024,"Self-monitoring of hydration, body weight or dehydration status."
+fluid_loss,adjust_dose,cdc_2025;nyc_page;vic_2024,Adjust fluid restrictions and dose on hot days.
+sodium,monitor,hc_2011,"Hyponatremia needs close monitoring (named for antiepileptics in Health Canada 2011); hydration monitoring in others."
+sodium,adjust_dose,cdc_2025;nyc_page;vic_2024,Adjust fluid restrictions for medicines that affect electrolytes.
+potassium,monitor,,No document names potassium monitoring; mapped to monitoring by analogy with electrolytes. Treat as our inference.
+low_bp,adjust_dose,hc_2011;cdc_2025;nyc_page;vic_2024,"Optimise antihypertensives during heat (Health Canada 2011); general dose adjustment on hot days."
+kidney,monitor,ansm_2023,"Dehydration assessment; no document names kidney-function tests."
+drug_level,monitor,,"Several documents name toxicity or level changes (lithium, carbamazepine, metformin) but none says to check levels. Our inference; shown as a gap."
+low_sugar,monitor,nyc_han_2026,People with diabetes should check blood sugar more often in heat.
+low_sugar,adjust_dose,ansm_2023,Insulin absorbs faster in heat (hypoglycaemia risk).
+ketoacidosis,monitor,nyc_han_2026,Blood sugar checks for people with diabetes; no document names ketoacidosis.
+heat_illness,counsel,cdc_2025;nyc_page;nyc_han_2026;hc_2011;vic_2024,"Cooling, symptoms of heat illness, when to seek care, minimise heat exposure."
+heat_illness,monitor,hc_2011,Topiramate: watch for hyperthermia and heat intolerance.
+confusion,counsel,cdc_2025;nyc_page,Point of contact to check on older patients and those with altered cognition.
+falls,counsel,cdc_2025;nyc_page,Point of contact; falls named as a consequence of low blood pressure and sedation.
+heart_rhythm,,,No document links heat and these medicines through heart rhythm. Shown as evidence without guidance.
+storage,storage,cdc_2025;nyc_page;hc_2011;ukhsa_2024;ansm_2023;vic_2024,"Storage below 25 °C, refrigeration for insulin, no medicines left in cars, power-outage plans."
+overdose,counsel,nyc_page;nyc_han_2026,Drug use in heat (NYC palm card); not a prescribing action.

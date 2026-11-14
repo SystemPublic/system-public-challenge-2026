@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import "@fontsource/libre-franklin/400.css";
+@import "@fontsource/libre-franklin/500.css";
+@import "@fontsource/libre-franklin/600.css";
+@import "@fontsource/libre-franklin/700.css";
+@import "@fontsource/source-serif-4/600.css";
+@import "@fontsource/source-serif-4/700.css";
+
+/* Visual language from the teammate's pages (stella/heat-med-guide): warm off-white app, near-black ink,
+   one heat accent, a slate scale for evidence strength. Plan colours for the heat check are separate. */
+@theme {
+  --font-sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Source Serif 4", Georgia, serif;
+
+  --color-canvas: #f3f2ef;
+  --color-panel: #ffffff;
+  --color-soft: #f6f5f2;
+  --color-hov: #f1f0ec;
+  --color-ink: #121212;
+  --color-ink-2: #3a3a3a;
+  --color-ink-3: #6b6b6b;
+  --color-faint: #8a8a8a;
+  --color-line: #e3e2de;
+  --color-line-2: #c9c9c9;
+  --color-accent: #1f3d5c;
+  --color-accent-soft: #e8edf3;
+
+  --color-heat: #cf4a1c;
+  --color-heat-ink: #b53c12;
+  --color-heat-soft: #fcebe3;
+  --color-s1: #a3b6ca;
+  --color-s2: #5f7ea0;
+  --color-s3: #1f3d5c;
+
+  /* map tiers */
+  --color-direct: #cf4a1c;
+  --color-shared: #5f7ea0;
+  --color-guidance: #9a9a9a;
+
+  /* the map stage (light, framed) */
+  --color-hero: #fbfaf8;
+  --color-hero-2: #ffffff;
+  --color-hero-line: #e3e2de;
+  --color-hero-ink: #121212;
+  --color-hero-ink-2: #6b6b6b;
+
+  /* plan colours */
+  --color-red: #c0391b;
+  --color-red-soft: #fcebe3;
+  --color-amber: #b7791f;
+  --color-amber-soft: #fbf1dd;
+  --color-green: #2f7a4b;
+  --color-green-soft: #e5f2ea;
+  --color-blue: #2f5f8f;
+  --color-blue-soft: #e6eef7;
+}
+
+html, body, #root { height: 100%; }
+body { background: var(--color-canvas); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { text-wrap: balance; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+.num { font-variant-numeric: tabular-nums; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--color-ink-3); }
+@media print { .no-print { display: none !important; } body { background: white; } }

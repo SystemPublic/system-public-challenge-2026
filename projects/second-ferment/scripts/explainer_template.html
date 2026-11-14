@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Public Graph: what's in it for medications and heat</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,.10);
+  --s1: #2a78d6; --s2: #eb6834; --track: #f0efec;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,.10);
+    --s1: #3987e5; --s2: #d95926; --track: #2c2c2a;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 940px; margin: 0 auto; padding: 32px 20px 80px; }
+h1 { font-size: 28px; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-size: 20px; line-height: 1.3; margin: 48px 0 6px; }
+h3 { font-size: 15px; margin: 0 0 2px; }
+p { margin: 6px 0 12px; color: var(--ink2); max-width: 70ch; }
+.lede { font-size: 17px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin: 14px 0; }
+.sub { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.tile b { display: block; font-size: 26px; line-height: 1.1; }
+.tile span { color: var(--ink2); font-size: 13px; }
+.tile small { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+.schema { display: grid; grid-template-columns: 1fr 22px 1.25fr 22px 1fr 22px 1fr; align-items: stretch; gap: 0; }
+.tbl { border: 1px solid var(--axis); border-radius: 8px; padding: 10px 12px; background: var(--surface); min-width: 0; }
+.tbl code { overflow-wrap: anywhere; }
+.tbl h3 { font-size: 14px; }
+.tbl .n { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+.tbl code { display: block; font: 12px/1.55 ui-monospace, Menlo, monospace; color: var(--ink2); }
+.tbl code.k { color: var(--ink); font-weight: 600; }
+.arrow { display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 18px; }
+.rel { margin-top: 12px; }
+.anat { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
+.anat div { border-top: 1px solid var(--grid); padding: 7px 0; }
+.anat code { font: 12px ui-monospace, Menlo, monospace; color: var(--muted); display: block; }
+.anat b { font-weight: 600; }
+.anat em { font-style: normal; color: var(--ink2); font-size: 13px; display: block; }
+.bars { display: grid; grid-template-columns: minmax(150px, 230px) 1fr 76px; gap: 5px 10px; align-items: center; font-size: 13px; }
+.bars .l { color: var(--ink2); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bars .t { height: 14px; position: relative; border-left: 1px solid var(--axis); }
+.bars .b { height: 14px; background: var(--s1); border-radius: 0 4px 4px 0; min-width: 1px; }
+.bars .b.o { background: var(--s2); }
+.bars .v { font-variant-numeric: tabular-nums; color: var(--ink); }
+.bars .row { display: contents; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.funnel { display: grid; grid-template-columns: 1fr 20px 1fr 20px 1fr 20px 1fr; align-items: stretch; }
+.funnel .tile { min-width: 0; padding: 12px; }
+.hm { border-collapse: separate; border-spacing: 2px; width: 100%; font-size: 12.5px; table-layout: fixed; }
+.hm th { font-weight: 500; color: var(--ink2); padding: 4px; vertical-align: bottom; line-height: 1.25; }
+.hm th.r { text-align: right; width: 190px; white-space: nowrap; }
+.hm td { text-align: center; height: 30px; border-radius: 4px; font-variant-numeric: tabular-nums; cursor: default; }
+.hm tr.gap td, .hm tr.gap th { height: 10px; }
+.hm td.z { color: var(--muted); background: var(--track); }
+table.ev { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+table.ev th { text-align: left; color: var(--muted); font-weight: 500; font-size: 12px; padding: 6px 8px; border-bottom: 1px solid var(--axis); }
+table.ev td { padding: 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+table.ev td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+a { color: var(--s1); }
+ul { color: var(--ink2); padding-left: 20px; max-width: 72ch; }
+li { margin: 4px 0; }
+#tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--page); font-size: 12.5px; padding: 6px 9px; border-radius: 6px; max-width: 300px; display: none; z-index: 9; }
+.legend { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; margin-top: 10px; }
+.legend i { width: 22px; height: 12px; border-radius: 3px; display: inline-block; }
+@media (max-width: 720px) {
+  .schema, .funnel { grid-template-columns: 1fr; } .arrow { transform: rotate(90deg); height: 26px; }
+  .two, .anat { grid-template-columns: 1fr; }
+  .bars { grid-template-columns: 120px 1fr 60px; }
+  .hm th.r { width: 110px; white-space: normal; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>What the System Public Graph holds for medications and heat</h1>
+<p class="lede">A walk through the dataset's structure, then what it does and doesn't contain for Visualize Challenge 3. Built from the public Dataverse snapshot (v2.1, July 2026).</p>
+
+<h2>1. The graph is a pile of 2 million statistical findings</h2>
+<p>Each row is one number pulled out of one paper by an AI extractor: "X is associated with Y, odds ratio 1.6". Everything else in the dataset exists to label and group those rows.</p>
+<div class="tiles" id="tiles"></div>
+
+<h2>2. Five tables, joined by IDs</h2>
+<p>A finding links two <b>variables</b> (the paper's own wording). Each variable is mapped to a <b>concept</b> (a Wikidata entry) so that different wordings line up. <b>Relationships</b> are just findings rolled up to concept pairs.</p>
+<div class="card">
+  <div class="schema">
+    <div class="tbl"><h3>Studies</h3><div class="n" data-n="studies"></div>
+      <code class="k">study_id</code><code>doi</code><code>pubmed_id</code><code>population_string</code><code>study_type</code></div>
+    <div class="arrow" data-tip="One study reports many findings (joined on study_id)">→</div>
+    <div class="tbl"><h3>Associations (findings)</h3><div class="n" data-n="associations"></div>
+      <code class="k">system_id</code><code>study_id</code><code>statistic_type, statistic_value</code><code>ci_lower, ci_upper, p_value</code><code>variable_1_id, variable_2_id</code><code>variable_1_name, variable_2_name</code><code>variable_1/2_concept_id</code></div>
+    <div class="arrow" data-tip="Each finding points at two variables (variable_1_id, variable_2_id)">→</div>
+    <div class="tbl"><h3>Variables</h3><div class="n" data-n="variables"></div>
+      <code class="k">system_id</code><code>name</code><code>concept_id</code></div>
+    <div class="arrow" data-tip="Many variables map to one concept (concept_id)">→</div>
+    <div class="tbl"><h3>Concepts</h3><div class="n" data-n="concepts"></div>
+      <code class="k">system_id</code><code>wikidata_id</code><code>wikidata_label</code><code>wikidata_aliases</code><code>wikidata_description</code></div>
+  </div>
+  <div class="tbl rel"><h3>Relationships</h3><div class="n" data-n="relationships"></div>
+    <code>One row per concept pair: relationship_id = "sourceConcept|targetConcept", num_findings, num_studies, last_published_date. A summary layer; you can rebuild it from Associations.</code></div>
+</div>
+
+<h3 style="margin-top:22px">One real finding, field by field</h3>
+<p class="sub">From a study of the 2003 French heat wave. This is one of the very few direct medication-and-heat rows in the graph.</p>
+<div class="card"><div class="anat">
+  <div><code>variable_1_name</code><b>using long-term antihypertensive medication</b><em>the paper's wording, lightly normalised</em></div>
+  <div><code>variable_2_name</code><b>mortality (among patients with heatstroke)</b><em>context is folded into the name in brackets</em></div>
+  <div><code>variable_1_concept_id → concepts</code><b>antihypertensive drug</b> (Q575890)<em>851 different variable wordings map to this one concept</em></div>
+  <div><code>variable_2_concept_id → concepts</code><b>mortality rate</b> (Q58702)<em>note the heat-stroke context is lost at concept level</em></div>
+  <div><code>system_statistic_type / statistic_value</code><b>hazard_ratio = 2.17</b><em>normalised statistic type, value as reported</em></div>
+  <div><code>ci_level, ci_lower, ci_upper / p_value</code><b>95% CI 1.17 to 4.05</b>, p-value empty<em>only what the paper reported; often blank</em></div>
+  <div><code>study_id → studies.population_string</code><b>83 patients presenting with heatstroke in a university hospital in Lyon, France, during the heat wave of August 1-20, 2003</b><em>free text: country, setting and sample size live here</em></div>
+  <div><code>studies.doi / pubmed_id / study_type</code><b><a href="https://doi.org/10.1001/archinte.167.20.ioi70147">10.1001/archinte.167.20.ioi70147</a></b>, PMID 17698677, type empty<em>the DOI is your route to publication year (via OpenAlex or PubMed)</em></div>
+</div></div>
+<p>At concept level this finding becomes "antihypertensive drug → mortality rate", pooled with 67 unrelated findings from 42 other studies. <b>For this challenge you have to work at the variable-name level</b>, because the heat context only survives in the names.</p>
+
+<h2>3. What kind of numbers, and how complete</h2>
+<div class="two">
+  <div class="card"><h3>Statistic types</h3><p class="sub">Number of findings by normalised type</p><div class="bars" id="stats"></div></div>
+  <div class="card"><h3>How often fields are filled in</h3><p class="sub">Share of rows with a value</p><div class="bars" id="complete"></div>
+    <p class="sub" style="margin-top:14px" id="relnote"></p></div>
+</div>
+<p>Practical consequences: half the findings have no confidence interval, so "evidence strength" will need to lean on number of studies, sample size from the population text, and statistic type. The only study type recorded is "Experimental Trial"; everything else is blank, so trial vs observational is partly knowable and nothing finer. There is no publication year, sex, or country column.</p>
+
+<h2>4. Direct evidence linking these drugs to heat is almost absent</h2>
+<p>I matched variable names against heat-exposure terms (heat wave, heat stroke, extreme heat, ambient temperature, summer and so on) and against 24 medication classes.</p>
+<div class="funnel" id="funnel"></div>
+<div class="card">
+  <h3>Plenty of research on each drug class, almost none of it about heat</h3>
+  <p class="sub">Studies per medication class: anywhere in the graph (left) and with a heat-exposure variable on the other side (right). Right-hand counts are raw name matches before manual review, so the true numbers are lower still.</p>
+  <div class="two">
+    <div><p class="sub"><b>Studies mentioning the drug class</b></p><div class="bars" id="clsAll"></div></div>
+    <div><p class="sub"><b>...of which linked to heat exposure</b></p><div class="bars" id="clsHeat"></div></div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>The direct findings worth knowing about</h3>
+  <p class="sub">Values as extracted in the graph; I have not checked them against the papers. Direction of effect can be wrong in the extraction.</p>
+  <table class="ev">
+    <tr><th>Drug side</th><th>Heat side</th><th>Statistic</th><th>Source</th></tr>
+    <tr><td>Long-term antihypertensive medication</td><td>Mortality among heatstroke patients (Lyon, 2003)</td><td class="num">HR 2.17 (1.17-4.05)</td><td><a href="https://doi.org/10.1001/archinte.167.20.ioi70147">doi</a></td></tr>
+    <tr><td>"Persons under medication" (unspecified)</td><td>Heat illness</td><td class="num">aOR 3.09 (1.15-8.29)</td><td><a href="https://doi.org/10.3390/ijerph16245065">doi</a></td></tr>
+    <tr><td>Lithium dose-to-level ratio</td><td>Mean daily temperature</td><td class="num">coef -0.17, p=0.08</td><td><a href="https://doi.org/10.1002/hup.2413">doi</a></td></tr>
+    <tr><td>Thiazide-induced hyponatraemia, monthly cases</td><td>Average air temperature</td><td class="num">r -0.06, p=0.65</td><td><a href="https://doi.org/10.1111/j.1742-1241.2006.00877.x">doi</a></td></tr>
+    <tr><td>Irbesartan / hydrochlorothiazide, blood pressure response</td><td>Started in spring/summer vs autumn/winter</td><td class="num">diff 3.9 (1.4-6.4)</td><td><a href="https://doi.org/10.1038/s41440-022-01084-y">doi</a></td></tr>
+    <tr><td>Opioid overdose; cocaine overdose (not prescribing)</td><td>Daily ambient temperature</td><td class="num">OR 1.08; OR 1.16</td><td><a href="https://doi.org/10.1016/j.envint.2023.108233">doi</a></td></tr>
+    <tr><td>Prior emergency visits for alcohol use</td><td>Hyperthermia mortality</td><td class="num">OR 11.2 (3.9-32.2)</td><td><a href="https://doi.org/10.1016/j.annepidem.2021.09.009">doi</a></td></tr>
+  </table>
+  <p class="sub" style="margin-top:12px">The other name matches were false hits or off-topic (fever control with paracetamol, a river basin abbreviated "ARB", summer training programmes). Nothing direct for anticholinergics, antipsychotics, SGLT2 inhibitors or beta blockers and heat illness.</p>
+</div>
+<div class="tiles" style="margin-top:10px">
+  <div class="tile"><b id="storageN"></b><span>finding on drug storage temperature</span><small>Refrigerated vs non-refrigerated insulin. Nothing on inhalers or epinephrine: storage evidence will have to come from outside the graph.</small></div>
+  <div class="tile"><b>0</b><span>findings linking wearables to heat risk on these drugs</span><small>Skin temperature and heart rate exist as outcomes, but not in a medication-and-heat context.</small></div>
+</div>
+
+<h2>5. But both halves of the chain are well covered</h2>
+<p>The graph is strong on what heat does to health, and on the side effects through which these drugs make heat dangerous. The two meet at shared outcomes such as kidney injury, low sodium and fainting.</p>
+<div class="card">
+  <h3>What heat exposure is linked to</h3>
+  <p class="sub">Number of studies connecting a heat-exposure variable to each outcome concept (top outcomes, generic concepts removed)</p>
+  <div class="bars" id="heatLinks"></div>
+</div>
+<div class="card">
+  <h3>Where drug classes and heat meet: shared pathways</h3>
+  <p class="sub">Number of studies linking each drug class (rows) to each heat-relevant side effect (columns). The top row shows studies linking heat exposure itself to the same outcomes.</p>
+  <div style="overflow-x:auto"><table class="hm" id="hm"></table></div>
+  <div class="legend">fewer studies <i style="background:#cde2fb"></i><i style="background:#86b6ef"></i><i style="background:#3987e5"></i><i style="background:#1c5cab"></i><i style="background:#0d366b"></i> more (square-root scale, capped at 80)</div>
+</div>
+<p>This is the realistic shape of your project: a two-step evidence map, <b>drug → physiological effect ← heat</b>, with the graph supplying each arm and the direct drug-and-heat link shown as the gap. For example, diuretics → acute kidney injury (76 studies) and heat → acute kidney injury (14 studies) are both there; diuretics → heat illness is not.</p>
+
+<h2>6. Things to keep in mind when using it</h2>
+<ul>
+  <li><b>Extraction errors.</b> The docs say about 20% of associations returned by the API are inaccurately extracted and recommend keeping only those that also appear in the Dataverse CSV, which is what this page uses. Direction (which variable is the cause) can be swapped.</li>
+  <li><b>Concept mapping is lossy.</b> "Heatwaves" variables are sometimes filed under the concept "heat stroke"; many drug-specific variables collapse into broad concepts. Search names, not just concepts.</li>
+  <li><b>My matching is keyword-based.</b> The counts here come from pattern matching on variable names. They show the scale of coverage, not a curated evidence base; a careful version needs manual review of each row.</li>
+  <li><b>Absence is not evidence of absence.</b> The well-known heat-wave case-control studies on psychotropics and diuretics exist in the literature. Their absence here means the graph missed them (results in tables are under-extracted), which is itself a finding worth showing.</li>
+  <li><b>Guidance documents are not in the graph.</b> The comparison with CDC, WHO, UK or NYC heat-health guidance needs sources you collect yourself.</li>
+  <li><b>Licence.</b> The dataset is CC BY-NC 4.0.</li>
+</ul>
+</main>
+<div id="tip"></div>
+<script>
+const D = /*__DATA__*/null;
+const fmt = n => n.toLocaleString('en-US');
+const short = n => n >= 1e6 ? (n / 1e6).toFixed(2) + 'M' : n >= 1e4 ? Math.round(n / 1e3) + 'k' : fmt(n);
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+
+// tiles
+const T = [['associations', 'findings (associations)'], ['studies', 'source studies'], ['variables', 'variables as worded in papers'], ['concepts', 'Wikidata concepts'], ['relationships', 'concept-pair relationships']];
+$('tiles').innerHTML = T.map(([k, l]) => `<div class="tile"><b>${short(D.counts[k])}</b><span>${l}</span></div>`).join('');
+document.querySelectorAll('[data-n]').forEach(e => e.textContent = fmt(D.counts[e.dataset.n]) + ' rows');
+
+function bars(id, rows, o = {}) {
+  const max = o.max || Math.max(...rows.map(r => r.value), 1);
+  $(id).innerHTML = rows.map(r => `<div class="row" data-tip="${esc(r.tip || (r.label + ': ' + (o.fmt || fmt)(r.value)))}">
+    <div class="l">${esc(r.label)}</div>
+    <div class="t"><div class="b ${o.cls || ''}" style="width:${r.value ? Math.max(0.4, 100 * r.value / max) : 0}%"></div></div>
+    <div class="v">${(o.fmt || fmt)(r.value)}</div></div>`).join('');
+}
+const STAT = {odds_ratio: 'Odds ratio', mean_difference_unstandardized: 'Mean difference', coefficient: 'Regression coefficient', hazard_ratio: 'Hazard ratio', pearson_r: 'Pearson correlation', relative_risk_ratio: 'Relative risk', adjusted_odds_ratio: 'Adjusted odds ratio', adjusted_hazard_ratio: 'Adjusted hazard ratio', incident_rate_ratio: 'Incidence rate ratio', spearman_correlation: 'Spearman correlation', mean_difference_standardized: 'Standardised mean diff.', prevalence_ratio: 'Prevalence ratio'};
+const st = D.stat_types.filter(r => STAT[r[0]]).map(r => ({label: STAT[r[0]], value: r[1]}));
+const other = D.stat_types.filter(r => !STAT[r[0]]).reduce((a, r) => a + r[1], 0);
+bars('stats', st.concat([{label: 'Other (5 types)', value: other}]));
+bars('complete', Object.entries(D.complete).map(([k, v]) => ({label: k, value: v})), {max: 1, fmt: v => Math.round(v * 100) + '%'});
+$('relnote').textContent = Math.round(D.rel_single * 100) + '% of concept-pair relationships rest on a single study.';
+
+// funnel
+const S = D.summary;
+const F = [[fmt(S.total_associations), 'findings in the graph', ''],
+  [fmt(S.heat_findings.direct), 'mention heat exposure or heat illness', (100 * S.heat_findings.direct / S.total_associations).toFixed(2) + '% of all findings, from ' + fmt(S.heat_studies.direct) + ' studies'],
+  ['46', 'also mention a medication or drug', 'raw keyword matches'],
+  ['about 6', 'are about a prescribed drug and heat risk', 'after reading every match']];
+$('funnel').innerHTML = F.map(([n, l, s], i) => (i ? '<div class="arrow">→</div>' : '') + `<div class="tile"><b>${n}</b><span>${l}</span><small>${s}</small></div>`).join('');
+
+// per-class
+const CLS = ['Diuretics', 'Beta blockers', 'ACE inhibitors / ARBs', 'Calcium channel blockers', 'Anticholinergics', 'Antipsychotics', 'Antidepressants', 'Lithium', 'Insulin (as therapy)', 'SGLT2 inhibitors', 'Other diabetes drugs', 'Stimulants', 'Antihistamines', 'NSAIDs / analgesics', 'Opioids / sedatives', 'Anticonvulsants'];
+bars('clsAll', CLS.map(c => ({label: c, value: S.by_class[c].graph_studies, tip: `${c}: ${fmt(S.by_class[c].graph_studies)} studies, ${fmt(S.by_class[c].graph_findings)} findings`})));
+bars('clsHeat', CLS.map(c => ({label: c, value: S.by_class[c].direct_studies, tip: `${c}: ${S.by_class[c].direct_studies} studies with a heat-exposure variable (raw matches)`})), {max: 10, cls: 'o'});
+$('storageN').textContent = D.storage_hits;
+
+// heat links
+bars('heatLinks', D.heat_links.map(r => ({label: r[0], value: r[1], tip: `${r[0]}: ${r[1]} studies, ${r[2]} findings`})));
+
+// heatmap
+const RAMP = ['#cde2fb', '#b7d3f6', '#9ec5f4', '#86b6ef', '#6da7ec', '#5598e7', '#3987e5', '#2a78d6', '#256abf', '#1c5cab', '#184f95', '#104281', '#0d366b'];
+const M = D.path.mechanisms;
+const cell = (v, tip) => {
+  if (!v) return `<td class="z" data-tip="${esc(tip)}">0</td>`;
+  const i = Math.min(RAMP.length - 1, Math.round((RAMP.length - 1) * Math.sqrt(Math.min(v, 80)) / Math.sqrt(80)));
+  return `<td style="background:${RAMP[i]};color:${i >= 5 ? '#fff' : '#0b0b0b'}" data-tip="${esc(tip)}">${v}</td>`;
+};
+let h = '<tr><th class="r"></th>' + M.map(m => `<th>${esc(m)}</th>`).join('') + '</tr>';
+h += '<tr><th class="r"><b>Heat exposure</b></th>' + M.map(m => cell(D.path.heat_mech_studies[m] || 0, `Heat exposure ↔ ${m}: ${D.path.heat_mech_studies[m] || 0} studies`)).join('') + '</tr><tr class="gap"><th></th></tr>';
+for (const c of CLS) h += `<tr><th class="r">${esc(c)}</th>` + M.map(m => { const v = D.path.drug_mech_studies[c + '|' + m] || 0; return cell(v, `${c} ↔ ${m}: ${v} studies, ${D.path.drug_mech_findings[c + '|' + m] || 0} findings`); }).join('') + '</tr>';
+$('hm').innerHTML = h;
+
+// tooltip
+const tip = $('tip');
+document.addEventListener('mousemove', e => {
+  const t = e.target.closest('[data-tip]');
+  if (!t) { tip.style.display = 'none'; return; }
+  tip.textContent = t.dataset.tip; tip.style.display = 'block';
+  const x = Math.min(e.clientX + 12, innerWidth - tip.offsetWidth - 8);
+  tip.style.left = x + 'px'; tip.style.top = (e.clientY + 14) + 'px';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+doc,class,effect,named_as,mechanism
+cdc_2025,diuretics,sodium,Diuretics,Electrolyte imbalance
+cdc_2025,diuretics,potassium,Diuretics,Electrolyte imbalance
+cdc_2025,diuretics,fluid_loss,Diuretics,"Volume depletion, dehydration; reduced thirst"
+cdc_2025,diuretics,low_bp,Diuretics,Risk of fainting
+cdc_2025,diuretics,falls,Diuretics,Risk of falls
+cdc_2025,beta_blockers,heat_illness,Beta blockers,Reduced superficial vasodilation; decreased sweating
+cdc_2025,beta_blockers,low_bp,Beta blockers,"Reduced blood pressure, fainting"
+cdc_2025,beta_blockers,falls,Beta blockers,Risk of falls
+cdc_2025,ccb,low_bp,Calcium channel blockers,"Decreased blood pressure, fainting"
+cdc_2025,ccb,falls,Calcium channel blockers,Risk of falls
+cdc_2025,ccb,sodium,Calcium channel blockers,Electrolyte imbalance
+cdc_2025,acei_arb,low_bp,ACE inhibitors and ARBs (and ARNI),"Decreased blood pressure, fainting"
+cdc_2025,acei_arb,falls,ACE inhibitors and ARBs,Risk of falls
+cdc_2025,acei_arb,fluid_loss,ACE inhibitors and ARBs,Reduced thirst sensation
+cdc_2025,lithium,fluid_loss,Lithium,Diabetes insipidus water loss
+cdc_2025,lithium,sodium,Lithium,Electrolyte imbalance
+cdc_2025,lithium,drug_level,Lithium,Toxicity with dehydration (narrow therapeutic index)
+cdc_2025,lithium,falls,Lithium,"Fainting, falls"
+cdc_2025,antipsychotics,heat_illness,Antipsychotics,Impaired sweating and temperature regulation
+cdc_2025,antidepressants,heat_illness,"SSRIs, SNRIs, TCAs","Increased sweating (SSRI, SNRI); decreased sweating (TCA)"
+cdc_2025,anticonvulsants,heat_illness,Topiramate,Decreased sweating
+cdc_2025,anticonvulsants,fluid_loss,Oxcarbazepine,Increased sweating and urination
+cdc_2025,anticonvulsants,drug_level,Carbamazepine,Toxicity with dehydration (narrow therapeutic index)
+cdc_2025,anticholinergics,heat_illness,Anticholinergic agents,Interference with central thermoregulation
+cdc_2025,antihistamines,heat_illness,Antihistamines with anticholinergic properties,Decreased sweating; impaired thermoregulation
+cdc_2025,nsaids,kidney,NSAIDs and aspirin,Kidney injury with dehydration
+cdc_2025,stimulants,heat_illness,"Amphetamine, methylphenidate, cocaine",Increased body temperature; reduced sweating
+cdc_2025,insulin,storage,Insulin,Degraded by heat; should be refrigerated
+nyc_page,diuretics,sodium,Diuretics,Electrolyte imbalance
+nyc_page,diuretics,fluid_loss,Diuretics,Volume depletion; reduced thirst
+nyc_page,diuretics,low_bp,Diuretics,Hypotension
+nyc_page,beta_blockers,heat_illness,Beta blockers,Reduced superficial vasodilation; decreased sweating
+nyc_page,beta_blockers,low_bp,Beta blockers,"Reduced blood pressure, falls"
+nyc_page,beta_blockers,sodium,Beta blockers,Electrolyte imbalance
+nyc_page,ccb,low_bp,Calcium channel blockers,"Decreased blood pressure, falls"
+nyc_page,ccb,sodium,Calcium channel blockers,Electrolyte imbalance
+nyc_page,acei_arb,low_bp,ACE inhibitors and ARBs,"Decreased blood pressure, falls"
+nyc_page,acei_arb,fluid_loss,ACE inhibitors and ARBs,Reduced thirst
+nyc_page,lithium,drug_level,Lithium,Toxicity with dehydration (narrow therapeutic index)
+nyc_page,lithium,sodium,Lithium,Electrolyte imbalance
+nyc_page,lithium,fluid_loss,Lithium,Diabetes insipidus water loss
+nyc_page,antipsychotics,heat_illness,Antipsychotics,Impaired sweating; central thermoregulation
+nyc_page,antipsychotics,confusion,Antipsychotics,Sedation or cognitive impairment
+nyc_page,antidepressants,heat_illness,"SSRIs, SNRIs, TCAs",Altered sweating
+nyc_page,antidepressants,confusion,Antidepressants,Sedation or cognitive impairment
+nyc_page,antidepressants,low_bp,TCAs,"Volume depletion, hypotension"
+nyc_page,anticonvulsants,heat_illness,Topiramate,Decreased sweating
+nyc_page,anticonvulsants,drug_level,Carbamazepine,Toxicity with dehydration
+nyc_page,anticonvulsants,confusion,Anticonvulsants,Sedation or cognitive impairment
+nyc_page,anticholinergics,heat_illness,Anticholinergics,Central thermoregulation; decreased sweating
+nyc_page,antihistamines,heat_illness,Anticholinergic antihistamines,Decreased sweating; impaired thermoregulation
+nyc_page,nsaids,kidney,NSAIDs,Kidney injury with dehydration
+nyc_page,opioids_sedatives,confusion,"Opiates, benzodiazepines",Sedation or cognitive impairment; falls; reduced thirst
+nyc_page,opioids_sedatives,falls,"Opiates, benzodiazepines",Falls from sedation
+nyc_page,stimulants,heat_illness,"Amphetamine, methylphenidate, cocaine",Increased body temperature; reduced sweating
+nyc_page,insulin,storage,Insulin,May become less effective if left in heat
+nyc_han_2026,diuretics,fluid_loss,Diuretics,Named as a heat-risk factor
+nyc_han_2026,anticholinergics,heat_illness,Anticholinergics,Named as a heat-risk factor
+nyc_han_2026,antipsychotics,heat_illness,Psychotropics,Named as a heat-risk factor
+nyc_han_2026,antidepressants,heat_illness,Psychotropics,Named as a heat-risk factor
+nyc_han_2026,insulin,low_sugar,Insulin,High temperatures can change how the body uses insulin
+hc_2011,antipsychotics,heat_illness,Antipsychotics / neuroleptics; phenothiazines,Raise the core temperature set-point; impair thermoregulation
+hc_2011,anticholinergics,heat_illness,Anticholinergic drugs (incl. anti-Parkinson agents),Inhibit sweating
+hc_2011,antihistamines,heat_illness,Antihistamines,Inhibit sweating
+hc_2011,antidepressants,heat_illness,"SSRIs, tricyclics",Alter hypothalamic heat production and loss
+hc_2011,antidepressants,sodium,SSRIs,Raise risk of hyponatremia
+hc_2011,lithium,drug_level,Lithium,Plasma levels affected by dehydration; higher in summer
+hc_2011,anticonvulsants,heat_illness,Topiramate,Hypohidrosis
+hc_2011,anticonvulsants,sodium,"Oxcarbazepine, carbamazepine",Hyponatremia
+hc_2011,diuretics,fluid_loss,Diuretics,Dehydration
+hc_2011,diuretics,sodium,Diuretics,Hyponatremia
+hc_2011,acei_arb,sodium,ACE inhibitors,Hyponatremia
+hc_2011,acei_arb,fluid_loss,ACE inhibitors,Vomiting and dehydration
+hc_2011,ccb,fluid_loss,Calcium channel blockers,Diarrhoea; sweating
+hc_2011,beta_blockers,heat_illness,Beta blockers,Decrease cardiac output
+hc_2011,stimulants,heat_illness,"Amphetamines, sympathomimetics",Heat production; prevent skin vasodilation
+hc_2011,insulin,storage,Insulin,Potency lost when stored at high temperature
+hc_2024,antipsychotics,,Antipsychotics / neuroleptics,Listed (mechanisms given only in general)
+hc_2024,antidepressants,,Antidepressants,Listed
+hc_2024,lithium,,Lithium,Listed
+hc_2024,anticonvulsants,,Anti-epileptics,Listed
+hc_2024,diuretics,,Diuretics,Listed
+hc_2024,acei_arb,,ACE inhibitors,Listed
+hc_2024,ccb,,Calcium channel blockers,Listed
+hc_2024,beta_blockers,,Beta blockers,Listed
+ukhsa_2024,diuretics,fluid_loss,"Diuretics, especially loop diuretics",Dehydration
+ukhsa_2024,diuretics,sodium,Diuretics,Electrolyte abnormalities
+ukhsa_2024,diuretics,low_bp,Antihypertensives,Interfere with cardiovascular responses
+ukhsa_2024,beta_blockers,low_bp,Antihypertensives,Interfere with cardiovascular responses
+ukhsa_2024,acei_arb,low_bp,Antihypertensives,Interfere with cardiovascular responses
+ukhsa_2024,ccb,low_bp,Antihypertensives,Interfere with cardiovascular responses
+ukhsa_2024,beta_blockers,heat_illness,Beta blockers,Interfere with sweating
+ukhsa_2024,anticholinergics,heat_illness,Anticholinergics,Interfere with sweating
+ukhsa_2024,opioids_sedatives,fluid_loss,Opiates,Diarrhoea or vomiting leading to dehydration
+ukhsa_2024,opioids_sedatives,confusion,"Hypnotics, anxiolytics, analgesics",Alter states of alertness
+ukhsa_2024,nsaids,kidney,NSAIDs,Can impair renal function
+ukhsa_2024,lithium,drug_level,Lithium,Levels affected by dehydration
+ukhsa_2024,anticonvulsants,drug_level,Antiepileptics,Levels affected by dehydration
+ukhsa_2024,antipsychotics,heat_illness,Neuroleptics,Interfere with central thermoregulation
+ukhsa_2024,antidepressants,heat_illness,Serotoninergic agonists,Interfere with central thermoregulation
+ansm_2023,diuretics,fluid_loss,Diurétiques,Disturb hydration and electrolytes
+ansm_2023,diuretics,sodium,Diurétiques,Disturb hydration and electrolytes
+ansm_2023,diuretics,heat_illness,Diurétiques,Limit the rise in cardiac output (peripheral heat loss)
+ansm_2023,diuretics,low_bp,All antihypertensives,Can lower blood pressure
+ansm_2023,sglt2,fluid_loss,Gliflozines,Disturb hydration and electrolytes
+ansm_2023,anticonvulsants,fluid_loss,"Topiramate, zonisamide",Disturb hydration and electrolytes
+ansm_2023,anticonvulsants,drug_level,Anti-épileptiques,Kinetics affected by dehydration
+ansm_2023,nsaids,kidney,AINS,Can impair renal function
+ansm_2023,acei_arb,kidney,"IEC, sartans",Can impair renal function
+ansm_2023,acei_arb,low_bp,All antihypertensives,Can lower blood pressure
+ansm_2023,other_diabetes,kidney,Gliptines and GLP-1 agonists,Can impair renal function
+ansm_2023,other_diabetes,drug_level,"Biguanides, hypoglycaemic sulfonylureas",Kinetics affected by dehydration
+ansm_2023,lithium,drug_level,Sels de lithium,Kinetics affected by dehydration
+ansm_2023,insulin,low_sugar,Insuline,Risk of hypoglycaemia from faster absorption
+ansm_2023,antipsychotics,heat_illness,Neuroleptiques,Disturb central thermoregulation; malignant syndrome
+ansm_2023,antidepressants,heat_illness,Médicaments sérotoninergiques,Disturb central thermoregulation; serotonin syndrome
+ansm_2023,anticholinergics,heat_illness,Anticholinergiques,Limit sweating
+ansm_2023,beta_blockers,heat_illness,Bêta-bloquants,Limit the rise in cardiac output (peripheral heat loss)
+ansm_2023,beta_blockers,low_bp,All antihypertensives,Can lower blood pressure
+ansm_2023,ccb,low_bp,All antihypertensives,Can lower blood pressure
+ansm_2023,antipsychotics,confusion,Psychotropes,Alter alertness
+ansm_2023,antidepressants,confusion,Psychotropes,Alter alertness
+ansm_2023,opioids_sedatives,confusion,Psychotropes,Alter alertness
+ansm_2023,stimulants,confusion,Substances illicites,Alter alertness
+vic_2024,beta_blockers,heat_illness,Beta-blockers,Reduced vasodilation; decreased sweating
+vic_2024,antidepressants,heat_illness,Tricyclic antidepressants (anticholinergic),Decreased sweating
+vic_2024,antihistamines,heat_illness,Sedating antihistamines,Decreased sweating
+vic_2024,antipsychotics,heat_illness,Phenothiazines; antipsychotic drugs,Decreased sweating; increased heat production
+vic_2024,antipsychotics,fluid_loss,Antipsychotics (haloperidol),Decreased thirst
+vic_2024,anticholinergics,heat_illness,"Other anticholinergics (oxybutynin, solifenacin, benztropine)",Decreased sweating
+vic_2024,stimulants,heat_illness,Stimulants,Increased heat production
+vic_2024,acei_arb,fluid_loss,ACE inhibitors,Mechanism label unclear in the table (between decreased thirst and dehydration)
+vic_2024,diuretics,fluid_loss,Diuretics,Dehydration
+vic_2024,diuretics,low_bp,All antihypertensives,Worsening hypotension
+vic_2024,beta_blockers,low_bp,All antihypertensives,Worsening hypotension
+vic_2024,acei_arb,low_bp,All antihypertensives,Worsening hypotension
+vic_2024,ccb,low_bp,"All antihypertensives, particularly calcium channel blockers",Worsening hypotension
+vic_2024,lithium,drug_level,Lithium,Increased toxicity in dehydration (narrow therapeutic index)
+vic_2024,other_diabetes,drug_level,Metformin,Increased toxicity in dehydration (narrow therapeutic index)

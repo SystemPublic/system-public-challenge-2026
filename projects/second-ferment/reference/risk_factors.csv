@@ -1,0 +1,13 @@
+id,factor,direction,statistic,value,ci_lower,ci_upper,outcome,population,pmid,checked,note
+rf_ac,Working air conditioner,protective,odds_ratio,0.2,0.1,0.7,Heat-related death,"Chicago, 1999 heat wave (case-control)",11988377,abstract,The strongest protective factor in the study.
+rf_ac_bed,Air conditioner in the bedroom,protective,adjusted_odds_ratio,0.12,0.02,0.74,Direct heat-related hospital admission,"Adelaide, 2009 heat wave (case-control, mean age 73)",27256088,abstract,
+rf_alone,Living alone,risk,odds_ratio,8.1,1.4,48.1,Heat-related death,"Chicago, 1999 heat wave (case-control)",11988377,abstract,Also OR 2.3 in the 1995 Chicago heat wave (PMID 8649494).
+rf_home,Not leaving home each day,risk,odds_ratio,5.8,1.5,22.0,Heat-related death,"Chicago, 1999 heat wave (case-control)",11988377,abstract,OR 6.7 in 1995 (PMID 8649494).
+rf_bed,Confined to bed,risk,odds_ratio,8.2,,,Heat-related death,"Chicago, 1995 heat wave (case-control, multivariate)",8649494,abstract,
+rf_top,Living on the top floor,risk,odds_ratio,4.7,,,Heat-related death,"Chicago, 1995 heat wave (case-control)",8649494,abstract,
+rf_social,Social contacts or activities,protective,adjusted_odds_ratio,0.11,0.02,,Direct heat-related hospital admission,"Adelaide, 2009 heat wave",27256088,abstract,Upper CI bound not visible in the abstract excerpt read; value and lower bound confirmed.
+rf_isolation_prog,Programme to reduce social isolation,protective,incident_rate_ratio,0.76,0.59,0.98,Heat-wave mortality in people over 80,"Italy, ecological study",34770101,abstract,Adjusted IRR 0.44 (0.32-0.60).
+rf_green,Living in a ZIP code with little green space,risk,odds_ratio,1.17,1.06,1.29,Cardiovascular death during extreme heat,"Older adults, Michigan 1990-2007",25460667,abstract,Compared with 0.98 in greener ZIP codes.
+rf_heart,Heart disease,risk,adjusted_odds_ratio,13.56,1.27,144.86,Direct heat-related hospital admission,"Adelaide, 2009 heat wave",27256088,abstract,Wide confidence interval.
+rf_dementia,Dementia,risk,adjusted_odds_ratio,26.43,1.99,350.73,Direct heat-related hospital admission,"Adelaide, 2009 heat wave",27256088,abstract,Wide confidence interval.
+rf_psych_count,Each additional psychotropic medicine,risk,adjusted_odds_ratio,1.25,1.21,1.29,Death during the 2003 heat wave,"France, people aged 70-100",20104062,abstract,Dose-response with number of psychotropic drugs.

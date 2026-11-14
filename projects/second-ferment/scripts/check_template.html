@@ -1,0 +1,90 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HeatRx Evidence Check</title>
+<style>
+  :root { --bg:#f6f7f9; --fg:#17202a; --muted:#5b6672; --line:#dde2e8; --direct:#c4442a; --shared:#b77a0f; --weak:#8a949e; --card:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e141a; --fg:#e7edf2; --muted:#9aa7b3; --line:#26323d; --direct:#f0694d; --shared:#f2b041; --weak:#7d8893; --card:#151e27; color-scheme:dark } }
+  body { background:var(--bg); color:var(--fg); font:14px/1.5 system-ui, -apple-system, sans-serif; margin:0; padding:20px max(16px, env(safe-area-inset-left)); }
+  h1 { font-size:20px; margin:0 0 4px } p { margin:0 0 12px; color:var(--muted) }
+  .bar { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin:12px 0 }
+  .wrap { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:8px }
+  table { border-collapse:collapse; font-size:12px; font-variant-numeric:tabular-nums; min-width:1100px }
+  th, td { border-bottom:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top }
+  th { position:sticky; top:0; background:var(--card); font-weight:600; color:var(--muted) }
+  td.c { cursor:pointer; min-width:80px }
+  .t { display:inline-block; font-weight:700; font-size:11px; padding:1px 6px; border-radius:99px; border:1px solid currentColor }
+  .direct { color:var(--direct) } .shared { color:var(--shared) } .weak, .direct_misuse, .guidance_only { color:var(--weak) }
+  .guidance_only { border-style:dashed }
+  .g { font-size:11px; color:var(--muted) } h2 { font-size:16px; margin:24px 0 8px }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px 12px; min-width:0 }
+  .n { color:var(--muted) }
+  #detail { margin-top:16px; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 14px }
+  #detail li { margin:6px 0 } .corr { color:var(--direct) }
+</style>
+<h1>HeatRx evidence check</h1>
+<p>Every drug class against every body effect, read from <code>bundle/evidence.json</code>. Each cell: tier, then studies with a significantly raised / lowered ratio out of all drug-side studies, then heat-side studies. Select a cell to list its findings.</p>
+<div class="bar" id="meta"></div>
+<label><input type="checkbox" id="weak"> Show weak links</label>
+<div class="wrap"><table id="t"></table></div>
+<div id="detail">Select a cell.</div>
+<h2>Outside the graph: guidance, prescribers, scenarios</h2>
+<div class="grid" id="outside"></div>
+<script>/*BUNDLE*/</script>
+<script>
+(window.HEATRX_BUNDLE ? Promise.resolve(window.HEATRX_BUNDLE) : fetch("evidence.json").then(r => r.json()))
+.catch(() => { document.getElementById("detail").textContent = "Could not load the bundle. Rebuild it with scripts/merge_papers.py, which writes evidence.js next to this page."; throw new Error("no bundle"); })
+.then(B => {
+  const m = B.meta;
+  document.getElementById("meta").textContent =
+    `Generated ${m.generated} · ${m.counts.links} links · ${m.counts.direct} direct findings · ${m.counts.findings} findings · ${m.counts.papers_with_metadata} papers with titles`;
+  const eff = B.effects, cls = B.classes, link = {};
+  B.links.forEach(l => link[l.class + "|" + l.effect] = l);
+  const heat = {}; B.heat_arms.forEach(h => heat[h.effect] = h);
+  const dir = {}; B.direct.forEach(d => dir[d.id] = d);
+  function render() {
+    const showWeak = document.getElementById("weak").checked;
+    let h = "<tr><th>Drug class</th>" + eff.map(e => `<th>${e.label}<div class="n">heat: ${heat[e.id] ? heat[e.id].studies : 0} studies</div></th>`).join("") + "</tr>";
+    cls.forEach(c => {
+      h += `<tr><th>${c.label}${c.named_in_brief ? " *" : ""}${c.guidance_docs ? `<div class="g">in ${c.guidance_docs.length} guidance docs · ${(c.buckets || []).join(", ")}</div>` : ""}</th>`;
+      eff.forEach(e => {
+        const l = link[c.id + "|" + e.id];
+        if (!l || (l.tier === "weak" && !showWeak)) { h += "<td></td>"; return; }
+        const a = l.drug_arm;
+        h += `<td class="c" data-k="${c.id}|${e.id}"><span class="t ${l.tier}">${l.tier.replace("_", " ")}</span><br>` +
+             (a.studies ? `${a.raised}↑ ${a.lowered}↓ / ${a.studies}` : "") + (l.direct_ids.length ? `<br>${l.direct_ids.join(" ")}` : "") +
+             (l.guidance_docs && l.guidance_docs.length ? `<div class="g">guidance: ${l.guidance_docs.length}</div>` : "") + "</td>";
+      });
+      h += "</tr>";
+    });
+    document.getElementById("t").innerHTML = h;
+  }
+  render();
+  document.getElementById("weak").addEventListener("change", render);
+  document.getElementById("t").addEventListener("click", ev => {
+    const td = ev.target.closest("td.c"); if (!td) return;
+    const l = link[td.dataset.k], out = document.getElementById("detail");
+    const paper = p => B.papers[p] ? `${B.papers[p].authors} ${B.papers[p].year}, <i>${B.papers[p].title}</i>` : `PMID ${p}`;
+    let h = `<b>${td.dataset.k}</b> · tier ${l.tier}`;
+    if (l.direct_ids.length) h += "<h3>Direct</h3><ul>" + l.direct_ids.map(i => { const d = dir[i]; return `<li><b>${d.statistic} ${d.value}${d.ci_lower ? ` (${d.ci_lower}–${d.ci_upper})` : ""}</b> ${d.finding} <span class="n">[${d.scope}, ${d.source}, ${d.checked}] ${paper(d.pmid)}</span></li>`; }).join("") + "</ul>";
+    h += `<h3>Drug side (${l.drug_arm_ids.length} findings)</h3><ul>` + l.drug_arm_ids.slice(0, 60).map(i => {
+      const f = B.findings[i];
+      return `<li><span class="t ${f.dir === "raised" ? "direct" : "weak"}">${f.dir}</span> ${f.v1} ↔ ${f.v2}: ${f.stat} ${f.value}${f.lo ? ` (${f.lo}–${f.hi})` : ""} <span class="n">${f.src} · ${paper(f.pmid)}</span>${f.correction ? `<div class="corr">Correction: ${f.correction.text}</div>` : ""}</li>`;
+    }).join("") + "</ul>";
+    if (l.guidance_docs && l.guidance_docs.length && B.guidance) {
+      const ms = B.guidance.mentions.filter(m => m.class === l.class && m.effect === l.effect);
+      h = h.replace("</b>", "</b>") + "<h3>Guidance naming this link</h3><ul>" + ms.map(m => `<li><b>${m.doc}</b>: ${m.named_as} · ${m.mechanism}</li>`).join("") + "</ul>";
+    }
+    out.innerHTML = h;
+  });
+  if (B.guidance) {
+    const docs = B.guidance.documents.map(d => `<li><b>${d.id}</b> ${d.publisher}, ${d.year}: <a href="${d.url}">${d.title}</a></li>`).join("");
+    const cards = B.classes.map(c => `<div class="card"><b>${c.label}</b>` +
+      (c.specialties ? `<div class="g">Prescribers (Medicare claims): ${c.specialties.slice(0, 4).map(s => `${s[0]} ${Math.round(s[1] * 100)}%`).join(", ")}</div>` : "") +
+      `<ul>${(c.actions || []).map(a => `<li><b>${B.guidance.buckets[a.bucket]}</b> ${a.text} <span class="g">[${a.docs.join(", ") || "our inference"}]</span></li>`).join("")}</ul></div>`).join("");
+    const sc = (B.scenarios ? B.scenarios.scenarios : []).map(s => `<div class="card"><b>${s.title}</b><div class="g">${s.note}</div><ul>${s.days.map(d => `<li>${d.date}: ${d.max_temp_f} °F, heat index ${d.max_heat_index_f} °F · ${d.nws_product}</li>`).join("")}</ul></div>`).join("");
+    document.getElementById("outside").innerHTML = `<div class="card"><b>Guidance documents (${B.guidance.documents.length})</b><ul>${docs}</ul><div class="g">Not included: ${B.guidance.not_included.map(x => x.title + ". " + x.reason).join(" ")}</div></div>` + sc + cards;
+  }
+});
+</script>

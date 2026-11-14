@@ -1,0 +1,1283 @@
+{
+ "source": "CMS Medicare Part D Prescribers - by Provider and Drug, data year 2024; dataset 9552739e-3d05-4c1b-8eff-ecabf391e2e5",
+ "measure": "share of Part D claims (Tot_Clms) by prescriber type",
+ "sample": "first 20000 prescriber rows per drug (rows ordered by NPI)",
+ "drugs": {
+  "Furosemide": {
+   "class": "diuretics",
+   "prescribers": 283306,
+   "rows_read": 20000,
+   "claims_read": 1579159
+  },
+  "Hydrochlorothiazide": {
+   "class": "diuretics",
+   "prescribers": 247617,
+   "rows_read": 20000,
+   "claims_read": 1441634
+  },
+  "Chlorthalidone": {
+   "class": "diuretics",
+   "prescribers": 79744,
+   "rows_read": 20000,
+   "claims_read": 565720
+  },
+  "Spironolactone": {
+   "class": "diuretics",
+   "prescribers": 177743,
+   "rows_read": 20000,
+   "claims_read": 925072
+  },
+  "Bumetanide": {
+   "class": "diuretics",
+   "prescribers": 54410,
+   "rows_read": 20000,
+   "claims_read": 672865
+  },
+  "Torsemide": {
+   "class": "diuretics",
+   "prescribers": 61785,
+   "rows_read": 20000,
+   "claims_read": 792971
+  },
+  "Metoprolol Succinate": {
+   "class": "beta_blockers",
+   "prescribers": 287967,
+   "rows_read": 20000,
+   "claims_read": 2201785
+  },
+  "Metoprolol Tartrate": {
+   "class": "beta_blockers",
+   "prescribers": 229389,
+   "rows_read": 20000,
+   "claims_read": 1321558
+  },
+  "Carvedilol": {
+   "class": "beta_blockers",
+   "prescribers": 230309,
+   "rows_read": 20000,
+   "claims_read": 1295243
+  },
+  "Atenolol": {
+   "class": "beta_blockers",
+   "prescribers": 147062,
+   "rows_read": 20000,
+   "claims_read": 795016
+  },
+  "Propranolol HCl": {
+   "class": "beta_blockers",
+   "prescribers": 118654,
+   "rows_read": 20000,
+   "claims_read": 482944
+  },
+  "Lisinopril": {
+   "class": "acei_arb",
+   "prescribers": 309768,
+   "rows_read": 20000,
+   "claims_read": 2278630
+  },
+  "Losartan Potassium": {
+   "class": "acei_arb",
+   "prescribers": 306330,
+   "rows_read": 20000,
+   "claims_read": 2316494
+  },
+  "Valsartan": {
+   "class": "acei_arb",
+   "prescribers": 104863,
+   "rows_read": 20000,
+   "claims_read": 766814
+  },
+  "Olmesartan Medoxomil": {
+   "class": "acei_arb",
+   "prescribers": 78661,
+   "rows_read": 20000,
+   "claims_read": 746400
+  },
+  "Benazepril HCl": {
+   "class": "acei_arb",
+   "prescribers": 60708,
+   "rows_read": 20000,
+   "claims_read": 518102
+  },
+  "Amlodipine Besylate": {
+   "class": "ccb",
+   "prescribers": 343301,
+   "rows_read": 20000,
+   "claims_read": 2918827
+  },
+  "Diltiazem HCl": {
+   "class": "ccb",
+   "prescribers": 145769,
+   "rows_read": 20000,
+   "claims_read": 565535
+  },
+  "Nifedipine": {
+   "class": "ccb",
+   "prescribers": 89381,
+   "rows_read": 20000,
+   "claims_read": 693335
+  },
+  "Verapamil HCl": {
+   "class": "ccb",
+   "prescribers": 38119,
+   "rows_read": 20000,
+   "claims_read": 380760
+  },
+  "Oxybutynin Chloride": {
+   "class": "anticholinergics",
+   "prescribers": 140247,
+   "rows_read": 20000,
+   "claims_read": 604769
+  },
+  "Tolterodine Tartrate": {
+   "class": "anticholinergics",
+   "prescribers": 19564,
+   "rows_read": 19564,
+   "claims_read": 432267
+  },
+  "Solifenacin Succinate": {
+   "class": "anticholinergics",
+   "prescribers": 30361,
+   "rows_read": 20000,
+   "claims_read": 679687
+  },
+  "Benztropine Mesylate": {
+   "class": "anticholinergics",
+   "prescribers": 32868,
+   "rows_read": 20000,
+   "claims_read": 1058140
+  },
+  "Trospium Chloride": {
+   "class": "anticholinergics",
+   "prescribers": 12307,
+   "rows_read": 12307,
+   "claims_read": 401207
+  },
+  "Quetiapine Fumarate": {
+   "class": "antipsychotics",
+   "prescribers": 161581,
+   "rows_read": 20000,
+   "claims_read": 1111247
+  },
+  "Olanzapine": {
+   "class": "antipsychotics",
+   "prescribers": 71753,
+   "rows_read": 20000,
+   "claims_read": 952543
+  },
+  "Risperidone": {
+   "class": "antipsychotics",
+   "prescribers": 65259,
+   "rows_read": 20000,
+   "claims_read": 1012348
+  },
+  "Aripiprazole": {
+   "class": "antipsychotics",
+   "prescribers": 82707,
+   "rows_read": 20000,
+   "claims_read": 848186
+  },
+  "Haloperidol": {
+   "class": "antipsychotics",
+   "prescribers": 20597,
+   "rows_read": 20000,
+   "claims_read": 744606
+  },
+  "Sertraline HCl": {
+   "class": "antidepressants",
+   "prescribers": 237719,
+   "rows_read": 20000,
+   "claims_read": 1299235
+  },
+  "Escitalopram Oxalate": {
+   "class": "antidepressants",
+   "prescribers": 214132,
+   "rows_read": 20000,
+   "claims_read": 1127317
+  },
+  "Citalopram Hydrobromide": {
+   "class": "antidepressants",
+   "prescribers": 151909,
+   "rows_read": 20000,
+   "claims_read": 807425
+  },
+  "Fluoxetine HCl": {
+   "class": "antidepressants",
+   "prescribers": 167295,
+   "rows_read": 20000,
+   "claims_read": 805969
+  },
+  "Duloxetine HCl": {
+   "class": "antidepressants",
+   "prescribers": 232022,
+   "rows_read": 20000,
+   "claims_read": 1069352
+  },
+  "Mirtazapine": {
+   "class": "antidepressants",
+   "prescribers": 153113,
+   "rows_read": 20000,
+   "claims_read": 997176
+  },
+  "Bupropion HCl": {
+   "class": "antidepressants",
+   "prescribers": 233329,
+   "rows_read": 20000,
+   "claims_read": 699255
+  },
+  "Venlafaxine HCl": {
+   "class": "antidepressants",
+   "prescribers": 152672,
+   "rows_read": 20000,
+   "claims_read": 668293
+  },
+  "Amitriptyline HCl": {
+   "class": "antidepressants",
+   "prescribers": 103097,
+   "rows_read": 20000,
+   "claims_read": 562545
+  },
+  "Lithium Carbonate": {
+   "class": "lithium",
+   "prescribers": 30552,
+   "rows_read": 20000,
+   "claims_read": 558612
+  },
+  "Insulin Glargine,hum.Rec.Anlog": {
+   "class": "insulin",
+   "prescribers": 228219,
+   "rows_read": 20000,
+   "claims_read": 683511
+  },
+  "Insulin Lispro": {
+   "class": "insulin",
+   "prescribers": 77468,
+   "rows_read": 20000,
+   "claims_read": 547580
+  },
+  "Insulin Aspart": {
+   "class": "insulin",
+   "prescribers": 50429,
+   "rows_read": 20000,
+   "claims_read": 575006
+  },
+  "Insulin Degludec": {
+   "class": "insulin",
+   "prescribers": 54493,
+   "rows_read": 20000,
+   "claims_read": 591333
+  },
+  "Empagliflozin": {
+   "class": "sglt2",
+   "prescribers": 198275,
+   "rows_read": 20000,
+   "claims_read": 1088512
+  },
+  "Dapagliflozin Propanediol": {
+   "class": "sglt2",
+   "prescribers": 118837,
+   "rows_read": 20000,
+   "claims_read": 871788
+  },
+  "Canagliflozin": {
+   "class": "sglt2",
+   "prescribers": 6318,
+   "rows_read": 6318,
+   "claims_read": 116409
+  },
+  "Metformin HCl": {
+   "class": "other_diabetes",
+   "prescribers": 422011,
+   "rows_read": 20000,
+   "claims_read": 1593541
+  },
+  "Glipizide": {
+   "class": "other_diabetes",
+   "prescribers": 181211,
+   "rows_read": 20000,
+   "claims_read": 731588
+  },
+  "Semaglutide": {
+   "class": "other_diabetes",
+   "prescribers": 210621,
+   "rows_read": 20000,
+   "claims_read": 1036838
+  },
+  "Glimepiride": {
+   "class": "other_diabetes",
+   "prescribers": 91745,
+   "rows_read": 20000,
+   "claims_read": 895963
+  },
+  "Dulaglutide": {
+   "class": "other_diabetes",
+   "prescribers": 101479,
+   "rows_read": 20000,
+   "claims_read": 751027
+  },
+  "Topiramate": {
+   "class": "anticonvulsants",
+   "prescribers": 80919,
+   "rows_read": 20000,
+   "claims_read": 677077
+  },
+  "Divalproex Sodium": {
+   "class": "anticonvulsants",
+   "prescribers": 93751,
+   "rows_read": 20000,
+   "claims_read": 957154
+  },
+  "Carbamazepine": {
+   "class": "anticonvulsants",
+   "prescribers": 36246,
+   "rows_read": 20000,
+   "claims_read": 472887
+  },
+  "Oxcarbazepine": {
+   "class": "anticonvulsants",
+   "prescribers": 30704,
+   "rows_read": 20000,
+   "claims_read": 651185
+  },
+  "Meloxicam": {
+   "class": "nsaids",
+   "prescribers": 204507,
+   "rows_read": 20000,
+   "claims_read": 1110514
+  },
+  "Ibuprofen": {
+   "class": "nsaids",
+   "prescribers": 168355,
+   "rows_read": 20000,
+   "claims_read": 711498
+  },
+  "Naproxen": {
+   "class": "nsaids",
+   "prescribers": 75347,
+   "rows_read": 20000,
+   "claims_read": 531628
+  },
+  "Diclofenac Sodium": {
+   "class": "nsaids",
+   "prescribers": 138511,
+   "rows_read": 20000,
+   "claims_read": 864173
+  },
+  "Celecoxib": {
+   "class": "nsaids",
+   "prescribers": 122982,
+   "rows_read": 20000,
+   "claims_read": 811418
+  },
+  "Oxycodone HCl": {
+   "class": "opioids_sedatives",
+   "prescribers": 161409,
+   "rows_read": 20000,
+   "claims_read": 1065579
+  },
+  "Hydrocodone/Acetaminophen": {
+   "class": "opioids_sedatives",
+   "prescribers": 225916,
+   "rows_read": 20000,
+   "claims_read": 1703795
+  },
+  "Tramadol HCl": {
+   "class": "opioids_sedatives",
+   "prescribers": 218868,
+   "rows_read": 20000,
+   "claims_read": 1095146
+  },
+  "Lorazepam": {
+   "class": "opioids_sedatives",
+   "prescribers": 155207,
+   "rows_read": 20000,
+   "claims_read": 946620
+  },
+  "Alprazolam": {
+   "class": "opioids_sedatives",
+   "prescribers": 168819,
+   "rows_read": 20000,
+   "claims_read": 1305247
+  },
+  "Zolpidem Tartrate": {
+   "class": "opioids_sedatives",
+   "prescribers": 162762,
+   "rows_read": 20000,
+   "claims_read": 881362
+  },
+  "Methylphenidate HCl": {
+   "class": "stimulants",
+   "prescribers": 27150,
+   "rows_read": 20000,
+   "claims_read": 396496
+  },
+  "Dextroamphetamine/Amphetamine": {
+   "class": "stimulants",
+   "prescribers": 67584,
+   "rows_read": 20000,
+   "claims_read": 570766
+  },
+  "Hydroxyzine HCl": {
+   "class": "antihistamines",
+   "prescribers": 120201,
+   "rows_read": 20000,
+   "claims_read": 614080
+  },
+  "Promethazine HCl": {
+   "class": "antihistamines",
+   "prescribers": 31730,
+   "rows_read": 20000,
+   "claims_read": 528152
+  }
+ },
+ "classes": {
+  "diuretics": {
+   "claims_read": 5977421,
+   "by_type": [
+    [
+     "Family Practice",
+     0.2552
+    ],
+    [
+     "Internal Medicine",
+     0.245
+    ],
+    [
+     "Nurse Practitioner",
+     0.1869
+    ],
+    [
+     "Cardiology",
+     0.1236
+    ],
+    [
+     "Physician Assistant",
+     0.0546
+    ],
+    [
+     "Nephrology",
+     0.0422
+    ],
+    [
+     "Interventional Cardiology",
+     0.0256
+    ],
+    [
+     "General Practice",
+     0.0138
+    ],
+    [
+     "Geriatric Medicine",
+     0.0091
+    ],
+    [
+     "Advanced Heart Failure and Transplant Cardiology",
+     0.0074
+    ],
+    [
+     "Hospitalist",
+     0.0071
+    ],
+    [
+     "Clinical Cardiac Electrophysiology",
+     0.0047
+    ]
+   ]
+  },
+  "beta_blockers": {
+   "claims_read": 6096546,
+   "by_type": [
+    [
+     "Family Practice",
+     0.2557
+    ],
+    [
+     "Internal Medicine",
+     0.2521
+    ],
+    [
+     "Nurse Practitioner",
+     0.1677
+    ],
+    [
+     "Cardiology",
+     0.149
+    ],
+    [
+     "Physician Assistant",
+     0.0554
+    ],
+    [
+     "Interventional Cardiology",
+     0.033
+    ],
+    [
+     "General Practice",
+     0.0149
+    ],
+    [
+     "Nephrology",
+     0.0115
+    ],
+    [
+     "Clinical Cardiac Electrophysiology",
+     0.0107
+    ],
+    [
+     "Neurology",
+     0.0089
+    ],
+    [
+     "Geriatric Medicine",
+     0.0083
+    ],
+    [
+     "Hospitalist",
+     0.0059
+    ]
+   ]
+  },
+  "acei_arb": {
+   "claims_read": 6626440,
+   "by_type": [
+    [
+     "Family Practice",
+     0.3177
+    ],
+    [
+     "Internal Medicine",
+     0.2891
+    ],
+    [
+     "Nurse Practitioner",
+     0.1599
+    ],
+    [
+     "Cardiology",
+     0.0871
+    ],
+    [
+     "Physician Assistant",
+     0.0566
+    ],
+    [
+     "General Practice",
+     0.0185
+    ],
+    [
+     "Nephrology",
+     0.018
+    ],
+    [
+     "Interventional Cardiology",
+     0.018
+    ],
+    [
+     "Geriatric Medicine",
+     0.0064
+    ],
+    [
+     "Endocrinology",
+     0.0047
+    ],
+    [
+     "Hospitalist",
+     0.0036
+    ],
+    [
+     "Clinical Cardiac Electrophysiology",
+     0.003
+    ]
+   ]
+  },
+  "ccb": {
+   "claims_read": 4558457,
+   "by_type": [
+    [
+     "Internal Medicine",
+     0.2967
+    ],
+    [
+     "Family Practice",
+     0.2778
+    ],
+    [
+     "Nurse Practitioner",
+     0.153
+    ],
+    [
+     "Cardiology",
+     0.1095
+    ],
+    [
+     "Physician Assistant",
+     0.0481
+    ],
+    [
+     "Nephrology",
+     0.0265
+    ],
+    [
+     "Interventional Cardiology",
+     0.0218
+    ],
+    [
+     "General Practice",
+     0.019
+    ],
+    [
+     "Geriatric Medicine",
+     0.0087
+    ],
+    [
+     "Clinical Cardiac Electrophysiology",
+     0.0076
+    ],
+    [
+     "Hospitalist",
+     0.0054
+    ],
+    [
+     "Emergency Medicine",
+     0.0032
+    ]
+   ]
+  },
+  "anticholinergics": {
+   "claims_read": 3176070,
+   "by_type": [
+    [
+     "Nurse Practitioner",
+     0.249
+    ],
+    [
+     "Urology",
+     0.1799
+    ],
+    [
+     "Family Practice",
+     0.1563
+    ],
+    [
+     "Internal Medicine",
+     0.1455
+    ],
+    [
+     "Psychiatry",
+     0.0976
+    ],
+    [
+     "Physician Assistant",
+     0.0747
+    ],
+    [
+     "Obstetrics & Gynecology",
+     0.0302
+    ],
+    [
+     "Psychiatry & Neurology",
+     0.0149
+    ],
+    [
+     "General Practice",
+     0.0122
+    ],
+    [
+     "Geriatric Medicine",
+     0.0058
+    ],
+    [
+     "Neurology",
+     0.0054
+    ],
+    [
+     "Certified Clinical Nurse Specialist",
+     0.0036
+    ]
+   ]
+  },
+  "antipsychotics": {
+   "claims_read": 4668930,
+   "by_type": [
+    [
+     "Nurse Practitioner",
+     0.3447
+    ],
+    [
+     "Psychiatry",
+     0.2516
+    ],
+    [
+     "Internal Medicine",
+     0.1203
+    ],
+    [
+     "Family Practice",
+     0.119
+    ],
+    [
+     "Physician Assistant",
+     0.0445
+    ],
+    [
+     "Psychiatry & Neurology",
+     0.0396
+    ],
+    [
+     "Neurology",
+     0.0113
+    ],
+    [
+     "General Practice",
+     0.0109
+    ],
+    [
+     "Geriatric Medicine",
+     0.0104
+    ],
+    [
+     "Certified Clinical Nurse Specialist",
+     0.0091
+    ],
+    [
+     "Neuropsychiatry",
+     0.0081
+    ],
+    [
+     "Hospitalist",
+     0.0051
+    ]
+   ]
+  },
+  "antidepressants": {
+   "claims_read": 8036567,
+   "by_type": [
+    [
+     "Family Practice",
+     0.2731
+    ],
+    [
+     "Nurse Practitioner",
+     0.2472
+    ],
+    [
+     "Internal Medicine",
+     0.219
+    ],
+    [
+     "Psychiatry",
+     0.0969
+    ],
+    [
+     "Physician Assistant",
+     0.0574
+    ],
+    [
+     "Neurology",
+     0.0183
+    ],
+    [
+     "Psychiatry & Neurology",
+     0.0159
+    ],
+    [
+     "General Practice",
+     0.0113
+    ],
+    [
+     "Geriatric Medicine",
+     0.011
+    ],
+    [
+     "Rheumatology",
+     0.0046
+    ],
+    [
+     "Hospitalist",
+     0.0044
+    ],
+    [
+     "Certified Clinical Nurse Specialist",
+     0.0042
+    ]
+   ]
+  },
+  "lithium": {
+   "claims_read": 558612,
+   "by_type": [
+    [
+     "Psychiatry",
+     0.3895
+    ],
+    [
+     "Nurse Practitioner",
+     0.3602
+    ],
+    [
+     "Psychiatry & Neurology",
+     0.0603
+    ],
+    [
+     "Internal Medicine",
+     0.0504
+    ],
+    [
+     "Family Practice",
+     0.0469
+    ],
+    [
+     "Physician Assistant",
+     0.0414
+    ],
+    [
+     "Certified Clinical Nurse Specialist",
+     0.0115
+    ],
+    [
+     "Neuropsychiatry",
+     0.0096
+    ],
+    [
+     "Geriatric Medicine",
+     0.0052
+    ],
+    [
+     "General Practice",
+     0.0033
+    ],
+    [
+     "Geriatric Psychiatry",
+     0.0032
+    ],
+    [
+     "Student in an Organized Health Care Education/Training Program",
+     0.0027
+    ]
+   ]
+  },
+  "insulin": {
+   "claims_read": 2397430,
+   "by_type": [
+    [
+     "Internal Medicine",
+     0.2458
+    ],
+    [
+     "Endocrinology",
+     0.2264
+    ],
+    [
+     "Family Practice",
+     0.2173
+    ],
+    [
+     "Nurse Practitioner",
+     0.2003
+    ],
+    [
+     "Physician Assistant",
+     0.0585
+    ],
+    [
+     "General Practice",
+     0.0169
+    ],
+    [
+     "Geriatric Medicine",
+     0.0079
+    ],
+    [
+     "Hospitalist",
+     0.0056
+    ],
+    [
+     "Pharmacist",
+     0.0034
+    ],
+    [
+     "Nephrology",
+     0.0029
+    ],
+    [
+     "Emergency Medicine",
+     0.0027
+    ],
+    [
+     "Certified Clinical Nurse Specialist",
+     0.0022
+    ]
+   ]
+  },
+  "sglt2": {
+   "claims_read": 2076709,
+   "by_type": [
+    [
+     "Internal Medicine",
+     0.251
+    ],
+    [
+     "Family Practice",
+     0.2461
+    ],
+    [
+     "Nurse Practitioner",
+     0.1767
+    ],
+    [
+     "Cardiology",
+     0.0743
+    ],
+    [
+     "Endocrinology",
+     0.0718
+    ],
+    [
+     "Physician Assistant",
+     0.057
+    ],
+    [
+     "Nephrology",
+     0.0522
+    ],
+    [
+     "General Practice",
+     0.0168
+    ],
+    [
+     "Interventional Cardiology",
+     0.0142
+    ],
+    [
+     "Advanced Heart Failure and Transplant Cardiology",
+     0.0083
+    ],
+    [
+     "Hospitalist",
+     0.005
+    ],
+    [
+     "Geriatric Medicine",
+     0.0047
+    ]
+   ]
+  },
+  "other_diabetes": {
+   "claims_read": 5008957,
+   "by_type": [
+    [
+     "Family Practice",
+     0.3254
+    ],
+    [
+     "Internal Medicine",
+     0.2897
+    ],
+    [
+     "Nurse Practitioner",
+     0.1803
+    ],
+    [
+     "Endocrinology",
+     0.0828
+    ],
+    [
+     "Physician Assistant",
+     0.0595
+    ],
+    [
+     "General Practice",
+     0.0238
+    ],
+    [
+     "Cardiology",
+     0.006
+    ],
+    [
+     "Geriatric Medicine",
+     0.005
+    ],
+    [
+     "Pharmacist",
+     0.0044
+    ],
+    [
+     "Hospitalist",
+     0.004
+    ],
+    [
+     "Nephrology",
+     0.0038
+    ],
+    [
+     "Emergency Medicine",
+     0.0029
+    ]
+   ]
+  },
+  "anticonvulsants": {
+   "claims_read": 2758303,
+   "by_type": [
+    [
+     "Nurse Practitioner",
+     0.2681
+    ],
+    [
+     "Neurology",
+     0.1831
+    ],
+    [
+     "Family Practice",
+     0.1438
+    ],
+    [
+     "Internal Medicine",
+     0.1408
+    ],
+    [
+     "Psychiatry",
+     0.1313
+    ],
+    [
+     "Physician Assistant",
+     0.0483
+    ],
+    [
+     "Psychiatry & Neurology",
+     0.0197
+    ],
+    [
+     "Geriatric Medicine",
+     0.0093
+    ],
+    [
+     "General Practice",
+     0.0091
+    ],
+    [
+     "Hospitalist",
+     0.0058
+    ],
+    [
+     "Certified Clinical Nurse Specialist",
+     0.0049
+    ],
+    [
+     "Neuropsychiatry",
+     0.0042
+    ]
+   ]
+  },
+  "nsaids": {
+   "claims_read": 4029231,
+   "by_type": [
+    [
+     "Family Practice",
+     0.2545
+    ],
+    [
+     "Internal Medicine",
+     0.1978
+    ],
+    [
+     "Nurse Practitioner",
+     0.1689
+    ],
+    [
+     "Physician Assistant",
+     0.0962
+    ],
+    [
+     "Orthopedic Surgery",
+     0.0727
+    ],
+    [
+     "Dentist",
+     0.0335
+    ],
+    [
+     "Rheumatology",
+     0.0237
+    ],
+    [
+     "General Practice",
+     0.0219
+    ],
+    [
+     "Emergency Medicine",
+     0.0153
+    ],
+    [
+     "Podiatry",
+     0.0151
+    ],
+    [
+     "Physical Medicine and Rehabilitation",
+     0.0138
+    ],
+    [
+     "Pain Management",
+     0.0111
+    ]
+   ]
+  },
+  "opioids_sedatives": {
+   "claims_read": 6997749,
+   "by_type": [
+    [
+     "Family Practice",
+     0.2396
+    ],
+    [
+     "Nurse Practitioner",
+     0.1974
+    ],
+    [
+     "Internal Medicine",
+     0.1928
+    ],
+    [
+     "Physician Assistant",
+     0.0885
+    ],
+    [
+     "Psychiatry",
+     0.0446
+    ],
+    [
+     "Pain Management",
+     0.0275
+    ],
+    [
+     "Orthopedic Surgery",
+     0.0247
+    ],
+    [
+     "Anesthesiology",
+     0.0245
+    ],
+    [
+     "Physical Medicine and Rehabilitation",
+     0.0204
+    ],
+    [
+     "Interventional Pain Management",
+     0.0163
+    ],
+    [
+     "General Practice",
+     0.0116
+    ],
+    [
+     "Emergency Medicine",
+     0.0112
+    ]
+   ]
+  },
+  "stimulants": {
+   "claims_read": 967262,
+   "by_type": [
+    [
+     "Psychiatry",
+     0.2722
+    ],
+    [
+     "Nurse Practitioner",
+     0.2539
+    ],
+    [
+     "Family Practice",
+     0.1769
+    ],
+    [
+     "Internal Medicine",
+     0.0979
+    ],
+    [
+     "Physician Assistant",
+     0.0462
+    ],
+    [
+     "Psychiatry & Neurology",
+     0.0436
+    ],
+    [
+     "Neurology",
+     0.0358
+    ],
+    [
+     "Certified Clinical Nurse Specialist",
+     0.012
+    ],
+    [
+     "Neuropsychiatry",
+     0.009
+    ],
+    [
+     "Pulmonary Disease",
+     0.0081
+    ],
+    [
+     "General Practice",
+     0.0056
+    ],
+    [
+     "Sleep Medicine",
+     0.005
+    ]
+   ]
+  },
+  "antihistamines": {
+   "claims_read": 1142232,
+   "by_type": [
+    [
+     "Nurse Practitioner",
+     0.2717
+    ],
+    [
+     "Family Practice",
+     0.269
+    ],
+    [
+     "Internal Medicine",
+     0.1717
+    ],
+    [
+     "Physician Assistant",
+     0.0801
+    ],
+    [
+     "Psychiatry",
+     0.0539
+    ],
+    [
+     "Gastroenterology",
+     0.0169
+    ],
+    [
+     "Neurology",
+     0.0133
+    ],
+    [
+     "General Practice",
+     0.0119
+    ],
+    [
+     "Dermatology",
+     0.0098
+    ],
+    [
+     "Orthopedic Surgery",
+     0.0094
+    ],
+    [
+     "Hematology-Oncology",
+     0.0087
+    ],
+    [
+     "Emergency Medicine",
+     0.0084
+    ]
+   ]
+  }
+ }
+}

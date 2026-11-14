@@ -1,0 +1,8 @@
+pmid,correction,caveat
+17513091,"The graph labels all three odds ratios ""use of psychotropic drugs"". The abstract assigns 6.0 to anticholinergics, 4.6 to antipsychotics and 2.4 to anxiolytics.",C10
+15052388,"Two graph rows give opposite results for the same pair (odds ratio 0.1 in the snapshot, 7.1 in the API). Not used.",C10
+7010077,"The extracted value (mean difference -10.0) does not match the abstract, which reports 50-60% faster insulin disappearance at 35 °C than at 20 °C.",C11
+31900477,"The odds ratio 1.76 (and 1.58) compares women with men in July, not temperature. The paper's heat result: hyponatremia prevalence 4.5% in July against 2.7% in December.",C15
+37280056,"The ratios are per unit of serum potassium, not effects of temperature. The paper shows potassium peaking in winter and prescribing shifting with it.",C16
+28342346,"This is wastewater analysis in one Australian catchment, not patient data.",C17
+31205291,"The graph labels this ""ambient temperature""; the paper is about cold weather. Lower temperature raised the odds of fatal opioid overdose.",C22
