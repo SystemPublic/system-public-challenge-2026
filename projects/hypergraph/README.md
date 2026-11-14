@@ -19,6 +19,10 @@ The rules ask for work done during the event, so this section states what was no
 
 NYC Concordance treats each link between two variables in the System Public Graph as a running meta-analysis and adds a registered test on New York City's open data to it. The tests show which findings the city data confirm, which they contest, and which they connect. It is for city analysts, researchers and funders who want to know which research findings hold in New York, which do not, and what research is missing. Each of the 94 hypotheses was written down and committed before it was scored, and 93 have outcomes. For 87 of the 93 a referee agent that did not see the registrant's reasoning re-estimated the deciding number. Two claims were not blind tests, and the Limitations section says which. Twelve claims have a replication package.
 
+## Architecture
+
+![Sources, fixed versions on the Underlay, and what NYC Concordance does with them](figures/comics/architecture.png)
+
 ## How we used the System Public Graph
 
 We read the graph before looking at any city data. For each question we searched concepts (`/v1/concepts`). Concept search matches whole words only, so we also searched study variables by name, which often found more matches. For each pair of concepts we read the relationship's findings (associations): the statistic, its interval, the study and its PubMed id. `concord/sysgraph.py` is the client and caches every response; `tools/graph_evidence.py` prints the evidence for a pair of concepts. We also loaded the Dataverse deposit of the graph (v2.1) to describe the graph as a dataset (`docs/graph.md`).

@@ -30,6 +30,43 @@ SLUG = re.compile(r"^[A-Za-z0-9_.-]{1,80}$")
 SEMVER = re.compile(r"^v\d+\.\d+\.\d+$")
 
 
+def lookup(term: str) -> dict:
+    """Live: ask the city's table (today) for a Manhattan restaurant by name, then fetch each of its inspections
+    from the June version on the Underlay and compare the scores."""
+    import time
+    from concurrent.futures import ThreadPoolExecutor
+
+    import requests
+    term = re.sub(r"[^A-Za-z0-9 &'.-]", "", term).strip().upper()[:40]
+    if len(term) < 3:
+        return {"error": "type at least three letters of a restaurant's name"}
+    t0 = time.time()
+    r = requests.get("https://data.cityofnewyork.us/resource/43nn-pn8j.json", timeout=40, params={
+        "$select": "camis,dba,building,street,zipcode,inspection_date,inspection_type,max(score) as score,max(grade) as grade",
+        "$where": "boro='Manhattan' AND upper(dba) like '%" + term.replace("'", "''") + "%' AND inspection_date between '2024-01-01T00:00:00' and '2026-06-11T23:59:59'",
+        "$group": "camis,dba,building,street,zipcode,inspection_date,inspection_type", "$order": "inspection_date DESC", "$limit": "40"})
+    if r.status_code != 200:
+        return {"error": f"the city's data portal answered {r.status_code}"}
+    rows, t_city = r.json(), time.time() - t0
+    slug = lambda x: re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", x.lower())).strip("-")  # noqa: E731
+
+    def june(x):
+        rid = f"{x['camis']}-{x['inspection_date'][:10]}-{slug(x.get('inspection_type') or '')}"
+        rec = cv.record("nyc", "restaurant-inspections", "v1.0.0", "Inspection", rid)
+        now = int(float(x["score"])) if x.get("score") not in (None, "") else None
+        then = (rec or {}).get("data", {}).get("score") if rec else None
+        return {"id": rid, "name": x.get("dba"), "address": f"{x.get('building', '')} {x.get('street', '')}, {x.get('zipcode', '')}".strip(), "date": x["inspection_date"][:10],
+                "type": x.get("inspection_type"), "now": now, "june": then, "in_june_copy": rec is not None,
+                "changed": rec is not None and then is not None and now is not None and then != now}
+    t1 = time.time()
+    with ThreadPoolExecutor(max_workers=12) as ex:
+        out = list(ex.map(june, rows))
+    found = [o for o in out if o["in_june_copy"]]
+    return {"term": term, "inspections_today": len(out), "found_in_june": len(found), "changed": sum(o["changed"] for o in out), "rows": out,
+            "seconds_city": round(t_city, 1), "seconds_underlay": round(time.time() - t1, 1),
+            "sources": {"today": "NYC Open Data 43nn-pn8j, queried now", "june": "Underlay nyc/restaurant-inspections v1.0.0"}}
+
+
 class Handler(SimpleHTTPRequestHandler):
     def _json(self, code: int, obj) -> None:
         body = json.dumps(obj).encode()
@@ -62,6 +99,8 @@ class Handler(SimpleHTTPRequestHandler):
                     v = cv.get(f"{cv.API}/collections/{d[side]['owner']}/{d[side]['slug']}/versions/{d[side]['version']}") or {}
                     d[side].update(hash=v.get("hash"), recordCount=v.get("recordCount"), createdAt=v.get("createdAt"))
                 return self._json(200, d)
+            if u.path == "/api/inspections/lookup":
+                return self._json(200, lookup(q.get("q", "")))
             if u.path == "/api/inspections/history":
                 return self._json(200, json.loads((ROOT / "viz/data/inspections_history.json").read_text()))
             if u.path == "/api/inspections/record":

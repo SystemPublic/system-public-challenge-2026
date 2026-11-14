@@ -87,6 +87,9 @@
   .card a { color: #9cc2ff; }
   .detail .cap { font-family: var(--letter); text-transform: uppercase; font-size: 15px; margin: 12px 0 0; letter-spacing: .02em; }
   #research { margin-top: 30px; }
+  .live { margin: 26px 0 30px; padding: 4px 0 18px; border-bottom: 2px solid #000; max-width: 1100px; }
+  .live input { font: inherit; font-size: 17px; padding: 9px 12px; border: 2px solid #000; border-radius: 4px; width: 34ch; }
+  #lstatus { font-size: 14.5px; }
   .steps { display: flex; gap: 14px; flex-wrap: wrap; margin: 16px 0 14px; }
   button.big:disabled { opacity: .35; cursor: default; }
   table.story { border-collapse: collapse; width: 100%; max-width: 1400px; background: #000; color: #fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -137,6 +140,12 @@
 </header>
 <main>
   <div id="list" hidden>
+    <div class="live">
+      <h2 class="strip-title">Look up any Manhattan restaurant, live</h2>
+      <p class="strip-lede">Type a name. The page asks the city's data portal for that restaurant's inspections as they stand today, fetches the same inspections from the June version on the Underlay, and compares them.</p>
+      <div class="listbar"><input id="lq" placeholder="A restaurant's name, for example JOE'S PIZZA"><button class="big" id="lgo" style="font-size:16px; padding:9px 18px;">Look it up</button><span id="lstatus"></span></div>
+      <table class="rows" id="ltable" hidden><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>Points in June</th><th>Points today</th></tr></thead><tbody id="lrows"></tbody></table>
+    </div>
     <div class="listbar"><b>One restaurant at a time: the 485 inspections whose score changed.</b> Click one to fetch both records from the Underlay. <input id="q" placeholder="Search a restaurant or street"></div>
     <table class="rows"><thead><tr><th>Restaurant</th><th>Address</th><th>Inspected</th><th>Points in June</th><th>Points in November</th></tr></thead><tbody id="rows"></tbody></table>
     <p><button class="plain" id="morerows">Show more</button></p>
@@ -338,6 +347,22 @@ async function drill(tr) {
   } catch (e) { d.firstChild.textContent = String(e.message || e); }
 }
 $("go").addEventListener("click", compare);
+async function lookupLive() {
+  const term = $("lq").value.trim(); if (!term) return;
+  $("lgo").disabled = true; $("lstatus").textContent = "Asking the city's data portal, then the Underlay…"; $("ltable").hidden = true;
+  try {
+    const r = await fetch("/api/inspections/lookup?q=" + encodeURIComponent(term)).then(r => r.json());
+    if (r.error) throw new Error(r.error);
+    $("lrows").innerHTML = r.rows.map(x => `<tr${x.changed ? ' style="background:#fff3b0"' : ""}><td><b>${esc(x.name)}</b></td><td>${esc(x.address)}</td><td>${esc(x.date)}</td>`
+      + `<td class="sc">${x.in_june_copy ? (x.june ?? "no score") : "not in the June copy"}</td><td class="sc">${x.changed ? `<span class="to">${x.now}</span> changed` : (x.now ?? "no score")}</td></tr>`).join("")
+      || `<tr><td colspan="5">No Manhattan restaurant with that name has an inspection from 2024 to June 2026.</td></tr>`;
+    $("ltable").hidden = false;
+    $("lstatus").innerHTML = `<b>${r.inspections_today}</b> inspections in the city's table today (${r.seconds_city} s), <b>${r.found_in_june}</b> found in the June version (${r.seconds_underlay} s), <b>${r.changed}</b> with a different score.`;
+  } catch (e) { $("lstatus").textContent = String(e.message || e); }
+  $("lgo").disabled = false;
+}
+$("lgo").addEventListener("click", lookupLive);
+$("lq").addEventListener("keydown", e => { if (e.key === "Enter") lookupLive(); });
 
 $("rows").addEventListener("click", e => { const tr = e.target.closest("tr.row"); if (tr) drill(tr); });
 $("morerows").addEventListener("click", () => renderRows(false));
