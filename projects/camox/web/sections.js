@@ -87,12 +87,12 @@ const RULES = {
 function findingsTable(fs, verdict) {
   const rule = `<p class="small rule"><strong>Why ${esc(verdict)}:</strong> ${esc(RULES[verdict] || 'No rule recorded for this verdict.')}</p>`;
   if (!fs.length) return `<details class="findings"><summary>Why this verdict</summary>${rule}</details>`;
-  const rows = fs.map((f) => `<tr><td>${esc(f.variable_1)} and ${esc(f.variable_2)}</td>
-      <td class="r">${fmt(f.value)}<div class="small muted">${esc(String(f.stat_type || '').replaceAll('_', ' '))}</div></td>
-      <td class="r">${f.ci_lower == null ? '' : `${fmt(f.ci_lower)} to ${fmt(f.ci_upper)}`}</td>
-      <td>${esc(f.population)}</td><td>${doiLink(f.doi)}</td></tr>`).join('');
+  const rows = fs.map((f) => `<tr><td data-label="Finding">${esc(f.variable_1)} and ${esc(f.variable_2)}</td>
+      <td class="r" data-label="Effect">${fmt(f.value)}<div class="small muted">${esc(String(f.stat_type || '').replaceAll('_', ' '))}</div></td>
+      <td class="r" data-label="95% CI">${f.ci_lower == null ? '' : `${fmt(f.ci_lower)} to ${fmt(f.ci_upper)}`}</td>
+      <td data-label="Population">${esc(f.population)}</td><td data-label="DOI">${doiLink(f.doi)}</td></tr>`).join('');
   return `<details class="findings"><summary>Why this verdict, and ${plural(fs.length, 'key finding', 'key findings')}</summary>${rule}
-    <div class="scroll-x"><table><thead><tr><th>Finding</th><th class="r">Effect</th><th class="r">95% CI</th><th>Population</th><th>DOI</th></tr></thead>
+    <div class="scroll-x"><table class="stack"><thead><tr><th>Finding</th><th class="r">Effect</th><th class="r">95% CI</th><th>Population</th><th>DOI</th></tr></thead>
     <tbody>${rows}</tbody></table></div></details>`;
 }
 
@@ -160,18 +160,18 @@ function indicatorMap(s) {
   const id = `csv-${nextCsv++}`;
   csvs.set(id, { name: `${slug(s.seed.indicator_id || 'indicators')}-linked-indicators.csv`, text: indicatorCsv(s) });
   const rows = s.links.map((l) => `<tr data-kind="${l.cross_dataset ? 'other' : ''} ${l.data_gap ? 'gap' : ''}">
-      <td><strong>${esc(l.concept_label)}</strong>
+      <td data-label="Linked to"><strong>${esc(l.concept_label)}</strong>
         ${l.cross_dataset ? '<span class="pill s-backed">Different dataset</span>' : ''}${l.data_gap ? '<span class="pill s-partial">Data gap</span>' : ''}
         <div class="small muted">${linked(l.note)}</div>${l.dois?.length ? `<p class="dois">${l.dois.map(doiLink).join('')}</p>` : ''}</td>
-      <td class="r num">${plural(l.studies, 'study', 'studies')}</td>
-      <td>${l.indicators.length ? `<ul class="plain">${l.indicators.map(indicator).join('')}</ul>` : '<span class="small muted">No World Bank indicator measures this</span>'}</td>
+      <td class="r num" data-label="Evidence">${plural(l.studies, 'study', 'studies')}</td>
+      <td data-label="World Bank indicators">${l.indicators.length ? `<ul class="plain">${l.indicators.map(indicator).join('')}</ul>` : '<span class="small muted">No World Bank indicator measures this</span>'}</td>
     </tr>`).join('');
   return `<p><strong>Starting indicator:</strong> ${esc(s.seed.name)} ${indId(s.seed.indicator_id)} ${dataset(s.seed.database)}</p>
     <ul class="plain small">${s.matches.map((m) => `<li>Graph concept <strong>${esc(m.label)}</strong>: ${esc(MATCH[m.match] || m.match)} match. ${linked(m.why)}</li>`).join('')}</ul>
     <div class="filter" role="group" aria-label="Show links"><button type="button" class="chip" data-show="" aria-pressed="true">All ${s.links.length}</button>
       <button type="button" class="chip" data-show="other" aria-pressed="false">Other datasets ${s.links.filter((l) => l.cross_dataset).length}</button>
       <button type="button" class="chip" data-show="gap" aria-pressed="false">Data gaps ${s.links.filter((l) => l.data_gap).length}</button></div>
-    <div class="scroll-x"><table><thead><tr><th>Linked to</th><th class="r">Evidence</th><th>World Bank indicators</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <div class="scroll-x"><table class="stack"><thead><tr><th>Linked to</th><th class="r">Evidence</th><th>World Bank indicators</th></tr></thead><tbody>${rows}</tbody></table></div>
     <p class="small muted">Study counts: System Public Graph. Indicators: World Bank Data360.</p>
     ${facts([['Gaps', s.gaps]])}
     <p><button type="button" class="download" data-csv="${id}">Download indicators (CSV)</button></p>`;
@@ -247,6 +247,7 @@ function chartTheme() {
   return {
     background: 'transparent', font: css('--font'), view: { stroke: 'transparent' },
     axis: { labelColor: muted, titleColor: text, gridColor: line, domainColor: line, tickColor: line, labelFontSize: 12, titleFontSize: 12 },
+    axisY: { titleLimit: 190, labelLimit: 140 }, axisX: { labelLimit: 120 },  // long titles must not run past the plot on phones
     legend: { labelColor: muted, titleColor: text, labelFontSize: 12, titleFontSize: 12, orient: 'bottom' },
     title: { color: text }, mark: { color: css('--cat-1') },
     range: { category: ['--cat-1', '--cat-2', '--cat-3', '--cat-4', '--cat-5', '--cat-6'].map(css) },

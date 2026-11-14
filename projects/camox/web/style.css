@@ -341,3 +341,26 @@ a.src-chip:hover { border-color: var(--accent); color: var(--accent); }
 .graph-pick { margin: var(--s1) 0 0; color: var(--muted); }
 .project-head .goals { border-bottom: 0; padding-bottom: 0; }
 .jump { display: flex; flex-wrap: wrap; gap: var(--s1); align-items: baseline; margin-top: var(--s3); }
+
+/* Phone width: nothing may push the page wider than the screen */
+html { overflow-x: clip; }
+.layout > *, main, .block, .turn, .answer, .sec, .card, .panel { min-width: 0; }
+.sec p, .sec li, .sec td, .summary, .caveats li, .panel { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  table.stack td.r { text-align: left; }
+  table.stack ul.plain { margin: 0; }
+}
+
+.mobile-only { display: none; }
+@media (max-width: 760px) {
+  .mobile-only { display: block; }
+  .project-cards { margin-bottom: var(--s5, 32px); }
+  .project-cards ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2, 8px); }
+  .project-cards a { display: block; padding: var(--s3, 12px); border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); text-decoration: none; }
+}
+@media (max-width: 600px) {
+  /* stacked rows: label in column 1 for the whole cell, every piece of content in column 2 */
+  table.stack td::before { grid-row: 1 / span 20; }
+  table.stack td > * { grid-column: 2; justify-self: start; min-width: 0; }
+  .ds { white-space: normal; }
+}

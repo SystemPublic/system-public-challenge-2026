@@ -237,7 +237,13 @@ function bindFirstPass() {
 }
 
 const GOALS_HINT = 'What the work is for, who will read it, and its scope: countries, populations, years.';
-const newProjectView = () => `<div class="new-project"><h1>New project</h1>
+// On a phone the sidebar collapses to a menu, so the landing view lists the projects first.
+const projectCards = () => (state.projects.length ? `<section class="project-cards mobile-only"><h1>Your projects</h1>
+  <ul>${state.projects.map((x) => `<li><a href="#profile=${state.profile.id}&project=${x.id}"><strong>${esc(x.title)}</strong>
+    ${x.goals ? `<div class="small muted">${esc(short(x.goals.split('\n')[0], 90))}</div>` : ''}
+    <div class="small muted num">${projectStatus(x)}</div></a></li>`).join('')}</ul></section>` : '');
+
+const newProjectView = () => `${projectCards()}<div class="new-project"><h1>New project</h1>
   <p>A project is one piece of work, such as a brief or a programme design note. <strong>Its goals drive everything:</strong></p>
   <ol class="how small">
     <li>A first pass reads the goals and maps which data and studies exist, and where sources disagree.</li>
