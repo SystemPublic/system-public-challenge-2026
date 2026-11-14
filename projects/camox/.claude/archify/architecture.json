@@ -9,7 +9,7 @@
   },
   "components": [
     {
-      "id": "user",
+      "id": "researcher",
       "type": "external",
       "label": "Researcher",
       "sublabel": "e.g. World Bank analyst",
@@ -19,77 +19,148 @@
       ],
       "size": [
         150,
-        60
+        64
       ]
     },
     {
-      "id": "dashboard",
+      "id": "web",
       "type": "frontend",
       "label": "Web dashboard",
-      "sublabel": "profile picker, graph view",
+      "sublabel": "profile, project + goals, follow-ups",
       "pos": [
-        290,
+        400,
         40
       ],
       "size": [
-        150,
-        60
+        215,
+        64
       ]
     },
     {
       "id": "backend",
       "type": "backend",
       "label": "FastAPI backend",
-      "sublabel": "deploys the agent loop",
+      "sublabel": "projects, runs, SSE stream",
       "pos": [
-        540,
+        880,
         40
       ],
       "size": [
-        150,
-        60
+        180,
+        64
+      ]
+    },
+    {
+      "id": "postgres",
+      "type": "database",
+      "label": "Neon Postgres",
+      "sublabel": "profiles, projects + goals, runs, dashboards",
+      "pos": [
+        1180,
+        40
+      ],
+      "size": [
+        240,
+        64
+      ]
+    },
+    {
+      "id": "first-pass",
+      "type": "backend",
+      "label": "Automatic first pass",
+      "sublabel": "availability, indicator map, research",
+      "tag": "fixed plan",
+      "pos": [
+        620,
+        250
+      ],
+      "size": [
+        215,
+        64
+      ]
+    },
+    {
+      "id": "dash-planner",
+      "type": "backend",
+      "label": "Dashboard planner",
+      "sublabel": "panels from goals + answers",
+      "pos": [
+        1200,
+        210
+      ],
+      "size": [
+        200,
+        64
       ]
     },
     {
       "id": "planner",
       "type": "backend",
       "label": "Planner",
-      "sublabel": "query to tasks",
+      "sublabel": "question to tasks",
       "pos": [
-        540,
-        200
+        40,
+        400
       ],
       "size": [
         150,
-        60
+        64
       ]
     },
     {
       "id": "specialists",
       "type": "backend",
       "label": "Specialist agents",
-      "sublabel": "4 roles, in parallel",
+      "sublabel": "7 roles, in parallel",
       "pos": [
-        790,
-        200
+        265,
+        400
       ],
       "size": [
-        150,
-        60
+        280,
+        64
       ]
     },
     {
       "id": "formatter",
       "type": "backend",
       "label": "Formatter",
-      "sublabel": "Pydantic contract, retry",
+      "sublabel": "summary, DOI citations, follow-ups",
       "pos": [
-        1040,
-        200
+        630,
+        400
       ],
       "size": [
-        150,
-        60
+        195,
+        64
+      ]
+    },
+    {
+      "id": "verifier",
+      "type": "security",
+      "label": "Verifier",
+      "sublabel": "re-checks key claims",
+      "pos": [
+        960,
+        400
+      ],
+      "size": [
+        165,
+        64
+      ]
+    },
+    {
+      "id": "panels",
+      "type": "backend",
+      "label": "Panel builders",
+      "sublabel": "in parallel, numbers checked",
+      "pos": [
+        1200,
+        400
+      ],
+      "size": [
+        200,
+        64
       ]
     },
     {
@@ -98,145 +169,154 @@
       "label": "OpenAI",
       "sublabel": "gpt-6-luna, web search",
       "pos": [
-        540,
-        360
+        40,
+        580
       ],
       "size": [
-        150,
-        60
+        180,
+        64
       ]
     },
     {
       "id": "mcp",
       "type": "backend",
       "label": "MCP server",
-      "sublabel": "one tool surface",
-      "pos": [
-        790,
-        360
-      ],
-      "size": [
-        150,
-        60
-      ]
-    },
-    {
-      "id": "sga",
-      "type": "cloud",
-      "label": "System Graph API",
-      "sublabel": "live, key pending",
+      "sublabel": "the only tool surface, /mcp",
       "pos": [
         290,
-        520
+        580
       ],
       "size": [
-        150,
-        60
+        450,
+        64
       ]
     },
     {
-      "id": "graph",
-      "type": "backend",
-      "label": "Graph client",
-      "sublabel": "live or local, same tools",
+      "id": "graph-api",
+      "type": "cloud",
+      "label": "System Graph API",
+      "sublabel": "live, public-api.system.com",
       "pos": [
-        540,
-        520
+        40,
+        750
       ],
       "size": [
-        150,
-        60
-      ]
-    },
-    {
-      "id": "lit",
-      "type": "external",
-      "label": "Literature search",
-      "sublabel": "OpenAlex, PubMed",
-      "pos": [
-        790,
-        520
-      ],
-      "size": [
-        150,
-        60
-      ]
-    },
-    {
-      "id": "apis",
-      "type": "external",
-      "label": "Outside data APIs",
-      "sublabel": "user's own keys, per profile",
-      "pos": [
-        1040,
-        520
-      ],
-      "size": [
-        150,
-        60
+        200,
+        64
       ]
     },
     {
       "id": "duckdb",
       "type": "database",
       "label": "Local graph copy",
-      "sublabel": "DuckDB, 2M findings",
+      "sublabel": "DuckDB, cleaned Dataverse subset",
       "pos": [
-        540,
-        680
+        290,
+        750
       ],
       "size": [
-        150,
-        60
+        200,
+        64
       ]
     },
     {
-      "id": "db",
-      "type": "database",
-      "label": "Product database",
-      "sublabel": "runs, context, projects",
+      "id": "literature",
+      "type": "external",
+      "label": "Literature",
+      "sublabel": "OpenAlex, PubMed",
       "pos": [
-        1040,
-        360
+        540,
+        750
       ],
       "size": [
-        150,
-        60
+        200,
+        64
+      ]
+    },
+    {
+      "id": "worldbank",
+      "type": "external",
+      "label": "World Bank",
+      "sublabel": "Indicators API, Data360",
+      "pos": [
+        790,
+        750
+      ],
+      "size": [
+        200,
+        64
       ]
     }
   ],
   "boundaries": [
     {
       "kind": "region",
-      "label": "Agent loop",
+      "label": "Each question",
       "wraps": [
         "planner",
         "specialists",
-        "formatter"
+        "formatter",
+        "verifier"
+      ]
+    },
+    {
+      "kind": "region",
+      "label": "Project dashboard",
+      "wraps": [
+        "dash-planner",
+        "panels"
       ]
     }
   ],
   "connections": [
     {
       "id": "ask",
-      "from": "user",
-      "to": "dashboard",
-      "label": "query",
+      "from": "researcher",
+      "to": "web",
+      "label": "asks, replies",
       "variant": "emphasis"
     },
     {
       "id": "api",
-      "from": "dashboard",
+      "from": "web",
       "to": "backend",
-      "label": "API + SSE",
+      "label": "REST + SSE events",
       "variant": "emphasis"
     },
     {
-      "id": "run",
+      "id": "store",
+      "from": "backend",
+      "to": "postgres",
+      "label": "read / write"
+    },
+    {
+      "id": "goals",
+      "from": "backend",
+      "to": "first-pass",
+      "label": "project gets goals",
+      "fromSide": "bottom",
+      "toSide": "right",
+      "via": [
+        [
+          970,
+          282
+        ]
+      ]
+    },
+    {
+      "id": "question",
       "from": "backend",
       "to": "planner",
-      "label": "query + profile",
-      "variant": "emphasis"
+      "label": "each question",
+      "variant": "emphasis",
+      "fromSide": "left",
+      "toSide": "top"
+    },
+    {
+      "id": "fixed-plan",
+      "from": "first-pass",
+      "to": "specialists",
+      "label": "fixed plan"
     },
     {
       "id": "tasks",
@@ -246,75 +326,81 @@
       "variant": "emphasis"
     },
     {
-      "id": "findings",
+      "id": "sections",
       "from": "specialists",
       "to": "formatter",
-      "label": "findings",
+      "label": "sections",
       "variant": "emphasis"
     },
     {
-      "id": "answer",
+      "id": "draft",
       "from": "formatter",
+      "to": "verifier",
+      "label": "answer",
+      "variant": "emphasis"
+    },
+    {
+      "id": "verified",
+      "from": "verifier",
       "to": "backend",
-      "label": "validated answer",
-      "variant": "dashed",
-      "fromSide": "top",
-      "toSide": "right"
+      "label": "answer + checks",
+      "variant": "emphasis"
+    },
+    {
+      "id": "build",
+      "from": "backend",
+      "to": "dash-planner",
+      "label": "after first pass",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "panel-plans",
+      "from": "dash-planner",
+      "to": "panels",
+      "label": "3 to 6 panels"
     },
     {
       "id": "llm",
-      "from": "planner",
+      "from": "specialists",
       "to": "openai",
-      "label": "LLM calls"
+      "label": "LLM calls (all agents)"
     },
     {
       "id": "tool-calls",
       "from": "specialists",
       "to": "mcp",
+      "label": "tool calls (all agents)"
+    },
+    {
+      "id": "panel-tools",
+      "from": "panels",
+      "to": "mcp",
       "label": "tool calls"
     },
     {
-      "id": "graph-tools",
-      "from": "mcp",
-      "to": "graph",
-      "label": "graph tools"
-    },
-    {
-      "id": "search",
-      "from": "mcp",
-      "to": "lit",
-      "label": "search"
-    },
-    {
-      "id": "connectors",
-      "from": "mcp",
-      "to": "apis",
-      "label": "connectors"
-    },
-    {
       "id": "live",
-      "from": "graph",
-      "to": "sga",
-      "label": "live",
-      "variant": "dashed"
+      "from": "mcp",
+      "to": "graph-api",
+      "label": "graph: live first"
     },
     {
       "id": "fallback",
-      "from": "graph",
+      "from": "mcp",
       "to": "duckdb",
       "label": "fallback"
     },
     {
-      "id": "save",
-      "from": "formatter",
-      "to": "db",
-      "label": "save run"
+      "id": "search",
+      "from": "mcp",
+      "to": "literature",
+      "label": "search"
     },
     {
-      "id": "context",
+      "id": "indicators",
       "from": "mcp",
-      "to": "db",
-      "label": "project context"
+      "to": "worldbank",
+      "label": "indicators"
     }
   ],
   "cards": [
@@ -322,29 +408,37 @@
       "dot": "emerald",
       "title": "Specialist agents",
       "items": [
-        "Graph evidence: findings, verdicts, DOIs",
-        "Research: OpenAlex, PubMed, web search",
+        "Graph evidence: verdicts, consensus meters, DOIs",
+        "Skeptic: contrary and null findings only",
+        "Policy / theory of change: backed or unbacked links",
         "EDA: coverage, distributions, gaps",
-        "Policy: theory-of-change chains from graph paths"
+        "Indicator map: evidence around a World Bank indicator",
+        "Availability: where sources disagree or run out",
+        "Research: OpenAlex, PubMed, web search"
       ]
     },
     {
-      "dot": "violet",
-      "title": "Shared harness",
+      "dot": "rose",
+      "title": "Checks in code",
       "items": [
-        "Pydantic contracts in and out of every agent",
-        "Retry with the validation errors",
-        "Context compaction on long runs",
-        "Tools only through the MCP server"
+        "Every DOI, concept id, effect size and CI traced to tool results",
+        "Consensus meters match evidence summaries",
+        "No causal wording",
+        "Summary cites only DOIs from the sections",
+        "Dashboard numbers must appear in tool results, or the panel is dropped",
+        "A failed check goes back to the agent to retry"
       ]
     },
     {
       "dot": "slate",
-      "title": "Stretch and later",
+      "title": "Data sources and licences",
       "items": [
-        "Project knowledge graph for graph RAG",
-        "More connectors as users add keys",
-        "Neo4j if we need graph algorithms"
+        "System Public Graph, cleaned Dataverse subset: CC BY-NC 4.0",
+        "System Public Graph API: CC BY-NC 4.0",
+        "OpenAlex: CC0",
+        "PubMed E-utilities (NCBI): public; abstracts may be copyrighted",
+        "World Bank Indicators and Data360: CC BY 4.0",
+        "Web search results: linked, not checked against the graph"
       ]
     }
   ]
