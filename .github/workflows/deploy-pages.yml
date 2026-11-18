@@ -1,0 +1,47 @@
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches: [panacea-build-4, main]
+    paths:
+      - "projects/panacea/web/**"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.18.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: projects/panacea/web/pnpm-lock.yaml
+      - name: Install dependencies
+        working-directory: projects/panacea/web
+        run: pnpm install --frozen-lockfile
+      - name: Build (static export)
+        working-directory: projects/panacea/web
+        env:
+          NEXT_OUTPUT: export
+          NEXT_BASE_PATH: /system-public-challenge-2026
+        run: pnpm build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: projects/panacea/web/out
+      - uses: actions/deploy-pages@v4
